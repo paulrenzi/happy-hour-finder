@@ -16,11 +16,12 @@ function money(n) {
   return "$" + (n % 1 ? n.toFixed(2) : n);
 }
 
-function itemText(item) {
-  if (item.price_usd != null) return `${money(item.price_usd)} ${item.label}`;
-  if (item.discount_pct != null) return `${item.discount_pct}% off ${item.label}`;
-  if (item.amount_off_usd != null) return `${money(item.amount_off_usd)} off ${item.label}`;
-  return item.label;
+/* Split into {amount, label} so the number can carry its own weight. */
+function itemParts(item) {
+  if (item.price_usd != null) return { amount: money(item.price_usd), label: item.label };
+  if (item.discount_pct != null) return { amount: item.discount_pct + "% off", label: item.label };
+  if (item.amount_off_usd != null) return { amount: money(item.amount_off_usd) + " off", label: item.label };
+  return { amount: "", label: item.label };
 }
 
 /* The window covering `at`, or the next one starting within `lookahead` minutes. */
@@ -63,6 +64,24 @@ function score(row) {
   return (row.hit.live ? 0 : 10000) + row.hit.until + conf * 3;
 }
 
+/* A venue with no photo still gets a designed tile, not a grey hole. The hue is
+   derived from the id so a given bar always looks like itself. */
+function hueOf(id) {
+  let h = 0;
+  for (const ch of id) h = (h * 31 + ch.charCodeAt(0)) % 360;
+  return (h % 32) + 6; // rust..amber only -- a missing photo still reads warm, never sickly
+}
+function monogramOf(name) {
+  return (name.replace(/^(The|A)\s+/i, "").match(/[A-Za-z]/) || ["·"])[0].toUpperCase();
+}
+
+function heading(text) {
+  const h = document.createElement("p");
+  h.className = "sec";
+  h.textContent = text;
+  return h;
+}
+
 function render() {
   const at = arrivalTime();
   const feed = $("#feed");
@@ -79,35 +98,68 @@ function render() {
   }
   rows.sort((a, b) => score(a) - score(b));
 
-  $("#clock").textContent =
-    state.offset < 0
-      ? at.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })
-      : `${DOW[at.getDay()]} ${at.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}`;
-  $("#whenLabel").textContent =
-    state.offset < 0
-      ? "Right now"
-      : "Arriving " + at.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+  const clock = at.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+  $("#clock").textContent = state.offset < 0 ? clock : `${DOW[at.getDay()]} ${clock}`;
+  $("#whenLabel").textContent = state.offset < 0 ? "Right now" : "Arriving " + clock;
+
+  const liveCount = rows.filter((r) => r.hit.live).length;
+  $("#heroCount").innerHTML = rows.length
+    ? (liveCount
+        ? `<b>${liveCount}</b> happy hour${liveCount === 1 ? "" : "s"} live ${state.offset < 0 ? "now" : "then"}`
+        : `Nothing live — <b>${rows.length}</b> starting soon`)
+    : "Nothing live at that time";
 
   if (!rows.length) {
     const p = document.createElement("p");
     p.className = "empty";
     p.innerHTML =
-      "<b>Nothing live here at that time.</b><br>Drag the slider, or pick another zone. " +
+      "<b>Nothing live here at that time.</b>Drag the slider, or pick another zone. " +
       "The seed corpus is 8 hand-checked venues — most bars around here never publish their happy hour, " +
       "which is what the camera button is for.";
     feed.append(p);
     return;
   }
 
+  let section = null;
   for (const { v, deal, hit } of rows) {
+    const want = hit.live ? "Live now" : "Starting soon";
+    if (want !== section) {
+      feed.append(heading((section = want)));
+    }
+
     const el = $("#cardTpl").content.cloneNode(true);
     const card = $(".card", el);
     if (!hit.live) card.classList.add("soon");
     if (deal.confidence === "unconfirmed") card.classList.add("dim");
 
+    const shot = $(".shot", el);
+    shot.style.setProperty("--h", hueOf(v.id));
+    if (v.photo) {
+      const img = $(".photo", el);
+      img.src = v.photo.file;
+      img.hidden = false;
+      // A photo that 404s must not leave a blank band -- fall back to the tile.
+      img.addEventListener("error", () => {
+        img.remove();
+        shot.classList.add("fallback");
+      });
+      $(".credit", el).textContent = v.photo.attribution || "";
+    } else {
+      shot.classList.add("fallback");
+      $(".mono", el).textContent = monogramOf(v.name);
+    }
+
     $(".name", el).textContent = v.name;
     $(".zone", el).textContent = state.zones.find((z) => z.id === v.zone_id)?.name ?? "";
-    $(".items", el).textContent = deal.items.map(itemText).join(" · ");
+
+    const items = $(".items", el);
+    for (const item of deal.items) {
+      const { amount, label } = itemParts(item);
+      const li = document.createElement("li");
+      if (amount) li.append(Object.assign(document.createElement("b"), { textContent: amount }));
+      li.append(document.createTextNode(label));
+      items.append(li);
+    }
     $(".fine", el).textContent =
       deal.fine_print || (deal.items.length ? "" : "Window published without prices.");
 
@@ -116,16 +168,14 @@ function render() {
       ends.classList.add("live");
       ends.textContent = `Ends in ${fmtMins(hit.until)}`;
     } else {
-      ends.textContent = `Starts in ${fmtMins(hit.until)} · ${hit.w.start}–${hit.w.end}`;
+      ends.textContent = `In ${fmtMins(hit.until)} · ${hit.w.start}`;
     }
 
     const conf = $(".conf", el);
     conf.classList.add(deal.confidence);
     const age = deal.age_days === 0 ? "today" : `${deal.age_days}d ago`;
     conf.textContent =
-      deal.confidence === "unconfirmed"
-        ? `Unconfirmed — call ahead · ${age}`
-        : `Checked ${age}`;
+      deal.confidence === "unconfirmed" ? `Unconfirmed — call ahead · ${age}` : `Checked ${age}`;
 
     $(".map", el).href =
       "https://www.google.com/maps/dir/?api=1&destination=" +
@@ -135,7 +185,7 @@ function render() {
       sheet(
         `<h3>${v.name}</h3><p>Reports go to a human queue daily — that habit is the whole trust model. ` +
           `The write path (Worker + D1) isn't wired yet, so this is a stub.</p>` +
-          `<p style="color:var(--dim)">Source: <a href="${deal.source.url}">${deal.source.kind}</a>` +
+          `<p>Source: <a href="${deal.source.url}">${deal.source.kind}</a>` +
           (deal.source.note ? `<br>${deal.source.note}` : "") +
           `</p>`
       )
@@ -169,6 +219,15 @@ function buildZoneChips() {
   state.zones.forEach((z) => mk(z.id, z.name));
 }
 
+/* The hero owns the title until it scrolls away, then the glass bar takes over. */
+function watchHero() {
+  const hero = $("#hero"), bar = $("#bar");
+  if (!("IntersectionObserver" in window)) return bar.classList.add("show");
+  new IntersectionObserver(([e]) => bar.classList.toggle("show", !e.isIntersecting), {
+    rootMargin: "-56px 0px 0px 0px",
+  }).observe(hero);
+}
+
 async function boot() {
   const index = await (await fetch("data/index.json")).json();
   state.zones = index.zones;
@@ -178,8 +237,15 @@ async function boot() {
   state.venues = bundles.flatMap((b) => b.venues);
 
   buildZoneChips();
+  watchHero();
   render();
   setInterval(() => state.offset < 0 && render(), 30000);
+
+  $("#credits").innerHTML =
+    'Header photo: <a href="https://commons.wikimedia.org/wiki/File:South_Shore_Brewery_Taproom.jpg">' +
+    "South Shore Brewery Taproom</a> by Billertl, cropped, " +
+    '<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. ' +
+    "Deal windows are transcribed from the source linked on each card — always call ahead.";
 
   $("#when").addEventListener("input", (e) => {
     state.offset = Number(e.target.value);

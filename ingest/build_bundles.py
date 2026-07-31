@@ -19,6 +19,7 @@ from validate_pa import validate_deal, validate_food_combo_count  # noqa: E402
 
 DEALS_JSON = os.path.join(REPO, "data", "deals_seed.json")
 ZONES_JSON = os.path.join(REPO, "data", "zones.json")
+PHOTOS_JSON = os.path.join(REPO, "data", "venue_photos.json")
 OUT_DIR = os.path.join(REPO, "web", "data")
 
 
@@ -39,6 +40,9 @@ def main():
     payload = json.load(open(DEALS_JSON, encoding="utf-8"))
     zones = json.load(open(ZONES_JSON, encoding="utf-8"))
     zone_names = {z["id"]: z["name"] for z in zones["zones"]}
+    # Optional: written by ingest/fetch_venue_photos.py. A venue with no entry
+    # gets the app's generated tile instead.
+    photos = json.load(open(PHOTOS_JSON, encoding="utf-8")) if os.path.exists(PHOTOS_JSON) else {}
 
     by_zone, rejected, hidden = {}, 0, 0
     for venue in payload["venues"]:
@@ -64,6 +68,9 @@ def main():
             continue
         v = {k: venue[k] for k in ("id", "name", "address", "zone_id", "website")}
         v["plcb_name"] = venue.get("plcb_name")
+        shot = photos.get(venue["id"])
+        if shot and os.path.exists(os.path.join(REPO, "web", shot["file"])):
+            v["photo"] = {"file": shot["file"], "attribution": shot.get("attribution", "")}
         v["deals"] = deals
         by_zone.setdefault(venue["zone_id"], []).append(v)
 

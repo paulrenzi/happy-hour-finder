@@ -1,7 +1,10 @@
 /* Cache the shell and the zone bundles so "what's live right now" works with no
    signal -- it is pure client-side math over data already on the device. */
-const CACHE = "hhf-v1";
-const SHELL = ["./", "index.html", "app.js", "styles.css", "manifest.json", "data/index.json"];
+const CACHE = "hhf-v2";
+const SHELL = [
+  "./", "index.html", "app.js", "styles.css", "manifest.json",
+  "data/index.json", "img/hero-taproom.jpg", "img/icon-192.png",
+];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));

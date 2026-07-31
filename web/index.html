@@ -3,17 +3,30 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#12100f">
+<meta name="theme-color" content="#14100d">
 <title>Happy Hour — King of Prussia</title>
+<meta name="description" content="What's live right now around King of Prussia, and is the deal actually still on?">
 <link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="img/icon-192.png">
+<link rel="preload" as="image" href="img/hero-taproom.jpg">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header id="top">
-  <h1>What's on now</h1>
-  <div id="clock" aria-live="polite"></div>
+<!-- Collapses into a glass bar once the hero scrolls away. -->
+<header id="bar">
+  <span id="barTitle">Happy Hour</span>
+  <span id="clock" aria-live="polite"></span>
 </header>
+
+<section id="hero">
+  <img id="heroImg" src="img/hero-taproom.jpg" alt="" aria-hidden="true">
+  <div id="heroInk">
+    <p class="kicker">King of Prussia · 20 miles</p>
+    <h1>What's on<br><em>right now</em></h1>
+    <p id="heroCount">Checking the board…</p>
+  </div>
+</section>
 
 <section id="controls">
   <label class="slider">
@@ -26,22 +39,31 @@
 
 <main id="feed" aria-live="polite"></main>
 
+<footer id="credits"></footer>
+
 <template id="cardTpl">
   <article class="card">
-    <div class="row1">
-      <h2 class="name"></h2>
-      <span class="zone"></span>
-    </div>
-    <p class="items"></p>
-    <p class="fine"></p>
-    <div class="row2">
+    <div class="shot">
+      <img class="photo" alt="" loading="lazy" decoding="async" hidden>
+      <span class="mono" aria-hidden="true"></span>
       <span class="ends"></span>
-      <span class="conf"></span>
+      <div class="shotInk">
+        <h2 class="name"></h2>
+        <span class="zone"></span>
+      </div>
     </div>
-    <div class="actions">
-      <a class="btn map" target="_blank" rel="noopener">Directions</a>
-      <a class="btn src" target="_blank" rel="noopener">Source</a>
-      <button class="btn wrong" type="button">This was wrong</button>
+    <div class="body">
+      <ul class="items"></ul>
+      <p class="fine"></p>
+      <div class="meta">
+        <span class="conf"></span>
+        <span class="credit"></span>
+      </div>
+      <div class="actions">
+        <a class="btn go map" target="_blank" rel="noopener">Directions</a>
+        <a class="btn src" target="_blank" rel="noopener">Source</a>
+        <button class="btn wrong" type="button" aria-label="Report this deal as wrong">Wrong?</button>
+      </div>
     </div>
   </article>
 </template>
@@ -50,7 +72,7 @@
   <button id="nowBtn" type="button">What's on now</button>
   <label id="addBtn" class="btn-photo">
     <input type="file" accept="image/*" capture="environment" id="photo" hidden>
-    <span>📷 Add a menu</span>
+    <span aria-hidden="true">📷</span><span class="lbl">Add a menu</span>
   </label>
 </nav>
 
