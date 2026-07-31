@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#12100f">
+<title>Happy Hour — King of Prussia</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header id="top">
+  <h1>What's on now</h1>
+  <div id="clock" aria-live="polite"></div>
+</header>
+
+<section id="controls">
+  <label class="slider">
+    <span id="whenLabel">Right now</span>
+    <input type="range" id="when" min="-1" max="96" value="-1" step="1"
+           aria-label="Arrival time">
+  </label>
+  <div id="zones" class="chips" role="group" aria-label="Zones"></div>
+</section>
+
+<main id="feed" aria-live="polite"></main>
+
+<template id="cardTpl">
+  <article class="card">
+    <div class="row1">
+      <h2 class="name"></h2>
+      <span class="zone"></span>
+    </div>
+    <p class="items"></p>
+    <p class="fine"></p>
+    <div class="row2">
+      <span class="ends"></span>
+      <span class="conf"></span>
+    </div>
+    <div class="actions">
+      <a class="btn map" target="_blank" rel="noopener">Directions</a>
+      <a class="btn src" target="_blank" rel="noopener">Source</a>
+      <button class="btn wrong" type="button">This was wrong</button>
+    </div>
+  </article>
+</template>
+
+<nav id="thumb">
+  <button id="nowBtn" type="button">What's on now</button>
+  <label id="addBtn" class="btn-photo">
+    <input type="file" accept="image/*" capture="environment" id="photo" hidden>
+    <span>📷 Add a menu</span>
+  </label>
+</nav>
+
+<dialog id="sheet">
+  <div id="sheetBody"></div>
+  <button id="sheetClose" type="button">Close</button>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>

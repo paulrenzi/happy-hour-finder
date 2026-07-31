@@ -1,0 +1,72 @@
+{
+ "zone_id": "ardmore_bryn_mawr",
+ "name": "Ardmore / Bryn Mawr",
+ "built_at": "2026-07-31",
+ "venues": [
+  {
+   "id": "tired-hands-ardmore",
+   "name": "Tired Hands Fermentaria",
+   "address": "35 Cricket Terrace, Ardmore PA 19003",
+   "zone_id": "ardmore_bryn_mawr",
+   "website": "https://tiredhands.com",
+   "plcb_name": "TIRED HANDS BREWING COMPANY",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "pints of Alien Church, HopHands, and the LUKR tap",
+       "discount_pct": 50
+      },
+      {
+       "category": "food",
+       "label": "warm pretzel",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "wings",
+       "price_usd": 16.0
+      },
+      {
+       "category": "food",
+       "label": "cheeseburger",
+       "price_usd": 12.0
+      }
+     ],
+     "confidence": "likely",
+     "last_verified_at": "2026-07-31",
+     "verified_by": "staff",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://tiredhands.com"
+     },
+     "age_days": 0
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,42 @@
+{
+ "zone_id": "norristown_bridgeport",
+ "name": "Norristown / Bridgeport",
+ "built_at": "2026-07-31",
+ "venues": [
+  {
+   "id": "tony-gs-norristown",
+   "name": "Tony G's Pub and Eatery",
+   "address": "1991 W Main St, Norristown PA 19403",
+   "zone_id": "norristown_bridgeport",
+   "website": "https://tonygspub.com/specials",
+   "plcb_name": "FRA-MAR ENTERPRISES LTD",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 5,
+       "start": "22:00",
+       "end": "24:00"
+      },
+      {
+       "dow": 6,
+       "start": "22:00",
+       "end": "24:00"
+      }
+     ],
+     "items": [],
+     "fine_print": "Late-night happy hour. The venue advertises a late-night menu and cheap drinks without naming prices.",
+     "confidence": "likely",
+     "last_verified_at": "2026-07-31",
+     "verified_by": "staff",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://tonygspub.com/specials"
+     },
+     "age_days": 0
+    }
+   ]
+  }
+ ]
+}

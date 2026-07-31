@@ -1,0 +1,72 @@
+{
+ "zone_id": "blue_bell_plymouth_meeting",
+ "name": "Blue Bell / Plymouth Meeting",
+ "built_at": "2026-07-31",
+ "venues": [
+  {
+   "id": "black-horse-plymouth-meeting",
+   "name": "The Black Horse Tavern",
+   "address": "200 Fairfield Rd, Plymouth Meeting PA 19462",
+   "zone_id": "blue_bell_plymouth_meeting",
+   "website": "https://blackhorsetaverns.com",
+   "plcb_name": "THE OLDE BLACK HORSE TAVERN AND MOTEL",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "14:00",
+       "end": "16:00"
+      },
+      {
+       "dow": 7,
+       "start": "14:00",
+       "end": "16:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "pints",
+       "amount_off_usd": 1.0
+      }
+     ],
+     "confidence": "likely",
+     "last_verified_at": "2026-07-31",
+     "verified_by": "staff",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://blackhorsetaverns.com"
+     },
+     "age_days": 0
+    }
+   ]
+  }
+ ]
+}

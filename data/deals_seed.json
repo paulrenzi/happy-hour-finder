@@ -1,0 +1,266 @@
+{
+  "_comment": "Hand-verified seed corpus from the Phase 0 check (data/phase0_checks.csv). Every deal here was read off the cited source by a human on 2026-07-31. This is a UI/flow bootstrap, not a market corpus -- it is deliberately tiny and deliberately auditable. Windows use dow 1=Mon..7=Sun and 24-hour times; '24:00' means midnight, which is the latest a PA discount may legally run.",
+  "as_of": "2026-07-31",
+  "venues": [
+    {
+      "id": "wills-bills-berwyn",
+      "name": "Will's + Bill's Brewery & Restaurant",
+      "plcb_name": "BKBC INC",
+      "address": "324 W Swedesford Rd, Berwyn PA 19312",
+      "zone_id": "wayne_radnor",
+      "license_type": "Brewery",
+      "website": "https://wills-bills.com",
+      "deals": [
+        {
+          "type": "happy_hour",
+          "windows": [
+            { "dow": 2, "start": "16:00", "end": "18:00" },
+            { "dow": 3, "start": "16:00", "end": "18:00" },
+            { "dow": 4, "start": "16:00", "end": "18:00" },
+            { "dow": 5, "start": "16:00", "end": "18:00" },
+            { "dow": 6, "start": "16:00", "end": "18:00" },
+            { "dow": 7, "start": "16:00", "end": "18:00" }
+          ],
+          "items": [
+            { "category": "draft", "label": "W+B craft pints", "price_usd": 5.0 },
+            { "category": "cocktail", "label": "house martinis, Manhattans, cosmos", "price_usd": 7.0 },
+            { "category": "food", "label": "buck-a-shuck oysters", "price_usd": 1.0 },
+            { "category": "wine", "label": "house wine", "price_usd": 7.0 }
+          ],
+          "confidence": "likely",
+          "last_verified_at": "2026-07-31",
+          "verified_by": "staff",
+          "source": { "kind": "venue_site", "url": "https://wills-bills.com" }
+        }
+      ]
+    },
+    {
+      "id": "tired-hands-ardmore",
+      "name": "Tired Hands Fermentaria",
+      "plcb_name": "TIRED HANDS BREWING COMPANY",
+      "address": "35 Cricket Terrace, Ardmore PA 19003",
+      "zone_id": "ardmore_bryn_mawr",
+      "license_type": "Brewery Pub",
+      "website": "https://tiredhands.com",
+      "deals": [
+        {
+          "type": "happy_hour",
+          "windows": [
+            { "dow": 2, "start": "16:00", "end": "18:00" },
+            { "dow": 3, "start": "16:00", "end": "18:00" },
+            { "dow": 4, "start": "16:00", "end": "18:00" },
+            { "dow": 5, "start": "16:00", "end": "18:00" }
+          ],
+          "items": [
+            { "category": "draft", "label": "pints of Alien Church, HopHands, and the LUKR tap", "discount_pct": 50 },
+            { "category": "food", "label": "warm pretzel", "price_usd": 10.0 },
+            { "category": "food", "label": "wings", "price_usd": 16.0 },
+            { "category": "food", "label": "cheeseburger", "price_usd": 12.0 }
+          ],
+          "confidence": "likely",
+          "last_verified_at": "2026-07-31",
+          "verified_by": "staff",
+          "source": { "kind": "venue_site", "url": "https://tiredhands.com" }
+        }
+      ]
+    },
+    {
+      "id": "iron-hill-media",
+      "name": "Iron Hill Brewery & Restaurant — Media",
+      "plcb_name": "IRON HILL BREWERY & RESTAURANT",
+      "address": "30-32 E State St, Media PA 19063",
+      "zone_id": "media",
+      "license_type": "Restaurant (Liquor)",
+      "website": "https://www.ironhillbrewery.com/food-menus/media-pa-happy-hour-menu/",
+      "deals": [
+        {
+          "type": "happy_hour",
+          "windows": [
+            { "dow": 1, "start": "16:00", "end": "18:00" },
+            { "dow": 2, "start": "16:00", "end": "18:00" },
+            { "dow": 3, "start": "16:00", "end": "18:00" },
+            { "dow": 4, "start": "16:00", "end": "18:00" },
+            { "dow": 5, "start": "16:00", "end": "18:00" }
+          ],
+          "items": [
+            { "category": "draft", "label": "Iron Hill pours", "price_usd": null, "discount_pct": null, "amount_off_usd": 2.0 },
+            { "category": "cocktail", "label": "cocktails", "price_usd": 7.5 },
+            { "category": "food", "label": "fried chicken sandwich", "price_usd": 5.0 },
+            { "category": "food", "label": "crispy brussels", "price_usd": 5.0 },
+            { "category": "food", "label": "nachos", "price_usd": 7.0 }
+          ],
+          "confidence": "likely",
+          "last_verified_at": "2026-07-31",
+          "verified_by": "staff",
+          "source": {
+            "kind": "venue_site",
+            "url": "https://www.ironhillbrewery.com/food-menus/media-pa-happy-hour-menu/"
+          }
+        }
+      ]
+    },
+    {
+      "id": "black-horse-plymouth-meeting",
+      "name": "The Black Horse Tavern",
+      "plcb_name": "THE OLDE BLACK HORSE TAVERN AND MOTEL",
+      "address": "200 Fairfield Rd, Plymouth Meeting PA 19462",
+      "zone_id": "blue_bell_plymouth_meeting",
+      "license_type": "Hotel (Liquor)",
+      "website": "https://blackhorsetaverns.com",
+      "deals": [
+        {
+          "type": "happy_hour",
+          "windows": [
+            { "dow": 1, "start": "16:00", "end": "18:00" },
+            { "dow": 2, "start": "16:00", "end": "18:00" },
+            { "dow": 3, "start": "16:00", "end": "18:00" },
+            { "dow": 4, "start": "16:00", "end": "18:00" },
+            { "dow": 5, "start": "16:00", "end": "18:00" },
+            { "dow": 6, "start": "14:00", "end": "16:00" },
+            { "dow": 7, "start": "14:00", "end": "16:00" }
+          ],
+          "items": [
+            { "category": "draft", "label": "pints", "amount_off_usd": 1.0 }
+          ],
+          "confidence": "likely",
+          "last_verified_at": "2026-07-31",
+          "verified_by": "staff",
+          "source": { "kind": "venue_site", "url": "https://blackhorsetaverns.com" }
+        }
+      ]
+    },
+    {
+      "id": "coyote-crossing-conshohocken",
+      "name": "Coyote Crossing",
+      "plcb_name": "300-E-6, INC.",
+      "address": "800 Springmill Ave, Conshohocken PA 19428",
+      "zone_id": "conshohocken",
+      "license_type": "Restaurant (Liquor)",
+      "website": "https://coyotecrossing.com/happy-hour",
+      "deals": [
+        {
+          "type": "happy_hour",
+          "windows": [
+            { "dow": 1, "start": "16:00", "end": "18:00" },
+            { "dow": 2, "start": "16:00", "end": "18:00" },
+            { "dow": 3, "start": "16:00", "end": "18:00" },
+            { "dow": 4, "start": "16:00", "end": "18:00" },
+            { "dow": 5, "start": "16:00", "end": "18:00" }
+          ],
+          "items": [],
+          "fine_print": "The venue publishes the window but no items or prices.",
+          "confidence": "likely",
+          "last_verified_at": "2026-07-31",
+          "verified_by": "staff",
+          "source": { "kind": "venue_site", "url": "https://coyotecrossing.com/happy-hour" }
+        }
+      ]
+    },
+    {
+      "id": "tony-gs-norristown",
+      "name": "Tony G's Pub and Eatery",
+      "plcb_name": "FRA-MAR ENTERPRISES LTD",
+      "address": "1991 W Main St, Norristown PA 19403",
+      "zone_id": "norristown_bridgeport",
+      "license_type": "Restaurant (Liquor)",
+      "website": "https://tonygspub.com/specials",
+      "deals": [
+        {
+          "type": "happy_hour",
+          "windows": [
+            { "dow": 5, "start": "22:00", "end": "24:00" },
+            { "dow": 6, "start": "22:00", "end": "24:00" }
+          ],
+          "items": [],
+          "fine_print": "Late-night happy hour. The venue advertises a late-night menu and cheap drinks without naming prices.",
+          "confidence": "likely",
+          "last_verified_at": "2026-07-31",
+          "verified_by": "staff",
+          "source": { "kind": "venue_site", "url": "https://tonygspub.com/specials" }
+        }
+      ]
+    },
+    {
+      "id": "goats-beard-wayne",
+      "name": "The Goat's Beard",
+      "plcb_name": "THE GOATS BEARD",
+      "address": "103 N Wayne Ave, Wayne PA 19087",
+      "zone_id": "wayne_radnor",
+      "license_type": "Restaurant (Liquor)",
+      "website": "https://thegoatsbeardphilly.com",
+      "deals": [
+        {
+          "type": "happy_hour",
+          "windows": [
+            { "dow": 1, "start": "16:00", "end": "18:00" },
+            { "dow": 2, "start": "16:00", "end": "18:00" },
+            { "dow": 3, "start": "16:00", "end": "18:00" },
+            { "dow": 4, "start": "16:00", "end": "18:00" },
+            { "dow": 5, "start": "15:00", "end": "18:00" }
+          ],
+          "items": [
+            { "category": "draft", "label": "beers", "price_usd": 5.0 },
+            { "category": "well", "label": "mixed drinks", "price_usd": 6.0 },
+            { "category": "wine", "label": "wine", "price_usd": 7.0 }
+          ],
+          "confidence": "unconfirmed",
+          "last_verified_at": "2026-07-31",
+          "verified_by": "staff",
+          "source": {
+            "kind": "aggregator",
+            "url": "https://www.yelp.com/biz/the-goats-beard-wayne",
+            "note": "Not published on the venue's own site."
+          }
+        }
+      ]
+    },
+    {
+      "id": "barnabys-west-chester",
+      "name": "Barnaby's of West Chester",
+      "plcb_name": "BARNABY'S OF WEST CHESTER",
+      "address": "7-15 S High St, West Chester PA 19382",
+      "zone_id": "west_chester",
+      "license_type": "Restaurant (Liquor)",
+      "website": "https://barnabyswc.com",
+      "deals": [
+        {
+          "type": "happy_hour",
+          "windows": [
+            { "dow": 1, "start": "17:00", "end": "19:00" },
+            { "dow": 2, "start": "17:00", "end": "19:00" },
+            { "dow": 3, "start": "17:00", "end": "19:00" },
+            { "dow": 4, "start": "17:00", "end": "19:00" },
+            { "dow": 5, "start": "17:00", "end": "19:00" }
+          ],
+          "items": [
+            { "category": "draft", "label": "drafts", "price_usd": 4.0 },
+            { "category": "wine", "label": "wine", "price_usd": 5.0 },
+            { "category": "cocktail", "label": "cocktails", "price_usd": 6.0 }
+          ],
+          "confidence": "unconfirmed",
+          "last_verified_at": "2026-07-31",
+          "verified_by": "staff",
+          "source": {
+            "kind": "instagram",
+            "url": "https://www.instagram.com/barnabyswc/",
+            "note": "The venue's own site blocks automated fetch and carries no happy hour."
+          }
+        }
+      ]
+    }
+  ],
+  "_excluded": [
+    {
+      "venue": "Pietro's Pizzeria Radnor",
+      "why": "A current happy hour PDF exists (dated 2026-07-06) but was not transcribed. Nothing to publish until it is read."
+    },
+    {
+      "venue": "The Frosted Mug (Phoenixville)",
+      "why": "Instagram says 'happy hour all day every Tuesday'. 'All day' needs the venue's open hours, which we do not have, and inventing them would render a claim the source did not make."
+    },
+    {
+      "venue": "Peking Media / The Cresson Inn / Whole Foods Plymouth Meeting / Murphy's Tavern",
+      "why": "Prices with no window. A deal with no time cannot answer 'can I go right now?'"
+    }
+  ]
+}

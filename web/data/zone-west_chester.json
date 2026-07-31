@@ -1,0 +1,73 @@
+{
+ "zone_id": "west_chester",
+ "name": "West Chester",
+ "built_at": "2026-07-31",
+ "venues": [
+  {
+   "id": "barnabys-west-chester",
+   "name": "Barnaby's of West Chester",
+   "address": "7-15 S High St, West Chester PA 19382",
+   "zone_id": "west_chester",
+   "website": "https://barnabyswc.com",
+   "plcb_name": "BARNABY'S OF WEST CHESTER",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "drafts",
+       "price_usd": 4.0
+      },
+      {
+       "category": "wine",
+       "label": "wine",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "label": "cocktails",
+       "price_usd": 6.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-07-31",
+     "verified_by": "staff",
+     "source": {
+      "kind": "instagram",
+      "url": "https://www.instagram.com/barnabyswc/",
+      "note": "The venue's own site blocks automated fetch and carries no happy hour."
+     },
+     "age_days": 0
+    }
+   ]
+  }
+ ]
+}
