@@ -49,7 +49,7 @@ a { color: inherit; }
 /* ---- hero ---- */
 #hero { position: relative; isolation: isolate; }
 #heroImg {
-  display: block; width: 100%; height: 46vh; min-height: 260px; max-height: 380px;
+  display: block; width: 100%; height: 38vh; min-height: 230px; max-height: 320px;
   object-fit: cover; object-position: 32% 60%;
   filter: saturate(112%) contrast(104%);
 }
@@ -74,15 +74,46 @@ a { color: inherit; }
 
 /* ---- controls ---- */
 #controls {
-  padding: 14px 16px 12px; margin: -2px 0 4px;
+  padding: 12px 16px 10px; margin: -2px 0 4px;
   border-bottom: 1px solid var(--line);
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 2px;
 }
+/* Without this the scrolling chip strips size to max-content, the grid column
+   grows to fit every chip, and the whole page ends up wider than the phone. */
+#controls > * { min-width: 0; }
 .slider { display: block; }
 #whenLabel {
   display: block; font-size: 13px; letter-spacing: 0.02em; color: var(--dim);
   margin-bottom: 2px; text-transform: uppercase; font-weight: 700;
 }
 input[type=range] { width: 100%; height: var(--tap); accent-color: var(--hot); }
+
+#pickers { display: flex; gap: 8px; margin-top: 8px; }
+.pick { flex: 1 1 0; min-width: 0; position: relative; display: block; }
+/* The caret is drawn here so the select itself can stay a bare, native control. */
+.pick::after {
+  content: "▾"; position: absolute; right: 11px; top: 50%; transform: translateY(-50%);
+  color: var(--dim); pointer-events: none; font-size: 12px;
+}
+.pick select {
+  width: 100%; min-height: 38px; padding: 8px 26px 8px 13px;
+  border-radius: 999px; border: 1px solid var(--line);
+  background: var(--bg2); color: var(--fg); font: inherit; font-size: 14.5px;
+  appearance: none; -webkit-appearance: none;
+  text-overflow: ellipsis; white-space: nowrap; overflow: hidden;
+}
+.pick select:focus-visible { outline: 2px solid var(--amber); outline-offset: 1px; }
+.ghost {
+  flex: 0 0 auto; min-height: 38px; padding: 8px 13px; border-radius: 999px;
+  border: 1px dashed var(--line); background: transparent; color: var(--dim);
+  font: inherit; font-size: 14.5px; white-space: nowrap;
+}
+.ghost.on { border-style: solid; border-color: var(--ok); color: var(--ok); }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; margin: -1px;
+  padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
 
 .chips { display: flex; gap: 8px; overflow-x: auto; padding: 6px 0 2px; scrollbar-width: none; }
 .chips::-webkit-scrollbar { display: none; }
@@ -111,9 +142,20 @@ main { padding: 14px 16px 0; display: grid; gap: 16px; }
 }
 .card.soon { opacity: 0.92; }
 .card.dim .shot { filter: saturate(80%); }
+/* Live, but it ends before you could get there. Present, honest, and last. */
+.card.unreachable { opacity: 0.66; }
+.card.unreachable .ends.live { background: var(--bg2); color: var(--dim); border: 1px solid var(--line); }
+.card.unreachable .ends.live::before { display: none; }
 
-/* image band -- a real photo when we have one, a designed tile when we don't */
-.shot { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #191310; }
+/* image band -- a real photo when we have one, a designed tile when we don't.
+   It is a button because the whole band opens the venue. */
+.shot {
+  position: relative; display: block; width: 100%; aspect-ratio: 16 / 9;
+  overflow: hidden; background: #191310;
+  border: 0; padding: 0; margin: 0; font: inherit; color: inherit;
+  text-align: left; cursor: pointer;
+}
+.shot:focus-visible { outline: 3px solid var(--amber); outline-offset: -3px; }
 .photo { width: 100%; height: 100%; object-fit: cover; display: block; }
 .photo[hidden] { display: none; }
 .shot::after {
@@ -149,9 +191,9 @@ main { padding: 14px 16px 0; display: grid; gap: 16px; }
 }
 @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.25; } }
 
-.shotInk { position: absolute; z-index: 2; inset: auto 0 0 0; padding: 12px 14px; }
+.shotInk { position: absolute; z-index: 2; inset: auto 0 0 0; display: block; padding: 12px 14px; }
 .name {
-  margin: 0; font-family: var(--serif); font-weight: 400; font-size: 22px;
+  display: block; margin: 0; font-family: var(--serif); font-weight: 400; font-size: 22px;
   line-height: 1.15; letter-spacing: -0.2px; text-shadow: 0 2px 10px rgba(0,0,0,0.6);
 }
 .zone { display: block; margin-top: 3px; font-size: 12.5px; color: #d8c9b6;
@@ -232,9 +274,41 @@ dialog {
   padding: 22px 18px calc(26px + env(safe-area-inset-bottom));
   border-top: 1px solid var(--line);
 }
-dialog h3 { margin: 0 0 10px; font-family: var(--serif); font-weight: 400; font-size: 22px; }
+dialog h3 { margin: 0 0 6px; font-family: var(--serif); font-weight: 400; font-size: 24px; line-height: 1.15; }
+dialog h4 {
+  margin: 0 0 4px; font-size: 12px; font-weight: 800; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--dim);
+}
 dialog p { margin: 0 0 10px; font-size: 15px; line-height: 1.5; color: var(--dim); }
 dialog::backdrop { background: rgba(0,0,0,0.66); }
+#sheet { max-height: 86vh; overflow-y: auto; }
+
+.sheetSub { color: var(--dim); font-size: 14.5px; }
+.pill {
+  display: inline-block; margin-left: 8px; padding: 2px 9px; border-radius: 999px;
+  background: var(--bg2); border: 1px solid var(--line); color: var(--amber);
+  font-size: 12.5px; font-weight: 650; white-space: nowrap;
+}
+.dealBlock {
+  margin: 16px 0; padding: 13px 14px; border: 1px solid var(--line);
+  border-radius: 14px; background: var(--bg2);
+}
+.dealBlock .items { margin: 10px 0 0; }
+.dealBlock .items li { background: var(--card); }
+.sched {
+  margin: 0; color: var(--fg); font-size: 16px; font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.note { margin: 9px 0 0; font-size: 13px; line-height: 1.45; color: var(--dim); }
+.note a { color: var(--amber); }
+#sheet .actions { margin-top: 18px; }
+
+.toast {
+  position: fixed; left: 50%; bottom: calc(96px + env(safe-area-inset-bottom));
+  transform: translateX(-50%); z-index: 20;
+  padding: 11px 18px; border-radius: 999px; background: var(--fg); color: var(--bg);
+  font-size: 14.5px; font-weight: 650; box-shadow: 0 10px 30px -12px #000;
+}
 #sheetClose {
   width: 100%; min-height: var(--tap); margin-top: 14px; border-radius: 12px;
   border: 1px solid var(--line); background: var(--bg2); color: var(--fg); font: inherit;

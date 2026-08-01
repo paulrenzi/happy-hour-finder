@@ -1,7 +1,7 @@
 {
  "zone_id": "norristown_bridgeport",
  "name": "Norristown / Bridgeport",
- "built_at": "2026-07-31",
+ "built_at": "2026-08-01",
  "venues": [
   {
    "id": "tony-gs-norristown",
@@ -10,6 +10,9 @@
    "zone_id": "norristown_bridgeport",
    "website": "https://tonygspub.com/specials",
    "plcb_name": "FRA-MAR ENTERPRISES LTD",
+   "lat": 40.115877,
+   "lng": -75.347872,
+   "geo_precision": "road",
    "deals": [
     {
      "type": "happy_hour",
@@ -33,8 +36,7 @@
      "source": {
       "kind": "venue_site",
       "url": "https://tonygspub.com/specials"
-     },
-     "age_days": 0
+     }
     }
    ]
   }

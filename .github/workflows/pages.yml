@@ -17,7 +17,34 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  # The site is live, so a bad bundle would ship straight to phones. Nothing
+  # deploys until the validators and the time math pass.
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: python -m unittest discover -s tests
+      - run: node --test tests/time_math.test.mjs
+      - run: python ingest/validate_pa.py
+      # The committed bundles must match what the builder produces from the
+      # seed -- a hand-edited bundle no script can regenerate is a silent fork.
+      # `built_at` is expected to differ: it is the day CI ran, not a change.
+      - name: web/data is in sync with data/deals_seed.json
+        run: |
+          python ingest/build_bundles.py
+          drift=$(git diff -U0 -- web/data \
+                  | grep -E '^[+-]' | grep -Ev '^(\+\+\+|---)' | grep -v '"built_at"' || true)
+          if [ -n "$drift" ]; then
+            echo "::error::web/data is stale -- run ingest/build_bundles.py and commit"
+            echo "$drift"
+            exit 1
+          fi
+
   deploy:
+    needs: test
     runs-on: ubuntu-latest
     environment:
       name: github-pages

@@ -1,7 +1,7 @@
 {
  "zone_id": "blue_bell_plymouth_meeting",
  "name": "Blue Bell / Plymouth Meeting",
- "built_at": "2026-07-31",
+ "built_at": "2026-08-01",
  "venues": [
   {
    "id": "black-horse-plymouth-meeting",
@@ -10,6 +10,9 @@
    "zone_id": "blue_bell_plymouth_meeting",
    "website": "https://blackhorsetaverns.com",
    "plcb_name": "THE OLDE BLACK HORSE TAVERN AND MOTEL",
+   "lat": 40.108229,
+   "lng": -75.318986,
+   "geo_precision": "place",
    "deals": [
     {
      "type": "happy_hour",
@@ -63,8 +66,7 @@
      "source": {
       "kind": "venue_site",
       "url": "https://blackhorsetaverns.com"
-     },
-     "age_days": 0
+     }
     }
    ]
   }

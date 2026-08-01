@@ -6,6 +6,10 @@
 <meta name="theme-color" content="#14100d">
 <title>Happy Hour — King of Prussia</title>
 <meta name="description" content="What's live right now around King of Prussia, and is the deal actually still on?">
+<meta property="og:title" content="Happy Hour — King of Prussia">
+<meta property="og:description" content="What's live right now around King of Prussia, and is the deal actually still on?">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="img/icon-192.png">
 <link rel="preload" as="image" href="img/hero-taproom.jpg">
@@ -16,7 +20,7 @@
 <!-- Collapses into a glass bar once the hero scrolls away. -->
 <header id="bar">
   <span id="barTitle">Happy Hour</span>
-  <span id="clock" aria-live="polite"></span>
+  <span id="clock"></span>
 </header>
 
 <section id="hero">
@@ -29,29 +33,48 @@
 </section>
 
 <section id="controls">
+  <div id="days" class="chips" role="group" aria-label="Day"></div>
+
   <label class="slider">
     <span id="whenLabel">Right now</span>
-    <input type="range" id="when" min="-1" max="96" value="-1" step="1"
-           aria-label="Arrival time">
+    <input type="range" id="when" min="-1" max="96" value="-1" step="1" aria-label="Arrival time">
   </label>
-  <div id="zones" class="chips" role="group" aria-label="Zones"></div>
+
+  <div id="filters" class="chips" role="group" aria-label="Deal type"></div>
+
+  <!-- Zone and sort are pickers, not chip strips: four scrolling rows of chrome
+       pushed the first deal off the screen entirely. -->
+  <div id="pickers">
+    <label class="pick">
+      <span class="visually-hidden">Zone</span>
+      <select id="zone"></select>
+    </label>
+    <label class="pick">
+      <span class="visually-hidden">Sort order</span>
+      <select id="sort"></select>
+    </label>
+    <button id="nearMe" class="ghost" type="button">
+      <span aria-hidden="true">◎</span> <span id="nearMeLabel">Near me</span>
+    </button>
+  </div>
 </section>
 
-<main id="feed" aria-live="polite"></main>
+<p id="status" class="visually-hidden" role="status" aria-live="polite"></p>
+<main id="feed"></main>
 
 <footer id="credits"></footer>
 
 <template id="cardTpl">
   <article class="card">
-    <div class="shot">
+    <button class="shot" type="button" aria-label="Open venue details">
       <img class="photo" alt="" loading="lazy" decoding="async" hidden>
       <span class="mono" aria-hidden="true"></span>
       <span class="ends"></span>
-      <div class="shotInk">
-        <h2 class="name"></h2>
+      <span class="shotInk">
+        <span class="name"></span>
         <span class="zone"></span>
-      </div>
-    </div>
+      </span>
+    </button>
     <div class="body">
       <ul class="items"></ul>
       <p class="fine"></p>
@@ -81,6 +104,11 @@
   <button id="sheetClose" type="button">Close</button>
 </dialog>
 
-<script src="app.js"></script>
+<noscript>
+  <p style="padding:20px;color:#a99a89">This page works out what's live right now in your
+  browser, so it needs JavaScript switched on.</p>
+</noscript>
+
+<script type="module" src="app.js"></script>
 </body>
 </html>

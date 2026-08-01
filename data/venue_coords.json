@@ -1,0 +1,82 @@
+{
+ "barnabys-west-chester": {
+  "lat": 39.959608,
+  "lng": -75.603943,
+  "matched_by": "full",
+  "osm": "node/10875605456",
+  "place_rank": 30,
+  "precision": "place",
+  "queried": "7-15 S High St, West Chester PA 19382",
+  "resolved": "7, South High Street, West Chester, Chester County, Pennsylvania, 19382, United States"
+ },
+ "black-horse-plymouth-meeting": {
+  "lat": 40.108229,
+  "lng": -75.318986,
+  "matched_by": "street+zip",
+  "osm": "way/12342843",
+  "place_rank": 30,
+  "precision": "place",
+  "queried": "200 Fairfield Rd, Plymouth Meeting PA 19462",
+  "resolved": "200, Fairfield Road, Mogees Station, Plymouth Township, Montgomery County, Pennsylvania, 19462, United States"
+ },
+ "coyote-crossing-conshohocken": {
+  "lat": 40.075755,
+  "lng": -75.292913,
+  "matched_by": "full",
+  "osm": "way/221492162",
+  "place_rank": 30,
+  "precision": "amenity",
+  "queried": "800 Spring Mill Ave, Conshohocken PA 19428",
+  "resolved": "Coyote Crossing, 800, Spring Mill Avenue, Spring Mill, Conshohocken, Montgomery County, Pennsylvania, 19428, United States"
+ },
+ "goats-beard-wayne": {
+  "lat": 40.044243,
+  "lng": -75.387808,
+  "matched_by": "full",
+  "osm": "node/13384627661",
+  "place_rank": 30,
+  "precision": "amenity",
+  "queried": "103 N Wayne Ave, Wayne PA 19087",
+  "resolved": "The Goat's Beard, 103, North Wayne Avenue, Wayne, Radnor Township, Delaware County, Pennsylvania, 19087, United States"
+ },
+ "iron-hill-media": {
+  "lat": 39.917428,
+  "lng": -75.388327,
+  "matched_by": "full",
+  "osm": "way/307079587",
+  "place_rank": 30,
+  "precision": "building",
+  "queried": "30-32 E State St, Media PA 19063",
+  "resolved": "30, East State Street, Media, Delaware County, Pennsylvania, 19063, United States"
+ },
+ "tired-hands-ardmore": {
+  "lat": 40.006933,
+  "lng": -75.290392,
+  "matched_by": "full",
+  "osm": "node/4949266021",
+  "place_rank": 30,
+  "precision": "amenity",
+  "queried": "35 Cricket Terrace, Ardmore PA 19003",
+  "resolved": "Tired Hands Fermentaria, 35, Cricket Terrace, Hamilton Court, Wynnewood, Ardmore, Lower Merion Township, Montgomery County, Pennsylvania, 19003, United States"
+ },
+ "tony-gs-norristown": {
+  "lat": 40.115877,
+  "lng": -75.347872,
+  "matched_by": "full",
+  "osm": "way/1335363369",
+  "place_rank": 26,
+  "precision": "road",
+  "queried": "1991 W Main St, Norristown PA 19403",
+  "resolved": "West Main Street, Norristown, Montgomery County, Pennsylvania, 19403, United States"
+ },
+ "wills-bills-berwyn": {
+  "lat": 40.069716,
+  "lng": -75.44438,
+  "matched_by": "street+zip",
+  "osm": "way/1481640540",
+  "place_rank": 30,
+  "precision": "amenity",
+  "queried": "324 W Swedesford Rd, Berwyn PA 19312",
+  "resolved": "Will's + Bill's Brewery, 324, West Swedesford Road, Chesterbrook, Tredyffrin Township, Chester County, Pennsylvania, 19087, United States"
+ }
+}

@@ -1,7 +1,7 @@
 {
  "zone_id": "ardmore_bryn_mawr",
  "name": "Ardmore / Bryn Mawr",
- "built_at": "2026-07-31",
+ "built_at": "2026-08-01",
  "venues": [
   {
    "id": "tired-hands-ardmore",
@@ -10,6 +10,9 @@
    "zone_id": "ardmore_bryn_mawr",
    "website": "https://tiredhands.com",
    "plcb_name": "TIRED HANDS BREWING COMPANY",
+   "lat": 40.006933,
+   "lng": -75.290392,
+   "geo_precision": "amenity",
    "deals": [
     {
      "type": "happy_hour",
@@ -63,8 +66,7 @@
      "source": {
       "kind": "venue_site",
       "url": "https://tiredhands.com"
-     },
-     "age_days": 0
+     }
     }
    ]
   }

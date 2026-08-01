@@ -1,7 +1,7 @@
 {
  "zone_id": "west_chester",
  "name": "West Chester",
- "built_at": "2026-07-31",
+ "built_at": "2026-08-01",
  "venues": [
   {
    "id": "barnabys-west-chester",
@@ -10,6 +10,9 @@
    "zone_id": "west_chester",
    "website": "https://barnabyswc.com",
    "plcb_name": "BARNABY'S OF WEST CHESTER",
+   "lat": 39.959608,
+   "lng": -75.603943,
+   "geo_precision": "place",
    "deals": [
     {
      "type": "happy_hour",
@@ -64,8 +67,7 @@
       "kind": "instagram",
       "url": "https://www.instagram.com/barnabyswc/",
       "note": "The venue's own site blocks automated fetch and carries no happy hour."
-     },
-     "age_days": 0
+     }
     }
    ]
   }

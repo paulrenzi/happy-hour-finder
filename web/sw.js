@@ -1,8 +1,8 @@
 /* Cache the shell and the zone bundles so "what's live right now" works with no
    signal -- it is pure client-side math over data already on the device. */
-const CACHE = "hhf-v2";
+const CACHE = "hhf-v3";
 const SHELL = [
-  "./", "index.html", "app.js", "styles.css", "manifest.json",
+  "./", "index.html", "app.js", "lib.js", "styles.css", "manifest.json",
   "data/index.json", "img/hero-taproom.jpg", "img/icon-192.png",
 ];
 

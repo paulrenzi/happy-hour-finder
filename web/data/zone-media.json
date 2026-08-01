@@ -1,7 +1,7 @@
 {
  "zone_id": "media",
  "name": "Media",
- "built_at": "2026-07-31",
+ "built_at": "2026-08-01",
  "venues": [
   {
    "id": "iron-hill-media",
@@ -10,6 +10,9 @@
    "zone_id": "media",
    "website": "https://www.ironhillbrewery.com/food-menus/media-pa-happy-hour-menu/",
    "plcb_name": "IRON HILL BREWERY & RESTAURANT",
+   "lat": 39.917428,
+   "lng": -75.388327,
+   "geo_precision": "building",
    "deals": [
     {
      "type": "happy_hour",
@@ -75,8 +78,7 @@
      "source": {
       "kind": "venue_site",
       "url": "https://www.ironhillbrewery.com/food-menus/media-pa-happy-hour-menu/"
-     },
-     "age_days": 0
+     }
     }
    ]
   }

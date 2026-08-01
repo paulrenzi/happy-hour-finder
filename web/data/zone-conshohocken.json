@@ -1,15 +1,18 @@
 {
  "zone_id": "conshohocken",
  "name": "Conshohocken",
- "built_at": "2026-07-31",
+ "built_at": "2026-08-01",
  "venues": [
   {
    "id": "coyote-crossing-conshohocken",
    "name": "Coyote Crossing",
-   "address": "800 Springmill Ave, Conshohocken PA 19428",
+   "address": "800 Spring Mill Ave, Conshohocken PA 19428",
    "zone_id": "conshohocken",
    "website": "https://coyotecrossing.com/happy-hour",
    "plcb_name": "300-E-6, INC.",
+   "lat": 40.075755,
+   "lng": -75.292913,
+   "geo_precision": "amenity",
    "deals": [
     {
      "type": "happy_hour",
@@ -48,8 +51,7 @@
      "source": {
       "kind": "venue_site",
       "url": "https://coyotecrossing.com/happy-hour"
-     },
-     "age_days": 0
+     }
     }
    ]
   }

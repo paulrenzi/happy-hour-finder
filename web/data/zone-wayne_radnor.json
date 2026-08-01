@@ -1,7 +1,7 @@
 {
  "zone_id": "wayne_radnor",
  "name": "Wayne / Radnor",
- "built_at": "2026-07-31",
+ "built_at": "2026-08-01",
  "venues": [
   {
    "id": "wills-bills-berwyn",
@@ -10,6 +10,9 @@
    "zone_id": "wayne_radnor",
    "website": "https://wills-bills.com",
    "plcb_name": "BKBC INC",
+   "lat": 40.069716,
+   "lng": -75.44438,
+   "geo_precision": "amenity",
    "deals": [
     {
      "type": "happy_hour",
@@ -73,8 +76,7 @@
      "source": {
       "kind": "venue_site",
       "url": "https://wills-bills.com"
-     },
-     "age_days": 0
+     }
     }
    ]
   },
@@ -85,6 +87,9 @@
    "zone_id": "wayne_radnor",
    "website": "https://thegoatsbeardphilly.com",
    "plcb_name": "THE GOATS BEARD",
+   "lat": 40.044243,
+   "lng": -75.387808,
+   "geo_precision": "amenity",
    "deals": [
     {
      "type": "happy_hour",
@@ -139,8 +144,7 @@
       "kind": "aggregator",
       "url": "https://www.yelp.com/biz/the-goats-beard-wayne",
       "note": "Not published on the venue's own site."
-     },
-     "age_days": 0
+     }
     }
    ]
   }
