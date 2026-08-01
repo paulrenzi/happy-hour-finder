@@ -21,7 +21,8 @@ import os
 import sys
 import time
 
-import requests
+# requests is imported lazily by the two functions that reach the network, so the
+# path helpers below stay importable -- and the CI test gate stays stdlib-only.
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEALS_JSON = os.path.join(REPO, "data", "deals_seed.json")
@@ -44,6 +45,8 @@ def load_key():
 
 def resolve(key, venue):
     """Text search keyed on name + full address; take the first place with photos."""
+    import requests
+
     r = requests.post(
         SEARCH,
         headers={
@@ -60,7 +63,19 @@ def resolve(key, venue):
     return places[0]
 
 
+def photo_dest(vid):
+    """Where the bytes go, and the path the app will ask for.
+
+    These are different roots and must be derived together: the manifest stores a
+    path relative to the *web* root, so joining it against REPO writes outside
+    IMG_DIR -- into a directory nothing creates.
+    """
+    return os.path.join(IMG_DIR, f"{vid}.jpg"), f"img/venues/{vid}.jpg"
+
+
 def download(key, photo, dest):
+    import requests
+
     r = requests.get(
         f"https://places.googleapis.com/v1/{photo['name']}/media",
         params={"maxWidthPx": MAX_W, "key": key},
@@ -79,6 +94,8 @@ def main():
     ap.add_argument("--limit", type=int, default=0, help="stop after N lookups")
     ap.add_argument("--force", action="store_true", help="refetch venues already in the manifest")
     args = ap.parse_args()
+
+    import requests  # the run itself needs it; fail here, before any work
 
     key = load_key()
     if not key:
@@ -109,9 +126,13 @@ def main():
             continue
 
         photo = place["photos"][0]
-        rel = f"img/venues/{vid}.jpg"
+        dest, rel = photo_dest(vid)
         try:
-            size = download(key, photo, os.path.join(REPO, rel))
+            size = download(key, photo, dest)
+        except OSError as e:
+            # A local write failure is systemic, not per-venue. Continuing here
+            # bills a Places call per remaining venue and stores none of them.
+            sys.exit(f"  {vid:<34} cannot write {dest}: {e}")
         except Exception as e:  # noqa: BLE001 -- one venue failing must not stop the run
             print(f"  {vid:<34} download failed: {e}")
             continue

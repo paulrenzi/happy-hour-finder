@@ -18,6 +18,7 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(REPO, "ingest"))
 
 from build_bundles import decay  # noqa: E402
+from fetch_venue_photos import IMG_DIR, photo_dest  # noqa: E402
 from geocode_venues import split_address, strip_range, strategies  # noqa: E402
 from validate_pa import validate_deal, validate_food_combo_count  # noqa: E402
 
@@ -170,6 +171,21 @@ class SeedCorpus(unittest.TestCase):
         for vid, at in self.coords.items():
             self.assertEqual(at["queried"], by_id[vid]["address"],
                              f"{vid}: cached coordinate is for a different address than the seed now lists")
+
+
+class PhotoPaths(unittest.TestCase):
+    """The photo lane costs money per call, so its paths are pinned before it runs."""
+
+    def test_bytes_land_in_the_directory_the_run_creates(self):
+        dest, _rel = photo_dest("coyote-crossing")
+        self.assertEqual(os.path.dirname(dest), IMG_DIR,
+                         "download writes outside the only directory makedirs creates")
+
+    def test_the_manifest_path_is_relative_to_the_web_root(self):
+        # app.js does img.src = photo.file, resolved against web/ -- not the repo.
+        dest, rel = photo_dest("coyote-crossing")
+        self.assertEqual(rel, "img/venues/coyote-crossing.jpg")
+        self.assertEqual(os.path.join(REPO, "web", rel.replace("/", os.sep)), dest)
 
 
 if __name__ == "__main__":
