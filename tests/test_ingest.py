@@ -18,6 +18,8 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(REPO, "ingest"))
 
 from build_bundles import decay  # noqa: E402
+from crawl_sites import candidate_links, quotes, visible_text  # noqa: E402
+from discover_sites import plcb_key, site_of, street_core  # noqa: E402
 from fetch_venue_photos import IMG_DIR, photo_dest  # noqa: E402
 from geocode_venues import split_address, strip_range, strategies  # noqa: E402
 from validate_pa import validate_deal, validate_food_combo_count  # noqa: E402
@@ -221,6 +223,74 @@ class Zones(unittest.TestCase):
             for zp in z.get("zips", []):
                 self.assertTrue(zp.startswith("191"),
                                 f"{z['id']}: {zp} is not a Philadelphia ZIP")
+
+
+class SiteDiscovery(unittest.TestCase):
+    """The OSM join is on address, and a bad address key fails silently -- it
+    just yields no match, which is indistinguishable from 'OSM doesn't know it'."""
+
+    def test_the_two_sources_spellings_reduce_to_one_key(self):
+        # The PLCB writes 'RIDGE PK', OSM writes 'Ridge Pike'; they are one road.
+        self.assertEqual(street_core("W Lancaster Avenue"), street_core("LANCASTER AVE"))
+        self.assertEqual(street_core("Ridge Pike"), street_core("W RIDGE PK"))
+        self.assertEqual(street_core("MacDade Boulevard"), street_core("MACDADE BLVD"))
+
+    def test_a_street_named_for_a_suffix_survives(self):
+        # 'W St Rd' is West Street Road. Popping every suffix word erases it.
+        self.assertTrue(street_core("W ST RD"))
+        self.assertEqual(street_core("W ST RD"), street_core("West Street Road"))
+
+    def test_a_plain_address_parses(self):
+        self.assertEqual(plcb_key("929-931 MACDADE BLVD, COLLINGDALE PA 19023-3720"),
+                         ("19023", "929", "macdade"))
+
+    def test_a_plaza_name_does_not_supply_the_house_number(self):
+        # 'STORES 15 & 16' precedes the real number; taking the first number
+        # keys the venue to a building that does not exist.
+        self.assertEqual(
+            plcb_key("ROXBORO MARKET SQ SHOPPING CENTER STORES 15 & 16  8919 RIDGE AVE, "
+                     "PHILADELPHIA PA 19128"),
+            ("19128", "8919", "ridge"))
+
+    def test_an_address_with_no_number_is_refused_not_guessed(self):
+        self.assertIsNone(plcb_key("BALTIMORE PIKE, CONCORDVILLE PA 19331"))
+        self.assertIsNone(plcb_key("nowhere in particular"))
+
+    def test_a_website_is_only_taken_from_a_url_field(self):
+        self.assertEqual(site_of({"website": "https://x.com"}), "https://x.com")
+        self.assertEqual(site_of({"contact:website": "https://y.com"}), "https://y.com")
+        self.assertIsNone(site_of({"website": "see facebook"}), "not a fetchable URL")
+        self.assertIsNone(site_of({"phone": "+1 610-555-0100"}))
+
+
+class CrawlExtraction(unittest.TestCase):
+    """What the crawler keeps becomes the quoted evidence under a published
+    deal, so a mangled quote is a claim the venue did not make."""
+
+    def test_entities_and_line_structure_survive(self):
+        text = visible_text("<div>HAPPY HOUR</div><p>Monday &#8211; Friday 4pm to 6pm</p>")
+        self.assertEqual(text, "HAPPY HOUR\nMonday – Friday 4pm to 6pm")
+
+    def test_script_and_style_bodies_are_not_text(self):
+        self.assertEqual(visible_text("<style>.happy hour{}</style><p>Open daily</p>"),
+                         "Open daily")
+
+    def test_a_heading_pulls_in_the_window_on_the_next_line(self):
+        # 'HAPPY HOUR' alone is not a deal; the times are the deal, and they are
+        # routinely a separate element.
+        q = quotes("HAPPY HOUR\nMonday - Friday 4pm to 6pm\nunrelated line")
+        self.assertTrue(any("4pm to 6pm" in x for x in q), q)
+
+    def test_happy_unqualified_is_not_a_hit(self):
+        self.assertEqual(quotes("Book your Happy Birthday party with us"), [])
+        self.assertEqual(quotes("We are happy to host your event, 4pm to 6pm"), [])
+
+    def test_only_same_host_pages_are_followed(self):
+        html = ('<a href="/happy-hour">Happy Hour</a>'
+                '<a href="https://facebook.com/specials">Specials</a>'
+                '<a href="/menu.pdf">Menu</a>')
+        links = candidate_links(html, "https://bar.example/")
+        self.assertEqual(links, ["https://bar.example/happy-hour"])
 
 
 class PhotoPaths(unittest.TestCase):

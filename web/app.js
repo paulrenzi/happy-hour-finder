@@ -539,7 +539,7 @@ async function boot() {
     'Header photo: <a href="https://commons.wikimedia.org/wiki/File:South_Shore_Brewery_Taproom.jpg">' +
     "South Shore Brewery Taproom</a> by Billertl, cropped, " +
     '<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. ' +
-    'Venue locations from <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, ' +
+    'Venue locations and websites from <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, ' +
     "© OpenStreetMap contributors, ODbL. Drive times are estimates. " +
     "Deal windows are transcribed from the source linked on each card — always call ahead.";
 
