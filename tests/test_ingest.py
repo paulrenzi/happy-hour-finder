@@ -173,6 +173,56 @@ class SeedCorpus(unittest.TestCase):
                              f"{vid}: cached coordinate is for a different address than the seed now lists")
 
 
+class Zones(unittest.TestCase):
+    """Zone membership is hand-maintained data, and venues.csv is gitignored, so
+    a typo here is invisible until a whole township silently goes unzoned."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.zones = json.load(open(os.path.join(REPO, "data", "zones.json"), encoding="utf-8"))
+
+    def test_every_zone_is_reachable(self):
+        for z in self.zones["zones"]:
+            self.assertTrue(z.get("municipalities") or z.get("zips"),
+                            f"{z['id']} claims no municipality and no ZIP -- nothing can land in it")
+            for key in ("id", "name", "anchor"):
+                self.assertTrue(z.get(key), f"{z.get('id')} is missing {key}")
+
+    def test_ids_are_unique(self):
+        ids = [z["id"] for z in self.zones["zones"]]
+        self.assertEqual(len(ids), len(set(ids)), "duplicate zone id")
+
+    def test_no_municipality_or_zip_is_claimed_twice(self):
+        # seed_plcb takes the first match, so a double claim silently hands the
+        # venues to whichever zone happens to be listed first.
+        seen_m, seen_z = {}, {}
+        for z in self.zones["zones"]:
+            for mun, county in z.get("municipalities", []):
+                key = (mun.lower(), county.lower())
+                self.assertNotIn(key, seen_m,
+                                 f"{mun}, {county} is in both {seen_m.get(key)} and {z['id']}")
+                seen_m[key] = z["id"]
+            for zp in z.get("zips", []):
+                self.assertNotIn(zp, seen_z,
+                                 f"ZIP {zp} is in both {seen_z.get(zp)} and {z['id']}")
+                seen_z[zp] = z["id"]
+
+    def test_municipalities_name_a_county_in_scope(self):
+        # A county outside the scope list can never match a kept row.
+        scope = set(self.zones["counties_in_scope"])
+        for z in self.zones["zones"]:
+            for mun, county in z.get("municipalities", []):
+                self.assertIn(county, scope, f"{z['id']}: {mun} is in out-of-scope {county}")
+
+    def test_a_zip_zone_is_a_philadelphia_zone(self):
+        # ZIPs name zones only inside Philadelphia (SPEC section 2); elsewhere a
+        # ZIP straddles the municipal line the zone is actually drawn on.
+        for z in self.zones["zones"]:
+            for zp in z.get("zips", []):
+                self.assertTrue(zp.startswith("191"),
+                                f"{z['id']}: {zp} is not a Philadelphia ZIP")
+
+
 class PhotoPaths(unittest.TestCase):
     """The photo lane costs money per call, so its paths are pinned before it runs."""
 

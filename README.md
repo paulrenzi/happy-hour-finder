@@ -17,8 +17,11 @@ pipeline with anything else. Its `.env` lives in this repo only.
 ## How it works
 
 ```
-data/venues.csv          PLCB licensee registry (2,911 rows, the denominator)
-   ↓ ingest/seed_plcb.py
+data/zones.json          38 named drinking districts — the zone map, hand-maintained
+   ↓ ingest/seed_plcb.py  filter the statewide PLCB export to the disc, assign a zone
+data/venues.csv          the denominator: 2,911 licensees, 2,908 in a zone (gitignored,
+                         regenerate it — zones.json is the source of truth)
+   ↓
 data/deals_seed.json     the curated corpus — 8 venues today
    ↓ ingest/geocode_venues.py     OSM/Nominatim, no key, ODbL (results are storable)
    ↓ ingest/validate_pa.py        PA Acts 57 & 86 of 2024 — a failing deal never ships
@@ -96,7 +99,11 @@ column, one-shot geolocation on an explicit tap only.
 
 ## Status
 
-The app surface is done. **The corpus is the constraint — it knows about 8 bars.**
+The app surface is done, and the zone map now covers the disc: 2,908 of 2,911
+licensees sit in one of 38 named zones (it was 1,122 in 12). That is the *target
+list* — it says where a bar is, not what its happy hour is.
+
+**The corpus is still the constraint — it knows about 8 bars.**
 Phase 0 measured the real scrape yield at 19%, not 40%: ~80% of bars never publish
 a happy hour anywhere, which is why the photo lane (photograph a table tent →
 vision extract → validate → publish) is the only path to covering half the area.

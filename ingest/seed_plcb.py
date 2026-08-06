@@ -172,9 +172,12 @@ def load_licensees():
             if dist > radius:
                 dropped["outside radius"] += 1
                 continue
-            zone = by_zip.get(zp) or by_mun.get(
+            # Municipality wins over ZIP: ZIPs only name zones inside
+            # Philadelphia, and a Philadelphia ZIP can spill across the city
+            # line (19153 covers both Eastwick and Tinicum Twp).
+            zone = by_mun.get(
                 (row["Municipality"].lower(), row["County"].lower())
-            )
+            ) or by_zip.get(zp)
             kept.append(
                 {
                     "lid": row["LID"],
