@@ -1,9 +1,12 @@
 /* Cache the shell and the zone bundles so "what's live right now" works with no
    signal -- it is pure client-side math over data already on the device. */
-const CACHE = "hhf-v3";
+const CACHE = "hhf-v4";
 const SHELL = [
   "./", "index.html", "app.js", "lib.js", "styles.css", "manifest.json",
   "data/index.json", "img/hero-taproom.jpg", "img/icon-192.png",
+  // Self-hosted so the offline shell keeps its typography instead of falling
+  // back to system serif the first time the page opens on no signal.
+  "fonts/fraunces-latin-var.woff2", "fonts/manrope-latin-var.woff2",
 ];
 
 self.addEventListener("install", (e) => {

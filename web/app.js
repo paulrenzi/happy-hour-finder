@@ -325,6 +325,7 @@ function render() {
     );
     feed.append(p);
     $("#status").textContent = "No results.";
+    $("#sectionKicker").textContent = "Nothing to show";
     return;
   }
 
@@ -335,6 +336,9 @@ function render() {
     feed.append(card(row, at));
   }
   $("#status").textContent = `${rows.length} result${rows.length === 1 ? "" : "s"}, ${live} live.`;
+  $("#sectionKicker").textContent =
+    `${rows.length} venue${rows.length === 1 ? "" : "s"} · ` +
+    (live ? `${live} live ${isNow() ? "now" : "then"}` : "none live");
 }
 
 function refresh() {

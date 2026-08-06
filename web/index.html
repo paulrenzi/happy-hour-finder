@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#14100d">
+<meta name="theme-color" content="#f7f3eb">
 <title>Happy Hour — King of Prussia</title>
 <meta name="description" content="What's live right now around King of Prussia, and is the deal actually still on?">
 <meta property="og:title" content="Happy Hour — King of Prussia">
@@ -12,8 +12,11 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="img/icon-192.png">
-<link rel="preload" as="image" href="img/hero-taproom.jpg">
-<link rel="stylesheet" href="styles.css">
+<link rel="preload" as="image" href="img/hero-taproom.jpg" fetchpriority="high">
+<!-- Fonts are self-hosted so the offline shell keeps its typography with no CDN. -->
+<link rel="preload" as="font" type="font/woff2" href="fonts/fraunces-latin-var.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/manrope-latin-var.woff2" crossorigin>
+<link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body>
 
@@ -23,46 +26,96 @@
   <span id="clock"></span>
 </header>
 
-<section id="hero">
-  <img id="heroImg" src="img/hero-taproom.jpg" alt="" aria-hidden="true">
+<section id="hero" aria-label="Site introduction">
+  <img id="heroImg" src="img/hero-taproom.jpg" alt="" aria-hidden="true" fetchpriority="high">
+  <div id="heroOverlay" aria-hidden="true"></div>
   <div id="heroInk">
-    <p class="kicker">King of Prussia · 20 miles</p>
+    <p class="kicker">
+      <span class="kicker-dot" aria-hidden="true"></span>
+      <span>King of Prussia · 20 miles</span>
+    </p>
     <h1>What's on<br><em>right now</em></h1>
+    <p class="hero-tagline">
+      Every happy hour within reach of King of Prussia, checked against the clock
+      you're actually holding — so you see what's live this minute, what starts
+      soon, and what ends before you could get there.
+    </p>
     <p id="heroCount">Checking the board…</p>
   </div>
 </section>
 
-<section id="controls">
-  <div id="days" class="chips" role="group" aria-label="Day"></div>
+<div id="controls" class="strip" aria-label="Filter happy hours">
+  <div class="strip-inner">
 
-  <label class="slider">
-    <span id="whenLabel">Right now</span>
-    <input type="range" id="when" min="-1" max="96" value="-1" step="1" aria-label="Arrival time">
-  </label>
+    <div class="strip-field strip-field--days">
+      <span class="strip-label">Day</span>
+      <div id="days" class="chips" role="group" aria-label="Day"></div>
+    </div>
 
-  <div id="filters" class="chips" role="group" aria-label="Deal type"></div>
-
-  <!-- Zone and sort are pickers, not chip strips: four scrolling rows of chrome
-       pushed the first deal off the screen entirely. -->
-  <div id="pickers">
-    <label class="pick">
-      <span class="visually-hidden">Zone</span>
-      <select id="zone"></select>
+    <label class="strip-field strip-field--when">
+      <span class="strip-label" id="whenLabel">Right now</span>
+      <input type="range" id="when" min="-1" max="96" value="-1" step="1" aria-label="Arrival time">
     </label>
-    <label class="pick">
-      <span class="visually-hidden">Sort order</span>
-      <select id="sort"></select>
-    </label>
-    <button id="nearMe" class="ghost" type="button">
-      <span aria-hidden="true">◎</span> <span id="nearMeLabel">Near me</span>
-    </button>
+
+    <div class="strip-field strip-field--filters">
+      <span class="strip-label">Deal type</span>
+      <div id="filters" class="chips" role="group" aria-label="Deal type"></div>
+    </div>
+
+    <!-- Zone and sort are pickers, not chip strips: four scrolling rows of chrome
+         pushed the first deal off the screen entirely. -->
+    <div id="pickers">
+      <label class="pick">
+        <span class="strip-label">Zone</span>
+        <select id="zone"></select>
+      </label>
+      <label class="pick">
+        <span class="strip-label">Sort</span>
+        <select id="sort"></select>
+      </label>
+      <button id="nearMe" class="ghost" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
+        </svg>
+        <span id="nearMeLabel">Near me</span>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<main class="shell">
+  <div class="section-header">
+    <p class="section-kicker" id="sectionKicker">Loading…</p>
+    <h2 class="section-headline">Happy hours near you</h2>
+  </div>
+
+  <p id="status" class="visually-hidden" role="status" aria-live="polite"></p>
+  <div id="feed"></div>
+</main>
+
+<section class="support-band" aria-label="How this list is built">
+  <div class="support-inner">
+    <p class="support-eyebrow">About the board</p>
+    <p class="support-body">
+      A free, independent happy-hour board for the western suburbs. Every window is
+      transcribed from a source linked on its own card, with the date it was last
+      checked shown in the open. Around four in five bars never publish a happy hour
+      anywhere — the camera button is how the rest get on the board.
+    </p>
   </div>
 </section>
 
-<p id="status" class="visually-hidden" role="status" aria-live="polite"></p>
-<main id="feed"></main>
-
-<footer id="credits"></footer>
+<footer class="footer">
+  <p id="credits"></p>
+  <p class="footer-credit">
+    Type set in <a href="https://github.com/undercasetype/Fraunces" target="_blank" rel="noreferrer">Fraunces</a>
+    and <a href="https://github.com/sharanda/manrope" target="_blank" rel="noreferrer">Manrope</a>,
+    both <a href="https://openfontlicense.org/" target="_blank" rel="noreferrer">SIL Open Font License 1.1</a>,
+    served from this site.
+  </p>
+</footer>
 
 <template id="cardTpl">
   <article class="card">
@@ -105,10 +158,10 @@
 </dialog>
 
 <noscript>
-  <p style="padding:20px;color:#a99a89">This page works out what's live right now in your
+  <p class="noscript-note">This page works out what's live right now in your
   browser, so it needs JavaScript switched on.</p>
 </noscript>
 
-<script type="module" src="app.js"></script>
+<script type="module" src="app.js?v=2"></script>
 </body>
 </html>
