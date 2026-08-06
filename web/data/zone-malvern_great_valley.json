@@ -118,7 +118,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "discount_pct": 50.0,
+       "label": "Half Price"
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -126,7 +132,8 @@
       "kind": "venue_site",
       "url": "https://www.mainlinetavern.com/menus",
       "quote": "Happy Hour / 7 days a week 4-6 pm"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -201,6 +208,10 @@
    "lat": 40.0409866,
    "lng": -75.5424423,
    "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/joey-chops-frazer.jpg",
+    "attribution": "Photo: Joey Chops"
+   },
    "deals": [
     {
      "type": "happy_hour",

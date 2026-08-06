@@ -47,7 +47,28 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "bottle_can",
+       "label": "select beer",
+       "price_usd": 5.99
+      },
+      {
+       "category": "wine",
+       "label": "select wine",
+       "price_usd": 6.99
+      },
+      {
+       "category": "cocktail",
+       "label": "select cocktails",
+       "price_usd": 8.99
+      },
+      {
+       "category": "food",
+       "discount_pct": 50.0,
+       "label": "half apps"
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -55,7 +76,8 @@
       "kind": "venue_site",
       "url": "https://www.pfchangs.com/beverages",
       "quote": "HAPPY HOUR SPECIALS / Available Monday-Friday, 3-6PM*"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   }

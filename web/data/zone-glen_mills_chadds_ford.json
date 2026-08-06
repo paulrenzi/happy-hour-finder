@@ -98,7 +98,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "Tavern Wedge",
+       "price_usd": 10.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -106,7 +112,8 @@
       "kind": "venue_site",
       "url": "https://www.thecftavern.com/menus",
       "quote": "Happy Hour / 7 days a week 4-6 pm"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -159,7 +166,13 @@
        "end": "20:30"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "happy hour food",
+       "price_usd": 10.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -167,7 +180,8 @@
       "kind": "venue_site",
       "url": "https://favaglenmills.com/",
       "quote": "Join us for Happy Hour Sunday\u2013Friday from 4\u20136 p.m. (extended to 8 p.m. on Mondays and Thursdays) and enjoy select food and drink specials."
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },

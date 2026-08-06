@@ -21,6 +21,7 @@ from validate_pa import validate_deal, validate_food_combo_count  # noqa: E402
 DEALS_JSON = os.path.join(REPO, "data", "deals_seed.json")
 EXTRACTED_JSON = os.path.join(REPO, "data", "deals_extracted.json")
 ZONES_JSON = os.path.join(REPO, "data", "zones.json")
+PRICES_JSON = os.path.join(REPO, "data", "deals_prices_llm.json")
 PHOTOS_JSON = os.path.join(REPO, "data", "venue_photos.json")
 COORDS_JSON = os.path.join(REPO, "data", "venue_coords.json")
 OUT_DIR = os.path.join(REPO, "web", "data")
@@ -72,6 +73,10 @@ def main():
     zone_names = {z["id"]: z["name"] for z in zones["zones"]}
     # Optional: written by ingest/fetch_venue_photos.py. A venue with no entry
     # gets the app's generated tile instead.
+    # Written by ingest/extract_prices_llm.py: prices read off the same quotes
+    # the deal was built from, each already checked against that quote's text.
+    # It only ever fills in items -- windows are the extractor's alone.
+    prices = json.load(open(PRICES_JSON, encoding="utf-8")) if os.path.exists(PRICES_JSON) else {}
     photos = json.load(open(PHOTOS_JSON, encoding="utf-8")) if os.path.exists(PHOTOS_JSON) else {}
     # Written by ingest/geocode_venues.py. Without it the app still works, it
     # just cannot rank by distance or tell you whether you can make it in time.
@@ -81,6 +86,11 @@ def main():
     for venue in payload["venues"]:
         deals = []
         for deal in venue.get("deals", []):
+            extra = prices.get(venue["id"])
+            if extra and deal.get("verified_by") == "auto_extract" and not deal.get("items"):
+                # Applied before the validators, not after, so a price the model
+                # read still has to clear the same PA checks as any other item.
+                deal = dict(deal, items=extra, items_source="llm_extract")
             errs = validate_deal(deal)
             if errs:
                 rejected += 1

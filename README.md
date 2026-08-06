@@ -128,10 +128,26 @@ hedge, and it passes the PA validators — everything else is kept as evidence i
 their own file; the seed is what a person read, and merging them would lose the
 only thing that distinguishes them.
 
+**Prices are read from those same quotes, and never anything else.**
+`ingest/extract_prices_llm.py` puts a language model over the text a deal was
+already built from, because a bar that writes "drafts are five dollars" publishes
+a price the regex cannot see. It is bounded by two rules. It touches **prices
+only** — days and times stay with the deterministic extractor, so the
+"no meridiem ⇒ refused, never guessed" guarantee is untouched. And every item it
+returns carries the exact span it was read from, which is checked against the
+quote *in code*: an item whose price is not literally in the venue's own sentence
+is dropped before it reaches a card. It runs on `claude -p` (the subscription
+already on this machine, not an API key this repo doesn't have), in batches,
+because that call carries a large fixed prompt before it reads any of ours.
+
 **Photos come from each venue's own og:image**, not Google Places — the Places
 key isn't in this repo and its photo bytes are under a caching restriction a
 public repo can't honour. Every image is decoded and re-encoded from pixels,
-which is what actually drops EXIF (non-negotiable 5).
+which is what actually drops EXIF (non-negotiable 5). The venue's own site is
+always checked against its robots.txt; an image it hosts on a builder's CDN is
+fetched as an embedded asset of a page we were allowed to read — the call a link
+preview makes — because that CDN's robots.txt is about crawling the CDN and must
+not be able to hide a bar from its own listing.
 
 Still true: ~80% of bars never publish a happy hour anywhere, so the photo lane
 (photograph a table tent → vision extract → validate → publish) remains the only

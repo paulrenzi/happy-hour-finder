@@ -22,12 +22,14 @@ restaurant's site carries GPS, and copying the bytes would republish it.
 """
 
 import argparse
+import html as html_mod
 import io
 import json
 import os
 import re
 import sys
 import time
+from urllib.parse import urlsplit
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -40,7 +42,12 @@ OUT = os.path.join(REPO, "data", "venue_photos.json")
 
 MAX_W = 900          # the card band is a 16:9 strip 390px wide, 2x for retina
 MAX_H = 700
-MIN_SRC = 320        # a 100px logo is not a photo of a bar
+# A logo floor, not a shape filter. Gating on the SHORT edge rejected a 480x270
+# hero -- a 16:9 photo of exactly the shape the card band wants -- so the floor
+# is the long edge plus a total-pixel check, which a 100x100 avatar fails and a
+# wide banner passes.
+MIN_LONG = 400
+MIN_PIXELS = 400 * 225
 QUALITY = 82
 
 META_RE = re.compile(r"<meta\s[^>]*>", re.I)
@@ -62,7 +69,7 @@ def og_image(html, page_url):
             found.setdefault(prop.group(1).lower(), cont.group(1).strip())
     for key in WANTED:
         if found.get(key):
-            url = urllib.parse.urljoin(page_url, found[key])
+            url = urllib.parse.urljoin(page_url, html_mod.unescape(found[key]))
             # A tracking pixel or an SVG logo is not a photograph of the place.
             if url.startswith("http") and not url.lower().endswith(".svg"):
                 return url
@@ -78,7 +85,55 @@ NOT_A_PHOTO = re.compile(
     re.I)
 
 
-def inline_images(html, page_url, cap=4):
+def asset_allowed(url, page_url, robots):
+    """Whether we may fetch an image the page we are allowed to read declares.
+
+    robots.txt governs crawling a host, and the venue's own site is always
+    checked that way. An image is different: it is an embedded asset of a page
+    we have already been given permission to read, and most of these sites host
+    theirs on a builder's CDN (static.wixstatic.com and friends) whose robots.txt
+    is written to keep crawlers out of the CDN, not to stop a venue's own site
+    from displaying its own photo. Treat a cross-host asset as part of the page
+    that declared it -- the same call a browser or a link-preview unfurler makes
+    when it renders the venue's og:image. Same-host images still obey the site's
+    own robots.txt, so a venue that asks us to stay out of /photos/ is honoured.
+    """
+    import urllib.parse
+
+    if urllib.parse.urlsplit(url).netloc != urllib.parse.urlsplit(page_url).netloc:
+        return True
+    return allowed(url, robots)
+
+
+CSS_URL_RE = re.compile(r"url\(\s*['\"]?([^'\")]+?)['\"]?\s*\)", re.I)
+
+
+def css_images(html, page_url, cap=6):
+    """Images a page paints as CSS backgrounds rather than <img> elements.
+
+    Several of these sites are 120KB of markup with not one <img> in it: the
+    hero shot of the dining room is a `background-image` on a div, which is how
+    every current site builder does a full-bleed header. Without this the page
+    reads as having no photograph at all.
+    """
+    import urllib.parse
+
+    out, seen = [], set()
+    for src in CSS_URL_RE.findall(html):
+        if NOT_A_PHOTO.search(src) or src.lower().endswith((".svg", ".gif")):
+            continue
+        if src.startswith("data:") or src.startswith("#"):
+            continue
+        url = urllib.parse.urljoin(page_url, html_mod.unescape(src.strip()))
+        if url.startswith("http") and url not in seen:
+            seen.add(url)
+            out.append(url)
+        if len(out) >= cap:
+            break
+    return out
+
+
+def inline_images(html, page_url, cap=8):
     """Plausible content photos on a page, in document order.
 
     A third of these sites predate social-share tags entirely, so with no
@@ -91,7 +146,11 @@ def inline_images(html, page_url, cap=4):
     for src in IMG_SRC_RE.findall(html):
         if NOT_A_PHOTO.search(src) or src.lower().endswith((".svg", ".gif")):
             continue
-        url = urllib.parse.urljoin(page_url, src.strip())
+        # An attribute value is HTML-escaped, and these are increasingly image
+        # *proxy* URLs carrying their real target in query parameters -- so a
+        # literal '&amp;' does not merely look untidy, it hands the proxy a
+        # parameter named 'amp;w' and earns a 400 for a photo that was there.
+        url = urllib.parse.urljoin(page_url, html_mod.unescape(src.strip()))
         if url.startswith("http") and url not in seen:
             seen.add(url)
             out.append(url)
@@ -105,7 +164,7 @@ def store(raw, vid):
     from PIL import Image
 
     im = Image.open(io.BytesIO(raw))
-    if min(im.size) < MIN_SRC:
+    if max(im.size) < MIN_LONG or im.size[0] * im.size[1] < MIN_PIXELS:
         return None, f"too small ({im.size[0]}x{im.size[1]})"
     im = im.convert("RGB")
     # The card band is a 16:9 strip 390px wide, so 900x700 covers it at 2x with
@@ -118,6 +177,88 @@ def store(raw, vid):
     out = Image.frombytes("RGB", im.size, im.tobytes())
     out.save(os.path.join(IMG_DIR, f"{vid}.jpg"), "JPEG", quality=QUALITY, optimize=True)
     return f"img/venues/{vid}.jpg", None
+
+
+PHOTO_PAGE_RE = re.compile(
+    r"gallery|galler|photo|about|our.?story|the.?space|venue|interior|"
+    r"food|menu|events?", re.I)
+LINK_RE = re.compile(r'<a\s[^>]*href=["\']([^"\']+)["\'][^>]*>(.{0,120}?)</a>',
+                     re.I | re.S)
+SUBPAGES = 2
+
+
+def photo_pages(html, page_url):
+    """Same-host pages likely to show the room, best guess first.
+
+    Deliberately narrower than crawl_sites.candidate_links, which hunts for a
+    deal: here a 'gallery' link is the prize and a 'menu' link is the consolation.
+    """
+    import urllib.parse
+
+    host = urllib.parse.urlsplit(page_url).netloc
+    found, seen = [], set()
+    for m in LINK_RE.finditer(html):
+        href, label = m.group(1), re.sub(r"<[^>]+>", " ", m.group(2))
+        if not PHOTO_PAGE_RE.search(href) and not PHOTO_PAGE_RE.search(label):
+            continue
+        full = urllib.parse.urljoin(page_url, html_mod.unescape(href)).split("#")[0]
+        if urllib.parse.urlsplit(full).netloc != host or full in seen:
+            continue
+        if full.rstrip("/") == page_url.rstrip("/"):
+            continue
+        seen.add(full)
+        rank = 0 if re.search(r"gallery|photo|about", full + label, re.I) else 1
+        found.append((rank, full))
+    return [u for _, u in sorted(found, key=lambda t: t[0])]
+
+
+def harvest(session, r, vid, name, robots):
+    """Try every plausible image on one fetched page. (record, None) or (None, why)."""
+    og = og_image(r.text, r.url)
+    # The share image first; only if the page has none is it scanned for a
+    # photo, and each candidate must clear the size floor before it is accepted.
+    cands = ([og] if og else []) + inline_images(r.text, r.url) \
+        + css_images(r.text, r.url)
+    why = "no image on the page"
+    for url in cands[:10]:
+        if not asset_allowed(url, r.url, robots):
+            why = "image robots-disallowed"
+            continue
+        time.sleep(DELAY)
+        # Referer is what hotlink protection checks; without it a CDN that
+        # happily serves the venue's own page returns 400 to us. Accept matters
+        # because several serve AVIF/WebP only when asked, and HTML otherwise.
+        ir = session.get(url, timeout=TIMEOUT, headers={
+            "User-Agent": UA,
+            "Referer": r.url,
+            "Accept": "image/avif,image/webp,image/apng,image/*,*/*;q=0.8",
+        })
+        ctype = ir.headers.get("content-type", "")
+        if not ir.ok or "image" not in ctype:
+            why = f"image fetch {ir.status_code}"
+            continue
+        if "svg" in ctype:
+            # A vector is a logo, and these CDNs serve them from extensionless
+            # URLs the filename filter cannot see.
+            why = "vector, not a photograph"
+            continue
+        try:
+            path, why = store(ir.content, vid)
+        except Exception as e:  # noqa: BLE001 -- try the next candidate
+            # One undecodable image (a truncated file, a format Pillow wasn't
+            # built with) must cost this venue that candidate, not its whole
+            # turn -- the next one down the page is usually a good photo.
+            path, why = None, f"undecodable ({type(e).__name__})"
+        if path:
+            return {
+                "file": path,
+                "attribution": f"Photo: {name}",
+                "source_url": url,
+                "source": "og:image" if url == og else "page image",
+                "page": r.url,
+                "fetched_at": time.strftime("%Y-%m-%d"),
+            }, None
+    return None, why
 
 
 def published():
@@ -155,35 +296,38 @@ def main():
             if not allowed(site, robots):
                 why = "robots.txt disallows"
             else:
-                time.sleep(DELAY)
-                r = session.get(site, timeout=TIMEOUT, headers={"User-Agent": UA})
-                og = og_image(r.text, r.url) if r.ok else None
-                # The share image first; only if the site has none does the page
-                # get scanned for a photo, and each candidate must clear the
-                # size floor before it is accepted.
-                cands = ([og] if og else []) + (inline_images(r.text, r.url) if r.ok else [])
+                pages, tried, expanded = [site], set(), False
                 why = "no image on the page"
-                for url in cands[:5]:
-                    if not allowed(url, robots):
-                        why = "image robots-disallowed"
+                while pages:
+                    page = pages.pop(0)
+                    if page in tried:
                         continue
+                    tried.add(page)
                     time.sleep(DELAY)
-                    ir = session.get(url, timeout=TIMEOUT, headers={"User-Agent": UA})
-                    if not ir.ok or "image" not in ir.headers.get("content-type", ""):
-                        why = f"image fetch {ir.status_code}"
+                    r = session.get(page, timeout=TIMEOUT, headers={"User-Agent": UA})
+                    if not r.ok:
+                        why = f"page fetch {r.status_code}"
+                        # The stored website is often a deep link the crawler
+                        # followed months ago -- a happy-hour menu page that has
+                        # since been retired. The site itself is usually fine.
+                        if page == site:
+                            root = "{0.scheme}://{0.netloc}/".format(urlsplit(site))
+                            if root != site:
+                                pages.append(root)
                         continue
-                    path, why = store(ir.content, vid)
-                    if path:
-                        photos[vid] = {
-                            "file": path,
-                            "attribution": f"Photo: {name}",
-                            "source_url": url,
-                            "source": "og:image" if url == og else "page image",
-                            "page": r.url,
-                            "fetched_at": time.strftime("%Y-%m-%d"),
-                        }
+                    record, why = harvest(session, r, vid, name, robots)
+                    if record:
+                        photos[vid] = record
                         kept += 1
                         break
+                    # A homepage that is one full-bleed video or a splash logo
+                    # still has a photo of the room on its gallery or about
+                    # page, so follow a couple -- bounded, same host, and only
+                    # from the first page, so this can never become a crawl.
+                    if not expanded:
+                        expanded = True
+                        pages += [u for u in photo_pages(r.text, r.url)[:SUBPAGES]
+                                  if allowed(u, robots)]
         except Exception as e:  # noqa: BLE001 -- one dead site must not end the run
             why = f"{type(e).__name__}"
         print(f"[{n}/{len(todo)}] {name[:34]:<36} {'ok' if not why else why}")

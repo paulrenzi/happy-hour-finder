@@ -57,7 +57,18 @@
        "end": "14:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "shot",
+       "label": "Green Tea Shots",
+       "price_usd": 3.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Margaritas",
+       "price_usd": 5.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -65,7 +76,8 @@
       "kind": "venue_site",
       "url": "https://santuccispizza.com/specials/",
       "quote": "North Broad Street Happy Hour (21+): / Monday - Friday 4 PM - 7 PM / Saturday - Sunday 11 AM - 2 PM"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -145,6 +157,10 @@
    "lat": 39.952754,
    "lng": -75.183713,
    "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/the-post-philadelphia.jpg",
+    "attribution": "Photo: The Post"
+   },
    "deals": [
     {
      "type": "happy_hour",

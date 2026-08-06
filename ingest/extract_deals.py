@@ -228,6 +228,24 @@ def dedupe(windows):
     return [w for _dow, (_span, w) in sorted(best.items())]
 
 
+def one_per_osm(hits, sites):
+    """[(lid, crawl_hits_entry)] -- one entry per real bar, in a stable order.
+
+    One bar can hold several licences (a restaurant licence and a hotel licence
+    at one address are two PLCB rows), and the frontier joined both to the same
+    OSM element -- so the OSM id, not the LID, is the venue.
+    """
+    by_osm, order = {}, []
+    for lid, v in sorted(hits.items()):
+        key = (sites.get(lid) or {}).get("osm") or lid
+        if key not in by_osm:
+            by_osm[key] = (lid, v)
+            order.append(key)
+        elif v["hits"] and not by_osm[key][1]["hits"]:
+            by_osm[key] = (lid, v)
+    return [by_osm[k] for k in order]
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--show", type=int, default=0)
@@ -239,21 +257,9 @@ def main():
     sites = json.load(open(SITES, encoding="utf-8"))
     coords = json.load(open(COORDS, encoding="utf-8")) if os.path.exists(COORDS) else {}
 
-    # One bar can hold several licences (a restaurant licence and a hotel
-    # licence at one address are two PLCB rows), and the frontier joined both to
-    # the same OSM element -- so the OSM id, not the LID, is the venue.
-    by_osm, order = {}, []
-    for lid, v in sorted(hits.items()):
-        key = (sites.get(lid) or {}).get("osm") or lid
-        if key not in by_osm:
-            by_osm[key] = (lid, v)
-            order.append(key)
-        elif v["hits"] and not by_osm[key][1]["hits"]:
-            by_osm[key] = (lid, v)
-
     venues, stats, kept, rejects = [], collections.Counter(), [], []
     seen_ids = set()
-    for lid, v in (by_osm[k] for k in order):
+    for lid, v in one_per_osm(hits, sites):
         if not v["hits"]:
             stats["no quote crawled"] += 1
             continue

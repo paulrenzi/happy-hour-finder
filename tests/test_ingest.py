@@ -21,7 +21,8 @@ from build_bundles import decay  # noqa: E402
 from crawl_sites import candidate_links, quotes, visible_text  # noqa: E402
 from discover_sites import plcb_key, site_of, street_core  # noqa: E402
 from extract_deals import days_in, items_in, window_in, windows_from  # noqa: E402
-from fetch_og_images import inline_images, og_image  # noqa: E402
+from extract_prices_llm import verify  # noqa: E402
+from fetch_og_images import asset_allowed, css_images, inline_images, og_image  # noqa: E402
 from fetch_venue_photos import IMG_DIR, photo_dest  # noqa: E402
 from geocode_venues import split_address, strip_range, strategies  # noqa: E402
 from validate_pa import validate_deal, validate_food_combo_count  # noqa: E402
@@ -406,6 +407,123 @@ class PhotoSourcing(unittest.TestCase):
                 '<img src="/tacos.jpg"><img src="https://x.test/facebook-icon.png">')
         self.assertEqual(inline_images(html, "https://bar.example/"),
                          ["https://bar.example/tacos.jpg"])
+
+    def test_a_hero_painted_as_a_css_background_is_still_a_photo(self):
+        # Several of these sites have no <img> at all -- the shot of the dining
+        # room is a background-image on a div.
+        html = ('<style>.hero{background-image:url("/img/room.jpg")}'
+                '.logo{background:url(/logo.png)}</style>')
+        self.assertEqual(css_images(html, "https://bar.example/"),
+                         ["https://bar.example/img/room.jpg"])
+
+    def test_an_inline_data_uri_is_not_fetched_as_a_photo(self):
+        html = '<div style="background-image:url(data:image/png;base64,AAAA)"></div>'
+        self.assertEqual(css_images(html, "https://bar.example/"), [])
+
+    def test_an_escaped_ampersand_is_decoded_before_the_url_is_used(self):
+        # These are image *proxy* URLs carrying their target in query params, so
+        # a literal '&amp;' makes the proxy read a parameter called 'amp;w'.
+        html = '<img src="/_next/image?url=%2Fbar.webp&amp;w=3840&amp;q=75">'
+        self.assertEqual(inline_images(html, "https://bar.example/"),
+                         ["https://bar.example/_next/image?url=%2Fbar.webp&w=3840&q=75"])
+
+    def test_an_escaped_share_image_url_is_decoded_too(self):
+        html = '<meta property="og:image" content="https://cdn.test/a.jpg?w=1&amp;h=2">'
+        self.assertEqual(og_image(html, "https://bar.example/"),
+                         "https://cdn.test/a.jpg?w=1&h=2")
+
+    def test_the_sites_own_robots_still_governs_its_own_images(self):
+        robots = {"https://bar.example": _Robots(False)}
+        self.assertFalse(asset_allowed("https://bar.example/photos/a.jpg",
+                                       "https://bar.example/", robots))
+
+    def test_a_builders_cdn_does_not_veto_the_venues_own_share_image(self):
+        # The venue's site said we may read the page, and the page names this
+        # image as its own picture; the CDN's robots.txt is about crawling the
+        # CDN, and it must not be able to hide a bar from its own listing.
+        robots = {"https://static.wixstatic.test": _Robots(False)}
+        self.assertTrue(asset_allowed("https://static.wixstatic.test/media/a.jpg",
+                                      "https://bar.example/", robots))
+
+
+class _Robots:
+    """Stand-in for the parsed robots.txt crawl_sites caches per host."""
+
+    def __init__(self, verdict):
+        self.verdict = verdict
+
+    def can_fetch(self, _ua, _url):
+        return self.verdict
+
+
+class PriceExtraction(unittest.TestCase):
+    """What the LLM price pass is allowed to put on a card.
+
+    The model is a reader, not a source: every one of these is about the price
+    being present in the venue's own sentence, because that check -- not the
+    model's confidence -- is what makes the pass safe to publish.
+    """
+
+    QUOTE = "Happy Hour / $5 drafts and half-price wings / Mon - Fri 4 - 6 pm"
+
+    def item(self, **kw):
+        base = {"category": "draft", "label": "drafts", "price_usd": 5.0,
+                "evidence": "$5 drafts"}
+        base.update(kw)
+        return base
+
+    def test_a_price_written_in_the_quote_is_kept(self):
+        clean, why = verify(self.item(), self.QUOTE)
+        self.assertIsNone(why)
+        self.assertEqual(clean, {"category": "draft", "label": "drafts", "price_usd": 5.0})
+
+    def test_evidence_that_is_not_in_the_quote_is_refused(self):
+        _, why = verify(self.item(evidence="$5 house cocktails"), self.QUOTE)
+        self.assertIn("not in the quote", why)
+
+    def test_a_price_the_evidence_does_not_state_is_refused(self):
+        # The span is real but the number is not in it -- which is exactly what
+        # a plausible-sounding invented price looks like.
+        _, why = verify(self.item(price_usd=4.0), self.QUOTE)
+        self.assertIn("not written in the evidence", why)
+
+    def test_line_breaks_in_the_quote_do_not_defeat_the_check(self):
+        clean, why = verify(self.item(), "Happy Hour\n\n$5   drafts\nMon - Fri")
+        self.assertIsNone(why)
+        self.assertEqual(clean["price_usd"], 5.0)
+
+    def test_half_price_is_read_as_a_discount(self):
+        clean, why = verify(self.item(category="food", label="wings", price_usd=None,
+                                      discount_pct=50, evidence="half-price wings"),
+                            self.QUOTE)
+        self.assertIsNone(why)
+        self.assertEqual(clean, {"category": "food", "label": "wings", "discount_pct": 50.0})
+
+    def test_an_item_needs_exactly_one_of_price_or_discount(self):
+        _, why = verify(self.item(discount_pct=50), self.QUOTE)
+        self.assertIn("exactly one", why)
+        _, why = verify(self.item(price_usd=None), self.QUOTE)
+        self.assertIn("exactly one", why)
+
+    def test_an_unknown_category_is_refused(self):
+        # Categories drive the food/drink filters, so an invented one would file
+        # a bar under a tab it does not belong in.
+        _, why = verify(self.item(category="dessert"), self.QUOTE)
+        self.assertIn("category", why)
+
+    def test_an_unlawful_claim_never_becomes_an_item(self):
+        _, why = verify(self.item(label="bottomless drafts",
+                                  evidence="$5 drafts"), self.QUOTE)
+        self.assertIn("unlawful", why)
+
+    def test_a_label_the_size_of_a_sentence_is_refused(self):
+        _, why = verify(self.item(label="drafts all day every day at both of our bars"),
+                        self.QUOTE)
+        self.assertEqual(why, "label length")
+
+    def test_an_item_with_no_evidence_is_refused(self):
+        _, why = verify(self.item(evidence=""), self.QUOTE)
+        self.assertEqual(why, "no evidence")
 
 
 if __name__ == "__main__":

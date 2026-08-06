@@ -42,7 +42,13 @@
        "end": "17:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "House Margarita (16oz)",
+       "price_usd": 5.99
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -50,7 +56,8 @@
       "kind": "venue_site",
       "url": "https://www.senorsalsapa.com/",
       "quote": "Happy Hour / Monday \u2013 Thursday 2pm \u2013 5pm / House Margarita (16oz) $5.99 + $1 Flavor"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   }
