@@ -1,0 +1,48 @@
+{
+ "zone_id": "chester_chichester",
+ "name": "Chester / Aston",
+ "built_at": "2026-08-06",
+ "venues": [
+  {
+   "id": "bowlero-boothwyn",
+   "name": "Bowlero",
+   "address": "575 CONCHESTER HWY, BOOTHWYN PA 19061",
+   "zone_id": "chester_chichester",
+   "website": "https://www.bowlero.com/location/bowlero-boothwyn",
+   "plcb_name": "BOWLERO BOOTHWYN",
+   "lat": 39.8502211,
+   "lng": -75.446885,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/bowlero-boothwyn.jpg",
+    "attribution": "Photo: Bowlero"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 6,
+       "start": "11:00",
+       "end": "15:00"
+      },
+      {
+       "dow": 7,
+       "start": "11:00",
+       "end": "15:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.bowlero.com/location/bowlero-boothwyn",
+      "quote": "Family Unlimited Food & Drink Specials / Saturday & Sunday | 11AM \u2013 3PM / Get two shareable apps for one low per-person price, plus discounted Craft Lemonades and Dirty Sodas."
+     }
+    }
+   ]
+  }
+ ]
+}

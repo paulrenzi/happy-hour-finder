@@ -1,7 +1,7 @@
 {
  "zone_id": "media",
  "name": "Media",
- "built_at": "2026-08-01",
+ "built_at": "2026-08-06",
  "venues": [
   {
    "id": "iron-hill-media",
@@ -78,6 +78,120 @@
      "source": {
       "kind": "venue_site",
       "url": "https://www.ironhillbrewery.com/food-menus/media-pa-happy-hour-menu/"
+     }
+    }
+   ]
+  },
+  {
+   "id": "pinocchio-s-restaurant-beer-garden-to-go-media",
+   "name": "Pinocchio's Restaurant & Beer Garden to Go",
+   "address": "131 E BALTIMORE PK, MEDIA PA 19063",
+   "zone_id": "media",
+   "website": "https://pinpizza.com/",
+   "plcb_name": "PINOCCHIO'S FAMILY RESTAURANT",
+   "lat": 39.9166777,
+   "lng": -75.3867026,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/pinocchio-s-restaurant-beer-garden-to-go-media.jpg",
+    "attribution": "Photo: Pinocchio's Restaurant & Beer Garden to Go"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "Appetizers",
+       "price_usd": 5.99
+      },
+      {
+       "category": "draft",
+       "label": "Beer & Cocktails",
+       "discount_pct": 50
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://pinpizza.com/specials",
+      "quote": "Happy Hour / Monday - Thursday from 4PM - 6PM / Half Priced Beer & Cocktails | $5.99 Appetizers *Wings are Excluded"
+     }
+    }
+   ]
+  },
+  {
+   "id": "spasso-italian-grill-media",
+   "name": "Spasso Italian Grill",
+   "address": "1 W STATE ST, MEDIA PA 19063-3310",
+   "zone_id": "media",
+   "website": "https://www.spassoitaliangrill.com/media",
+   "plcb_name": "SPASSO INC",
+   "lat": 39.9181693,
+   "lng": -75.3896409,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.spassoitaliangrill.com/media-happy-hour-menu",
+      "quote": "Media | Happy Hour / Every MONDAY - FRIDAY 4:00 - 6:00 PM"
      }
     }
    ]

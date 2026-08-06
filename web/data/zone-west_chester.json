@@ -1,7 +1,7 @@
 {
  "zone_id": "west_chester",
  "name": "West Chester",
- "built_at": "2026-08-01",
+ "built_at": "2026-08-06",
  "venues": [
   {
    "id": "barnabys-west-chester",
@@ -67,6 +67,152 @@
       "kind": "instagram",
       "url": "https://www.instagram.com/barnabyswc/",
       "note": "The venue's own site blocks automated fetch and carries no happy hour."
+     }
+    }
+   ]
+  },
+  {
+   "id": "station-142-stage-bar-kitchen-west-chester",
+   "name": "Station 142 Stage + Bar + Kitchen",
+   "address": "142 E MARKET ST, WEST CHESTER PA 19382-3153",
+   "zone_id": "west_chester",
+   "website": "https://station142.com/",
+   "plcb_name": "FTROOP142 LLC",
+   "lat": 39.9607386,
+   "lng": -75.601918,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/station-142-stage-bar-kitchen-west-chester.jpg",
+    "attribution": "Photo: Station 142 Stage + Bar + Kitchen"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Domestic Drafts",
+       "price_usd": 4.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://station142.com/food-drink-menu/",
+      "quote": "Happy Hour / Tuesday-Friday: 4-7pm | Saturday & Sunday: 3-6pm / $4 Domestic Drafts & Bottles"
+     }
+    }
+   ]
+  },
+  {
+   "id": "pietro-s-prime-west-chester",
+   "name": "Pietro\u2019s Prime",
+   "address": "125 W MARKET ST, WEST CHESTER PA 19382-2901",
+   "zone_id": "west_chester",
+   "website": "https://www.pietrosprime.com",
+   "plcb_name": "PIETROS PRIME INC",
+   "lat": 39.9589239,
+   "lng": -75.6065283,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.pietrosprime.com",
+      "quote": "HAPPY HOUR / Join us every Monday through Friday from 5-7 PM in the bar area!"
+     }
+    }
+   ]
+  },
+  {
+   "id": "p-j-whelihan-s-west-chester",
+   "name": "P.J. Whelihan's",
+   "address": "1347 WILMINGTON PK, WEST CHESTER PA 19382-8470",
+   "zone_id": "west_chester",
+   "website": "https://locations.pjspub.com/pa/west-chester/1347-wilmington-pike",
+   "plcb_name": "PJ WHELIHANS",
+   "lat": 39.903188,
+   "lng": -75.5643383,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://locations.pjspub.com/pa/west-chester/1347-wilmington-pike",
+      "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
      }
     }
    ]

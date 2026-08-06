@@ -1,0 +1,124 @@
+{
+ "zone_id": "fishtown_kensington",
+ "name": "Philadelphia \u2014 Fishtown / Kensington",
+ "built_at": "2026-08-06",
+ "venues": [
+  {
+   "id": "lloyd-whiskey-bar-philadelpphia",
+   "name": "Lloyd Whiskey Bar",
+   "address": "529 E GIRARD AVE, PHILADELPPHIA PA 19125-3311",
+   "zone_id": "fishtown_kensington",
+   "website": "https://www.lloydwhiskeybar.com/",
+   "plcb_name": "529 GIRARD GROUP INC",
+   "lat": 39.9717762,
+   "lng": -75.1262997,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/lloyd-whiskey-bar-philadelpphia.jpg",
+    "attribution": "Photo: Lloyd Whiskey Bar"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.lloydwhiskeybar.com/",
+      "quote": "Happy Hour / Mon-Fri 4-6pm!"
+     }
+    }
+   ]
+  },
+  {
+   "id": "cedar-point-bar-kitchen-philadelphia",
+   "name": "Cedar Point Bar & Kitchen",
+   "address": "2370-72 E NORRIS ST, PHILADELPHIA PA 19125-1929",
+   "zone_id": "fishtown_kensington",
+   "website": "https://www.cedarpointbarandkitchen.com/",
+   "plcb_name": "CEDAR POINT LLC",
+   "lat": 39.97688,
+   "lng": -75.127701,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/cedar-point-bar-kitchen-philadelphia.jpg",
+    "attribution": "Photo: Cedar Point Bar & Kitchen"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 7,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.cedarpointbarandkitchen.com/",
+      "quote": "HAPPY HOUR / Sunday \u2013 Friday: 5PM \u2013 7pm / Monday \u2013 Friday: 10PM \u2013 11PM"
+     }
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+{
+ "zone_id": "collegeville_trappe",
+ "name": "Collegeville / Trappe",
+ "built_at": "2026-08-06",
+ "venues": [
+  {
+   "id": "p-j-whelihan-s-pub-restaurant-oaks",
+   "name": "P. J. Whelihan's Pub + Restaurant",
+   "address": "180 MILL RD, OAKS PA 19456-6503",
+   "zone_id": "collegeville_trappe",
+   "website": "https://www.pjspub.com/about.php?loc=Oaks",
+   "plcb_name": "OAKS CINEMA",
+   "lat": 40.1292498,
+   "lng": -75.4531135,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.pjspub.com/about.php?loc=Oaks",
+      "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
+     }
+    }
+   ]
+  }
+ ]
+}

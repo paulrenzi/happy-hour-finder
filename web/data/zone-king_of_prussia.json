@@ -1,0 +1,59 @@
+{
+ "zone_id": "king_of_prussia",
+ "name": "King of Prussia",
+ "built_at": "2026-08-06",
+ "venues": [
+  {
+   "id": "fogo-de-ch-o-king-of-prussia",
+   "name": "Fogo de Ch\u00e3o",
+   "address": "KING OF PRUSSIA TOWN CENTER  155 MAIN ST, KING OF PRUSSIA PA 19406",
+   "zone_id": "king_of_prussia",
+   "website": "https://fogodechao.com/location/king-of-prussia/",
+   "plcb_name": "FOGO DE CHAO CHURRASCARIA (KING OF PRUSSIA) LLC",
+   "lat": 40.0834604,
+   "lng": -75.404701,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 2,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 3,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 4,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:30",
+       "end": "18:30"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://fogodechao.com/location/king-of-prussia/",
+      "quote": "Happy Hour / MON - FRI 4:30 PM - 6:30 PM"
+     }
+    }
+   ]
+  }
+ ]
+}

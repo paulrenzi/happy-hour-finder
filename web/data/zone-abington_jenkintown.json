@@ -1,0 +1,58 @@
+{
+ "zone_id": "abington_jenkintown",
+ "name": "Abington / Jenkintown",
+ "built_at": "2026-08-06",
+ "venues": [
+  {
+   "id": "se-or-salsa-abington",
+   "name": "Se\u00f1or Salsa",
+   "address": "1301 OLD YORK RD, ABINGTON PA 19001-3403",
+   "zone_id": "abington_jenkintown",
+   "website": "https://www.senorsalsapa.com/",
+   "plcb_name": "SENOR SALSA",
+   "lat": 40.1190608,
+   "lng": -75.118913,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/se-or-salsa-abington.jpg",
+    "attribution": "Photo: Se\u00f1or Salsa"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "14:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 2,
+       "start": "14:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 3,
+       "start": "14:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 4,
+       "start": "14:00",
+       "end": "17:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.senorsalsapa.com/",
+      "quote": "Happy Hour / Monday \u2013 Thursday 2pm \u2013 5pm / House Margarita (16oz) $5.99 + $1 Flavor"
+     }
+    }
+   ]
+  }
+ ]
+}

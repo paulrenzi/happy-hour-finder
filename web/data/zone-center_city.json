@@ -1,0 +1,1914 @@
+{
+ "zone_id": "center_city",
+ "name": "Philadelphia \u2014 Center City",
+ "built_at": "2026-08-06",
+ "venues": [
+  {
+   "id": "the-sidecar-bar-grille-philadelphia",
+   "name": "The SideCar Bar & Grille",
+   "address": "2201 CHRISTIAN ST, PHILADELPHIA PA 19146-1718",
+   "zone_id": "center_city",
+   "website": "https://www.thesidecarbar.com/",
+   "plcb_name": "BARCARSIDE LLC",
+   "lat": 39.9417727,
+   "lng": -75.1794507,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.thesidecarbar.com/",
+      "quote": "Happy Hour / MONDAY THROUGH FRIDAY 4-6PM, LATE NIGHT HAPPY HOUR FRIDAY ONLY 10-12PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "las-bugambilias-philadelphia",
+   "name": "Las Bugambilias",
+   "address": "15 S 3RD ST, PHILADELPHIA PA 19106-2801",
+   "zone_id": "center_city",
+   "website": "https://lasbugambiliasphilly.com/",
+   "plcb_name": "NP LL 20 LLC",
+   "lat": 39.94964,
+   "lng": -75.1456832,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/las-bugambilias-philadelphia.jpg",
+    "attribution": "Photo: Las Bugambilias"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "21:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "12:00",
+       "end": "15:00"
+      },
+      {
+       "dow": 7,
+       "start": "12:00",
+       "end": "15:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "house margaritas",
+       "discount_pct": 50
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://lasbugambiliasphilly.com/",
+      "quote": "Happy Hour / Monday - Thursday: 5\u20137PM / Friday: 3-6PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "pier-bar-philadelphia",
+   "name": "Pier Bar",
+   "address": "2025 FAIRMOUNT AVE, PHILADELPHIA PA 19130-2612",
+   "zone_id": "center_city",
+   "website": "https://pierbarphilly.com",
+   "plcb_name": "2025 LOCAL",
+   "lat": 39.9674824,
+   "lng": -75.1711606,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/pier-bar-philadelphia.jpg",
+    "attribution": "Photo: Pier Bar"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://pierbarphilly.com",
+      "quote": "Happy Hour : Monday - Friday from 4-6pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "top-tomato-bar-pizza-philadelphia",
+   "name": "Top Tomato Bar & Pizza",
+   "address": "116-120 S 11TH ST, PHILADELPHIA PA 19107-4801",
+   "zone_id": "center_city",
+   "website": "https://toptomatophilly.com",
+   "plcb_name": "TOP TOMATO II INC",
+   "lat": 39.9495962,
+   "lng": -75.1589684,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/top-tomato-bar-pizza-philadelphia.jpg",
+    "attribution": "Photo: Top Tomato Bar & Pizza"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 2,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 3,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 4,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:30",
+       "end": "18:30"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://toptomatophilly.com",
+      "quote": "Happy Hour Header - Join us for $5 Happy Hour, Mon-Fri | 4:30-6:30pm!"
+     }
+    }
+   ]
+  },
+  {
+   "id": "chili-s-philadelphia",
+   "name": "Chili's",
+   "address": "1239 FILBERT ST, PHILADELPHIA PA 19107-2818",
+   "zone_id": "center_city",
+   "website": "https://www.chilis.com/locations/us/pennsylvania/philadelphia/center-city",
+   "plcb_name": "CHILI'S GRILL & BAR",
+   "lat": 39.9532308,
+   "lng": -75.1610942,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.chilis.com/locations/us/pennsylvania/philadelphia/center-city",
+      "quote": "Happy Hour / MONDAY-THURSDAY / 3-6pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "the-fairmount-tavern-philadelphia",
+   "name": "The Fairmount Tavern",
+   "address": "1700 FAIRMOUNT AVE, PHILADELPHIA PA 19130-2812",
+   "zone_id": "center_city",
+   "website": "https://thefairmounttavern.com/",
+   "plcb_name": "THE FAIRMOUNT TAVERN LICENSE LLC",
+   "lat": 39.9669375,
+   "lng": -75.1655119,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/the-fairmount-tavern-philadelphia.jpg",
+    "attribution": "Photo: The Fairmount Tavern"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "20:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "20:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "20:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "20:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "20:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://thefairmounttavern.com/happy-hour/",
+      "quote": "Happy Hour / Monday \u2013 Friday / 5:00 PM \u2013 8:00 PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "hi-lo-taco-co-philadelphia",
+   "name": "Hi-Lo Taco Co.",
+   "address": "1109 WALNUT ST, PHILADELPHIA PA 19107-4908",
+   "zone_id": "center_city",
+   "website": "http://www.hilotaco.com",
+   "plcb_name": "HI-LO TACO 1 LLC",
+   "lat": 39.948863,
+   "lng": -75.159579,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://www.hilotaco.com",
+      "quote": "HAPPY HOUR EVERY DAY / 4-6PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "panorama-philadelphia",
+   "name": "Panorama",
+   "address": "14-18 N FRONT ST, PHILADELPHIA PA 19106-2202",
+   "zone_id": "center_city",
+   "website": "https://www.pennsviewhotel.com/panorama",
+   "plcb_name": "PANORAMA RISTORANTE",
+   "lat": 39.9501703,
+   "lng": -75.1421735,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/panorama-philadelphia.jpg",
+    "attribution": "Photo: Panorama"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "16:30"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.pennsviewhotel.com/panorama",
+      "quote": "Happy Hour / Tuesday - Friday: 4:30 PM - 6:00 PM / Saturday 3:00 PM - 4:30 PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "tria-philadelphia",
+   "name": "Tria",
+   "address": "1137 SPRUCE ST, PHILADELPHIA PA 19107-6738",
+   "zone_id": "center_city",
+   "website": "https://triaphilly.com",
+   "plcb_name": "NEXT OF KIN",
+   "lat": 39.946541,
+   "lng": -75.161027,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/tria-philadelphia.jpg",
+    "attribution": "Photo: Tria"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "14:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "14:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "14:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "14:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://triaphilly.com/tria-happy-hour",
+      "quote": "Philadelphia's Happy Hour for Wine Lovers / MON-THU / 2 PM \u2013 6 PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "veda-philadelphia",
+   "name": "Veda",
+   "address": "1920 CHESTNUT ST, PHILADELPHIA PA 19103-4634",
+   "zone_id": "center_city",
+   "website": "https://vedaphilly.com/",
+   "plcb_name": "1920 PHILLY LLC",
+   "lat": 39.9518636,
+   "lng": -75.1729105,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/veda-philadelphia.jpg",
+    "attribution": "Photo: Veda"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:30",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:30",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:30",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:30",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://vedaphilly.com/menu-new/",
+      "quote": "HAPPY HOUR / Monday \u2013 Thursday 4:30PM \u2013 7:00PM / Friday \u2013 Sunday 5:00 PM \u2013 7:00 PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "hard-rock-cafe-philadelphia",
+   "name": "Hard Rock Cafe",
+   "address": "1113-31 MARKET ST, PHILADELPHIA PA 19107-2901",
+   "zone_id": "center_city",
+   "website": "https://www.hardrockcafe.com/location/philadelphia/",
+   "plcb_name": "HARD ROCK CAFE",
+   "lat": 39.9520693,
+   "lng": -75.1596357,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.hardrockcafe.com/location/philadelphia/",
+      "quote": "Happy Hour Join us weekdays from 3pm-7pm for Happy Hour"
+     }
+    }
+   ]
+  },
+  {
+   "id": "devil-s-alley-bar-grill-philadelphia",
+   "name": "Devil's Alley Bar & Grill",
+   "address": "1907 CHESTNUT ST, PHILADELPHIA PA 19103-3500",
+   "zone_id": "center_city",
+   "website": "https://devilsalleybarandgrill.com/",
+   "plcb_name": "SAM'S CHESTNUT GRILL, INC.",
+   "lat": 39.952015,
+   "lng": -75.172231,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/devil-s-alley-bar-grill-philadelphia.jpg",
+    "attribution": "Photo: Devil's Alley Bar & Grill"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Select Beers",
+       "price_usd": 4.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://devilsalleybarandgrill.com/",
+      "quote": "HH Header - Happy Hour 5-7pm Mon-Fri $4 Select Beers!"
+     }
+    }
+   ]
+  },
+  {
+   "id": "estia-philadelphia",
+   "name": "Estia",
+   "address": "1405 LOCUST ST, PHILADELPHIA PA 19102-3807",
+   "zone_id": "center_city",
+   "website": "https://estiarestaurant.com/philadelphia-pa/philadelphia-pa.asp",
+   "plcb_name": "AEGEAN ESTIATORIO, INC.",
+   "lat": 39.948409,
+   "lng": -75.165306,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/estia-philadelphia.jpg",
+    "attribution": "Photo: Estia"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 2,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 3,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 4,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 5,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 6,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 7,
+       "start": "15:30",
+       "end": "17:30"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "beers",
+       "price_usd": 6.0
+      },
+      {
+       "category": "wine",
+       "label": "wines",
+       "price_usd": 10.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://estiarestaurant.com/philadelphia-pa/philadelphia-pa.asp",
+      "quote": "HAPPY HOUR / Every day 3:30pm - 5:30pm / $6 beers, $10 wines and hand crafted cocktails."
+     }
+    }
+   ]
+  },
+  {
+   "id": "pub-kitchen-philadelphia",
+   "name": "Pub & Kitchen",
+   "address": "1946 LOMBARD ST, PHILADELPHIA PA 19146-1411",
+   "zone_id": "center_city",
+   "website": "https://thepubandkitchen.com",
+   "plcb_name": "DRC INVESTMENTS LLC",
+   "lat": 39.9457205,
+   "lng": -75.1747533,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/pub-kitchen-philadelphia.jpg",
+    "attribution": "Photo: Pub & Kitchen"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://thepubandkitchen.com/menus/",
+      "quote": "Happy Hour / Monday - Friday: 4pm - 6pm / wine $7"
+     }
+    }
+   ]
+  },
+  {
+   "id": "prohibition-taproom-philadelphia",
+   "name": "Prohibition Taproom",
+   "address": "501 N 13TH ST, PHILADELPHIA PA 19123-3632",
+   "zone_id": "center_city",
+   "website": "http://theprohibitiontaproom.com/",
+   "plcb_name": "PROHIBITION TAPROOM INC",
+   "lat": 39.9607305,
+   "lng": -75.1594566,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/prohibition-taproom-philadelphia.jpg",
+    "attribution": "Photo: Prohibition Taproom"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://theprohibitiontaproom.com/",
+      "quote": "Happy Hour is offered every Monday - Thursday from 4-6pm and Fridays 3-6pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "con-murphy-s-philadelphia",
+   "name": "Con Murphy's",
+   "address": "1700 BENJAMIN FRANKLIN PKWY, PHILADELPHIA PA 19103-2735",
+   "zone_id": "center_city",
+   "website": "https://conmurphyspub.com",
+   "plcb_name": "SNUGBAR LLC",
+   "lat": 39.9557024,
+   "lng": -75.1680332,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "Margaritas Join us for the be",
+       "price_usd": 7.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Margaritas",
+       "price_usd": 7.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://conmurphyspub.com",
+      "quote": "Join us for the best Happy Hour on the parkway! / Weekdays 3pm-6pm / $7 Margaritas"
+     }
+    }
+   ]
+  },
+  {
+   "id": "pearl-mary-philadelphia",
+   "name": "Pearl & Mary",
+   "address": "114-124 S 13TH ST, PHILADELPHIA PA 19107-4528",
+   "zone_id": "center_city",
+   "website": "https://www.pearlandmary.com",
+   "plcb_name": "76 WEST LLC",
+   "lat": 39.9497468,
+   "lng": -75.1621039,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/pearl-mary-philadelphia.jpg",
+    "attribution": "Photo: Pearl & Mary"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.pearlandmary.com",
+      "quote": "Happy Hour [walk-in only] : / 4:00pm-7:00pm daily"
+     }
+    }
+   ]
+  },
+  {
+   "id": "yards-brewing-company-philadelphia",
+   "name": "Yards Brewing Company",
+   "address": "500 SPRING GARDEN ST, PHILADELPHIA PA 19123-2833",
+   "zone_id": "center_city",
+   "website": "https://yardsbrewing.com/",
+   "plcb_name": "YARDS BREWING COMPANY LLC",
+   "lat": 39.9606439,
+   "lng": -75.1472275,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://yardsbrewing.com/pages/taproom",
+      "quote": "Happy Hour: 3-6pm Mon-Fri"
+     }
+    }
+   ]
+  },
+  {
+   "id": "american-sardine-bar-philadelphia",
+   "name": "American Sardine Bar",
+   "address": "1800 FEDERAL ST, PHILADELPHIA PA 19146-2915",
+   "zone_id": "center_city",
+   "website": "https://americansardinebar.com/",
+   "plcb_name": "SPTR INC",
+   "lat": 39.9366171,
+   "lng": -75.173729,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/american-sardine-bar-philadelphia.jpg",
+    "attribution": "Photo: American Sardine Bar"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://americansardinebar.com/menus/",
+      "quote": "Happy Hour from 4-6pm Monday thru Friday"
+     }
+    }
+   ]
+  },
+  {
+   "id": "jerry-s-bar-philadelphia",
+   "name": "Jerry's Bar",
+   "address": "129 W LAUREL ST, PHILADELPHIA PA 19123-2325",
+   "zone_id": "center_city",
+   "website": "https://jerrysbarphilly.com/",
+   "plcb_name": "WP LLC",
+   "lat": 39.9651629,
+   "lng": -75.1388758,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/jerry-s-bar-philadelphia.jpg",
+    "attribution": "Photo: Jerry's Bar"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://jerrysbarphilly.com/",
+      "quote": "Happy Hour / MONDAY - FRIDAY 4PM-7PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "charlie-was-a-sinner-philadelphia",
+   "name": "Charlie Was a Sinner",
+   "address": "131 S 13TH ST, PHILADELPHIA PA 19107-4917",
+   "zone_id": "center_city",
+   "website": "https://charliewasasinner.com/",
+   "plcb_name": "ADR 131 S 13 LLC",
+   "lat": 39.9495249,
+   "lng": -75.1618901,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://charliewasasinner.com/",
+      "quote": "Happy Hour. / Monday-Friday 4pm-6pm / Monday-Friday 3pm-5pm -->"
+     }
+    }
+   ]
+  },
+  {
+   "id": "southgate-philadelphia",
+   "name": "SouthGate",
+   "address": "1801 LOMBARD ST, PHILADELPHIA PA 19146-1409",
+   "zone_id": "center_city",
+   "website": "https://southgatephilly.com",
+   "plcb_name": "OLD ROW INC",
+   "lat": 39.9455589,
+   "lng": -75.1717866,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://southgatephilly.com",
+      "quote": "Our happy hour menu is offered: / Tuesday-Thursday, 4pm to 6:30pm / Friday, 4pm to 6pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "bar-bombon-philadelphia",
+   "name": "Bar Bombon",
+   "address": "133 S 18TH ST, PHILADELPHIA PA 19103-5238",
+   "zone_id": "center_city",
+   "website": "https://barbombon.com/",
+   "plcb_name": "MARQUIS LATIN PHILLY LLC",
+   "lat": 39.950618,
+   "lng": -75.1704475,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/bar-bombon-philadelphia.jpg",
+    "attribution": "Photo: Bar Bombon"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "21:00",
+       "end": "23:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://barbombon.com/",
+      "quote": "Day Happy Hour Specials / Wednesday, 5pm\u20136pm / Thursday\u2013Friday, 3pm\u20136pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dandan-philadelphia",
+   "name": "DanDan",
+   "address": "126 S 16TH ST, PHILADELPHIA PA 19102-2820",
+   "zone_id": "center_city",
+   "website": "https://www.dandanrestaurant.com/location/dan-dan-philadelphia",
+   "plcb_name": "DAN DAN 126 LLC",
+   "lat": 39.950243,
+   "lng": -75.1675348,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/dandan-philadelphia.jpg",
+    "attribution": "Photo: DanDan"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.dandanrestaurant.com/location/dan-dan-philadelphia",
+      "quote": "Happy Hour / Mon-Sun: 4pm-6pm (1st floor only, excluding holidays)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "royal-boucherie-philadelphia",
+   "name": "Royal Boucherie",
+   "address": "52 S 2ND ST, PHILADELPHIA PA 19106-2810",
+   "zone_id": "center_city",
+   "website": "https://www.royalboucherie.com",
+   "plcb_name": "BISTRO 52 INC",
+   "lat": 39.9487153,
+   "lng": -75.1441338,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/royal-boucherie-philadelphia.jpg",
+    "attribution": "Photo: Royal Boucherie"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.royalboucherie.com/menus",
+      "quote": "Happy Hour is 4pm - 6pm, Wednesday-Friday."
+     }
+    }
+   ]
+  },
+  {
+   "id": "malbec-argentine-steakhouse-philadelphia",
+   "name": "Malbec Argentine Steakhouse",
+   "address": "400-02 S 2ND ST, PHILADELPHIA PA 19147-1608",
+   "zone_id": "center_city",
+   "website": "http://www.malbecsteakhouse.com/",
+   "plcb_name": "ARGENTO ARGENTINIAN STEAK HOUSE LLC",
+   "lat": 39.9430129,
+   "lng": -75.1455311,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/malbec-argentine-steakhouse-philadelphia.jpg",
+    "attribution": "Photo: Malbec Argentine Steakhouse"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://www.malbecsteakhouse.com/",
+      "quote": "HAPPY HOUR Tuesday \u2013 Friday 4 to 7 PM / Sunday 3 to 7 PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "los-camaradas-philadelphia",
+   "name": "Los Camaradas",
+   "address": "918 S 22ND ST, PHILADELPHIA PA 19146-2562",
+   "zone_id": "center_city",
+   "website": "https://www.loscamaradas.com/",
+   "plcb_name": "DOS PERROS LLC",
+   "lat": 39.9407975,
+   "lng": -75.1796943,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/los-camaradas-philadelphia.jpg",
+    "attribution": "Photo: Los Camaradas"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.loscamaradas.com/",
+      "quote": "Happy Hour! Discounted drinks and happy hour plates! / Monday to Friday / 5:00 PM - 7:00 PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "bad-brother-philadelphia",
+   "name": "Bad Brother",
+   "address": "726 N 24TH ST, PHILADELPHIA PA 19130-2535",
+   "zone_id": "center_city",
+   "website": "https://www.badbrotherphilly.com",
+   "plcb_name": "726 N. 24TH ST. ASSOCIATES, INC.",
+   "lat": 39.9684873,
+   "lng": -75.1768835,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/bad-brother-philadelphia.jpg",
+    "attribution": "Photo: Bad Brother"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "OFF DRAFT BEERS",
+       "price_usd": 2.0
+      },
+      {
+       "category": "food",
+       "label": "Happy Hour Bites 5-6 PM Monda",
+       "price_usd": 5.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.badbrotherphilly.com",
+      "quote": "HAPPY HOUR / MONDAY-FRIDAY 5-6PM / $2 OFF DRAFT BEERS & WINES BY THE GLASS"
+     }
+    }
+   ]
+  },
+  {
+   "id": "village-whiskey-philadelphia",
+   "name": "Village Whiskey",
+   "address": "116 & 118 S 20TH ST, PHILADELPHIA PA 19103-9136",
+   "zone_id": "center_city",
+   "website": "https://villagewhiskey.com/",
+   "plcb_name": "VILLAGE WHISKEY",
+   "lat": 39.9513934,
+   "lng": -75.1737834,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/village-whiskey-philadelphia.jpg",
+    "attribution": "Photo: Village Whiskey"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://villagewhiskey.com/",
+      "quote": "HAPPY HOUR / Sunday - Friday: / 4pm - 6pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "amada-philadelphia",
+   "name": "Amada",
+   "address": "217-219 CHESTNUT ST, PHILADELPHIA PA 19106-2812",
+   "zone_id": "center_city",
+   "website": "https://www.amadarestaurant.com/amada-philadelphia/",
+   "plcb_name": "AMADA",
+   "lat": 39.9485657,
+   "lng": -75.1448374,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/amada-philadelphia.jpg",
+    "attribution": "Photo: Amada"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 2,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 3,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 4,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 7,
+       "start": "16:30",
+       "end": "18:30"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.amadarestaurant.com/amada-philadelphia/",
+      "quote": "HAPPY HOUR / Sunday - Friday: 4:30pm-6:30pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "the-wilder-philadelphia",
+   "name": "the Wilder",
+   "address": "2009-11 SANSOM ST, PHILADELPHIA PA 19103",
+   "zone_id": "center_city",
+   "website": "https://www.wilderphilly.com/",
+   "plcb_name": "VICTROLA89 II LLC",
+   "lat": 39.951443,
+   "lng": -75.174049,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/the-wilder-philadelphia.jpg",
+    "attribution": "Photo: the Wilder"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 2,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 3,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 4,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 6,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 7,
+       "start": "16:30",
+       "end": "18:30"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.wilderphilly.com/",
+      "quote": "Happy Hour / Everyday for Summer: 4:30pm - 6:30pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "forsythia-philadelphia",
+   "name": "Forsythia",
+   "address": "233 CHESTNUT ST, PHILADELPHIA PA 19106-2813",
+   "zone_id": "center_city",
+   "website": "https://www.forsythiaphilly.com/",
+   "plcb_name": "CWKEARSE LLC",
+   "lat": 39.9486465,
+   "lng": -75.1453965,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/forsythia-philadelphia.jpg",
+    "attribution": "Photo: Forsythia"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "20:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "20:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "20:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "20:00"
+      },
+      {
+       "dow": 7,
+       "start": "17:00",
+       "end": "20:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.forsythiaphilly.com/",
+      "quote": "Happy Hour - Bar Only - 5pm-8pm | Sunday-Thursday, 5pm-7pm Friday (No HH during special events)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dock-street-brewery-south-philadelphia",
+   "name": "Dock Street Brewery South",
+   "address": "2118 WASHINGTON AVE, PHILADELPHIA PA 19146",
+   "zone_id": "center_city",
+   "website": "https://www.dockstreetbeer.com/dock-street-south-point-breeze",
+   "plcb_name": "DOCK STREET BREWERY SOUTH",
+   "lat": 39.9391563,
+   "lng": -75.1783853,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/dock-street-brewery-south-philadelphia.jpg",
+    "attribution": "Photo: Dock Street Brewery South"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "off Draught Beers",
+       "price_usd": 1.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.dockstreetbeer.com/dock-street-south-point-breeze",
+      "quote": "HAPPY HOUR(s) / TUESDAY - FRIDAY: 4pm - 6pm / $1 off Draught Beers"
+     }
+    }
+   ]
+  }
+ ]
+}

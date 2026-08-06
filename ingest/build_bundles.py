@@ -9,6 +9,7 @@ the confidence decay ladder (SPEC section 6), and writes web/data/.
 
 import datetime
 import json
+import re
 import os
 import sys
 
@@ -18,10 +19,20 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from validate_pa import validate_deal, validate_food_combo_count  # noqa: E402
 
 DEALS_JSON = os.path.join(REPO, "data", "deals_seed.json")
+EXTRACTED_JSON = os.path.join(REPO, "data", "deals_extracted.json")
 ZONES_JSON = os.path.join(REPO, "data", "zones.json")
 PHOTOS_JSON = os.path.join(REPO, "data", "venue_photos.json")
 COORDS_JSON = os.path.join(REPO, "data", "venue_coords.json")
 OUT_DIR = os.path.join(REPO, "web", "data")
+
+
+def norm_addr(address):
+    """Enough of an address to tell whether two records are one bar. The seed
+    writes '324 W Swedesford Rd, Berwyn PA 19312' where the PLCB row the crawler
+    carried says '324 WEST SWEDESFORD ROAD'; the number and the ZIP agree."""
+    m = re.search(r"\b(\d{5})\b", address or "")
+    n = re.match(r"\s*(\d+)", address or "")
+    return (n.group(1) if n else "?", m.group(1) if m else "?")
 
 
 def decay(confidence, verified_at, today):
@@ -46,6 +57,17 @@ def decay(confidence, verified_at, today):
 def main():
     today = datetime.date.today()
     payload = json.load(open(DEALS_JSON, encoding="utf-8"))
+    # Machine-extracted deals (ingest/extract_deals.py) ship alongside the
+    # hand-verified seed, never merged into it. Where both describe one venue the
+    # seed wins outright -- a person read that page, a regex read this one.
+    if os.path.exists(EXTRACTED_JSON):
+        seen = {v["id"] for v in payload["venues"]}
+        seen |= {norm_addr(v["address"]) for v in payload["venues"]}
+        auto = json.load(open(EXTRACTED_JSON, encoding="utf-8"))["venues"]
+        fresh = [v for v in auto if v["id"] not in seen and norm_addr(v["address"]) not in seen]
+        print(f"  +{len(fresh)} machine-extracted venues "
+              f"({len(auto) - len(fresh)} already hand-verified)")
+        payload = dict(payload, venues=payload["venues"] + fresh)
     zones = json.load(open(ZONES_JSON, encoding="utf-8"))
     zone_names = {z["id"]: z["name"] for z in zones["zones"]}
     # Optional: written by ingest/fetch_venue_photos.py. A venue with no entry

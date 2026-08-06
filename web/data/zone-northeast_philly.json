@@ -1,0 +1,65 @@
+{
+ "zone_id": "northeast_philly",
+ "name": "Philadelphia \u2014 Northeast",
+ "built_at": "2026-08-06",
+ "venues": [
+  {
+   "id": "chickie-s-pete-s-philadelphia",
+   "name": "Chickie's & Pete's",
+   "address": "4010 ROBBINS ST & BSMT 4012 ROBBINS ST, PHILADELPHIA PA 19135-3016",
+   "zone_id": "northeast_philly",
+   "website": "https://chickiesandpetes.com/location/the-original-at-robbins-ave/",
+   "plcb_name": "4010 LLC",
+   "photo": {
+    "file": "img/venues/chickie-s-pete-s-philadelphia.jpg",
+    "attribution": "Photo: Chickie's & Pete's"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://chickiesandpetes.com/menu",
+      "quote": "Happy Hour available Monday-Friday 4-6 pm and Sunday-Thursday 10pm-12am at bar area only. Where permitted by law. Dine-in only. Prices and times may vary at Parx, Tropicana, Kansas City, and Robbins Ave. locations. Not valid at Allentown or Nevada locations."
+     }
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,186 @@
+{
+ "zone_id": "university_city",
+ "name": "Philadelphia \u2014 University City / West",
+ "built_at": "2026-08-06",
+ "venues": [
+  {
+   "id": "santucci-s-original-square-pizza-philadelphia",
+   "name": "Santucci's Original Square Pizza",
+   "address": "3700 LANCASTER AVE, PHILADELPHIA PA 19104",
+   "zone_id": "university_city",
+   "website": "https://santuccispizza.com/santuccis-pizza-universitycity/",
+   "plcb_name": "PHILLY'S ORIGINAL SQUARE PIZZA UCITY",
+   "lat": 39.9594333,
+   "lng": -75.1966701,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/santucci-s-original-square-pizza-philadelphia.jpg",
+    "attribution": "Photo: Santucci's Original Square Pizza"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 6,
+       "start": "11:00",
+       "end": "14:00"
+      },
+      {
+       "dow": 7,
+       "start": "11:00",
+       "end": "14:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://santuccispizza.com/specials/",
+      "quote": "North Broad Street Happy Hour (21+): / Monday - Friday 4 PM - 7 PM / Saturday - Sunday 11 AM - 2 PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "co-op-restaurant-bar-philadelphia",
+   "name": "CO-OP Restaurant & Bar",
+   "address": "20-40 SOUTH 33RD ST, PHILADELPHIA PA 19104",
+   "zone_id": "university_city",
+   "website": "https://www.coopphilly.com/",
+   "plcb_name": "STUDY PHILADELPHIA",
+   "lat": 39.95428,
+   "lng": -75.19011,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/co-op-restaurant-bar-philadelphia.jpg",
+    "attribution": "Photo: CO-OP Restaurant & Bar"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "14:00",
+       "end": "16:00"
+      },
+      {
+       "dow": 7,
+       "start": "14:00",
+       "end": "16:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.coopphilly.com/menus",
+      "quote": "Bar Bites & Happy Hour / Bar Menu Served Daily from 2pm to 4pm / Happy Hour: Monday to Friday from 3pm to 6pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "the-post-philadelphia",
+   "name": "The Post",
+   "address": "129L S 30TH ST, PHILADELPHIA PA 19104",
+   "zone_id": "university_city",
+   "website": "https://thepostphl.com/",
+   "plcb_name": "BRBH HD LLC",
+   "lat": 39.952754,
+   "lng": -75.183713,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://thepostphl.com/",
+      "quote": "Happy Hour / Available Tues - Fri | 5 - 7pm / Quizzo Tuesdays"
+     }
+    }
+   ]
+  }
+ ]
+}

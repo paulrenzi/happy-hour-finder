@@ -1,29 +1,107 @@
 {
- "built_at": "2026-08-01",
+ "built_at": "2026-08-06",
  "zones": [
   {
-   "id": "ardmore_bryn_mawr",
-   "name": "Ardmore / Bryn Mawr",
+   "id": "abington_jenkintown",
+   "name": "Abington / Jenkintown",
    "venues": 1,
    "deals": 1
   },
   {
+   "id": "ambler_upper_dublin",
+   "name": "Ambler / Upper Dublin",
+   "venues": 2,
+   "deals": 2
+  },
+  {
+   "id": "ardmore_bryn_mawr",
+   "name": "Ardmore / Bryn Mawr",
+   "venues": 4,
+   "deals": 4
+  },
+  {
    "id": "blue_bell_plymouth_meeting",
    "name": "Blue Bell / Plymouth Meeting",
+   "venues": 5,
+   "deals": 5
+  },
+  {
+   "id": "center_city",
+   "name": "Philadelphia \u2014 Center City",
+   "venues": 33,
+   "deals": 33
+  },
+  {
+   "id": "chester_chichester",
+   "name": "Chester / Aston",
+   "venues": 1,
+   "deals": 1
+  },
+  {
+   "id": "collegeville_trappe",
+   "name": "Collegeville / Trappe",
    "venues": 1,
    "deals": 1
   },
   {
    "id": "conshohocken",
    "name": "Conshohocken",
+   "venues": 4,
+   "deals": 4
+  },
+  {
+   "id": "exton_downingtown",
+   "name": "Exton / Downingtown",
+   "venues": 6,
+   "deals": 6
+  },
+  {
+   "id": "fishtown_kensington",
+   "name": "Philadelphia \u2014 Fishtown / Kensington",
+   "venues": 2,
+   "deals": 2
+  },
+  {
+   "id": "glen_mills_chadds_ford",
+   "name": "Glen Mills / Chadds Ford",
+   "venues": 4,
+   "deals": 4
+  },
+  {
+   "id": "king_of_prussia",
+   "name": "King of Prussia",
+   "venues": 1,
+   "deals": 1
+  },
+  {
+   "id": "lansdale_montgomeryville",
+   "name": "Lansdale / Montgomeryville",
+   "venues": 1,
+   "deals": 1
+  },
+  {
+   "id": "malvern_great_valley",
+   "name": "Malvern / Great Valley",
+   "venues": 5,
+   "deals": 5
+  },
+  {
+   "id": "manayunk",
+   "name": "Manayunk / Roxborough",
    "venues": 1,
    "deals": 1
   },
   {
    "id": "media",
    "name": "Media",
-   "venues": 1,
-   "deals": 1
+   "venues": 3,
+   "deals": 3
+  },
+  {
+   "id": "newtown_square_broomall",
+   "name": "Newtown Square / Broomall",
+   "venues": 3,
+   "deals": 3
   },
   {
    "id": "norristown_bridgeport",
@@ -32,16 +110,52 @@
    "deals": 1
   },
   {
+   "id": "northeast_philly",
+   "name": "Philadelphia \u2014 Northeast",
+   "venues": 1,
+   "deals": 1
+  },
+  {
+   "id": "phoenixville",
+   "name": "Phoenixville",
+   "venues": 1,
+   "deals": 1
+  },
+  {
+   "id": "souderton_harleysville",
+   "name": "Souderton / Harleysville",
+   "venues": 1,
+   "deals": 1
+  },
+  {
+   "id": "south_philly",
+   "name": "Philadelphia \u2014 South Philly",
+   "venues": 4,
+   "deals": 4
+  },
+  {
+   "id": "university_city",
+   "name": "Philadelphia \u2014 University City / West",
+   "venues": 3,
+   "deals": 3
+  },
+  {
+   "id": "warminster_warrington",
+   "name": "Warminster / Warrington",
+   "venues": 1,
+   "deals": 1
+  },
+  {
    "id": "wayne_radnor",
    "name": "Wayne / Radnor",
-   "venues": 2,
-   "deals": 2
+   "venues": 7,
+   "deals": 7
   },
   {
    "id": "west_chester",
    "name": "West Chester",
-   "venues": 1,
-   "deals": 1
+   "venues": 4,
+   "deals": 4
   }
  ]
 }

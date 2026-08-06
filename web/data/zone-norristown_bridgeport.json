@@ -1,7 +1,7 @@
 {
  "zone_id": "norristown_bridgeport",
  "name": "Norristown / Bridgeport",
- "built_at": "2026-08-01",
+ "built_at": "2026-08-06",
  "venues": [
   {
    "id": "tony-gs-norristown",
@@ -13,6 +13,10 @@
    "lat": 40.115877,
    "lng": -75.347872,
    "geo_precision": "road",
+   "photo": {
+    "file": "img/venues/tony-gs-norristown.jpg",
+    "attribution": "Photo: Tony G's Pub and Eatery"
+   },
    "deals": [
     {
      "type": "happy_hour",

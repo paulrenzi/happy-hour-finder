@@ -1,0 +1,59 @@
+{
+ "zone_id": "lansdale_montgomeryville",
+ "name": "Lansdale / Montgomeryville",
+ "built_at": "2026-08-06",
+ "venues": [
+  {
+   "id": "well-crafted-beer-co-ste-b100-lansdale",
+   "name": "Well Crafted Beer Co.",
+   "address": "310 MADISON ST, STE B100, LANSDALE PA 19446",
+   "zone_id": "lansdale_montgomeryville",
+   "website": "https://www.wellcraftedbeer.com/home2",
+   "plcb_name": "WELL CRAFTED BEER COMPANY",
+   "lat": 40.2437936,
+   "lng": -75.2865272,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.wellcraftedbeer.com/home/ambler/foodandevents",
+      "quote": "HAPPY HOUR / Weekdays 3 - 6PM"
+     }
+    }
+   ]
+  }
+ ]
+}

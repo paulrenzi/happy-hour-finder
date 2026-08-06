@@ -1,0 +1,63 @@
+{
+ "zone_id": "manayunk",
+ "name": "Manayunk / Roxborough",
+ "built_at": "2026-08-06",
+ "venues": [
+  {
+   "id": "mia-ragazza-philadelphia",
+   "name": "Mia Ragazza",
+   "address": "4411-4413 MAIN ST, PHILADELPHIA PA 19127-1311",
+   "zone_id": "manayunk",
+   "website": "https://miaragazzaphilly.com/",
+   "plcb_name": "MIA RAGAZZA",
+   "lat": 40.026143,
+   "lng": -75.225064,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/mia-ragazza-philadelphia.jpg",
+    "attribution": "Photo: Mia Ragazza"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://miaragazzaphilly.com/",
+      "quote": "we also have the best happy hour in town 4-6pm monday-friday"
+     }
+    }
+   ]
+  }
+ ]
+}

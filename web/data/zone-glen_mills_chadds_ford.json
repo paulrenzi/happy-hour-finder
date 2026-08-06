@@ -1,0 +1,267 @@
+{
+ "zone_id": "glen_mills_chadds_ford",
+ "name": "Glen Mills / Chadds Ford",
+ "built_at": "2026-08-06",
+ "venues": [
+  {
+   "id": "avenue-kitchen-glen-mills",
+   "name": "Avenue Kitchen",
+   "address": "509 WILMINGTON WEST CHESTER PK SUITE D-14, GLEN MILLS PA 19342",
+   "zone_id": "glen_mills_chadds_ford",
+   "website": "https://www.avekitchen.com/",
+   "plcb_name": "AVENUE KITCHEN",
+   "lat": 39.8644358,
+   "lng": -75.5424654,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/avenue-kitchen-glen-mills.jpg",
+    "attribution": "Photo: Avenue Kitchen"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.avekitchen.com/happyhour",
+      "quote": "Unwind with happy hour specials at Avenue Kitchen in Glen Mills / (Friday + Saturday 4-6 PM, check for updates)."
+     }
+    }
+   ]
+  },
+  {
+   "id": "chadds-ford-tavern-chadds-ford",
+   "name": "Chadds Ford Tavern",
+   "address": "1400 BALTIMORE PK, CHADDS FORD PA 19317-9441",
+   "zone_id": "glen_mills_chadds_ford",
+   "website": "https://www.thecftavern.com/",
+   "plcb_name": "1400 OPCO LLC",
+   "lat": 39.8737378,
+   "lng": -75.5676042,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/chadds-ford-tavern-chadds-ford.jpg",
+    "attribution": "Photo: Chadds Ford Tavern"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.thecftavern.com/menus",
+      "quote": "Happy Hour / 7 days a week 4-6 pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "fava-glen-mills",
+   "name": "Fava",
+   "address": "1102 BALTIMORE PIKE SUITE 101, GLEN MILLS PA 19342-1013",
+   "zone_id": "glen_mills_chadds_ford",
+   "website": "https://favaglenmills.com/",
+   "plcb_name": "BCD HOSPITALITY INC",
+   "lat": 39.8809109,
+   "lng": -75.543001,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/fava-glen-mills.jpg",
+    "attribution": "Photo: Fava"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:30",
+       "end": "20:30"
+      },
+      {
+       "dow": 2,
+       "start": "16:30",
+       "end": "20:30"
+      },
+      {
+       "dow": 3,
+       "start": "16:30",
+       "end": "20:30"
+      },
+      {
+       "dow": 4,
+       "start": "16:30",
+       "end": "20:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:30",
+       "end": "20:30"
+      },
+      {
+       "dow": 7,
+       "start": "16:30",
+       "end": "20:30"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://favaglenmills.com/",
+      "quote": "Join us for Happy Hour Sunday\u2013Friday from 4\u20136 p.m. (extended to 8 p.m. on Mondays and Thursdays) and enjoy select food and drink specials."
+     }
+    }
+   ]
+  },
+  {
+   "id": "white-dog-cafe-glen-mills",
+   "name": "White Dog Cafe",
+   "address": "981 BALTIMORE PK, GLEN MILLS PA 19342-1016",
+   "zone_id": "glen_mills_chadds_ford",
+   "website": "https://whitedog.com/glenmills",
+   "plcb_name": "WHITE DOG CAFE",
+   "lat": 39.8846308,
+   "lng": -75.5352953,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/white-dog-cafe-glen-mills.jpg",
+    "attribution": "Photo: White Dog Cafe"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "specialty cocktails",
+       "price_usd": 9.0
+      },
+      {
+       "category": "wine",
+       "label": "glasses of wine",
+       "price_usd": 8.0
+      },
+      {
+       "category": "draft",
+       "label": "select draft beer",
+       "price_usd": 7.0
+      },
+      {
+       "category": "cocktail",
+       "label": "seasonal cocktails",
+       "price_usd": 9.0
+      },
+      {
+       "category": "draft",
+       "label": "draft beer with select half-p",
+       "price_usd": 6.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "bottles of wine",
+       "discount_pct": 50
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://whitedog.com/glenmills/specials",
+      "quote": "HAPPY HOUR / Join us on the patio or at the bar and high tops from 3 - 6 PM Sunday - Friday for $9 specialty cocktails, $8 glasses of wine, $7 select draft beer, and our specially priced MENU. / Our patio is open for dining, weather permitting. Umbrellas are scattered for sun coverage. We welcome well-behaved pups."
+     }
+    }
+   ]
+  }
+ ]
+}

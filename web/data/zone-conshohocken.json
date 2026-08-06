@@ -1,7 +1,7 @@
 {
  "zone_id": "conshohocken",
  "name": "Conshohocken",
- "built_at": "2026-08-01",
+ "built_at": "2026-08-06",
  "venues": [
   {
    "id": "coyote-crossing-conshohocken",
@@ -51,6 +51,164 @@
      "source": {
       "kind": "venue_site",
       "url": "https://coyotecrossing.com/happy-hour"
+     }
+    }
+   ]
+  },
+  {
+   "id": "the-gypsy-saloon-west-conshohocken",
+   "name": "The Gypsy Saloon",
+   "address": "128 FORD ST, WEST CONSHOHOCKEN PA 19428",
+   "zone_id": "conshohocken",
+   "website": "https://www.gypsysaloon.com/",
+   "plcb_name": "GYPSY SALOON",
+   "lat": 40.068927,
+   "lng": -75.3126306,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/the-gypsy-saloon-west-conshohocken.jpg",
+    "attribution": "Photo: The Gypsy Saloon"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:30"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.gypsysaloon.com/menus",
+      "quote": "happy hour / monday through friday 4pm to 6:30pm at the bar"
+     }
+    }
+   ]
+  },
+  {
+   "id": "southern-cross-kitchen-conshohocken",
+   "name": "Southern Cross Kitchen",
+   "address": "8 E 1ST AVE, CONSHOHOCKEN PA 19428-2002",
+   "zone_id": "conshohocken",
+   "website": "https://www.southerncrosskitchen.com",
+   "plcb_name": "SOUTHERN CROSS KITCHEN RESTAURANT",
+   "lat": 40.0738047,
+   "lng": -75.3057214,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/southern-cross-kitchen-conshohocken.jpg",
+    "attribution": "Photo: Southern Cross Kitchen"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 3,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 4,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 6,
+       "start": "21:00",
+       "end": "22:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.southerncrosskitchen.com/menus",
+      "quote": "HAPPY HOUR / Tuesday to Friday: 4:30 PM - 6:30 PM / Friday & Saturday: 9 PM - 10 PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "jasper-s-backyard-conshohocken",
+   "name": "Jasper's Backyard",
+   "address": "101 E 7TH AVE, CONSHOHOCKEN PA 19428-1722",
+   "zone_id": "conshohocken",
+   "website": "https://jaspersbackyard.com",
+   "plcb_name": "JASPERS BACKYARD LLC",
+   "lat": 40.078094,
+   "lng": -75.3004988,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/jasper-s-backyard-conshohocken.jpg",
+    "attribution": "Photo: Jasper's Backyard"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "17:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://jaspersbackyard.com",
+      "quote": "View 'Happy Hour' Menu / Weekend Happy Hour - Weekend Happy Hour! 3-5 pm Saturdays & Sundays"
      }
     }
    ]

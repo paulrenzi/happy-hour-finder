@@ -1,0 +1,313 @@
+{
+ "zone_id": "malvern_great_valley",
+ "name": "Malvern / Great Valley",
+ "built_at": "2026-08-06",
+ "venues": [
+  {
+   "id": "chickie-s-pete-s-malvern",
+   "name": "Chickie's & Pete's",
+   "address": "THE GROVE 10 LIBERTY BLVD, MALVERN PA 19355",
+   "zone_id": "malvern_great_valley",
+   "website": "https://chickiesandpetes.com/location/malvern",
+   "plcb_name": "MALVERN CPC LLC",
+   "lat": 40.0544018,
+   "lng": -75.526371,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/chickie-s-pete-s-malvern.jpg",
+    "attribution": "Photo: Chickie's & Pete's"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://chickiesandpetes.com/menu",
+      "quote": "Happy Hour available Monday-Friday 4-6 pm and Sunday-Thursday 10pm-12am at bar area only. Where permitted by law. Dine-in only. Prices and times may vary at Parx, Tropicana, Kansas City, and Robbins Ave. locations. Not valid at Allentown or Nevada locations."
+     }
+    }
+   ]
+  },
+  {
+   "id": "main-line-tavern-paoli",
+   "name": "Main Line Tavern",
+   "address": "516 KING ST, PAOLI PA 19301-1759",
+   "zone_id": "malvern_great_valley",
+   "website": "https://www.mainlinetavern.com/",
+   "plcb_name": "MLT OPCO LLC",
+   "lat": 40.0410007,
+   "lng": -75.4977461,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/main-line-tavern-paoli.jpg",
+    "attribution": "Photo: Main Line Tavern"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.mainlinetavern.com/menus",
+      "quote": "Happy Hour / 7 days a week 4-6 pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "desmond-hotel-malvern-a-doubletree-by-hilton-malvern",
+   "name": "Desmond Hotel Malvern, a DoubleTree by Hilton",
+   "address": "1 LIBERTY BLVD, MALVERN PA 19355-1419",
+   "zone_id": "malvern_great_valley",
+   "website": "https://www.desmondgv.com/",
+   "plcb_name": "THE DESMOND",
+   "lat": 40.0557551,
+   "lng": -75.5267083,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/desmond-hotel-malvern-a-doubletree-by-hilton-malvern.jpg",
+    "attribution": "Photo: Desmond Hotel Malvern, a DoubleTree by Hilton"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "14:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "14:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "14:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "14:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "14:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "14:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.desmondgv.com/calendar/",
+      "quote": "2:00 pm - 6:00 pm: Happy Hour Sun - Fri at Fox & Hounds Pub"
+     }
+    }
+   ]
+  },
+  {
+   "id": "joey-chops-frazer",
+   "name": "Joey Chops",
+   "address": "LINCOLN COURT SHOPPING CENTER 245 LANCASTER AVE, FRAZER PA 19355-3607",
+   "zone_id": "malvern_great_valley",
+   "website": "https://www.joeychops.com/",
+   "plcb_name": "LINCOLN LIQUOR, LLC",
+   "lat": 40.0409866,
+   "lng": -75.5424423,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.joeychops.com/",
+      "quote": "HAPPY HOUR / Join us every day from 4 - 6 pm for delicious food and drink specials!"
+     }
+    }
+   ]
+  },
+  {
+   "id": "avola-kitchen-bar-malvern",
+   "name": "Avola Kitchen + Bar",
+   "address": "625 MOREHALL RD STE 500, MALVERN PA 19355",
+   "zone_id": "malvern_great_valley",
+   "website": "https://avolakitchenandbar.com",
+   "plcb_name": "AVOLA RESTAURANT & BAR",
+   "lat": 40.0678937,
+   "lng": -75.5360881,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/avola-kitchen-bar-malvern.jpg",
+    "attribution": "Photo: Avola Kitchen + Bar"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://avolakitchenandbar.com/malvern-chester-county-east-whiteland-township-avola-kitchen-and-bar-menus",
+      "quote": "Happy Hour / Monday - Friday from 4:00pm to 6:00pm"
+     }
+    }
+   ]
+  }
+ ]
+}

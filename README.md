@@ -22,7 +22,11 @@ data/zones.json          38 named drinking districts — the zone map, hand-main
 data/venues.csv          the denominator: 2,911 licensees, 2,908 in a zone (gitignored,
                          regenerate it — zones.json is the source of truth)
    ↓
-data/deals_seed.json     the curated corpus — 8 venues today
+data/deals_seed.json     the hand-verified corpus — 8 venues, read off the page by a person
+   ↓ ingest/discover_sites.py     join the licensees to OSM on address → 691 websites
+   ↓ ingest/crawl_sites.py        robots-honouring crawl → data/crawl_hits.json (quotes, not deals)
+   ↓ ingest/extract_deals.py      quotes → data/deals_extracted.json, 93 venues
+   ↓ ingest/fetch_og_images.py    each venue's own og:image → web/img/venues/
    ↓ ingest/geocode_venues.py     OSM/Nominatim, no key, ODbL (results are storable)
    ↓ ingest/validate_pa.py        PA Acts 57 & 86 of 2024 — a failing deal never ships
    ↓ ingest/build_bundles.py
@@ -106,14 +110,32 @@ column, one-shot geolocation on an explicit tap only.
 
 ## Status
 
-The app surface is done, and the zone map now covers the disc: 2,908 of 2,911
-licensees sit in one of 38 named zones (it was 1,122 in 12). That is the *target
-list* — it says where a bar is, not what its happy hour is.
+**The corpus is 101 venues across 26 zones**, up from 8 in one.
 
-**The corpus is still the constraint — it knows about 8 bars.**
-Phase 0 measured the real scrape yield at 19%, not 40%: ~80% of bars never publish
-a happy hour anywhere, which is why the photo lane (photograph a table tent →
-vision extract → validate → publish) is the only path to covering half the area.
+Scraping was never blocked on extraction — it was blocked on *discovery*. The
+PLCB export has no URLs, so nothing said where to crawl. Joining the 2,911
+licensees to OpenStreetMap on address (never on name: ~37% of PLCB rows carry a
+corporate shell, and two "Iron Hill Brewery" rows are two different bars) yields
+**691 crawlable websites** for no fee and no licensing risk — ODbL results may be
+stored and shipped, the same argument that made Nominatim the geocoder.
+
+Of those, 201 published something a crawler could quote and **93 stated a
+schedule specific enough to publish**. The gap is the point: a quote is only
+promoted to a deal when it carries both days and times, an unambiguous am/pm, no
+hedge, and it passes the PA validators — everything else is kept as evidence in
+`data/crawl_hits.json` rather than guessed at. Machine-extracted deals ship at
+`unconfirmed`, carry the sentence they came from in `source.quote`, and live in
+their own file; the seed is what a person read, and merging them would lose the
+only thing that distinguishes them.
+
+**Photos come from each venue's own og:image**, not Google Places — the Places
+key isn't in this repo and its photo bytes are under a caching restriction a
+public repo can't honour. Every image is decoded and re-encoded from pixels,
+which is what actually drops EXIF (non-negotiable 5).
+
+Still true: ~80% of bars never publish a happy hour anywhere, so the photo lane
+(photograph a table tent → vision extract → validate → publish) remains the only
+path to covering half the area.
 
 Background: [`SPEC.md`](SPEC.md) · [`HANDOFF-START-HERE.md`](HANDOFF-START-HERE.md)
 · [`PHASE-0-FINDINGS.md`](PHASE-0-FINDINGS.md) · the dated `HANDOFF-*.md` files are

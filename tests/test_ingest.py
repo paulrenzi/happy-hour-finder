@@ -20,6 +20,8 @@ sys.path.insert(0, os.path.join(REPO, "ingest"))
 from build_bundles import decay  # noqa: E402
 from crawl_sites import candidate_links, quotes, visible_text  # noqa: E402
 from discover_sites import plcb_key, site_of, street_core  # noqa: E402
+from extract_deals import days_in, items_in, window_in, windows_from  # noqa: E402
+from fetch_og_images import inline_images, og_image  # noqa: E402
 from fetch_venue_photos import IMG_DIR, photo_dest  # noqa: E402
 from geocode_venues import split_address, strip_range, strategies  # noqa: E402
 from validate_pa import validate_deal, validate_food_combo_count  # noqa: E402
@@ -154,23 +156,39 @@ class SeedCorpus(unittest.TestCase):
             cls.seed = json.load(fh)
         with open(os.path.join(REPO, "data", "venue_coords.json"), encoding="utf-8") as fh:
             cls.coords = json.load(fh)
+        # The coordinate cache covers everything that ships, and since the
+        # crawler started feeding the corpus that is the seed plus the
+        # machine-extracted venues -- both are published, so both are audited.
+        cls.corpus = list(cls.seed["venues"])
+        extracted = os.path.join(REPO, "data", "deals_extracted.json")
+        if os.path.exists(extracted):
+            with open(extracted, encoding="utf-8") as fh:
+                cls.corpus += json.load(fh)["venues"]
 
     def test_every_seeded_deal_passes_the_validators(self):
         for venue in self.seed["venues"]:
             for d in venue["deals"]:
                 self.assertEqual(validate_deal(d), [], f"{venue['name']} publishes an invalid deal")
 
-    def test_every_venue_has_a_coordinate_inside_the_seed_market(self):
+    def test_every_seeded_venue_has_a_coordinate(self):
+        # Only the seed is required to be complete. A machine-extracted venue
+        # whose OSM element carried no centre still publishes -- it just cannot
+        # be ranked by distance, which the build prints a count of.
         for venue in self.seed["venues"]:
-            self.assertIn(venue["id"], self.coords, f"{venue['name']} was never geocoded")
-            at = self.coords[venue["id"]]
-            self.assertTrue(39.6 < at["lat"] < 40.6 and -76.0 < at["lng"] < -74.8,
-                            f"{venue['name']} resolved outside the 20-mile disc")
+            self.assertTrue(venue["id"] in self.coords, f"{venue['name']} was never geocoded")
+
+    def test_no_venue_resolved_outside_the_disc(self):
+        for venue in self.corpus:
+            at = self.coords.get(venue["id"])
+            if at:
+                self.assertTrue(39.6 < at["lat"] < 40.6 and -76.0 < at["lng"] < -74.8,
+                                f"{venue['name']} resolved outside the 20-mile disc")
 
     def test_geocode_records_keep_the_address_they_were_asked_for(self):
         # The audit trail that makes a wrong match findable later.
-        by_id = {v["id"]: v for v in self.seed["venues"]}
+        by_id = {v["id"]: v for v in self.corpus}
         for vid, at in self.coords.items():
+            self.assertTrue(vid in by_id, f"{vid}: a coordinate no corpus venue claims")
             self.assertEqual(at["queried"], by_id[vid]["address"],
                              f"{vid}: cached coordinate is for a different address than the seed now lists")
 
@@ -306,6 +324,88 @@ class PhotoPaths(unittest.TestCase):
         dest, rel = photo_dest("coyote-crossing")
         self.assertEqual(rel, "img/venues/coyote-crossing.jpg")
         self.assertEqual(os.path.join(REPO, "web", rel.replace("/", os.sep)), dest)
+
+
+class DealExtraction(unittest.TestCase):
+    """What a regex may and may not conclude from a sentence on a bar's website.
+
+    Rule 2 is that we never render a claim the source didn't make, and every
+    test here is a way a parser invents one.
+    """
+
+    def test_a_day_range_expands_to_every_day_in_it(self):
+        self.assertEqual(days_in("Monday - Friday"), {1, 2, 3, 4, 5})
+
+    def test_a_day_range_may_wrap_through_the_weekend(self):
+        # 'Sunday - Friday' is a real six-day happy hour, not a reversed typo.
+        self.assertEqual(days_in("Sunday - Friday: 4pm - 6pm"), {7, 1, 2, 3, 4, 5})
+
+    def test_the_start_inherits_the_ends_meridiem(self):
+        # '4 - 6 pm' is how it is written on every chalkboard in the state.
+        self.assertEqual(window_in("Happy Hour 4 - 6 pm"), ("16:00", "18:00"))
+
+    def test_an_inherited_meridiem_that_inverts_the_window_crosses_noon(self):
+        self.assertEqual(window_in("11 - 2 pm"), ("11:00", "14:00"))
+
+    def test_a_window_with_no_meridiem_at_all_is_refused(self):
+        # 'Monday - Thursday 4:30 - 6:00' reads as 4:30pm to a person and
+        # 4:30am to a parser. Guessing it right most of the time is still
+        # publishing a time the venue never wrote.
+        self.assertEqual(windows_from("Happy Hour Monday - Thursday 4:30 - 6:00"), [])
+
+    def test_midnight_is_the_end_of_the_day_not_the_start(self):
+        self.assertEqual(window_in("Late Night 11pm-12am"), ("23:00", "24:00"))
+
+    def test_days_carry_forward_across_the_crawlers_line_joins(self):
+        # The crawler joins lines with ' / ', and a happy-hour block routinely
+        # puts the heading, the days and the times on three separate lines.
+        got = windows_from("HAPPY HOUR / Sunday - Friday: / 4:30pm - 6:30pm")
+        self.assertEqual(len(got), 6)
+        self.assertEqual(got[0], {"dow": 1, "start": "16:30", "end": "18:30"})
+
+    def test_days_stated_after_the_time_are_still_paired(self):
+        # An event listing writes them last; reading only forwards loses it.
+        got = windows_from("Happy Hour / 04:30 PM - 06:30 PM / Friday August 7th")
+        self.assertEqual(got, [{"dow": 5, "start": "16:30", "end": "18:30"}])
+
+    def test_a_hedged_chain_page_publishes_nothing_about_this_address(self):
+        self.assertEqual(
+            windows_from("Happy Hour times vary by location, Monday-Friday 3-6pm"), [])
+
+    def test_a_customer_review_is_not_the_venue_speaking(self):
+        self.assertEqual(
+            windows_from("I have found my new happy hour spot, Mon-Fri 4-6pm"), [])
+
+    def test_a_price_is_only_kept_when_its_noun_is_recognised(self):
+        got = items_in("Sip $8 wines, enjoy $7 bites, $12 parking validation")
+        self.assertEqual([(i["category"], i["price_usd"]) for i in got],
+                         [("wine", 8.0), ("food", 7.0)])
+
+    def test_an_extracted_deal_still_has_to_pass_the_pa_validators(self):
+        # 10am-2:30pm is 4.5h, over the statutory daily cap -- the extractor
+        # runs the same validator the build does, while the quote is still
+        # attached to say why.
+        d = deal(windows=windows_from("Happy Hour Saturday & Sunday: 10am - 2:30pm"))
+        self.assertTrue(any("4h/day" in e for e in validate_deal(d)))
+
+
+class PhotoSourcing(unittest.TestCase):
+    """Which image on a venue's page may stand in as a photo of the venue."""
+
+    def test_the_share_image_is_absolutised_against_the_page(self):
+        html = '<meta property="og:image" content="/img/bar.jpg">'
+        self.assertEqual(og_image(html, "https://bar.example/menu"),
+                         "https://bar.example/img/bar.jpg")
+
+    def test_a_vector_logo_is_not_a_photograph(self):
+        self.assertIsNone(og_image('<meta name="twitter:image" content="/logo.svg">',
+                                   "https://bar.example/"))
+
+    def test_chrome_is_skipped_when_scanning_a_page_for_a_photo(self):
+        html = ('<img src="/logo.png"><img src="/spacer.gif">'
+                '<img src="/tacos.jpg"><img src="https://x.test/facebook-icon.png">')
+        self.assertEqual(inline_images(html, "https://bar.example/"),
+                         ["https://bar.example/tacos.jpg"])
 
 
 if __name__ == "__main__":

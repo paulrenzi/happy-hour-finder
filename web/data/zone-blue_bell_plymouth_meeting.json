@@ -1,7 +1,7 @@
 {
  "zone_id": "blue_bell_plymouth_meeting",
  "name": "Blue Bell / Plymouth Meeting",
- "built_at": "2026-08-01",
+ "built_at": "2026-08-06",
  "venues": [
   {
    "id": "black-horse-plymouth-meeting",
@@ -66,6 +66,188 @@
      "source": {
       "kind": "venue_site",
       "url": "https://blackhorsetaverns.com"
+     }
+    }
+   ]
+  },
+  {
+   "id": "panache-blue-bell",
+   "name": "Panache",
+   "address": "602 SKIPPACK PIKE, BLUE BELL PA 19422-1710",
+   "zone_id": "blue_bell_plymouth_meeting",
+   "website": "https://panachewoodfiregrill.com/",
+   "plcb_name": "PANACHE",
+   "lat": 40.1523832,
+   "lng": -75.2667273,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/panache-blue-bell.jpg",
+    "attribution": "Photo: Panache"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "20:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "wine",
+       "label": "wines",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "label": "bites",
+       "price_usd": 7.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://panachewoodfiregrill.com/happy-hour-blue-bell/",
+      "quote": "Happy Hour in Blue Bell Just Got Better &#8211; Join Us at Panache! / Monday &#8211; Friday 4pm to 6pm / Sip $8 wines, enjoy $7 bites, and relax on our lively patio or at the bar. Whether you&#8217;re here for after-work drinks or early evening bites, Panache is the place to be in Blue Bell."
+     }
+    }
+   ]
+  },
+  {
+   "id": "p-j-whelihan-s-conshohocken",
+   "name": "P.J. Whelihan's",
+   "address": "200 W RIDGE PIKE STE 117, CONSHOHOCKEN  PA 19428",
+   "zone_id": "blue_bell_plymouth_meeting",
+   "website": "https://locations.pjspub.com/pa/conshohocken/200-ridge-pike",
+   "plcb_name": "P.J. WHELIHAN'S",
+   "lat": 40.0959369,
+   "lng": -75.2874141,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://locations.pjspub.com/pa/conshohocken/200-ridge-pike",
+      "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "cantina-feliz-fort-washington",
+   "name": "Cantina Feliz",
+   "address": "424 S BETHLEHEM PIKE, FORT WASHINGTON PA 19034-2304",
+   "zone_id": "blue_bell_plymouth_meeting",
+   "website": "https://www.cantinafeliz.com/",
+   "plcb_name": "FINELINE FORT WASHINGTON LLC",
+   "lat": 40.1363009,
+   "lng": -75.2136073,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/cantina-feliz-fort-washington.jpg",
+    "attribution": "Photo: Cantina Feliz"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:30",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.cantinafeliz.com/",
+      "quote": "HAPPY HOUR / Monday - Friday, 3:30pm - 6pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "p-j-whelihan-s-pub-and-restaurant-blue-bell",
+   "name": "P.J. Whelihan's Pub and Restaurant",
+   "address": "799 DEKALB PK, BLUE BELL PA 19422-1213",
+   "zone_id": "blue_bell_plymouth_meeting",
+   "website": "https://locations.pjspub.com/pa/blue-bell/799-dekalb-pike",
+   "plcb_name": "PJ ENTERPRISES GROUP LLC",
+   "lat": 40.1695394,
+   "lng": -75.2881262,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://locations.pjspub.com/pa/blue-bell/799-dekalb-pike",
+      "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
      }
     }
    ]

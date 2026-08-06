@@ -1,0 +1,59 @@
+{
+ "zone_id": "phoenixville",
+ "name": "Phoenixville",
+ "built_at": "2026-08-06",
+ "venues": [
+  {
+   "id": "revival-pizza-pub-chester-springs",
+   "name": "Revival Pizza Pub",
+   "address": "240 WINDGATE DR, CHESTER SPRINGS PA 19425",
+   "zone_id": "phoenixville",
+   "website": "https://revivalpizzapub.com/",
+   "plcb_name": "REVIVAL",
+   "lat": 40.1160536,
+   "lng": -75.6919705,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://revivalpizzapub.com/",
+      "quote": "RAISE A SLICE TO HAPPY HOUR / Join us Monday through Friday from 4 - 6 pm for food and drink specials! Enjoy our exclusive deals and delicious offerings."
+     }
+    }
+   ]
+  }
+ ]
+}
