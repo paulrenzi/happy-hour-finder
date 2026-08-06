@@ -60,6 +60,13 @@ python ingest/validate_pa.py
 python ingest/build_bundles.py            # web/data must not drift from the seed
 ```
 
+⚠️ **Pushing does not currently deploy.** Since 2026-08-01 a push to `master`
+stops creating a workflow run — the commit lands on GitHub and nothing fires, so
+the live site silently stays on the last build (the 08-06 redesign sat
+unpublished this way). Actions itself is fine: `gh workflow run pages.yml --ref
+master` runs the gate and deploys normally. **Check the live site after a push,
+and dispatch by hand until the trigger is fixed.**
+
 The test suite is **pure logic and touches no DOM** — it cannot catch a markup or
 layout regression. Screenshot the render at a real 390px viewport instead
 (headless Chrome clamps window size, so a device-emulation viewport is required,
