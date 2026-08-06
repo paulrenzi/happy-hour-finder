@@ -149,6 +149,11 @@ fetched as an embedded asset of a page we were allowed to read — the call a li
 preview makes — because that CDN's robots.txt is about crawling the CDN and must
 not be able to hide a bar from its own listing.
 
+**94 of 100 venues carry a photo.** The last six are six different causes and
+none of them is a bug: two Chili's pages offer only 210x140 thumbnails, two
+venues publish no fetchable image at all, one site would not connect, and
+Barnaby's of West Chester disallows us in robots.txt — so it stays photoless.
+
 Still true: ~80% of bars never publish a happy hour anywhere, so the photo lane
 (photograph a table tent → vision extract → validate → publish) remains the only
 path to covering half the area.
