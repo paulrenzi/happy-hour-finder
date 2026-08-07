@@ -195,11 +195,6 @@
        "end": "18:00"
       },
       {
-       "dow": 3,
-       "start": "15:30",
-       "end": "18:00"
-      },
-      {
        "dow": 5,
        "start": "15:30",
        "end": "18:00"
@@ -314,6 +309,58 @@
       "kind": "venue_site",
       "url": "https://pubofpennvalley.com/menu/",
       "quote": "Happy Hours / 3:30 pm - 5:30 pm & 9:00 pm-11:00 pm / $6 Daily Appetizer Specials (available 3:30pm-5:30pm only)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "great-american-pub-narberth",
+   "name": "Great American Pub",
+   "address": "101 N NARBERTH AVE, NARBERTH PA 19072-1923",
+   "zone_id": "ardmore_bryn_mawr",
+   "website": "https://www.greatamericanpub.net/",
+   "plcb_name": "101 NARBERTH TAVERN, INC.",
+   "lat": 40.0060034,
+   "lng": -75.2600251,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.greatamericanpub.net/happy-hour",
+      "quote": "HAPPY HOUR: / MONDAY-FRIDAY / 4PM-6PM"
      }
     }
    ]

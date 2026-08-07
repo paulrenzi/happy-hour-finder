@@ -262,8 +262,8 @@
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://lascalasfire.com/villanova/",
-      "quote": "Happy Hour / Happy Hour, Mon-Fri, 3pm-6pm"
+      "url": "https://lascalasfire.com/villanova/menus/happy-hour",
+      "quote": "HAPPY HOUR / MON-FRI 3PM-6PM / HOUSE RED & WHITE $7"
      }
     }
    ]
@@ -2301,8 +2301,8 @@
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://blackpowdertavern.com/",
-      "quote": "Happy Hour / Monday \u2014 Friday / 4:00 p.m. to 6:00 p.m."
+      "url": "https://blackpowdertavern.com/happy-hour-at-black-powder-tavern/",
+      "quote": "Happy Hour at Black Powder Tavern / We invite you to come and join us to celebrate Happy Hour on Monday through Friday from 4:00 p.m. until 6:00 p.m."
      }
     }
    ]
@@ -2461,11 +2461,6 @@
      "windows": [
       {
        "dow": 2,
-       "start": "15:30",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
        "start": "15:30",
        "end": "18:00"
       },
@@ -3258,6 +3253,56 @@
    ]
   },
   {
+   "id": "great-american-pub-narberth",
+   "name": "Great American Pub",
+   "plcb_name": "101 NARBERTH TAVERN, INC.",
+   "address": "101 N NARBERTH AVE, NARBERTH PA 19072-1923",
+   "zone_id": "ardmore_bryn_mawr",
+   "license_type": "",
+   "website": "https://www.greatamericanpub.net/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.greatamericanpub.net/happy-hour",
+      "quote": "HAPPY HOUR: / MONDAY-FRIDAY / 4PM-6PM"
+     }
+    }
+   ]
+  },
+  {
    "id": "morton-s-of-chicago-king-of-prussia",
    "name": "MORTON'S OF CHICAGO",
    "plcb_name": "MORTON'S OF CHICAGO",
@@ -3929,7 +3974,7 @@
      "source": {
       "kind": "venue_site",
       "url": "https://www.pietrosprime.com",
-      "quote": "HAPPY HOUR / Join us every Monday through Friday from 5-7 PM in the bar area!"
+      "quote": "HAPPY HOUR / Join us every Monday through Friday from 5-7 PM in the bar area! / .sfxZxsX{--wbu-color-blue-0:#0F2CCF;--wbu-color-blue-100:#2F5DFF;--wbu-color-blue-200:#597DFF;--wbu-color-blue-300:#ACBEFF;--wbu-color-blue-400:#D5DFFF;--wbu-color-blue-500:#EAEFFF;--wbu-color-blue-600:#F5F7FF;--wbu-color-black-0:#151414;--wbu-color-black-100:#383838;--wbu-color-black-200:#525150;--wbu-color-black-300:"
      }
     }
    ]
@@ -5323,72 +5368,51 @@
    ]
   },
   {
-   "id": "pietro-s-pizzeria-radnor",
-   "name": "Pietro's Pizzeria",
-   "plcb_name": "PIETROS ITALIAN RESTAURANT INC",
-   "address": "236 N RADNOR CHESTER RD, RADNOR PA 19085-5106",
+   "id": "estia-taverna-inc-radnor",
+   "name": "ESTIA TAVERNA INC",
+   "plcb_name": "ESTIA TAVERNA INC",
+   "address": "222 N RADNOR CHESTER RD, RADNOR PA 19085",
    "zone_id": "wayne_radnor",
    "license_type": "",
-   "website": "https://pietrospizza.com/radnor.asp",
+   "website": "https://estiarestaurant.com/",
    "deals": [
     {
      "type": "happy_hour",
      "windows": [
       {
        "dow": 1,
-       "start": "15:00",
-       "end": "18:00"
+       "start": "15:30",
+       "end": "17:00"
       },
       {
        "dow": 2,
-       "start": "15:00",
-       "end": "18:00"
+       "start": "15:30",
+       "end": "17:00"
       },
       {
        "dow": 3,
-       "start": "15:00",
-       "end": "18:00"
+       "start": "15:30",
+       "end": "17:00"
       },
       {
        "dow": 4,
-       "start": "15:00",
-       "end": "18:00"
+       "start": "15:30",
+       "end": "17:00"
       },
       {
        "dow": 5,
-       "start": "15:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 6,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 7,
-       "start": "15:00",
-       "end": "18:00"
+       "start": "15:30",
+       "end": "17:00"
       }
      ],
-     "items": [
-      {
-       "category": "draft",
-       "label": "Draft Beers",
-       "price_usd": 5.0
-      },
-      {
-       "category": "wine",
-       "label": "Wines",
-       "price_usd": 6.0
-      }
-     ],
+     "items": [],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://pietrospizza.com/promotions.asp",
-      "quote": "South Street Happy Hour / Available every day from 4pm - 6pm at our bar and high tops"
+      "url": "http://estiarestaurant.com/radnor-pa/menus/happy-hour-radnor.pdf",
+      "quote": "HAPPY HOUR MENU / MONDAY - FRIDAY 3:30PM-5PM"
      }
     }
    ]
@@ -6245,6 +6269,11 @@
        "dow": 4,
        "start": "16:00",
        "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
       }
      ],
      "items": [
@@ -6265,7 +6294,7 @@
      "source": {
       "kind": "venue_site",
       "url": "https://www.thegoatsbeardphilly.com/manayunk-menu/",
-      "quote": "***Happy Hour*** / Mon - Thur | 4-6pm - Fri | 3-6pm / $5 Select Beers"
+      "quote": "Happy Hour Food / Mon - Thur | 4-6pm / Fri | 3-6pm"
      }
     }
    ]

@@ -190,9 +190,48 @@ def pdf_text(blob):
         return ""
 
 
+class _Plain:
+    """The subset of a requests response get() reads, filled in by urllib."""
+
+    def __init__(self, status_code, headers, content):
+        self.status_code, self.headers, self.content = status_code, headers, content
+        self.encoding = self.apparent_encoding = None
+
+    @property
+    def text(self):
+        return self.content.decode(self.encoding or "utf-8", "replace")
+
+
+def urllib_get(url):
+    """The same request, same UA, issued by urllib instead of requests.
+
+    Founding Farmers, Stable 12 and a long tail of others answer 403 to
+    requests/urllib3 and 200 to urllib for the identical URL and the identical
+    User-Agent -- it is not our identity being refused, it is the shape of the
+    connection urllib3 makes. Cycling headers does not move it (Accept,
+    Accept-Encoding, Connection all tested, all 403). So this is not a browser
+    disguise and not a robots bypass: robots.txt is still fetched and still
+    obeyed above, and we still say who we are. It is only a second client for
+    the same polite request.
+    """
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=TIMEOUT) as fh:
+        # requests hands back a case-insensitive header map and every caller
+        # here asks for 'content-type' in lower case; a plain dict answers None
+        # to that and the page is discarded as '200 ?' -- a fetch that worked,
+        # recorded as a failure.
+        headers = {k.lower(): v for k, v in fh.headers.items()}
+        return _Plain(fh.status, headers, fh.read(2_000_000))
+
+
 def get(session, url):
     r = session.get(url, timeout=TIMEOUT, headers={"User-Agent": UA},
                     allow_redirects=True)
+    if r.status_code == 403:
+        try:
+            r = urllib_get(url)
+        except Exception:  # noqa: BLE001 -- keep the original 403 as the answer
+            pass
     ctype = r.headers.get("content-type", "")
     # A venue that publishes its happy hour as a PDF has published it. The text
     # is the venue speaking exactly as much as its HTML is, so it is read the

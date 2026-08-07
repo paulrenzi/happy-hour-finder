@@ -435,6 +435,15 @@
   "queried": "224 S 15TH ST, PHILADELPHIA PA 19102-3806",
   "resolved": "Good Dog Bar"
  },
+ "great-american-pub-narberth": {
+  "lat": 40.0060034,
+  "lng": -75.2600251,
+  "matched_by": "osm_site",
+  "osm": "way/372593381",
+  "precision": "place",
+  "queried": "101 N NARBERTH AVE, NARBERTH PA 19072-1923",
+  "resolved": "Great American Pub"
+ },
  "guiseppes-restauant-ambler": {
   "lat": 40.157917,
   "lng": -75.2145017,
@@ -795,15 +804,6 @@
   "precision": "place",
   "queried": "2025 FAIRMOUNT AVE, PHILADELPHIA PA 19130-2612",
   "resolved": "Pier Bar"
- },
- "pietro-s-pizzeria-radnor": {
-  "lat": 40.041703,
-  "lng": -75.3636776,
-  "matched_by": "osm_site",
-  "osm": "node/11137175405",
-  "precision": "place",
-  "queried": "236 N RADNOR CHESTER RD, RADNOR PA 19085-5106",
-  "resolved": "Pietro's Pizzeria"
  },
  "pietro-s-prime-west-chester": {
   "lat": 39.9589239,

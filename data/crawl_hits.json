@@ -619,14 +619,6 @@
    {
     "quote": "Join us for Happy Hour from 4pm \u2013 6pm for $7.9 house wine by the glass and $9.9 select craft classics!",
     "url": "https://sedonataphouse.com/locations/west-chester-pa/"
-   },
-   {
-    "quote": "Happy Hour Menu",
-    "url": "https://sedonataphouse.com/locations/west-chester-pa/"
-   },
-   {
-    "quote": "Join us for Happy Hour from 4pm \u2013 6pm for $7.9 house wine by the glass and $9.9 select craft classics!",
-    "url": "https://sedonataphouse.com/locations/west-chester-pa/"
    }
   ],
   "name": "SEDONA TAPHOUSE",
@@ -638,15 +630,15 @@
    },
    {
     "result": "ok, 0 quote(s)",
-    "url": "https://sedonataphouse.com/contact?type=PrivateEvent&store=West Chester, PA"
-   },
-   {
-    "result": "ok, 2 quote(s)",
-    "url": "https://sedonataphouse.com/locations/west-chester-pa/"
+    "url": "https://sedonataphouse.com/nye-special-short-ribs-dinner/"
    },
    {
     "result": "ok, 0 quote(s)",
-    "url": "https://sedonataphouse.com/menu/"
+    "url": "https://sedonataphouse.com/nye-special-salmon-dinner-2/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://sedonataphouse.com/nye-special-short-ribs-dinner-2/"
    }
   ],
   "website": "https://sedonataphouse.com/locations/west-chester-pa/",
@@ -660,7 +652,7 @@
   "osm_name": "Hampton Inn & Suites",
   "pages": [
    {
-    "result": "error: ReadTimeout",
+    "result": "403 text/html",
     "url": "https://www.hilton.com/en/hotels/cfordhx-hampton-suites-chadds-ford"
    }
   ],
@@ -1038,6 +1030,22 @@
     "url": "https://lascalasfire.com/villanova/"
    },
    {
+    "quote": "HAPPY HOUR / MON-FRI 3PM-6PM / HOUSE RED & WHITE $7",
+    "url": "https://lascalasfire.com/villanova/menus/happy-hour"
+   },
+   {
+    "quote": "HAPPY HOUR / MON-FRI 3PM-6PM",
+    "url": "https://lascalasfire.com/villanova/menus/happy-hour"
+   },
+   {
+    "quote": "HAPPY HOUR / MON-FRI 3PM-6PM / HOUSE RED & WHITE $7",
+    "url": "https://lascalasfire.com/villanova/menus/happy-hour/"
+   },
+   {
+    "quote": "HAPPY HOUR / MON-FRI 3PM-6PM",
+    "url": "https://lascalasfire.com/villanova/menus/happy-hour/"
+   },
+   {
     "quote": "Happy Hour",
     "url": "https://lascalasfire.com/7th-chestnut"
    },
@@ -1058,11 +1066,11 @@
     "url": "https://lascalasfire.com/villanova/"
    },
    {
-    "result": "200 application/pdf",
+    "result": "ok, 2 quote(s)",
     "url": "https://lascalasfire.com/villanova/menus/happy-hour"
    },
    {
-    "result": "200 application/pdf",
+    "result": "ok, 2 quote(s)",
     "url": "https://lascalasfire.com/villanova/menus/happy-hour/"
    },
    {
@@ -1183,7 +1191,7 @@
     "url": "https://wrongcrowdbeer.com/"
    },
    {
-    "result": "ok, 0 quote(s)",
+    "result": "error: ConnectionError",
     "url": "https://wrongcrowdbeer.com/west-chester-wrong-crowd-beer-company-events"
    },
    {
@@ -1234,7 +1242,7 @@
   "osm_name": "Hampton Inn Philadelphia/Willow Grove",
   "pages": [
    {
-    "result": "error: ReadTimeout",
+    "result": "403 text/html",
     "url": "https://www.hilton.com/en/hotels/wgvpahx-hampton-philadelphia-willow-grove/"
    }
   ],
@@ -1313,7 +1321,7 @@
   "osm_name": "Residence Inn",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "robots.txt unreadable (403), treated as disallow",
     "url": "https://www.marriott.com/phlrb"
    }
   ],
@@ -1951,12 +1959,16 @@
     "url": "https://opataverna.com/"
    },
    {
-    "result": "ok, 0 quote(s)",
+    "result": "error: ConnectionError",
     "url": "https://opataverna.com/west-chester-opa-taverna-drink-menu"
    },
    {
     "result": "ok, 1 quote(s)",
     "url": "https://opataverna.com/west-chester-opa-taverna-food-menu"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://order.opataverna.com/ordering/home?source=pop_up&spot_id=81404&destination=order&promotion=order_online"
    }
   ],
   "website": "https://opataverna.com/",
@@ -3176,7 +3188,7 @@
   "osm_name": "Embassy Suites by Hilton Philadelphia Valley Forge",
   "pages": [
    {
-    "result": "error: ReadTimeout",
+    "result": "403 text/html",
     "url": "https://www.hilton.com/en/hotels/phlvles-embassy-suites-philadelphia-valley-forge/"
    }
   ],
@@ -3242,15 +3254,15 @@
    },
    {
     "result": "ok, 0 quote(s)",
+    "url": "https://www.santinostapandtable.com/weekend-specials"
+   },
+   {
+    "result": "ok, 0 quote(s)",
     "url": "https://www.santinostapandtable.com/banquet-menu"
    },
    {
     "result": "ok, 0 quote(s)",
     "url": "https://www.santinostapandtable.com/brunch-menu"
-   },
-   {
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.santinostapandtable.com/catering"
    }
   ],
   "website": "https://www.santinostapandtable.com",
@@ -4275,6 +4287,14 @@
     "url": "https://www.amadarestaurant.com/specials/"
    },
    {
+    "quote": "HAPPY HOUR / White Wine, Apricot, Cinnamon-Honey, Lemon,",
+    "url": "https://www.amadarestaurant.com/uploads/114704AMAHappyHourMenu0726-nocrop.pdf"
+   },
+   {
+    "quote": "HAPPY HOUR",
+    "url": "https://www.amadarestaurant.com/uploads/114704AMAHappyHourMenu0726-nocrop.pdf"
+   },
+   {
     "quote": "HAPPY HOUR / Sunday - Friday: / 4:30pm - 6:30pm",
     "url": "https://www.amadarestaurant.com/amada-radnor/"
    },
@@ -4299,12 +4319,12 @@
     "url": "https://www.amadarestaurant.com/specials/"
    },
    {
-    "result": "ok, 3 quote(s)",
-    "url": "https://www.amadarestaurant.com/amada-radnor/"
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.amadarestaurant.com/uploads/114704AMAHappyHourMenu0726-nocrop.pdf"
    },
    {
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.amadarestaurant.com/menus/"
+    "result": "ok, 3 quote(s)",
+    "url": "https://www.amadarestaurant.com/amada-radnor/"
    }
   ],
   "website": "https://www.amadarestaurant.com/amada-radnor/",
@@ -5220,14 +5240,6 @@
    {
     "quote": "Pre-book your Fantasy Football Draft Party and score half-price wings and starters , a dedicated draft area, free WiFi, drink specials & MORE!",
     "url": "https://www.pjspub.com/specials"
-   },
-   {
-    "quote": "Pre-book your Fantasy Football Draft Party and score half-price wings and starters , a dedicated draft area, free WiFi, drink specials & MORE!",
-    "url": "https://www.pjspub.com/drinks-menu"
-   },
-   {
-    "quote": "Pre-book your Fantasy Football Draft Party and score half-price wings and starters , a dedicated draft area, free WiFi, drink specials & MORE!",
-    "url": "https://www.pjspub.com/food-menu"
    }
   ],
   "name": "PJ WHELIHAN'S",
@@ -5242,12 +5254,12 @@
     "url": "https://www.pjspub.com/specials"
    },
    {
-    "result": "ok, 1 quote(s)",
-    "url": "https://www.pjspub.com/drinks-menu"
+    "result": "robots.txt disallows",
+    "url": "https://order.pjspub.com/menu/pj-whelihans-restaurant-wynnewood"
    },
    {
-    "result": "ok, 1 quote(s)",
-    "url": "https://www.pjspub.com/food-menu"
+    "result": "404 text/html",
+    "url": "https://pjspub.com/media/Documents/menu_PJ_GlutenFree_2024.pdf"
    }
   ],
   "website": "https://www.pjspub.com/about.php?loc=Wynnewood",
@@ -5303,8 +5315,20 @@
   "osm_name": "Ember & Ale",
   "pages": [
    {
-    "result": "403 text/html",
+    "result": "ok, 0 quote(s)",
     "url": "https://emberandale.com/"
+   },
+   {
+    "result": "403 text/html",
+    "url": "https://emberandale.com/menu"
+   },
+   {
+    "result": "403 text/html",
+    "url": "https://emberandale.com/menu/catering"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://emberandale.com/page/private-events"
    }
   ],
   "website": "https://emberandale.com/",
@@ -5593,7 +5617,7 @@
   "osm_name": "Hilton Garden Inn Philadelphia/Fort Washington",
   "pages": [
    {
-    "result": "error: ReadTimeout",
+    "result": "403 text/html",
     "url": "https://www.hilton.com/en/hotels/phlfwgi-hilton-garden-inn-philadelphia-ft-washington/"
    }
   ],
@@ -5980,6 +6004,18 @@
    {
     "quote": "Happy Hour Mon to Fri 4-6pm",
     "url": "https://www.maison-lotus.com/"
+   },
+   {
+    "quote": "$7 wines",
+    "url": "https://www.maison-lotus.com/s/Jan-2026-Maison-Lotus-Cafe-Bakery-HH-4.pdf"
+   },
+   {
+    "quote": "$5 BEERS",
+    "url": "https://www.maison-lotus.com/s/Jan-2026-Maison-Lotus-Cafe-Bakery-HH-4.pdf"
+   },
+   {
+    "quote": "h o u s e s p i r i t s $8 COCKTAILS",
+    "url": "https://www.maison-lotus.com/s/Jan-2026-Maison-Lotus-Cafe-Bakery-HH-4.pdf"
    }
   ],
   "name": "MAISON LOTUS",
@@ -5988,6 +6024,18 @@
    {
     "result": "ok, 2 quote(s)",
     "url": "https://www.maison-lotus.com/"
+   },
+   {
+    "result": "ok, 3 quote(s)",
+    "url": "https://www.maison-lotus.com/s/Jan-2026-Maison-Lotus-Cafe-Bakery-HH-4.pdf"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.maison-lotus.com/s/Beverage-Menu-126.pdf"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.maison-lotus.com/s/Jan-2026-ML-Dessert-Menu-5.pdf"
    }
   ],
   "website": "https://www.maison-lotus.com/",
@@ -6164,7 +6212,7 @@
   "osm_name": "Hyatt House Philadelphia/Plymouth Meeting",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "robots.txt unreadable (403), treated as disallow",
     "url": "https://plymouthmeeting.house.hyatt.com/en/hotel/home.html"
    }
   ],
@@ -6579,7 +6627,7 @@
   "osm_name": "Hilton Garden Inn Philadelphia Center City",
   "pages": [
    {
-    "result": "error: ReadTimeout",
+    "result": "403 text/html",
     "url": "https://www.hilton.com/en/hotels/phlgigi-hilton-garden-inn-philadelphia-center-city/"
    }
   ],
@@ -7167,6 +7215,10 @@
    {
     "result": "ok, 0 quote(s)",
     "url": "http://www.caseyspourhouse.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.caseyspourhouse.com/s/CASEYS-BERWYN-02-07-2685x14.pdf"
    }
   ],
   "website": "http://www.caseyspourhouse.com/",
@@ -8239,8 +8291,20 @@
   "osm_name": "Seiko",
   "pages": [
    {
-    "result": "403 text/html",
+    "result": "ok, 0 quote(s)",
     "url": "https://seikopa.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://seikopa.com/events"
+   },
+   {
+    "result": "403 text/html",
+    "url": "https://seikopa.com/menu"
+   },
+   {
+    "result": "403 text/html",
+    "url": "https://seikopa.com/menu/catering"
    }
   ],
   "website": "https://seikopa.com/",
@@ -8319,6 +8383,26 @@
     "url": "https://blackpowdertavern.com/"
    },
    {
+    "quote": "Happy Hour at Black Powder Tavern \u2013 Black Powder Tavern",
+    "url": "https://blackpowdertavern.com/happy-hour-at-black-powder-tavern/"
+   },
+   {
+    "quote": "Happy Hour at Black Powder Tavern / We invite you to come and join us to celebrate Happy Hour on Monday through Friday from 4:00 p.m. until 6:00 p.m.",
+    "url": "https://blackpowdertavern.com/happy-hour-at-black-powder-tavern/"
+   },
+   {
+    "quote": "We invite you to come and join us to celebrate Happy Hour on Monday through Friday from 4:00 p.m. until 6:00 p.m.",
+    "url": "https://blackpowdertavern.com/happy-hour-at-black-powder-tavern/"
+   },
+   {
+    "quote": "View our Happy Hour menu",
+    "url": "https://blackpowdertavern.com/happy-hour-at-black-powder-tavern/"
+   },
+   {
+    "quote": "Happy Hour / Monday \u2014 Friday / 4:00 p.m. to 6:00 p.m.",
+    "url": "https://blackpowdertavern.com/happy-hour-at-black-powder-tavern/"
+   },
+   {
     "quote": "Happy Hour at Black Powder Tavern / We invite you to come and join us to celebrate Happy Hour on Tuesday through Friday from 4:00 p.m. until 6:00 p.m. You can enjoy the Black Powder Tavern experience with our special offers on drinks and Bar Bites.",
     "url": "https://blackpowdertavern.com/blog/"
    },
@@ -8329,14 +8413,6 @@
    {
     "quote": "Happy Hour / Monday \u2014 Friday / 4:00 p.m. to 6:00 p.m.",
     "url": "https://blackpowdertavern.com/blog/"
-   },
-   {
-    "quote": "Happy Hour",
-    "url": "https://blackpowdertavern.com/menu/"
-   },
-   {
-    "quote": "Happy Hour / Monday \u2014 Friday / 4:00 p.m. to 6:00 p.m.",
-    "url": "https://blackpowdertavern.com/menu/"
    }
   ],
   "name": "BLACK POWDER TAVERN",
@@ -8347,16 +8423,16 @@
     "url": "https://blackpowdertavern.com/"
    },
    {
+    "result": "ok, 5 quote(s)",
+    "url": "https://blackpowdertavern.com/happy-hour-at-black-powder-tavern/"
+   },
+   {
     "result": "ok, 3 quote(s)",
     "url": "https://blackpowdertavern.com/blog/"
    },
    {
     "result": "404 text/html",
     "url": "https://blackpowdertavern.com/menu.php"
-   },
-   {
-    "result": "ok, 2 quote(s)",
-    "url": "https://blackpowdertavern.com/menu/"
    }
   ],
   "website": "https://blackpowdertavern.com/",
@@ -8686,7 +8762,7 @@
     "url": "https://gulliftys.com/bryn-mawr-rosemont-gullifty-s-specials-custom"
    },
    {
-    "quote": "Happy Hour food and drink specials! See Happy Hour Menu under the menus tab. / 03:30 PM - 06:00 PM / Join us the last Friday of every month for our Album Club! Mix and mingle with fellow music lovers while sampling featured albums and voting on one to hear in full. Enjoy extended happy hour food and drink specials throughout the event.",
+    "quote": "Happy Hour food and drink specials! See Happy Hour Menu under the menus tab. / 03:30 PM - 06:00 PM / 06:00 PM - 08:00 PM",
     "url": "https://gulliftys.com/bryn-mawr-rosemont-gullifty-s-specials-custom"
    },
    {
@@ -8706,11 +8782,11 @@
     "url": "https://gulliftys.com/bryn-mawr-rosemont-gullifty-s-specials-custom"
    },
    {
-    "quote": "Happy Hour food and drink specials! See Happy Hour Menu under the menus tab. / 03:30 PM - 06:00 PM / Balloon Night Every Tuesday! Let our amazing balloon artist, Jim Burkardt, entertain your kids while you enjoy dinner!",
+    "quote": "Happy Hour food and drink specials! See Happy Hour Menu under the menus tab. / 03:30 PM - 06:00 PM / 05:30 PM - 07:30 PM",
     "url": "https://gulliftys.com/bryn-mawr-rosemont-gullifty-s-specials-custom"
    },
    {
-    "quote": "Happy Hour food and drink specials! See Happy Hour Menu under the menus tab. / 03:30 PM - 06:00 PM / Music Bingo with Johnny Cheesesteaks the first and third Wednesday of every month!",
+    "quote": "Happy Hour food and drink specials! See Happy Hour Menu under the menus tab. / 03:30 PM - 06:00 PM / 07:30 PM - 09:30 PM",
     "url": "https://gulliftys.com/bryn-mawr-rosemont-gullifty-s-specials-custom"
    },
    {
@@ -10865,7 +10941,7 @@
     "url": "https://restaurants.applebees.com/en-us/pa/east-norriton/2710-dekalb-pike-94094/specials"
    },
    {
-    "result": "robots.txt disallows",
+    "result": "robots.txt unreadable (403), treated as disallow",
     "url": "https://www.applebees.com/en/menu"
    }
   ],
@@ -11047,7 +11123,7 @@
   "osm_name": "Facenda Whitaker Lanes",
   "pages": [
    {
-    "result": "444 ?",
+    "result": "error: ConnectTimeout",
     "url": "http://www.facendawhitaker.com/"
    }
   ],
@@ -11415,13 +11491,30 @@
  "48382": {
   "address": "101 N NARBERTH AVE, NARBERTH PA 19072-1923",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "HAPPY HOUR | restaurant",
+    "url": "https://www.greatamericanpub.net/happy-hour"
+   },
+   {
+    "quote": "HAPPY HOUR: / MONDAY-FRIDAY / 4PM-6PM",
+    "url": "https://www.greatamericanpub.net/happy-hour"
+   },
+   {
+    "quote": "HAPPY HOUR / MONDAY-FRIDAY 4.30PM-6 PM / Meatball or Roast Beef Sliders $6",
+    "url": "https://www.greatamericanpub.net/happy-hour"
+   }
+  ],
   "name": "101 NARBERTH TAVERN, INC.",
   "osm_name": "Great American Pub",
   "pages": [
    {
     "result": "ok, 0 quote(s)",
     "url": "https://www.greatamericanpub.net/"
+   },
+   {
+    "result": "ok, 3 quote(s)",
+    "url": "https://www.greatamericanpub.net/happy-hour"
    },
    {
     "result": "ok, 0 quote(s)",
@@ -12631,6 +12724,18 @@
    {
     "result": "ok, 0 quote(s)",
     "url": "https://www.minellasdiner.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.minellasdiner.com/shop/breakfast-specials/32"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.minellasdiner.com/shop/minellas-sauteed-specialties/38"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.minellasdiner.com/shop/greek-specialties/42"
    }
   ],
   "website": "https://www.minellasdiner.com/",
@@ -12734,7 +12839,7 @@
   "osm_name": "Hilton Philadelphia at Penn's Landing",
   "pages": [
    {
-    "result": "error: ReadTimeout",
+    "result": "403 text/html",
     "url": "https://www.hilton.com/en/hotels/phlpnhh-hilton-philadelphia-at-penns-landing/"
    }
   ],
@@ -12767,7 +12872,12 @@
  "54865": {
   "address": "TOWN AND COUNTRY SHOPPING CTR 1107 W CHESTER PK, WEST CHESTER PA 19382-5004",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "The Usual: Soho-based restaurant from famed chef Alvin Cailan has launched Burger Happy Hour just in time for National Hamburger Day. After 10:00 p.m, guests can get burgers as well as 50 percent off bottles of wine to pair with them.",
+    "url": "https://waybackburgers.com/news/national-burger-day-2019-deals-and-specials-on-hamburgers-where-to-get-best-vegan-and-vegetarian-burgers/"
+   }
+  ],
   "name": "APPLEBEE'S NEIGHBORHOOD GRILL & BAR",
   "osm_name": "Jake\u2019s Wayback Burgers",
   "pages": [
@@ -12777,7 +12887,15 @@
    },
    {
     "result": "ok, 0 quote(s)",
-    "url": "https://waybackburgers.com/menu/"
+    "url": "https://waybackburgers.com/news/wayback-burgers-offers-month-long-specials-for-national-hamburger-month/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://waybackburgers.com/news/wayback-burgers-offering-special-deal-for-leap-year/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://waybackburgers.com/news/national-burger-day-2019-deals-and-specials-on-hamburgers-where-to-get-best-vegan-and-vegetarian-burgers/"
    }
   ],
   "website": "https://waybackburgers.com/locations/us/pennsylvania/west-chester-2",
@@ -12959,7 +13077,7 @@
   "osm_name": "Hilton Inn at Penn",
   "pages": [
    {
-    "result": "error: ReadTimeout",
+    "result": "403 text/html",
     "url": "https://www.hilton.com/en/hotels/phlidhh-the-inn-at-penn/"
    }
   ],
@@ -13142,6 +13260,14 @@
    {
     "result": "ok, 0 quote(s)",
     "url": "https://www.teresas-cafe.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.teresas-cafe.com/s/Food-Menu-6526-FOR-WEBSITE.pdf"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.teresas-cafe.com/s/Whiskey-Menu-052926-UPDATE-FOR-WEBSITE.pdf"
    }
   ],
   "website": "https://www.teresas-cafe.com/",
@@ -13533,7 +13659,7 @@
     "url": "https://www.pietrosprime.com"
    },
    {
-    "quote": "HAPPY HOUR / Join us every Monday through Friday from 5-7 PM in the bar area!",
+    "quote": "HAPPY HOUR / Join us every Monday through Friday from 5-7 PM in the bar area! / .sfxZxsX{--wbu-color-blue-0:#0F2CCF;--wbu-color-blue-100:#2F5DFF;--wbu-color-blue-200:#597DFF;--wbu-color-blue-300:#ACBEFF;--wbu-color-blue-400:#D5DFFF;--wbu-color-blue-500:#EAEFFF;--wbu-color-blue-600:#F5F7FF;--wbu-color-black-0:#151414;--wbu-color-black-100:#383838;--wbu-color-black-200:#525150;--wbu-color-black-300:",
     "url": "https://www.pietrosprime.com"
    },
    {
@@ -14856,6 +14982,14 @@
     "url": "https://www.whitedog.com/wayne"
    },
    {
+    "quote": "Happy Hour / FRIED PICKLESFRIED PICKLES / TRUFFLE PARMESAN FRIES TRUFFLE PARMESAN FRIES (D)",
+    "url": "https://www.whitedog.com/cmsAdmin/uploads/wdw-happy-hour-6-25-26.pdf"
+   },
+   {
+    "quote": "Happy HourHappy Hour",
+    "url": "https://www.whitedog.com/cmsAdmin/uploads/wdw-happy-hour-6-25-26.pdf"
+   },
+   {
     "quote": "Weekday Happy Hour",
     "url": "https://www.whitedog.com/wayne/specials"
    },
@@ -14870,10 +15004,6 @@
    {
     "quote": "DINNER | LUNCH | WEEKEND BRUNCH | MIDDAY | DESSERT | HAPPY HOUR | KIDS | KIDS BRUNCH",
     "url": "https://www.whitedog.com/chestersprings/"
-   },
-   {
-    "quote": "DINNER | LUNCH | WEEKEND BRUNCH | MIDDAY | HAPPY HOUR | DESSERT | KIDS | KIDS BRUNCH",
-    "url": "https://www.whitedog.com/glenmills/"
    }
   ],
   "name": "LUCKY DOG ENTERPRISES LLC",
@@ -14884,16 +15014,16 @@
     "url": "https://www.whitedog.com/wayne"
    },
    {
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.whitedog.com/cmsAdmin/uploads/wdw-happy-hour-6-25-26.pdf"
+   },
+   {
     "result": "ok, 3 quote(s)",
     "url": "https://www.whitedog.com/wayne/specials"
    },
    {
     "result": "ok, 1 quote(s)",
     "url": "https://www.whitedog.com/chestersprings/"
-   },
-   {
-    "result": "ok, 1 quote(s)",
-    "url": "https://www.whitedog.com/glenmills/"
    }
   ],
   "website": "https://www.whitedog.com/wayne",
@@ -16109,7 +16239,7 @@
   "osm_name": "Fine Wine & Good Spirits",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "error: ReadTimeout",
     "url": "https://www.finewineandgoodspirits.com/store-1527"
    }
   ],
@@ -16217,13 +16347,26 @@
  "64664": {
   "address": "10002-04 VERREE RD, PHILADELPHIA PA 19116-3612",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Happy-hour Food",
+    "url": "https://www.wackyzakis.net"
+   }
+  ],
   "name": "WACKY ZAKI INC",
   "osm_name": "Wacky Zaki's",
   "pages": [
    {
-    "result": "403 text/html",
+    "result": "ok, 1 quote(s)",
     "url": "https://www.wackyzakis.net"
+   },
+   {
+    "result": "403 text/html",
+    "url": "https://www.wackyzakis.net/menu"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.wackyzakis.net/page/menu-pdf"
    }
   ],
   "website": "https://www.wackyzakis.net",
@@ -16611,7 +16754,7 @@
   "osm_name": "Hampton Inn Philadelphia Center City - Convention Center",
   "pages": [
    {
-    "result": "error: ReadTimeout",
+    "result": "403 text/html",
     "url": "https://www.hilton.com/en/hotels/phlcvhx-hampton-philadelphia-center-city-convention-center/"
    }
   ],
@@ -17486,7 +17629,7 @@
   "osm_name": "Hilton Garden Inn - Valley Forge/Oaks",
   "pages": [
    {
-    "result": "error: ReadTimeout",
+    "result": "403 text/html",
     "url": "https://www.hilton.com/en/hotels/phlpogi-hilton-garden-inn-valley-forge-oaks/"
    }
   ],
@@ -17990,7 +18133,24 @@
  "67838": {
   "address": "222 N RADNOR CHESTER RD, RADNOR PA 19085",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Happy Hour / Monday-Friday 4:00 p.m. 6:00 p.m. / Sunday 7:00 p.m.- Close",
+    "url": "http://estiarestaurant.com/philadelphia-pa/menus/happy-hour-012615.pdf"
+   },
+   {
+    "quote": "Half Price Appetizers ~ $6 Crafted Cocktails and Wine by the Glass ~ $4 Beer",
+    "url": "http://estiarestaurant.com/philadelphia-pa/menus/happy-hour-012615.pdf"
+   },
+   {
+    "quote": "HAPPY HOUR MENU / MONDAY - FRIDAY 3:30PM-5PM",
+    "url": "http://estiarestaurant.com/radnor-pa/menus/happy-hour-radnor.pdf"
+   },
+   {
+    "quote": "HAPPY HOUR MENU",
+    "url": "http://estiarestaurant.com/marlton-nj/menus/happy-hour-marlton.pdf"
+   }
+  ],
   "name": "ESTIA TAVERNA INC",
   "osm_name": null,
   "pages": [
@@ -17999,8 +18159,16 @@
     "url": "https://estiarestaurant.com/"
    },
    {
-    "result": "ok, 0 quote(s)",
-    "url": "https://estiarestaurant.com/"
+    "result": "ok, 2 quote(s)",
+    "url": "http://estiarestaurant.com/philadelphia-pa/menus/happy-hour-012615.pdf"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "http://estiarestaurant.com/radnor-pa/menus/happy-hour-radnor.pdf"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "http://estiarestaurant.com/marlton-nj/menus/happy-hour-marlton.pdf"
    }
   ],
   "website": "https://estiarestaurant.com/",
@@ -18019,28 +18187,40 @@
     "url": "https://pietrospizza.com/radnor.asp"
    },
    {
-    "quote": "Walnut Street Happy Hour / Monday thru Friday 4pm - 6pm \u2022 Sunday 7pm - 10pm",
-    "url": "https://pietrospizza.com/promotions.asp"
+    "quote": "HAPPY HOUR PACKAGES NOW AVAILABLE",
+    "url": "https://pietrospizza.com/files/pietros-radnor-happy-hour-menu.pdf"
    },
    {
-    "quote": "Happy Hour Menu / Monday - Friday 3:30pm - 4:30pm / $5 Draft Beers, $6 Wines, Craft Cocktail & Food Specials",
-    "url": "https://pietrospizza.com/promotions.asp"
+    "quote": "HAPPY HOUR MENU",
+    "url": "https://pietrospizza.com/files/pietros-radnor-happy-hour-menu.pdf"
    },
    {
-    "quote": "$5 Draft Beers, $6 Wines, Craft Cocktail & Food Specials",
-    "url": "https://pietrospizza.com/promotions.asp"
+    "quote": "Happy hour / $20 Package*",
+    "url": "https://pietrospizza.com/files/pietros-happy-hour-packages.pdf"
    },
    {
-    "quote": "South Street Happy Hour / Available every day from 4pm - 6pm at our bar and high tops",
-    "url": "https://pietrospizza.com/promotions.asp"
+    "quote": "Happy Hour / $20 Package*",
+    "url": "https://pietrospizza.com/files/pietros-happy-hour-packages.pdf"
    },
    {
-    "quote": "Radnor, PA Happy Hour Specials / Sunday - Friday 3pm - 6pm",
-    "url": "https://pietrospizza.com/promotions.asp"
+    "quote": "Includes Pietro\u2019s happy hour red and white wine, all draft beer plus, / Truffle Fries",
+    "url": "https://pietrospizza.com/files/pietros-happy-hour-packages.pdf"
    },
    {
-    "quote": "Radnor, PA Happy Hour Group Specials / Monday - Friday 5 - 7 \u2022 Sunday 12 - 4 \u2022 15 people minimum",
-    "url": "https://pietrospizza.com/promotions.asp"
+    "quote": "Includes Pietro\u2019s happy hour red and white wine, all draft beer, well",
+    "url": "https://pietrospizza.com/files/pietros-happy-hour-packages.pdf"
+   },
+   {
+    "quote": "Includes Pietro\u2019s happy hour red and white wine, all draft beer,",
+    "url": "https://pietrospizza.com/files/pietros-happy-hour-packages.pdf"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://pietrospizza.com/files/pietros-happy-hour-packages.pdf"
+   },
+   {
+    "quote": "HAPPY HOUR MENU / MONDAY - FRIDAY 4 - 6 / SUNDAY 7 - 10",
+    "url": "https://pietrospizza.com/files/walnut-street-happy-hour-menu.pdf"
    }
   ],
   "name": "PIETROS ITALIAN RESTAURANT INC",
@@ -18051,16 +18231,16 @@
     "url": "https://pietrospizza.com/radnor.asp"
    },
    {
-    "result": "ok, 0 quote(s)",
-    "url": "https://pietrospizza.com/philadelphia-private-dining.asp"
-   },
-   {
-    "result": "ok, 0 quote(s)",
-    "url": "https://pietrospizza.com/philadelphia-walnut-st-banquet-events.asp"
+    "result": "ok, 2 quote(s)",
+    "url": "https://pietrospizza.com/files/pietros-radnor-happy-hour-menu.pdf"
    },
    {
     "result": "ok, 6 quote(s)",
-    "url": "https://pietrospizza.com/promotions.asp"
+    "url": "https://pietrospizza.com/files/pietros-happy-hour-packages.pdf"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://pietrospizza.com/files/walnut-street-happy-hour-menu.pdf"
    }
   ],
   "website": "https://pietrospizza.com/radnor.asp",
@@ -18714,7 +18894,7 @@
   "osm_name": "Hilton Garden Inn Exton/West Chester",
   "pages": [
    {
-    "result": "error: ReadTimeout",
+    "result": "403 text/html",
     "url": "https://www.hilton.com/en/hotels/phlexgi-hilton-garden-inn-exton-west-chester/"
    }
   ],
@@ -19512,26 +19692,13 @@
  "70835": {
   "address": "503 W LANCASTER AVE  SUITE 700, WAYNE PA 19087-3109",
   "crawled_at": "2026-08-06",
-  "hits": [
-   {
-    "quote": "DINNER | LUNCH | BRUNCH | HAPPY HOUR",
-    "url": "https://www.autographbrasserie.com/"
-   },
-   {
-    "quote": "LUNCH | DINNER | WEEKEND BRUNCH | DESSERT | COCKTAILS | WINE LIST | HAPPY HOUR",
-    "url": "https://www.autographbrasserie.com/menu"
-   }
-  ],
+  "hits": [],
   "name": "MSG WAYNE LLC",
   "osm_name": "Autograph Brasserie",
   "pages": [
    {
-    "result": "ok, 1 quote(s)",
+    "result": "error: ConnectionError",
     "url": "https://www.autographbrasserie.com/"
-   },
-   {
-    "result": "ok, 1 quote(s)",
-    "url": "https://www.autographbrasserie.com/menu"
    }
   ],
   "website": "https://www.autographbrasserie.com/",
@@ -20943,6 +21110,10 @@
     "url": "https://www.thegoatsbeardphilly.com/manayunk-menu/"
    },
    {
+    "quote": "Happy Hour Food / Mon - Thur | 4-6pm / Fri | 3-6pm",
+    "url": "https://www.thegoatsbeardphilly.com/manayunk-menu/"
+   },
+   {
     "quote": "Happy Hour Smashburger / single 4 oz patty, american cheese, charred onions, special sauce, pickles, brioche bun, herb fries",
     "url": "https://www.thegoatsbeardphilly.com/manayunk-menu/"
    },
@@ -20967,7 +21138,7 @@
     "url": "https://www.thegoatsbeardphilly.com/location/the-goats-beard-wayne/"
    },
    {
-    "result": "ok, 4 quote(s)",
+    "result": "ok, 5 quote(s)",
     "url": "https://www.thegoatsbeardphilly.com/manayunk-menu/"
    },
    {
@@ -21255,7 +21426,7 @@
   "osm_name": "Courtyard Philadelphia Valley Forge/King of Prussia",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "robots.txt unreadable (403), treated as disallow",
     "url": "https://www.marriott.com/hotels/travel/phlva-courtyard-philadelphia-valley-forge-king-of-prussia/"
    }
   ],
@@ -21270,7 +21441,7 @@
   "osm_name": "Courtyard",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "robots.txt unreadable (403), treated as disallow",
     "url": "https://www.marriott.com/phldv"
    }
   ],
@@ -21585,6 +21756,10 @@
    {
     "result": "ok, 0 quote(s)",
     "url": "https://www.chick-fil-a.com/locations/pa/east-norriton"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.chick-fil-a.com/stories/6-ways-to-make-valentines-day-special"
    }
   ],
   "website": "https://www.chick-fil-a.com/locations/pa/east-norriton",
@@ -22014,13 +22189,34 @@
  "85028": {
   "address": "KING OF PRUSSIA TOWN CENTER  255 MAIN ST, KING OF PRUSSIA PA 19406-1509",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Do you have a happy hour?",
+    "url": "https://www.wearefoundingfarmers.com/location/king-of-prussia/"
+   },
+   {
+    "quote": "Every hour is happy here! While we don\u2019t have a traditional happy hour or offer discounted pricing on our cocktails, we do provide the best possible pricing with the freshest and best ingredients for each handcrafted cocktail.",
+    "url": "https://www.wearefoundingfarmers.com/location/king-of-prussia/"
+   }
+  ],
   "name": "FOUNDING FARMERS",
   "osm_name": "Founding Farmers",
   "pages": [
    {
-    "result": "403 text/html",
+    "result": "ok, 2 quote(s)",
     "url": "https://www.wearefoundingfarmers.com/location/king-of-prussia/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.wearefoundingfarmers.com/chocolate/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.wearefoundingfarmers.com/king-of-prussia-dessert-menu/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.wearefoundingfarmers.com/king-of-prussia-drinks-cocktails-menu/"
    }
   ],
   "website": "https://www.wearefoundingfarmers.com/location/king-of-prussia/",
@@ -22320,7 +22516,16 @@
  "86742": {
   "address": "1 WEST AVE, WAYNE PA 19087",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Oyster Happy Hour (archived) \u2013 Cornerstone Bistro & Artisanal Market",
+    "url": "https://www.cornerstonewayne.com/oyster-happy-hour/"
+   },
+   {
+    "quote": "Oyster Happy Hour (archived)",
+    "url": "https://www.cornerstonewayne.com/oyster-happy-hour/"
+   }
+  ],
   "name": "CORNERSTONE CHEESE & CHARCUTERIE",
   "osm_name": "Cornerstone Bistro & Artisinal Market",
   "pages": [
@@ -22329,16 +22534,16 @@
     "url": "https://www.cornerstonewayne.com/"
    },
    {
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.cornerstonewayne.com/oyster-happy-hour/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.cornerstonewayne.com/super-bowl-special/"
+   },
+   {
     "result": "ok, 0 quote(s)",
     "url": "https://www.cornerstonewayne.com/events"
-   },
-   {
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.cornerstonewayne.com/large-parties-and-private-events"
-   },
-   {
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.cornerstonewayne.com/large-parties-and-private-events/"
    }
   ],
   "website": "https://www.cornerstonewayne.com/",
@@ -23014,7 +23219,7 @@
   "osm_name": "Fairfield Inn & Suites",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "robots.txt unreadable (403), treated as disallow",
     "url": "https://www.marriott.com/phlig"
    }
   ],
@@ -23764,7 +23969,7 @@
   "osm_name": "Embassy Suites by Hilton Philadelphia Airport",
   "pages": [
    {
-    "result": "error: ReadTimeout",
+    "result": "403 text/html",
     "url": "https://www.hilton.com/en/hotels/phlapes-embassy-suites-philadelphia-airport/"
    }
   ],
@@ -24889,7 +25094,7 @@
   "osm_name": "Timothy's",
   "pages": [
    {
-    "result": "403 text/html",
+    "result": "robots.txt unreadable (403), treated as disallow",
     "url": "https://lionvillepa.mytimothysrestaurants.com"
    }
   ],
@@ -24919,7 +25124,7 @@
   "osm_name": "Hampton Inn & Suites Philadelphia/Media",
   "pages": [
    {
-    "result": "error: ReadTimeout",
+    "result": "403 text/html",
     "url": "https://www.hilton.com/en/hotels/phlsphx-hampton-suites-philadelphia-media"
    }
   ],
@@ -25344,7 +25549,7 @@
     "url": "https://tjsbeer.com/-drink-menu?source=header&spot_id=92785&destination=drink_menu&promotion=ipa_day"
    },
    {
-    "result": "ok, 0 quote(s)",
+    "result": "error: ConnectionError",
     "url": "https://tjsbeer.com/-events?source=header&spot_id=92785&destination=events&promotion=premier_league"
    }
   ],
@@ -25544,12 +25749,17 @@
  "98643": {
   "address": "700 N 2ND ST, PHILADELPHIA PA 19123-3008",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "The 700 | Northern Liberties' best happy hour and entertainment. / body,.et_pb_column_1_2 .et_quote_content blockquote cite,.et_pb_column_1_2 .et_link_content a.et_link_main_url,.et_pb_column_1_3 .et_quote_content blockquote cite,.et_pb_column_3_8 .et_quote_content blockquote cite,.et_pb_column_1_4 .et_quote_content blockquote cite,.et_pb_blog_grid .et_quote_content blockquote cite,.et_pb_column_1",
+    "url": "https://philly700.com/"
+   }
+  ],
   "name": "DEC70 LLC",
   "osm_name": "The 700",
   "pages": [
    {
-    "result": "403 text/html",
+    "result": "ok, 1 quote(s)",
     "url": "https://philly700.com/"
    }
   ],
@@ -25722,6 +25932,10 @@
    {
     "result": "ok, 0 quote(s)",
     "url": "https://lamichoacananorristown.com"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.lamichoacananorristown.com/menu"
    }
   ],
   "website": "https://lamichoacananorristown.com",

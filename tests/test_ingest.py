@@ -1011,3 +1011,52 @@ class PriceExtraction(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
+
+
+class ForbiddenToOneClient(unittest.TestCase):
+    """A 403 to requests is not a 403 to us.
+
+    Founding Farmers, Stable 12 and 16 other hosts answered 403 to
+    requests/urllib3 and 200 to urllib for the same URL and the same UA.
+    """
+
+    def _session(self, status):
+        r = unittest.mock.Mock()
+        r.status_code = status
+        r.headers = {"content-type": "text/html"}
+        r.text = "<html>from requests</html>"
+        s = unittest.mock.Mock()
+        s.get.return_value = r
+        return s
+
+    def test_a_403_from_requests_is_retried_with_the_other_client(self):
+        plain = crawl_sites._Plain(
+            200, {"content-type": "text/html; charset=utf-8"},
+            b"<html>from urllib</html>")
+        with unittest.mock.patch.object(crawl_sites, "urllib_get",
+                                        return_value=plain) as ug:
+            body, err = crawl_sites.get(self._session(403), "https://x.test/")
+        ug.assert_called_once()
+        self.assertIsNone(err)
+        self.assertIn("from urllib", body)
+
+    def test_a_200_is_never_refetched(self):
+        with unittest.mock.patch.object(crawl_sites, "urllib_get") as ug:
+            body, err = crawl_sites.get(self._session(200), "https://x.test/")
+        ug.assert_not_called()
+        self.assertIn("from requests", body)
+
+    def test_the_fallbacks_headers_answer_to_a_lowercase_lookup(self):
+        """A real fetch recorded as '200 ?' because the dict was case-sensitive."""
+        plain = crawl_sites._Plain(200, {"content-type": "text/html"}, b"<p>hi</p>")
+        with unittest.mock.patch.object(crawl_sites, "urllib_get",
+                                        return_value=plain):
+            body, err = crawl_sites.get(self._session(403), "https://x.test/")
+        self.assertIsNone(err, "content-type lookup must not miss on case")
+
+    def test_a_failing_fallback_keeps_the_original_refusal(self):
+        with unittest.mock.patch.object(crawl_sites, "urllib_get",
+                                        side_effect=OSError("nope")):
+            body, err = crawl_sites.get(self._session(403), "https://x.test/")
+        self.assertIsNone(body)
+        self.assertTrue(err.startswith("403"))
