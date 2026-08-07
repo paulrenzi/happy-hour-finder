@@ -171,6 +171,43 @@ class RoundupTier(unittest.TestCase):
         self.assertIsNone(published_date("<html><body><p>Happy hour picks</p></body></html>"))
 
 
+class HandCorrectedJoins(unittest.TestCase):
+    """Single-claimant mis-joins corrected by hand, pinned so a re-run of the
+    address join cannot quietly take them back.
+
+    The join is on ADDRESS, never name, because ~37% of PLCB rows carry a
+    corporate shell -- so a name mismatch alone is not evidence of a mis-join.
+    These are the ones where the claimed site was independently shown wrong:
+    North Italia's entry pointed at locations.bonchon.com, which 404s, while the
+    real site carries a happy-hour PDF the crawler reached the moment the URL
+    was fixed. That one correction is the whole of King of Prussia's 3 -> 4.
+    """
+
+    CORRECTED = {
+        "92272": ("NORTH ITALIA", "northitalia.com"),
+    }
+
+    @classmethod
+    def setUpClass(cls):
+        cls.sites = json.load(open(os.path.join(REPO, "data", "venue_sites.json"),
+                                   encoding="utf-8"))
+
+    def test_the_corrected_sites_are_still_corrected(self):
+        for lid, (name, host) in self.CORRECTED.items():
+            v = self.sites[lid]
+            self.assertEqual(v["name"], name, f"{lid} is no longer the venue it was")
+            self.assertIn(host, v["website"], f"{lid} lost its hand-corrected website")
+
+    def test_no_corrected_venue_still_carries_a_stale_osm_name(self):
+        # The card's display name comes from osm_name, so a stale OSM node left
+        # North Italia's happy hour shipping under "Bonchon Chicken" -- a venue
+        # that publishes under another business's name is worse than absent.
+        for lid, (name, _host) in self.CORRECTED.items():
+            osm = (self.sites[lid].get("osm_name") or "").lower()
+            self.assertIn(name.split()[0].lower(), osm,
+                          f"{lid} display name disagrees with the venue")
+
+
 class ServiceWorkerCache(unittest.TestCase):
     """The published shell must evict what the last build left on devices."""
 

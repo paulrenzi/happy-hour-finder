@@ -20920,16 +20920,49 @@
  "92272": {
   "address": "350 MALL BLVD STE 1000C, KING OF PRUSSIA PA 19406-3258",
   "crawled_at": "2026-08-06",
-  "hits": [],
-  "name": "NORTH ITALIA",
-  "osm_name": "Bonchon Chicken",
-  "pages": [
+  "hits": [
    {
-    "result": "404 text/html",
-    "url": "https://locations.bonchon.com/ll/US/PA/King-of-Prussia/350-Mall-Blvd"
+    "quote": "Happy Hour / Mon - Fri / 4pm - 6pm",
+    "url": "https://www.northitalia.com/locations/king-of-prussia-pa/"
+   },
+   {
+    "quote": "Lunch Dinner Brunch Dessert Kids Happy Hour Summer Match-Ups",
+    "url": "https://www.northitalia.com/locations/king-of-prussia-pa/"
+   },
+   {
+    "quote": "Happy Hour / Mon - Fri / 4pm - 6pm",
+    "url": "https://www.northitalia.com/locations/king-of-prussia-pa/?menu=happy-hour"
+   },
+   {
+    "quote": "Lunch Dinner Brunch Dessert Kids Happy Hour Summer Match-Ups",
+    "url": "https://www.northitalia.com/locations/king-of-prussia-pa/?menu=happy-hour"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://www.northitalia.com/locations/king-of-prussia-pa/?menu=happy-hour"
    }
   ],
-  "website": "https://locations.bonchon.com/ll/US/PA/King-of-Prussia/350-Mall-Blvd",
+  "name": "NORTH ITALIA",
+  "osm_name": "North Italia",
+  "pages": [
+   {
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.northitalia.com/locations/king-of-prussia-pa/"
+   },
+   {
+    "result": "ok, 3 quote(s)",
+    "url": "https://www.northitalia.com/locations/king-of-prussia-pa/?menu=happy-hour"
+   },
+   {
+    "result": "robots.txt disallows",
+    "url": "https://order.northitalia.com/menu/king-prussia-pa"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.northitalia.com/locations/"
+   }
+  ],
+  "website": "https://www.northitalia.com/locations/king-of-prussia-pa/",
   "zone_id": "king_of_prussia"
  },
  "92374": {
