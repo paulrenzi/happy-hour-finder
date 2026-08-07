@@ -19,7 +19,17 @@ const state = {
   filter: "all",
   sort: "soonest",
   origin: null,  // {lat,lng} once, in-session only -- never tracked in the background
+  // Zones whose full venue base has been fetched. Boot loads every zone's
+  // DEALS (small, and "what's on right now" is an area-wide question); the
+  // 2,900-venue base is a megabyte, so it arrives one zone at a time.
+  loadedZones: new Set(),
+  loadingZone: null,
+  // How many no-hours venues the feed is currently showing. Reset on every
+  // control change -- a zone with 668 licensed bars must not paint 668 cards.
+  shown: 0,
 };
+
+const UNKNOWN_PAGE = 24;
 
 const $ = (s, r = document) => r.querySelector(s);
 const el = (tag, cls, text) => {
@@ -134,11 +144,23 @@ function buildControls() {
     (v) => (state.filter = v)
   );
 
+  // "King of Prussia (6 of 59)" -- the second number is the coverage claim and
+  // the first is what we can actually stand behind. Showing only one of them is
+  // what made the board look either empty or complete, and it is neither.
   picker(
     $("#zone"),
-    [[null, "All zones"], ...state.zones.map((z) => [z.id, `${z.name} (${z.venues})`])],
+    [
+      [null, "All zones"],
+      ...state.zones.map((z) => [
+        z.id,
+        `${z.name} (${z.with_deals ?? z.venues} of ${z.venues})`,
+      ]),
+    ],
     state.zone,
-    (v) => (state.zone = v)
+    (v) => {
+      state.zone = v;
+      loadZoneVenues(v);
+    }
   );
 
   picker($("#sort"), SORTS, state.sort, (v) => (state.sort = v));
@@ -184,6 +206,33 @@ function restoreLocation() {
   }
 }
 
+/* ---- the venue base --------------------------------------------------- */
+
+/* Every licensed bar, restaurant and brewery in one zone -- including the four
+   in five we have no published window for. Fetched only when that zone is
+   picked: the whole base is a megabyte, and downloading it to answer "what's on
+   near me right now" would cost every user the price of a question they didn't
+   ask. */
+async function loadZoneVenues(zoneId) {
+  if (!zoneId || state.loadedZones.has(zoneId) || state.loadingZone === zoneId) return;
+  state.loadingZone = zoneId;
+  refresh();
+  try {
+    const res = await fetch(`data/venues-${zoneId}.json`);
+    if (!res.ok) throw new Error(res.status);
+    const bundle = await res.json();
+    state.venues = state.venues.concat(bundle.venues);
+    state.loadedZones.add(zoneId);
+  } catch {
+    // Offline, or a zone whose file hasn't shipped yet. The deals already in
+    // hand still render -- the board degrades to what it used to be, which is
+    // a worse answer but never a broken page.
+  } finally {
+    state.loadingZone = null;
+    refresh();
+  }
+}
+
 /* ---- rendering -------------------------------------------------------- */
 
 function sectionFor(row, at) {
@@ -212,6 +261,143 @@ function distanceTo(venue) {
   if (!state.origin || venue.lat == null) return null;
   const miles = haversineMiles(state.origin, venue);
   return { miles, driveMin: driveMinutes(miles) };
+}
+
+/* The card for a venue whose hours nobody has published.
+
+   It is deliberately a full card and not a grey stub. This is most of the board
+   -- 2,732 of 2,901 venues -- and the product's only path to covering them is a
+   person who has been there telling us. That ask has to look like an invitation,
+   not like a hole where a card failed to load. */
+function unknownCard(row) {
+  const { v } = row;
+  const node = $("#unknownTpl").content.cloneNode(true);
+
+  const shot = $(".shot", node);
+  shot.style.setProperty("--h", hueOf(v.id));
+  if (v.photo) {
+    const img = $(".photo", node);
+    img.src = v.photo.file;
+    img.hidden = false;
+    img.addEventListener("error", () => {
+      img.remove();
+      shot.classList.add("fallback");
+    });
+    $(".credit", node).textContent = v.photo.attribution || "";
+  } else {
+    shot.classList.add("fallback");
+    $(".mono", node).textContent = monogramOf(v.name);
+  }
+  shot.addEventListener("click", () => openVenue(v.id));
+
+  $(".name", node).textContent = v.name;
+  const zoneName = state.zones.find((z) => z.id === v.zone_id)?.name ?? "";
+  const dist = distanceText(v, row.miles, row.driveMin);
+  $(".zone", node).textContent = dist ? `${zoneName} · ${dist}` : zoneName;
+  $(".kind", node).textContent = licenseLabel(v.license_type);
+
+  $(".map", node).href = directionsUrl(v);
+  const site = $(".site", node);
+  if (v.website) site.href = v.website;
+  else site.remove();
+  $(".know", node).addEventListener("click", () => submitHours(v));
+  return node;
+}
+
+/* The PLCB licence class, said the way a person would. It is the only thing we
+   know about an unlisted venue beyond its name and address, and "Brewery" vs
+   "Hotel bar" genuinely changes whether you'd walk in. */
+const LICENSE_LABEL = {
+  "Restaurant (Liquor)": "Restaurant & bar",
+  "Eating Place Retail Dispenser (Malt)": "Beer & food",
+  "Hotel (Liquor)": "Hotel bar",
+  "Brewery": "Brewery",
+  "Brewery Pub": "Brewpub",
+  "Limited Winery": "Winery tasting room",
+  "Winery": "Winery",
+  "Limited Distillery": "Distillery tasting room",
+  "Distillery": "Distillery",
+  "Airport Restaurant (Liquor)": "Airport restaurant",
+  "Public Venue Restaurant": "Venue restaurant",
+  "Performing Arts Facility": "Theatre bar",
+  "Privately-Owned Public Golf Course Rest (Liquor)": "Golf club restaurant",
+  "Municipal Golf Course (Liquor)": "Golf course restaurant",
+  "Economic Development Restaurant (Liquor)": "Restaurant & bar",
+};
+
+function licenseLabel(type) {
+  return LICENSE_LABEL[type] || "Licensed venue";
+}
+
+/* Submitting hours. There is no backend yet -- the Worker is a decision that has
+   not been made -- so this opens a prefilled mail draft. That is a real delivery
+   path today rather than another "not wired yet" dialog, and when a write
+   endpoint lands it replaces this one function and nothing else.
+
+   The LID rides in the subject because it is the stable key: a venue's name can
+   change and its slug with it, but the licence number is what the board is
+   keyed on. */
+/* Assembled rather than written out, and never rendered as text anywhere on the
+   page: the address is the destination of a mailto, not content. A plain literal
+   in a public bundle is a mailbox address harvesters read for free. */
+const SUBMIT_TO = ["paul", "umbrellaarcades.com"].join("@");
+
+function submitHours(v) {
+  const body = $("#sheetBody");
+  body.textContent = "";
+  body.append(el("h3", null, v.name));
+  body.append(el("p", "sheetSub", v.address));
+  body.append(
+    el(
+      "p",
+      null,
+      "Nobody has published this one's happy hour anywhere we can read, so it " +
+        "isn't on the board yet. If you know it, send it — the days, the times, " +
+        "and anything it applies to. Every window on this site says where it came " +
+        "from and when it was last checked, and yours will too."
+    )
+  );
+
+  const lines = [
+    `Venue: ${v.name}`,
+    `Address: ${v.address}`,
+    v.plcb_name && v.plcb_name !== v.name ? `Licensee: ${v.plcb_name}` : null,
+    "",
+    "Happy hour (days and times):",
+    "",
+    "Prices, if you know them:",
+    "",
+    "How do you know? (saw the menu / staff told me / I work here):",
+    "",
+  ].filter((l) => l !== null);
+
+  const href =
+    `mailto:${SUBMIT_TO}` +
+    `?subject=${encodeURIComponent(`Happy hour: ${v.name} (LID ${v.lid || v.id})`)}` +
+    `&body=${encodeURIComponent(lines.join("\n"))}`;
+
+  const acts = el("div", "actions");
+  const send = el("a", "btn go", "Send the hours");
+  send.href = href;
+  acts.append(send);
+
+  const copy = el("button", "btn", "Copy the details");
+  copy.type = "button";
+  copy.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(`${lines.join("\n")}\nLID ${v.lid || v.id}`);
+      toast("Copied");
+    } catch {
+      /* clipboard denied -- the mail button is still there */
+    }
+  });
+  acts.append(copy);
+  body.append(acts);
+
+  body.append(
+    el("p", "note", `Reference: LID ${v.lid || v.id}. Quote it and we'll know exactly which venue you mean.`)
+  );
+  $("#sheet").showModal();
 }
 
 function card(row, at) {
@@ -301,13 +487,16 @@ function render() {
 
   const live = rows.filter((r) => r.group === GROUP.LIVE).length;
   const soon = rows.filter((r) => r.group === GROUP.SOON).length;
+  const withDeals = rows.filter((r) => r.group !== GROUP.UNKNOWN).length;
   $("#heroCount").innerHTML = live
     ? `<b>${live}</b> happy hour${live === 1 ? "" : "s"} live ${isNow() ? "now" : "then"}`
     : soon
       ? `Nothing live yet — <b>${soon}</b> starting soon`
-      : rows.length
+      : withDeals
         ? `Nothing on ${isNow() ? "right now" : "then"} — here's what's next`
-        : "Nothing matches that filter";
+        : rows.length
+          ? "No published hours here yet — every venue below is one you could fill in"
+          : "Nothing matches that filter";
 
   const feed = $("#feed");
   feed.textContent = "";
@@ -318,9 +507,12 @@ function render() {
     p.append(
       document.createTextNode(
         state.filter === "all"
-          ? "Try another zone. The seed corpus is 8 hand-checked venues — most bars around " +
-            "here never publish their happy hour, which is what the camera button is for."
-          : `No ${FILTERS[state.filter].label.toLowerCase()} in this zone. Try “Everything”.`
+          ? state.loadingZone
+            ? "Loading this zone's venues…"
+            : "Try another zone. Around four in five bars never publish a happy hour " +
+              "anywhere, so most of the board is venues waiting for someone to fill them in."
+          : `No ${FILTERS[state.filter].label.toLowerCase()} in this zone. Try “Everything” ` +
+            "to see every licensed venue here, published hours or not."
       )
     );
     feed.append(p);
@@ -329,19 +521,74 @@ function render() {
     return;
   }
 
+  // Split before painting: the no-hours rows are the bulk of the board and are
+  // revealed a page at a time, so they cannot go through the same loop.
+  const dealRows = rows.filter((r) => r.group !== GROUP.UNKNOWN);
+  const unknownRows = rows.filter((r) => r.group === GROUP.UNKNOWN);
+
   let section = null;
-  for (const row of rows) {
+  for (const row of dealRows) {
     const want = sectionFor(row, at);
     if (want !== section) feed.append(el("p", "sec", (section = want)));
     feed.append(card(row, at));
   }
-  $("#status").textContent = `${rows.length} result${rows.length === 1 ? "" : "s"}, ${live} live.`;
+
+  if (unknownRows.length) {
+    const n = Math.min(state.shown || UNKNOWN_PAGE, unknownRows.length);
+    const head = el("p", "sec sec-unknown");
+    head.append(document.createTextNode(GROUP_LABEL[GROUP.UNKNOWN]));
+    head.append(el("span", "secCount", `${unknownRows.length} venue${unknownRows.length === 1 ? "" : "s"}`));
+    feed.append(head);
+    feed.append(
+      el(
+        "p",
+        "secNote",
+        "Licensed bars, restaurants and breweries we have no published happy hour " +
+          "for. Most never post one anywhere — if you know one, the card says how " +
+          "to tell us."
+      )
+    );
+    for (const row of unknownRows.slice(0, n)) feed.append(unknownCard(row));
+    if (n < unknownRows.length) {
+      const more = el("button", "moreBtn", `Show ${Math.min(UNKNOWN_PAGE, unknownRows.length - n)} more of ${unknownRows.length - n}`);
+      more.type = "button";
+      more.addEventListener("click", () => {
+        state.shown = n + UNKNOWN_PAGE;
+        render(); // not refresh(): the hash describes the query, not how far you scrolled
+      });
+      feed.append(more);
+    }
+  } else if (state.zone && !state.loadedZones.has(state.zone) && state.filter === "all") {
+    feed.append(
+      el("p", "secNote", state.loadingZone === state.zone
+        ? "Loading every licensed venue in this zone…"
+        : "Couldn't load the full venue list for this zone — showing published happy hours only.")
+    );
+  } else if (!state.zone && state.filter === "all") {
+    feed.append(
+      el(
+        "p",
+        "secNote",
+        "Pick a zone above to see every licensed bar, restaurant and brewery in it — " +
+          "including the ones whose happy hour nobody has published."
+      )
+    );
+  }
+
+  $("#status").textContent =
+    `${dealRows.length} result${dealRows.length === 1 ? "" : "s"}, ${live} live` +
+    (unknownRows.length ? `, ${unknownRows.length} with no published hours.` : ".");
+  const total = dealRows.length + unknownRows.length;
   $("#sectionKicker").textContent =
-    `${rows.length} venue${rows.length === 1 ? "" : "s"} · ` +
-    (live ? `${live} live ${isNow() ? "now" : "then"}` : "none live");
+    `${total} venue${total === 1 ? "" : "s"} · ` +
+    (live ? `${live} live ${isNow() ? "now" : "then"}` : "none live") +
+    (unknownRows.length ? ` · ${unknownRows.length} need hours` : "");
 }
 
 function refresh() {
+  // Any change to the query is a new list, so the "show more" reveal starts over.
+  // Keeping it would leave you 200 cards deep in a zone you just switched away from.
+  state.shown = UNKNOWN_PAGE;
   writeHash();
   render();
 }
@@ -355,8 +602,12 @@ const DEAL_TYPE = {
 };
 
 function openVenue(id) {
-  const v = state.venues.find((x) => x.id === id);
+  // The board is keyed on the PLCB licence number now. Every link shared before
+  // that was keyed on a name-derived slug, so those still resolve -- a slug is
+  // carried on any venue that ever had one.
+  const v = state.venues.find((x) => x.id === id) || state.venues.find((x) => x.slug === id);
   if (!v) return;
+  if (!v.deals.length) return submitHours(v);
   const body = $("#sheetBody");
   body.textContent = "";
 
@@ -533,6 +784,11 @@ async function boot() {
   restoreLocation();
   watchHero();
   render();
+  // A shared link to a venue with no published hours names a venue that only
+  // arrives with its zone's base, so the fetch has to finish before the sheet is
+  // opened -- otherwise the link silently does nothing, which is exactly the
+  // failure a share is supposed to prevent.
+  if (state.zone) await loadZoneVenues(state.zone);
   if (openId) openVenue(openId);
 
   // Keep "ends in" honest while the page sits open, but only in live mode.

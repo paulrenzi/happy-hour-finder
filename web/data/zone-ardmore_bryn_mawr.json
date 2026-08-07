@@ -1,86 +1,18 @@
 {
  "zone_id": "ardmore_bryn_mawr",
  "name": "Ardmore / Bryn Mawr",
- "built_at": "2026-08-06",
+ "built_at": "2026-08-07",
  "venues": [
   {
-   "id": "tired-hands-ardmore",
-   "name": "Tired Hands Fermentaria",
-   "address": "35 Cricket Terrace, Ardmore PA 19003",
-   "zone_id": "ardmore_bryn_mawr",
-   "website": "https://tiredhands.com",
-   "plcb_name": "TIRED HANDS BREWING COMPANY",
-   "lat": 40.006933,
-   "lng": -75.290392,
-   "geo_precision": "amenity",
-   "photo": {
-    "file": "img/venues/tired-hands-ardmore.jpg",
-    "attribution": "Photo: Tired Hands Fermentaria"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [
-      {
-       "category": "draft",
-       "label": "pints of Alien Church, HopHands, and the LUKR tap",
-       "discount_pct": 50
-      },
-      {
-       "category": "food",
-       "label": "warm pretzel",
-       "price_usd": 10.0
-      },
-      {
-       "category": "food",
-       "label": "wings",
-       "price_usd": 16.0
-      },
-      {
-       "category": "food",
-       "label": "cheeseburger",
-       "price_usd": 12.0
-      }
-     ],
-     "confidence": "likely",
-     "last_verified_at": "2026-07-31",
-     "verified_by": "staff",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://tiredhands.com"
-     }
-    }
-   ]
-  },
-  {
-   "id": "dandan-ardmore",
+   "id": "102696",
+   "lid": "102696",
+   "slug": "dandan-ardmore",
    "name": "Dandan",
-   "address": "30 PARKING PLAZA, ARDMORE PA 19003",
+   "address": "30 Parking Plaza, Ardmore PA 19003",
    "zone_id": "ardmore_bryn_mawr",
    "website": "https://www.dandanrestaurant.com/location/ardmore/",
    "plcb_name": "DAN DAN 30 LLC",
+   "license_type": "Restaurant (Liquor)",
    "lat": 40.0087705,
    "lng": -75.2890484,
    "geo_precision": "place",
@@ -131,19 +63,18 @@
    ]
   },
   {
-   "id": "pj-whelihan-s-wynnewood",
-   "name": "PJ Whelihan's",
-   "address": "50 E WYNNEWOOD RD, WYNNEWOOD PA 19096-2030",
+   "id": "48382",
+   "lid": "48382",
+   "slug": "great-american-pub-narberth",
+   "name": "Great American Pub",
+   "address": "101 N Narberth Ave, Narberth PA 19072",
    "zone_id": "ardmore_bryn_mawr",
-   "website": "https://www.pjspub.com/about.php?loc=Wynnewood",
-   "plcb_name": "PJ WHELIHAN'S",
-   "lat": 40.0017868,
-   "lng": -75.2715861,
+   "website": "https://www.greatamericanpub.net/",
+   "plcb_name": "101 NARBERTH TAVERN, INC.",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.0060034,
+   "lng": -75.2600251,
    "geo_precision": "place",
-   "photo": {
-    "file": "img/venues/pj-whelihan-s-wynnewood.jpg",
-    "attribution": "Photo: PJ Whelihan's"
-   },
    "deals": [
     {
      "type": "happy_hour",
@@ -157,6 +88,21 @@
        "dow": 2,
        "start": "16:00",
        "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
       }
      ],
      "items": [],
@@ -165,19 +111,22 @@
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://www.pjspub.com/about.php?loc=Wynnewood",
-      "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
+      "url": "https://www.greatamericanpub.net/happy-hour",
+      "quote": "HAPPY HOUR: / MONDAY-FRIDAY / 4PM-6PM"
      }
     }
    ]
   },
   {
-   "id": "gullifty-s-rosemont",
+   "id": "26291",
+   "lid": "26291",
+   "slug": "gullifty-s-rosemont",
    "name": "Gullifty's",
-   "address": "1149 LANCASTER AVE, ROSEMONT PA 19010-2722",
+   "address": "1149 Lancaster Ave, Rosemont PA 19010",
    "zone_id": "ardmore_bryn_mawr",
    "website": "https://gulliftys.com/",
    "plcb_name": "GULLIFTYS",
+   "license_type": "Restaurant (Liquor)",
    "lat": 40.0257204,
    "lng": -75.325758,
    "geo_precision": "place",
@@ -244,12 +193,100 @@
    ]
   },
   {
-   "id": "the-pub-of-penn-valley-narberth",
+   "id": "119303",
+   "lid": "119303",
+   "slug": "pj-whelihan-s-wynnewood",
+   "name": "PJ Whelihan's",
+   "address": "50 E Wynnewood Rd, Wynnewood PA 19096",
+   "zone_id": "ardmore_bryn_mawr",
+   "website": "https://www.pjspub.com/about.php?loc=Wynnewood",
+   "plcb_name": "PJ WHELIHAN'S",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.0017868,
+   "lng": -75.2715861,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/pj-whelihan-s-wynnewood.jpg",
+    "attribution": "Photo: PJ Whelihan's"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.pjspub.com/about.php?loc=Wynnewood",
+      "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "73040",
+   "lid": "73040",
+   "slug": "pj-whelihan-s-wynnewood-73040",
+   "name": "PJ Whelihan's",
+   "address": "50 E Wynnewood Rd Unit #2, Wynnewood PA 19096",
+   "zone_id": "ardmore_bryn_mawr",
+   "website": "https://www.pjspub.com/about.php?loc=Wynnewood",
+   "plcb_name": "THE GIANT COMPANY LLC",
+   "license_type": "Restaurant (Liquor)",
+   "photo": {
+    "file": "img/venues/pj-whelihan-s-wynnewood-73040.jpg",
+    "attribution": "Photo: PJ Whelihan's"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.pjspub.com/about.php?loc=Wynnewood",
+      "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "43721",
+   "lid": "43721",
+   "slug": "the-pub-of-penn-valley-narberth",
    "name": "THE PUB OF PENN VALLEY",
-   "address": "863 MONTGOMERY AVE, NARBERTH PA 19072-1541",
+   "address": "863 Montgomery Ave, Narberth PA 19072",
    "zone_id": "ardmore_bryn_mawr",
    "website": "https://pubofpennvalley.com/",
    "plcb_name": "THE PUB OF PENN VALLEY",
+   "license_type": "Restaurant (Liquor)",
    "deals": [
     {
      "type": "happy_hour",
@@ -314,24 +351,26 @@
    ]
   },
   {
-   "id": "great-american-pub-narberth",
-   "name": "Great American Pub",
-   "address": "101 N NARBERTH AVE, NARBERTH PA 19072-1923",
+   "id": "70056",
+   "lid": "70056",
+   "slug": "tired-hands-ardmore",
+   "name": "Tired Hands Fermentaria",
+   "address": "35 Cricket Terr, Ardmore PA 19003",
    "zone_id": "ardmore_bryn_mawr",
-   "website": "https://www.greatamericanpub.net/",
-   "plcb_name": "101 NARBERTH TAVERN, INC.",
-   "lat": 40.0060034,
-   "lng": -75.2600251,
-   "geo_precision": "place",
+   "website": "https://tiredhands.com",
+   "plcb_name": "TIRED HANDS BREWING COMPANY",
+   "license_type": "Brewery",
+   "lat": 40.006933,
+   "lng": -75.290392,
+   "geo_precision": "amenity",
+   "photo": {
+    "file": "img/venues/tired-hands-ardmore.jpg",
+    "attribution": "Photo: Tired Hands Fermentaria"
+   },
    "deals": [
     {
      "type": "happy_hour",
      "windows": [
-      {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
       {
        "dow": 2,
        "start": "16:00",
@@ -353,52 +392,34 @@
        "end": "18:00"
       }
      ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://www.greatamericanpub.net/happy-hour",
-      "quote": "HAPPY HOUR: / MONDAY-FRIDAY / 4PM-6PM"
-     }
-    }
-   ]
-  },
-  {
-   "id": "pj-whelihan-s-wynnewood-73040",
-   "name": "PJ Whelihan's",
-   "address": "50 E WYNNEWOOD RD UNIT #2, WYNNEWOOD PA 19096-2013",
-   "zone_id": "ardmore_bryn_mawr",
-   "website": "https://www.pjspub.com/about.php?loc=Wynnewood",
-   "plcb_name": "THE GIANT COMPANY LLC",
-   "photo": {
-    "file": "img/venues/pj-whelihan-s-wynnewood-73040.jpg",
-    "attribution": "Photo: PJ Whelihan's"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
+     "items": [
       {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
+       "category": "draft",
+       "label": "pints of Alien Church, HopHands, and the LUKR tap",
+       "discount_pct": 50
       },
       {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
+       "category": "food",
+       "label": "warm pretzel",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "wings",
+       "price_usd": 16.0
+      },
+      {
+       "category": "food",
+       "label": "cheeseburger",
+       "price_usd": 12.0
       }
      ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
+     "confidence": "likely",
+     "last_verified_at": "2026-07-31",
+     "verified_by": "staff",
      "source": {
       "kind": "venue_site",
-      "url": "https://www.pjspub.com/about.php?loc=Wynnewood",
-      "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
+      "url": "https://tiredhands.com"
      }
     }
    ]

@@ -1,43 +1,36 @@
 {
  "zone_id": "collegeville_trappe",
  "name": "Collegeville / Trappe",
- "built_at": "2026-08-06",
+ "built_at": "2026-08-07",
  "venues": [
   {
-   "id": "troubles-end-brewing-collegeville",
-   "name": "Troubles End Brewing",
-   "address": "36 W 3RD AVE, COLLEGEVILLE PA 19426-3605",
+   "id": "120730",
+   "lid": "120730",
+   "slug": "p-j-whelihan-s-pub-restaurant-oaks",
+   "name": "P. J. Whelihan's Pub + Restaurant",
+   "address": "180 Mill Rd, Oaks PA 19456",
    "zone_id": "collegeville_trappe",
-   "website": "https://www.troublesendbrewing.com/",
-   "plcb_name": "TROUBLES END BREWING LLC",
-   "lat": 40.1852277,
-   "lng": -75.452495,
+   "website": "https://www.pjspub.com/about.php?loc=Oaks",
+   "plcb_name": "OAKS CINEMA",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.1292498,
+   "lng": -75.4531135,
    "geo_precision": "place",
    "photo": {
-    "file": "img/venues/troubles-end-brewing-collegeville.jpg",
-    "attribution": "Photo: Troubles End Brewing"
+    "file": "img/venues/p-j-whelihan-s-pub-restaurant-oaks.jpg",
+    "attribution": "Photo: P. J. Whelihan's Pub + Restaurant"
    },
    "deals": [
     {
      "type": "happy_hour",
      "windows": [
       {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
        "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
        "start": "16:00",
        "end": "18:00"
       }
@@ -48,19 +41,66 @@
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://www.troublesendbrewing.com/happyhour",
-      "quote": "HAPPY HOUR SPECIALS / 4-6 PM | TUESDAY - FRIDAY"
+      "url": "https://www.pjspub.com/about.php?loc=Oaks",
+      "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
      }
     }
    ]
   },
   {
-   "id": "the-stray-dog-tavern-skippack",
+   "id": "81482",
+   "lid": "81482",
+   "slug": "p-j-whelihan-s-pub-restaurant-oaks-81482",
+   "name": "P. J. Whelihan's Pub + Restaurant",
+   "address": "180B Mill Rd, Oaks PA 19456",
+   "zone_id": "collegeville_trappe",
+   "website": "https://www.pjspub.com/about.php?loc=Oaks",
+   "plcb_name": "PJ'S OAKS LLC",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.1292498,
+   "lng": -75.4531135,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/p-j-whelihan-s-pub-restaurant-oaks-81482.jpg",
+    "attribution": "Photo: P. J. Whelihan's Pub + Restaurant"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.pjspub.com/about.php?loc=Oaks",
+      "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "109142",
+   "lid": "109142",
+   "slug": "the-stray-dog-tavern-skippack",
    "name": "The Stray Dog Tavern",
-   "address": "3911 SKIPPACK PIKE, SKIPPACK PA 19474",
+   "address": "3911 Skippack Pike, Skippack PA 19474",
    "zone_id": "collegeville_trappe",
    "website": "https://thestraydogtavern.com/",
    "plcb_name": "JUSTIN'S CARRIAGE HOUSE",
+   "license_type": "Hotel (Liquor)",
    "lat": 40.2230637,
    "lng": -75.3972861,
    "geo_precision": "place",
@@ -121,53 +161,15 @@
    ]
   },
   {
-   "id": "p-j-whelihan-s-pub-restaurant-oaks",
-   "name": "P. J. Whelihan's Pub + Restaurant",
-   "address": "180 MILL RD, OAKS PA 19456-6503",
-   "zone_id": "collegeville_trappe",
-   "website": "https://www.pjspub.com/about.php?loc=Oaks",
-   "plcb_name": "OAKS CINEMA",
-   "lat": 40.1292498,
-   "lng": -75.4531135,
-   "geo_precision": "place",
-   "photo": {
-    "file": "img/venues/p-j-whelihan-s-pub-restaurant-oaks.jpg",
-    "attribution": "Photo: P. J. Whelihan's Pub + Restaurant"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://www.pjspub.com/about.php?loc=Oaks",
-      "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
-     }
-    }
-   ]
-  },
-  {
-   "id": "trappe-tavern-trappe",
+   "id": "19496",
+   "lid": "19496",
+   "slug": "trappe-tavern-trappe",
    "name": "Trappe Tavern",
-   "address": "416 MAIN ST, TRAPPE PA 19426-2607",
+   "address": "416 Main St, Trappe PA 19426",
    "zone_id": "collegeville_trappe",
    "website": "https://trappetavern.com/",
    "plcb_name": "TRAPPE TAVERN, INC.",
+   "license_type": "Restaurant (Liquor)",
    "lat": 40.1984254,
    "lng": -75.4757088,
    "geo_precision": "place",
@@ -214,30 +216,43 @@
    ]
   },
   {
-   "id": "p-j-whelihan-s-pub-restaurant-oaks-81482",
-   "name": "P. J. Whelihan's Pub + Restaurant",
-   "address": "180B MILL RD, OAKS PA 19456",
+   "id": "100226",
+   "lid": "100226",
+   "slug": "troubles-end-brewing-collegeville",
+   "name": "Troubles End Brewing",
+   "address": "36 W 3Rd Ave, Collegeville PA 19426",
    "zone_id": "collegeville_trappe",
-   "website": "https://www.pjspub.com/about.php?loc=Oaks",
-   "plcb_name": "PJ'S OAKS LLC",
-   "lat": 40.1292498,
-   "lng": -75.4531135,
+   "website": "https://www.troublesendbrewing.com/",
+   "plcb_name": "TROUBLES END BREWING LLC",
+   "license_type": "Brewery",
+   "lat": 40.1852277,
+   "lng": -75.452495,
    "geo_precision": "place",
    "photo": {
-    "file": "img/venues/p-j-whelihan-s-pub-restaurant-oaks-81482.jpg",
-    "attribution": "Photo: P. J. Whelihan's Pub + Restaurant"
+    "file": "img/venues/troubles-end-brewing-collegeville.jpg",
+    "attribution": "Photo: Troubles End Brewing"
    },
    "deals": [
     {
      "type": "happy_hour",
      "windows": [
       {
-       "dow": 1,
+       "dow": 2,
        "start": "16:00",
        "end": "18:00"
       },
       {
-       "dow": 2,
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
        "start": "16:00",
        "end": "18:00"
       }
@@ -248,8 +263,8 @@
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://www.pjspub.com/about.php?loc=Oaks",
-      "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
+      "url": "https://www.troublesendbrewing.com/happyhour",
+      "quote": "HAPPY HOUR SPECIALS / 4-6 PM | TUESDAY - FRIDAY"
      }
     }
    ]

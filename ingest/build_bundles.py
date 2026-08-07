@@ -25,6 +25,7 @@ ZONES_JSON = os.path.join(REPO, "data", "zones.json")
 PRICES_JSON = os.path.join(REPO, "data", "deals_prices_llm.json")
 PHOTOS_JSON = os.path.join(REPO, "data", "venue_photos.json")
 COORDS_JSON = os.path.join(REPO, "data", "venue_coords.json")
+BASE_JSON = os.path.join(REPO, "data", "venue_base.json")
 OUT_DIR = os.path.join(REPO, "web", "data")
 
 
@@ -130,7 +131,34 @@ def main():
     # just cannot rank by distance or tell you whether you can make it in time.
     coords = json.load(open(COORDS_JSON, encoding="utf-8")) if os.path.exists(COORDS_JSON) else {}
 
+    # The venue base: every licensed premises in the corpus, keyed on its PLCB
+    # LID (ingest/build_venue_base.py). This is what the board is a list OF. A
+    # deal is an attribute some of them have -- and the ones that don't are the
+    # whole point, because a venue nobody can see is a venue nobody can correct.
+    base = json.load(open(BASE_JSON, encoding="utf-8")) if os.path.exists(BASE_JSON) else {}
+    if not base:
+        print("  ! data/venue_base.json missing -- shipping ONLY deal-bearing venues.\n"
+              "    Run ingest/build_venue_base.py (needs data/venues.csv).")
+
+    # A second licence at one building was collapsed into the row that holds the
+    # card; a deal crawled against the sibling LID belongs on that same card.
+    canon = {lid: lid for lid in base}
+    for lid, v in base.items():
+        for other in v.get("also_lids", []):
+            canon[other] = lid
+    # Fallback for a deal whose LID predates the base (the hand-written seed has
+    # no LID at all): the number and the ZIP, which is enough to tell two bars
+    # apart and is the same key the seed/extract merge above uses.
+    by_addr = {}
+    for lid, v in base.items():
+        by_addr.setdefault(norm_addr(v["address"]), lid)
+
+    def base_lid_for(venue):
+        lid = canon.get(str(venue.get("lid") or ""))
+        return lid or by_addr.get(norm_addr(venue["address"]))
+
     by_zone, rejected, hidden = {}, 0, 0
+    deals_by_lid, orphans = {}, []
     for venue in payload["venues"]:
         deals = []
         for deal in venue.get("deals", []):
@@ -156,49 +184,136 @@ def main():
             deals = []
         if not deals:
             continue
-        v = {k: venue[k] for k in ("id", "name", "address", "zone_id", "website")}
-        v["plcb_name"] = venue.get("plcb_name")
+        lid = base_lid_for(venue)
+        if lid is None:
+            # A deal for a premises the base has never heard of. It still ships
+            # -- a proven happy hour is not something to drop over a join -- but
+            # it is counted, because a rising number here means the base is stale.
+            orphans.append(venue["name"])
+        held = deals_by_lid.get(lid) if lid else None
+        if held is None:
+            deals_by_lid[lid or f"orphan:{venue['id']}"] = (venue, deals)
+        else:
+            # Two crawled licences at one building. Keep the richer read rather
+            # than letting whichever sorted first win.
+            keep = venue if len(deals) > len(held[1]) else held[0]
+            deals_by_lid[lid] = (keep, deals if keep is venue else held[1])
+
+    for key, (venue, deals) in deals_by_lid.items():
+        b = base.get(key) or {}
+        v = {
+            "id": b.get("lid") or venue["id"],
+            "lid": b.get("lid"),
+            # The id every shared link minted before the board was keyed on LIDs.
+            # #v=iron-hill-media must keep opening Iron Hill.
+            "slug": venue["id"],
+            # A hand-checked seed name is a person's reading of the sign; below
+            # it, the trade name Places resolved beats the crawler's.
+            "name": venue["name"] if venue.get("verified_by") != "auto_extract"
+            else (b.get("name") or venue["name"]),
+            "address": b.get("address") or venue["address"],
+            "zone_id": venue["zone_id"],
+            "website": venue.get("website") or b.get("website"),
+            "plcb_name": venue.get("plcb_name") or b.get("plcb_name"),
+            "license_type": b.get("license_type", ""),
+        }
         at = coords.get(venue["id"])
         if at:
             v["lat"], v["lng"] = at["lat"], at["lng"]
             # A road-level match is a street centroid: good to a block, not a
             # doorway. The app rounds those distances harder.
             v["geo_precision"] = at.get("precision", "?")
+        elif b.get("lat") is not None:
+            v["lat"], v["lng"], v["geo_precision"] = b["lat"], b["lng"], b["geo_precision"]
         shot = photos.get(venue["id"])
         if shot and os.path.exists(os.path.join(REPO, "web", shot["file"])):
             v["photo"] = {"file": shot["file"], "attribution": shot.get("attribution", "")}
+        elif b.get("photo"):
+            v["photo"] = b["photo"]
         v["deals"] = deals
         by_zone.setdefault(venue["zone_id"], []).append(v)
+
+    # Then every venue the corpus knows about that no source gave us a window
+    # for. It ships with deals: [] and the app renders it as a card asking to be
+    # filled in -- that ask IS the coverage plan.
+    outside = 0
+    for lid, b in base.items():
+        if lid in deals_by_lid:
+            continue
+        if not b["zone_id"]:
+            # A licence whose municipality matched no zone -- Croydon, St Peters.
+            # There is no zone for a person to select, so a card for it is
+            # unreachable, and shipping it invents a nameless zone in the picker.
+            outside += 1
+            continue
+        v = {k: b[k] for k in ("lid", "name", "address", "zone_id", "license_type")
+             if k in b}
+        v["id"] = lid
+        v["plcb_name"] = b["plcb_name"]
+        for k in ("website", "lat", "lng", "geo_precision", "photo", "also_lids"):
+            if k in b:
+                v[k] = b[k]
+        v["deals"] = []
+        by_zone.setdefault(b["zone_id"], []).append(v)
+
+    for venues in by_zone.values():
+        # Deal-bearing first, then alphabetical: the bundle order is what the app
+        # falls back to whenever two rows score the same.
+        venues.sort(key=lambda v: (not v["deals"], v["name"].lower(), v["id"]))
 
     os.makedirs(OUT_DIR, exist_ok=True)
     index = []
     for zid, venues in sorted(by_zone.items()):
+        # Two files per zone, and the split is a load-time decision, not a
+        # taxonomy. The app boots by fetching EVERY zone's deals so it can answer
+        # "what's on right now" across the whole area -- 169 venues, small. The
+        # venue base is 2,900 and would be a megabyte on a phone in a parking
+        # lot, so it ships per zone and is fetched only when that zone is picked.
+        dealful = [v for v in venues if v["deals"]]
+        rest = [v for v in venues if not v["deals"]]
+        meta = {"zone_id": zid, "name": zone_names.get(zid, zid),
+                "built_at": today.isoformat()}
         path = os.path.join(OUT_DIR, f"zone-{zid}.json")
         with open(path, "w", encoding="utf-8") as fh:
-            json.dump(
-                {"zone_id": zid, "name": zone_names.get(zid, zid), "built_at": today.isoformat(),
-                 "venues": venues},
-                fh,
-                indent=1,
-            )
+            json.dump(dict(meta, venues=dealful), fh, indent=1)
+        rest_path = os.path.join(OUT_DIR, f"venues-{zid}.json")
+        with open(rest_path, "w", encoding="utf-8") as fh:
+            json.dump(dict(meta, venues=rest), fh, indent=1)
         index.append(
             {
                 "id": zid,
                 "name": zone_names.get(zid, zid),
                 "venues": len(venues),
+                # How many of them we can actually tell you the hours for. The
+                # zone picker shows this, because "59 venues, 6 with hours" is
+                # the honest state of the board and hiding it would be the lie.
+                "with_deals": len(dealful),
                 "deals": sum(len(v["deals"]) for v in venues),
             }
         )
-        print(f"  {zid:<32}{len(venues):>3} venues  {os.path.getsize(path):>6,} bytes")
+        print(f"  {zid:<32}{len(venues):>4} venues{len(dealful):>4} with hours  "
+              f"{os.path.getsize(path):>6,} + {os.path.getsize(rest_path):>7,} bytes")
 
     with open(os.path.join(OUT_DIR, "index.json"), "w", encoding="utf-8") as fh:
         json.dump({"built_at": today.isoformat(), "zones": index}, fh, indent=1)
 
     published = [v for vs in by_zone.values() for v in vs]
-    stamp_service_worker(today.isoformat(), len(published))
+    dealful = [v for v in published if v["deals"]]
+    # The service worker cache name has always keyed on the count of what ships.
+    # It must keep keying on the DEAL count: the venue base moves only when the
+    # PLCB corpus does, so keying on it would stop evicting on a deal-only build.
+    stamp_service_worker(today.isoformat(), len(dealful))
     located = sum(1 for v in published if "lat" in v)
     print(f"\n{sum(z['deals'] for z in index)} deals across {len(index)} zones"
           f"  ({rejected} rejected by validators, {hidden} decayed out)")
+    print(f"{len(published)} venues ship, {len(dealful)} with a published window "
+          f"({len(published) - len(dealful)} asking to be filled in)")
+    if outside:
+        print(f"  {outside} licensed venue(s) sit outside every zone and cannot be "
+              f"reached in the UI -- add a zone in data/zones.json to surface them")
+    if orphans:
+        print(f"  ! {len(orphans)} deal(s) matched no venue in the base "
+              f"-- rebuild it: {', '.join(orphans[:3])}")
     print(f"{located}/{len(published)} venues have coordinates"
           + ("" if located == len(published) else "  -- run ingest/geocode_venues.py"))
 

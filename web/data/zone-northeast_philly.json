@@ -1,15 +1,18 @@
 {
  "zone_id": "northeast_philly",
  "name": "Philadelphia \u2014 Northeast",
- "built_at": "2026-08-06",
+ "built_at": "2026-08-07",
  "venues": [
   {
-   "id": "chickie-s-pete-s-philadelphia",
+   "id": "59775",
+   "lid": "59775",
+   "slug": "chickie-s-pete-s-philadelphia",
    "name": "Chickie's & Pete's",
-   "address": "4010 ROBBINS ST & BSMT 4012 ROBBINS ST, PHILADELPHIA PA 19135-3016",
+   "address": "4010 Robbins St & Bsmt 4012 Robbins St, Philadelphia PA 19135",
    "zone_id": "northeast_philly",
    "website": "https://chickiesandpetes.com/location/the-original-at-robbins-ave/",
    "plcb_name": "4010 LLC",
+   "license_type": "Restaurant (Liquor)",
    "photo": {
     "file": "img/venues/chickie-s-pete-s-philadelphia.jpg",
     "attribution": "Photo: Chickie's & Pete's"

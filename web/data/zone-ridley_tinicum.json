@@ -1,15 +1,18 @@
 {
  "zone_id": "ridley_tinicum",
  "name": "Ridley / Tinicum",
- "built_at": "2026-08-06",
+ "built_at": "2026-08-07",
  "venues": [
   {
-   "id": "rosemary-ridley-park",
+   "id": "110744",
+   "lid": "110744",
+   "slug": "rosemary-ridley-park",
    "name": "Rosemary",
-   "address": "25 E HINKLEY AVE, RIDLEY PARK PA 19078-2101",
+   "address": "25 E Hinkley Ave, Ridley Park PA 19078",
    "zone_id": "ridley_tinicum",
    "website": "https://rosemaryrp.com/",
    "plcb_name": "ROSEMARY",
+   "license_type": "Restaurant (Liquor)",
    "lat": 39.8795493,
    "lng": -75.3228839,
    "geo_precision": "place",
@@ -59,7 +62,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",

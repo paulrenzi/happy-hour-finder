@@ -1,67 +1,18 @@
 {
  "zone_id": "ambler_upper_dublin",
  "name": "Ambler / Upper Dublin",
- "built_at": "2026-08-06",
+ "built_at": "2026-08-07",
  "venues": [
   {
-   "id": "guiseppes-restauant-ambler",
-   "name": "Guiseppes Restauant",
-   "address": "46 S BETHLEHEM PK, AMBLER PA 19002-5801",
-   "zone_id": "ambler_upper_dublin",
-   "website": "https://giuseppesofambler.com/",
-   "plcb_name": "GIUSEPPE'S PIZZA REST. OF AMBLER",
-   "lat": 40.157917,
-   "lng": -75.2145017,
-   "geo_precision": "place",
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://giuseppesofambler.com/specials",
-      "quote": "Happy Hour (Monday-Friday 4pm-6pm)"
-     }
-    }
-   ]
-  },
-  {
-   "id": "fireside-bar-and-grill-ambler",
+   "id": "55311",
+   "lid": "55311",
+   "slug": "fireside-bar-and-grill-ambler",
    "name": "Fireside Bar and Grill",
-   "address": "1211 S BETHLEHEM PK, AMBLER PA 19002-5804",
+   "address": "1211 S Bethlehem Pk, Ambler PA 19002",
    "zone_id": "ambler_upper_dublin",
    "website": "https://www.firesidebarandgrille.com/",
    "plcb_name": "FIRESIDE GRILL",
+   "license_type": "Restaurant (Liquor)",
    "lat": 40.1583249,
    "lng": -75.2136911,
    "geo_precision": "place",
@@ -106,12 +57,119 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://www.firesidebarandgrille.com/",
       "quote": "Join Us for Happy Hour / Monday thru Friday: 4:30PM - 6:30PM / Saturday: 4:00PM - 6:00PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "23492",
+   "lid": "23492",
+   "slug": "guiseppes-restauant-ambler",
+   "name": "Guiseppes Restauant",
+   "address": "46 S Bethlehem Pk, Ambler PA 19002",
+   "zone_id": "ambler_upper_dublin",
+   "website": "https://giuseppesofambler.com/",
+   "plcb_name": "GIUSEPPE'S PIZZA REST. OF AMBLER",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.157917,
+   "lng": -75.2145017,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://giuseppesofambler.com/specials",
+      "quote": "Happy Hour (Monday-Friday 4pm-6pm)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "109577",
+   "lid": "109577",
+   "slug": "well-crafted-beer-company-llc-ambler",
+   "name": "WELL CRAFTED BEER COMPANY LLC",
+   "address": "300 Brookside Ave Bldg 19 Ste E, Ambler PA 19002",
+   "zone_id": "ambler_upper_dublin",
+   "website": "https://www.wellcraftedbeer.com/",
+   "plcb_name": "WELL CRAFTED BEER COMPANY LLC",
+   "license_type": "Brewery",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.wellcraftedbeer.com/home/lansdale/happyhour",
+      "quote": "HAPPY HOUR MENU / Available weekdays 4 to 6 pm."
      }
     }
    ]

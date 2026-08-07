@@ -1,221 +1,18 @@
 {
  "zone_id": "fishtown_kensington",
  "name": "Philadelphia \u2014 Fishtown / Kensington",
- "built_at": "2026-08-06",
+ "built_at": "2026-08-07",
  "venues": [
   {
-   "id": "wissahickon-brewing-co-philadelphia",
-   "name": "Wissahickon Brewing Co",
-   "address": "1526 N AMERICAN ST, PHILADELPHIA PA 19122-3811",
-   "zone_id": "fishtown_kensington",
-   "website": "https://www.wissahickonbrew.com/",
-   "plcb_name": "WISSAHICKON BREWING COMPANY OLDE KENSINGTON",
-   "lat": 39.9745786,
-   "lng": -75.1400343,
-   "geo_precision": "place",
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://www.wissahickonbrew.com/kensington/",
-      "quote": "DINNER & HAPPY HOUR / Mon-Fri, 4-6pm / smash burger, fries, and a beer"
-     }
-    }
-   ]
-  },
-  {
-   "id": "percy-philadelphia",
-   "name": "Percy",
-   "address": "1700 N FRONT ST, PHILADELPHIA PA 19122-3261",
-   "zone_id": "fishtown_kensington",
-   "website": "https://percyphl.com/",
-   "plcb_name": "MECHA NOODLE BAR FISHTOWN LLC",
-   "lat": 39.9753997,
-   "lng": -75.1344358,
-   "geo_precision": "place",
-   "photo": {
-    "file": "img/venues/percy-philadelphia.jpg",
-    "attribution": "Photo: Percy"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 4,
-       "start": "15:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "15:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://percyphl.com/",
-      "quote": "HAPPY HOUR / THURS\u2013FRI\u2013SAT / 3PM\u20136PM"
-     }
-    }
-   ]
-  },
-  {
-   "id": "frankford-hall-philadelphia",
-   "name": "Frankford Hall",
-   "address": "1210-22 FRANKFORD AVE, PHILADELPHIA PA 19125-3906",
-   "zone_id": "fishtown_kensington",
-   "website": "https://frankfordhall.com/",
-   "plcb_name": "BIERFISH RESTAURANT PARTNERS LP",
-   "lat": 39.969485,
-   "lng": -75.134683,
-   "geo_precision": "place",
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 7,
-       "start": "20:00",
-       "end": "22:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://frankfordhall.com/",
-      "quote": "Happy Hour / Monday-Friday 4-6pm / Sunday 8-10pm"
-     }
-    }
-   ]
-  },
-  {
-   "id": "lloyd-whiskey-bar-philadelpphia",
-   "name": "Lloyd Whiskey Bar",
-   "address": "529 E GIRARD AVE, PHILADELPPHIA PA 19125-3311",
-   "zone_id": "fishtown_kensington",
-   "website": "https://www.lloydwhiskeybar.com/",
-   "plcb_name": "529 GIRARD GROUP INC",
-   "lat": 39.9717762,
-   "lng": -75.1262997,
-   "geo_precision": "place",
-   "photo": {
-    "file": "img/venues/lloyd-whiskey-bar-philadelpphia.jpg",
-    "attribution": "Photo: Lloyd Whiskey Bar"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://www.lloydwhiskeybar.com/",
-      "quote": "Happy Hour / Mon-Fri 4-6pm!"
-     }
-    }
-   ]
-  },
-  {
-   "id": "cedar-point-bar-kitchen-philadelphia",
+   "id": "67138",
+   "lid": "67138",
+   "slug": "cedar-point-bar-kitchen-philadelphia",
    "name": "Cedar Point Bar & Kitchen",
-   "address": "2370-72 E NORRIS ST, PHILADELPHIA PA 19125-1929",
+   "address": "2370-72 E Norris St, Philadelphia PA 19125",
    "zone_id": "fishtown_kensington",
    "website": "https://www.cedarpointbarandkitchen.com/",
    "plcb_name": "CEDAR POINT LLC",
+   "license_type": "Restaurant (Liquor)",
    "lat": 39.97688,
    "lng": -75.127701,
    "geo_precision": "place",
@@ -258,25 +55,104 @@
        "end": "19:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "off draft beer",
+       "price_usd": 2.0
+      },
+      {
+       "category": "draft",
+       "label": "Off Draft Beer for Happy Hour",
+       "price_usd": 2.0
+      },
+      {
+       "category": "wine",
+       "label": "Off Wine for Happy Hour",
+       "price_usd": 2.0
+      }
+     ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://www.cedarpointbarandkitchen.com/",
-      "quote": "HAPPY HOUR / Sunday \u2013 Friday: 5PM \u2013 7pm / Monday \u2013 Friday: 10PM \u2013 11PM"
+      "url": "https://cedarpointbarandkitchen.com/happy-hour-specials/",
+      "quote": "HAPPY HOUR / Standard Happy Hour runs Sunday through Friday from 5PM to 7PM / Late Night Happy Hour for the Last Hour: Monday \u2013 Thursday 10PM \u2013 11PM (Friday 11PM \u2013 12AM)"
      }
     }
    ]
   },
   {
-   "id": "interstate-drafthouse-philadelphia",
+   "id": "64739",
+   "lid": "64739",
+   "slug": "frankford-hall-philadelphia",
+   "name": "Frankford Hall",
+   "address": "1210-22 Frankford Ave, Philadelphia PA 19125",
+   "zone_id": "fishtown_kensington",
+   "website": "https://frankfordhall.com/",
+   "plcb_name": "BIERFISH RESTAURANT PARTNERS LP",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.969485,
+   "lng": -75.134683,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "20:00",
+       "end": "22:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://frankfordhall.com/",
+      "quote": "Happy Hour / Monday-Friday 4-6pm / Sunday 8-10pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "87212",
+   "lid": "87212",
+   "slug": "interstate-drafthouse-philadelphia",
    "name": "Interstate Drafthouse",
-   "address": "1235 E PALMER ST, PHILADELPHIA PA 19125-3307",
+   "address": "1235 E Palmer St, Philadelphia PA 19125",
    "zone_id": "fishtown_kensington",
    "website": "https://interstatedrafthouse.com/",
    "plcb_name": "DRAFTHOUSE INC",
+   "license_type": "Restaurant (Liquor)",
    "lat": 39.9718422,
    "lng": -75.1286774,
    "geo_precision": "place",
@@ -318,12 +194,170 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://interstatedrafthouse.com/weekly-specials/",
       "quote": "Happy Hour / Tuesday to Friday \u2013 Happy Hour from 4 to 6PM $1 off drafts"
+     }
+    }
+   ]
+  },
+  {
+   "id": "65739",
+   "lid": "65739",
+   "slug": "lloyd-whiskey-bar-philadelpphia",
+   "name": "Lloyd Whiskey Bar",
+   "address": "529 E Girard Ave, Philadelpphia PA 19125",
+   "zone_id": "fishtown_kensington",
+   "website": "https://www.lloydwhiskeybar.com/",
+   "plcb_name": "529 GIRARD GROUP INC",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.9717762,
+   "lng": -75.1262997,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/lloyd-whiskey-bar-philadelpphia.jpg",
+    "attribution": "Photo: Lloyd Whiskey Bar"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.lloydwhiskeybar.com/",
+      "quote": "Happy Hour / Mon-Fri 4-6pm!"
+     }
+    }
+   ]
+  },
+  {
+   "id": "128022",
+   "lid": "128022",
+   "slug": "percy-philadelphia",
+   "name": "Percy",
+   "address": "1700 N Front St, Philadelphia PA 19122",
+   "zone_id": "fishtown_kensington",
+   "website": "https://percyphl.com/",
+   "plcb_name": "MECHA NOODLE BAR FISHTOWN LLC",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.9753997,
+   "lng": -75.1344358,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/percy-philadelphia.jpg",
+    "attribution": "Photo: Percy"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://percyphl.com/",
+      "quote": "HAPPY HOUR / THURS\u2013FRI\u2013SAT / 3PM\u20136PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "120981",
+   "lid": "120981",
+   "slug": "wissahickon-brewing-co-philadelphia",
+   "name": "Wissahickon Brewing Co",
+   "address": "1526 N American St, Philadelphia PA 19122",
+   "zone_id": "fishtown_kensington",
+   "website": "https://www.wissahickonbrew.com/",
+   "plcb_name": "WISSAHICKON BREWING COMPANY OLDE KENSINGTON",
+   "license_type": "Brewery",
+   "lat": 39.9745786,
+   "lng": -75.1400343,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.wissahickonbrew.com/kensington/",
+      "quote": "DINNER & HAPPY HOUR / Mon-Fri, 4-6pm / smash burger, fries, and a beer"
      }
     }
    ]

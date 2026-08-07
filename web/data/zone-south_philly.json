@@ -1,15 +1,82 @@
 {
  "zone_id": "south_philly",
  "name": "Philadelphia \u2014 South Philly",
- "built_at": "2026-08-06",
+ "built_at": "2026-08-07",
  "venues": [
   {
-   "id": "chili-s-philadelphia-109005",
+   "id": "49542",
+   "lid": "49542",
+   "slug": "chickie-s-and-pete-s-philadelphia",
+   "name": "Chickie's and Pete's",
+   "address": "1526 Packer Ave, Philadelphia PA 19145",
+   "zone_id": "south_philly",
+   "website": "https://chickiesandpetes.com/",
+   "plcb_name": "CHICKIE'S & PETE'S CAFE",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.9115895,
+   "lng": -75.1747709,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/chickie-s-and-pete-s-philadelphia.jpg",
+    "attribution": "Photo: Chickie's and Pete's"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.chickiesandpetes.com/happy-hour",
+      "quote": "Happy Hour available Monday-Friday 4-6 pm and Sunday-Thursday 10pm-12am at bar area only. Where permitted by law. Dine-in only. Prices and times may vary at Parx, Tropicana, Kansas City, and Robbins Ave. locations. Not valid at Allentown, Airport, or Nevada locations."
+     }
+    }
+   ]
+  },
+  {
+   "id": "109005",
+   "lid": "109005",
+   "slug": "chili-s-philadelphia-109005",
    "name": "Chili's",
-   "address": "2320 OREGON AVE, PHILADELPHIA PA 19145",
+   "address": "2320 Oregon Ave, Philadelphia PA 19145",
    "zone_id": "south_philly",
    "website": "https://www.chilis.com/locations/us/pennsylvania/philadelphia/south-philly",
    "plcb_name": "CHILI'S GRILL & BAR",
+   "license_type": "Restaurant (Liquor)",
    "lat": 39.9184825,
    "lng": -75.1874832,
    "geo_precision": "place",
@@ -40,7 +107,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -51,12 +118,74 @@
    ]
   },
   {
-   "id": "south-philadelphia-tap-room-philadelphia",
+   "id": "83231",
+   "lid": "83231",
+   "slug": "second-district-brewing-company-philadelphia",
+   "name": "Second District Brewing Company",
+   "address": "1939 S Bancroft St, Philadelphia PA 19145",
+   "zone_id": "south_philly",
+   "website": "https://seconddistrictbrewing.com/",
+   "plcb_name": "SECOND DISTRICT BREWING COMPANY",
+   "license_type": "Brewery",
+   "lat": 39.9262596,
+   "lng": -75.173111,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/second-district-brewing-company-philadelphia.jpg",
+    "attribution": "Photo: Second District Brewing Company"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://seconddistrictbrewing.com/brewpub-menu/",
+      "quote": "HAPPY HOUR / MONDAY-FRIDAY 4-6pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "45092",
+   "lid": "45092",
+   "slug": "south-philadelphia-tap-room-philadelphia",
    "name": "South Philadelphia Tap Room",
-   "address": "1509-11 MIFFLIN ST, PHILADELPHIA PA 19145-2231",
+   "address": "1509-11 Mifflin St, Philadelphia PA 19145",
    "zone_id": "south_philly",
    "website": "https://southphiladelphiataproom.com/",
    "plcb_name": "SOUTH PHILLY TAP ROOM",
+   "license_type": "Restaurant (Liquor)",
    "lat": 39.9272653,
    "lng": -75.1714593,
    "geo_precision": "place",
@@ -102,129 +231,12 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://southphiladelphiataproom.com/",
       "quote": "Happy Hour / $1 off drafts / Monday \u2013 Friday | 4pm-6pm"
-     }
-    }
-   ]
-  },
-  {
-   "id": "chickie-s-and-pete-s-philadelphia",
-   "name": "Chickie's and Pete's",
-   "address": "1526 PACKER AVE, PHILADELPHIA PA 19145-5407",
-   "zone_id": "south_philly",
-   "website": "https://chickiesandpetes.com/",
-   "plcb_name": "CHICKIE'S & PETE'S CAFE",
-   "lat": 39.9115895,
-   "lng": -75.1747709,
-   "geo_precision": "place",
-   "photo": {
-    "file": "img/venues/chickie-s-and-pete-s-philadelphia.jpg",
-    "attribution": "Photo: Chickie's and Pete's"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 7,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://chickiesandpetes.com/menu",
-      "quote": "Happy Hour available Monday-Friday 4-6 pm and Sunday-Thursday 10pm-12am at bar area only. Where permitted by law. Dine-in only. Prices and times may vary at Parx, Tropicana, Kansas City, and Robbins Ave. locations. Not valid at Allentown or Nevada locations."
-     }
-    }
-   ]
-  },
-  {
-   "id": "second-district-brewing-company-philadelphia",
-   "name": "Second District Brewing Company",
-   "address": "1939 S BANCROFT ST, PHILADELPHIA PA 19145",
-   "zone_id": "south_philly",
-   "website": "https://seconddistrictbrewing.com/",
-   "plcb_name": "SECOND DISTRICT BREWING COMPANY",
-   "lat": 39.9262596,
-   "lng": -75.173111,
-   "geo_precision": "place",
-   "photo": {
-    "file": "img/venues/second-district-brewing-company-philadelphia.jpg",
-    "attribution": "Photo: Second District Brewing Company"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://seconddistrictbrewing.com/brewpub-menu/",
-      "quote": "HAPPY HOUR / MONDAY-FRIDAY 4-6pm"
      }
     }
    ]

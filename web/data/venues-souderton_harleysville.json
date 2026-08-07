@@ -1,0 +1,500 @@
+{
+ "zone_id": "souderton_harleysville",
+ "name": "Souderton / Harleysville",
+ "built_at": "2026-08-07",
+ "venues": [
+  {
+   "lid": "64832",
+   "name": "1110 Sumneytown",
+   "address": "1110 Sumneytown Pk Rte 63, Harleysville PA 19438",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "64832",
+   "plcb_name": "1110 SUMNEYTOWN INC",
+   "deals": []
+  },
+  {
+   "lid": "116225",
+   "name": "3 Sisters Rum",
+   "address": "843 Spring Mount Rd, Schwenksville PA 19473",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Limited Distillery",
+   "id": "116225",
+   "plcb_name": "3 SISTERS RUM",
+   "deals": []
+  },
+  {
+   "lid": "55288",
+   "name": "Arielle's Country Inn",
+   "address": "740 Allentown Rd, Sellersville PA 18960",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "55288",
+   "plcb_name": "ARIELLE'S COUNTRY INN",
+   "website": "https://ariellescountryinn.com/",
+   "lat": 40.3675024,
+   "lng": -75.3831217,
+   "geo_precision": "place",
+   "deals": []
+  },
+  {
+   "lid": "37888",
+   "name": "Bay Pony Inn",
+   "address": "Old Skippack Rd, Lederach PA 19450",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Hotel (Liquor)",
+   "id": "37888",
+   "plcb_name": "BAY PONY INN",
+   "deals": []
+  },
+  {
+   "lid": "92808",
+   "name": "Beef Sports Bar",
+   "address": "4402 Old Bethlehem Pk, Telford PA 18969",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "92808",
+   "plcb_name": "BEEF SPORTS BAR LLC",
+   "deals": []
+  },
+  {
+   "lid": "114533",
+   "name": "Branch Creek Brewing",
+   "address": "20 W Chestnut St, Souderton PA 18964",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Brewery",
+   "id": "114533",
+   "plcb_name": "BRANCH CREEK BREWING COMPANY",
+   "deals": []
+  },
+  {
+   "lid": "128502",
+   "name": "Broad Street Italian Cuisine & Pizzeria",
+   "address": "30 W Broad St, Souderton PA 18964",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "128502",
+   "plcb_name": "BROAD STREET ITALIAN CUISINE & PIZZERIA",
+   "deals": []
+  },
+  {
+   "lid": "110102",
+   "name": "Bye Town",
+   "address": "1903 Bethlehem Pk, Hatfield PA 19440",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "110102",
+   "plcb_name": "BYE TOWN LLC",
+   "deals": []
+  },
+  {
+   "lid": "46456",
+   "name": "Campler",
+   "address": "404-408 S Main St, Hatfield PA 19440",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "46456",
+   "plcb_name": "CAMPLER, INC.",
+   "deals": []
+  },
+  {
+   "lid": "116275",
+   "name": "Collegeville Diner",
+   "address": "290 Main St, Harleysville PA 19438",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "116275",
+   "plcb_name": "HENNING'S SUPER MARKET INC",
+   "website": "https://www.thecollegevillediner.com/",
+   "lat": 40.1856409,
+   "lng": -75.4517414,
+   "geo_precision": "place",
+   "deals": []
+  },
+  {
+   "lid": "118223",
+   "name": "Colmar Inn",
+   "address": "102 Bethlehem Pk, Colmar PA 18915",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "118223",
+   "plcb_name": "COLMAR INN",
+   "deals": []
+  },
+  {
+   "lid": "67224",
+   "name": "Creekside Cabaret",
+   "address": "3225 Advance Ln, Colmar PA 18915",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "67224",
+   "plcb_name": "CREEKSIDE CABARET",
+   "deals": []
+  },
+  {
+   "lid": "56850",
+   "name": "Crossroads Tavern",
+   "address": "2004 Hilltown Pk, Hilltown PA 18927",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "56850",
+   "plcb_name": "CROSSROADS TAVERN",
+   "deals": []
+  },
+  {
+   "lid": "36516",
+   "name": "Fasageo's Italian Restaurant & Pizzeria",
+   "address": "724 Ridge Rd, Sellersville PA 18960",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Hotel (Liquor)",
+   "id": "36516",
+   "plcb_name": "FASAGEO'S ITALIAN RESTAURANT & PIZZERIA, INC.",
+   "deals": []
+  },
+  {
+   "lid": "45182",
+   "name": "Fine Wine & Good Spirits",
+   "address": "2333 Welsh Rd Ste 30, Lansdale PA 19446",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "45182",
+   "plcb_name": "APPLEBEE'S NEIGHBORHOOD GRILL & BAR",
+   "website": "https://www.finewineandgoodspirits.com/store-4658",
+   "lat": 40.2627389,
+   "lng": -75.3170827,
+   "geo_precision": "place",
+   "deals": []
+  },
+  {
+   "lid": "116360",
+   "name": "Freight Building",
+   "address": "100 S Front St, Souderton PA 18964",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Brewery",
+   "id": "116360",
+   "plcb_name": "FREIGHT BUILDING",
+   "deals": []
+  },
+  {
+   "lid": "35695",
+   "name": "Giuseppe's Pizza & Family Restaurant of Cowpath Road",
+   "address": "101 Cowpath Rd, Lansdale PA 19446",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "35695",
+   "plcb_name": "GIUSEPPE'S PIZZA & FAMILY RESTAURANT OF COWPATH ROAD, INC.",
+   "deals": []
+  },
+  {
+   "lid": "58275",
+   "name": "Hattricks Sports Bar & Grill",
+   "address": "64 E Lincoln Ave, Hatfield PA 19440",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "58275",
+   "plcb_name": "WEIMAR RESTAURANT INC",
+   "website": "http://www.hattricksbar.com/",
+   "lat": 40.2804167,
+   "lng": -75.2972614,
+   "geo_precision": "place",
+   "deals": []
+  },
+  {
+   "lid": "90023",
+   "name": "Imprint Beer",
+   "address": "1500 Industry Rd Ste O, Hatfield PA 19440",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Brewery",
+   "id": "90023",
+   "plcb_name": "IMPRINT BEER COMPANY",
+   "website": "https://imprintbeer.com/",
+   "also_lids": [
+    "130725"
+   ],
+   "deals": []
+  },
+  {
+   "lid": "93303",
+   "name": "Landis Supermarket",
+   "address": "Shelly Square Shopping Center 2700 Shelly Rd, Harleysville PA 19438",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "93303",
+   "plcb_name": "LANDIS SUPERMARKET INC",
+   "deals": []
+  },
+  {
+   "lid": "125498",
+   "name": "Lederach Golf Club",
+   "address": "900 Clubhouse Dr, Harleysville PA 19438",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Municipal Golf Course (Liquor)",
+   "id": "125498",
+   "plcb_name": "LEDERACH GOLF CLUB",
+   "deals": []
+  },
+  {
+   "lid": "58620",
+   "name": "Naceville Hotel",
+   "address": "2038 Ridge Rd, Sellersville PA 18960",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Hotel (Liquor)",
+   "id": "58620",
+   "plcb_name": "NACEVILLE HOTEL",
+   "deals": []
+  },
+  {
+   "lid": "122089",
+   "name": "Northbound Restaurant",
+   "address": "2 W Broad St, Souderton PA 18964",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Brewery",
+   "id": "122089",
+   "plcb_name": "NORTHBOUND RESTAURANT",
+   "website": "https://northboundrestaurant.com/",
+   "deals": []
+  },
+  {
+   "lid": "35230",
+   "name": "Old Rockhill Tavern",
+   "address": "1115 Old Rte 309, Sellersville PA 18960",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "35230",
+   "plcb_name": "OLD ROCKHILL TAVERN, INC.",
+   "deals": []
+  },
+  {
+   "lid": "20622",
+   "name": "Olde Indian Valley Inn",
+   "address": "101 East Broad St, Souderton PA 18964",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "20622",
+   "plcb_name": "OLDE INDIAN VALLEY INN",
+   "deals": []
+  },
+  {
+   "lid": "93958",
+   "name": "Perkiomen Valley Brewery",
+   "address": "101 Walnut St, Green Lane PA 18054",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Brewery",
+   "id": "93958",
+   "plcb_name": "PERKIOMEN VALLEY BREWERY LLC",
+   "website": "https://perkiomenvalleybrewery.com/",
+   "deals": []
+  },
+  {
+   "lid": "131154",
+   "name": "Peter Chang PA",
+   "address": "118 Bethlehem Pk Rte 309, Colmar PA 18915",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "131154",
+   "plcb_name": "PETER CHANG PA LLC",
+   "deals": []
+  },
+  {
+   "lid": "108069",
+   "name": "Piano Bar",
+   "address": "701 Cross Rd Unit #1, Lederach PA 19450",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "108069",
+   "plcb_name": "PIANO BAR",
+   "deals": []
+  },
+  {
+   "lid": "66496",
+   "name": "Red Cedar Grille & Bar",
+   "address": "249 Bethlehem Pk, Colmar PA 18915",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "66496",
+   "plcb_name": "RED CEDAR GRILLE & BAR INC",
+   "deals": []
+  },
+  {
+   "lid": "56800",
+   "name": "Rising Sun Inn",
+   "address": "898 Allentown Rd, Telford PA 18969",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "56800",
+   "plcb_name": "RISING SUN INN LLC",
+   "deals": []
+  },
+  {
+   "lid": "91284",
+   "name": "Royal Farms",
+   "address": "935 Bethlehem Pike, Colmar PA 18915",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "91284",
+   "plcb_name": "ROYAL FARMS",
+   "deals": []
+  },
+  {
+   "lid": "50377",
+   "name": "Saylormoon",
+   "address": "104 Allentown Rd, Elroy PA 18964",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "50377",
+   "plcb_name": "SAYLORMOON INC",
+   "deals": []
+  },
+  {
+   "lid": "128721",
+   "name": "Sellersville Bar & Grill",
+   "address": "309 S Main St, Sellersville PA 18960",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "128721",
+   "plcb_name": "SELLERSVILLE BAR & GRILL LLC",
+   "deals": []
+  },
+  {
+   "lid": "5993",
+   "name": "Sellersville Inn",
+   "address": "136 N Main St & 24 W Temple St, Sellersville PA 18960",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Hotel (Liquor)",
+   "id": "5993",
+   "plcb_name": "SELLERSVILLE INN, INC.",
+   "deals": []
+  },
+  {
+   "lid": "131560",
+   "name": "Shop Rite",
+   "address": "170 Forty Foot Rd, Hatfield PA 19440",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "131560",
+   "plcb_name": "SHOP RITE",
+   "deals": []
+  },
+  {
+   "lid": "120850",
+   "name": "Souderton Food Mart",
+   "address": "672 E Broad St, Souderton PA 18964",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "120850",
+   "plcb_name": "SOUDERTON FOOD MART",
+   "deals": []
+  },
+  {
+   "lid": "104798",
+   "name": "Spirochete Brewing",
+   "address": "2880 Bergey Rd Unit Aa, Hatfield PA 19440",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Brewery",
+   "id": "104798",
+   "plcb_name": "SPIROCHETE BREWING INC",
+   "website": "https://www.spirochetebrewing.com/",
+   "deals": []
+  },
+  {
+   "lid": "67636",
+   "name": "Spring Mountain Adventures",
+   "address": "757 Spring Mount Rd, Spring Mount PA 19478",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "67636",
+   "plcb_name": "SPRING MOUNTAIN ADVENTURES INC",
+   "deals": []
+  },
+  {
+   "lid": "105357",
+   "name": "Sumneytown Hotel & Restaurant",
+   "address": "3188 Main St, Sumneytown PA 18084",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "105357",
+   "plcb_name": "SUMNEYTOWN HOTEL & RESTAURANT",
+   "deals": []
+  },
+  {
+   "lid": "56609",
+   "name": "Telford Kat",
+   "address": "146 N Main St, Telford PA 18969",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "56609",
+   "plcb_name": "TELFORD KAT INC",
+   "deals": []
+  },
+  {
+   "lid": "86875",
+   "name": "The Giant Company",
+   "address": "760 Route 113, Souderton PA 18964",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "86875",
+   "plcb_name": "THE GIANT COMPANY LLC",
+   "deals": []
+  },
+  {
+   "lid": "91324",
+   "name": "The Giant Company",
+   "address": "1540 Cowpath Rd, Hatfield PA 19440",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "91324",
+   "plcb_name": "THE GIANT COMPANY LLC",
+   "deals": []
+  },
+  {
+   "lid": "120988",
+   "name": "The Harleysville Hotel",
+   "address": "496 Main St, Harleysville PA 19438",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "120988",
+   "plcb_name": "THE HARLEYSVILLE HOTEL",
+   "deals": []
+  },
+  {
+   "lid": "54100",
+   "name": "The Horse Tavern & Grill",
+   "address": "1000 Old Bethlehem Pk, Sellersville PA 18960",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Hotel (Liquor)",
+   "id": "54100",
+   "plcb_name": "THE HORSE TAVERN & GRILL",
+   "deals": []
+  },
+  {
+   "lid": "106707",
+   "name": "Wawa",
+   "address": "201 Main St, Harleysville PA 19438",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "106707",
+   "plcb_name": "WAWA INC",
+   "deals": []
+  },
+  {
+   "lid": "115954",
+   "name": "Wawa #8149",
+   "address": "1900 N Broad St, Hatfield PA 19446",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "115954",
+   "plcb_name": "WAWA #8149",
+   "deals": []
+  },
+  {
+   "lid": "26228",
+   "name": "Wetlands",
+   "address": "Mclean Station Rd Rd 2, Green Lane PA 18054",
+   "zone_id": "souderton_harleysville",
+   "license_type": "Privately-Owned Public Golf Course Rest (Liquor)",
+   "id": "26228",
+   "plcb_name": "WETLANDS, INC.",
+   "deals": []
+  }
+ ]
+}

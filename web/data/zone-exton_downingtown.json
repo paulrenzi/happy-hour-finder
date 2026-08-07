@@ -1,15 +1,594 @@
 {
  "zone_id": "exton_downingtown",
  "name": "Exton / Downingtown",
- "built_at": "2026-08-06",
+ "built_at": "2026-08-07",
  "venues": [
   {
-   "id": "vk-brewing-co-eatery-exton",
+   "id": "81364",
+   "lid": "81364",
+   "slug": "al-pastor-exton",
+   "name": "Al Pastor",
+   "address": "560 Wellington Sq, Exton PA 19341",
+   "zone_id": "exton_downingtown",
+   "website": "https://eatalpastor.com",
+   "plcb_name": "EAGLEVIEW TOWN CENTER",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.0615056,
+   "lng": -75.6849077,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/al-pastor-exton.jpg",
+    "attribution": "Photo: Al Pastor"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://eatalpastor.com",
+      "quote": "HAPPY HOUR / Join us Monday through Friday from 4 - 6 pm for food and drink specials! Enjoy our exclusive deals and delicious offerings."
+     }
+    }
+   ]
+  },
+  {
+   "id": "73031",
+   "lid": "73031",
+   "slug": "anthony-s-cucina-fresca-downingtown",
+   "name": "Anthony's Cucina Fresca",
+   "address": "78 W Lancaster Ave, Downingtown PA 19335",
+   "zone_id": "exton_downingtown",
+   "website": "https://anthonyscucinafresca.com/",
+   "plcb_name": "ANTHONYS PIZZA & GRILL",
+   "license_type": "Economic Development Restaurant (Liquor)",
+   "lat": 40.0038458,
+   "lng": -75.7078421,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://anthonyscucinafresca.com/menu/",
+      "quote": "Happy Hour Menu / Join us for Happy Hour! Monday through Friday, 4:00pm to 6:00pm. / Single shot mixed drinks \u2013 $5.00 each! All other cocktails in our menu for only $9.00"
+     }
+    }
+   ]
+  },
+  {
+   "id": "109596",
+   "lid": "109596",
+   "slug": "bloom-southern-kitchen-chester-springs",
+   "name": "Bloom Southern Kitchen",
+   "address": "123 Pottstown Pk, Chester Springs PA 19425",
+   "zone_id": "exton_downingtown",
+   "website": "https://www.bloomsouthernkitchen.com",
+   "plcb_name": "123 BOURBON PIKE LLC",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.0782005,
+   "lng": -75.6884381,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.bloomsouthernkitchen.com/happy-hour-menu",
+      "quote": "Happy Hour / Daily from 3-6pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "89606",
+   "lid": "89606",
+   "slug": "chophouse-grille-exton",
+   "name": "ChopHouse Grille",
+   "address": "301 N Pottstown Pk, Exton PA 19341",
+   "zone_id": "exton_downingtown",
+   "website": "https://www.chophousegrille.com",
+   "plcb_name": "PJW EXTON LLC",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.033653,
+   "lng": -75.63083,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.chophousegrille.com/happy-hour",
+      "quote": "happy hour / Monday - Friday 4 pm - 6pm. Available in bar area only"
+     }
+    }
+   ]
+  },
+  {
+   "id": "65626",
+   "lid": "65626",
+   "slug": "liberty-union-bar-and-grill-chester-springs",
+   "name": "Liberty Union Bar and Grill",
+   "address": "325 Simpson Dr, Chester Springs PA 19425",
+   "zone_id": "exton_downingtown",
+   "website": "http://libertyunionbar.com/chester-springs",
+   "plcb_name": "LIBERTY UNION BAR AND GRILL",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.0770239,
+   "lng": -75.6875295,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/liberty-union-bar-and-grill-chester-springs.jpg",
+    "attribution": "Photo: Liberty Union Bar and Grill"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://libertyunionbar.com/chester-springs/specials/",
+      "quote": "Happy Hour Menu / Monday, Tuesday, Wednesday, Thursday, Friday \u2022 4:00 PM to 6:00 PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "67364",
+   "lid": "67364",
+   "slug": "limoncello-chester-springs",
+   "name": "Limoncello",
+   "address": "491-499 E Uwchlan Ave, Chester Springs PA 19425",
+   "zone_id": "exton_downingtown",
+   "website": "https://www.limoncellorestaurant.com/chester-springs",
+   "plcb_name": "LIMONCELLO",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.0672209,
+   "lng": -75.6484842,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/limoncello-chester-springs.jpg",
+    "attribution": "Photo: Limoncello"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.limoncellorestaurant.com/happy-hour-menu",
+      "quote": "HAPPY HOUR MENU / Sunday-Friday 4:00-6:00PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "63902",
+   "lid": "63902",
+   "slug": "pj-whelihan-s-downingtown",
+   "name": "PJ Whelihan's",
+   "address": "853 E Lancaster Ave, Downingtown PA 19335",
+   "zone_id": "exton_downingtown",
+   "website": "https://www.pjspub.com/about.php?loc=Downingtown",
+   "plcb_name": "PJ WHELIHAN'S",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.0172385,
+   "lng": -75.6840524,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/pj-whelihan-s-downingtown.jpg",
+    "attribution": "Photo: PJ Whelihan's"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.pjspub.com/about.php?loc=Downingtown",
+      "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "62955",
+   "lid": "62955",
+   "slug": "station-taproom-downingtown",
+   "name": "Station Taproom",
+   "address": "207 W Lancaster Ave, Downingtown PA 19335",
+   "zone_id": "exton_downingtown",
+   "website": "https://stationtaproom.com/",
+   "plcb_name": "STATION TAPROOM",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.0025529,
+   "lng": -75.7107646,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/station-taproom-downingtown.jpg",
+    "attribution": "Photo: Station Taproom"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 3,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 4,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:30",
+       "end": "18:30"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "select pints",
+       "price_usd": 5.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://stationtaproom.com/",
+      "quote": "Happy Hour / Tuesday-Friday 4:30-6:30pm / $5 select pints, $7 pulled pork sandwiches"
+     }
+    }
+   ]
+  },
+  {
+   "id": "131290",
+   "lid": "131290",
+   "slug": "the-stables-dowingtown",
+   "name": "The Stables",
+   "address": "160 Park Rd, Dowingtown PA 19335",
+   "zone_id": "exton_downingtown",
+   "website": "https://thestablesbeergarden.com/",
+   "plcb_name": "123 PPCS LLC",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.080151,
+   "lng": -75.6901631,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.thestablesbeergarden.com/happy-hour",
+      "quote": "HAPPY HOUR / Join us for Happy Hour every Tuesday - Friday from 4 pm - 6 pm!"
+     }
+    }
+   ]
+  },
+  {
+   "id": "36829",
+   "lid": "36829",
+   "slug": "victory-brewing-company-downingtown",
+   "name": "Victory Brewing Company",
+   "address": "Downingtown Tech Ctr 420 Acorn Ln, Downingtown PA 19335",
+   "zone_id": "exton_downingtown",
+   "website": "https://downingtown.victorybeer.com/",
+   "plcb_name": "VICTORY BREWING COMPANY LLC",
+   "license_type": "Brewery",
+   "lat": 40.0051212,
+   "lng": -75.6939462,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/victory-brewing-company-downingtown.jpg",
+    "attribution": "Photo: Victory Brewing Company"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "11:00",
+       "end": "14:00"
+      },
+      {
+       "dow": 2,
+       "start": "11:00",
+       "end": "14:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "off drafts",
+       "price_usd": 2.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://downingtown.victorybeer.com/",
+      "quote": "Weekday Happy Hour / $2 off drafts, liquor pours,, wine + shareables / Monday - Friday, 4pm to 6pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "111047",
+   "lid": "111047",
+   "slug": "vk-brewing-co-eatery-exton",
    "name": "VK Brewing Co. & Eatery",
-   "address": "693 E LINCOLN HWY, EXTON PA 19341-2809",
+   "address": "693 E Lincoln Hwy, Exton PA 19341",
    "zone_id": "exton_downingtown",
    "website": "https://www.vkbrewing.com/",
    "plcb_name": "VK BREWING COMPANY",
+   "license_type": "Restaurant (Liquor)",
    "lat": 40.0301221,
    "lng": -75.610095,
    "geo_precision": "place",
@@ -70,397 +649,12 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://www.vkbrewing.com/specials.html",
       "quote": "Happy Hour / Tuesday \u2013 Friday: 4pm to 6 pm & Saturday \u2013 Sunday: 1pm to 3pm / \u200b$6 Draft Beers \u25c6 $8 House Wines \u25c6 $10 Craft Cocktails"
-     }
-    }
-   ]
-  },
-  {
-   "id": "victory-brewing-company-downingtown",
-   "name": "Victory Brewing Company",
-   "address": "DOWNINGTOWN TECH CTR 420 ACORN LN, DOWNINGTOWN PA 19335-3075",
-   "zone_id": "exton_downingtown",
-   "website": "https://downingtown.victorybeer.com/",
-   "plcb_name": "VICTORY BREWING COMPANY LLC",
-   "lat": 40.0051212,
-   "lng": -75.6939462,
-   "geo_precision": "place",
-   "photo": {
-    "file": "img/venues/victory-brewing-company-downingtown.jpg",
-    "attribution": "Photo: Victory Brewing Company"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "11:00",
-       "end": "14:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [
-      {
-       "category": "draft",
-       "label": "off drafts",
-       "price_usd": 2.0
-      }
-     ],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://downingtown.victorybeer.com/",
-      "quote": "Weekday Happy Hour / $2 off drafts, liquor pours,, wine + shareables / Monday - Friday, 4pm to 6pm"
-     }
-    }
-   ]
-  },
-  {
-   "id": "station-taproom-downingtown",
-   "name": "Station Taproom",
-   "address": "207 W LANCASTER AVE, DOWNINGTOWN PA 19335-2511",
-   "zone_id": "exton_downingtown",
-   "website": "https://stationtaproom.com/",
-   "plcb_name": "STATION TAPROOM",
-   "lat": 40.0025529,
-   "lng": -75.7107646,
-   "geo_precision": "place",
-   "photo": {
-    "file": "img/venues/station-taproom-downingtown.jpg",
-    "attribution": "Photo: Station Taproom"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 2,
-       "start": "16:30",
-       "end": "18:30"
-      },
-      {
-       "dow": 3,
-       "start": "16:30",
-       "end": "18:30"
-      },
-      {
-       "dow": 4,
-       "start": "16:30",
-       "end": "18:30"
-      },
-      {
-       "dow": 5,
-       "start": "16:30",
-       "end": "18:30"
-      }
-     ],
-     "items": [
-      {
-       "category": "draft",
-       "label": "select pints",
-       "price_usd": 5.0
-      }
-     ],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://stationtaproom.com/",
-      "quote": "Happy Hour / Tuesday-Friday 4:30-6:30pm / $5 select pints, $7 pulled pork sandwiches"
-     }
-    }
-   ]
-  },
-  {
-   "id": "pj-whelihan-s-downingtown",
-   "name": "PJ Whelihan's",
-   "address": "853 E LANCASTER AVE, DOWNINGTOWN PA 19335-3327",
-   "zone_id": "exton_downingtown",
-   "website": "https://www.pjspub.com/about.php?loc=Downingtown",
-   "plcb_name": "PJ WHELIHAN'S",
-   "lat": 40.0172385,
-   "lng": -75.6840524,
-   "geo_precision": "place",
-   "photo": {
-    "file": "img/venues/pj-whelihan-s-downingtown.jpg",
-    "attribution": "Photo: PJ Whelihan's"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://www.pjspub.com/about.php?loc=Downingtown",
-      "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
-     }
-    }
-   ]
-  },
-  {
-   "id": "liberty-union-bar-and-grill-chester-springs",
-   "name": "Liberty Union Bar and Grill",
-   "address": "325 SIMPSON DR, CHESTER SPRINGS PA 19425-9550",
-   "zone_id": "exton_downingtown",
-   "website": "http://libertyunionbar.com/chester-springs",
-   "plcb_name": "LIBERTY UNION BAR AND GRILL",
-   "lat": 40.0770239,
-   "lng": -75.6875295,
-   "geo_precision": "place",
-   "photo": {
-    "file": "img/venues/liberty-union-bar-and-grill-chester-springs.jpg",
-    "attribution": "Photo: Liberty Union Bar and Grill"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "http://libertyunionbar.com/chester-springs/specials/",
-      "quote": "Happy Hour Menu / Monday, Tuesday, Wednesday, Thursday, Friday \u2022 4:00 PM to 6:00 PM"
-     }
-    }
-   ]
-  },
-  {
-   "id": "limoncello-chester-springs",
-   "name": "Limoncello",
-   "address": "491-499 E UWCHLAN AVE, CHESTER SPRINGS PA 19425-2231",
-   "zone_id": "exton_downingtown",
-   "website": "https://www.limoncellorestaurant.com/chester-springs",
-   "plcb_name": "LIMONCELLO",
-   "lat": 40.0672209,
-   "lng": -75.6484842,
-   "geo_precision": "place",
-   "photo": {
-    "file": "img/venues/limoncello-chester-springs.jpg",
-    "attribution": "Photo: Limoncello"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 7,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://www.limoncellorestaurant.com/happy-hour-menu",
-      "quote": "HAPPY HOUR MENU / Sunday-Friday 4:00-6:00PM"
-     }
-    }
-   ]
-  },
-  {
-   "id": "anthony-s-cucina-fresca-downingtown",
-   "name": "Anthony's Cucina Fresca",
-   "address": "78 W LANCASTER AVE, DOWNINGTOWN PA 19335-2825",
-   "zone_id": "exton_downingtown",
-   "website": "https://anthonyscucinafresca.com/",
-   "plcb_name": "ANTHONYS PIZZA & GRILL",
-   "lat": 40.0038458,
-   "lng": -75.7078421,
-   "geo_precision": "place",
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://anthonyscucinafresca.com/menu/",
-      "quote": "Happy Hour Menu / Join us for Happy Hour! Monday through Friday, 4:00pm to 6:00pm. / Single shot mixed drinks \u2013 $5.00 each! All other cocktails in our menu for only $9.00"
-     }
-    }
-   ]
-  },
-  {
-   "id": "al-pastor-exton",
-   "name": "Al Pastor",
-   "address": "560 WELLINGTON SQ, EXTON PA 19341",
-   "zone_id": "exton_downingtown",
-   "website": "https://eatalpastor.com",
-   "plcb_name": "EAGLEVIEW TOWN CENTER",
-   "lat": 40.0615056,
-   "lng": -75.6849077,
-   "geo_precision": "place",
-   "photo": {
-    "file": "img/venues/al-pastor-exton.jpg",
-    "attribution": "Photo: Al Pastor"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://eatalpastor.com",
-      "quote": "HAPPY HOUR / Join us Monday through Friday from 4 - 6 pm for food and drink specials! Enjoy our exclusive deals and delicious offerings."
      }
     }
    ]

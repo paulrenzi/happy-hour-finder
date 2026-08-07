@@ -222,6 +222,7 @@ export const GROUP = {
   LATER: 2,       // later today
   UPCOMING: 3,    // another day
   UNREACHABLE: 4, // on now, but it ends before you could arrive
+  UNKNOWN: 5,     // a licensed bar we have no published window for -- most of them
 };
 
 export const GROUP_LABEL = {
@@ -230,6 +231,7 @@ export const GROUP_LABEL = {
   [GROUP.LATER]: "Later today",
   [GROUP.UPCOMING]: "Later this week",
   [GROUP.UNREACHABLE]: "Ends before you'd get there",
+  [GROUP.UNKNOWN]: "Hours not published",
 };
 
 const CONFIDENCE_PENALTY = { verified: 0, likely: 3, unconfirmed: 9, disputed: 99 };
@@ -269,6 +271,14 @@ const TIME_WEIGHT = 10;
 export function score(row, { sort = "soonest" } = {}) {
   const conf = CONFIDENCE_PENALTY[row.confidence] ?? 9;
   const drive = row.driveMin ?? 0;
+
+  /* A venue with no published window has no deal to rank and no window to be
+     early or late for. It sits in its own group below everything else, ordered
+     by how far away it is -- the only fact about it we actually have. */
+  if (row.group === GROUP.UNKNOWN) {
+    return GROUP.UNKNOWN * 100000 + Math.min((row.miles ?? 999) * 100, 99999);
+  }
+
   const value = dealValue(row.deal);
 
   if (sort === "nearest") {
@@ -303,6 +313,22 @@ export function buildFeed(venues, at, { zone = null, filter = "all", sort = "soo
     if (zone && v.zone_id !== zone) continue;
     const miles = origin && v.lat != null ? haversineMiles(origin, v) : null;
     const driveMin = miles == null ? null : driveMinutes(miles);
+
+    /* The reframe: the board is a list of VENUES, and the happy hour is an
+       attribute some of them have. A licensed bar with no window we could prove
+       still gets a row, because it is the only way a person can see that it is
+       missing and tell us what it is -- they cannot fill in a bar that never
+       shows up. It is excluded only under a DEAL filter, where the question
+       being asked ("food deals") is one an empty venue cannot answer. */
+    if (!v.deals || !v.deals.length) {
+      if (filter === "all") {
+        rows.push({
+          v, deal: null, hit: null, miles, driveMin,
+          confidence: "unknown", ageDays: null, group: GROUP.UNKNOWN,
+        });
+      }
+      continue;
+    }
 
     for (const deal of v.deals) {
       const confidence = effectiveConfidence(deal, at);

@@ -1,117 +1,18 @@
 {
  "zone_id": "newtown_square_broomall",
  "name": "Newtown Square / Broomall",
- "built_at": "2026-08-06",
+ "built_at": "2026-08-07",
  "venues": [
   {
-   "id": "lascala-s-fire-newtown-square",
-   "name": "LaScala\u2019s Fire",
-   "address": "3739 WEST CHESTER PK, NEWTOWN SQUARE PA 19073-2316",
-   "zone_id": "newtown_square_broomall",
-   "website": "https://lascalasfire.com/newtown-square/",
-   "plcb_name": "LASCALA'S FIRE",
-   "lat": 39.9871967,
-   "lng": -75.4044329,
-   "geo_precision": "place",
-   "photo": {
-    "file": "img/venues/lascala-s-fire-newtown-square.jpg",
-    "attribution": "Photo: LaScala\u2019s Fire"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "15:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "15:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "15:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "15:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "15:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://lascalasfire.com/newtown-square/",
-      "quote": "HAPPY HOUR / Monday-Friday / 3pm - 6pm"
-     }
-    }
-   ]
-  },
-  {
-   "id": "charlotte-s-restaurant-newtown-square",
-   "name": "Charlotte's Restaurant",
-   "address": "3207 WEST CHESTER PK, NEWTOWN SQUARE PA 19073-4200",
-   "zone_id": "newtown_square_broomall",
-   "website": "https://charlottesrestaurant.com/",
-   "plcb_name": "CHARLOTTE'S RESTAURANT",
-   "lat": 39.9843329,
-   "lng": -75.3812423,
-   "geo_precision": "place",
-   "photo": {
-    "file": "img/venues/charlotte-s-restaurant-newtown-square.jpg",
-    "attribution": "Photo: Charlotte's Restaurant"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:30"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:30"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:30"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://charlottesrestaurant.com/newtown-square-charlotte-s-restaurant-happy-hours-specials",
-      "quote": "Happy Hour at Charlottes features drink specials and discounted appetizers. / 04:00 PM - 06:30 PM / Wednesday August 12th"
-     }
-    }
-   ]
-  },
-  {
-   "id": "ale-house-newtown-square",
+   "id": "60905",
+   "lid": "60905",
+   "slug": "ale-house-newtown-square",
    "name": "Ale House",
-   "address": "NEWTOWN SQ SHOPPING CENTER 3546 WEST CHESTER PK, NEWTOWN SQUARE PA 19073-4128",
+   "address": "Newtown Sq Shopping Center 3546 West Chester Pk, Newtown Square PA 19073",
    "zone_id": "newtown_square_broomall",
    "website": "https://alehousenewtownsquare.com",
    "plcb_name": "FALCON ALE HOUSE INC",
+   "license_type": "Restaurant (Liquor)",
    "lat": 39.985003,
    "lng": -75.3963923,
    "geo_precision": "place",
@@ -151,12 +52,175 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://alehousenewtownsquare.com/newtown-square-delaware-county-the-ale-house-happy-hours-specials",
       "quote": "Happy Hour! / 04:00 PM - 06:00 PM / Wednesday August 12th"
+     }
+    }
+   ]
+  },
+  {
+   "id": "20468",
+   "lid": "20468",
+   "slug": "charlotte-s-restaurant-newtown-square",
+   "name": "Charlotte's Restaurant",
+   "address": "3207 West Chester Pk, Newtown Square PA 19073",
+   "zone_id": "newtown_square_broomall",
+   "website": "https://charlottesrestaurant.com/",
+   "plcb_name": "CHARLOTTE'S RESTAURANT",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.9843329,
+   "lng": -75.3812423,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/charlotte-s-restaurant-newtown-square.jpg",
+    "attribution": "Photo: Charlotte's Restaurant"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:30"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://charlottesrestaurant.com/newtown-square-charlotte-s-restaurant-happy-hours-specials",
+      "quote": "Happy Hour at Charlottes features drink specials and discounted appetizers. / 04:00 PM - 06:30 PM / Wednesday August 12th"
+     }
+    }
+   ]
+  },
+  {
+   "id": "64766",
+   "lid": "64766",
+   "slug": "la-porta-ristorante-media",
+   "name": "La Porta Ristorante",
+   "address": "1192 Middletown Rd, Media PA 19063",
+   "zone_id": "newtown_square_broomall",
+   "website": "https://laportarestaurant.com",
+   "plcb_name": "LOCUST CREST TAVERN",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.9389816,
+   "lng": -75.460135,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.laportarestaurant.com/daily-specials",
+      "quote": "HAPPY HOUR / Monday - Friday 4 pm - 6 pm / (Closed Tuesday)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "119970",
+   "lid": "119970",
+   "slug": "lascala-s-fire-newtown-square",
+   "name": "LaScala\u2019s Fire",
+   "address": "3739 West Chester Pk, Newtown Square PA 19073",
+   "zone_id": "newtown_square_broomall",
+   "website": "https://lascalasfire.com/newtown-square/",
+   "plcb_name": "LASCALA'S FIRE",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.9871967,
+   "lng": -75.4044329,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/lascala-s-fire-newtown-square.jpg",
+    "attribution": "Photo: LaScala\u2019s Fire"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://lascalasfire.com/newtown-square/menus/happy-hour",
+      "quote": "HAPPY HOUR / MON-FRI 3PM-6PM / APEROL SPRITZ $9"
      }
     }
    ]

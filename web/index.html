@@ -102,7 +102,8 @@
       A free, independent happy-hour board for the western suburbs. Every window is
       transcribed from a source linked on its own card, with the date it was last
       checked shown in the open. Around four in five bars never publish a happy hour
-      anywhere — the camera button is how the rest get on the board.
+      anywhere, so every licensed bar, restaurant and brewery gets a card either way —
+      the ones we can't prove say so, and ask you to fill them in.
     </p>
   </div>
 </section>
@@ -139,6 +140,39 @@
         <a class="btn go map" target="_blank" rel="noopener">Directions</a>
         <a class="btn src" target="_blank" rel="noopener">Source</a>
         <button class="btn wrong" type="button" aria-label="Report this deal as wrong">Wrong?</button>
+      </div>
+    </div>
+  </article>
+</template>
+
+<!-- A venue nobody has published a happy hour for. Same shape as a deal card on
+     purpose: it is most of the board, and it has to read as an invitation to
+     fill it in rather than as a card that failed to load. -->
+<template id="unknownTpl">
+  <article class="card card-unknown">
+    <button class="shot" type="button" aria-label="Tell us this venue's happy hour">
+      <img class="photo" alt="" loading="lazy" decoding="async" hidden>
+      <span class="mono" aria-hidden="true"></span>
+      <span class="ends ends-ask">Hours unknown</span>
+      <span class="shotInk">
+        <span class="name"></span>
+        <span class="zone"></span>
+      </span>
+    </button>
+    <div class="body">
+      <p class="fine">
+        No happy hour published anywhere we can read. If you know it, tell us and
+        it goes on the board with your name for the source.
+      </p>
+      <div class="meta">
+        <span class="conf unknown">Hours not published</span>
+        <span class="kind"></span>
+        <span class="credit"></span>
+      </div>
+      <div class="actions">
+        <button class="btn go know" type="button">Know the hours?</button>
+        <a class="btn map" target="_blank" rel="noopener">Directions</a>
+        <a class="btn site" target="_blank" rel="noopener">Website</a>
       </div>
     </div>
   </article>

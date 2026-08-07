@@ -1,0 +1,60 @@
+{
+ "zone_id": "northwest_philly",
+ "name": "Philadelphia \u2014 Chestnut Hill / Mt Airy / Germantown",
+ "built_at": "2026-08-07",
+ "venues": [
+  {
+   "id": "94918",
+   "lid": "94918",
+   "slug": "attic-brewing-company-llc-philadelphia",
+   "name": "ATTIC BREWING COMPANY LLC",
+   "address": "137 Berkley St, Philadelphia PA 19144",
+   "zone_id": "northwest_philly",
+   "website": "https://www.atticbrewing.com/",
+   "plcb_name": "ATTIC BREWING COMPANY LLC",
+   "license_type": "Brewery",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "off drafts and",
+       "price_usd": 1.0
+      },
+      {
+       "category": "cocktail",
+       "label": "margaritas to say Thank you t",
+       "price_usd": 6.0
+      },
+      {
+       "category": "draft",
+       "label": "off drafts",
+       "price_usd": 1.0
+      },
+      {
+       "category": "cocktail",
+       "label": "margaritas and",
+       "price_usd": 6.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.atticbrewing.com/event-details/teacher-happy-hour-2022-08-26-15-00",
+      "quote": "Teacher Happy Hour / Fri, Aug 26 / Every Friday 3-5pm is Teacher Happy Hour with $1 off drafts and $6 margaritas to say Thank you to all of our hardworking teachers!!!"
+     }
+    }
+   ]
+  }
+ ]
+}

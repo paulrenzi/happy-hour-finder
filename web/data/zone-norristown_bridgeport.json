@@ -1,15 +1,18 @@
 {
  "zone_id": "norristown_bridgeport",
  "name": "Norristown / Bridgeport",
- "built_at": "2026-08-06",
+ "built_at": "2026-08-07",
  "venues": [
   {
-   "id": "tony-gs-norristown",
+   "id": "13697",
+   "lid": "13697",
+   "slug": "tony-gs-norristown",
    "name": "Tony G's Pub and Eatery",
    "address": "1991 W Main St, Norristown PA 19403",
    "zone_id": "norristown_bridgeport",
    "website": "https://tonygspub.com/specials",
    "plcb_name": "FRA-MAR ENTERPRISES LTD",
+   "license_type": "Restaurant (Liquor)",
    "lat": 40.115877,
    "lng": -75.347872,
    "geo_precision": "road",

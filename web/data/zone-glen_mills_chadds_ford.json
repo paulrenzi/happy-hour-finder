@@ -1,66 +1,18 @@
 {
  "zone_id": "glen_mills_chadds_ford",
  "name": "Glen Mills / Chadds Ford",
- "built_at": "2026-08-06",
+ "built_at": "2026-08-07",
  "venues": [
   {
-   "id": "the-crown-tavern-glen-mills",
-   "name": "The Crown Tavern",
-   "address": "451 WILMINGTON-WEST CHESTER PK, GLEN MILLS PA 19342-9802",
-   "zone_id": "glen_mills_chadds_ford",
-   "website": "https://crowninconcord.com",
-   "plcb_name": "MCKENZIE'S BREWHOUSE, INC.",
-   "lat": 39.8620259,
-   "lng": -75.5435805,
-   "geo_precision": "place",
-   "photo": {
-    "file": "img/venues/the-crown-tavern-glen-mills.jpg",
-    "attribution": "Photo: The Crown Tavern"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://crowninconcord.com",
-      "quote": "Half-price house drinks... Buck-a-Shuck oysters... Every room. Every table. Every day. / Pull up a stool at the bar, cozy up by the fire, or soak up the sunshine on the deck. At The Crown, Happy Hour isn't just at the bar... it's everywhere in the house. / Tuesday\u2013Friday \u00b7 4\u20136PM Saturday & Sunday \u00b7 3\u20136PM"
-     }
-    }
-   ]
-  },
-  {
-   "id": "avenue-kitchen-glen-mills",
+   "id": "71430",
+   "lid": "71430",
+   "slug": "avenue-kitchen-glen-mills",
    "name": "Avenue Kitchen",
-   "address": "509 WILMINGTON WEST CHESTER PK SUITE D-14, GLEN MILLS PA 19342",
+   "address": "509 Wilmington West Chester Pk Suite D-14, Glen Mills PA 19342",
    "zone_id": "glen_mills_chadds_ford",
    "website": "https://www.avekitchen.com/",
    "plcb_name": "AVENUE KITCHEN",
+   "license_type": "Restaurant (Liquor)",
    "lat": 39.8644358,
    "lng": -75.5424654,
    "geo_precision": "place",
@@ -85,7 +37,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -96,12 +48,15 @@
    ]
   },
   {
-   "id": "chadds-ford-tavern-chadds-ford",
+   "id": "91807",
+   "lid": "91807",
+   "slug": "chadds-ford-tavern-chadds-ford",
    "name": "Chadds Ford Tavern",
-   "address": "1400 BALTIMORE PK, CHADDS FORD PA 19317-9441",
+   "address": "1400 Baltimore Pk, Chadds Ford PA 19317",
    "zone_id": "glen_mills_chadds_ford",
    "website": "https://www.thecftavern.com/",
    "plcb_name": "1400 OPCO LLC",
+   "license_type": "Restaurant (Liquor)",
    "lat": 39.8737378,
    "lng": -75.5676042,
    "geo_precision": "place",
@@ -157,7 +112,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -169,12 +124,15 @@
    ]
   },
   {
-   "id": "fava-glen-mills",
+   "id": "94550",
+   "lid": "94550",
+   "slug": "fava-glen-mills",
    "name": "Fava",
-   "address": "1102 BALTIMORE PIKE SUITE 101, GLEN MILLS PA 19342-1013",
+   "address": "1102 Baltimore Pike Suite 101, Glen Mills PA 19342",
    "zone_id": "glen_mills_chadds_ford",
    "website": "https://favaglenmills.com/",
    "plcb_name": "BCD HOSPITALITY INC",
+   "license_type": "Restaurant (Liquor)",
    "lat": 39.8809109,
    "lng": -75.543001,
    "geo_precision": "place",
@@ -225,7 +183,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -237,12 +195,69 @@
    ]
   },
   {
-   "id": "white-dog-cafe-glen-mills",
+   "id": "48062",
+   "lid": "48062",
+   "slug": "the-crown-tavern-glen-mills",
+   "name": "The Crown Tavern",
+   "address": "451 Wilmington-West Chester Pk, Glen Mills PA 19342",
+   "zone_id": "glen_mills_chadds_ford",
+   "website": "https://crowninconcord.com",
+   "plcb_name": "MCKENZIE'S BREWHOUSE, INC.",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.8620259,
+   "lng": -75.5435805,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/the-crown-tavern-glen-mills.jpg",
+    "attribution": "Photo: The Crown Tavern"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://crowninconcord.com",
+      "quote": "Half-price house drinks... Buck-a-Shuck oysters... Every room. Every table. Every day. / Pull up a stool at the bar, cozy up by the fire, or soak up the sunshine on the deck. At The Crown, Happy Hour isn't just at the bar... it's everywhere in the house. / Tuesday\u2013Friday \u00b7 4\u20136PM Saturday & Sunday \u00b7 3\u20136PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "99000",
+   "lid": "99000",
+   "slug": "white-dog-cafe-glen-mills",
    "name": "White Dog Cafe",
-   "address": "981 BALTIMORE PK, GLEN MILLS PA 19342-1016",
+   "address": "981 Baltimore Pk, Glen Mills PA 19342",
    "zone_id": "glen_mills_chadds_ford",
    "website": "https://whitedog.com/glenmills",
    "plcb_name": "WHITE DOG CAFE",
+   "license_type": "Restaurant (Liquor)",
    "lat": 39.8846308,
    "lng": -75.5352953,
    "geo_precision": "place",
@@ -318,7 +333,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",

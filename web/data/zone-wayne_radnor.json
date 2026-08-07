@@ -1,26 +1,155 @@
 {
  "zone_id": "wayne_radnor",
  "name": "Wayne / Radnor",
- "built_at": "2026-08-06",
+ "built_at": "2026-08-07",
  "venues": [
   {
-   "id": "wills-bills-berwyn",
-   "name": "Will's + Bill's Brewery & Restaurant",
-   "address": "324 W Swedesford Rd, Berwyn PA 19312",
+   "id": "115054",
+   "lid": "115054",
+   "slug": "amada-st-davids",
+   "name": "Amada",
+   "address": "555 E Lancaster Ave, St Davids PA 19087",
    "zone_id": "wayne_radnor",
-   "website": "https://wills-bills.com",
-   "plcb_name": "BKBC INC",
-   "lat": 40.069716,
-   "lng": -75.44438,
-   "geo_precision": "amenity",
+   "website": "https://www.amadarestaurant.com/amada-radnor/",
+   "plcb_name": "AMADA",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.0414415,
+   "lng": -75.3678274,
+   "geo_precision": "place",
    "photo": {
-    "file": "img/venues/wills-bills-berwyn.jpg",
-    "attribution": "Photo: Will's + Bill's Brewery & Restaurant"
+    "file": "img/venues/amada-st-davids.jpg",
+    "attribution": "Photo: Amada"
    },
    "deals": [
     {
      "type": "happy_hour",
      "windows": [
+      {
+       "dow": 1,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 2,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 3,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 4,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 7,
+       "start": "16:30",
+       "end": "18:30"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.amadarestaurant.com/amada-radnor/",
+      "quote": "HAPPY HOUR / Sunday - Friday: / 4:30pm - 6:30pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "61077",
+   "lid": "61077",
+   "slug": "amada-radnor",
+   "name": "Amada",
+   "address": "Radnor Financial Center 555 E Lancaster Ave, Radnor PA 19087",
+   "zone_id": "wayne_radnor",
+   "website": "https://www.amadarestaurant.com/amada-radnor/",
+   "plcb_name": "FLEMINGS PRIME STEAKHOUSE & WINE BAR",
+   "license_type": "Restaurant (Liquor)",
+   "photo": {
+    "file": "img/venues/amada-radnor.jpg",
+    "attribution": "Photo: Amada"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 2,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 3,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 4,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 7,
+       "start": "16:30",
+       "end": "18:30"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.amadarestaurant.com/amada-radnor/",
+      "quote": "HAPPY HOUR / Sunday - Friday: / 4:30pm - 6:30pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "17574",
+   "lid": "17574",
+   "slug": "black-powder-tavern-wayne",
+   "name": "Black Powder Tavern",
+   "address": "1164 Valley Forge Rd, Wayne PA 19087",
+   "zone_id": "wayne_radnor",
+   "website": "https://blackpowdertavern.com/",
+   "plcb_name": "BLACK POWDER TAVERN",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.0726183,
+   "lng": -75.4382876,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
       {
        "dow": 2,
        "start": "16:00",
@@ -40,57 +169,357 @@
        "dow": 5,
        "start": "16:00",
        "end": "18:00"
-      },
-      {
-       "dow": 6,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 7,
-       "start": "16:00",
-       "end": "18:00"
       }
      ],
-     "items": [
-      {
-       "category": "draft",
-       "label": "W+B craft pints",
-       "price_usd": 5.0
-      },
-      {
-       "category": "cocktail",
-       "label": "house martinis, Manhattans, cosmos",
-       "price_usd": 7.0
-      },
-      {
-       "category": "food",
-       "label": "buck-a-shuck oysters",
-       "price_usd": 1.0
-      },
-      {
-       "category": "wine",
-       "label": "house wine",
-       "price_usd": 7.0
-      }
-     ],
-     "confidence": "likely",
-     "last_verified_at": "2026-07-31",
-     "verified_by": "staff",
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://wills-bills.com"
+      "url": "https://blackpowdertavern.com/happy-hour-at-black-powder-tavern/",
+      "quote": "Happy Hour at Black Powder Tavern / We invite you to come and join us to celebrate Happy Hour on Monday through Friday from 4:00 p.m. until 6:00 p.m."
      }
     }
    ]
   },
   {
-   "id": "goats-beard-wayne",
+   "id": "80458",
+   "lid": "80458",
+   "slug": "dandan-wayne",
+   "name": "Dandan",
+   "address": "214 Sugartown Rd, Wayne PA 19087",
+   "zone_id": "wayne_radnor",
+   "website": "https://www.dandanrestaurant.com/location/wayne-1/",
+   "plcb_name": "214 SUGARTOWN LICENSE OPERATIONS",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.0453097,
+   "lng": -75.4067978,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/dandan-wayne.jpg",
+    "attribution": "Photo: Dandan"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.dandanrestaurant.com/location/wayne-1/",
+      "quote": "Happy Hour / Mon-Fri: 4pm-6pm (bar, lounge and patio only, excluding holidays)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "67838",
+   "lid": "67838",
+   "slug": "estia-taverna-inc-radnor",
+   "name": "ESTIA TAVERNA INC",
+   "address": "222 N Radnor Chester Rd, Radnor PA 19085",
+   "zone_id": "wayne_radnor",
+   "website": "https://estiarestaurant.com/",
+   "plcb_name": "ESTIA TAVERNA INC",
+   "license_type": "Restaurant (Liquor)",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:30",
+       "end": "17:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:30",
+       "end": "17:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:30",
+       "end": "17:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:30",
+       "end": "17:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:30",
+       "end": "17:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://estiarestaurant.com/radnor-pa/menus/happy-hour-radnor.pdf",
+      "quote": "HAPPY HOUR MENU / MONDAY - FRIDAY 3:30PM-5PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "109849",
+   "lid": "109849",
+   "slug": "exit-13-gastrobar-bryn-mawr",
+   "name": "EXIT 13 GASTROBAR",
+   "address": "910 - 912 Conestoga Rd, Bryn Mawr PA 19010",
+   "zone_id": "wayne_radnor",
+   "website": "https://exit13gastrobar.com/",
+   "plcb_name": "EXIT 13 GASTROBAR",
+   "license_type": "Restaurant (Liquor)",
+   "photo": {
+    "file": "img/venues/exit-13-gastrobar-bryn-mawr.jpg",
+    "attribution": "Photo: EXIT 13 GASTROBAR"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 3,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 4,
+       "start": "15:30",
+       "end": "17:30"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://exit13gastrobar.com/",
+      "quote": "HAPPY HOUR TUESDAY- THURSDAY 3:30 PM to 5:30 PM AT THE BAR ONLY!"
+     }
+    }
+   ]
+  },
+  {
+   "id": "56307",
+   "lid": "56307",
+   "slug": "flip-and-baileys-llc-rosemont",
+   "name": "FLIP AND BAILEYS LLC",
+   "address": "902-904 Conestoga Rd Garrett Hill, Rosemont PA 19010",
+   "zone_id": "wayne_radnor",
+   "website": "https://www.flipandbaileys.com/",
+   "plcb_name": "FLIP AND BAILEYS LLC",
+   "license_type": "Restaurant (Liquor)",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.flipandbaileys.com/hold-happ",
+      "quote": "Happy Hour / Monday - Friday / 5pm-7pm / $2 off all Drinks & Appetizers"
+     }
+    }
+   ]
+  },
+  {
+   "id": "103297",
+   "lid": "103297",
+   "slug": "lascala-s-fire-villanova",
+   "name": "LaScala's Fire",
+   "address": "789 East Lancaster Ave, Villanova PA 19085",
+   "zone_id": "wayne_radnor",
+   "website": "https://lascalasfire.com/villanova/",
+   "plcb_name": "BLAZE THREE MANAGEMENT LLC",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.0376278,
+   "lng": -75.3517354,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/lascala-s-fire-villanova.jpg",
+    "attribution": "Photo: LaScala's Fire"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://lascalasfire.com/villanova/menus/happy-hour",
+      "quote": "HAPPY HOUR / MON-FRI 3PM-6PM / HOUSE RED & WHITE $7"
+     }
+    }
+   ]
+  },
+  {
+   "id": "122420",
+   "lid": "122420",
+   "slug": "maison-lotus-wayne",
+   "name": "Maison Lotus",
+   "address": "175 E Lancaster Ave, Wayne PA 19087",
+   "zone_id": "wayne_radnor",
+   "website": "https://www.maison-lotus.com/",
+   "plcb_name": "MAISON LOTUS",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.0441095,
+   "lng": -75.3854308,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/maison-lotus-wayne.jpg",
+    "attribution": "Photo: Maison Lotus"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.maison-lotus.com/",
+      "quote": "Happy Hour Mon to Fri 4-6pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "72756",
+   "lid": "72756",
+   "slug": "goats-beard-wayne",
    "name": "The Goat's Beard",
    "address": "103 N Wayne Ave, Wayne PA 19087",
    "zone_id": "wayne_radnor",
    "website": "https://thegoatsbeardphilly.com",
    "plcb_name": "THE GOATS BEARD",
+   "license_type": "Restaurant (Liquor)",
    "lat": 40.044243,
    "lng": -75.387808,
    "geo_precision": "amenity",
@@ -157,387 +586,15 @@
    ]
   },
   {
-   "id": "lascala-s-fire-villanova",
-   "name": "LaScala's Fire",
-   "address": "789 EAST LANCASTER AVE, VILLANOVA PA 19085",
-   "zone_id": "wayne_radnor",
-   "website": "https://lascalasfire.com/villanova/",
-   "plcb_name": "BLAZE THREE MANAGEMENT LLC",
-   "lat": 40.0376278,
-   "lng": -75.3517354,
-   "geo_precision": "place",
-   "photo": {
-    "file": "img/venues/lascala-s-fire-villanova.jpg",
-    "attribution": "Photo: LaScala's Fire"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "15:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "15:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "15:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "15:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "15:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://lascalasfire.com/villanova/menus/happy-hour",
-      "quote": "HAPPY HOUR / MON-FRI 3PM-6PM / HOUSE RED & WHITE $7"
-     }
-    }
-   ]
-  },
-  {
-   "id": "exit-13-gastrobar-bryn-mawr",
-   "name": "EXIT 13 GASTROBAR",
-   "address": "910 - 912 CONESTOGA RD, BRYN MAWR PA 19010-1331",
-   "zone_id": "wayne_radnor",
-   "website": "https://exit13gastrobar.com/",
-   "plcb_name": "EXIT 13 GASTROBAR",
-   "photo": {
-    "file": "img/venues/exit-13-gastrobar-bryn-mawr.jpg",
-    "attribution": "Photo: EXIT 13 GASTROBAR"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 2,
-       "start": "15:30",
-       "end": "17:30"
-      },
-      {
-       "dow": 3,
-       "start": "15:30",
-       "end": "17:30"
-      },
-      {
-       "dow": 4,
-       "start": "15:30",
-       "end": "17:30"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://exit13gastrobar.com/",
-      "quote": "HAPPY HOUR TUESDAY- THURSDAY 3:30 PM to 5:30 PM AT THE BAR ONLY!"
-     }
-    }
-   ]
-  },
-  {
-   "id": "amada-st-davids",
-   "name": "Amada",
-   "address": "555 E LANCASTER AVE, ST DAVIDS PA 19087-5109",
-   "zone_id": "wayne_radnor",
-   "website": "https://www.amadarestaurant.com/amada-radnor/",
-   "plcb_name": "AMADA",
-   "lat": 40.0414415,
-   "lng": -75.3678274,
-   "geo_precision": "place",
-   "photo": {
-    "file": "img/venues/amada-st-davids.jpg",
-    "attribution": "Photo: Amada"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:30",
-       "end": "18:30"
-      },
-      {
-       "dow": 2,
-       "start": "16:30",
-       "end": "18:30"
-      },
-      {
-       "dow": 3,
-       "start": "16:30",
-       "end": "18:30"
-      },
-      {
-       "dow": 4,
-       "start": "16:30",
-       "end": "18:30"
-      },
-      {
-       "dow": 5,
-       "start": "16:30",
-       "end": "18:30"
-      },
-      {
-       "dow": 7,
-       "start": "16:30",
-       "end": "18:30"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://www.amadarestaurant.com/amada-radnor/",
-      "quote": "HAPPY HOUR / Sunday - Friday: / 4:30pm - 6:30pm"
-     }
-    }
-   ]
-  },
-  {
-   "id": "maison-lotus-wayne",
-   "name": "Maison Lotus",
-   "address": "175 E LANCASTER AVE, WAYNE PA 19087-3525",
-   "zone_id": "wayne_radnor",
-   "website": "https://www.maison-lotus.com/",
-   "plcb_name": "MAISON LOTUS",
-   "lat": 40.0441095,
-   "lng": -75.3854308,
-   "geo_precision": "place",
-   "photo": {
-    "file": "img/venues/maison-lotus-wayne.jpg",
-    "attribution": "Photo: Maison Lotus"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://www.maison-lotus.com/",
-      "quote": "Happy Hour Mon to Fri 4-6pm"
-     }
-    }
-   ]
-  },
-  {
-   "id": "black-powder-tavern-wayne",
-   "name": "Black Powder Tavern",
-   "address": "1164 VALLEY FORGE RD, WAYNE PA 19087-1202",
-   "zone_id": "wayne_radnor",
-   "website": "https://blackpowdertavern.com/",
-   "plcb_name": "BLACK POWDER TAVERN",
-   "lat": 40.0726183,
-   "lng": -75.4382876,
-   "geo_precision": "place",
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://blackpowdertavern.com/happy-hour-at-black-powder-tavern/",
-      "quote": "Happy Hour at Black Powder Tavern / We invite you to come and join us to celebrate Happy Hour on Monday through Friday from 4:00 p.m. until 6:00 p.m."
-     }
-    }
-   ]
-  },
-  {
-   "id": "flip-and-baileys-llc-rosemont",
-   "name": "FLIP AND BAILEYS LLC",
-   "address": "902-904 CONESTOGA RD GARRETT HILL, ROSEMONT PA 19010",
-   "zone_id": "wayne_radnor",
-   "website": "https://www.flipandbaileys.com/",
-   "plcb_name": "FLIP AND BAILEYS LLC",
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "17:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 2,
-       "start": "17:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 3,
-       "start": "17:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 4,
-       "start": "17:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 5,
-       "start": "17:00",
-       "end": "19:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://www.flipandbaileys.com/hold-happ",
-      "quote": "Happy Hour / Monday - Friday / 5pm-7pm / $2 off all Drinks & Appetizers"
-     }
-    }
-   ]
-  },
-  {
-   "id": "amada-radnor",
-   "name": "Amada",
-   "address": "RADNOR FINANCIAL CENTER 555 E LANCASTER AVE, RADNOR PA 19087-5158",
-   "zone_id": "wayne_radnor",
-   "website": "https://www.amadarestaurant.com/amada-radnor/",
-   "plcb_name": "FLEMINGS PRIME STEAKHOUSE & WINE BAR",
-   "photo": {
-    "file": "img/venues/amada-radnor.jpg",
-    "attribution": "Photo: Amada"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:30",
-       "end": "18:30"
-      },
-      {
-       "dow": 2,
-       "start": "16:30",
-       "end": "18:30"
-      },
-      {
-       "dow": 3,
-       "start": "16:30",
-       "end": "18:30"
-      },
-      {
-       "dow": 4,
-       "start": "16:30",
-       "end": "18:30"
-      },
-      {
-       "dow": 5,
-       "start": "16:30",
-       "end": "18:30"
-      },
-      {
-       "dow": 7,
-       "start": "16:30",
-       "end": "18:30"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://www.amadarestaurant.com/amada-radnor/",
-      "quote": "HAPPY HOUR / Sunday - Friday: / 4:30pm - 6:30pm"
-     }
-    }
-   ]
-  },
-  {
-   "id": "white-dog-cafe-wayne",
+   "id": "61419",
+   "lid": "61419",
+   "slug": "white-dog-cafe-wayne",
    "name": "White Dog Cafe",
-   "address": "TOWN CENTER AT WAYNE 200 W LANCASTER AVE, WAYNE PA 19087-4046",
+   "address": "Town Center At Wayne 200 W Lancaster Ave, Wayne PA 19087",
    "zone_id": "wayne_radnor",
    "website": "https://www.whitedog.com/wayne",
    "plcb_name": "LUCKY DOG ENTERPRISES LLC",
+   "license_type": "Restaurant (Liquor)",
    "lat": 40.043913,
    "lng": -75.3914076,
    "geo_precision": "place",
@@ -614,78 +671,27 @@
    ]
   },
   {
-   "id": "estia-taverna-inc-radnor",
-   "name": "ESTIA TAVERNA INC",
-   "address": "222 N RADNOR CHESTER RD, RADNOR PA 19085",
+   "id": "64900",
+   "lid": "64900",
+   "slug": "wills-bills-berwyn",
+   "name": "Will's + Bill's Brewery & Restaurant",
+   "address": "324 W Swedesford Rd, Berwyn PA 19312",
    "zone_id": "wayne_radnor",
-   "website": "https://estiarestaurant.com/",
-   "plcb_name": "ESTIA TAVERNA INC",
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "15:30",
-       "end": "17:00"
-      },
-      {
-       "dow": 2,
-       "start": "15:30",
-       "end": "17:00"
-      },
-      {
-       "dow": 3,
-       "start": "15:30",
-       "end": "17:00"
-      },
-      {
-       "dow": 4,
-       "start": "15:30",
-       "end": "17:00"
-      },
-      {
-       "dow": 5,
-       "start": "15:30",
-       "end": "17:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "http://estiarestaurant.com/radnor-pa/menus/happy-hour-radnor.pdf",
-      "quote": "HAPPY HOUR MENU / MONDAY - FRIDAY 3:30PM-5PM"
-     }
-    }
-   ]
-  },
-  {
-   "id": "dandan-wayne",
-   "name": "Dandan",
-   "address": "214 SUGARTOWN RD, WAYNE PA 19087",
-   "zone_id": "wayne_radnor",
-   "website": "https://www.dandanrestaurant.com/location/wayne-1/",
-   "plcb_name": "214 SUGARTOWN LICENSE OPERATIONS",
-   "lat": 40.0453097,
-   "lng": -75.4067978,
-   "geo_precision": "place",
+   "website": "https://wills-bills.com",
+   "plcb_name": "BKBC INC",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.069716,
+   "lng": -75.44438,
+   "geo_precision": "amenity",
    "photo": {
-    "file": "img/venues/dandan-wayne.jpg",
-    "attribution": "Photo: Dandan"
+    "file": "img/venues/wills-bills-berwyn.jpg",
+    "attribution": "Photo: Will's + Bill's Brewery & Restaurant"
    },
    "deals": [
     {
      "type": "happy_hour",
      "windows": [
       {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
        "dow": 2,
        "start": "16:00",
        "end": "18:00"
@@ -704,16 +710,46 @@
        "dow": 5,
        "start": "16:00",
        "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
       }
      ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
+     "items": [
+      {
+       "category": "draft",
+       "label": "W+B craft pints",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "label": "house martinis, Manhattans, cosmos",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "label": "buck-a-shuck oysters",
+       "price_usd": 1.0
+      },
+      {
+       "category": "wine",
+       "label": "house wine",
+       "price_usd": 7.0
+      }
+     ],
+     "confidence": "likely",
+     "last_verified_at": "2026-07-31",
+     "verified_by": "staff",
      "source": {
       "kind": "venue_site",
-      "url": "https://www.dandanrestaurant.com/location/wayne-1/",
-      "quote": "Happy Hour / Mon-Fri: 4pm-6pm (bar, lounge and patio only, excluding holidays)"
+      "url": "https://wills-bills.com"
      }
     }
    ]

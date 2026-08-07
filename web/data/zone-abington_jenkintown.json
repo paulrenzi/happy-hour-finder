@@ -1,15 +1,18 @@
 {
  "zone_id": "abington_jenkintown",
  "name": "Abington / Jenkintown",
- "built_at": "2026-08-06",
+ "built_at": "2026-08-07",
  "venues": [
   {
-   "id": "chili-s-philadelphia-109062",
+   "id": "109062",
+   "lid": "109062",
+   "slug": "chili-s-philadelphia-109062",
    "name": "Chili's",
    "address": "2451 CHELTENHAM AVE, Philadelphia PA 19150",
    "zone_id": "abington_jenkintown",
    "website": "https://green.chilis.com/locations/us/pennsylvania/wyncote/cheltenham",
    "plcb_name": "CHILI'S GRILL & BAR",
+   "license_type": "Restaurant (Liquor)",
    "lat": 40.0747533,
    "lng": -75.1579181,
    "geo_precision": "place",
@@ -40,7 +43,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -51,12 +54,76 @@
    ]
   },
   {
-   "id": "w-tavern-jenkintown",
+   "id": "68604",
+   "lid": "68604",
+   "slug": "se-or-salsa-abington",
+   "name": "Se\u00f1or Salsa",
+   "address": "1301 Old York Rd, Abington PA 19001",
+   "zone_id": "abington_jenkintown",
+   "website": "https://www.senorsalsapa.com/",
+   "plcb_name": "SENOR SALSA",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.1190608,
+   "lng": -75.118913,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/se-or-salsa-abington.jpg",
+    "attribution": "Photo: Se\u00f1or Salsa"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "14:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 2,
+       "start": "14:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 3,
+       "start": "14:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 4,
+       "start": "14:00",
+       "end": "17:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "House Margarita (16oz)",
+       "price_usd": 5.99
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.senorsalsapa.com/",
+      "quote": "Happy Hour / Monday \u2013 Thursday 2pm \u2013 5pm / House Margarita (16oz) $5.99 + $1 Flavor"
+     },
+     "items_source": "llm_extract"
+    }
+   ]
+  },
+  {
+   "id": "110382",
+   "lid": "110382",
+   "slug": "w-tavern-jenkintown",
    "name": "W Tavern",
-   "address": "208 - 210 YORK RD, JENKINTOWN PA 19146",
+   "address": "208 - 210 York Rd, Jenkintown PA 19146",
    "zone_id": "abington_jenkintown",
    "website": "https://wtavern19090.wixsite.com/my-site/",
    "plcb_name": "BOROBOTS INC",
+   "license_type": "Brewery",
    "lat": 40.1455117,
    "lng": -75.1162614,
    "geo_precision": "place",
@@ -106,71 +173,13 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://wtavern19090.wixsite.com/my-site/",
       "quote": "Introducing our Happy Hour! / Check out our daily happy hour from Tuesday-Friday from 4-6 pm!"
      }
-    }
-   ]
-  },
-  {
-   "id": "se-or-salsa-abington",
-   "name": "Se\u00f1or Salsa",
-   "address": "1301 OLD YORK RD, ABINGTON PA 19001-3403",
-   "zone_id": "abington_jenkintown",
-   "website": "https://www.senorsalsapa.com/",
-   "plcb_name": "SENOR SALSA",
-   "lat": 40.1190608,
-   "lng": -75.118913,
-   "geo_precision": "place",
-   "photo": {
-    "file": "img/venues/se-or-salsa-abington.jpg",
-    "attribution": "Photo: Se\u00f1or Salsa"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "14:00",
-       "end": "17:00"
-      },
-      {
-       "dow": 2,
-       "start": "14:00",
-       "end": "17:00"
-      },
-      {
-       "dow": 3,
-       "start": "14:00",
-       "end": "17:00"
-      },
-      {
-       "dow": 4,
-       "start": "14:00",
-       "end": "17:00"
-      }
-     ],
-     "items": [
-      {
-       "category": "cocktail",
-       "label": "House Margarita (16oz)",
-       "price_usd": 5.99
-      }
-     ],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://www.senorsalsapa.com/",
-      "quote": "Happy Hour / Monday \u2013 Thursday 2pm \u2013 5pm / House Margarita (16oz) $5.99 + $1 Flavor"
-     },
-     "items_source": "llm_extract"
     }
    ]
   }

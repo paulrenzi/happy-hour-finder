@@ -1,15 +1,77 @@
 {
  "zone_id": "west_chester",
  "name": "West Chester",
- "built_at": "2026-08-06",
+ "built_at": "2026-08-07",
  "venues": [
   {
-   "id": "barnabys-west-chester",
+   "id": "119098",
+   "lid": "119098",
+   "slug": "9-prime-west-chester",
+   "name": "9 Prime",
+   "address": "9 N High St, West Chester PA 19382",
+   "zone_id": "west_chester",
+   "website": "https://9primewestchester.com",
+   "plcb_name": "WCTHG LL LLC",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.9601764,
+   "lng": -75.6043923,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/9-prime-west-chester.jpg",
+    "attribution": "Photo: 9 Prime"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:30"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://9primewestchester.com",
+      "quote": "Happy Hour / Tuesday-Friday 4PM-6:30PM / Sunday 4PM-6:30PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "130939",
+   "lid": "130939",
+   "slug": "barnabys-west-chester",
    "name": "Barnaby's of West Chester",
    "address": "7-15 S High St, West Chester PA 19382",
    "zone_id": "west_chester",
    "website": "https://barnabyswc.com",
    "plcb_name": "BARNABY'S OF WEST CHESTER",
+   "license_type": "Restaurant (Liquor)",
    "lat": 39.959608,
    "lng": -75.603943,
    "geo_precision": "place",
@@ -76,237 +138,15 @@
    ]
   },
   {
-   "id": "9-prime-west-chester",
-   "name": "9 Prime",
-   "address": "9 N HIGH ST, WEST CHESTER PA 19382",
-   "zone_id": "west_chester",
-   "website": "https://9primewestchester.com",
-   "plcb_name": "WCTHG LL LLC",
-   "lat": 39.9601764,
-   "lng": -75.6043923,
-   "geo_precision": "place",
-   "photo": {
-    "file": "img/venues/9-prime-west-chester.jpg",
-    "attribution": "Photo: 9 Prime"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:30"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:30"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:30"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:30"
-      },
-      {
-       "dow": 7,
-       "start": "16:00",
-       "end": "18:30"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://9primewestchester.com",
-      "quote": "Happy Hour / Tuesday-Friday 4PM-6:30PM / Sunday 4PM-6:30PM"
-     }
-    }
-   ]
-  },
-  {
-   "id": "the-stone-tavern-west-chester",
-   "name": "The Stone Tavern",
-   "address": "1227 W CHESTER PK, WEST CHESTER PA 19380-6874",
-   "zone_id": "west_chester",
-   "website": "https://www.thestonetavern1867.com",
-   "plcb_name": "THE STONE TAVERN",
-   "lat": 39.968793,
-   "lng": -75.5579416,
-   "geo_precision": "place",
-   "photo": {
-    "file": "img/venues/the-stone-tavern-west-chester.jpg",
-    "attribution": "Photo: The Stone Tavern"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://www.thestonetavern1867.com/specials",
-      "quote": "HAPPY HOUR: / Monday-Friday / 4-6PM @ The Bar Only"
-     }
-    }
-   ]
-  },
-  {
-   "id": "station-142-stage-bar-kitchen-west-chester",
-   "name": "Station 142 Stage + Bar + Kitchen",
-   "address": "142 E MARKET ST, WEST CHESTER PA 19382-3153",
-   "zone_id": "west_chester",
-   "website": "https://station142.com/",
-   "plcb_name": "FTROOP142 LLC",
-   "lat": 39.9607386,
-   "lng": -75.601918,
-   "geo_precision": "place",
-   "photo": {
-    "file": "img/venues/station-142-stage-bar-kitchen-west-chester.jpg",
-    "attribution": "Photo: Station 142 Stage + Bar + Kitchen"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "19:00"
-      }
-     ],
-     "items": [
-      {
-       "category": "draft",
-       "label": "Domestic Drafts",
-       "price_usd": 4.0
-      }
-     ],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://station142.com/food-drink-menu/",
-      "quote": "Happy Hour / Tuesday-Friday: 4-7pm | Saturday & Sunday: 3-6pm / $4 Domestic Drafts & Bottles"
-     }
-    }
-   ]
-  },
-  {
-   "id": "pietro-s-prime-west-chester",
-   "name": "Pietro\u2019s Prime",
-   "address": "125 W MARKET ST, WEST CHESTER PA 19382-2901",
-   "zone_id": "west_chester",
-   "website": "https://www.pietrosprime.com",
-   "plcb_name": "PIETROS PRIME INC",
-   "lat": 39.9589239,
-   "lng": -75.6065283,
-   "geo_precision": "place",
-   "photo": {
-    "file": "img/venues/pietro-s-prime-west-chester.jpg",
-    "attribution": "Photo: Pietro\u2019s Prime"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "17:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 2,
-       "start": "17:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 3,
-       "start": "17:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 4,
-       "start": "17:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 5,
-       "start": "17:00",
-       "end": "19:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://www.pietrosprime.com",
-      "quote": "HAPPY HOUR / Join us every Monday through Friday from 5-7 PM in the bar area! / .sfxZxsX{--wbu-color-blue-0:#0F2CCF;--wbu-color-blue-100:#2F5DFF;--wbu-color-blue-200:#597DFF;--wbu-color-blue-300:#ACBEFF;--wbu-color-blue-400:#D5DFFF;--wbu-color-blue-500:#EAEFFF;--wbu-color-blue-600:#F5F7FF;--wbu-color-black-0:#151414;--wbu-color-black-100:#383838;--wbu-color-black-200:#525150;--wbu-color-black-300:"
-     }
-    }
-   ]
-  },
-  {
-   "id": "limoncello-west-chester",
+   "id": "59213",
+   "lid": "59213",
+   "slug": "limoncello-west-chester",
    "name": "Limoncello",
-   "address": "5-7-9 N WALNUT ST, WEST CHESTER PA 19380-3138",
+   "address": "5-7-9 N Walnut St, West Chester PA 19380",
    "zone_id": "west_chester",
    "website": "https://www.limoncellorestaurant.com/",
    "plcb_name": "LIMONCELLO",
+   "license_type": "Restaurant (Liquor)",
    "lat": 39.9605561,
    "lng": -75.6033322,
    "geo_precision": "place",
@@ -362,12 +202,15 @@
    ]
   },
   {
-   "id": "p-j-whelihan-s-west-chester",
+   "id": "66141",
+   "lid": "66141",
+   "slug": "p-j-whelihan-s-west-chester",
    "name": "P.J. Whelihan's",
-   "address": "1347 WILMINGTON PK, WEST CHESTER PA 19382-8470",
+   "address": "1347 Wilmington Pk, West Chester PA 19382",
    "zone_id": "west_chester",
    "website": "https://locations.pjspub.com/pa/west-chester/1347-wilmington-pike",
    "plcb_name": "PJ WHELIHANS",
+   "license_type": "Restaurant (Liquor)",
    "lat": 39.903188,
    "lng": -75.5643383,
    "geo_precision": "place",
@@ -398,6 +241,229 @@
       "kind": "venue_site",
       "url": "https://locations.pjspub.com/pa/west-chester/1347-wilmington-pike",
       "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "58333",
+   "lid": "58333",
+   "slug": "pietro-s-prime-west-chester",
+   "name": "Pietro\u2019s Prime",
+   "address": "125 W Market St, West Chester PA 19382",
+   "zone_id": "west_chester",
+   "website": "https://www.pietrosprime.com",
+   "plcb_name": "PIETROS PRIME INC",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.9589239,
+   "lng": -75.6065283,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/pietro-s-prime-west-chester.jpg",
+    "attribution": "Photo: Pietro\u2019s Prime"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.pietrosprime.com",
+      "quote": "HAPPY HOUR / Join us every Monday through Friday from 5-7 PM in the bar area! / .sfxZxsX{--wbu-color-blue-0:#0F2CCF;--wbu-color-blue-100:#2F5DFF;--wbu-color-blue-200:#597DFF;--wbu-color-blue-300:#ACBEFF;--wbu-color-blue-400:#D5DFFF;--wbu-color-blue-500:#EAEFFF;--wbu-color-blue-600:#F5F7FF;--wbu-color-black-0:#151414;--wbu-color-black-100:#383838;--wbu-color-black-200:#525150;--wbu-color-black-300:"
+     }
+    }
+   ]
+  },
+  {
+   "id": "129847",
+   "lid": "129847",
+   "slug": "station-142-stage-bar-kitchen-west-chester",
+   "name": "Station 142 Stage + Bar + Kitchen",
+   "address": "142 E Market St, West Chester PA 19382",
+   "zone_id": "west_chester",
+   "website": "https://station142.com/",
+   "plcb_name": "FTROOP142 LLC",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.9607386,
+   "lng": -75.601918,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/station-142-stage-bar-kitchen-west-chester.jpg",
+    "attribution": "Photo: Station 142 Stage + Bar + Kitchen"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Domestic Drafts",
+       "price_usd": 4.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://station142.com/food-drink-menu/",
+      "quote": "Happy Hour / Tuesday-Friday: 4-7pm | Saturday & Sunday: 3-6pm / $4 Domestic Drafts & Bottles"
+     }
+    }
+   ]
+  },
+  {
+   "id": "96391",
+   "lid": "96391",
+   "slug": "stove-and-tap-west-chester",
+   "name": "Stove and Tap",
+   "address": "158 W Gay St, West Chester PA 19380",
+   "zone_id": "west_chester",
+   "website": "https://stoveandtap-wc.com/",
+   "plcb_name": "158 LICENSE LLC",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.9593496,
+   "lng": -75.6075703,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 6,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.stoveandtap-wc.com/specials",
+      "quote": "Food & Drink Specials / 5:00 PM - 7:00 PM / WEDNESDAY"
+     }
+    }
+   ]
+  },
+  {
+   "id": "126237",
+   "lid": "126237",
+   "slug": "the-stone-tavern-west-chester",
+   "name": "The Stone Tavern",
+   "address": "1227 W Chester Pk, West Chester PA 19380",
+   "zone_id": "west_chester",
+   "website": "https://www.thestonetavern1867.com",
+   "plcb_name": "THE STONE TAVERN",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.968793,
+   "lng": -75.5579416,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/the-stone-tavern-west-chester.jpg",
+    "attribution": "Photo: The Stone Tavern"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.thestonetavern1867.com/specials",
+      "quote": "HAPPY HOUR: / Monday-Friday / 4-6PM @ The Bar Only"
      }
     }
    ]

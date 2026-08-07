@@ -325,6 +325,11 @@ def main():
         kept.append((vid, deal))
         venues.append({
             "id": vid,
+            # The LID this deal was crawled for. data/venue_base.json is keyed on
+            # it, so this is what joins a deal to the venue card it belongs on --
+            # without it the merge falls back to matching addresses, which is how
+            # a bar ends up on the board twice.
+            "lid": lid,
             "name": v["osm_name"] or v["name"],
             "plcb_name": v["name"],
             "address": v["address"],

@@ -1,9 +1,10 @@
 {
  "_comment": "Machine-extracted from data/crawl_hits.json by ingest/extract_deals.py. Every deal carries the quote it was read from. Hand-verified deals live in deals_seed.json.",
- "as_of": "2026-08-06",
+ "as_of": "2026-08-07",
  "venues": [
   {
    "id": "lansdale-tavern-lansdale",
+   "lid": "100210",
    "name": "Lansdale Tavern",
    "plcb_name": "CALIMONT LLC",
    "address": "839 W MAIN ST, LANSDALE PA 19446-2015",
@@ -63,7 +64,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -75,6 +76,7 @@
   },
   {
    "id": "troubles-end-brewing-collegeville",
+   "lid": "100226",
    "name": "Troubles End Brewing",
    "plcb_name": "TROUBLES END BREWING LLC",
    "address": "36 W 3RD AVE, COLLEGEVILLE PA 19426-3605",
@@ -120,6 +122,7 @@
   },
   {
    "id": "the-sidecar-bar-grille-philadelphia",
+   "lid": "101345",
    "name": "The SideCar Bar & Grille",
    "plcb_name": "BARCARSIDE LLC",
    "address": "2201 CHRISTIAN ST, PHILADELPHIA PA 19146-1718",
@@ -170,6 +173,7 @@
   },
   {
    "id": "dandan-ardmore",
+   "lid": "102696",
    "name": "Dandan",
    "plcb_name": "DAN DAN 30 LLC",
    "address": "30 PARKING PLAZA, ARDMORE PA 19003",
@@ -220,6 +224,7 @@
   },
   {
    "id": "lascala-s-fire-villanova",
+   "lid": "103297",
    "name": "LaScala's Fire",
    "plcb_name": "BLAZE THREE MANAGEMENT LLC",
    "address": "789 EAST LANCASTER AVE, VILLANOVA PA 19085",
@@ -270,6 +275,7 @@
   },
   {
    "id": "las-bugambilias-philadelphia",
+   "lid": "103534",
    "name": "Las Bugambilias",
    "plcb_name": "NP LL 20 LLC",
    "address": "15 S 3RD ST, PHILADELPHIA PA 19106-2801",
@@ -336,6 +342,7 @@
   },
   {
    "id": "panache-blue-bell",
+   "lid": "103994",
    "name": "Panache",
    "plcb_name": "PANACHE",
    "address": "602 SKIPPACK PIKE, BLUE BELL PA 19422-1710",
@@ -346,6 +353,21 @@
     {
      "type": "happy_hour",
      "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
       {
        "dow": 4,
        "start": "16:00",
@@ -375,13 +397,14 @@
      "source": {
       "kind": "venue_site",
       "url": "https://panachewoodfiregrill.com/happy-hour-blue-bell/",
-      "quote": "Happy Hour in Blue Bell Just Got Better &#8211; Join Us at Panache! / Monday &#8211; Friday 4pm to 6pm / Sip $8 wines, enjoy $7 bites, and relax on our lively patio or at the bar. Whether you&#8217;re here for after-work drinks or early evening bites, Panache is the place to be in Blue Bell."
+      "quote": "Happy Hour in Blue Bell Just Got Better \u2013 Join Us at Panache! / Monday \u2013 Friday 4pm to 6pm / Sip $8 wines, enjoy $7 bites, and relax on our lively patio or at the bar. Whether you\u2019re here for after-work drinks or early evening bites, Panache is the place to be in Blue Bell."
      }
     }
    ]
   },
   {
    "id": "chickie-s-pete-s-malvern",
+   "lid": "104355",
    "name": "Chickie's & Pete's",
    "plcb_name": "MALVERN CPC LLC",
    "address": "THE GROVE 10 LIBERTY BLVD, MALVERN PA 19355",
@@ -425,18 +448,19 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://chickiesandpetes.com/menu",
-      "quote": "Happy Hour available Monday-Friday 4-6 pm and Sunday-Thursday 10pm-12am at bar area only. Where permitted by law. Dine-in only. Prices and times may vary at Parx, Tropicana, Kansas City, and Robbins Ave. locations. Not valid at Allentown or Nevada locations."
+      "url": "https://www.chickiesandpetes.com/happy-hour",
+      "quote": "Happy Hour available Monday-Friday 4-6 pm and Sunday-Thursday 10pm-12am at bar area only. Where permitted by law. Dine-in only. Prices and times may vary at Parx, Tropicana, Kansas City, and Robbins Ave. locations. Not valid at Allentown, Airport, or Nevada locations."
      }
     }
    ]
   },
   {
    "id": "pier-bar-philadelphia",
+   "lid": "104583",
    "name": "Pier Bar",
    "plcb_name": "2025 LOCAL",
    "address": "2025 FAIRMOUNT AVE, PHILADELPHIA PA 19130-2612",
@@ -487,6 +511,7 @@
   },
   {
    "id": "top-tomato-bar-pizza-philadelphia",
+   "lid": "105744",
    "name": "Top Tomato Bar & Pizza",
    "plcb_name": "TOP TOMATO II INC",
    "address": "116-120 S 11TH ST, PHILADELPHIA PA 19107-4801",
@@ -537,6 +562,7 @@
   },
   {
    "id": "revival-pizza-pub-chester-springs",
+   "lid": "106706",
    "name": "Revival Pizza Pub",
    "plcb_name": "REVIVAL",
    "address": "240 WINDGATE DR, CHESTER SPRINGS PA 19425",
@@ -587,6 +613,7 @@
   },
   {
    "id": "the-gypsy-saloon-west-conshohocken",
+   "lid": "107050",
    "name": "The Gypsy Saloon",
    "plcb_name": "GYPSY SALOON",
    "address": "128 FORD ST, WEST CONSHOHOCKEN PA 19428",
@@ -637,6 +664,7 @@
   },
   {
    "id": "limerick-bowl-limerick",
+   "lid": "107670",
    "name": "Limerick Bowl",
    "plcb_name": "BOWLERO LIMERICK LLC",
    "address": "653 W RIDGE PK, LIMERICK PA 19468-1419",
@@ -660,18 +688,80 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.bowlero.com/specials/family-unlimited",
+      "quote": "Food & Drink Specials / During Family Unlimited, g et two shareable apps for one low per-person price, plus discounted Craft Lemonades and Dirty Sodas. / Valid every Saturday & Sunday, 11AM\u20133PM, including holidays. Not available at all locations. Selection, pricing and participation may vary. Visit a participating location for complete details. Management reserves all rights."
+     }
+    }
+   ]
+  },
+  {
+   "id": "other-half-brewing-philadelphia",
+   "lid": "108084",
+   "name": "Other Half Brewing",
+   "plcb_name": "OTHER HALF BREWERY",
+   "address": "1000-1002 CANAL ST, PHILADELPHIA PA 19123",
+   "zone_id": "center_city",
+   "license_type": "",
+   "website": "https://otherhalfbrewing.com/location/philadelphia/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://www.bowlero.com/location/limerick-bowl",
-      "quote": "Family Unlimited Food & Drink Specials / Saturday & Sunday | 11AM \u2013 3PM / Get two shareable apps for one low per-person price, plus discounted Craft Lemonades and Dirty Sodas."
+      "url": "https://otherhalfbrewing.com/event/clone-ohanother-happy-hour-buffalo-2026-08-18/",
+      "quote": "OH\u2026Another Happy Hour @ Buffalo / August 18 2026 4:00 pm - August 21 2026 6:00 pm / Daily Happy Hour at Other Half Buffalo Tuesday-Friday 4pm-6pm"
      }
     }
    ]
   },
   {
    "id": "chili-s-philadelphia",
+   "lid": "108997",
    "name": "Chili's",
    "plcb_name": "CHILI'S GRILL & BAR",
    "address": "1239 FILBERT ST, PHILADELPHIA PA 19107-2818",
@@ -717,6 +807,7 @@
   },
   {
    "id": "chili-s-philadelphia-109005",
+   "lid": "109005",
    "name": "Chili's",
    "plcb_name": "CHILI'S GRILL & BAR",
    "address": "2320 OREGON AVE, PHILADELPHIA PA 19145",
@@ -750,7 +841,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -762,6 +853,7 @@
   },
   {
    "id": "chili-s-philadelphia-109062",
+   "lid": "109062",
    "name": "Chili's",
    "plcb_name": "CHILI'S GRILL & BAR",
    "address": "2451 CHELTENHAM AVE, Philadelphia PA 19150",
@@ -795,7 +887,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -807,6 +899,7 @@
   },
   {
    "id": "the-stray-dog-tavern-skippack",
+   "lid": "109142",
    "name": "The Stray Dog Tavern",
    "plcb_name": "JUSTIN'S CARRIAGE HOUSE",
    "address": "3911 SKIPPACK PIKE, SKIPPACK PA 19474",
@@ -867,6 +960,7 @@
   },
   {
    "id": "the-fairmount-tavern-philadelphia",
+   "lid": "109360",
    "name": "The Fairmount Tavern",
    "plcb_name": "THE FAIRMOUNT TAVERN LICENSE LLC",
    "address": "1700 FAIRMOUNT AVE, PHILADELPHIA PA 19130-2812",
@@ -916,7 +1010,120 @@
    ]
   },
   {
+   "id": "well-crafted-beer-company-llc-ambler",
+   "lid": "109577",
+   "name": "WELL CRAFTED BEER COMPANY LLC",
+   "plcb_name": "WELL CRAFTED BEER COMPANY LLC",
+   "address": "300 BROOKSIDE AVE BLDG 19 STE E, AMBLER PA 19002-3436",
+   "zone_id": "ambler_upper_dublin",
+   "license_type": "",
+   "website": "https://www.wellcraftedbeer.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.wellcraftedbeer.com/home/lansdale/happyhour",
+      "quote": "HAPPY HOUR MENU / Available weekdays 4 to 6 pm."
+     }
+    }
+   ]
+  },
+  {
+   "id": "bloom-southern-kitchen-chester-springs",
+   "lid": "109596",
+   "name": "Bloom Southern Kitchen",
+   "plcb_name": "123 BOURBON PIKE LLC",
+   "address": "123 POTTSTOWN PK, CHESTER SPRINGS PA 19425-9518",
+   "zone_id": "exton_downingtown",
+   "license_type": "",
+   "website": "https://www.bloomsouthernkitchen.com",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.bloomsouthernkitchen.com/happy-hour-menu",
+      "quote": "Happy Hour / Daily from 3-6pm"
+     }
+    }
+   ]
+  },
+  {
    "id": "exit-13-gastrobar-bryn-mawr",
+   "lid": "109849",
    "name": "EXIT 13 GASTROBAR",
    "plcb_name": "EXIT 13 GASTROBAR",
    "address": "910 - 912 CONESTOGA RD, BRYN MAWR PA 19010-1331",
@@ -957,6 +1164,7 @@
   },
   {
    "id": "botld-king-of-prussia",
+   "lid": "109967",
    "name": "BOTLD",
    "plcb_name": "BOTLD",
    "address": "190 TOWN CENTER  RD, KING OF PRUSSIA PA 19406-2373",
@@ -1007,6 +1215,7 @@
   },
   {
    "id": "w-tavern-jenkintown",
+   "lid": "110382",
    "name": "W Tavern",
    "plcb_name": "BOROBOTS INC",
    "address": "208 - 210 YORK RD, JENKINTOWN PA 19146",
@@ -1055,7 +1264,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1067,6 +1276,7 @@
   },
   {
    "id": "rosemary-ridley-park",
+   "lid": "110744",
    "name": "Rosemary",
    "plcb_name": "ROSEMARY",
    "address": "25 E HINKLEY AVE, RIDLEY PARK PA 19078-2101",
@@ -1115,7 +1325,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1127,6 +1337,7 @@
   },
   {
    "id": "p-j-welihan-s-pub-restaurant-hatfield",
+   "lid": "110926",
    "name": "P.J. Welihan's Pub & Restaurant",
    "plcb_name": "PJ WHELIHAN'S PUB & RESTAURANT",
    "address": "190 FORTY FOOT RD SUITE 114-118, HATFIELD PA 19440",
@@ -1150,7 +1361,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1162,6 +1373,7 @@
   },
   {
    "id": "vk-brewing-co-eatery-exton",
+   "lid": "111047",
    "name": "VK Brewing Co. & Eatery",
    "plcb_name": "VK BREWING COMPANY",
    "address": "693 E LINCOLN HWY, EXTON PA 19341-2809",
@@ -1221,7 +1433,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1233,6 +1445,7 @@
   },
   {
    "id": "amada-st-davids",
+   "lid": "115054",
    "name": "Amada",
    "plcb_name": "AMADA",
    "address": "555 E LANCASTER AVE, ST DAVIDS PA 19087-5109",
@@ -1288,6 +1501,7 @@
   },
   {
    "id": "hi-lo-taco-co-philadelphia",
+   "lid": "115785",
    "name": "Hi-Lo Taco Co.",
    "plcb_name": "HI-LO TACO 1 LLC",
    "address": "1109 WALNUT ST, PHILADELPHIA PA 19107-4908",
@@ -1348,6 +1562,7 @@
   },
   {
    "id": "p-j-whelihan-s-conshohocken",
+   "lid": "117317",
    "name": "P.J. Whelihan's",
    "plcb_name": "P.J. WHELIHAN'S",
    "address": "200 W RIDGE PIKE STE 117, CONSHOHOCKEN  PA 19428",
@@ -1383,6 +1598,7 @@
   },
   {
    "id": "mia-ragazza-philadelphia",
+   "lid": "117329",
    "name": "Mia Ragazza",
    "plcb_name": "MIA RAGAZZA",
    "address": "4411-4413 MAIN ST, PHILADELPHIA PA 19127-1311",
@@ -1433,6 +1649,7 @@
   },
   {
    "id": "main-line-tavern-paoli",
+   "lid": "118403",
    "name": "Main Line Tavern",
    "plcb_name": "MLT OPCO LLC",
    "address": "516 KING ST, PAOLI PA 19301-1759",
@@ -1481,7 +1698,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1493,6 +1710,7 @@
   },
   {
    "id": "9-prime-west-chester",
+   "lid": "119098",
    "name": "9 Prime",
    "plcb_name": "WCTHG LL LLC",
    "address": "9 N HIGH ST, WEST CHESTER PA 19382",
@@ -1543,6 +1761,7 @@
   },
   {
    "id": "pj-whelihan-s-wynnewood",
+   "lid": "119303",
    "name": "PJ Whelihan's",
    "plcb_name": "PJ WHELIHAN'S",
    "address": "50 E WYNNEWOOD RD, WYNNEWOOD PA 19096-2030",
@@ -1578,6 +1797,7 @@
   },
   {
    "id": "lascala-s-fire-newtown-square",
+   "lid": "119970",
    "name": "LaScala\u2019s Fire",
    "plcb_name": "LASCALA'S FIRE",
    "address": "3739 WEST CHESTER PK, NEWTOWN SQUARE PA 19073-2316",
@@ -1616,18 +1836,19 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://lascalasfire.com/newtown-square/",
-      "quote": "HAPPY HOUR / Monday-Friday / 3pm - 6pm"
+      "url": "https://lascalasfire.com/newtown-square/menus/happy-hour",
+      "quote": "HAPPY HOUR / MON-FRI 3PM-6PM / APEROL SPRITZ $9"
      }
     }
    ]
   },
   {
    "id": "p-j-whelihan-s-pub-restaurant-oaks",
+   "lid": "120730",
    "name": "P. J. Whelihan's Pub + Restaurant",
    "plcb_name": "OAKS CINEMA",
    "address": "180 MILL RD, OAKS PA 19456-6503",
@@ -1663,6 +1884,7 @@
   },
   {
    "id": "wissahickon-brewing-co-philadelphia",
+   "lid": "120981",
    "name": "Wissahickon Brewing Co",
    "plcb_name": "WISSAHICKON BREWING COMPANY OLDE KENSINGTON",
    "address": "1526 N AMERICAN ST, PHILADELPHIA PA 19122-3811",
@@ -1701,7 +1923,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1713,6 +1935,7 @@
   },
   {
    "id": "santucci-s-original-square-pizza-philadelphia",
+   "lid": "122033",
    "name": "Santucci's Original Square Pizza",
    "plcb_name": "SANTUCCI'S ORIGINAL SQUARE PIZZA",
    "address": "655-659 N BROAD ST, PHILADELPHIA PA 19123-2418",
@@ -1773,6 +1996,7 @@
   },
   {
    "id": "maison-lotus-wayne",
+   "lid": "122420",
    "name": "Maison Lotus",
    "plcb_name": "MAISON LOTUS",
    "address": "175 E LANCASTER AVE, WAYNE PA 19087-3525",
@@ -1823,6 +2047,7 @@
   },
   {
    "id": "the-stone-tavern-west-chester",
+   "lid": "126237",
    "name": "The Stone Tavern",
    "plcb_name": "THE STONE TAVERN",
    "address": "1227 W CHESTER PK, WEST CHESTER PA 19380-6874",
@@ -1873,6 +2098,7 @@
   },
   {
    "id": "percy-philadelphia",
+   "lid": "128022",
    "name": "Percy",
    "plcb_name": "MECHA NOODLE BAR FISHTOWN LLC",
    "address": "1700 N FRONT ST, PHILADELPHIA PA 19122-3261",
@@ -1896,7 +2122,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1908,6 +2134,7 @@
   },
   {
    "id": "paladar-latin-kitchen-rum-bar-king-of-prussia",
+   "lid": "128897",
    "name": "PALADAR LATIN KITCHEN & RUM BAR",
    "plcb_name": "PALADAR LATIN KITCHEN & RUM BAR",
    "address": "KING OF PRUSSIA TOWN CENTER  250 MAIN STREET, KING OF PRUSSIA PA 19406",
@@ -1957,7 +2184,90 @@
    ]
   },
   {
+   "id": "white-dog-cafe-philadelphia",
+   "lid": "12921",
+   "name": "White Dog Cafe",
+   "plcb_name": "WHITE DOG CAFE",
+   "address": "3420-24 SANSOM ST, PHILADELPHIA PA 19104",
+   "zone_id": "university_city",
+   "license_type": "",
+   "website": "https://www.whitedog.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "cocktails",
+       "price_usd": 9.0
+      },
+      {
+       "category": "wine",
+       "label": "wine",
+       "price_usd": 8.0
+      },
+      {
+       "category": "draft",
+       "label": "beer",
+       "price_usd": 6.0
+      },
+      {
+       "category": "draft",
+       "label": "select beer paired with our s",
+       "price_usd": 7.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "bottles of wine",
+       "discount_pct": 50
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://whitedog.com/location/specials.php?1",
+      "quote": "HAPPY HOUR / Join us for Happy Hour from 3 - 6 PM Sunday through Friday, weather permitting, at the bar or patio, with drink specials and a specially priced MENU . / WINE NOT MONDAY!?"
+     }
+    }
+   ]
+  },
+  {
    "id": "panorama-philadelphia",
+   "lid": "129284",
    "name": "Panorama",
    "plcb_name": "PANORAMA RISTORANTE",
    "address": "14-18 N FRONT ST, PHILADELPHIA PA 19106-2202",
@@ -2008,6 +2318,7 @@
   },
   {
    "id": "station-142-stage-bar-kitchen-west-chester",
+   "lid": "129847",
    "name": "Station 142 Stage + Bar + Kitchen",
    "plcb_name": "FTROOP142 LLC",
    "address": "142 E MARKET ST, WEST CHESTER PA 19382-3153",
@@ -2058,7 +2369,39 @@
    ]
   },
   {
+   "id": "marsha-s-south-street-philadelphia",
+   "lid": "130105",
+   "name": "Marsha's South Street",
+   "plcb_name": "MARSHA'S",
+   "address": "430 SOUTH ST, PHILADELPHIA PA 19147-1535",
+   "zone_id": "center_city",
+   "license_type": "",
+   "website": "https://www.marshassouthstreet.com",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "20:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.marshassouthstreet.com/events/halftime-rb-happy-hour",
+      "quote": "Chill vibes, dope beats, and a dash of R&B karaoke\u2026 it\u2019s the kind of weekend pop-up Happy Hour that feels like home. Pull up, link up, and let\u2019s kick off this new vibe the right way. / \ud83d\udd53 Saturday 12/13/25 / \u23f0 4\u20138PM (Day Party)"
+     }
+    }
+   ]
+  },
+  {
    "id": "oyster-house-philadelphia",
+   "lid": "130662",
    "name": "Oyster House",
    "plcb_name": "OYSTER HOUSE",
    "address": "8500 ESSINGTON AVE 2ND FL B&C CONNECTOR SPACE #BC13, PHILADELPHIA PA 19153-7027",
@@ -2092,7 +2435,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -2103,7 +2446,54 @@
    ]
   },
   {
+   "id": "the-stables-dowingtown",
+   "lid": "131290",
+   "name": "The Stables",
+   "plcb_name": "123 PPCS LLC",
+   "address": "160 PARK RD, DOWINGTOWN PA 19335",
+   "zone_id": "exton_downingtown",
+   "license_type": "",
+   "website": "https://thestablesbeergarden.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.thestablesbeergarden.com/happy-hour",
+      "quote": "HAPPY HOUR / Join us for Happy Hour every Tuesday - Friday from 4 pm - 6 pm!"
+     }
+    }
+   ]
+  },
+  {
    "id": "tria-philadelphia",
+   "lid": "131553",
    "name": "Tria",
    "plcb_name": "NEXT OF KIN",
    "address": "1137 SPRUCE ST, PHILADELPHIA PA 19107-6738",
@@ -2149,6 +2539,7 @@
   },
   {
    "id": "veda-philadelphia",
+   "lid": "133012",
    "name": "Veda",
    "plcb_name": "1920 PHILLY LLC",
    "address": "1920 CHESTNUT ST, PHILADELPHIA PA 19103-4634",
@@ -2209,6 +2600,7 @@
   },
   {
    "id": "cantina-feliz-fort-washington",
+   "lid": "133440",
    "name": "Cantina Feliz",
    "plcb_name": "FINELINE FORT WASHINGTON LLC",
    "address": "424 S BETHLEHEM PIKE, FORT WASHINGTON PA 19034-2304",
@@ -2259,6 +2651,7 @@
   },
   {
    "id": "black-powder-tavern-wayne",
+   "lid": "17574",
    "name": "Black Powder Tavern",
    "plcb_name": "BLACK POWDER TAVERN",
    "address": "1164 VALLEY FORGE RD, WAYNE PA 19087-1202",
@@ -2309,6 +2702,7 @@
   },
   {
    "id": "trappe-tavern-trappe",
+   "lid": "19496",
    "name": "Trappe Tavern",
    "plcb_name": "TRAPPE TAVERN, INC.",
    "address": "416 MAIN ST, TRAPPE PA 19426-2607",
@@ -2359,6 +2753,7 @@
   },
   {
    "id": "charlotte-s-restaurant-newtown-square",
+   "lid": "20468",
    "name": "Charlotte's Restaurant",
    "plcb_name": "CHARLOTTE'S RESTAURANT",
    "address": "3207 WEST CHESTER PK, NEWTOWN SQUARE PA 19073-4200",
@@ -2387,7 +2782,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -2399,6 +2794,7 @@
   },
   {
    "id": "guiseppes-restauant-ambler",
+   "lid": "23492",
    "name": "Guiseppes Restauant",
    "plcb_name": "GIUSEPPE'S PIZZA REST. OF AMBLER",
    "address": "46 S BETHLEHEM PK, AMBLER PA 19002-5801",
@@ -2437,7 +2833,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -2449,6 +2845,7 @@
   },
   {
    "id": "gullifty-s-rosemont",
+   "lid": "26291",
    "name": "Gullifty's",
    "plcb_name": "GULLIFTYS",
    "address": "1149 LANCASTER AVE, ROSEMONT PA 19010-2722",
@@ -2515,6 +2912,7 @@
   },
   {
    "id": "pinocchio-s-restaurant-beer-garden-to-go-media",
+   "lid": "32028",
    "name": "Pinocchio's Restaurant & Beer Garden to Go",
    "plcb_name": "PINOCCHIO'S FAMILY RESTAURANT",
    "address": "131 E BALTIMORE PK, MEDIA PA 19063",
@@ -2570,7 +2968,59 @@
    ]
   },
   {
+   "id": "franzone-s-pizzeria-conshohocken",
+   "lid": "32489",
+   "name": "Franzone's Pizzeria",
+   "plcb_name": "FRANZONES INC OF PLYMOUTH",
+   "address": "1940 MAIN AVE, CONSHOHOCKEN PA 19428-1215",
+   "zone_id": "blue_bell_plymouth_meeting",
+   "license_type": "",
+   "website": "https://www.franzonesconshohocken.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.franzonesconshohocken.com/",
+      "quote": "Weekday Happy Hour / 5:00p - 7:00p"
+     }
+    }
+   ]
+  },
+  {
    "id": "desmond-hotel-malvern-a-doubletree-by-hilton-malvern",
+   "lid": "32835",
    "name": "Desmond Hotel Malvern, a DoubleTree by Hilton",
    "plcb_name": "THE DESMOND",
    "address": "1 LIBERTY BLVD, MALVERN PA 19355-1419",
@@ -2614,7 +3064,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -2626,6 +3076,7 @@
   },
   {
    "id": "dave-buster-s-philadelphia",
+   "lid": "33647",
    "name": "Dave & Buster's",
    "plcb_name": "DAVE & BUSTERS",
    "address": "325 N CHRISTOPHER COLUMBUS BLVD, PHILADELPHIA PA 19106",
@@ -2681,6 +3132,7 @@
   },
   {
    "id": "coyote-crossing-conshohocken",
+   "lid": "36229",
    "name": "Coyote Crossing",
    "plcb_name": "300-E-6, INC.",
    "address": "800 SPRINGMILL AVE, CONSHOHOCKEN PA 19428-2314",
@@ -2741,6 +3193,7 @@
   },
   {
    "id": "victory-brewing-company-downingtown",
+   "lid": "36829",
    "name": "Victory Brewing Company",
    "plcb_name": "VICTORY BREWING COMPANY LLC",
    "address": "DOWNINGTOWN TECH CTR 420 ACORN LN, DOWNINGTOWN PA 19335-3075",
@@ -2753,8 +3206,8 @@
      "windows": [
       {
        "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
+       "start": "11:00",
+       "end": "14:00"
       },
       {
        "dow": 2,
@@ -2785,7 +3238,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -2797,6 +3250,7 @@
   },
   {
    "id": "sullivan-s-steakhouse-king-of-prussia",
+   "lid": "39702",
    "name": "Sullivan's Steakhouse",
    "plcb_name": "NORTH PHILADELPHIA SULLIVANS LLC",
    "address": "700 W DEKALB PK, KING OF PRUSSIA PA 19406",
@@ -2842,6 +3296,7 @@
   },
   {
    "id": "hard-rock-cafe-philadelphia",
+   "lid": "41866",
    "name": "Hard Rock Cafe",
    "plcb_name": "HARD ROCK CAFE",
    "address": "1113-31 MARKET ST, PHILADELPHIA PA 19107-2901",
@@ -2892,6 +3347,7 @@
   },
   {
    "id": "bowlero-boothwyn",
+   "lid": "42334",
    "name": "Bowlero",
    "plcb_name": "BOWLERO BOOTHWYN",
    "address": "575 CONCHESTER HWY, BOOTHWYN PA 19061",
@@ -2915,18 +3371,19 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://www.bowlero.com/location/bowlero-boothwyn",
-      "quote": "Family Unlimited Food & Drink Specials / Saturday & Sunday | 11AM \u2013 3PM / Get two shareable apps for one low per-person price, plus discounted Craft Lemonades and Dirty Sodas."
+      "url": "https://www.bowlero.com/specials/family-unlimited",
+      "quote": "Food & Drink Specials / During Family Unlimited, g et two shareable apps for one low per-person price, plus discounted Craft Lemonades and Dirty Sodas. / Valid every Saturday & Sunday, 11AM\u20133PM, including holidays. Not available at all locations. Selection, pricing and participation may vary. Visit a participating location for complete details. Management reserves all rights."
      }
     }
    ]
   },
   {
    "id": "the-pub-of-penn-valley-narberth",
+   "lid": "43721",
    "name": "THE PUB OF PENN VALLEY",
    "plcb_name": "THE PUB OF PENN VALLEY",
    "address": "863 MONTGOMERY AVE, NARBERTH PA 19072-1541",
@@ -2998,6 +3455,7 @@
   },
   {
    "id": "hard-rock-cafe-philadelphia-44268",
+   "lid": "44268",
    "name": "Hard Rock Cafe",
    "plcb_name": "PHILADELPHIA MARRIOTT",
    "address": "1201 MARKET ST & 1113-31 MARKET ST, PHILADELPHIA PA 19107-2817",
@@ -3048,6 +3506,7 @@
   },
   {
    "id": "south-philadelphia-tap-room-philadelphia",
+   "lid": "45092",
    "name": "South Philadelphia Tap Room",
    "plcb_name": "SOUTH PHILLY TAP ROOM",
    "address": "1509-11 MIFFLIN ST, PHILADELPHIA PA 19145-2231",
@@ -3092,7 +3551,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -3104,6 +3563,7 @@
   },
   {
    "id": "good-dog-bar-philadelphia",
+   "lid": "45865",
    "name": "Good Dog Bar",
    "plcb_name": "FRANK CLEMENTS TAVERN, INC.",
    "address": "224 S 15TH ST, PHILADELPHIA PA 19102-3806",
@@ -3154,6 +3614,7 @@
   },
   {
    "id": "cuba-libre-philadelphia",
+   "lid": "46363",
    "name": "Cuba Libre",
    "plcb_name": "CUBA LIBRE",
    "address": "10-14-16 S SECOND ST, PHILADELPHIA PA 19106-2802",
@@ -3201,14 +3662,15 @@
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://cubalibrerestaurant.com/en/philadelphia/",
-      "quote": "Happy Hour / MON-FRI 4PM-7:30PM / SUNDAY 12PM-4PM"
+      "url": "https://www.cubalibrerestaurant.com/en/philadelphia/menus/happy-hour/",
+      "quote": "Happy Hour MENU / HOURS | MON-FRI 4PM-7:30PM / SUNDAY 12PM-4PM AT BAR ONLY"
      }
     }
    ]
   },
   {
    "id": "the-crown-tavern-glen-mills",
+   "lid": "48062",
    "name": "The Crown Tavern",
    "plcb_name": "MCKENZIE'S BREWHOUSE, INC.",
    "address": "451 WILMINGTON-WEST CHESTER PK, GLEN MILLS PA 19342-9802",
@@ -3242,7 +3704,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -3254,6 +3716,7 @@
   },
   {
    "id": "great-american-pub-narberth",
+   "lid": "48382",
    "name": "Great American Pub",
    "plcb_name": "101 NARBERTH TAVERN, INC.",
    "address": "101 N NARBERTH AVE, NARBERTH PA 19072-1923",
@@ -3304,6 +3767,7 @@
   },
   {
    "id": "morton-s-of-chicago-king-of-prussia",
+   "lid": "49114",
    "name": "MORTON'S OF CHICAGO",
    "plcb_name": "MORTON'S OF CHICAGO",
    "address": "THE PAVILION AT KING OF PRUSSIA 640 W. DEKALB PK #1250, KING OF PRUSSIA PA 19406",
@@ -3359,6 +3823,7 @@
   },
   {
    "id": "chickie-s-and-pete-s-philadelphia",
+   "lid": "49542",
    "name": "Chickie's and Pete's",
    "plcb_name": "CHICKIE'S & PETE'S CAFE",
    "address": "1526 PACKER AVE, PHILADELPHIA PA 19145-5407",
@@ -3402,18 +3867,19 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://chickiesandpetes.com/menu",
-      "quote": "Happy Hour available Monday-Friday 4-6 pm and Sunday-Thursday 10pm-12am at bar area only. Where permitted by law. Dine-in only. Prices and times may vary at Parx, Tropicana, Kansas City, and Robbins Ave. locations. Not valid at Allentown or Nevada locations."
+      "url": "https://www.chickiesandpetes.com/happy-hour",
+      "quote": "Happy Hour available Monday-Friday 4-6 pm and Sunday-Thursday 10pm-12am at bar area only. Where permitted by law. Dine-in only. Prices and times may vary at Parx, Tropicana, Kansas City, and Robbins Ave. locations. Not valid at Allentown, Airport, or Nevada locations."
      }
     }
    ]
   },
   {
    "id": "p-j-whelihan-s-pub-and-restaurant-blue-bell",
+   "lid": "50385",
    "name": "P.J. Whelihan's Pub and Restaurant",
    "plcb_name": "PJ ENTERPRISES GROUP LLC",
    "address": "799 DEKALB PK, BLUE BELL PA 19422-1213",
@@ -3449,6 +3915,7 @@
   },
   {
    "id": "teikoku-newtown-square",
+   "lid": "50423",
    "name": "Teikoku",
    "plcb_name": "TEIKOKU RESTAURANT",
    "address": "5240 WEST CHESTER PK, NEWTOWN SQUARE PA 19073-1119",
@@ -3461,23 +3928,23 @@
      "windows": [
       {
        "dow": 1,
-       "start": "16:30",
-       "end": "18:00"
+       "start": "11:30",
+       "end": "15:00"
       },
       {
        "dow": 2,
-       "start": "16:30",
-       "end": "18:00"
+       "start": "11:30",
+       "end": "15:00"
       },
       {
        "dow": 3,
-       "start": "16:30",
-       "end": "18:00"
+       "start": "11:30",
+       "end": "15:00"
       },
       {
        "dow": 4,
-       "start": "16:30",
-       "end": "18:00"
+       "start": "11:30",
+       "end": "15:00"
       },
       {
        "dow": 5,
@@ -3487,7 +3954,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -3498,7 +3965,59 @@
    ]
   },
   {
+   "id": "yakitori-boy-philadelphia",
+   "lid": "51472",
+   "name": "Yakitori Boy",
+   "plcb_name": "YAKITORI BOY, INC.",
+   "address": "211 N 11TH ST, PHILADELPHIA PA 19107",
+   "zone_id": "center_city",
+   "license_type": "",
+   "website": "https://www.yakitoriboy.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 7,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://yakitoriboy.com/happy-hour/",
+      "quote": "Happy Hour / TUESDAY-FRIDAY: 5-7 PM | / SUNDAY: 5-7 PM"
+     }
+    }
+   ]
+  },
+  {
    "id": "el-vez-philadelphia",
+   "lid": "52068",
    "name": "El Vez",
    "plcb_name": "THIRTEENTH STREET RESTAURANT PARTNERS, LP",
    "address": "121-127 S 13TH ST, PHILADELPHIA PA 19107-4903",
@@ -3549,6 +4068,7 @@
   },
   {
    "id": "devil-s-alley-bar-grill-philadelphia",
+   "lid": "53420",
    "name": "Devil's Alley Bar & Grill",
    "plcb_name": "SAM'S CHESTNUT GRILL, INC.",
    "address": "1907 CHESTNUT ST, PHILADELPHIA PA 19103-3500",
@@ -3605,6 +4125,7 @@
   },
   {
    "id": "pepperoncini-restaurant-bar-conshohocken",
+   "lid": "53783",
    "name": "PEPPERONCINI RESTAURANT & BAR",
    "plcb_name": "PEPPERONCINI RESTAURANT & BAR",
    "address": "72-74 POPLAR ST, CONSHOHOCKEN PA 19428-1927",
@@ -3655,6 +4176,7 @@
   },
   {
    "id": "estia-philadelphia",
+   "lid": "54242",
    "name": "Estia",
    "plcb_name": "AEGEAN ESTIATORIO, INC.",
    "address": "1405 LOCUST ST, PHILADELPHIA PA 19102-3807",
@@ -3726,6 +4248,7 @@
   },
   {
    "id": "fireside-bar-and-grill-ambler",
+   "lid": "55311",
    "name": "Fireside Bar and Grill",
    "plcb_name": "FIRESIDE GRILL",
    "address": "1211 S BETHLEHEM PK, AMBLER PA 19002-5804",
@@ -3769,7 +4292,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -3781,6 +4304,7 @@
   },
   {
    "id": "flip-and-baileys-llc-rosemont",
+   "lid": "56307",
    "name": "FLIP AND BAILEYS LLC",
    "plcb_name": "FLIP AND BAILEYS LLC",
    "address": "902-904 CONESTOGA RD GARRETT HILL, ROSEMONT PA 19010",
@@ -3831,6 +4355,7 @@
   },
   {
    "id": "the-continental-mid-town-philadelphia",
+   "lid": "56370",
    "name": "The Continental Mid-Town",
    "plcb_name": "CONTINENTAL MIDTOWN",
    "address": "1801 CHESTNUT ST, PHILADELPHIA PA 19103-3712",
@@ -3880,57 +4405,8 @@
    ]
   },
   {
-   "id": "p-f-chang-s-warrington",
-   "name": "P.F. Chang's",
-   "plcb_name": "P F CHANGS CHINA BISTRO",
-   "address": "THE SHOPPES AT VALLEY SQ 721 EASTON RD, WARRINGTON PA 18976",
-   "zone_id": "warminster_warrington",
-   "license_type": "",
-   "website": "https://www.pfchangs.com/locations/us/pa/warrington/721-easton-rd/9827-warrington.html",
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "15:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "15:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "15:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "15:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "15:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://www.pfchangs.com/beverages",
-      "quote": "HAPPY HOUR SPECIALS / Available Monday-Friday, 3-6PM*"
-     }
-    }
-   ]
-  },
-  {
    "id": "pietro-s-prime-west-chester",
+   "lid": "58333",
    "name": "Pietro\u2019s Prime",
    "plcb_name": "PIETROS PRIME INC",
    "address": "125 W MARKET ST, WEST CHESTER PA 19382-2901",
@@ -3981,6 +4457,7 @@
   },
   {
    "id": "limoncello-west-chester",
+   "lid": "59213",
    "name": "Limoncello",
    "plcb_name": "LIMONCELLO",
    "address": "5-7-9 N WALNUT ST, WEST CHESTER PA 19380-3138",
@@ -4036,6 +4513,7 @@
   },
   {
    "id": "chickie-s-pete-s-philadelphia",
+   "lid": "59775",
    "name": "Chickie's & Pete's",
    "plcb_name": "4010 LLC",
    "address": "4010 ROBBINS ST & BSMT 4012 ROBBINS ST, PHILADELPHIA PA 19135-3016",
@@ -4091,6 +4569,7 @@
   },
   {
    "id": "pub-kitchen-philadelphia",
+   "lid": "60353",
    "name": "Pub & Kitchen",
    "plcb_name": "DRC INVESTMENTS LLC",
    "address": "1946 LOMBARD ST, PHILADELPHIA PA 19146-1411",
@@ -4141,6 +4620,7 @@
   },
   {
    "id": "prohibition-taproom-philadelphia",
+   "lid": "60604",
    "name": "Prohibition Taproom",
    "plcb_name": "PROHIBITION TAPROOM INC",
    "address": "501 N 13TH ST, PHILADELPHIA PA 19123-3632",
@@ -4186,6 +4666,7 @@
   },
   {
    "id": "ale-house-newtown-square",
+   "lid": "60905",
    "name": "Ale House",
    "plcb_name": "FALCON ALE HOUSE INC",
    "address": "NEWTOWN SQ SHOPPING CENTER 3546 WEST CHESTER PK, NEWTOWN SQUARE PA 19073-4128",
@@ -4224,7 +4705,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -4236,6 +4717,7 @@
   },
   {
    "id": "amada-radnor",
+   "lid": "61077",
    "name": "Amada",
    "plcb_name": "FLEMINGS PRIME STEAKHOUSE & WINE BAR",
    "address": "RADNOR FINANCIAL CENTER 555 E LANCASTER AVE, RADNOR PA 19087-5158",
@@ -4291,6 +4773,7 @@
   },
   {
    "id": "con-murphy-s-philadelphia",
+   "lid": "61260",
    "name": "Con Murphy's",
    "plcb_name": "SNUGBAR LLC",
    "address": "1700 BENJAMIN FRANKLIN PKWY, PHILADELPHIA PA 19103-2735",
@@ -4352,6 +4835,7 @@
   },
   {
    "id": "white-dog-cafe-wayne",
+   "lid": "61419",
    "name": "White Dog Cafe",
    "plcb_name": "LUCKY DOG ENTERPRISES LLC",
    "address": "TOWN CENTER AT WAYNE 200 W LANCASTER AVE, WAYNE PA 19087-4046",
@@ -4428,6 +4912,7 @@
   },
   {
    "id": "pearl-mary-philadelphia",
+   "lid": "62039",
    "name": "Pearl & Mary",
    "plcb_name": "76 WEST LLC",
    "address": "114-124 S 13TH ST, PHILADELPHIA PA 19107-4528",
@@ -4487,7 +4972,69 @@
    ]
   },
   {
+   "id": "dbg-philadelphia",
+   "lid": "62290",
+   "name": "DBG",
+   "plcb_name": "1311 SANSOM ENTERPRISES LLC",
+   "address": "1311-13 SANSOM ST, PHILADELPHIA PA 19107-4523",
+   "zone_id": "center_city",
+   "license_type": "",
+   "website": "https://dbgphilly.com",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://dbgphilly.com/s/DBG-SUMMER-MENU.pdf",
+      "quote": "HAPPY HOUR / EVERY DAY 4-7PM"
+     }
+    }
+   ]
+  },
+  {
    "id": "station-taproom-downingtown",
+   "lid": "62955",
    "name": "Station Taproom",
    "plcb_name": "STATION TAPROOM",
    "address": "207 W LANCASTER AVE, DOWNINGTOWN PA 19335-2511",
@@ -4527,7 +5074,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -4539,6 +5086,7 @@
   },
   {
    "id": "yards-brewing-company-philadelphia",
+   "lid": "63368",
    "name": "Yards Brewing Company",
    "plcb_name": "YARDS BREWING COMPANY LLC",
    "address": "500 SPRING GARDEN ST, PHILADELPHIA PA 19123-2833",
@@ -4589,6 +5137,7 @@
   },
   {
    "id": "the-trestle-inn-philadelphia",
+   "lid": "63425",
    "name": "The Trestle Inn",
    "plcb_name": "GLADURHAR LLC",
    "address": "339 N 11TH ST, PHILADELPHIA PA 19107-1307",
@@ -4628,7 +5177,59 @@
    ]
   },
   {
+   "id": "ubar-philadelphia",
+   "lid": "63811",
+   "name": "Ubar",
+   "plcb_name": "UNCLES LLC",
+   "address": "1220 LOCUST ST, PHILADELPHIA PA 19107-5605",
+   "zone_id": "center_city",
+   "license_type": "",
+   "website": "https://www.ubarphilly.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.ubarphilly.com/happy-hour",
+      "quote": "Happy Hour at U BAR / 4 PM - 6 PM Monday through Friday"
+     }
+    }
+   ]
+  },
+  {
    "id": "pj-whelihan-s-downingtown",
+   "lid": "63902",
    "name": "PJ Whelihan's",
    "plcb_name": "PJ WHELIHAN'S",
    "address": "853 E LANCASTER AVE, DOWNINGTOWN PA 19335-3327",
@@ -4652,7 +5253,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -4664,6 +5265,7 @@
   },
   {
    "id": "american-sardine-bar-philadelphia",
+   "lid": "64274",
    "name": "American Sardine Bar",
    "plcb_name": "SPTR INC",
    "address": "1800 FEDERAL ST, PHILADELPHIA PA 19146-2915",
@@ -4714,6 +5316,7 @@
   },
   {
    "id": "frankford-hall-philadelphia",
+   "lid": "64739",
    "name": "Frankford Hall",
    "plcb_name": "BIERFISH RESTAURANT PARTNERS LP",
    "address": "1210-22 FRANKFORD AVE, PHILADELPHIA PA 19125-3906",
@@ -4757,7 +5360,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -4768,7 +5371,59 @@
    ]
   },
   {
+   "id": "la-porta-ristorante-media",
+   "lid": "64766",
+   "name": "La Porta Ristorante",
+   "plcb_name": "LOCUST CREST TAVERN",
+   "address": "1192 MIDDLETOWN RD, MEDIA PA 19063",
+   "zone_id": "newtown_square_broomall",
+   "license_type": "",
+   "website": "https://laportarestaurant.com",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.laportarestaurant.com/daily-specials",
+      "quote": "HAPPY HOUR / Monday - Friday 4 pm - 6 pm / (Closed Tuesday)"
+     }
+    }
+   ]
+  },
+  {
    "id": "will-s-bill-s-brewery-berwyn",
+   "lid": "64900",
    "name": "Will's + Bill's Brewery",
    "plcb_name": "WILL'S + BILL'S BREWERY",
    "address": "324 W SWEDESFORD RD, BERWYN PA 19312-1165",
@@ -4824,6 +5479,7 @@
   },
   {
    "id": "will-s-bill-s-brewery-berwyn-64901",
+   "lid": "64901",
    "name": "Will's + Bill's Brewery",
    "plcb_name": "BKBC INC",
    "address": "324 W SWEDESFORD RD, BERWYN PA 19312-1165",
@@ -4879,6 +5535,7 @@
   },
   {
    "id": "black-horse-tavern-phoenixville",
+   "lid": "64975",
    "name": "Black Horse Tavern",
    "plcb_name": "OLDE BLACK HORSE TAVERN",
    "address": "1303 CHARLESTOWN RD, PHOENIXVILLE PA 19460-2344",
@@ -4929,6 +5586,7 @@
   },
   {
    "id": "jerry-s-bar-philadelphia",
+   "lid": "65261",
    "name": "Jerry's Bar",
    "plcb_name": "WP LLC",
    "address": "129 W LAUREL ST, PHILADELPHIA PA 19123-2325",
@@ -4979,6 +5637,7 @@
   },
   {
    "id": "liberty-union-bar-and-grill-chester-springs",
+   "lid": "65626",
    "name": "Liberty Union Bar and Grill",
    "plcb_name": "LIBERTY UNION BAR AND GRILL",
    "address": "325 SIMPSON DR, CHESTER SPRINGS PA 19425-9550",
@@ -5017,7 +5676,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -5029,6 +5688,7 @@
   },
   {
    "id": "spasso-italian-grill-media",
+   "lid": "65705",
    "name": "Spasso Italian Grill",
    "plcb_name": "SPASSO INC",
    "address": "1 W STATE ST, MEDIA PA 19063-3310",
@@ -5079,6 +5739,7 @@
   },
   {
    "id": "vedge-philadelphia",
+   "lid": "65714",
    "name": "Vedge",
    "plcb_name": "VEDGE",
    "address": "1221-23 LOCUST ST, PHILADELPHIA PA 19107-5414",
@@ -5124,6 +5785,7 @@
   },
   {
    "id": "lloyd-whiskey-bar-philadelpphia",
+   "lid": "65739",
    "name": "Lloyd Whiskey Bar",
    "plcb_name": "529 GIRARD GROUP INC",
    "address": "529 E GIRARD AVE, PHILADELPPHIA PA 19125-3311",
@@ -5162,7 +5824,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -5174,6 +5836,7 @@
   },
   {
    "id": "p-j-whelihan-s-west-chester",
+   "lid": "66141",
    "name": "P.J. Whelihan's",
    "plcb_name": "PJ WHELIHANS",
    "address": "1347 WILMINGTON PK, WEST CHESTER PA 19382-8470",
@@ -5209,6 +5872,7 @@
   },
   {
    "id": "cedar-point-bar-kitchen-philadelphia",
+   "lid": "67138",
    "name": "Cedar Point Bar & Kitchen",
    "plcb_name": "CEDAR POINT LLC",
    "address": "2370-72 E NORRIS ST, PHILADELPHIA PA 19125-1929",
@@ -5250,20 +5914,37 @@
        "end": "19:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "off draft beer",
+       "price_usd": 2.0
+      },
+      {
+       "category": "draft",
+       "label": "Off Draft Beer for Happy Hour",
+       "price_usd": 2.0
+      },
+      {
+       "category": "wine",
+       "label": "Off Wine for Happy Hour",
+       "price_usd": 2.0
+      }
+     ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://www.cedarpointbarandkitchen.com/",
-      "quote": "HAPPY HOUR / Sunday \u2013 Friday: 5PM \u2013 7pm / Monday \u2013 Friday: 10PM \u2013 11PM"
+      "url": "https://cedarpointbarandkitchen.com/happy-hour-specials/",
+      "quote": "HAPPY HOUR / Standard Happy Hour runs Sunday through Friday from 5PM to 7PM / Late Night Happy Hour for the Last Hour: Monday \u2013 Thursday 10PM \u2013 11PM (Friday 11PM \u2013 12AM)"
      }
     }
    ]
   },
   {
    "id": "limoncello-chester-springs",
+   "lid": "67364",
    "name": "Limoncello",
    "plcb_name": "LIMONCELLO",
    "address": "491-499 E UWCHLAN AVE, CHESTER SPRINGS PA 19425-2231",
@@ -5307,7 +5988,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -5319,6 +6000,7 @@
   },
   {
    "id": "southern-cross-kitchen-conshohocken",
+   "lid": "67489",
    "name": "Southern Cross Kitchen",
    "plcb_name": "SOUTHERN CROSS KITCHEN RESTAURANT",
    "address": "8 E 1ST AVE, CONSHOHOCKEN PA 19428-2002",
@@ -5369,6 +6051,7 @@
   },
   {
    "id": "estia-taverna-inc-radnor",
+   "lid": "67838",
    "name": "ESTIA TAVERNA INC",
    "plcb_name": "ESTIA TAVERNA INC",
    "address": "222 N RADNOR CHESTER RD, RADNOR PA 19085",
@@ -5419,6 +6102,7 @@
   },
   {
    "id": "charlie-was-a-sinner-philadelphia",
+   "lid": "68001",
    "name": "Charlie Was a Sinner",
    "plcb_name": "ADR 131 S 13 LLC",
    "address": "131 S 13TH ST, PHILADELPHIA PA 19107-4917",
@@ -5469,6 +6153,7 @@
   },
   {
    "id": "ocean-prime-philadelphia",
+   "lid": "68137",
    "name": "Ocean Prime",
    "plcb_name": "OCEAN PRIME",
    "address": "124-34 S 15TH ST 1500 SANSOM ST, PHILADELPHIA PA 19102-3002",
@@ -5481,28 +6166,28 @@
      "windows": [
       {
        "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
+       "start": "15:00",
+       "end": "19:00"
       },
       {
        "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
+       "start": "15:00",
+       "end": "19:00"
       },
       {
        "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
+       "start": "15:00",
+       "end": "19:00"
       },
       {
        "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
+       "start": "15:00",
+       "end": "19:00"
       },
       {
        "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
+       "start": "15:00",
+       "end": "19:00"
       },
       {
        "dow": 7,
@@ -5520,6 +6205,11 @@
        "category": "draft",
        "label": "Selected Domestic Beers",
        "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "oysters during happy hour",
+       "price_usd": 2.0
       },
       {
        "category": "cocktail",
@@ -5540,6 +6230,7 @@
   },
   {
    "id": "butcher-and-barkeep-harleysville",
+   "lid": "68559",
    "name": "Butcher and Barkeep",
    "plcb_name": "THE BUTCHER AND BARKEEP",
    "address": "712 MAIN ST, HARLEYSVILLE PA 19438-1636",
@@ -5578,7 +6269,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -5590,6 +6281,7 @@
   },
   {
    "id": "se-or-salsa-abington",
+   "lid": "68604",
    "name": "Se\u00f1or Salsa",
    "plcb_name": "SENOR SALSA",
    "address": "1301 OLD YORK RD, ABINGTON PA 19001-3403",
@@ -5623,7 +6315,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -5635,6 +6327,7 @@
   },
   {
    "id": "p-j-whelihan-s-conshohocken-69227",
+   "lid": "69227",
    "name": "P.J. Whelihan's",
    "plcb_name": "WEIS MARKETS INC",
    "address": "200 RIDGE PK STE 110, CONSHOHOCKEN PA 19428-3702",
@@ -5670,6 +6363,7 @@
   },
   {
    "id": "the-great-american-pub-phoenixville",
+   "lid": "69448",
    "name": "The Great American Pub",
    "plcb_name": "THE GREAT AMERICAN PUB & HOTEL",
    "address": "148 BRIDGE ST, PHOENIXVILLE PA 19460-3448",
@@ -5720,6 +6414,7 @@
   },
   {
    "id": "southgate-philadelphia",
+   "lid": "69790",
    "name": "SouthGate",
    "plcb_name": "OLD ROW INC",
    "address": "1801 LOMBARD ST, PHILADELPHIA PA 19146-1409",
@@ -5765,6 +6460,7 @@
   },
   {
    "id": "jasper-s-backyard-conshohocken",
+   "lid": "70520",
    "name": "Jasper's Backyard",
    "plcb_name": "JASPERS BACKYARD LLC",
    "address": "101 E 7TH AVE, CONSHOHOCKEN PA 19428-1722",
@@ -5805,6 +6501,7 @@
   },
   {
    "id": "bar-bombon-philadelphia",
+   "lid": "70669",
    "name": "Bar Bombon",
    "plcb_name": "MARQUIS LATIN PHILLY LLC",
    "address": "133 S 18TH ST, PHILADELPHIA PA 19103-5238",
@@ -5850,6 +6547,7 @@
   },
   {
    "id": "the-cheesecake-factory-philadelphia",
+   "lid": "70846",
    "name": "The Cheesecake Factory",
    "plcb_name": "THE CHEESECAKE FACTORY",
    "address": "1426-30 WALNUT ST, PHILADELPHIA PA 19102-3804",
@@ -5900,6 +6598,7 @@
   },
   {
    "id": "dandan-philadelphia",
+   "lid": "70872",
    "name": "DanDan",
    "plcb_name": "DAN DAN 126 LLC",
    "address": "126 S 16TH ST, PHILADELPHIA PA 19102-2820",
@@ -5960,6 +6659,7 @@
   },
   {
    "id": "royal-boucherie-philadelphia",
+   "lid": "71150",
    "name": "Royal Boucherie",
    "plcb_name": "BISTRO 52 INC",
    "address": "52 S 2ND ST, PHILADELPHIA PA 19106-2810",
@@ -6000,6 +6700,7 @@
   },
   {
    "id": "avenue-kitchen-glen-mills",
+   "lid": "71430",
    "name": "Avenue Kitchen",
    "plcb_name": "AVENUE KITCHEN",
    "address": "509 WILMINGTON WEST CHESTER PK SUITE D-14, GLEN MILLS PA 19342",
@@ -6023,7 +6724,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -6035,6 +6736,7 @@
   },
   {
    "id": "malbec-argentine-steakhouse-philadelphia",
+   "lid": "71806",
    "name": "Malbec Argentine Steakhouse",
    "plcb_name": "ARGENTO ARGENTINIAN STEAK HOUSE LLC",
    "address": "400-02 S 2ND ST, PHILADELPHIA PA 19147-1608",
@@ -6085,6 +6787,7 @@
   },
   {
    "id": "los-camaradas-philadelphia",
+   "lid": "71924",
    "name": "Los Camaradas",
    "plcb_name": "DOS PERROS LLC",
    "address": "918 S 22ND ST, PHILADELPHIA PA 19146-2562",
@@ -6135,6 +6838,7 @@
   },
   {
    "id": "fogo-de-ch-o-king-of-prussia",
+   "lid": "72540",
    "name": "Fogo de Ch\u00e3o",
    "plcb_name": "FOGO DE CHAO CHURRASCARIA (KING OF PRUSSIA) LLC",
    "address": "KING OF PRUSSIA TOWN CENTER  155 MAIN ST, KING OF PRUSSIA PA 19406",
@@ -6185,6 +6889,7 @@
   },
   {
    "id": "osteria-philadelphia",
+   "lid": "72600",
    "name": "Osteria",
    "plcb_name": "OSTERIA",
    "address": "630-640 N BROAD ST, PHILADELPHIA PA 19130-3420",
@@ -6239,7 +6944,55 @@
    ]
   },
   {
+   "id": "2637brew-philadelphia",
+   "lid": "72755",
+   "name": "2637brew",
+   "plcb_name": "2637BREW INC",
+   "address": "2637 GIRARD AVE, PHILADELPHIA PA 19130-1333",
+   "zone_id": "center_city",
+   "license_type": "",
+   "website": "https://2637brew.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "17:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Kenwood Lager",
+       "price_usd": 4.0
+      },
+      {
+       "category": "shot",
+       "label": "Fireball shot",
+       "price_usd": 5.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://2637brew.com/happy-hours-specials",
+      "quote": "Weekend Happy Hour! / $4 Kenwood Lager - $5 Fireball shot / 03:00 PM - 05:00 PM"
+     }
+    }
+   ]
+  },
+  {
    "id": "the-goat-s-beard-wayne",
+   "lid": "72756",
    "name": "The Goat's Beard",
    "plcb_name": "THE GOATS BEARD",
    "address": "103 N WAYNE AVE, WAYNE PA 19087-3529",
@@ -6301,6 +7054,7 @@
   },
   {
    "id": "anthony-s-cucina-fresca-downingtown",
+   "lid": "73031",
    "name": "Anthony's Cucina Fresca",
    "plcb_name": "ANTHONYS PIZZA & GRILL",
    "address": "78 W LANCASTER AVE, DOWNINGTOWN PA 19335-2825",
@@ -6339,7 +7093,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -6351,6 +7105,7 @@
   },
   {
    "id": "pj-whelihan-s-wynnewood-73040",
+   "lid": "73040",
    "name": "PJ Whelihan's",
    "plcb_name": "THE GIANT COMPANY LLC",
    "address": "50 E WYNNEWOOD RD UNIT #2, WYNNEWOOD PA 19096-2013",
@@ -6386,6 +7141,7 @@
   },
   {
    "id": "dandan-wayne",
+   "lid": "80458",
    "name": "Dandan",
    "plcb_name": "214 SUGARTOWN LICENSE OPERATIONS",
    "address": "214 SUGARTOWN RD, WAYNE PA 19087",
@@ -6436,6 +7192,7 @@
   },
   {
    "id": "al-pastor-exton",
+   "lid": "81364",
    "name": "Al Pastor",
    "plcb_name": "EAGLEVIEW TOWN CENTER",
    "address": "560 WELLINGTON SQ, EXTON PA 19341",
@@ -6474,7 +7231,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -6486,6 +7243,7 @@
   },
   {
    "id": "p-j-whelihan-s-pub-restaurant-oaks-81482",
+   "lid": "81482",
    "name": "P. J. Whelihan's Pub + Restaurant",
    "plcb_name": "PJ'S OAKS LLC",
    "address": "180B MILL RD, OAKS PA 19456",
@@ -6521,6 +7279,7 @@
   },
   {
    "id": "second-district-brewing-company-philadelphia",
+   "lid": "83231",
    "name": "Second District Brewing Company",
    "plcb_name": "SECOND DISTRICT BREWING COMPANY",
    "address": "1939 S BANCROFT ST, PHILADELPHIA PA 19145",
@@ -6559,7 +7318,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -6571,6 +7330,7 @@
   },
   {
    "id": "co-op-restaurant-bar-philadelphia",
+   "lid": "83411",
    "name": "CO-OP Restaurant & Bar",
    "plcb_name": "STUDY PHILADELPHIA",
    "address": "20-40 SOUTH 33RD ST, PHILADELPHIA PA 19104",
@@ -6619,7 +7379,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -6631,6 +7391,7 @@
   },
   {
    "id": "harper-s-garden-philadelphia",
+   "lid": "83984",
    "name": "Harper's Garden",
    "plcb_name": "31SOUTH18 LLC",
    "address": "31 S 18TH ST, PHILADELPHIA PA 19103-4138",
@@ -6680,42 +7441,8 @@
    ]
   },
   {
-   "id": "bloomsday-cafe-philadelphia",
-   "name": "Bloomsday Cafe",
-   "plcb_name": "GECC2 LLC",
-   "address": "414 S 2ND ST, PHILADELPHIA PA 19147-1608",
-   "zone_id": "center_city",
-   "license_type": "",
-   "website": "https://bloomsdaycafe.com/",
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:00",
-       "end": "17:30"
-      },
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "17:30"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://bloomsdaycafe.com/",
-      "quote": "HAPPY HOUR 4p-5:30p, W/Th/Fr / MONDAY & TUESDAY"
-     }
-    }
-   ]
-  },
-  {
    "id": "interstate-drafthouse-philadelphia",
+   "lid": "87212",
    "name": "Interstate Drafthouse",
    "plcb_name": "DRAFTHOUSE INC",
    "address": "1235 E PALMER ST, PHILADELPHIA PA 19125-3307",
@@ -6760,7 +7487,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -6772,6 +7499,7 @@
   },
   {
    "id": "well-crafted-beer-co-ste-b100-lansdale",
+   "lid": "87757",
    "name": "Well Crafted Beer Co.",
    "plcb_name": "WELL CRAFTED BEER COMPANY",
    "address": "310 MADISON ST, STE B100, LANSDALE PA 19446",
@@ -6810,18 +7538,19 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://www.wellcraftedbeer.com/home/ambler/foodandevents",
-      "quote": "HAPPY HOUR / Weekdays 3 - 6PM"
+      "url": "https://www.wellcraftedbeer.com/home/lansdale/happyhour",
+      "quote": "HAPPY HOUR MENU / Available weekdays 4 to 6 pm."
      }
     }
    ]
   },
   {
    "id": "rebel-hill-brewing-phoenixville",
+   "lid": "88072",
    "name": "Rebel Hill Brewing",
    "plcb_name": "REBEL HILL BREWING COMPANY",
    "address": "242 BRIDGE ST, PHOENIXVILLE PA 19460-3450",
@@ -6861,7 +7590,59 @@
    ]
   },
   {
+   "id": "chophouse-grille-exton",
+   "lid": "89606",
+   "name": "ChopHouse Grille",
+   "plcb_name": "PJW EXTON LLC",
+   "address": "301 N POTTSTOWN PK, EXTON PA 19341-2228",
+   "zone_id": "exton_downingtown",
+   "license_type": "",
+   "website": "https://www.chophousegrille.com",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.chophousegrille.com/happy-hour",
+      "quote": "happy hour / Monday - Friday 4 pm - 6pm. Available in bar area only"
+     }
+    }
+   ]
+  },
+  {
    "id": "joey-chops-frazer",
+   "lid": "90129",
    "name": "Joey Chops",
    "plcb_name": "LINCOLN LIQUOR, LLC",
    "address": "LINCOLN COURT SHOPPING CENTER 245 LANCASTER AVE, FRAZER PA 19355-3607",
@@ -6910,7 +7691,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -6922,6 +7703,7 @@
   },
   {
    "id": "avola-kitchen-bar-malvern",
+   "lid": "90491",
    "name": "Avola Kitchen + Bar",
    "plcb_name": "AVOLA RESTAURANT & BAR",
    "address": "625 MOREHALL RD STE 500, MALVERN PA 19355",
@@ -6960,7 +7742,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -6972,6 +7754,7 @@
   },
   {
    "id": "bad-brother-philadelphia",
+   "lid": "91278",
    "name": "Bad Brother",
    "plcb_name": "726 N. 24TH ST. ASSOCIATES, INC.",
    "address": "726 N 24TH ST, PHILADELPHIA PA 19130-2535",
@@ -7010,11 +7793,6 @@
      ],
      "items": [
       {
-       "category": "draft",
-       "label": "OFF DRAFT BEERS",
-       "price_usd": 2.0
-      },
-      {
        "category": "food",
        "label": "Happy Hour Bites 5-6 PM Monda",
        "price_usd": 5.0
@@ -7026,13 +7804,14 @@
      "source": {
       "kind": "venue_site",
       "url": "https://www.badbrotherphilly.com",
-      "quote": "HAPPY HOUR / MONDAY-FRIDAY 5-6PM / $2 OFF DRAFT BEERS & WINES BY THE GLASS"
+      "quote": "HAPPY HOUR / MONDAY-FRIDAY 5-6PM / MONDAY-THURSDAY 5-6PM"
      }
     }
    ]
   },
   {
    "id": "chadds-ford-tavern-chadds-ford",
+   "lid": "91807",
    "name": "Chadds Ford Tavern",
    "plcb_name": "1400 OPCO LLC",
    "address": "1400 BALTIMORE PK, CHADDS FORD PA 19317-9441",
@@ -7081,7 +7860,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -7093,6 +7872,7 @@
   },
   {
    "id": "north-italia-king-of-prussia",
+   "lid": "92272",
    "name": "North Italia",
    "plcb_name": "NORTH ITALIA",
    "address": "350 MALL BLVD STE 1000C, KING OF PRUSSIA PA 19406-3258",
@@ -7143,6 +7923,7 @@
   },
   {
    "id": "firebirds-wood-fired-grill-north-wales",
+   "lid": "93322",
    "name": "Firebirds Wood Fired Grill",
    "plcb_name": "FIREBIRDS OF NORTH WALES LLC",
    "address": "GWYNEDD CROSSING SHOPPING CENTER  1220 BETHLEHEM PIKE, NORTH WALES PA 19454",
@@ -7181,7 +7962,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -7193,6 +7974,7 @@
   },
   {
    "id": "village-whiskey-philadelphia",
+   "lid": "93942",
    "name": "Village Whiskey",
    "plcb_name": "VILLAGE WHISKEY",
    "address": "116 & 118 S 20TH ST, PHILADELPHIA PA 19103-9136",
@@ -7234,20 +8016,42 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "Bar Snacks",
+       "price_usd": 5.0
+      },
+      {
+       "category": "draft",
+       "label": "Beer",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "Wine",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Cocktail specials",
+       "price_usd": 9.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://villagewhiskey.com/",
-      "quote": "HAPPY HOUR / Sunday - Friday: / 4pm - 6pm"
+      "url": "https://www.villagewhiskey.com/specials/",
+      "quote": "Join us for Food and Drink Specials! / Pull up a chair Sunday - Friday, 4-6pm at Village Whiskey for $5 Bar Snacks, $5 Beer, $8 Wine, and $9 Cocktail specials!"
      }
     }
    ]
   },
   {
    "id": "amada-philadelphia",
+   "lid": "93945",
    "name": "Amada",
    "plcb_name": "AMADA",
    "address": "217-219 CHESTNUT ST, PHILADELPHIA PA 19106-2812",
@@ -7303,6 +8107,7 @@
   },
   {
    "id": "fava-glen-mills",
+   "lid": "94550",
    "name": "Fava",
    "plcb_name": "BCD HOSPITALITY INC",
    "address": "1102 BALTIMORE PIKE SUITE 101, GLEN MILLS PA 19342-1013",
@@ -7346,7 +8151,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -7357,7 +8162,60 @@
    ]
   },
   {
+   "id": "attic-brewing-company-llc-philadelphia",
+   "lid": "94918",
+   "name": "ATTIC BREWING COMPANY LLC",
+   "plcb_name": "ATTIC BREWING COMPANY LLC",
+   "address": "137 BERKLEY ST, PHILADELPHIA PA 19144",
+   "zone_id": "northwest_philly",
+   "license_type": "",
+   "website": "https://www.atticbrewing.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "off drafts and",
+       "price_usd": 1.0
+      },
+      {
+       "category": "cocktail",
+       "label": "margaritas to say Thank you t",
+       "price_usd": 6.0
+      },
+      {
+       "category": "draft",
+       "label": "off drafts",
+       "price_usd": 1.0
+      },
+      {
+       "category": "cocktail",
+       "label": "margaritas and",
+       "price_usd": 6.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.atticbrewing.com/event-details/teacher-happy-hour-2022-08-26-15-00",
+      "quote": "Teacher Happy Hour / Fri, Aug 26 / Every Friday 3-5pm is Teacher Happy Hour with $1 off drafts and $6 margaritas to say Thank you to all of our hardworking teachers!!!"
+     }
+    }
+   ]
+  },
+  {
    "id": "the-post-philadelphia",
+   "lid": "95357",
    "name": "The Post",
    "plcb_name": "BRBH HD LLC",
    "address": "129L S 30TH ST, PHILADELPHIA PA 19104",
@@ -7403,6 +8261,7 @@
   },
   {
    "id": "the-post-philadelphia-95445",
+   "lid": "95445",
    "name": "The Post",
    "plcb_name": "WARRENHQ LLC",
    "address": "129L S 30TH ST, PHILADELPHIA PA 19104",
@@ -7447,7 +8306,54 @@
    ]
   },
   {
+   "id": "jj-ratigan-brewing-llc-pottstown",
+   "lid": "95739",
+   "name": "JJ RATIGAN BREWING LLC",
+   "plcb_name": "JJ RATIGAN BREWING LLC",
+   "address": "223-227 E HIGH ST, POTTSTOWN PA 19464",
+   "zone_id": "pottstown",
+   "license_type": "",
+   "website": "https://www.jjratiganbrewing.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.jjratiganbrewing.com/menu-happy-hour",
+      "quote": "Happy Hour / Happy Hour is every MON - THUR from 4 to 6pm. Bar, high-tops seating and outdoors only. Reverse Happy Hour is FRI & SAT from 9 until 11. Downstairs only."
+     }
+    }
+   ]
+  },
+  {
    "id": "the-wilder-philadelphia",
+   "lid": "95957",
    "name": "the Wilder",
    "plcb_name": "VICTROLA89 II LLC",
    "address": "2009-11 SANSOM ST, PHILADELPHIA PA 19103",
@@ -7496,7 +8402,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -7507,7 +8413,49 @@
    ]
   },
   {
+   "id": "stove-and-tap-west-chester",
+   "lid": "96391",
+   "name": "Stove and Tap",
+   "plcb_name": "158 LICENSE LLC",
+   "address": "158 W GAY ST, WEST CHESTER PA 19380-2915",
+   "zone_id": "west_chester",
+   "license_type": "",
+   "website": "https://stoveandtap-wc.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 6,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.stoveandtap-wc.com/specials",
+      "quote": "Food & Drink Specials / 5:00 PM - 7:00 PM / WEDNESDAY"
+     }
+    }
+   ]
+  },
+  {
    "id": "forsythia-philadelphia",
+   "lid": "97820",
    "name": "Forsythia",
    "plcb_name": "CWKEARSE LLC",
    "address": "233 CHESTNUT ST, PHILADELPHIA PA 19106-2813",
@@ -7546,7 +8494,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -7558,6 +8506,7 @@
   },
   {
    "id": "dock-street-brewery-south-philadelphia",
+   "lid": "98360",
    "name": "Dock Street Brewery South",
    "plcb_name": "DOCK STREET BREWERY SOUTH",
    "address": "2118 WASHINGTON AVE, PHILADELPHIA PA 19146",
@@ -7592,12 +8541,12 @@
      "items": [
       {
        "category": "draft",
-       "label": "off Draught Beers",
+       "label": "off Draught Beers Cannery Hap",
        "price_usd": 1.0
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -7609,6 +8558,7 @@
   },
   {
    "id": "white-dog-cafe-glen-mills",
+   "lid": "99000",
    "name": "White Dog Cafe",
    "plcb_name": "WHITE DOG CAFE",
    "address": "981 BALTIMORE PK, GLEN MILLS PA 19342-1016",
@@ -7683,7 +8633,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",

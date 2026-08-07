@@ -1,15 +1,18 @@
 {
  "zone_id": "conshohocken",
  "name": "Conshohocken",
- "built_at": "2026-08-06",
+ "built_at": "2026-08-07",
  "venues": [
   {
-   "id": "coyote-crossing-conshohocken",
+   "id": "36229",
+   "lid": "36229",
+   "slug": "coyote-crossing-conshohocken",
    "name": "Coyote Crossing",
-   "address": "800 Spring Mill Ave, Conshohocken PA 19428",
+   "address": "800 Springmill Ave, Conshohocken PA 19428",
    "zone_id": "conshohocken",
    "website": "https://coyotecrossing.com/happy-hour",
    "plcb_name": "300-E-6, INC.",
+   "license_type": "Restaurant (Liquor)",
    "lat": 40.075755,
    "lng": -75.292913,
    "geo_precision": "amenity",
@@ -56,47 +59,40 @@
    ]
   },
   {
-   "id": "the-gypsy-saloon-west-conshohocken",
-   "name": "The Gypsy Saloon",
-   "address": "128 FORD ST, WEST CONSHOHOCKEN PA 19428",
+   "id": "70520",
+   "lid": "70520",
+   "slug": "jasper-s-backyard-conshohocken",
+   "name": "Jasper's Backyard",
+   "address": "101 E 7Th Ave, Conshohocken PA 19428",
    "zone_id": "conshohocken",
-   "website": "https://www.gypsysaloon.com/",
-   "plcb_name": "GYPSY SALOON",
-   "lat": 40.068927,
-   "lng": -75.3126306,
+   "website": "https://jaspersbackyard.com",
+   "plcb_name": "JASPERS BACKYARD LLC",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.078094,
+   "lng": -75.3004988,
    "geo_precision": "place",
    "photo": {
-    "file": "img/venues/the-gypsy-saloon-west-conshohocken.jpg",
-    "attribution": "Photo: The Gypsy Saloon"
+    "file": "img/venues/jasper-s-backyard-conshohocken.jpg",
+    "attribution": "Photo: Jasper's Backyard"
    },
    "deals": [
     {
      "type": "happy_hour",
      "windows": [
       {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:30"
-      },
-      {
        "dow": 2,
-       "start": "16:00",
-       "end": "18:30"
+       "start": "15:00",
+       "end": "17:00"
       },
       {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:30"
+       "dow": 6,
+       "start": "15:00",
+       "end": "17:00"
       },
       {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:30"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:30"
+       "dow": 7,
+       "start": "15:00",
+       "end": "17:00"
       }
      ],
      "items": [],
@@ -105,19 +101,22 @@
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://www.gypsysaloon.com/menus",
-      "quote": "happy hour / monday through friday 4pm to 6:30pm at the bar"
+      "url": "https://jaspersbackyard.com",
+      "quote": "View 'Happy Hour' Menu / Weekend Happy Hour - Weekend Happy Hour! 3-5 pm Saturdays & Sundays"
      }
     }
    ]
   },
   {
-   "id": "pepperoncini-restaurant-bar-conshohocken",
+   "id": "53783",
+   "lid": "53783",
+   "slug": "pepperoncini-restaurant-bar-conshohocken",
    "name": "PEPPERONCINI RESTAURANT & BAR",
-   "address": "72-74 POPLAR ST, CONSHOHOCKEN PA 19428-1927",
+   "address": "72-74 Poplar St, Conshohocken PA 19428",
    "zone_id": "conshohocken",
    "website": "https://pepperoncinirestaurant.com/",
    "plcb_name": "PEPPERONCINI RESTAURANT & BAR",
+   "license_type": "Restaurant (Liquor)",
    "deals": [
     {
      "type": "happy_hour",
@@ -161,12 +160,15 @@
    ]
   },
   {
-   "id": "southern-cross-kitchen-conshohocken",
+   "id": "67489",
+   "lid": "67489",
+   "slug": "southern-cross-kitchen-conshohocken",
    "name": "Southern Cross Kitchen",
-   "address": "8 E 1ST AVE, CONSHOHOCKEN PA 19428-2002",
+   "address": "8 E 1St Ave, Conshohocken PA 19428",
    "zone_id": "conshohocken",
    "website": "https://www.southerncrosskitchen.com",
    "plcb_name": "SOUTHERN CROSS KITCHEN RESTAURANT",
+   "license_type": "Restaurant (Liquor)",
    "lat": 40.0738047,
    "lng": -75.3057214,
    "geo_precision": "place",
@@ -217,37 +219,50 @@
    ]
   },
   {
-   "id": "jasper-s-backyard-conshohocken",
-   "name": "Jasper's Backyard",
-   "address": "101 E 7TH AVE, CONSHOHOCKEN PA 19428-1722",
+   "id": "107050",
+   "lid": "107050",
+   "slug": "the-gypsy-saloon-west-conshohocken",
+   "name": "The Gypsy Saloon",
+   "address": "128 Ford St, West Conshohocken PA 19428",
    "zone_id": "conshohocken",
-   "website": "https://jaspersbackyard.com",
-   "plcb_name": "JASPERS BACKYARD LLC",
-   "lat": 40.078094,
-   "lng": -75.3004988,
+   "website": "https://www.gypsysaloon.com/",
+   "plcb_name": "GYPSY SALOON",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.068927,
+   "lng": -75.3126306,
    "geo_precision": "place",
    "photo": {
-    "file": "img/venues/jasper-s-backyard-conshohocken.jpg",
-    "attribution": "Photo: Jasper's Backyard"
+    "file": "img/venues/the-gypsy-saloon-west-conshohocken.jpg",
+    "attribution": "Photo: The Gypsy Saloon"
    },
    "deals": [
     {
      "type": "happy_hour",
      "windows": [
       {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
        "dow": 2,
-       "start": "15:00",
-       "end": "17:00"
+       "start": "16:00",
+       "end": "18:30"
       },
       {
-       "dow": 6,
-       "start": "15:00",
-       "end": "17:00"
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:30"
       },
       {
-       "dow": 7,
-       "start": "15:00",
-       "end": "17:00"
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:30"
       }
      ],
      "items": [],
@@ -256,8 +271,8 @@
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://jaspersbackyard.com",
-      "quote": "View 'Happy Hour' Menu / Weekend Happy Hour - Weekend Happy Hour! 3-5 pm Saturdays & Sundays"
+      "url": "https://www.gypsysaloon.com/menus",
+      "quote": "happy hour / monday through friday 4pm to 6:30pm at the bar"
      }
     }
    ]

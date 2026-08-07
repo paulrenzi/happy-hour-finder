@@ -12,6 +12,7 @@ import {
   dowOf, mins, fmtClock, fmtMins, itemParts, haversineMiles, driveMinutes, fmtMiles,
   dealValue, cheapestPrice, FILTERS, windowFor, nextOccurrence, groupFor, GROUP,
   buildFeed, summarizeWindows, usableMinutes, ageDays, effectiveConfidence,
+  GROUP_LABEL, score,
 } from "../web/lib.js";
 
 const FRI_5PM = new Date(2026, 6, 31, 17, 0);
@@ -297,4 +298,76 @@ test("summarizeWindows collapses a week into one readable line", () => {
     summarizeWindows([{ dow: 3, start: "16:00", end: "18:00" }]),
     "Wed 4pm–6pm"
   );
+});
+
+/* ---- venues with no published happy hour ------------------------------
+
+   The reframe, 2026-08-07: the board is a list of VENUES and the happy hour is
+   an attribute some of them have. 2,732 of 2,901 licensed venues have no window
+   anyone published, and the old feed dropped every one of them -- so King of
+   Prussia showed 6 cards against 59 real bars, and a person who KNEW one of the
+   missing windows had nothing on screen to correct. */
+
+const noHours = {
+  id: "133026", lid: "133026", name: "Bald Birds Brewing", zone_id: "z",
+  address: "250 King Manor Dr, King Of Prussia PA 19406", deals: [],
+};
+
+test("a venue with no deals still gets a row", () => {
+  const rows = buildFeed([noHours], FRI_5PM);
+  assert.equal(rows.length, 1);
+  assert.equal(rows[0].group, GROUP.UNKNOWN);
+  assert.equal(rows[0].deal, null, "there is no deal to describe");
+  assert.equal(rows[0].hit, null, "and no window to be early or late for");
+});
+
+test("it sorts below every venue that HAS a window, including an unreachable one", () => {
+  const fleeting = {
+    id: "fleeting", name: "Fleeting", zone_id: "z", lat: 39.91743, lng: -75.38833,
+    deals: [{ ...HH, windows: [{ dow: 5, start: "16:00", end: "17:05" }] }],
+  };
+  const rows = buildFeed([noHours, fleeting, near], FRI_5PM, {
+    origin: { lat: 40.089, lng: -75.396 },
+  });
+  assert.equal(rows[rows.length - 1].v.id, "133026");
+  // A real window we cannot reach is still a better answer than no window.
+  assert.ok(GROUP.UNKNOWN > GROUP.UNREACHABLE);
+});
+
+test("a DEAL filter excludes it -- an empty venue cannot answer 'food deals'", () => {
+  for (const f of ["food", "cheap", "drinks"]) {
+    assert.equal(buildFeed([noHours], FRI_5PM, { filter: f }).length, 0, f);
+  }
+  assert.equal(buildFeed([noHours], FRI_5PM, { filter: "all" }).length, 1);
+});
+
+test("it still obeys the zone, and answers at every hour of the week", () => {
+  assert.equal(buildFeed([noHours], FRI_5PM, { zone: "other" }).length, 0);
+  // Unlike a deal, it has no schedule to fall off -- Sunday morning included.
+  for (const at of [FRI_5PM, FRI_11AM, SUN_11AM]) {
+    assert.equal(buildFeed([noHours], at).length, 1);
+  }
+});
+
+test("scoring one never reads the deal it does not have", () => {
+  // dealValue(null) and row.hit.live would both throw; the group is checked
+  // before either is touched, under every sort the UI offers.
+  const rows = buildFeed([noHours], FRI_5PM);
+  for (const sort of ["soonest", "nearest", "value"]) {
+    assert.equal(typeof score(rows[0], { sort }), "number", sort);
+  }
+});
+
+test("with a location, the nearest unlisted venue comes first", () => {
+  // Distance is the only fact we have about these, so it is the only ordering
+  // that can be honest.
+  const close = { ...noHours, id: "a", lid: "a", lat: 40.089, lng: -75.396 };
+  const distant = { ...noHours, id: "b", lid: "b", lat: 39.91743, lng: -75.38833 };
+  const rows = buildFeed([distant, close], FRI_5PM, { origin: { lat: 40.089, lng: -75.396 } });
+  assert.equal(rows[0].v.id, "a");
+});
+
+test("the group has a label, so the section header is never blank", () => {
+  assert.equal(typeof GROUP_LABEL[GROUP.UNKNOWN], "string");
+  assert.ok(GROUP_LABEL[GROUP.UNKNOWN].length > 0);
 });

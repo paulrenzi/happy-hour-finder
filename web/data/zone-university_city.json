@@ -1,15 +1,18 @@
 {
  "zone_id": "university_city",
  "name": "Philadelphia \u2014 University City / West",
- "built_at": "2026-08-06",
+ "built_at": "2026-08-07",
  "venues": [
   {
-   "id": "co-op-restaurant-bar-philadelphia",
+   "id": "83411",
+   "lid": "83411",
+   "slug": "co-op-restaurant-bar-philadelphia",
    "name": "CO-OP Restaurant & Bar",
-   "address": "20-40 SOUTH 33RD ST, PHILADELPHIA PA 19104",
+   "address": "20-40 South 33Rd St, Philadelphia PA 19104",
    "zone_id": "university_city",
    "website": "https://www.coopphilly.com/",
    "plcb_name": "STUDY PHILADELPHIA",
+   "license_type": "Hotel (Liquor)",
    "lat": 39.95428,
    "lng": -75.19011,
    "geo_precision": "place",
@@ -59,7 +62,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -70,12 +73,15 @@
    ]
   },
   {
-   "id": "the-post-philadelphia",
+   "id": "95357",
+   "lid": "95357",
+   "slug": "the-post-philadelphia",
    "name": "The Post",
-   "address": "129L S 30TH ST, PHILADELPHIA PA 19104",
+   "address": "129L S 30Th St, Philadelphia PA 19104",
    "zone_id": "university_city",
    "website": "https://thepostphl.com/",
    "plcb_name": "BRBH HD LLC",
+   "license_type": "Restaurant (Liquor)",
    "lat": 39.952754,
    "lng": -75.183713,
    "geo_precision": "place",
@@ -121,12 +127,15 @@
    ]
   },
   {
-   "id": "the-post-philadelphia-95445",
+   "id": "95445",
+   "lid": "95445",
+   "slug": "the-post-philadelphia-95445",
    "name": "The Post",
-   "address": "129L S 30TH ST, PHILADELPHIA PA 19104",
+   "address": "129L S 30Th St, Philadelphia PA 19104",
    "zone_id": "university_city",
    "website": "https://thepostphl.com/",
    "plcb_name": "WARRENHQ LLC",
+   "license_type": "Restaurant (Liquor)",
    "photo": {
     "file": "img/venues/the-post-philadelphia-95445.jpg",
     "attribution": "Photo: The Post"
@@ -164,6 +173,92 @@
       "kind": "venue_site",
       "url": "https://thepostphl.com/",
       "quote": "Happy Hour / Available Tues - Fri | 5 - 7pm / Quizzo Tuesdays"
+     }
+    }
+   ]
+  },
+  {
+   "id": "12921",
+   "lid": "12921",
+   "slug": "white-dog-cafe-philadelphia",
+   "name": "White Dog Cafe",
+   "address": "3420-24 Sansom St, Philadelphia PA 19104",
+   "zone_id": "university_city",
+   "website": "https://www.whitedog.com/",
+   "plcb_name": "WHITE DOG CAFE",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.9535621,
+   "lng": -75.192966,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "cocktails",
+       "price_usd": 9.0
+      },
+      {
+       "category": "wine",
+       "label": "wine",
+       "price_usd": 8.0
+      },
+      {
+       "category": "draft",
+       "label": "beer",
+       "price_usd": 6.0
+      },
+      {
+       "category": "draft",
+       "label": "select beer paired with our s",
+       "price_usd": 7.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "bottles of wine",
+       "discount_pct": 50
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://whitedog.com/location/specials.php?1",
+      "quote": "HAPPY HOUR / Join us for Happy Hour from 3 - 6 PM Sunday through Friday, weather permitting, at the bar or patio, with drink specials and a specially priced MENU . / WINE NOT MONDAY!?"
      }
     }
    ]

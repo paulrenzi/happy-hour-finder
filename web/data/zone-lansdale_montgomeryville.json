@@ -1,15 +1,77 @@
 {
  "zone_id": "lansdale_montgomeryville",
  "name": "Lansdale / Montgomeryville",
- "built_at": "2026-08-06",
+ "built_at": "2026-08-07",
  "venues": [
   {
-   "id": "lansdale-tavern-lansdale",
+   "id": "93322",
+   "lid": "93322",
+   "slug": "firebirds-wood-fired-grill-north-wales",
+   "name": "Firebirds Wood Fired Grill",
+   "address": "Gwynedd Crossing Shopping Center 1220 Bethlehem Pike, North Wales PA 19454",
+   "zone_id": "lansdale_montgomeryville",
+   "website": "https://north-wales.firebirdsrestaurants.com/",
+   "plcb_name": "FIREBIRDS OF NORTH WALES LLC",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.2077081,
+   "lng": -75.2265143,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/firebirds-wood-fired-grill-north-wales.jpg",
+    "attribution": "Photo: Firebirds Wood Fired Grill"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "14:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "14:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "14:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "14:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "14:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://north-wales.firebirdsrestaurants.com/",
+      "quote": "Happy Hour / Join us for Bar Bites and Drink Specials in the FIREBAR \u00ae and on the Patio every Monday-Friday from 2PM-6PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "100210",
+   "lid": "100210",
+   "slug": "lansdale-tavern-lansdale",
    "name": "Lansdale Tavern",
-   "address": "839 W MAIN ST, LANSDALE PA 19446-2015",
+   "address": "839 W Main St, Lansdale PA 19446",
    "zone_id": "lansdale_montgomeryville",
    "website": "https://lansdaletavern.com/",
    "plcb_name": "CALIMONT LLC",
+   "license_type": "Restaurant (Liquor)",
    "lat": 40.2479843,
    "lng": -75.294166,
    "geo_precision": "place",
@@ -66,7 +128,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -77,12 +139,15 @@
    ]
   },
   {
-   "id": "well-crafted-beer-co-ste-b100-lansdale",
+   "id": "87757",
+   "lid": "87757",
+   "slug": "well-crafted-beer-co-ste-b100-lansdale",
    "name": "Well Crafted Beer Co.",
-   "address": "310 MADISON ST, STE B100, LANSDALE PA 19446",
+   "address": "310 Madison St, Ste B100, Lansdale PA 19446",
    "zone_id": "lansdale_montgomeryville",
    "website": "https://www.wellcraftedbeer.com/home2",
    "plcb_name": "WELL CRAFTED BEER COMPANY",
+   "license_type": "Brewery",
    "lat": 40.2437936,
    "lng": -75.2865272,
    "geo_precision": "place",
@@ -122,68 +187,12 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://www.wellcraftedbeer.com/home/ambler/foodandevents",
-      "quote": "HAPPY HOUR / Weekdays 3 - 6PM"
-     }
-    }
-   ]
-  },
-  {
-   "id": "firebirds-wood-fired-grill-north-wales",
-   "name": "Firebirds Wood Fired Grill",
-   "address": "GWYNEDD CROSSING SHOPPING CENTER  1220 BETHLEHEM PIKE, NORTH WALES PA 19454",
-   "zone_id": "lansdale_montgomeryville",
-   "website": "https://north-wales.firebirdsrestaurants.com/",
-   "plcb_name": "FIREBIRDS OF NORTH WALES LLC",
-   "lat": 40.2077081,
-   "lng": -75.2265143,
-   "geo_precision": "place",
-   "photo": {
-    "file": "img/venues/firebirds-wood-fired-grill-north-wales.jpg",
-    "attribution": "Photo: Firebirds Wood Fired Grill"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "14:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "14:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "14:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "14:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "14:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://north-wales.firebirdsrestaurants.com/",
-      "quote": "Happy Hour / Join us for Bar Bites and Drink Specials in the FIREBAR \u00ae and on the Patio every Monday-Friday from 2PM-6PM"
+      "url": "https://www.wellcraftedbeer.com/home/lansdale/happyhour",
+      "quote": "HAPPY HOUR MENU / Available weekdays 4 to 6 pm."
      }
     }
    ]

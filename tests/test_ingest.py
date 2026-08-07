@@ -234,9 +234,15 @@ class ServiceWorkerCache(unittest.TestCase):
         # serving an older zone list -- King of Prussia read 1 while the server had
         # said 3 for hours, and NOTHING on either side reported a disagreement.
         # build_bundles stamps it now; this fails if a build ships without it.
+        #
+        # It counts venues WITH A DEAL, not venues. The venue base is 2,900 rows
+        # that move only when the PLCB corpus does, so keying on the total would
+        # hold one number steady across every deal-only build -- reintroducing
+        # the exact staleness this test exists to catch, on the half of the data
+        # that actually changes.
         index = json.load(open(os.path.join(REPO, "web", "data", "index.json"),
                                encoding="utf-8"))
-        published = sum(z["venues"] for z in index["zones"])
+        published = sum(z["with_deals"] for z in index["zones"])
         src = open(os.path.join(REPO, "web", "sw.js"), encoding="utf-8").read()
         self.assertIn(f'const CACHE = "{sw_cache_name(index["built_at"], published)}";',
                       src, "web/sw.js was not stamped by the last build_bundles run")
@@ -1060,3 +1066,133 @@ class ForbiddenToOneClient(unittest.TestCase):
             body, err = crawl_sites.get(self._session(403), "https://x.test/")
         self.assertIsNone(body)
         self.assertTrue(err.startswith("403"))
+
+
+class VenueBase(unittest.TestCase):
+    """The layer the board now rests on: every licensed venue, keyed on its LID.
+
+    The old bundle shipped only deal-bearing venues, so King of Prussia showed 6
+    cards against 59 real bars and there was no way for a person to see -- let
+    alone correct -- the 53 that were missing. These guard the properties that
+    make the base a venue list rather than a second deal list.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        with open(os.path.join(REPO, "data", "venue_base.json"), encoding="utf-8") as fh:
+            cls.base = json.load(fh)
+        with open(os.path.join(REPO, "web", "data", "index.json"), encoding="utf-8") as fh:
+            cls.index = json.load(fh)
+
+    def test_every_entry_is_keyed_on_its_own_lid(self):
+        for lid, v in self.base.items():
+            self.assertEqual(lid, v["lid"], "the key and the record disagree")
+
+    def test_a_warehouse_licence_is_not_a_venue(self):
+        # Brewery Storage is a permit to keep beer in a building, not to serve
+        # it. A card for one is an invitation to drive to a warehouse.
+        for v in self.base.values():
+            self.assertNotEqual(v["license_type"], "Brewery Storage")
+
+    def test_no_two_venues_claim_the_same_premises(self):
+        # One bar routinely holds several licences -- the Sheraton Valley Forge
+        # is two Hotel (Liquor) rows at one address -- and a card per LICENCE
+        # shows the same bar twice.
+        claimed = {}
+        for lid, v in self.base.items():
+            for other in v.get("also_lids", []):
+                self.assertNotIn(other, self.base,
+                                 f"{other} was collapsed into {lid} but still ships")
+                self.assertNotIn(other, claimed,
+                                 f"{other} was collapsed into two venues at once")
+                claimed[other] = lid
+
+    def test_a_name_is_never_a_bare_legal_entity(self):
+        # The PLCB ships the LICENSEE: `SCREWBALLS LLC`. A card whose only
+        # content is a name cannot afford to print the paperwork.
+        for v in self.base.values():
+            self.assertFalse(v["name"].upper().endswith((" LLC", " INC", " INC.", " LP")),
+                             f"{v['lid']} shows a legal entity: {v['name']}")
+            self.assertTrue(v["name"].strip(), f"{v['lid']} has no name at all")
+
+    def test_the_index_counts_venues_and_the_ones_we_can_answer_for(self):
+        # "King of Prussia (6 of 59)". Shipping only one of these numbers is
+        # what made the board read as either empty or complete; it is neither.
+        for z in self.index["zones"]:
+            self.assertIn("with_deals", z)
+            self.assertLessEqual(z["with_deals"], z["venues"])
+            self.assertGreater(z["venues"], 0)
+
+    def test_a_zone_ships_its_deals_and_its_base_as_separate_files(self):
+        # The split is a load-time decision: boot fetches every zone's deals
+        # (169 venues) and the 2,900-venue base only for the zone you pick.
+        for z in self.index["zones"]:
+            deals_path = os.path.join(REPO, "web", "data", f"zone-{z['id']}.json")
+            rest_path = os.path.join(REPO, "web", "data", f"venues-{z['id']}.json")
+            for path in (deals_path, rest_path):
+                self.assertTrue(os.path.exists(path), f"{path} was not built")
+            with open(deals_path, encoding="utf-8") as fh:
+                dealful = json.load(fh)["venues"]
+            with open(rest_path, encoding="utf-8") as fh:
+                rest = json.load(fh)["venues"]
+            self.assertEqual(len(dealful), z["with_deals"])
+            self.assertEqual(len(dealful) + len(rest), z["venues"])
+            self.assertTrue(all(v["deals"] for v in dealful),
+                            f"zone-{z['id']}.json carries a venue with no deal")
+            self.assertTrue(all(not v["deals"] for v in rest),
+                            f"venues-{z['id']}.json carries a deal that boot never loads")
+
+    def test_the_boot_payload_stays_small(self):
+        # Every zone's deals are fetched on load. The venue base is a megabyte
+        # and must never drift back into that path -- the whole point of the
+        # split is that "what's on near me" does not cost a full corpus.
+        boot = sum(os.path.getsize(os.path.join(REPO, "web", "data", f"zone-{z['id']}.json"))
+                   for z in self.index["zones"])
+        self.assertLess(boot, 400_000, "the boot payload has grown a venue base again")
+
+    def test_every_shipped_venue_can_be_identified_in_a_submission(self):
+        # The ask on a no-hours card quotes the LID back to us. A card that
+        # cannot name itself produces a report nobody can act on.
+        for z in self.index["zones"]:
+            with open(os.path.join(REPO, "web", "data", f"venues-{z['id']}.json"),
+                      encoding="utf-8") as fh:
+                for v in json.load(fh)["venues"]:
+                    self.assertTrue(v.get("lid"), f"{v['id']} ships with no LID")
+                    self.assertEqual(v["id"], v["lid"])
+                    self.assertTrue(v.get("address"))
+
+    def test_a_deal_venue_keeps_the_slug_its_old_links_were_shared_with(self):
+        # The board is keyed on LIDs now. #v=iron-hill-media was a real shared
+        # link and must still open Iron Hill.
+        for z in self.index["zones"]:
+            with open(os.path.join(REPO, "web", "data", f"zone-{z['id']}.json"),
+                      encoding="utf-8") as fh:
+                for v in json.load(fh)["venues"]:
+                    self.assertTrue(v.get("slug"), f"{v['id']} dropped its legacy id")
+
+
+class PrettyName(unittest.TestCase):
+    """An ALL-CAPS licensee is the only thing most cards have to show."""
+
+    def test_it_recases_without_breaking_an_apostrophe(self):
+        from build_venue_base import pretty_name
+        self.assertEqual(pretty_name("OHAGANS BAR & RESTAURANT"), "Ohagans Bar & Restaurant")
+        # str.title() gives "Tommy'S", which looks like a bug in the one place
+        # the card has nothing else to show.
+        self.assertEqual(pretty_name("TOMMY'S TAVERN + TAP"), "Tommy's Tavern + Tap")
+
+    def test_it_drops_the_legal_entity(self):
+        from build_venue_base import pretty_name
+        self.assertEqual(pretty_name("SCREWBALLS LLC"), "Screwballs")
+        self.assertEqual(pretty_name("KOP FONDUE INC"), "KOP Fondue")
+
+    def test_a_name_that_is_already_mixed_case_is_left_alone(self):
+        # A trade name from Places or OSM is already how the sign reads.
+        from build_venue_base import pretty_name
+        self.assertEqual(pretty_name("Peppers By Amedeo's"), "Peppers By Amedeo's")
+
+    def test_it_never_returns_an_empty_name(self):
+        # Stripping the suffix off a name that is ONLY a suffix would leave a
+        # card with no title at all.
+        from build_venue_base import pretty_name
+        self.assertEqual(pretty_name("LLC"), "LLC")

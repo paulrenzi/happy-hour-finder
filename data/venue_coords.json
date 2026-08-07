@@ -1,4 +1,13 @@
 {
+ "2637brew-philadelphia": {
+  "lat": 39.9742756,
+  "lng": -75.1801781,
+  "matched_by": "osm_site",
+  "osm": "node/9424246613",
+  "precision": "place",
+  "queried": "2637 GIRARD AVE, PHILADELPHIA PA 19130-1333",
+  "resolved": "2637brew"
+ },
  "9-prime-west-chester": {
   "lat": 39.9601764,
   "lng": -75.6043923,
@@ -127,14 +136,14 @@
   "queried": "1164 VALLEY FORGE RD, WAYNE PA 19087-1202",
   "resolved": "Black Powder Tavern"
  },
- "bloomsday-cafe-philadelphia": {
-  "lat": 39.942737,
-  "lng": -75.1455915,
+ "bloom-southern-kitchen-chester-springs": {
+  "lat": 40.0782005,
+  "lng": -75.6884381,
   "matched_by": "osm_site",
-  "osm": "node/9459428362",
+  "osm": "node/5218557984",
   "precision": "place",
-  "queried": "414 S 2ND ST, PHILADELPHIA PA 19147-1608",
-  "resolved": "Bloomsday Cafe"
+  "queried": "123 POTTSTOWN PK, CHESTER SPRINGS PA 19425-9518",
+  "resolved": "Bloom Southern Kitchen"
  },
  "bowlero-boothwyn": {
   "lat": 39.8502211,
@@ -244,6 +253,15 @@
   "queried": "2451 CHELTENHAM AVE, Philadelphia PA 19150",
   "resolved": "Chili's"
  },
+ "chophouse-grille-exton": {
+  "lat": 40.033653,
+  "lng": -75.63083,
+  "matched_by": "osm_site",
+  "osm": "way/727543055",
+  "precision": "place",
+  "queried": "301 N POTTSTOWN PK, EXTON PA 19341-2228",
+  "resolved": "ChopHouse Grille"
+ },
  "co-op-restaurant-bar-philadelphia": {
   "lat": 39.95428,
   "lng": -75.19011,
@@ -316,6 +334,15 @@
   "precision": "place",
   "queried": "325 N CHRISTOPHER COLUMBUS BLVD, PHILADELPHIA PA 19106",
   "resolved": "Dave & Buster's"
+ },
+ "dbg-philadelphia": {
+  "lat": 39.9499718,
+  "lng": -75.1624278,
+  "matched_by": "osm_site",
+  "osm": "node/3529171171",
+  "precision": "place",
+  "queried": "1311-13 SANSOM ST, PHILADELPHIA PA 19107-4523",
+  "resolved": "DBG"
  },
  "desmond-hotel-malvern-a-doubletree-by-hilton-malvern": {
   "lat": 40.0557551,
@@ -415,6 +442,15 @@
   "precision": "place",
   "queried": "1210-22 FRANKFORD AVE, PHILADELPHIA PA 19125-3906",
   "resolved": "Frankford Hall"
+ },
+ "franzone-s-pizzeria-conshohocken": {
+  "lat": 40.0959463,
+  "lng": -75.2932294,
+  "matched_by": "osm_site",
+  "osm": "way/1140077776",
+  "precision": "place",
+  "queried": "1940 MAIN AVE, CONSHOHOCKEN PA 19428-1215",
+  "resolved": "Franzone's Pizzeria"
  },
  "goats-beard-wayne": {
   "lat": 40.044243,
@@ -535,6 +571,15 @@
   "queried": "LINCOLN COURT SHOPPING CENTER 245 LANCASTER AVE, FRAZER PA 19355-3607",
   "resolved": "Joey Chops"
  },
+ "la-porta-ristorante-media": {
+  "lat": 39.9389816,
+  "lng": -75.460135,
+  "matched_by": "osm_site",
+  "osm": "way/1188089617",
+  "precision": "place",
+  "queried": "1192 MIDDLETOWN RD, MEDIA PA 19063",
+  "resolved": "La Porta Ristorante"
+ },
  "lansdale-tavern-lansdale": {
   "lat": 40.2479843,
   "lng": -75.294166,
@@ -652,6 +697,15 @@
   "queried": "400-02 S 2ND ST, PHILADELPHIA PA 19147-1608",
   "resolved": "Malbec Argentine Steakhouse"
  },
+ "marsha-s-south-street-philadelphia": {
+  "lat": 39.9416796,
+  "lng": -75.1503534,
+  "matched_by": "osm_site",
+  "osm": "node/13426985662",
+  "precision": "place",
+  "queried": "430 SOUTH ST, PHILADELPHIA PA 19147-1535",
+  "resolved": "Marsha's South Street"
+ },
  "mia-ragazza-philadelphia": {
   "lat": 40.026143,
   "lng": -75.225064,
@@ -688,6 +742,15 @@
   "queried": "630-640 N BROAD ST, PHILADELPHIA PA 19130-3420",
   "resolved": "Osteria"
  },
+ "other-half-brewing-philadelphia": {
+  "lat": 39.9649456,
+  "lng": -75.1356963,
+  "matched_by": "osm_site",
+  "osm": "node/7383548306",
+  "precision": "place",
+  "queried": "1000-1002 CANAL ST, PHILADELPHIA PA 19123",
+  "resolved": "Other Half Brewing"
+ },
  "oyster-house-philadelphia": {
   "lat": 39.950302,
   "lng": -75.166539,
@@ -696,15 +759,6 @@
   "precision": "place",
   "queried": "8500 ESSINGTON AVE 2ND FL B&C CONNECTOR SPACE #BC13, PHILADELPHIA PA 19153-7027",
   "resolved": "Oyster House"
- },
- "p-f-chang-s-warrington": {
-  "lat": 40.2320936,
-  "lng": -75.1368482,
-  "matched_by": "osm_site",
-  "osm": "node/2003023261",
-  "precision": "place",
-  "queried": "THE SHOPPES AT VALLEY SQ 721 EASTON RD, WARRINGTON PA 18976",
-  "resolved": "P.F. Chang's"
  },
  "p-j-welihan-s-pub-restaurant-hatfield": {
   "lat": 40.2673752,
@@ -976,6 +1030,15 @@
   "queried": "207 W LANCASTER AVE, DOWNINGTOWN PA 19335-2511",
   "resolved": "Station Taproom"
  },
+ "stove-and-tap-west-chester": {
+  "lat": 39.9593496,
+  "lng": -75.6075703,
+  "matched_by": "osm_site",
+  "osm": "node/1653492355",
+  "precision": "place",
+  "queried": "158 W GAY ST, WEST CHESTER PA 19380-2915",
+  "resolved": "Stove and Tap"
+ },
  "sullivan-s-steakhouse-king-of-prussia": {
   "lat": 40.0866596,
   "lng": -75.3867881,
@@ -1075,6 +1138,15 @@
   "queried": "2201 CHRISTIAN ST, PHILADELPHIA PA 19146-1718",
   "resolved": "The SideCar Bar & Grille"
  },
+ "the-stables-dowingtown": {
+  "lat": 40.080151,
+  "lng": -75.6901631,
+  "matched_by": "osm_site",
+  "osm": "node/12051477031",
+  "precision": "place",
+  "queried": "160 PARK RD, DOWINGTOWN PA 19335",
+  "resolved": "The Stables"
+ },
  "the-stone-tavern-west-chester": {
   "lat": 39.968793,
   "lng": -75.5579416,
@@ -1167,6 +1239,15 @@
   "queried": "36 W 3RD AVE, COLLEGEVILLE PA 19426-3605",
   "resolved": "Troubles End Brewing"
  },
+ "ubar-philadelphia": {
+  "lat": 39.947752,
+  "lng": -75.161535,
+  "matched_by": "osm_site",
+  "osm": "node/6222237222",
+  "precision": "place",
+  "queried": "1220 LOCUST ST, PHILADELPHIA PA 19107-5605",
+  "resolved": "Ubar"
+ },
  "veda-philadelphia": {
   "lat": 39.9518636,
   "lng": -75.1729105,
@@ -1239,6 +1320,15 @@
   "queried": "981 BALTIMORE PK, GLEN MILLS PA 19342-1016",
   "resolved": "White Dog Cafe"
  },
+ "white-dog-cafe-philadelphia": {
+  "lat": 39.9535621,
+  "lng": -75.192966,
+  "matched_by": "osm_site",
+  "osm": "way/369570967",
+  "precision": "place",
+  "queried": "3420-24 SANSOM ST, PHILADELPHIA PA 19104",
+  "resolved": "White Dog Cafe"
+ },
  "white-dog-cafe-wayne": {
   "lat": 40.043913,
   "lng": -75.3914076,
@@ -1275,6 +1365,15 @@
   "precision": "place",
   "queried": "1526 N AMERICAN ST, PHILADELPHIA PA 19122-3811",
   "resolved": "Wissahickon Brewing Co"
+ },
+ "yakitori-boy-philadelphia": {
+  "lat": 39.955961,
+  "lng": -75.157271,
+  "matched_by": "osm_site",
+  "osm": "node/1702834419",
+  "precision": "place",
+  "queried": "211 N 11TH ST, PHILADELPHIA PA 19107",
+  "resolved": "Yakitori Boy"
  },
  "yards-brewing-company-philadelphia": {
   "lat": 39.9606439,

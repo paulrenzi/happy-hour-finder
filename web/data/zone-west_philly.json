@@ -1,15 +1,18 @@
 {
  "zone_id": "west_philly",
  "name": "Philadelphia \u2014 Overbrook / Southwest",
- "built_at": "2026-08-06",
+ "built_at": "2026-08-07",
  "venues": [
   {
-   "id": "oyster-house-philadelphia",
+   "id": "130662",
+   "lid": "130662",
+   "slug": "oyster-house-philadelphia",
    "name": "Oyster House",
-   "address": "8500 ESSINGTON AVE 2ND FL B&C CONNECTOR SPACE #BC13, PHILADELPHIA PA 19153-7027",
+   "address": "8500 Essington Ave 2Nd Fl B&C Connector Space #Bc13, Philadelphia PA 19153",
    "zone_id": "west_philly",
    "website": "https://oysterhousephilly.com",
    "plcb_name": "OYSTER HOUSE",
+   "license_type": "Airport Restaurant (Liquor)",
    "lat": 39.950302,
    "lng": -75.166539,
    "geo_precision": "place",
@@ -44,7 +47,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",

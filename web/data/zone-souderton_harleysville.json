@@ -1,56 +1,18 @@
 {
  "zone_id": "souderton_harleysville",
  "name": "Souderton / Harleysville",
- "built_at": "2026-08-06",
+ "built_at": "2026-08-07",
  "venues": [
   {
-   "id": "p-j-welihan-s-pub-restaurant-hatfield",
-   "name": "P.J. Welihan's Pub & Restaurant",
-   "address": "190 FORTY FOOT RD SUITE 114-118, HATFIELD PA 19440",
-   "zone_id": "souderton_harleysville",
-   "website": "https://locations.pjspub.com/pa/hatfield/190-forty-foot-road",
-   "plcb_name": "PJ WHELIHAN'S PUB & RESTAURANT",
-   "lat": 40.2673752,
-   "lng": -75.3158156,
-   "geo_precision": "place",
-   "photo": {
-    "file": "img/venues/p-j-welihan-s-pub-restaurant-hatfield.jpg",
-    "attribution": "Photo: P.J. Welihan's Pub & Restaurant"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://locations.pjspub.com/pa/hatfield/190-forty-foot-road",
-      "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
-     }
-    }
-   ]
-  },
-  {
-   "id": "butcher-and-barkeep-harleysville",
+   "id": "68559",
+   "lid": "68559",
+   "slug": "butcher-and-barkeep-harleysville",
    "name": "Butcher and Barkeep",
-   "address": "712 MAIN ST, HARLEYSVILLE PA 19438-1636",
+   "address": "712 Main St, Harleysville PA 19438",
    "zone_id": "souderton_harleysville",
    "website": "https://www.thebutcherandbarkeep.com/",
    "plcb_name": "THE BUTCHER AND BARKEEP",
+   "license_type": "Restaurant (Liquor)",
    "lat": 40.2873691,
    "lng": -75.3988303,
    "geo_precision": "place",
@@ -86,12 +48,56 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://www.thebutcherandbarkeep.com/",
       "quote": "HAPPY HOUR MONDAY \u2013 FRIDAY 3:30PM \u2013 5:30PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "110926",
+   "lid": "110926",
+   "slug": "p-j-welihan-s-pub-restaurant-hatfield",
+   "name": "P.J. Welihan's Pub & Restaurant",
+   "address": "190 Forty Foot Rd Suite 114-118, Hatfield PA 19440",
+   "zone_id": "souderton_harleysville",
+   "website": "https://locations.pjspub.com/pa/hatfield/190-forty-foot-road",
+   "plcb_name": "PJ WHELIHAN'S PUB & RESTAURANT",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.2673752,
+   "lng": -75.3158156,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/p-j-welihan-s-pub-restaurant-hatfield.jpg",
+    "attribution": "Photo: P.J. Welihan's Pub & Restaurant"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://locations.pjspub.com/pa/hatfield/190-forty-foot-road",
+      "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
      }
     }
    ]

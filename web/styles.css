@@ -368,6 +368,48 @@ input[type=range] { width: 100%; height: var(--tap); accent-color: var(--accent)
 .btn.wrong { flex: 0 0 auto; padding: 0 14px; color: var(--dim); }
 .btn:focus-visible { outline: 2px solid var(--accent-deep); outline-offset: 2px; }
 
+/* ---- venues with no published hours ----
+
+   Most of the board. Styled as a quieter sibling of a deal card, never as a
+   broken one: the dashed edge and the flat tile say "this is waiting for
+   something" while the layout stays close enough that the ask reads as part of
+   the product rather than as an error state. */
+.card-unknown {
+  background: var(--bg); border-style: dashed; border-color: rgba(15, 42, 52, 0.2);
+  box-shadow: none;
+}
+@media (hover: hover) {
+  .card-unknown:hover { box-shadow: var(--shadow-sm); }
+}
+.card-unknown .shot { filter: saturate(70%); }
+.ends-ask {
+  background: rgba(255, 255, 255, 0.86); color: var(--muted);
+  font-weight: 700; letter-spacing: 0.02em;
+}
+.conf.unknown { color: var(--dim); }
+.conf.unknown::before { background: none; box-shadow: inset 0 0 0 1.5px currentColor; }
+.kind {
+  font-size: 12px; font-weight: 600; color: var(--dim); opacity: 0.85;
+  white-space: nowrap;
+}
+/* The ask is the point of this card, so it gets the width it needs to stay on
+   one line next to two secondary buttons. */
+.card-unknown .btn.go { background: var(--accent-deep); flex: 1.5; white-space: nowrap; }
+
+.sec-unknown { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.secCount { font-weight: 700; letter-spacing: 0.08em; opacity: 0.75; }
+.secNote {
+  grid-column: 1 / -1;
+  margin: 2px 2px 4px; font-size: 13.5px; line-height: 1.5; color: var(--muted);
+}
+.moreBtn {
+  grid-column: 1 / -1;
+  min-height: var(--tap); margin: 4px 2px 0; padding: 0 20px;
+  border: 1px solid var(--line); border-radius: 12px; background: var(--surface);
+  color: var(--accent-deep); font: inherit; font-size: 15px; font-weight: 700;
+}
+.moreBtn:focus-visible { outline: 2px solid var(--accent-deep); outline-offset: 2px; }
+
 .empty {
   color: var(--muted); padding: 32px 20px; text-align: center;
   border: 1px dashed rgba(15, 42, 52, 0.22); border-radius: var(--r); background: var(--surface);

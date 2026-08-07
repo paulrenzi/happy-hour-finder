@@ -1,15 +1,18 @@
 {
  "zone_id": "limerick_royersford",
  "name": "Limerick / Royersford",
- "built_at": "2026-08-06",
+ "built_at": "2026-08-07",
  "venues": [
   {
-   "id": "limerick-bowl-limerick",
+   "id": "107670",
+   "lid": "107670",
+   "slug": "limerick-bowl-limerick",
    "name": "Limerick Bowl",
-   "address": "653 W RIDGE PK, LIMERICK PA 19468-1419",
+   "address": "653 W Ridge Pk, Limerick PA 19468",
    "zone_id": "limerick_royersford",
    "website": "https://www.bowlero.com/location/limerick-bowl",
    "plcb_name": "BOWLERO LIMERICK LLC",
+   "license_type": "Restaurant (Liquor)",
    "lat": 40.239237,
    "lng": -75.5427756,
    "geo_precision": "place",
@@ -34,12 +37,12 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://www.bowlero.com/location/limerick-bowl",
-      "quote": "Family Unlimited Food & Drink Specials / Saturday & Sunday | 11AM \u2013 3PM / Get two shareable apps for one low per-person price, plus discounted Craft Lemonades and Dirty Sodas."
+      "url": "https://www.bowlero.com/specials/family-unlimited",
+      "quote": "Food & Drink Specials / During Family Unlimited, g et two shareable apps for one low per-person price, plus discounted Craft Lemonades and Dirty Sodas. / Valid every Saturday & Sunday, 11AM\u20133PM, including holidays. Not available at all locations. Selection, pricing and participation may vary. Visit a participating location for complete details. Management reserves all rights."
      }
     }
    ]
