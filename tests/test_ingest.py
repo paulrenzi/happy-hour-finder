@@ -19,7 +19,7 @@ import urllib.error
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(REPO, "ingest"))
 
-from build_bundles import decay  # noqa: E402
+from build_bundles import decay, sw_cache_name  # noqa: E402
 import crawl_sites  # noqa: E402
 from crawl_sites import candidate_links, quotes, registrable, visible_text  # noqa: E402
 from discover_sites import collapse_shared, name_core, plcb_key, site_of, street_core  # noqa: E402
@@ -99,6 +99,23 @@ class PaValidators(unittest.TestCase):
         combo = deal(type="food_combo", windows=[{"dow": 3, "start": "16:00", "end": "18:00"}])
         self.assertEqual(validate_food_combo_count([combo, combo]), [])
         self.assertTrue(validate_food_combo_count([combo, combo, combo]))
+
+
+class ServiceWorkerCache(unittest.TestCase):
+    """The published shell must evict what the last build left on devices."""
+
+    def test_the_cache_name_matches_the_bundle_that_shipped(self):
+        # The name is the ONLY eviction trigger, and data/index.json is precached.
+        # A hand-edited constant sat unchanged across four builds, so phones kept
+        # serving an older zone list -- King of Prussia read 1 while the server had
+        # said 3 for hours, and NOTHING on either side reported a disagreement.
+        # build_bundles stamps it now; this fails if a build ships without it.
+        index = json.load(open(os.path.join(REPO, "web", "data", "index.json"),
+                               encoding="utf-8"))
+        published = sum(z["venues"] for z in index["zones"])
+        src = open(os.path.join(REPO, "web", "sw.js"), encoding="utf-8").read()
+        self.assertIn(f'const CACHE = "{sw_cache_name(index["built_at"], published)}";',
+                      src, "web/sw.js was not stamped by the last build_bundles run")
 
 
 class DecayLadder(unittest.TestCase):

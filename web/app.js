@@ -518,7 +518,10 @@ function watchHero() {
 /* ---- boot ------------------------------------------------------------- */
 
 async function boot() {
-  const index = await (await fetch("data/index.json")).json();
+  // no-cache revalidates rather than trusting the 10-minute HTTP freshness window:
+  // the zone list is what every count on the page is drawn from, so a stale copy is
+  // wrong in a way the page cannot show.
+  const index = await (await fetch("data/index.json", { cache: "no-cache" })).json();
   state.zones = index.zones;
   const bundles = await Promise.all(
     index.zones.map((z) => fetch(`data/zone-${z.id}.json`).then((r) => r.json()))

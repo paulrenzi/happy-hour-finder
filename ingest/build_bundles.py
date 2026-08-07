@@ -55,6 +55,31 @@ def decay(confidence, verified_at, today):
     return confidence, age
 
 
+def sw_cache_name(built_at, n_published):
+    """The cache name a build of this shape must ship.
+
+    The service worker precaches data/index.json, and its cache name is the ONLY
+    thing that evicts. A hand-edited constant went four builds without changing,
+    so devices kept serving an index from an older corpus -- King of Prussia read
+    1 venue while the server had said 3 for hours, with nothing on either side to
+    show a disagreement. The venue count rides along with the date so that a
+    second build on the same day still evicts.
+    """
+    return f"hhf-{built_at}-{n_published}"
+
+
+def stamp_service_worker(built_at, n_published):
+    path = os.path.join(OUT_DIR, "..", "sw.js")
+    with open(path, encoding="utf-8") as fh:
+        src = fh.read()
+    new = re.sub(r'const CACHE = "[^"]*";',
+                 f'const CACHE = "{sw_cache_name(built_at, n_published)}";', src, count=1)
+    if new != src:
+        with open(path, "w", encoding="utf-8") as fh:
+            fh.write(new)
+        print(f"sw.js cache -> {sw_cache_name(built_at, n_published)}")
+
+
 def main():
     today = datetime.date.today()
     payload = json.load(open(DEALS_JSON, encoding="utf-8"))
@@ -147,6 +172,7 @@ def main():
         json.dump({"built_at": today.isoformat(), "zones": index}, fh, indent=1)
 
     published = [v for vs in by_zone.values() for v in vs]
+    stamp_service_worker(today.isoformat(), len(published))
     located = sum(1 for v in published if "lat" in v)
     print(f"\n{sum(z['deals'] for z in index)} deals across {len(index)} zones"
           f"  ({rejected} rejected by validators, {hidden} decayed out)")

@@ -1,6 +1,11 @@
 /* Cache the shell and the zone bundles so "what's live right now" works with no
    signal -- it is pure client-side math over data already on the device. */
-const CACHE = "hhf-v4";
+/* Bump on every deploy that changes the shell or the corpus. The name is the ONLY
+   eviction trigger: activate deletes caches whose name differs, so a name that never
+   changes means the precache below is never refreshed. data/index.json is precached,
+   so a stale hhf-v4 kept serving an old zone list -- King of Prussia read 1 on
+   devices while the server had said 3 for hours. */
+const CACHE = "hhf-2026-08-06-131";
 const SHELL = [
   "./", "index.html", "app.js", "lib.js", "styles.css", "manifest.json",
   "data/index.json", "img/hero-taproom.jpg", "img/icon-192.png",
@@ -10,12 +15,24 @@ const SHELL = [
 ];
 
 self.addEventListener("install", (e) => {
-  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));
+  // reload: 'no-store' so the precache is filled from the network, never from an
+  // HTTP-cached copy of the file this install exists to replace.
+  e.waitUntil(
+    caches
+      .open(CACHE)
+      .then((c) => c.addAll(SHELL.map((u) => new Request(u, { cache: "reload" }))))
+      .then(() => self.skipWaiting())
+  );
 });
 
 self.addEventListener("activate", (e) => {
   e.waitUntil(
-    caches.keys().then((ks) => Promise.all(ks.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
+    caches
+      .keys()
+      .then((ks) => Promise.all(ks.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
+      // Without claim() the PAGE ALREADY OPEN keeps its old worker until every tab
+      // for the site is closed -- on an installed PWA that can be days.
+      .then(() => self.clients.claim())
   );
 });
 
@@ -25,8 +42,11 @@ self.addEventListener("fetch", (e) => {
   e.respondWith(
     fetch(e.request)
       .then((res) => {
-        const copy = res.clone();
-        caches.open(CACHE).then((c) => c.put(e.request, copy));
+        // A 404 mid-deploy is not an offline floor worth keeping.
+        if (res.ok && res.type === "basic") {
+          const copy = res.clone();
+          caches.open(CACHE).then((c) => c.put(e.request, copy));
+        }
         return res;
       })
       .catch(() => caches.match(e.request).then((r) => r || caches.match("index.html")))
