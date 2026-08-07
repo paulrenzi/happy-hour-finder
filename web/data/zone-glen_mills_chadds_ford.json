@@ -146,18 +146,18 @@
      "windows": [
       {
        "dow": 1,
-       "start": "16:30",
-       "end": "20:30"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 2,
-       "start": "16:30",
-       "end": "20:30"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 3,
-       "start": "16:30",
-       "end": "20:30"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 4,
@@ -166,13 +166,13 @@
       },
       {
        "dow": 5,
-       "start": "16:30",
-       "end": "20:30"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 7,
-       "start": "16:30",
-       "end": "20:30"
+       "start": "16:00",
+       "end": "18:00"
       }
      ],
      "items": [
@@ -191,60 +191,6 @@
       "quote": "Join us for Happy Hour Sunday\u2013Friday from 4\u20136 p.m. (extended to 8 p.m. on Mondays and Thursdays) and enjoy select food and drink specials."
      },
      "items_source": "llm_extract"
-    }
-   ]
-  },
-  {
-   "id": "48062",
-   "lid": "48062",
-   "slug": "the-crown-tavern-glen-mills",
-   "name": "The Crown Tavern",
-   "address": "451 Wilmington-West Chester Pk, Glen Mills PA 19342",
-   "zone_id": "glen_mills_chadds_ford",
-   "website": "https://crowninconcord.com",
-   "plcb_name": "MCKENZIE'S BREWHOUSE, INC.",
-   "license_type": "Restaurant (Liquor)",
-   "lat": 39.8620259,
-   "lng": -75.5435805,
-   "geo_precision": "place",
-   "photo": {
-    "file": "img/venues/the-crown-tavern-glen-mills.jpg",
-    "attribution": "Photo: The Crown Tavern"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://crowninconcord.com",
-      "quote": "Half-price house drinks... Buck-a-Shuck oysters... Every room. Every table. Every day. / Pull up a stool at the bar, cozy up by the fire, or soak up the sunshine on the deck. At The Crown, Happy Hour isn't just at the bar... it's everywhere in the house. / Tuesday\u2013Friday \u00b7 4\u20136PM Saturday & Sunday \u00b7 3\u20136PM"
-     }
     }
    ]
   },

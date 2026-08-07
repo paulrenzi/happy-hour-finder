@@ -652,8 +652,8 @@
       },
       {
        "dow": 7,
-       "start": "17:00",
-       "end": "19:00"
+       "start": "22:00",
+       "end": "24:00"
       }
      ],
      "items": [],
@@ -989,65 +989,6 @@
       "kind": "venue_site",
       "url": "https://estiarestaurant.com/philadelphia-pa/philadelphia-pa.asp",
       "quote": "HAPPY HOUR / Every day 3:30pm - 5:30pm / $6 beers, $10 wines and hand crafted cocktails."
-     }
-    }
-   ]
-  },
-  {
-   "id": "97820",
-   "lid": "97820",
-   "slug": "forsythia-philadelphia",
-   "name": "Forsythia",
-   "address": "233 Chestnut St, Philadelphia PA 19106",
-   "zone_id": "center_city",
-   "website": "https://www.forsythiaphilly.com/",
-   "plcb_name": "CWKEARSE LLC",
-   "license_type": "Restaurant (Liquor)",
-   "lat": 39.9486465,
-   "lng": -75.1453965,
-   "geo_precision": "place",
-   "photo": {
-    "file": "img/venues/forsythia-philadelphia.jpg",
-    "attribution": "Photo: Forsythia"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "17:00",
-       "end": "20:00"
-      },
-      {
-       "dow": 2,
-       "start": "17:00",
-       "end": "20:00"
-      },
-      {
-       "dow": 3,
-       "start": "17:00",
-       "end": "20:00"
-      },
-      {
-       "dow": 4,
-       "start": "17:00",
-       "end": "20:00"
-      },
-      {
-       "dow": 7,
-       "start": "17:00",
-       "end": "20:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://www.forsythiaphilly.com/",
-      "quote": "Happy Hour - Bar Only - 5pm-8pm | Sunday-Thursday, 5pm-7pm Friday (No HH during special events)"
      }
     }
    ]
@@ -1897,7 +1838,7 @@
      "source": {
       "kind": "venue_site",
       "url": "https://www.pennsviewhotel.com/panorama",
-      "quote": "Happy Hour / Tuesday - Friday: 4:30 PM - 6:00 PM / Saturday 3:00 PM - 4:30 PM"
+      "quote": "Happy Hour / Every Tuesday, Wednesday, Thursday, Friday, Saturday \u2026 \u2022 Tuesday - Friday from 4:30 - 6:00pm \u2026 \u2022 Saturday 3:00 - 4:30pm \u2026 At the Bar / First Come\u2026"
      }
     }
    ]
@@ -2616,6 +2557,21 @@
      "type": "happy_hour",
      "windows": [
       {
+       "dow": 1,
+       "start": "17:00",
+       "end": "20:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "20:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "20:00"
+      },
+      {
        "dow": 4,
        "start": "17:00",
        "end": "20:00"
@@ -2629,6 +2585,11 @@
        "dow": 6,
        "start": "17:00",
        "end": "20:00"
+      },
+      {
+       "dow": 7,
+       "start": "17:00",
+       "end": "20:00"
       }
      ],
      "items": [],
@@ -2638,7 +2599,7 @@
      "source": {
       "kind": "venue_site",
       "url": "https://thetrestleinn.com/",
-      "quote": "Come and enjoy our Happy Hours from 5pm-8pm and 10pm-11pm every Thursday, Friday and Saturday."
+      "quote": "We are open 5pm-2am Thursday, Friday and Saturday with Happy Hour daily from 5pm-8pm and are available for private parties and events."
      }
     }
    ]

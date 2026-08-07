@@ -442,8 +442,8 @@
       },
       {
        "dow": 7,
-       "start": "16:00",
-       "end": "18:00"
+       "start": "22:00",
+       "end": "24:00"
       }
      ],
      "items": [],
@@ -1406,13 +1406,13 @@
       },
       {
        "dow": 6,
-       "start": "16:00",
-       "end": "18:00"
+       "start": "13:00",
+       "end": "15:00"
       },
       {
        "dow": 7,
-       "start": "16:00",
-       "end": "18:00"
+       "start": "13:00",
+       "end": "15:00"
       }
      ],
      "items": [
@@ -2166,9 +2166,14 @@
        "end": "18:30"
       },
       {
-       "dow": 7,
+       "dow": 5,
        "start": "16:00",
        "end": "18:30"
+      },
+      {
+       "dow": 7,
+       "start": "20:30",
+       "end": "22:00"
       }
      ],
      "items": [],
@@ -2311,7 +2316,7 @@
      "source": {
       "kind": "venue_site",
       "url": "https://www.pennsviewhotel.com/panorama",
-      "quote": "Happy Hour / Tuesday - Friday: 4:30 PM - 6:00 PM / Saturday 3:00 PM - 4:30 PM"
+      "quote": "Happy Hour / Every Tuesday, Wednesday, Thursday, Friday, Saturday \u2026 \u2022 Tuesday - Friday from 4:30 - 6:00pm \u2026 \u2022 Saturday 3:00 - 4:30pm \u2026 At the Bar / First Come\u2026"
      }
     }
    ]
@@ -2348,6 +2353,11 @@
        "dow": 5,
        "start": "16:00",
        "end": "19:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "18:00"
       }
      ],
      "items": [
@@ -2395,6 +2405,57 @@
       "kind": "venue_site",
       "url": "https://www.marshassouthstreet.com/events/halftime-rb-happy-hour",
       "quote": "Chill vibes, dope beats, and a dash of R&B karaoke\u2026 it\u2019s the kind of weekend pop-up Happy Hour that feels like home. Pull up, link up, and let\u2019s kick off this new vibe the right way. / \ud83d\udd53 Saturday 12/13/25 / \u23f0 4\u20138PM (Day Party)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dave-buster-s-king-of-prussia-king-of-prussia",
+   "lid": "130467",
+   "name": "Dave & Buster's King of Prussia",
+   "plcb_name": "DAVE AND BUSTER'S",
+   "address": "310 GODDARD BLVD STE 200, KING OF PRUSSIA PA 19406",
+   "zone_id": "king_of_prussia",
+   "license_type": "",
+   "website": "http://www.daveandbusters.com/us/en/about/locations/king-of-prussia",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://www.daveandbusters.com/us/en/about/locations/king-of-prussia",
+      "quote": "Swing by with your crew during Happy Hour to save on brand-new cocktails, classic faves, 22oz domestic drafts & house wine. Available Mon\u2013Fri from 5\u20137PM & Sun\u2013Thu from 10PM\u201312PM.*"
      }
     }
    ]
@@ -3114,8 +3175,8 @@
       },
       {
        "dow": 7,
-       "start": "17:00",
-       "end": "19:00"
+       "start": "22:00",
+       "end": "24:00"
       }
      ],
      "items": [],
@@ -3435,11 +3496,6 @@
        "category": "food",
        "label": "Daily Appetizer Specials",
        "price_usd": 6.0
-      },
-      {
-       "category": "food",
-       "label": "Appetizer Specials",
-       "price_usd": 6.0
       }
      ],
      "confidence": "unconfirmed",
@@ -3669,52 +3725,6 @@
    ]
   },
   {
-   "id": "the-crown-tavern-glen-mills",
-   "lid": "48062",
-   "name": "The Crown Tavern",
-   "plcb_name": "MCKENZIE'S BREWHOUSE, INC.",
-   "address": "451 WILMINGTON-WEST CHESTER PK, GLEN MILLS PA 19342-9802",
-   "zone_id": "glen_mills_chadds_ford",
-   "license_type": "",
-   "website": "https://crowninconcord.com",
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://crowninconcord.com",
-      "quote": "Half-price house drinks... Buck-a-Shuck oysters... Every room. Every table. Every day. / Pull up a stool at the bar, cozy up by the fire, or soak up the sunshine on the deck. At The Crown, Happy Hour isn't just at the bar... it's everywhere in the house. / Tuesday\u2013Friday \u00b7 4\u20136PM Saturday & Sunday \u00b7 3\u20136PM"
-     }
-    }
-   ]
-  },
-  {
    "id": "great-american-pub-narberth",
    "lid": "48382",
    "name": "Great American Pub",
@@ -3861,8 +3871,8 @@
       },
       {
        "dow": 7,
-       "start": "16:00",
-       "end": "18:00"
+       "start": "22:00",
+       "end": "24:00"
       }
      ],
      "items": [],
@@ -3928,23 +3938,23 @@
      "windows": [
       {
        "dow": 1,
-       "start": "11:30",
-       "end": "15:00"
+       "start": "16:30",
+       "end": "18:00"
       },
       {
        "dow": 2,
-       "start": "11:30",
-       "end": "15:00"
+       "start": "16:30",
+       "end": "18:00"
       },
       {
        "dow": 3,
-       "start": "11:30",
-       "end": "15:00"
+       "start": "16:30",
+       "end": "18:00"
       },
       {
        "dow": 4,
-       "start": "11:30",
-       "end": "15:00"
+       "start": "16:30",
+       "end": "18:00"
       },
       {
        "dow": 5,
@@ -4551,8 +4561,8 @@
       },
       {
        "dow": 7,
-       "start": "16:00",
-       "end": "18:00"
+       "start": "22:00",
+       "end": "24:00"
       }
      ],
      "items": [],
@@ -5149,6 +5159,21 @@
      "type": "happy_hour",
      "windows": [
       {
+       "dow": 1,
+       "start": "17:00",
+       "end": "20:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "20:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "20:00"
+      },
+      {
        "dow": 4,
        "start": "17:00",
        "end": "20:00"
@@ -5162,6 +5187,11 @@
        "dow": 6,
        "start": "17:00",
        "end": "20:00"
+      },
+      {
+       "dow": 7,
+       "start": "17:00",
+       "end": "20:00"
       }
      ],
      "items": [],
@@ -5171,7 +5201,7 @@
      "source": {
       "kind": "venue_site",
       "url": "https://thetrestleinn.com/",
-      "quote": "Come and enjoy our Happy Hours from 5pm-8pm and 10pm-11pm every Thursday, Friday and Saturday."
+      "quote": "We are open 5pm-2am Thursday, Friday and Saturday with Happy Hour daily from 5pm-8pm and are available for private parties and events."
      }
     }
    ]
@@ -5779,6 +5809,57 @@
       "kind": "venue_site",
       "url": "https://www.vedgerestaurant.com/happyhour",
       "quote": "happy hour menu / HAPPY HOUR TUes - FRi | 5 - 7 PM / SNACKS $7"
+     }
+    }
+   ]
+  },
+  {
+   "id": "perky-cafe-phoenixville",
+   "lid": "65737",
+   "name": "PERKY CAFE",
+   "plcb_name": "PERKY CAFE",
+   "address": "400 BROWER AVE, PHOENIXVILLE PA 19460-6122",
+   "zone_id": "collegeville_trappe",
+   "license_type": "",
+   "website": "https://theperky.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://theperky.com/menu/specials/",
+      "quote": "Daily Specials / Happy Hour Every Weekday from 4 - 6pm / Monday: $7 Cheese Steaks from 11am - 6pm, $19.99 A.Y.C.E Wings 6pm-10pm"
      }
     }
    ]
@@ -7031,11 +7112,6 @@
      ],
      "items": [
       {
-       "category": "draft",
-       "label": "Select Beers Happy Hour Food",
-       "price_usd": 5.0
-      },
-      {
        "category": "food",
        "label": "Small Plates",
        "price_usd": 10.0
@@ -8120,18 +8196,18 @@
      "windows": [
       {
        "dow": 1,
-       "start": "16:30",
-       "end": "20:30"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 2,
-       "start": "16:30",
-       "end": "20:30"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 3,
-       "start": "16:30",
-       "end": "20:30"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 4,
@@ -8140,13 +8216,13 @@
       },
       {
        "dow": 5,
-       "start": "16:30",
-       "end": "20:30"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 7,
-       "start": "16:30",
-       "end": "20:30"
+       "start": "16:00",
+       "end": "18:00"
       }
      ],
      "items": [],
@@ -8449,57 +8525,6 @@
       "kind": "venue_site",
       "url": "https://www.stoveandtap-wc.com/specials",
       "quote": "Food & Drink Specials / 5:00 PM - 7:00 PM / WEDNESDAY"
-     }
-    }
-   ]
-  },
-  {
-   "id": "forsythia-philadelphia",
-   "lid": "97820",
-   "name": "Forsythia",
-   "plcb_name": "CWKEARSE LLC",
-   "address": "233 CHESTNUT ST, PHILADELPHIA PA 19106-2813",
-   "zone_id": "center_city",
-   "license_type": "",
-   "website": "https://www.forsythiaphilly.com/",
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "17:00",
-       "end": "20:00"
-      },
-      {
-       "dow": 2,
-       "start": "17:00",
-       "end": "20:00"
-      },
-      {
-       "dow": 3,
-       "start": "17:00",
-       "end": "20:00"
-      },
-      {
-       "dow": 4,
-       "start": "17:00",
-       "end": "20:00"
-      },
-      {
-       "dow": 7,
-       "start": "17:00",
-       "end": "20:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://www.forsythiaphilly.com/",
-      "quote": "Happy Hour - Bar Only - 5pm-8pm | Sunday-Thursday, 5pm-7pm Friday (No HH during special events)"
      }
     }
    ]

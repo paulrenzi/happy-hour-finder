@@ -188,6 +188,55 @@ def items_in(text):
     return out[:6]
 
 
+# A second schedule starting inside one segment: '... 4-6pm & Sunday-Thursday
+# 8:30-10pm', 'Tue-Fri 4-7pm | Saturday & Sunday 3-6pm'. The separator has to be
+# followed by a day name, so 'Monday & Friday 4-6pm' -- one schedule naming two
+# days -- is left alone.
+CLAUSE_SPLIT_RE = re.compile(
+    r"\s*(?:&|\band\b|\||·|•|,)\s*"
+    r"(?=(?:late\s+night\s+)?(?:happy\s+hour\s+)?"
+    r"(?:mon|tues?|wed|thur?s?|fri|sat|sun)[a-z]*\b)",
+    re.I,
+)
+
+
+def clauses(segment):
+    """A segment split so that each piece states at most one time range.
+
+    'Monday-Friday 4-6 pm and Sunday-Thursday 10pm-12am' is TWO schedules in one
+    line. Read as one, days_in() unions all five weekdays with Sun-Thu and
+    window_in() takes only the FIRST range -- publishing Sunday 4-6pm at a bar
+    whose Sunday happy hour starts at ten. That was 22 of 170 published venues.
+
+    Returns None when the split does not resolve the segment into pieces of one
+    range each, because at that point which days go with which time is a guess,
+    and a card on the wrong day still looks like a correct card.
+    """
+    if len(TIME_RE.findall(segment)) <= 1:
+        return [segment]
+    parts = CLAUSE_SPLIT_RE.split(segment)
+    if len(parts) < 2 or any(len(TIME_RE.findall(p)) > 1 for p in parts):
+        return None
+    if any(not one_sided(p) for p in parts):
+        return None
+    return parts
+
+
+def one_sided(piece):
+    """True when every day this piece names sits on ONE side of its time range.
+
+    'Sunday-Thursday, 5pm-7pm Friday' names days on both sides, and reading it
+    forwards gives Sunday-Thursday the 5-7pm that belongs to Friday -- while
+    Friday, already consumed as a day, silently gets nothing. Days before the
+    range ('Mon-Fri 4-6pm') or after it ('4-6pm | Friday') are both unambiguous;
+    days on both sides are two schedules sharing one line.
+    """
+    m = TIME_RE.search(piece)
+    if not m:
+        return True
+    return not (days_in(piece[: m.start()]) and days_in(piece[m.end():]))
+
+
 def windows_from(quote):
     """[{dow,start,end}] for one quote, or [] if it does not state a schedule.
 
@@ -200,13 +249,21 @@ def windows_from(quote):
         return []
     pending, out = set(), []
     for seg in re.split(r"\s/\s|;", quote):
-        here = days_in(seg)
-        if here:
-            pending = here
-        win = window_in(seg)
-        if win and pending:
-            out += [{"dow": d, "start": win[0], "end": win[1]} for d in sorted(pending)]
+        pieces = clauses(seg)
+        if pieces is None:
+            # Two schedules we cannot separate. Nothing after this can be
+            # trusted to pair with days from before it either, so the carry
+            # forward is dropped rather than applied to the wrong times.
             pending = set()
+            continue
+        for piece in pieces:
+            here = days_in(piece)
+            if here:
+                pending = here
+            win = window_in(piece)
+            if win and pending:
+                out += [{"dow": d, "start": win[0], "end": win[1]} for d in sorted(pending)]
+                pending = set()
     if out:
         return out
     # An event listing writes the days last ('Happy Hour / 4:30 PM - 6:30 PM /

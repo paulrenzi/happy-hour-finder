@@ -23,11 +23,12 @@ from build_bundles import decay, shell_digest, sw_cache_name  # noqa: E402
 import crawl_sites  # noqa: E402
 from crawl_roundups import fresh_enough, mentions, published_date, venue_index  # noqa: E402
 from crawl_sites import candidate_links, crawl_one, quotes, registrable, visible_text  # noqa: E402
+from discover_places import HAND_DROPPED  # noqa: E402
 from discover_sites import collapse_shared, name_core, plcb_key, site_of, street_core  # noqa: E402
 import guess_sites  # noqa: E402
 from guess_sites import candidates  # noqa: E402
 from guess_sites import verify as guess_verify  # noqa: E402
-from extract_deals import days_in, items_in, window_in, windows_from  # noqa: E402
+from extract_deals import clauses, days_in, items_in, one_sided, window_in, windows_from  # noqa: E402
 from extract_prices_llm import verify  # noqa: E402
 from fetch_og_images import asset_allowed, css_images, inline_images, og_image  # noqa: E402
 from fetch_venue_photos import IMG_DIR, photo_dest  # noqa: E402
@@ -194,11 +195,11 @@ class HandCorrectedJoins(unittest.TestCase):
     }
 
     # A neighbour in the same plaza claimed the row. Nothing is substituted:
-    # absent beats publishing under another business's name.
-    DROPPED = {
-        "127673": "First Watch is not the Residence Inn at 127 S Gulph Rd",
-        "86292": "PrimoHoagies is not the Giant at 700 Nutt Rd",
-    }
+    # absent beats publishing under another business's name. The list lives in
+    # the ingest code, not here, because the Places merge has to consult it --
+    # it re-added the Residence Inn on its first run, and a hand-made drop that
+    # only a test knows about is one an automated step will keep undoing.
+    DROPPED = HAND_DROPPED
 
     def test_a_neighbours_site_stays_dropped(self):
         for lid, why in self.DROPPED.items():
@@ -1196,3 +1197,74 @@ class PrettyName(unittest.TestCase):
         # card with no title at all.
         from build_venue_base import pretty_name
         self.assertEqual(pretty_name("LLC"), "LLC")
+
+
+class TwoSchedulesOnOneLine(unittest.TestCase):
+    """One segment, two schedules -- the bug that put a 5pm window on a Sunday.
+
+    'Mon-Fri from 5-7PM & Sun-Thu from 10PM-12PM' was read as ONE schedule:
+    days_in() unioned every day either clause named and window_in() took only
+    the FIRST range, so Dave & Buster's published a Sunday happy hour at five
+    that actually starts at ten. It affected 22 of 170 published venues, and a
+    card on the wrong day still looks like a correct card.
+    """
+
+    def dows(self, quote):
+        """{(start, end): {dow, ...}} -- the schedule as published."""
+        out = {}
+        for w in windows_from(quote):
+            out.setdefault((w["start"], w["end"]), set()).add(w["dow"])
+        return out
+
+    def test_each_clause_keeps_its_own_times(self):
+        got = self.dows("Happy Hour available Monday-Friday 4-6 pm "
+                        "and Sunday-Thursday 10pm-12am at bar area only.")
+        self.assertEqual(got[("16:00", "18:00")], {1, 2, 3, 4, 5})
+        self.assertEqual(got[("22:00", "24:00")], {7, 1, 2, 3, 4})
+
+    def test_sunday_no_longer_inherits_the_weekday_window(self):
+        got = self.dows("Available Mon–Fri from 5–7PM & Sun–Thu from 10PM–12PM.*")
+        self.assertNotIn(7, got.get(("17:00", "19:00"), set()),
+                         "Sunday took the Mon-Fri window it is not part of")
+
+    def test_a_weekend_clause_keeps_its_earlier_start(self):
+        got = self.dows("Tuesday-Friday: 4-7pm | Saturday & Sunday: 3-6pm")
+        self.assertEqual(got[("16:00", "19:00")], {2, 3, 4, 5})
+        self.assertIn(7, got[("15:00", "18:00")])
+        self.assertNotIn(7, got[("16:00", "19:00")])
+
+    def test_one_schedule_naming_two_days_is_not_split(self):
+        # The separator only splits when a DAY follows it, so 'Monday & Friday'
+        # stays one schedule rather than becoming two.
+        self.assertEqual(self.dows("Monday & Friday 4-6pm"), {("16:00", "18:00"): {1, 5}})
+
+    def test_days_on_both_sides_of_a_time_are_refused(self):
+        # 'Sunday-Thursday, 5pm-7pm Friday' is two schedules sharing a line, and
+        # reading it forwards hands Sun-Thu the window that belongs to Friday.
+        self.assertFalse(one_sided("Sunday-Thursday, 5pm-7pm Friday"))
+        self.assertTrue(one_sided("Mon-Fri 4-6pm"))
+        self.assertTrue(one_sided("4-6pm | Friday"))
+
+    def test_a_days_last_line_with_two_clauses_states_nothing(self):
+        # Forsythia writes the days AFTER the time: '5pm-8pm | Sunday-Thursday,
+        # 5pm-7pm Friday'. Splitting before a day name cuts between a time and
+        # the days it belongs to, so the pieces come out with days on both
+        # sides -- and the forward read would hand Sun-Thu the Friday window.
+        # Refusing costs a venue that was previously correct; it now shows as a
+        # card asking to be filled in, which is the honest form of not knowing.
+        quote = ("Happy Hour - Bar Only - 5pm-8pm | Sunday-Thursday, "
+                 "5pm-7pm Friday (No HH during special events)")
+        self.assertEqual(windows_from(quote), [])
+
+    def test_an_unsplittable_segment_states_nothing(self):
+        # No window is a better answer than a guessed one.
+        self.assertIsNone(clauses("open 5pm-2am with Happy Hour 10pm-11pm"))
+        self.assertEqual(clauses("Mon-Fri 4-6pm"), ["Mon-Fri 4-6pm"])
+
+    def test_a_refused_segment_does_not_leak_its_days_forward(self):
+        # The carry-forward is what makes multi-line blocks work; after a
+        # segment we could not read, those days would pair with the wrong time.
+        # Here 'Mon-Fri' is named in a segment holding two unseparable ranges,
+        # so it must not be handed the 9pm window on the next line.
+        self.assertEqual(
+            windows_from("Mon-Fri lunch 11-2pm and dinner 5-9pm / 9pm - 11pm"), [])

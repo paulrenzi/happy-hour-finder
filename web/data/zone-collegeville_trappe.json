@@ -92,6 +92,58 @@
    ]
   },
   {
+   "id": "65737",
+   "lid": "65737",
+   "slug": "perky-cafe-phoenixville",
+   "name": "PERKY CAFE",
+   "address": "400 Brower Ave, Phoenixville PA 19460",
+   "zone_id": "collegeville_trappe",
+   "website": "https://theperky.com/",
+   "plcb_name": "PERKY CAFE",
+   "license_type": "Restaurant (Liquor)",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://theperky.com/menu/specials/",
+      "quote": "Daily Specials / Happy Hour Every Weekday from 4 - 6pm / Monday: $7 Cheese Steaks from 11am - 6pm, $19.99 A.Y.C.E Wings 6pm-10pm"
+     }
+    }
+   ]
+  },
+  {
    "id": "109142",
    "lid": "109142",
    "slug": "the-stray-dog-tavern-skippack",

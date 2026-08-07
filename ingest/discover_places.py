@@ -225,6 +225,94 @@ def resolve(key, venue):
     return place, how
 
 
+SITES_JSON = os.path.join(REPO, "data", "venue_sites.json")
+
+# The join that discovered a website decides whether the crawler may read that
+# website FOR EVIDENCE. An address join says the state and Google agree on the
+# building. A name join says two strings look alike in one ZIP -- enough to hang
+# a photo and a link off, which is all it was ever allowed to do. Promoting one
+# into the crawl frontier would make a happy hour attributable to a licence on
+# the strength of a name, which is the line the address-only rule draws.
+EVIDENCE_SAFE_MATCHES = {"text search", "nearby search"}
+
+# Licences whose site was removed BY HAND after a neighbour in the same plaza
+# was found claiming the row -- absent beats publishing under another business's
+# name. An automated merge must not quietly overturn that: a re-added row looks
+# identical to one that was never reviewed.
+#
+# Places has since resolved 127673 to a marriott.com Residence Inn page, which
+# is very likely the right site. Re-enabling it is a decision to make on that
+# evidence, by deleting the entry here -- not a side effect of running a merge.
+HAND_DROPPED = {
+    "127673": "First Watch is not the Residence Inn at 127 S Gulph Rd",
+    "86292": "PrimoHoagies is not the Giant at 700 Nutt Rd",
+}
+
+
+def merge_sites(dry_run=True, zone=None):
+    """Feed the addresses Places resolved into the crawl frontier.
+
+    ingest/crawl_sites.py reads data/venue_sites.json, so a website Places found
+    is invisible to it until it lands there -- which is why King of Prussia's 26
+    newly-discovered sites had never been read for a window.
+    """
+    places = json.load(open(OUT_JSON, encoding="utf-8"))
+    sites = json.load(open(SITES_JSON, encoding="utf-8"))
+    venues = {v["lid"]: v for v in csv.DictReader(open(VENUES_CSV, encoding="utf-8"))}
+
+    added, held, dropped = {}, [], []
+    for lid, p in sorted(places.items()):
+        if lid in sites or not p.get("website"):
+            continue
+        row = venues.get(lid)
+        if row is None:
+            continue
+        if zone and row["zone_id"] != zone:
+            continue
+        if lid in HAND_DROPPED:
+            dropped.append((lid, p.get("places_name", ""), HAND_DROPPED[lid]))
+            continue
+        if p.get("matched_by") not in EVIDENCE_SAFE_MATCHES:
+            held.append((lid, p.get("places_name", ""), p.get("matched_by")))
+            continue
+        added[lid] = {
+            "address": row["address"],
+            "kind": None,
+            "lat": p.get("lat"),
+            "lng": p.get("lng"),
+            "matched_by": f"places {p['matched_by']} -> {p.get('places_address', '')}",
+            "name": row["name"],
+            "opening_hours": None,
+            "osm": None,
+            # The crawler shows osm_name on a card. Places resolved the trade
+            # name against this exact address this month, so it is the better
+            # display name -- and leaving it null would ship the licensee.
+            "osm_name": p.get("places_name"),
+            "phone": None,
+            "website": p["website"],
+            "zone_id": row["zone_id"],
+        }
+
+    print(f"{len(places)} resolved by Places, {len(sites)} already in the frontier")
+    print(f"  +{len(added)} to add (address-joined, safe to crawl for evidence)")
+    print(f"  {len(held)} held back -- name-joined, discovery only:")
+    for lid, name, how in held:
+        print(f"      {lid}  {name[:40]:<42} {how}")
+    if dropped:
+        print(f"  {len(dropped)} held back -- removed by hand, see HAND_DROPPED:")
+        for lid, name, why in dropped:
+            print(f"      {lid}  {name[:40]:<42} {why}")
+    if dry_run:
+        print("\ndry run -- nothing written. Re-run with --execute.")
+        return added
+
+    sites.update(added)
+    json.dump(sites, open(SITES_JSON, "w", encoding="utf-8"), indent=1, sort_keys=True)
+    print(f"\nwrote {len(sites)} venues -> data/venue_sites.json")
+    print("next: python ingest/crawl_sites.py --zone <id>   (only the new LIDs are uncrawled)")
+    return added
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--zone", help="resolve one zone (e.g. king_of_prussia)")
@@ -232,7 +320,14 @@ def main():
     ap.add_argument("--dry-run", action="store_true", help="report scope, make no calls")
     ap.add_argument("--max", type=int, default=1000, help="hard cap on billed lookups")
     ap.add_argument("--force", action="store_true", help="re-resolve venues already done")
+    ap.add_argument("--merge-sites", action="store_true",
+                    help="add resolved websites to the crawl frontier (no API calls)")
+    ap.add_argument("--execute", action="store_true", help="with --merge-sites: actually write")
     args = ap.parse_args()
+
+    if args.merge_sites:
+        merge_sites(dry_run=not args.execute, zone=args.zone)
+        return
 
     if not (args.zone or args.all):
         sys.exit("Pick a scope: --zone <id> or --all")
