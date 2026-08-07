@@ -32,7 +32,9 @@ import sys
 import time
 import urllib.parse
 
-import requests
+# requests is imported inside main(), not here: the date gate and the mention
+# matcher are pure functions the test suite imports, and CI has no requests.
+# A module-level import made a locally-green gate fail the deploy.
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -218,6 +220,8 @@ def main():
     ap.add_argument("--write", action="store_true",
                     help=f"write {os.path.relpath(OUT, REPO)} (default is a dry run)")
     args = ap.parse_args()
+
+    import requests
 
     if not os.path.exists(SOURCES):
         print(f"no {os.path.relpath(SOURCES, REPO)} -- nothing to crawl")
