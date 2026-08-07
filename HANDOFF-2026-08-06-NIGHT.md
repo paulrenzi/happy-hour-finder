@@ -107,6 +107,35 @@ photos → **`build_bundles` again**.
 5. Roundups — worth it for **Phoenixville** (1 published venue vs a dozen named),
    not for KoP.
 
+## Live-site verification (re-run at session close — all four confirmed)
+
+Fetched from `https://paulrenzi.github.io/happy-hour-finder` with a cache-buster and
+compared against the local build, not just assumed from a green push:
+
+| Artifact | Live value |
+|---|---|
+| `sw.js` | `const CACHE = "hhf-2026-08-06-132-c3beea14"` — byte-matches local |
+| `index.html` | `<input type="file" accept="image/*" id="photo" hidden>` — no `capture` |
+| `app.js` | carries the `pick-preview` handler |
+| `data/zone-king_of_prussia.json` | **4** — BOTLD, Paladar, Fogo de Chão, **North Italia** |
+
+`git status` clean, `master` level with `origin/master`, `gh run list` newest run
+`completed success` (31137074551, 31s).
+
+## Knowledge graph — updated this session
+
+- `reference_index_happy_hour_finder` — new **"Paul's settled calls"** section (roundup
+  tier, 120-day hard drop, Places, hand-verify, hand-fix mis-joins) and a new
+  **"KoP 3 → 4 — five causes"** section. The old *"Awaiting Paul's call on that tier"*
+  line is resolved. Added the `capture=` finding and the CI-deploy rule.
+- `feedback_a_never_bumped_service_worker_cache_name_freezes_the_corpus` — **corrected a
+  fix I had previously recorded as complete.** Deriving the cache name from
+  `built_at + n_published` still only moved when the *corpus* moved, so a shell-only
+  deploy re-stamped an identical name. Generalised: *a derived cache key must be derived
+  from everything it precaches* — ask what inputs the key does **not** cover.
+- New: `feedback_a_green_local_gate_does_not_mean_the_deploy_ran`,
+  `feedback_check_the_joined_url_resolves_before_blaming_the_renderer`.
+
 ## Standing constraints
 
 - 🛑 Do not relax the price pass's evidence check, the window requirement, or the
