@@ -13,6 +13,10 @@
    "lat": 39.959608,
    "lng": -75.603943,
    "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/barnabys-west-chester.jpg",
+    "attribution": "Photo: Barnaby's of West Chester"
+   },
    "deals": [
     {
      "type": "happy_hour",
@@ -67,6 +71,118 @@
       "kind": "instagram",
       "url": "https://www.instagram.com/barnabyswc/",
       "note": "The venue's own site blocks automated fetch and carries no happy hour."
+     }
+    }
+   ]
+  },
+  {
+   "id": "9-prime-west-chester",
+   "name": "9 Prime",
+   "address": "9 N HIGH ST, WEST CHESTER PA 19382",
+   "zone_id": "west_chester",
+   "website": "https://9primewestchester.com",
+   "plcb_name": "WCTHG LL LLC",
+   "lat": 39.9601764,
+   "lng": -75.6043923,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/9-prime-west-chester.jpg",
+    "attribution": "Photo: 9 Prime"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:30"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://9primewestchester.com",
+      "quote": "Happy Hour / Tuesday-Friday 4PM-6:30PM / Sunday 4PM-6:30PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "the-stone-tavern-west-chester",
+   "name": "The Stone Tavern",
+   "address": "1227 W CHESTER PK, WEST CHESTER PA 19380-6874",
+   "zone_id": "west_chester",
+   "website": "https://www.thestonetavern1867.com",
+   "plcb_name": "THE STONE TAVERN",
+   "lat": 39.968793,
+   "lng": -75.5579416,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/the-stone-tavern-west-chester.jpg",
+    "attribution": "Photo: The Stone Tavern"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.thestonetavern1867.com/specials",
+      "quote": "HAPPY HOUR: / Monday-Friday / 4-6PM @ The Bar Only"
      }
     }
    ]
@@ -180,6 +296,67 @@
       "kind": "venue_site",
       "url": "https://www.pietrosprime.com",
       "quote": "HAPPY HOUR / Join us every Monday through Friday from 5-7 PM in the bar area!"
+     }
+    }
+   ]
+  },
+  {
+   "id": "limoncello-west-chester",
+   "name": "Limoncello",
+   "address": "5-7-9 N WALNUT ST, WEST CHESTER PA 19380-3138",
+   "zone_id": "west_chester",
+   "website": "https://www.limoncellorestaurant.com/",
+   "plcb_name": "LIMONCELLO",
+   "lat": 39.9605561,
+   "lng": -75.6033322,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/limoncello-west-chester.jpg",
+    "attribution": "Photo: Limoncello"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.limoncellorestaurant.com/happy-hour-menu",
+      "quote": "HAPPY HOUR MENU / Sunday-Friday 4:00-6:00PM"
      }
     }
    ]

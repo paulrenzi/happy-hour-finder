@@ -4,6 +4,112 @@
  "built_at": "2026-08-06",
  "venues": [
   {
+   "id": "botld-king-of-prussia",
+   "name": "BOTLD",
+   "address": "190 TOWN CENTER  RD, KING OF PRUSSIA PA 19406-2373",
+   "zone_id": "king_of_prussia",
+   "website": "https://botld.com/",
+   "plcb_name": "BOTLD",
+   "photo": {
+    "file": "img/venues/botld-king-of-prussia.jpg",
+    "attribution": "Photo: BOTLD"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "14:00",
+       "end": "16:00"
+      },
+      {
+       "dow": 7,
+       "start": "14:00",
+       "end": "16:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://botld.com/",
+      "quote": "Happy Hour at the Cocktail Bar / Wednesday - Friday: 4pm - 6pm / Saturday & Sunday: 2pm -4pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "paladar-latin-kitchen-rum-bar-king-of-prussia",
+   "name": "PALADAR LATIN KITCHEN & RUM BAR",
+   "address": "KING OF PRUSSIA TOWN CENTER  250 MAIN STREET, KING OF PRUSSIA PA 19406",
+   "zone_id": "king_of_prussia",
+   "website": "https://paladarlatinkitchen.com/happy-hour/",
+   "plcb_name": "PALADAR LATIN KITCHEN & RUM BAR",
+   "photo": {
+    "file": "img/venues/paladar-latin-kitchen-rum-bar-king-of-prussia.jpg",
+    "attribution": "Photo: PALADAR LATIN KITCHEN & RUM BAR"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:30"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://paladarlatinkitchen.com/happy-hour/",
+      "quote": "HAPPY HOUR DETAILS / Monday-Friday / from 4-6:30pm & Sunday- Thursday 8:30-10pm in the Bar"
+     }
+    }
+   ]
+  },
+  {
    "id": "fogo-de-ch-o-king-of-prussia",
    "name": "Fogo de Ch\u00e3o",
    "address": "KING OF PRUSSIA TOWN CENTER  155 MAIN ST, KING OF PRUSSIA PA 19406",

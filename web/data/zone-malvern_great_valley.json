@@ -199,6 +199,62 @@
    ]
   },
   {
+   "id": "teikoku-newtown-square",
+   "name": "Teikoku",
+   "address": "5240 WEST CHESTER PK, NEWTOWN SQUARE PA 19073-1119",
+   "zone_id": "malvern_great_valley",
+   "website": "https://www.teikokurestaurant.com/",
+   "plcb_name": "TEIKOKU RESTAURANT",
+   "lat": 39.9714758,
+   "lng": -75.4699749,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/teikoku-newtown-square.jpg",
+    "attribution": "Photo: Teikoku"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:30",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.teikokurestaurant.com/",
+      "quote": "Happy Hour Mon to Fri 4:30-6pm"
+     }
+    }
+   ]
+  },
+  {
    "id": "joey-chops-frazer",
    "name": "Joey Chops",
    "address": "LINCOLN COURT SHOPPING CENTER 245 LANCASTER AVE, FRAZER PA 19355-3607",

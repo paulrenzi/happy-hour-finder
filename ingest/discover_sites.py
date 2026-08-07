@@ -127,11 +127,102 @@ def osm_key(tags):
 
 
 def site_of(tags):
-    for k in ("website", "contact:website", "url"):
+    # brand:website is last on purpose: it is the chain's page, not this
+    # location's, so it only answers when nothing more specific does.
+    for k in ("website", "contact:website", "url", "brand:website"):
         v = (tags.get(k) or "").strip()
         if v.startswith("http"):
             return v
     return None
+
+
+# Names are matched only as a guarded fallback (see promote_by_name), so the
+# normaliser drops the corporate and category noise that would otherwise make
+# two different bars look alike -- and the guard, not this list, is what makes
+# it safe.
+NAME_NOISE = {
+    "the", "a", "an", "and", "of", "inc", "llc", "lp", "co", "corp", "company",
+    "ltd", "llp", "pa", "restaurant", "bar", "grill", "grille", "tavern", "pub",
+    "brewing", "brewery", "taproom", "cafe", "kitchen", "house", "group",
+    "holdings", "enterprises", "associates", "partners",
+}
+
+
+def name_core(name):
+    words = re.sub(r"[^\w\s]", " ", (name or "").lower()).split()
+    return " ".join(w for w in words if w not in NAME_NOISE)
+
+
+def name_agrees(plcb_name, osm_name):
+    """Do these two names plausibly describe the same business?
+
+    Deliberately loose, because it is only ever used to break a tie between
+    licensees that already share one address: the question is not 'is this the
+    same name' but 'of the several tenants at 250 Main St, which one is the
+    site about'. One shared distinctive word answers that; a shell name such as
+    'KOP FONDUE INC' shares none with 'The Melting Pot' and stays unresolved,
+    which is the correct answer, not a failure.
+    """
+    a, b = set(name_core(plcb_name).split()), set(name_core(osm_name).split())
+    return bool(a & b)
+
+
+def collapse_shared(out):
+    """Drop websites that belong to a neighbour rather than to the licensee.
+
+    The address join is right that a name mismatch is not evidence of a
+    mis-join -- roughly a third of PLCB rows are corporate shells. But a mall,
+    a plaza, an airport terminal and a town center are all ONE street address
+    holding many businesses, so the key that is elsewhere unique here returns
+    the wrong tenant. Measured on the seven towns plus the disc, 100 licensees
+    across 37 URLs are joined this way; in King of Prussia seven Town Center
+    licensees were each handed Shake Shack's page.
+
+    When several licensees land on one OSM element the site can belong to at
+    most one of them, so it is kept only for those whose name agrees with the
+    element's, and dropped for the rest. A wrong site is worse than none: it
+    publishes a neighbour's happy hour under this venue's name. Nothing is
+    dropped where the element is claimed by a single licensee, so this cannot
+    lower the count for any venue the join was already right about.
+    """
+    claims = collections.defaultdict(list)
+    for lid, v in out.items():
+        if v.get("osm"):
+            claims[v["osm"]].append(lid)
+    dropped = []
+    for osm_id, lids in claims.items():
+        if len(lids) < 2:
+            continue
+        for lid in lids:
+            v = out[lid]
+            if not name_agrees(v["name"], v.get("osm_name") or ""):
+                dropped.append((v["name"], v.get("osm_name"), v["zone_id"],
+                                v["website"]))
+                del out[lid]
+    return dropped
+
+
+def localities_osm(tags):
+    """The locality tokens an OSM element can be pinned to, best first."""
+    out = []
+    city = (tags.get("addr:city") or "").strip().lower()
+    zp = (tags.get("addr:postcode") or "")[:5]
+    if city:
+        out.append(("city", city))
+    if len(zp) == 5:
+        out.append(("zip", zp))
+    return out
+
+
+def localities_plcb(row):
+    out = []
+    tail = TAIL_RE.search(row["address"] or "")
+    if tail:
+        out.append(("city", tail.group(1).strip().lower()))
+    zp = (row.get("zip") or "")[:5]
+    if len(zp) == 5:
+        out.append(("zip", zp))
+    return out
 
 
 def fetch_osm():
@@ -177,29 +268,69 @@ def main():
     # Keep the one that actually carries a website; a duplicate without one is
     # not evidence of anything.
     by_addr = {}
+    # Two weaker indexes, each used only when it answers *uniquely*.
+    #  - by_street drops the ZIP, because 256 of the extract's elements carry a
+    #    housenumber and street but a missing or 4-digit postcode, and a ZIP is
+    #    not disambiguating information once the number and street already are.
+    #  - by_name is the guarded name fallback: the corporate-shell and
+    #    two-Iron-Hills reasons never to match on name alone are still true, so
+    #    a name is only allowed to speak when it is unique within one locality
+    #    on BOTH sides. Every pair it accepts is printed.
+    by_street = collections.defaultdict(list)
+    by_name = collections.defaultdict(list)
     for e in els:
         tags = e.get("tags", {})
         key = osm_key(tags)
-        if not key:
-            continue
-        if key not in by_addr or (site_of(tags) and not site_of(by_addr[key][1])):
+        if key and (key not in by_addr or (site_of(tags) and not site_of(by_addr[key][1]))):
             by_addr[key] = (e, tags)
+        num, street = tags.get("addr:housenumber"), tags.get("addr:street")
+        if num and street:
+            core = street_core(street)
+            if core:
+                by_street[(num.split("-")[0].strip(), core)].append((e, tags))
+        core = name_core(tags.get("name"))
+        if core:
+            for loc in localities_osm(tags):
+                by_name[(loc, core)].append((e, tags))
 
     rows = list(csv.DictReader(open(VENUES_CSV, encoding="utf-8")))
-    out, stats, misses = {}, collections.Counter(), []
+    # How often each name occurs per locality on the PLCB side -- the other half
+    # of the uniqueness guard.
+    plcb_names = collections.Counter()
+    for row in rows:
+        core = name_core(row["name"])
+        if core:
+            for loc in localities_plcb(row):
+                plcb_names[(loc, core)] += 1
+
+    out, stats, misses, promoted = {}, collections.Counter(), [], []
     for row in rows:
         key = plcb_key(row["address"])
+        hit, how = (by_addr.get(key) if key else None), "address"
         if not key:
             stats["licensee address unparseable"] += 1
-            continue
-        hit = by_addr.get(key)
+        if not hit and key:
+            near = by_street.get((key[1], key[2]), [])
+            if len(near) == 1:
+                hit, how = near[0], "address (ZIP ignored)"
         if not hit:
-            stats["no OSM row at that address"] += 1
-            if len(misses) < args.unmatched:
-                misses.append(row)
+            core = name_core(row["name"])
+            for loc in localities_plcb(row) if core else []:
+                cands = by_name.get((loc, core), [])
+                if len(cands) == 1 and plcb_names[(loc, core)] == 1:
+                    hit, how = cands[0], f"name, unique in {loc[1]}"
+                    break
+        if not hit:
+            if key:
+                stats["no OSM row at that address"] += 1
+                if len(misses) < args.unmatched:
+                    misses.append(row)
             continue
         el, tags = hit
         stats["matched to OSM"] += 1
+        stats[f"  via {how.split(',')[0]}"] += 1
+        if how.startswith("name"):
+            promoted.append((row["name"], tags.get("name"), row["zone_id"], how))
         site = site_of(tags)
         if not site:
             stats["  matched but no website tag"] += 1
@@ -217,12 +348,37 @@ def main():
             "lat": el.get("lat") or (el.get("center") or {}).get("lat"),
             "lng": el.get("lon") or (el.get("center") or {}).get("lon"),
             "osm": f"{el['type']}/{el['id']}",
+            "matched_by": how,
         }
+
+    shared = collapse_shared(out)
+
+    # guess_sites.py merges its proven domains into the same file, and this one
+    # rewrites that file whole -- so without this a re-run of the join silently
+    # deletes every guessed site, and the loss looks like the guesser having
+    # found nothing. A guess is only ever kept for a licensee the join itself
+    # could not answer for, so the join always wins.
+    kept = 0
+    if os.path.exists(OUT):
+        for lid, v in json.load(open(OUT, encoding="utf-8")).items():
+            if lid not in out and str(v.get("matched_by", "")).startswith("guessed"):
+                out[lid] = v
+                kept += 1
 
     print(f"\n{len(rows)} licensees vs {len(by_addr)} addressed OSM venues\n")
     for k, v in stats.most_common():
         print(f"  {v:>6}  {k}")
-    print(f"\ncrawlable websites: {len(out)}")
+    print(f"\ncrawlable websites: {len(out)}  ({kept} carried over from guess_sites)")
+
+    if shared:
+        print(f"\n{len(shared)} dropped: a neighbour's site at a shared address")
+        for plcb, osm, zone, site in sorted(shared, key=lambda p: p[2])[:40]:
+            print(f"  {plcb[:30]:<32} != {(osm or '?')[:22]:<24} {zone:<20}{site[:38]}")
+
+    if promoted:
+        print(f"\n{len(promoted)} promoted on name (review these):")
+        for plcb, osm, zone, how in sorted(promoted, key=lambda p: p[2]):
+            print(f"  {plcb[:32]:<34} -> {(osm or '')[:28]:<30} {zone:<22}{how}")
 
     if misses:
         print("\nunmatched sample:")

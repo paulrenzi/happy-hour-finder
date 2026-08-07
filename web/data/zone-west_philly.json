@@ -1,0 +1,58 @@
+{
+ "zone_id": "west_philly",
+ "name": "Philadelphia \u2014 Overbrook / Southwest",
+ "built_at": "2026-08-06",
+ "venues": [
+  {
+   "id": "oyster-house-philadelphia",
+   "name": "Oyster House",
+   "address": "8500 ESSINGTON AVE 2ND FL B&C CONNECTOR SPACE #BC13, PHILADELPHIA PA 19153-7027",
+   "zone_id": "west_philly",
+   "website": "https://oysterhousephilly.com",
+   "plcb_name": "OYSTER HOUSE",
+   "lat": 39.950302,
+   "lng": -75.166539,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/oyster-house-philadelphia.jpg",
+    "attribution": "Photo: Oyster House"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://oysterhousephilly.com",
+      "quote": "Join us for Center City's Best Happy Hour / 4-6 pm Tuesday - Friday"
+     }
+    }
+   ]
+  }
+ ]
+}

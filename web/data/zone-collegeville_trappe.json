@@ -4,6 +4,123 @@
  "built_at": "2026-08-06",
  "venues": [
   {
+   "id": "troubles-end-brewing-collegeville",
+   "name": "Troubles End Brewing",
+   "address": "36 W 3RD AVE, COLLEGEVILLE PA 19426-3605",
+   "zone_id": "collegeville_trappe",
+   "website": "https://www.troublesendbrewing.com/",
+   "plcb_name": "TROUBLES END BREWING LLC",
+   "lat": 40.1852277,
+   "lng": -75.452495,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/troubles-end-brewing-collegeville.jpg",
+    "attribution": "Photo: Troubles End Brewing"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.troublesendbrewing.com/happyhour",
+      "quote": "HAPPY HOUR SPECIALS / 4-6 PM | TUESDAY - FRIDAY"
+     }
+    }
+   ]
+  },
+  {
+   "id": "the-stray-dog-tavern-skippack",
+   "name": "The Stray Dog Tavern",
+   "address": "3911 SKIPPACK PIKE, SKIPPACK PA 19474",
+   "zone_id": "collegeville_trappe",
+   "website": "https://thestraydogtavern.com/",
+   "plcb_name": "JUSTIN'S CARRIAGE HOUSE",
+   "lat": 40.2230637,
+   "lng": -75.3972861,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/the-stray-dog-tavern-skippack.jpg",
+    "attribution": "Photo: The Stray Dog Tavern"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://thestraydogtavern.com/",
+      "quote": "Happy Hour / We all need a place to relax after work, so why not do it with a drink in your hand? Join us for Happy Hour 7 days a week from 4pm-6pm for discounted drinks, buck-a-shuck oysters and more! / Our local music scene is great and we wanted to showcase some of the best talent around. Come by on Thursday evenings for open mic or check the entertainment schedule link on top of this page for "
+     }
+    }
+   ]
+  },
+  {
    "id": "p-j-whelihan-s-pub-restaurant-oaks",
    "name": "P. J. Whelihan's Pub + Restaurant",
    "address": "180 MILL RD, OAKS PA 19456-6503",
@@ -15,6 +132,47 @@
    "geo_precision": "place",
    "photo": {
     "file": "img/venues/p-j-whelihan-s-pub-restaurant-oaks.jpg",
+    "attribution": "Photo: P. J. Whelihan's Pub + Restaurant"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.pjspub.com/about.php?loc=Oaks",
+      "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "p-j-whelihan-s-pub-restaurant-oaks-81482",
+   "name": "P. J. Whelihan's Pub + Restaurant",
+   "address": "180B MILL RD, OAKS PA 19456",
+   "zone_id": "collegeville_trappe",
+   "website": "https://www.pjspub.com/about.php?loc=Oaks",
+   "plcb_name": "PJ'S OAKS LLC",
+   "lat": 40.1292498,
+   "lng": -75.4531135,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/p-j-whelihan-s-pub-restaurant-oaks-81482.jpg",
     "attribution": "Photo: P. J. Whelihan's Pub + Restaurant"
    },
    "deals": [

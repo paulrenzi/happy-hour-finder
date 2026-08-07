@@ -263,6 +263,44 @@
      }
     }
    ]
+  },
+  {
+   "id": "p-j-whelihan-s-conshohocken-69227",
+   "name": "P.J. Whelihan's",
+   "address": "200 RIDGE PK STE 110, CONSHOHOCKEN PA 19428-3702",
+   "zone_id": "blue_bell_plymouth_meeting",
+   "website": "https://locations.pjspub.com/pa/conshohocken/200-ridge-pike",
+   "plcb_name": "WEIS MARKETS INC",
+   "photo": {
+    "file": "img/venues/p-j-whelihan-s-conshohocken-69227.jpg",
+    "attribution": "Photo: P.J. Whelihan's"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://locations.pjspub.com/pa/conshohocken/200-ridge-pike",
+      "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
+     }
+    }
+   ]
   }
  ]
 }

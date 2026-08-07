@@ -323,7 +323,16 @@ def main():
         # OSM already placed this venue when the frontier was built, so the
         # geocoder has nothing to look up -- carry the coordinate across.
         site = sites.get(lid) or {}
-        if vid not in coords and site.get("lat"):
+        # A venue id is name + city, so two Santucci's in Philadelphia collide and
+        # seen_ids decides which one holds the bare slug. That can change between
+        # runs -- and then 'already cached' is a coordinate for the OTHER branch,
+        # several miles away, with nothing to show it moved. A cache entry this
+        # step owns is refreshed when the address it was looked up for is no
+        # longer this venue's; a hand-geocoded entry is still never touched.
+        held = coords.get(vid)
+        stale = (held or {}).get("matched_by") == "osm_site" \
+            and held.get("queried") != v["address"]
+        if (vid not in coords or stale) and site.get("lat"):
             coords[vid] = {"lat": site["lat"], "lng": site["lng"], "precision": "place",
                            "matched_by": "osm_site", "osm": site.get("osm"),
                            "queried": v["address"], "resolved": site.get("osm_name") or ""}

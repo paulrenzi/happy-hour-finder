@@ -297,6 +297,67 @@
    ]
   },
   {
+   "id": "limoncello-chester-springs",
+   "name": "Limoncello",
+   "address": "491-499 E UWCHLAN AVE, CHESTER SPRINGS PA 19425-2231",
+   "zone_id": "exton_downingtown",
+   "website": "https://www.limoncellorestaurant.com/chester-springs",
+   "plcb_name": "LIMONCELLO",
+   "lat": 40.0672209,
+   "lng": -75.6484842,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/limoncello-chester-springs.jpg",
+    "attribution": "Photo: Limoncello"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.limoncellorestaurant.com/happy-hour-menu",
+      "quote": "HAPPY HOUR MENU / Sunday-Friday 4:00-6:00PM"
+     }
+    }
+   ]
+  },
+  {
    "id": "al-pastor-exton",
    "name": "Al Pastor",
    "address": "560 WELLINGTON SQ, EXTON PA 19341",

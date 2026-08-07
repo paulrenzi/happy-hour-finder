@@ -1,4 +1,13 @@
 {
+ "9-prime-west-chester": {
+  "lat": 39.9601764,
+  "lng": -75.6043923,
+  "matched_by": "osm_site",
+  "osm": "way/152667912",
+  "precision": "place",
+  "queried": "9 N HIGH ST, WEST CHESTER PA 19382",
+  "resolved": "9 Prime"
+ },
  "al-pastor-exton": {
   "lat": 40.0615056,
   "lng": -75.6849077,
@@ -190,6 +199,15 @@
   "queried": "2320 OREGON AVE, PHILADELPHIA PA 19145",
   "resolved": "Chili's"
  },
+ "chili-s-philadelphia-109062": {
+  "lat": 40.0747533,
+  "lng": -75.1579181,
+  "matched_by": "osm_site",
+  "osm": "way/376479757",
+  "precision": "place",
+  "queried": "2451 CHELTENHAM AVE, Philadelphia PA 19150",
+  "resolved": "Chili's"
+ },
  "co-op-restaurant-bar-philadelphia": {
   "lat": 39.95428,
   "lng": -75.19011,
@@ -217,6 +235,15 @@
   "precision": "amenity",
   "queried": "800 Spring Mill Ave, Conshohocken PA 19428",
   "resolved": "Coyote Crossing, 800, Spring Mill Avenue, Spring Mill, Conshohocken, Montgomery County, Pennsylvania, 19428, United States"
+ },
+ "cuba-libre-philadelphia": {
+  "lat": 39.9495924,
+  "lng": -75.1439453,
+  "matched_by": "osm_site",
+  "osm": "node/12228634290",
+  "precision": "place",
+  "queried": "10-14-16 S SECOND ST, PHILADELPHIA PA 19106-2802",
+  "resolved": "Cuba Libre"
  },
  "dandan-ardmore": {
   "lat": 40.0087705,
@@ -290,6 +317,15 @@
   "queried": "1102 BALTIMORE PIKE SUITE 101, GLEN MILLS PA 19342-1013",
   "resolved": "Fava"
  },
+ "firebirds-wood-fired-grill-north-wales": {
+  "lat": 40.2077081,
+  "lng": -75.2265143,
+  "matched_by": "osm_site",
+  "osm": "way/771969377",
+  "precision": "place",
+  "queried": "GWYNEDD CROSSING SHOPPING CENTER  1220 BETHLEHEM PIKE, NORTH WALES PA 19454",
+  "resolved": "Firebirds Wood Fired Grill"
+ },
  "fireside-bar-and-grill-ambler": {
   "lat": 40.1583249,
   "lng": -75.2136911,
@@ -353,6 +389,15 @@
   "precision": "place",
   "queried": "1113-31 MARKET ST, PHILADELPHIA PA 19107-2901",
   "resolved": "Hard Rock Cafe"
+ },
+ "harper-s-garden-philadelphia": {
+  "lat": 39.9523182,
+  "lng": -75.169769,
+  "matched_by": "osm_site",
+  "osm": "node/13685667343",
+  "precision": "place",
+  "queried": "31 S 18TH ST, PHILADELPHIA PA 19103-4138",
+  "resolved": "Harper's Garden"
  },
  "hi-lo-taco-co-philadelphia": {
   "lat": 39.948863,
@@ -436,6 +481,33 @@
   "queried": "325 SIMPSON DR, CHESTER SPRINGS PA 19425-9550",
   "resolved": "Liberty Union Bar and Grill"
  },
+ "limerick-bowl-limerick": {
+  "lat": 40.239237,
+  "lng": -75.5427756,
+  "matched_by": "osm_site",
+  "osm": "way/720018583",
+  "precision": "place",
+  "queried": "653 W RIDGE PK, LIMERICK PA 19468-1419",
+  "resolved": "Limerick Bowl"
+ },
+ "limoncello-chester-springs": {
+  "lat": 40.0672209,
+  "lng": -75.6484842,
+  "matched_by": "osm_site",
+  "osm": "node/3261789829",
+  "precision": "place",
+  "queried": "491-499 E UWCHLAN AVE, CHESTER SPRINGS PA 19425-2231",
+  "resolved": "Limoncello"
+ },
+ "limoncello-west-chester": {
+  "lat": 39.9605561,
+  "lng": -75.6033322,
+  "matched_by": "osm_site",
+  "osm": "node/13965317226",
+  "precision": "place",
+  "queried": "5-7-9 N WALNUT ST, WEST CHESTER PA 19380-3138",
+  "resolved": "Limoncello"
+ },
  "lloyd-whiskey-bar-philadelpphia": {
   "lat": 39.9717762,
   "lng": -75.1262997,
@@ -490,6 +562,33 @@
   "queried": "4411-4413 MAIN ST, PHILADELPHIA PA 19127-1311",
   "resolved": "Mia Ragazza"
  },
+ "ocean-prime-philadelphia": {
+  "lat": 39.9501513,
+  "lng": -75.1659493,
+  "matched_by": "osm_site",
+  "osm": "node/3545078824",
+  "precision": "place",
+  "queried": "124-34 S 15TH ST 1500 SANSOM ST, PHILADELPHIA PA 19102-3002",
+  "resolved": "Ocean Prime"
+ },
+ "osteria-philadelphia": {
+  "lat": 39.964982,
+  "lng": -75.161107,
+  "matched_by": "osm_site",
+  "osm": "node/2040436590",
+  "precision": "place",
+  "queried": "630-640 N BROAD ST, PHILADELPHIA PA 19130-3420",
+  "resolved": "Osteria"
+ },
+ "oyster-house-philadelphia": {
+  "lat": 39.950302,
+  "lng": -75.166539,
+  "matched_by": "osm_site",
+  "osm": "node/8127686617",
+  "precision": "place",
+  "queried": "8500 ESSINGTON AVE 2ND FL B&C CONNECTOR SPACE #BC13, PHILADELPHIA PA 19153-7027",
+  "resolved": "Oyster House"
+ },
  "p-f-chang-s-warrington": {
   "lat": 40.2320936,
   "lng": -75.1368482,
@@ -535,6 +634,15 @@
   "queried": "180 MILL RD, OAKS PA 19456-6503",
   "resolved": "P. J. Whelihan's Pub + Restaurant"
  },
+ "p-j-whelihan-s-pub-restaurant-oaks-81482": {
+  "lat": 40.1292498,
+  "lng": -75.4531135,
+  "matched_by": "osm_site",
+  "osm": "way/351535796",
+  "precision": "place",
+  "queried": "180B MILL RD, OAKS PA 19456",
+  "resolved": "P. J. Whelihan's Pub + Restaurant"
+ },
  "p-j-whelihan-s-west-chester": {
   "lat": 39.903188,
   "lng": -75.5643383,
@@ -571,6 +679,15 @@
   "queried": "114-124 S 13TH ST, PHILADELPHIA PA 19107-4528",
   "resolved": "Pearl & Mary"
  },
+ "percy-philadelphia": {
+  "lat": 39.9753997,
+  "lng": -75.1344358,
+  "matched_by": "osm_site",
+  "osm": "node/12941711389",
+  "precision": "place",
+  "queried": "1700 N FRONT ST, PHILADELPHIA PA 19122-3261",
+  "resolved": "Percy"
+ },
  "pier-bar-philadelphia": {
   "lat": 39.9674824,
   "lng": -75.1711606,
@@ -579,6 +696,15 @@
   "precision": "place",
   "queried": "2025 FAIRMOUNT AVE, PHILADELPHIA PA 19130-2612",
   "resolved": "Pier Bar"
+ },
+ "pietro-s-pizzeria-radnor": {
+  "lat": 40.041703,
+  "lng": -75.3636776,
+  "matched_by": "osm_site",
+  "osm": "node/11137175405",
+  "precision": "place",
+  "queried": "236 N RADNOR CHESTER RD, RADNOR PA 19085-5106",
+  "resolved": "Pietro's Pizzeria"
  },
  "pietro-s-prime-west-chester": {
   "lat": 39.9589239,
@@ -643,6 +769,15 @@
   "queried": "240 WINDGATE DR, CHESTER SPRINGS PA 19425",
   "resolved": "Revival Pizza Pub"
  },
+ "rosemary-ridley-park": {
+  "lat": 39.8795493,
+  "lng": -75.3228839,
+  "matched_by": "osm_site",
+  "osm": "node/5262891099",
+  "precision": "place",
+  "queried": "25 E HINKLEY AVE, RIDLEY PARK PA 19078-2101",
+  "resolved": "Rosemary"
+ },
  "royal-boucherie-philadelphia": {
   "lat": 39.9487153,
   "lng": -75.1441338,
@@ -658,7 +793,7 @@
   "matched_by": "osm_site",
   "osm": "node/13516932239",
   "precision": "place",
-  "queried": "3700 LANCASTER AVE, PHILADELPHIA PA 19104",
+  "queried": "655-659 N BROAD ST, PHILADELPHIA PA 19123-2418",
   "resolved": "Santucci's Original Square Pizza"
  },
  "se-or-salsa-abington": {
@@ -733,6 +868,33 @@
   "queried": "207 W LANCASTER AVE, DOWNINGTOWN PA 19335-2511",
   "resolved": "Station Taproom"
  },
+ "teikoku-newtown-square": {
+  "lat": 39.9714758,
+  "lng": -75.4699749,
+  "matched_by": "osm_site",
+  "osm": "node/8344642586",
+  "precision": "place",
+  "queried": "5240 WEST CHESTER PK, NEWTOWN SQUARE PA 19073-1119",
+  "resolved": "Teikoku"
+ },
+ "the-cheesecake-factory-philadelphia": {
+  "lat": 39.9494459,
+  "lng": -75.1656902,
+  "matched_by": "osm_site",
+  "osm": "node/6221547185",
+  "precision": "place",
+  "queried": "1426-30 WALNUT ST, PHILADELPHIA PA 19102-3804",
+  "resolved": "The Cheesecake Factory"
+ },
+ "the-crown-tavern-glen-mills": {
+  "lat": 39.8620259,
+  "lng": -75.5435805,
+  "matched_by": "osm_site",
+  "osm": "way/686996139",
+  "precision": "place",
+  "queried": "451 WILMINGTON-WEST CHESTER PK, GLEN MILLS PA 19342-9802",
+  "resolved": "The Crown Tavern"
+ },
  "the-fairmount-tavern-philadelphia": {
   "lat": 39.9669375,
   "lng": -75.1655119,
@@ -777,6 +939,24 @@
   "precision": "place",
   "queried": "2201 CHRISTIAN ST, PHILADELPHIA PA 19146-1718",
   "resolved": "The SideCar Bar & Grille"
+ },
+ "the-stone-tavern-west-chester": {
+  "lat": 39.968793,
+  "lng": -75.5579416,
+  "matched_by": "osm_site",
+  "osm": "node/8344642593",
+  "precision": "place",
+  "queried": "1227 W CHESTER PK, WEST CHESTER PA 19380-6874",
+  "resolved": "The Stone Tavern"
+ },
+ "the-stray-dog-tavern-skippack": {
+  "lat": 40.2230637,
+  "lng": -75.3972861,
+  "matched_by": "osm_site",
+  "osm": "node/12362359305",
+  "precision": "place",
+  "queried": "3911 SKIPPACK PIKE, SKIPPACK PA 19474",
+  "resolved": "The Stray Dog Tavern"
  },
  "the-wilder-philadelphia": {
   "lat": 39.951443,
@@ -825,6 +1005,15 @@
   "queried": "1137 SPRUCE ST, PHILADELPHIA PA 19107-6738",
   "resolved": "Tria"
  },
+ "troubles-end-brewing-collegeville": {
+  "lat": 40.1852277,
+  "lng": -75.452495,
+  "matched_by": "osm_site",
+  "osm": "way/988327880",
+  "precision": "place",
+  "queried": "36 W 3RD AVE, COLLEGEVILLE PA 19426-3605",
+  "resolved": "Troubles End Brewing"
+ },
  "veda-philadelphia": {
   "lat": 39.9518636,
   "lng": -75.1729105,
@@ -833,6 +1022,15 @@
   "precision": "place",
   "queried": "1920 CHESTNUT ST, PHILADELPHIA PA 19103-4634",
   "resolved": "Veda"
+ },
+ "vedge-philadelphia": {
+  "lat": 39.9479023,
+  "lng": -75.1613868,
+  "matched_by": "osm_site",
+  "osm": "node/4236656391",
+  "precision": "place",
+  "queried": "1221-23 LOCUST ST, PHILADELPHIA PA 19107-5414",
+  "resolved": "Vedge"
  },
  "victory-brewing-company-downingtown": {
   "lat": 40.0051212,
@@ -861,6 +1059,15 @@
   "queried": "693 E LINCOLN HWY, EXTON PA 19341-2809",
   "resolved": "VK Brewing Co. & Eatery"
  },
+ "w-tavern-jenkintown": {
+  "lat": 40.1455117,
+  "lng": -75.1162614,
+  "matched_by": "osm_site",
+  "osm": "way/543594020",
+  "precision": "place",
+  "queried": "208 - 210 YORK RD, JENKINTOWN PA 19146",
+  "resolved": "W Tavern"
+ },
  "well-crafted-beer-co-ste-b100-lansdale": {
   "lat": 40.2437936,
   "lng": -75.2865272,
@@ -887,6 +1094,15 @@
   "precision": "place",
   "queried": "TOWN CENTER AT WAYNE 200 W LANCASTER AVE, WAYNE PA 19087-4046",
   "resolved": "White Dog Cafe"
+ },
+ "will-s-bill-s-brewery-berwyn": {
+  "lat": 40.0697312,
+  "lng": -75.4443797,
+  "matched_by": "osm_site",
+  "osm": "way/1481640540",
+  "precision": "place",
+  "queried": "324 W SWEDESFORD RD, BERWYN PA 19312-1165",
+  "resolved": "Will's + Bill's Brewery"
  },
  "wills-bills-berwyn": {
   "lat": 40.069716,

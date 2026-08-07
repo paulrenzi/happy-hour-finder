@@ -1,0 +1,48 @@
+{
+ "zone_id": "limerick_royersford",
+ "name": "Limerick / Royersford",
+ "built_at": "2026-08-06",
+ "venues": [
+  {
+   "id": "limerick-bowl-limerick",
+   "name": "Limerick Bowl",
+   "address": "653 W RIDGE PK, LIMERICK PA 19468-1419",
+   "zone_id": "limerick_royersford",
+   "website": "https://www.bowlero.com/location/limerick-bowl",
+   "plcb_name": "BOWLERO LIMERICK LLC",
+   "lat": 40.239237,
+   "lng": -75.5427756,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/limerick-bowl-limerick.jpg",
+    "attribution": "Photo: Limerick Bowl"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 6,
+       "start": "11:00",
+       "end": "15:00"
+      },
+      {
+       "dow": 7,
+       "start": "11:00",
+       "end": "15:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.bowlero.com/location/limerick-bowl",
+      "quote": "Family Unlimited Food & Drink Specials / Saturday & Sunday | 11AM \u2013 3PM / Get two shareable apps for one low per-person price, plus discounted Craft Lemonades and Dirty Sodas."
+     }
+    }
+   ]
+  }
+ ]
+}

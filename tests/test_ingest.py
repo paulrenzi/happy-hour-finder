@@ -13,13 +13,18 @@ import json
 import os
 import sys
 import unittest
+import unittest.mock
+import urllib.error
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(REPO, "ingest"))
 
 from build_bundles import decay  # noqa: E402
-from crawl_sites import candidate_links, quotes, visible_text  # noqa: E402
-from discover_sites import plcb_key, site_of, street_core  # noqa: E402
+import crawl_sites  # noqa: E402
+from crawl_sites import candidate_links, quotes, registrable, visible_text  # noqa: E402
+from discover_sites import collapse_shared, name_core, plcb_key, site_of, street_core  # noqa: E402
+from guess_sites import candidates  # noqa: E402
+from guess_sites import verify as guess_verify  # noqa: E402
 from extract_deals import days_in, items_in, window_in, windows_from  # noqa: E402
 from extract_prices_llm import verify  # noqa: E402
 from fetch_og_images import asset_allowed, css_images, inline_images, og_image  # noqa: E402
@@ -244,6 +249,37 @@ class Zones(unittest.TestCase):
                                 f"{z['id']}: {zp} is not a Philadelphia ZIP")
 
 
+def _entry(name, osm_name, osm, site="https://x.test/"):
+    return {"name": name, "osm_name": osm_name, "osm": osm, "website": site,
+            "zone_id": "king_of_prussia"}
+
+
+class SharedAddressTenants(unittest.TestCase):
+    """A mall, a plaza and an airport terminal are one street address holding
+    many businesses, so the address key returns the wrong tenant there."""
+
+    def test_a_neighbours_site_is_dropped_when_several_licensees_share_one_row(self):
+        out = {"a": _entry("SHAKE SHACK", "Shake Shack", "node/1"),
+               "b": _entry("YARD HOUSE 8371", "Shake Shack", "node/1"),
+               "c": _entry("EATALY KOP LLC", "Shake Shack", "node/1")}
+        dropped = collapse_shared(out)
+        self.assertEqual(sorted(out), ["a"])
+        self.assertEqual(len(dropped), 2)
+
+    def test_a_row_claimed_by_one_licensee_is_never_dropped(self):
+        # The corporate-shell case: 300-E-6, INC. is Coyote Crossing, and a
+        # name mismatch alone is not evidence of a mis-join.
+        out = {"a": _entry("300-E-6, INC.", "Coyote Crossing", "node/9")}
+        self.assertEqual(collapse_shared(out), [])
+        self.assertIn("a", out)
+
+    def test_two_licences_on_one_real_venue_both_survive(self):
+        out = {"a": _entry("NEW RIDGE BREWING CO.", "New Ridge Brewing", "way/4"),
+               "b": _entry("NEW RIDGE BREWING CO", "New Ridge Brewing", "way/4")}
+        self.assertEqual(collapse_shared(out), [])
+        self.assertEqual(sorted(out), ["a", "b"])
+
+
 class SiteDiscovery(unittest.TestCase):
     """The OSM join is on address, and a bad address key fails silently -- it
     just yields no match, which is indistinguishable from 'OSM doesn't know it'."""
@@ -281,6 +317,52 @@ class SiteDiscovery(unittest.TestCase):
         self.assertIsNone(site_of({"website": "see facebook"}), "not a fetchable URL")
         self.assertIsNone(site_of({"phone": "+1 610-555-0100"}))
 
+    def test_a_chain_brand_url_answers_only_when_nothing_else_does(self):
+        # brand:website is the chain's page, not this location's.
+        self.assertEqual(site_of({"brand:website": "https://chain.com"}),
+                         "https://chain.com")
+        self.assertEqual(
+            site_of({"website": "https://this-one.com", "brand:website": "https://chain.com"}),
+            "https://this-one.com")
+
+    def test_the_name_key_strips_the_corporate_and_category_noise(self):
+        # 'ALEKSANDAR LLC' and OSM's 'Restaurant Aleksandar' are one venue.
+        self.assertEqual(name_core("ALEKSANDAR LLC"), name_core("Restaurant Aleksandar"))
+        self.assertEqual(name_core("THE GREAT AMERICAN PUB"), name_core("Great American Pub"))
+
+    def test_the_name_key_does_not_collapse_two_different_bars(self):
+        self.assertNotEqual(name_core("Dawson Street Pub"), name_core("Cresson Inn"))
+        # ...but it DOES collapse the two Iron Hills, which is why the join may
+        # only use it when the name is unique within one locality on both sides.
+        self.assertEqual(name_core("IRON HILL BREWERY"), name_core("Iron Hill Brewery"))
+
+
+class GuessedSites(unittest.TestCase):
+    """A guessed domain is attached to a real licensee, so the proof gate is the
+    only thing standing between a hunch and a wrong website on a published card."""
+
+    def test_a_shell_or_bare_address_yields_no_guess(self):
+        self.assertEqual(candidates("4326 MAIN STREET HOLDCO, LLC"), [])
+        self.assertEqual(candidates("THE PUB"), [])
+
+    def test_a_real_name_yields_its_run_together_domain(self):
+        self.assertIn("dawsonstreetpub", candidates("DAWSON STREET PUB"))
+        self.assertIn("cressoninn", candidates("CRESSON-INN"))
+        # The corporate tail is not part of the domain.
+        self.assertIn("newridgebrewing", candidates("NEW RIDGE BREWING CO."))
+
+    def test_a_page_must_both_name_and_place_the_venue(self):
+        page = "Cresson Inn -- your neighborhood bar in Philadelphia since 1933"
+        self.assertTrue(guess_verify(page, ["cresson"], ["philadelphia"]))
+        # Names it, but places it somewhere else entirely.
+        self.assertIsNone(guess_verify(page, ["cresson"], ["phoenixville"]))
+        # Places it, but is a different business.
+        self.assertIsNone(guess_verify(page, ["dawson", "street"], ["philadelphia"]))
+
+    def test_a_parked_page_echoing_its_own_domain_is_refused(self):
+        parked = "cressoninn.com -- this domain is for sale. Philadelphia. Cresson Inn."
+        self.assertIsNone(guess_verify(parked, ["cresson"], ["philadelphia"]))
+
 
 class CrawlExtraction(unittest.TestCase):
     """What the crawler keeps becomes the quoted evidence under a published
@@ -307,9 +389,76 @@ class CrawlExtraction(unittest.TestCase):
     def test_only_same_host_pages_are_followed(self):
         html = ('<a href="/happy-hour">Happy Hour</a>'
                 '<a href="https://facebook.com/specials">Specials</a>'
-                '<a href="/menu.pdf">Menu</a>')
+                '<a href="/menu-photo.jpg">Menu</a>')
         links = candidate_links(html, "https://bar.example/")
         self.assertEqual(links, ["https://bar.example/happy-hour"])
+
+    def test_a_chains_specials_page_on_a_sibling_host_is_followed(self):
+        # locations.pjspub.com holds the location; www.pjspub.com holds the
+        # deals. An exact-netloc test dropped exactly the page we want.
+        html = ('<a href="https://www.pjspub.com/specials">Specials</a>'
+                '<a href="https://facebook.com/pjs-specials">Follow us</a>')
+        links = candidate_links(
+            html, "https://locations.pjspub.com/pa/conshohocken/200-ridge-pike")
+        self.assertEqual(links, ["https://www.pjspub.com/specials"])
+
+    def test_robots_is_fetched_under_a_deadline(self):
+        # RobotFileParser.read() passes no timeout, so a host that accepts the
+        # connection and never answers stalls the run forever -- one did, for
+        # ten minutes, and from outside it looked exactly like slow progress.
+        # What is pinned here is that a deadline is passed at all.
+        seen = {}
+
+        def fake_urlopen(req, timeout=None):
+            seen["timeout"] = timeout
+            raise OSError("timed out")
+
+        with unittest.mock.patch("crawl_sites.urllib.request.urlopen", fake_urlopen):
+            self.assertIsNone(crawl_sites.robots_for("https://slow.example", {}))
+        self.assertEqual(seen["timeout"], crawl_sites.TIMEOUT)
+
+    def test_a_robots_that_forbids_everyone_is_still_obeyed(self):
+        # An unreachable robots.txt is not a ban, but a 403 on it is: that is
+        # the host answering, and read() treated it that way too.
+        def fake_urlopen(req, timeout=None):
+            raise urllib.error.HTTPError(req.full_url, 403, "no", {}, None)
+
+        with unittest.mock.patch("crawl_sites.urllib.request.urlopen", fake_urlopen):
+            self.assertFalse(crawl_sites.allowed("https://walled.example/menu", {}))
+
+    def test_a_pdf_happy_hour_menu_is_a_candidate_link(self):
+        # Some venues publish the deal ONLY as a PDF; excluding it by extension
+        # dropped the one page that named their happy hour.
+        html = ('<a href="/menus/happy-hour.pdf">Happy Hour Menu</a>'
+                '<a href="/logo-drink.png">drink</a>')
+        links = candidate_links(html, "https://bar.example/")
+        self.assertIn("https://bar.example/menus/happy-hour.pdf", links)
+        self.assertNotIn("https://bar.example/logo-drink.png", links)
+
+    def test_a_scanned_pdf_yields_no_text_rather_than_a_guess(self):
+        # No extractable text must read as 'published nothing here', never as an
+        # invitation to infer a deal from a filename.
+        self.assertEqual(crawl_sites.pdf_text(b"not a pdf at all"), "")
+
+    def test_sitemap_finds_a_happy_hour_page_nothing_links_to(self):
+        body = ("<urlset><url><loc>https://bar.example/about</loc></url>"
+                "<url><loc>https://bar.example/happy-hour</loc></url></urlset>")
+
+        class R:
+            status_code = 200
+            headers = {"content-type": "application/xml"}
+            text = body
+
+        session = unittest.mock.Mock()
+        session.get.return_value = R()
+        with unittest.mock.patch.object(crawl_sites, "allowed", lambda u, c: True):
+            found = crawl_sites.sitemap_links(session, "https://bar.example/", {})
+        self.assertEqual(found, ["https://bar.example/happy-hour"])
+
+    def test_registrable_domain_ignores_subdomains_and_ports(self):
+        self.assertEqual(registrable("locations.pjspub.com"), "pjspub.com")
+        self.assertEqual(registrable("www.pjspub.com:443"), "pjspub.com")
+        self.assertEqual(registrable("pjspub.com"), "pjspub.com")
 
 
 class PhotoPaths(unittest.TestCase):
@@ -333,6 +482,24 @@ class DealExtraction(unittest.TestCase):
     Rule 2 is that we never render a claim the source didn't make, and every
     test here is a way a parser invents one.
     """
+
+    def test_a_venue_id_never_keeps_another_branchs_coordinate(self):
+        # A venue id is name + city, so two Santucci's in Philadelphia collide
+        # and which one holds the bare slug can change between runs. The cache
+        # write was guarded on absence alone, so the slug changed hands while
+        # the coordinate did not -- a pin several miles from the bar, with
+        # nothing on the page to show it. Every osm_site coordinate must name
+        # the address of the venue currently holding the id.
+        coords = json.load(open(os.path.join(REPO, "data", "venue_coords.json"),
+                                encoding="utf-8"))
+        extracted = json.load(open(os.path.join(REPO, "data", "deals_extracted.json"),
+                                   encoding="utf-8"))
+        for v in extracted["venues"]:
+            c = coords.get(v["id"])
+            if c and c.get("matched_by") == "osm_site":
+                self.assertEqual(
+                    c["queried"], v["address"],
+                    f"{v['id']}: coordinate was looked up for a different address")
 
     def test_a_day_range_expands_to_every_day_in_it(self):
         self.assertEqual(days_in("Monday - Friday"), {1, 2, 3, 4, 5})

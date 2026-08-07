@@ -25,7 +25,9 @@ import os
 import re
 import sys
 import time
+import urllib.error
 import urllib.parse
+import urllib.request
 import urllib.robotparser
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -89,11 +91,28 @@ def quotes(text):
 
 
 def robots_for(base, cache):
+    """The host's robots.txt, fetched under a deadline.
+
+    RobotFileParser.read() calls urlopen with no timeout at all, so a host that
+    accepts the connection and then never answers does not stall for TIMEOUT
+    seconds -- it stalls forever, and it takes the whole run with it. One such
+    host held a 64-venue crawl for ten minutes with no output, which from the
+    outside is indistinguishable from slow progress. So fetch it here, bounded,
+    and hand the lines to the parser. The 401/403 = 'stay out entirely' rule
+    read() applies is kept, because that is a real answer, not a failure.
+    """
     if base not in cache:
         rp = urllib.robotparser.RobotFileParser()
         rp.set_url(urllib.parse.urljoin(base, "/robots.txt"))
         try:
-            rp.read()
+            req = urllib.request.Request(rp.url, headers={"User-Agent": UA})
+            with urllib.request.urlopen(req, timeout=TIMEOUT) as fh:
+                rp.parse(fh.read(200_000).decode("utf-8", "replace").splitlines())
+        except urllib.error.HTTPError as e:
+            if e.code in (401, 403):
+                rp.disallow_all = True
+            else:
+                rp = None
         except Exception:  # noqa: BLE001 -- an unreadable robots.txt is not a ban
             rp = None
         cache[base] = rp
@@ -106,10 +125,36 @@ def allowed(url, cache):
     return rp.can_fetch(UA, url) if rp else True
 
 
+def pdf_text(blob):
+    """The text of a PDF menu, or '' if it cannot be read.
+
+    A scanned-image menu yields nothing here and that is the correct answer:
+    no text means no quote means no deal, rather than a guess about pixels.
+    """
+    try:
+        import io
+
+        import pypdf
+
+        reader = pypdf.PdfReader(io.BytesIO(blob))
+        # A drinks menu is one or two pages; a 60-page franchise document is not
+        # this venue's happy hour and is not worth the parse.
+        return "\n".join(p.extract_text() or "" for p in reader.pages[:6])
+    except Exception:  # noqa: BLE001 -- an unreadable menu is not a crawl failure
+        return ""
+
+
 def get(session, url):
     r = session.get(url, timeout=TIMEOUT, headers={"User-Agent": UA},
                     allow_redirects=True)
     ctype = r.headers.get("content-type", "")
+    # A venue that publishes its happy hour as a PDF has published it. The text
+    # is the venue speaking exactly as much as its HTML is, so it is read the
+    # same way -- the extractor never learns which one a quote came from.
+    if r.status_code == 200 and "pdf" in ctype.lower():
+        text = pdf_text(r.content)
+        return ("<pre>" + html_mod.escape(text) + "</pre>", None) if text \
+            else (None, "pdf, no extractable text")
     if r.status_code != 200 or "html" not in ctype:
         return None, f"{r.status_code} {ctype.split(';')[0] or '?'}"
     # requests falls back to latin-1 when a page declares no charset, which
@@ -119,9 +164,30 @@ def get(session, url):
     return r.text[:600_000], None
 
 
+def registrable(netloc):
+    """'locations.pjspub.com' and 'www.pjspub.com' -> 'pjspub.com'.
+
+    Two labels is the right approximation for this corpus: it is US bars and
+    restaurants, so the multi-part public suffixes this would get wrong
+    (.co.uk, .com.au) do not occur, and treating one as registrable would at
+    worst let a link through to be filtered on its words instead.
+    """
+    return ".".join(netloc.lower().split(":")[0].split(".")[-2:])
+
+
 def candidate_links(html, page_url):
-    """Same-host links whose text or href suggests a menu or specials page."""
-    host = urllib.parse.urlsplit(page_url).netloc
+    """Links whose text or href suggests a menu or specials page.
+
+    Sibling hosts on the same registrable domain count as the same site. A
+    chain puts each location on locations.<brand>.com but keeps the specials on
+    www.<brand>.com, so an exact-netloc test threw away exactly the page we are
+    looking for: fetching locations.pjspub.com/pa/conshohocken/200-ridge-pike
+    yielded no candidates at all while dropping /specials, /drinks-menu and
+    /food-menu as foreign. Those locations returned one quote where their
+    same-host siblings returned four. The domain is still the venue's own, so
+    this widens the host test without loosening what counts as a deal page.
+    """
+    host = registrable(urllib.parse.urlsplit(page_url).netloc)
     found, seen = [], set()
     for m in re.finditer(r'<a\s[^>]*href=["\']([^"\']+)["\'][^>]*>(.{0,120}?)</a>',
                          html, re.I | re.S):
@@ -129,14 +195,56 @@ def candidate_links(html, page_url):
         if not LINK_WORDS.search(href) and not LINK_WORDS.search(label):
             continue
         full = urllib.parse.urljoin(page_url, href).split("#")[0]
-        if urllib.parse.urlsplit(full).netloc != host or full in seen:
+        if registrable(urllib.parse.urlsplit(full).netloc) != host or full in seen:
             continue
-        if re.search(r"\.(pdf|jpg|png|gif|zip|doc|docx)$", full, re.I):
+        # .pdf is deliberately absent: a link labelled 'Happy Hour Menu' that
+        # points at a PDF is the deal itself, and dropping it by extension threw
+        # away the only page some venues publish it on.
+        if re.search(r"\.(jpg|png|gif|zip|doc|docx)$", full, re.I):
             continue
         seen.add(full)
         # A link that says 'happy hour' outranks one that merely says 'menu'.
         found.append((0 if re.search(r"happy.?hour|special", full + label, re.I) else 1, full))
     return [u for _, u in sorted(found)]
+
+
+def sitemap_links(session, page_url, robots):
+    """Deal-page URLs from the host's sitemap, for sites that link to none.
+
+    A page can be published and unlinked: a theme's nav holds Menu / About /
+    Contact while /happy-hour exists and is reachable only from search. The
+    sitemap is the venue's own index of what it published, so consulting it
+    finds those pages without guessing at URLs. Only used when the homepage
+    offered nothing, because when it does offer links they are better ordered.
+    """
+    base = "{0.scheme}://{0.netloc}".format(urllib.parse.urlsplit(page_url))
+    out, seen = [], set()
+    queue, budget = [base + "/sitemap.xml"], 3
+    while queue and budget:
+        url = queue.pop(0)
+        if url in seen or not allowed(url, robots):
+            continue
+        seen.add(url)
+        budget -= 1
+        try:
+            r = session.get(url, timeout=TIMEOUT, headers={"User-Agent": UA})
+            if r.status_code != 200 or "xml" not in r.headers.get("content-type", ""):
+                continue
+            body = r.text[:2_000_000]
+        except Exception:  # noqa: BLE001 -- no sitemap is the common case
+            continue
+        locs = [html_mod.unescape(m.group(1))
+                for m in re.finditer(r"<loc>\s*([^<\s]+)\s*</loc>", body, re.I)]
+        # An index of sitemaps points at more sitemaps; follow only the one most
+        # likely to hold pages, never the whole tree of a 10,000-URL chain site.
+        if "<sitemapindex" in body[:2000].lower():
+            queue += [u for u in locs if re.search(r"page|post", u, re.I)][:2] or locs[:1]
+            continue
+        for u in locs:
+            if re.search(r"happy.?hour|special", u, re.I) and u not in seen:
+                seen.add(u)
+                out.append(u)
+    return out
 
 
 def crawl_one(session, venue, robots):
@@ -164,6 +272,8 @@ def crawl_one(session, venue, robots):
             hits.append({"url": url, "quote": q})
         if fetched == 1:
             queue = candidate_links(html, url)[: PAGE_CAP - 1]
+            if not queue:
+                queue = sitemap_links(session, url, robots)[: PAGE_CAP - 1]
     return pages, hits
 
 
@@ -172,6 +282,10 @@ def main():
     ap.add_argument("--limit", type=int, default=0, help="stop after N venues")
     ap.add_argument("--zone", help="only venues in this zone id")
     ap.add_argument("--recrawl", action="store_true", help="revisit venues already recorded")
+    # A fix to candidate_links only changes the answer for the sites it applies
+    # to, and recrawling all 800 to reach the 66 on a sibling host would cost
+    # hours of somebody else's bandwidth for pages we already hold.
+    ap.add_argument("--match", help="only venues whose website matches this regex")
     args = ap.parse_args()
 
     import requests
@@ -183,6 +297,7 @@ def main():
 
     todo = [(lid, v) for lid, v in sorted(sites.items())
             if (not args.zone or v["zone_id"] == args.zone)
+            and (not args.match or re.search(args.match, v["website"], re.I))
             and (args.recrawl or lid not in out)]
     if args.limit:
         todo = todo[: args.limit]

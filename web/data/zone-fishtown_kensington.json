@@ -4,6 +4,47 @@
  "built_at": "2026-08-06",
  "venues": [
   {
+   "id": "percy-philadelphia",
+   "name": "Percy",
+   "address": "1700 N FRONT ST, PHILADELPHIA PA 19122-3261",
+   "zone_id": "fishtown_kensington",
+   "website": "https://percyphl.com/",
+   "plcb_name": "MECHA NOODLE BAR FISHTOWN LLC",
+   "lat": 39.9753997,
+   "lng": -75.1344358,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/percy-philadelphia.jpg",
+    "attribution": "Photo: Percy"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://percyphl.com/",
+      "quote": "HAPPY HOUR / THURS\u2013FRI\u2013SAT / 3PM\u20136PM"
+     }
+    }
+   ]
+  },
+  {
    "id": "lloyd-whiskey-bar-philadelpphia",
    "name": "Lloyd Whiskey Bar",
    "address": "529 E GIRARD AVE, PHILADELPPHIA PA 19125-3311",

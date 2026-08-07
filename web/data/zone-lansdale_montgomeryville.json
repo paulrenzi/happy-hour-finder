@@ -58,6 +58,62 @@
      }
     }
    ]
+  },
+  {
+   "id": "firebirds-wood-fired-grill-north-wales",
+   "name": "Firebirds Wood Fired Grill",
+   "address": "GWYNEDD CROSSING SHOPPING CENTER  1220 BETHLEHEM PIKE, NORTH WALES PA 19454",
+   "zone_id": "lansdale_montgomeryville",
+   "website": "https://north-wales.firebirdsrestaurants.com/",
+   "plcb_name": "FIREBIRDS OF NORTH WALES LLC",
+   "lat": 40.2077081,
+   "lng": -75.2265143,
+   "geo_precision": "place",
+   "photo": {
+    "file": "img/venues/firebirds-wood-fired-grill-north-wales.jpg",
+    "attribution": "Photo: Firebirds Wood Fired Grill"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "14:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "14:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "14:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "14:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "14:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://north-wales.firebirdsrestaurants.com/",
+      "quote": "Happy Hour / Join us for Bar Bites and Drink Specials in the FIREBAR \u00ae and on the Patio every Monday-Friday from 2PM-6PM"
+     }
+    }
+   ]
   }
  ]
 }

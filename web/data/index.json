@@ -4,8 +4,8 @@
   {
    "id": "abington_jenkintown",
    "name": "Abington / Jenkintown",
-   "venues": 1,
-   "deals": 1
+   "venues": 3,
+   "deals": 3
   },
   {
    "id": "ambler_upper_dublin",
@@ -16,20 +16,20 @@
   {
    "id": "ardmore_bryn_mawr",
    "name": "Ardmore / Bryn Mawr",
-   "venues": 4,
-   "deals": 4
-  },
-  {
-   "id": "blue_bell_plymouth_meeting",
-   "name": "Blue Bell / Plymouth Meeting",
    "venues": 5,
    "deals": 5
   },
   {
+   "id": "blue_bell_plymouth_meeting",
+   "name": "Blue Bell / Plymouth Meeting",
+   "venues": 6,
+   "deals": 6
+  },
+  {
    "id": "center_city",
    "name": "Philadelphia \u2014 Center City",
-   "venues": 33,
-   "deals": 33
+   "venues": 41,
+   "deals": 41
   },
   {
    "id": "chester_chichester",
@@ -40,8 +40,8 @@
   {
    "id": "collegeville_trappe",
    "name": "Collegeville / Trappe",
-   "venues": 1,
-   "deals": 1
+   "venues": 4,
+   "deals": 4
   },
   {
    "id": "conshohocken",
@@ -52,38 +52,44 @@
   {
    "id": "exton_downingtown",
    "name": "Exton / Downingtown",
-   "venues": 6,
-   "deals": 6
+   "venues": 7,
+   "deals": 7
   },
   {
    "id": "fishtown_kensington",
    "name": "Philadelphia \u2014 Fishtown / Kensington",
-   "venues": 2,
-   "deals": 2
+   "venues": 3,
+   "deals": 3
   },
   {
    "id": "glen_mills_chadds_ford",
    "name": "Glen Mills / Chadds Ford",
-   "venues": 4,
-   "deals": 4
+   "venues": 5,
+   "deals": 5
   },
   {
    "id": "king_of_prussia",
    "name": "King of Prussia",
-   "venues": 1,
-   "deals": 1
+   "venues": 3,
+   "deals": 3
   },
   {
    "id": "lansdale_montgomeryville",
    "name": "Lansdale / Montgomeryville",
+   "venues": 2,
+   "deals": 2
+  },
+  {
+   "id": "limerick_royersford",
+   "name": "Limerick / Royersford",
    "venues": 1,
    "deals": 1
   },
   {
    "id": "malvern_great_valley",
    "name": "Malvern / Great Valley",
-   "venues": 5,
-   "deals": 5
+   "venues": 6,
+   "deals": 6
   },
   {
    "id": "manayunk",
@@ -122,6 +128,12 @@
    "deals": 1
   },
   {
+   "id": "ridley_tinicum",
+   "name": "Ridley / Tinicum",
+   "venues": 1,
+   "deals": 1
+  },
+  {
    "id": "souderton_harleysville",
    "name": "Souderton / Harleysville",
    "venues": 1,
@@ -148,14 +160,20 @@
   {
    "id": "wayne_radnor",
    "name": "Wayne / Radnor",
-   "venues": 7,
-   "deals": 7
+   "venues": 10,
+   "deals": 10
   },
   {
    "id": "west_chester",
    "name": "West Chester",
-   "venues": 4,
-   "deals": 4
+   "venues": 7,
+   "deals": 7
+  },
+  {
+   "id": "west_philly",
+   "name": "Philadelphia \u2014 Overbrook / Southwest",
+   "venues": 1,
+   "deals": 1
   }
  ]
 }
