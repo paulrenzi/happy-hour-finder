@@ -4,6 +4,58 @@
  "built_at": "2026-08-06",
  "venues": [
   {
+   "id": "wissahickon-brewing-co-philadelphia",
+   "name": "Wissahickon Brewing Co",
+   "address": "1526 N AMERICAN ST, PHILADELPHIA PA 19122-3811",
+   "zone_id": "fishtown_kensington",
+   "website": "https://www.wissahickonbrew.com/",
+   "plcb_name": "WISSAHICKON BREWING COMPANY OLDE KENSINGTON",
+   "lat": 39.9745786,
+   "lng": -75.1400343,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.wissahickonbrew.com/kensington/",
+      "quote": "DINNER & HAPPY HOUR / Mon-Fri, 4-6pm / smash burger, fries, and a beer"
+     }
+    }
+   ]
+  },
+  {
    "id": "percy-philadelphia",
    "name": "Percy",
    "address": "1700 N FRONT ST, PHILADELPHIA PA 19122-3261",
@@ -40,6 +92,63 @@
       "kind": "venue_site",
       "url": "https://percyphl.com/",
       "quote": "HAPPY HOUR / THURS\u2013FRI\u2013SAT / 3PM\u20136PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "frankford-hall-philadelphia",
+   "name": "Frankford Hall",
+   "address": "1210-22 FRANKFORD AVE, PHILADELPHIA PA 19125-3906",
+   "zone_id": "fishtown_kensington",
+   "website": "https://frankfordhall.com/",
+   "plcb_name": "BIERFISH RESTAURANT PARTNERS LP",
+   "lat": 39.969485,
+   "lng": -75.134683,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "20:00",
+       "end": "22:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://frankfordhall.com/",
+      "quote": "Happy Hour / Monday-Friday 4-6pm / Sunday 8-10pm"
      }
     }
    ]
@@ -157,6 +266,64 @@
       "kind": "venue_site",
       "url": "https://www.cedarpointbarandkitchen.com/",
       "quote": "HAPPY HOUR / Sunday \u2013 Friday: 5PM \u2013 7pm / Monday \u2013 Friday: 10PM \u2013 11PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "interstate-drafthouse-philadelphia",
+   "name": "Interstate Drafthouse",
+   "address": "1235 E PALMER ST, PHILADELPHIA PA 19125-3307",
+   "zone_id": "fishtown_kensington",
+   "website": "https://interstatedrafthouse.com/",
+   "plcb_name": "DRAFTHOUSE INC",
+   "lat": 39.9718422,
+   "lng": -75.1286774,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "off drafts Tuesday to Friday",
+       "price_usd": 1.0
+      },
+      {
+       "category": "draft",
+       "label": "off drafts Happy Hour",
+       "price_usd": 1.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://interstatedrafthouse.com/weekly-specials/",
+      "quote": "Happy Hour / Tuesday to Friday \u2013 Happy Hour from 4 to 6PM $1 off drafts"
      }
     }
    ]

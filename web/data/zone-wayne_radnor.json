@@ -373,6 +373,107 @@
    ]
   },
   {
+   "id": "black-powder-tavern-wayne",
+   "name": "Black Powder Tavern",
+   "address": "1164 VALLEY FORGE RD, WAYNE PA 19087-1202",
+   "zone_id": "wayne_radnor",
+   "website": "https://blackpowdertavern.com/",
+   "plcb_name": "BLACK POWDER TAVERN",
+   "lat": 40.0726183,
+   "lng": -75.4382876,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://blackpowdertavern.com/",
+      "quote": "Happy Hour / Monday \u2014 Friday / 4:00 p.m. to 6:00 p.m."
+     }
+    }
+   ]
+  },
+  {
+   "id": "flip-and-baileys-llc-rosemont",
+   "name": "FLIP AND BAILEYS LLC",
+   "address": "902-904 CONESTOGA RD GARRETT HILL, ROSEMONT PA 19010",
+   "zone_id": "wayne_radnor",
+   "website": "https://www.flipandbaileys.com/",
+   "plcb_name": "FLIP AND BAILEYS LLC",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.flipandbaileys.com/hold-happ",
+      "quote": "Happy Hour / Monday - Friday / 5pm-7pm / $2 off all Drinks & Appetizers"
+     }
+    }
+   ]
+  },
+  {
    "id": "amada-radnor",
    "name": "Amada",
    "address": "RADNOR FINANCIAL CENTER 555 E LANCASTER AVE, RADNOR PA 19087-5158",

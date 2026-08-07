@@ -22,8 +22,9 @@ sys.path.insert(0, os.path.join(REPO, "ingest"))
 from build_bundles import decay, shell_digest, sw_cache_name  # noqa: E402
 import crawl_sites  # noqa: E402
 from crawl_roundups import fresh_enough, mentions, published_date, venue_index  # noqa: E402
-from crawl_sites import candidate_links, quotes, registrable, visible_text  # noqa: E402
+from crawl_sites import candidate_links, crawl_one, quotes, registrable, visible_text  # noqa: E402
 from discover_sites import collapse_shared, name_core, plcb_key, site_of, street_core  # noqa: E402
+import guess_sites  # noqa: E402
 from guess_sites import candidates  # noqa: E402
 from guess_sites import verify as guess_verify  # noqa: E402
 from extract_deals import days_in, items_in, window_in, windows_from  # noqa: E402
@@ -185,7 +186,23 @@ class HandCorrectedJoins(unittest.TestCase):
 
     CORRECTED = {
         "92272": ("NORTH ITALIA", "northitalia.com"),
+        # Not a mis-join at all: the same venue, rebranded. The address join was
+        # right and the SITE had gone stale, so a live happy hour was shipping
+        # under "Gaucho's Prime" -- a name the building stopped using. A stale
+        # join looks identical to a wrong one from inside the data.
+        "113156": ("CHARKOAL'S PRIME BRAZILIZN STEAKHOUSE", "charkoals.com"),
     }
+
+    # A neighbour in the same plaza claimed the row. Nothing is substituted:
+    # absent beats publishing under another business's name.
+    DROPPED = {
+        "127673": "First Watch is not the Residence Inn at 127 S Gulph Rd",
+        "86292": "PrimoHoagies is not the Giant at 700 Nutt Rd",
+    }
+
+    def test_a_neighbours_site_stays_dropped(self):
+        for lid, why in self.DROPPED.items():
+            self.assertNotIn(lid, self.sites, why)
 
     @classmethod
     def setUpClass(cls):
@@ -337,7 +354,14 @@ class SeedCorpus(unittest.TestCase):
 
     def test_geocode_records_keep_the_address_they_were_asked_for(self):
         # The audit trail that makes a wrong match findable later.
+        #
+        # Seed last, because where both describe one venue the seed is what
+        # build_bundles ships and the extracted copy is dropped. Coyote
+        # Crossing is in both, spelled '800 Spring Mill Ave' by hand and '800
+        # SPRINGMILL AVE' by the PLCB, and letting the dropped copy shadow the
+        # seed made this assert against a record that never reaches a user.
         by_id = {v["id"]: v for v in self.corpus}
+        by_id.update({v["id"]: v for v in self.seed["venues"]})
         for vid, at in self.coords.items():
             self.assertTrue(vid in by_id, f"{vid}: a coordinate no corpus venue claims")
             self.assertEqual(at["queried"], by_id[vid]["address"],
@@ -508,6 +532,51 @@ class GuessedSites(unittest.TestCase):
         parked = "cressoninn.com -- this domain is for sale. Philadelphia. Cresson Inn."
         self.assertIsNone(guess_verify(parked, ["cresson"], ["philadelphia"]))
 
+    def test_a_possessive_on_the_sign_still_matches_the_licensee(self):
+        # clean_name drops the apostrophe from 'CREEDS SEAFOOD & STEAKS', so a
+        # page writing "Creed's" was refused for not naming the venue it is.
+        # Both sides have to be read the same way; three King of Prussia
+        # licensees were failing on this alone, seed URL already in hand.
+        page = "Creed's Seafood & Steaks, King of Prussia's steakhouse since 1982"
+        self.assertTrue(guess_verify(page, ["creeds", "seafood", "steaks"],
+                                     ["king of prussia"]))
+        self.assertTrue(guess_verify("Morton's The Steakhouse, King of Prussia",
+                                     ["mortons"], ["king of prussia"]))
+
+    def test_coming_soon_is_a_placeholder_only_on_a_placeholder_page(self):
+        # A trading venue writes 'coming soon' about next month's release.
+        # Bowen Arrow Winery names four wines that way and was thrown out as a
+        # parked domain; what makes a placeholder is that it is nearly all the
+        # page has, not the phrase.
+        stub = "Bowen Arrow Winery. Phoenixville. Launching soon!"
+        self.assertIsNone(guess_verify(stub, ["bowen", "arrow"], ["phoenixville"]))
+        real = ("Bowen Arrow Winery, Phoenixville. " + "Tasting room open Friday "
+                "through Sunday on our 48-acre farm. " * 40 + " Coming soon: Zweigelt.")
+        self.assertTrue(guess_verify(real, ["bowen", "arrow"], ["phoenixville"]))
+
+    def test_a_store_number_is_not_part_of_the_name_to_prove(self):
+        # The operator's own store number rides in the PLCB row. Requiring it
+        # on the page made those licensees unprovable by construction.
+        self.assertEqual(guess_sites.clean_name("SEASONS 52 #4510"), "seasons 52")
+        self.assertEqual(guess_sites.clean_name("YARD HOUSE 8371"), "yard house")
+        self.assertEqual(guess_sites.clean_name("RED LOBSTER #778"), "red lobster")
+        # The numbers that ARE the name survive.
+        self.assertEqual(guess_sites.clean_name("STABLE 12 BREWING CO"), "stable 12 brewing")
+        self.assertEqual(guess_sites.clean_name("CATCH 101"), "catch 101")
+
+    def test_a_seed_may_name_a_shells_trade_name_without_bypassing_proof(self):
+        # 'COLD RIVER LLC' at 822 Fayette St is the StoneRose and no page of
+        # theirs will ever say 'cold river'. The trade name is what the page
+        # must then show -- it is a different question, not a weaker one.
+        row = {"name": "COLD RIVER LLC", "municipality": "Conshohocken",
+               "address": "822 FAYETTE ST, CONSHOHOCKEN PA 19428-1709", "zip": "19428"}
+        words, place = guess_sites.proof_tokens(row, "The StoneRose")
+        self.assertIn("stonerose", words)
+        page = "The StoneRose, 822 Fayette Street, Conshohocken"
+        self.assertTrue(guess_verify(page, words, place))
+        # A neighbour on the same street is still refused.
+        self.assertIsNone(guess_verify("Guppy's Good Times, Conshohocken", words, place))
+
 
 class CrawlExtraction(unittest.TestCase):
     """What the crawler keeps becomes the quoted evidence under a published
@@ -526,6 +595,40 @@ class CrawlExtraction(unittest.TestCase):
         # routinely a separate element.
         q = quotes("HAPPY HOUR\nMonday - Friday 4pm to 6pm\nunrelated line")
         self.assertTrue(any("4pm to 6pm" in x for x in q), q)
+
+    def test_the_hours_beat_the_price_line_into_the_quote(self):
+        # Pepperoncini publishes its window in plain text and was dropped for
+        # stating no schedule: the two context slots went to 'mon - fri' and
+        # '$2 OFF' while '4p - 6p' sat one line further down, unrecognised as a
+        # time at all. This was the largest single loss in the corpus.
+        page = "\n".join(["Happy Hour", "in the bar area", "mon - fri", "4p - 6p",
+                          "$2 OFF", "Our Draft Beer Selection", "$7 Wine"])
+        q = quotes(page)[0]
+        self.assertIn("4p - 6p", q)
+        self.assertIn("mon - fri", q)
+        # Page order, so the days still read before the hours.
+        self.assertLess(q.index("mon - fri"), q.index("4p - 6p"))
+
+    def test_a_match_that_already_has_context_pulls_in_nothing(self):
+        # Reaching further down the page to find hours costs more than it wins:
+        # Fogo de Chao's '$6 Beers' line then acquired the dining room's
+        # 'Mon - Thu 3:00 PM - 9:30 PM', which is opening hours, not a happy
+        # hour, and it fails the four-hour cap -- so a venue that had been
+        # publishing correctly stopped. The block ends where it always ended.
+        page = "\n".join(["Bar Fogo features $6 Beers and $10 Cocktails",
+                          "Mon - Thu 3:00 PM - 9:30 PM",
+                          "Fri 3:00 PM - 10:30 PM"])
+        self.assertEqual(quotes(page), ["Bar Fogo features $6 Beers and $10 Cocktails"])
+
+    def test_two_windows_under_one_heading_both_survive(self):
+        # BOTLD states a weekday window and a weekend one on consecutive lines;
+        # preferring times must not mean keeping only the first of them.
+        page = "\n".join(["Happy Hour at the Cocktail Bar",
+                          "Wednesday - Friday: 4pm - 6pm",
+                          "Saturday & Sunday: 2pm - 4pm"])
+        q = quotes(page)[0]
+        self.assertIn("4pm - 6pm", q)
+        self.assertIn("2pm - 4pm", q)
 
     def test_happy_unqualified_is_not_a_hit(self):
         self.assertEqual(quotes("Book your Happy Birthday party with us"), [])
@@ -565,11 +668,40 @@ class CrawlExtraction(unittest.TestCase):
     def test_a_robots_that_forbids_everyone_is_still_obeyed(self):
         # An unreachable robots.txt is not a ban, but a 403 on it is: that is
         # the host answering, and read() treated it that way too.
+        calls = []
+
         def fake_urlopen(req, timeout=None):
+            calls.append(req.full_url)
             raise urllib.error.HTTPError(req.full_url, 403, "no", {}, None)
 
+        with unittest.mock.patch("crawl_sites.urllib.request.urlopen", fake_urlopen), \
+                unittest.mock.patch("crawl_sites.time.sleep"):
+            cache = {}
+            self.assertFalse(crawl_sites.allowed("https://walled.example/menu", cache))
+            # Retried once before believing it: a 403 is also what a WAF hands
+            # anything that is not a browser.
+            self.assertEqual(len(calls), 2)
+            # ...and the refusal says which of the two it was. 210 of 886
+            # venues were recorded as "robots.txt disallows"; re-checking the
+            # ones in the three target towns, every independent venue among
+            # them served a robots.txt that allows us outright, and a handoff
+            # had already carried "robots.txt disallows us" forward as a fact
+            # about four King of Prussia bars that in fact crawl fine.
+            self.assertIn("unreadable (403)",
+                          crawl_sites.refusal("https://walled.example/menu", cache))
+
+    def test_a_real_disallow_directive_is_not_reported_as_unreadable(self):
+        def fake_urlopen(req, timeout=None):
+            return unittest.mock.MagicMock(
+                __enter__=lambda s: unittest.mock.Mock(
+                    read=lambda n: b"User-agent: *\nDisallow: /"),
+                __exit__=lambda *a: False)
+
         with unittest.mock.patch("crawl_sites.urllib.request.urlopen", fake_urlopen):
-            self.assertFalse(crawl_sites.allowed("https://walled.example/menu", {}))
+            cache = {}
+            self.assertFalse(crawl_sites.allowed("https://shut.example/menu", cache))
+            self.assertEqual(crawl_sites.refusal("https://shut.example/menu", cache),
+                             "robots.txt disallows")
 
     def test_a_pdf_happy_hour_menu_is_a_candidate_link(self):
         # Some venues publish the deal ONLY as a PDF; excluding it by extension
@@ -599,6 +731,37 @@ class CrawlExtraction(unittest.TestCase):
         with unittest.mock.patch.object(crawl_sites, "allowed", lambda u, c: True):
             found = crawl_sites.sitemap_links(session, "https://bar.example/", {})
         self.assertEqual(found, ["https://bar.example/happy-hour"])
+
+    def test_menu_links_no_longer_suppress_the_sitemap(self):
+        # The old rule consulted the sitemap only when a page linked NOTHING.
+        # The commoner shape is a page that links three menus and no happy
+        # hour: City Works' King of Prussia page offers a food menu, a second
+        # food menu and a charity event, so the whole page budget went on
+        # entrees while /happy-hour sat in the sitemap unread.
+        home = ('<a href="/food-menu">Menu</a><a href="/events">Events</a>')
+        sitemap = ("<urlset><url><loc>https://bar.example/happy-hour</loc>"
+                   "</url></urlset>")
+
+        def get(url, **kw):
+            r = unittest.mock.Mock(status_code=200)
+            if url.endswith("sitemap.xml"):
+                r.headers = {"content-type": "application/xml"}
+                r.text = sitemap
+            else:
+                r.headers = {"content-type": "text/html; charset=utf-8"}
+                r.text = home if url == "https://bar.example/" else "Happy Hour 4pm - 6pm"
+            return r
+
+        session = unittest.mock.Mock(get=get)
+        venue = {"website": "https://bar.example/"}
+        with unittest.mock.patch.object(crawl_sites, "allowed", lambda u, c: True), \
+                unittest.mock.patch.object(crawl_sites, "DELAY", 0):
+            pages, hits = crawl_one(session, venue, {})
+        fetched = [p["url"] for p in pages]
+        self.assertIn("https://bar.example/happy-hour", fetched)
+        # The linked menus are still crawled -- this tops up, it does not replace.
+        self.assertIn("https://bar.example/food-menu", fetched)
+        self.assertTrue(hits)
 
     def test_registrable_domain_ignores_subdomains_and_ports(self):
         self.assertEqual(registrable("locations.pjspub.com"), "pjspub.com")
@@ -665,6 +828,14 @@ class DealExtraction(unittest.TestCase):
         # 4:30am to a parser. Guessing it right most of the time is still
         # publishing a time the venue never wrote.
         self.assertEqual(windows_from("Happy Hour Monday - Thursday 4:30 - 6:00"), [])
+
+    def test_a_single_letter_meridiem_is_the_same_claim_as_pm(self):
+        # A bar writes '4p - 6p' about as often as '4pm - 6pm'.
+        self.assertEqual(window_in("mon - fri 4p - 6p"), ("16:00", "18:00"))
+        self.assertEqual(window_in("Happy Hour 11a - 2p"), ("11:00", "14:00"))
+        # It must still end on a word boundary, or a quantity becomes a window.
+        self.assertIsNone(window_in("buy 4 - 6 pizzas"))
+        self.assertIsNone(window_in("seats 5 - 9 people"))
 
     def test_midnight_is_the_end_of_the_day_not_the_start(self):
         self.assertEqual(window_in("Late Night 11pm-12am"), ("23:00", "24:00"))

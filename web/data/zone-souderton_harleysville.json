@@ -43,6 +43,58 @@
      }
     }
    ]
+  },
+  {
+   "id": "butcher-and-barkeep-harleysville",
+   "name": "Butcher and Barkeep",
+   "address": "712 MAIN ST, HARLEYSVILLE PA 19438-1636",
+   "zone_id": "souderton_harleysville",
+   "website": "https://www.thebutcherandbarkeep.com/",
+   "plcb_name": "THE BUTCHER AND BARKEEP",
+   "lat": 40.2873691,
+   "lng": -75.3988303,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 2,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 3,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 4,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 5,
+       "start": "15:30",
+       "end": "17:30"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.thebutcherandbarkeep.com/",
+      "quote": "HAPPY HOUR MONDAY \u2013 FRIDAY 3:30PM \u2013 5:30PM"
+     }
+    }
+   ]
   }
  ]
 }

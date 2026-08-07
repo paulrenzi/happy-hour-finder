@@ -249,6 +249,76 @@
    ]
   },
   {
+   "id": "the-pub-of-penn-valley-narberth",
+   "name": "THE PUB OF PENN VALLEY",
+   "address": "863 MONTGOMERY AVE, NARBERTH PA 19072-1541",
+   "zone_id": "ardmore_bryn_mawr",
+   "website": "https://pubofpennvalley.com/",
+   "plcb_name": "THE PUB OF PENN VALLEY",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 2,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 3,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 4,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 5,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 6,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 7,
+       "start": "15:30",
+       "end": "17:30"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "Daily Appetizer Specials",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "label": "Appetizer Specials",
+       "price_usd": 6.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://pubofpennvalley.com/menu/",
+      "quote": "Happy Hours / 3:30 pm - 5:30 pm & 9:00 pm-11:00 pm / $6 Daily Appetizer Specials (available 3:30pm-5:30pm only)"
+     }
+    }
+   ]
+  },
+  {
    "id": "pj-whelihan-s-wynnewood-73040",
    "name": "PJ Whelihan's",
    "address": "50 E WYNNEWOOD RD UNIT #2, WYNNEWOOD PA 19096-2013",

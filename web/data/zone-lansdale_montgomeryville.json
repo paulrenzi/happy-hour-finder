@@ -4,6 +4,79 @@
  "built_at": "2026-08-06",
  "venues": [
   {
+   "id": "lansdale-tavern-lansdale",
+   "name": "Lansdale Tavern",
+   "address": "839 W MAIN ST, LANSDALE PA 19446-2015",
+   "zone_id": "lansdale_montgomeryville",
+   "website": "https://lansdaletavern.com/",
+   "plcb_name": "CALIMONT LLC",
+   "lat": 40.2479843,
+   "lng": -75.294166,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "21:00",
+       "end": "23:00"
+      },
+      {
+       "dow": 2,
+       "start": "21:00",
+       "end": "23:00"
+      },
+      {
+       "dow": 3,
+       "start": "21:00",
+       "end": "23:00"
+      },
+      {
+       "dow": 4,
+       "start": "21:00",
+       "end": "23:00"
+      },
+      {
+       "dow": 5,
+       "start": "22:00",
+       "end": "24:00"
+      },
+      {
+       "dow": 6,
+       "start": "22:00",
+       "end": "24:00"
+      },
+      {
+       "dow": 7,
+       "start": "21:00",
+       "end": "23:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "off draft beer Happy Hour",
+       "price_usd": 1.0
+      },
+      {
+       "category": "draft",
+       "label": "off draft beer",
+       "price_usd": 1.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://lansdaletavern.com/menu",
+      "quote": "Late Night Menu / Sunday \u2013 Thursday: 9pm \u2013 11pm / Friday \u2013 Saturday: 10pm \u2013 12am"
+     }
+    }
+   ]
+  },
+  {
    "id": "well-crafted-beer-co-ste-b100-lansdale",
    "name": "Well Crafted Beer Co.",
    "address": "310 MADISON ST, STE B100, LANSDALE PA 19446",

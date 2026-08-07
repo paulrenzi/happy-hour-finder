@@ -60,9 +60,15 @@ EVERYDAY_RE = re.compile(r"\b(?:daily|every ?day|all week|7 days a week|seven da
 WEEKDAY_RE = re.compile(r"\bweekdays?\b", re.I)
 WEEKEND_RE = re.compile(r"\bweekends?\b", re.I)
 
+# '4p - 6p' is how a bar writes it about as often as '4pm - 6pm', and requiring
+# the full 'pm' meant Pepperoncini published its window in plain text -- the
+# line reads 'mon - fri' then '4p - 6p' -- and was dropped for stating no
+# schedule. The bare letter must still end on a word boundary, so 'buy 4 - 6
+# pizzas' is not a window: the 'p' there is followed by an 'i'.
+MERIDIEM = r"am|pm|a\.m\.|p\.m\.|[ap]\b"
 TIME_RE = re.compile(
-    r"\b(\d{1,2})(?::(\d{2}))?\s*(am|pm|a\.m\.|p\.m\.)?\s*"
-    rf"{DASH}\s*(\d{{1,2}})(?::(\d{{2}}))?\s*(am|pm|a\.m\.|p\.m\.)",
+    rf"\b(\d{{1,2}})(?::(\d{{2}}))?\s*({MERIDIEM})?\s*"
+    rf"{DASH}\s*(\d{{1,2}})(?::(\d{{2}}))?\s*({MERIDIEM})",
     re.I)
 
 # A quote that hedges, advertises a bookable event, or is somebody's review has
@@ -128,8 +134,15 @@ def window_in(text):
     sh, eh = int(sh), int(eh)
     if not 1 <= sh <= 12 or not 1 <= eh <= 12:
         return None
-    emer = emer.replace(".", "").lower()
-    smer = smer.replace(".", "").lower() if smer else None
+    # 'p' and 'a' are the same claim as 'pm' and 'am'; h24 below compares the
+    # whole string, so a bare letter left unexpanded would read as morning and
+    # silently turn a 4p-6p happy hour into 04:00.
+    def mer(x):
+        x = x.replace(".", "").lower()
+        return x + "m" if x in ("a", "p") else x
+
+    emer = mer(emer)
+    smer = mer(smer) if smer else None
 
     def h24(h, mer):
         if mer == "pm":

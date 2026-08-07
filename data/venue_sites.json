@@ -111,6 +111,20 @@
   "website": "https://locations.chipotle.com/pa/philadelphia/1100-w-montgomery-ave",
   "zone_id": "fishtown_kensington"
  },
+ "100909": {
+  "address": "1300 HARES HILL RD, KIMBERTON PA 19442",
+  "kind": null,
+  "lat": null,
+  "lng": null,
+  "matched_by": "guessed seed URL, proved by name(stone) + kimberton",
+  "name": "STONE HOUSE GRILLE LLC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": null,
+  "phone": null,
+  "website": "https://www.stonehousegrillepa.com/",
+  "zone_id": "phoenixville"
+ },
  "101064": {
   "address": "175 TOWN CENTER RD, KING OF PRUSSIA PA 19406",
   "kind": null,
@@ -433,6 +447,20 @@
   "website": "https://lascalasfire.com/villanova/",
   "zone_id": "wayne_radnor"
  },
+ "103419": {
+  "address": "1750 ASHBOURNE RD BUILDING 4, ELKINS PARK PA 19027",
+  "kind": null,
+  "lat": null,
+  "lng": null,
+  "matched_by": "guessed guessed domain, proved by name(morgan+stillhouse) + elkins park",
+  "name": "MORGAN STILLHOUSE",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": null,
+  "phone": null,
+  "website": "https://morganstillhouse.com/",
+  "zone_id": "abington_jenkintown"
+ },
  "103534": {
   "address": "15 S 3RD ST, PHILADELPHIA PA 19106-2801",
   "kind": "restaurant",
@@ -600,6 +628,20 @@
   "phone": null,
   "website": "http://cartesianbrewing.com/",
   "zone_id": "center_city"
+ },
+ "104798": {
+  "address": "2880 BERGEY RD  UNIT AA, HATFIELD PA 19440-1764",
+  "kind": null,
+  "lat": null,
+  "lng": null,
+  "matched_by": "guessed guessed domain, proved by name(spirochete) + hatfield",
+  "name": "SPIROCHETE BREWING INC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": null,
+  "phone": null,
+  "website": "https://www.spirochetebrewing.com/",
+  "zone_id": "souderton_harleysville"
  },
  "104811": {
   "address": "39 MORRIS AVE, BRYN MAWR PA 19010-3335",
@@ -1754,13 +1796,13 @@
   "kind": "restaurant",
   "lat": 40.0859252,
   "lng": -75.3970311,
-  "matched_by": "address",
+  "matched_by": "address; site + display name hand-corrected 2026-08-06 (rebrand from Gaucho's Prime)",
   "name": "CHARKOAL'S PRIME BRAZILIZN STEAKHOUSE",
   "opening_hours": "Mo-Th 11:30-22:00; Fr-Sa 11:30-22:30; Su 11:30-21:00",
   "osm": "way/47089253",
-  "osm_name": "Gaucho's Prime",
+  "osm_name": "Charkoal's Brazilian Steakhouse",
   "phone": "+1-610-946-6480",
-  "website": "https://gauchosprimeusa.com/",
+  "website": "https://charkoals.com/",
   "zone_id": "king_of_prussia"
  },
  "113632": {
@@ -2491,6 +2533,20 @@
   "website": "https://www.marriott.com/en-us/hotels/phlyd-courtyard-philadelphia-downtown/overview/",
   "zone_id": "center_city"
  },
+ "120855": {
+  "address": "560 W LANCASTER AVE, HAVERFORD PA 19041-1209",
+  "kind": null,
+  "lat": null,
+  "lng": null,
+  "matched_by": "guessed guessed domain, proved by name(roache+obrien) + haverford",
+  "name": "ROACHE & O'BRIEN",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": null,
+  "phone": null,
+  "website": "https://www.roacheandobrien.com/",
+  "zone_id": "ardmore_bryn_mawr"
+ },
  "120981": {
   "address": "1526 N AMERICAN ST, PHILADELPHIA PA 19122-3811",
   "kind": "pub",
@@ -2743,6 +2799,20 @@
   "website": "https://www.thestonetavern1867.com",
   "zone_id": "west_chester"
  },
+ "126367": {
+  "address": "3350 SCHUYLKILL RD, SPRING CITY PA 19475-1144",
+  "kind": null,
+  "lat": null,
+  "lng": null,
+  "matched_by": "guessed seed URL, proved by name(spring+hollow) + spring city",
+  "name": "SPRING HOLLOW SERVICES INC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Spring Hollow Bar & Grille",
+  "phone": null,
+  "website": "https://springhollowgolf.com/bar-grille/",
+  "zone_id": "phoenixville"
+ },
  "126401": {
   "address": "24 N MAIN ST #7, DOYLESTOWN PA 18901-4330",
   "kind": null,
@@ -2813,20 +2883,6 @@
   "website": "https://www.marriott.com/phlav",
   "zone_id": "west_philly"
  },
- "127673": {
-  "address": "127 S GULPH RD, KING OF PRUSSIA PA 19406-3103",
-  "kind": "restaurant",
-  "lat": 40.0844537,
-  "lng": -75.388354,
-  "matched_by": "address",
-  "name": "RESIDENCE INN BY MARRIOTT",
-  "opening_hours": "07:00-14:30",
-  "osm": "node/13140202713",
-  "osm_name": "First Watch",
-  "phone": "+1 267-289-7147",
-  "website": "https://firstwatch.com/locations/king-prussia",
-  "zone_id": "king_of_prussia"
- },
  "127747": {
   "address": "39 E GAY ST, WEST CHESTER PA 19380-3144",
   "kind": "restaurant",
@@ -2896,6 +2952,20 @@
   "phone": "+1-215-986-7719",
   "website": "https://uniphiladelphia.com/",
   "zone_id": "center_city"
+ },
+ "128827": {
+  "address": "460 W STREET RD, WARMINSTER  PA 18974",
+  "kind": null,
+  "lat": null,
+  "lng": null,
+  "matched_by": "guessed guessed domain, proved by name(philomena+santuccis) + warminster",
+  "name": "PHILOMENA SANTUCCIS",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": null,
+  "phone": null,
+  "website": "https://philomenasantuccis.com/",
+  "zone_id": "warminster_warrington"
  },
  "128892": {
   "address": "1100 ARCH ST, PHILADELPHIA PA 19107-2956",
@@ -2980,6 +3050,20 @@
   "phone": "+1-215-386-9224",
   "website": "https://www.whitedog.com/",
   "zone_id": "university_city"
+ },
+ "129244": {
+  "address": "1972 SAINT MATTHEWS RD, PHOENIXVILLE PA 19460-1604",
+  "kind": null,
+  "lat": null,
+  "lng": null,
+  "matched_by": "guessed seed URL, proved by name(bowen+arrow+winery+vineyards) + west vincent",
+  "name": "BOWEN ARROW WINERY AND VINEYARDS",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": null,
+  "phone": null,
+  "website": "https://bowenarrowwinery.com/",
+  "zone_id": "phoenixville"
  },
  "129263": {
   "address": "114 S OLIVE ST, MEDIA PA 19063-3202",
@@ -3849,6 +3933,20 @@
   "website": "https://springhousetavern.com/",
   "zone_id": "ambler_upper_dublin"
  },
+ "19857": {
+  "address": "47 E BRIDGE ST, SPRING CITY PA 19475-1404",
+  "kind": null,
+  "lat": null,
+  "lng": null,
+  "matched_by": "guessed seed URL, proved by name(center+city+steaks) + spring",
+  "name": "CENTER CITY",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Center City Steaks",
+  "phone": null,
+  "website": "https://www.centercitysteaks.com/",
+  "zone_id": "phoenixville"
+ },
  "20304": {
   "address": "2036 SWAMP PK, GILBERTSVILLE PA 19525-9725",
   "kind": "restaurant",
@@ -3876,6 +3974,20 @@
   "phone": "+1 610-356-7100",
   "website": "https://charlottesrestaurant.com/",
   "zone_id": "newtown_square_broomall"
+ },
+ "20559": {
+  "address": "499 N GULPH RD, KING OF PRUSSIA PA 19406-2821",
+  "kind": null,
+  "lat": null,
+  "lng": null,
+  "matched_by": "guessed seed URL, proved by name(creeds+seafood+steaks) + king of prussia",
+  "name": "CREEDS SEAFOOD & STEAKS",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": null,
+  "phone": null,
+  "website": "https://www.creedskop.com/",
+  "zone_id": "king_of_prussia"
  },
  "23492": {
   "address": "46 S BETHLEHEM PK, AMBLER PA 19002-5801",
@@ -4170,6 +4282,20 @@
   "phone": "+1-215-755-7180",
   "website": "https://www.popisrestaurant.com/",
   "zone_id": "south_philly"
+ },
+ "36229": {
+  "address": "800 SPRINGMILL AVE, CONSHOHOCKEN PA 19428-2314",
+  "kind": null,
+  "lat": null,
+  "lng": null,
+  "matched_by": "guessed seed URL, proved by name(coyote+crossing) + conshohocken",
+  "name": "300-E-6, INC.",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Coyote Crossing",
+  "phone": null,
+  "website": "https://coyotecrossing.com/",
+  "zone_id": "conshohocken"
  },
  "36491": {
   "address": "229 S 45TH ST, PHILADELPHIA PA 19104-2918",
@@ -5123,6 +5249,20 @@
   "website": "https://m.longhornsteakhouse.com/locations/pa/norristown/norristown-west-norriton/5180",
   "zone_id": "norristown_bridgeport"
  },
+ "49114": {
+  "address": "THE PAVILION AT KING OF PRUSSIA 640 W. DEKALB PK #1250, KING OF PRUSSIA PA 19406",
+  "kind": null,
+  "lat": null,
+  "lng": null,
+  "matched_by": "guessed seed URL, proved by name(mortons+chicago) + king of prussia",
+  "name": "MORTON'S OF CHICAGO",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": null,
+  "phone": null,
+  "website": "https://www.mortons.com/location/mortons-the-steakhouse-king-of-prussia-pa/",
+  "zone_id": "king_of_prussia"
+ },
  "49123": {
   "address": "70 BUCKWALTER RD STE 1350, ROYERSFORD PA 19468-1846",
   "kind": "restaurant",
@@ -5529,6 +5669,20 @@
   "website": "https://www.northbowlphilly.com/",
   "zone_id": "center_city"
  },
+ "53783": {
+  "address": "72-74 POPLAR ST, CONSHOHOCKEN PA 19428-1927",
+  "kind": null,
+  "lat": null,
+  "lng": null,
+  "matched_by": "guessed seed URL, proved by name(pepperoncini) + conshohocken",
+  "name": "PEPPERONCINI RESTAURANT & BAR",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": null,
+  "phone": null,
+  "website": "https://pepperoncinirestaurant.com/",
+  "zone_id": "conshohocken"
+ },
  "53858": {
   "address": "1927-33 E PASSYUNK AVE, PHILADELPHIA PA 19148-2220",
   "kind": "restaurant",
@@ -5767,6 +5921,20 @@
   "website": "https://www.meltingpot.com/king-of-prussia-pa/",
   "zone_id": "king_of_prussia"
  },
+ "56307": {
+  "address": "902-904 CONESTOGA RD GARRETT HILL, ROSEMONT PA 19010",
+  "kind": null,
+  "lat": null,
+  "lng": null,
+  "matched_by": "guessed guessed domain, proved by name(flip+baileys) + 19010",
+  "name": "FLIP AND BAILEYS LLC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": null,
+  "phone": null,
+  "website": "https://www.flipandbaileys.com/",
+  "zone_id": "wayne_radnor"
+ },
  "56370": {
   "address": "1801 CHESTNUT ST, PHILADELPHIA PA 19103-3712",
   "kind": "restaurant",
@@ -5850,6 +6018,20 @@
   "phone": "+1 610-658-0618",
   "website": "http://www.sangkeeasianbistro.com/",
   "zone_id": "ardmore_bryn_mawr"
+ },
+ "57342": {
+  "address": "193-195-197 BRIDGE ST, PHOENIXVILLE PA 19460-3401",
+  "kind": null,
+  "lat": null,
+  "lng": null,
+  "matched_by": "guessed seed URL, proved by name(molly+maguires) + phoenixville",
+  "name": "MOLLY MAGUIRES RESTAURANT & PUB INC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": null,
+  "phone": null,
+  "website": "https://www.mollymaguiresphoenixville.com/",
+  "zone_id": "phoenixville"
  },
  "5739": {
   "address": "400 AND 402 SOUTH ST, PHILADELPHIA PA 19147-1521",
@@ -6019,6 +6201,20 @@
   "website": "https://www.pietrosprime.com",
   "zone_id": "west_chester"
  },
+ "58341": {
+  "address": "1146 STUMP HALL & CEDARS RD, SKIPPACK PA 19474",
+  "kind": null,
+  "lat": null,
+  "lng": null,
+  "matched_by": "guessed guessed domain, proved by name(skippack+golf) + skippack",
+  "name": "SKIPPACK GOLF CLUB",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": null,
+  "phone": null,
+  "website": "https://www.skippackgolfclub.com/",
+  "zone_id": "collegeville_trappe"
+ },
  "58437": {
   "address": "1051 BALTIMORE PK, GLEN MILLS PA 19342",
   "kind": "restaurant",
@@ -6116,6 +6312,20 @@
   "phone": "+1 215-659-0270",
   "website": "https://locations.thecheesecakefactory.com/pa/willow-grove-128/",
   "zone_id": "abington_jenkintown"
+ },
+ "58996": {
+  "address": "208-212 BRIDGE ST, PHOENIXVILLE PA 19460-3404",
+  "kind": null,
+  "lat": null,
+  "lng": null,
+  "matched_by": "guessed seed URL, proved by name(bistro+bridge) + phoenixville",
+  "name": "BEANERS RESTAURANT INC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Bistro on Bridge",
+  "phone": null,
+  "website": "https://bistroonbridge.com/",
+  "zone_id": "phoenixville"
  },
  "59081": {
   "address": "505 W RIDGE PK, CONSHOHOCKEN PA 19428-1224",
@@ -6550,6 +6760,20 @@
   "phone": "+1-215-729-0260",
   "website": "https://www.eatatvietnam.com/cafe/",
   "zone_id": "university_city"
+ },
+ "61728": {
+  "address": "822 FAYETTE ST, CONSHOHOCKEN PA 19428-1709",
+  "kind": null,
+  "lat": null,
+  "lng": null,
+  "matched_by": "guessed seed URL, proved by name(stonerose) + conshohocken",
+  "name": "COLD RIVER LLC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "The StoneRose",
+  "phone": null,
+  "website": "https://thestoneroserestaurant.com/",
+  "zone_id": "conshohocken"
  },
  "61788": {
   "address": "128 S 19TH ST, PHILADELPHIA PA 19103-4630",
@@ -7138,6 +7362,20 @@
   "phone": "+1 484-318-8538",
   "website": "https://wills-bills.com/",
   "zone_id": "wayne_radnor"
+ },
+ "64975": {
+  "address": "1303 CHARLESTOWN RD, PHOENIXVILLE PA 19460-2344",
+  "kind": null,
+  "lat": null,
+  "lng": null,
+  "matched_by": "guessed seed URL, proved by name(black+horse) + phoenixville",
+  "name": "OLDE BLACK HORSE TAVERN",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Black Horse Tavern",
+  "phone": null,
+  "website": "https://blackhorsetaverns.com/phoenixville/",
+  "zone_id": "phoenixville"
  },
  "65086": {
   "address": "1301 RACE ST, PHILADELPHIA PA 19107-1517",
@@ -7993,6 +8231,20 @@
   "website": "https://www.senorsalsapa.com/",
   "zone_id": "abington_jenkintown"
  },
+ "68716": {
+  "address": "20 HAGERTY BLVD STE 6, WEST CHESTER PA 19382-5910",
+  "kind": null,
+  "lat": null,
+  "lng": null,
+  "matched_by": "guessed guessed domain, proved by name(artisans+cellar) + west chester",
+  "name": "THE ARTISAN'S CELLAR LLC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": null,
+  "phone": null,
+  "website": "https://theartisanscellar.com/",
+  "zone_id": "west_chester"
+ },
  "68830": {
   "address": "1080 E PHILADELPHIA AVE, GILBERTSVILLE PA 19525-9510",
   "kind": "pub",
@@ -8454,6 +8706,20 @@
   "phone": "+1-215-387-4992",
   "website": "https://clarkvillephilly.com/",
   "zone_id": "university_city"
+ },
+ "70519": {
+  "address": "1095 W BALTIMORE PIKE, MEDIA PA 19063",
+  "kind": null,
+  "lat": null,
+  "lng": null,
+  "matched_by": "guessed guessed domain, proved by name(acme+markets) + media",
+  "name": "ACME MARKETS INC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": null,
+  "phone": null,
+  "website": "https://www.acmemarkets.com/",
+  "zone_id": "media"
  },
  "70520": {
   "address": "101 E 7TH AVE, CONSHOHOCKEN PA 19428-1722",
@@ -9001,6 +9267,20 @@
   "website": "http://cpvalleyforge.com",
   "zone_id": "king_of_prussia"
  },
+ "72735": {
+  "address": "325 BRIDGE ST, PHOENIXVILLE PA 19460-3355",
+  "kind": null,
+  "lat": null,
+  "lng": null,
+  "matched_by": "guessed seed URL, proved by name(foodery) + phoenixville",
+  "name": "THE FOODERY PHOENIXVILLE INC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "The Foodery",
+  "phone": null,
+  "website": "https://fooderybeer.squarespace.com/phoenixville",
+  "zone_id": "phoenixville"
+ },
  "72755": {
   "address": "2637 GIRARD AVE, PHILADELPHIA PA 19130-1333",
   "kind": "pub",
@@ -9435,6 +9715,20 @@
   "website": "https://www.ihg.com/holidayinnexpress/hotels/us/en/fort-washington/ftspa/hoteldetail",
   "zone_id": "blue_bell_plymouth_meeting"
  },
+ "84498": {
+  "address": "519 KIMBERTON RD  SUITE 9  PIKELAND VILLAGE SQUARE, PHOENIXVILLE PA 19460",
+  "kind": null,
+  "lat": null,
+  "lng": null,
+  "matched_by": "guessed seed URL, proved by name(liberty+union) + phoenixville",
+  "name": "LIBERTY UNION 2 LLC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Liberty Union Bar & Grill",
+  "phone": null,
+  "website": "http://libertyunionbar.com/",
+  "zone_id": "phoenixville"
+ },
  "84583": {
   "address": "225 & 227 BRIDGE ST, PHOENIXVILLE PA 19460-3449",
   "kind": null,
@@ -9630,20 +9924,6 @@
   "phone": "+1 215-629-3888",
   "website": "https://yamitsuki1028.wixsite.com/yamitsukiramen",
   "zone_id": "center_city"
- },
- "86292": {
-  "address": "700 NUTT RD, PHOENIXVILLE PA 19460",
-  "kind": "fast_food",
-  "lat": 40.1329491,
-  "lng": -75.5331255,
-  "matched_by": "address",
-  "name": "THE GIANT COMPANY LLC",
-  "opening_hours": "10:00-20:00",
-  "osm": "node/6185958240",
-  "osm_name": "PrimoHoagies",
-  "phone": "+1 610-933-5777",
-  "website": "https://www.primohoagies.com/location/Phoenixville-PA",
-  "zone_id": "phoenixville"
  },
  "86412": {
   "address": "7 E LANCASTER AVE, ARDMORE PA 19003-2318",
@@ -10009,6 +10289,20 @@
   "website": "https://baldbirdsbrewing.com/",
   "zone_id": "audubon_eagleville"
  },
+ "90605": {
+  "address": "182-184 E BRIDGE ST, PHOENIXVILLE PA 19460-3448",
+  "kind": null,
+  "lat": null,
+  "lng": null,
+  "matched_by": "guessed seed URL, proved by name(granaio) + phoenixville",
+  "name": "ILGRANAIO PHOENIXVILLE",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "il Granaio",
+  "phone": null,
+  "website": "https://ilgranaiopa2.com/",
+  "zone_id": "phoenixville"
+ },
  "90655": {
   "address": "1445 N AMERICAN ST, PHILADELPHIA PA 19122",
   "kind": "bar",
@@ -10051,6 +10345,20 @@
   "website": "https://www.marriott.com/en-us/hotels/phlwe-marriott-philadelphia-west/overview/",
   "zone_id": "conshohocken"
  },
+ "91167": {
+  "address": "810 DICKERSON RD STE B, NORTH WALES PA 19464",
+  "kind": null,
+  "lat": null,
+  "lng": null,
+  "matched_by": "guessed guessed domain, proved by name(mcallister) + north wales",
+  "name": "MCALLISTER BREWING COMPANY",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": null,
+  "phone": null,
+  "website": "https://www.mcallisterbrewing.com/",
+  "zone_id": "lansdale_montgomeryville"
+ },
  "91278": {
   "address": "726 N 24TH ST, PHILADELPHIA PA 19130-2535",
   "kind": "restaurant",
@@ -10078,6 +10386,20 @@
   "phone": "+1 610-521-5900",
   "website": "https://www.marriott.com/en-us/hotels/phlde-delta-hotel-philadelphia-airport/overview/",
   "zone_id": "ridley_tinicum"
+ },
+ "91502": {
+  "address": "131 BRIDGE ST STE 5, PHOENIXVILLE PA 19460",
+  "kind": null,
+  "lat": null,
+  "lng": null,
+  "matched_by": "guessed guessed domain, proved by name(sedona+taphouse) + phoenixville",
+  "name": "SEDONA TAPHOUSE",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": null,
+  "phone": null,
+  "website": "https://sedonataphouse.com/",
+  "zone_id": "phoenixville"
  },
  "91715": {
   "address": "1817-53 N HOWARD ST, PHILADELPHIA PA 19122",
@@ -11058,6 +11380,20 @@
   "phone": null,
   "website": "https://www.marriott.com/phlro",
   "zone_id": "newtown_square_broomall"
+ },
+ "98616": {
+  "address": "201 MAIN ST SUITE 100, KING OF PRUSSIA PA 19406",
+  "kind": null,
+  "lat": null,
+  "lng": null,
+  "matched_by": "guessed seed URL, proved by name(kooma) + king of prussia",
+  "name": "KOOMA III LLC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Kooma",
+  "phone": null,
+  "website": "http://koomakop.com/",
+  "zone_id": "king_of_prussia"
  },
  "98621": {
   "address": "1600 LIMEKILN PIKE, GLENSIDE PA 19038",

@@ -112,6 +112,55 @@
    ]
   },
   {
+   "id": "pepperoncini-restaurant-bar-conshohocken",
+   "name": "PEPPERONCINI RESTAURANT & BAR",
+   "address": "72-74 POPLAR ST, CONSHOHOCKEN PA 19428-1927",
+   "zone_id": "conshohocken",
+   "website": "https://pepperoncinirestaurant.com/",
+   "plcb_name": "PEPPERONCINI RESTAURANT & BAR",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://pepperoncinirestaurant.com/conshohocken-pepperoncini-restaurant-happy-hours-specials",
+      "quote": "Happy Hour / mon - fri / 4p - 6p"
+     }
+    }
+   ]
+  },
+  {
    "id": "southern-cross-kitchen-conshohocken",
    "name": "Southern Cross Kitchen",
    "address": "8 E 1ST AVE, CONSHOHOCKEN PA 19428-2002",

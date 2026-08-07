@@ -49,10 +49,14 @@ DEAL_RE = re.compile(
     r"industry night|power hour|social hour|bar special|half.?price|"
     r"\$\d+(?:\.\d\d)?\s*(?:draft|drafts|beer|wells|well drinks|wine|cocktails?|"
     r"apps|appetizers|margaritas|shots)", re.I)
-# Sentences worth keeping alongside the match: a window or a price.
+# Sentences worth keeping alongside the match: a window or a price. '4p' counts
+# -- a bar writes the hour that way as readily as '4pm', and CONTEXT_RE not
+# knowing it is why Pepperoncini's quote came back as 'Happy Hour / mon - fri /
+# $2 OFF': the day line and the price line were picked up and the line that
+# actually held the window, '4p - 6p', was invisible.
+TIME_CONTEXT_RE = re.compile(r"\d{1,2}(?::\d\d)?\s*(?:am|pm|a\.m\.|p\.m\.|[ap]\b)", re.I)
 CONTEXT_RE = re.compile(
-    r"\d{1,2}(?::\d\d)?\s*(?:am|pm|a\.m\.|p\.m\.)|\$\d|mon|tue|wed|thu|fri|sat|sun",
-    re.I)
+    TIME_CONTEXT_RE.pattern + r"|\$\d|mon|tue|wed|thu|fri|sat|sun", re.I)
 
 TAG_RE = re.compile(r"<(script|style|noscript)[^>]*>.*?</\1>", re.S | re.I)
 MARKUP_RE = re.compile(r"<[^>]+>")
@@ -81,8 +85,21 @@ def quotes(text):
         block = [ln]
         # A heading ('HAPPY HOUR') is frequently its own line, with the window
         # on the next one; keeping only the match would drop the entire deal.
+        #
+        # Two slots, and the window gets first refusal on them: a day line and
+        # a price line were filling both while the hours sat just below, and the
+        # venue was then dropped for stating no schedule. Neither the span nor
+        # the slot count moved -- reaching further down the page pulled in the
+        # NEXT block's hours instead (Fogo de Chao's '$6 Beers' line acquired
+        # the dining room's 3:00-9:30, which is not a happy hour and fails the
+        # four-hour cap), so only the ordering within the slots changed.
         if not CONTEXT_RE.search(ln):
-            block += [l for l in lines[i + 1:i + 4] if CONTEXT_RE.search(l)][:2]
+            near = lines[i + 1:i + 4]
+            ctx = [l for l in near if CONTEXT_RE.search(l)]
+            timed = [l for l in ctx if TIME_CONTEXT_RE.search(l)]
+            keep = (timed + [l for l in ctx if l not in timed])[:2]
+            # Page order, so 'mon - fri' still reads before '4p - 6p'.
+            block += [l for l in near if l in keep]
         q = " / ".join(block)[:400]
         if q not in seen:
             seen.add(q)
@@ -104,17 +121,32 @@ def robots_for(base, cache):
     if base not in cache:
         rp = urllib.robotparser.RobotFileParser()
         rp.set_url(urllib.parse.urljoin(base, "/robots.txt"))
-        try:
-            req = urllib.request.Request(rp.url, headers={"User-Agent": UA})
-            with urllib.request.urlopen(req, timeout=TIMEOUT) as fh:
-                rp.parse(fh.read(200_000).decode("utf-8", "replace").splitlines())
-        except urllib.error.HTTPError as e:
-            if e.code in (401, 403):
+        rp.unreadable = None
+        for attempt in (0, 1):
+            try:
+                req = urllib.request.Request(rp.url, headers={"User-Agent": UA})
+                with urllib.request.urlopen(req, timeout=TIMEOUT) as fh:
+                    rp.parse(fh.read(200_000).decode("utf-8", "replace").splitlines())
+            except urllib.error.HTTPError as e:
+                if e.code not in (401, 403):
+                    rp = None
+                    break
+                # 401/403 is the convention for 'stay out entirely' and it is
+                # still obeyed -- but it is ALSO what a WAF hands any client
+                # that is not a browser, and that verdict was being written
+                # into crawl_hits.json as if the venue had said it. 210 of 886
+                # venues read as blocked; re-checking eight of them later, all
+                # eight served a robots.txt that allows us outright. So retry
+                # once before believing it, and record the shape of the answer
+                # so a bad moment is never again mistaken for a directive.
+                if attempt == 0:
+                    time.sleep(DELAY)
+                    continue
                 rp.disallow_all = True
-            else:
+                rp.unreadable = e.code
+            except Exception:  # noqa: BLE001 -- an unreadable robots.txt is not a ban
                 rp = None
-        except Exception:  # noqa: BLE001 -- an unreadable robots.txt is not a ban
-            rp = None
+            break
         cache[base] = rp
     return cache[base]
 
@@ -123,6 +155,20 @@ def allowed(url, cache):
     base = "{0.scheme}://{0.netloc}".format(urllib.parse.urlsplit(url))
     rp = robots_for(base, cache)
     return rp.can_fetch(UA, url) if rp else True
+
+
+def refusal(url, cache):
+    """Why allowed() said no, in the words of what actually happened.
+
+    A page skipped because the host would not serve its robots.txt is not the
+    same finding as a page the host told us to stay off, and crawl_hits.json is
+    read as evidence -- 'robots.txt disallows us' was carried into a handoff as
+    a property of four venues that in fact allow us.
+    """
+    base = "{0.scheme}://{0.netloc}".format(urllib.parse.urlsplit(url))
+    code = getattr(robots_for(base, cache), "unreadable", None)
+    return (f"robots.txt unreadable ({code}), treated as disallow"
+            if code else "robots.txt disallows")
 
 
 def pdf_text(blob):
@@ -254,7 +300,7 @@ def crawl_one(session, venue, robots):
     while queue and fetched < PAGE_CAP:
         url = queue.pop(0)
         if not allowed(url, robots):
-            pages.append({"url": url, "result": "robots.txt disallows"})
+            pages.append({"url": url, "result": refusal(url, robots)})
             continue
         time.sleep(DELAY)
         fetched += 1
@@ -272,8 +318,18 @@ def crawl_one(session, venue, robots):
             hits.append({"url": url, "quote": q})
         if fetched == 1:
             queue = candidate_links(html, url)[: PAGE_CAP - 1]
-            if not queue:
-                queue = sitemap_links(session, url, robots)[: PAGE_CAP - 1]
+            # The sitemap used to be consulted only when the page linked
+            # nothing at all, which missed the commoner shape: a page that
+            # links three menus and no happy hour. City Works' King of Prussia
+            # page offers a food menu, a second food menu and a charity event,
+            # so the budget was spent on entrees while /happy-hour/ sat in the
+            # sitemap unread. Linked pages still go first -- they are better
+            # ordered -- and the sitemap only ever returns happy-hour and
+            # specials URLs, so this tops up rather than replaces.
+            if not any(re.search(r"happy.?hour|special", u, re.I) for u in queue):
+                extra = [u for u in sitemap_links(session, url, robots)
+                         if u not in queue]
+                queue = (extra + queue)[: PAGE_CAP - 1]
     return pages, hits
 
 

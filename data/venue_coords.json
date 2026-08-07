@@ -53,6 +53,15 @@
   "queried": "1800 FEDERAL ST, PHILADELPHIA PA 19146-2915",
   "resolved": "American Sardine Bar"
  },
+ "anthony-s-cucina-fresca-downingtown": {
+  "lat": 40.0038458,
+  "lng": -75.7078421,
+  "matched_by": "osm_site",
+  "osm": "way/554302607",
+  "precision": "place",
+  "queried": "78 W LANCASTER AVE, DOWNINGTOWN PA 19335-2825",
+  "resolved": "Anthony's Cucina Fresca"
+ },
  "avenue-kitchen-glen-mills": {
   "lat": 39.8644358,
   "lng": -75.5424654,
@@ -109,6 +118,24 @@
   "queried": "200 Fairfield Rd, Plymouth Meeting PA 19462",
   "resolved": "200, Fairfield Road, Mogees Station, Plymouth Township, Montgomery County, Pennsylvania, 19462, United States"
  },
+ "black-powder-tavern-wayne": {
+  "lat": 40.0726183,
+  "lng": -75.4382876,
+  "matched_by": "osm_site",
+  "osm": "way/679902919",
+  "precision": "place",
+  "queried": "1164 VALLEY FORGE RD, WAYNE PA 19087-1202",
+  "resolved": "Black Powder Tavern"
+ },
+ "bloomsday-cafe-philadelphia": {
+  "lat": 39.942737,
+  "lng": -75.1455915,
+  "matched_by": "osm_site",
+  "osm": "node/9459428362",
+  "precision": "place",
+  "queried": "414 S 2ND ST, PHILADELPHIA PA 19147-1608",
+  "resolved": "Bloomsday Cafe"
+ },
  "bowlero-boothwyn": {
   "lat": 39.8502211,
   "lng": -75.446885,
@@ -117,6 +144,15 @@
   "precision": "place",
   "queried": "575 CONCHESTER HWY, BOOTHWYN PA 19061",
   "resolved": "Bowlero"
+ },
+ "butcher-and-barkeep-harleysville": {
+  "lat": 40.2873691,
+  "lng": -75.3988303,
+  "matched_by": "osm_site",
+  "osm": "way/627646345",
+  "precision": "place",
+  "queried": "712 MAIN ST, HARLEYSVILLE PA 19438-1636",
+  "resolved": "Butcher and Barkeep"
  },
  "cantina-feliz-fort-washington": {
   "lat": 40.1363009,
@@ -272,6 +308,15 @@
   "queried": "214 SUGARTOWN RD, WAYNE PA 19087",
   "resolved": "Dandan"
  },
+ "dave-buster-s-philadelphia": {
+  "lat": 39.956051,
+  "lng": -75.1377109,
+  "matched_by": "osm_site",
+  "osm": "way/334264527",
+  "precision": "place",
+  "queried": "325 N CHRISTOPHER COLUMBUS BLVD, PHILADELPHIA PA 19106",
+  "resolved": "Dave & Buster's"
+ },
  "desmond-hotel-malvern-a-doubletree-by-hilton-malvern": {
   "lat": 40.0557551,
   "lng": -75.5267083,
@@ -298,6 +343,15 @@
   "precision": "place",
   "queried": "2118 WASHINGTON AVE, PHILADELPHIA PA 19146",
   "resolved": "Dock Street Brewery South"
+ },
+ "el-vez-philadelphia": {
+  "lat": 39.949702,
+  "lng": -75.161896,
+  "matched_by": "osm_site",
+  "osm": "node/5437614421",
+  "precision": "place",
+  "queried": "121-127 S 13TH ST, PHILADELPHIA PA 19107-4903",
+  "resolved": "El Vez"
  },
  "estia-philadelphia": {
   "lat": 39.948409,
@@ -353,6 +407,15 @@
   "queried": "233 CHESTNUT ST, PHILADELPHIA PA 19106-2813",
   "resolved": "Forsythia"
  },
+ "frankford-hall-philadelphia": {
+  "lat": 39.969485,
+  "lng": -75.134683,
+  "matched_by": "osm_site",
+  "osm": "node/3306921057",
+  "precision": "place",
+  "queried": "1210-22 FRANKFORD AVE, PHILADELPHIA PA 19125-3906",
+  "resolved": "Frankford Hall"
+ },
  "goats-beard-wayne": {
   "lat": 40.044243,
   "lng": -75.387808,
@@ -362,6 +425,15 @@
   "precision": "amenity",
   "queried": "103 N Wayne Ave, Wayne PA 19087",
   "resolved": "The Goat's Beard, 103, North Wayne Avenue, Wayne, Radnor Township, Delaware County, Pennsylvania, 19087, United States"
+ },
+ "good-dog-bar-philadelphia": {
+  "lat": 39.9487884,
+  "lng": -75.1663204,
+  "matched_by": "osm_site",
+  "osm": "way/334239526",
+  "precision": "place",
+  "queried": "224 S 15TH ST, PHILADELPHIA PA 19102-3806",
+  "resolved": "Good Dog Bar"
  },
  "guiseppes-restauant-ambler": {
   "lat": 40.157917,
@@ -408,6 +480,15 @@
   "queried": "1109 WALNUT ST, PHILADELPHIA PA 19107-4908",
   "resolved": "Hi-Lo Taco Co."
  },
+ "interstate-drafthouse-philadelphia": {
+  "lat": 39.9718422,
+  "lng": -75.1286774,
+  "matched_by": "osm_site",
+  "osm": "way/1218089813",
+  "precision": "place",
+  "queried": "1235 E PALMER ST, PHILADELPHIA PA 19125-3307",
+  "resolved": "Interstate Drafthouse"
+ },
  "iron-hill-media": {
   "lat": 39.917428,
   "lng": -75.388327,
@@ -444,6 +525,15 @@
   "precision": "place",
   "queried": "LINCOLN COURT SHOPPING CENTER 245 LANCASTER AVE, FRAZER PA 19355-3607",
   "resolved": "Joey Chops"
+ },
+ "lansdale-tavern-lansdale": {
+  "lat": 40.2479843,
+  "lng": -75.294166,
+  "matched_by": "osm_site",
+  "osm": "node/13382004707",
+  "precision": "place",
+  "queried": "839 W MAIN ST, LANSDALE PA 19446-2015",
+  "resolved": "Lansdale Tavern"
  },
  "las-bugambilias-philadelphia": {
   "lat": 39.94964,
@@ -769,6 +859,15 @@
   "queried": "1946 LOMBARD ST, PHILADELPHIA PA 19146-1411",
   "resolved": "Pub & Kitchen"
  },
+ "rebel-hill-brewing-phoenixville": {
+  "lat": 40.133652,
+  "lng": -75.5177982,
+  "matched_by": "osm_site",
+  "osm": "node/5523297854",
+  "precision": "place",
+  "queried": "242 BRIDGE ST, PHOENIXVILLE PA 19460-3450",
+  "resolved": "Rebel Hill Brewing"
+ },
  "revival-pizza-pub-chester-springs": {
   "lat": 40.1160536,
   "lng": -75.6919705,
@@ -877,6 +976,15 @@
   "queried": "207 W LANCASTER AVE, DOWNINGTOWN PA 19335-2511",
   "resolved": "Station Taproom"
  },
+ "sullivan-s-steakhouse-king-of-prussia": {
+  "lat": 40.0866596,
+  "lng": -75.3867881,
+  "matched_by": "osm_site",
+  "osm": "way/47094437",
+  "precision": "place",
+  "queried": "700 W DEKALB PK, KING OF PRUSSIA PA 19406",
+  "resolved": "Sullivan's Steakhouse"
+ },
  "teikoku-newtown-square": {
   "lat": 39.9714758,
   "lng": -75.4699749,
@@ -894,6 +1002,15 @@
   "precision": "place",
   "queried": "1426-30 WALNUT ST, PHILADELPHIA PA 19102-3804",
   "resolved": "The Cheesecake Factory"
+ },
+ "the-continental-mid-town-philadelphia": {
+  "lat": 39.9518174,
+  "lng": -75.1704471,
+  "matched_by": "osm_site",
+  "osm": "node/5636054821",
+  "precision": "place",
+  "queried": "1801 CHESTNUT ST, PHILADELPHIA PA 19103-3712",
+  "resolved": "The Continental Mid-Town"
  },
  "the-crown-tavern-glen-mills": {
   "lat": 39.8620259,
@@ -921,6 +1038,15 @@
   "precision": "place",
   "queried": "103 N WAYNE AVE, WAYNE PA 19087-3529",
   "resolved": "The Goat's Beard"
+ },
+ "the-great-american-pub-phoenixville": {
+  "lat": 40.134039,
+  "lng": -75.5143516,
+  "matched_by": "osm_site",
+  "osm": "node/1388435177",
+  "precision": "place",
+  "queried": "148 BRIDGE ST, PHOENIXVILLE PA 19460-3448",
+  "resolved": "The Great American Pub"
  },
  "the-gypsy-saloon-west-conshohocken": {
   "lat": 40.068927,
@@ -967,6 +1093,15 @@
   "queried": "3911 SKIPPACK PIKE, SKIPPACK PA 19474",
   "resolved": "The Stray Dog Tavern"
  },
+ "the-trestle-inn-philadelphia": {
+  "lat": 39.958754,
+  "lng": -75.1565163,
+  "matched_by": "osm_site",
+  "osm": "way/1099888899",
+  "precision": "place",
+  "queried": "339 N 11TH ST, PHILADELPHIA PA 19107-1307",
+  "resolved": "The Trestle Inn"
+ },
  "the-wilder-philadelphia": {
   "lat": 39.951443,
   "lng": -75.174049,
@@ -1004,6 +1139,15 @@
   "precision": "place",
   "queried": "116-120 S 11TH ST, PHILADELPHIA PA 19107-4801",
   "resolved": "Top Tomato Bar & Pizza"
+ },
+ "trappe-tavern-trappe": {
+  "lat": 40.1984254,
+  "lng": -75.4757088,
+  "matched_by": "osm_site",
+  "osm": "node/1609665802",
+  "precision": "place",
+  "queried": "416 MAIN ST, TRAPPE PA 19426-2607",
+  "resolved": "Trappe Tavern"
  },
  "tria-philadelphia": {
   "lat": 39.946541,
@@ -1122,6 +1266,15 @@
   "precision": "amenity",
   "queried": "324 W Swedesford Rd, Berwyn PA 19312",
   "resolved": "Will's + Bill's Brewery, 324, West Swedesford Road, Chesterbrook, Tredyffrin Township, Chester County, Pennsylvania, 19087, United States"
+ },
+ "wissahickon-brewing-co-philadelphia": {
+  "lat": 39.9745786,
+  "lng": -75.1400343,
+  "matched_by": "osm_site",
+  "osm": "node/7383526243",
+  "precision": "place",
+  "queried": "1526 N AMERICAN ST, PHILADELPHIA PA 19122-3811",
+  "resolved": "Wissahickon Brewing Co"
  },
  "yards-brewing-company-philadelphia": {
   "lat": 39.9606439,

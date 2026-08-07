@@ -1,6 +1,8 @@
 {
   "_comment": "Candidate URLs for licensees the name-stem guess cannot reach, keyed by PLCB lid. Almost all are chains: the stem resolves to the right company, but a national homepage never names the town, so guess_sites.verify() cannot place it. A location page can. These are LEADS ONLY -- every one is fetched and kept only if the page both names and places the venue, exactly like a guessed stem. Sourced by web search; see HANDOFF. Add freely, wrong entries are rejected rather than published.",
 
+  "_comment_name": "An entry may be {url, name} instead of a bare URL. 'name' is the trade name for a licensee whose PLCB row is a corporate shell -- COLD RIVER LLC at 822 Fayette St is the StoneRose. It does NOT bypass verification: that name is what verify() then requires the page to show, alongside the town. It also becomes the name on the card. Every one below was found by searching the licensee's STREET ADDRESS, not its name, because the address is the join.",
+
   "129451": ["https://www.tommystavernandtap.com/kingofprussia"],
   "130467": ["https://www.daveandbusters.com/us/en/about/locations/king-of-prussia-pa"],
   "20559":  ["https://www.creedskop.com/"],
@@ -25,8 +27,29 @@
   "49850":  ["https://www.savonarestaurant.com/"],
   "58639":  ["https://www.wildricekop.com/"],
   "107668": ["https://www.takusteakhouse.com/"],
-  "98616":  ["https://www.koomasushi.com/"],
   "109967": ["https://www.botld.com/"],
   "131566": ["https://www.netflix.com/house/philadelphia"],
-  "84761":  ["https://www.bestwestern.com/en_US/book/hotels-in-king-of-prussia/best-western-plus-the-inn-at-king-of-prussia/propertyCode.38141.html"]
+  "84761":  ["https://www.bestwestern.com/en_US/book/hotels-in-king-of-prussia/best-western-plus-the-inn-at-king-of-prussia/propertyCode.38141.html"],
+
+  "98616":  [{"url": "http://koomakop.com/", "name": "Kooma"}],
+
+  "57342":  ["https://www.mollymaguiresphoenixville.com/"],
+  "71159":  [{"url": "https://www.stable12.com/", "name": "Stable 12 Brewing"}],
+  "71157":  [{"url": "https://www.stable12.com/", "name": "Stable 12 Brewing"}],
+  "84498":  [{"url": "http://libertyunionbar.com/", "name": "Liberty Union Bar & Grill"}],
+  "64975":  [{"url": "https://blackhorsetaverns.com/phoenixville/", "name": "Black Horse Tavern"}],
+  "90605":  [{"url": "https://ilgranaiopa2.com/", "name": "il Granaio"}],
+  "100909": ["https://www.stonehousegrillepa.com/"],
+  "72735":  [{"url": "https://fooderybeer.squarespace.com/phoenixville", "name": "The Foodery"}],
+  "18900":  [{"url": "https://countryhouserestaurant.com/", "name": "The Country House"}],
+  "129244": ["https://bowenarrowwinery.com/"],
+  "58996":  [{"url": "https://bistroonbridge.com/", "name": "Bistro on Bridge"}],
+
+  "97258":  ["https://catch101.com/"],
+  "61728":  [{"url": "https://thestoneroserestaurant.com/", "name": "The StoneRose"}],
+  "36229":  [{"url": "https://coyotecrossing.com/", "name": "Coyote Crossing"}],
+  "53783":  ["https://pepperoncinirestaurant.com/"],
+
+  "126367": [{"url": "https://springhollowgolf.com/bar-grille/", "name": "Spring Hollow Bar & Grille"}],
+  "19857":  [{"url": "https://www.centercitysteaks.com/", "name": "Center City Steaks"}]
 }

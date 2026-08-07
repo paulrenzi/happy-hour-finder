@@ -358,6 +358,58 @@
    ]
   },
   {
+   "id": "anthony-s-cucina-fresca-downingtown",
+   "name": "Anthony's Cucina Fresca",
+   "address": "78 W LANCASTER AVE, DOWNINGTOWN PA 19335-2825",
+   "zone_id": "exton_downingtown",
+   "website": "https://anthonyscucinafresca.com/",
+   "plcb_name": "ANTHONYS PIZZA & GRILL",
+   "lat": 40.0038458,
+   "lng": -75.7078421,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://anthonyscucinafresca.com/menu/",
+      "quote": "Happy Hour Menu / Join us for Happy Hour! Monday through Friday, 4:00pm to 6:00pm. / Single shot mixed drinks \u2013 $5.00 each! All other cocktails in our menu for only $9.00"
+     }
+    }
+   ]
+  },
+  {
    "id": "al-pastor-exton",
    "name": "Al Pastor",
    "address": "560 WELLINGTON SQ, EXTON PA 19341",

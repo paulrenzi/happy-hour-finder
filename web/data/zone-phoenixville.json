@@ -58,6 +58,149 @@
      }
     }
    ]
+  },
+  {
+   "id": "black-horse-tavern-phoenixville",
+   "name": "Black Horse Tavern",
+   "address": "1303 CHARLESTOWN RD, PHOENIXVILLE PA 19460-2344",
+   "zone_id": "phoenixville",
+   "website": "https://blackhorsetaverns.com/phoenixville/",
+   "plcb_name": "OLDE BLACK HORSE TAVERN",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://blackhorsetaverns.com/phoenixville/",
+      "quote": "Happy Hour Monday-Friday 4-6pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "the-great-american-pub-phoenixville",
+   "name": "The Great American Pub",
+   "address": "148 BRIDGE ST, PHOENIXVILLE PA 19460-3448",
+   "zone_id": "phoenixville",
+   "website": "https://thegreatamericanpub.com/phoenixville",
+   "plcb_name": "THE GREAT AMERICAN PUB & HOTEL",
+   "lat": 40.134039,
+   "lng": -75.5143516,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://thegreatamericanpub.com/phoenixville/menus/happy-hour/",
+      "quote": "Happy Hour Specials / Monday through Friday | DINE-IN ONLY | 4 -6pm / $3 - Miller Lite Drafts"
+     }
+    }
+   ]
+  },
+  {
+   "id": "rebel-hill-brewing-phoenixville",
+   "name": "Rebel Hill Brewing",
+   "address": "242 BRIDGE ST, PHOENIXVILLE PA 19460-3450",
+   "zone_id": "phoenixville",
+   "website": "https://www.rebelhillbrewing.com/",
+   "plcb_name": "REBEL HILL BREWING COMPANY",
+   "lat": 40.133652,
+   "lng": -75.5177982,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.rebelhillbrewing.com/specials",
+      "quote": "HAPPY HOUR / Tuesday-Thursday 5-7 PM"
+     }
+    }
+   ]
   }
  ]
 }

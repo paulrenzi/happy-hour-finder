@@ -718,6 +718,63 @@
    ]
   },
   {
+   "id": "dave-buster-s-philadelphia",
+   "name": "Dave & Buster's",
+   "address": "325 N CHRISTOPHER COLUMBUS BLVD, PHILADELPHIA PA 19106",
+   "zone_id": "center_city",
+   "website": "https://www.daveandbusters.com/us/en/about/locations/philadelphia",
+   "plcb_name": "DAVE & BUSTERS",
+   "lat": 39.956051,
+   "lng": -75.1377109,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 7,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.daveandbusters.com/us/en/about/locations/philadelphia",
+      "quote": "Swing by with your crew during Happy Hour to save on brand-new cocktails, classic faves, 22oz domestic drafts & house wine. Available Mon\u2013Fri from 5\u20137PM & Sun\u2013Thu from 10PM\u201312AM.*"
+     }
+    }
+   ]
+  },
+  {
    "id": "hard-rock-cafe-philadelphia",
    "name": "Hard Rock Cafe",
    "address": "1113-31 MARKET ST, PHILADELPHIA PA 19107-2901",
@@ -819,6 +876,58 @@
    ]
   },
   {
+   "id": "good-dog-bar-philadelphia",
+   "name": "Good Dog Bar",
+   "address": "224 S 15TH ST, PHILADELPHIA PA 19102-3806",
+   "zone_id": "center_city",
+   "website": "https://www.gooddogbar.com/",
+   "plcb_name": "FRANK CLEMENTS TAVERN, INC.",
+   "lat": 39.9487884,
+   "lng": -75.1663204,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://gooddogbar.com/menu/",
+      "quote": "Happy Hour / Monday to Friday 3-6pm / $5 Mixed Drinks"
+     }
+    }
+   ]
+  },
+  {
    "id": "cuba-libre-philadelphia",
    "name": "Cuba Libre",
    "address": "10-14-16 S SECOND ST, PHILADELPHIA PA 19106-2802",
@@ -875,6 +984,58 @@
       "kind": "venue_site",
       "url": "https://cubalibrerestaurant.com/en/philadelphia/",
       "quote": "Happy Hour / MON-FRI 4PM-7:30PM / SUNDAY 12PM-4PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "el-vez-philadelphia",
+   "name": "El Vez",
+   "address": "121-127 S 13TH ST, PHILADELPHIA PA 19107-4903",
+   "zone_id": "center_city",
+   "website": "https://elvezrestaurant.com",
+   "plcb_name": "THIRTEENTH STREET RESTAURANT PARTNERS, LP",
+   "lat": 39.949702,
+   "lng": -75.161896,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "11:30",
+       "end": "15:00"
+      },
+      {
+       "dow": 2,
+       "start": "11:30",
+       "end": "15:00"
+      },
+      {
+       "dow": 3,
+       "start": "11:30",
+       "end": "15:00"
+      },
+      {
+       "dow": 4,
+       "start": "11:30",
+       "end": "15:00"
+      },
+      {
+       "dow": 5,
+       "start": "11:30",
+       "end": "15:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://elvezrestaurant.com",
+      "quote": "Happy Hour / Monday-Friday 3-5pm / Monday-Friday 11:30am-3pm"
      }
     }
    ]
@@ -1014,6 +1175,58 @@
       "kind": "venue_site",
       "url": "https://estiarestaurant.com/philadelphia-pa/philadelphia-pa.asp",
       "quote": "HAPPY HOUR / Every day 3:30pm - 5:30pm / $6 beers, $10 wines and hand crafted cocktails."
+     }
+    }
+   ]
+  },
+  {
+   "id": "the-continental-mid-town-philadelphia",
+   "name": "The Continental Mid-Town",
+   "address": "1801 CHESTNUT ST, PHILADELPHIA PA 19103-3712",
+   "zone_id": "center_city",
+   "website": "https://continentalmidtown.com",
+   "plcb_name": "CONTINENTAL MIDTOWN",
+   "lat": 39.9518174,
+   "lng": -75.1704471,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "11:30",
+       "end": "15:00"
+      },
+      {
+       "dow": 2,
+       "start": "11:30",
+       "end": "15:00"
+      },
+      {
+       "dow": 3,
+       "start": "11:30",
+       "end": "15:00"
+      },
+      {
+       "dow": 4,
+       "start": "11:30",
+       "end": "15:00"
+      },
+      {
+       "dow": 5,
+       "start": "11:30",
+       "end": "15:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://continentalmidtown.com",
+      "quote": "Happy Hour / Monday-Friday 5-7pm (Bar Only) / Monday-Friday 11:30am-3pm"
      }
     }
    ]
@@ -1317,6 +1530,48 @@
       "kind": "venue_site",
       "url": "https://yardsbrewing.com/pages/taproom",
       "quote": "Happy Hour: 3-6pm Mon-Fri"
+     }
+    }
+   ]
+  },
+  {
+   "id": "the-trestle-inn-philadelphia",
+   "name": "The Trestle Inn",
+   "address": "339 N 11TH ST, PHILADELPHIA PA 19107-1307",
+   "zone_id": "center_city",
+   "website": "https://thetrestleinn.com/",
+   "plcb_name": "GLADURHAR LLC",
+   "lat": 39.958754,
+   "lng": -75.1565163,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "20:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "20:00"
+      },
+      {
+       "dow": 6,
+       "start": "17:00",
+       "end": "20:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://thetrestleinn.com/",
+      "quote": "Come and enjoy our Happy Hours from 5pm-8pm and 10pm-11pm every Thursday, Friday and Saturday."
      }
     }
    ]
@@ -2112,6 +2367,43 @@
       "kind": "venue_site",
       "url": "https://www.harpersgardenphilly.com/menus",
       "quote": "Join us at the bar for Happy Hour from 4PM - 6PM Monday - Friday."
+     }
+    }
+   ]
+  },
+  {
+   "id": "bloomsday-cafe-philadelphia",
+   "name": "Bloomsday Cafe",
+   "address": "414 S 2ND ST, PHILADELPHIA PA 19147-1608",
+   "zone_id": "center_city",
+   "website": "https://bloomsdaycafe.com/",
+   "plcb_name": "GECC2 LLC",
+   "lat": 39.942737,
+   "lng": -75.1455915,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "17:30"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "17:30"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://bloomsdaycafe.com/",
+      "quote": "HAPPY HOUR 4p-5:30p, W/Th/Fr / MONDAY & TUESDAY"
      }
     }
    ]

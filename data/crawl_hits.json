@@ -63,13 +63,106 @@
  "100210": {
   "address": "839 W MAIN ST, LANSDALE PA 19446-2015",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "A warm and welcoming family-friendly spot in Lansdale, offering delicious daily food and drink specials, fun events, and light catering for your smaller gatherings.",
+    "url": "https://lansdaletavern.com/"
+   },
+   {
+    "quote": "Late night menu \u2019til 11pm",
+    "url": "https://lansdaletavern.com/"
+   },
+   {
+    "quote": "Late night menu \u2019til 12am",
+    "url": "https://lansdaletavern.com/"
+   },
+   {
+    "quote": "Happy Hour / 4pm \u2013 6pm",
+    "url": "https://lansdaletavern.com/"
+   },
+   {
+    "quote": "Industry Night / Select Thursdays, 10pm\u20132am, with specials all night. Check our Instagram for upcoming dates. / Monday",
+    "url": "https://lansdaletavern.com/"
+   },
+   {
+    "quote": "Daily Specials / Monday / Test your knowledge on Trivia Night from 7:30 to 9:30 with exciting prizes up for grabs. Plus, enjoy $6.50 margaritas to keep the good times flowing.",
+    "url": "https://lansdaletavern.com/"
+   },
+   {
+    "quote": "Test your knowledge on Trivia Night from 7:30 to 9:30 with exciting prizes up for grabs. Plus, enjoy $6.50 margaritas to keep the good times flowing.",
+    "url": "https://lansdaletavern.com/"
+   },
+   {
+    "quote": "Happy Hour / 7 days a week, from 4-6pm / $1 off draft beer",
+    "url": "https://lansdaletavern.com/"
+   },
+   {
+    "quote": "~ Industry Night ~ Weekly Food Specials ~ Coconut",
+    "url": "https://lansdaletavern.com/"
+   },
+   {
+    "quote": "A warm and welcoming family-friendly spot in Lansdale, offering delicious daily food and drink specials, fun events, and light catering for your smaller gatherings.",
+    "url": "https://lansdaletavern.com/events/"
+   },
+   {
+    "quote": "Late night menu \u2019til 11pm",
+    "url": "https://lansdaletavern.com/events/"
+   },
+   {
+    "quote": "Late night menu \u2019til 12am",
+    "url": "https://lansdaletavern.com/events/"
+   },
+   {
+    "quote": "Happy Hour / 4pm \u2013 6pm",
+    "url": "https://lansdaletavern.com/events/"
+   },
+   {
+    "quote": "Industry Night / Select Thursdays, 10pm\u20132am, with specials all night. Check our Instagram for upcoming dates. / Monday",
+    "url": "https://lansdaletavern.com/events/"
+   },
+   {
+    "quote": "Daily Specials / Monday / Test your knowledge on Trivia Night from 7:30 to 9:30 with exciting prizes up for grabs. Plus, enjoy $6.50 margaritas to keep the good times flowing.",
+    "url": "https://lansdaletavern.com/events/"
+   },
+   {
+    "quote": "Test your knowledge on Trivia Night from 7:30 to 9:30 with exciting prizes up for grabs. Plus, enjoy $6.50 margaritas to keep the good times flowing.",
+    "url": "https://lansdaletavern.com/events/"
+   },
+   {
+    "quote": "Happy Hour / 7 days a week, from 4-6pm / $1 off draft beer",
+    "url": "https://lansdaletavern.com/events/"
+   },
+   {
+    "quote": "~ Industry Night ~ Weekly Food Specials ~ Coconut",
+    "url": "https://lansdaletavern.com/events/"
+   },
+   {
+    "quote": "Late Night Menu / Sunday \u2013 Thursday: 9pm \u2013 11pm / Friday \u2013 Saturday: 10pm \u2013 12am",
+    "url": "https://lansdaletavern.com/menu"
+   },
+   {
+    "quote": "Late Night Menu / Sunday \u2013 Thursday: 9pm \u2013 11pm / Friday \u2013 Saturday: 10pm \u2013 12am",
+    "url": "https://lansdaletavern.com/menu/"
+   }
+  ],
   "name": "CALIMONT LLC",
   "osm_name": "Lansdale Tavern",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 9 quote(s)",
     "url": "https://lansdaletavern.com/"
+   },
+   {
+    "result": "ok, 9 quote(s)",
+    "url": "https://lansdaletavern.com/events/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://lansdaletavern.com/menu"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://lansdaletavern.com/menu/"
    }
   ],
   "website": "https://lansdaletavern.com/",
@@ -173,8 +266,12 @@
   "osm_name": "Antica Italian Restaurant & BYOB",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.anticapa.com"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.anticapa.com/menus.html"
    }
   ],
   "website": "https://www.anticapa.com",
@@ -199,6 +296,33 @@
   "website": "https://locations.chipotle.com/pa/philadelphia/1100-w-montgomery-ave",
   "zone_id": "fishtown_kensington"
  },
+ "100909": {
+  "address": "1300 HARES HILL RD, KIMBERTON PA 19442",
+  "crawled_at": "2026-08-06",
+  "hits": [],
+  "name": "STONE HOUSE GRILLE LLC",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.stonehousegrillepa.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.stonehousegrillepa.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.stonehousegrillepa.com/music-events-1"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.stonehousegrillepa.com/weekend-menu-additions"
+   }
+  ],
+  "website": "https://www.stonehousegrillepa.com/",
+  "zone_id": "phoenixville"
+ },
  "101064": {
   "address": "175 TOWN CENTER RD, KING OF PRUSSIA PA 19406",
   "crawled_at": "2026-08-06",
@@ -220,7 +344,7 @@
     "url": "https://peppersitalianrestaurantandbar.com/king-of-prussia-peppers-by-amedeo-s-restaurant-and-bar-happy-hours-specials"
    },
    {
-    "result": "error: ConnectionError",
+    "result": "ok, 0 quote(s)",
     "url": "https://peppersitalianrestaurantandbar.com/king-of-prussia-peppers-by-amedeo-s-restaurant-and-bar-drink-menu"
    },
    {
@@ -249,13 +373,46 @@
  "101129": {
   "address": "795 N 24TH ST, PHILADELPHIA PA 19130-2540",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Happy Hour",
+    "url": "https://hilltownfairmount.com/"
+   },
+   {
+    "quote": "Happy Hour \u2013 Hilltown Tavern Fairmount",
+    "url": "https://hilltownfairmount.com/happyhour/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://hilltownfairmount.com/happyhour/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://hilltownfairmount.com/drinks-2/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://hilltownfairmount.com/menu"
+   }
+  ],
   "name": "HILLTOWN 2 LLC",
   "osm_name": "Hilltown Tavern Fairmount",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 1 quote(s)",
     "url": "https://hilltownfairmount.com/"
+   },
+   {
+    "result": "ok, 2 quote(s)",
+    "url": "https://hilltownfairmount.com/happyhour/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://hilltownfairmount.com/drinks-2/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://hilltownfairmount.com/menu"
    }
   ],
   "website": "https://hilltownfairmount.com/",
@@ -454,13 +611,42 @@
  "101577": {
   "address": "44 W GAY ST, WEST CHESTER PA 19380",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Happy Hour Menu",
+    "url": "https://sedonataphouse.com/locations/west-chester-pa/"
+   },
+   {
+    "quote": "Join us for Happy Hour from 4pm \u2013 6pm for $7.9 house wine by the glass and $9.9 select craft classics!",
+    "url": "https://sedonataphouse.com/locations/west-chester-pa/"
+   },
+   {
+    "quote": "Happy Hour Menu",
+    "url": "https://sedonataphouse.com/locations/west-chester-pa/"
+   },
+   {
+    "quote": "Join us for Happy Hour from 4pm \u2013 6pm for $7.9 house wine by the glass and $9.9 select craft classics!",
+    "url": "https://sedonataphouse.com/locations/west-chester-pa/"
+   }
+  ],
   "name": "SEDONA TAPHOUSE",
   "osm_name": "Sedona Taphouse",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 2 quote(s)",
     "url": "https://sedonataphouse.com/locations/west-chester-pa/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://sedonataphouse.com/contact?type=PrivateEvent&store=West Chester, PA"
+   },
+   {
+    "result": "ok, 2 quote(s)",
+    "url": "https://sedonataphouse.com/locations/west-chester-pa/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://sedonataphouse.com/menu/"
    }
   ],
   "website": "https://sedonataphouse.com/locations/west-chester-pa/",
@@ -591,13 +777,30 @@
  "102299": {
   "address": "COLUMBUS COMMONS SHOPPING CENTER 1936 S COLUMBUS BLVD, PHILADELPHIA PA 19148",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Happy Hour",
+    "url": "https://hookreel.com/location/southphiladelphia/"
+   }
+  ],
   "name": "HOOK & REEL",
   "osm_name": "Hook & Reel",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 1 quote(s)",
     "url": "https://hookreel.com/location/southphiladelphia/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://hookreel.com/wp-content/uploads/2024/09/happyhourHK.pdf"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://hookreel.com/menu"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://hookreel.com/menu/"
    }
   ],
   "website": "https://hookreel.com/location/southphiladelphia/",
@@ -870,6 +1073,21 @@
   "website": "https://lascalasfire.com/villanova/",
   "zone_id": "wayne_radnor"
  },
+ "103419": {
+  "address": "1750 ASHBOURNE RD BUILDING 4, ELKINS PARK PA 19027",
+  "crawled_at": "2026-08-06",
+  "hits": [],
+  "name": "MORGAN STILLHOUSE",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://morganstillhouse.com/"
+   }
+  ],
+  "website": "https://morganstillhouse.com/",
+  "zone_id": "abington_jenkintown"
+ },
  "103534": {
   "address": "15 S 3RD ST, PHILADELPHIA PA 19106-2801",
   "crawled_at": "2026-08-06",
@@ -1110,7 +1328,7 @@
   "osm_name": "Bacio's Italian Cuicina",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.baciocucina.com/"
    }
   ],
@@ -1356,6 +1574,21 @@
   "website": "http://cartesianbrewing.com/",
   "zone_id": "center_city"
  },
+ "104798": {
+  "address": "2880 BERGEY RD  UNIT AA, HATFIELD PA 19440-1764",
+  "crawled_at": "2026-08-06",
+  "hits": [],
+  "name": "SPIROCHETE BREWING INC",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.spirochetebrewing.com/"
+   }
+  ],
+  "website": "https://www.spirochetebrewing.com/",
+  "zone_id": "souderton_harleysville"
+ },
  "104811": {
   "address": "39 MORRIS AVE, BRYN MAWR PA 19010-3335",
   "crawled_at": "2026-08-06",
@@ -1459,7 +1692,7 @@
   "osm_name": "Que Chula Es Puebla",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "robots.txt unreadable (403), treated as disallow",
     "url": "http://www.chulaespuebla.com/"
    }
   ],
@@ -1474,8 +1707,16 @@
   "osm_name": "PHS Pop Up Garden at Manayunk",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://phsonline.org/locations/phs-pop-up-garden-at-manayunk"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://phsonline.org/events"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://phsonline.org/events?location%5B0%5D=phs-pop-up-garden-at-manayunk"
    }
   ],
   "website": "https://phsonline.org/locations/phs-pop-up-garden-at-manayunk",
@@ -1628,6 +1869,46 @@
    {
     "quote": "VIEW HAPPY HOUR MENU",
     "url": "https://revivalpizzapub.com/"
+   },
+   {
+    "quote": "DAILY SPECIALS | Revival Pizza Pub",
+    "url": "https://www.revivalpizzapub.com/daily-specials"
+   },
+   {
+    "quote": "HAPPY HOUR MENU",
+    "url": "https://www.revivalpizzapub.com/daily-specials"
+   },
+   {
+    "quote": "DAILY SPECIALS",
+    "url": "https://www.revivalpizzapub.com/daily-specials"
+   },
+   {
+    "quote": "VIEW OUR DAILY SPECIALS! / MONDAYS / MARGHERITA MONDAY",
+    "url": "https://www.revivalpizzapub.com/daily-specials"
+   },
+   {
+    "quote": "$6 margaritas",
+    "url": "https://www.revivalpizzapub.com/daily-specials"
+   },
+   {
+    "quote": "HAPPY HOUR MENU | Revival Pizza Pub",
+    "url": "https://www.revivalpizzapub.com/happy-hour-menu"
+   },
+   {
+    "quote": "HAPPY HOUR MENU",
+    "url": "https://www.revivalpizzapub.com/happy-hour-menu"
+   },
+   {
+    "quote": "DAILY SPECIALS",
+    "url": "https://www.revivalpizzapub.com/happy-hour-menu"
+   },
+   {
+    "quote": "HAPPY HOUR MENU",
+    "url": "https://www.revivalpizzapub.com/lunch-specials"
+   },
+   {
+    "quote": "DAILY SPECIALS",
+    "url": "https://www.revivalpizzapub.com/lunch-specials"
    }
   ],
   "name": "REVIVAL",
@@ -1636,6 +1917,18 @@
    {
     "result": "ok, 5 quote(s)",
     "url": "https://revivalpizzapub.com/"
+   },
+   {
+    "result": "ok, 5 quote(s)",
+    "url": "https://www.revivalpizzapub.com/daily-specials"
+   },
+   {
+    "result": "ok, 3 quote(s)",
+    "url": "https://www.revivalpizzapub.com/happy-hour-menu"
+   },
+   {
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.revivalpizzapub.com/lunch-specials"
    }
   ],
   "website": "https://revivalpizzapub.com/",
@@ -1715,7 +2008,7 @@
   "osm_name": "Little Caesars",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://littlecaesars.com/en-us/store/10435/"
    }
   ],
@@ -1823,8 +2116,12 @@
   "osm_name": "Restaurant Aleksandar",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.restaurantaleksandar.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.restaurantaleksandar.com/gallery"
    }
   ],
   "website": "https://www.restaurantaleksandar.com/",
@@ -1900,7 +2197,7 @@
   "osm_name": "Big Phil's Bar & Grill",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "robots.txt unreadable (403), treated as disallow",
     "url": "https://bphils.com"
    }
   ],
@@ -1910,12 +2207,65 @@
  "108084": {
   "address": "1000-1002 CANAL ST, PHILADELPHIA PA 19123",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Happy Hour / Philadelphia",
+    "url": "https://otherhalfbrewing.com/location/philadelphia/"
+   },
+   {
+    "quote": "Philly Happy Hour",
+    "url": "https://otherhalfbrewing.com/location/philadelphia/"
+   },
+   {
+    "quote": "Happy Hour / Philadelphia",
+    "url": "https://otherhalfbrewing.com/events"
+   },
+   {
+    "quote": "Philly Happy Hour",
+    "url": "https://otherhalfbrewing.com/events"
+   },
+   {
+    "quote": "Happy Hour / Western New York",
+    "url": "https://otherhalfbrewing.com/events"
+   },
+   {
+    "quote": "OH\u2026Another Happy Hour @ Buffalo",
+    "url": "https://otherhalfbrewing.com/events"
+   },
+   {
+    "quote": "Happy Hour / Philadelphia",
+    "url": "https://otherhalfbrewing.com/events?fwp_event_location=philadelphia"
+   },
+   {
+    "quote": "Philly Happy Hour",
+    "url": "https://otherhalfbrewing.com/events?fwp_event_location=philadelphia"
+   },
+   {
+    "quote": "Happy Hour / Philadelphia",
+    "url": "https://otherhalfbrewing.com/location/philadelphia/"
+   },
+   {
+    "quote": "Philly Happy Hour",
+    "url": "https://otherhalfbrewing.com/location/philadelphia/"
+   }
+  ],
   "name": "OTHER HALF BREWERY",
   "osm_name": "Other Half Brewing",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 2 quote(s)",
+    "url": "https://otherhalfbrewing.com/location/philadelphia/"
+   },
+   {
+    "result": "ok, 4 quote(s)",
+    "url": "https://otherhalfbrewing.com/events"
+   },
+   {
+    "result": "ok, 2 quote(s)",
+    "url": "https://otherhalfbrewing.com/events?fwp_event_location=philadelphia"
+   },
+   {
+    "result": "ok, 2 quote(s)",
     "url": "https://otherhalfbrewing.com/location/philadelphia/"
    }
   ],
@@ -1945,8 +2295,20 @@
   "osm_name": "Rosa Mexicano",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://rosamexicano.com/location/ardmore/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://rosamexicano.com/menus/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://rosamexicano.com/menus/?menu=ardmore"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://rosamexicano.com/menus/?menu=boston"
    }
   ],
   "website": "https://rosamexicano.com/location/ardmore/",
@@ -2351,12 +2713,17 @@
  "109283": {
   "address": "174 EAGLEVIEW BLVD, EXTON PA 19341-3012",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Special events, happy hours, job offers, and more will be highlighted here on your local Magerks bulletin board.",
+    "url": "https://www.magerkspub.com/lionville"
+   }
+  ],
   "name": "MAGERKS PUB",
   "osm_name": "MaGerk's",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 1 quote(s)",
     "url": "https://www.magerkspub.com/lionville"
    }
   ],
@@ -2455,7 +2822,7 @@
   "osm_name": null,
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://mylocalbrewworks.com/"
    }
   ],
@@ -2523,7 +2890,40 @@
  "109775": {
   "address": "366 RIDGE RD, SPRING CITY PA 19475-2802",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Friyay Happy Hour!!! \u2014 Bella Trattoria",
+    "url": "https://www.bellatrattoriasc.com/events/friyay-happy-hour"
+   },
+   {
+    "quote": "Friyay Happy Hour!!!",
+    "url": "https://www.bellatrattoriasc.com/events/friyay-happy-hour"
+   },
+   {
+    "quote": "Friyay is here!!! Join us for fantastic Happy Hour Specials every Friyay. Unpack the week with us.",
+    "url": "https://www.bellatrattoriasc.com/events/friyay-happy-hour"
+   },
+   {
+    "quote": "Music Happy Hour with Jasmine Foster",
+    "url": "https://www.bellatrattoriasc.com/events/friyay-happy-hour"
+   },
+   {
+    "quote": "Music Happy Hour with Jasmine Foster \u2014 Bella Trattoria",
+    "url": "https://www.bellatrattoriasc.com/events/music-happy-hour-with-jasmine-foster"
+   },
+   {
+    "quote": "Music Happy Hour with Jasmine Foster / 2:00\u202fPM / 4:00\u202fPM",
+    "url": "https://www.bellatrattoriasc.com/events/music-happy-hour-with-jasmine-foster"
+   },
+   {
+    "quote": "Join us at Bella for a music Happy Hour with Jasmine Foster. Jasmine will be performing original music and we will be serving fabulous drink and food specials. Unwind on a wonderful Saturday afternoon.",
+    "url": "https://www.bellatrattoriasc.com/events/music-happy-hour-with-jasmine-foster"
+   },
+   {
+    "quote": "Friyay Happy Hour!!!",
+    "url": "https://www.bellatrattoriasc.com/events/music-happy-hour-with-jasmine-foster"
+   }
+  ],
   "name": "BELLA TRATTORIA",
   "osm_name": "Bella Trattoria",
   "pages": [
@@ -2532,16 +2932,16 @@
     "url": "https://www.bellatrattoriasc.com/"
    },
    {
+    "result": "ok, 4 quote(s)",
+    "url": "https://www.bellatrattoriasc.com/events/friyay-happy-hour"
+   },
+   {
+    "result": "ok, 4 quote(s)",
+    "url": "https://www.bellatrattoriasc.com/events/music-happy-hour-with-jasmine-foster"
+   },
+   {
     "result": "ok, 0 quote(s)",
     "url": "https://www.bellatrattoriasc.com/events"
-   },
-   {
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.bellatrattoriasc.com/ourmenu"
-   },
-   {
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.bellatrattoriasc.com/privateevents"
    }
   ],
   "website": "https://www.bellatrattoriasc.com/",
@@ -2602,7 +3002,7 @@
   "osm_name": "Masala Symphony",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "403 text/html",
     "url": "https://masalasymphony.com/"
    }
   ],
@@ -2730,7 +3130,11 @@
   "osm_name": "Paulie Gee's Soul City",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
+    "url": "https://pauliegee.com/soul-city/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
     "url": "https://pauliegee.com/soul-city/"
    }
   ],
@@ -2745,8 +3149,20 @@
   "osm_name": "Bierhaul",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://bierhaul.com"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://bierhaul.com"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://bierhaul.com/farmhousemenu/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://bierhaul.com/townhousemenu/"
    }
   ],
   "website": "https://bierhaul.com",
@@ -3064,13 +3480,30 @@
  "111049": {
   "address": "46 FAYETTE ST, CONSHOHOCKEN PA 19428",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Meet where the past meets the future. Book a private event at a historic 148-year-old firehouse. Picture a private dinner in front of a fireplace or a soaring happy hour event in our Sky Bar and restaurant. Our spacious and versatile Conshohocken event venues adapt seamlessly to your vision.",
+    "url": "https://www.hotelwestandmain.com/conshohocken-events"
+   }
+  ],
   "name": "HOTEL WEST & MAIN TAPESTRY COLLECTION",
   "osm_name": "Hotel West & Main Conshohocken Philadelphia, Tapestry Collection by Hilton",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.hotelwestandmain.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.hotelwestandmain.com/hotel-west--main-special-offer--book-by-sept-30-for-exclusive-perks"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.hotelwestandmain.com/conshohocken-event-venues"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.hotelwestandmain.com/conshohocken-events"
    }
   ],
   "website": "https://www.hotelwestandmain.com/",
@@ -3127,8 +3560,16 @@
   "osm_name": "Lock 29 Mont Clare",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.lock29montclare.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.lock29montclare.com/menu"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.lock29montclare.com/private-events"
    }
   ],
   "website": "https://www.lock29montclare.com/",
@@ -3274,7 +3715,11 @@
   "osm_name": "Pizzaz Pizza",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
+    "url": "https://mypizzazpizza.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
     "url": "https://mypizzazpizza.com/"
    }
   ],
@@ -3452,14 +3897,26 @@
   "crawled_at": "2026-08-06",
   "hits": [],
   "name": "CHARKOAL'S PRIME BRAZILIZN STEAKHOUSE",
-  "osm_name": "Gaucho's Prime",
+  "osm_name": "Charkoal's Brazilian Steakhouse",
   "pages": [
    {
     "result": "ok, 0 quote(s)",
-    "url": "https://gauchosprimeusa.com/"
+    "url": "https://charkoals.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://charkoals.com/bar-menu/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://charkoals.com/desserts-menu/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://charkoals.com/hostyourevent/"
    }
   ],
-  "website": "https://gauchosprimeusa.com/",
+  "website": "https://charkoals.com/",
   "zone_id": "king_of_prussia"
  },
  "113226": {
@@ -3495,12 +3952,41 @@
  "114168": {
   "address": "2509 W MAIN ST, NORRISTOWN PA 19403-3020",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Daily Specials",
+    "url": "https://chapstap.com/"
+   },
+   {
+    "quote": "Daily Specials",
+    "url": "https://chapstap.com/menus/daily-specials/"
+   },
+   {
+    "quote": "Daily Specials",
+    "url": "https://chapstap.com/menus/weekly-specials/"
+   },
+   {
+    "quote": "Daily Specials",
+    "url": "https://chapstap.com/"
+   }
+  ],
   "name": "CHAPS TAP ROOM & SPORTS GRILL",
   "osm_name": "Chap's Taproom",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 1 quote(s)",
+    "url": "https://chapstap.com/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://chapstap.com/menus/daily-specials/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://chapstap.com/menus/weekly-specials/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
     "url": "https://chapstap.com/"
    }
   ],
@@ -3534,7 +4020,7 @@
   "osm_name": "Terrain at DelVal",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "robots.txt unreadable (403), treated as disallow",
     "url": "https://www.shopterrain.com/doylestown"
    }
   ],
@@ -3616,15 +4102,15 @@
    },
    {
     "result": "ok, 0 quote(s)",
+    "url": "https://topgolf.com/us/driving-for-good/special-olympics-topgolf/"
+   },
+   {
+    "result": "robots.txt disallows",
+    "url": "https://s3.topgolf.com/uploads/pdf/menus/Tier6_National_05.2026.pdf"
+   },
+   {
+    "result": "ok, 0 quote(s)",
     "url": "https://topgolf.com/us/king-of-prussia/"
-   },
-   {
-    "result": "ok, 0 quote(s)",
-    "url": "https://topgolf.com/us/king-of-prussia/menu/"
-   },
-   {
-    "result": "ok, 0 quote(s)",
-    "url": "https://topgolf.com/us/king-of-prussia/plan-an-event/"
    }
   ],
   "website": "https://topgolf.com/us/king-of-prussia/",
@@ -3705,8 +4191,12 @@
   "osm_name": "Ralph's",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://ralphsrestaurant.com"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://ralphsrestaurant.com/our-menu/"
    }
   ],
   "website": "https://ralphsrestaurant.com",
@@ -4023,7 +4513,7 @@
   "osm_name": "Crafty Crab",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "410 text/html",
     "url": "https://www.kitchenbar.net"
    }
   ],
@@ -4061,8 +4551,20 @@
   "osm_name": "KPot",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://thekpot.com/location/philadelphia-cottman/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://thekpot.com/location/philadelphia-cottman/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://thekpot.com/menu"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://thekpot.com/menu/"
    }
   ],
   "website": "https://thekpot.com/location/philadelphia-cottman/",
@@ -4110,7 +4612,7 @@
   "osm_name": "Terrain Garden Cafe",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "robots.txt unreadable (403), treated as disallow",
     "url": "https://www.shopterrain.com/pages/glen-mills-restaurant"
    }
   ],
@@ -4349,7 +4851,11 @@
   "osm_name": "Borromini",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
+    "url": "https://borrominiristorante.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
     "url": "https://borrominiristorante.com/"
    }
   ],
@@ -4359,13 +4865,34 @@
  "118325": {
   "address": "217 E MAIN ST, COLLEGEVILLE PA 19426",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "HAPPY HOUR",
+    "url": "https://thelibrarycollegeville.com/"
+   },
+   {
+    "quote": "HAPPY HOUR",
+    "url": "https://thelibrarycollegeville.com/assets/menu/menu-hh.pdf"
+   }
+  ],
   "name": "PH PUB LLC",
   "osm_name": "The Library",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 1 quote(s)",
     "url": "https://thelibrarycollegeville.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://thelibrarycollegeville.com/assets/menu/menu-dessert.pdf"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://thelibrarycollegeville.com/assets/menu/menu-drinks.pdf"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://thelibrarycollegeville.com/assets/menu/menu-hh.pdf"
    }
   ],
   "website": "https://thelibrarycollegeville.com/",
@@ -4461,13 +4988,50 @@
  "118439": {
   "address": "106 SQUIRE DR, NEWTOWN SQUARE PA 19073-2347",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Thursday Happy Hour",
+    "url": "https://sedonataphouse.com/locations/newtown-square-pa/"
+   },
+   {
+    "quote": "Join us for Happy Hour from 4pm \u2013 6pm for $7.9 house wine by the glass and $9.9 craft classics!",
+    "url": "https://sedonataphouse.com/locations/newtown-square-pa/"
+   },
+   {
+    "quote": "Happy Hour Menu / Dine Out for Charity Menu (Available Mondays)",
+    "url": "https://sedonataphouse.com/locations/newtown-square-pa/"
+   },
+   {
+    "quote": "Thursday Happy Hour",
+    "url": "https://sedonataphouse.com/locations/newtown-square-pa/"
+   },
+   {
+    "quote": "Join us for Happy Hour from 4pm \u2013 6pm for $7.9 house wine by the glass and $9.9 craft classics!",
+    "url": "https://sedonataphouse.com/locations/newtown-square-pa/"
+   },
+   {
+    "quote": "Happy Hour Menu / Dine Out for Charity Menu (Available Mondays)",
+    "url": "https://sedonataphouse.com/locations/newtown-square-pa/"
+   }
+  ],
   "name": "SEDONA TAP HOUSE",
   "osm_name": "Sedona Taphouse",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 3 quote(s)",
     "url": "https://sedonataphouse.com/locations/newtown-square-pa/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://sedonataphouse.com/contact?type=PrivateEvent&store=Newtown Square, PA"
+   },
+   {
+    "result": "ok, 3 quote(s)",
+    "url": "https://sedonataphouse.com/locations/newtown-square-pa/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://sedonataphouse.com/menu/"
    }
   ],
   "website": "https://sedonataphouse.com/locations/newtown-square-pa/",
@@ -4697,8 +5261,20 @@
   "osm_name": "Twelve78",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.twelve78brewing.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.twelve78brewing.com/event-calendar/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.twelve78brewing.com/private-events"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.twelve78brewing.com/private-events/"
    }
   ],
   "website": "https://www.twelve78brewing.com/",
@@ -4712,7 +5288,7 @@
   "osm_name": "Don Barriga",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.donbarriga.com/"
    }
   ],
@@ -4727,7 +5303,7 @@
   "osm_name": "Ember & Ale",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "403 text/html",
     "url": "https://emberandale.com/"
    }
   ],
@@ -4972,7 +5548,7 @@
   "osm_name": "Shiso",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "403 text/html",
     "url": "https://shisonoodleandsushi.com/"
    }
   ],
@@ -5083,16 +5659,64 @@
   "website": "https://www.marriott.com/en-us/hotels/phlyd-courtyard-philadelphia-downtown/overview/",
   "zone_id": "center_city"
  },
+ "120855": {
+  "address": "560 W LANCASTER AVE, HAVERFORD PA 19041-1209",
+  "crawled_at": "2026-08-06",
+  "hits": [],
+  "name": "ROACHE & O'BRIEN",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.roacheandobrien.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.roacheandobrien.com/about-1-1"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.roacheandobrien.com/about-1-1-2"
+   }
+  ],
+  "website": "https://www.roacheandobrien.com/",
+  "zone_id": "ardmore_bryn_mawr"
+ },
  "120981": {
   "address": "1526 N AMERICAN ST, PHILADELPHIA PA 19122-3811",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "DINNER & HAPPY HOUR / Mon-Fri, 4-6pm / smash burger, fries, and a beer",
+    "url": "https://www.wissahickonbrew.com/kensington/"
+   },
+   {
+    "quote": "happy hour / Mon-Fri, 4-6pm / smash burger, fries, and a beer",
+    "url": "https://www.wissahickonbrew.com/kensington/"
+   },
+   {
+    "quote": "HAPPY HOUR DRINKS / $1 off all drafts / $3 off wine",
+    "url": "https://www.wissahickonbrew.com/kensington/"
+   }
+  ],
   "name": "WISSAHICKON BREWING COMPANY OLDE KENSINGTON",
   "osm_name": "Wissahickon Brewing Co",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.wissahickonbrew.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.wissahickonbrew.com/east-falls/"
+   },
+   {
+    "result": "ok, 3 quote(s)",
+    "url": "https://www.wissahickonbrew.com/kensington/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.wissahickonbrew.com/maple-glen/"
    }
   ],
   "website": "https://www.wissahickonbrew.com/",
@@ -5286,12 +5910,17 @@
  "122089": {
   "address": "2 W BROAD ST, SOUDERTON PA 18964",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Happy Hour Tues-Fri 3:30-5:30",
+    "url": "https://northboundrestaurant.com/"
+   }
+  ],
   "name": "NORTHBOUND RESTAURANT",
   "osm_name": null,
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 1 quote(s)",
     "url": "https://northboundrestaurant.com/"
    }
   ],
@@ -5372,7 +6001,7 @@
   "osm_name": "Main Street Pizza & Brewery",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://mainstreetpizzabrewery.com/"
    }
   ],
@@ -5417,7 +6046,7 @@
   "osm_name": "Plaza Azteca",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://plazaazteca.com/location-pennsylvania-plaza-azteca-collegeville/"
    }
   ],
@@ -5463,13 +6092,50 @@
  "125968": {
   "address": "106 SQUIRE DR, NEWTOWN SQUARE PA 19073-2347",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Thursday Happy Hour",
+    "url": "https://sedonataphouse.com/locations/newtown-square-pa/"
+   },
+   {
+    "quote": "Join us for Happy Hour from 4pm \u2013 6pm for $7.9 house wine by the glass and $9.9 craft classics!",
+    "url": "https://sedonataphouse.com/locations/newtown-square-pa/"
+   },
+   {
+    "quote": "Happy Hour Menu / Dine Out for Charity Menu (Available Mondays)",
+    "url": "https://sedonataphouse.com/locations/newtown-square-pa/"
+   },
+   {
+    "quote": "Thursday Happy Hour",
+    "url": "https://sedonataphouse.com/locations/newtown-square-pa/"
+   },
+   {
+    "quote": "Join us for Happy Hour from 4pm \u2013 6pm for $7.9 house wine by the glass and $9.9 craft classics!",
+    "url": "https://sedonataphouse.com/locations/newtown-square-pa/"
+   },
+   {
+    "quote": "Happy Hour Menu / Dine Out for Charity Menu (Available Mondays)",
+    "url": "https://sedonataphouse.com/locations/newtown-square-pa/"
+   }
+  ],
   "name": "SEDONA TAPHOUSE NEWTOWN SQUARE",
   "osm_name": "Sedona Taphouse",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 3 quote(s)",
     "url": "https://sedonataphouse.com/locations/newtown-square-pa/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://sedonataphouse.com/contact?type=PrivateEvent&store=Newtown Square, PA"
+   },
+   {
+    "result": "ok, 3 quote(s)",
+    "url": "https://sedonataphouse.com/locations/newtown-square-pa/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://sedonataphouse.com/menu/"
    }
   ],
   "website": "https://sedonataphouse.com/locations/newtown-square-pa/",
@@ -5483,7 +6149,7 @@
   "osm_name": "Casey's",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "403 text/html",
     "url": "https://www.caseysdh.com"
    }
   ],
@@ -5513,8 +6179,12 @@
   "osm_name": "Hangry Joe's Hot Chicken",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://hangryjoes.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://hangryjoes.com/our-menu/"
    }
   ],
   "website": "https://hangryjoes.com/",
@@ -5551,6 +6221,38 @@
   ],
   "website": "https://www.thestonetavern1867.com",
   "zone_id": "west_chester"
+ },
+ "126367": {
+  "address": "3350 SCHUYLKILL RD, SPRING CITY PA 19475-1144",
+  "crawled_at": "2026-08-06",
+  "hits": [
+   {
+    "quote": "\u2022 Happy Hour",
+    "url": "https://springhollowgolf.com/special-events/"
+   }
+  ],
+  "name": "SPRING HOLLOW SERVICES INC",
+  "osm_name": "Spring Hollow Bar & Grille",
+  "pages": [
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://springhollowgolf.com/bar-grille/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://springhollowgolf.com/special-events/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://springhollowgolf.com/bar-grille/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://springhollowgolf.com/eventcalendar/"
+   }
+  ],
+  "website": "https://springhollowgolf.com/bar-grille/",
+  "zone_id": "phoenixville"
  },
  "126401": {
   "address": "24 N MAIN ST #7, DOYLESTOWN PA 18901-4330",
@@ -5697,13 +6399,42 @@
  "127747": {
   "address": "39 E GAY ST, WEST CHESTER PA 19380-3144",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "SOCIAL HOUR",
+    "url": "https://wcseafoodkitchen.com/"
+   },
+   {
+    "quote": "SOCIAL HOUR",
+    "url": "https://wcseafoodkitchen.com/"
+   },
+   {
+    "quote": "Unique and casual seating within the main dining room of the West Chester Seafood Kitchen. This space is perfect for a casual happy hour with your corporate team, friends, or family.",
+    "url": "https://wcseafoodkitchen.com/private-dining-events-in-west-chester/"
+   },
+   {
+    "quote": "Tucked away in the lower level of the Hotel Indigo, this sultry space is perfect for small receptions and happy hour style events with a variety of menu options and uniquely crafted cocktails.",
+    "url": "https://wcseafoodkitchen.com/private-dining-events-in-west-chester/"
+   }
+  ],
   "name": "HOTEL INDIGO",
   "osm_name": "West Chester Seafood Kitchen",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 1 quote(s)",
     "url": "https://wcseafoodkitchen.com/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://wcseafoodkitchen.com/"
+   },
+   {
+    "result": "ok, 2 quote(s)",
+    "url": "https://wcseafoodkitchen.com/private-dining-events-in-west-chester/"
+   },
+   {
+    "result": "404 text/html",
+    "url": "https://wcseafoodkitchen.com/private-events/"
    }
   ],
   "website": "https://wcseafoodkitchen.com/",
@@ -5817,6 +6548,29 @@
   "website": "https://uniphiladelphia.com/",
   "zone_id": "center_city"
  },
+ "128827": {
+  "address": "460 W STREET RD, WARMINSTER  PA 18974",
+  "crawled_at": "2026-08-06",
+  "hits": [],
+  "name": "PHILOMENA SANTUCCIS",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://philomenasantuccis.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://philomenasantuccis.com/events/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://philomenasantuccis.com/menus/"
+   }
+  ],
+  "website": "https://philomenasantuccis.com/",
+  "zone_id": "warminster_warrington"
+ },
  "128892": {
   "address": "1100 ARCH ST, PHILADELPHIA PA 19107-2956",
   "crawled_at": "2026-08-06",
@@ -5903,7 +6657,7 @@
   "osm_name": "Hyatt Place",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "robots.txt unreadable (403), treated as disallow",
     "url": "https://www.hyatt.com/en-US/hotel/pennsylvania/hyatt-place-philadelphia-king-of-prussia/phlzk"
    }
   ],
@@ -6042,6 +6796,21 @@
   "website": "https://www.coriophilly.com/",
   "zone_id": "university_city"
  },
+ "129244": {
+  "address": "1972 SAINT MATTHEWS RD, PHOENIXVILLE PA 19460-1604",
+  "crawled_at": "2026-08-06",
+  "hits": [],
+  "name": "BOWEN ARROW WINERY AND VINEYARDS",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://bowenarrowwinery.com/"
+   }
+  ],
+  "website": "https://bowenarrowwinery.com/",
+  "zone_id": "phoenixville"
+ },
  "129263": {
   "address": "114 S OLIVE ST, MEDIA PA 19063-3202",
   "crawled_at": "2026-08-06",
@@ -6170,16 +6939,24 @@
     "url": "https://www.tommystavernandtap.com/kingofprussia"
    },
    {
-    "quote": "HALF PRICE ALL TITOS COCKTAILS / TUESDAY / WEDNESDAY",
-    "url": "https://www.tommystavernandtap.com/kingofprussia"
+    "quote": "Tommy's Tavern + Tap | Happy Hour",
+    "url": "https://www.tommystavernandtap.com/copy-of-happy-hour-specials"
    },
    {
-    "quote": "HALF PRICE ALL CABERNET / WEDNESDAY",
-    "url": "https://www.tommystavernandtap.com/kingofprussia"
+    "quote": "HAPPY HOUR / 3 PM TIL' 6 PM",
+    "url": "https://www.tommystavernandtap.com/copy-of-happy-hour-specials"
    },
    {
-    "quote": "HALF PRICE / THURSDAY / $3 MILLER LIGHT DRAFTS",
-    "url": "https://www.tommystavernandtap.com/kingofprussia"
+    "quote": "HALF PRICE SPECIALTY COCKTAILS / TUESDAYS",
+    "url": "https://www.tommystavernandtap.com/copy-of-happy-hour-specials"
+   },
+   {
+    "quote": "HALF PRICE WINE LIST / WEDNESDAYS",
+    "url": "https://www.tommystavernandtap.com/copy-of-happy-hour-specials"
+   },
+   {
+    "quote": "HALF PRICE SANGRIA / THURSDAYS",
+    "url": "https://www.tommystavernandtap.com/copy-of-happy-hour-specials"
    }
   ],
   "name": "TOMMY'S TAVERN + TAP",
@@ -6190,16 +6967,16 @@
     "url": "https://www.tommystavernandtap.com/kingofprussia"
    },
    {
+    "result": "ok, 5 quote(s)",
+    "url": "https://www.tommystavernandtap.com/copy-of-happy-hour-specials"
+   },
+   {
     "result": "ok, 0 quote(s)",
     "url": "https://www.tommystavernandtap.com"
    },
    {
     "result": "ok, 0 quote(s)",
     "url": "https://www.tommystavernandtap.com/eventsandcateringattommys"
-   },
-   {
-    "result": "ok, 3 quote(s)",
-    "url": "https://www.tommystavernandtap.com/kingofprussia"
    }
   ],
   "website": "https://www.tommystavernandtap.com/kingofprussia",
@@ -6503,13 +7280,26 @@
  "130825": {
   "address": "44 GREENFIELD AVE STORE #60, ARDMORE PA 19003",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Happy Hour Menu",
+    "url": "https://ogyubbq.com"
+   },
+   {
+    "quote": "Happy Hour Menu",
+    "url": "https://www.ogyubbq.com/happy-hour-menu"
+   }
+  ],
   "name": "OGYU",
   "osm_name": "Ogyu",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 1 quote(s)",
     "url": "https://ogyubbq.com"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.ogyubbq.com/happy-hour-menu"
    }
   ],
   "website": "https://ogyubbq.com",
@@ -6523,8 +7313,16 @@
   "osm_name": null,
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.warwickfarmbrewing.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.warwickfarmbrewing.com/events-calendar/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.warwickfarmbrewing.com/takeout-menu/"
    }
   ],
   "website": "https://www.warwickfarmbrewing.com/",
@@ -6614,7 +7412,7 @@
   "osm_name": "Manong",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.manongphilly.com/"
    }
   ],
@@ -6824,8 +7622,16 @@
   "osm_name": "Taormina's Pizza & Pasta",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://taorminasivyland.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://taorminasivyland.com/menu/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://taorminasivyland.com/menus/"
    }
   ],
   "website": "https://taorminasivyland.com/",
@@ -6834,13 +7640,30 @@
  "131404": {
   "address": "304 OLD YORK RD, JENKINTOWN PA 19046-3211",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "As one of the best places to eat and drink in Jenkintown, Pennsylvania, we pride ourselves on excellent service inside our bar area and in our outdoor dining space. We have an impressive list of small plates and entrees, as well as a large selection of rotating draft beers, specialty drinks, and weekly drink specials. / Our famous burgers are made exactly how you like them. While ribeye steak and ",
+    "url": "https://draketavern.com/"
+   }
+  ],
   "name": "CURRANS JENKINTOWN CORP",
   "osm_name": "Drake Tavern",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 1 quote(s)",
     "url": "https://draketavern.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://draketavern.com/weekly-specials/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://draketavern.com/appetizer-menu/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://draketavern.com/banquet-menu/"
    }
   ],
   "website": "https://draketavern.com/",
@@ -6992,7 +7815,7 @@
   "osm_name": "Cotoletta",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.cotolettafs.com/"
    }
   ],
@@ -7120,7 +7943,7 @@
   "osm_name": "Residence Inn Philadelphia Conshohocken",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "robots.txt unreadable (403), treated as disallow",
     "url": "https://www.marriott.com/phlcn"
    }
   ],
@@ -7316,7 +8139,7 @@
   "osm_name": "Varga",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://vargabar.com"
    }
   ],
@@ -7416,7 +8239,7 @@
   "osm_name": "Seiko",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "403 text/html",
     "url": "https://seikopa.com/"
    }
   ],
@@ -7461,8 +8284,12 @@
   "osm_name": "Valley Green Inn",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.valleygreeninn.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://valleygreeninn.com/?page_id=24"
    }
   ],
   "website": "https://www.valleygreeninn.com/",
@@ -7486,13 +8313,50 @@
  "17574": {
   "address": "1164 VALLEY FORGE RD, WAYNE PA 19087-1202",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Happy Hour / Monday \u2014 Friday / 4:00 p.m. to 6:00 p.m.",
+    "url": "https://blackpowdertavern.com/"
+   },
+   {
+    "quote": "Happy Hour at Black Powder Tavern / We invite you to come and join us to celebrate Happy Hour on Tuesday through Friday from 4:00 p.m. until 6:00 p.m. You can enjoy the Black Powder Tavern experience with our special offers on drinks and Bar Bites.",
+    "url": "https://blackpowdertavern.com/blog/"
+   },
+   {
+    "quote": "We invite you to come and join us to celebrate Happy Hour on Tuesday through Friday from 4:00 p.m. until 6:00 p.m. You can enjoy the Black Powder Tavern experience with our special offers on drinks and Bar Bites.",
+    "url": "https://blackpowdertavern.com/blog/"
+   },
+   {
+    "quote": "Happy Hour / Monday \u2014 Friday / 4:00 p.m. to 6:00 p.m.",
+    "url": "https://blackpowdertavern.com/blog/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://blackpowdertavern.com/menu/"
+   },
+   {
+    "quote": "Happy Hour / Monday \u2014 Friday / 4:00 p.m. to 6:00 p.m.",
+    "url": "https://blackpowdertavern.com/menu/"
+   }
+  ],
   "name": "BLACK POWDER TAVERN",
   "osm_name": "Black Powder Tavern",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 1 quote(s)",
     "url": "https://blackpowdertavern.com/"
+   },
+   {
+    "result": "ok, 3 quote(s)",
+    "url": "https://blackpowdertavern.com/blog/"
+   },
+   {
+    "result": "404 text/html",
+    "url": "https://blackpowdertavern.com/menu.php"
+   },
+   {
+    "result": "ok, 2 quote(s)",
+    "url": "https://blackpowdertavern.com/menu/"
    }
   ],
   "website": "https://blackpowdertavern.com/",
@@ -7524,13 +8388,34 @@
  "19496": {
   "address": "416 MAIN ST, TRAPPE PA 19426-2607",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "(Daily Specials can be found on all our social media) / Kitchen Open till 2 am / Welcome to The World Famous Trappe Tavern , a family-run Tavern located in one of the oldest towns in Pa. The Trappe originally opened in the mid-1700s and was re-established in 1988. The Trappe is open 11 am- 2 am, 7 days a week for lunch, dinner, and late-night snacks.",
+    "url": "https://trappetavern.com/"
+   },
+   {
+    "quote": "The kitchen is cooking till 2 am Every night! Join us for our unbeatable Happy Hour, Monday-Friday 4-6 pm with drink, food, and draft features.",
+    "url": "https://trappetavern.com/"
+   }
+  ],
   "name": "TRAPPE TAVERN, INC.",
   "osm_name": "Trappe Tavern",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 2 quote(s)",
     "url": "https://trappetavern.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://trappetavern.com/weekly-specials/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://trappetavern.com/menu"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://trappetavern.com/menu/"
    }
   ],
   "website": "https://trappetavern.com/",
@@ -7544,7 +8429,7 @@
   "osm_name": "Thunderbird Lanes",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "error: ConnectionError",
     "url": "https://www.phillybowl.com/"
    }
   ],
@@ -7559,8 +8444,16 @@
   "osm_name": "Coppa 82",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://coppa82.com"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://coppa82.com/wp-content/uploads/2025/01/2025-menu-v4-final-website-takeout.pdf"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://coppa82.com/wp-content/uploads/2026/05/new-menu-2026-website.pdf"
    }
   ],
   "website": "https://coppa82.com",
@@ -7574,12 +8467,31 @@
   "osm_name": "Spring House Tavern",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "403 text/html",
     "url": "https://springhousetavern.com/"
    }
   ],
   "website": "https://springhousetavern.com/",
   "zone_id": "ambler_upper_dublin"
+ },
+ "19857": {
+  "address": "47 E BRIDGE ST, SPRING CITY PA 19475-1404",
+  "crawled_at": "2026-08-06",
+  "hits": [],
+  "name": "CENTER CITY",
+  "osm_name": "Center City Steaks",
+  "pages": [
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.centercitysteaks.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.centercitysteaks.com/menus"
+   }
+  ],
+  "website": "https://www.centercitysteaks.com/",
+  "zone_id": "phoenixville"
  },
  "20304": {
   "address": "2036 SWAMP PK, GILBERTSVILLE PA 19525-9725",
@@ -7657,6 +8569,29 @@
   "website": "https://charlottesrestaurant.com/",
   "zone_id": "newtown_square_broomall"
  },
+ "20559": {
+  "address": "499 N GULPH RD, KING OF PRUSSIA PA 19406-2821",
+  "crawled_at": "2026-08-06",
+  "hits": [],
+  "name": "CREEDS SEAFOOD & STEAKS",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.creedskop.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.creedskop.com/drinks"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.creedskop.com/menu"
+   }
+  ],
+  "website": "https://www.creedskop.com/",
+  "zone_id": "king_of_prussia"
+ },
  "20622": {
   "address": "101 EAST BROAD ST, SOUDERTON PA 18964",
   "crawled_at": "2026-08-06",
@@ -7727,7 +8662,7 @@
   "osm_name": "Below Deck Bottle Shop",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "403 text/html",
     "url": "https://boathousepa.com"
    }
   ],
@@ -7895,13 +8830,30 @@
  "28480": {
   "address": "123-125-127 FAYETTE ST, CONSHOHOCKEN PA 19428-1817",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Happy Hour",
+    "url": "https://thegreatamericanpub.com/phoenixville/specials/"
+   }
+  ],
   "name": "THE GREAT AMERICAN PUB",
   "osm_name": "Great American Pub",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://thegreatamericanpub.com"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://thegreatamericanpub.com/conshohocken/specials-events/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://thegreatamericanpub.com/wayne/specials/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://thegreatamericanpub.com/phoenixville/specials/"
    }
   ],
   "website": "https://thegreatamericanpub.com",
@@ -8022,7 +8974,7 @@
   "osm_name": "Kitchen at Bala",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://kitchenatbala.com/"
    }
   ],
@@ -8224,8 +9176,20 @@
   "osm_name": "Oregon Diner",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.oregondinerphilly.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://oregondinerphilly.com/wp-content/uploads/2022/07/OREGON-BREAKFAST-PLACEMAT-MENU-17x11-JULY-01.pdf"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://oregondinerphilly.com/wp-content/uploads/2025/10/09-OREGON-DINER-NEW-BRUNCH-MENU-OCT-25.pdf"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://oregondinerphilly.com/wp-content/uploads/2026/06/06-OREGON-DINER-NEW-MONTHLY-SPECIALS-MAY-26-NEW.pdf"
    }
   ],
   "website": "https://www.oregondinerphilly.com/",
@@ -8234,13 +9198,42 @@
  "33647": {
   "address": "325 N CHRISTOPHER COLUMBUS BLVD, PHILADELPHIA PA 19106",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Happy Hours / WORK HARD. PLAY HARD. HAPPY HOUR HARDER. $5 HAPPY HOUR.",
+    "url": "https://www.daveandbusters.com/us/en/about/locations/philadelphia"
+   },
+   {
+    "quote": "WORK HARD. PLAY HARD. HAPPY HOUR HARDER. $5 HAPPY HOUR.",
+    "url": "https://www.daveandbusters.com/us/en/about/locations/philadelphia"
+   },
+   {
+    "quote": "Swing by with your crew during Happy Hour to save on brand-new cocktails, classic faves, 22oz domestic drafts & house wine. Available Mon\u2013Fri from 5\u20137PM & Sun\u2013Thu from 10PM\u201312AM.*",
+    "url": "https://www.daveandbusters.com/us/en/about/locations/philadelphia"
+   },
+   {
+    "quote": "*HAPPY HOUR: $5 beverages including 22 oz. select domestic draft beer, glass of wine, Backwoods Blueberry Lemonade, Tres Tequila Rita, and D&B Long Island Tea are available during Happy Hour and Late-Night Happy Hour in select Dave & Buster\u2019s locations. Time and offerings may also vary by location. See the store for details.",
+    "url": "https://www.daveandbusters.com/us/en/about/locations/philadelphia"
+   }
+  ],
   "name": "DAVE & BUSTERS",
   "osm_name": "Dave & Buster's",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 4 quote(s)",
     "url": "https://www.daveandbusters.com/us/en/about/locations/philadelphia"
+   },
+   {
+    "result": "404 text/html",
+    "url": "https://www.daveandbusters.com/us/en/about/specials"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.daveandbusters.com/us/en/play/specials"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.daveandbusters.com/us/en/celebrate/adult-social"
    }
   ],
   "website": "https://www.daveandbusters.com/us/en/about/locations/philadelphia",
@@ -8300,6 +9293,70 @@
   ],
   "website": "https://www.popisrestaurant.com/",
   "zone_id": "south_philly"
+ },
+ "36229": {
+  "address": "800 SPRINGMILL AVE, CONSHOHOCKEN PA 19428-2314",
+  "crawled_at": "2026-08-06",
+  "hits": [
+   {
+    "quote": "Happy Hour Menu",
+    "url": "https://coyotecrossing.com/"
+   },
+   {
+    "quote": "Happy Hour: 4:00PM \u2013 6:00PM Mon-Fri",
+    "url": "https://coyotecrossing.com/"
+   },
+   {
+    "quote": "Right now is the best time to dive into all our Mexican flavors and enjoy Happy Hour with the most delicious cocktails in Conshohocken",
+    "url": "https://coyotecrossing.com/"
+   },
+   {
+    "quote": "Happy Hour Menu - Coyote Crossing",
+    "url": "https://coyotecrossing.com/happy-hour-menu/"
+   },
+   {
+    "quote": "Happy Hour Menu",
+    "url": "https://coyotecrossing.com/happy-hour-menu/"
+   },
+   {
+    "quote": "Happy Hour Menu / Enjoy the best drinks and dishes at special prices from 4 PM to 6 PM, Monday through Friday. Stop by after work, after class, or anytime you want to break away from the everyday routine. We\u2019ll be waiting for you.",
+    "url": "https://coyotecrossing.com/happy-hour-menu/"
+   },
+   {
+    "quote": "The best happy hour of Conshohocken / Enjoy the best drinks and dishes at special prices from 4 PM to 6 PM, Monday through Friday. Stop by after work, after class, or anytime you want to break away from the everyday routine. We\u2019ll be waiting for you.",
+    "url": "https://coyotecrossing.com/happy-hour-menu/"
+   },
+   {
+    "quote": "Happy Hour Menu",
+    "url": "https://coyotecrossing.com/catering-menu/"
+   },
+   {
+    "quote": "Happy Hour Menu",
+    "url": "https://coyotecrossing.com/drinks/"
+   }
+  ],
+  "name": "300-E-6, INC.",
+  "osm_name": "Coyote Crossing",
+  "pages": [
+   {
+    "result": "ok, 3 quote(s)",
+    "url": "https://coyotecrossing.com/"
+   },
+   {
+    "result": "ok, 4 quote(s)",
+    "url": "https://coyotecrossing.com/happy-hour-menu/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://coyotecrossing.com/catering-menu/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://coyotecrossing.com/drinks/"
+   }
+  ],
+  "website": "https://coyotecrossing.com/",
+  "zone_id": "conshohocken"
  },
  "36491": {
   "address": "229 S 45TH ST, PHILADELPHIA PA 19104-2918",
@@ -8481,8 +9538,20 @@
   "osm_name": "William Penn Inn",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.williampenninn.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.williampenninn.com/occasions/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.williampenninn.com/corporate-events/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.williampenninn.com/dining/menus/"
    }
   ],
   "website": "https://www.williampenninn.com/",
@@ -8603,7 +9672,7 @@
   "osm_name": "August Moon",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "500 text/html",
     "url": "https://augustmoonpa.com"
    }
   ],
@@ -8661,13 +9730,38 @@
  "39617": {
   "address": "240 N GULPH RD, KING OF PRUSSIA PA 19406-2804",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Enjoy world famous wings and a great beer selection at Hooters of King of Prussia. Eat-in or carryout, the best food in Pennsylvania can always be found right in King of Prussia. Daily happy hour specials, drink specials and craft beer on tap.",
+    "url": "https://www.hooters.com/locations/32704-king-of-prussia"
+   },
+   {
+    "quote": "Celebrate Tax Day with a BOGO Wings Deal and Drink Specials at Hooters | Hooters",
+    "url": "https://www.hooters.com/about/news/celebrate-tax-day-with-a-bogo-wings-deal-and-drink-specials-at-hooters"
+   },
+   {
+    "quote": "Celebrate Tax Day with a BOGO Wings Deal and Drink Specials at Hooters",
+    "url": "https://www.hooters.com/about/news/celebrate-tax-day-with-a-bogo-wings-deal-and-drink-specials-at-hooters"
+   }
+  ],
   "name": "HOOTERS OF KING OF PRUSSIA",
   "osm_name": "Hooters",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 1 quote(s)",
     "url": "https://www.hooters.com/locations/32704-king-of-prussia"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.hooters.com/about/news/golf-legend-john-daly-to-curate-hooters-summers-specials-menu-featuring-big-john-dogs-plus-buffalo-chicken-dip-and-funnel-fries"
+   },
+   {
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.hooters.com/about/news/celebrate-tax-day-with-a-bogo-wings-deal-and-drink-specials-at-hooters"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.hooters.com/about/news/hooters-unveils-limited-time-seasonal-specials-to-kick-off-fall"
    }
   ],
   "website": "https://www.hooters.com/locations/32704-king-of-prussia",
@@ -8676,13 +9770,46 @@
  "39702": {
   "address": "700 W DEKALB PK, KING OF PRUSSIA PA 19406",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "HAPPY HOUR / Monday \u2013 Thursday 3:00 pm \u2013 6:00 pm",
+    "url": "https://www.sullivanssteakhouse.com/king-of-prussia"
+   },
+   {
+    "quote": "Happy Hour Menu",
+    "url": "https://www.sullivanssteakhouse.com/king-of-prussia"
+   },
+   {
+    "quote": "Happy Hour Menu in King of Prussia, PA | Sullivan's Steakhouse",
+    "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/"
+   },
+   {
+    "quote": "King Of Prussia Happy Hour Menu / Available in the bar, Monday-Thursday 3pm-6pm / $20",
+    "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/"
+   },
+   {
+    "quote": "Happy Hour Menu",
+    "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/"
+   }
+  ],
   "name": "NORTH PHILADELPHIA SULLIVANS LLC",
   "osm_name": "Sullivan's Steakhouse",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 2 quote(s)",
     "url": "https://www.sullivanssteakhouse.com/king-of-prussia"
+   },
+   {
+    "result": "ok, 3 quote(s)",
+    "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.sullivanssteakhouse.com/events/live-music-from-the-doug-drewes-duo-2/?occurrence=2026-08-14"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.sullivanssteakhouse.com/events/live-music-from-the-doug-drewes-duo-2/?occurrence=2026-08-28"
    }
   ],
   "website": "https://www.sullivanssteakhouse.com/king-of-prussia",
@@ -8804,8 +9931,20 @@
   "osm_name": "Barnaby's - Havertown",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.barnabysrestaurantandpub.com/havertown"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.barnabysrestaurantandpub.com/menus/lunch-specials-menu"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.barnabysrestaurantandpub.com/items/modelo-especial"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.barnabysrestaurantandpub.com/items/specialty-drinks"
    }
   ],
   "website": "https://www.barnabysrestaurantandpub.com/havertown",
@@ -8928,7 +10067,7 @@
   "osm_name": "Bishop's Collar",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "robots.txt unreadable (403), treated as disallow",
     "url": "https://thecollar.us/"
    }
   ],
@@ -8995,8 +10134,20 @@
   "osm_name": "Vetri Cucina",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://vetricucina.com"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://vetricucina.com/classes-events"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://vetricucina.com/classes-events/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://vetricucina.com/menu/"
    }
   ],
   "website": "https://vetricucina.com",
@@ -9066,13 +10217,30 @@
  "43721": {
   "address": "863 MONTGOMERY AVE, NARBERTH PA 19072-1541",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Happy Hour",
+    "url": "https://pubofpennvalley.com/"
+   },
+   {
+    "quote": "Happy Hour Every Day / 3:30 pm - 5:30 pm & 9:00 pm-11:00 pm / $6 Appetizer Specials (3:30pm-5:30pm only)",
+    "url": "https://pubofpennvalley.com/"
+   },
+   {
+    "quote": "Happy Hours / 3:30 pm - 5:30 pm & 9:00 pm-11:00 pm / $6 Daily Appetizer Specials (available 3:30pm-5:30pm only)",
+    "url": "https://pubofpennvalley.com/menu/"
+   }
+  ],
   "name": "THE PUB OF PENN VALLEY",
   "osm_name": null,
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 2 quote(s)",
     "url": "https://pubofpennvalley.com/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://pubofpennvalley.com/menu/"
    }
   ],
   "website": "https://pubofpennvalley.com/",
@@ -9081,13 +10249,50 @@
  "44242": {
   "address": "1005 HORSHAM RD, NORTH WALES PA 19454-1413",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Happy Hour",
+    "url": "https://www.josephamblerinn.com/"
+   },
+   {
+    "quote": "Featuring contemporary American cuisine, casual dining and weekday Happy Hours at our bar, the JPub / Weddings",
+    "url": "https://www.josephamblerinn.com/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://josephamblerinn.com/specials-promotions/"
+   },
+   {
+    "quote": "Happy Hour in the JPUB! / 3:30-5:30 PM",
+    "url": "https://josephamblerinn.com/wp-content/uploads/2026/06/JAI-HH.pdf"
+   },
+   {
+    "quote": "Happy Hour Food Specials / $2 per piece",
+    "url": "https://josephamblerinn.com/wp-content/uploads/2026/06/JAI-HH.pdf"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://josephamblerinn.com/contact/"
+   }
+  ],
   "name": "JOSEPH AMBLER INN",
   "osm_name": "Joseph Ambler Inn",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 2 quote(s)",
     "url": "https://www.josephamblerinn.com/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://josephamblerinn.com/specials-promotions/"
+   },
+   {
+    "result": "ok, 2 quote(s)",
+    "url": "https://josephamblerinn.com/wp-content/uploads/2026/06/JAI-HH.pdf"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://josephamblerinn.com/contact/"
    }
   ],
   "website": "https://www.josephamblerinn.com/",
@@ -9129,7 +10334,7 @@
   "osm_name": "Brickside Grille",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "robots.txt unreadable (403), treated as disallow",
     "url": "https://www.bricksidegrille.com/"
    }
   ],
@@ -9144,8 +10349,12 @@
   "osm_name": "Gravel Pike Inn",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.gravelpikeinn.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.gravelpikeinn.com/restaurant-menu"
    }
   ],
   "website": "https://www.gravelpikeinn.com/",
@@ -9740,8 +10949,12 @@
   "osm_name": "Buddakan",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://buddakan.com"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://buddakan.com/"
    }
   ],
   "website": "https://buddakan.com",
@@ -9750,13 +10963,34 @@
  "45865": {
   "address": "224 S 15TH ST, PHILADELPHIA PA 19102-3806",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Happy Hour / Monday to Friday 3-6pm / $5 Mixed Drinks",
+    "url": "https://gooddogbar.com/menu/"
+   },
+   {
+    "quote": "$6 Wines",
+    "url": "https://gooddogbar.com/menu/"
+   },
+   {
+    "quote": "View Happy Hour Menu",
+    "url": "https://gooddogbar.com/menu/"
+   },
+   {
+    "quote": "Daily Specials Draughts Drinks Menu",
+    "url": "https://gooddogbar.com/menu/"
+   }
+  ],
   "name": "FRANK CLEMENTS TAVERN, INC.",
   "osm_name": "Good Dog Bar",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.gooddogbar.com/"
+   },
+   {
+    "result": "ok, 4 quote(s)",
+    "url": "https://gooddogbar.com/menu/"
    }
   ],
   "website": "https://www.gooddogbar.com/",
@@ -9770,7 +11004,7 @@
   "osm_name": "Monster Vegan",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "403 text/html",
     "url": "https://www.themonstervegan.com/"
    }
   ],
@@ -9780,13 +11014,26 @@
  "46126": {
   "address": "1500 LOCUST ST, PHILADELPHIA PA 19102-4327",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "After Work Starts Here \ud83c\udf7a Join Us for Happy Hour \ud83c\udf7b | Drink Specials + Good Craic \ud83c\udf7a After Work Starts Here \ud83c\udf7a Join Us for Happy Hour \ud83c\udf7b | Drink Specials + Good Craic",
+    "url": "https://www.fadoirishpub.com/philadelphia/"
+   }
+  ],
   "name": "FADO'",
   "osm_name": "Fado",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 1 quote(s)",
     "url": "https://www.fadoirishpub.com/philadelphia/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.fadoirishpub.com/popmenu-order"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.fadoirishpub.com/private-events"
    }
   ],
   "website": "https://www.fadoirishpub.com/philadelphia/",
@@ -9974,13 +11221,34 @@
  "47289": {
   "address": "1900 WEST POINT PIKE, WEST POINT PA 19486",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "HAPPY HOUR BUFFET / $20.00 PER PERSON",
+    "url": "https://pizzatimesaloon.com/in-house-parties-catering-menu/"
+   },
+   {
+    "quote": "(breakfast, lunch, dinner, happy hour)",
+    "url": "https://pizzatimesaloon.com/in-house-parties-catering-menu/"
+   }
+  ],
   "name": "TRAVE'S PIZZA TIME SALOON",
   "osm_name": "Pizza Time Saloon",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://pizzatimesaloon.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://pizzatimesaloon.com/lunch-special/"
+   },
+   {
+    "result": "ok, 2 quote(s)",
+    "url": "https://pizzatimesaloon.com/in-house-parties-catering-menu/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://pizzatimesaloon.com/kids-menu/"
    }
   ],
   "website": "https://pizzatimesaloon.com/",
@@ -10016,13 +11284,30 @@
  "47717": {
   "address": "124 W GAY ST, WEST CHESTER PA 19380-2915",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "From office happy hours to birthdays, holiday parties to rehearsal dinners, baptisms & confirmation luncheons, Ryan\u2019s Pub offers a variety of options to make your party great.",
+    "url": "https://ryans-pub.com/events/"
+   }
+  ],
   "name": "P. J. RYAN'S, INC.",
   "osm_name": "Ryan\u2019s Pub",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://ryans-pub.com"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://ryans-pub.com"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://ryans-pub.com/beer-menu/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://ryans-pub.com/events/"
    }
   ],
   "website": "https://ryans-pub.com",
@@ -10036,8 +11321,20 @@
   "osm_name": "Great American Pub",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://thegreatamericanpub.com/wayne/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://thegreatamericanpub.com/wayne/specials/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://thegreatamericanpub.com/wayne/menus/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://thegreatamericanpub.com/wp-content/uploads/2024/01/Wayne-Rooftop-1.pdf"
    }
   ],
   "website": "https://thegreatamericanpub.com/wayne/",
@@ -10281,6 +11578,82 @@
   "website": "https://m.longhornsteakhouse.com/locations/pa/norristown/norristown-west-norriton/5180",
   "zone_id": "norristown_bridgeport"
  },
+ "49114": {
+  "address": "THE PAVILION AT KING OF PRUSSIA 640 W. DEKALB PK #1250, KING OF PRUSSIA PA 19406",
+  "crawled_at": "2026-08-06",
+  "hits": [
+   {
+    "quote": "Power Hour",
+    "url": "https://www.mortons.com/location/mortons-the-steakhouse-king-of-prussia-pa/"
+   },
+   {
+    "quote": "Power Hour: Sunday - Friday 4PM - 6:30PM",
+    "url": "https://www.mortons.com/location/mortons-the-steakhouse-king-of-prussia-pa/"
+   },
+   {
+    "quote": "Power Hour",
+    "url": "https://www.mortons.com/specials/"
+   },
+   {
+    "quote": "Happy Hour | Morton's The Steakhouse",
+    "url": "https://www.mortons.com/event/power-hour/"
+   },
+   {
+    "quote": "Power Hour",
+    "url": "https://www.mortons.com/event/power-hour/"
+   },
+   {
+    "quote": "JOIN US FOR OUR VERSION OF HAPPY HOUR!",
+    "url": "https://www.mortons.com/event/power-hour/"
+   },
+   {
+    "quote": "At Morton's, we keep the buzz alive. Join us for Power Hour and savor signature cocktails paired with crave-worthy bar bites, all at a special price.",
+    "url": "https://www.mortons.com/event/power-hour/"
+   },
+   {
+    "quote": "Power Hour cocktails not available in Anaheim, Biloxi, Boston Seaport, Washington D.C, and New York - 5th Avenue.",
+    "url": "https://www.mortons.com/event/power-hour/"
+   },
+   {
+    "quote": "Power Hour Bar Bites not available in Anaheim or Palm Desert.",
+    "url": "https://www.mortons.com/event/power-hour/"
+   },
+   {
+    "quote": "*Power Hour cocktails not available in Biloxi, Boston Seaport, Washington D.C, and New York - 5th Avenue.",
+    "url": "https://www.mortons.com/event/power-hour/"
+   },
+   {
+    "quote": "**Power Hour Bar Bites not available in Palm Desert.",
+    "url": "https://www.mortons.com/event/power-hour/"
+   },
+   {
+    "quote": "Power Hour",
+    "url": "https://www.mortons.com/king-of-prussia-pa-events"
+   }
+  ],
+  "name": "MORTON'S OF CHICAGO",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.mortons.com/location/mortons-the-steakhouse-king-of-prussia-pa/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.mortons.com/specials/"
+   },
+   {
+    "result": "ok, 8 quote(s)",
+    "url": "https://www.mortons.com/event/power-hour/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.mortons.com/king-of-prussia-pa-events"
+   }
+  ],
+  "website": "https://www.mortons.com/location/mortons-the-steakhouse-king-of-prussia-pa/",
+  "zone_id": "king_of_prussia"
+ },
  "49123": {
   "address": "70 BUCKWALTER RD STE 1350, ROYERSFORD PA 19468-1846",
   "crawled_at": "2026-08-06",
@@ -10289,7 +11662,11 @@
   "osm_name": "Palermo's",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.palermospizzaroyersford.com"
+   },
+   {
+    "result": "ok, 0 quote(s)",
     "url": "https://www.palermospizzaroyersford.com"
    }
   ],
@@ -10578,8 +11955,20 @@
   "osm_name": "Talula's Garden",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://talulasgarden.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://talulasgarden.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://talulasgarden.com/wp-content/uploads/2026/04/TALULAS-groupdining-dinner-012325.pdf"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://talulasgarden.com/wp-content/uploads/2026/05/TALULAS-groupdining-010826-brunch.pdf"
    }
   ],
   "website": "https://talulasgarden.com/",
@@ -10782,13 +12171,34 @@
  "52068": {
   "address": "121-127 S 13TH ST, PHILADELPHIA PA 19107-4903",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Happy Hour",
+    "url": "https://elvezrestaurant.com"
+   },
+   {
+    "quote": "Happy Hour / Monday-Friday 3-5pm / Monday-Friday 11:30am-3pm",
+    "url": "https://elvezrestaurant.com"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://elvezrestaurant.com/"
+   },
+   {
+    "quote": "Happy Hour / Monday-Friday 3-5pm / Monday-Friday 11:30am-3pm",
+    "url": "https://elvezrestaurant.com/"
+   }
+  ],
   "name": "THIRTEENTH STREET RESTAURANT PARTNERS, LP",
   "osm_name": "El Vez",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 2 quote(s)",
     "url": "https://elvezrestaurant.com"
+   },
+   {
+    "result": "ok, 2 quote(s)",
+    "url": "https://elvezrestaurant.com/"
    }
   ],
   "website": "https://elvezrestaurant.com",
@@ -11139,6 +12549,46 @@
   "website": "https://www.northbowlphilly.com/",
   "zone_id": "center_city"
  },
+ "53783": {
+  "address": "72-74 POPLAR ST, CONSHOHOCKEN PA 19428-1927",
+  "crawled_at": "2026-08-06",
+  "hits": [
+   {
+    "quote": "Happy Hour / mon - fri / 4p - 6p",
+    "url": "https://pepperoncinirestaurant.com/conshohocken-pepperoncini-restaurant-happy-hours-specials"
+   },
+   {
+    "quote": "$7 Wine",
+    "url": "https://pepperoncinirestaurant.com/conshohocken-pepperoncini-restaurant-happy-hours-specials"
+   },
+   {
+    "quote": "$7 Apps",
+    "url": "https://pepperoncinirestaurant.com/conshohocken-pepperoncini-restaurant-happy-hours-specials"
+   }
+  ],
+  "name": "PEPPERONCINI RESTAURANT & BAR",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://pepperoncinirestaurant.com/"
+   },
+   {
+    "result": "ok, 3 quote(s)",
+    "url": "https://pepperoncinirestaurant.com/conshohocken-pepperoncini-restaurant-happy-hours-specials"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://pepperoncinirestaurant.com/?source=pop_up&spot_id=101452&destination=reservations&promotion=reservations"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://pepperoncinirestaurant.com/conshohocken-pepperoncini-restaurant-catering"
+   }
+  ],
+  "website": "https://pepperoncinirestaurant.com/",
+  "zone_id": "conshohocken"
+ },
  "53858": {
   "address": "1927-33 E PASSYUNK AVE, PHILADELPHIA PA 19148-2220",
   "crawled_at": "2026-08-06",
@@ -11194,8 +12644,16 @@
   "osm_name": "Texas Roadhouse",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.texasroadhouse.com/locations/214-montgomeryvillepa"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.texasroadhouse.com/global-menu"
+   },
+   {
+    "result": "robots.txt disallows",
+    "url": "https://www.texasroadhouse.com/location/214-montgomeryvillepa/digital-menu"
    }
   ],
   "website": "https://www.texasroadhouse.com/locations/214-montgomeryvillepa",
@@ -11291,8 +12749,16 @@
   "osm_name": "Bellewood Country Club",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.bellewoodgolf.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.bellewoodgolf.com/Events"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.bellewoodgolf.com/The_Clubhouse/Lunch_Menu"
    }
   ],
   "website": "https://www.bellewoodgolf.com/",
@@ -11466,8 +12932,20 @@
   "osm_name": "Pumpernick's Deli",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://pumpernicksdeli.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://pumpernicksdeli.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://pumpernicksdeli.com/catering"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://pumpernicksdeli.com/deli"
    }
   ],
   "website": "https://pumpernicksdeli.com/",
@@ -11566,16 +13044,89 @@
   "website": "https://www.meltingpot.com/king-of-prussia-pa/",
   "zone_id": "king_of_prussia"
  },
+ "56307": {
+  "address": "902-904 CONESTOGA RD GARRETT HILL, ROSEMONT PA 19010",
+  "crawled_at": "2026-08-06",
+  "hits": [
+   {
+    "quote": "Daily food and drink specials / Friendly staff and locals",
+    "url": "https://www.flipandbaileys.com/"
+   },
+   {
+    "quote": "Happy Hour / Monday - Friday / 5pm-7pm / $2 off all Drinks & Appetizers",
+    "url": "https://www.flipandbaileys.com/hold-happ"
+   },
+   {
+    "quote": "All day Happy Hour! / $2 off all drinks and appetizers / $6 Flip's House Margaritas",
+    "url": "https://www.flipandbaileys.com/hold-happ"
+   },
+   {
+    "quote": "$4 Well drinks from 8 to 11pm",
+    "url": "https://www.flipandbaileys.com/hold-happ"
+   },
+   {
+    "quote": "$1 well drinks and Busch Light with purchase of $20 cup 10pm-12am",
+    "url": "https://www.flipandbaileys.com/hold-happ"
+   },
+   {
+    "quote": "$2 off during Happy Hour",
+    "url": "https://www.flipandbaileys.com/copy-of-drink-menu"
+   }
+  ],
+  "name": "FLIP AND BAILEYS LLC",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.flipandbaileys.com/"
+   },
+   {
+    "result": "ok, 4 quote(s)",
+    "url": "https://www.flipandbaileys.com/hold-happ"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.flipandbaileys.com/copy-of-drink-menu"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.flipandbaileys.com/drink-menu"
+   }
+  ],
+  "website": "https://www.flipandbaileys.com/",
+  "zone_id": "wayne_radnor"
+ },
  "56370": {
   "address": "1801 CHESTNUT ST, PHILADELPHIA PA 19103-3712",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Happy Hour",
+    "url": "https://continentalmidtown.com"
+   },
+   {
+    "quote": "Happy Hour / Monday-Friday 5-7pm (Bar Only) / Monday-Friday 11:30am-3pm",
+    "url": "https://continentalmidtown.com"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://continentalmidtown.com/"
+   },
+   {
+    "quote": "Happy Hour / Monday-Friday 5-7pm (Bar Only) / Monday-Friday 11:30am-3pm",
+    "url": "https://continentalmidtown.com/"
+   }
+  ],
   "name": "CONTINENTAL MIDTOWN",
   "osm_name": "The Continental Mid-Town",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 2 quote(s)",
     "url": "https://continentalmidtown.com"
+   },
+   {
+    "result": "ok, 2 quote(s)",
+    "url": "https://continentalmidtown.com/"
    }
   ],
   "website": "https://continentalmidtown.com",
@@ -11663,6 +13214,33 @@
   ],
   "website": "http://www.sangkeeasianbistro.com/",
   "zone_id": "ardmore_bryn_mawr"
+ },
+ "57342": {
+  "address": "193-195-197 BRIDGE ST, PHOENIXVILLE PA 19460-3401",
+  "crawled_at": "2026-08-06",
+  "hits": [],
+  "name": "MOLLY MAGUIRES RESTAURANT & PUB INC",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.mollymaguiresphoenixville.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.mollymaguiresphoenixville.com/banquet-menu/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.mollymaguiresphoenixville.com/catering-menu/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.mollymaguiresphoenixville.com/drink-menu/"
+   }
+  ],
+  "website": "https://www.mollymaguiresphoenixville.com/",
+  "zone_id": "phoenixville"
  },
  "5739": {
   "address": "400 AND 402 SOUTH ST, PHILADELPHIA PA 19147-1521",
@@ -12002,6 +13580,21 @@
   "website": "https://www.pietrosprime.com",
   "zone_id": "west_chester"
  },
+ "58341": {
+  "address": "1146 STUMP HALL & CEDARS RD, SKIPPACK PA 19474",
+  "crawled_at": "2026-08-06",
+  "hits": [],
+  "name": "SKIPPACK GOLF CLUB",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.skippackgolfclub.com/"
+   }
+  ],
+  "website": "https://www.skippackgolfclub.com/",
+  "zone_id": "collegeville_trappe"
+ },
  "58437": {
   "address": "1051 BALTIMORE PK, GLEN MILLS PA 19342",
   "crawled_at": "2026-08-06",
@@ -12010,8 +13603,16 @@
   "osm_name": "Texas Roadhouse",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.texasroadhouse.com/locations/320-concordvillepa"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.texasroadhouse.com/global-menu"
+   },
+   {
+    "result": "robots.txt disallows",
+    "url": "https://www.texasroadhouse.com/location/320-concordvillepa/digital-menu"
    }
   ],
   "website": "https://www.texasroadhouse.com/locations/320-concordvillepa",
@@ -12047,13 +13648,30 @@
  "58564": {
   "address": "1495 FARMINGTON AVE, POTTSTOWN PA 19464-1851",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Drink Specials",
+    "url": "https://fujiyamahibachi.com/drink-specials"
+   }
+  ],
   "name": "FUJIYAMA",
   "osm_name": "Fujiyama",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "http://www.fujiyamahibachi.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://fujiyamahibachi.com/specials"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://fujiyamahibachi.com/drink-specials"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://fujiyamahibachi.com/house-special"
    }
   ],
   "website": "http://www.fujiyamahibachi.com/",
@@ -12242,16 +13860,97 @@
   "website": "https://locations.thecheesecakefactory.com/pa/willow-grove-128/",
   "zone_id": "abington_jenkintown"
  },
+ "58996": {
+  "address": "208-212 BRIDGE ST, PHOENIXVILLE PA 19460-3404",
+  "crawled_at": "2026-08-06",
+  "hits": [
+   {
+    "quote": "Happy Hour",
+    "url": "https://bistroonbridge.com/"
+   },
+   {
+    "quote": "$5 BEERS & PROVERB WINES",
+    "url": "https://bistroonbridge.com/"
+   },
+   {
+    "quote": "$9 COCKTAILS",
+    "url": "https://bistroonbridge.com/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://bistroonbridge.com/bistro/"
+   },
+   {
+    "quote": "$5 BEERS & PROVERB WINES",
+    "url": "https://bistroonbridge.com/bistro/"
+   },
+   {
+    "quote": "$9 COCKTAILS",
+    "url": "https://bistroonbridge.com/bistro/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://bistroonbridge.com/santa-claus-returns-with-special-guests-copy/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://bistroonbridge.com/specials-menu/"
+   },
+   {
+    "quote": "$5 BEERS & PROVERB WINES",
+    "url": "https://bistroonbridge.com/specials-menu/"
+   },
+   {
+    "quote": "$9 COCKTAILS",
+    "url": "https://bistroonbridge.com/specials-menu/"
+   }
+  ],
+  "name": "BEANERS RESTAURANT INC",
+  "osm_name": "Bistro on Bridge",
+  "pages": [
+   {
+    "result": "ok, 3 quote(s)",
+    "url": "https://bistroonbridge.com/"
+   },
+   {
+    "result": "ok, 3 quote(s)",
+    "url": "https://bistroonbridge.com/bistro/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://bistroonbridge.com/santa-claus-returns-with-special-guests-copy/"
+   },
+   {
+    "result": "ok, 3 quote(s)",
+    "url": "https://bistroonbridge.com/specials-menu/"
+   }
+  ],
+  "website": "https://bistroonbridge.com/",
+  "zone_id": "phoenixville"
+ },
  "59081": {
   "address": "505 W RIDGE PK, CONSHOHOCKEN PA 19428-1224",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "In addition to our regular menu items, we offer daily specials made with fresh seasonal ingredients.",
+    "url": "https://www.andysdinerandpub.com/menu-2"
+   },
+   {
+    "quote": "Be sure to ask your server about our daily specials.",
+    "url": "https://www.andysdinerandpub.com/menu-2"
+   }
+  ],
   "name": "ANDY'S DINER",
   "osm_name": "Andy's Diner & Pub",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.andysdinerandpub.com/"
+   },
+   {
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.andysdinerandpub.com/menu-2"
    }
   ],
   "website": "https://www.andysdinerandpub.com/",
@@ -12265,8 +13964,20 @@
   "osm_name": "Kung Fu Necktie",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.kungfunecktie.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://kungfunecktie.com/event/abby-jeanne-the-shadowband-negative-affirmations-token-girl/kung-fu-necktie/philadelphia-pennsylvania/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://kungfunecktie.com/event/circus-of-power-tim-mosher-his-junkyard-friends-ten-ton-mojo-the-erotics/kung-fu-necktie/philadelphia-pennsylvania/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://kungfunecktie.com/event/conduition-brothers-saint-issarok/kung-fu-necktie/philadelphia-pennsylvania/"
    }
   ],
   "website": "https://www.kungfunecktie.com/",
@@ -12332,8 +14043,20 @@
   "osm_name": "Jeffersonville Golf Club",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.jeffersonvillegolfclub.org/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://jeffersonvillegolfclub.org/banquets-special-events"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://jeffersonvillegolfclub.org/banquets-special-events/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://jeffersonvillegolfclub.org/bar-menu/"
    }
   ],
   "website": "https://www.jeffersonvillegolfclub.org/",
@@ -12362,7 +14085,11 @@
   "osm_name": "Parc",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
+    "url": "https://parc-restaurant.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
     "url": "https://parc-restaurant.com/"
    }
   ],
@@ -12377,7 +14104,7 @@
   "osm_name": "OOKA Japanese Sushi & Hibachi Restaurant",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "http://ookasushi.com/phone/montgomeryville-contact.html"
    }
   ],
@@ -12749,8 +14476,20 @@
   "osm_name": "El Balconcito II",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.elbalconcito.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.elbalconcito.com/menu/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.elbalconcito.com/peruvian-menu/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.elbalconcito.com/plan-your-event/"
    }
   ],
   "website": "https://www.elbalconcito.com/",
@@ -12835,8 +14574,20 @@
   "osm_name": null,
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://phillyexpocenter.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://phillyexpocenter.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://phillyexpocenter.com/cal"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://phillyexpocenter.com/contact"
    }
   ],
   "website": "https://phillyexpocenter.com/",
@@ -12935,13 +14686,22 @@
  "61206": {
   "address": "20-24 E LANCASTER AVE, DOWNINGTOWN PA 19335",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Happy Hour",
+    "url": "https://www.lasponda.com/menus.html"
+   }
+  ],
   "name": "STELLA ROSA RISTORANTE",
   "osm_name": "La Sponda",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.lasponda.com/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.lasponda.com/menus.html"
    }
   ],
   "website": "https://www.lasponda.com/",
@@ -13066,12 +14826,17 @@
  "61267": {
   "address": "582 BETHLEHEM PK, FORT WASHINGTON PA 19034-2108",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Special events, happy hours, job offers, and more will be highlighted here on your local Magerks bulletin board.",
+    "url": "https://www.magerkspub.com/fort-washington/"
+   }
+  ],
   "name": "MAGERKS PUB",
   "osm_name": "MaGerks",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 1 quote(s)",
     "url": "https://www.magerkspub.com/fort-washington/"
    }
   ],
@@ -13300,12 +15065,40 @@
   "osm_name": "Vietnam Cafe",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "403 text/html",
     "url": "https://www.eatatvietnam.com/cafe/"
    }
   ],
   "website": "https://www.eatatvietnam.com/cafe/",
   "zone_id": "university_city"
+ },
+ "61728": {
+  "address": "822 FAYETTE ST, CONSHOHOCKEN PA 19428-1709",
+  "crawled_at": "2026-08-06",
+  "hits": [
+   {
+    "quote": "Happy Hour",
+    "url": "https://thestoneroserestaurant.com/food-menu"
+   },
+   {
+    "quote": "Daily Specials / Monday / Tuesday",
+    "url": "https://thestoneroserestaurant.com/food-menu"
+   }
+  ],
+  "name": "COLD RIVER LLC",
+  "osm_name": "The StoneRose",
+  "pages": [
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://thestoneroserestaurant.com/"
+   },
+   {
+    "result": "ok, 2 quote(s)",
+    "url": "https://thestoneroserestaurant.com/food-menu"
+   }
+  ],
+  "website": "https://thestoneroserestaurant.com/",
+  "zone_id": "conshohocken"
  },
  "61788": {
   "address": "128 S 19TH ST, PHILADELPHIA PA 19103-4630",
@@ -13792,7 +15585,7 @@
   "osm_name": "Little Anthony's Pizza",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "403 text/html",
     "url": "https://www.littleanthonysmedia.com/"
    }
   ],
@@ -13924,6 +15717,14 @@
    {
     "result": "ok, 0 quote(s)",
     "url": "https://thevalleyhousemalvern.com/"
+   },
+   {
+    "result": "pdf, no extractable text",
+    "url": "https://thevalleyhousemalvern.com/wp-content/uploads/2026/07/VH-MENU-2026-DRINK.pdf"
+   },
+   {
+    "result": "pdf, no extractable text",
+    "url": "https://thevalleyhousemalvern.com/wp-content/uploads/2026/07/VH-MENU-2026-FOOD.pdf"
    }
   ],
   "website": "https://thevalleyhousemalvern.com/",
@@ -14075,12 +15876,25 @@
  "63425": {
   "address": "339 N 11TH ST, PHILADELPHIA PA 19107-1307",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "We are open 5pm-2am Thursday, Friday and Saturday with Happy Hour daily from 5pm-8pm and are available for private parties and events.",
+    "url": "https://thetrestleinn.com/"
+   },
+   {
+    "quote": "Late Night Happy Hour 10pm-11pm!",
+    "url": "https://thetrestleinn.com/"
+   },
+   {
+    "quote": "Come and enjoy our Happy Hours from 5pm-8pm and 10pm-11pm every Thursday, Friday and Saturday.",
+    "url": "https://thetrestleinn.com/"
+   }
+  ],
   "name": "GLADURHAR LLC",
   "osm_name": "The Trestle Inn",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 3 quote(s)",
     "url": "https://thetrestleinn.com/"
    }
   ],
@@ -14095,7 +15909,7 @@
   "osm_name": "The Metropolitan American Diner & Bar",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.metrodinerbar.com/"
    }
   ],
@@ -14346,7 +16160,7 @@
   "osm_name": "Buffalo Wild Wings",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "404 text/html",
     "url": "https://www.buffalowildwings.com/locations/us/pa/downingtown/"
    }
   ],
@@ -14408,7 +16222,7 @@
   "osm_name": "Wacky Zaki's",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "403 text/html",
     "url": "https://www.wackyzakis.net"
    }
   ],
@@ -14433,12 +16247,33 @@
  "64739": {
   "address": "1210-22 FRANKFORD AVE, PHILADELPHIA PA 19125-3906",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Happy Hour / Small Warm Bavarian Pretzel $6",
+    "url": "https://frankfordhall.com/"
+   },
+   {
+    "quote": "Happy Hour / Monday-Friday 4-6pm / Sunday 8-10pm",
+    "url": "https://frankfordhall.com/"
+   },
+   {
+    "quote": "Happy Hour / Small Warm Bavarian Pretzel $6",
+    "url": "https://frankfordhall.com/"
+   },
+   {
+    "quote": "Happy Hour / Monday-Friday 4-6pm / Sunday 8-10pm",
+    "url": "https://frankfordhall.com/"
+   }
+  ],
   "name": "BIERFISH RESTAURANT PARTNERS LP",
   "osm_name": "Frankford Hall",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 2 quote(s)",
+    "url": "https://frankfordhall.com/"
+   },
+   {
+    "result": "ok, 2 quote(s)",
     "url": "https://frankfordhall.com/"
    }
   ],
@@ -14712,6 +16547,38 @@
   ],
   "website": "https://wills-bills.com/",
   "zone_id": "wayne_radnor"
+ },
+ "64975": {
+  "address": "1303 CHARLESTOWN RD, PHOENIXVILLE PA 19460-2344",
+  "crawled_at": "2026-08-06",
+  "hits": [
+   {
+    "quote": "Happy Hour Monday-Friday 4-6pm",
+    "url": "https://blackhorsetaverns.com/phoenixville/"
+   },
+   {
+    "quote": "$1.00 off pints during Happy Hour",
+    "url": "https://blackhorsetaverns.com/phoenixville/"
+   }
+  ],
+  "name": "OLDE BLACK HORSE TAVERN",
+  "osm_name": "Black Horse Tavern",
+  "pages": [
+   {
+    "result": "ok, 2 quote(s)",
+    "url": "https://blackhorsetaverns.com/phoenixville/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://blackhorsetaverns.com/drink-of-the-month/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://blackhorsetaverns.com/menu/"
+   }
+  ],
+  "website": "https://blackhorsetaverns.com/phoenixville/",
+  "zone_id": "phoenixville"
  },
  "64981": {
   "address": "600 N BROAD ST, PHILADELPHIA PA 19130-3402",
@@ -15086,7 +16953,7 @@
   "osm_name": "SpringHill Suites Philadelphia Valley Forge/King of Prussia",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "robots.txt unreadable (403), treated as disallow",
     "url": "https://www.marriott.com/phlkp"
    }
   ],
@@ -15253,13 +17120,70 @@
  "65850": {
   "address": "2300 EASTON RD, WILLOW GROVE PA 19090-1105",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Refreshing Drink Specials",
+    "url": "https://millersalehouse.com/locations/willow-grove/"
+   },
+   {
+    "quote": "Drink Specials Near You \u2013 Best Sports Bar in Willow Grove / \ud83d\ude9a Score 15% OFF (Up to $7.00) on ALL online orders! Use code FIRSTDOWN at checkout! View Terms",
+    "url": "https://millersalehouse.com/locations/willow-grove/drink-specials-in-willow-grove/"
+   },
+   {
+    "quote": "Drink Specials & Nightlife at Miller\u2019s Ale House in Willow Grove",
+    "url": "https://millersalehouse.com/locations/willow-grove/drink-specials-in-willow-grove/"
+   },
+   {
+    "quote": "Your go-to sports bar in Willow Grove for great drink specials, craft beer, and an unbeatable nightlife scene.",
+    "url": "https://millersalehouse.com/locations/willow-grove/drink-specials-in-willow-grove/"
+   },
+   {
+    "quote": "Drink Specials Near You \u2013 The Best Sports Bar in Willow Grove",
+    "url": "https://millersalehouse.com/locations/willow-grove/drink-specials-in-willow-grove/"
+   },
+   {
+    "quote": "If you\u2019re searching for the best drink specials near you, Miller\u2019s Ale House in Willow Grove is the ultimate destination for big games, bold drinks, and a lively crowd. With 35+ beers on tap, handcrafted cocktails , and wall-to-wall TVs playing every major matchup, this is where locals and visitors come together for sports, drinks, and good times.",
+    "url": "https://millersalehouse.com/locations/willow-grove/drink-specials-in-willow-grove/"
+   },
+   {
+    "quote": "Nightlife & Drink Specials That Keep the Party Going",
+    "url": "https://millersalehouse.com/locations/willow-grove/drink-specials-in-willow-grove/"
+   },
+   {
+    "quote": "When the game ends, the night gets even better at Miller\u2019s Ale House in Willow Grove. Whether you\u2019re toasting a win or starting a night out, our drink specials hit just right. From bold IPAs to smooth cocktails, we\u2019ve got something for every taste and every kind of night.",
+    "url": "https://millersalehouse.com/locations/willow-grove/drink-specials-in-willow-grove/"
+   },
+   {
+    "quote": "Join Us for the Best Drink Specials in Willow Grove",
+    "url": "https://millersalehouse.com/locations/willow-grove/drink-specials-in-willow-grove/"
+   },
+   {
+    "quote": "Looking for drink specials near you? Miller\u2019s Ale House in Willow Grove has everything you want\u2014 ice-cold craft beer , signature drinks, wall-to-wall sports, and nightlife that keeps the fun going.",
+    "url": "https://millersalehouse.com/locations/willow-grove/drink-specials-in-willow-grove/"
+   },
+   {
+    "quote": "Restaurant Deals & Drink Specials | Miller's Ale House Skip to Main Content / \ud83d\ude9a Score 15% OFF (Up to $7.00) on ALL online orders! Use code FIRSTDOWN at checkout! View Terms",
+    "url": "https://millersalehouse.com/specials/"
+   }
+  ],
   "name": "MILLER'S WILLOW GROVE ALE HOUSE",
   "osm_name": "Miller's Ale House",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 1 quote(s)",
     "url": "https://millersalehouse.com/locations/willow-grove/"
+   },
+   {
+    "result": "ok, 9 quote(s)",
+    "url": "https://millersalehouse.com/locations/willow-grove/drink-specials-in-willow-grove/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://millersalehouse.com/specials/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://millersalehouse.com/menu/"
    }
   ],
   "website": "https://millersalehouse.com/locations/willow-grove/",
@@ -15273,8 +17197,16 @@
   "osm_name": "Texas Roadhouse",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.texasroadhouse.com/locations/413-downingtownpa"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.texasroadhouse.com/global-menu"
+   },
+   {
+    "result": "robots.txt disallows",
+    "url": "https://www.texasroadhouse.com/location/413-downingtownpa/digital-menu"
    }
   ],
   "website": "https://www.texasroadhouse.com/locations/413-downingtownpa",
@@ -15303,7 +17235,7 @@
   "osm_name": "Buffalo Wild Wings",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.buffalowildwings.com/locations/us/pa/glen-mills/920-baltimore-pike/sports-bar-843"
    }
   ],
@@ -15404,6 +17336,10 @@
    {
     "result": "ok, 2 quote(s)",
     "url": "https://www.valleyforgepizza.com/happy-hours"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.valleyforgepizza.com/images/dine_in_menu.pdf"
    }
   ],
   "website": "https://www.valleyforgepizza.com",
@@ -15417,8 +17353,16 @@
   "osm_name": "Red Owl Tavern",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://redowltavern.com"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.redowltavern.com/special-events"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.redowltavern.com/menus"
    }
   ],
   "website": "https://redowltavern.com",
@@ -15447,8 +17391,12 @@
   "osm_name": "Noir",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.noirrestaurantandbar.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.noirrestaurantandbar.com/menu"
    }
   ],
   "website": "https://www.noirrestaurantandbar.com/",
@@ -15671,7 +17619,7 @@
   "osm_name": "Plaza Azteca",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://plazaazteca.com/king-of-prussia"
    }
   ],
@@ -15883,7 +17831,7 @@
   "osm_name": "Hyatt House Philadelphia / King of Prussia",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "robots.txt unreadable (403), treated as disallow",
     "url": "https://www.hyatt.com/en-US/hotel/pennsylvania/hyatt-house-philadelphia-king-of-prussia/phlxk"
    }
   ],
@@ -15940,7 +17888,7 @@
   "osm_name": "Sonesta Select Philadelphia Airport",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.sonesta.com/us/pennsylvania/philadelphia/sonesta-select-philadelphia-airport"
    }
   ],
@@ -15950,13 +17898,22 @@
  "67692": {
   "address": "116 N POTTSTOWN PK, EXTON PA 19341-2206",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Pour House started with a passion for great beer and has grown into a neighborhood gathering place for every occasion. Whether you're joining us for Happy Hour, lunch with coworkers, Buck-a-Shuck Wednesdays, dinner with friends or a night out, there's always something worth raising a glass to.",
+    "url": "https://pjspourhouse.com/index.php?loc=Exton"
+   }
+  ],
   "name": "PJ'S POUR HOUSE LLC",
   "osm_name": "The Pour House",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 1 quote(s)",
     "url": "https://pjspourhouse.com/index.php?loc=Exton"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://pjspourhouse.com/menu"
    }
   ],
   "website": "https://pjspourhouse.com/index.php?loc=Exton",
@@ -16004,8 +17961,12 @@
   "osm_name": "Hotel Warner",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.hotelwarner.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.hotelwarner.com/events/"
    }
   ],
   "website": "https://www.hotelwarner.com/",
@@ -16207,13 +18168,30 @@
  "68012": {
   "address": "1902 COUNTY LINE RD, HUNTINGDON VALLEY PA 19006-1738",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Monthly Menu & Happy Hour",
+    "url": "https://www.palztaphouse.net/"
+   },
+   {
+    "quote": "Monthly Menu & Happy Hour",
+    "url": "https://www.palztaphouse.net/menu"
+   }
+  ],
   "name": "PALZ TAP HOUSE",
   "osm_name": "Palz Tap House",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 1 quote(s)",
     "url": "https://www.palztaphouse.net/"
+   },
+   {
+    "result": "404 text/html",
+    "url": "https://www.palztaphouse.net/beer-menu-and-coctails"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.palztaphouse.net/menu"
    }
   ],
   "website": "https://www.palztaphouse.net/",
@@ -16329,7 +18307,7 @@
   "osm_name": "Plaza Azteca",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://plazaazteca.com/exton"
    }
   ],
@@ -16389,8 +18367,16 @@
   "osm_name": "Humpty Dumplings",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://humptysdumplings.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://humptysdumplings.com/events/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://humptysdumplings.com/menu/"
    }
   ],
   "website": "https://humptysdumplings.com/",
@@ -16414,13 +18400,26 @@
  "68559": {
   "address": "712 MAIN ST, HARLEYSVILLE PA 19438-1636",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "HAPPY HOUR MONDAY \u2013 FRIDAY 3:30PM \u2013 5:30PM",
+    "url": "https://www.thebutcherandbarkeep.com/"
+   }
+  ],
   "name": "THE BUTCHER AND BARKEEP",
   "osm_name": "Butcher and Barkeep",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 1 quote(s)",
     "url": "https://www.thebutcherandbarkeep.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://thebutcherandbarkeep.com/events/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://thebutcherandbarkeep.com/menus/"
    }
   ],
   "website": "https://www.thebutcherandbarkeep.com/",
@@ -16449,6 +18448,21 @@
   ],
   "website": "https://www.senorsalsapa.com/",
   "zone_id": "abington_jenkintown"
+ },
+ "68716": {
+  "address": "20 HAGERTY BLVD STE 6, WEST CHESTER PA 19382-5910",
+  "crawled_at": "2026-08-06",
+  "hits": [],
+  "name": "THE ARTISAN'S CELLAR LLC",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://theartisanscellar.com/"
+   }
+  ],
+  "website": "https://theartisanscellar.com/",
+  "zone_id": "west_chester"
  },
  "68830": {
   "address": "1080 E PHILADELPHIA AVE, GILBERTSVILLE PA 19525-9510",
@@ -16518,7 +18532,7 @@
   "osm_name": "Buffalo Wild Wings",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.buffalowildwings.com/locations/us/pa/phoenixville/1510-egypt-rd/sports-bar-1133"
    }
   ],
@@ -16710,13 +18724,58 @@
  "69448": {
   "address": "148 BRIDGE ST, PHOENIXVILLE PA 19460-3448",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Happy Hour",
+    "url": "https://thegreatamericanpub.com/phoenixville"
+   },
+   {
+    "quote": "Happy Hour - The Great American Pub",
+    "url": "https://thegreatamericanpub.com/phoenixville/menus/happy-hour/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://thegreatamericanpub.com/phoenixville/menus/happy-hour/"
+   },
+   {
+    "quote": "Happy Hour / Monday through Friday | DINE-IN ONLY | 4 -6pm",
+    "url": "https://thegreatamericanpub.com/phoenixville/menus/happy-hour/"
+   },
+   {
+    "quote": "Happy Hour Specials / Monday through Friday | DINE-IN ONLY | 4 -6pm / $3 - Miller Lite Drafts",
+    "url": "https://thegreatamericanpub.com/phoenixville/menus/happy-hour/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://thegreatamericanpub.com/phoenixville/specials/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://thegreatamericanpub.com/phoenixville/specials/weekly-specials/"
+   },
+   {
+    "quote": "Happy Hour from 5pm - 7pm",
+    "url": "https://thegreatamericanpub.com/phoenixville/specials/weekly-specials/"
+   }
+  ],
   "name": "THE GREAT AMERICAN PUB & HOTEL",
   "osm_name": "The Great American Pub",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 1 quote(s)",
     "url": "https://thegreatamericanpub.com/phoenixville"
+   },
+   {
+    "result": "ok, 4 quote(s)",
+    "url": "https://thegreatamericanpub.com/phoenixville/menus/happy-hour/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://thegreatamericanpub.com/phoenixville/specials/"
+   },
+   {
+    "result": "ok, 2 quote(s)",
+    "url": "https://thegreatamericanpub.com/phoenixville/specials/weekly-specials/"
    }
   ],
   "website": "https://thegreatamericanpub.com/phoenixville",
@@ -16725,13 +18784,30 @@
  "69449": {
   "address": "561 GLEN EAGLE SQ, GLEN MILLS PA 19342",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Features Dining Brunch Gluten Sensitive Kids Family & Catering Options Happy Hour",
+    "url": "https://www.notyouraveragejoes.com/menu"
+   }
+  ],
   "name": "NOT YOUR AVERAGE JOES",
   "osm_name": "Not Your Average Joe's",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.notyouraveragejoes.com/glen-mills"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://order.notyouraveragejoes.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.notyouraveragejoes.com/glen-mills"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.notyouraveragejoes.com/menu"
    }
   ],
   "website": "https://www.notyouraveragejoes.com/glen-mills",
@@ -16775,8 +18851,16 @@
   "osm_name": "Roots Cafe",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.rootscafewc.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.rootscafewc.com/popmenu-order"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.rootscafewc.com/private-events"
    }
   ],
   "website": "https://www.rootscafewc.com/",
@@ -16790,8 +18874,20 @@
   "osm_name": "Bierhaul Lagerhaus & American Kitchen",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://bierhaul.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://bierhaul.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://bierhaul.com/farmhousemenu/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://bierhaul.com/townhousemenu/"
    }
   ],
   "website": "https://bierhaul.com/",
@@ -16893,13 +18989,30 @@
  "69896": {
   "address": "49 ST JAMES PLACE, ARDMORE PA 19003-2407",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Features Dining Brunch Gluten Sensitive Kids Family & Catering Options Happy Hour",
+    "url": "https://www.notyouraveragejoes.com/menu"
+   }
+  ],
   "name": "NOT YOUR AVERAGE JOES",
   "osm_name": "Not Your Average Joe's",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.notyouraveragejoes.com/ardmore"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://order.notyouraveragejoes.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.notyouraveragejoes.com/ardmore"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.notyouraveragejoes.com/menu"
    }
   ],
   "website": "https://www.notyouraveragejoes.com/ardmore",
@@ -16988,13 +19101,50 @@
  "70157": {
   "address": "425 W DEKALB PK, KING OF PRUSSIA PA 19406-2304",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Happy Hour / Available Monday \u2013 Friday from 3-6pm at participating locations.* See full terms and availability HERE .",
+    "url": "https://www.redlobster.com/happy-hour/"
+   },
+   {
+    "quote": "Cheers to Happy Hour Menus! / Available Monday \u2013 Friday from 3-6pm at participating locations.* See full terms and availability HERE . / Introducing $5 Drink Specials & $2 Off Select Appetizers from 3-6pm at participating locations*",
+    "url": "https://www.redlobster.com/happy-hour/"
+   },
+   {
+    "quote": "Food & Drinks Happy Hour* / Introducing $5 Drink Specials & $2 Off Select Appetizers from 3-6pm at participating locations*",
+    "url": "https://www.redlobster.com/happy-hour/"
+   },
+   {
+    "quote": "Introducing $5 Drink Specials & $2 Off Select Appetizers from 3-6pm at participating locations*",
+    "url": "https://www.redlobster.com/happy-hour/"
+   },
+   {
+    "quote": "Food ONLY Happy Hour / Did someone say $2 off* select appetizers, like Lobster Flatbread, Seafood-Stuffed Mushrooms, Crab Queso, and more, from 3-6pm?!",
+    "url": "https://www.redlobster.com/happy-hour/"
+   },
+   {
+    "quote": "*Food Happy Hour offers available Monday through Friday only between 3pm to 6pm, at participating US locations. Gainesville, GA hours are 4-6pm. Beverage offerings not available. Price indicated excludes applicable taxes and gratuities. Available for Dine-in only; To Go and Delivery excluded. Offer may not be combined with any other offer or coupon. Full terms & availability here .",
+    "url": "https://www.redlobster.com/happy-hour/"
+   }
+  ],
   "name": "RED LOBSTER #778",
   "osm_name": "Red Lobster",
   "pages": [
    {
     "result": "ok, 0 quote(s)",
     "url": "https://www.redlobster.com/seafood-restaurants/locations/pa/king-of-prussia/425-w-dekalb-pike"
+   },
+   {
+    "result": "ok, 6 quote(s)",
+    "url": "https://www.redlobster.com/happy-hour/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.redlobster.com/menu/specials/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.redlobster.com/news-press/press/2024/12/02/sip-snack-and-celebrate-red-lobster-announces-launch-of-happy-hour/"
    }
   ],
   "website": "https://www.redlobster.com/seafood-restaurants/locations/pa/king-of-prussia/425-w-dekalb-pike",
@@ -17164,6 +19314,33 @@
   "website": "https://clarkvillephilly.com/",
   "zone_id": "university_city"
  },
+ "70519": {
+  "address": "1095 W BALTIMORE PIKE, MEDIA PA 19063",
+  "crawled_at": "2026-08-06",
+  "hits": [],
+  "name": "ACME MARKETS INC",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.acmemarkets.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.acmemarkets.com/lp/specialty-diets.html"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.acmemarkets.com/lp/specialty-diets/dairy-free-diet.html"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.acmemarkets.com/lp/specialty-diets/gluten-free-diet.html"
+   }
+  ],
+  "website": "https://www.acmemarkets.com/",
+  "zone_id": "media"
+ },
  "70520": {
   "address": "101 E 7TH AVE, CONSHOHOCKEN PA 19428-1722",
   "crawled_at": "2026-08-06",
@@ -17287,13 +19464,22 @@
  "70777": {
   "address": "29 AIRPORT SQ, NORTH WALES PA 19454-1419",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Pour House started with a passion for great beer and has grown into a neighborhood gathering place for every occasion. Whether you're joining us for Happy Hour, lunch with coworkers, Buck-a-Shuck Wednesdays, dinner with friends or a night out, there's always something worth raising a glass to.",
+    "url": "https://www.pjspourhouse.com/"
+   }
+  ],
   "name": "PJW MONTGOMERYVILLE LLC",
   "osm_name": "Pour House",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 1 quote(s)",
     "url": "https://www.pjspourhouse.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.pjspourhouse.com/menu"
    }
   ],
   "website": "https://www.pjspourhouse.com/",
@@ -17465,8 +19651,16 @@
   "osm_name": "Palermo's Pizza",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://hgpalermospizza.com"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://hgpalermospizza.com/our-menu"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://hgpalermospizza.com/our-menu/"
    }
   ],
   "website": "https://hgpalermospizza.com",
@@ -17742,12 +19936,77 @@
  "71516": {
   "address": "18-22 W GAY ST, WEST CHESTER PA 19380-3011",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Daily Specials/Events",
+    "url": "https://kildarespubwc.com"
+   },
+   {
+    "quote": "Daily Specials / Mondays: / $10 Fish and Chips and $4 Michelob Drafts all day",
+    "url": "https://kildarespubwc.com"
+   },
+   {
+    "quote": "Happy Hour Specials: / $3 Off Draft Beer, Wine, and Specialty Cocktails",
+    "url": "https://kildarespubwc.com"
+   },
+   {
+    "quote": "Week Day Happy Hour: / $3 Off Draft Beer, Wine, and Specialty Cocktails",
+    "url": "https://kildarespubwc.com"
+   },
+   {
+    "quote": "Late Night Happy Hour: / $3 Well Mixed Drinks / $4 Michalob Ultra Draft",
+    "url": "https://kildarespubwc.com"
+   },
+   {
+    "quote": "our daily specials and special sports events!",
+    "url": "https://kildarespubwc.com"
+   },
+   {
+    "quote": "HAPPY HOUR SPECIALS",
+    "url": "http://kildarespubwc.com/drink-menu/"
+   },
+   {
+    "quote": "Daily Specials/Events",
+    "url": "https://kildarespubwc.com"
+   },
+   {
+    "quote": "Daily Specials / Mondays: / $10 Fish and Chips and $4 Michelob Drafts all day",
+    "url": "https://kildarespubwc.com"
+   },
+   {
+    "quote": "Happy Hour Specials: / $3 Off Draft Beer, Wine, and Specialty Cocktails",
+    "url": "https://kildarespubwc.com"
+   },
+   {
+    "quote": "Week Day Happy Hour: / $3 Off Draft Beer, Wine, and Specialty Cocktails",
+    "url": "https://kildarespubwc.com"
+   },
+   {
+    "quote": "Late Night Happy Hour: / $3 Well Mixed Drinks / $4 Michalob Ultra Draft",
+    "url": "https://kildarespubwc.com"
+   },
+   {
+    "quote": "our daily specials and special sports events!",
+    "url": "https://kildarespubwc.com"
+   }
+  ],
   "name": "CHESTER COUNTY PUB COMPANY LLC",
   "osm_name": "Kildare's Irish Pub",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 6 quote(s)",
+    "url": "https://kildarespubwc.com"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "http://kildarespubwc.com/drink-menu/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "http://kildarespubwc.com/food-menu/"
+   },
+   {
+    "result": "ok, 6 quote(s)",
     "url": "https://kildarespubwc.com"
    }
   ],
@@ -18156,13 +20415,38 @@
  "72370": {
   "address": "102 MAIN ST SUITE 100, EXTON PA 19341",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Join us for Happy Hour! / Monday-Friday Open-2pm / 12 Under $12",
+    "url": "https://worldofbeer.com/locations/exton"
+   },
+   {
+    "quote": "Spirits & Wine Food Menu Weekend Brunch Daily Specials Kids Menu 12 under $12 Lunch Happy Hour Gluten-Friendly",
+    "url": "https://worldofbeer.com/locations/exton/food"
+   },
+   {
+    "quote": "Spirits & Wine Food Menu Weekend Brunch Daily Specials Kids Menu 12 under $12 Lunch Happy Hour Gluten",
+    "url": "https://worldofbeer.com/locations/exton/spirits"
+   }
+  ],
   "name": "WORLD OF BEER",
   "osm_name": "World of Beer Bar & Kitchen",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 1 quote(s)",
     "url": "https://worldofbeer.com/locations/exton"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://worldofbeer.com/food/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://worldofbeer.com/locations/exton/food"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://worldofbeer.com/locations/exton/spirits"
    }
   ],
   "website": "https://worldofbeer.com/locations/exton",
@@ -18176,7 +20460,7 @@
   "osm_name": "Ortlieb's Lounge",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.ortliebsphilly.com/"
    }
   ],
@@ -18556,6 +20840,33 @@
   "website": "http://cpvalleyforge.com",
   "zone_id": "king_of_prussia"
  },
+ "72735": {
+  "address": "325 BRIDGE ST, PHOENIXVILLE PA 19460-3355",
+  "crawled_at": "2026-08-06",
+  "hits": [],
+  "name": "THE FOODERY PHOENIXVILLE INC",
+  "osm_name": "The Foodery",
+  "pages": [
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://fooderybeer.squarespace.com/phoenixville"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://fooderybeer.squarespace.com/deli-phoenixville-menu"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://fooderybeer.squarespace.com/events"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://fooderybeer.squarespace.com/menu"
+   }
+  ],
+  "website": "https://fooderybeer.squarespace.com/phoenixville",
+  "zone_id": "phoenixville"
+ },
  "72740": {
   "address": "160 N GULPH RD STE 101, KING OF PRUSSIA PA 19406-2941",
   "crawled_at": "2026-08-06",
@@ -18693,13 +21004,54 @@
  "73031": {
   "address": "78 W LANCASTER AVE, DOWNINGTOWN PA 19335-2825",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Happy Hour",
+    "url": "https://anthonyscucinafresca.com/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://anthonyscucinafresca.com/catering/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://anthonyscucinafresca.com/menu/"
+   },
+   {
+    "quote": "Happy Hour Menu / Join us for Happy Hour! Monday through Friday, 4:00pm to 6:00pm. / Single shot mixed drinks \u2013 $5.00 each! All other cocktails in our menu for only $9.00",
+    "url": "https://anthonyscucinafresca.com/menu/"
+   },
+   {
+    "quote": "Join us for Happy Hour! Monday through Friday, 4:00pm to 6:00pm.",
+    "url": "https://anthonyscucinafresca.com/menu/"
+   },
+   {
+    "quote": "Download our Happy Hour Menu (pdf) / $8.50",
+    "url": "https://anthonyscucinafresca.com/menu/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://anthonyscucinafresca.com/private-events/"
+   }
+  ],
   "name": "ANTHONYS PIZZA & GRILL",
   "osm_name": "Anthony's Cucina Fresca",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 1 quote(s)",
     "url": "https://anthonyscucinafresca.com/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://anthonyscucinafresca.com/catering/"
+   },
+   {
+    "result": "ok, 4 quote(s)",
+    "url": "https://anthonyscucinafresca.com/menu/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://anthonyscucinafresca.com/private-events/"
    }
   ],
   "website": "https://anthonyscucinafresca.com/",
@@ -18854,13 +21206,42 @@
  "73397": {
   "address": "KING OF PRUSSIA TOWN CENTER 220 MAIN ST, KING OF PRUSSIA PA 19406",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "$21.45 Beer-battered alaskan cod, malt vinegar powder, coleslaw, cornichon tartar sauce, house fries.",
+    "url": "https://www.cityworksrestaurant.com/locations/king-of-prussia/food-menu/"
+   },
+   {
+    "quote": "$18.45 Beer-battered shrimp, Asian slaw, chili aioli, sriracha, sesame seeds, micro cilantro, flour tortillas.",
+    "url": "https://www.cityworksrestaurant.com/locations/king-of-prussia/food-menu/"
+   },
+   {
+    "quote": "$21.45 Beer-battered alaskan cod, malt vinegar powder, coleslaw, cornichon tartar sauce, house fries.",
+    "url": "https://www.cityworksrestaurant.com/locations/kingofprussia-2/food-menu/"
+   },
+   {
+    "quote": "$18.45 Beer-battered shrimp, Asian slaw, chili aioli, sriracha, sesame seeds, micro cilantro, flour tortillas.",
+    "url": "https://www.cityworksrestaurant.com/locations/kingofprussia-2/food-menu/"
+   }
+  ],
   "name": "CITY WORKS",
   "osm_name": "City Works - King of Prussia",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.cityworksrestaurant.com/locations/kingofprussia-2"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.cityworksrestaurant.com/events/chow-down-for-charity/"
+   },
+   {
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.cityworksrestaurant.com/locations/king-of-prussia/food-menu/"
+   },
+   {
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.cityworksrestaurant.com/locations/kingofprussia-2/food-menu/"
    }
   ],
   "website": "https://www.cityworksrestaurant.com/locations/kingofprussia-2",
@@ -18947,8 +21328,12 @@
   "osm_name": "AKA Rittenhouse Square",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.stayaka.com/locations/rittenhouse_square/default.aspx"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.stayaka.com/special-offer-2024"
    }
   ],
   "website": "https://www.stayaka.com/locations/rittenhouse_square/default.aspx",
@@ -19418,7 +21803,7 @@
   "osm_name": "Residence Inn",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "robots.txt unreadable (403), treated as disallow",
     "url": "https://www.marriott.com/en-us/hotels/phlma-residence-inn-philadelphia-great-valley-malvern/overview"
    }
   ],
@@ -19433,8 +21818,12 @@
   "osm_name": "Exton Inn & Suites",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.extonhotels.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.extonhotels.com/events"
    }
   ],
   "website": "https://www.extonhotels.com/",
@@ -19489,6 +21878,29 @@
   ],
   "website": "https://www.ihg.com/holidayinnexpress/hotels/us/en/fort-washington/ftspa/hoteldetail",
   "zone_id": "blue_bell_plymouth_meeting"
+ },
+ "84498": {
+  "address": "519 KIMBERTON RD  SUITE 9  PIKELAND VILLAGE SQUARE, PHOENIXVILLE PA 19460",
+  "crawled_at": "2026-08-06",
+  "hits": [],
+  "name": "LIBERTY UNION 2 LLC",
+  "osm_name": "Liberty Union Bar & Grill",
+  "pages": [
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "http://libertyunionbar.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "http://libertyunionbar.com/chester-springs/menus/main"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "http://libertyunionbar.com/kimberton/menus/main"
+   }
+  ],
+  "website": "http://libertyunionbar.com/",
+  "zone_id": "phoenixville"
  },
  "84583": {
   "address": "225 & 227 BRIDGE ST, PHOENIXVILLE PA 19460-3449",
@@ -19971,13 +22383,22 @@
  "86864": {
   "address": "201 CHESTNUT ST, PHILADELPHIA PA 19106-2808",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "$14 Cocktail",
+    "url": "https://www.rottenralphspub.com/menu/rotten-ralph-s-201-chestnut-st"
+   }
+  ],
   "name": "REALLY ROTTEN RALPHS LLC",
   "osm_name": "Rotten Ralph's Pub & Eatery",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.rottenralphspub.com"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.rottenralphspub.com/menu/rotten-ralph-s-201-chestnut-st"
    }
   ],
   "website": "https://www.rottenralphspub.com",
@@ -20001,13 +22422,46 @@
  "87212": {
   "address": "1235 E PALMER ST, PHILADELPHIA PA 19125-3307",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Happy Hour",
+    "url": "https://interstatedrafthouse.com/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://interstatedrafthouse.com/libations/"
+   },
+   {
+    "quote": "Happy Hour / Tuesday to Friday / 4 to 6PM",
+    "url": "https://interstatedrafthouse.com/libations/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://interstatedrafthouse.com/weekly-specials/"
+   },
+   {
+    "quote": "Happy Hour / Tuesday to Friday \u2013 Happy Hour from 4 to 6PM $1 off drafts",
+    "url": "https://interstatedrafthouse.com/weekly-specials/"
+   },
+   {
+    "quote": "Tuesday to Friday \u2013 Happy Hour from 4 to 6PM $1 off drafts",
+    "url": "https://interstatedrafthouse.com/weekly-specials/"
+   }
+  ],
   "name": "DRAFTHOUSE INC",
   "osm_name": "Interstate Drafthouse",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 1 quote(s)",
     "url": "https://interstatedrafthouse.com/"
+   },
+   {
+    "result": "ok, 2 quote(s)",
+    "url": "https://interstatedrafthouse.com/libations/"
+   },
+   {
+    "result": "ok, 3 quote(s)",
+    "url": "https://interstatedrafthouse.com/weekly-specials/"
    }
   ],
   "website": "https://interstatedrafthouse.com/",
@@ -20125,13 +22579,26 @@
  "88072": {
   "address": "242 BRIDGE ST, PHOENIXVILLE PA 19460-3450",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "-Happy Hour & Weekly Specials-",
+    "url": "https://www.rebelhillbrewing.com/specials"
+   },
+   {
+    "quote": "HAPPY HOUR / Tuesday-Thursday 5-7 PM",
+    "url": "https://www.rebelhillbrewing.com/specials"
+   }
+  ],
   "name": "REBEL HILL BREWING COMPANY",
   "osm_name": "Rebel Hill Brewing",
   "pages": [
    {
     "result": "ok, 0 quote(s)",
     "url": "https://www.rebelhillbrewing.com/"
+   },
+   {
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.rebelhillbrewing.com/specials"
    },
    {
     "result": "ok, 0 quote(s)",
@@ -20341,8 +22808,16 @@
   "osm_name": "ChopHouse Grille",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.chophousegrille.com"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.chophousegrille.com/events"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.chophousegrille.com/private-events"
    }
   ],
   "website": "https://www.chophousegrille.com",
@@ -20643,6 +23118,30 @@
   "website": "https://baldbirdsbrewing.com/",
   "zone_id": "audubon_eagleville"
  },
+ "90605": {
+  "address": "182-184 E BRIDGE ST, PHOENIXVILLE PA 19460-3448",
+  "crawled_at": "2026-08-06",
+  "hits": [
+   {
+    "quote": "Happy Hour",
+    "url": "https://ilgranaiopa2.com/menus.html"
+   }
+  ],
+  "name": "ILGRANAIO PHOENIXVILLE",
+  "osm_name": "il Granaio",
+  "pages": [
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://ilgranaiopa2.com/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://ilgranaiopa2.com/menus.html"
+   }
+  ],
+  "website": "https://ilgranaiopa2.com/",
+  "zone_id": "phoenixville"
+ },
  "90655": {
   "address": "1445 N AMERICAN ST, PHILADELPHIA PA 19122",
   "crawled_at": "2026-08-06",
@@ -20686,12 +23185,39 @@
   "osm_name": "Marriott Philadelphia West",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "robots.txt unreadable (403), treated as disallow",
     "url": "https://www.marriott.com/en-us/hotels/phlwe-marriott-philadelphia-west/overview/"
    }
   ],
   "website": "https://www.marriott.com/en-us/hotels/phlwe-marriott-philadelphia-west/overview/",
   "zone_id": "conshohocken"
+ },
+ "91167": {
+  "address": "810 DICKERSON RD STE B, NORTH WALES PA 19464",
+  "crawled_at": "2026-08-06",
+  "hits": [],
+  "name": "MCALLISTER BREWING COMPANY",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.mcallisterbrewing.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.mcallisterbrewing.com/event-details/special-event-operation-strongman-8-30am"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.mcallisterbrewing.com/event-details/special-event-libations-lobsters-and-local-artists-12-00pm-est"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.mcallisterbrewing.com/event-details/special-event-cigar-night-brewery-5-00pm-est"
+   }
+  ],
+  "website": "https://www.mcallisterbrewing.com/",
+  "zone_id": "lansdale_montgomeryville"
  },
  "91278": {
   "address": "726 N 24TH ST, PHILADELPHIA PA 19130-2535",
@@ -20764,14 +23290,26 @@
   "crawled_at": "2026-08-06",
   "hits": [],
   "name": "SEDONA TAPHOUSE",
-  "osm_name": "Chikara Sushi",
+  "osm_name": null,
   "pages": [
    {
     "result": "ok, 0 quote(s)",
-    "url": "https://www.chikarapa.com/"
+    "url": "https://sedonataphouse.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://sedonataphouse.com/nye-special-short-ribs-dinner/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://sedonataphouse.com/nye-special-salmon-dinner-2/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://sedonataphouse.com/nye-special-short-ribs-dinner-2/"
    }
   ],
-  "website": "https://www.chikarapa.com/",
+  "website": "https://sedonataphouse.com/",
   "zone_id": "phoenixville"
  },
  "91715": {
@@ -20882,24 +23420,37 @@
  "92150": {
   "address": "160 N GULPH RD ROOM C110, KING OF PRUSSIA PA 19406",
   "crawled_at": "2026-08-06",
-  "hits": [],
-  "name": "BARTACO",
-  "osm_name": "Shake Shack",
-  "pages": [
+  "hits": [
    {
-    "result": "ok, 0 quote(s)",
-    "url": "https://shakeshack.com/location/kop-outside-of-mall-pa"
+    "quote": "kop high tide happy hour (at our bar)",
+    "url": "https://bartaco.com/kophightidehour/"
    },
    {
-    "result": "ok, 0 quote(s)",
-    "url": "https://shakeshack.com/"
-   },
-   {
-    "result": "ok, 0 quote(s)",
-    "url": "https://shakeshack.com/location/kop-outside-of-mall-pa"
+    "quote": "this 4th of July bartaco is the place to be. we\u2019re celebrating with happy hour all day long, plus check out your local location for music, face painting, and more! / boulder: dj 3-6pm / lohi: face painter 3:30-6:30pm + dj 6-11pm",
+    "url": "https://bartaco.com/4th-of-july-lineup-and-happy-hour/"
    }
   ],
-  "website": "https://shakeshack.com/location/kop-outside-of-mall-pa",
+  "name": "BARTACO",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://bartaco.com/kophightidehour/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://bartaco.com/4th-of-july-lineup-and-happy-hour/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://bartaco.com/food/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://bartaco.com/locations/"
+   }
+  ],
+  "website": "https://bartaco.com/kophightidehour/",
   "zone_id": "king_of_prussia"
  },
  "92169": {
@@ -20983,6 +23534,10 @@
    {
     "result": "ok, 0 quote(s)",
     "url": "https://www.hogislandsteaks.com/menu-photos"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.hogislandsteaks.com/s/HogIslandMenu7825.pdf"
    }
   ],
   "website": "https://www.hogislandsteaks.com",
@@ -21833,13 +24388,26 @@
  "95057": {
   "address": "1200 MARKET ST, PHILADELPHIA PA 19107-3671",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "From happy hour to upcoming events - discover what's happening at Bank & Bourbon .",
+    "url": "https://www.bankandbourbon.com/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://www.bankandbourbon.com/menus"
+   }
+  ],
   "name": "LOEWS HOTEL",
   "osm_name": "Bank & Bourbon",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 1 quote(s)",
     "url": "https://www.bankandbourbon.com/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.bankandbourbon.com/menus"
    }
   ],
   "website": "https://www.bankandbourbon.com/",
@@ -21848,13 +24416,38 @@
  "95066": {
   "address": "965 BALTIMORE PK, SPRINGFIELD PA 19064-3957",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Check out our daily specials & discounts",
+    "url": "https://www.bertuccis.com/locations/springfield-square/"
+   },
+   {
+    "quote": "Check out our daily specials & discounts",
+    "url": "https://www.bertuccis.com/specials/"
+   },
+   {
+    "quote": "Check out our daily specials & discounts",
+    "url": "https://www.bertuccis.com/menu/"
+   }
+  ],
   "name": "BERTUCCI'S",
   "osm_name": "Bertucci's",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 1 quote(s)",
     "url": "https://www.bertuccis.com/locations/springfield-square/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.bertuccis.com/specials/"
+   },
+   {
+    "result": "robots.txt disallows",
+    "url": "https://order.bertuccis.com/menu/bertuccis-springfield-square"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.bertuccis.com/menu/"
    }
   ],
   "website": "https://www.bertuccis.com/locations/springfield-square/",
@@ -21905,13 +24498,74 @@
  "95350": {
   "address": "611 S 3RD ST, PHILADELPHIA PA 19147-2301",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Happy Hour",
+    "url": "https://onealspub.com/"
+   },
+   {
+    "quote": "Daily Specials",
+    "url": "https://onealspub.com/"
+   },
+   {
+    "quote": "Daily Specials \u2013 Oneal's Pub",
+    "url": "https://onealspub.com/daily-specials/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://onealspub.com/daily-specials/"
+   },
+   {
+    "quote": "Daily Specials",
+    "url": "https://onealspub.com/daily-specials/"
+   },
+   {
+    "quote": "Daily specials-all day / MONDAY",
+    "url": "https://onealspub.com/daily-specials/"
+   },
+   {
+    "quote": "Happy Hour \u2013 Oneal's Pub",
+    "url": "https://onealspub.com/happy-hour/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://onealspub.com/happy-hour/"
+   },
+   {
+    "quote": "Daily Specials",
+    "url": "https://onealspub.com/happy-hour/"
+   },
+   {
+    "quote": "Happy Hour Monday - Friday",
+    "url": "https://onealspub.com/happy-hour/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://onealspub.com/drinks/"
+   },
+   {
+    "quote": "Daily Specials",
+    "url": "https://onealspub.com/drinks/"
+   }
+  ],
   "name": "MORGAN ASSOCIATES LLC",
   "osm_name": "Oneal's Pub",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 2 quote(s)",
     "url": "https://onealspub.com/"
+   },
+   {
+    "result": "ok, 4 quote(s)",
+    "url": "https://onealspub.com/daily-specials/"
+   },
+   {
+    "result": "ok, 4 quote(s)",
+    "url": "https://onealspub.com/happy-hour/"
+   },
+   {
+    "result": "ok, 2 quote(s)",
+    "url": "https://onealspub.com/drinks/"
    }
   ],
   "website": "https://onealspub.com/",
@@ -21960,8 +24614,12 @@
   "osm_name": "Duck Inn Taproom",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 0 quote(s)",
     "url": "https://www.duckinntaproompa.com"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.duckinntaproompa.com/specials"
    }
   ],
   "website": "https://www.duckinntaproompa.com",
@@ -22231,7 +24889,7 @@
   "osm_name": "Timothy's",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "403 text/html",
     "url": "https://lionvillepa.mytimothysrestaurants.com"
    }
   ],
@@ -22379,6 +25037,65 @@
   "website": "https://locations.thecheesecakefactory.com/pa/willow-grove-128/",
   "zone_id": "abington_jenkintown"
  },
+ "96669": {
+  "address": "700 E BALTIMORE AVE, FERNWOOD PA 19050-2604",
+  "crawled_at": "2026-08-06",
+  "hits": [],
+  "name": "CHHAY CHENG ENTERPRISES INC",
+  "osm_name": "Philly Pretzel Factory",
+  "pages": [
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://phillypretzelfactory.com/locations/springfield"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://phillypretzelfactory.com/locations/springfield"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://phillypretzelfactory.com/menu"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://phillypretzelfactory.com/menu/"
+   }
+  ],
+  "website": "https://phillypretzelfactory.com/locations/springfield",
+  "zone_id": "upper_darby_lansdowne"
+ },
+ "96687": {
+  "address": "3857 GERMANTOWN PIKE, COLLEGEVILLE PA 19426",
+  "crawled_at": "2026-08-06",
+  "hits": [
+   {
+    "quote": "+ option to add tour / workshop / happy hour",
+    "url": "https://evansburgvineyards.com/private-events/"
+   }
+  ],
+  "name": "EVANSBURG VINEYARDS",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://evansburgvineyards.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://evansburgvineyards.com/events"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://evansburgvineyards.com/private-events/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://evansburgvineyards.com/the-bistro/"
+   }
+  ],
+  "website": "https://evansburgvineyards.com/",
+  "zone_id": "audubon_eagleville"
+ },
  "96761": {
   "address": "1717 ARCH ST FL 50, PHILADELPHIA PA 19103",
   "crawled_at": "2026-08-06",
@@ -22397,17 +25114,73 @@
  "96856": {
   "address": "500 W GERMANTOWN PIKE UNIT NO. 1700, PLYMOUTH MEETING PA 19462",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "35 Beers on Tap + All-Day Drink Specials / We have 35 beers on tap, featuring a great selection of local craft brews, plus drink specials available all day, every day to keep the good times flowing. Whether you\u2019re celebrating a big win, grabbing a cold one after shopping, or just unwinding with friends, we\u2019ll make sure your glass is never empty at Miller\u2019s Ale House \u2013 Plymouth Meeting.",
+    "url": "https://millersalehouse.com/locations/plymouth-meeting/"
+   },
+   {
+    "quote": "We have 35 beers on tap, featuring a great selection of local craft brews, plus drink specials available all day, every day to keep the good times flowing. Whether you\u2019re celebrating a big win, grabbing a cold one after shopping, or just unwinding with friends, we\u2019ll make sure your glass is never empty at Miller\u2019s Ale House \u2013 Plymouth Meeting.",
+    "url": "https://millersalehouse.com/locations/plymouth-meeting/"
+   },
+   {
+    "quote": "Refreshing Drink Specials",
+    "url": "https://millersalehouse.com/locations/plymouth-meeting/"
+   },
+   {
+    "quote": "35 Beers on Tap + All-Day Drink Specials / We have 35 beers on tap, featuring a great selection of local craft brews, plus drink specials available all day, every day to keep the good times flowing. Whether you\u2019re celebrating a big win, grabbing a cold one after shopping, or just unwinding with friends, we\u2019ll make sure your glass is never empty at Miller\u2019s Ale House \u2013 Plymouth Meeting.",
+    "url": "https://millersalehouse.com/locations/plymouth-meeting/"
+   },
+   {
+    "quote": "We have 35 beers on tap, featuring a great selection of local craft brews, plus drink specials available all day, every day to keep the good times flowing. Whether you\u2019re celebrating a big win, grabbing a cold one after shopping, or just unwinding with friends, we\u2019ll make sure your glass is never empty at Miller\u2019s Ale House \u2013 Plymouth Meeting.",
+    "url": "https://millersalehouse.com/locations/plymouth-meeting/"
+   },
+   {
+    "quote": "Refreshing Drink Specials",
+    "url": "https://millersalehouse.com/locations/plymouth-meeting/"
+   },
+   {
+    "quote": "Restaurant Deals & Drink Specials | Miller's Ale House Skip to Main Content / \ud83d\ude9a Score 15% OFF (Up to $7.00) on ALL online orders! Use code FIRSTDOWN at checkout! View Terms",
+    "url": "https://millersalehouse.com/specials/"
+   }
+  ],
   "name": "MILLERS ALE HOUSE",
   "osm_name": "Miller's Ale House",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 3 quote(s)",
     "url": "https://millersalehouse.com/locations/plymouth-meeting/"
+   },
+   {
+    "result": "ok, 3 quote(s)",
+    "url": "https://millersalehouse.com/locations/plymouth-meeting/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://millersalehouse.com/specials/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://millersalehouse.com/menu/"
    }
   ],
   "website": "https://millersalehouse.com/locations/plymouth-meeting/",
   "zone_id": "blue_bell_plymouth_meeting"
+ },
+ "96925": {
+  "address": "1110 BALTIMORE PIKE, CONCORDVILLE PA 19331",
+  "crawled_at": "2026-08-06",
+  "hits": [],
+  "name": "NHB AI LP",
+  "osm_name": "Comfort Inn & Suites Glen Mills - West Chester",
+  "pages": [
+   {
+    "result": "error: ReadTimeout",
+    "url": "https://www.choicehotels.com/pennsylvania/glen-mills/comfort-inn-hotels/pa252"
+   }
+  ],
+  "website": "https://www.choicehotels.com/pennsylvania/glen-mills/comfort-inn-hotels/pa252",
+  "zone_id": "glen_mills_chadds_ford"
  },
  "96954": {
   "address": "1825 LIMEKILN PIKE, DRESHER PA 19025",
@@ -22682,13 +25455,34 @@
  "98474": {
   "address": "1600 ARCH ST, PHILADELPHIA PA 19103-2028",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "After Work Starts Here \ud83c\udf7a Join Us for Happy Hour \ud83c\udf7b | Drink Specials + Good Craic \ud83c\udf7a After Work Starts Here \ud83c\udf7a Join Us for Happy Hour \ud83c\udf7b | Drink Specials + Good Craic",
+    "url": "https://tirnanogphilly.com/"
+   },
+   {
+    "quote": "Food Menu Brunch Happy Hour Signature Cocktails Beer Spirits Wine Private Party Menu",
+    "url": "https://tirnanogphilly.com/menu"
+   }
+  ],
   "name": "PHILLY PUB LLC",
   "osm_name": "Tir na nOg",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 1 quote(s)",
     "url": "https://tirnanogphilly.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://tirnanogphilly.com/events"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://tirnanogphilly.com/menu"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://tirnanogphilly.com/private-events"
    }
   ],
   "website": "https://tirnanogphilly.com/",
@@ -22708,6 +25502,29 @@
   ],
   "website": "https://www.marriott.com/phlro",
   "zone_id": "newtown_square_broomall"
+ },
+ "98616": {
+  "address": "201 MAIN ST SUITE 100, KING OF PRUSSIA PA 19406",
+  "crawled_at": "2026-08-06",
+  "hits": [],
+  "name": "KOOMA III LLC",
+  "osm_name": "Kooma",
+  "pages": [
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "http://koomakop.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "http://koomakop.com/special-diet/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "http://koomakop.com/our-menu/"
+   }
+  ],
+  "website": "http://koomakop.com/",
+  "zone_id": "king_of_prussia"
  },
  "98621": {
   "address": "1600 LIMEKILN PIKE, GLENSIDE PA 19038",
@@ -22753,6 +25570,42 @@
   ],
   "website": "https://tru3.hilton.com/en/hotels/pennsylvania/tru-by-hilton-audubon-valley-forge-PHLAVRU/index.html",
   "zone_id": "audubon_eagleville"
+ },
+ "98941": {
+  "address": "121-123 SOUTH ST, PHILADELPHIA PA 19147",
+  "crawled_at": "2026-08-06",
+  "hits": [
+   {
+    "quote": "Experience the difference with our happy hour",
+    "url": "https://queenandrookcafe.com/"
+   },
+   {
+    "quote": "Happy Hour! Yards Pale Ale $5, Margarita or Daiquiri $10",
+    "url": "https://www.queenandrookcafe.com/specials/"
+   }
+  ],
+  "name": "QUEEN & ROOK GAME CAFE",
+  "osm_name": "Queen & Rook Game Cafe",
+  "pages": [
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://queenandrookcafe.com/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.queenandrookcafe.com/specials/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://queenandrookcafe.com/drinks"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.queenandrookcafe.com/drinks/"
+   }
+  ],
+  "website": "https://queenandrookcafe.com/",
+  "zone_id": "center_city"
  },
  "98951": {
   "address": "2560 WEST CHESTER PIKE, BROOMALL PA 19008-2428",
@@ -22882,7 +25735,7 @@
   "osm_name": "Qu Japan Bistro & Bar",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "robots.txt unreadable (403), treated as disallow",
     "url": "https://www.qujapan1635.com"
    }
   ],
@@ -22904,19 +25757,126 @@
   "website": "https://ruthschris.com/philadelphia",
   "zone_id": "center_city"
  },
+ "99715": {
+  "address": "2107 MACDADE BLVD, HOLMES PA 19043",
+  "crawled_at": "2026-08-06",
+  "hits": [],
+  "name": "RIDLEY HOUSE LLC",
+  "osm_name": "The Ridley House",
+  "pages": [
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.ridleyhousepa.com"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://ridleyhousepa.com/heritage-ballrooms/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://ridleyhousepa.com/menus/"
+   }
+  ],
+  "website": "https://www.ridleyhousepa.com",
+  "zone_id": "ridley_tinicum"
+ },
  "99719": {
   "address": "1119 W Baltimore PIKE, Media PA 19063",
   "crawled_at": "2026-08-06",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Looking for a restaurant near you with an incredible craft beer selection, refreshing drink specials, and a lively sports bar atmosphere? Miller\u2019s Ale House \u2013 Media is your go-to destination for bold flavors, ice-cold drinks and nonstop game-day excitement. Conveniently located near Granite Run Mall, we\u2019re the perfect spot for lunch, dinner, and a fun night out. / Whether you\u2019re grabbing a craft b",
+    "url": "https://millersalehouse.com/locations/media/"
+   },
+   {
+    "quote": "Whether you\u2019re grabbing a craft beer after shopping, meeting up with friends for drink specials, or catching the big game with a cold pint in hand, our menu is packedwith juicy burgers , crave-worthy bar bites, delicious salads , and deliciously grilled steaks and seafood entr\u00e9es. With large portions, unbeatable prices, and a welcoming atmosphere, every visit is a win.",
+    "url": "https://millersalehouse.com/locations/media/"
+   },
+   {
+    "quote": "No matter the occasion\u2014grabbing drinks after work, catching up with friends, or looking for the best drink specials in Media\u2014we\u2019re here to serve up bold flavors, cold drinks, and unforgettable moments. So grab a seat, explore our menu, and experience Miller\u2019s Ale House \u2013 Media.",
+    "url": "https://millersalehouse.com/locations/media/"
+   },
+   {
+    "quote": "35 Beers on Tap + All-Day Drink Specials / We have 35 beers on tap, including a great selection of craft beer , plus drink specials available all day, every day to keep the good times flowing. Whether you\u2019re celebrating a big win or just unwinding with friends, we\u2019ll make sure your glass is never empty at Miller\u2019s Ale House \u2013 Media.",
+    "url": "https://millersalehouse.com/locations/media/"
+   },
+   {
+    "quote": "We have 35 beers on tap, including a great selection of craft beer , plus drink specials available all day, every day to keep the good times flowing. Whether you\u2019re celebrating a big win or just unwinding with friends, we\u2019ll make sure your glass is never empty at Miller\u2019s Ale House \u2013 Media.",
+    "url": "https://millersalehouse.com/locations/media/"
+   },
+   {
+    "quote": "Refreshing Drink Specials",
+    "url": "https://millersalehouse.com/locations/media/"
+   },
+   {
+    "quote": "Looking for a restaurant near you with an incredible craft beer selection, refreshing drink specials, and a lively sports bar atmosphere? Miller\u2019s Ale House \u2013 Media is your go-to destination for bold flavors, ice-cold drinks and nonstop game-day excitement. Conveniently located near Granite Run Mall, we\u2019re the perfect spot for lunch, dinner, and a fun night out. / Whether you\u2019re grabbing a craft b",
+    "url": "https://millersalehouse.com/locations/media/"
+   },
+   {
+    "quote": "Whether you\u2019re grabbing a craft beer after shopping, meeting up with friends for drink specials, or catching the big game with a cold pint in hand, our menu is packedwith juicy burgers , crave-worthy bar bites, delicious salads , and deliciously grilled steaks and seafood entr\u00e9es. With large portions, unbeatable prices, and a welcoming atmosphere, every visit is a win.",
+    "url": "https://millersalehouse.com/locations/media/"
+   },
+   {
+    "quote": "No matter the occasion\u2014grabbing drinks after work, catching up with friends, or looking for the best drink specials in Media\u2014we\u2019re here to serve up bold flavors, cold drinks, and unforgettable moments. So grab a seat, explore our menu, and experience Miller\u2019s Ale House \u2013 Media.",
+    "url": "https://millersalehouse.com/locations/media/"
+   },
+   {
+    "quote": "35 Beers on Tap + All-Day Drink Specials / We have 35 beers on tap, including a great selection of craft beer , plus drink specials available all day, every day to keep the good times flowing. Whether you\u2019re celebrating a big win or just unwinding with friends, we\u2019ll make sure your glass is never empty at Miller\u2019s Ale House \u2013 Media.",
+    "url": "https://millersalehouse.com/locations/media/"
+   },
+   {
+    "quote": "We have 35 beers on tap, including a great selection of craft beer , plus drink specials available all day, every day to keep the good times flowing. Whether you\u2019re celebrating a big win or just unwinding with friends, we\u2019ll make sure your glass is never empty at Miller\u2019s Ale House \u2013 Media.",
+    "url": "https://millersalehouse.com/locations/media/"
+   },
+   {
+    "quote": "Refreshing Drink Specials",
+    "url": "https://millersalehouse.com/locations/media/"
+   },
+   {
+    "quote": "Restaurant Deals & Drink Specials | Miller's Ale House Skip to Main Content / \ud83d\ude9a Score 15% OFF (Up to $7.00) on ALL online orders! Use code FIRSTDOWN at checkout! View Terms",
+    "url": "https://millersalehouse.com/specials/"
+   }
+  ],
   "name": "MILLER'S ALE HOUSE",
   "osm_name": "Miller's Ale House",
   "pages": [
    {
-    "result": "robots.txt disallows",
+    "result": "ok, 6 quote(s)",
     "url": "https://millersalehouse.com/locations/media/"
+   },
+   {
+    "result": "ok, 6 quote(s)",
+    "url": "https://millersalehouse.com/locations/media/"
+   },
+   {
+    "result": "ok, 1 quote(s)",
+    "url": "https://millersalehouse.com/specials/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://millersalehouse.com/bar/"
    }
   ],
   "website": "https://millersalehouse.com/locations/media/",
+  "zone_id": "media"
+ },
+ "99799": {
+  "address": "4-6 W STATE ST, MEDIA PA 19063-3311",
+  "crawled_at": "2026-08-06",
+  "hits": [],
+  "name": "PEKING MEDIA LLC",
+  "osm_name": "Peking Media Restaurant",
+  "pages": [
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.pekingmedia.com/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.pekingmedia.com/dzb5nxih/peking-media-restaurant-media-19063/order-online"
+   }
+  ],
+  "website": "https://www.pekingmedia.com/",
   "zone_id": "media"
  }
 }

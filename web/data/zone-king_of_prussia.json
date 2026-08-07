@@ -110,6 +110,107 @@
    ]
   },
   {
+   "id": "sullivan-s-steakhouse-king-of-prussia",
+   "name": "Sullivan's Steakhouse",
+   "address": "700 W DEKALB PK, KING OF PRUSSIA PA 19406",
+   "zone_id": "king_of_prussia",
+   "website": "https://www.sullivanssteakhouse.com/king-of-prussia",
+   "plcb_name": "NORTH PHILADELPHIA SULLIVANS LLC",
+   "lat": 40.0866596,
+   "lng": -75.3867881,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/",
+      "quote": "King Of Prussia Happy Hour Menu / Available in the bar, Monday-Thursday 3pm-6pm / $20"
+     }
+    }
+   ]
+  },
+  {
+   "id": "morton-s-of-chicago-king-of-prussia",
+   "name": "MORTON'S OF CHICAGO",
+   "address": "THE PAVILION AT KING OF PRUSSIA 640 W. DEKALB PK #1250, KING OF PRUSSIA PA 19406",
+   "zone_id": "king_of_prussia",
+   "website": "https://www.mortons.com/location/mortons-the-steakhouse-king-of-prussia-pa/",
+   "plcb_name": "MORTON'S OF CHICAGO",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:30"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.mortons.com/location/mortons-the-steakhouse-king-of-prussia-pa/",
+      "quote": "Power Hour: Sunday - Friday 4PM - 6:30PM"
+     }
+    }
+   ]
+  },
+  {
    "id": "fogo-de-ch-o-king-of-prussia",
    "name": "Fogo de Ch\u00e3o",
    "address": "KING OF PRUSSIA TOWN CENTER  155 MAIN ST, KING OF PRUSSIA PA 19406",

@@ -78,16 +78,35 @@ PARKED_RE = re.compile(
     r"domain (?:is )?(?:for sale|parking)|buy this domain|this domain is|"
     r"parked (?:free )?(?:at|by|courtesy)|godaddy\.com/domainsearch|"
     r"hugedomains|sedoparking|namecheap\.com/domains|expired domain|"
-    r"under construction|coming soon|website is currently unavailable|"
+    r"website is currently unavailable|"
     r"account suspended|default web page|welcome to nginx|apache2 ubuntu default",
     re.I)
 
+# 'Coming soon' and 'under construction' were in the list above, and they are
+# the wrong shape for it: a trading venue writes them about a new beer, a new
+# location or next month's event. Bowen Arrow Winery names four wines as coming
+# soon and was refused as a parked domain on the strength of it. What makes a
+# placeholder a placeholder is not the phrase, it is that the phrase is nearly
+# all there is -- so these only disqualify a page with almost nothing on it.
+PLACEHOLDER_RE = re.compile(
+    r"under construction|coming soon|launching soon|opening soon|"
+    r"site is being (?:built|updated)", re.I)
+PLACEHOLDER_MAX_CHARS = 1500
+
 SUFFIX_RE = re.compile(r"\b(?:%s)\b\.?" % "|".join(CORP), re.I)
+
+# A chain's PLCB row carries the operator's own store number -- 'SEASONS 52
+# #4510', 'YARD HOUSE 8371', "EDDIE V'S #8522". It is not part of the name the
+# venue puts on its building, so requiring it on the page made those licensees
+# unprovable by construction: proof_tokens asked for '4510' and no page in the
+# world says it. Only a '#' marker or a run of four or more digits qualifies,
+# which leaves the numbers that ARE the name -- Stable 12, Catch 101 -- alone.
+STORE_NO_RE = re.compile(r"\s*#\s*\d+\s*$|\s+\d{4,}\s*$")
 
 
 def clean_name(name):
     """'4326 MAIN STREET HOLDCO, LLC' -> '4326 main street'."""
-    n = re.sub(r"[^\w\s&']", " ", (name or "").lower())
+    n = re.sub(r"[^\w\s&']", " ", STORE_NO_RE.sub("", name or "").lower())
     n = n.replace("&", " and ").replace("'", "")
     n = SUFFIX_RE.sub(" ", n)
     return " ".join(n.split())
@@ -133,7 +152,7 @@ def candidates(name):
 
 
 def seed_urls(lid):
-    """URLs supplied by hand for licensees the name-stem guess cannot reach.
+    """Leads supplied by hand for licensees the name-stem guess cannot reach.
 
     A chain is invisible to the guesser by construction: daveandbusters.com
     resolves and is the right site, but its homepage never says 'King of
@@ -144,17 +163,30 @@ def seed_urls(lid):
     hour roundup), but it earns its place the same way every other candidate
     does: it is fetched, and it is kept only if the page names AND places the
     venue. A seed is a lead, not an assertion; nothing here bypasses verify().
+
+    A seed may be a bare URL, or {"url": ..., "name": "The StoneRose"} when the
+    licensee is a corporate shell. 'COLD RIVER LLC' at 822 Fayette St is the
+    StoneRose, and no page of theirs will ever say 'cold river' -- so the stem
+    guess cannot reach it and neither can a bare seed, because the name half of
+    verify() is asking for a name the venue does not use. Supplying the trade
+    name does not weaken the proof: that name still has to appear on the page,
+    alongside the town, exactly as the licensee's own would. It is also what
+    the card displays, so the deal ships under the name on the door instead of
+    the holding company's.
     """
     if not os.path.exists(SEEDS):
         return []
     seeds = json.load(open(SEEDS, encoding="utf-8"))
     v = seeds.get(lid) or []
-    return [v] if isinstance(v, str) else list(v)
+    if isinstance(v, (str, dict)):
+        v = [v]
+    return [{"url": e, "name": None} if isinstance(e, str)
+            else {"url": e["url"], "name": e.get("name")} for e in v]
 
 
-def proof_tokens(row):
+def proof_tokens(row, trade_name=None):
     """The words a page must show to prove it is this licensee's own site."""
-    words = [w for w in clean_name(row["name"]).split()
+    words = [w for w in clean_name(trade_name or row["name"]).split()
              if len(w) > 2 and w not in TOO_GENERIC and w not in GLUE]
     town = (row.get("municipality") or "").lower()
     town = re.sub(r"\b(twp|township|boro|borough|city|of)\b", " ", town).strip()
@@ -179,8 +211,15 @@ def verify(text, words, place):
     and by a parked page echoing its own domain; the town alone is met by every
     other business in that town.
     """
-    low = " ".join(text.lower().split())
+    # clean_name drops the apostrophe from the licensee, so the page has to be
+    # read the same way or the two halves never meet: 'CREEDS SEAFOOD & STEAKS'
+    # becomes 'creeds' and creedskop.com writes "Creed's", so a page that named
+    # the venue perfectly was refused. Same for Morton's, Dave & Buster's and
+    # every other possessive on the sign.
+    low = " ".join(text.lower().split()).replace("’", "").replace("'", "")
     if PARKED_RE.search(low[:4000]):
+        return None
+    if len(low) < PLACEHOLDER_MAX_CHARS and PLACEHOLDER_RE.search(low):
         return None
     if not words:
         return None
@@ -216,6 +255,8 @@ def main():
     ap.add_argument("--limit", type=int, default=0, help="stop after N licensees")
     ap.add_argument("--write", action="store_true",
                     help="merge the proven sites into data/venue_sites.json")
+    ap.add_argument("--cached-only", action="store_true",
+                    help="re-score pages already fetched; makes no requests")
     args = ap.parse_args()
 
     zones = set(args.zone) | (set(TOWN_ZONES) if args.towns else set())
@@ -238,15 +279,26 @@ def main():
             stats["name too generic or a shell to guess from"] += 1
             continue
         tried += 1
-        words, place = proof_tokens(row)
         # Seeds first: a hand-supplied location page is more specific than any
-        # stem, and it is the only lead that reaches a chain at all.
-        urls = list(seeds) + ["https://%s%s" % (s, t)
-                              for s in cands for t in (".com", ".net")]
-        for url in urls:
+        # stem, and it is the only lead that reaches a chain at all. The bare
+        # stem before the www one, because most hosts redirect either way and
+        # the ones that do not are usually apex-broken, not www-broken --
+        # stable12.com times out where www.stable12.com is the live brewery.
+        leads = list(seeds) + [{"url": "https://%s%s%s" % (p, s, t), "name": None}
+                               for t in (".com", ".net") for p in ("", "www.")
+                               for s in cands]
+        for lead in leads:
+            url = lead["url"]
+            words, place = proof_tokens(row, lead["name"])
             host = urllib.parse.urlsplit(url).netloc
             if url in cache:
                 rec = cache[url]
+            elif args.cached_only:
+                # A change to the proof rules re-answers every page already
+                # paid for. Re-scoring the whole corpus should not cost anyone
+                # a single request, or it will only ever be done on a few zones.
+                stats["not fetched yet (--cached-only)"] += 1
+                continue
             else:
                 try:
                     socket.gethostbyname(host)
@@ -266,9 +318,9 @@ def main():
                 continue
             why = verify(rec["text"], words, place)
             if why:
-                how = "seed URL" if url in seeds else "guessed domain"
+                how = "seed URL" if lead in seeds else "guessed domain"
                 found[row["lid"]] = {
-                    "name": row["name"], "osm_name": None,
+                    "name": row["name"], "osm_name": lead["name"],
                     "address": row["address"], "zone_id": row["zone_id"],
                     "website": rec["url"], "phone": None,
                     "opening_hours": None, "kind": None,
@@ -276,7 +328,8 @@ def main():
                     "matched_by": f"guessed {how}, proved by {why}",
                 }
                 stats["PROVEN"] += 1
-                print(f"  {row['name'][:30]:<32} {rec['url'][:44]:<46} {why[:46]}")
+                shown = lead["name"] or row["name"]
+                print(f"  {shown[:30]:<32} {rec['url'][:44]:<46} {why[:46]}")
                 break
         else:
             stats["no candidate domain proved itself"] += 1
