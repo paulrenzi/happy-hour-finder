@@ -59,8 +59,18 @@ CORE_TYPES = {
 
 # Producers with public tasting rooms. They run happy hours but sit under a
 # different part of the discount rules, so they are tracked as their own tier.
+#
+# "Brewery Storage" reads like a warehouse licence and was excluded on that
+# reading, but in this market it is overwhelmingly the *secondary* licence a
+# brewpub holds on its own taproom -- Forest and Main Pub, Steel City
+# Coffeehouse, The Citadel Taproom, Sterling Pig, Backstage Tap and Grille all
+# reach the corpus by no other row. Of 32 active in-zone storage licences only
+# one names a premises another licence already covers, so excluding the type
+# dropped ~30 public bars outright. A genuine warehouse costs nothing here: it
+# publishes no happy-hour window and the evidence gate drops it downstream.
 TAPROOM_TYPES = {
     "Brewery",
+    "Brewery Storage",
     "Limited Winery",
     "Limited Distillery",
     "Distillery",

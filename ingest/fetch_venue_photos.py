@@ -27,6 +27,10 @@ import time
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEALS_JSON = os.path.join(REPO, "data", "deals_seed.json")
 MANIFEST = os.path.join(REPO, "data", "venue_photos.json")
+# --from-places works off the licence id, so it needs its own manifest: a deal id
+# and an LID are different key spaces and must not share a file.
+PLACES_JSON = os.path.join(REPO, "data", "places_venues.json")
+LID_MANIFEST = os.path.join(REPO, "data", "venue_photos_by_lid.json")
 IMG_DIR = os.path.join(REPO, "web", "img", "venues")
 
 SEARCH = "https://places.googleapis.com/v1/places:searchText"
@@ -89,11 +93,67 @@ def download(key, photo, dest):
     return len(r.content)
 
 
+def from_places(args, key, requests):
+    """Download photos for venues already resolved by discover_places.py.
+
+    That pass kept each venue's photo resource name, so the search half is
+    already paid for -- re-resolving here would bill a second Places lookup per
+    venue to learn something on disk. Keyed by PLCB licence id rather than a
+    deal id, because the point of this mode is venues that have no deal yet.
+    """
+    resolved = json.load(open(PLACES_JSON, encoding="utf-8"))
+    manifest = json.load(open(LID_MANIFEST, encoding="utf-8")) if os.path.exists(LID_MANIFEST) else {}
+    os.makedirs(IMG_DIR, exist_ok=True)
+
+    todo = [
+        (lid, e) for lid, e in sorted(resolved.items())
+        if e.get("photo_names") and (args.force or lid not in manifest)
+        and (not args.zone or e.get("zone_id") == args.zone)
+    ]
+    if args.limit:
+        todo = todo[: args.limit]
+    print(f"venues with a photo to fetch: {len(todo)}\n")
+
+    for lid, e in todo:
+        dest, rel = photo_dest(lid)
+        try:
+            size = download(key, {"name": e["photo_names"][0]}, dest)
+        except OSError as err:
+            sys.exit(f"  {lid:<10} cannot write {dest}: {err}")
+        except Exception as err:  # noqa: BLE001 -- one venue must not stop the run
+            print(f"  {lid:<10} {e['name'][:34]:<36} download failed: {err}")
+            continue
+        manifest[lid] = {
+            "file": rel,
+            "attribution": "Photo: Google",
+            "place_id": e["place_id"],
+            "resolved_name": e.get("places_name"),
+            "resolved_address": e.get("places_address"),
+            "fetched_at": time.strftime("%Y-%m-%d"),
+        }
+        print(f"  {lid:<10} {e['name'][:34]:<36} {size:>7,} bytes  <- {e.get('places_name')}")
+
+    with open(LID_MANIFEST, "w", encoding="utf-8") as fh:
+        json.dump(manifest, fh, indent=1, sort_keys=True)
+    print(f"\n{len(manifest)} venues have a photo -> {LID_MANIFEST}")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0, help="stop after N lookups")
     ap.add_argument("--force", action="store_true", help="refetch venues already in the manifest")
+    ap.add_argument("--from-places", action="store_true",
+                    help="use photo references discover_places.py already fetched")
+    ap.add_argument("--zone", help="with --from-places, restrict to one zone")
     args = ap.parse_args()
+
+    if args.from_places:
+        import requests
+
+        key = load_key()
+        if not key:
+            sys.exit("No GOOGLE_PLACES_API_KEY. Put one in happy-hour-finder/.env")
+        return from_places(args, key, requests)
 
     import requests  # the run itself needs it; fail here, before any work
 
