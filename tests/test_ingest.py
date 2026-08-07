@@ -21,6 +21,7 @@ sys.path.insert(0, os.path.join(REPO, "ingest"))
 
 from build_bundles import decay, shell_digest, sw_cache_name  # noqa: E402
 import crawl_sites  # noqa: E402
+from crawl_roundups import fresh_enough, mentions, published_date, venue_index  # noqa: E402
 from crawl_sites import candidate_links, quotes, registrable, visible_text  # noqa: E402
 from discover_sites import collapse_shared, name_core, plcb_key, site_of, street_core  # noqa: E402
 from guess_sites import candidates  # noqa: E402
@@ -99,6 +100,75 @@ class PaValidators(unittest.TestCase):
         combo = deal(type="food_combo", windows=[{"dow": 3, "start": "16:00", "end": "18:00"}])
         self.assertEqual(validate_food_combo_count([combo, combo]), [])
         self.assertTrue(validate_food_combo_count([combo, combo, combo]))
+
+
+class RoundupTier(unittest.TestCase):
+    """Paul's call, 2026-08-06: roundups publish in their OWN tier with the
+    outlet named, capped at unconfirmed, and nothing older than 4 months is
+    ingested at all."""
+
+    TODAY = datetime.date(2026, 8, 6)
+
+    def roundup(self, **over):
+        src = {"kind": "roundup", "url": "https://vista.today/x",
+               "outlet": "VISTA.today", "published": "2026-06-01"}
+        src.update(over.pop("source", {}))
+        over.setdefault("confidence", "unconfirmed")
+        return deal(source=src, **over)
+
+    def test_a_well_formed_roundup_publishes(self):
+        self.assertEqual(validate_deal(self.roundup()), [])
+
+    def test_an_unnamed_outlet_is_rejected(self):
+        errs = validate_deal(self.roundup(source={"outlet": ""}))
+        self.assertTrue(any("must name who said it" in e for e in errs), errs)
+
+    def test_an_undated_roundup_is_rejected(self):
+        errs = validate_deal(self.roundup(source={"published": None}))
+        self.assertTrue(any("recency cannot be gated" in e for e in errs), errs)
+
+    def test_the_tier_caps_at_unconfirmed(self):
+        # A roundup may read as specifically as a menu; it is still a magazine
+        # describing a bar, so it must never present as the bar speaking.
+        errs = validate_deal(self.roundup(confidence="likely"))
+        self.assertTrue(any("caps at unconfirmed" in e for e in errs), errs)
+        errs = validate_deal(self.roundup(confidence="verified"))
+        self.assertTrue(any("caps at unconfirmed" in e for e in errs), errs)
+
+    def test_an_unknown_source_kind_is_rejected(self):
+        errs = validate_deal(deal(source={"kind": "hearsay", "url": "https://x/"}))
+        self.assertTrue(any("unknown source kind" in e for e in errs), errs)
+
+    def test_the_kinds_already_in_the_seed_still_pass(self):
+        # aggregator and instagram ship in data/deals_seed.json. A kinds check
+        # that forgot them would silently delete published deals on the day it
+        # landed, and the venue count would just quietly be smaller.
+        for kind in ("venue_site", "aggregator", "instagram"):
+            self.assertEqual(validate_deal(deal(source={"kind": kind, "url": "https://x/"})),
+                             [], kind)
+
+    def test_the_date_gate_drops_the_october_2024_phoenixville_piece(self):
+        # The concrete case that made this a hard gate rather than a demotion.
+        self.assertFalse(fresh_enough("2024-10-15", self.TODAY))
+        self.assertTrue(fresh_enough("2026-06-01", self.TODAY))
+        self.assertFalse(fresh_enough("2026-04-07", self.TODAY), "121 days is outside")
+        self.assertTrue(fresh_enough("2026-04-08", self.TODAY), "120 days is inside")
+
+    def test_an_undated_article_is_never_fresh(self):
+        # None is a refusal. Defaulting an undated page to "today" would wave
+        # the entire archive of every outlet through the gate.
+        self.assertFalse(fresh_enough(None, self.TODAY))
+
+    def test_the_publish_date_is_read_from_jsonld_meta_and_prose(self):
+        ld = '<script type="application/ld+json">{"@type":"Article",' \
+             '"datePublished":"2026-06-01T09:00:00-04:00"}</script>'
+        self.assertEqual(published_date(ld), "2026-06-01")
+        meta = '<meta property="article:published_time" content="2026-05-02T10:00:00Z">'
+        self.assertEqual(published_date(meta), "2026-05-02")
+        self.assertEqual(published_date("<p>Published June 3, 2026 by staff</p>"), "2026-06-03")
+
+    def test_a_dateless_page_reports_none_rather_than_guessing(self):
+        self.assertIsNone(published_date("<html><body><p>Happy hour picks</p></body></html>"))
 
 
 class ServiceWorkerCache(unittest.TestCase):

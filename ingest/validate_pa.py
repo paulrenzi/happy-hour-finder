@@ -31,6 +31,16 @@ BANNED = [
 TYPES = {"happy_hour", "daily_special", "food_combo"}
 CATEGORIES = {"draft", "bottle_can", "wine", "well", "call", "cocktail", "shot", "food"}
 CONFIDENCE = {"verified", "likely", "unconfirmed", "disputed"}
+# "aggregator" and "instagram" are in the shipped seed; listing them keeps this
+# check from silently deleting two published deals the day it lands.
+KINDS = {"venue_site", "roundup", "aggregator", "instagram", "photo"}
+
+# A roundup is a PUBLICATION describing a bar, not the bar speaking. Paul's call
+# (2026-08-06): publish them, but in their own tier with the outlet named, capped
+# at "unconfirmed" however specific the prose is, and never outranking the venue's
+# own page. The outlet and its publish date are therefore not optional metadata --
+# they are the whole reason the tier is allowed to exist.
+ROUNDUP_MAX_AGE_DAYS = 120
 
 
 def minutes(hhmm):
@@ -102,8 +112,21 @@ def validate_deal(deal):
         ):
             errs.append(f"item {item.get('label')!r} has neither a price nor a discount")
 
-    if not deal.get("source", {}).get("url") and not deal.get("source", {}).get("photo_id"):
+    source = deal.get("source") or {}
+    if not source.get("url") and not source.get("photo_id"):
         errs.append("no source -- every deal must be auditable")
+    if source.get("kind") not in KINDS:
+        errs.append(f"unknown source kind {source.get('kind')!r}")
+
+    if source.get("kind") == "roundup":
+        # Named outlet + publish date, or the card cannot say who is speaking and
+        # the recency rule has nothing to gate on.
+        if not source.get("outlet"):
+            errs.append("roundup with no outlet -- the card must name who said it")
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", source.get("published") or ""):
+            errs.append("roundup with no publish date -- recency cannot be gated")
+        if deal.get("confidence") != "unconfirmed":
+            errs.append(f"roundup at {deal.get('confidence')!r}: the tier caps at unconfirmed")
 
     return errs
 
