@@ -19,7 +19,7 @@ import urllib.error
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(REPO, "ingest"))
 
-from build_bundles import decay, sw_cache_name  # noqa: E402
+from build_bundles import decay, shell_digest, sw_cache_name  # noqa: E402
 import crawl_sites  # noqa: E402
 from crawl_sites import candidate_links, quotes, registrable, visible_text  # noqa: E402
 from discover_sites import collapse_shared, name_core, plcb_key, site_of, street_core  # noqa: E402
@@ -116,6 +116,27 @@ class ServiceWorkerCache(unittest.TestCase):
         src = open(os.path.join(REPO, "web", "sw.js"), encoding="utf-8").read()
         self.assertIn(f'const CACHE = "{sw_cache_name(index["built_at"], published)}";',
                       src, "web/sw.js was not stamped by the last build_bundles run")
+
+    def test_a_shell_only_change_still_evicts(self):
+        # The date and count move only when the CORPUS moves. Without the shell
+        # digest, a deploy that changes app.js alone ships the SAME cache name,
+        # activate deletes nothing, and installed devices keep the old app.js --
+        # the King of Prussia freeze with the corpus in the clear.
+        same_corpus = ("2026-08-06", 131)
+        self.assertNotEqual(sw_cache_name(*same_corpus, digest="aaaaaaaa"),
+                            sw_cache_name(*same_corpus, digest="bbbbbbbb"))
+
+    def test_the_digest_reads_the_shipped_shell(self):
+        # An instrument with a hardcoded input answers about the wrong build.
+        before = shell_digest()
+        path = os.path.join(REPO, "web", "app.js")
+        original = open(path, "rb").read()
+        try:
+            open(path, "wb").write(original + b"\n// probe\n")
+            self.assertNotEqual(shell_digest(), before)
+        finally:
+            open(path, "wb").write(original)
+        self.assertEqual(shell_digest(), before)
 
 
 class DecayLadder(unittest.TestCase):

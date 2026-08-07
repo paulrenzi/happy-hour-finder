@@ -471,6 +471,14 @@ dialog::backdrop { background: rgba(4, 17, 24, 0.55); }
 .note a { color: var(--accent-deep); }
 #sheet .actions { margin-top: 20px; }
 
+.pick { color: var(--muted); font-size: 13.5px; word-break: break-word; }
+.pick-preview {
+  display: block; width: 100%; max-height: 46vh; object-fit: contain;
+  margin: 10px 0; border-radius: 12px; border: 1px solid var(--line);
+  background: rgba(0, 0, 0, 0.04);
+}
+.pick-warn { color: var(--muted); font-size: 13.5px; }
+
 .toast {
   position: fixed; left: 50%; bottom: calc(96px + env(safe-area-inset-bottom));
   transform: translateX(-50%); z-index: 20;

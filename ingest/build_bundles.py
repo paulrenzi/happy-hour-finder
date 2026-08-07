@@ -8,6 +8,7 @@ the confidence decay ladder (SPEC section 6), and writes web/data/.
 """
 
 import datetime
+import hashlib
 import json
 import re
 import os
@@ -55,7 +56,28 @@ def decay(confidence, verified_at, today):
     return confidence, age
 
 
-def sw_cache_name(built_at, n_published):
+# The precached shell files, minus sw.js itself -- hashing the file being stamped
+# would never reach a fixed point. data/index.json is covered by the venue count.
+SHELL_FILES = ("index.html", "app.js", "lib.js", "styles.css", "manifest.json")
+
+
+def shell_digest():
+    """A short hash of the precached shell, so a shell-only deploy still evicts.
+
+    The date and venue count move only when the CORPUS moves. A deploy that
+    changes app.js or index.html and nothing else produces the same name, the
+    activate handler deletes nothing, and every already-installed device keeps
+    serving the old shell out of the precache -- the exact shape of the King of
+    Prussia freeze, with the corpus in the clear.
+    """
+    h = hashlib.sha256()
+    for name in SHELL_FILES:
+        with open(os.path.join(REPO, "web", name), "rb") as fh:
+            h.update(fh.read())
+    return h.hexdigest()[:8]
+
+
+def sw_cache_name(built_at, n_published, digest=None):
     """The cache name a build of this shape must ship.
 
     The service worker precaches data/index.json, and its cache name is the ONLY
@@ -63,9 +85,10 @@ def sw_cache_name(built_at, n_published):
     so devices kept serving an index from an older corpus -- King of Prussia read
     1 venue while the server had said 3 for hours, with nothing on either side to
     show a disagreement. The venue count rides along with the date so that a
-    second build on the same day still evicts.
+    second build on the same day still evicts, and the shell digest so that a
+    build changing only the app code evicts too.
     """
-    return f"hhf-{built_at}-{n_published}"
+    return f"hhf-{built_at}-{n_published}-{shell_digest() if digest is None else digest}"
 
 
 def stamp_service_worker(built_at, n_published):

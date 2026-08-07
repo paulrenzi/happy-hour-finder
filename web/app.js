@@ -561,20 +561,53 @@ async function boot() {
     scrollTo({ top: 0, behavior: "smooth" });
   });
   $("#nearMe").addEventListener("click", askLocation);
-  $("#photo").addEventListener("change", () => {
+  $("#photo").addEventListener("change", (e) => {
     const body = $("#sheetBody");
     body.textContent = "";
     body.append(el("h3", null, "Photo lane"));
+
+    // Echo the actual File back, so picking from the library is *shown* to have
+    // worked rather than assumed. A saved photo and a fresh capture arrive by the
+    // same path but differ in type (HEIC is common from a library) and size.
+    const f = e.target.files && e.target.files[0];
+    if (f) {
+      const kb = Math.round(f.size / 1024);
+      body.append(
+        el("p", "pick", `${f.name} — ${f.type || "unknown type"}, ${kb} KB`)
+      );
+      const url = URL.createObjectURL(f);
+      const img = el("img", "pick-preview");
+      img.alt = "The menu photo you just picked";
+      img.src = url;
+      // A HEIC that the browser cannot decode must say so, not leave a blank box.
+      img.addEventListener("error", () => {
+        img.replaceWith(
+          el(
+            "p",
+            "pick-warn",
+            "The browser can't preview this format, but the file was read — " +
+              "the upload lane will convert it server-side."
+          )
+        );
+        URL.revokeObjectURL(url);
+      });
+      img.addEventListener("load", () => URL.revokeObjectURL(url));
+      body.append(img);
+    }
+
     body.append(
       el(
         "p",
         null,
-        "Capture works — the upload, vision extraction and moderation pipeline are not " +
-          "built yet. At a 19% scrape yield this lane is the only path to half the venues " +
-          "in the area, so it is the next thing to build."
+        "Picking a photo works — take a new one or choose a saved one. The upload, " +
+          "vision extraction and moderation pipeline are not built yet. At a 19% " +
+          "scrape yield this lane is the only path to half the venues in the area, " +
+          "so it is the next thing to build."
       )
     );
     $("#sheet").showModal();
+    // Let the same file be picked twice in a row during testing.
+    e.target.value = "";
   });
   $("#sheetClose").addEventListener("click", () => $("#sheet").close());
   $("#sheet").addEventListener("close", () => writeHash());
