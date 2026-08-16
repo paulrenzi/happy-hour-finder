@@ -24,6 +24,9 @@ const state = {
   // 2,900-venue base is a megabyte, so it arrives one zone at a time.
   loadedZones: new Set(),
   loadingZone: null,
+  // Set when the photo lane is opened from a specific venue's sheet, so the
+  // submitter skips the picker. Consumed once, then cleared.
+  photoVenue: null,
   // How many no-hours venues the feed is currently showing. Reset on every
   // control change -- a zone with 668 licensed bars must not paint 668 cards.
   shown: 0,
@@ -394,9 +397,204 @@ function submitHours(v) {
   acts.append(copy);
   body.append(acts);
 
+  const photo = el("button", "btn", "Or send a photo of the menu");
+  photo.type = "button";
+  photo.addEventListener("click", () => {
+    // Remember which venue, then trigger the same file input the header button
+    // uses. Coming from a card is the good case: the venue is already known, so
+    // the submitter never has to find their own bar in a list of 2,900.
+    state.photoVenue = v;
+    $("#photo").click();
+  });
+  acts.append(photo);
+
   body.append(
     el("p", "note", `Reference: LID ${v.lid || v.id}. Quote it and we'll know exactly which venue you mean.`)
   );
+  $("#sheet").showModal();
+}
+
+/* ---- photo lane -------------------------------------------------------- */
+
+/* The Worker (worker/index.js). Everything else on this site is static files;
+   this is the one endpoint that writes. */
+const SUBMIT_API = "https://hhf-submit.paulrenzi.workers.dev";
+
+/* Re-encode to a bounded JPEG before upload.
+
+   Three things at once, and all three matter: it strips EXIF (a menu photo
+   carries the GPS of the bar and we promised never to store that), it converts
+   whatever the phone's library handed us into a format the server accepts, and
+   it turns a 3 MB capture into ~300 KB so the upload finishes on bar wifi.
+
+   Returns null if the browser cannot decode the file at all -- HEIC on a
+   desktop browser, mostly. The caller sends the original and lets the server
+   say no, which is a clearer error than one invented here. */
+async function shrink(file, maxEdge = 1600, quality = 0.82) {
+  let bitmap;
+  try {
+    bitmap = await createImageBitmap(file);
+  } catch {
+    return null;
+  }
+  const scale = Math.min(1, maxEdge / Math.max(bitmap.width, bitmap.height));
+  const canvas = document.createElement("canvas");
+  canvas.width = Math.round(bitmap.width * scale);
+  canvas.height = Math.round(bitmap.height * scale);
+  canvas.getContext("2d").drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+  bitmap.close?.();
+  return new Promise((resolve) => canvas.toBlob(resolve, "image/jpeg", quality));
+}
+
+/* The venue this menu is for. A photo with no venue is unfilable, so this is
+   the one required field -- but it is a search, not a dropdown: the board is
+   2,900 licensed premises and no one scrolls that. */
+function venuePicker(onPick) {
+  const wrap = el("div", "picker");
+  const input = el("input", "pickerInput");
+  input.type = "search";
+  input.placeholder = "Which bar? Start typing the name";
+  input.setAttribute("aria-label", "Search for the venue this menu is from");
+  const list = el("div", "pickerList");
+  const chosen = el("p", "pickerChosen");
+
+  input.addEventListener("input", () => {
+    const q = input.value.trim().toLowerCase();
+    list.textContent = "";
+    if (q.length < 2) return;
+    const hits = state.venues
+      .filter((v) => v.name.toLowerCase().includes(q))
+      .slice(0, 8);
+    if (!hits.length) {
+      // Boot loads every zone's deal-bearing venues, but the 2,900-venue base
+      // arrives one zone at a time. So a miss here usually means "that zone
+      // isn't loaded", not "that bar isn't licensed" -- and telling someone
+      // their bar doesn't exist when we simply haven't fetched it is the wrong
+      // answer to give the one person willing to fill the board in.
+      list.append(
+        el("p", "pickerMiss",
+          "No match yet. If it's not a bar with hours already on the board, " +
+            "pick its area at the top of the page first — that loads the rest.")
+      );
+      return;
+    }
+    for (const v of hits) {
+      const b = el("button", "pickerHit");
+      b.type = "button";
+      b.append(el("b", null, v.name));
+      b.append(el("span", null, v.address || ""));
+      b.addEventListener("click", () => {
+        onPick(v);
+        chosen.textContent = `Menu for ${v.name}`;
+        list.textContent = "";
+        input.value = "";
+      });
+      list.append(b);
+    }
+  });
+
+  wrap.append(input, list, chosen);
+  return wrap;
+}
+
+function photoLane(file) {
+  const body = $("#sheetBody");
+  body.textContent = "";
+  body.append(el("h3", null, "Send a menu photo"));
+
+  let venue = state.photoVenue || null;
+  state.photoVenue = null;
+
+  body.append(
+    el("p", "sheetSub", venue
+      ? `Menu for ${venue.name}.`
+      : "Around four in five bars never publish their happy hour anywhere we can " +
+        "read, so a photo of the menu on the wall is how most of this board gets " +
+        "filled in.")
+  );
+
+  const kb = Math.round(file.size / 1024);
+  body.append(el("p", "pick", `${file.name} — ${file.type || "unknown type"}, ${kb} KB`));
+
+  const url = URL.createObjectURL(file);
+  const img = el("img", "pick-preview");
+  img.alt = "The menu photo you just picked";
+  img.src = url;
+  img.addEventListener("error", () => {
+    img.replaceWith(
+      el("p", "pick-warn",
+        "The browser can't preview this format. You can still send it, but if it " +
+          "comes back rejected, retake the photo with your camera app.")
+    );
+    URL.revokeObjectURL(url);
+  });
+  img.addEventListener("load", () => URL.revokeObjectURL(url));
+  body.append(img);
+
+  if (!venue) body.append(venuePicker((v) => { venue = v; }));
+
+  const note = el("textarea", "noteBox");
+  note.placeholder = "Anything worth knowing? (bar only, weekdays, seasonal…)";
+  note.maxLength = 500;
+  note.setAttribute("aria-label", "Optional note about this menu");
+  body.append(note);
+
+  const status = el("p", "sendStatus");
+  const acts = el("div", "actions");
+  const send = el("button", "btn go", "Send it");
+  send.type = "button";
+  acts.append(send);
+  body.append(acts, status);
+
+  body.append(
+    el("p", "note",
+      "A person reads every photo before anything goes on the board, so this " +
+        "won't appear straight away. We strip the location data out of the image " +
+        "before it's stored, and the photo itself is never published — only the " +
+        "hours printed on it, with a note saying they came from a menu photo.")
+  );
+
+  send.addEventListener("click", async () => {
+    if (!venue) {
+      status.textContent = "Pick which bar this menu is from first.";
+      return;
+    }
+    send.disabled = true;
+    status.textContent = "Sending…";
+
+    const shrunk = await shrink(file);
+    const form = new FormData();
+    form.append("photo", shrunk || file, shrunk ? "menu.jpg" : file.name);
+    form.append("lid", venue.lid || venue.id);
+    form.append("venue_name", venue.name);
+    form.append("note", note.value.trim());
+
+    try {
+      const res = await fetch(`${SUBMIT_API}/submit`, { method: "POST", body: form });
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        status.textContent = out.error || "That didn't go through. Try again in a minute.";
+        send.disabled = false;
+        return;
+      }
+      body.textContent = "";
+      body.append(el("h3", null, "Got it — thank you"));
+      body.append(
+        el("p", null,
+          `That's in the queue for ${venue.name}. Someone reads it, checks the ` +
+            "hours against Pennsylvania's happy hour rules, and puts it on the " +
+            "board — usually within a day or two. It'll say it came from a photo, " +
+            "and it'll show the date, same as every other window on this site.")
+      );
+    } catch {
+      // Offline in a basement bar is the normal case, not the exception.
+      status.textContent =
+        "Couldn't reach us — you might be on bad signal. The photo is still in " +
+        "your camera roll; try again when you have a bar or two.";
+      send.disabled = false;
+    }
+  });
+
   $("#sheet").showModal();
 }
 
@@ -464,7 +662,13 @@ function card(row, at) {
   $(".map", node).href = directionsUrl(v);
   const src = $(".src", node);
   if (deal.source?.url) src.href = deal.source.url;
-  else src.remove(); // a photo-sourced deal has no link to point at yet
+  else if (deal.source?.kind === "photo") {
+    // A photo has no URL to link, but it still has a provenance, and every card
+    // on this site says where its hours came from. Saying "from a photo of the
+    // menu" is the honest version of that; removing the element would quietly
+    // make this the one card that cites nothing.
+    src.replaceWith(el("span", "srcNote", "From a photo of their menu"));
+  } else src.remove();
   $(".wrong", node).addEventListener("click", () => reportWrong(v, deal));
   return node;
 }
@@ -818,52 +1022,11 @@ async function boot() {
   });
   $("#nearMe").addEventListener("click", askLocation);
   $("#photo").addEventListener("change", (e) => {
-    const body = $("#sheetBody");
-    body.textContent = "";
-    body.append(el("h3", null, "Photo lane"));
-
-    // Echo the actual File back, so picking from the library is *shown* to have
-    // worked rather than assumed. A saved photo and a fresh capture arrive by the
-    // same path but differ in type (HEIC is common from a library) and size.
-    const f = e.target.files && e.target.files[0];
-    if (f) {
-      const kb = Math.round(f.size / 1024);
-      body.append(
-        el("p", "pick", `${f.name} — ${f.type || "unknown type"}, ${kb} KB`)
-      );
-      const url = URL.createObjectURL(f);
-      const img = el("img", "pick-preview");
-      img.alt = "The menu photo you just picked";
-      img.src = url;
-      // A HEIC that the browser cannot decode must say so, not leave a blank box.
-      img.addEventListener("error", () => {
-        img.replaceWith(
-          el(
-            "p",
-            "pick-warn",
-            "The browser can't preview this format, but the file was read — " +
-              "the upload lane will convert it server-side."
-          )
-        );
-        URL.revokeObjectURL(url);
-      });
-      img.addEventListener("load", () => URL.revokeObjectURL(url));
-      body.append(img);
-    }
-
-    body.append(
-      el(
-        "p",
-        null,
-        "Picking a photo works — take a new one or choose a saved one. The upload, " +
-          "vision extraction and moderation pipeline are not built yet. At a 19% " +
-          "scrape yield this lane is the only path to half the venues in the area, " +
-          "so it is the next thing to build."
-      )
-    );
-    $("#sheet").showModal();
-    // Let the same file be picked twice in a row during testing.
+    const file = e.target.files && e.target.files[0];
+    // Let the same file be picked twice in a row, and clear it before the sheet
+    // opens so a cancelled pick doesn't leave the input holding the last one.
     e.target.value = "";
+    if (file) photoLane(file);
   });
   $("#sheetClose").addEventListener("click", () => $("#sheet").close());
   $("#sheet").addEventListener("close", () => writeHash());

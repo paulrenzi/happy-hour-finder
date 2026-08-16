@@ -62,6 +62,10 @@ python -m unittest discover -s tests
 node --test tests/time_math.test.mjs      # needs node 22 for ESM + node --test
 python ingest/validate_pa.py
 python ingest/build_bundles.py            # web/data must not drift from the seed
+
+# the photo lane (see worker/README.md — needs the Worker deployed first)
+python ingest/extract_photo_deals.py      # read pending menu photos, propose deals
+python ingest/review_photos.py            # approve or reject, one at a time
 ```
 
 ⚠️ **Pushing does not currently deploy.** Since 2026-08-01 a push to `master`

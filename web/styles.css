@@ -521,6 +521,43 @@ dialog::backdrop { background: rgba(4, 17, 24, 0.55); }
 }
 .pick-warn { color: var(--muted); font-size: 13.5px; }
 
+/* Photo lane: which bar is this menu from, and the note that rides with it. */
+.picker { margin: 14px 0 0; }
+.pickerInput {
+  width: 100%; min-height: var(--tap); padding: 0 14px; border-radius: 12px;
+  border: 1px solid var(--line); background: var(--bg); color: var(--fg);
+  font: inherit; -webkit-appearance: none; appearance: none;
+}
+.pickerInput:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.pickerList:not(:empty) {
+  margin-top: 8px; border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
+}
+.pickerHit {
+  display: block; width: 100%; padding: 11px 14px; border: 0; border-bottom: 1px solid var(--line);
+  background: var(--bg); color: var(--fg); font: inherit; text-align: left; cursor: pointer;
+}
+.pickerHit:last-child { border-bottom: 0; }
+.pickerHit:hover, .pickerHit:focus-visible { background: var(--surface); }
+.pickerHit b { display: block; font-size: 15px; }
+.pickerHit span { display: block; color: var(--dim); font-size: 13px; }
+.pickerMiss { margin: 0; padding: 11px 14px; color: var(--dim); font-size: 13.5px; }
+.pickerChosen:not(:empty) {
+  margin: 10px 0 0; color: var(--accent-deep); font-size: 14.5px; font-weight: 700;
+}
+.noteBox {
+  display: block; width: 100%; min-height: 72px; margin-top: 12px; padding: 11px 14px;
+  border-radius: 12px; border: 1px solid var(--line); background: var(--bg);
+  color: var(--fg); font: inherit; resize: vertical;
+}
+.noteBox:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+/* Empty until there is something to say, so it never reserves a blank line. */
+.sendStatus:not(:empty) { margin: 12px 0 0; color: var(--accent-deep); font-size: 14.5px; }
+/* Sits where a Source link sits on every other card, and reads as provenance
+   rather than as a button that failed to become a link. */
+.srcNote {
+  align-self: center; color: var(--dim); font-size: 13px; font-style: italic;
+}
+
 .toast {
   position: fixed; left: 50%; bottom: calc(96px + env(safe-area-inset-bottom));
   transform: translateX(-50%); z-index: 20;

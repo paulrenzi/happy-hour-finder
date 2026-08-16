@@ -1,0 +1,27 @@
+name = "hhf-submit"
+main = "index.js"
+compatibility_date = "2024-09-23"
+
+# The static front end. Only this origin may POST a photo -- the endpoint
+# accepts image uploads from the public, so it does not get a wildcard.
+[vars]
+FRONTEND_ORIGIN = "https://paulrenzi.github.io"
+
+# Menu photos, one object per submission. Private: nothing is served from R2 to
+# the public, because an unreviewed submission is an arbitrary camera image
+# from a stranger and must not become a URL anyone can hand around.
+[[r2_buckets]]
+binding = "PHOTOS"
+bucket_name = "hhf-photos"
+
+# Submission rows + the daily per-submitter counter.
+# Create with: wrangler d1 create hhf  ->  paste the id below.
+[[d1_databases]]
+binding = "DB"
+database_name = "hhf"
+database_id = "PASTE_D1_DATABASE_ID_HERE"
+
+# Secrets, set with `wrangler secret put NAME` -- never in this file:
+#   ADMIN_TOKEN      the review/extraction bearer, read by ingest/*.py
+#   IP_SALT          salt for the submitter hash (rotating it resets rate limits)
+#   TURNSTILE_SECRET optional; when set, /submit requires a Turnstile token

@@ -21,6 +21,9 @@ from validate_pa import validate_deal, validate_food_combo_count  # noqa: E402
 
 DEALS_JSON = os.path.join(REPO, "data", "deals_seed.json")
 EXTRACTED_JSON = os.path.join(REPO, "data", "deals_extracted.json")
+# Approved menu-photo submissions (ingest/review_photos.py). Distinct from
+# PHOTOS_JSON below, which is venue hero images and has nothing to do with deals.
+PHOTO_DEALS_JSON = os.path.join(REPO, "data", "deals_photo.json")
 ZONES_JSON = os.path.join(REPO, "data", "zones.json")
 PRICES_JSON = os.path.join(REPO, "data", "deals_prices_llm.json")
 PHOTOS_JSON = os.path.join(REPO, "data", "venue_photos.json")
@@ -107,17 +110,30 @@ def stamp_service_worker(built_at, n_published):
 def main():
     today = datetime.date.today()
     payload = json.load(open(DEALS_JSON, encoding="utf-8"))
-    # Machine-extracted deals (ingest/extract_deals.py) ship alongside the
-    # hand-verified seed, never merged into it. Where both describe one venue the
-    # seed wins outright -- a person read that page, a regex read this one.
-    if os.path.exists(EXTRACTED_JSON):
+    def merge(payload, path, label):
+        """Add venues from a lower-priority source, skipping any the higher
+        ones already describe. Never merged INTO an existing venue: where two
+        sources describe one bar the earlier source wins outright."""
+        if not os.path.exists(path):
+            return payload
         seen = {v["id"] for v in payload["venues"]}
         seen |= {norm_addr(v["address"]) for v in payload["venues"]}
-        auto = json.load(open(EXTRACTED_JSON, encoding="utf-8"))["venues"]
-        fresh = [v for v in auto if v["id"] not in seen and norm_addr(v["address"]) not in seen]
-        print(f"  +{len(fresh)} machine-extracted venues "
-              f"({len(auto) - len(fresh)} already hand-verified)")
-        payload = dict(payload, venues=payload["venues"] + fresh)
+        more = json.load(open(path, encoding="utf-8"))["venues"]
+        fresh = [v for v in more if v["id"] not in seen and norm_addr(v["address"]) not in seen]
+        print(f"  +{len(fresh)} {label} venues ({len(more) - len(fresh)} already covered)")
+        return dict(payload, venues=payload["venues"] + fresh)
+
+    # Priority order, highest first:
+    #   deals_seed.json       a person read the venue's own page
+    #   deals_photo.json      a person approved a photo of the venue's own menu
+    #   deals_extracted.json  a regex read a page
+    # A photo outranks the crawler because a human moderated it (SPEC section 8)
+    # and because the menu on the wall is the venue speaking; it sits under the
+    # hand-verified seed because that was read end to end rather than off one
+    # board. Written by ingest/review_photos.py -- approving is not publishing,
+    # this build is.
+    payload = merge(payload, PHOTO_DEALS_JSON, "photo-submitted")
+    payload = merge(payload, EXTRACTED_JSON, "machine-extracted")
     zones = json.load(open(ZONES_JSON, encoding="utf-8"))
     zone_names = {z["id"]: z["name"] for z in zones["zones"]}
     # Optional: written by ingest/fetch_venue_photos.py. A venue with no entry
