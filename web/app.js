@@ -1001,8 +1001,7 @@ function reportWrong(v, deal) {
   mail.href =
     `mailto:${SUBMIT_TO}` +
     `?subject=${encodeURIComponent(`Wrong hours: ${v.name} (LID ${v.lid || v.id})`)}` +
-    `&body=${encodeURIComponent(lines.join("
-"))}`;
+    `&body=${encodeURIComponent(lines.join("\n"))}`;
   acts.append(mail);
   body.append(acts);
 

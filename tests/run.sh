@@ -12,3 +12,11 @@ node --test tests/time_math.test.mjs
 echo
 echo "== the shipped corpus still validates =="
 python ingest/validate_pa.py
+
+echo
+echo "== the shipped modules parse in a real browser engine =="
+python tests/parse_check.py
+
+echo
+echo "== the board actually paints =="
+python tests/render_check.py
