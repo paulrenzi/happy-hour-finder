@@ -20,6 +20,7 @@ Reads the same happy-hour-finder/.env as ingest/extract_photo_deals.py.
 """
 
 import argparse
+import datetime
 import json
 import os
 import subprocess
@@ -33,6 +34,13 @@ from extract_photo_deals import api, env_file, fetch_photo  # noqa: E402
 
 PHOTO_JSON = os.path.join(REPO, "data", "deals_photo.json")
 BASE_JSON = os.path.join(REPO, "data", "venue_base.json")
+# Same order ingest/build_bundles.py publishes in, so what this prints as "on
+# the board" is what is actually on the board.
+BOARD_JSON = [
+    PHOTO_JSON,
+    os.path.join(REPO, "data", "deals_seed.json"),
+    os.path.join(REPO, "data", "deals_extracted.json"),
+]
 
 
 def load_photo_deals():
@@ -41,12 +49,43 @@ def load_photo_deals():
     return {"venues": []}
 
 
+def on_board(lid):
+    """What this venue's card says right now, highest-priority source first.
+
+    Printed next to what the photo says, because most submissions are not a new
+    venue -- they are somebody telling us the hours we are showing are stale.
+    Approving is a replacement, so the thing being replaced has to be visible at
+    the moment of the decision, not looked up afterwards.
+    """
+    for path in BOARD_JSON:
+        if not os.path.exists(path):
+            continue
+        for v in json.load(open(path, encoding="utf-8"))["venues"]:
+            if v["id"] == lid and v.get("deals"):
+                return os.path.basename(path), v["deals"]
+    return None, []
+
+
+def print_board(lid):
+    where, deals = on_board(lid)
+    if not deals:
+        print("  on the board now: nothing -- this venue has no published hours")
+        return
+    print(f"  ON THE BOARD NOW (from {where}) -- approving REPLACES this:")
+    for d in deals:
+        src = (d.get("source") or {}).get("kind", "?")
+        print(f"    [{d.get('type')}] {src}, checked {d.get('last_verified_at', '?')}")
+        for w in d.get("windows") or []:
+            print(f"      day {w['dow']}  {w['start']}-{w['end']}")
+
+
 def show(sub, extracted):
     print("=" * 72)
     print(f"{sub['venue_name'] or '(no name given)'}   LID {sub['lid']}")
     print(f"submitted {sub['submitted_at']}   {sub['bytes'] // 1024} KB")
     if sub.get("note"):
         print(f"their note: {sub['note']}")
+    print_board(sub["lid"])
     print("-" * 72)
     if not extracted.get("is_menu", True):
         print(f"NOT A MENU: {extracted.get('reason', '')}")
@@ -77,6 +116,53 @@ def show(sub, extracted):
     print("-" * 72)
 
 
+# A happy hour menu is often several pages, and those arrive as separate
+# submissions a minute apart. A menu CHANGING arrives weeks later. Six hours
+# tells those two cases apart with room to spare, and is the only reason this
+# needs a window at all rather than "the newest photo wins".
+PAGE_SET_HOURS = 6
+
+
+def submitted_at(deal):
+    return (deal.get("source") or {}).get("submitted") or ""
+
+
+def superseded(deals, sub):
+    """The deals of this venue that survive approving `sub`.
+
+    A newer photo is the newer truth: the menu on the wall today replaces the
+    menu that was on the wall in June, so an older photo's windows come off the
+    board rather than sitting beside the new ones. Pages of the SAME menu are
+    not older -- they arrive together, so they add.
+
+    This used to filter on `photo_id != sub["id"]`, which drops the deals of the
+    submission being approved (there are none -- it has not been approved yet)
+    and keeps every stale one. The result was a venue whose card grew a second,
+    contradictory happy hour every time somebody corrected it.
+    """
+    this = sub["submitted_at"]
+    try:
+        when = datetime.datetime.fromisoformat(this.replace("Z", "+00:00"))
+    except ValueError:
+        # An unparseable timestamp must not silently mean "supersede nothing".
+        print("  ! submitted_at is unreadable -- replacing ALL earlier photo deals")
+        return [d for d in deals if (d.get("source") or {}).get("kind") != "photo"]
+    cutoff = (when - datetime.timedelta(hours=PAGE_SET_HOURS)).isoformat().replace("+00:00", "Z")
+    kept = []
+    for d in deals:
+        src = d.get("source") or {}
+        if src.get("kind") != "photo":
+            kept.append(d)  # nothing else writes this file today, but do not eat it
+        elif src.get("photo_id") == sub["id"]:
+            continue  # re-approving the same photo replaces its own deals
+        elif submitted_at(d) >= cutoff:
+            kept.append(d)  # another page of the same menu
+    dropped = len(deals) - len(kept)
+    if dropped:
+        print(f"  superseding {dropped} deal(s) from an earlier photo of this venue")
+    return kept
+
+
 def approve(sub, extracted, base):
     """Attach the deals to a venue row in data/deals_photo.json."""
     payload = load_photo_deals()
@@ -94,13 +180,7 @@ def approve(sub, extracted, base):
         if b.get("website"):
             venue["website"] = b["website"]
         payload["venues"].append(venue)
-    # One photo replaces what an earlier photo of the same venue said. A newer
-    # menu is the newer truth, and two photos of the same board would otherwise
-    # double every window.
-    venue["deals"] = [
-        d for d in venue["deals"] if d.get("source", {}).get("photo_id") != sub["id"]
-    ]
-    venue["deals"].extend(extracted["deals"])
+    venue["deals"] = superseded(venue["deals"], sub) + extracted["deals"]
     with open(PHOTO_JSON, "w", encoding="utf-8") as fh:
         json.dump(payload, fh, indent=1)
     return venue

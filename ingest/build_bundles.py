@@ -126,30 +126,65 @@ def stamp_service_worker(built_at, n_published):
 def main():
     today = datetime.date.today()
     payload = json.load(open(DEALS_JSON, encoding="utf-8"))
-    def merge(payload, path, label):
-        """Add venues from a lower-priority source, skipping any the higher
-        ones already describe. Never merged INTO an existing venue: where two
-        sources describe one bar the earlier source wins outright."""
-        if not os.path.exists(path):
-            return payload
-        seen = {v["id"] for v in payload["venues"]}
-        seen |= {norm_addr(v["address"]) for v in payload["venues"]}
-        more = json.load(open(path, encoding="utf-8"))["venues"]
-        fresh = [v for v in more if v["id"] not in seen and norm_addr(v["address"]) not in seen]
-        print(f"  +{len(fresh)} {label} venues ({len(more) - len(fresh)} already covered)")
+    reserve = []
+
+    def merge_venues(payload, more, label, rank):
+        """Add venues from a lower-priority source, skipping any the higher ones
+        already describe. Never merged INTO an existing venue: where two sources
+        describe one bar the higher-priority source wins outright.
+
+        The loser is not thrown away: it goes on `reserve` and publishes if the
+        winner turns out to have no deal LEFT once the validators and the decay
+        ladder are done with it. Dropping it outright meant a venue could win on
+        priority and then publish nothing -- a photo whose hours had aged into
+        `hidden` would take the crawler's still-good window off the board with
+        it and the card would go blank. A stale window is a bug; a venue that
+        silently loses the hours it had is worse."""
+        seen = {}
+        for v in payload["venues"]:
+            seen.setdefault(v["id"], v)
+            seen.setdefault(norm_addr(v["address"]), v)
+        fresh, dupes = [], []
+        for v in more:
+            # Which venue this one lost to, kept with it: the fallback has to ask
+            # whether THAT venue published, not whether this one's own licence
+            # number is on the board. Two licences at one building have two
+            # different numbers, so asking about its own would always say no and
+            # every duplicate would publish a second card for the same bar.
+            beat_by = seen.get(v["id"]) or seen.get(norm_addr(v["address"]))
+            if beat_by is None:
+                fresh.append(dict(v, _rank=rank))
+            else:
+                dupes.append((dict(v, _rank=rank), beat_by))
+        reserve.extend(dupes)
+        print(f"  +{len(fresh)} {label} venues ({len(dupes)} already covered)")
         return dict(payload, venues=payload["venues"] + fresh)
 
+    def merge(payload, path, label, rank):
+        if not os.path.exists(path):
+            return payload
+        return merge_venues(payload, json.load(open(path, encoding="utf-8"))["venues"],
+                            label, rank)
+
     # Priority order, highest first:
-    #   deals_seed.json       a person read the venue's own page
     #   deals_photo.json      a person approved a photo of the venue's own menu
+    #   deals_seed.json       a person read the venue's own page
     #   deals_extracted.json  a regex read a page
-    # A photo outranks the crawler because a human moderated it (SPEC section 8)
-    # and because the menu on the wall is the venue speaking; it sits under the
-    # hand-verified seed because that was read end to end rather than off one
-    # board. Written by ingest/review_photos.py -- approving is not publishing,
-    # this build is.
-    payload = merge(payload, PHOTO_DEALS_JSON, "photo-submitted")
-    payload = merge(payload, EXTRACTED_JSON, "machine-extracted")
+    # A photo is the menu on the wall, dated, moderated by a human (SPEC section
+    # 8), and it is the only source a customer can correct us with. So it now
+    # outranks the hand-read seed as well as the crawler: the seed was read once,
+    # months ago, and somebody standing in a bar photographing the board is
+    # usually telling us it has changed since. Ranking the seed above it meant an
+    # approved correction for a seeded venue was merged, counted, and then
+    # silently dropped -- the submitter saw nothing change, ever. Written by
+    # ingest/review_photos.py -- approving is not publishing, this build is.
+    seeded = [dict(v, _rank=1) for v in payload["venues"]]
+    photos = (json.load(open(PHOTO_DEALS_JSON, encoding="utf-8"))["venues"]
+              if os.path.exists(PHOTO_DEALS_JSON) else [])
+    print(f"  {len(photos)} photo-submitted venues (highest priority)")
+    payload = dict(payload, venues=[dict(v, _rank=0) for v in photos])
+    payload = merge_venues(payload, seeded, "hand-seeded", 1)
+    payload = merge(payload, EXTRACTED_JSON, "machine-extracted", 2)
     zones = json.load(open(ZONES_JSON, encoding="utf-8"))
     zone_names = {z["id"]: z["name"] for z in zones["zones"]}
     # Optional: written by ingest/fetch_venue_photos.py. A venue with no entry
@@ -191,7 +226,11 @@ def main():
 
     by_zone, rejected, hidden = {}, 0, 0
     deals_by_lid, orphans = {}, []
-    for venue in payload["venues"]:
+
+    def surviving(venue):
+        """The deals of one venue that are fit to publish: past the PA
+        validators, and not decayed out from under their own age."""
+        nonlocal rejected, hidden
         deals = []
         for deal in venue.get("deals", []):
             extra = prices.get(venue["id"])
@@ -214,22 +253,39 @@ def main():
         for e in validate_food_combo_count(deals):
             print(f"  rejected: {venue['name']} -- {e}")
             deals = []
-        if not deals:
-            continue
+        return deals
+
+    def place(venue, deals):
         lid = base_lid_for(venue)
         if lid is None:
             # A deal for a premises the base has never heard of. It still ships
             # -- a proven happy hour is not something to drop over a join -- but
             # it is counted, because a rising number here means the base is stale.
             orphans.append(venue["name"])
-        held = deals_by_lid.get(lid) if lid else None
-        if held is None:
-            deals_by_lid[lid or f"orphan:{venue['id']}"] = (venue, deals)
-        else:
-            # Two crawled licences at one building. Keep the richer read rather
-            # than letting whichever sorted first win.
-            keep = venue if len(deals) > len(held[1]) else held[0]
-            deals_by_lid[lid] = (keep, deals if keep is venue else held[1])
+        key = lid or f"orphan:{venue['id']}"
+        held = deals_by_lid.get(key)
+        # Two licences at one building: the higher-priority source first, and
+        # within one source the richer read rather than whichever sorted first.
+        if held is None or (venue.get("_rank", 9), -len(deals)) < (
+            held[0].get("_rank", 9), -len(held[1])
+        ):
+            deals_by_lid[key] = (venue, deals)
+
+    for venue in payload["venues"]:
+        deals = surviving(venue)
+        if deals:
+            place(venue, deals)
+
+    # The duplicates merge set aside. One publishes only where the source that
+    # outranked it ended up with nothing left to say.
+    for venue, beat_by in reserve:
+        if (base_lid_for(beat_by) or f"orphan:{beat_by['id']}") in deals_by_lid:
+            continue
+        deals = surviving(venue)
+        if deals:
+            print(f"  fallback: {venue['name']} -- {beat_by['name']} outranked it "
+                  "and then published nothing")
+            place(venue, deals)
 
     for key, (venue, deals) in deals_by_lid.items():
         b = base.get(key) or {}

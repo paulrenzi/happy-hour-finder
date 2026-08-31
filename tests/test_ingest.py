@@ -24,6 +24,7 @@ import crawl_sites  # noqa: E402
 from crawl_roundups import fresh_enough, mentions, published_date, venue_index  # noqa: E402
 from crawl_sites import candidate_links, crawl_one, quotes, registrable, visible_text  # noqa: E402
 from discover_places import HAND_DROPPED  # noqa: E402
+from review_photos import superseded  # noqa: E402
 from discover_sites import collapse_shared, name_core, plcb_key, site_of, street_core  # noqa: E402
 import guess_sites  # noqa: E402
 from guess_sites import candidates  # noqa: E402
@@ -1046,6 +1047,53 @@ class PriceExtraction(unittest.TestCase):
     def test_an_item_with_no_evidence_is_refused(self):
         _, why = verify(self.item(evidence=""), self.QUOTE)
         self.assertEqual(why, "no evidence")
+
+
+def _photo_deal(submitted, photo_id, start="16:00"):
+    return {
+        "type": "happy_hour",
+        "windows": [{"dow": 1, "start": start, "end": "18:00"}],
+        "items": [],
+        "source": {"kind": "photo", "photo_id": photo_id, "submitted": submitted},
+    }
+
+
+class MenuSupersession(unittest.TestCase):
+    """A photo of the menu is how a customer corrects us, so approving one has
+    to REPLACE what it contradicts. The original filter dropped the incoming
+    submission's own deals and kept every stale one, so a venue grew a second,
+    contradictory happy hour every time somebody reported the first was wrong."""
+
+    def test_an_older_photo_is_replaced(self):
+        old = _photo_deal("2026-06-01T18:00:00.000Z", "old-1")
+        sub = {"id": "new-1", "submitted_at": "2026-08-31T21:58:23.288Z"}
+        self.assertEqual(superseded([old], sub), [])
+
+    def test_pages_of_the_same_menu_add_up(self):
+        # Three pages of one menu are three submissions minutes apart. If the
+        # second replaced the first, a multi-page happy hour could never be
+        # published whole -- only its last page would survive.
+        page1 = _photo_deal("2026-08-31T21:58:00.000Z", "p1")
+        sub = {"id": "p2", "submitted_at": "2026-08-31T22:01:00.000Z"}
+        self.assertEqual(superseded([page1], sub), [page1])
+
+    def test_reapproving_one_photo_replaces_its_own_deals(self):
+        mine = _photo_deal("2026-08-31T21:58:00.000Z", "p1")
+        sub = {"id": "p1", "submitted_at": "2026-08-31T21:58:00.000Z"}
+        self.assertEqual(superseded([mine], sub), [])
+
+    def test_a_non_photo_deal_is_never_eaten(self):
+        seeded = {"type": "happy_hour", "windows": [], "items": [],
+                  "source": {"kind": "venue_site"}}
+        sub = {"id": "new-1", "submitted_at": "2026-08-31T21:58:23.288Z"}
+        self.assertEqual(superseded([seeded], sub), [seeded])
+
+    def test_an_unreadable_timestamp_supersedes_rather_than_accumulates(self):
+        # Failing open here means duplicate contradictory windows on a live
+        # card, which is the exact defect this function exists to stop.
+        old = _photo_deal("2026-06-01T18:00:00.000Z", "old-1")
+        sub = {"id": "new-1", "submitted_at": "not a timestamp"}
+        self.assertEqual(superseded([old], sub), [])
 
 
 if __name__ == "__main__":

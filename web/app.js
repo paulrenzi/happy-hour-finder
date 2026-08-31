@@ -397,21 +397,58 @@ function submitHours(v) {
   acts.append(copy);
   body.append(acts);
 
-  const photo = el("button", "btn", "Or send a photo of the menu");
-  photo.type = "button";
-  photo.addEventListener("click", () => {
+  acts.append(photoButton(v, "Or send a photo of the menu"));
+
+  body.append(
+    el("p", "note", `Reference: LID ${v.lid || v.id}. Quote it and we'll know exactly which venue you mean.`)
+  );
+  openSheet();
+}
+
+/* ---- the sheet ---------------------------------------------------------
+
+   Every dialog on this site is the same <dialog>, so opening and closing it
+   goes through here.
+
+   The body scroll lock is not cosmetic. A <dialog> in the top layer does not
+   stop iOS Safari from scrolling the page underneath it, and once the page
+   under a bottom-anchored sheet starts moving, touches land on the page rather
+   than on the sheet -- which is why the Close button "could not be pressed".
+   Freezing the body at its current offset and restoring it on close keeps the
+   taps where the user aimed them. */
+let sheetScrollY = 0;
+
+function openSheet() {
+  const dlg = $("#sheet");
+  if (!dlg.open) {
+    sheetScrollY = window.scrollY;
+    document.body.style.top = `-${sheetScrollY}px`;
+    document.body.classList.add("sheetOpen");
+    dlg.showModal();
+  }
+  dlg.scrollTop = 0;
+}
+
+function releaseSheet() {
+  if (!document.body.classList.contains("sheetOpen")) return;
+  document.body.classList.remove("sheetOpen");
+  document.body.style.top = "";
+  window.scrollTo(0, sheetScrollY);
+}
+
+/* The venue this sheet is about, so a button inside it can hand the photo lane
+   a venue that is already known. */
+function photoButton(v, label) {
+  const b = el("button", "btn", label);
+  b.type = "button";
+  b.addEventListener("click", () => {
     // Remember which venue, then trigger the same file input the header button
     // uses. Coming from a card is the good case: the venue is already known, so
     // the submitter never has to find their own bar in a list of 2,900.
     state.photoVenue = v;
     $("#photo").click();
   });
-  acts.append(photo);
-
-  body.append(
-    el("p", "note", `Reference: LID ${v.lid || v.id}. Quote it and we'll know exactly which venue you mean.`)
-  );
-  $("#sheet").showModal();
+  return b;
 }
 
 /* ---- photo lane -------------------------------------------------------- */
@@ -600,7 +637,7 @@ function photoLane(file) {
     }
   });
 
-  $("#sheet").showModal();
+  openSheet();
 }
 
 function card(row, at) {
@@ -897,8 +934,23 @@ function openVenue(id) {
   acts.append(share);
   body.append(acts);
 
+  // The photo lane used to live only in submitHours(), which runs for venues
+  // with NO hours -- so the one case that actually happens, somebody standing
+  // in a bar looking at hours we publish and a menu that disagrees, had no way
+  // in. A newer photo supersedes what is here (ingest/review_photos.py), so
+  // this is the update path, not a second opinion.
+  const upd = el("div", "actions");
+  upd.append(photoButton(v, "These hours changed — send a photo of the menu"));
+  body.append(upd);
+  body.append(
+    el("p", "note",
+      "A photo of the current menu replaces what's above once a person has read " +
+        "it. Several pages? Send them one after another and they'll be read as " +
+        "one menu.")
+  );
+
   writeHash(v.id);
-  $("#sheet").showModal();
+  openSheet();
 }
 
 async function shareVenue(v) {
@@ -917,16 +969,45 @@ function reportWrong(v, deal) {
   const body = $("#sheetBody");
   body.textContent = "";
   body.append(el("h3", null, v.name));
+  body.append(el("p", "sheetSub", summarizeWindows(deal.windows)));
   body.append(
     el(
       "p",
       null,
-      "Reports go to a human queue daily — that habit is the whole trust model. " +
-        "The write path (Worker + D1) isn't wired yet, so nothing is sent."
+      "If that's not what the menu says, the fastest fix by a distance is a " +
+        "photo of it: it goes into the same queue a person reads every day, and " +
+        "an approved photo replaces what's on the card above."
     )
   );
+
+  const acts = el("div", "actions");
+  acts.append(photoButton(v, "Send a photo of the menu"));
+
+  // Not everyone reporting a wrong window is standing in front of the menu.
+  // A mail draft is a real delivery path for those, and it carries the LID so
+  // the report is filable against a licence number rather than a name.
+  const lines = [
+    `Venue: ${v.name}`,
+    `Address: ${v.address}`,
+    `LID: ${v.lid || v.id}`,
+    `What we show: ${summarizeWindows(deal.windows)}`,
+    "",
+    "What's wrong:",
+    "",
+    "How do you know? (saw the menu / staff told me / I work here):",
+    "",
+  ];
+  const mail = el("a", "btn", "No photo — tell us instead");
+  mail.href =
+    `mailto:${SUBMIT_TO}` +
+    `?subject=${encodeURIComponent(`Wrong hours: ${v.name} (LID ${v.lid || v.id})`)}` +
+    `&body=${encodeURIComponent(lines.join("
+"))}`;
+  acts.append(mail);
+  body.append(acts);
+
   const p = el("p", "note");
-  p.append(document.createTextNode("Source: "));
+  p.append(document.createTextNode("What we have now came from: "));
   if (deal.source?.url) {
     const a = el("a", null, deal.source.kind.replace("_", " "));
     a.href = deal.source.url;
@@ -938,7 +1019,7 @@ function reportWrong(v, deal) {
   }
   if (deal.source?.note) p.append(document.createTextNode(` — ${deal.source.note}`));
   body.append(p);
-  $("#sheet").showModal();
+  openSheet();
 }
 
 function toast(text) {
@@ -1034,7 +1115,10 @@ async function boot() {
     if (file) photoLane(file);
   });
   $("#sheetClose").addEventListener("click", () => $("#sheet").close());
-  $("#sheet").addEventListener("close", () => writeHash());
+  $("#sheet").addEventListener("close", () => {
+    releaseSheet();
+    writeHash();
+  });
 
   if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
 }

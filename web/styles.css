@@ -492,6 +492,13 @@ dialog h4 {
 dialog p { margin: 0 0 10px; font-size: 15px; line-height: 1.55; color: var(--muted); }
 dialog::backdrop { background: rgba(4, 17, 24, 0.55); }
 #sheet { max-height: 86vh; overflow-y: auto; }
+/* Set by openSheet() in app.js. A <dialog> in the top layer does not stop iOS
+   Safari scrolling the page behind it, and a moving page under a bottom-anchored
+   sheet swallows the taps meant for the sheet -- including Close. body.style.top
+   carries the offset so freezing it does not jump the page to the top. */
+body.sheetOpen {
+  position: fixed; left: 0; right: 0; width: 100%; overflow: hidden;
+}
 
 .sheetSub { color: var(--muted); font-size: 14.5px; }
 .pill {
