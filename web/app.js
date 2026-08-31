@@ -1058,22 +1058,111 @@ function watchHero() {
 
 /* ---- boot ------------------------------------------------------------- */
 
-async function boot() {
-  // no-cache revalidates rather than trusting the 10-minute HTTP freshness window:
-  // the zone list is what every count on the page is drawn from, so a stale copy is
-  // wrong in a way the page cannot show.
-  const index = await (await fetch("data/index.json", { cache: "no-cache" })).json();
-  state.zones = index.zones;
-  const bundles = await Promise.all(
-    index.zones.map((z) => fetch(`data/zone-${z.id}.json`).then((r) => r.json()))
-  );
-  state.venues = bundles.flatMap((b) => b.venues);
+// GitHub Pages sits behind Fastly, which refuses a burst: firing all 38 zone
+// bundles at once had every one of them dropped on a clean connection, and the
+// same URLs fetched singly a second later were fine. Six at a time is well under
+// that, and on a phone it is six sockets competing for one radio instead of 38.
+const FETCH_POOL = 6;
 
+async function fetchJSON(url, tries = 3) {
+  let last;
+  for (let i = 0; i < tries; i++) {
+    // Back off before a RETRY only; the first attempt goes immediately.
+    if (i) await new Promise((r) => setTimeout(r, 250 * 2 ** (i - 1)));
+    try {
+      // no-cache revalidates rather than trusting the 10-minute HTTP freshness
+      // window -- a stale bundle is wrong in a way the page cannot show.
+      const res = await fetch(url, { cache: "no-cache" });
+      if (!res.ok) throw new Error(`${res.status} ${url}`);
+      return await res.json();
+    } catch (e) {
+      last = e;
+    }
+  }
+  throw last;
+}
+
+async function pooled(items, limit, fn) {
+  const out = new Array(items.length);
+  let next = 0;
+  const worker = async () => {
+    while (next < items.length) {
+      const i = next++;
+      out[i] = await fn(items[i], i);
+    }
+  };
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, worker));
+  return out;
+}
+
+// Never all-or-nothing. Promise.all rejected the entire board when a single
+// bundle dropped, and boot() then died BEFORE it had drawn even the controls --
+// a fully styled page stuck on "Loading..." with empty filters, forever. A zone
+// that will not load now costs that zone and nothing else.
+async function loadZoneDeals(zones) {
+  const failed = [];
+  const got = await pooled(zones, FETCH_POOL, async (z) => {
+    try {
+      return await fetchJSON(`data/zone-${z.id}.json`);
+    } catch {
+      failed.push(z);
+      return null;
+    }
+  });
+  state.venues = state.venues.concat(got.filter(Boolean).flatMap((b) => b.venues));
+  return failed;
+}
+
+// A page that cannot say what went wrong is indistinguishable from a broken one.
+function boardNote(text, retry) {
+  let n = $("#boardNote");
+  if (!n) {
+    n = el("div", "boardNote");
+    n.id = "boardNote";
+    $("#feed").before(n);
+  }
+  n.textContent = "";
+  n.append(el("p", null, text));
+  if (retry) {
+    const b = el("button", "btn", "Retry");
+    b.type = "button";
+    b.addEventListener("click", () => {
+      n.remove();
+      retry();
+    });
+    n.append(b);
+  }
+}
+
+function noteMissingZones(failed) {
+  const names = failed.map((z) => z.name).join(", ");
+  boardNote(
+    `${failed.length} of ${state.zones.length} areas didn't load, so some happy ` +
+      `hours are missing: ${names}.`,
+    async () => {
+      const still = await loadZoneDeals(failed);
+      if (still.length) noteMissingZones(still);
+      refresh();
+    }
+  );
+}
+
+async function boot() {
+  const index = await fetchJSON("data/index.json");
+  state.zones = index.zones;
+
+  // Paint the controls off the index, before a single bundle is asked for. They
+  // need nothing else, and a page that shows its filters immediately reads as
+  // loading rather than as broken while the network is slow.
   const openId = readHash();
   buildControls();
   restoreLocation();
   watchHero();
+
+  state.venues = [];
+  const failed = await loadZoneDeals(index.zones);
   render();
+  if (failed.length) noteMissingZones(failed);
   // A shared link to a venue with no published hours names a venue that only
   // arrives with its zone's base, so the fetch has to finish before the sheet is
   // opened -- otherwise the link silently does nothing, which is exactly the
@@ -1123,4 +1212,15 @@ async function boot() {
   if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
 }
 
-boot();
+boot().catch((err) => {
+  // The only throw left is the zone index itself: without it there is no board
+  // to draw and no list of zones to report as missing.
+  console.error(err);
+  $("#heroCount").textContent = "Couldn't reach the board.";
+  $("#sectionKicker").textContent = "Not loaded";
+  boardNote(
+    "The board didn't load. That is nearly always a dropped connection rather " +
+      "than anything wrong with the happy hours themselves.",
+    () => location.reload()
+  );
+});

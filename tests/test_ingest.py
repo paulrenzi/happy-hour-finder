@@ -227,6 +227,51 @@ class HandCorrectedJoins(unittest.TestCase):
                           f"{lid} display name disagrees with the venue")
 
 
+class OfflineFallback(unittest.TestCase):
+    """A dropped request must cost that request, never the whole page."""
+
+    def _sw(self):
+        return open(os.path.join(REPO, "web", "sw.js"), encoding="utf-8").read()
+
+    def _app(self):
+        return open(os.path.join(REPO, "web", "app.js"), encoding="utf-8").read()
+
+    def test_only_a_navigation_falls_back_to_the_shell(self):
+        # The worker used to answer ANY uncached miss with index.html. A phone
+        # that dropped one data/zone-*.json got HTML back, r.json() threw, and
+        # boot() died before drawing a single control -- a fully styled page
+        # frozen on "Loading..." with empty filters. Seen on a real iPhone.
+        sw = self._sw()
+        self.assertIn('e.request.mode === "navigate"', sw)
+        hit = sw.index('caches.match("index.html")')
+        guard = sw.index('e.request.mode === "navigate"')
+        self.assertLess(guard, hit, "the shell fallback is not gated on navigation")
+
+    def test_the_board_does_not_load_all_or_nothing(self):
+        # Promise.all over 38 zone bundles rejected the entire board when any
+        # one of them failed. loadZoneDeals catches per zone and reports what is
+        # missing instead.
+        app = self._app()
+        self.assertNotIn("index.zones.map((z) => fetch(", app)
+        self.assertIn("async function loadZoneDeals", app)
+        self.assertIn("noteMissingZones", app)
+
+    def test_the_controls_are_drawn_before_the_bundles(self):
+        # The difference between "loading" and "broken": the filters come from
+        # the index alone and need no bundle at all.
+        app = self._app()
+        boot = app[app.index("async function boot()"):]
+        self.assertLess(
+            boot.index("buildControls()"),
+            boot.index("loadZoneDeals(index.zones)"),
+            "buildControls must not wait on the zone bundles",
+        )
+
+    def test_a_failed_boot_says_so(self):
+        app = self._app()
+        self.assertIn("boot().catch(", app)
+
+
 class ServiceWorkerCache(unittest.TestCase):
     """The published shell must evict what the last build left on devices."""
 

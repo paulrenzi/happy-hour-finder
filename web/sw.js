@@ -5,7 +5,7 @@
    changes means the precache below is never refreshed. data/index.json is precached,
    so a stale hhf-v4 kept serving an old zone list -- King of Prussia read 1 on
    devices while the server had said 3 for hours. */
-const CACHE = "hhf-2026-08-31-169-2c279c7f";
+const CACHE = "hhf-2026-08-31-169-28dad665";
 const SHELL = [
   "./", "index.html", "app.js", "lib.js", "styles.css", "manifest.json",
   "data/index.json", "img/hero-taproom.jpg", "img/icon-192.png",
@@ -60,6 +60,21 @@ self.addEventListener("fetch", (e) => {
         }
         return res;
       })
-      .catch(() => caches.match(e.request).then((r) => r || caches.match("index.html")))
+      .catch(() =>
+        // ignoreSearch because index.html asks for "app.js?v=2" while the
+        // precache holds "app.js": without it the offline shell missed its own
+        // script.
+        caches.match(e.request, { ignoreSearch: true }).then((r) => {
+          if (r) return r;
+          // index.html as a last resort is right for a NAVIGATION and wrong for
+          // everything else: it used to be handed back for an uncached
+          // data/zone-*.json too, so r.json() got HTML, threw, and boot()'s
+          // Promise.all rejected before it had drawn a single control. One
+          // dropped request on a phone became a permanently dead board. Let a
+          // failed asset fail, so the caller can see it and carry on.
+          if (e.request.mode === "navigate") return caches.match("index.html");
+          return Response.error();
+        })
+      )
   );
 });

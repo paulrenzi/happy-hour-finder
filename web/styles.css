@@ -581,3 +581,20 @@ body.sheetOpen {
   * { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }
 }
+
+/* Shown only when a zone bundle -- or the whole board -- failed to arrive. The
+   page used to have no way to say so, which is how a network drop presented as
+   a permanently empty board. */
+.boardNote {
+  margin: 0 0 18px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+.boardNote p { margin: 0 0 10px; }
+.boardNote .btn { width: auto; }
