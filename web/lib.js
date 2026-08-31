@@ -383,3 +383,69 @@ export function summarizeWindows(windows) {
   }
   return parts.join(" · ");
 }
+
+/* ---- the live overlay --------------------------------------------------
+
+   Approved photo deals that are not in the built bundles yet. The app loads its
+   static bundles first and patches these over the top, so an approval reaches a
+   reader in seconds instead of waiting for a rebuild and a Pages deploy.
+
+   The merge rule is the same one ingest/review_photos.py applies at approval
+   time, and for the same reason: a menu is often several pages, and those arrive
+   as separate submissions minutes apart, while a menu CHANGING arrives weeks
+   later. Six hours tells those two cases apart with room to spare. */
+export const PAGE_SET_HOURS = 6;
+
+const submittedAt = (deal) => (deal.source || {}).submitted || "";
+const isPhoto = (deal) => (deal.source || {}).kind === "photo";
+
+/* Every licence ID a venue answers to. A venue can hold more than one. */
+function lidsOf(venue) {
+  return [venue.lid, ...(venue.also_lids || [])].filter(Boolean).map(String);
+}
+
+/* Merge the overlay into the venues in hand.
+
+   Returns the venues (mutated in place -- they are this session's own copies)
+   and the zones that could not be applied because the venue is not loaded yet.
+   That is not an error: a venue auto-published from a photo had no hours, so it
+   is in no deals bundle, and the app has to fetch that zone's base first. */
+export function applyOverlay(venues, overlay) {
+  const byLid = new Map();
+  for (const v of venues) for (const lid of lidsOf(v)) byLid.set(lid, v);
+
+  let added = 0;
+  const missingZones = new Set();
+
+  for (const entry of (overlay && overlay.venues) || []) {
+    const venue = byLid.get(String(entry.lid));
+    if (!venue) {
+      if (entry.zone_id) missingZones.add(entry.zone_id);
+      continue;
+    }
+    // A deal already baked into the bundle we just loaded. This is why every
+    // overlay deal carries its photo_id: it means the overlay never has to know
+    // when the bundles were last built.
+    const have = new Set(
+      (venue.deals || []).map((d) => (d.source || {}).photo_id).filter(Boolean)
+    );
+    const fresh = (entry.deals || []).filter(
+      (d) => !have.has((d.source || {}).photo_id)
+    );
+    if (!fresh.length) continue;
+
+    let newest = "";
+    for (const d of fresh) if (submittedAt(d) > newest) newest = submittedAt(d);
+    const cutoff = new Date(
+      new Date(newest).getTime() - PAGE_SET_HOURS * 3600 * 1000
+    ).toISOString();
+
+    venue.deals = (venue.deals || []).filter(
+      (d) => !isPhoto(d) || submittedAt(d) >= cutoff
+    );
+    venue.deals.push(...fresh);
+    added += fresh.length;
+  }
+
+  return { venues, added, missingZones: [...missingZones] };
+}

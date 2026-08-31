@@ -8,6 +8,7 @@ Serves web/ through Playwright's router, so it tests the working tree with no
 listening socket. Skips if the browser is not installed.
 """
 
+import json
 import mimetypes
 import os
 import sys
@@ -15,6 +16,10 @@ import sys
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 WEB = os.path.join(REPO, "web")
 BASE = "https://hhf.test/"
+# A real King of Prussia venue with no published hours, so the overlay has to do
+# the whole job: find it in the zone base the app has not loaded yet, fetch that
+# zone, and patch the deal in.
+OVERLAY_LID = "92150"  # bartaco, King of Prussia -- no hours published
 
 
 def main():
@@ -46,8 +51,36 @@ def main():
             route.fulfill(status=200, content_type=ctype, body=open(path, "rb").read())
 
         page.route(BASE + "**", serve)
+
+        # The live overlay, served here rather than from the real Worker: the
+        # point is to prove the app APPLIES it, and a test that depends on a
+        # deployed service tells you about the network, not the code.
+        overlay = {
+            "venues": [{
+                "lid": OVERLAY_LID,
+                "zone_id": "king_of_prussia",
+                "deals": [{
+                    "type": "happy_hour",
+                    "windows": [{"dow": d, "start": "15:00", "end": "17:00"}
+                                for d in range(1, 8)],
+                    "items": [{"category": "draft", "label": "OVERLAY PROBE DRAFT",
+                               "price_usd": 3}],
+                    "confidence": "unconfirmed",
+                    "last_verified_at": "2026-08-31",
+                    "source": {"kind": "photo", "photo_id": "probe",
+                               "submitted": "2026-08-31T23:00:00Z"},
+                }],
+            }]
+        }
+        page.route(
+            "**/live/deals.json",
+            lambda route: route.fulfill(
+                status=200, content_type="application/json", body=json.dumps(overlay)
+            ),
+        )
+
         page.goto(BASE, wait_until="load")
-        page.wait_for_timeout(2500)
+        page.wait_for_timeout(3500)
 
         checks = page.evaluate(
             """() => ({
@@ -55,6 +88,7 @@ def main():
                  zones: document.querySelector("#zone").options.length,
                  feed: document.querySelector("#feed").children.length,
                  kicker: document.querySelector("#sectionKicker").textContent,
+                 overlay: document.body.innerText.includes("OVERLAY PROBE DRAFT"),
                })"""
         )
         browser.close()
@@ -70,6 +104,8 @@ def main():
         bad.append("the feed is empty")
     if "LOADING" in checks["kicker"].upper():
         bad.append(f'the board is still saying "{checks["kicker"]}"')
+    if not checks["overlay"]:
+        bad.append("an approved deal from the live overlay never reached the page")
 
     for line in bad:
         print(f"  FAIL {line}")

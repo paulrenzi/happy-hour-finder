@@ -385,6 +385,42 @@ def main():
     with open(os.path.join(OUT_DIR, "index.json"), "w", encoding="utf-8") as fh:
         json.dump({"built_at": today.isoformat(), "zones": index}, fh, indent=1)
 
+    # What is published, keyed by licence ID. The Worker reads this to answer one
+    # question before it auto-approves a photo: does this venue already have
+    # hours? Adding hours to a blank venue publishes itself; CHANGING hours that
+    # are already on the board is the damaging case and waits for a person. The
+    # admin page reads the same file to show a reviewer what approving replaces.
+    #
+    # Deliberately small -- windows and provenance, no items, no prices. It is
+    # fetched by a Worker on a submission, not by a reader.
+    board = {}
+    for venue in (v for vs in by_zone.values() for v in vs if v["deals"]):
+        entry = {
+            "name": venue["name"],
+            "deals": [
+                {"type": d["type"], "windows": d["windows"],
+                 "source": {"kind": (d.get("source") or {}).get("kind", "")}}
+                for d in venue["deals"]
+            ],
+        }
+        for key in [venue.get("lid")] + list(venue.get("also_lids") or []):
+            if key:
+                board[str(key)] = entry
+    with open(os.path.join(OUT_DIR, "board-by-lid.json"), "w", encoding="utf-8") as fh:
+        json.dump(board, fh, indent=1)
+
+    # Licence ID -> zone, for EVERY venue including the 2,729 with no hours.
+    # The live overlay needs it: a photo that auto-publishes is by definition
+    # for a venue with nothing on the board, so that venue is not in any deals
+    # bundle and the app has to be told which zone base to go and fetch.
+    lid_zone = {}
+    for venue in (v for vs in by_zone.values() for v in vs):
+        for key in [venue.get("lid")] + list(venue.get("also_lids") or []):
+            if key:
+                lid_zone[str(key)] = venue["zone_id"]
+    with open(os.path.join(OUT_DIR, "lid-zone.json"), "w", encoding="utf-8") as fh:
+        json.dump(lid_zone, fh, separators=(",", ":"))
+
     published = [v for vs in by_zone.values() for v in vs]
     dealful = [v for v in published if v["deals"]]
     # The service worker cache name has always keyed on the count of what ships.

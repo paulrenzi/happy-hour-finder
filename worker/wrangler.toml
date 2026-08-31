@@ -35,3 +35,17 @@ database_id = "4acff9cc-d2e3-4130-acec-347652effe9d"
 #   ADMIN_TOKEN      the review/extraction bearer, read by ingest/*.py
 #   IP_SALT          salt for the submitter hash (rotating it resets rate limits)
 #   TURNSTILE_SECRET optional; when set, /submit requires a Turnstile token
+#   ANTHROPIC_API_KEY optional. When set, the Worker reads a menu photo itself
+#                    the moment it is uploaded, and a clean read for a venue
+#                    with no hours publishes through /live/deals.json within
+#                    seconds. With it unset, nothing breaks: the reading waits
+#                    for the HappyHourReadPhotos scheduled task on Paul's PC,
+#                    which runs the  CLI on the Max subscription and
+#                    costs nothing. A Max subscription is licensed for a
+#                    person's own interactive use, not as a public backend --
+#                    that is why this path is an API key and not a copied
+#                    credentials file.
+#
+# Optional var (not a secret), set in [vars] or the dashboard:
+#   VISION_MODEL     defaults to claude-sonnet-5. A menu photo is roughly 1.5k
+#                    tokens in and 1k out, so about two cents a photo.

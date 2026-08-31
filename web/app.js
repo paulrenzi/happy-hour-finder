@@ -7,7 +7,7 @@
 import {
   DOW_SHORT, DOW_LONG, dowOf, fmtClock, fmtMins, fmtMiles, itemParts,
   FILTERS, GROUP, GROUP_LABEL, buildFeed, summarizeWindows, usableMinutes,
-  haversineMiles, driveMinutes, ageDays, effectiveConfidence,
+  haversineMiles, driveMinutes, ageDays, effectiveConfidence, applyOverlay,
 } from "./lib.js";
 
 const state = {
@@ -1112,6 +1112,30 @@ async function loadZoneDeals(zones) {
   return failed;
 }
 
+/* Approved photo deals that are not in the built bundles yet.
+
+   Everything on this page is normally static files, and that is the point --
+   it works in a parking lot with no signal. This is the one live read, and it
+   is additive: it patches deals over what the bundles already gave us. A
+   failed fetch changes nothing on screen, so the offline story is unharmed.
+
+   A venue that auto-published had NO hours, so it is in no deals bundle at
+   all. applyOverlay hands back the zones those venues live in; we fetch each
+   zone's base once and apply again, which is idempotent because every overlay
+   deal carries the photo_id that says it has already been applied. */
+async function loadOverlay() {
+  let overlay;
+  try {
+    overlay = await fetchJSON(`${SUBMIT_API}/live/deals.json`, 1);
+  } catch {
+    return; // the board is already drawn from the bundles; this adds or it does not
+  }
+  let res = applyOverlay(state.venues, overlay);
+  for (const zid of res.missingZones) await loadZoneVenues(zid);
+  if (res.missingZones.length) res = applyOverlay(state.venues, overlay);
+  if (res.added) refresh();
+}
+
 // A page that cannot say what went wrong is indistinguishable from a broken one.
 function boardNote(text, retry) {
   let n = $("#boardNote");
@@ -1162,6 +1186,7 @@ async function boot() {
   const failed = await loadZoneDeals(index.zones);
   render();
   if (failed.length) noteMissingZones(failed);
+  loadOverlay();
   // A shared link to a venue with no published hours names a venue that only
   // arrives with its zone's base, so the fetch has to finish before the sheet is
   // opened -- otherwise the link silently does nothing, which is exactly the
@@ -1171,6 +1196,10 @@ async function boot() {
 
   // Keep "ends in" honest while the page sits open, but only in live mode.
   setInterval(() => isNow() && render(), 30000);
+  // And pick up anything approved since this page loaded. The endpoint is
+  // cached for 30s, so this is cheap and a new approval lands within a minute
+  // on a page nobody has touched.
+  setInterval(loadOverlay, 60000);
 
   $("#credits").innerHTML =
     'Header photo: <a href="https://commons.wikimedia.org/wiki/File:South_Shore_Brewery_Taproom.jpg">' +

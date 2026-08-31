@@ -5,16 +5,28 @@
      POST /submit           multipart: photo, lid, venue_name, note, cf_token
      GET  /health
 
-   Admin (X-Admin-Token; driven by ingest/extract_photo_deals.py and
-   ingest/review_photos.py, never by the browser):
+   Admin (X-Admin-Token; the admin page, ingest/extract_photo_deals.py and
+   ingest/review_photos.py):
+     GET  /admin               the review page itself (no token; it asks)
      GET  /admin/queue?status=pending
      GET  /admin/photo/<id>
-     POST /admin/extract/<id>   {extracted} | {error}
-     POST /admin/review/<id>    {status: approved|rejected, note}
+     GET  /admin/board         what is published per LID, for the reviewer
+     POST /admin/extract/<id>  {extracted} | {error}
+     POST /admin/read/<id>     read it here and now (needs ANTHROPIC_API_KEY)
+     POST /admin/review/<id>   {status: approved|rejected, note}
 
-   The Worker stores and queues. It never publishes: a submission reaches the
-   site only via the review script and a bundle rebuild.
+   Live overlay (public):
+     GET  /live/deals.json     approved deals not yet in the built bundles
+
+   The Worker now publishes, in one narrow case: a photo for a venue with NO
+   hours on the board, that the model read cleanly and the PA validators passed,
+   is approved automatically and appears through the overlay within seconds.
+   Anything that would CHANGE hours already published waits for a person. See
+   autoApprove() for why the line is drawn there.
    ============================================================ */
+
+import { proposalFrom, readPhoto } from "./extract.js";
+import { ADMIN_HTML } from "./admin_page.js";
 
 const MAX_BYTES = 8 * 1024 * 1024;
 const MAX_PER_DAY = 12;
@@ -135,7 +147,7 @@ async function verifyTurnstile(secret, token, ip) {
 
 /* ---- POST /submit ------------------------------------------------------ */
 
-async function submit(request, env, headers) {
+async function submit(request, env, ctx, headers) {
   const ip = request.headers.get("CF-Connecting-IP") || "";
   const ipHash = await sha256Hex(`${env.IP_SALT || "unsalted"}:${ip}`);
   const now = new Date().toISOString();
@@ -204,7 +216,160 @@ async function submit(request, env, headers) {
     env.DB.prepare("DELETE FROM rate WHERE day < ?").bind(day),
   ]);
 
+  // Read it now, after the response has gone out. With no API key this does
+  // nothing and the row waits for the CLI pass on Paul's PC, which costs
+  // nothing and is still the default.
+  if (env.ANTHROPIC_API_KEY) {
+    ctx.waitUntil(
+      readAndMaybePublish(env, id).catch((err) => console.error("extract", String(err)))
+    );
+  }
+
   return json({ id, status: "pending" }, 201, headers);
+}
+
+/* ---- reading, and the auto-approve gate -------------------------------- */
+
+/* What the site currently publishes, keyed by licence ID. Built by
+   ingest/build_bundles.py and served with the rest of the static data. The
+   Worker needs it to answer one question: does this venue already have hours?
+   Cached at the edge -- it changes only when Paul rebuilds. */
+async function publishedBoard(env) {
+  const base = env.FRONTEND_ORIGIN || "https://paulrenzi.github.io";
+  const res = await fetch(base + "/happy-hour-finder/data/board-by-lid.json", {
+    cf: { cacheTtl: 300, cacheEverything: true },
+  });
+  if (!res.ok) throw new Error("board-by-lid " + res.status);
+  return await res.json();
+}
+
+/* The line between what publishes itself and what waits for a person.
+
+   Adding hours to a venue that has none is close to harmless, and it is where
+   nearly all the value is: the site's actual problem is 2,729 venues with
+   nothing published. A photo that CHANGES hours already on the board is the
+   damaging case -- it can overwrite something correct -- and it is rare enough
+   to look at by hand.
+
+   The rest is about trusting the read, not the submitter. A dropped quote means
+   the model reported a price the menu does not contain; one of those and the
+   whole submission goes to a person, because grounding failing at all is the
+   signal that this particular read cannot be trusted. */
+async function autoApprove(env, sub, proposal) {
+  if (!proposal.is_menu || !proposal.deals.length) return null;
+  if (proposal.rejected && proposal.rejected.length) return null;
+  if (proposal.legible === false) return null;
+
+  let board;
+  try {
+    board = await publishedBoard(env);
+  } catch (err) {
+    // Not knowing what is published is not a licence to guess. A person decides.
+    console.error("board", String(err));
+    return null;
+  }
+  const already = board[String(sub.lid)];
+  if (already && (already.deals || []).length) return null;
+
+  return "auto-approved: " + proposal.deals.length + " deal(s) read cleanly for a " +
+    "venue with nothing published. Grounding and the PA validators both passed.";
+}
+
+/* Read a pending submission, store the proposal, publish it if it clears the
+   gate. Safe to call twice: the UPDATE only touches a row still pending. */
+async function readAndMaybePublish(env, id) {
+  const sub = await env.DB.prepare(
+    "SELECT id, lid, venue_name, r2_key, content_type, submitted_at, status FROM submissions WHERE id = ?"
+  )
+    .bind(id)
+    .first();
+  if (!sub || sub.status !== "pending") return;
+
+  const now = new Date().toISOString();
+  let proposal;
+  try {
+    const body = await getPhoto(env, sub.r2_key);
+    if (!body) throw new Error("photo missing from storage");
+    const bytes = await new Response(body).arrayBuffer();
+    const read = await readPhoto(env, bytes, sub.content_type);
+    proposal = proposalFrom(read, sub, now.slice(0, 10));
+  } catch (err) {
+    await env.DB.prepare(
+      "UPDATE submissions SET extract_error = ?, extracted_at = ? WHERE id = ? AND status = 'pending'"
+    )
+      .bind(String(err).slice(0, 2000), now, id)
+      .run();
+    return;
+  }
+
+  const res = await env.DB.prepare(
+    "UPDATE submissions SET extracted = ?, extract_error = NULL, extracted_at = ?, status = 'extracted' WHERE id = ? AND status = 'pending'"
+  )
+    .bind(JSON.stringify(proposal), now, id)
+    .run();
+  if (!res.meta.changes) return;
+
+  const note = await autoApprove(env, sub, proposal);
+  if (note) {
+    await env.DB.prepare(
+      "UPDATE submissions SET status = 'approved', reviewed_at = ?, review_note = ? WHERE id = ? AND status = 'extracted'"
+    )
+      .bind(now, note, id)
+      .run();
+  }
+}
+
+/* ---- GET /live/deals.json ----------------------------------------------
+
+   Everything approved, as deals ready to render. The app loads its static
+   bundles first and patches these over the top, so an approval is visible in
+   seconds instead of waiting for a rebuild and a Pages deploy.
+
+   Every deal carries its photo_id, which is how the app tells that an overlay
+   entry is already baked into the bundle it just loaded and skips it. That is
+   why this endpoint needs to know nothing about when Paul last built. */
+async function liveDeals(env, headers) {
+  const { results } = await env.DB.prepare(
+    "SELECT id, lid, venue_name, extracted, submitted_at FROM submissions WHERE status = 'approved' AND extracted IS NOT NULL ORDER BY submitted_at DESC LIMIT 300"
+  ).all();
+
+  // Which zone each licence ID lives in. A photo that auto-published was for a
+  // venue with no hours, so it is in no deals bundle -- the app needs to be told
+  // which zone base to fetch before it can show it at all.
+  let zones = {};
+  try {
+    const base = env.FRONTEND_ORIGIN || "https://paulrenzi.github.io";
+    const res = await fetch(base + "/happy-hour-finder/data/lid-zone.json", {
+      cf: { cacheTtl: 3600, cacheEverything: true },
+    });
+    if (res.ok) zones = await res.json();
+  } catch (err) {
+    // Without it the overlay still applies to every venue already on the board.
+    console.error("lid-zone", String(err));
+  }
+
+  const byLid = new Map();
+  for (const row of results) {
+    let ex;
+    try {
+      ex = JSON.parse(row.extracted);
+    } catch {
+      continue;
+    }
+    if (!ex.is_menu || !(ex.deals || []).length) continue;
+    const lid = String(row.lid);
+    if (!byLid.has(lid)) {
+      byLid.set(lid, { lid, name: row.venue_name || "", zone_id: zones[lid] || "", deals: [] });
+    }
+    byLid.get(lid).deals.push(...ex.deals);
+  }
+
+  return json({ venues: [...byLid.values()] }, 200, {
+    ...headers,
+    // Short and shared: an approval should land quickly, but this must not be
+    // fetched fresh by every reader on every page load.
+    "Cache-Control": "public, max-age=30",
+  });
 }
 
 /* ---- photo storage ------------------------------------------------------
@@ -269,6 +434,29 @@ async function admin(request, env, url, headers) {
     });
   }
 
+  if (verb === "board" && request.method === "GET") {
+    try {
+      return json(await publishedBoard(env), 200, headers);
+    } catch (err) {
+      return json({ error: String(err) }, 502, headers);
+    }
+  }
+
+  if (verb === "read" && request.method === "POST" && id) {
+    if (!env.ANTHROPIC_API_KEY) {
+      return json(
+        { error: "No ANTHROPIC_API_KEY on this Worker -- reading runs on Paul's PC." },
+        501,
+        headers
+      );
+    }
+    await readAndMaybePublish(env, id);
+    const row = await env.DB.prepare("SELECT status, extract_error FROM submissions WHERE id = ?")
+      .bind(id)
+      .first();
+    return json({ id, ...row }, 200, headers);
+  }
+
   if (verb === "extract" && request.method === "POST" && id) {
     const body = await request.json();
     const now = new Date().toISOString();
@@ -290,6 +478,22 @@ async function admin(request, env, url, headers) {
       .bind(JSON.stringify(body.extracted), now, id)
       .run();
     if (!res.meta.changes) return json({ error: "not pending" }, 409, headers);
+
+    // The same gate, whoever did the reading. The CLI pass on Paul's PC posts
+    // its proposal here, so keeping the decision on THIS side is what stops
+    // there being a second implementation of it in Python that can drift.
+    const sub = await env.DB.prepare("SELECT id, lid FROM submissions WHERE id = ?")
+      .bind(id)
+      .first();
+    const note = await autoApprove(env, sub, body.extracted);
+    if (note) {
+      await env.DB.prepare(
+        "UPDATE submissions SET status = 'approved', reviewed_at = ?, review_note = ? WHERE id = ? AND status = 'extracted'"
+      )
+        .bind(now, note, id)
+        .run();
+      return json({ id, status: "approved", auto: note }, 200, headers);
+    }
     return json({ id, status: "extracted" }, 200, headers);
   }
 
@@ -312,16 +516,31 @@ async function admin(request, env, url, headers) {
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const headers = cors(env, request.headers.get("Origin"));
 
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers });
     if (url.pathname === "/health") return json({ ok: true, service: "hhf-submit" }, 200, headers);
 
+    // The page itself holds no submissions -- it asks for the token and sends
+    // it as a header -- so it is served without one. noindex, and never linked.
+    if (url.pathname === "/admin" && request.method === "GET") {
+      return new Response(ADMIN_HTML, {
+        headers: {
+          "Content-Type": "text/html; charset=utf-8",
+          "X-Robots-Tag": "noindex, nofollow",
+          "Cache-Control": "no-store",
+        },
+      });
+    }
+
     try {
+      if (url.pathname === "/live/deals.json" && request.method === "GET") {
+        return await liveDeals(env, headers);
+      }
       if (url.pathname === "/submit" && request.method === "POST") {
-        return await submit(request, env, headers);
+        return await submit(request, env, ctx, headers);
       }
       if (url.pathname.startsWith("/admin/")) {
         return await admin(request, env, url, headers);
