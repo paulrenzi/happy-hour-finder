@@ -20,3 +20,7 @@ python tests/parse_check.py
 echo
 echo "== the board actually paints =="
 python tests/render_check.py
+
+echo
+echo "== a tab left open restamps itself on wake =="
+python tests/stale_clock_check.py

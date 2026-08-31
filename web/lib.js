@@ -264,6 +264,8 @@ export function usableMinutes(hit, driveMin) {
 const ENOUGH_MINUTES = 120;
 const DRIVE_WEIGHT = 12; // a minute in the car costs more than a minute of deal
 const TIME_WEIGHT = 10;
+/* Start times inside the same half-hour are the same decision -- see score(). */
+const START_BUCKET = 30;
 
 /* Lower is better. Deliberately readable rather than tuned: group dominates,
    then how much deal you actually get, then how far, then how good, then how
@@ -281,6 +283,30 @@ export function score(row, { sort = "soonest" } = {}) {
 
   const value = dealValue(row.deal);
 
+  /* Another DAY is not an urgency. Inside "Tomorrow" or "Thursday", ordering by
+     who opens earliest is answering a question nobody asked -- 11am and 4pm are
+     both "not now", and it put a seventeen-mile brewery above one down the road
+     for the sole reason that it opens at eleven. Once we know where the reader
+     is, distance is the fact that actually separates these, so it leads and the
+     clock breaks the tie. With no location we have nothing better than the
+     clock, and we keep it. */
+  if (sort === "soonest" && row.group === GROUP.UPCOMING && row.hasOrigin) {
+    /* The DAY still leads, because the feed prints a header per day and sorting
+       across days would interleave them and repeat the headers. Inside one day,
+       distance decides. */
+    return (
+      row.group * 100000 +
+      row.hit.dayAhead * 12000 +
+      /* A venue we have no coordinates for sorts last inside its day, at the
+         cap. We cannot say it is near, and 2,100 of 2,900 venues have no
+         coordinates yet -- floating all of them above the ones we CAN place
+         would undo the whole point of asking for a location. */
+      Math.min(row.miles ?? 199, 199) * 60 +
+      (100 - Math.min(value, 100)) / 10 +
+      conf / 10
+    );
+  }
+
   if (sort === "nearest") {
     return row.group * 100000 + (row.miles ?? 999) * 100 + conf;
   }
@@ -288,16 +314,25 @@ export function score(row, { sort = "soonest" } = {}) {
     return row.group * 100000 + (100 - Math.min(value, 100)) * 100 + drive + conf;
   }
   // "soonest" -- the default, and the one that answers "where can I go now".
+
+  /* Bucketed, not raw. Nobody chooses between "starts at 4:00" and "starts at
+     4:20" -- they are the same plan -- but raw minutes made that 200 points of
+     ranking, which no realistic distance could overcome, so an identical deal
+     seventeen miles away outranked one down the street. Rounding start times
+     into half-hours says the true thing: within the same part of the evening,
+     the nearer bar is the better answer. */
   const shortfall = row.hit.live
     ? ENOUGH_MINUTES - Math.min(usableMinutes(row.hit, row.driveMin), ENOUGH_MINUTES)
-    : row.hit.startsIn;
-  return (
-    row.group * 100000 +
-    shortfall * TIME_WEIGHT +
-    drive * DRIVE_WEIGHT +
-    (100 - Math.min(value, 100)) +
-    conf
+    : Math.floor(row.hit.startsIn / START_BUCKET) * START_BUCKET;
+  /* Clamped so a row can never score its way into the NEXT group's band. A
+     window seven days out is 10,080 minutes of shortfall, which at TIME_WEIGHT
+     is 100,800 -- past the 100,000 a group is worth -- so a far-off row could
+     sort below an unreachable one and split its own section header in two. */
+  const within = Math.min(
+    99999,
+    shortfall * TIME_WEIGHT + drive * DRIVE_WEIGHT + (100 - Math.min(value, 100)) + conf
   );
+  return row.group * 100000 + within;
 }
 
 /* ---- the one call the app makes --------------------------------------- */
@@ -323,7 +358,7 @@ export function buildFeed(venues, at, { zone = null, filter = "all", sort = "soo
     if (!v.deals || !v.deals.length) {
       if (filter === "all") {
         rows.push({
-          v, deal: null, hit: null, miles, driveMin,
+          v, deal: null, hit: null, miles, driveMin, hasOrigin: origin != null,
           confidence: "unknown", ageDays: null, group: GROUP.UNKNOWN,
         });
       }
@@ -339,7 +374,7 @@ export function buildFeed(venues, at, { zone = null, filter = "all", sort = "soo
       const hit = nextOccurrence(deal, at, horizonDays);
       if (!hit) continue;
       rows.push({
-        v, deal, hit, miles, driveMin,
+        v, deal, hit, miles, driveMin, hasOrigin: origin != null,
         confidence,
         ageDays: ageDays(deal, at),
         group: groupFor(hit, driveMin),

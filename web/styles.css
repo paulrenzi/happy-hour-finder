@@ -345,6 +345,11 @@ input[type=range] { width: 100%; height: var(--tap); accent-color: var(--accent)
 
 .fine { margin: 12px 0 0; font-size: 14px; color: var(--muted); line-height: 1.5; }
 .fine:empty { display: none; }
+.fineFold > summary { cursor: pointer; color: var(--fg); font-weight: 600; list-style: none; }
+.fineFold > summary::-webkit-details-marker { display: none; }
+.fineFold > summary::after { content: " be"; }
+.fineFold[open] > summary::after { content: " b4"; }
+.fineFold > span { display: block; margin-top: 6px; }
 
 .meta {
   display: flex; justify-content: space-between; align-items: baseline; gap: 10px;

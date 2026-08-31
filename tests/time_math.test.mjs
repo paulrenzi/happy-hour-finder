@@ -249,6 +249,65 @@ test("but a good deal nearby beats a longer one across the county", () => {
   assert.equal(rows[0].v.id, "close");
 });
 
+test("inside a future day, the nearer venue leads -- opening earliest is not urgency", () => {
+  /* Paul, live on the phone: a brewery seventeen miles away outranked a bar
+     down the street in the Tomorrow section, for the sole reason that it opened
+     at 11am. Another day is not an urgency -- 11am and 4pm are both "not now",
+     and once we know where the reader is standing, distance is the fact that
+     actually separates them. */
+  const farEarly = {
+    id: "farEarly", name: "Far Early", zone_id: "z", lat: 39.91743, lng: -75.38833,
+    deals: [{ ...HH, windows: [{ dow: 6, start: "11:00", end: "14:00" }] }],
+  };
+  const nearLate = {
+    id: "nearLate", name: "Near Late", zone_id: "z", lat: 40.089, lng: -75.396,
+    deals: [{ ...HH, windows: [{ dow: 6, start: "16:00", end: "18:00" }] }],
+  };
+  const rows = buildFeed([farEarly, nearLate], FRI_5PM, {
+    origin: { lat: 40.089, lng: -75.396 },
+  });
+  assert.equal(rows[0].group, GROUP.UPCOMING);
+  assert.equal(rows[0].v.id, "nearLate");
+
+  // With no location we have nothing better than the clock, and we keep it.
+  const blind = buildFeed([farEarly, nearLate], FRI_5PM, {});
+  assert.equal(blind[0].v.id, "farEarly");
+});
+
+test("a venue we cannot place does not outrank one we can", () => {
+  // 2,100 of 2,900 venues have no coordinates. Floating every one of them above
+  // the bars we CAN place would undo the whole point of asking for a location.
+  const placeless = {
+    id: "placeless", name: "Placeless", zone_id: "z",
+    deals: [{ ...HH, windows: [{ dow: 6, start: "11:00", end: "14:00" }] }],
+  };
+  const placed = {
+    id: "placed", name: "Placed", zone_id: "z", lat: 40.089, lng: -75.396,
+    deals: [{ ...HH, windows: [{ dow: 6, start: "16:00", end: "18:00" }] }],
+  };
+  const rows = buildFeed([placeless, placed], FRI_5PM, {
+    origin: { lat: 40.089, lng: -75.396 },
+  });
+  assert.equal(rows[0].v.id, "placed");
+});
+
+test("a row seven days out never scores into the next group's band", () => {
+  /* The score is group * 100000 plus a within-group term. A window seven days
+     away is 10,080 minutes of shortfall, which unclamped is 100,800 -- past the
+     100,000 a group is worth -- so it sorted below an UNREACHABLE row and split
+     its own day's section header in two. */
+  const weekOut = {
+    id: "weekOut", name: "Week Out", zone_id: "z",
+    deals: [{ ...HH, windows: [{ dow: 5, start: "11:00", end: "14:00" }] }],
+  };
+  const rows = buildFeed([weekOut], FRI_5PM, {});
+  assert.equal(rows[0].group, GROUP.UPCOMING);
+  assert.ok(
+    score(rows[0]) < (GROUP.UPCOMING + 1) * 100000,
+    `score ${score(rows[0])} leaked into the group above`
+  );
+});
+
 test("a live deal that ends before you could arrive sorts to the bottom", () => {
   const fleeting = {
     id: "fleeting", name: "Fleeting", zone_id: "z", lat: 39.91743, lng: -75.38833,

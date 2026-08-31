@@ -640,6 +640,28 @@ function photoLane(file) {
   openSheet();
 }
 
+/* Fine print, folded.
+
+   A card's job is to say what the deal is and when. One venue's menu carries
+   592 characters of promotional small print -- legally part of the offer, so we
+   do not drop it -- and printed in full it buried every card under it. Long
+   text gets a "Details" toggle; short text (which is nearly all of it) is
+   printed as it always was, because a toggle over one line is worse than the
+   line. */
+const FINE_FOLD_CHARS = 150;
+
+function setFine(node, text) {
+  if (!text) return;
+  if (text.length <= FINE_FOLD_CHARS) {
+    node.textContent = text;
+    return;
+  }
+  const details = el("details", "fineFold");
+  const summary = el("summary", null, "Details");
+  details.append(summary, el("span", null, text));
+  node.append(details);
+}
+
 function card(row, at) {
   const { v, deal, hit } = row;
   const node = $("#cardTpl").content.cloneNode(true);
@@ -693,7 +715,7 @@ function card(row, at) {
     const usable = usableMinutes(hit, row.driveMin);
     if (usable < 30) fine = `About ${fmtMins(usable)} of it left by the time you arrive. ` + fine;
   }
-  $(".fine", node).textContent = fine.trim();
+  setFine($(".fine", node), fine.trim());
 
   const conf = $(".conf", node);
   conf.classList.add(row.confidence);
@@ -1196,6 +1218,18 @@ async function boot() {
 
   // Keep "ends in" honest while the page sits open, but only in live mode.
   setInterval(() => isNow() && render(), 30000);
+  /* A timer is not enough. A backgrounded tab is throttled, a laptop that
+     sleeps stops it dead, and a tab Chrome discarded and restored comes back
+     painted with whatever the board said hours ago -- a 3-6pm window still
+     reading "Live now" at half past seven. Whenever the page becomes visible
+     again, it is a page of unknown age: re-render before the reader believes
+     any of it. */
+  const restamp = () => isNow() && render();
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) restamp();
+  });
+  window.addEventListener("pageshow", restamp);
+  window.addEventListener("focus", restamp);
   // And pick up anything approved since this page loaded. The endpoint is
   // cached for 30s, so this is cheap and a new approval lands within a minute
   // on a page nobody has touched.
