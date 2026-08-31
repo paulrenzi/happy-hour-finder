@@ -65,7 +65,7 @@
   {
    "id": "130467",
    "lid": "130467",
-   "slug": "dave-buster-s-king-of-prussia-king-of-prussia",
+   "slug": "130467",
    "name": "Dave & Buster's King of Prussia",
    "address": "310 Goddard Blvd Ste 200, King Of Prussia PA 19406",
    "zone_id": "king_of_prussia",
@@ -107,17 +107,74 @@
        "dow": 5,
        "start": "17:00",
        "end": "19:00"
+      },
+      {
+       "dow": 7,
+       "start": "22:00",
+       "end": "24:00"
+      },
+      {
+       "dow": 1,
+       "start": "22:00",
+       "end": "24:00"
+      },
+      {
+       "dow": 2,
+       "start": "22:00",
+       "end": "24:00"
+      },
+      {
+       "dow": 3,
+       "start": "22:00",
+       "end": "24:00"
+      },
+      {
+       "dow": 4,
+       "start": "22:00",
+       "end": "24:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "Watermelon Rita",
+       "price_usd": 6
+      },
+      {
+       "category": "cocktail",
+       "label": "Moonshine LIT",
+       "price_usd": 7
+      },
+      {
+       "category": "wine",
+       "label": "Glass of house wine",
+       "price_usd": 7
+      },
+      {
+       "category": "cocktail",
+       "label": "Dangerous Waters",
+       "price_usd": 7
+      },
+      {
+       "category": "cocktail",
+       "label": "Henny's Strawberry Nirvana",
+       "price_usd": 8
+      },
+      {
+       "category": "draft",
+       "label": "22oz domestic draft",
+       "price_usd": 5
+      }
+     ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
-     "verified_by": "auto_extract",
+     "last_verified_at": "2026-08-31",
+     "verified_by": "photo_submission",
      "source": {
-      "kind": "venue_site",
-      "url": "http://www.daveandbusters.com/us/en/about/locations/king-of-prussia",
-      "quote": "Swing by with your crew during Happy Hour to save on brand-new cocktails, classic faves, 22oz domestic drafts & house wine. Available Mon\u2013Fri from 5\u20137PM & Sun\u2013Thu from 10PM\u201312PM.*"
-     }
+      "kind": "photo",
+      "photo_id": "89f3ff46-44ce-4726-a7f3-6ddca786976a",
+      "submitted": "2026-08-31T21:58:23.288Z"
+     },
+     "fine_print": "*PROMOTIONAL. Offer begins 6/2/25. Includes 22 oz. select domestic draft beer, $7 glass of wine, $6 Watermelon Rita, $7 Moonshine LIT, $7 Dangerous Waters Island Punch and $8 Henny's Strawberry Nirvana during Happy Hour and Late-Night Happy hour in select Dave & Buster's locations. Times and offers vary by location. Offer may be modified or end at any time without notice. Offer available in store only, and not available on to-go orders. Must be at least 21 years old to consume alcohol. Please drink responsibly. Other restrictions may apply. Void where prohibited. See store for details."
     }
    ]
   },

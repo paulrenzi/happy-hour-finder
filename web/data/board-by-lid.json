@@ -1,4 +1,300 @@
 {
+ "109967": {
+  "name": "BOTLD",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 6,
+      "start": "14:00",
+      "end": "16:00"
+     },
+     {
+      "dow": 7,
+      "start": "14:00",
+      "end": "16:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "130467": {
+  "name": "Dave & Buster's King of Prussia",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 2,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 3,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 4,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 5,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 7,
+      "start": "22:00",
+      "end": "24:00"
+     },
+     {
+      "dow": 1,
+      "start": "22:00",
+      "end": "24:00"
+     },
+     {
+      "dow": 2,
+      "start": "22:00",
+      "end": "24:00"
+     },
+     {
+      "dow": 3,
+      "start": "22:00",
+      "end": "24:00"
+     },
+     {
+      "dow": 4,
+      "start": "22:00",
+      "end": "24:00"
+     }
+    ],
+    "source": {
+     "kind": "photo"
+    }
+   }
+  ]
+ },
+ "72540": {
+  "name": "Fogo de Ch\u00e3o",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 2,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 3,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 4,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 5,
+      "start": "16:30",
+      "end": "18:30"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "49114": {
+  "name": "MORTON'S OF CHICAGO",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:30"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:30"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:30"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:30"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:30"
+     },
+     {
+      "dow": 7,
+      "start": "16:00",
+      "end": "18:30"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "92272": {
+  "name": "North Italia",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "128897": {
+  "name": "PALADAR LATIN KITCHEN & RUM BAR",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:30"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:30"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:30"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:30"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:30"
+     },
+     {
+      "dow": 7,
+      "start": "20:30",
+      "end": "22:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "39702": {
+  "name": "Sullivan's Steakhouse",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "15:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "115054": {
   "name": "Amada",
   "deals": [
@@ -5061,277 +5357,6 @@
       "dow": 7,
       "start": "13:00",
       "end": "15:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "109967": {
-  "name": "BOTLD",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 6,
-      "start": "14:00",
-      "end": "16:00"
-     },
-     {
-      "dow": 7,
-      "start": "14:00",
-      "end": "16:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "130467": {
-  "name": "Dave & Buster's King of Prussia",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "17:00",
-      "end": "19:00"
-     },
-     {
-      "dow": 2,
-      "start": "17:00",
-      "end": "19:00"
-     },
-     {
-      "dow": 3,
-      "start": "17:00",
-      "end": "19:00"
-     },
-     {
-      "dow": 4,
-      "start": "17:00",
-      "end": "19:00"
-     },
-     {
-      "dow": 5,
-      "start": "17:00",
-      "end": "19:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "72540": {
-  "name": "Fogo de Ch\u00e3o",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:30",
-      "end": "18:30"
-     },
-     {
-      "dow": 2,
-      "start": "16:30",
-      "end": "18:30"
-     },
-     {
-      "dow": 3,
-      "start": "16:30",
-      "end": "18:30"
-     },
-     {
-      "dow": 4,
-      "start": "16:30",
-      "end": "18:30"
-     },
-     {
-      "dow": 5,
-      "start": "16:30",
-      "end": "18:30"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "49114": {
-  "name": "MORTON'S OF CHICAGO",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:30"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:30"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:30"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:30"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:30"
-     },
-     {
-      "dow": 7,
-      "start": "16:00",
-      "end": "18:30"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "92272": {
-  "name": "North Italia",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "128897": {
-  "name": "PALADAR LATIN KITCHEN & RUM BAR",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:30"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:30"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:30"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:30"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:30"
-     },
-     {
-      "dow": 7,
-      "start": "20:30",
-      "end": "22:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "39702": {
-  "name": "Sullivan's Steakhouse",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "15:00",
-      "end": "18:00"
      }
     ],
     "source": {
