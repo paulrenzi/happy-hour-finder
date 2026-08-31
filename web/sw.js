@@ -5,7 +5,7 @@
    changes means the precache below is never refreshed. data/index.json is precached,
    so a stale hhf-v4 kept serving an old zone list -- King of Prussia read 1 on
    devices while the server had said 3 for hours. */
-const CACHE = "hhf-2026-08-15-169-74999928";
+const CACHE = "hhf-2026-08-31-169-2a408fcd";
 const SHELL = [
   "./", "index.html", "app.js", "lib.js", "styles.css", "manifest.json",
   "data/index.json", "img/hero-taproom.jpg", "img/icon-192.png",

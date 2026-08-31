@@ -30,14 +30,21 @@ cd worker
 wrangler secret put ADMIN_TOKEN            # `openssl rand -hex 32`
 wrangler secret put IP_SALT                # `openssl rand -hex 16`
 wrangler deploy
+
+# Wrangler needs BOTH env vars with an account-scoped token: with only
+# CLOUDFLARE_API_TOKEN set it calls /memberships and dies "Authentication
+# failed (status: 400) [code: 9106]". Also export:
+#   CLOUDFLARE_ACCOUNT_ID=83f33c67294ca2f2f0869b63c1663b0e
 ```
 
 `wrangler deploy` prints the live URL. Two places need it, and they must match:
 
-1. `web/app.js` → `SUBMIT_API`. It is currently set to a **guess**
-   (`https://hhf-submit.paulrenzi.workers.dev`) because the subdomain is only
-   known once you have deployed. If it is wrong the Send button fails with
-   "Couldn't reach us" and nothing else on the site breaks.
+1. `web/app.js` → `SUBMIT_API`. Now `https://hhf-submit.paulmichaelrenzi.workers.dev`
+   (deployed 2026-08-31). It was a **guess** — `paulrenzi`, not the account's
+   real subdomain `paulmichaelrenzi` — for as long as the Worker went
+   undeployed, and a wrong value here fails the Send button with a network
+   error while nothing else on the site breaks. That is exactly how it read
+   from a phone: "Couldn't reach us", on full 5G.
 2. `happy-hour-finder/.env` (this repo's own — never another repo's):
 
    ```
@@ -46,6 +53,13 @@ wrangler deploy
    ```
 
 Check it with `curl https://.../health` → `{"ok":true,"service":"hhf-submit"}`.
+
+**Photos live in KV, not R2.** R2 is not enabled on this Cloudflare account —
+creating the bucket returns code 10042, "Please enable R2 through the
+Cloudflare Dashboard", which is a billing opt-in nobody can do from a script.
+The Worker keeps both paths (`putPhoto`/`getPhoto`) and uses whichever binding
+exists, so switching to R2 later is: enable it, create `hhf-photos`, uncomment
+the `r2_buckets` block in `wrangler.toml`, copy existing keys across, redeploy.
 
 ## Running the queue
 

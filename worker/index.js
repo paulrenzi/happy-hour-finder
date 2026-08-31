@@ -190,7 +190,7 @@ async function submit(request, env, headers) {
   const ext = contentType === "image/png" ? "png" : contentType === "image/webp" ? "webp" : "jpg";
   const key = `submissions/${day}/${id}.${ext}`;
 
-  await env.PHOTOS.put(key, buf, { httpMetadata: { contentType } });
+  await putPhoto(env, key, buf, contentType);
   await env.DB.batch([
     env.DB.prepare(
       `INSERT INTO submissions
@@ -205,6 +205,34 @@ async function submit(request, env, headers) {
   ]);
 
   return json({ id, status: "pending" }, 201, headers);
+}
+
+/* ---- photo storage ------------------------------------------------------
+
+   R2 is the intended home and the code below prefers it. It is not enabled on
+   this account, so the live binding is PHOTOS_KV -- a KV namespace, private
+   exactly like the bucket was: nothing here is ever served to the public, only
+   read back by the admin endpoint under the bearer. A submission is a bounded
+   camera image (MAX_BYTES 8 MB, and the app re-encodes to ~300 KB before it
+   leaves the phone), well inside KV's 25 MB value ceiling.
+
+   Enabling R2 later is a one-line binding change in wrangler.toml -- no code
+   moves, because both paths already exist here. Old KV objects would need
+   copying across; until then, whichever binding is present is the store. */
+async function putPhoto(env, key, buf, contentType) {
+  if (env.PHOTOS) {
+    await env.PHOTOS.put(key, buf, { httpMetadata: { contentType } });
+    return;
+  }
+  await env.PHOTOS_KV.put(key, buf, { metadata: { contentType } });
+}
+
+async function getPhoto(env, key) {
+  if (env.PHOTOS) {
+    const obj = await env.PHOTOS.get(key);
+    return obj ? obj.body : null;
+  }
+  return await env.PHOTOS_KV.get(key, { type: "stream" });
 }
 
 /* ---- admin ------------------------------------------------------------- */
@@ -234,9 +262,9 @@ async function admin(request, env, url, headers) {
       .bind(id)
       .first();
     if (!row) return json({ error: "no such submission" }, 404, headers);
-    const obj = await env.PHOTOS.get(row.r2_key);
-    if (!obj) return json({ error: "photo missing from storage" }, 404, headers);
-    return new Response(obj.body, {
+    const body = await getPhoto(env, row.r2_key);
+    if (!body) return json({ error: "photo missing from storage" }, 404, headers);
+    return new Response(body, {
       headers: { ...headers, "Content-Type": row.content_type, "Cache-Control": "private, no-store" },
     });
   }

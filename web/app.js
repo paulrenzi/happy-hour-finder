@@ -418,7 +418,7 @@ function submitHours(v) {
 
 /* The Worker (worker/index.js). Everything else on this site is static files;
    this is the one endpoint that writes. */
-const SUBMIT_API = "https://hhf-submit.paulrenzi.workers.dev";
+const SUBMIT_API = "https://hhf-submit.paulmichaelrenzi.workers.dev";
 
 /* Re-encode to a bounded JPEG before upload.
 
@@ -587,10 +587,15 @@ function photoLane(file) {
             "and it'll show the date, same as every other window on this site.")
       );
     } catch {
-      // Offline in a basement bar is the normal case, not the exception.
-      status.textContent =
-        "Couldn't reach us — you might be on bad signal. The photo is still in " +
-        "your camera roll; try again when you have a bar or two.";
+      // Offline in a basement bar is the normal case -- but it is not the only
+      // way this throws, and blaming the signal when the endpoint itself is
+      // down sends the submitter to go stand by a window for nothing. The
+      // browser knows which one it is, so say which one it is.
+      status.textContent = navigator.onLine
+        ? "We can't reach the server right now — that's on us, not your signal. " +
+          "The photo is still in your camera roll; please try again later."
+        : "You're offline — the photo is still in your camera roll; try again " +
+          "when you have a bar or two.";
       send.disabled = false;
     }
   });

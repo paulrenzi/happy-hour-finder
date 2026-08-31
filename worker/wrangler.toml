@@ -7,19 +7,29 @@ compatibility_date = "2024-09-23"
 [vars]
 FRONTEND_ORIGIN = "https://paulrenzi.github.io"
 
-# Menu photos, one object per submission. Private: nothing is served from R2 to
-# the public, because an unreviewed submission is an arbitrary camera image
-# from a stranger and must not become a URL anyone can hand around.
-[[r2_buckets]]
-binding = "PHOTOS"
-bucket_name = "hhf-photos"
+# Menu photos, one object per submission. Private: nothing is served to the
+# public, because an unreviewed submission is an arbitrary camera image from a
+# stranger and must not become a URL anyone can hand around.
+#
+# R2 is not enabled on this account (the API refuses with "Please enable R2
+# through the Cloudflare Dashboard", code 10042 -- it is a dashboard opt-in
+# that adds a billing subscription, so it is Paul's call, not a deploy step).
+# KV holds the photos instead; the Worker supports both and picks whichever
+# binding exists. To move to R2: enable it, create the bucket, uncomment the
+# r2_buckets block, copy any existing keys across, redeploy.
+#
+# [[r2_buckets]]
+# binding = "PHOTOS"
+# bucket_name = "hhf-photos"
+[[kv_namespaces]]
+binding = "PHOTOS_KV"
+id = "66b5eaaf6b094c64b8647a60ec0207af"
 
 # Submission rows + the daily per-submitter counter.
-# Create with: wrangler d1 create hhf  ->  paste the id below.
 [[d1_databases]]
 binding = "DB"
 database_name = "hhf"
-database_id = "PASTE_D1_DATABASE_ID_HERE"
+database_id = "4acff9cc-d2e3-4130-acec-347652effe9d"
 
 # Secrets, set with `wrangler secret put NAME` -- never in this file:
 #   ADMIN_TOKEN      the review/extraction bearer, read by ingest/*.py
