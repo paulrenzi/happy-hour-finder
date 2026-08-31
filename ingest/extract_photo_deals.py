@@ -122,11 +122,20 @@ def env_file():
     return out
 
 
+USER_AGENT = "happy-hour-finder-ingest/1.0 (+https://paulrenzi.github.io/happy-hour-finder/)"
+
+
 def api(env, path, method="GET", body=None):
     req = urllib.request.Request(
         env["SUBMIT_API"].rstrip("/") + path,
         method=method,
-        headers={"X-Admin-Token": env["ADMIN_TOKEN"]},
+        headers={
+            "X-Admin-Token": env["ADMIN_TOKEN"],
+            # Cloudflare answers the default Python-urllib agent with a 1010
+            # block, so every admin call -- and therefore the whole review
+            # pipeline -- came back 403 before this line existed.
+            "User-Agent": USER_AGENT,
+        },
     )
     if body is not None:
         req.add_header("Content-Type", "application/json")
