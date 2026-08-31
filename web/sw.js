@@ -5,7 +5,7 @@
    changes means the precache below is never refreshed. data/index.json is precached,
    so a stale hhf-v4 kept serving an old zone list -- King of Prussia read 1 on
    devices while the server had said 3 for hours. */
-const CACHE = "hhf-2026-08-31-169-2a408fcd";
+const CACHE = "hhf-2026-08-31-169-f2316e27";
 const SHELL = [
   "./", "index.html", "app.js", "lib.js", "styles.css", "manifest.json",
   "data/index.json", "img/hero-taproom.jpg", "img/icon-192.png",
@@ -39,8 +39,19 @@ self.addEventListener("activate", (e) => {
 self.addEventListener("fetch", (e) => {
   if (e.request.method !== "GET") return;
   // Network first so a rebuilt bundle lands, cache as the offline floor.
+  //
+  // 'no-cache' revalidates instead of trusting the HTTP cache: GitHub Pages
+  // serves the shell with max-age=600, so a plain fetch() here can be answered
+  // from Safari's own cache and "network first" quietly becomes "ten minutes
+  // stale". That is not theoretical -- a deploy fixing the submit endpoint
+  // read as still-broken on a phone because the phone re-ran the old app.js.
+  // Revalidation costs a 304 when nothing changed, and is the difference
+  // between a fix landing now and landing whenever the cache feels like it.
+  const req = new URL(e.request.url).origin === self.location.origin
+    ? new Request(e.request, { cache: "no-cache" })
+    : e.request;
   e.respondWith(
-    fetch(e.request)
+    fetch(req)
       .then((res) => {
         // A 404 mid-deploy is not an offline floor worth keeping.
         if (res.ok && res.type === "basic") {

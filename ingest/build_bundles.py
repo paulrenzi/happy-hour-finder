@@ -60,9 +60,24 @@ def decay(confidence, verified_at, today):
     return confidence, age
 
 
-# The precached shell files, minus sw.js itself -- hashing the file being stamped
-# would never reach a fixed point. data/index.json is covered by the venue count.
+# The precached shell files. data/index.json is covered by the venue count.
+#
+# sw.js is hashed too, but through _sw_source_for_digest, which blanks the CACHE
+# line before hashing: the naive version has no fixed point, because stamping the
+# name changes the bytes that produced it. Leaving it out entirely was the other
+# way to break the tie, and it left a hole -- a deploy that changes ONLY the
+# service worker (a caching-strategy fix, say) kept the previous cache name, so
+# activate() deleted nothing and every installed device kept serving the old
+# precached shell out from under the new worker.
 SHELL_FILES = ("index.html", "app.js", "lib.js", "styles.css", "manifest.json")
+
+CACHE_LINE = re.compile(r'const CACHE = "[^"]*";')
+
+
+def _sw_source_for_digest():
+    """sw.js with its own cache name neutralised, so hashing it terminates."""
+    with open(os.path.join(REPO, "web", "sw.js"), encoding="utf-8") as fh:
+        return CACHE_LINE.sub('const CACHE = "";', fh.read()).encode("utf-8")
 
 
 def shell_digest():
@@ -78,6 +93,7 @@ def shell_digest():
     for name in SHELL_FILES:
         with open(os.path.join(REPO, "web", name), "rb") as fh:
             h.update(fh.read())
+    h.update(_sw_source_for_digest())
     return h.hexdigest()[:8]
 
 

@@ -19,7 +19,7 @@ import urllib.error
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(REPO, "ingest"))
 
-from build_bundles import decay, shell_digest, sw_cache_name  # noqa: E402
+from build_bundles import CACHE_LINE, decay, shell_digest, sw_cache_name  # noqa: E402
 import crawl_sites  # noqa: E402
 from crawl_roundups import fresh_enough, mentions, published_date, venue_index  # noqa: E402
 from crawl_sites import candidate_links, crawl_one, quotes, registrable, visible_text  # noqa: E402
@@ -268,6 +268,38 @@ class ServiceWorkerCache(unittest.TestCase):
         finally:
             open(path, "wb").write(original)
         self.assertEqual(shell_digest(), before)
+
+    def test_a_service_worker_only_change_still_evicts(self):
+        # sw.js used to sit OUTSIDE the digest, because hashing the file you are
+        # about to stamp has no fixed point. The cost of leaving it out: a deploy
+        # that changes only the caching strategy kept the old cache name, so
+        # activate() deleted nothing and the new worker served the old precached
+        # shell. _sw_source_for_digest blanks the CACHE line before hashing,
+        # which breaks the tie without reopening the hole.
+        before = shell_digest()
+        path = os.path.join(REPO, "web", "sw.js")
+        original = open(path, "rb").read()
+        try:
+            open(path, "wb").write(original + b"\n// probe\n")
+            self.assertNotEqual(shell_digest(), before)
+        finally:
+            open(path, "wb").write(original)
+        self.assertEqual(shell_digest(), before)
+
+    def test_stamping_the_service_worker_reaches_a_fixed_point(self):
+        # The reason sw.js was excluded in the first place. Writing the name in
+        # must not change the name -- otherwise every build restamps forever and
+        # every device evicts its whole shell on every deploy.
+        path = os.path.join(REPO, "web", "sw.js")
+        original = open(path, "rb").read()
+        try:
+            first = shell_digest()
+            src = open(path, encoding="utf-8").read()
+            stamped = CACHE_LINE.sub('const CACHE = "hhf-2026-01-01-1-%s";' % first, src)
+            open(path, "w", encoding="utf-8", newline="").write(stamped)
+            self.assertEqual(shell_digest(), first)
+        finally:
+            open(path, "wb").write(original)
 
 
 class DecayLadder(unittest.TestCase):
