@@ -44,7 +44,9 @@ from extract_deals import (  # noqa: E402
 )
 from extract_prices_llm import verify  # noqa: E402
 from fetch_og_images import asset_allowed, css_images, inline_images, og_image  # noqa: E402
-from fetch_venue_photos import IMG_DIR, absorbed_lids, photo_dest  # noqa: E402
+from fetch_venue_photos import (  # noqa: E402
+    IMG_DIR, absorbed_lids, name_agrees, photo_dest,
+)
 from geocode_venues import split_address, strip_range, strategies  # noqa: E402
 from validate_pa import validate_deal, validate_food_combo_count  # noqa: E402
 
@@ -1124,6 +1126,32 @@ class DealExtraction(unittest.TestCase):
         # attached to say why.
         d = deal(windows=windows_from("Happy Hour Saturday & Sunday: 10am - 2:30pm"))
         self.assertTrue(any("4h/day" in e for e in validate_deal(d)))
+
+
+class PlacesNameAgreement(unittest.TestCase):
+    """A right address is not a right subject."""
+
+    def place(self, name):
+        return {"displayName": {"text": name}}
+
+    def test_the_apartment_block_a_bar_sits_inside_is_refused(self):
+        # Justop is on the ground floor of 1720 Fairmount Ave, so the address
+        # matches perfectly and Google returns the building. A photograph of an
+        # apartment block on a bar's card is read as the whole board being
+        # careless -- which is what it would be.
+        venue = {"name": "Justop", "plcb_name": "JUSTOP LLC",
+                 "address": "1720 Fairmount Ave, Philadelphia PA 19130"}
+        self.assertFalse(name_agrees(venue, self.place("1720 Fairmount Luxury Apartments")))
+
+    def test_the_same_bar_under_a_longer_google_name_is_kept(self):
+        venue = {"name": "Philadelphia Live! Hotel", "plcb_name": "LIVE CASINO"}
+        self.assertTrue(name_agrees(venue, self.place("Live! Casino & Hotel Philadelphia")))
+        venue = {"name": "Brickside Grille", "plcb_name": "BRICKSIDE GRILLE"}
+        self.assertTrue(name_agrees(venue, self.place("Brickside Grille")))
+
+    def test_two_names_sharing_only_a_business_type_do_not_agree(self):
+        venue = {"name": "The Black Horse Tavern", "plcb_name": "BLACK HORSE"}
+        self.assertFalse(name_agrees(venue, self.place("Wellington Square Tavern")))
 
 
 class PhotoSourcing(unittest.TestCase):

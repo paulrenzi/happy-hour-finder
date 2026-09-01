@@ -19,6 +19,7 @@ import argparse
 import glob
 import json
 import os
+import re
 import sys
 import time
 
@@ -82,6 +83,41 @@ def resolve(key, venue):
     if not places or not places[0].get("photos"):
         return None
     return places[0]
+
+
+# Words that identify a business type, not a business. Two names sharing only
+# these are not the same place.
+GENERIC = {
+    "bar", "bars", "grill", "grille", "cafe", "club", "hotel", "inn", "pub",
+    "tavern", "restaurant", "kitchen", "house", "brewing", "brewery", "company",
+    "the", "and", "llc", "inc", "philadelphia", "taproom", "lounge", "eatery",
+}
+
+
+def _tokens(text):
+    out = set()
+    for word in re.split(r"[^a-z0-9]+", (text or "").lower()):
+        if len(word) >= 4 and word not in GENERIC:
+            out.add(word)
+    return out
+
+
+def name_agrees(venue, place):
+    """Does the place Google returned carry OUR bar's name?
+
+    The address is not enough on its own and cannot be made enough: a bar on the
+    ground floor of an apartment block shares its street address with the block,
+    and Google returns the block. That is how a photo of "1720 Fairmount Luxury
+    Apartments" was downloaded for Justop -- right address, wrong subject, and
+    an apartment building on a bar's card is exactly the kind of thing a reader
+    counts against every other card on the board.
+
+    So: the two names must share one distinctive word. Checked BEFORE the photo
+    is downloaded, so a rejection costs the search only.
+    """
+    ours = _tokens(venue.get("name")) | _tokens(venue.get("plcb_name"))
+    theirs = _tokens(place.get("displayName", {}).get("text"))
+    return not ours or not theirs or bool(ours & theirs)
 
 
 def photo_dest(vid):
@@ -253,6 +289,11 @@ def from_board(args, key):
             continue
         if not place:
             print(f"[{n}/{len(todo)}] {lid:<8} {b['name'][:34]:<36} no photo on Places")
+            continue
+        if not name_agrees(b, place):
+            got = place.get("displayName", {}).get("text")
+            print(f"[{n}/{len(todo)}] {lid:<8} {b['name'][:34]:<36} "
+                  f"REFUSED -- Places returned {got!r}")
             continue
 
         photo = place["photos"][0]
