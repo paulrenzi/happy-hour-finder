@@ -45,50 +45,9 @@
       "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
      }
     }
-   ]
-  },
-  {
-   "id": "81482",
-   "lid": "81482",
-   "slug": "p-j-whelihan-s-pub-restaurant-oaks-81482",
-   "name": "P. J. Whelihan's Pub + Restaurant",
-   "address": "180B Mill Rd, Oaks PA 19456",
-   "zone_id": "collegeville_trappe",
-   "website": "https://www.pjspub.com/about.php?loc=Oaks",
-   "plcb_name": "PJ'S OAKS LLC",
-   "license_type": "Restaurant (Liquor)",
-   "lat": 40.1292498,
-   "lng": -75.4531135,
-   "geo_precision": "place",
-   "photo": {
-    "file": "img/venues/p-j-whelihan-s-pub-restaurant-oaks-81482.jpg",
-    "attribution": "Photo: P. J. Whelihan's Pub + Restaurant"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://www.pjspub.com/about.php?loc=Oaks",
-      "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
-     }
-    }
+   ],
+   "also_lids": [
+    "81482"
    ]
   },
   {

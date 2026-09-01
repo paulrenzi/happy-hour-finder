@@ -1101,58 +1101,9 @@
       "quote": "Happy Hour Join us weekdays from 3pm-7pm for Happy Hour"
      }
     }
-   ]
-  },
-  {
-   "id": "44268",
-   "lid": "44268",
-   "slug": "hard-rock-cafe-philadelphia-44268",
-   "name": "Hard Rock Cafe",
-   "address": "1201 Market St & 1113-31 Market St, Philadelphia PA 19107",
-   "zone_id": "center_city",
-   "website": "https://www.hardrockcafe.com/location/philadelphia/",
-   "plcb_name": "PHILADELPHIA MARRIOTT",
-   "license_type": "Hotel (Liquor)",
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "15:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 2,
-       "start": "15:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 3,
-       "start": "15:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 4,
-       "start": "15:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 5,
-       "start": "15:00",
-       "end": "19:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://www.hardrockcafe.com/location/philadelphia/",
-      "quote": "Happy Hour Join us weekdays from 3pm-7pm for Happy Hour"
-     }
-    }
+   ],
+   "also_lids": [
+    "44268"
    ]
   },
   {

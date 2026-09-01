@@ -65,67 +65,9 @@
       "quote": "HAPPY HOUR / Sunday - Friday: / 4:30pm - 6:30pm"
      }
     }
-   ]
-  },
-  {
-   "id": "61077",
-   "lid": "61077",
-   "slug": "amada-radnor",
-   "name": "Amada",
-   "address": "Radnor Financial Center 555 E Lancaster Ave, Radnor PA 19087",
-   "zone_id": "wayne_radnor",
-   "website": "https://www.amadarestaurant.com/amada-radnor/",
-   "plcb_name": "FLEMINGS PRIME STEAKHOUSE & WINE BAR",
-   "license_type": "Restaurant (Liquor)",
-   "photo": {
-    "file": "img/venues/amada-radnor.jpg",
-    "attribution": "Photo: Amada"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:30",
-       "end": "18:30"
-      },
-      {
-       "dow": 2,
-       "start": "16:30",
-       "end": "18:30"
-      },
-      {
-       "dow": 3,
-       "start": "16:30",
-       "end": "18:30"
-      },
-      {
-       "dow": 4,
-       "start": "16:30",
-       "end": "18:30"
-      },
-      {
-       "dow": 5,
-       "start": "16:30",
-       "end": "18:30"
-      },
-      {
-       "dow": 7,
-       "start": "16:30",
-       "end": "18:30"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://www.amadarestaurant.com/amada-radnor/",
-      "quote": "HAPPY HOUR / Sunday - Friday: / 4:30pm - 6:30pm"
-     }
-    }
+   ],
+   "also_lids": [
+    "61077"
    ]
   },
   {

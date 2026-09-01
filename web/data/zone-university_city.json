@@ -124,57 +124,9 @@
       "quote": "Happy Hour / Available Tues - Fri | 5 - 7pm / Quizzo Tuesdays"
      }
     }
-   ]
-  },
-  {
-   "id": "95445",
-   "lid": "95445",
-   "slug": "the-post-philadelphia-95445",
-   "name": "The Post",
-   "address": "129L S 30Th St, Philadelphia PA 19104",
-   "zone_id": "university_city",
-   "website": "https://thepostphl.com/",
-   "plcb_name": "WARRENHQ LLC",
-   "license_type": "Restaurant (Liquor)",
-   "photo": {
-    "file": "img/venues/the-post-philadelphia-95445.jpg",
-    "attribution": "Photo: The Post"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 2,
-       "start": "17:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 3,
-       "start": "17:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 4,
-       "start": "17:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 5,
-       "start": "17:00",
-       "end": "19:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://thepostphl.com/",
-      "quote": "Happy Hour / Available Tues - Fri | 5 - 7pm / Quizzo Tuesdays"
-     }
-    }
+   ],
+   "also_lids": [
+    "95445"
    ]
   },
   {

@@ -89,6 +89,15 @@ def main():
                  feed: document.querySelector("#feed").children.length,
                  kicker: document.querySelector("#sectionKicker").textContent,
                  overlay: document.body.innerText.includes("OVERLAY PROBE DRAFT"),
+                 // Every card that claims a happy hour, and its identity as a
+                 // READER sees it: the name, the town and the window. Nothing
+                 // compared the build's own count to what the page paints, so
+                 // one bar painting twice was invisible to us and obvious to
+                 // anyone scrolling.
+                 cards: [...document.querySelectorAll("#feed article.card")]
+                   .filter((c) => !c.classList.contains("card-unknown"))
+                   .map((c) => [".name", ".zone", ".ends"]
+                     .map((sel) => c.querySelector(sel)?.textContent).join(" | ")),
                })"""
         )
         browser.close()
@@ -107,11 +116,25 @@ def main():
     if not checks["overlay"]:
         bad.append("an approved deal from the live overlay never reached the page")
 
+    # The count the build declares, against the count the page paints. One
+    # overlay probe is added on top, and it is for a venue with no hours, so it
+    # is a card the bundles did not ship.
+    with open(os.path.join(WEB, "data", "index.json"), encoding="utf-8") as fh:
+        declared = sum(z["with_deals"] for z in json.load(fh)["zones"])
+    painted = len(checks["cards"])
+    if painted != declared + 1:
+        bad.append(f"the build ships {declared} venues with hours (+1 overlay probe) "
+                   f"and the page painted {painted} cards")
+    dupes = sorted({c for c in checks["cards"] if checks["cards"].count(c) > 1})
+    if dupes:
+        bad.append(f"the same bar is on the board twice: {dupes[:3]}")
+
     for line in bad:
         print(f"  FAIL {line}")
     if not bad:
         print(f"  ok   board painted: {checks['zones'] - 1} zones, "
-              f"{checks['feed']} feed rows, kicker {checks['kicker']!r}")
+              f"{checks['feed']} feed rows, {painted} deal cards and no bar twice, "
+              f"kicker {checks['kicker']!r}")
     return 1 if bad else 0
 
 

@@ -19,7 +19,8 @@ import urllib.error
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(REPO, "ingest"))
 
-from build_bundles import CACHE_LINE, decay, shell_digest, sw_cache_name  # noqa: E402
+from build_bundles import (CACHE_LINE, collapse_name_collisions, decay,  # noqa: E402
+                           norm_name, shell_digest, sw_cache_name)
 import crawl_sites  # noqa: E402
 from crawl_roundups import fresh_enough, mentions, published_date, venue_index  # noqa: E402
 from crawl_sites import candidate_links, crawl_one, quotes, registrable, visible_text  # noqa: E402
@@ -1584,3 +1585,64 @@ class TwoSchedulesOnOneLine(unittest.TestCase):
         # so it must not be handed the 9pm window on the next line.
         self.assertEqual(
             windows_from("Mon-Fri lunch 11-2pm and dinner 5-9pm / 9pm - 11pm"), [])
+
+
+class OneBarOneCard(unittest.TestCase):
+    """Two licences in one building, one of them wearing the other's name.
+
+    Six bars painted twice on the live board. The PLCB has a second licence at
+    the same address -- the Giant next door, the Marriott upstairs -- the name
+    match gave it the bar's trade name, and the crawl hung the bar's hours on
+    both. The signal that they are one bar is that both deals were read off the
+    SAME page.
+    """
+
+    def venue(self, lid, name, url, plcb=None, deals=True):
+        v = {"id": lid, "lid": lid, "name": name, "zone_id": "z",
+             "plcb_name": plcb or name, "deals": []}
+        if deals:
+            v["deals"] = [{"type": "happy_hour", "source": {"url": url}}]
+        return v
+
+    def test_the_same_page_under_the_same_name_is_one_bar(self):
+        a = self.venue("119303", "PJ Whelihan's", "https://pjspub.com/wynnewood")
+        b = self.venue("73040", "PJ Whelihan's", "https://pjspub.com/wynnewood",
+                       plcb="THE GIANT COMPANY LLC")
+        n = collapse_name_collisions({"z": [a, b]})
+        self.assertEqual(n, 1)
+        # One card keeps the hours; the other goes back to being a supermarket
+        # with no published window, and its licence rides along on the card so
+        # a correction quoting it still lands.
+        self.assertEqual(len(a["deals"]), 1)
+        self.assertEqual(b["deals"], [])
+        self.assertEqual(b["name"], "THE GIANT COMPANY LLC")
+        self.assertIn("73040", a["also_lids"])
+
+    def test_a_real_second_branch_keeps_its_card(self):
+        # Same name, same town, its OWN page: two real bars. Merging those is a
+        # far worse error than listing one twice, so the page has to agree.
+        a = self.venue("1", "P.J. Whelihan's", "https://pjspub.com/conshohocken")
+        b = self.venue("2", "P.J. Whelihan's", "https://pjspub.com/blue-bell")
+        self.assertEqual(collapse_name_collisions({"z": [a, b]}), 0)
+        self.assertTrue(a["deals"] and b["deals"])
+
+    def test_two_licences_merge_while_a_third_branch_is_left_alone(self):
+        # The case that made the first version of this merge nobody: asking
+        # what ALL THREE share finds nothing.
+        a = self.venue("117317", "P.J. Whelihan's", "https://pjspub.com/consho")
+        b = self.venue("69227", "P.J. Whelihan's", "https://pjspub.com/consho",
+                       plcb="WEIS MARKETS INC")
+        c = self.venue("50385", "P.J. Whelihan's Pub and Restaurant",
+                       "https://pjspub.com/blue-bell")
+        self.assertEqual(collapse_name_collisions({"z": [a, b, c]}), 1)
+        self.assertEqual(b["deals"], [])
+        self.assertTrue(c["deals"])
+
+    def test_punctuation_is_not_a_different_bar(self):
+        self.assertEqual(norm_name("PJ Whelihan's"),
+                         norm_name("P. J. Whelihan's Pub + Restaurant"))
+        self.assertNotEqual(norm_name("Amada"), norm_name("Armada"))
+
+
+if __name__ == "__main__":
+    unittest.main()

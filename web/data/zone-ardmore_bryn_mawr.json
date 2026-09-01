@@ -234,47 +234,9 @@
       "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
      }
     }
-   ]
-  },
-  {
-   "id": "73040",
-   "lid": "73040",
-   "slug": "pj-whelihan-s-wynnewood-73040",
-   "name": "PJ Whelihan's",
-   "address": "50 E Wynnewood Rd Unit #2, Wynnewood PA 19096",
-   "zone_id": "ardmore_bryn_mawr",
-   "website": "https://www.pjspub.com/about.php?loc=Wynnewood",
-   "plcb_name": "THE GIANT COMPANY LLC",
-   "license_type": "Restaurant (Liquor)",
-   "photo": {
-    "file": "img/venues/pj-whelihan-s-wynnewood-73040.jpg",
-    "attribution": "Photo: PJ Whelihan's"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://www.pjspub.com/about.php?loc=Wynnewood",
-      "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
-     }
-    }
+   ],
+   "also_lids": [
+    "73040"
    ]
   },
   {

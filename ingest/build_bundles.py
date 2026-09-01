@@ -41,6 +41,95 @@ def norm_addr(address):
     return (n.group(1) if n else "?", m.group(1) if m else "?")
 
 
+def norm_name(name):
+    """Two display names are the same bar's name if they differ only in the
+    punctuation a licensee typed: PJ Whelihan's / P.J. Whelihan's / P. J.
+    Whelihan's Pub + Restaurant all collapse to the same key."""
+    n = re.sub(r"[^a-z0-9]+", " ", (name or "").lower()).strip()
+    n = re.sub(r"\b(pub|restaurant|bar|grill|grille|tavern|cafe|and|the)\b", " ", n)
+    # Spaces go too: a licensee typing "PJ" and another typing "P. J." is the
+    # same three letters, and the source-page check below is what actually
+    # guards the merge.
+    return re.sub(r"[^a-z0-9]", "", n)
+
+
+def deal_sources(venue):
+    return {(d.get("source") or {}).get("url") for d in venue.get("deals", [])
+            if (d.get("source") or {}).get("url")}
+
+
+def collapse_name_collisions(by_zone):
+    """One bar, one card.
+
+    Six bars painted TWICE on the live board -- three P.J. Whelihan's, Hard Rock
+    Cafe, Amada, The Post. Not a rendering bug and not two branches: the PLCB
+    lists a SECOND licence in the same building (the Giant next door, the
+    Marriott upstairs, the cinema in the same plaza), the name/site match gave
+    that licence the bar's trade name, and the crawl then hung the bar's happy
+    hour on both. premises_key could not merge them because it is deliberately
+    strict -- Google gave them different place ids, and the licensee names
+    ("THE GIANT COMPANY LLC") do not agree.
+
+    So the merge happens here instead, where a much stronger signal exists: the
+    two rows carry the SAME name in the same zone AND their deals were read off
+    the SAME page. One web page is one bar's hours. The loser keeps its licence
+    row -- it is a real premises -- but gives up the trade name it was never
+    entitled to and the deals that belong next door, so it falls back to the
+    'hours unknown' list under its own licensee name. Its LID rides along in
+    also_lids, so a correction quoting it still lands on the right card.
+
+    Returns the number of collisions collapsed.
+    """
+    collapsed = 0
+    for venues in by_zone.values():
+        groups = {}
+        for v in venues:
+            if v.get("deals"):
+                groups.setdefault(norm_name(v["name"]), []).append(v)
+        for rows in groups.values():
+            if len(rows) < 2:
+                continue
+            # Sub-group by the page the hours were read off. Three P.J.
+            # Whelihan's share a zone: two are one bar in Conshohocken with two
+            # licences, the third is a real second branch in Blue Bell with its
+            # own page. Asking what ALL of them share finds nothing and merges
+            # nobody -- the question is which of them share a page.
+            by_page = {}
+            for v in rows:
+                for url in deal_sources(v):
+                    by_page.setdefault(url, []).append(v)
+            for page, same in by_page.items():
+                if len(same) < 2:
+                    # Same name, a different page. That can be two real
+                    # branches, and merging two real bars is far worse than
+                    # listing one twice.
+                    continue
+                collapsed += merge_rows(same)
+    return collapsed
+
+
+def merge_rows(rows):
+    """One winner keeps the card; the losers give back the trade name and the
+    deals, and ride along in also_lids. Returns how many were collapsed."""
+    rows = [v for v in rows if v.get("deals")]
+    if len(rows) < 2:
+        return 0
+    rows.sort(key=lambda v: (-len(v["deals"]), "photo" not in v,
+                             "website" not in v, str(v["id"])))
+    winner, losers = rows[0], rows[1:]
+    also = list(winner.get("also_lids") or [])
+    for v in losers:
+        print(f"  merged: {v['name']} ({v['id']}) into {winner['id']} "
+              f"-- same name, same source page")
+        also += [str(v.get("lid") or v["id"])] + list(v.get("also_lids") or [])
+        v["deals"] = []
+        v.pop("also_lids", None)
+        if v.get("plcb_name"):
+            v["name"] = v["plcb_name"]
+    winner["also_lids"] = sorted(set(also) - {str(winner.get("lid") or "")})
+    return len(losers)
+
+
 def decay(confidence, verified_at, today):
     """A deal never disappears, it demotes. SPEC section 6.
 
@@ -344,6 +433,8 @@ def main():
         v["deals"] = []
         by_zone.setdefault(b["zone_id"], []).append(v)
 
+    merged = collapse_name_collisions(by_zone)
+
     for venues in by_zone.values():
         # Deal-bearing first, then alphabetical: the bundle order is what the app
         # falls back to whenever two rows score the same.
@@ -457,6 +548,9 @@ def main():
           f"  ({rejected} rejected by validators, {hidden} decayed out)")
     print(f"{len(published)} venues ship, {len(dealful)} with a published window "
           f"({len(published) - len(dealful)} asking to be filled in)")
+    if merged:
+        print(f"  {merged} second licence(s) at a bar already on the board were "
+              f"collapsed into its card (one bar, one card)")
     if outside:
         print(f"  {outside} licensed venue(s) sit outside every zone and cannot be "
               f"reached in the UI -- add a zone in data/zones.json to surface them")
