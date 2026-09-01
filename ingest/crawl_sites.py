@@ -905,6 +905,10 @@ DARDEN_HOSTS = ("yardhouse.com", "seasons52.com", "eddiev.com",
                 "bahamabreeze.com", "longhornsteakhouse.com")
 # .../locations/pa/king-of-prussia/king-of-prussia-king-of-prussia-mall/8371
 DARDEN_NUM_RE = re.compile(r"/locations/(?:[^/]+/){2,3}(\d{3,6})(?:[?#]|$)")
+# The same shape, as the thing that says 'this is the platform' on a brand we
+# have never seen: a two-letter state, a city, a location slug and a number.
+DARDEN_PATH_RE = re.compile(
+    r"/locations/[a-z]{2}/[a-z0-9-]+/[a-z0-9-]+/\d{3,6}(?:[?#]|$)", re.I)
 DARDEN_DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday",
                "Saturday", "Sunday"]
 
@@ -921,12 +925,23 @@ def money(value):
 
 
 def darden_ref(url):
-    """(host, restaurant number) if this is a Darden location URL, else None."""
+    """(host, restaurant number) if this looks like a Darden location URL.
+
+    The host list is a fast path, not the test. A typed list of brands is what
+    made the FRC adapter miss a sibling brand silently, and the same trap is
+    here: Darden owns more restaurants than this file names and buys more. The
+    URL SHAPE -- /locations/<state>/<city>/<slug>/<number> -- is the platform's
+    own, and the API either answers with a restaurant or it does not, so the
+    guess costs one 404 and can never publish anything wrong. The brand list
+    stays because it saves that request on the eight we know.
+    """
     host = registrable(urllib.parse.urlparse(url).netloc)
-    if host not in DARDEN_HOSTS:
-        return None
     m = DARDEN_NUM_RE.search(url)
-    return (host, m.group(1)) if m else None
+    if not m:
+        return None
+    if host not in DARDEN_HOSTS and not DARDEN_PATH_RE.search(url):
+        return None
+    return (host, m.group(1))
 
 
 def darden_quotes(url):
@@ -1232,6 +1247,19 @@ def frc_host(url):
     return registrable(urllib.parse.urlparse(url).netloc) in FRC_HOSTS
 
 
+# What the platform itself puts in the page. The hostname tuple above triggers
+# on brands somebody typed in, and a sibling brand on the SAME platform then
+# misses in complete silence -- which is how North Italia was found by hand
+# rather than by us. The markup is the platform's own signature and needs
+# nobody to have heard of the brand.
+FRC_MARKUP_RE = re.compile(r'class="menu-item-price"|data-section-slug=', re.I)
+
+
+def frc_markup(html):
+    """True if this PAGE is built by the FRC menu platform, whoever owns it."""
+    return bool(FRC_MARKUP_RE.search(html or ""))
+
+
 def frc_text(chunk):
     """The visible text of one markup fragment."""
     return html_mod.unescape(re.sub(r"<[^>]+>", " ", chunk or "")).strip()
@@ -1343,7 +1371,9 @@ def crawl_one(session, venue, robots):
                           "result": f"error: darden menu api {type(e).__name__}"})
     # A Fox Restaurant Concepts page prints its prices without a dollar sign, so
     # the generic pass reads the tab labels and stops. Read structurally instead.
+    frc_done = False
     if frc_host(venue["website"]):
+        frc_done = True
         try:
             f_url, dishes, unknown = frc_menu_quotes(venue["website"])
             note = "ok, %d dish(es) from the menu markup" % len(dishes)
@@ -1399,6 +1429,21 @@ def crawl_one(session, venue, robots):
         # The lines AND the element each was found in: which lines a page put in
         # one box is what says which item a bare price belongs to, and it exists
         # only here, in the markup. See item_beside().
+        # A page that carries the FRC menu markup IS an FRC page, whatever the
+        # brand is called. Read structurally, once per venue.
+        if not frc_done and frc_markup(html):
+            frc_done = True
+            try:
+                f_url, dishes, unknown = frc_menu_quotes(url)
+                note = "ok, %d dish(es) from the menu markup (platform)" % len(dishes)
+                if unknown:
+                    note += "; section(s) refused, unknown kind: " + ", ".join(sorted(unknown))
+                pages.append({"url": f_url, "result": note})
+                for q in dishes:
+                    hits.append({"url": venue["website"], "quote": q, "hh": True})
+            except Exception as e:  # noqa: BLE001 -- one dead page must not end the run
+                pages.append({"url": url,
+                              "result": "error: frc menu %s" % type(e).__name__})
         lines, stacks, emph = text_lines_emph(html)
         text = "\n".join(lines)
         # The URL is no longer the only key. A page that does not name the happy

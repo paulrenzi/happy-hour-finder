@@ -2601,3 +2601,37 @@ class TheMenuRatchetRefusesARisingNumberOfSilentWindows(unittest.TestCase):
         holes = build_bundles.menu_ratchet(self.zones(2), verdicts, 1,
                                            out=lambda *_: None)
         self.assertEqual(holes, ["Silent 1"])
+
+
+class APlatformIsRecognisedByWhatItPublishes(unittest.TestCase):
+    """The adapters triggered on hostnames somebody had typed in.
+
+    That is how North Italia was found by Paul opening the site rather than by
+    us: a sibling brand on the SAME menu platform misses in complete silence,
+    and the next zone repeats it with brands nobody here has heard of. So the
+    trigger is the platform's own signature -- the markup FRC prints, and the
+    location-URL shape Darden's API answers on.
+    """
+
+    def test_frc_markup_names_the_platform_on_an_unknown_brand(self):
+        self.assertTrue(crawl_sites.frc_markup(
+            '<h4 class="menu-item-name">Pizza</h4><span class="menu-item-price">12</span>'))
+        self.assertTrue(crawl_sites.frc_markup('<div data-section-slug="eat">'))
+        self.assertFalse(crawl_sites.frc_markup("<p>Happy hour 4-6</p>"))
+
+    def test_a_darden_shaped_url_is_probed_on_a_brand_we_never_listed(self):
+        # The API either answers with a restaurant or it does not; the guess
+        # costs one 404 and can publish nothing wrong.
+        self.assertEqual(
+            crawl_sites.darden_ref(
+                "https://www.somebrand.com/locations/pa/king-of-prussia/kop-mall/8371"),
+            ("somebrand.com", "8371"))
+
+    def test_a_listed_brand_still_works_without_the_full_shape(self):
+        self.assertEqual(
+            crawl_sites.darden_ref("https://www.yardhouse.com/locations/pa/x/y/8371"),
+            ("yardhouse.com", "8371"))
+
+    def test_an_ordinary_location_page_is_not_darden(self):
+        self.assertIsNone(crawl_sites.darden_ref(
+            "https://locations.pjspub.com/pa/hatfield/190-forty-foot-road"))
