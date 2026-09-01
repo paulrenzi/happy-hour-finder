@@ -156,6 +156,31 @@ order of return: recrawl to populate `lines`/`hh`; the headless tier for the JS
 shells; the never-crawled frontier bug. Run the report on a zone *before*
 deciding what to build for it.
 
+### 🛑 The headless tier was sized on the wrong number (2026-09-01)
+
+That ordering put the headless tier second on the strength of the
+`page-is-a-shell` **count**. The count was never the question. `page-is-a-shell`
+says *why we think* a venue is silent — it does not say a happy hour is hiding
+behind the JavaScript, and for King of Prussia **none was.**
+
+All 8 of KoP's shells were rendered in WebKit (the browser a headless tier
+would use) and **not one mentions a happy hour**. True Food Kitchen goes from
+0 to 193 lines of text and still says nothing; Eataly renders 396 lines and
+says nothing. They are silent because the venue publishes nothing, not because
+JavaScript hid it. **Building the headless tier for KoP would have returned
+zero.**
+
+This is `audit the classifier before planning on its counts`, again, and it is
+the third time: `'Hotel (Liquor)'` was a licence class and not a hotel, 24 of
+36 `no-price-published` venues had prices, and now `page-is-a-shell` is a
+hypothesis about a cause, sized as though it were a stock of work.
+🔑 **A class name states a SUSPICION. Before building the fix a class implies,
+open the venues and check the fix would land.** Rendering eight pages cost two
+minutes and cancelled a tier.
+
+The real reclaim in KoP was two crawler bugs, not a renderer — see
+`frontier()` and the seed-dropping fix in `crawl_sites.py`.
+
 ### The reclaim classes found behind KoP's 45 silent venues
 
 Seven venues say "happy hour" on their own homepage while we publish nothing.
@@ -170,6 +195,18 @@ None of the causes is venue-specific:
   daily." The card already renders "Starts 3pm" (Tommy's proves it). Publishable,
   and being thrown away.
 - **JavaScript shells** — Cheesecake 11 lines, Bonefish 163 KB and 55 lines.
+
+🛑 **Two of the four causes above were misdiagnosed, and the correction is the
+useful part.** bartaco was written up as "the window line never entered the
+quote — the grammar is innocent." The grammar was innocent and so was the
+quote: the page we were given (`/kophightidehour/`) is a 29-line shell that
+does not contain a window **at all**. The window is on `/location/kop/`, a URL
+we already held in `venue_base`, and we had never fetched it — for two reasons,
+both now fixed (`frontier()` seeds both URLs; untried seeds survive the queue
+rebuild). And Cheesecake was never a JavaScript shell either — it was
+`never-crawled`, and reading it took no renderer, only asking.
+🔑 **Before believing a diagnosis in a handoff, fetch the page and look.** Both
+of these had been reasoned about rather than opened.
 
 ---
 
