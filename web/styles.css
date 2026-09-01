@@ -276,7 +276,6 @@ input[type=range] { width: 100%; height: var(--tap); accent-color: var(--accent)
   .card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
 }
 .card.soon { opacity: 0.95; }
-.card.dim .shot { filter: saturate(85%); }
 /* Live, but it ends before you could get there. Present, honest, and last. */
 .card.unreachable { opacity: 0.72; }
 .card.unreachable .ends.live { background: var(--bg2); color: var(--muted); border: 1px solid var(--line); }
@@ -350,36 +349,28 @@ input[type=range] { width: 100%; height: var(--tap); accent-color: var(--accent)
 
 .fine { margin: 12px 0 0; font-size: 14px; color: var(--muted); line-height: 1.5; }
 .fine:empty { display: none; }
-/* The toggle is a word, not a glyph. The caret this started as was written as
+/* ONE fold per card, over everything the card is holding back -- the rest of
+   the prices and the small print both. Two separate toggles made the reader
+   tap twice to finish one bar.
+
+   The toggle is a word, not a glyph. The caret this started as was written as
    a CSS escape through a shell heredoc, which ate the backslash and shipped a
    literal control character -- so the one thing on the card that was purely
    decorative was also the only thing that looked broken. */
-.fineFold > summary {
-  display: inline-block; width: auto; cursor: pointer;
-  color: var(--accent-deep); font-weight: 600;
-  text-decoration: underline; text-underline-offset: 3px;
-  list-style: none;
-}
-.fineFold > summary::-webkit-details-marker { display: none; }
-.fineFold > summary::marker { content: ""; }
-.fineFold .foldHide { display: none; }
-.fineFold[open] .foldShow { display: none; }
-.fineFold[open] .foldHide { display: inline; }
-.fineFold > .foldText { display: block; margin-top: 8px; }
-
-/* The same two-word fold, over the price list. A menu that reads cleanly can
-   be sixteen items long, and sixteen chips is a card you scroll PAST. */
-.itemFold > summary {
+.moreFold > summary {
   display: inline-block; width: auto; margin-top: 9px; cursor: pointer;
   color: var(--accent-deep); font-size: 13.5px; font-weight: 700;
   text-decoration: underline; text-underline-offset: 3px;
   list-style: none;
 }
-.itemFold > summary::-webkit-details-marker { display: none; }
-.itemFold > summary::marker { content: ""; }
-.itemFold .foldHide { display: none; }
-.itemFold[open] .foldShow { display: none; }
-.itemFold[open] .foldHide { display: inline; }
+.moreFold > summary::-webkit-details-marker { display: none; }
+.moreFold > summary::marker { content: ""; }
+.moreFold .foldHide { display: none; }
+.moreFold[open] .foldShow { display: none; }
+.moreFold[open] .foldHide { display: inline; }
+.moreFold .foldText {
+  display: block; margin: 8px 0 0; font-size: 14px; color: var(--muted); line-height: 1.5;
+}
 .itemsMore { margin-top: 8px; }
 
 .meta {
@@ -390,9 +381,6 @@ input[type=range] { width: 100%; height: var(--tap); accent-color: var(--accent)
   content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 6px;
   border-radius: 50%; background: currentColor; vertical-align: 1px;
 }
-.conf.verified { color: var(--ok); }
-.conf.unconfirmed { color: var(--stale); }
-.conf.verified::before, .conf.unconfirmed::before { flex: 0 0 auto; }
 
 .actions { display: flex; gap: 8px; margin-top: 14px; }
 /* Narrow phones are the common case, so a label may never wrap or clip: the

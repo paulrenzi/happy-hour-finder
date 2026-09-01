@@ -21,6 +21,9 @@ const state = {
   query: "",     // venue-name search, from the menu panel
   filter: "all",
   sort: "soonest",
+  // Set once the reader chooses an order, so knowing where they are can pick a
+  // better default without ever overriding what they asked for.
+  sortPicked: false,
   origin: null,  // {lat,lng} once, in-session only -- never tracked in the background
   // Zones whose full venue base has been fetched. Boot loads every zone's
   // DEALS (small, and "what's on right now" is an area-wide question); the
@@ -78,7 +81,10 @@ function readHash() {
   if (p.has("z")) state.zone = p.get("z") || null;
   if (p.has("q")) state.query = p.get("q") || "";
   if (p.has("f") && FILTERS[p.get("f")]) state.filter = p.get("f");
-  if (p.has("s") && SORTS.some(([k]) => k === p.get("s"))) state.sort = p.get("s");
+  if (p.has("s") && SORTS.some(([k]) => k === p.get("s"))) {
+    state.sort = p.get("s");
+    state.sortPicked = true;
+  }
   return p.get("v");
 }
 
@@ -171,7 +177,10 @@ function buildControls() {
     }
   );
 
-  picker($("#sort"), SORTS, state.sort, (v) => (state.sort = v));
+  picker($("#sort"), SORTS, state.sort, (v) => {
+    state.sort = v;
+    state.sortPicked = true;
+  });
 }
 
 /* ---- location --------------------------------------------------------- */
@@ -189,7 +198,14 @@ function askLocation() {
   navigator.geolocation.getCurrentPosition(
     (pos) => {
       state.origin = { lat: pos.coords.latitude, lng: pos.coords.longitude };
-      sessionStorage.setItem("origin", JSON.stringify(state.origin));
+      rememberOrigin(state.origin);
+      if (!state.sortPicked) {
+        state.sort = "nearest";
+        // The control has to agree with the board: an order that changed under
+        // the reader while the picker still reads "Best now" is the app lying
+        // about what it just did.
+        $("#sort").value = state.sort;
+      }
       $("#nearMe").classList.add("on");
       label.textContent = "Located";
       refresh();
@@ -202,15 +218,38 @@ function askLocation() {
   );
 }
 
+/* Kept for half a day, not for the tab.
+
+   sessionStorage forgot where you were the moment the tab closed, so the next
+   visit re-sorted the whole board by the clock and buried the bar down the road
+   under thirty that happen to open earlier. A location half a day old is still
+   the right town; older than that and we ask again rather than guess. */
+const ORIGIN_TTL_MS = 12 * 3600 * 1000;
+
+function rememberOrigin(origin) {
+  try {
+    localStorage.setItem("origin", JSON.stringify({ ...origin, at: Date.now() }));
+  } catch {
+    /* private mode, a full quota -- the app still works, it just re-asks */
+  }
+}
+
 function restoreLocation() {
   try {
-    const saved = sessionStorage.getItem("origin");
-    if (!saved) return;
-    state.origin = JSON.parse(saved);
+    const saved = JSON.parse(localStorage.getItem("origin") || "null");
+    if (!saved || !(Date.now() - saved.at < ORIGIN_TTL_MS)) return;
+    state.origin = { lat: saved.lat, lng: saved.lng };
+    /* Knowing where they are makes "nearest" the better answer to the question
+       the board is for, so it becomes the default -- but never over a sort the
+       reader picked, or one carried in on a shared link. */
+    if (!state.sortPicked) {
+      state.sort = "nearest";
+      $("#sort").value = state.sort;
+    }
     $("#nearMe").classList.add("on");
     $("#nearMeLabel").textContent = "Located";
   } catch {
-    /* a corrupt session value is not worth a crash */
+    /* a corrupt stored value is not worth a crash */
   }
 }
 
@@ -251,11 +290,22 @@ function sectionFor(row, at) {
   return DOW_LONG[dowOf(d) - 1];
 }
 
+/* What is true about this window, in as few words as it takes.
+
+   "Ends in 2h" is only true of a happy hour that is ON. Said of one that starts
+   tomorrow it is nonsense, and "in 13h 54m" is a countdown to tomorrow lunchtime
+   that nobody was running. A window that has not started STARTS; the clock time
+   is the fact, and a countdown is only worth printing while it is short enough
+   to be a plan. */
+const COUNTDOWN_MINS = 180;
+
 function whenText(row) {
   const { hit } = row;
-  if (hit.live) return { text: `Ends in ${fmtMins(hit.until)}`, live: true };
-  if (hit.dayAhead === 0) return { text: `${fmtClock(hit.w.start)} · in ${fmtMins(hit.startsIn)}` };
-  return { text: `${fmtClock(hit.w.start)}–${fmtClock(hit.w.end)}` };
+  if (hit.live) return { text: `Live until ${fmtClock(hit.w.end)}`, live: true };
+  if (hit.dayAhead === 0 && hit.startsIn <= COUNTDOWN_MINS) {
+    return { text: `Starts in ${fmtMins(hit.startsIn)}` };
+  }
+  return { text: `Starts ${fmtClock(hit.w.start)}` };
 }
 
 function distanceText(venue, miles, driveMin) {
@@ -741,25 +791,6 @@ function photoLane(file) {
    line. */
 const FINE_FOLD_CHARS = 150;
 
-function setFine(node, text) {
-  if (!text) return;
-  if (text.length <= FINE_FOLD_CHARS) {
-    node.textContent = text;
-    return;
-  }
-  // Two labels rather than a caret: a decorative glyph has to survive every
-  // editor and encoding between here and the page, and one of them ate it.
-  // Words cannot be mangled into a control character.
-  const details = el("details", "fineFold");
-  const summary = el("summary");
-  summary.append(
-    el("span", "foldShow", "Show the small print"),
-    el("span", "foldHide", "Hide the small print")
-  );
-  details.append(summary, el("span", "foldText", text));
-  node.append(details);
-}
-
 /* A menu is not a list -- it is a wall.
 
    Taku's menu read cleanly and produced SIXTEEN priced items, which is the
@@ -781,20 +812,40 @@ function itemChip(item) {
   return li;
 }
 
-function fillItems(list, items) {
+/* ONE fold per card.
+
+   A card that hid its extra prices behind "+13 more" and its small print behind
+   "Show the small print" made the reader tap twice to finish reading one bar,
+   and put two competing buttons in a feed meant to be thumbed past. There is
+   one thing folded here -- the rest of this card -- so there is one button.
+
+   Nothing is dropped, and the count stays in the label: "+13 more" is itself
+   the honest signal that this venue published a real menu. */
+function fillItems(list, items, fineNode, fine) {
   for (const item of items.slice(0, ITEMS_SHOWN)) list.append(itemChip(item));
   const rest = items.slice(ITEMS_SHOWN);
-  if (!rest.length) return;
+  const foldFine = fine.length > FINE_FOLD_CHARS;
+  // Short small print (nearly all of it) still prints in the open, because a
+  // toggle over one line is worse than the line.
+  if (!foldFine) fineNode.textContent = fine;
+  if (!rest.length && !foldFine) return;
 
-  const details = el("details", "itemFold");
+  const details = el("details", "moreFold");
   const summary = el("summary");
+  // Two labels rather than a caret: a decorative glyph has to survive every
+  // editor and encoding between here and the page, and one of them ate it.
   summary.append(
-    el("span", "foldShow", `+${rest.length} more`),
-    el("span", "foldHide", "Show fewer")
+    el("span", "foldShow", rest.length ? `+${rest.length} more` : "Show more"),
+    el("span", "foldHide", "Show less")
   );
-  const more = el("ul", "items itemsMore");
-  for (const item of rest) more.append(itemChip(item));
-  details.append(summary, more);
+  const body = el("div", "foldBody");
+  if (rest.length) {
+    const more = el("ul", "items itemsMore");
+    for (const item of rest) more.append(itemChip(item));
+    body.append(more);
+  }
+  if (foldFine) body.append(el("p", "foldText", fine));
+  details.append(summary, body);
   // Outside the <ul>: a <details> is not a valid child of a list, and Safari
   // is the engine that punishes that rather than the one that forgives it.
   list.after(details);
@@ -805,7 +856,6 @@ function card(row, at) {
   const node = $("#cardTpl").content.cloneNode(true);
   const article = $(".card", node);
   if (!hit.live) article.classList.add("soon");
-  if (row.confidence === "unconfirmed") article.classList.add("dim");
   if (row.group === GROUP.UNREACHABLE) article.classList.add("unreachable");
 
   const shot = $(".shot", node);
@@ -830,8 +880,6 @@ function card(row, at) {
   const dist = distanceText(v, row.miles, row.driveMin);
   $(".zone", node).textContent = dist ? `${zoneName} · ${dist}` : zoneName;
 
-  fillItems($(".items", node), deal.items);
-
   const when = whenText(row);
   const ends = $(".ends", node);
   ends.textContent = when.text;
@@ -845,20 +893,13 @@ function card(row, at) {
     const usable = usableMinutes(hit, row.driveMin);
     if (usable < 30) fine = `About ${fmtMins(usable)} of it left by the time you arrive. ` + fine;
   }
-  setFine($(".fine", node), fine.trim());
-
-  const conf = $(".conf", node);
-  conf.classList.add(row.confidence);
-  const age = row.ageDays === 0 ? "today" : `${row.ageDays}d ago`;
-  const n = deal.confirmations || 0;
-  // "Unconfirmed" was read as a doubt about the hours themselves. It never
-  // meant that: it means nobody has checked them LATELY. Say that instead --
-  // the age is the fact, and the reader can decide what it is worth.
-  conf.textContent = n
-    ? `${n} ${n === 1 ? "person" : "people"} confirmed · ${age}`
-    : row.confidence === "unconfirmed"
-      ? `Not checked since ${age} — worth a call`
-      : `Checked ${age}`;
+  // How old a reading is belongs on the venue sheet with the rest of the
+  // provenance, not on the face of the card. "Not checked since 26d ago" is
+  // true, and printed under every second bar it reads as an apology for the
+  // board rather than a fact about one deal -- it spent our credibility to say
+  // nothing the reader could act on. The decay ladder still demotes and then
+  // hides a deal that gets too old; that is the part of freshness doing work.
+  fillItems($(".items", node), deal.items, $(".fine", node), fine.trim());
 
   $(".map", node).href = directionsUrl(v);
   const src = $(".src", node);
