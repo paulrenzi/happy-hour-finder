@@ -2613,7 +2613,88 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "Peach Bourbon Smash",
+       "price_usd": 12.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Classic Margarita",
+       "price_usd": 12.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Greyhound Martini",
+       "price_usd": 12.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Old Fashioned",
+       "price_usd": 12.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Straight Up",
+       "price_usd": 12.0
+      },
+      {
+       "category": "wine",
+       "label": "Screen Press, Pinot Noir, California",
+       "price_usd": 8.0
+      },
+      {
+       "category": "wine",
+       "label": "Acquisition, Cabernet Sauvignon, California",
+       "price_usd": 8.0
+      },
+      {
+       "category": "wine",
+       "label": "Narrative, Chardonnay, California",
+       "price_usd": 8.0
+      },
+      {
+       "category": "wine",
+       "label": "Silver Gate Vineyards, Sauvignon Blanc, California",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "label": "Sliced Dry Aged NY Strip",
+       "price_usd": 18.0
+      },
+      {
+       "category": "food",
+       "label": "Caesar Salad Bites",
+       "price_usd": 11.0
+      },
+      {
+       "category": "food",
+       "label": "Mushroom Truffle Arancini",
+       "price_usd": 13.0
+      },
+      {
+       "category": "food",
+       "label": "Cast Iron Garlic Shrimp",
+       "price_usd": 16.0
+      },
+      {
+       "category": "food",
+       "label": "Oysters Casino (2)",
+       "price_usd": 11.0
+      },
+      {
+       "category": "food",
+       "label": "Petite Filet Sandwiches (2)",
+       "price_usd": 15.0
+      },
+      {
+       "category": "food",
+       "label": "Porcini-Rubbed Lollipop Lamb Chops (2)",
+       "price_usd": 17.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",

@@ -872,6 +872,17 @@ DARDEN_DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday",
                "Saturday", "Sunday"]
 
 
+def money(value):
+    """A price the downstream label pattern can read: two decimals, or none.
+
+    '$5.5' is neither, and All Beers at $5.50 was dropped for it with no error
+    anywhere -- rstrip('0') had turned a valid half-dollar into a shape the
+    pattern refuses (2026-09-01).
+    """
+    value = float(value)
+    return "%d" % round(value) if value == int(value) else "%.2f" % value
+
+
 def darden_ref(url):
     """(host, restaurant number) if this is a Darden location URL, else None."""
     host = registrable(urllib.parse.urlparse(url).netloc)
@@ -950,7 +961,11 @@ def darden_dish_name(raw):
     to ASCII also lets the noun list read ROSE as wine, which it cannot do
     through the accent.
     """
-    name = raw.replace("®", "").replace("™", "")
+    # The asterisk is a FOOTNOTE mark ('cooked to order'), and it is not always
+    # trailing: 'Petite Filet Sandwiches* (2)' carries it mid-name. Stripping it
+    # only off the end left the mark inside the label pattern's charset, so the
+    # dish vanished with no error -- the same silent drop as the (R) (2026-09-01).
+    name = raw.replace("®", "").replace("™", "").replace("*", "")
     name = name.replace("‘", "'").replace("’", "'")
     name = name.replace("“", "").replace("”", "")
     name = unicodedata.normalize("NFKD", name)
@@ -1010,6 +1025,47 @@ def darden_drink_category(text):
     return None
 
 
+# What a Darden brand CALLS its happy hour in its own menu API. Seven of the
+# eight say 'happy-hour'; The Capital Grille brands its as CAPITAL HOURS, slug
+# 'capital-hours', and matching the literal slug therefore read its hours fine
+# and returned zero dishes -- the same silent nothing as a missing venue, on a
+# venue we were already crawling (Paul, 2026-09-01).
+#
+# This is an explicit per-brand alias and NOT a pattern over category names. A
+# looser match here does not fail closed: it would file a brand's dinner menu as
+# a happy hour and put full-price steaks on the board as bargains. Each new name
+# gets read off the API and typed in.
+DARDEN_HH_SLUGS = {"thecapitalgrille.com": ("happy-hour", "capital-hours")}
+DARDEN_HH_DEFAULT = ("happy-hour",)
+
+
+def darden_hh_slugs(host):
+    return DARDEN_HH_SLUGS.get(host, DARDEN_HH_DEFAULT)
+
+
+# The not-a-deal gate matched on product slug alone, and a brand that shortens
+# the dish name on its happy-hour menu walks straight through it: The Capital
+# Grille lists 'Pan-Fried Calamari' at $23 under CAPITAL HOURS and the identical
+# 'Pan-Fried Calamari with Hot Cherry Peppers' at $23 on dinner, under a
+# different slug. Three full-price appetizers -- a $40 caviar dip among them --
+# were about to be published as happy-hour bargains. So the name is matched too,
+# and the shortened form counts: an entry whose full name begins with the
+# happy-hour name plus a word is the same dish (Paul, 2026-09-01).
+def darden_norm(name):
+    return re.sub(r"[^a-z0-9 ]", "", darden_dish_name(name or "").lower()).strip()
+
+
+def darden_regular(elsewhere, names, prod, name):
+    """The lowest price this venue states for this dish OFF its happy-hour menu."""
+    found = [elsewhere[prod.get("slug")]] if prod.get("slug") in elsewhere else []
+    key = darden_norm(name)
+    if key:
+        for other, value in names.items():
+            if other == key or other.startswith(key + " "):
+                found.append(value)
+    return min(found) if found else None
+
+
 def darden_menu_quotes(host, num):
     """The venue's happy-hour DISHES, from the same API that holds its hours.
 
@@ -1027,19 +1083,25 @@ def darden_menu_quotes(host, num):
     # every other price the venue states for that dish. Without this the board
     # would have advertised six full-price appetizers as bargains, which is the
     # '$X off' mistake once more: the digits are real, the deal is not.
-    elsewhere = {}
+    hh_slugs = darden_hh_slugs(host)
+    elsewhere, names = {}, {}
     for cat in menu.get("categories") or []:
-        if cat.get("slug") == "happy-hour":
+        if cat.get("slug") in hh_slugs:
             continue
         for sub in cat.get("subCategories") or []:
             for prod in sub.get("products") or []:
                 value = (prod.get("price") or {}).get("value")
                 slug = prod.get("slug")
-                if slug and value is not None:
+                if value is None:
+                    continue
+                if slug:
                     elsewhere[slug] = min(value, elsewhere.get(slug, value))
+                key = darden_norm(prod.get("displayName"))
+                if key:
+                    names[key] = min(value, names.get(key, value))
     out = []
     for cat in menu.get("categories") or []:
-        if cat.get("slug") != "happy-hour":
+        if cat.get("slug") not in hh_slugs:
             continue
         for sub in cat.get("subCategories") or []:
             # The heading is folded for the same reason the dish name is: the noun
@@ -1077,12 +1139,146 @@ def darden_menu_quotes(host, num):
                 price = (prod.get("price") or {}).get("value")
                 if price is None:
                     continue
-                regular = elsewhere.get(prod.get("slug"))
+                regular = darden_regular(elsewhere, names, prod, name)
                 if regular is not None and float(price) >= float(regular):
                     continue
-                amount = f"{float(price):.2f}".rstrip("0").rstrip(".")
+                amount = money(price)
                 out.append(f"{mark}{head} / ${amount} {name}")
     return api, out
+
+
+# --- Fox Restaurant Concepts (North Italia and its sibling brands) -----------
+#
+# The handoff guessed this was a JavaScript menu like Darden's. It is not: the
+# whole happy-hour menu is in the HTML on first byte, every tab of it, and the
+# generic pass still came back with the tab LABELS and nothing else. The reason
+# is one character. This platform prints its prices with no dollar sign --
+# <span class="menu-item-price">8</span> -- so DEAL_RE, BARE_PRICE_RE and the
+# price pass downstream all look straight past them. A bare 8 in prose is not a
+# price and must not be read as one; here it is a price because the venue put it
+# in a box that says so.
+#
+# So this is read structurally, like Darden, and for the same reason: the source
+# STATES the things we would otherwise guess. One element gives the dish, one
+# gives its price, and the section it sits in gives its kind. Nothing is derived
+# from a word list over dish names.
+FRC_HOSTS = ("northitalia.com", "flowerchild.com", "culinarydropout.com",
+             "foxrc.com", "blancotacos.com", "thehenrycafe.com")
+# The tab anchor names the menu; the panel carries the same id. Reading the id
+# off the anchor rather than trusting class="active" means the panel is found
+# whichever tab the server decided to open on.
+FRC_TAB_RE = re.compile(r'href="\?menu=happy-hour"[^>]*data-menu-id="(\d+)"', re.I)
+FRC_TAB_ALT_RE = re.compile(r'data-menu-id="(\d+)"[^>]*href="\?menu=happy-hour"', re.I)
+FRC_PANEL_RE = r'<div class="[^"]*menu-category[^"]*" data-menu-id="%s"'
+FRC_SECTION_RE = re.compile(r'data-section-slug="([^"]+)"(.*?)(?=data-section-slug=|\Z)',
+                            re.S)
+FRC_TITLE_RE = re.compile(r'menu-section-title">(.*?)</h3>', re.S)
+FRC_ITEM_RE = re.compile(
+    r'menu-item-name">(.*?)</h4>\s*<span class="menu-item-price">([^<]*)</span>', re.S)
+# A happy-hour section of alcohol-free drinks. The board has eight categories and
+# none of them is 'no alcohol', so these are refused outright rather than filed
+# under the thing they imitate -- a Phony Negroni on the board as a cocktail is a
+# customer ordering a drink that is not what they came for.
+FRC_ZERO_RE = re.compile(r"zero.proof|non.alcoholic|mocktail|\bn/?a\b", re.I)
+# The section headings this platform files FOOD under. A closed list of the
+# source's own SECTION names, which is a different thing from the open noun list
+# over dish names that this repo keeps trying to grow: it is the venue's own
+# grouping, and 'Eat' answers for ten dishes at once. A heading in neither this
+# list nor the drink vocabulary is REFUSED and logged by name, so an unknown
+# section shows up as a line to add rather than as items silently misfiled.
+FRC_FOOD_RE = re.compile(r"^(eat|food|bites|snacks|small plates|shareables|"
+                         r"appetizers|starters|plates|share)$", re.I)
+
+
+def frc_host(url):
+    """True if this URL is on the Fox Restaurant Concepts menu platform."""
+    return registrable(urllib.parse.urlparse(url).netloc) in FRC_HOSTS
+
+
+def frc_text(chunk):
+    """The visible text of one markup fragment."""
+    return html_mod.unescape(re.sub(r"<[^>]+>", " ", chunk or "")).strip()
+
+
+def frc_category(head, name, unknown=None):
+    """Which of the board's eight categories a section is, from its own heading.
+
+    Drink type first, then varietals, then the food headings. Never the dish
+    name for food: that is the word list this repo removed. A heading that
+    answers none of them is refused, and its text is recorded in `unknown` so
+    the next pass can see what it was rather than wonder where the items went.
+    """
+    if FRC_ZERO_RE.search(head or ""):
+        return None
+    cat = darden_drink_category(head)
+    if cat:
+        return cat
+    if VARIETALS.search(head or "") or VARIETALS.search(name or ""):
+        return "wine"
+    if FRC_FOOD_RE.match((head or "").strip()):
+        return "food"
+    if unknown is not None and head:
+        unknown.add(head)
+    return None
+
+
+def frc_menu_quotes(url):
+    """The venue's happy-hour DISHES, read off its own menu markup.
+
+    Every tab of every menu is in this one document, so the venue's ordinary
+    prices are here too and the same not-a-deal gate Darden needs applies: a
+    priced happy-hour line counts only if it BEATS the lowest price the venue
+    states for that dish anywhere else on the page. North Italia's own numbers
+    pass it (Zucca Chips 8 against 11, Calamari 15 against 18); the gate is here
+    for the day a section is the dinner menu wearing a happy-hour heading, which
+    is exactly what Eddie V's turned out to be.
+    """
+    page = url.split("?")[0].rstrip("/") + "/?menu=happy-hour"
+    req = urllib.request.Request(page, headers={"User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=TIMEOUT) as fh:
+        doc = fh.read().decode("utf-8", "replace")
+    m = FRC_TAB_RE.search(doc) or FRC_TAB_ALT_RE.search(doc)
+    if not m:
+        return page, [], set()
+    menu_id = m.group(1)
+    start = re.search(FRC_PANEL_RE % menu_id, doc)
+    if not start:
+        return page, [], set()
+    rest = doc[start.end():]
+    nxt = re.search(r'<div class="[^"]*menu-category[^"]*" data-menu-id="', rest)
+    panel = rest[: nxt.start()] if nxt else rest
+    # What the same dish costs on this venue's other menus, lowest wins.
+    elsewhere = {}
+    for name, price in FRC_ITEM_RE.findall(doc.replace(panel, "")):
+        key = frc_text(name).lower()
+        try:
+            value = float(price.strip())
+        except ValueError:
+            continue
+        if key:
+            elsewhere[key] = min(value, elsewhere.get(key, value))
+    out, unknown = [], set()
+    for sec in FRC_SECTION_RE.finditer(panel):
+        slug, body = sec.group(1), sec.group(2)
+        t = FRC_TITLE_RE.search(body)
+        head = frc_text(t.group(1)) if t else slug.replace("-", " ")
+        for raw_name, raw_price in FRC_ITEM_RE.findall(body):
+            name = darden_dish_name(frc_text(raw_name))
+            if not name:
+                continue
+            try:
+                price = float(raw_price.strip())
+            except ValueError:
+                continue
+            regular = elsewhere.get(name.lower())
+            if regular is not None and price >= regular:
+                continue
+            cat = frc_category(head, name, unknown)
+            if not cat:
+                continue
+            amount = money(price)
+            out.append("[cat:%s] %s / $%s %s" % (cat, head, amount, name))
+    return page, out, unknown
 
 
 def crawl_one(session, venue, robots):
@@ -1108,6 +1304,25 @@ def crawl_one(session, venue, robots):
         except Exception as e:  # noqa: BLE001 -- the hours stand without the menu
             pages.append({"url": venue["website"],
                           "result": f"error: darden menu api {type(e).__name__}"})
+    # A Fox Restaurant Concepts page prints its prices without a dollar sign, so
+    # the generic pass reads the tab labels and stops. Read structurally instead.
+    if frc_host(venue["website"]):
+        try:
+            f_url, dishes, unknown = frc_menu_quotes(venue["website"])
+            note = "ok, %d dish(es) from the menu markup" % len(dishes)
+            if unknown:
+                note += "; section(s) refused, unknown kind: " + ", ".join(sorted(unknown))
+            pages.append({"url": f_url, "result": note})
+            # Filed under the venue's own URL, exactly as the Darden dishes are.
+            # '?menu=happy-hour' is a TAB of the page the hours were read from,
+            # but items_from_hits() pairs items to the schedule by exact URL, so
+            # the query string alone was enough to leave all 19 dishes unattached
+            # and publish the window with an empty card.
+            for q in dishes:
+                hits.append({"url": venue["website"], "quote": q})
+        except Exception as e:  # noqa: BLE001 -- one dead page must not end the run
+            pages.append({"url": venue["website"],
+                          "result": "error: frc menu %s" % type(e).__name__})
     queue = [(venue["website"], 1)]
     fetched = 0
     docs = 0
