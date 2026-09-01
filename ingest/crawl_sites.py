@@ -958,6 +958,58 @@ def darden_dish_name(raw):
     return name.strip().rstrip("*").strip().strip("'").strip()
 
 
+# Grape varieties, so a wine list that never says the word 'wine' is still wine.
+# Seasons 52 heads three glasses 'RED' and names them PINOT NOIR, MALBEC and
+# CABERNET SAUVIGNON; no structural field separates a red from a cocktail, and
+# guessing would put wine on the board as a cocktail. A varietal list is a closed
+# real-world vocabulary, unlike the open one the food nouns try to be.
+VARIETALS = re.compile(
+    r"\b(pinot noir|pinot grigio|pinot gris|chardonnay|sauvignon blanc|"
+    r"cabernet|cabernet sauvignon|merlot|malbec|riesling|zinfandel|syrah|shiraz|"
+    r"tempranillo|sangiovese|chianti|prosecco|champagne|moscato|grenache|"
+    r"rose|rioja|bordeaux|brut)\b", re.I)
+
+
+def darden_category(sub, prod, head, name):
+    """Which of the board's eight categories this dish is, from the API's own fields.
+
+    isBeverageItem is a fact the venue states, so food never depends on a word
+    list at all. A drink still needs its TYPE, which no field carries, so the
+    section heading is read first ('COCKTAILS', 'SANGRIA', 'WHITE & ROSE'), then
+    the dish name, then the varietals. If none of those answer, the drink is
+    refused rather than filed under a guessed type -- a wine sold as a cocktail
+    is worse on the board than a wine we left off.
+    """
+    configs = prod.get("configs") or {}
+    if configs.get("isBeverageItem") is False:
+        return "food"
+    for text in (head, name):
+        cat = darden_drink_category(text)
+        if cat:
+            return cat
+    if VARIETALS.search(name) or VARIETALS.search(head):
+        return "wine"
+    return None
+
+
+DRINK_WORDS = [
+    ("draft", r"draft|drafts|draught|pint|pints|beer|beers|lager|ipa|brew"),
+    ("bottle_can", r"bottle|bottles|can|cans"),
+    ("wine", r"wine|wines|sangria|rose|red|white|sparkling|bubbles"),
+    ("cocktail", r"cocktail|cocktails|martini|margarita|mule|spritz|highball|punch"),
+    ("shot", r"shot|shots"),
+    ("well", r"well|wells|rail"),
+]
+
+
+def darden_drink_category(text):
+    low = (text or "").lower()
+    for cat, pat in DRINK_WORDS:
+        if re.search(rf"\b(?:{pat})\b", low):
+            return cat
+    return None
+
+
 def darden_menu_quotes(host, num):
     """The venue's happy-hour DISHES, from the same API that holds its hours.
 
@@ -1001,8 +1053,19 @@ def darden_menu_quotes(host, num):
                 name = darden_dish_name(prod.get("displayName") or "")
                 if not name:
                     continue
+                # Darden TELLS us what the thing is, so we stop guessing from words.
+                # The noun whitelist downstream exists for prose pages, where a '$8'
+                # beside some text could be a deal, a gift card or a corkage fee and
+                # the only evidence is the vocabulary. Here the API states it, and
+                # re-deriving it from a word list threw away six flatbreads because
+                # nobody had typed 'flatbread'. Carried as a marker the extractor
+                # reads instead of asking category_of().
+                cat_hint = darden_category(sub, prod, head, name)
+                if not cat_hint:
+                    continue
+                mark = f"[cat:{cat_hint}] "
                 if pct is not None:
-                    out.append(f"{head} / {pct}% Off {name}")
+                    out.append(f"{mark}{head} / {pct}% Off {name}")
                     continue
                 # A Darden brand states its happy hour in ONE of TWO dialects, and we
                 # were reading only the first. Yard House discounts a section it prices
@@ -1018,7 +1081,7 @@ def darden_menu_quotes(host, num):
                 if regular is not None and float(price) >= float(regular):
                     continue
                 amount = f"{float(price):.2f}".rstrip("0").rstrip(".")
-                out.append(f"{head} / ${amount} {name}")
+                out.append(f"{mark}{head} / ${amount} {name}")
     return api, out
 
 

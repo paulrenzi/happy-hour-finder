@@ -268,11 +268,14 @@ OFF_RE = re.compile(r"^off\b", re.I)
 # is carried along because it answers the question the noun list cannot: a
 # guacamole is food because the venue filed it under SNACKS, not because
 # 'guacamole' is a word we happen to know. See heading_prices() in crawl_sites.
+# 64, not 40: a real dish name runs longer than a drink's does, and the cap was
+# silently deleting 'WOOD-GRILLED CORN, AGED CHEDDAR AND SPICED BACON' -- a
+# length limit rejecting a valid item is the same silent drop as the (R) was.
 # The comma is allowed because wine is named with one and nothing else is:
 # 'SANTA JULIA, PINOT GRIGIO' is one item, not two, and without the comma the
 # whole wine list of a venue drops out with no error raised anywhere.
 SECTION_ITEM_RE = re.compile(
-    r"^\$(\d{1,3}(?:\.\d\d)?)(?:-\$?(\d{1,3}(?:\.\d\d)?))?\s+([A-Za-z][\w\s&',()-]{1,40})$")
+    r"^\$(\d{1,3}(?:\.\d\d)?)(?:-\$?(\d{1,3}(?:\.\d\d)?))?\s+([A-Za-z][\w\s&',()-]{1,64})$")
 
 # The same shape, for a section the venue discounts instead of pricing: Yard
 # House's 'HH 1/2 OFF SELECT APPS' names no price at all, and the price its own
@@ -280,7 +283,27 @@ SECTION_ITEM_RE = re.compile(
 # put $14.99 on the board for a $7.50 spinach dip -- the '$X off' mistake again,
 # with the digits sitting right there looking like an answer. The discount is
 # what the venue stated, so the discount is what we publish.
-SECTION_OFF_RE = re.compile(r"^(\d{1,2})% Off\s+([A-Za-z][\w\s&'()-]{1,40})$", re.I)
+SECTION_OFF_RE = re.compile(r"^(\d{1,2})% Off\s+([A-Za-z][\w\s&'()-]{1,64})$", re.I)
+
+
+# A quote that arrives already classified, because its source said what the item
+# was instead of leaving us to infer it from the heading. The noun whitelist is
+# for pages where inference is all we have; where a structured menu states
+# isBeverageItem, asking the word list again can only lose items it has never
+# heard of. See darden_category() in crawl_sites.
+# The board's whole vocabulary -- a marker naming anything else is ignored rather
+# than trusted, so a source cannot invent a category by asserting one.
+CATEGORIES = {"draft", "bottle_can", "wine", "well", "call", "cocktail", "shot", "food"}
+
+CAT_MARKER = re.compile(r"^\[cat:([a-z_]+)\]\s*")
+
+
+def strip_category_marker(text):
+    m = CAT_MARKER.match(text)
+    if not m:
+        return text, None
+    cat = m.group(1)
+    return text[m.end():], cat if cat in CATEGORIES else None
 
 
 def section_items(text):
@@ -290,10 +313,12 @@ def section_items(text):
     and it is what the card says; picking either end would be stating a price
     for a dish that does not have it.
     """
+    text, cat = strip_category_marker(text)
     parts = [p.strip() for p in text.split(" / ")]
     if len(parts) != 2:
         return []
-    cat = category_of(parts[0])
+    if not cat:
+        cat = category_of(parts[0])
     if not cat:
         return []
     m = SECTION_ITEM_RE.match(parts[1])
