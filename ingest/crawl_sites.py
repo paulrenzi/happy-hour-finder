@@ -62,6 +62,25 @@ CONTEXT_RE = re.compile(
 # document a happy-hour page linked as its menu -- on an ordinary page this
 # matches the dinner menu, which is why it is not part of DEAL_RE.
 MENU_ITEM_RE = re.compile(r"[A-Za-z].{2,60}?\s\$\s?\d{1,3}(?:\.\d\d)?\s*$")
+# A price sitting on a line of its own. A themed menu puts the item name and its
+# price in separate blocks, so visible_text emits '$ 5' with nothing attached:
+# Bloom Southern Kitchen's happy-hour page yields thirty of these and not one
+# names the food it belongs to. MENU_ITEM_RE cannot match them and DEAL_RE
+# should not, so on its own this line is correctly worthless -- the fix is to
+# keep it WITH its neighbours and let the reviewed price pass associate them,
+# which it can only do over text the crawl actually kept.
+BARE_PRICE_RE = re.compile(r"^\$\s?\d{1,3}(?:\.\d\d)?$")
+
+# An image on a happy-hour page whose filename names the thing. Malbec exports
+# its happy-hour menu from a PDF to a single JPG and posts that: the page has
+# real hours in text and NOT ONE dollar sign anywhere in its HTML, so the venue
+# reads as covered while its entire menu is invisible. No parser fixes that --
+# the words are pixels. The crawl records the URL; reading it is a separate,
+# reviewed vision pass, exactly as a customer's photo submission is.
+MENU_IMG_RE = re.compile(
+    r"(?:happy.?hour|_hh_|-hh-|specials?|drink.?menu|bar.?menu)[^\"'\s]*"
+    r"\.(?:jpe?g|png|webp)", re.I)
+IMG_CAP = 3
 
 TAG_RE = re.compile(r"<(script|style|noscript)[^>]*>.*?</\1>", re.S | re.I)
 MARKUP_RE = re.compile(r"<[^>]+>")
@@ -80,7 +99,7 @@ def visible_text(html):
     return "\n".join(ln for ln in lines if ln)
 
 
-def quotes(text, menu_doc=False):
+def quotes(text, menu_doc=False, hh_page=False):
     """The matched lines, plus a neighbour when the match itself has no time.
 
     menu_doc is for a document we reached BECAUSE a happy-hour page linked it as
@@ -90,15 +109,39 @@ def quotes(text, menu_doc=False):
     DEAL_RE itself would let every dinner entree on every site through. So the
     looser rule is scoped to the document the venue itself called its happy
     hour, which is the answer stored on the record rather than guessed at here.
+
+    hh_page is the same allowance for a PAGE the venue called its happy hour --
+    /happy-hour, /specials. The containment is identical and it is the whole
+    safety argument: on an arbitrary page these rules would harvest the dinner
+    menu, but a page the venue titled 'Happy Hour' is one whose priced lines ARE
+    the deal. 96 of the 179 venues that reached such a page came back with no
+    price at all, and a sample showed the commonest reason was not that the page
+    was silent -- it was that the price and the item were on separate lines and
+    each was worthless alone.
     """
     lines = text.split("\n")
     out, seen = [], set()
     for i, ln in enumerate(lines):
-        if not DEAL_RE.search(ln) and not (menu_doc and MENU_ITEM_RE.search(ln)):
+        loose = menu_doc or hh_page
+        bare = hh_page and BARE_PRICE_RE.match(ln)
+        if (not DEAL_RE.search(ln) and not bare
+                and not (loose and MENU_ITEM_RE.search(ln))):
             continue
         if len(ln) > 400:
             continue
         block = [ln]
+        if bare:
+            # Both neighbours, in page order, because the ordering is not
+            # stable: Bloom prints the price above its item, other themes print
+            # it below. Naming the wrong one is a wrong price on a card, so the
+            # crawl keeps the material and the price pass -- whose every item is
+            # checked back against this text -- decides which side it was on.
+            def label(j):
+                l = lines[j] if 0 <= j < len(lines) else ""
+                return l if (re.search(r"[A-Za-z]{3}", l)
+                             and not BARE_PRICE_RE.match(l)
+                             and len(l) <= 80) else None
+            block = [x for x in (label(i - 1), ln, label(i + 1)) if x]
         # A heading ('HAPPY HOUR') is frequently its own line, with the window
         # on the next one; keeping only the match would drop the entire deal.
         #
@@ -109,7 +152,7 @@ def quotes(text, menu_doc=False):
         # NEXT block's hours instead (Fogo de Chao's '$6 Beers' line acquired
         # the dining room's 3:00-9:30, which is not a happy hour and fails the
         # four-hour cap), so only the ordering within the slots changed.
-        if not CONTEXT_RE.search(ln):
+        if not bare and not CONTEXT_RE.search(ln):
             near = lines[i + 1:i + 4]
             ctx = [l for l in near if CONTEXT_RE.search(l)]
             timed = [l for l in ctx if TIME_CONTEXT_RE.search(l)]
@@ -120,7 +163,32 @@ def quotes(text, menu_doc=False):
         if q not in seen:
             seen.add(q)
             out.append(q)
-    return out[: 24 if menu_doc else 12]
+    return out[: 24 if (menu_doc or hh_page) else 12]
+
+
+def menu_images(html, page_url):
+    """Image URLs on this page that name themselves a happy-hour or drinks menu.
+
+    Filename only. Alt text and surrounding copy were both tried and both let
+    the page furniture through -- a hero shot in a <div> captioned 'Happy Hour'
+    is a photograph of people drinking, not a menu. A venue that exports its
+    menu to an image names the file for what it is.
+    """
+    out, seen = [], set()
+    pat = r'''(?:src|href|data-src)=(['"])(.+?)\1'''
+    for m in re.finditer(pat, html, re.I):
+        href = html_mod.unescape(m.group(2))
+        if not MENU_IMG_RE.search(href):
+            continue
+        full = urllib.parse.urljoin(page_url, href).split("#")[0]
+        # A theme emits the same upload at six widths ('-300x150', '-1024x512');
+        # they are one menu, and the largest is the only readable one.
+        key = re.sub(r"-\d{2,4}x\d{2,4}(?=\.\w+$)", "", full)
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(key)
+    return out[:IMG_CAP]
 
 
 def robots_for(base, cache):
@@ -349,7 +417,7 @@ def sitemap_links(session, page_url, robots):
 
 
 def crawl_one(session, venue, robots):
-    pages, hits = [], []
+    pages, hits, images = [], [], []
     queue = [(venue["website"], 1)]
     fetched = 0
     docs = 0
@@ -382,10 +450,18 @@ def crawl_one(session, venue, robots):
         if err:
             pages.append({"url": url, "result": err})
             continue
-        found = quotes(visible_text(html), menu_doc=is_doc)
+        # The venue's own title for the page is what unlocks the looser price
+        # rules -- the same test used a few lines below to decide a menu PDF is
+        # worth chasing, and the same containment.
+        on_hh = bool(depth > 1 and re.search(r"happy.?hour|special", url, re.I))
+        found = quotes(visible_text(html), menu_doc=is_doc, hh_page=on_hh)
         pages.append({"url": url, "result": f"ok, {len(found)} quote(s)"})
         for q in found:
             hits.append({"url": url, "quote": q})
+        if on_hh:
+            for src in menu_images(html, url):
+                if not any(im["src"] == src for im in images):
+                    images.append({"url": url, "src": src})
 
         # A page we fetched because it said 'happy hour' is the one place a menu
         # PDF is worth chasing: Black Powder Tavern's hours were read off their
@@ -414,7 +490,7 @@ def crawl_one(session, venue, robots):
                 extra = [(u, 2) for u in sitemap_links(session, url, robots)
                          if u not in queued]
                 queue = (extra + queue)[: PAGE_CAP - 1]
-    return pages, hits
+    return pages, hits, images[:IMG_CAP]
 
 
 def main():
@@ -444,7 +520,7 @@ def main():
     print(f"{len(todo)} venues to crawl (of {len(sites)} discovered)\n")
 
     for n, (lid, v) in enumerate(todo, 1):
-        pages, hits = crawl_one(session, v, robots)
+        pages, hits, images = crawl_one(session, v, robots)
         stats["venues crawled"] += 1
         stats["WITH A DEAL QUOTE" if hits else "nothing published"] += 1
         out[lid] = {
@@ -456,6 +532,10 @@ def main():
             "crawled_at": time.strftime("%Y-%m-%d"),
             "pages": pages,
             "hits": hits,
+            # Only present when the venue posted its menu as a picture. Absent
+            # is the normal case and means nothing was found, not that the pass
+            # did not run -- the crawl date on the record says when it looked.
+            **({"menu_images": images} if images else {}),
         }
         flag = f"** {len(hits)} quote(s)" if hits else "--"
         print(f"[{n}/{len(todo)}] {(v['osm_name'] or v['name'])[:38]:<40} {flag}")

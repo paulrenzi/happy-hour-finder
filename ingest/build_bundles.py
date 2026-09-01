@@ -26,6 +26,7 @@ EXTRACTED_JSON = os.path.join(REPO, "data", "deals_extracted.json")
 PHOTO_DEALS_JSON = os.path.join(REPO, "data", "deals_photo.json")
 ZONES_JSON = os.path.join(REPO, "data", "zones.json")
 PRICES_JSON = os.path.join(REPO, "data", "deals_prices_llm.json")
+MENU_IMG_JSON = os.path.join(REPO, "data", "deals_menu_images.json")
 PHOTOS_JSON = os.path.join(REPO, "data", "venue_photos.json")
 COORDS_JSON = os.path.join(REPO, "data", "venue_coords.json")
 BASE_JSON = os.path.join(REPO, "data", "venue_base.json")
@@ -287,6 +288,14 @@ def main():
     # the deal was built from, each already checked against that quote's text.
     # It only ever fills in items -- windows are the extractor's alone.
     prices = json.load(open(PRICES_JSON, encoding="utf-8")) if os.path.exists(PRICES_JSON) else {}
+    # Written by ingest/extract_menu_images.py: the same kind of answer, read
+    # off a menu the venue posted as a picture instead of as text. It fills the
+    # same slot under the same rule -- items only, never a window -- so the two
+    # sidecars merge rather than rank. A venue appears in at most one of them:
+    # having quotes to re-read and having no text at all are exclusive.
+    if os.path.exists(MENU_IMG_JSON):
+        for vid, items in json.load(open(MENU_IMG_JSON, encoding="utf-8")).items():
+            prices.setdefault(vid, items)
     photos = json.load(open(PHOTOS_JSON, encoding="utf-8")) if os.path.exists(PHOTOS_JSON) else {}
     # Written by ingest/geocode_venues.py. Without it the app still works, it
     # just cannot rank by distance or tell you whether you can make it in time.

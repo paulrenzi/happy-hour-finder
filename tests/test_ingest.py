@@ -23,7 +23,8 @@ from build_bundles import (CACHE_LINE, collapse_name_collisions, decay,  # noqa:
                            norm_name, shell_digest, sw_cache_name)
 import crawl_sites  # noqa: E402
 from crawl_roundups import fresh_enough, mentions, published_date, venue_index  # noqa: E402
-from crawl_sites import candidate_links, crawl_one, quotes, registrable, visible_text  # noqa: E402
+from crawl_sites import (candidate_links, crawl_one, menu_images, quotes,  # noqa: E402
+                         registrable, visible_text)
 from discover_places import HAND_DROPPED  # noqa: E402
 from review_photos import merge_mode, superseded  # noqa: E402
 from discover_sites import collapse_shared, name_core, plcb_key, site_of, street_core  # noqa: E402
@@ -918,7 +919,7 @@ class CrawlExtraction(unittest.TestCase):
         venue = {"website": "https://bar.example/"}
         with unittest.mock.patch.object(crawl_sites, "allowed", lambda u, c: True), \
                 unittest.mock.patch.object(crawl_sites, "DELAY", 0):
-            pages, hits = crawl_one(session, venue, {})
+            pages, hits, _ = crawl_one(session, venue, {})
         fetched = [p["url"] for p in pages]
         self.assertIn("https://bar.example/happy-hour", fetched)
         # The linked menus are still crawled -- this tops up, it does not replace.
@@ -959,7 +960,7 @@ class CrawlExtraction(unittest.TestCase):
         with unittest.mock.patch.object(crawl_sites, "allowed", lambda u, c: True), \
                 unittest.mock.patch.object(crawl_sites, "DELAY", 0), \
                 unittest.mock.patch.object(crawl_sites, "pdf_text", lambda blob: menu):
-            pages, hits = crawl_one(session, {"website": "https://bpt.example/"}, {})
+            pages, hits, _ = crawl_one(session, {"website": "https://bpt.example/"}, {})
 
         self.assertIn("https://bpt.example/uploads/HH.pdf", [p["url"] for p in pages])
         quoted = " | ".join(h["quote"] for h in hits)
@@ -988,7 +989,7 @@ class CrawlExtraction(unittest.TestCase):
         with unittest.mock.patch.object(crawl_sites, "allowed", lambda u, c: True), \
                 unittest.mock.patch.object(crawl_sites, "DELAY", 0), \
                 unittest.mock.patch.object(crawl_sites, "pdf_text", lambda b: "WINGS $9"):
-            pages, _ = crawl_one(session, {"website": "https://bar.example/"}, {})
+            pages, _, _ = crawl_one(session, {"website": "https://bar.example/"}, {})
 
         urls = [p["url"] for p in pages]
         html_pages = [u for u in urls if not u.endswith(".pdf")]
@@ -1646,3 +1647,100 @@ class OneBarOneCard(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class MenuPricesOnAHappyHourPage(unittest.TestCase):
+    """A price and the thing it is for, printed in separate blocks.
+
+    Bloom Southern Kitchen's happy-hour page holds thirty prices and our crawl
+    kept three quotes, none of them priced: the theme puts the item name and its
+    price in different DOM blocks, so visible_text emits '$ 5' alone. Neither
+    DEAL_RE nor MENU_ITEM_RE can match that line, and on its own it deserves
+    nothing -- '$ 5' names no product.
+    """
+
+    PAGE = "Small Plates\n$ 5\nNashville Deviled Eggs\nchives, fresno chile\n"
+
+    def test_an_ordinary_page_still_ignores_a_bare_price(self):
+        # The containment is the whole safety argument: on a page the venue did
+        # not call its happy hour, these lines are the dinner menu.
+        self.assertEqual(quotes(self.PAGE), [])
+
+    def test_a_happy_hour_page_keeps_the_price_with_its_neighbours(self):
+        got = quotes(self.PAGE, hh_page=True)
+        self.assertTrue(any("$ 5" in q and "Nashville Deviled Eggs" in q for q in got),
+                        got)
+
+    def test_both_neighbours_are_kept_because_the_order_is_not_stable(self):
+        # Bloom prints the price above its item; other themes print it below.
+        # Naming the wrong one is a wrong price on a card, so the crawl keeps
+        # the material and the reviewed price pass decides.
+        q = [x for x in quotes(self.PAGE, hh_page=True) if "$ 5" in x][0]
+        self.assertIn("Small Plates", q)
+        self.assertIn("Nashville Deviled Eggs", q)
+
+
+class MenuPostedAsAPicture(unittest.TestCase):
+    """Malbec publishes its entire happy-hour menu as a JPG exported from a PDF.
+
+    The page has real hours in text and not one dollar sign anywhere in its
+    HTML, so the venue reads as covered while its menu is invisible.
+    """
+
+    HTML = ('<img src="/wp-content/uploads/2026/06/MalbecStk_HH_May_2026-pdf.jpg">'
+            '<img src="/wp-content/uploads/2026/06/MalbecStk_HH_May_2026-pdf-300x150.jpg">'
+            '<img src="/wp-content/uploads/2020/04/cropped-IMG_2939-180x180.jpg">')
+
+    def test_the_menu_image_is_found_and_made_absolute(self):
+        got = menu_images(self.HTML, "http://malbec.example/happyhour/")
+        self.assertEqual(
+            got,
+            ["http://malbec.example/wp-content/uploads/2026/06/"
+             "MalbecStk_HH_May_2026-pdf.jpg"])
+
+    def test_a_theme_size_variant_is_not_a_second_menu(self):
+        # A WordPress theme emits the same upload at six widths. They are one
+        # menu, and only the full-size one is legible.
+        self.assertEqual(len(menu_images(self.HTML, "http://malbec.example/happyhour/")), 1)
+
+    def test_page_furniture_is_not_a_menu(self):
+        # The logo and the favicon are on every page; the filename is the only
+        # signal that held up, because alt text and nearby copy let a hero shot
+        # of people drinking through.
+        self.assertEqual(menu_images('<img src="/uploads/cropped-IMG_2939.jpg">',
+                                     "http://x.example/happyhour/"), [])
+
+
+class APrintedMenuOmitsTheDollarSign(unittest.TestCase):
+    """'COCONUT MOJITO 9' is a price. The whole sheet is a price list.
+
+    verify()'s rule that the digits must appear as '$9' is right for a sentence
+    on a web page and rejected all eighteen of Malbec's real items.
+    """
+
+    def test_a_signless_price_is_accepted_on_a_menu(self):
+        item = {"category": "cocktail", "label": "Coconut Mojito",
+                "price_usd": 9.0, "evidence": "COCONUT MOJITO 9"}
+        clean, why = verify(dict(item), "COCONUT MOJITO 9", menu=True)
+        self.assertIsNotNone(clean, why)
+
+    def test_a_signless_price_is_still_refused_on_a_web_page(self):
+        item = {"category": "cocktail", "label": "Coconut Mojito",
+                "price_usd": 9.0, "evidence": "COCONUT MOJITO 9"}
+        self.assertIsNone(verify(dict(item), "COCONUT MOJITO 9")[0])
+
+    def test_a_price_is_never_read_out_of_a_longer_number(self):
+        # 5 must not be found inside '15'. This is the check that makes the
+        # signless form safe to accept at all.
+        item = {"category": "food", "label": "mussels", "price_usd": 5.0,
+                "evidence": "Half Dozen Mussels - marinara sauce 15"}
+        self.assertIsNone(
+            verify(dict(item), "Half Dozen Mussels - marinara sauce 15", menu=True)[0])
+
+    def test_a_menu_may_name_its_dishes_in_full(self):
+        item = {"category": "food", "price_usd": 16.0,
+                "label": "Malbec Burger served with French fries or house salad",
+                "evidence": "Served with French Fries or House Salad 16"}
+        clean, why = verify(dict(item), "Served with French Fries or House Salad 16",
+                            menu=True)
+        self.assertIsNotNone(clean, why)

@@ -4,6 +4,8 @@ __pycache__/
 *.pyc
 data/*.db
 data/photos/
+# Downloaded menu images, re-fetchable from the URLs in crawl_hits.json.
+data/menu_images/
 node_modules/
 .wrangler/
 .DS_Store

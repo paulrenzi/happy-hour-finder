@@ -105,7 +105,14 @@ def published():
         for v in json.load(open(os.path.join(BUNDLES, fn), encoding="utf-8"))["venues"]:
             for deal in v["deals"]:
                 if deal.get("verified_by") == "auto_extract" and not deal.get("items"):
-                    out[v["id"]] = deal
+                    # The SLUG, not the id. A shipped venue is keyed by its PLCB
+                    # licence number; the sidecar this pass writes -- and the
+                    # lookup build_bundles does against it -- is keyed by the
+                    # slug the extractor derives from name+address. Reading the
+                    # id here matched nothing at all, and the pass reported it
+                    # as '119 could not be joined back to a crawl hit' and
+                    # exited 0, so it read as a thin corpus rather than a bug.
+                    out[v.get("slug") or v["id"]] = deal
     return out
 
 
@@ -156,7 +163,7 @@ def ask(batch):
     return json.loads(m.group(0))
 
 
-def verify(item, text):
+def verify(item, text, menu=False):
     """(clean_item, None) if the venue really published this, else (None, why).
 
     This is the check that makes the pass safe to ship. The model is a reader,
@@ -171,7 +178,10 @@ def verify(item, text):
     if item.get("category") not in CATEGORIES:
         return None, f"category {item.get('category')!r}"
     label = (item.get("label") or "").strip()
-    if not 1 <= len(label) <= 30:
+    # A menu names its dishes in full ('Malbec Burger with French fries or
+    # house salad'); a sentence on a web page yields a short label. 30 is right
+    # for the latter and rejected every real item on the former.
+    if not 1 <= len(label) <= (60 if menu else 30):
         return None, "label length"
     for pat in BANNED:
         if re.search(pat, label, re.I):
@@ -181,7 +191,12 @@ def verify(item, text):
     if (price is None) == (pct is None):
         return None, "needs exactly one of price_usd / discount_pct"
 
-    low = norm(ev)
+    # '$ 8' and '$8' are the same claim. A themed menu that puts the price in
+    # its own block routinely emits the spaced form, and the digits-in-the-text
+    # check below rejected every item on such a page -- a real price, published
+    # by the venue, refused for a space. Only the gap after the sign is closed;
+    # nothing else about the evidence is rewritten.
+    low = re.sub(r"\$\s+(?=\d)", "$", norm(ev))
     if price is not None:
         price = float(price)
         if not 0 < price <= 99:
@@ -191,7 +206,17 @@ def verify(item, text):
         # in words ('five dollars') is left behind rather than accepted on the
         # model's say-so, because there is nothing here to check it against.
         forms = {f"${price:g}", f"${price:.2f}", f"{price:g} dollar"}
-        if not any(f in low for f in forms):
+        found = any(f in low for f in forms)
+        # A PRINTED MENU omits the dollar sign -- the whole sheet is a price
+        # list, so it writes 'COCONUT MOJITO 9' and 'SALMON TARTARE ... 15'.
+        # Requiring the sign there rejected all eighteen of Malbec's real
+        # items. The rule that matters is unchanged and still enforced: the
+        # number has to be sitting in the venue's own text. It is only the
+        # sign that becomes optional, and only for a menu -- and the digits
+        # must stand as a whole token, so 5 is never read out of '15'.
+        if not found and menu:
+            found = re.search(rf"(?<![\d.]){price:g}(?![\d.])", low) is not None
+        if not found:
             return None, f"price {price:g} not written in the evidence"
         clean = {"category": item["category"], "label": label, "price_usd": price}
     else:
