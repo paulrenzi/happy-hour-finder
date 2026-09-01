@@ -375,6 +375,77 @@
    ]
   },
   {
+   "id": "101577",
+   "lid": "101577",
+   "slug": "sedona-taphouse-west-chester",
+   "name": "Sedona Taphouse",
+   "address": "44 W Gay St, West Chester PA 19380",
+   "zone_id": "west_chester",
+   "website": "https://sedonataphouse.com/locations/west-chester-pa/",
+   "plcb_name": "SEDONA TAPHOUSE",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.9600335,
+   "lng": -75.6058116,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "wine",
+       "label": "house wine by the glass and",
+       "price_usd": 7.9
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://sedonataphouse.com/locations/west-chester-pa/",
+      "quote": "Join us for Happy Hour from 4pm \u2013 6pm for $7.9 house wine by the glass and $9.9 select craft classics!"
+     }
+    }
+   ]
+  },
+  {
    "id": "129847",
    "lid": "129847",
    "slug": "station-142-stage-bar-kitchen-west-chester",

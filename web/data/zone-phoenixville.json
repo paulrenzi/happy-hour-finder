@@ -176,13 +176,33 @@
        "dow": 5,
        "start": "17:00",
        "end": "19:00"
+      },
+      {
+       "dow": 6,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 7,
+       "start": "17:00",
+       "end": "19:00"
       }
      ],
      "items": [
       {
-       "category": "draft",
-       "label": "Miller Lite Drafts",
-       "price_usd": 3.0
+       "category": "food",
+       "label": "Brick Oven Pizza",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "label": "Wings",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "label": "any burger",
+       "amount_off_usd": 5.0
       }
      ],
      "confidence": "unconfirmed",
@@ -190,10 +210,9 @@
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://thegreatamericanpub.com/phoenixville/menus/happy-hour/",
-      "quote": "Happy Hour Specials / Monday through Friday | DINE-IN ONLY | 5-7pm / $3 - Miller Lite Drafts"
-     },
-     "items_source": "llm_extract"
+      "url": "https://thegreatamericanpub.com/phoenixville/specials/weekly-specials/",
+      "quote": "Happy Hour from 5pm - 7pm"
+     }
     }
    ]
   }

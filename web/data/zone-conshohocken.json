@@ -84,6 +84,31 @@
      "type": "happy_hour",
      "windows": [
       {
+       "dow": 1,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
        "dow": 6,
        "start": "15:00",
        "end": "17:00"
@@ -97,7 +122,22 @@
      "items": [
       {
        "category": "cocktail",
-       "label": "specialty margaritas",
+       "label": "Specialty Margaritas! (Classic",
+       "price_usd": 10.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Pineapple",
+       "price_usd": 10.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Strawberry",
+       "price_usd": 10.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Spicy)",
        "price_usd": 10.0
       }
      ],
@@ -106,10 +146,9 @@
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://jaspersbackyard.com",
-      "quote": "View 'Happy Hour' Menu / Weekend Happy Hour - Weekend Happy Hour! 3-5 pm Saturdays & Sundays"
-     },
-     "items_source": "llm_extract"
+      "url": "https://jaspersbackyard.com/-specials?source=pop_up&spot_id=92745&destination=specials&promotion=custom_promotion",
+      "quote": "Happy Hour! (available at the bars or high tops) / 03:00 PM - 05:00 PM"
+     }
     }
    ]
   },

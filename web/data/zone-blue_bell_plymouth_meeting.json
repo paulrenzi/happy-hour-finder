@@ -388,6 +388,92 @@
    ]
   },
   {
+   "id": "27076",
+   "lid": "27076",
+   "slug": "scoogi-s-italian-kitchen-bar-flourtown",
+   "name": "Scoogi's Italian Kitchen & Bar",
+   "address": "738 Bethlehem Pk, Flourtown PA 19031",
+   "zone_id": "blue_bell_plymouth_meeting",
+   "website": "https://www.scoogis.com/",
+   "plcb_name": "SCOOGI'S",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.1135426,
+   "lng": -75.2142298,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 2,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 3,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 4,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 5,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 6,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 7,
+       "start": "15:30",
+       "end": "17:30"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Premium Drafts",
+       "price_usd": 6.0
+      },
+      {
+       "category": "wine",
+       "label": "House Wines",
+       "price_usd": 7.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "Stateside Cans",
+       "price_usd": 7.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Aperol Spritz",
+       "price_usd": 9.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.scoogis.com/flourtown-scoogis-italian-kitchen-and-bar-happy-hours-specials",
+      "quote": "Happy Hour at the Bar-Top! / $10 Food Menu | $6 Premium Drafts | $7 House Wines | $7 Stateside Cans | $9 Aperol Spritz / 03:30 PM - 05:30 PM"
+     }
+    }
+   ]
+  },
+  {
    "id": "114621",
    "lid": "114621",
    "slug": "black-horse-plymouth-meeting",

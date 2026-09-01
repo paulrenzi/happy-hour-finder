@@ -4,6 +4,147 @@
  "built_at": "2026-09-01",
  "venues": [
   {
+   "id": "129263",
+   "lid": "129263",
+   "slug": "ariano-media",
+   "name": "Ariano",
+   "address": "114 S Olive St, Media PA 19063",
+   "zone_id": "media",
+   "website": "https://arianomedia.com",
+   "plcb_name": "ARIANO",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.9177439,
+   "lng": -75.3912629,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "20:00",
+       "end": "21:00"
+      },
+      {
+       "dow": 2,
+       "start": "20:00",
+       "end": "21:00"
+      },
+      {
+       "dow": 3,
+       "start": "20:00",
+       "end": "21:00"
+      },
+      {
+       "dow": 4,
+       "start": "20:00",
+       "end": "21:00"
+      },
+      {
+       "dow": 5,
+       "start": "20:00",
+       "end": "21:00"
+      },
+      {
+       "dow": 6,
+       "start": "20:00",
+       "end": "21:00"
+      },
+      {
+       "dow": 7,
+       "start": "20:00",
+       "end": "21:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "wine",
+       "label": "Wines",
+       "amount_off_usd": 4.0
+      },
+      {
+       "category": "draft",
+       "label": "Draft Beers",
+       "amount_off_usd": 2.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://arianomedia.com/specials",
+      "quote": "Late Night Happy Hour / $4 Off Wines, Cocktails , Pizzas, & Apps. $2 Off Draft Beers / 08:00 PM - 09:00 PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "130324",
+   "lid": "130324",
+   "slug": "casa-mia-media",
+   "name": "Casa Mia",
+   "address": "1175 W Baltimore Pk, Media PA 19063",
+   "zone_id": "media",
+   "website": "https://casamiamedia.com",
+   "plcb_name": "CASA MIA",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.9131341,
+   "lng": -75.438275,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://casamiamedia.com",
+      "quote": "HAPPY HOUR SPECIALS / Join us from 4:00 - 6:00 PM"
+     }
+    }
+   ]
+  },
+  {
    "id": "45303",
    "lid": "45303",
    "slug": "iron-hill-media",

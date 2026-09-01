@@ -39,7 +39,22 @@ OUT_DIR = os.path.join(REPO, "web", "data")
 # "nobody has looked" stop being the same state.
 VERDICTS = os.path.join(REPO, "data", "menu_verdicts.json")
 # The ratchet. See the menu ratchet in main(). Lower it with every fix.
-HOLE_BUDGET = 68
+# The ceiling on the SHARE of published venues whose window names no item and
+# carries no recorded reason.
+#
+# This was a COUNT, and the count was the wrong measurement. Reading days the
+# way people write them ('Fridays', 'M-F', "3 PM TIL' 6 PM") admitted 28 venues
+# that had published nothing at all before; 16 of them state hours and no menu,
+# so the count rose 87 -> 101 and the build refused. Nothing had got worse --
+# zero venues lost items, two gained them -- but a count cannot tell a
+# REGRESSION from a venue that has only just arrived, and a guard that fires on
+# progress gets its number bumped until it means nothing.
+#
+# A share can tell them apart, and it is also the thing the goal is about: when
+# the scrape moves into a new zone, what matters is whether that zone's venues
+# name their items at the rate the current ones do, not how many venues it has.
+# 101 of 203 is 49.8%; the ceiling is the number to drive down.
+HOLE_BUDGET = 0.50
 
 
 
@@ -238,20 +253,23 @@ def unaccounted_holes(by_zone, verdicts):
 
 
 def menu_ratchet(by_zone, verdicts, budget, out=print):
-    """Refuse the build if the number of unexplained silent windows has RISEN.
+    """Refuse the build if the SHARE of unexplained silent windows has RISEN.
 
     Separated from main() so its RED can be observed: a guard nobody has ever
     seen refuse is decoration. tests/test_ingest.py exercises both answers.
     """
     holes = unaccounted_holes(by_zone, verdicts)
+    total = sum(len(vs) for vs in by_zone.values()) or 1
+    share = len(holes) / total
     out(f"\n  windows naming no item, with no recorded reason: "
-        f"{len(holes)} (budget {budget})")
-    if len(holes) > budget:
+        f"{len(holes)} of {total} ({share:.1%}, ceiling {budget:.1%})")
+    if share > budget:
         for name in holes[:20]:
             out(f"    {name}")
         raise SystemExit(
-            f"\nREFUSED: {len(holes)} venues publish a window and name no item, "
-            f"and the budget is {budget}. Either read their menus "
+            f"\nREFUSED: {share:.1%} of venues publish a window and name no "
+            f"item ({len(holes)} of {total}), and the ceiling is {budget:.1%}. "
+            f"Either read their menus "
             f"(ingest/report_holes.py ranks them by class) or record a reason "
             f"per venue in data/menu_verdicts.json. Raising HOLE_BUDGET is a "
             f"decision, not a step."

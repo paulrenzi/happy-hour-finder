@@ -125,6 +125,77 @@
    ]
   },
   {
+   "id": "93544",
+   "lid": "93544",
+   "slug": "the-ways-restaurant-brewery-glenside",
+   "name": "The Ways Restaurant & Brewery",
+   "address": "11 S Easton Rd, Glenside PA 19038",
+   "zone_id": "abington_jenkintown",
+   "website": "https://thewaysrestaurantandbrewery.com/",
+   "plcb_name": "WOLF STONE BREWING LLC",
+   "license_type": "Brewery",
+   "lat": 40.1012942,
+   "lng": -75.1524224,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Pints and House Cocktails",
+       "amount_off_usd": 1.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://thewaysrestaurantandbrewery.com/glenside-the-ways-restaurant-and-brewery-happy-hours-specials",
+      "quote": "Happy Hour!!! 4-6pm"
+     }
+    }
+   ]
+  },
+  {
    "id": "110382",
    "lid": "110382",
    "slug": "w-tavern-jenkintown",

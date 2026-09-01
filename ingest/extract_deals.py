@@ -58,10 +58,72 @@ DOW = {"mon": 1, "monday": 1, "tue": 2, "tues": 2, "tuesday": 2, "wed": 3,
        "thursday": 4, "fri": 5, "friday": 5, "sat": 6, "saturday": 6,
        "sun": 7, "sunday": 7}
 DAY_RE = "|".join(sorted(DOW, key=len, reverse=True))
-DASH = r"(?:-|–|—|to|thru|through|till|til|until)"
+# 'til is written with an apostrophe as often as without, on either side of
+# the l: Tommy's Tavern + Tap publishes "3 PM TIL' 6 PM" on its happy hour
+# page and "4 PM 'TIL CLOSE" on its location page, and neither parsed, so a
+# venue whose whole schedule was on the page stated no schedule at all.
+DASH = r"(?:-|\u2013|\u2014|to|thru|through|[\u2019']?til[\u2019']?l?[\u2019']?|until)"
 
-RANGE_RE = re.compile(rf"\b({DAY_RE})\s*(?:s)?\s*{DASH}\s*({DAY_RE})\b", re.I)
-SINGLE_RE = re.compile(rf"\b({DAY_RE})\b", re.I)
+# A day is routinely written PLURAL -- 'Fridays', 'Wednesdays, Thursdays &
+# Fridays' -- and `days_in('Fridays')` returned the empty set, so a venue that
+# named its day in the ordinary English way stated no schedule and published
+# nothing. The trailing s is optional on both ends of a range and on a single
+# day alike; no weekday is another word with an s on it, so this cannot
+# over-match.
+#
+# The separator may also carry the venue's punctuation: 'MON.-THURS.' abbreviates
+# with periods, and requiring whitespace between the day and the dash did not
+# merely miss it -- RANGE_RE failed, SINGLE_RE then matched both ends
+# independently, and days_in returned {Mon, Thu}, SILENTLY DROPPING TUESDAY AND
+# WEDNESDAY. A range we cannot read has to fail as a range, never decay into two
+# single days, which is what the abbreviation guard below also exists to prevent.
+RANGE_RE = re.compile(
+    rf"\b({DAY_RE})s?\.?\s*{DASH}\s*({DAY_RE})s?\b", re.I)
+SINGLE_RE = re.compile(rf"\b({DAY_RE})s?\b", re.I)
+
+# The other way a menu writes its days: one- and two-letter codes, in a range
+# ('M-F', 'Tu-F') or a slash list ('W/Th/Fr'). These cannot go in DOW, because
+# a bare 'M' or 'F' in prose is not a day and DOW is matched against whole
+# pages.
+#
+# 'T' and 'S' are genuinely ambiguous -- Tuesday or Thursday, Saturday or
+# Sunday -- and no amount of looking at the letter decides it. So a construction
+# containing one is REFUSED WHOLE rather than read for the codes around it: a
+# partial answer here is a card that names the wrong days, which is worse than
+# the card we do not publish. Same rule as a happy-hour section that fails short.
+DAY_CODE = {"m": 1, "mo": 1, "tu": 2, "tue": 2, "w": 3, "we": 3, "th": 4,
+            "thu": 4, "f": 5, "fr": 5, "sa": 6, "su": 7}
+AMBIGUOUS_CODE = ("t", "s")
+_CODE = r"[A-Za-z]{1,3}"
+CODE_RANGE_RE = re.compile(rf"\b({_CODE})\s*(?:-|\u2013|\u2014)\s*({_CODE})\b")
+CODE_LIST_RE = re.compile(rf"\b({_CODE})(?:\s*/\s*({_CODE})){{1,6}}\b")
+
+
+def _code(tok):
+    """The weekday a short code names, 0 if it is ambiguous, None if not a code."""
+    t = tok.lower().rstrip(".")
+    if t in AMBIGUOUS_CODE:
+        return 0
+    return DAY_CODE.get(t)
+
+
+def code_days(text):
+    """Weekdays named by an abbreviation range or slash list, or set()."""
+    for m in CODE_RANGE_RE.finditer(text):
+        a, b = _code(m.group(1)), _code(m.group(2))
+        if a == 0 or b == 0:
+            return set()          # ambiguous: refuse the construction whole
+        if a and b:
+            return {(a - 1 + i) % 7 + 1 for i in range((b - a) % 7 + 1)}
+    for m in CODE_LIST_RE.finditer(text):
+        toks = [t for t in re.split(r"\s*/\s*", m.group(0)) if t]
+        got = [_code(t) for t in toks]
+        if any(g is None for g in got):
+            continue              # not a day list at all -- a path, a fraction
+        if any(g == 0 for g in got):
+            return set()          # ambiguous: refuse the construction whole
+        return set(got)
+    return set()
 EVERYDAY_RE = re.compile(r"\b(?:daily|every ?day|all week|7 days a week|seven days)\b", re.I)
 WEEKDAY_RE = re.compile(r"\bweekdays?\b", re.I)
 WEEKEND_RE = re.compile(r"\bweekends?\b", re.I)
@@ -169,8 +231,20 @@ def items_from_hits(hits, lead_url):
     board, $5 on its own PDF. A quote is the unit the crawl vouched for, and
     the price pass may not reach past its edge.
     """
+    # A page that HAS a happy-hour section has already answered which of its
+    # lines are happy-hour lines, and the URL test must not overrule it.
+    # Tommy's Tavern + Tap prints its happy hour and, further down the SAME
+    # page, a 'WEEKDAY SPECIALS' block running 4pm to close. Containment
+    # correctly left that block outside the section -- and then `url ==
+    # lead_url` let every line of it back in, and half-price Wednesday sangria
+    # published as a seven-day 3-6pm happy hour item, on the wrong days, at a
+    # price the venue does not charge then. The fallback is for pages where
+    # containment found NOTHING; where it found something, it is the authority.
+    contained = {h["url"] for h in hits if h.get("hh")}
     out, seen = [], set()
     for h in hits:
+        if h["url"] in contained and not h.get("hh"):
+            continue
         # `hh` is the crawl saying this line sat inside the venue's OWN
         # happy-hour section. That is the containment the URL test was standing
         # in for, and it is stronger: it survives the venue printing its hours
@@ -208,6 +282,11 @@ def days_in(text):
         consumed += 1
     if not consumed:
         out |= {DOW[m.group(1).lower()] for m in SINGLE_RE.finditer(text)}
+    if not out:
+        # Only when the spelled-out grammar found nothing: a page that says
+        # 'Monday' says it in DOW, and the codes are the fallback for the page
+        # that only ever writes 'M-F'.
+        out |= code_days(text)
     return out
 
 
@@ -549,6 +628,20 @@ def one_sided(piece):
     return not (days_in(piece[: m.start()]) and days_in(piece[m.end():]))
 
 
+# A DATED thing is not a weekly thing. This guard exists only for the rule
+# below it: a quote that names a calendar date or a holiday is one night, and
+# reading it as 'every day' would put a Toys For Tots night on 14 December and a
+# bartaco Fourth of July party on the board as a standing happy hour, seven days
+# a week, forever.
+ONE_OFF_RE = re.compile(
+    r"\b(?:jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\.?\s*\d{1,2}(?:st|nd|rd|th)?\b|"
+    r"\b\d{1,2}(?:st|nd|rd|th)\s+of\s+\w+|"
+    r"\b(?:new year|christmas|thanksgiving|halloween|easter|valentine|"
+    r"st\.?\s*patrick|cinco de mayo|super bowl|fourth of july|4th of july)\b|"
+    r"\btonight\b|\bthis (?:friday|saturday|sunday|week|weekend)\b",
+    re.I)
+
+
 def windows_from(quote):
     """[{dow,start,end}] for one quote, or [] if it does not state a schedule.
 
@@ -583,6 +676,26 @@ def windows_from(quote):
                 pending = set()
     if out:
         return out
+    # A happy hour stated as a CLOCK AND NO DAYS is a happy hour every day.
+    #
+    # This is an inference and it is written down as one. 23 venues published a
+    # window and nothing else -- Tommy's Tavern + Tap says "HAPPY HOUR / 3 PM
+    # TIL' 6 PM" and never names a day anywhere on the page -- and refusing them
+    # published nothing at all, which is not the safer answer, it is just the
+    # invisible one. A venue that limits its happy hour to weekdays SAYS SO;
+    # Tommy's own page proves it, heading the block below its daily happy hour
+    # 'WEEKDAY SPECIALS'. Silence about days is the venue saying every day.
+    #
+    # Two guards keep the inference off anything that is not a standing weekly
+    # deal: a MEAL clause (lunch and brunch are published in this exact shape)
+    # and a DATE, which is the difference between a happy hour and a party.
+    if len(quote) <= 200 and len(TIME_RE.findall(quote)) == 1 \
+            and HH_RE.search(quote) and not MEAL_RE.search(quote) \
+            and not ONE_OFF_RE.search(quote) and not days_in(quote):
+        win = window_in(quote)
+        if win:
+            return [{"dow": d, "start": win[0], "end": win[1]}
+                    for d in range(1, 8)]
     # An event listing writes the days last ('Happy Hour / 4:30 PM - 6:30 PM /
     # Friday'), which reading forwards can never pair up. Falling back to the
     # whole quote is only safe while there is exactly one time range in it --

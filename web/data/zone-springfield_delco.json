@@ -2,5 +2,77 @@
  "zone_id": "springfield_delco",
  "name": "Springfield / Morton",
  "built_at": "2026-09-01",
- "venues": []
+ "venues": [
+  {
+   "id": "70163",
+   "lid": "70163",
+   "slug": "red-lobster-springfield",
+   "name": "Red Lobster",
+   "address": "1 Baltimore Pk, Springfield PA 19064",
+   "zone_id": "springfield_delco",
+   "website": "https://www.redlobster.com/seafood-restaurants/locations/pa/springfield/1-baltimore-pike",
+   "plcb_name": "RED LOBSTER #375",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.9239712,
+   "lng": -75.3121893,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "Select Appetizers from 3-6pm at participa",
+       "amount_off_usd": 2.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.redlobster.com/happy-hour/",
+      "quote": "Food ONLY Happy Hour / Did someone say $2 off* select appetizers, like Lobster Flatbread, Seafood-Stuffed Mushrooms, Crab Queso, and more, from 3-6pm?!"
+     }
+    }
+   ]
+  }
+ ]
 }

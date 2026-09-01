@@ -4,6 +4,61 @@
  "built_at": "2026-09-01",
  "venues": [
   {
+   "id": "51932",
+   "lid": "51932",
+   "slug": "12-steps-down-philadelphia",
+   "name": "12 Steps Down",
+   "address": "Bsmt 831-833 Christian St & 831 Christian St, Philadelphia PA 19147",
+   "zone_id": "center_city",
+   "website": "http://www.12stepsdown.com",
+   "plcb_name": "12 STEPS DOWN, LLC",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.9390528,
+   "lng": -75.1576839,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://www.12stepsdown.com/beers/",
+      "quote": "*Happy Hour M-F/5pm-7pm"
+     }
+    }
+   ]
+  },
+  {
    "id": "72755",
    "lid": "72755",
    "slug": "2637brew-philadelphia",
@@ -277,6 +332,61 @@
    ]
   },
   {
+   "id": "114847",
+   "lid": "114847",
+   "slug": "bar-1010-philadelphia",
+   "name": "Bar 1010",
+   "address": "701 N 2Nd St, Philadelphia PA 19123",
+   "zone_id": "center_city",
+   "website": "https://www.bar1010.com/",
+   "plcb_name": "BAR1010 LLC",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.9619672,
+   "lng": -75.1409635,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.bar1010.com/",
+      "quote": "Happy Hour M-F 4-6pm"
+     }
+    }
+   ]
+  },
+  {
    "id": "70669",
    "lid": "70669",
    "slug": "bar-bombon-philadelphia",
@@ -456,6 +566,131 @@
       "kind": "venue_site",
       "url": "https://barbuzzo.com",
       "quote": "HAPPY HOUR: Monday to Friday - 5pm-7pm (at the bar and outside tables only)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "86119",
+   "lid": "86119",
+   "slug": "bloomsday-cafe-philadelphia",
+   "name": "Bloomsday Cafe",
+   "address": "414 S 2Nd St, Philadelphia PA 19147",
+   "zone_id": "center_city",
+   "website": "https://bloomsdaycafe.com/",
+   "plcb_name": "GECC2 LLC",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.942737,
+   "lng": -75.1455915,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "17:30"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "17:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "17:30"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://bloomsdaycafe.com/",
+      "quote": "HAPPY HOUR 4p-5:30p, W/Th/Fr"
+     }
+    }
+   ]
+  },
+  {
+   "id": "115475",
+   "lid": "115475",
+   "slug": "bolo-philadelphia",
+   "name": "Bolo",
+   "address": "2025 Sansom St, Philadelphia PA 19103",
+   "zone_id": "center_city",
+   "website": "https://bolophl.com/",
+   "plcb_name": "BOLO",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.951507,
+   "lng": -75.174575,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 6,
+       "start": "22:00",
+       "end": "24:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://bolophl.com/",
+      "quote": "Late Night (Food and Drink Specials) Saturdays 10pm-12am"
+     }
+    }
+   ]
+  },
+  {
+   "id": "129201",
+   "lid": "129201",
+   "slug": "brasil-s-nightclub-philadelphia",
+   "name": "Brasil's Nightclub",
+   "address": "112 Chestnut St, Philadelphia PA 19106",
+   "zone_id": "center_city",
+   "website": "https://brasilsnightclub-philly.com",
+   "plcb_name": "BRASILS",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.9481789,
+   "lng": -75.1430737,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://brasilsnightclub-philly.com/menu/",
+      "quote": "Happy Hour / Delicious options provided by Viva Pizza and available for delivery right to Brasil\u2019s. Available Wednesdays, Thursdays, Fridays 4\u20136 pm."
      }
     }
    ]
@@ -983,6 +1218,16 @@
        "dow": 5,
        "start": "17:00",
        "end": "19:00"
+      },
+      {
+       "dow": 6,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 7,
+       "start": "17:00",
+       "end": "19:00"
       }
      ],
      "items": [
@@ -990,6 +1235,16 @@
        "category": "draft",
        "label": "Select Beers",
        "price_usd": 4.0
+      },
+      {
+       "category": "wine",
+       "label": "Wines",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "label": "Bites",
+       "price_usd": 6.0
       }
      ],
      "confidence": "unconfirmed",
@@ -997,8 +1252,8 @@
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://devilsalleybarandgrill.com/",
-      "quote": "HH Header - Happy Hour 5-7pm Mon-Fri $4 Select Beers!"
+      "url": "https://devilsalleybarandgrill.com/specials",
+      "quote": "Happy Hour 5-7pm $4 Select Beers $6 Wines $6 Bites"
      }
     }
    ]
@@ -1639,17 +1894,17 @@
       },
       {
        "dow": 5,
-       "start": "15:00",
+       "start": "17:00",
        "end": "18:00"
       },
       {
        "dow": 6,
-       "start": "16:00",
+       "start": "17:00",
        "end": "18:00"
       },
       {
        "dow": 7,
-       "start": "16:00",
+       "start": "17:00",
        "end": "18:00"
       }
      ],
@@ -1665,8 +1920,8 @@
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://lasbugambiliasphilly.com/",
-      "quote": "Happy Hour / Monday - Thursday: 5\u20137PM / Friday: 3-6PM"
+      "url": "https://lasbugambiliasphilly.com/philadelphia-old-city-las-bugambilias-happy-hours-specials",
+      "quote": "Join us for happy hour from 5 to 7pm!"
      }
     }
    ]
@@ -1716,6 +1971,16 @@
        "dow": 5,
        "start": "17:00",
        "end": "19:00"
+      },
+      {
+       "dow": 6,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 7,
+       "start": "17:00",
+       "end": "19:00"
       }
      ],
      "items": [],
@@ -1724,8 +1989,8 @@
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://www.loscamaradas.com/",
-      "quote": "Happy Hour! Discounted drinks and happy hour plates! / Monday to Friday / 5:00 PM - 7:00 PM"
+      "url": "https://www.loscamaradas.com/philadelphia-graduate-hosptial-los-camaradas-happy-hours-specials",
+      "quote": "happy hour / 05:00 PM - 07:00 PM"
      }
     }
    ]
@@ -2261,26 +2526,36 @@
      "windows": [
       {
        "dow": 1,
-       "start": "16:00",
+       "start": "17:00",
        "end": "18:00"
       },
       {
        "dow": 2,
-       "start": "16:00",
+       "start": "17:00",
        "end": "18:00"
       },
       {
        "dow": 3,
-       "start": "16:00",
+       "start": "17:00",
        "end": "18:00"
       },
       {
        "dow": 4,
-       "start": "16:00",
+       "start": "17:00",
        "end": "18:00"
       },
       {
        "dow": 5,
+       "start": "17:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
        "start": "16:00",
        "end": "18:00"
       }
@@ -2292,7 +2567,7 @@
      "source": {
       "kind": "venue_site",
       "url": "https://pierbarphilly.com",
-      "quote": "Happy Hour : Monday - Friday from 4-6pm"
+      "quote": "Happy Hour! / 04:00 PM - 06:00 PM"
      }
     }
    ]
@@ -2336,6 +2611,11 @@
       {
        "dow": 4,
        "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
        "end": "18:00"
       }
      ],
@@ -2939,6 +3219,71 @@
    ]
   },
   {
+   "id": "39717",
+   "lid": "39717",
+   "slug": "the-plough-the-stars-philadelphia",
+   "name": "The Plough & the Stars",
+   "address": "123-129 Chestnut St, Philadelphia PA 19106",
+   "zone_id": "center_city",
+   "website": "https://ploughstars.com",
+   "plcb_name": "THE PLOUGH AND THE STARS",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.9487307,
+   "lng": -75.1438899,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://ploughstars.com/events",
+      "quote": "Happy Hour / 4:00pm \u2013 6:00pm \u00b7 bar seating"
+     }
+    }
+   ]
+  },
+  {
    "id": "101345",
    "lid": "101345",
    "slug": "the-sidecar-bar-grille-philadelphia",
@@ -3358,22 +3703,22 @@
      "windows": [
       {
        "dow": 1,
-       "start": "16:30",
+       "start": "17:00",
        "end": "19:00"
       },
       {
        "dow": 2,
-       "start": "16:30",
+       "start": "17:00",
        "end": "19:00"
       },
       {
        "dow": 3,
-       "start": "16:30",
+       "start": "17:00",
        "end": "19:00"
       },
       {
        "dow": 4,
-       "start": "16:30",
+       "start": "17:00",
        "end": "19:00"
       },
       {

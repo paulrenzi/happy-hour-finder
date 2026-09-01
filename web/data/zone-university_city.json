@@ -89,6 +89,142 @@
    ]
   },
   {
+   "id": "120279",
+   "lid": "120279",
+   "slug": "corio-philadelphia",
+   "name": "Corio",
+   "address": "3675 Market St Ste 100, Philadelphia PA 19104",
+   "zone_id": "university_city",
+   "website": "https://www.coriophilly.com/",
+   "plcb_name": "TWO LOCALS BREWING CO",
+   "license_type": "Brewery",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.coriophilly.com/copy-of-contact-1",
+      "quote": "Happy Hour Menu / Dirty Martini & Caesar Salad $17 / 3-6pm"
+     }
+    }
+   ],
+   "also_lids": [
+    "129240"
+   ]
+  },
+  {
+   "id": "101711",
+   "lid": "101711",
+   "slug": "renata-s-kitchen-bar-philadelphia",
+   "name": "Renata's Kitchen & Bar",
+   "address": "3940 Baltimore Ave, Philadelphia PA 19104",
+   "zone_id": "university_city",
+   "website": "https://www.renatas-kitchen.com/",
+   "plcb_name": "YM ART FOODS LLC",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.9497351,
+   "lng": -75.2029655,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:30"
+      }
+     ],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "craft cocktails",
+       "price_usd": 7.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.renatas-kitchen.com/menu",
+      "quote": "Looking for happy hour in University City? Renata\u2019s Kitchen hosts one of West Philly\u2019s most popular happy hours from 4\u20136:30 PM , featuring $7 craft cocktails , food specials, and $4 city wides ."
+     }
+    }
+   ]
+  },
+  {
    "id": "95357",
    "lid": "95357",
    "slug": "the-post-philadelphia",

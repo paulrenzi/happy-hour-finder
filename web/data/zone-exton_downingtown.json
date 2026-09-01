@@ -561,6 +561,47 @@
    ]
   },
   {
+   "id": "86837",
+   "lid": "86837",
+   "slug": "r5-wines-downingtown",
+   "name": "R5 Wines",
+   "address": "202 & 206 E Lancaster Ave, Downingtown PA 19335",
+   "zone_id": "exton_downingtown",
+   "website": "https://rfivewines.com",
+   "plcb_name": "EAST BRANCH BREWING COMPANY",
+   "license_type": "Brewery",
+   "lat": 40.0067437,
+   "lng": -75.7005769,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "Cocktails",
+       "price_usd": 10.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://rfivewines.com/events",
+      "quote": "Happy Hour / Fridays / 4-6pm"
+     }
+    }
+   ]
+  },
+  {
    "id": "62955",
    "lid": "62955",
    "slug": "station-taproom-downingtown",

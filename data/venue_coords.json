@@ -1,4 +1,13 @@
 {
+ "12-steps-down-philadelphia": {
+  "lat": 39.9390528,
+  "lng": -75.1576839,
+  "matched_by": "osm_site",
+  "osm": "node/2876251699",
+  "precision": "place",
+  "queried": "BSMT 831-833 CHRISTIAN ST & 831 CHRISTIAN ST, PHILADELPHIA PA 19147-3927",
+  "resolved": "12 Steps Down"
+ },
  "2637brew-philadelphia": {
   "lat": 39.9742756,
   "lng": -75.1801781,
@@ -16,6 +25,15 @@
   "precision": "place",
   "queried": "9 N HIGH ST, WEST CHESTER PA 19382",
   "resolved": "9 Prime"
+ },
+ "agave-mexican-cuisine-chadds-ford": {
+  "lat": 39.8717368,
+  "lng": -75.5910832,
+  "matched_by": "osm_site",
+  "osm": "node/6275165525",
+  "precision": "place",
+  "queried": "1620 BALTIMORE PIKE, CHADDS FORD PA 19317",
+  "resolved": "Agave Mexican Cuisine"
  },
  "al-pastor-exton": {
   "lat": 40.0615056,
@@ -71,6 +89,15 @@
   "queried": "78 W LANCASTER AVE, DOWNINGTOWN PA 19335-2825",
   "resolved": "Anthony's Cucina Fresca"
  },
+ "ariano-media": {
+  "lat": 39.9177439,
+  "lng": -75.3912629,
+  "matched_by": "osm_site",
+  "osm": "node/5787781246",
+  "precision": "place",
+  "queried": "114 S OLIVE ST, MEDIA PA 19063-3202",
+  "resolved": "Ariano"
+ },
  "avenue-kitchen-glen-mills": {
   "lat": 39.8644358,
   "lng": -75.5424654,
@@ -88,6 +115,15 @@
   "precision": "place",
   "queried": "726 N 24TH ST, PHILADELPHIA PA 19130-2535",
   "resolved": "Bad Brother"
+ },
+ "bar-1010-philadelphia": {
+  "lat": 39.9619672,
+  "lng": -75.1409635,
+  "matched_by": "osm_site",
+  "osm": "node/4132986627",
+  "precision": "place",
+  "queried": "701 N 2ND ST, PHILADELPHIA PA 19123",
+  "resolved": "Bar 1010"
  },
  "bar-bombon-philadelphia": {
   "lat": 39.950618,
@@ -117,6 +153,15 @@
   "queried": "7-15 S High St, West Chester PA 19382",
   "resolved": "7, South High Street, West Chester, Chester County, Pennsylvania, 19382, United States"
  },
+ "benny-the-bum-s-philadelphia": {
+  "lat": 40.1017923,
+  "lng": -75.0283225,
+  "matched_by": "osm_site",
+  "osm": "node/5423901567",
+  "precision": "place",
+  "queried": "9991-93 BUSTLETON AVE, PHILADELPHIA PA 19115",
+  "resolved": "Benny the Bum's"
+ },
  "black-horse-plymouth-meeting": {
   "lat": 40.108229,
   "lng": -75.318986,
@@ -145,6 +190,24 @@
   "queried": "123 POTTSTOWN PK, CHESTER SPRINGS PA 19425-9518",
   "resolved": "Bloom Southern Kitchen"
  },
+ "bloomsday-cafe-philadelphia": {
+  "lat": 39.942737,
+  "lng": -75.1455915,
+  "matched_by": "osm_site",
+  "osm": "node/9459428362",
+  "precision": "place",
+  "queried": "414 S 2ND ST, PHILADELPHIA PA 19147-1608",
+  "resolved": "Bloomsday Cafe"
+ },
+ "bolo-philadelphia": {
+  "lat": 39.951507,
+  "lng": -75.174575,
+  "matched_by": "osm_site",
+  "osm": "node/12228686819",
+  "precision": "place",
+  "queried": "2025 SANSOM ST, PHILADELPHIA PA 19103-4416",
+  "resolved": "Bolo"
+ },
  "bowlero-boothwyn": {
   "lat": 39.8502211,
   "lng": -75.446885,
@@ -153,6 +216,15 @@
   "precision": "place",
   "queried": "575 CONCHESTER HWY, BOOTHWYN PA 19061",
   "resolved": "Bowlero"
+ },
+ "brasil-s-nightclub-philadelphia": {
+  "lat": 39.9481789,
+  "lng": -75.1430737,
+  "matched_by": "osm_site",
+  "osm": "node/4779956683",
+  "precision": "place",
+  "queried": "112 CHESTNUT ST, PHILADELPHIA PA 19106-3009",
+  "resolved": "Brasil's Nightclub"
  },
  "brickside-grille-exton": {
   "lat": 40.0617237,
@@ -180,6 +252,15 @@
   "precision": "place",
   "queried": "424 S BETHLEHEM PIKE, FORT WASHINGTON PA 19034-2304",
   "resolved": "Cantina Feliz"
+ },
+ "casa-mia-media": {
+  "lat": 39.9131341,
+  "lng": -75.438275,
+  "matched_by": "osm_site",
+  "osm": "way/851668074",
+  "precision": "place",
+  "queried": "1175 W BALTIMORE PK, MEDIA PA 19063-5127",
+  "resolved": "Casa Mia"
  },
  "cedar-point-bar-kitchen-philadelphia": {
   "lat": 39.97688,
@@ -289,6 +370,15 @@
   "queried": "1700 BENJAMIN FRANKLIN PKWY, PHILADELPHIA PA 19103-2735",
   "resolved": "Con Murphy's"
  },
+ "copperfield-inn-at-lakeside-royersford": {
+  "lat": 40.2382906,
+  "lng": -75.5379657,
+  "matched_by": "osm_site",
+  "osm": "way/720018575",
+  "precision": "place",
+  "queried": "594 W RIDGE PK, ROYERSFORD PA 19468-1440",
+  "resolved": "Copperfield Inn at Lakeside"
+ },
  "coyote-crossing-conshohocken": {
   "lat": 40.075755,
   "lng": -75.292913,
@@ -362,6 +452,15 @@
   "queried": "1311-13 SANSOM ST, PHILADELPHIA PA 19107-4523",
   "resolved": "DBG"
  },
+ "depaul-s-table-ardmore": {
+  "lat": 40.0080061,
+  "lng": -75.2908039,
+  "matched_by": "osm_site",
+  "osm": "node/821207194",
+  "precision": "place",
+  "queried": "7 E LANCASTER AVE, ARDMORE PA 19003-2318",
+  "resolved": "DePaul's Table"
+ },
  "desmond-hotel-malvern-a-doubletree-by-hilton-malvern": {
   "lat": 40.0557551,
   "lng": -75.5267083,
@@ -379,6 +478,15 @@
   "precision": "place",
   "queried": "1907 CHESTNUT ST, PHILADELPHIA PA 19103-3500",
   "resolved": "Devil's Alley Bar & Grill"
+ },
+ "doc-s-irish-pub-gilbertsville": {
+  "lat": 40.323631,
+  "lng": -75.6179214,
+  "matched_by": "osm_site",
+  "osm": "way/670357999",
+  "precision": "place",
+  "queried": "1080 E PHILADELPHIA AVE, GILBERTSVILLE PA 19525-9510",
+  "resolved": "Doc's Irish Pub"
  },
  "dock-street-brewery-south-philadelphia": {
   "lat": 39.9391563,
@@ -571,6 +679,15 @@
   "queried": "101 E 7TH AVE, CONSHOHOCKEN PA 19428-1722",
   "resolved": "Jasper's Backyard"
  },
+ "jd-mcgillicuddy-s-havertown": {
+  "lat": 39.9788851,
+  "lng": -75.3032372,
+  "matched_by": "osm_site",
+  "osm": "way/1249791936",
+  "precision": "place",
+  "queried": "31-33-35 BROOKLINE BLVD, HAVERTOWN PA 19083-3801",
+  "resolved": "JD McGillicuddy's"
+ },
  "jerry-s-bar-philadelphia": {
   "lat": 39.9651629,
   "lng": -75.1388758,
@@ -588,6 +705,15 @@
   "precision": "place",
   "queried": "LINCOLN COURT SHOPPING CENTER 245 LANCASTER AVE, FRAZER PA 19355-3607",
   "resolved": "Joey Chops"
+ },
+ "joseph-ambler-inn-north-wales": {
+  "lat": 40.2385258,
+  "lng": -75.2272785,
+  "matched_by": "osm_site",
+  "osm": "way/526930491",
+  "precision": "place",
+  "queried": "1005 HORSHAM RD, NORTH WALES PA 19454-1413",
+  "resolved": "Joseph Ambler Inn"
  },
  "la-porta-ristorante-media": {
   "lat": 39.9389816,
@@ -940,6 +1066,51 @@
   "queried": "1946 LOMBARD ST, PHILADELPHIA PA 19146-1411",
   "resolved": "Pub & Kitchen"
  },
+ "r5-wines-downingtown": {
+  "lat": 40.0067437,
+  "lng": -75.7005769,
+  "matched_by": "osm_site",
+  "osm": "way/554091125",
+  "precision": "place",
+  "queried": "202 & 206 E LANCASTER AVE, DOWNINGTOWN PA 19335-2957",
+  "resolved": "R5 Wines"
+ },
+ "red-lobster-king-of-prussia": {
+  "lat": 40.0907107,
+  "lng": -75.3734357,
+  "matched_by": "osm_site",
+  "osm": "way/851738343",
+  "precision": "place",
+  "queried": "425 W DEKALB PK, KING OF PRUSSIA PA 19406-2304",
+  "resolved": "Red Lobster"
+ },
+ "red-lobster-lansdale": {
+  "lat": 40.2475215,
+  "lng": -75.2450645,
+  "matched_by": "osm_site",
+  "osm": "way/521340829",
+  "precision": "place",
+  "queried": "FIVE POINT PLZ 640 COWPATH RD, LANSDALE PA 19446-1563",
+  "resolved": "Red Lobster"
+ },
+ "red-lobster-springfield": {
+  "lat": 39.9239712,
+  "lng": -75.3121893,
+  "matched_by": "osm_site",
+  "osm": "way/1012319774",
+  "precision": "place",
+  "queried": "1 BALTIMORE PK, SPRINGFIELD PA 19064-3732",
+  "resolved": "Red Lobster"
+ },
+ "renata-s-kitchen-bar-philadelphia": {
+  "lat": 39.9497351,
+  "lng": -75.2029655,
+  "matched_by": "osm_site",
+  "osm": "way/647047816",
+  "precision": "place",
+  "queried": "3940 BALTIMORE AVE, PHILADELPHIA PA 19104",
+  "resolved": "Renata's Kitchen & Bar"
+ },
  "revival-pizza-pub-chester-springs": {
   "lat": 40.1160536,
   "lng": -75.6919705,
@@ -976,6 +1147,15 @@
   "queried": "655-659 N BROAD ST, PHILADELPHIA PA 19123-2418",
   "resolved": "Santucci's Original Square Pizza"
  },
+ "scoogi-s-italian-kitchen-bar-flourtown": {
+  "lat": 40.1135426,
+  "lng": -75.2142298,
+  "matched_by": "osm_site",
+  "osm": "way/988628751",
+  "precision": "place",
+  "queried": "738 BETHLEHEM PK, FLOURTOWN PA 19031-1318",
+  "resolved": "Scoogi's Italian Kitchen & Bar"
+ },
  "se-or-salsa-abington": {
   "lat": 40.1190608,
   "lng": -75.118913,
@@ -1002,6 +1182,24 @@
   "precision": "place",
   "queried": "1939 S BANCROFT ST, PHILADELPHIA PA 19145",
   "resolved": "Second District Brewing Company"
+ },
+ "sedona-taphouse-newtown-square": {
+  "lat": 39.9875809,
+  "lng": -75.4081001,
+  "matched_by": "osm_site",
+  "osm": "node/12990262767",
+  "precision": "place",
+  "queried": "106 SQUIRE DR, NEWTOWN SQUARE PA 19073-2347",
+  "resolved": "Sedona Taphouse"
+ },
+ "sedona-taphouse-west-chester": {
+  "lat": 39.9600335,
+  "lng": -75.6058116,
+  "matched_by": "osm_site",
+  "osm": "node/12220695839",
+  "precision": "place",
+  "queried": "44 W GAY ST, WEST CHESTER PA 19380",
+  "resolved": "Sedona Taphouse"
  },
  "sor-ynez-philadelphia": {
   "lat": 39.9787238,
@@ -1093,6 +1291,15 @@
   "queried": "5240 WEST CHESTER PK, NEWTOWN SQUARE PA 19073-1119",
   "resolved": "Teikoku"
  },
+ "the-bull-restaurant-tavern-montgomeryville": {
+  "lat": 40.2452816,
+  "lng": -75.2412567,
+  "matched_by": "osm_site",
+  "osm": "way/277422107",
+  "precision": "place",
+  "queried": "770 HORSHAM RD, MONTGOMERYVILLE PA 18936-9617",
+  "resolved": "The Bull Restaurant & Tavern"
+ },
  "the-capital-grille-king-of-prussia": {
   "lat": 40.0911314,
   "lng": -75.3921936,
@@ -1165,6 +1372,15 @@
   "queried": "128 FORD ST, WEST CONSHOHOCKEN PA 19428",
   "resolved": "The Gypsy Saloon"
  },
+ "the-plough-the-stars-philadelphia": {
+  "lat": 39.9487307,
+  "lng": -75.1438899,
+  "matched_by": "osm_site",
+  "osm": "node/3470849335",
+  "precision": "place",
+  "queried": "123-129 CHESTNUT ST, PHILADELPHIA PA 19106-3008",
+  "resolved": "The Plough & the Stars"
+ },
  "the-post-philadelphia": {
   "lat": 39.952754,
   "lng": -75.183713,
@@ -1227,6 +1443,15 @@
   "precision": "place",
   "queried": "339 N 11TH ST, PHILADELPHIA PA 19107-1307",
   "resolved": "The Trestle Inn"
+ },
+ "the-ways-restaurant-brewery-glenside": {
+  "lat": 40.1012942,
+  "lng": -75.1524224,
+  "matched_by": "osm_site",
+  "osm": "way/988642684",
+  "precision": "place",
+  "queried": "11 S EASTON RD, GLENSIDE PA 19038",
+  "resolved": "The Ways Restaurant & Brewery"
  },
  "the-wilder-philadelphia": {
   "lat": 39.951443,

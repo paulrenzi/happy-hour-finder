@@ -4,6 +4,56 @@
  "built_at": "2026-09-01",
  "venues": [
   {
+   "id": "95912",
+   "lid": "95912",
+   "slug": "agave-mexican-cuisine-chadds-ford",
+   "name": "Agave Mexican Cuisine",
+   "address": "1620 Baltimore Pike, Chadds Ford PA 19317",
+   "zone_id": "glen_mills_chadds_ford",
+   "website": "http://agavechaddsford.com/",
+   "plcb_name": "AGAVE RESTAURANT",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.8717368,
+   "lng": -75.5910832,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://agavechaddsford.com/",
+      "quote": "Happy Hour | Tu \u2013 F 4 \u2013 6pm"
+     }
+    }
+   ]
+  },
+  {
    "id": "71430",
    "lid": "71430",
    "slug": "avenue-kitchen-glen-mills",
@@ -25,12 +75,37 @@
      "type": "happy_hour",
      "windows": [
       {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
        "dow": 5,
        "start": "16:00",
        "end": "18:00"
       },
       {
        "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
        "start": "16:00",
        "end": "18:00"
       }
@@ -41,8 +116,8 @@
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://www.avekitchen.com/happyhour",
-      "quote": "Unwind with happy hour specials at Avenue Kitchen in Glen Mills / (Friday + Saturday 4-6 PM, check for updates)."
+      "url": "https://www.avekitchen.com/",
+      "quote": "Happy Hour 4PM - 6PM"
      }
     }
    ]

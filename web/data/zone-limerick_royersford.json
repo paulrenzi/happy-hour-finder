@@ -4,6 +4,51 @@
  "built_at": "2026-09-01",
  "venues": [
   {
+   "id": "63944",
+   "lid": "63944",
+   "slug": "copperfield-inn-at-lakeside-royersford",
+   "name": "Copperfield Inn at Lakeside",
+   "address": "594 W Ridge Pk, Royersford PA 19468",
+   "zone_id": "limerick_royersford",
+   "website": "https://www.copperfieldinn.net/",
+   "plcb_name": "COPPERFIELD INN LLC",
+   "license_type": "Hotel (Liquor)",
+   "lat": 40.2382906,
+   "lng": -75.5379657,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.copperfieldinn.net/menu/happy-hour/",
+      "quote": "Happy Hour Menu / Wednesdays, Thursdays, & Fridays / 4:00 PM to 6:00 PM"
+     }
+    }
+   ]
+  },
+  {
    "id": "107670",
    "lid": "107670",
    "slug": "limerick-bowl-limerick",

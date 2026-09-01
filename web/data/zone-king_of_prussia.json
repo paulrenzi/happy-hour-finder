@@ -761,6 +761,81 @@
    ]
   },
   {
+   "id": "70157",
+   "lid": "70157",
+   "slug": "red-lobster-king-of-prussia",
+   "name": "Red Lobster",
+   "address": "425 W Dekalb Pk, King Of Prussia PA 19406",
+   "zone_id": "king_of_prussia",
+   "website": "https://www.redlobster.com/seafood-restaurants/locations/pa/king-of-prussia/425-w-dekalb-pike",
+   "plcb_name": "RED LOBSTER #778",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.0907107,
+   "lng": -75.3734357,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Google",
+    "file": "img/venues/70157.jpg"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "Select Appetizers from 3-6pm at participa",
+       "amount_off_usd": 2.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.redlobster.com/happy-hour/",
+      "quote": "Food ONLY Happy Hour / Did someone say $2 off* select appetizers, like Lobster Flatbread, Seafood-Stuffed Mushrooms, Crab Queso, and more, from 3-6pm?!"
+     }
+    }
+   ]
+  },
+  {
    "id": "72740",
    "lid": "72740",
    "slug": "seasons-52-king-of-prussia",
@@ -1253,6 +1328,146 @@
       "kind": "venue_site",
       "url": "https://m.thecapitalgrille.com/locations/pa/king-of-prussia/king-of-prussia/8043",
       "quote": "Happy Hour / Monday, Tuesday, Wednesday, Thursday, Friday / 3:00 PM - 6:00 PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "129451",
+   "lid": "129451",
+   "slug": "tommy-s-tavern-tap-king-of-prussia",
+   "name": "TOMMY'S TAVERN + TAP",
+   "address": "256 Mall Blvd, King Of Prussia PA 19406",
+   "zone_id": "king_of_prussia",
+   "website": "https://www.tommystavernandtap.com/kingofprussia",
+   "plcb_name": "TOMMY'S TAVERN + TAP",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.0911064,
+   "lng": -75.390712,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Google",
+    "file": "img/venues/129451.jpg"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "GARLIC FLATBREAD",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "label": "SPICY TUNA ROLL",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "label": "PERSONAL CLASSIC PIZZA",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "label": "COAL FIRED JUMBO PRETZEL",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "label": "Tavern Taquitos",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "HOLY GUACAMOLE!",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "GENERAL TSO'S CAULIFLOWER",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "LOADED NACHOS",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "HUMMAS TRIO DIP",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "SPINACH & artichoke dip",
+       "price_usd": 10.0
+      },
+      {
+       "category": "draft",
+       "label": "al draft beers",
+       "amount_off_usd": 2.0
+      },
+      {
+       "category": "wine",
+       "label": "house wines",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "label": "all cocktails",
+       "amount_off_usd": 2.0
+      },
+      {
+       "category": "wine",
+       "label": "sangria",
+       "price_usd": 6.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.tommystavernandtap.com/copy-of-happy-hour-specials",
+      "quote": "HAPPY HOUR / 3 PM TIL' 6 PM"
      }
     }
    ]

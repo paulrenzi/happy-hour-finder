@@ -218,6 +218,140 @@
    ]
   },
   {
+   "id": "sedona-taphouse-west-chester",
+   "lid": "101577",
+   "name": "Sedona Taphouse",
+   "plcb_name": "SEDONA TAPHOUSE",
+   "address": "44 W GAY ST, WEST CHESTER PA 19380",
+   "zone_id": "west_chester",
+   "license_type": "",
+   "website": "https://sedonataphouse.com/locations/west-chester-pa/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "wine",
+       "label": "house wine by the glass and",
+       "price_usd": 7.9
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://sedonataphouse.com/locations/west-chester-pa/",
+      "quote": "Join us for Happy Hour from 4pm \u2013 6pm for $7.9 house wine by the glass and $9.9 select craft classics!"
+     }
+    }
+   ]
+  },
+  {
+   "id": "renata-s-kitchen-bar-philadelphia",
+   "lid": "101711",
+   "name": "Renata's Kitchen & Bar",
+   "plcb_name": "YM ART FOODS LLC",
+   "address": "3940 BALTIMORE AVE, PHILADELPHIA PA 19104",
+   "zone_id": "university_city",
+   "license_type": "",
+   "website": "https://www.renatas-kitchen.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:30"
+      }
+     ],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "craft cocktails",
+       "price_usd": 7.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.renatas-kitchen.com/menu",
+      "quote": "Looking for happy hour in University City? Renata\u2019s Kitchen hosts one of West Philly\u2019s most popular happy hours from 4\u20136:30 PM , featuring $7 craft cocktails , food specials, and $4 city wides ."
+     }
+    }
+   ]
+  },
+  {
    "id": "dandan-ardmore",
    "lid": "102696",
    "name": "Dandan",
@@ -416,17 +550,17 @@
       },
       {
        "dow": 5,
-       "start": "15:00",
+       "start": "17:00",
        "end": "18:00"
       },
       {
        "dow": 6,
-       "start": "16:00",
+       "start": "17:00",
        "end": "18:00"
       },
       {
        "dow": 7,
-       "start": "16:00",
+       "start": "17:00",
        "end": "18:00"
       }
      ],
@@ -442,8 +576,69 @@
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://lasbugambiliasphilly.com/",
-      "quote": "Happy Hour / Monday - Thursday: 5\u20137PM / Friday: 3-6PM"
+      "url": "https://lasbugambiliasphilly.com/philadelphia-old-city-las-bugambilias-happy-hours-specials",
+      "quote": "Join us for happy hour from 5 to 7pm!"
+     }
+    }
+   ]
+  },
+  {
+   "id": "benny-the-bum-s-philadelphia",
+   "lid": "103758",
+   "name": "Benny the Bum's",
+   "plcb_name": "BENNY THE BUMS",
+   "address": "9991-93 BUSTLETON AVE, PHILADELPHIA PA 19115",
+   "zone_id": "northeast_philly",
+   "license_type": "",
+   "website": "https://www.bennythebums.com",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:30",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:30",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:30",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:30",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:30",
+       "end": "19:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:30",
+       "end": "19:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:30",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.bennythebums.com",
+      "quote": "Happy Hours: 4:30-7 PM"
      }
     }
    ]
@@ -638,26 +833,36 @@
      "windows": [
       {
        "dow": 1,
-       "start": "16:00",
+       "start": "17:00",
        "end": "18:00"
       },
       {
        "dow": 2,
-       "start": "16:00",
+       "start": "17:00",
        "end": "18:00"
       },
       {
        "dow": 3,
-       "start": "16:00",
+       "start": "17:00",
        "end": "18:00"
       },
       {
        "dow": 4,
-       "start": "16:00",
+       "start": "17:00",
        "end": "18:00"
       },
       {
        "dow": 5,
+       "start": "17:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
        "start": "16:00",
        "end": "18:00"
       }
@@ -669,7 +874,7 @@
      "source": {
       "kind": "venue_site",
       "url": "https://pierbarphilly.com",
-      "quote": "Happy Hour : Monday - Friday from 4-6pm"
+      "quote": "Happy Hour! / 04:00 PM - 06:00 PM"
      }
     }
    ]
@@ -1815,6 +2020,57 @@
    ]
   },
   {
+   "id": "bar-1010-philadelphia",
+   "lid": "114847",
+   "name": "Bar 1010",
+   "plcb_name": "BAR1010 LLC",
+   "address": "701 N 2ND ST, PHILADELPHIA PA 19123",
+   "zone_id": "center_city",
+   "license_type": "",
+   "website": "https://www.bar1010.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.bar1010.com/",
+      "quote": "Happy Hour M-F 4-6pm"
+     }
+    }
+   ]
+  },
+  {
    "id": "amada-st-davids",
    "lid": "115054",
    "name": "Amada",
@@ -1866,6 +2122,37 @@
       "kind": "venue_site",
       "url": "https://www.amadarestaurant.com/amada-radnor/",
       "quote": "HAPPY HOUR / Sunday - Friday: / 4:30pm - 6:30pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "bolo-philadelphia",
+   "lid": "115475",
+   "name": "Bolo",
+   "plcb_name": "BOLO",
+   "address": "2025 SANSOM ST, PHILADELPHIA PA 19103-4416",
+   "zone_id": "center_city",
+   "license_type": "",
+   "website": "https://bolophl.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 6,
+       "start": "22:00",
+       "end": "24:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://bolophl.com/",
+      "quote": "Late Night (Food and Drink Specials) Saturdays 10pm-12am"
      }
     }
    ]
@@ -2112,6 +2399,73 @@
    ]
   },
   {
+   "id": "sedona-taphouse-newtown-square",
+   "lid": "118439",
+   "name": "Sedona Taphouse",
+   "plcb_name": "SEDONA TAP HOUSE",
+   "address": "106 SQUIRE DR, NEWTOWN SQUARE PA 19073-2347",
+   "zone_id": "newtown_square_broomall",
+   "license_type": "",
+   "website": "https://sedonataphouse.com/locations/newtown-square-pa/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "wine",
+       "label": "house wine by the glass and",
+       "price_usd": 7.9
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://sedonataphouse.com/locations/newtown-square-pa/",
+      "quote": "Join us for Happy Hour from 4pm \u2013 6pm for $7.9 house wine by the glass and $9.9 craft classics!"
+     }
+    }
+   ]
+  },
+  {
    "id": "9-prime-west-chester",
    "lid": "119098",
    "name": "9 Prime",
@@ -2296,6 +2650,67 @@
       "kind": "venue_site",
       "url": "https://lascalasfire.com/newtown-square/menus/happy-hour",
       "quote": "HAPPY HOUR / MON-FRI 3PM-6PM / APEROL SPRITZ $9"
+     }
+    }
+   ]
+  },
+  {
+   "id": "corio-philadelphia",
+   "lid": "120279",
+   "name": "Corio",
+   "plcb_name": "TWO LOCALS BREWING CO",
+   "address": "3675 MARKET ST STE 100, PHILADELPHIA PA 19104-2897",
+   "zone_id": "university_city",
+   "license_type": "",
+   "website": "https://www.coriophilly.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.coriophilly.com/copy-of-contact-1",
+      "quote": "Happy Hour Menu / Dirty Martini & Caesar Salad $17 / 3-6pm"
      }
     }
    ]
@@ -2615,6 +3030,67 @@
    ]
   },
   {
+   "id": "the-bull-restaurant-tavern-montgomeryville",
+   "lid": "126965",
+   "name": "The Bull Restaurant & Tavern",
+   "plcb_name": "BULL & BARREL BAR & RESTAURANT",
+   "address": "770 HORSHAM RD, MONTGOMERYVILLE PA 18936-9617",
+   "zone_id": "lansdale_montgomeryville",
+   "license_type": "",
+   "website": "https://www.thebulltavern.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 6,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 7,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.thebulltavern.com/specials.html",
+      "quote": "DRINK Happy Hour 5pm-7pm"
+     }
+    }
+   ]
+  },
+  {
    "id": "percy-philadelphia",
    "lid": "128022",
    "name": "Percy",
@@ -2792,6 +3268,47 @@
    ]
   },
   {
+   "id": "brasil-s-nightclub-philadelphia",
+   "lid": "129201",
+   "name": "Brasil's Nightclub",
+   "plcb_name": "BRASILS",
+   "address": "112 CHESTNUT ST, PHILADELPHIA PA 19106-3009",
+   "zone_id": "center_city",
+   "license_type": "",
+   "website": "https://brasilsnightclub-philly.com",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://brasilsnightclub-philly.com/menu/",
+      "quote": "Happy Hour / Delicious options provided by Viva Pizza and available for delivery right to Brasil\u2019s. Available Wednesdays, Thursdays, Fridays 4\u20136 pm."
+     }
+    }
+   ]
+  },
+  {
    "id": "white-dog-cafe-philadelphia",
    "lid": "12921",
    "name": "White Dog Cafe",
@@ -2879,6 +3396,139 @@
    ]
   },
   {
+   "id": "corio-philadelphia-129240",
+   "lid": "129240",
+   "name": "Corio",
+   "plcb_name": "FIFTY FIFTY LLC",
+   "address": "3675 MARKET ST STE 101, PHILADELPHIA PA 19104-2897",
+   "zone_id": "university_city",
+   "license_type": "",
+   "website": "https://www.coriophilly.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.coriophilly.com/copy-of-contact-1",
+      "quote": "Happy Hour Menu / Dirty Martini & Caesar Salad $17 / 3-6pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "ariano-media",
+   "lid": "129263",
+   "name": "Ariano",
+   "plcb_name": "ARIANO",
+   "address": "114 S OLIVE ST, MEDIA PA 19063-3202",
+   "zone_id": "media",
+   "license_type": "",
+   "website": "https://arianomedia.com",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "20:00",
+       "end": "21:00"
+      },
+      {
+       "dow": 2,
+       "start": "20:00",
+       "end": "21:00"
+      },
+      {
+       "dow": 3,
+       "start": "20:00",
+       "end": "21:00"
+      },
+      {
+       "dow": 4,
+       "start": "20:00",
+       "end": "21:00"
+      },
+      {
+       "dow": 5,
+       "start": "20:00",
+       "end": "21:00"
+      },
+      {
+       "dow": 6,
+       "start": "20:00",
+       "end": "21:00"
+      },
+      {
+       "dow": 7,
+       "start": "20:00",
+       "end": "21:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "wine",
+       "label": "Wines",
+       "amount_off_usd": 4.0
+      },
+      {
+       "category": "draft",
+       "label": "Draft Beers",
+       "amount_off_usd": 2.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://arianomedia.com/specials",
+      "quote": "Late Night Happy Hour / $4 Off Wines, Cocktails , Pizzas, & Apps. $2 Off Draft Beers / 08:00 PM - 09:00 PM"
+     }
+    }
+   ]
+  },
+  {
    "id": "panorama-philadelphia",
    "lid": "129284",
    "name": "Panorama",
@@ -2951,6 +3601,138 @@
       "kind": "venue_site",
       "url": "https://www.pennsviewhotel.com/panorama",
       "quote": "Happy Hour / Every Tuesday, Wednesday, Thursday, Friday, Saturday \u2026 \u2022 Tuesday - Friday from 4:30 - 6:00pm \u2026 \u2022 Saturday 3:00 - 4:30pm \u2026 At the Bar / First Come\u2026"
+     }
+    }
+   ]
+  },
+  {
+   "id": "tommy-s-tavern-tap-king-of-prussia",
+   "lid": "129451",
+   "name": "TOMMY'S TAVERN + TAP",
+   "plcb_name": "TOMMY'S TAVERN + TAP",
+   "address": "256 MALL BLVD, KING OF PRUSSIA PA 19406",
+   "zone_id": "king_of_prussia",
+   "license_type": "",
+   "website": "https://www.tommystavernandtap.com/kingofprussia",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "GARLIC FLATBREAD",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "label": "SPICY TUNA ROLL",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "label": "PERSONAL CLASSIC PIZZA",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "label": "COAL FIRED JUMBO PRETZEL",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "label": "Tavern Taquitos",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "HOLY GUACAMOLE!",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "GENERAL TSO'S CAULIFLOWER",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "LOADED NACHOS",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "HUMMAS TRIO DIP",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "SPINACH & artichoke dip",
+       "price_usd": 10.0
+      },
+      {
+       "category": "draft",
+       "label": "al draft beers",
+       "amount_off_usd": 2.0
+      },
+      {
+       "category": "wine",
+       "label": "house wines",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "label": "all cocktails",
+       "amount_off_usd": 2.0
+      },
+      {
+       "category": "wine",
+       "label": "sangria",
+       "price_usd": 6.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.tommystavernandtap.com/copy-of-happy-hour-specials",
+      "quote": "HAPPY HOUR / 3 PM TIL' 6 PM"
      }
     }
    ]
@@ -3069,6 +3851,67 @@
       "kind": "venue_site",
       "url": "https://www.marshassouthstreet.com/events/halftime-rb-happy-hour",
       "quote": "Chill vibes, dope beats, and a dash of R&B karaoke\u2026 it\u2019s the kind of weekend pop-up Happy Hour that feels like home. Pull up, link up, and let\u2019s kick off this new vibe the right way. / \ud83d\udd53 Saturday 12/13/25 / \u23f0 4\u20138PM (Day Party)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "casa-mia-media",
+   "lid": "130324",
+   "name": "Casa Mia",
+   "plcb_name": "CASA MIA",
+   "address": "1175 W BALTIMORE PK, MEDIA PA 19063-5127",
+   "zone_id": "media",
+   "license_type": "",
+   "website": "https://casamiamedia.com",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://casamiamedia.com",
+      "quote": "HAPPY HOUR SPECIALS / Join us from 4:00 - 6:00 PM"
      }
     }
    ]
@@ -3283,22 +4126,22 @@
      "windows": [
       {
        "dow": 1,
-       "start": "16:30",
+       "start": "17:00",
        "end": "19:00"
       },
       {
        "dow": 2,
-       "start": "16:30",
+       "start": "17:00",
        "end": "19:00"
       },
       {
        "dow": 3,
-       "start": "16:30",
+       "start": "17:00",
        "end": "19:00"
       },
       {
        "dow": 4,
-       "start": "16:30",
+       "start": "17:00",
        "end": "19:00"
       },
       {
@@ -3594,6 +4437,16 @@
      "type": "happy_hour",
      "windows": [
       {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
        "dow": 3,
        "start": "16:00",
        "end": "18:30"
@@ -3607,6 +4460,16 @@
        "dow": 5,
        "start": "16:00",
        "end": "18:30"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:30"
       }
      ],
      "items": [],
@@ -3616,7 +4479,7 @@
      "source": {
       "kind": "venue_site",
       "url": "https://charlottesrestaurant.com/newtown-square-charlotte-s-restaurant-happy-hours-specials",
-      "quote": "Happy Hour at Charlottes features drink specials and discounted appetizers. / 04:00 PM - 06:30 PM / Wednesday September 2nd"
+      "quote": "Happy Hour at Charlottes features drink specials and discounted appetizers. / 04:00 PM - 06:30 PM"
      }
     }
    ]
@@ -3635,14 +4498,39 @@
      "type": "happy_hour",
      "windows": [
       {
+       "dow": 1,
+       "start": "15:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:30",
+       "end": "18:00"
+      },
+      {
        "dow": 5,
        "start": "15:30",
        "end": "18:00"
       },
       {
        "dow": 6,
-       "start": "21:00",
-       "end": "23:00"
+       "start": "15:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:30",
+       "end": "18:00"
       }
      ],
      "items": [
@@ -3678,7 +4566,89 @@
      "source": {
       "kind": "venue_site",
       "url": "https://gulliftys.com/bryn-mawr-rosemont-gullifty-s-specials-custom",
-      "quote": "Saturday Night Food & Drink Specials from 8-11pm! Includes $1.25 Wings, $7 Lil' G Burgers, $6 Lil' Nachos, $7 Lil' Burrata, $5 Surfsides & Statesides, $6 House Mixed Drinks, $4 Mic Ultra Drafts, $4 Garage Beer Lime Drafts, $5 Levante Cloudy & Cumbersome Drafts. Dine-in Only."
+      "quote": "Happy Hour food and drink specials! See Happy Hour Menu under the menus tab. / 03:30 PM - 06:00 PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "scoogi-s-italian-kitchen-bar-flourtown",
+   "lid": "27076",
+   "name": "Scoogi's Italian Kitchen & Bar",
+   "plcb_name": "SCOOGI'S",
+   "address": "738 BETHLEHEM PK, FLOURTOWN PA 19031-1318",
+   "zone_id": "blue_bell_plymouth_meeting",
+   "license_type": "",
+   "website": "https://www.scoogis.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 2,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 3,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 4,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 5,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 6,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 7,
+       "start": "15:30",
+       "end": "17:30"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Premium Drafts",
+       "price_usd": 6.0
+      },
+      {
+       "category": "wine",
+       "label": "House Wines",
+       "price_usd": 7.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "Stateside Cans",
+       "price_usd": 7.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Aperol Spritz",
+       "price_usd": 9.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.scoogis.com/flourtown-scoogis-italian-kitchen-and-bar-happy-hours-specials",
+      "quote": "Happy Hour at the Bar-Top! / $10 Food Menu | $6 Premium Drafts | $7 House Wines | $7 Stateside Cans | $9 Aperol Spritz / 03:30 PM - 05:30 PM"
      }
     }
    ]
@@ -4099,6 +5069,67 @@
    ]
   },
   {
+   "id": "the-plough-the-stars-philadelphia",
+   "lid": "39717",
+   "name": "The Plough & the Stars",
+   "plcb_name": "THE PLOUGH AND THE STARS",
+   "address": "123-129 CHESTNUT ST, PHILADELPHIA PA 19106-3008",
+   "zone_id": "center_city",
+   "license_type": "",
+   "website": "https://ploughstars.com",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://ploughstars.com/events",
+      "quote": "Happy Hour / 4:00pm \u2013 6:00pm \u00b7 bar seating"
+     }
+    }
+   ]
+  },
+  {
    "id": "hard-rock-cafe-philadelphia",
    "lid": "41866",
    "name": "Hard Rock Cafe",
@@ -4263,6 +5294,83 @@
       "kind": "venue_site",
       "url": "https://pubofpennvalley.com/menu/",
       "quote": "Happy Hours / 3:30 pm - 5:30 pm & 9:00 pm-11:00 pm / $6 Daily Appetizer Specials (available 3:30pm-5:30pm only)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "joseph-ambler-inn-north-wales",
+   "lid": "44242",
+   "name": "Joseph Ambler Inn",
+   "plcb_name": "JOSEPH AMBLER INN",
+   "address": "1005 HORSHAM RD, NORTH WALES PA 19454-1413",
+   "zone_id": "lansdale_montgomeryville",
+   "license_type": "",
+   "website": "https://www.josephamblerinn.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 2,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 3,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 4,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 5,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 6,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 7,
+       "start": "15:30",
+       "end": "17:30"
+      }
+     ],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "Cocktails",
+       "price_usd": 10.0
+      },
+      {
+       "category": "wine",
+       "label": "Wine By The Glass",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "per wing",
+       "price_usd": 1.5
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://josephamblerinn.com/wp-content/uploads/2026/06/JAI-HH.pdf",
+      "quote": "Happy Hour in the JPUB! / 3:30-5:30 PM"
      }
     }
    ]
@@ -4844,11 +5952,6 @@
        "category": "bottle_can",
        "label": "Domestic Bottles",
        "price_usd": 3.0
-      },
-      {
-       "category": "draft",
-       "label": "Select Craft Beer",
-       "price_usd": 5.0
       }
      ],
      "confidence": "unconfirmed",
@@ -5017,6 +6120,57 @@
    ]
   },
   {
+   "id": "12-steps-down-philadelphia",
+   "lid": "51932",
+   "name": "12 Steps Down",
+   "plcb_name": "12 STEPS DOWN, LLC",
+   "address": "BSMT 831-833 CHRISTIAN ST & 831 CHRISTIAN ST, PHILADELPHIA PA 19147-3927",
+   "zone_id": "center_city",
+   "license_type": "",
+   "website": "http://www.12stepsdown.com",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://www.12stepsdown.com/beers/",
+      "quote": "*Happy Hour M-F/5pm-7pm"
+     }
+    }
+   ]
+  },
+  {
    "id": "el-vez-philadelphia",
    "lid": "52068",
    "name": "El Vez",
@@ -5104,6 +6258,16 @@
        "dow": 5,
        "start": "17:00",
        "end": "19:00"
+      },
+      {
+       "dow": 6,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 7,
+       "start": "17:00",
+       "end": "19:00"
       }
      ],
      "items": [
@@ -5111,6 +6275,16 @@
        "category": "draft",
        "label": "Select Beers",
        "price_usd": 4.0
+      },
+      {
+       "category": "wine",
+       "label": "Wines",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "label": "Bites",
+       "price_usd": 6.0
       }
      ],
      "confidence": "unconfirmed",
@@ -5118,8 +6292,8 @@
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://devilsalleybarandgrill.com/",
-      "quote": "HH Header - Happy Hour 5-7pm Mon-Fri $4 Select Beers!"
+      "url": "https://devilsalleybarandgrill.com/specials",
+      "quote": "Happy Hour 5-7pm $4 Select Beers $6 Wines $6 Bites"
      }
     }
    ]
@@ -5710,6 +6884,11 @@
        "dow": 4,
        "start": "16:00",
        "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
       }
      ],
      "items": [],
@@ -5743,6 +6922,11 @@
        "end": "18:00"
       },
       {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
        "dow": 3,
        "start": "16:00",
        "end": "18:00"
@@ -5761,6 +6945,11 @@
        "dow": 6,
        "start": "16:00",
        "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
       }
      ],
      "items": [],
@@ -5770,7 +6959,7 @@
      "source": {
       "kind": "venue_site",
       "url": "https://alehousenewtownsquare.com/newtown-square-delaware-county-the-ale-house-happy-hours-specials",
-      "quote": "Happy Hour! / 04:00 PM - 06:00 PM / Wednesday September 2nd"
+      "quote": "Happy Hour! / 04:00 PM - 06:00 PM"
      }
     }
    ]
@@ -6523,6 +7712,62 @@
    ]
   },
   {
+   "id": "jd-mcgillicuddy-s-havertown",
+   "lid": "63853",
+   "name": "JD McGillicuddy's",
+   "plcb_name": "JDM 33, INC.",
+   "address": "31-33-35 BROOKLINE BLVD, HAVERTOWN PA 19083-3801",
+   "zone_id": "havertown",
+   "license_type": "",
+   "website": "https://jdmcgillicuddys.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "18:00",
+       "end": "22:00"
+      },
+      {
+       "dow": 3,
+       "start": "18:00",
+       "end": "22:00"
+      },
+      {
+       "dow": 4,
+       "start": "18:00",
+       "end": "22:00"
+      },
+      {
+       "dow": 5,
+       "start": "18:00",
+       "end": "22:00"
+      },
+      {
+       "dow": 6,
+       "start": "18:00",
+       "end": "22:00"
+      },
+      {
+       "dow": 7,
+       "start": "18:00",
+       "end": "22:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://jdmcgillicuddys.com/toys-for-tots-happy-hour-jd-mcgilicuddys-kirklyn-dec-14th/",
+      "quote": "Toys For Tots is back @ JD McGilicuddy\u2019s Kirklyn! With live music by Moran & Kelly 6-10pm. Happy Hour specials are extended until 8pm. Bring a toy for the tots and show your giving holiday spirit!"
+     }
+    }
+   ]
+  },
+  {
    "id": "pj-whelihan-s-downingtown",
    "lid": "63902",
    "name": "PJ Whelihan's",
@@ -6554,6 +7799,47 @@
       "kind": "venue_site",
       "url": "https://www.pjspub.com/about.php?loc=Downingtown",
       "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "copperfield-inn-at-lakeside-royersford",
+   "lid": "63944",
+   "name": "Copperfield Inn at Lakeside",
+   "plcb_name": "COPPERFIELD INN LLC",
+   "address": "594 W RIDGE PK, ROYERSFORD PA 19468-1440",
+   "zone_id": "limerick_royersford",
+   "license_type": "",
+   "website": "https://www.copperfieldinn.net/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.copperfieldinn.net/menu/happy-hour/",
+      "quote": "Happy Hour Menu / Wednesdays, Thursdays, & Fridays / 4:00 PM to 6:00 PM"
      }
     }
    ]
@@ -7892,6 +9178,67 @@
    ]
   },
   {
+   "id": "doc-s-irish-pub-gilbertsville",
+   "lid": "68830",
+   "name": "Doc's Irish Pub",
+   "plcb_name": "DOC WATSONS LLC",
+   "address": "1080 E PHILADELPHIA AVE, GILBERTSVILLE PA 19525-9510",
+   "zone_id": "pottstown",
+   "license_type": "",
+   "website": "https://www.godocspub.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.godocspub.com/specials/",
+      "quote": "Happy Hour 4PM\u20136PM \u2014 beers, wells & wines $1 off"
+     }
+    }
+   ]
+  },
+  {
    "id": "p-j-whelihan-s-conshohocken-69227",
    "lid": "69227",
    "name": "P.J. Whelihan's",
@@ -7964,16 +9311,42 @@
        "dow": 5,
        "start": "17:00",
        "end": "19:00"
+      },
+      {
+       "dow": 6,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 7,
+       "start": "17:00",
+       "end": "19:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "Brick Oven Pizza",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "label": "Wings",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "label": "any burger",
+       "amount_off_usd": 5.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://thegreatamericanpub.com/phoenixville/menus/happy-hour/",
-      "quote": "Happy Hour Specials / Monday through Friday | DINE-IN ONLY | 5-7pm / $3 - Miller Lite Drafts"
+      "url": "https://thegreatamericanpub.com/phoenixville/specials/weekly-specials/",
+      "quote": "Happy Hour from 5pm - 7pm"
      }
     }
    ]
@@ -8025,6 +9398,207 @@
    ]
   },
   {
+   "id": "red-lobster-king-of-prussia",
+   "lid": "70157",
+   "name": "Red Lobster",
+   "plcb_name": "RED LOBSTER #778",
+   "address": "425 W DEKALB PK, KING OF PRUSSIA PA 19406-2304",
+   "zone_id": "king_of_prussia",
+   "license_type": "",
+   "website": "https://www.redlobster.com/seafood-restaurants/locations/pa/king-of-prussia/425-w-dekalb-pike",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "Select Appetizers from 3-6pm at participa",
+       "amount_off_usd": 2.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.redlobster.com/happy-hour/",
+      "quote": "Food ONLY Happy Hour / Did someone say $2 off* select appetizers, like Lobster Flatbread, Seafood-Stuffed Mushrooms, Crab Queso, and more, from 3-6pm?!"
+     }
+    }
+   ]
+  },
+  {
+   "id": "red-lobster-springfield",
+   "lid": "70163",
+   "name": "Red Lobster",
+   "plcb_name": "RED LOBSTER #375",
+   "address": "1 BALTIMORE PK, SPRINGFIELD PA 19064-3732",
+   "zone_id": "springfield_delco",
+   "license_type": "",
+   "website": "https://www.redlobster.com/seafood-restaurants/locations/pa/springfield/1-baltimore-pike",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "Select Appetizers from 3-6pm at participa",
+       "amount_off_usd": 2.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.redlobster.com/happy-hour/",
+      "quote": "Food ONLY Happy Hour / Did someone say $2 off* select appetizers, like Lobster Flatbread, Seafood-Stuffed Mushrooms, Crab Queso, and more, from 3-6pm?!"
+     }
+    }
+   ]
+  },
+  {
+   "id": "red-lobster-lansdale",
+   "lid": "70198",
+   "name": "Red Lobster",
+   "plcb_name": "RED LOBSTER #443",
+   "address": "FIVE POINT PLZ 640 COWPATH RD, LANSDALE PA 19446-1563",
+   "zone_id": "lansdale_montgomeryville",
+   "license_type": "",
+   "website": "https://www.redlobster.com/seafood-restaurants/locations/pa/lansdale/640-cowpath-road/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "Select Appetizers from 3-6pm at participa",
+       "amount_off_usd": 2.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.redlobster.com/happy-hour/",
+      "quote": "Food ONLY Happy Hour / Did someone say $2 off* select appetizers, like Lobster Flatbread, Seafood-Stuffed Mushrooms, Crab Queso, and more, from 3-6pm?!"
+     }
+    }
+   ]
+  },
+  {
    "id": "jasper-s-backyard-conshohocken",
    "lid": "70520",
    "name": "Jasper's Backyard",
@@ -8038,6 +9612,31 @@
      "type": "happy_hour",
      "windows": [
       {
+       "dow": 1,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
        "dow": 6,
        "start": "15:00",
        "end": "17:00"
@@ -8048,14 +9647,35 @@
        "end": "17:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "Specialty Margaritas! (Classic",
+       "price_usd": 10.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Pineapple",
+       "price_usd": 10.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Strawberry",
+       "price_usd": 10.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Spicy)",
+       "price_usd": 10.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://jaspersbackyard.com",
-      "quote": "View 'Happy Hour' Menu / Weekend Happy Hour - Weekend Happy Hour! 3-5 pm Saturdays & Sundays"
+      "url": "https://jaspersbackyard.com/-specials?source=pop_up&spot_id=92745&destination=specials&promotion=custom_promotion",
+      "quote": "Happy Hour! (available at the bars or high tops) / 03:00 PM - 05:00 PM"
      }
     }
    ]
@@ -8273,12 +9893,37 @@
      "type": "happy_hour",
      "windows": [
       {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
        "dow": 5,
        "start": "16:00",
        "end": "18:00"
       },
       {
        "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
        "start": "16:00",
        "end": "18:00"
       }
@@ -8289,8 +9934,8 @@
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://www.avekitchen.com/happyhour",
-      "quote": "Unwind with happy hour specials at Avenue Kitchen in Glen Mills / (Friday + Saturday 4-6 PM, check for updates)."
+      "url": "https://www.avekitchen.com/",
+      "quote": "Happy Hour 4PM - 6PM"
      }
     }
    ]
@@ -8475,6 +10120,16 @@
        "dow": 5,
        "start": "17:00",
        "end": "19:00"
+      },
+      {
+       "dow": 6,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 7,
+       "start": "17:00",
+       "end": "19:00"
       }
      ],
      "items": [],
@@ -8483,8 +10138,8 @@
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://www.loscamaradas.com/",
-      "quote": "Happy Hour! Discounted drinks and happy hour plates! / Monday to Friday / 5:00 PM - 7:00 PM"
+      "url": "https://www.loscamaradas.com/philadelphia-graduate-hosptial-los-camaradas-happy-hours-specials",
+      "quote": "happy hour / 05:00 PM - 07:00 PM"
      }
     }
    ]
@@ -9664,6 +11319,145 @@
    ]
   },
   {
+   "id": "bloomsday-cafe-philadelphia",
+   "lid": "86119",
+   "name": "Bloomsday Cafe",
+   "plcb_name": "GECC2 LLC",
+   "address": "414 S 2ND ST, PHILADELPHIA PA 19147-1608",
+   "zone_id": "center_city",
+   "license_type": "",
+   "website": "https://bloomsdaycafe.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "17:30"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "17:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "17:30"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://bloomsdaycafe.com/",
+      "quote": "HAPPY HOUR 4p-5:30p, W/Th/Fr"
+     }
+    }
+   ]
+  },
+  {
+   "id": "depaul-s-table-ardmore",
+   "lid": "86412",
+   "name": "DePaul's Table",
+   "plcb_name": "7 E LANCASTER FANCY FACE LLC",
+   "address": "7 E LANCASTER AVE, ARDMORE PA 19003-2318",
+   "zone_id": "ardmore_bryn_mawr",
+   "license_type": "",
+   "website": "https://www.depaulstable.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:30",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.depaulstable.com/",
+      "quote": "Social Hour | 7 Nights A Week 4:30pm to 6:00pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "r5-wines-downingtown",
+   "lid": "86837",
+   "name": "R5 Wines",
+   "plcb_name": "EAST BRANCH BREWING COMPANY",
+   "address": "202 & 206 E LANCASTER AVE, DOWNINGTOWN PA 19335-2957",
+   "zone_id": "exton_downingtown",
+   "license_type": "",
+   "website": "https://rfivewines.com",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "Cocktails",
+       "price_usd": 10.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://rfivewines.com/events",
+      "quote": "Happy Hour / Fridays / 4-6pm"
+     }
+    }
+   ]
+  },
+  {
    "id": "interstate-drafthouse-philadelphia",
    "lid": "87212",
    "name": "Interstate Drafthouse",
@@ -10211,6 +12005,73 @@
    ]
   },
   {
+   "id": "the-ways-restaurant-brewery-glenside",
+   "lid": "93544",
+   "name": "The Ways Restaurant & Brewery",
+   "plcb_name": "WOLF STONE BREWING LLC",
+   "address": "11 S EASTON RD, GLENSIDE PA 19038",
+   "zone_id": "abington_jenkintown",
+   "license_type": "",
+   "website": "https://thewaysrestaurantandbrewery.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Pints and House Cocktails",
+       "amount_off_usd": 1.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://thewaysrestaurantandbrewery.com/glenside-the-ways-restaurant-and-brewery-happy-hours-specials",
+      "quote": "Happy Hour!!! 4-6pm"
+     }
+    }
+   ]
+  },
+  {
    "id": "village-whiskey-philadelphia",
    "lid": "93942",
    "name": "Village Whiskey",
@@ -10439,9 +12300,39 @@
      "type": "happy_hour",
      "windows": [
       {
+       "dow": 1,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
        "dow": 5,
-       "start": "15:00",
-       "end": "17:00"
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 6,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 7,
+       "start": "17:00",
+       "end": "19:00"
       }
      ],
      "items": [
@@ -10462,7 +12353,7 @@
      "source": {
       "kind": "venue_site",
       "url": "https://www.atticbrewing.com/event-details/teacher-happy-hour-2022-09-09-15-00",
-      "quote": "Teacher Happy Hour / Fri, Sep 09 / Every Friday 3-5pm is Teacher Happy Hour with $1 off drafts and $6 margaritas to say Thank you to all of our hardworking teachers!!!"
+      "quote": "Happy Hour for everyone 5-7pm"
      }
     }
    ]
@@ -10647,6 +12538,52 @@
       "kind": "venue_site",
       "url": "https://www.jjratiganbrewing.com/menu-happy-hour",
       "quote": "Happy Hour / Happy Hour is every MON - THUR from 4 to 6pm. Bar, high-tops seating and outdoors only. Reverse Happy Hour is FRI & SAT from 9 until 11. Downstairs only."
+     }
+    }
+   ]
+  },
+  {
+   "id": "agave-mexican-cuisine-chadds-ford",
+   "lid": "95912",
+   "name": "Agave Mexican Cuisine",
+   "plcb_name": "AGAVE RESTAURANT",
+   "address": "1620 BALTIMORE PIKE, CHADDS FORD PA 19317",
+   "zone_id": "glen_mills_chadds_ford",
+   "license_type": "",
+   "website": "http://agavechaddsford.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-07",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://agavechaddsford.com/",
+      "quote": "Happy Hour | Tu \u2013 F 4 \u2013 6pm"
      }
     }
    ]

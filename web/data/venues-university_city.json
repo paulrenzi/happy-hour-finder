@@ -468,13 +468,15 @@
    "deals": []
   },
   {
+   "id": "129240",
    "lid": "129240",
-   "name": "Fifty Fifty",
+   "slug": "corio-philadelphia-129240",
+   "name": "FIFTY FIFTY LLC",
    "address": "3675 Market St Ste 101, Philadelphia PA 19104",
    "zone_id": "university_city",
-   "license_type": "Restaurant (Liquor)",
-   "id": "129240",
+   "website": "https://www.coriophilly.com/",
    "plcb_name": "FIFTY FIFTY LLC",
+   "license_type": "Restaurant (Liquor)",
    "deals": []
   },
   {
@@ -840,20 +842,6 @@
    "deals": []
   },
   {
-   "lid": "101711",
-   "name": "Renata's Kitchen & Bar",
-   "address": "3940 Baltimore Ave, Philadelphia PA 19104",
-   "zone_id": "university_city",
-   "license_type": "Restaurant (Liquor)",
-   "id": "101711",
-   "plcb_name": "YM ART FOODS LLC",
-   "website": "https://www.renatas-kitchen.com/",
-   "lat": 39.9497351,
-   "lng": -75.2029655,
-   "geo_precision": "place",
-   "deals": []
-  },
-  {
    "lid": "70878",
    "name": "S la 5701",
    "address": "5701 Elmwood Ave, Philadelphia PA 19143",
@@ -1117,16 +1105,6 @@
    "license_type": "Restaurant (Liquor)",
    "id": "13100",
    "plcb_name": "TOP SHELF LOUNGE, INC.",
-   "deals": []
-  },
-  {
-   "lid": "120279",
-   "name": "Two Locals Brewing",
-   "address": "3675 Market St Ste 100, Philadelphia PA 19104",
-   "zone_id": "university_city",
-   "license_type": "Brewery",
-   "id": "120279",
-   "plcb_name": "TWO LOCALS BREWING CO",
    "deals": []
   },
   {

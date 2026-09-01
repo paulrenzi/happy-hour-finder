@@ -205,6 +205,44 @@ class _Lines(HTMLParser):
         self._flush()
 
 
+# A price does not have to be a numeral. Tommy's Tavern + Tap heads its happy
+# hour food with 'EIGHT DOLLARS' and prices its drinks 'five dollar house wines'
+# and 'two dollars off all draft beers' -- a complete, published happy hour menu
+# with sixteen items and NOT ONE DOLLAR SIGN on the page. Every rule we have is
+# anchored on '$', so the whole page read as silence.
+#
+# The fix is a normalisation, not another grammar: rewrite the words into the
+# numeral ONCE, here, where every line of every page passes, and the shared-price
+# heading rule, the priced-line rule and the dollars-off rule all reach it
+# unchanged. Doing it as a fourth grammar would have meant three more places to
+# get 'off' wrong.
+#
+# Bounded to twenty plus the round tens, because a happy hour price is a small
+# number and 'a million dollars' is prose. The word must be followed by
+# dollar/dollars/buck/bucks, so 'four cheese pizza' cannot become '$4 cheese'.
+NUMBER_WORDS = {
+    "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7,
+    "eight": 8, "nine": 9, "ten": 10, "eleven": 11, "twelve": 12,
+    "thirteen": 13, "fourteen": 14, "fifteen": 15, "sixteen": 16,
+    "seventeen": 17, "eighteen": 18, "nineteen": 19, "twenty": 20,
+    "thirty": 30, "forty": 40, "fifty": 50,
+}
+WORD_PRICE_RE = re.compile(
+    r"\b(" + "|".join(sorted(NUMBER_WORDS, key=len, reverse=True)) +
+    r")\s+(?:dollars?|bucks?)\b", re.I)
+
+
+def word_prices(line):
+    """'EIGHT DOLLARS' -> '$8'. The line otherwise untouched.
+
+    Deliberately leaves the rest of the line alone, including a trailing 'off',
+    so 'two dollars off all draft beers' becomes '$2 off all draft beers' and
+    lands on AMOUNT_OFF_RE exactly as a page that typed it that way would.
+    """
+    return WORD_PRICE_RE.sub(
+        lambda m: "$%d" % NUMBER_WORDS[m.group(1).lower()], line)
+
+
 def text_lines_emph(html):
     """text_lines(), plus the first emphasised run of each line.
 
@@ -226,6 +264,10 @@ def _parse(html):
         # lines read so far -- a partial page is what a truncated fetch has
         # always given us, and it is handled everywhere downstream.
         p._flush()
+    # One chokepoint: every line every caller ever sees passes through here, so
+    # a worded price is a numeral before any rule looks at it.
+    p.lines = [word_prices(ln) for ln in p.lines]
+    p.emph = [word_prices(e) for e in p.emph]
     return p
 
 
@@ -397,6 +439,31 @@ def hh_sections(html, text):
     """
     lines = text.split("\n")
     heads = marked_headings(html, lines)
+    head_set = set(heads)
+
+    def title_end(i):
+        """The last line of the TITLE that opens at line i.
+
+        A title can be several headings in a row. Tommy's Tavern + Tap sets
+        'ALL NEW' / 'HAPPY HOUR' / 'at the bar.' / "3 PM TIL' 6 PM" as four
+        consecutive headings, and 'at the bar.' -- the second half of the
+        venue's own title -- closed the section on the line after it opened,
+        putting a sixteen-item happy hour menu out of reach. A heading
+        immediately abutting the one that opened the section is part of the same
+        title, not the next menu.
+
+        Adjacency alone is not enough to be safe, so the two headings that mean
+        'a different menu starts here' still close even when they abut: a MEAL
+        heading and a bare WEEKDAY. Those are the two that publish a wrong price
+        when a section runs past them, and neither is ever part of a happy
+        hour's own title.
+        """
+        j = i
+        while (j + 1 in head_set
+               and not DAY_HEADING_RE.match(lines[j + 1].strip())
+               and not MEAL_HEADING_RE.search(lines[j + 1].strip())):
+            j += 1
+        return j
 
     if heads:
         opens = [i for i in heads if HH_HEADING_RE.search(lines[i])]
@@ -421,14 +488,16 @@ def hh_sections(html, text):
     # Hour' contains both a 'Mid Day' menu and the happy hour proper. The outer
     # one is a title, not a section -- the inner one is the venue's own, more
     # specific word for the same thing, so it wins and the outer is dropped.
-    spans = {}
+    spans, starts = {}, {}
     for i in opens:
-        spans[i] = min([j for j in closes if j > i] + [i + 1 + SECTION_CAP, len(lines)])
+        starts[i] = title_end(i)
+        spans[i] = min([j for j in closes if j > starts[i]]
+                       + [i + 1 + SECTION_CAP, len(lines)])
     out = set()
     for i, stop in spans.items():
         if any(i < j < stop for j in spans):
             continue
-        out |= set(range(i + 1, stop))
+        out |= set(range(starts[i] + 1, stop))
     return out
 
 
@@ -1346,6 +1415,74 @@ def frc_menu_quotes(url):
     return page, out, unknown
 
 
+# A heading that says what KIND of thing the block below it is, in the venue's
+# own words. The dish-name word list can never carry food -- 'Garlic Flatbread',
+# 'Tavern Taquitos', 'Loaded Nachos' and 'Hummus Trio Dip' are on nobody's list
+# of nouns -- but the venue already answered the question by heading the block
+# 'EAT'. A word list is for prose; on a menu the structure states the category.
+# Only the food side is mapped: a 'DRINK' heading covers six of our categories at
+# once, so those lines still go to the label to be read.
+HEADING_CAT = re.compile(
+    r"^(?:eat|eats|food|foods|bites?|snacks?|kitchen|plates?|small plates|"
+    r"shareables?|to share|munchies|apps?|appetizers?|starters?)\s*$", re.I)
+# A line the venue left blank to separate one price block from the next. Wix
+# writes it as a zero-width space, so it is not empty and str.strip() keeps it.
+BLANK_RE = re.compile(r"^[\s\u200b\u200c\u00a0\u2060]*$")
+# How many dishes one stacked price may own. Same argument as SECTION_PRICE_CAP:
+# a happy-hour block is short, and a longer run is a menu the price does not own.
+STACK_CAP = 12
+
+
+def stacked_prices(lines, hh_lines):
+    """Quotes for the 'one price, then the dishes it covers' layout.
+
+    Tommy's Tavern + Tap lists its happy hour food as '$8' on its own line
+    followed by four dishes, then '$9' and four more, then '$10' and four more.
+    Nothing joins a price to its dishes except PAGE ORDER: the page is Wix, and
+    every one of those lines sits in its own absolutely-positioned branch of the
+    tree, so item_beside() -- which reads the box a price shares with its item --
+    finds a box holding the price and nothing else, and the twelve dishes went
+    unpublished while the page showed them in plain text.
+
+    The venue does mark where each block ends: a blank line, written as a
+    zero-width space. So a price owns the lines after it until the next blank
+    line, the next price, the end of the happy-hour section, or the cap.
+
+    Only ever inside a happy-hour section. That is what makes reading by page
+    order safe here and unsafe everywhere else -- outside the section this rule
+    would walk a price down the dinner menu.
+    """
+    out, cat, i, hh = [], None, 0, sorted(hh_lines)
+    for i in hh:
+        line = lines[i].strip()
+        if HEADING_CAT.match(line):
+            cat = "food"
+            continue
+        if BLANK_RE.match(lines[i]):
+            continue
+        if not BARE_PRICE_RE.match(line):
+            # Any other heading-ish line ends the food block's claim; a dish
+            # line is picked up below by the price above it, never here.
+            continue
+        names = []
+        for j in range(i + 1, min(i + 1 + STACK_CAP, len(lines))):
+            if j not in hh_lines or BLANK_RE.match(lines[j]):
+                break
+            nxt = lines[j].strip()
+            if BARE_PRICE_RE.match(nxt) or HEADING_CAT.match(nxt):
+                break
+            if len(nxt) > SECTION_LABEL_MAX or not re.search(r"[A-Za-z]{3}", nxt):
+                break
+            names.append(nxt)
+        if len(names) < 2:
+            # One name is the ordinary priced line and item_beside already has
+            # it. This rule exists for the LIST, and a run of one is not one.
+            continue
+        mark = "[cat:%s] " % cat if cat else ""
+        out.append(mark + line + " / " + " / ".join(names))
+    return out
+
+
 def crawl_one(session, venue, robots):
     pages, hits, images = [], [], []
     # A Darden site has nothing to read in its HTML; its API has the hours. Asked
@@ -1454,6 +1591,8 @@ def crawl_one(session, venue, robots):
         found = quotes(text, menu_doc=is_doc, hh_page=on_hh, hh_lines=hh_lines,
                        stacks=stacks, emph=emph, mark_hh=True,
                        head_prices=heading_prices(html, text, hh_lines, stacks))
+        for q in stacked_prices(lines, hh_lines):
+            hits.append({"url": url, "quote": q, "hh": True})
         pages.append({"url": url, "result": f"ok, {len(found)} quote(s)"})
         for q in found:
             # `hh` records that this line was INSIDE the venue's own happy-hour

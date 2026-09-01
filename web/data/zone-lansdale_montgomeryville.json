@@ -63,6 +63,87 @@
    ]
   },
   {
+   "id": "44242",
+   "lid": "44242",
+   "slug": "joseph-ambler-inn-north-wales",
+   "name": "Joseph Ambler Inn",
+   "address": "1005 Horsham Rd, North Wales PA 19454",
+   "zone_id": "lansdale_montgomeryville",
+   "website": "https://www.josephamblerinn.com/",
+   "plcb_name": "JOSEPH AMBLER INN",
+   "license_type": "Hotel (Liquor)",
+   "lat": 40.2385258,
+   "lng": -75.2272785,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 2,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 3,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 4,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 5,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 6,
+       "start": "15:30",
+       "end": "17:30"
+      },
+      {
+       "dow": 7,
+       "start": "15:30",
+       "end": "17:30"
+      }
+     ],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "Cocktails",
+       "price_usd": 10.0
+      },
+      {
+       "category": "wine",
+       "label": "Wine By The Glass",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "per wing",
+       "price_usd": 1.5
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://josephamblerinn.com/wp-content/uploads/2026/06/JAI-HH.pdf",
+      "quote": "Happy Hour in the JPUB! / 3:30-5:30 PM"
+     }
+    }
+   ]
+  },
+  {
    "id": "100210",
    "lid": "100210",
    "slug": "lansdale-tavern-lansdale",
@@ -163,6 +244,142 @@
       "kind": "venue_site",
       "url": "https://lansdaletavern.com/menu",
       "quote": "Late Night Menu / Sunday \u2013 Thursday: 9pm \u2013 11pm / Friday \u2013 Saturday: 10pm \u2013 12am"
+     }
+    }
+   ]
+  },
+  {
+   "id": "70198",
+   "lid": "70198",
+   "slug": "red-lobster-lansdale",
+   "name": "Red Lobster",
+   "address": "Five Point Plz 640 Cowpath Rd, Lansdale PA 19446",
+   "zone_id": "lansdale_montgomeryville",
+   "website": "https://www.redlobster.com/seafood-restaurants/locations/pa/lansdale/640-cowpath-road/",
+   "plcb_name": "RED LOBSTER #443",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.2475215,
+   "lng": -75.2450645,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "Select Appetizers from 3-6pm at participa",
+       "amount_off_usd": 2.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.redlobster.com/happy-hour/",
+      "quote": "Food ONLY Happy Hour / Did someone say $2 off* select appetizers, like Lobster Flatbread, Seafood-Stuffed Mushrooms, Crab Queso, and more, from 3-6pm?!"
+     }
+    }
+   ]
+  },
+  {
+   "id": "126965",
+   "lid": "126965",
+   "slug": "the-bull-restaurant-tavern-montgomeryville",
+   "name": "The Bull Restaurant & Tavern",
+   "address": "770 Horsham Rd, Montgomeryville PA 18936",
+   "zone_id": "lansdale_montgomeryville",
+   "website": "https://www.thebulltavern.com/",
+   "plcb_name": "BULL & BARREL BAR & RESTAURANT",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.2452816,
+   "lng": -75.2412567,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 6,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 7,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.thebulltavern.com/specials.html",
+      "quote": "DRINK Happy Hour 5pm-7pm"
      }
     }
    ]

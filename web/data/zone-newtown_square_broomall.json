@@ -30,6 +30,11 @@
        "end": "18:00"
       },
       {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
        "dow": 3,
        "start": "16:00",
        "end": "18:00"
@@ -48,6 +53,11 @@
        "dow": 6,
        "start": "16:00",
        "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
       }
      ],
      "items": [],
@@ -57,7 +67,7 @@
      "source": {
       "kind": "venue_site",
       "url": "https://alehousenewtownsquare.com/newtown-square-delaware-county-the-ale-house-happy-hours-specials",
-      "quote": "Happy Hour! / 04:00 PM - 06:00 PM / Wednesday September 2nd"
+      "quote": "Happy Hour! / 04:00 PM - 06:00 PM"
      }
     }
    ]
@@ -84,6 +94,16 @@
      "type": "happy_hour",
      "windows": [
       {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
        "dow": 3,
        "start": "16:00",
        "end": "18:30"
@@ -97,6 +117,16 @@
        "dow": 5,
        "start": "16:00",
        "end": "18:30"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:30"
       }
      ],
      "items": [],
@@ -106,7 +136,7 @@
      "source": {
       "kind": "venue_site",
       "url": "https://charlottesrestaurant.com/newtown-square-charlotte-s-restaurant-happy-hours-specials",
-      "quote": "Happy Hour at Charlottes features drink specials and discounted appetizers. / 04:00 PM - 06:30 PM / Wednesday September 2nd"
+      "quote": "Happy Hour at Charlottes features drink specials and discounted appetizers. / 04:00 PM - 06:30 PM"
      }
     }
    ]
@@ -287,6 +317,77 @@
       "kind": "venue_site",
       "url": "https://lascalasfire.com/newtown-square/menus/happy-hour",
       "quote": "HAPPY HOUR / MON-FRI 3PM-6PM / APEROL SPRITZ $9"
+     }
+    }
+   ]
+  },
+  {
+   "id": "118439",
+   "lid": "118439",
+   "slug": "sedona-taphouse-newtown-square",
+   "name": "Sedona Taphouse",
+   "address": "106 Squire Dr, Newtown Square PA 19073",
+   "zone_id": "newtown_square_broomall",
+   "website": "https://sedonataphouse.com/locations/newtown-square-pa/",
+   "plcb_name": "SEDONA TAP HOUSE",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.9875809,
+   "lng": -75.4081001,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "wine",
+       "label": "house wine by the glass and",
+       "price_usd": 7.9
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://sedonataphouse.com/locations/newtown-square-pa/",
+      "quote": "Join us for Happy Hour from 4pm \u2013 6pm for $7.9 house wine by the glass and $9.9 craft classics!"
      }
     }
    ]

@@ -2587,18 +2587,36 @@ class TheMenuRatchetRefusesARisingNumberOfSilentWindows(unittest.TestCase):
                 "deals": [{"items": [{"label": "drafts"}]}]} for i in range(n_full)]
         return {"a_zone": vs}
 
-    def test_it_passes_at_the_budget(self):
-        holes = build_bundles.menu_ratchet(self.zones(3), {}, 3, out=lambda *_: None)
+    def test_it_passes_at_the_ceiling(self):
+        # 3 silent of 4 venues.
+        holes = build_bundles.menu_ratchet(self.zones(3), {}, 0.75,
+                                           out=lambda *_: None)
         self.assertEqual(holes, ["Silent 0", "Silent 1", "Silent 2"])
 
-    def test_it_refuses_one_over(self):
+    def test_it_refuses_above_it(self):
         with self.assertRaises(SystemExit) as e:
-            build_bundles.menu_ratchet(self.zones(4), {}, 3, out=lambda *_: None)
+            build_bundles.menu_ratchet(self.zones(4), {}, 0.75, out=lambda *_: None)
         self.assertIn("REFUSED", str(e.exception))
+
+    def test_growth_at_the_same_rate_is_not_a_regression(self):
+        """The reason this is a share and not a count.
+
+        As a count it refused when reading days properly admitted 28 venues that
+        had published nothing at all before -- no venue lost an item and two
+        gained one, and the build still refused. A guard that fires on progress
+        gets its number bumped until it means nothing.
+        """
+        build_bundles.menu_ratchet(self.zones(30, 10), {}, 0.75,
+                                   out=lambda *_: None)
+
+    def test_a_zone_that_names_nothing_still_refuses(self):
+        with self.assertRaises(SystemExit):
+            build_bundles.menu_ratchet(self.zones(40, 10), {}, 0.75,
+                                       out=lambda *_: None)
 
     def test_a_recorded_verdict_accounts_for_a_venue(self):
         verdicts = {"s0": {"verdict": "no-menu-published"}}
-        holes = build_bundles.menu_ratchet(self.zones(2), verdicts, 1,
+        holes = build_bundles.menu_ratchet(self.zones(2), verdicts, 0.34,
                                            out=lambda *_: None)
         self.assertEqual(holes, ["Silent 1"])
 
@@ -2635,3 +2653,141 @@ class APlatformIsRecognisedByWhatItPublishes(unittest.TestCase):
     def test_an_ordinary_location_page_is_not_darden(self):
         self.assertIsNone(crawl_sites.darden_ref(
             "https://locations.pjspub.com/pa/hatfield/190-forty-foot-road"))
+
+
+class APriceCanBeSpelledOutInWords(unittest.TestCase):
+    """Tommy's Tavern + Tap, King of Prussia, found by Paul 2026-09-01.
+
+    A complete sixteen-item happy hour menu, published in plain text, with NOT
+    ONE DOLLAR SIGN on the page: 'EIGHT DOLLARS' heads the food and the drinks
+    are 'five dollar house wines' and 'two dollars off all draft beers'. Every
+    money rule we have is anchored on '$', so the whole page read as silence.
+    """
+
+    def test_the_words_become_the_numeral(self):
+        self.assertEqual(crawl_sites.word_prices("EIGHT DOLLARS"), "$8")
+        self.assertEqual(crawl_sites.word_prices("five dollar house wines"),
+                         "$5 house wines")
+
+    def test_the_word_off_survives_so_it_lands_on_the_discount_rule(self):
+        self.assertEqual(crawl_sites.word_prices("two dollars off all draft beers"),
+                         "$2 off all draft beers")
+
+    def test_a_number_that_is_not_a_price_is_left_alone(self):
+        self.assertEqual(crawl_sites.word_prices("four cheese pizza"),
+                         "four cheese pizza")
+
+
+class ADayIsWrittenTheWayPeopleWriteDays(unittest.TestCase):
+    """The day grammar read 'Mon-Fri' and nothing else people actually type."""
+
+    def test_a_plural_day_is_a_day(self):
+        self.assertEqual(extract_deals.days_in("Fridays"), {5})
+        self.assertEqual(
+            extract_deals.days_in("Wednesdays, Thursdays, & Fridays"), {3, 4, 5})
+
+    def test_abbreviations_in_a_range_and_a_slash_list(self):
+        self.assertEqual(extract_deals.days_in("M-F 4-6pm"), {1, 2, 3, 4, 5})
+        self.assertEqual(extract_deals.days_in("W/Th/Fr"), {3, 4, 5})
+
+    def test_an_ambiguous_code_refuses_the_whole_construction(self):
+        # 'T' is Tuesday or Thursday and nothing decides it. Reading the codes
+        # around it would name the wrong days on a real card.
+        self.assertEqual(extract_deals.days_in("T-F"), set())
+        self.assertEqual(extract_deals.days_in("T/W/Th"), set())
+
+    def test_a_slash_that_is_not_a_day_list_is_not_read_as_one(self):
+        self.assertEqual(extract_deals.days_in("open 24/7"), set())
+        self.assertEqual(extract_deals.days_in("and/or"), set())
+
+    def test_a_range_written_with_periods_does_not_decay_into_two_days(self):
+        # This returned {Mon, Thu} -- a WRONG answer, silently dropping Tuesday
+        # and Wednesday -- because RANGE_RE failed and SINGLE_RE then matched
+        # both ends on their own.
+        self.assertEqual(extract_deals.days_in("MON.-THURS. 11AM-11PM"),
+                         {1, 2, 3, 4})
+
+    def test_til_is_written_with_an_apostrophe(self):
+        self.assertEqual(extract_deals.window_in("3 PM TIL' 6 PM"),
+                         ("15:00", "18:00"))
+
+
+class AClockWithNoDaysIsEveryDay(unittest.TestCase):
+    """23 venues stated a happy hour window and never named a day.
+
+    Refusing them published nothing, which is not the safer answer -- it is the
+    invisible one. A venue that limits its happy hour to weekdays says so.
+    """
+
+    def test_a_dayless_happy_hour_runs_all_week(self):
+        got = extract_deals.windows_from("HAPPY HOUR / 3 PM TIL' 6 PM")
+        self.assertEqual(sorted(w["dow"] for w in got), [1, 2, 3, 4, 5, 6, 7])
+        self.assertEqual(got[0]["start"], "15:00")
+
+    def test_a_dated_event_is_not_a_weekly_deal(self):
+        self.assertEqual(extract_deals.windows_from(
+            "Toys For Tots Happy Hour: Dec. 14th / 5-8pm"), [])
+        self.assertEqual(extract_deals.windows_from(
+            "this 4th of July we are celebrating with happy hour 3-6pm"), [])
+
+    def test_a_meal_service_is_not_a_happy_hour(self):
+        self.assertEqual(extract_deals.windows_from(
+            "LUNCH: 12pm-4pm happy hour prices"), [])
+
+    def test_opening_hours_are_not_a_happy_hour(self):
+        self.assertEqual(extract_deals.windows_from("open 11am-10pm"), [])
+
+
+class OnePriceStandsAboveTheDishesItCovers(unittest.TestCase):
+    """Tommy's food is '$8' on its own line and then four dishes, three times.
+
+    Nothing in the page's TREE joins them -- it is Wix, and every line sits in
+    its own absolutely-positioned branch -- so item_beside() found a box holding
+    the price alone and twelve dishes went unpublished.
+    """
+
+    LINES = ["EAT", "$8", "GARLIC FLATBREAD", "SPICY TUNA ROLL",
+             "PERSONAL CLASSIC PIZZA", "​", "$9", "Tavern Taquitos",
+             "LOADED NACHOS", "​", "DINNER", "$40", "Dry Aged Ribeye"]
+
+    def test_the_price_owns_the_lines_until_the_blank(self):
+        got = crawl_sites.stacked_prices(self.LINES, set(range(10)))
+        self.assertEqual(got[0], "[cat:food] $8 / GARLIC FLATBREAD / "
+                                 "SPICY TUNA ROLL / PERSONAL CLASSIC PIZZA")
+        self.assertEqual(got[1], "[cat:food] $9 / Tavern Taquitos / LOADED NACHOS")
+
+    def test_it_never_leaves_the_happy_hour_section(self):
+        # The Dry Aged Ribeye is outside hh_lines. Reading by page order is only
+        # safe inside the section; outside it this rule walks the dinner menu.
+        got = crawl_sites.stacked_prices(self.LINES, set(range(10)))
+        self.assertNotIn("Ribeye", " ".join(got))
+
+    def test_the_venues_own_heading_gives_the_category(self):
+        # 'Garlic Flatbread' and 'Tavern Taquitos' are on nobody's word list of
+        # food nouns. The page said EAT.
+        got = crawl_sites.stacked_prices(self.LINES, set(range(10)))
+        self.assertTrue(all(q.startswith("[cat:food] ") for q in got))
+
+    def test_a_lone_name_is_left_to_the_ordinary_priced_line_rule(self):
+        self.assertEqual(
+            crawl_sites.stacked_prices(["$8", "GARLIC FLATBREAD"], {0, 1}), [])
+
+
+class ContainmentBeatsTheUrlOnAPageThatHasASection(unittest.TestCase):
+    """Tommy's prints WEEKDAY SPECIALS below its happy hour, on the same page.
+
+    hh_sections correctly left that block outside the section -- and then
+    `url == lead_url` let every line of it back in, and half-price Wednesday
+    sangria published as a seven-day 3-6pm happy-hour item.
+    """
+
+    def test_an_uncontained_line_on_a_contained_page_is_refused(self):
+        hits = [{"url": "u", "quote": "[cat:wine] $6 sangria", "hh": True},
+                {"url": "u", "quote": "HALF PRICE WINE LIST"}]
+        got = extract_deals.items_from_hits(hits, "u")
+        self.assertEqual([i["label"] for i in got], ["sangria"])
+
+    def test_the_url_still_carries_a_page_with_no_section_at_all(self):
+        hits = [{"url": "u", "quote": "$6 sangria"}]
+        got = extract_deals.items_from_hits(hits, "u")
+        self.assertEqual([i["label"] for i in got], ["sangria"])

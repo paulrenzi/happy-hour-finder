@@ -63,6 +63,71 @@
    ]
   },
   {
+   "id": "86412",
+   "lid": "86412",
+   "slug": "depaul-s-table-ardmore",
+   "name": "DePaul's Table",
+   "address": "7 E Lancaster Ave, Ardmore PA 19003",
+   "zone_id": "ardmore_bryn_mawr",
+   "website": "https://www.depaulstable.com/",
+   "plcb_name": "7 E LANCASTER FANCY FACE LLC",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.0080061,
+   "lng": -75.2908039,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:30",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.depaulstable.com/",
+      "quote": "Social Hour | 7 Nights A Week 4:30pm to 6:00pm"
+     }
+    }
+   ]
+  },
+  {
    "id": "48382",
    "lid": "48382",
    "slug": "great-american-pub-narberth",
@@ -154,14 +219,39 @@
      "type": "happy_hour",
      "windows": [
       {
+       "dow": 1,
+       "start": "15:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:30",
+       "end": "18:00"
+      },
+      {
        "dow": 5,
        "start": "15:30",
        "end": "18:00"
       },
       {
        "dow": 6,
-       "start": "21:00",
-       "end": "23:00"
+       "start": "15:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:30",
+       "end": "18:00"
       }
      ],
      "items": [
@@ -197,7 +287,7 @@
      "source": {
       "kind": "venue_site",
       "url": "https://gulliftys.com/bryn-mawr-rosemont-gullifty-s-specials-custom",
-      "quote": "Saturday Night Food & Drink Specials from 8-11pm! Includes $1.25 Wings, $7 Lil' G Burgers, $6 Lil' Nachos, $7 Lil' Burrata, $5 Surfsides & Statesides, $6 House Mixed Drinks, $4 Mic Ultra Drafts, $4 Garage Beer Lime Drafts, $5 Levante Cloudy & Cumbersome Drafts. Dine-in Only."
+      "quote": "Happy Hour food and drink specials! See Happy Hour Menu under the menus tab. / 03:30 PM - 06:00 PM"
      }
     }
    ]
