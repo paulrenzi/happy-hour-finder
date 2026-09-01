@@ -22,6 +22,10 @@ echo "== the board actually paints =="
 python tests/render_check.py
 
 echo
+echo "== a bar can be found by name =="
+python tests/search_check.py
+
+echo
 echo "== a tab left open restamps itself on wake =="
 python tests/stale_clock_check.py
 

@@ -340,12 +340,48 @@ export function score(row, { sort = "soonest" } = {}) {
 /* Build the ordered feed. `at` is the arrival moment; `origin` is the user's
    position or null. Rows are grouped and sorted, and the caller renders them
    in order, starting a new section whenever `group` changes. */
-export function buildFeed(venues, at, { zone = null, filter = "all", sort = "soonest", origin = null, horizonDays = 7 } = {}) {
+/* A name reduced to what a person actually typed at it: case, accents and the
+   punctuation nobody reproduces. "P.J. Whelihan's" is searched for as
+   "pj whelihans", and "Cafe" has to find "Café". */
+export function normalizeName(s) {
+  return (s || "")
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+/* Every word of the query has to appear in the name, in any order. Substring
+   rather than whole-word, so "powd" finds Black Powder Tavern before the name
+   is finished -- the board is 169 venues and the answer should arrive while you
+   are still typing. Order-free because "tavern black" is the same request. */
+const tight = (s) => normalizeName(s).replace(/ /g, "");
+
+export function matchesQuery(venue, query) {
+  const q = normalizeName(query);
+  if (!q) return true;
+  /* Matched against the name with its separators removed, not with them turned
+     into spaces. "P.J. Whelihan's" normalizes to "p j whelihan s", so a person
+     typing the name as they say it -- "pj whelihans" -- matches nothing at all
+     against the spaced form. Comparing token-by-token against "pjwhelihans"
+     costs a rare match across a word boundary and finds the bar. */
+  const name = tight(venue.name);
+  return q.split(" ").every((word) => name.includes(tight(word)));
+}
+
+export function buildFeed(venues, at, { zone = null, filter = "all", sort = "soonest", origin = null, horizonDays = 7, query = "" } = {}) {
   const test = (FILTERS[filter] || FILTERS.all).test;
+  const q = normalizeName(query);
   const rows = [];
 
   for (const v of venues) {
-    if (zone && v.zone_id !== zone) continue;
+    /* A search is a question about the whole board, not about the town you last
+       picked. Honouring the town filter here is what would make searching for a
+       bar you can see on the map return nothing, because you happened to be
+       looking at a different town when you typed it. */
+    if (zone && !q && v.zone_id !== zone) continue;
+    if (q && !matchesQuery(v, q)) continue;
     const miles = origin && v.lat != null ? haversineMiles(origin, v) : null;
     const driveMin = miles == null ? null : driveMinutes(miles);
 

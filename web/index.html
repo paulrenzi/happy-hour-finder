@@ -26,6 +26,29 @@
   <span id="clock"></span>
 </header>
 
+<!-- Search lives behind this button on purpose. The control strip is already
+     four fields deep on a phone and a fifth row pushes the first deal off the
+     screen, so the one thing that had to be reachable from anywhere gets a
+     button that floats over the page instead of a row of its own. -->
+<button id="menuBtn" type="button" aria-expanded="false" aria-controls="menuPanel"
+        aria-label="Search venues">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+       stroke-linecap="round" aria-hidden="true">
+    <path d="M4 7h16M4 12h16M4 17h16"/>
+  </svg>
+</button>
+
+<div id="menuPanel" hidden>
+  <div class="menu-inner">
+    <label class="menu-field">
+      <span class="strip-label">Find a bar by name</span>
+      <input type="search" id="search" autocomplete="off" enterkeyhint="search"
+             placeholder="Black Powder Tavern">
+    </label>
+    <p id="searchNote" class="menu-note"></p>
+  </div>
+</div>
+
 <section id="hero" aria-label="Site introduction">
   <img id="heroImg" src="img/hero-taproom.jpg" alt="" aria-hidden="true" fetchpriority="high">
   <div id="heroOverlay" aria-hidden="true"></div>
@@ -66,7 +89,7 @@
          pushed the first deal off the screen entirely. -->
     <div id="pickers">
       <label class="pick">
-        <span class="strip-label">Zone</span>
+        <span class="strip-label">Town</span>
         <select id="zone"></select>
       </label>
       <label class="pick">

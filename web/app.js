@@ -7,6 +7,7 @@
 import {
   DOW_SHORT, DOW_LONG, dowOf, fmtClock, fmtMins, fmtMiles, itemParts,
   FILTERS, GROUP, GROUP_LABEL, buildFeed, summarizeWindows, usableMinutes,
+  matchesQuery,
   haversineMiles, driveMinutes, ageDays, effectiveConfidence, applyOverlay,
   dealKey, applyConfirmations,
 } from "./lib.js";
@@ -17,6 +18,7 @@ const state = {
   day: 0,        // days ahead: 0 = today
   offset: -1,    // 15-minute slot of the day; -1 means "right now"
   zone: null,
+  query: "",     // venue-name search, from the menu panel
   filter: "all",
   sort: "soonest",
   origin: null,  // {lat,lng} once, in-session only -- never tracked in the background
@@ -74,6 +76,7 @@ function readHash() {
   if (p.has("d")) state.day = Math.min(6, Math.max(0, Number(p.get("d")) || 0));
   if (p.has("t")) state.offset = Math.min(96, Math.max(-1, Number(p.get("t"))));
   if (p.has("z")) state.zone = p.get("z") || null;
+  if (p.has("q")) state.query = p.get("q") || "";
   if (p.has("f") && FILTERS[p.get("f")]) state.filter = p.get("f");
   if (p.has("s") && SORTS.some(([k]) => k === p.get("s"))) state.sort = p.get("s");
   return p.get("v");
@@ -84,6 +87,7 @@ function writeHash(venueId) {
   if (state.day) p.set("d", state.day);
   if (state.offset >= 0) p.set("t", state.offset);
   if (state.zone) p.set("z", state.zone);
+  if (state.query) p.set("q", state.query);
   if (state.filter !== "all") p.set("f", state.filter);
   if (state.sort !== "soonest") p.set("s", state.sort);
   if (venueId) p.set("v", venueId);
@@ -154,7 +158,7 @@ function buildControls() {
   picker(
     $("#zone"),
     [
-      [null, "All zones"],
+      [null, "All towns"],
       ...state.zones.map((z) => [
         z.id,
         `${z.name} (${z.with_deals ?? z.venues} of ${z.venues})`,
@@ -788,6 +792,7 @@ function render() {
   const at = arrivalTime();
   const rows = buildFeed(state.venues, at, {
     zone: state.zone,
+    query: state.query,
     filter: state.filter,
     sort: state.sort,
     origin: state.origin,
@@ -821,12 +826,16 @@ function render() {
     p.append(el("b", null, "Nothing matches that."));
     p.append(
       document.createTextNode(
-        state.filter === "all"
+        state.query
+          ? `No venue loaded is called “${state.query}”. Venues with no published ` +
+            "hours only load once you pick their town, so try clearing the search " +
+            "and picking the town instead."
+          : state.filter === "all"
           ? state.loadingZone
-            ? "Loading this zone's venues…"
-            : "Try another zone. Around four in five bars never publish a happy hour " +
+            ? "Loading this town's venues…"
+            : "Try another town. Around four in five bars never publish a happy hour " +
               "anywhere, so most of the board is venues waiting for someone to fill them in."
-          : `No ${FILTERS[state.filter].label.toLowerCase()} in this zone. Try “Everything” ` +
+          : `No ${FILTERS[state.filter].label.toLowerCase()} in this town. Try “Everything” ` +
             "to see every licensed venue here, published hours or not."
       )
     );
@@ -876,15 +885,15 @@ function render() {
   } else if (state.zone && !state.loadedZones.has(state.zone) && state.filter === "all") {
     feed.append(
       el("p", "secNote", state.loadingZone === state.zone
-        ? "Loading every licensed venue in this zone…"
-        : "Couldn't load the full venue list for this zone — showing published happy hours only.")
+        ? "Loading every licensed venue in this town…"
+        : "Couldn't load the full venue list for this town — showing published happy hours only.")
     );
-  } else if (!state.zone && state.filter === "all") {
+  } else if (!state.zone && state.filter === "all" && !state.query) {
     feed.append(
       el(
         "p",
         "secNote",
-        "Pick a zone above to see every licensed bar, restaurant and brewery in it — " +
+        "Pick a town above to see every licensed bar, restaurant and brewery in it — " +
           "including the ones whose happy hour nobody has published."
       )
     );
@@ -1121,6 +1130,43 @@ function monogramOf(name) {
   return (name.replace(/^(The|A)\s+/i, "").match(/[A-Za-z]/) || ["·"])[0].toUpperCase();
 }
 
+/* ---- search ----------------------------------------------------------- */
+
+/* Opening the panel is the whole navigation: there is one thing behind the
+   button, so the button focuses the field rather than presenting a list of one.
+   Closing it clears nothing -- a search you scrolled away from is still the
+   list you are reading, and the hash carries it, so a shared link searches. */
+function toggleMenu(open) {
+  const btn = $("#menuBtn"), panel = $("#menuPanel");
+  const want = open ?? panel.hidden;
+  panel.hidden = !want;
+  btn.setAttribute("aria-expanded", String(want));
+  if (want) {
+    const box = $("#search");
+    box.value = state.query;
+    box.focus();
+    box.select();
+  }
+}
+
+/* What the search actually looked at. The board holds every town's deal-bearing
+   venues from boot, but the 2,900-venue base arrives one town at a time -- so a
+   bar with no published hours in a town nobody has opened is genuinely not in
+   memory to be found, and saying so is the honest answer rather than "no
+   results". */
+function searchNote() {
+  const note = $("#searchNote");
+  if (!note) return;
+  if (!state.query) {
+    note.textContent = "Searches every venue currently loaded — 169 with published hours, plus every licensed venue in any town you've opened.";
+    return;
+  }
+  const n = state.venues.filter((v) => matchesQuery(v, state.query)).length;
+  note.textContent = n
+    ? `${n} venue${n === 1 ? "" : "s"} match “${state.query}”.`
+    : `Nothing loaded matches “${state.query}”. Venues with no published hours only load once you pick their town.`;
+}
+
 /* The hero owns the title until it scrolls away, then the glass bar takes over. */
 function watchHero() {
   const hero = $("#hero"), bar = $("#bar");
@@ -1312,6 +1358,28 @@ async function boot() {
     scrollTo({ top: 0, behavior: "smooth" });
   });
   $("#nearMe").addEventListener("click", askLocation);
+  $("#menuBtn").addEventListener("click", () => toggleMenu());
+  $("#search").addEventListener("input", (e) => {
+    state.query = e.target.value;
+    refresh();
+    searchNote();
+  });
+  // Enter on a phone means "I am done typing", not "submit": the list is
+  // already filtered, so it just gets the keyboard out of the way.
+  $("#search").addEventListener("keydown", (e) => {
+    if (e.key === "Enter") { e.preventDefault(); e.target.blur(); }
+    if (e.key === "Escape") { state.query = ""; e.target.value = ""; refresh(); searchNote(); }
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !$("#menuPanel").hidden && document.activeElement !== $("#search")) {
+      toggleMenu(false);
+      $("#menuBtn").focus();
+    }
+  });
+  // A search restored from a shared link has to be visible, or the board looks
+  // arbitrarily short with nothing on screen explaining why.
+  if (state.query) { toggleMenu(true); $("#search").blur(); }
+  searchNote();
   $("#photo").addEventListener("change", (e) => {
     const file = e.target.files && e.target.files[0];
     // Let the same file be picked twice in a row, and clear it before the sheet

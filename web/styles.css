@@ -78,6 +78,9 @@ button { font: inherit; cursor: pointer; }
   transition: transform 0.22s ease;
 }
 #bar.show { transform: none; }
+/* The bar's own right edge is left clear for the floating menu button, which
+   sits above it and does not slide away with it. */
+#bar { padding-right: 64px; }
 #barTitle {
   font-family: var(--serif); font-weight: 700; font-size: 19px; letter-spacing: -0.02em;
 }
@@ -624,3 +627,46 @@ body.sheetOpen {
 }
 .boardNote p { margin: 0 0 10px; }
 .boardNote .btn { width: auto; }
+
+
+/* ---- the menu button and the search panel ----------------------------- */
+/* Fixed rather than parked in the glass bar: the bar only appears once the hero
+   has scrolled past, and a search you cannot reach from the top of the page is
+   a search nobody finds. It is one floating control, so the control strip keeps
+   the number of rows it had. */
+#menuBtn {
+  position: fixed; z-index: 14;
+  top: max(8px, env(safe-area-inset-top)); right: 12px;
+  width: 42px; height: 42px; padding: 0;
+  display: grid; place-items: center;
+  border-radius: 14px; border: 1px solid var(--line);
+  background: rgba(247, 243, 235, 0.9); color: var(--fg);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  backdrop-filter: saturate(160%) blur(14px);
+  box-shadow: var(--shadow-sm); cursor: pointer;
+}
+#menuBtn svg { width: 21px; height: 21px; }
+#menuBtn[aria-expanded="true"] { background: var(--accent-deep); color: #fff; border-color: transparent; }
+#menuBtn:focus-visible { outline: 2px solid var(--accent-deep); outline-offset: 2px; }
+
+#menuPanel {
+  position: fixed; z-index: 13; top: 0; left: 0; right: 0;
+  background: rgba(247, 243, 235, 0.97);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  backdrop-filter: saturate(160%) blur(14px);
+  border-bottom: 1px solid var(--line); box-shadow: var(--shadow-md);
+}
+#menuPanel[hidden] { display: none; }
+.menu-inner {
+  width: min(1040px, calc(100% - 2rem)); margin: 0 auto;
+  padding: calc(max(8px, env(safe-area-inset-top)) + 8px) 64px 14px 0;
+}
+.menu-field { display: block; }
+#search {
+  width: 100%; margin-top: 6px; padding: 11px 14px;
+  font: inherit; font-size: 16px; /* 16px or iOS zooms the page on focus */
+  color: var(--fg); background: var(--surface);
+  border: 1px solid var(--line); border-radius: var(--r-sm);
+}
+#search:focus-visible { outline: 2px solid var(--accent-deep); outline-offset: 1px; }
+.menu-note { margin: 8px 0 0; font-size: 13px; color: var(--dim); min-height: 1.2em; }
