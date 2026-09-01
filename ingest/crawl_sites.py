@@ -48,19 +48,26 @@ def frontier():
     of Prussia that was The Cheesecake Factory, Tommy Bahama and Wegmans --
     sites we already had on file and had simply never asked for.
 
-    The union, not a swap. venue_sites.json's URL WINS where both have one:
-    it is sometimes the deeper, hand-corrected page (Paladar's /happy-hour,
-    Tommy's location page rather than the chain root), and taking base's URL
-    for those would trade three new venues for seventeen worse ones.
+    The union, and where BOTH have a URL and they differ, both are kept --
+    venue_sites.json's as the start, base's in `also_urls`. Neither source is
+    reliably the better one, which is the whole reason not to choose: bartaco's
+    good page is base's (/location/kop/ states 'weekdays 3-6pm'; sites' URL is
+    a 29-line shell), and Pizzeria Vetri's good page is sites'
+    (/location/king-of-prussia/, against base's bare root). They disagree for
+    17 venues and a rule picking either source loses the other half.
     """
     sites = json.load(open(SITES, encoding="utf-8"))
     base = json.load(open(BASE, encoding="utf-8"))
     for lid, v in base.items():
-        if lid in sites or not v.get("website"):
+        site = v.get("website")
+        if not site:
             continue
-        sites[lid] = {"name": v["name"], "osm_name": None,
-                      "address": v.get("address", ""),
-                      "zone_id": v.get("zone_id"), "website": v["website"]}
+        if lid not in sites:
+            sites[lid] = {"name": v["name"], "osm_name": None,
+                          "address": v.get("address", ""),
+                          "zone_id": v.get("zone_id"), "website": site}
+        elif site != sites[lid]["website"]:
+            sites[lid] = {**sites[lid], "also_urls": [site]}
     return sites
 
 UA = "happy-hour-finder/0.1 (+https://paulrenzi.github.io/happy-hour-finder/)"
@@ -1554,7 +1561,16 @@ def crawl_one(session, venue, robots):
         except Exception as e:  # noqa: BLE001 -- one dead page must not end the run
             pages.append({"url": venue["website"],
                           "result": "error: frc menu %s" % type(e).__name__})
-    queue = [(venue["website"], 1)]
+    # We hold this venue's website in TWO places and they disagree for 17 of
+    # them -- and neither source is reliably the better one. bartaco's good URL
+    # (/location/kop/, which carries 'weekdays 3-6pm') is the one in
+    # venue_base; Pizzeria Vetri's good URL (/location/king-of-prussia/) is the
+    # one in venue_sites. Picking a winner loses one of them either way, so
+    # both are seeded: they are both this venue's site, and the second costs
+    # one fetch out of a budget that was being spent on the chain's /locations/
+    # index anyway.
+    queue = [(u, 1) for u in
+             dict.fromkeys([venue["website"], *venue.get("also_urls", ())])]
     fetched = 0
     docs = 0
     while queue and (fetched < PAGE_CAP or docs < DOC_CAP):
@@ -1667,7 +1683,15 @@ def crawl_one(session, venue, robots):
                 queue.append((u, depth + 1))
 
         if fetched == 1 and depth == 1:
-            queue = [(u, 2) for u in candidate_links(html, url)[: PAGE_CAP - 1]]
+            # The seeds we have NOT tried yet survive this rebuild, at the
+            # front. A URL we hold on file for this venue outranks a link we
+            # discovered on its homepage, and dropping them silently is what
+            # left bartaco's /location/kop/ -- the only page stating 'weekdays
+            # 3-6pm' -- unfetched while the budget went to the chain's
+            # /locations/ index.
+            seeds = [q for q in queue if q[1] == 1]
+            queue = seeds + [(u, 2) for u in
+                             candidate_links(html, url)[: PAGE_CAP - 1]]
             # The sitemap used to be consulted only when the page linked
             # nothing at all, which missed the commoner shape: a page that
             # links three menus and no happy hour. City Works' King of Prussia
@@ -1680,7 +1704,8 @@ def crawl_one(session, venue, robots):
                 queued = {u for u, _ in queue}
                 extra = [(u, 2) for u in sitemap_links(session, url, robots)
                          if u not in queued]
-                queue = (extra + queue)[: PAGE_CAP - 1]
+                rest = [q for q in queue if q[1] != 1]
+                queue = seeds + (extra + rest)[: PAGE_CAP - 1]
     return pages, hits, images[:IMG_CAP]
 
 

@@ -16,10 +16,31 @@ import sys
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 WEB = os.path.join(REPO, "web")
 BASE = "https://hhf.test/"
-# A real King of Prussia venue with no published hours, so the overlay has to do
-# the whole job: find it in the zone base the app has not loaded yet, fetch that
-# zone, and patch the deal in.
-OVERLAY_LID = "92150"  # bartaco, King of Prussia -- no hours published
+
+
+def overlay_lid():
+    """A King of Prussia venue with no published hours, for the overlay probe.
+
+    Picked this way so the overlay has to do the whole job: find the venue in
+    the zone base the app has not loaded yet, fetch that zone, and patch the
+    deal in.
+
+    This was hardcoded to bartaco (92150), which was silent when the probe was
+    written. Reclaiming bartaco's window gave it a real card, the probe added a
+    second one, and the duplicate-card gate failed on a fix that was working --
+    the fixture rotted, not the product. The requirement is derivable from the
+    build, so derive it: any venue that still has no deal will do, and the
+    probe stops going stale every time the scraper gets better.
+    """
+    # venues-*.json is the zone's venues WITHOUT hours; zone-*.json is the ones
+    # with. The probe wants the first file, by definition.
+    silent = json.load(open(os.path.join(WEB, "data",
+                                         "venues-king_of_prussia.json"),
+                            encoding="utf-8"))
+    for v in silent["venues"]:
+        if not v.get("deals"):
+            return v["lid"]
+    raise SystemExit("render_check: no silent KoP venue left to probe with")
 
 
 def main():
@@ -28,6 +49,8 @@ def main():
     except ImportError:
         print("  (skipped: playwright not installed)")
         return 0
+
+    probe_lid = overlay_lid()
 
     with sync_playwright() as pw:
         try:
@@ -57,7 +80,7 @@ def main():
         # deployed service tells you about the network, not the code.
         overlay = {
             "venues": [{
-                "lid": OVERLAY_LID,
+                "lid": probe_lid,
                 "zone_id": "king_of_prussia",
                 "deals": [{
                     "type": "happy_hour",

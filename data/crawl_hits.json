@@ -510,6 +510,12 @@
     "url": "https://peppersitalianrestaurantandbar.com/"
    },
    {
+    "hh": false,
+    "lines": 137,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.peppersitalianrestaurantandbar.com/"
+   },
+   {
     "hh": true,
     "lines": 64,
     "result": "ok, 1 quote(s)",
@@ -520,12 +526,6 @@
     "lines": 123,
     "result": "ok, 0 quote(s)",
     "url": "https://peppersitalianrestaurantandbar.com/king-of-prussia-peppers-by-amedeo-s-restaurant-and-bar-drink-menu"
-   },
-   {
-    "hh": false,
-    "lines": 137,
-    "result": "ok, 0 quote(s)",
-    "url": "https://peppersitalianrestaurantandbar.com/king-of-prussia-peppers-by-amedeo-s-restaurant-and-bar-events"
    }
   ],
   "website": "https://peppersitalianrestaurantandbar.com/",
@@ -3423,6 +3423,12 @@
    {
     "result": "404 text/html",
     "url": "https://www.chilis.com/locations/us/pennsylvania/king-of-prussia/king-of-prussia"
+   },
+   {
+    "hh": false,
+    "lines": 99,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.chilis.com/locations?utm_source=google&utm_medium=local&utm_campaign=Chilis"
    }
   ],
   "website": "https://www.chilis.com/locations/us/pennsylvania/king-of-prussia/king-of-prussia",
@@ -10270,6 +10276,10 @@
    {
     "result": "robots.txt disallows",
     "url": "https://www.netflix.com/house/philadelphia"
+   },
+   {
+    "result": "robots.txt disallows",
+    "url": "https://www.netflix.com/house/locations/philadelphia"
    }
   ],
   "website": "https://www.netflix.com/house/philadelphia",
@@ -11536,6 +11546,12 @@
     "lines": 55,
     "result": "ok, 0 quote(s)",
     "url": "https://www.creedskop.com/"
+   },
+   {
+    "hh": false,
+    "lines": 55,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.creedskop.com/"
    },
    {
     "hh": true,
@@ -13006,6 +13022,10 @@
     "url": "https://www.hooters.com/locations/32704-king-of-prussia"
    },
    {
+    "quote": "Enjoy world famous wings and a great beer selection at Hooters of King of Prussia. Eat-in or carryout, the best food in Pennsylvania can always be found right in King of Prussia. Daily happy hour specials, drink specials and craft beer on tap.",
+    "url": "https://www.hooters.com/locations/32704-king-of-prussia?utm_source=google&utm_medium=organic&utm_campaign=gmb-website-cta-king+of+prussia-pa-king+of+prussia"
+   },
+   {
     "quote": "Celebrate Tax Day with a BOGO Wings Deal and Drink Specials at Hooters | Hooters",
     "url": "https://www.hooters.com/about/news/celebrate-tax-day-with-a-bogo-wings-deal-and-drink-specials-at-hooters"
    },
@@ -13024,6 +13044,12 @@
     "url": "https://www.hooters.com/locations/32704-king-of-prussia"
    },
    {
+    "hh": true,
+    "lines": 114,
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.hooters.com/locations/32704-king-of-prussia?utm_source=google&utm_medium=organic&utm_campaign=gmb-website-cta-king+of+prussia-pa-king+of+prussia"
+   },
+   {
     "hh": false,
     "lines": 73,
     "result": "ok, 0 quote(s)",
@@ -13034,12 +13060,6 @@
     "lines": 72,
     "result": "ok, 2 quote(s)",
     "url": "https://www.hooters.com/about/news/celebrate-tax-day-with-a-bogo-wings-deal-and-drink-specials-at-hooters"
-   },
-   {
-    "hh": false,
-    "lines": 88,
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.hooters.com/about/news/hooters-unveils-limited-time-seasonal-specials-to-kick-off-fall"
    }
   ],
   "website": "https://www.hooters.com/locations/32704-king-of-prussia",
@@ -14922,6 +14942,12 @@
    },
    {
     "hh": false,
+    "lines": 76,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.maggianos.com/locations/pennsylvania/king-of-prussia/205-mall-blvd.?utm_source=google&utm_medium=organic&utm_campaign=Maggianos"
+   },
+   {
+    "hh": false,
     "lines": 77,
     "result": "ok, 0 quote(s)",
     "url": "https://www.maggianos.com/banquets/"
@@ -14931,12 +14957,6 @@
     "lines": 37,
     "result": "ok, 0 quote(s)",
     "url": "https://www.maggianos.com/menus/catering"
-   },
-   {
-    "hh": false,
-    "lines": 36,
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.maggianos.com/menus/dessert"
    }
   ],
   "website": "https://www.maggianos.com/locations/Pennsylvania/King%20of%20Prussia/205-mall-blvd.",
@@ -17962,7 +17982,12 @@
  "57609": {
   "address": "216 W BEIDLER RD STE 600, KING OF PRUSSIA PA 19406-1708",
   "crawled_at": "2026-09-01",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Check our Facebook page for daily specials & entertainment!",
+    "url": "http://www.screwballsbarandgrille.com/"
+   }
+  ],
   "name": "SCREWBALLS LLC",
   "osm_name": "Angelo's Pizza Co",
   "pages": [
@@ -17971,6 +17996,12 @@
     "lines": 22,
     "result": "ok, 0 quote(s)",
     "url": "https://www.angelospizzakop.com/"
+   },
+   {
+    "hh": false,
+    "lines": 10,
+    "result": "ok, 1 quote(s)",
+    "url": "http://www.screwballsbarandgrille.com/"
    }
   ],
   "website": "https://www.angelospizzakop.com/",
@@ -23665,6 +23696,12 @@
     "lines": 75,
     "result": "ok, 0 quote(s)",
     "url": "https://plazaazteca.com/king-of-prussia"
+   },
+   {
+    "hh": false,
+    "lines": 75,
+    "result": "ok, 0 quote(s)",
+    "url": "https://plazaazteca.com/king-of-prussia/"
    }
   ],
   "website": "https://plazaazteca.com/king-of-prussia",
@@ -24379,6 +24416,12 @@
     "lines": 128,
     "result": "ok, 0 quote(s)",
     "url": "https://shakeshack.com/location/kop-outside-of-mall-pa"
+   },
+   {
+    "hh": false,
+    "lines": 128,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.shakeshack.com/location/kop-outside-of-mall-pa?utm_source=google&utm_medium=listing"
    },
    {
     "hh": false,
@@ -27833,19 +27876,6 @@
    {
     "quote": "$18.45 Beer-battered shrimp, Asian slaw, chili aioli, sriracha, sesame seeds, micro cilantro, flour tortillas.",
     "url": "https://www.cityworksrestaurant.com/locations/king-of-prussia/food-menu/"
-   },
-   {
-    "hh": true,
-    "quote": "$11.95 White cheddar, cornmeal-battered, smoked tomato coulis.",
-    "url": "https://www.cityworksrestaurant.com/locations/kingofprussia-2/food-menu/"
-   },
-   {
-    "quote": "$21.45 Beer-battered alaskan cod, malt vinegar powder, coleslaw, cornichon tartar sauce, house fries.",
-    "url": "https://www.cityworksrestaurant.com/locations/kingofprussia-2/food-menu/"
-   },
-   {
-    "quote": "$18.45 Beer-battered shrimp, Asian slaw, chili aioli, sriracha, sesame seeds, micro cilantro, flour tortillas.",
-    "url": "https://www.cityworksrestaurant.com/locations/kingofprussia-2/food-menu/"
    }
   ],
   "name": "CITY WORKS",
@@ -27859,6 +27889,12 @@
    },
    {
     "hh": false,
+    "lines": 100,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.cityworksrestaurant.com/locations/kingofprussia-2/"
+   },
+   {
+    "hh": false,
     "lines": 76,
     "result": "ok, 0 quote(s)",
     "url": "https://www.cityworksrestaurant.com/events/chow-down-for-charity/"
@@ -27868,12 +27904,6 @@
     "lines": 702,
     "result": "ok, 3 quote(s)",
     "url": "https://www.cityworksrestaurant.com/locations/king-of-prussia/food-menu/"
-   },
-   {
-    "hh": true,
-    "lines": 658,
-    "result": "ok, 3 quote(s)",
-    "url": "https://www.cityworksrestaurant.com/locations/kingofprussia-2/food-menu/"
    }
   ],
   "website": "https://www.cityworksrestaurant.com/locations/kingofprussia-2",
@@ -28303,6 +28333,12 @@
     "url": "https://www.pizzeriavetri.com/location/king-of-prussia/"
    },
    {
+    "hh": false,
+    "lines": 161,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.pizzeriavetri.com/"
+   },
+   {
     "hh": true,
     "lines": 535,
     "result": "ok, 2 quote(s)",
@@ -28313,12 +28349,6 @@
     "lines": 143,
     "result": "ok, 0 quote(s)",
     "url": "https://www.pizzeriavetri.com/private-events/"
-   },
-   {
-    "hh": false,
-    "lines": 146,
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.pizzeriavetri.com/store/events/"
    }
   ],
   "website": "https://www.pizzeriavetri.com/location/king-of-prussia/",
@@ -29174,6 +29204,12 @@
     "lines": 1,
     "result": "ok, 0 quote(s)",
     "url": "https://www.truefoodkitchen.com/locations/king-of-prussia/"
+   },
+   {
+    "hh": false,
+    "lines": 1,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.truefoodkitchen.com/locations/kingofprussia/"
    }
   ],
   "website": "https://www.truefoodkitchen.com/locations/king-of-prussia/",
@@ -30511,6 +30547,10 @@
     "url": "https://bartaco.com/kophightidehour/"
    },
    {
+    "quote": "high tide happy hour / weekdays 3-6pm / mon-thurs last 1.5 hours before close",
+    "url": "https://bartaco.com/location/kop/"
+   },
+   {
     "quote": "this 4th of July bartaco is the place to be. we\u2019re celebrating with happy hour all day long, plus check out your local location for music, face painting, and more! / boulder: dj 3-6pm / lohi: face painter 3:30-6:30pm + dj 6-11pm",
     "url": "https://bartaco.com/4th-of-july-lineup-and-happy-hour/"
    }
@@ -30526,6 +30566,12 @@
    },
    {
     "hh": true,
+    "lines": 328,
+    "result": "ok, 1 quote(s)",
+    "url": "https://bartaco.com/location/kop/"
+   },
+   {
+    "hh": true,
     "lines": 88,
     "result": "ok, 1 quote(s)",
     "url": "https://bartaco.com/4th-of-july-lineup-and-happy-hour/"
@@ -30535,12 +30581,6 @@
     "lines": 35,
     "result": "ok, 0 quote(s)",
     "url": "https://bartaco.com/food/"
-   },
-   {
-    "hh": false,
-    "lines": 91,
-    "result": "ok, 0 quote(s)",
-    "url": "https://bartaco.com/locations/"
    }
   ],
   "website": "https://bartaco.com/kophightidehour/",

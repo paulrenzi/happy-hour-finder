@@ -2903,10 +2903,10 @@ class FrontierIsTheUnionOfBothSiteSources(unittest.TestCase):
         self.assertIn("1", out)
         self.assertEqual(out["1"]["website"], "https://cheesecake.example")
 
-    def test_the_sites_url_wins_where_both_have_one(self):
-        # venue_sites.json carries the deeper, hand-corrected page (Paladar's
-        # /happy-hour). Taking base's root URL instead would trade three new
-        # venues for seventeen worse ones.
+    def test_both_urls_are_kept_where_the_two_sources_disagree(self):
+        # Neither source is reliably better -- bartaco's good page is base's,
+        # Pizzeria Vetri's is sites'. So both are crawled rather than chosen
+        # between: sites' is the start, base's rides along in also_urls.
         out = self._frontier(
             {"1": {"name": "Paladar", "osm_name": None, "address": "a",
                    "zone_id": "kop",
@@ -2915,6 +2915,16 @@ class FrontierIsTheUnionOfBothSiteSources(unittest.TestCase):
                    "website": "https://paladar.example/"}})
         self.assertEqual(out["1"]["website"],
                          "https://paladar.example/happy-hour/")
+        self.assertEqual(out["1"]["also_urls"], ["https://paladar.example/"])
+
+    def test_an_agreeing_url_adds_no_second_seed(self):
+        same = "https://one.example/"
+        out = self._frontier(
+            {"1": {"name": "One", "osm_name": None, "address": "a",
+                   "zone_id": "kop", "website": same}},
+            {"1": {"name": "One", "zone_id": "kop", "address": "a",
+                   "website": same}})
+        self.assertNotIn("also_urls", out["1"])
 
     def test_a_venue_with_no_website_is_not_queued(self):
         out = self._frontier({}, {"1": {"name": "No Site", "zone_id": "kop"}})

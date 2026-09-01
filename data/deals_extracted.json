@@ -11858,6 +11858,57 @@
    ]
   },
   {
+   "id": "bartaco-king-of-prussia",
+   "lid": "92150",
+   "name": "BARTACO",
+   "plcb_name": "BARTACO",
+   "address": "160 N GULPH RD ROOM C110, KING OF PRUSSIA PA 19406",
+   "zone_id": "king_of_prussia",
+   "license_type": "",
+   "website": "https://bartaco.com/kophightidehour/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://bartaco.com/location/kop/",
+      "quote": "high tide happy hour / weekdays 3-6pm / mon-thurs last 1.5 hours before close"
+     }
+    }
+   ]
+  },
+  {
    "id": "north-italia-king-of-prussia",
    "lid": "92272",
    "name": "North Italia",

@@ -4,6 +4,65 @@
  "built_at": "2026-09-01",
  "venues": [
   {
+   "id": "92150",
+   "lid": "92150",
+   "slug": "bartaco-king-of-prussia",
+   "name": "BARTACO",
+   "address": "160 N Gulph Rd Room C110, King Of Prussia PA 19406",
+   "zone_id": "king_of_prussia",
+   "website": "https://bartaco.com/kophightidehour/",
+   "plcb_name": "BARTACO",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.088280399999995,
+   "lng": -75.388583,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Google",
+    "file": "img/venues/92150.jpg"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://bartaco.com/location/kop/",
+      "quote": "high tide happy hour / weekdays 3-6pm / mon-thurs last 1.5 hours before close"
+     }
+    }
+   ]
+  },
+  {
    "id": "109967",
    "lid": "109967",
    "slug": "botld-king-of-prussia",
