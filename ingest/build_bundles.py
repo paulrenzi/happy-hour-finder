@@ -32,6 +32,15 @@ PHOTOS_JSON = os.path.join(REPO, "data", "venue_photos.json")
 COORDS_JSON = os.path.join(REPO, "data", "venue_coords.json")
 BASE_JSON = os.path.join(REPO, "data", "venue_base.json")
 OUT_DIR = os.path.join(REPO, "web", "data")
+# Why a venue publishes a window and names no item, one line per venue, written
+# by a person or by a reviewed pass. {"venues": {"<lid>": {"verdict": "...",
+# "noted_at": "YYYY-MM-DD"}}}. A venue in here is ACCOUNTED FOR whatever the
+# verdict says; the file exists so that "we looked and there is no menu" and
+# "nobody has looked" stop being the same state.
+VERDICTS = os.path.join(REPO, "data", "menu_verdicts.json")
+# The ratchet. See the menu ratchet in main(). Lower it with every fix.
+HOLE_BUDGET = 72
+
 
 
 def norm_addr(address):
@@ -217,6 +226,37 @@ def stamp_service_worker(built_at, n_published):
         with open(path, "w", encoding="utf-8", newline="\n") as fh:
             fh.write(new)
         print(f"sw.js cache -> {sw_cache_name(built_at, n_published)}")
+
+
+def unaccounted_holes(by_zone, verdicts):
+    """Venues publishing a window that names no item and carries no verdict."""
+    return sorted(
+        v["name"] for vs in by_zone.values() for v in vs
+        if any(not d.get("items") for d in v["deals"])
+        and str(v.get("lid") or v["id"]) not in verdicts
+    )
+
+
+def menu_ratchet(by_zone, verdicts, budget, out=print):
+    """Refuse the build if the number of unexplained silent windows has RISEN.
+
+    Separated from main() so its RED can be observed: a guard nobody has ever
+    seen refuse is decoration. tests/test_ingest.py exercises both answers.
+    """
+    holes = unaccounted_holes(by_zone, verdicts)
+    out(f"\n  windows naming no item, with no recorded reason: "
+        f"{len(holes)} (budget {budget})")
+    if len(holes) > budget:
+        for name in holes[:20]:
+            out(f"    {name}")
+        raise SystemExit(
+            f"\nREFUSED: {len(holes)} venues publish a window and name no item, "
+            f"and the budget is {budget}. Either read their menus "
+            f"(ingest/report_holes.py ranks them by class) or record a reason "
+            f"per venue in data/menu_verdicts.json. Raising HOLE_BUDGET is a "
+            f"decision, not a step."
+        )
+    return holes
 
 
 def main():
@@ -461,6 +501,24 @@ def main():
                 v[k] = b[k]
         v["deals"] = []
         by_zone.setdefault(b["zone_id"], []).append(v)
+
+    # ---- the menu ratchet ------------------------------------------------
+    #
+    # A published window naming no item is the signature of a scraper failure
+    # (see ingest/report_holes.py). It is not always one: a venue may genuinely
+    # print its hours and no menu. The difference is a thing somebody looked at
+    # and recorded, and until that happens the hole is UNACCOUNTED.
+    #
+    # The count of unaccounted holes may not rise. That is the whole gate, and
+    # it is the only part of this pipeline that survives into the next zone:
+    # every fix ratchets the budget down, and a new zone that arrives with more
+    # silent windows than the last one fails the build instead of shipping a
+    # board full of cards that name nothing. Lower the budget when you fix
+    # something; raising it is a decision, not a step.
+    verdicts = {}
+    if os.path.exists(VERDICTS):
+        verdicts = json.load(open(VERDICTS, encoding="utf-8")).get("venues", {})
+    menu_ratchet(by_zone, verdicts, HOLE_BUDGET)
 
     merged = collapse_name_collisions(by_zone)
 

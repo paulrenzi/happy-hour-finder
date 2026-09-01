@@ -22,6 +22,7 @@ sys.path.insert(0, os.path.join(REPO, "ingest"))
 
 from build_bundles import (CACHE_LINE, collapse_name_collisions, decay,  # noqa: E402
                            norm_name, shell_digest, sw_cache_name)
+import build_bundles  # noqa: E402
 import crawl_sites  # noqa: E402
 from crawl_roundups import fresh_enough, mentions, published_date, venue_index  # noqa: E402
 from crawl_sites import (candidate_links, crawl_one, hh_sections,  # noqa: E402
@@ -2565,3 +2566,38 @@ class AGateOnlyAtWRITETimeCannotFixWhatIsALREADYWritten(unittest.TestCase):
                               "discount_pct": 50.0}]},
             {"pj-whelihan": "Happy Hour: half price wings and starters"})
         self.assertEqual(list(kept), ["pj-whelihan"])
+
+
+class TheMenuRatchetRefusesARisingNumberOfSilentWindows(unittest.TestCase):
+    """A window that names no item is the shape of a scraper failure, and the
+    count of ones nobody has explained may not rise.
+
+    This is the only part of the menu work that survives into the next zone: the
+    parser fixes travel, but nothing else stops a new area from arriving with a
+    hundred cards that name nothing and shipping them quietly. The budget is a
+    ratchet -- every fix lowers it, and raising it is a decision somebody makes
+    on purpose. Both answers are exercised here because a guard whose refusal
+    has never been observed is decoration.
+    """
+
+    def zones(self, n_silent, n_full=1):
+        vs = [{"id": f"s{i}", "lid": f"s{i}", "name": f"Silent {i}",
+               "deals": [{"items": []}]} for i in range(n_silent)]
+        vs += [{"id": f"f{i}", "lid": f"f{i}", "name": f"Full {i}",
+                "deals": [{"items": [{"label": "drafts"}]}]} for i in range(n_full)]
+        return {"a_zone": vs}
+
+    def test_it_passes_at_the_budget(self):
+        holes = build_bundles.menu_ratchet(self.zones(3), {}, 3, out=lambda *_: None)
+        self.assertEqual(holes, ["Silent 0", "Silent 1", "Silent 2"])
+
+    def test_it_refuses_one_over(self):
+        with self.assertRaises(SystemExit) as e:
+            build_bundles.menu_ratchet(self.zones(4), {}, 3, out=lambda *_: None)
+        self.assertIn("REFUSED", str(e.exception))
+
+    def test_a_recorded_verdict_accounts_for_a_venue(self):
+        verdicts = {"s0": {"verdict": "no-menu-published"}}
+        holes = build_bundles.menu_ratchet(self.zones(2), verdicts, 1,
+                                           out=lambda *_: None)
+        self.assertEqual(holes, ["Silent 1"])
