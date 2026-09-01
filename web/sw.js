@@ -5,10 +5,10 @@
    changes means the precache below is never refreshed. data/index.json is precached,
    so a stale hhf-v4 kept serving an old zone list -- King of Prussia read 1 on
    devices while the server had said 3 for hours. */
-const CACHE = "hhf-2026-08-31-164-49171e7e";
+const CACHE = "hhf-2026-08-31-164-5dbbebf5";
 const SHELL = [
   "./", "index.html", "app.js", "lib.js", "styles.css", "manifest.json",
-  "data/index.json", "img/hero-taproom.jpg", "img/icon-192.png",
+  "data/index.json", "img/hero-workhorse.jpg", "img/icon-192.png",
   // Self-hosted so the offline shell keeps its typography instead of falling
   // back to system serif the first time the page opens on no signal.
   "fonts/fraunces-latin-var.woff2", "fonts/manrope-latin-var.woff2",

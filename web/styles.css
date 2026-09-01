@@ -100,7 +100,9 @@ button { font: inherit; cursor: pointer; }
 @media (min-width: 700px) { #hero { min-height: 66vh; } }
 #heroImg {
   position: absolute; inset: 0; width: 100%; height: 100%;
-  object-fit: cover; object-position: 32% 60%;
+  /* Framed on the Workhorse sign: centred, and high enough that the crowd and
+     the ink at the bottom do not fight each other. */
+  object-fit: cover; object-position: 50% 42%;
   filter: saturate(108%) contrast(103%);
 }
 #heroOverlay {
