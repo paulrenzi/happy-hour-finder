@@ -230,7 +230,48 @@
        "end": "18:30"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "WEST COAST OYSTERS",
+       "price_usd": 3.0
+      },
+      {
+       "category": "food",
+       "label": "EAST COAST OYSTERS",
+       "price_usd": 3.0
+      },
+      {
+       "category": "cocktail",
+       "label": "THE DAPPER MARTINI",
+       "price_usd": 10.0
+      },
+      {
+       "category": "cocktail",
+       "label": "SPICY MARGARITA",
+       "price_usd": 10.0
+      },
+      {
+       "category": "cocktail",
+       "label": "BULLEIT SOUR",
+       "price_usd": 10.0
+      },
+      {
+       "category": "cocktail",
+       "label": "COSMOPOLITAN",
+       "price_usd": 10.0
+      },
+      {
+       "category": "wine",
+       "label": "NARRATIVE, CHARDONNAY, CALIFORNIA",
+       "price_usd": 9.0
+      },
+      {
+       "category": "wine",
+       "label": "SCREEN PRESS, PINOT NOIR, CALIFORNIA",
+       "price_usd": 9.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -620,7 +661,68 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "KONA-CRUSTED LAMB",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "label": "SEARED HANDLINE-CAUGHT AHI TUNA",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "label": "WARM GOAT CHEESE SPREAD",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "label": "WOOD-GRILLED STEAK LETTUCE WRAPS",
+       "price_usd": 8.0
+      },
+      {
+       "category": "wine",
+       "label": "SANTA JULIA, PINOT GRIGIO",
+       "price_usd": 7.0
+      },
+      {
+       "category": "wine",
+       "label": "COTE MAS 'ROSE AURORE",
+       "price_usd": 7.0
+      },
+      {
+       "category": "wine",
+       "label": "NARRATIVE, CHARDONNAY",
+       "price_usd": 7.0
+      },
+      {
+       "category": "wine",
+       "label": "RED OR WHITE WITH FRESH FRUIT",
+       "price_usd": 7.0
+      },
+      {
+       "category": "cocktail",
+       "label": "GRAPEFRUIT BLYSS",
+       "price_usd": 13.0
+      },
+      {
+       "category": "cocktail",
+       "label": "SPARKLING COSMO",
+       "price_usd": 7.0
+      },
+      {
+       "category": "cocktail",
+       "label": "TWISTED PALMER",
+       "price_usd": 7.0
+      },
+      {
+       "category": "cocktail",
+       "label": "CLASSIC MARGARITA",
+       "price_usd": 7.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",

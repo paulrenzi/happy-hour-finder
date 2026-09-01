@@ -268,8 +268,11 @@ OFF_RE = re.compile(r"^off\b", re.I)
 # is carried along because it answers the question the noun list cannot: a
 # guacamole is food because the venue filed it under SNACKS, not because
 # 'guacamole' is a word we happen to know. See heading_prices() in crawl_sites.
+# The comma is allowed because wine is named with one and nothing else is:
+# 'SANTA JULIA, PINOT GRIGIO' is one item, not two, and without the comma the
+# whole wine list of a venue drops out with no error raised anywhere.
 SECTION_ITEM_RE = re.compile(
-    r"^\$(\d{1,3}(?:\.\d\d)?)(?:-\$?(\d{1,3}(?:\.\d\d)?))?\s+([A-Za-z][\w\s&'()-]{1,40})$")
+    r"^\$(\d{1,3}(?:\.\d\d)?)(?:-\$?(\d{1,3}(?:\.\d\d)?))?\s+([A-Za-z][\w\s&',()-]{1,40})$")
 
 # The same shape, for a section the venue discounts instead of pricing: Yard
 # House's 'HH 1/2 OFF SELECT APPS' names no price at all, and the price its own

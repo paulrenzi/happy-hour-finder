@@ -27,6 +27,7 @@ import sys
 import time
 import urllib.error
 import urllib.parse
+import unicodedata
 import urllib.request
 from html.parser import HTMLParser
 import urllib.robotparser
@@ -939,6 +940,24 @@ def darden_off_pct(heading):
     return int(m.group(1)) if m.group(1) else 50
 
 
+def darden_dish_name(raw):
+    """A dish name the downstream label pattern can actually read.
+
+    (R)/(TM)/* are decoration on the venue's own name, and accents and curly
+    quotes are the same problem wearing a different hat: left in, the name falls
+    outside the label pattern and the dish is dropped with no error anywhere.
+    GARDEIN(R) WINGS went that way, and so did CoTe MAS 'ROSe AURORe'. Folding
+    to ASCII also lets the noun list read ROSE as wine, which it cannot do
+    through the accent.
+    """
+    name = raw.replace("®", "").replace("™", "")
+    name = name.replace("‘", "'").replace("’", "'")
+    name = name.replace("“", "").replace("”", "")
+    name = unicodedata.normalize("NFKD", name)
+    name = "".join(ch for ch in name if not unicodedata.combining(ch))
+    return name.strip().rstrip("*").strip().strip("'").strip()
+
+
 def darden_menu_quotes(host, num):
     """The venue's happy-hour DISHES, from the same API that holds its hours.
 
@@ -950,24 +969,56 @@ def darden_menu_quotes(host, num):
     req = urllib.request.Request(api, headers={"X-Source-Channel": "WEB", "User-Agent": UA})
     with urllib.request.urlopen(req, timeout=TIMEOUT) as fh:
         menu = json.load(fh)
+    # What the SAME dish costs on the rest of this venue's menu. Eddie V's files
+    # its ordinary dinner appetizers under happy-hour untouched -- a $36 crab cake
+    # is $36 at 4pm too -- so a priced happy-hour line is only a DEAL if it beats
+    # every other price the venue states for that dish. Without this the board
+    # would have advertised six full-price appetizers as bargains, which is the
+    # '$X off' mistake once more: the digits are real, the deal is not.
+    elsewhere = {}
+    for cat in menu.get("categories") or []:
+        if cat.get("slug") == "happy-hour":
+            continue
+        for sub in cat.get("subCategories") or []:
+            for prod in sub.get("products") or []:
+                value = (prod.get("price") or {}).get("value")
+                slug = prod.get("slug")
+                if slug and value is not None:
+                    elsewhere[slug] = min(value, elsewhere.get(slug, value))
     out = []
     for cat in menu.get("categories") or []:
         if cat.get("slug") != "happy-hour":
             continue
         for sub in cat.get("subCategories") or []:
-            head = (sub.get("displayName") or "").strip()
+            # The heading is folded for the same reason the dish name is: the noun
+            # list downstream reads ROSE as wine and cannot read it through the
+            # accent in 'WHITE & ROSE'.
+            head = darden_dish_name(sub.get("displayName") or "")
             pct = darden_off_pct(head)
-            if not head or pct is None:
+            if not head:
                 continue
             for prod in (sub.get("products") or []):
-                # (R)/(TM)/* are decoration on the venue's own name, not part of the dish.
-                # Left in, they fall outside the label pattern downstream and the
-                # item is silently dropped -- GARDEIN(R) WINGS was lost that way.
-                name = (prod.get("displayName") or "")
-                name = name.replace("®", "").replace("™", "")
-                name = name.strip().rstrip("*").strip()
-                if name:
+                name = darden_dish_name(prod.get("displayName") or "")
+                if not name:
+                    continue
+                if pct is not None:
                     out.append(f"{head} / {pct}% Off {name}")
+                    continue
+                # A Darden brand states its happy hour in ONE of TWO dialects, and we
+                # were reading only the first. Yard House discounts a section it prices
+                # nowhere ('HH 1/2 OFF ALL PIZZAS'), so the discount is the deal. Seasons
+                # 52 does the opposite: '$8 SMALL PLATES', with each dish carrying the
+                # price you actually pay. Refusing every section that names no discount
+                # threw away all 21 Seasons 52 items -- a full happy-hour menu the API
+                # had already handed us (Paul, 2026-09-01).
+                price = (prod.get("price") or {}).get("value")
+                if price is None:
+                    continue
+                regular = elsewhere.get(prod.get("slug"))
+                if regular is not None and float(price) >= float(regular):
+                    continue
+                amount = f"{float(price):.2f}".rstrip("0").rstrip(".")
+                out.append(f"{head} / ${amount} {name}")
     return api, out
 
 
