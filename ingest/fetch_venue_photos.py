@@ -16,6 +16,7 @@ is, so it is stored alongside the file and rendered on the card.
 """
 
 import argparse
+import glob
 import json
 import os
 import sys
@@ -30,11 +31,27 @@ MANIFEST = os.path.join(REPO, "data", "venue_photos.json")
 # --from-places works off the licence id, so it needs its own manifest: a deal id
 # and an LID are different key spaces and must not share a file.
 PLACES_JSON = os.path.join(REPO, "data", "places_venues.json")
+# --from-board reads the population the SITE actually shows. A manifest's own
+# length says nothing about coverage, in EITHER direction: places_venues.json
+# held 60 rows against a board of 169, so venues that had never been looked up
+# read as "Google has no photo" -- and counting that one file said 7 of 169 were
+# covered when the shipped bundles were drawing 125, because a photo reaches a
+# card by more than one route. Count what the bundle carries (shipped_with_a_photo),
+# never the length of the file you happen to be writing.
+BOARD_JSON = os.path.join(REPO, "web", "data", "board-by-lid.json")
+BASE_JSON = os.path.join(REPO, "data", "venue_base.json")
 LID_MANIFEST = os.path.join(REPO, "data", "venue_photos_by_lid.json")
 IMG_DIR = os.path.join(REPO, "web", "img", "venues")
 
 SEARCH = "https://places.googleapis.com/v1/places:searchText"
 MAX_W = 800  # a card band is never wider than this on a phone
+
+# Google Places, September 2026 list price. A Text Search asking for
+# places.photos bills at the Pro tier, and each photo download is billed again.
+# These are here so the run can price itself out loud before it spends anything:
+# a silent full-board sweep is a bill Paul finds out about from Google.
+USD_PER_SEARCH = 0.032
+USD_PER_PHOTO = 0.007
 
 
 def load_key():
@@ -138,14 +155,146 @@ def from_places(args, key, requests):
     print(f"\n{len(manifest)} venues have a photo -> {LID_MANIFEST}")
 
 
+def shipped_with_a_photo():
+    """The LIDs whose CARD has a picture on it, read off the shipped bundles.
+
+    Not the length of any one manifest, and not this file's manifest either.
+    Photos reach a card by more than one route -- venue_photos_by_lid.json is
+    only one of them -- so counting that file gave 7 of 169 when the board was
+    in fact drawing 125. Believing it would have billed 118 lookups for photos
+    the site already has. The bundle is what the reader sees, so the bundle is
+    what gets counted.
+    """
+    out = set()
+    for path in glob.glob(os.path.join(REPO, "web", "data", "zone-*.json")):
+        for v in json.load(open(path, encoding="utf-8"))["venues"]:
+            if v.get("photo"):
+                out.add(str(v.get("lid") or v.get("id")))
+    return out
+
+
+def from_board(args, key):
+    """Fetch photos for the venues that are ON THE BOARD and have none.
+
+    --from-places can only ever cover what discover_places.py happened to look
+    up. This mode starts from the other end -- the LIDs the site renders -- so a
+    venue like Black Powder Tavern, which was on the board but had never been
+    resolved, is in the population by construction. Same LID key space and same
+    manifest as --from-places; only the population differs.
+    """
+    board = json.load(open(BOARD_JSON, encoding="utf-8"))
+    base = json.load(open(BASE_JSON, encoding="utf-8"))
+    manifest = json.load(open(LID_MANIFEST, encoding="utf-8")) if os.path.exists(LID_MANIFEST) else {}
+
+    covered = shipped_with_a_photo()
+    print(f"board: {len(board)} venues, {len(covered & set(board))} with a photo "
+          f"({len(set(board) - covered)} without)")
+
+    todo = []
+    unknown = []
+    for lid in sorted(board):
+        if lid in covered and not args.force:
+            continue
+        b = base.get(lid)
+        # Resolution is address-keyed on purpose -- two "Iron Hill Brewery" rows
+        # are different bars -- so a venue with no address is left out rather
+        # than searched on a name that would match the wrong one.
+        if not b or not b.get("address"):
+            unknown.append(lid)
+            continue
+        if args.zone and b.get("zone_id") != args.zone:
+            continue
+        todo.append((lid, b))
+    if args.limit:
+        todo = todo[: args.limit]
+
+    if unknown:
+        print(f"{len(unknown)} board venues have no address on file and are skipped")
+
+    cost = len(todo) * (USD_PER_SEARCH + USD_PER_PHOTO)
+    print(f"{len(todo)} lookups to run -- about ${cost:,.2f} at Google list price "
+          f"(${USD_PER_SEARCH:.3f} search + ${USD_PER_PHOTO:.3f} photo each)")
+    if not args.spend:
+        print("\nNothing spent. Re-run with --spend to actually fetch.")
+        return
+    print()
+
+    os.makedirs(IMG_DIR, exist_ok=True)
+    import requests
+
+    for n, (lid, b) in enumerate(todo, 1):
+        try:
+            place = resolve(key, b)
+        except requests.HTTPError as err:
+            print(f"[{n}/{len(todo)}] {lid:<8} {b['name'][:34]:<36} search failed: {err}")
+            continue
+        if not place:
+            print(f"[{n}/{len(todo)}] {lid:<8} {b['name'][:34]:<36} no photo on Places")
+            continue
+
+        photo = place["photos"][0]
+        dest, rel = photo_dest(lid)
+        try:
+            size = download(key, photo, dest)
+        except OSError as err:
+            # A local write failure is systemic, not per-venue: continuing bills
+            # a Places call for every remaining venue and stores none of them.
+            _save(manifest)
+            sys.exit(f"  {lid:<8} cannot write {dest}: {err}")
+        except Exception as err:  # noqa: BLE001 -- one venue must not stop the run
+            print(f"[{n}/{len(todo)}] {lid:<8} {b['name'][:34]:<36} download failed: {err}")
+            continue
+
+        authors = [a.get("displayName", "") for a in photo.get("authorAttributions", [])]
+        manifest[lid] = {
+            "file": rel,
+            # Google requires the author attribution to be shown wherever the
+            # photo is, so it is stored beside the file and rendered on the card.
+            "attribution": ("Photo: " + ", ".join(a for a in authors if a) + " / Google")
+            if any(authors) else "Photo: Google",
+            "place_id": place["id"],
+            "resolved_name": place.get("displayName", {}).get("text"),
+            "resolved_address": place.get("formattedAddress"),
+            "fetched_at": time.strftime("%Y-%m-%d"),
+        }
+        print(f"[{n}/{len(todo)}] {lid:<8} {b['name'][:34]:<36} {size:>7,} bytes"
+              f"  <- {manifest[lid]['resolved_name']}")
+        # Written as we go: a lookup already billed must not be thrown away by
+        # an interrupt half way through the sweep.
+        _save(manifest)
+
+    _save(manifest)
+    print(f"\n{len(set(manifest) & set(board))}/{len(board)} board venues have a photo")
+    print("Now run: python ingest/build_venue_base.py && python ingest/build_bundles.py")
+
+
+def _save(manifest):
+    tmp = LID_MANIFEST + ".new"
+    with open(tmp, "w", encoding="utf-8") as fh:
+        json.dump(manifest, fh, indent=1, sort_keys=True)
+    os.replace(tmp, LID_MANIFEST)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0, help="stop after N lookups")
     ap.add_argument("--force", action="store_true", help="refetch venues already in the manifest")
     ap.add_argument("--from-places", action="store_true",
                     help="use photo references discover_places.py already fetched")
-    ap.add_argument("--zone", help="with --from-places, restrict to one zone")
+    ap.add_argument("--from-board", action="store_true",
+                    help="cover the venues the site actually shows (board-by-lid.json)")
+    ap.add_argument("--spend", action="store_true",
+                    help="with --from-board, actually run the billed lookups")
+    ap.add_argument("--zone", help="with --from-places/--from-board, restrict to one zone")
     args = ap.parse_args()
+
+    if args.from_board:
+        key = load_key()
+        # Priced before the key is demanded: the cost question is worth answering
+        # on a machine that has no key at all.
+        if not key and args.spend:
+            sys.exit("No GOOGLE_PLACES_API_KEY. Put one in happy-hour-finder/.env")
+        return from_board(args, key)
 
     if args.from_places:
         import requests
