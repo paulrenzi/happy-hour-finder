@@ -12,6 +12,7 @@ import datetime
 import json
 import os
 import sys
+import tempfile
 import unittest
 import unittest.mock
 import urllib.error
@@ -34,7 +35,7 @@ from guess_sites import verify as guess_verify  # noqa: E402
 from extract_deals import clauses, days_in, items_in, one_sided, window_in, windows_from  # noqa: E402
 from extract_prices_llm import verify  # noqa: E402
 from fetch_og_images import asset_allowed, css_images, inline_images, og_image  # noqa: E402
-from fetch_venue_photos import IMG_DIR, photo_dest  # noqa: E402
+from fetch_venue_photos import IMG_DIR, absorbed_lids, photo_dest  # noqa: E402
 from geocode_venues import split_address, strip_range, strategies  # noqa: E402
 from validate_pa import validate_deal, validate_food_combo_count  # noqa: E402
 
@@ -1744,3 +1745,41 @@ class APrintedMenuOmitsTheDollarSign(unittest.TestCase):
         clean, why = verify(dict(item), "Served with French Fries or House Salad 16",
                             menu=True)
         self.assertIsNotNone(clean, why)
+
+
+class ASecondLicenceIsNotACard(unittest.TestCase):
+    """A collapsed licence must never cost a Places lookup.
+
+    build_bundles folds a second PLCB licence at one address into the bar's
+    card. The loser keeps its LICENSEE name -- GIANT, Weis Markets,
+    Philadelphia Marriott -- and stays a key in board-by-lid.json, so the
+    photo pass searched Google for a supermarket and bought its storefront.
+    Six of those were billed. None could ever appear: the winning card keeps
+    its own picture.
+    """
+
+    def _zones(self, venues):
+        d = tempfile.mkdtemp()
+        os.makedirs(os.path.join(d, "web", "data"))
+        with open(os.path.join(d, "web", "data", "zone-x.json"), "w",
+                  encoding="utf-8") as fh:
+            json.dump({"venues": venues}, fh)
+        return d
+
+    def test_a_ridealong_licence_is_named(self):
+        d = self._zones([{"lid": "1", "also_lids": ["73040", "69227"]},
+                         {"lid": "2"}])
+        with unittest.mock.patch("fetch_venue_photos.REPO", d):
+            self.assertEqual(absorbed_lids(), {"73040", "69227"})
+
+    def test_a_card_with_no_second_licence_contributes_nothing(self):
+        d = self._zones([{"lid": "1"}, {"lid": "2", "also_lids": []}])
+        with unittest.mock.patch("fetch_venue_photos.REPO", d):
+            self.assertEqual(absorbed_lids(), set())
+
+    def test_the_winning_lid_is_not_swept_up_with_its_losers(self):
+        # The guard skips lookups. If it named the winner too, the bar itself
+        # would be refused a photograph forever.
+        d = self._zones([{"lid": "44269", "also_lids": ["44268"]}])
+        with unittest.mock.patch("fetch_venue_photos.REPO", d):
+            self.assertEqual(absorbed_lids(), {"44268"})

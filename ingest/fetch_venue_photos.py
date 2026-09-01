@@ -173,6 +173,24 @@ def shipped_with_a_photo():
     return out
 
 
+def absorbed_lids():
+    """LIDs that ride along in another card's also_lids and render nothing.
+
+    A second PLCB licence at one address -- the supermarket next door wearing
+    the bar's trade name -- is collapsed into the bar's card by build_bundles.
+    It is still a key in board-by-lid.json, and base.get(lid) still carries the
+    LICENSEE name, so searching it asks Google for GIANT and buys a photograph
+    of a grocery store. Six were bought that way before this guard existed, and
+    not one reached a card -- the winner keeps its own picture -- so the whole
+    outlay was waste. Not a card => never a lookup.
+    """
+    out = set()
+    for path in glob.glob(os.path.join(REPO, "web", "data", "zone-*.json")):
+        for v in json.load(open(path, encoding="utf-8"))["venues"]:
+            out.update(str(l) for l in (v.get("also_lids") or []))
+    return out
+
+
 def from_board(args, key):
     """Fetch photos for the venues that are ON THE BOARD and have none.
 
@@ -187,13 +205,18 @@ def from_board(args, key):
     manifest = json.load(open(LID_MANIFEST, encoding="utf-8")) if os.path.exists(LID_MANIFEST) else {}
 
     covered = shipped_with_a_photo()
+    absorbed = absorbed_lids() & set(board)
     print(f"board: {len(board)} venues, {len(covered & set(board))} with a photo "
-          f"({len(set(board) - covered)} without)")
+          f"({len(set(board) - covered - absorbed)} without)")
+    if absorbed:
+        print(f"{len(absorbed)} collapsed second licence(s) skipped -- not cards")
 
     todo = []
     unknown = []
     for lid in sorted(board):
         if lid in covered and not args.force:
+            continue
+        if lid in absorbed:
             continue
         b = base.get(lid)
         # Resolution is address-keyed on purpose -- two "Iron Hill Brewery" rows
@@ -264,7 +287,14 @@ def from_board(args, key):
         _save(manifest)
 
     _save(manifest)
-    print(f"\n{len(set(manifest) & set(board))}/{len(board)} board venues have a photo")
+    # NOT len(manifest & board): this file is one of several routes a photo
+    # takes to a card, so it printed "62/170" straight after a run that had
+    # just taken the board to full coverage -- the very miscount that
+    # shipped_with_a_photo() exists to avoid. The bundles are stale until the
+    # rebuild, so report the fetch and let the rebuild report the board.
+    print(f"\n{len(manifest)} venue(s) on file -> {LID_MANIFEST}")
+    print("Now run: python ingest/build_venue_base.py && "
+          "python ingest/build_bundles.py")
     print("Now run: python ingest/build_venue_base.py && python ingest/build_bundles.py")
 
 
