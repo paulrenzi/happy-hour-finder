@@ -45,7 +45,6 @@ CACHE = os.path.join(REPO, "data", "menu_images")
 OUT = os.path.join(REPO, "data", "deals_menu_images.json")
 UA = "happy-hour-finder-ingest/1.0 (+https://paulrenzi.github.io/happy-hour-finder/)"
 MAX_BYTES = 12_000_000
-MAX_ITEMS = 6
 
 
 def targets():
@@ -126,7 +125,7 @@ def items_from(read):
                 continue
             seen.add(key)
             items.append(clean)
-    return items[:MAX_ITEMS], dropped
+    return items, dropped
 
 
 def main():

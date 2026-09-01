@@ -276,6 +276,11 @@
        "category": "draft",
        "label": "draft beer with select half-p",
        "price_usd": 6.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "bottles of wine",
+       "discount_pct": 50
       }
      ],
      "confidence": "unconfirmed",

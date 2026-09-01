@@ -1682,6 +1682,16 @@
        "category": "wine",
        "label": "Wine",
        "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "label": "Oysters and",
+       "price_usd": 1.0
+      },
+      {
+       "category": "draft",
+       "label": "e of fixings and any beer for",
+       "price_usd": 15.0
       }
      ],
      "confidence": "unconfirmed",
@@ -2122,6 +2132,26 @@
        "category": "cocktail",
        "label": "LIMONCELLO SPRITZ",
        "price_usd": 9.0
+      },
+      {
+       "category": "cocktail",
+       "label": "ESPRESSO MARTINI",
+       "price_usd": 10.0
+      },
+      {
+       "category": "cocktail",
+       "label": "MOSCOW OR KENTUCKY MULE",
+       "price_usd": 8.0
+      },
+      {
+       "category": "wine",
+       "label": "HOUSE WINES",
+       "price_usd": 7.0
+      },
+      {
+       "category": "draft",
+       "label": "DRAFTS",
+       "price_usd": 5.0
       }
      ],
      "confidence": "unconfirmed",
@@ -2534,6 +2564,36 @@
       {
        "category": "food",
        "label": "Paladar Sliders (2)",
+       "price_usd": 7.5,
+       "price_max": 7.75
+      },
+      {
+       "category": "food",
+       "label": "Baja Shrimp Lettuce Wraps",
+       "price_usd": 7.5,
+       "price_max": 7.75
+      },
+      {
+       "category": "food",
+       "label": "Chicken Empanadas (2)",
+       "price_usd": 7.5,
+       "price_max": 7.75
+      },
+      {
+       "category": "food",
+       "label": "Mushroom Empanadas (2)",
+       "price_usd": 7.5,
+       "price_max": 7.75
+      },
+      {
+       "category": "food",
+       "label": "Venezuelan Teque\u00f1os",
+       "price_usd": 7.5,
+       "price_max": 7.75
+      },
+      {
+       "category": "food",
+       "label": "Guacamole Fries",
        "price_usd": 7.5,
        "price_max": 7.75
       }
@@ -6221,6 +6281,46 @@
        "category": "food",
        "label": "Buck-a-Shuck Oysters",
        "price_usd": 1.0
+      },
+      {
+       "category": "draft",
+       "label": "WB Craft Pints",
+       "price_usd": 5.0
+      },
+      {
+       "category": "draft",
+       "label": "a pint",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "Wine & Cocktails",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "label": "Happy Hour Bites",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "label": "per oyster",
+       "price_usd": 1.0
+      },
+      {
+       "category": "food",
+       "label": "each for our fresh oysters on",
+       "price_usd": 1.0
+      },
+      {
+       "category": "draft",
+       "label": "pints",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "wine and cocktails",
+       "price_usd": 7.0
       }
      ],
      "confidence": "unconfirmed",
@@ -8295,6 +8395,76 @@
        "category": "food",
        "label": "BONELESS WINGS",
        "discount_pct": 50
+      },
+      {
+       "category": "food",
+       "label": "POKE NACHOS",
+       "discount_pct": 50
+      },
+      {
+       "category": "food",
+       "label": "WISCONSIN FRIED CHEESE CURDS",
+       "discount_pct": 50
+      },
+      {
+       "category": "food",
+       "label": "GARDEIN WINGS",
+       "discount_pct": 50
+      },
+      {
+       "category": "food",
+       "label": "CHICKEN NACHOS",
+       "discount_pct": 50
+      },
+      {
+       "category": "food",
+       "label": "CLASSIC SLIDERS",
+       "discount_pct": 50
+      },
+      {
+       "category": "food",
+       "label": "SPICY ZA'ATAR HUMMUS",
+       "discount_pct": 50
+      },
+      {
+       "category": "food",
+       "label": "CRISPY BRUSSELS SPROUTS",
+       "discount_pct": 50
+      },
+      {
+       "category": "food",
+       "label": "BLACKENED AHI SASHIMI",
+       "discount_pct": 50
+      },
+      {
+       "category": "food",
+       "label": "THREE CHEESE",
+       "discount_pct": 50
+      },
+      {
+       "category": "food",
+       "label": "LOADED PEPPERONI",
+       "discount_pct": 50
+      },
+      {
+       "category": "food",
+       "label": "MARGHERITA",
+       "discount_pct": 50
+      },
+      {
+       "category": "food",
+       "label": "THE CARNIVORE",
+       "discount_pct": 50
+      },
+      {
+       "category": "food",
+       "label": "TRUFFLED MUSHROOM",
+       "discount_pct": 50
+      },
+      {
+       "category": "food",
+       "label": "BUFFALO CHICKEN",
+       "discount_pct": 50
       }
      ],
      "confidence": "unconfirmed",
@@ -9745,6 +9915,11 @@
        "category": "draft",
        "label": "draft beer with select half-p",
        "price_usd": 6.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "bottles of wine",
+       "discount_pct": 50
       }
      ],
      "confidence": "unconfirmed",

@@ -70,7 +70,8 @@ OUT = os.path.join(REPO, "data", "deals_prices_llm.json")
 # only thing it can cost is recall, which is the number measured above.
 BATCH = int(os.environ.get("HHF_PRICE_BATCH", "20"))   # venues per model call
 MAX_QUOTE = 2400     # chars of quote text per venue
-MAX_ITEMS = 6        # what the card can show without becoming a menu
+# No item cap. The card folds after 3 and holds the rest behind "+N more", so
+# the display never needed one; capping here only threw away menu we had read.
 MODEL = os.environ.get("HHF_PRICE_MODEL", "sonnet")
 
 # What `claude -p` may leave behind. This pass wants a reader, not an agent: it
@@ -112,7 +113,9 @@ Rules:
 - Skip anything that is not a happy-hour price: regular menu prices, gift
   cards, event tickets, catering, merchandise, prices at other locations.
 - If a venue's text states no price, return an empty items list for it.
-- At most {max_items} items per venue, the cheapest and most representative.
+- Return EVERY happy-hour item the text prices. Do not choose a
+  representative subset and do not stop early -- the board folds long lists
+  itself, so a dropped item is simply lost.
 
 Return ONLY a JSON array, no prose and no code fence:
 [{{"id": "<venue id>", "items": [
@@ -177,7 +180,7 @@ def ask(batch):
     """One `claude -p` call over a list of (id, text). Returns parsed JSON."""
     venues = "\n\n".join(f"--- id: {vid}\n{text}" for vid, text in batch)
     prompt = PROMPT.format(categories=", ".join(sorted(CATEGORIES)),
-                           max_items=MAX_ITEMS, venues=venues)
+                           venues=venues)
     # `claude` is a .cmd shim on Windows, which subprocess will not find on its
     # own, and the prompt goes in on stdin rather than argv so a batch is never
     # bounded by the command-line length limit.
@@ -408,7 +411,7 @@ def main():
                 rejects.append(("?", f"reply names a venue not in the batch: {vid!r}"))
                 continue
             kept = []
-            for item in (reply.get("items") or [])[:MAX_ITEMS]:
+            for item in (reply.get("items") or []):
                 clean, why = verify(item, texts[vid])
                 if clean:
                     kept.append(clean)

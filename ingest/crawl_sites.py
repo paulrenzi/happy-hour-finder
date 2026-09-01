@@ -925,10 +925,10 @@ def darden_lines(rest):
 # guessed at -- its dishes are on the happy-hour menu at a price we do not know.
 DARDEN_OFF_RE = re.compile(r"(?:\b1\s*/\s*2\b|\bhalf\b)[-\s]*(?:price|off)|"
                            r"\b(\d{1,2})\s*%\s*off", re.I)
-# A card is not a menu. Yard House puts 20 dishes on its happy-hour list and the
-# card shows six of them, so the cap is applied HERE, where the order is the
-# venue's own, rather than by whatever survived a later truncation.
-DARDEN_ITEM_CAP = 8
+# No cap. Yard House puts 20 dishes on its happy-hour list and we take all 20:
+# the card folds after 3 and keeps the rest behind "+N more", so the display was
+# never the constraint. Capping here was silently costing us menu the venue's own
+# API had already handed over (Paul, 2026-09-01).
 
 
 def darden_off_pct(heading):
@@ -959,8 +959,13 @@ def darden_menu_quotes(host, num):
             pct = darden_off_pct(head)
             if not head or pct is None:
                 continue
-            for prod in (sub.get("products") or [])[:DARDEN_ITEM_CAP]:
-                name = (prod.get("displayName") or "").strip().rstrip("*").strip()
+            for prod in (sub.get("products") or []):
+                # (R)/(TM)/* are decoration on the venue's own name, not part of the dish.
+                # Left in, they fall outside the label pattern downstream and the
+                # item is silently dropped -- GARDEIN(R) WINGS was lost that way.
+                name = (prod.get("displayName") or "")
+                name = name.replace("®", "").replace("™", "")
+                name = name.strip().rstrip("*").strip()
                 if name:
                     out.append(f"{head} / {pct}% Off {name}")
     return api, out

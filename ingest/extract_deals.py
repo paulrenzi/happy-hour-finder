@@ -165,7 +165,11 @@ def items_from_hits(hits, lead_url):
                 continue
             seen.add(item["label"].lower())
             out.append(item)
-    return out[:6]
+    # No cap. The card folds after 3 and keeps the rest behind "+N more",
+    # so the display never needed one -- the cap only threw away menu we had
+    # already read. It cut in quote order, which cost Yard House its entire
+    # half-off pizza section (Paul, 2026-09-01).
+    return out
 
 
 def days_in(text):
@@ -344,7 +348,11 @@ def items_in(text):
         if cat and label.lower() not in seen:
             seen.add(label.lower())
             out.append({"category": cat, "label": label, "price_usd": float(m.group(2))})
-    return out[:6]
+    # No cap. The card folds after 3 and keeps the rest behind "+N more",
+    # so the display never needed one -- the cap only threw away menu we had
+    # already read. It cut in quote order, which cost Yard House its entire
+    # half-off pizza section (Paul, 2026-09-01).
+    return out
 
 
 # A second schedule starting inside one segment: '... 4-6pm & Sunday-Thursday
