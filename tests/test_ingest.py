@@ -1916,6 +1916,36 @@ class OneUnlawfulDayIsNotEvidenceAgainstTheOthers(unittest.TestCase):
 
 
 
+class WhichSideOfTheJoinTheItemIsOnIsNotRECORDED(unittest.TestCase):
+    """A price glued to its neighbours cannot say which neighbour it belongs to.
+
+    quotes() joins a bare price line to the lines around it with " / ", because
+    '$8' and its dish are on separate lines and each is worthless alone. It does
+    NOT record which side the dish was on, and the answer differs by page:
+
+        CO-OP     'with capers and everything spice / $ 8 / Wings'
+                  -- the $8 is the DEVILED EGGS above it. Wings are $12.
+        Chili's   '$3 / Bud Light 16 oz'
+                  -- the $3 is the Bud Light below it.
+
+    Reading the item as the one AFTER the price therefore prices CO-OP's wings
+    at $8 when they are $12 -- a WRONG price on a real bar, which is the one
+    failure this whole containment exists to prevent. So PRICE_RE deliberately
+    still requires the item to follow the price with only whitespace, and the
+    40 venues holding a joined quote stay unpriced until the crawler records
+    the side. Being unpriced is the correct answer to a question we cannot
+    currently answer.
+    """
+
+    def test_a_joined_price_is_refused_rather_than_guessed(self):
+        self.assertEqual(items_in("with capers and everything spice / $ 8 / Wings"),
+                         [])
+
+    def test_the_adjacent_form_still_reads(self):
+        self.assertEqual(items_in("$6 margaritas")[0]["label"], "margaritas")
+
+
+
 class AFailedFetchIsNotAnAnswerAboutTheVenue(unittest.TestCase):
     """A re-crawl that could not read a page must not erase what we hold.
 

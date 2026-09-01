@@ -111,20 +111,24 @@
      ],
      "items": [
       {
-       "category": "food",
-       "label": "Sliders",
-       "price_usd": 6.0
+       "category": "draft",
+       "label": "Blue Moon draft",
+       "price_usd": 7.0
+      },
+      {
+       "category": "draft",
+       "label": "Corona Light Draft",
+       "price_usd": 4.0
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://www.greatamericanpub.net/happy-hour",
       "quote": "HAPPY HOUR: / MONDAY-FRIDAY / 4PM-6PM"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   },
