@@ -760,42 +760,44 @@ function setFine(node, text) {
   node.append(details);
 }
 
-/* "Still on?" -- one tap from somebody who is actually there.
+/* A menu is not a list -- it is a wall.
 
-   The ask is deliberately tiny and sits next to the freshness line rather than
-   in the row of buttons, because it is a claim about that line, and because a
-   fourth button is how a card stops being readable on a phone.
+   Taku's menu read cleanly and produced SIXTEEN priced items, which is the
+   product working, and on a phone it was a card you had to scroll past to
+   reach the next bar. So the card shows the first few and folds the rest
+   behind a count. The fold is a <details> with two words in it for the same
+   reason the small print's is: a decorative glyph has to survive every editor
+   between here and the page, and one of them ate it.
 
-   It answers optimistically. A confirmation that fails to reach the Worker
-   costs nobody anything, and a spinner over a one-tap favour is a worse product
-   than a thank-you that was very occasionally not earned. */
-const confirmed = new Set();
+   Nothing is dropped -- "+13 more" is itself the honest signal that this venue
+   published a real menu, and every item is one tap away. */
+const ITEMS_SHOWN = 3;
 
-function wireStillOn(btn, v, deal) {
-  if (!btn) return;
-  const key = `${v.id}:${dealKey(deal)}`;
-  if (confirmed.has(key)) {
-    btn.textContent = "Thanks";
-    btn.disabled = true;
-    return;
-  }
-  btn.addEventListener("click", async (e) => {
-    e.stopPropagation();
-    confirmed.add(key);
-    btn.textContent = "Thanks";
-    btn.disabled = true;
-    toast("Thanks — that helps the next person");
-    try {
-      await fetch(`${SUBMIT_API}/confirm`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ lid: v.id, key: dealKey(deal) }),
-      });
-    } catch {
-      // Nothing to say and nothing to undo -- the next person's confirmation
-      // carries the same information, and the board is unharmed either way.
-    }
-  });
+function itemChip(item) {
+  const { amount, label } = itemParts(item);
+  const li = el("li");
+  if (amount) li.append(el("b", null, amount));
+  li.append(document.createTextNode(label));
+  return li;
+}
+
+function fillItems(list, items) {
+  for (const item of items.slice(0, ITEMS_SHOWN)) list.append(itemChip(item));
+  const rest = items.slice(ITEMS_SHOWN);
+  if (!rest.length) return;
+
+  const details = el("details", "itemFold");
+  const summary = el("summary");
+  summary.append(
+    el("span", "foldShow", `+${rest.length} more`),
+    el("span", "foldHide", "Show fewer")
+  );
+  const more = el("ul", "items itemsMore");
+  for (const item of rest) more.append(itemChip(item));
+  details.append(summary, more);
+  // Outside the <ul>: a <details> is not a valid child of a list, and Safari
+  // is the engine that punishes that rather than the one that forgives it.
+  list.after(details);
 }
 
 function card(row, at) {
@@ -828,14 +830,7 @@ function card(row, at) {
   const dist = distanceText(v, row.miles, row.driveMin);
   $(".zone", node).textContent = dist ? `${zoneName} · ${dist}` : zoneName;
 
-  const items = $(".items", node);
-  for (const item of deal.items) {
-    const { amount, label } = itemParts(item);
-    const li = el("li");
-    if (amount) li.append(el("b", null, amount));
-    li.append(document.createTextNode(label));
-    items.append(li);
-  }
+  fillItems($(".items", node), deal.items);
 
   const when = whenText(row);
   const ends = $(".ends", node);
@@ -856,12 +851,14 @@ function card(row, at) {
   conf.classList.add(row.confidence);
   const age = row.ageDays === 0 ? "today" : `${row.ageDays}d ago`;
   const n = deal.confirmations || 0;
+  // "Unconfirmed" was read as a doubt about the hours themselves. It never
+  // meant that: it means nobody has checked them LATELY. Say that instead --
+  // the age is the fact, and the reader can decide what it is worth.
   conf.textContent = n
     ? `${n} ${n === 1 ? "person" : "people"} confirmed · ${age}`
     : row.confidence === "unconfirmed"
-      ? `Unconfirmed — call ahead · ${age}`
+      ? `Not checked since ${age} — worth a call`
       : `Checked ${age}`;
-  wireStillOn($(".stillOn", node), v, deal);
 
   $(".map", node).href = directionsUrl(v);
   const src = $(".src", node);
@@ -1060,7 +1057,7 @@ function openVenue(id) {
     prov.append(
       document.createTextNode(
         effectiveConfidence(deal) === "unconfirmed"
-          ? `Unconfirmed, last checked ${age}. Call ahead. Source: `
+          ? `Last checked ${age} — old enough to be worth a call. Source: `
           : `Last checked ${age}. Source: `
       )
     );
@@ -1145,9 +1142,10 @@ function reportWrong(v, deal) {
     el(
       "p",
       null,
-      "If that's not what the menu says, the fastest fix by a distance is a " +
-        "photo of it: it goes into the same queue a person reads every day, and " +
-        "an approved photo replaces what's on the card above."
+      "Wrong window, new prices, a menu that changed last week — it is all the " +
+        "same fix, and the fastest one by a distance is a photo of the menu: it " +
+        "goes into the same queue a person reads every day, and an approved " +
+        "photo replaces what's on the card above."
     )
   );
 
@@ -1163,7 +1161,7 @@ function reportWrong(v, deal) {
     `LID: ${v.lid || v.id}`,
     `What we show: ${summarizeWindows(deal.windows)}`,
     "",
-    "What's wrong:",
+    "What's wrong, or what changed:",
     "",
     "How do you know? (saw the menu / staff told me / I work here):",
     "",
@@ -1171,7 +1169,7 @@ function reportWrong(v, deal) {
   const mail = el("a", "btn", "No photo — tell us instead");
   mail.href =
     `mailto:${SUBMIT_TO}` +
-    `?subject=${encodeURIComponent(`Wrong hours: ${v.name} (LID ${v.lid || v.id})`)}` +
+    `?subject=${encodeURIComponent(`Hours changed: ${v.name} (LID ${v.lid || v.id})`)}` +
     `&body=${encodeURIComponent(lines.join("\n"))}`;
   acts.append(mail);
   body.append(acts);

@@ -96,8 +96,12 @@ def main():
                     "type": "happy_hour",
                     "windows": [{"dow": d, "start": "00:00", "end": "23:59"}
                                 for d in range(1, 8)],
+                    # Sixteen items, because a menu that reads cleanly is a
+                    # WALL of them -- Taku's was -- and the card has to fold.
                     "items": [{"category": "draft", "label": "CHROME PROBE DRAFT",
-                               "price_usd": 3}],
+                               "price_usd": 3}]
+                    + [{"category": "draft", "label": f"PROBE ITEM {i}",
+                        "price_usd": 4} for i in range(15)],
                     "confidence": "unconfirmed",
                     "last_verified_at": "2026-08-31",
                     "fine_print": LONG,
@@ -127,7 +131,7 @@ def main():
                    .find((c) => c.textContent.includes(probe));
                  if (!card) return { found: false };
                  const fold = card.querySelector(".fineFold");
-                 const still = card.querySelector(".stillOn");
+                 const itemFold = card.querySelector(".itemFold");
                  // A label wider than the box it sits in is a clipped label,
                  // whatever it happens to say.
                  const clipped = [...card.querySelectorAll(".btn")]
@@ -151,7 +155,14 @@ def main():
                      : null,
                    bodyShowsPrint: card.innerText.includes("Void where prohibited"),
                    conf: card.querySelector(".conf").textContent,
-                   still: still ? still.textContent : "",
+                   // Chips visible before anything is tapped, and the label on
+                   // the fold that holds the rest.
+                   shownItems: card.querySelectorAll(".items:not(.itemsMore) li").length,
+                   hiddenItems: card.querySelectorAll(".itemsMore li").length,
+                   itemFold: itemFold
+                     ? itemFold.querySelector("summary").innerText.trim() : "",
+                   itemFoldOpen: itemFold ? itemFold.hasAttribute("open") : null,
+                   cardText: card.innerText,
                    clipped,
                    creditSpots: card.querySelectorAll(".credit").length,
                    srcNotes: card.querySelectorAll(".srcNote").length,
@@ -185,8 +196,18 @@ def main():
             bad.append(f"button label clipped at 360px: {found['clipped']}")
         if "confirmed" not in found["conf"]:
             bad.append(f"two people confirmed it and the card says {found['conf']!r}")
-        if not found["still"]:
-            bad.append("there is no way to say the deal is still on")
+        if found["shownItems"] != 3:
+            bad.append(f"16 items and the card shows {found['shownItems']} before the fold")
+        if found["hiddenItems"] != 13:
+            bad.append(f"the fold holds {found['hiddenItems']} items, expected 13")
+        if found["itemFold"] != "+13 more":
+            bad.append(f"the item fold reads {found['itemFold']!r}")
+        if found["itemFoldOpen"]:
+            bad.append("the price list is unfolded by default")
+        # The word tested badly on a real reader: it was heard as a doubt about
+        # the hours rather than a statement about their age.
+        if "nconfirmed" in found["cardText"]:
+            bad.append("the card still says 'unconfirmed' at a reader")
         if found["creditSpots"] or found["srcNotes"]:
             bad.append("the card still carries its own credit/provenance line")
 
@@ -194,7 +215,7 @@ def main():
         print(f"  FAIL {line}")
     if not bad:
         print(f"  ok   card reads at 360px: toggle {found['summary']!r}, "
-              f"conf {found['conf']!r}, ask {found['still']!r}")
+              f"conf {found['conf']!r}, items {found['itemFold']!r}")
     return 1 if bad else 0
 
 
