@@ -102,7 +102,20 @@ MEAL_RE = re.compile(
 # is which, so the deciding fact is the WORD, not the time.
 HH_RE = re.compile(r"happy\s*hour|social hour|power hour", re.I)
 
-PRICE_RE = re.compile(r"\$(\d{1,3}(?:\.\d\d)?)\s*([A-Za-z][\w\s&'-]{1,28})")
+# A fragment that states a schedule rather than naming a thing you can buy. The
+# same test crawl_sites makes; a list of item names contains none of this.
+CONTEXT_RE = re.compile(
+    r"\d{1,2}(?::\d\d)?\s*(?:am|pm|a\.m\.|p\.m\.)|\bmon|\btue|\bwed|\bthu|\bfri|\bsat|\bsun", re.I)
+# A price on a line of its own, as the crawler emits it. Mirrors BARE_PRICE_RE
+# in crawl_sites.py.
+BARE_PRICE_RE = re.compile(r"^\$\s?\d{1,3}(?:\.\d{1,2})?$")
+
+# A price and the thing it buys. The dollar sign may be followed by a space --
+# Squarespace and BentoBox both print '$ 10' -- and the cents may be written
+# with a single digit ('$5.5'). Neither form was readable, and both are how a
+# real menu prints money: the Gypsy Saloon's entire happy hour is spaced, and
+# the venue read as one that publishes no prices at all.
+PRICE_RE = re.compile(r"\$\s?(\d{1,3}(?:\.\d{1,2})?)\s*([A-Za-z][\w\s&'-]{1,28})")
 HALF_RE = re.compile(r"half.?price(?:d)?\s+([A-Za-z][\w\s&'-]{1,28})", re.I)
 # A venue that prints the item FIRST and the price after it -- 'BEER $5',
 # 'Blue Moon draft $4'. PRICE_RE cannot read that form at all, so every such
@@ -158,7 +171,13 @@ def items_from_hits(hits, lead_url):
     """
     out, seen = [], set()
     for h in hits:
-        if not (h["url"] == lead_url or windows_from(h["quote"])):
+        # `hh` is the crawl saying this line sat inside the venue's OWN
+        # happy-hour section. That is the containment the URL test was standing
+        # in for, and it is stronger: it survives the venue printing its hours
+        # on one page and its menu on another, which is what left Mia Ragazza,
+        # the Gypsy Saloon and 20-odd others with a window and an empty card
+        # while both halves sat in crawl_hits.json. See mark_hh in crawl_sites.
+        if not (h.get("hh") or h["url"] == lead_url or windows_from(h["quote"])):
             continue
         for item in items_in(h["quote"]):
             if item["label"].lower() in seen:
@@ -253,14 +272,21 @@ def category_of(label):
 
 
 # '$2 Off Wine by the Glass' is not a $2 glass of wine, and PRICE_RE reads it as
-# one -- label 'Off Wine by the Glass', category wine, price $2.00. Paladar and
-# Sullivan's both print their drink deals in this form, so the moment the crawler
-# stopped throwing those lines away they became wrong prices on the board. The
-# amount is a DISCOUNT, and this pipeline has no field for a dollars-off discount
-# (only discount_pct); inventing one would have to reach validate_pa, lib.js's
-# sort key and the admin page. Unpriced is the right answer to a question we
-# cannot express, so the form is refused outright rather than published wrong.
+# one -- label 'Off Wine by the Glass', category wine, price $2.00. So the form
+# has to be told apart from a price, and it was, by refusing it outright: the
+# note here said the pipeline had no field for a dollars-off discount. That was
+# true when it was written and is not true now -- `amount_off_usd` is checked by
+# ingest/validate_pa.py AND worker/validate_pa.js, rendered by itemParts() and
+# ranked by itemValue(). The refusal outlived its reason, and it cost Lansdale
+# Tavern, W Tavern, Black Horse and Interstate their entire happy hour: every
+# line those venues publish is '$1 off draft beer'. The amount is now read as
+# what the venue said it was -- a discount -- and never as a price.
 OFF_RE = re.compile(r"^off\b", re.I)
+# The same line, read instead of refused. Anchored at the dollar amount so the
+# word 'off' has to belong to THIS price; 'Off' further along a dish name is not
+# a discount.
+AMOUNT_OFF_RE = re.compile(
+    r"\$\s?(\d{1,3}(?:\.\d{1,2})?)\s*off\s+([A-Za-z][\w\s&'-]{1,40})", re.I)
 
 
 # A quote the crawler built from a PRICED SECTION HEADING and one item under
@@ -275,7 +301,8 @@ OFF_RE = re.compile(r"^off\b", re.I)
 # 'SANTA JULIA, PINOT GRIGIO' is one item, not two, and without the comma the
 # whole wine list of a venue drops out with no error raised anywhere.
 SECTION_ITEM_RE = re.compile(
-    r"^\$(\d{1,3}(?:\.\d\d)?)(?:-\$?(\d{1,3}(?:\.\d\d)?))?\s+([A-Za-z][\w\s&',()-]{1,64})$")
+    r"^\$\s?(\d{1,3}(?:\.\d{1,2})?)(?:\s?-\s?\$?\s?(\d{1,3}(?:\.\d{1,2})?))?"
+    r"\s+([A-Za-z][\w\s&',()-]{1,64})$")
 
 # The same shape, for a section the venue discounts instead of pricing: Yard
 # House's 'HH 1/2 OFF SELECT APPS' names no price at all, and the price its own
@@ -315,6 +342,13 @@ def section_items(text):
     """
     text, cat = strip_category_marker(text)
     parts = [p.strip() for p in text.split(" / ")]
+    # The price on a line of its own between the heading and the dish. A themed
+    # menu emits three blocks, not two -- the Gypsy Saloon's happy hour is
+    # 'bites / $ 10 / Mini French Fry Board', and read as two parts it is not a
+    # section quote at all and the whole venue goes unpriced. Only a BARE price
+    # may be the middle part, so nothing else can be folded away.
+    if len(parts) == 3 and BARE_PRICE_RE.match(parts[1]):
+        parts = [parts[0], parts[1] + " " + parts[2]]
     if len(parts) != 2:
         return []
     if not cat:
@@ -342,11 +376,65 @@ def section_items(text):
     return [item]
 
 
+# A price stated once for a LIST the venue then names, all in one quote:
+# '$6 sips / House Red / House White / Draft Beers / Seasonal Sangria', or Hard
+# Rock's '-$8 Nachos, Tupelo Dippers, Jumbo Pretzels'. The price is not repeated
+# on any of them, so PRICE_RE reads the first name and nothing else, and a
+# four-item happy hour publishes one item. The adjacency is not invented here:
+# the crawler already vouched that these lines are ONE box on the page.
+LIST_HEAD_RE = re.compile(r"^-?\s?\$\s?(\d{1,3}(?:\.\d{1,2})?)\s*(.*)$")
+LIST_ITEM_MAX = 40
+LIST_CAP = 12
+
+
+def shared_price_items(text, cat_hint=None):
+    """[item] when one price at the head of a quote owns the names after it."""
+    text, marked = strip_category_marker(text)
+    parts = [x.strip() for x in re.split(r"\s+/\s+|,", text) if x.strip()]
+    if len(parts) < 2:
+        return []
+    m = LIST_HEAD_RE.match(parts[0])
+    if not m:
+        return []
+    price = float(m.group(1))
+    if not 0 < price <= 99:
+        return []
+    # The head may name the kind of thing ('$6 sips') or nothing at all ('-$8').
+    head_cat = marked or cat_hint or category_of(m.group(2)) or category_of(parts[0])
+    # What follows the price on the head part may be the KIND ('$6 sips') or the
+    # first item itself ('-$8 Nachos'). It is offered as an item either way: a
+    # kind-word carries no category of its own and drops out, and Hard Rock's
+    # nachos are not silently the one item on the list nobody reads.
+    names = ([m.group(2).strip()] if m.group(2).strip() else []) + parts[1:]
+    out, seen = [], set()
+    for name in names[:LIST_CAP]:
+        if "$" in name or len(name) > LIST_ITEM_MAX or not re.search(r"[A-Za-z]{3}", name):
+            return []          # not a list of names; do not guess at it
+        if CONTEXT_RE.search(name):
+            return []          # a schedule line rode along; this is not a list
+        cat = category_of(name) or head_cat
+        if not cat or name.lower() in seen:
+            continue
+        seen.add(name.lower())
+        out.append({"category": cat, "label": name.strip(" -'"), "price_usd": price})
+    return out if len(out) >= 2 else []
+
+
 def items_in(text):
     section = section_items(text)
     if section:
         return section
+    shared = shared_price_items(text)
+    if shared:
+        return shared
     out, seen = [], set()
+    for m in AMOUNT_OFF_RE.finditer(text):
+        label = re.split(r"\s+/\s+", m.group(2))[0].strip(" -'")
+        cat = category_of(label)
+        if cat and label.lower() not in seen:
+            seen.add(label.lower())
+            out.append({"category": cat, "label": label,
+                        "amount_off_usd": float(m.group(1))})
     for m in PRICE_RE.finditer(text):
         # '$6.50 Mojitos & Margaritas' is ONE priced label, and splitting it at
         # the '&' handed category_of the word 'Mojitos', which no noun matches --

@@ -89,6 +89,13 @@ BARE_PRICE_RE = re.compile(r"^\$\s?\d{1,3}(?:\.\d\d)?$")
 # reads as covered while its entire menu is invisible. No parser fixes that --
 # the words are pixels. The crawl records the URL; reading it is a separate,
 # reviewed vision pass, exactly as a customer's photo submission is.
+# A document whose own filename says it is the happy hour. Only ever used to
+# decide whether a PDF is worth one extra request; what it then yields is read
+# under the same menu_doc containment every linked menu is.
+HH_DOC_RE = re.compile(
+    r"(?:happy.?hour|happyhour|(?:^|[/\-_])hh[-_.]|drink.?menu|bar.?menu|specials?)"
+    r"[^/]*\.pdf($|\?)", re.I)
+
 MENU_IMG_RE = re.compile(
     r"(?:happy.?hour|_hh_|-hh-|specials?|drink.?menu|bar.?menu)[^\"'\s]*"
     r"\.(?:jpe?g|png|webp)", re.I)
@@ -331,6 +338,18 @@ MEAL_HEADING_RE = re.compile(
     r"entrée|main|catering|address|location|hours of operation|contact)\b", re.I)
 
 
+# A heading that is nothing but a WEEKDAY closes the happy hour. A day-of-week
+# specials block is not a happy hour and its prices are not happy-hour prices:
+# Revival Pizza Pub heads its Monday block 'MONDAYS' and prints '$6 margaritas'
+# under it, and with nothing to close the section on, that $6 was published as a
+# 4-6pm happy-hour price on every weekday. It is the CO-OP failure again -- a
+# section that runs on does not add noise, it states a price the venue does not
+# charge. A heading that also states a CLOCK is the happy hour's own hours line
+# and still does not close it (see the closes list).
+DAY_HEADING_RE = re.compile(
+    r"^(?:mon|tues?|wed(?:nes)?|thur?s?|fri|sat(?:ur)?|sun)(?:day)?s?[ !:.-]*$", re.I)
+
+
 def _norm(x):
     return WS_RE.sub(" ", x).strip().lower()
 
@@ -383,9 +402,10 @@ def hh_sections(html, text):
         opens = [i for i in heads if HH_HEADING_RE.search(lines[i])]
         # A subdivision of the happy hour does not end it; anything else does.
         closes = [i for i in heads
-                  if not SUBDIVISION_RE.search(lines[i].strip())
-                  and not HH_HEADING_RE.search(lines[i])
-                  and not TIME_CONTEXT_RE.search(lines[i])]
+                  if (DAY_HEADING_RE.match(lines[i].strip())
+                      or (not SUBDIVISION_RE.search(lines[i].strip())
+                          and not HH_HEADING_RE.search(lines[i])
+                          and not TIME_CONTEXT_RE.search(lines[i])))]
     else:
         def headinglike(ln):
             return (len(ln) <= FALLBACK_MAX_CHARS and "$" not in ln
@@ -394,7 +414,8 @@ def hh_sections(html, text):
         opens = [i for i, ln in enumerate(lines)
                  if headinglike(ln) and HH_HEADING_RE.search(ln)]
         closes = [i for i, ln in enumerate(lines)
-                  if headinglike(ln) and MEAL_HEADING_RE.search(ln)]
+                  if headinglike(ln) and (MEAL_HEADING_RE.search(ln)
+                                          or DAY_HEADING_RE.match(ln.strip()))]
 
     # Two happy-hour headings can nest: CO-OP's page-level 'Bar Bites & Happy
     # Hour' contains both a 'Mid Day' menu and the happy hour proper. The outer
@@ -493,7 +514,7 @@ def heading_prices(html, text, hh_lines, stacks=None):
 
 
 def quotes(text, menu_doc=False, hh_page=False, hh_lines=frozenset(), stacks=None,
-           head_prices=None, emph=None):
+           head_prices=None, emph=None, mark_hh=False):
     """The matched lines, plus a neighbour when the match itself has no time.
 
     menu_doc is for a document we reached BECAUSE a happy-hour page linked it as
@@ -520,6 +541,10 @@ def quotes(text, menu_doc=False, hh_page=False, hh_lines=frozenset(), stacks=Non
     """
     lines = text.split("\n")
     out, seen = [], set()
+    # Which of the returned quotes came from INSIDE the venue's own happy hour.
+    # See mark_hh in the caller: this is the containment the crawl performed,
+    # recorded so the extractor does not have to re-derive it from a URL.
+    contained = {}
     for i, ln in enumerate(lines):
         inside = i in hh_lines
         loose = menu_doc or hh_page or inside
@@ -541,6 +566,7 @@ def quotes(text, menu_doc=False, hh_page=False, hh_lines=frozenset(), stacks=Non
             if q not in seen:
                 seen.add(q)
                 out.append(q)
+                contained[q] = True
             continue
         if (not DEAL_RE.search(ln) and not bare
                 and not (loose and (MENU_ITEM_RE.search(ln)
@@ -592,7 +618,18 @@ def quotes(text, menu_doc=False, hh_page=False, hh_lines=frozenset(), stacks=Non
         if q not in seen:
             seen.add(q)
             out.append(q)
-    return out[: 24 if (menu_doc or hh_page or hh_lines) else 12]
+            # Deliberately NOT `loose`. `loose` includes hh_page, which is the
+            # URL saying 'special' -- and '/daily-specials' is such a URL while
+            # its prices are Monday's, not the happy hour's. Revival Pizza Pub
+            # published '$6 margaritas' as a weekday 4-6pm price on that basis.
+            # A quote may travel to another page's schedule only when the venue
+            # put it inside a happy-hour SECTION, or inside a menu the venue's
+            # own happy-hour page linked.
+            contained[q] = bool(menu_doc or inside)
+    out = out[: 24 if (menu_doc or hh_page or hh_lines) else 12]
+    if mark_hh:
+        return [{"quote": q, "hh": contained.get(q, False)} for q in out]
+    return out
 
 
 def menu_images(html, page_url):
@@ -1294,13 +1331,13 @@ def crawl_one(session, venue, robots):
     if api:
         pages.append({"url": api, "result": f"ok, {len(found)} quote(s) from the venue API"})
         for q in found:
-            hits.append({"url": venue["website"], "quote": q})
+            hits.append({"url": venue["website"], "quote": q, "hh": True})
         ref = darden_ref(venue["website"])
         try:
             m_api, dishes = darden_menu_quotes(*ref)
             pages.append({"url": m_api, "result": f"ok, {len(dishes)} dish(es) from the menu API"})
             for q in dishes:
-                hits.append({"url": venue["website"], "quote": q})
+                hits.append({"url": venue["website"], "quote": q, "hh": True})
         except Exception as e:  # noqa: BLE001 -- the hours stand without the menu
             pages.append({"url": venue["website"],
                           "result": f"error: darden menu api {type(e).__name__}"})
@@ -1319,7 +1356,7 @@ def crawl_one(session, venue, robots):
             # the query string alone was enough to leave all 19 dishes unattached
             # and publish the window with an empty card.
             for q in dishes:
-                hits.append({"url": venue["website"], "quote": q})
+                hits.append({"url": venue["website"], "quote": q, "hh": True})
         except Exception as e:  # noqa: BLE001 -- one dead page must not end the run
             pages.append({"url": venue["website"],
                           "result": "error: frc menu %s" % type(e).__name__})
@@ -1370,11 +1407,19 @@ def crawl_one(session, venue, robots):
         # the URL was standing in for, read off the page rather than the link.
         hh_lines = frozenset() if is_doc else hh_sections(html, text)
         found = quotes(text, menu_doc=is_doc, hh_page=on_hh, hh_lines=hh_lines,
-                       stacks=stacks, emph=emph,
+                       stacks=stacks, emph=emph, mark_hh=True,
                        head_prices=heading_prices(html, text, hh_lines, stacks))
         pages.append({"url": url, "result": f"ok, {len(found)} quote(s)"})
         for q in found:
-            hits.append({"url": url, "quote": q})
+            # `hh` records that this line was INSIDE the venue's own happy-hour
+            # section, which is the fact the extractor needs and could not get.
+            # It paired a price to a schedule by exact URL, and a venue that
+            # prints its hours on the home page and its menu on /menu -- Mia
+            # Ragazza, and it is a common shape -- had both halves on disk and
+            # published neither. The containment is not loosened by saying so:
+            # the same lines are stored, and only lines the crawl already
+            # vouched for may now travel between pages of the same site.
+            hits.append({"url": url, "quote": q["quote"], **({"hh": True} if q["hh"] else {})})
         if on_hh:
             for src in menu_images(html, url):
                 if not any(im["src"] == src for im in images):
@@ -1386,11 +1431,19 @@ def crawl_one(session, venue, robots):
         # linked, one hop further in than the crawler ever went. The venue then
         # looked covered, because it had a card. So a happy-hour page's own PDF
         # links are followed -- and only those, and only PDFs.
-        if depth > 1 and re.search(r"happy.?hour|special", url, re.I):
-            queued = {u for u, _ in queue}
-            for u in candidate_links(html, url):
-                if re.search(r"\.pdf($|\?)", u, re.I) and u not in queued:
-                    queue.append((u, depth + 1))
+        # ...and so is a PDF that NAMES ITSELF the happy hour, wherever it is
+        # linked from. Amada, Barbuzzo, Cantina Feliz and ten others post
+        # 'happy-hour-menu.pdf' on the HOME page, which is depth 1 and does not
+        # say 'happy hour' in its address, so the whole menu was one link away
+        # and never followed. The filename is the venue's own word for the
+        # document, which is the same claim the page URL was standing in for.
+        queued = {u for u, _ in queue}
+        on_hh_page = depth > 1 and re.search(r"happy.?hour|special", url, re.I)
+        for u in candidate_links(html, url):
+            if not re.search(r"\.pdf($|\?)", u, re.I) or u in queued:
+                continue
+            if on_hh_page or HH_DOC_RE.search(u):
+                queue.append((u, depth + 1))
 
         if fetched == 1 and depth == 1:
             queue = [(u, 2) for u in candidate_links(html, url)[: PAGE_CAP - 1]]

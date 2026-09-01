@@ -2328,14 +2328,20 @@ class AnAmountOFFIsNotAPrice(unittest.TestCase):
     it returned a $5 martini for '$5 Off Select Martinis'. The check is that the
     number is written somewhere as a PRICE, not only as an amount off.
 
-    There is no dollars-off field in this pipeline (only discount_pct), and
-    inventing one would have to reach validate_pa, lib.js's sort key and the
-    admin page. Unpriced is the right answer to a question we cannot express.
+    The pipeline DOES have a dollars-off field -- `amount_off_usd`, checked by
+    both validators, rendered by itemParts() and ranked by itemValue() -- so the
+    line is now read as the discount it is. What must never happen is the
+    number arriving as a PRICE, and that is what these tests hold.
     """
 
-    def test_the_deterministic_pass_refuses_it(self):
-        self.assertEqual(extract_deals.items_in("$2 Off Wine by the Glass"), [])
-        self.assertEqual(extract_deals.items_in("$1 off drafts"), [])
+    def test_the_deterministic_pass_reads_it_as_a_discount_not_a_price(self):
+        got = extract_deals.items_in("$2 Off Wine by the Glass")
+        self.assertEqual(got, [{"category": "wine", "label": "Wine by the Glass",
+                                "amount_off_usd": 2.0}])
+        self.assertNotIn("price_usd", got[0])
+        got = extract_deals.items_in("$1 off drafts")
+        self.assertEqual(got, [{"category": "draft", "label": "drafts",
+                                "amount_off_usd": 1.0}])
 
     def test_a_real_price_on_the_same_page_is_untouched(self):
         got = extract_deals.items_in("$4.50 Draft Beer")
