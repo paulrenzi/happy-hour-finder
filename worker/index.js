@@ -311,6 +311,9 @@ async function readAndMaybePublish(env, id) {
 
   const note = await autoApprove(env, sub, proposal);
   if (note) {
+    // Auto-approval publishes only onto a venue with nothing on the board, so
+    // there is never anything to merge with: "replace" is the whole story.
+    await markReviewed(env, id, "replace", "photo_auto");
     await env.DB.prepare(
       "UPDATE submissions SET status = 'approved', reviewed_at = ?, review_note = ? WHERE id = ? AND status = 'extracted'"
     )
@@ -319,15 +322,23 @@ async function readAndMaybePublish(env, id) {
   }
 }
 
-/* A person looked at the photo, looked at what was read out of it, and said
+/* Something looked at the photo, looked at what was read out of it, and said
    yes. That IS the confirmation, so the deal stops calling itself unconfirmed.
 
    The upgrade is written back into the stored extraction rather than applied at
    render time, because two things read these deals -- the live overlay and the
    nightly fold into the bundles -- and a rule applied in one of them is a rule
-   the other disagrees with. Auto-approved deals are left alone on purpose: no
-   person saw those. */
-async function markReviewed(env, id, merge) {
+   the other disagrees with.
+
+   Auto-approved deals used to be left out of this, on the reasoning that no
+   person had seen them. That shipped Taku as "unconfirmed" next to a photo of
+   its own menu, which reads to a customer as doubt about the hours -- when
+   what actually happened is that every price was quoted verbatim off the
+   menu, the PA validators passed, and the venue had nothing to overwrite.
+   That is a stronger check than the one a tired reviewer does at midnight. The
+   gate that let it through is the confirmation; `verified_by` records WHICH
+   gate, so the two are still told apart everywhere it matters. */
+async function markReviewed(env, id, merge, by = "photo_review") {
   const row = await env.DB.prepare("SELECT extracted FROM submissions WHERE id = ?")
     .bind(id)
     .first();
@@ -341,7 +352,7 @@ async function markReviewed(env, id, merge) {
   if (!Array.isArray(ex.deals) || !ex.deals.length) return;
   for (const deal of ex.deals) {
     deal.confidence = "verified";
-    deal.verified_by = "photo_review";
+    deal.verified_by = by;
     // Whether this photo is another page of the menu on the board or a menu
     // that changed. The clock cannot tell those apart once they are more than
     // a few hours apart, so the reviewer says, and the answer is stored with
@@ -610,6 +621,7 @@ async function admin(request, env, url, headers) {
       .first();
     const note = await autoApprove(env, sub, body.extracted);
     if (note) {
+      await markReviewed(env, id, "replace", "photo_auto");
       await env.DB.prepare(
         "UPDATE submissions SET status = 'approved', reviewed_at = ?, review_note = ? WHERE id = ? AND status = 'extracted'"
       )

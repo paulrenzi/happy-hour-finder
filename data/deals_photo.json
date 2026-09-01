@@ -219,13 +219,14 @@
        "price_usd": 7
       }
      ],
-     "confidence": "unconfirmed",
+     "confidence": "verified",
      "last_verified_at": "2026-08-31",
-     "verified_by": "photo_submission",
+     "verified_by": "photo_auto",
      "source": {
       "kind": "photo",
       "photo_id": "9a775059-586a-4598-b73a-4cc997af30f1",
-      "submitted": "2026-09-01T01:18:11.463Z"
+      "submitted": "2026-09-01T01:18:11.463Z",
+      "merge": "replace"
      },
      "fine_print": "DINE IN ONLY"
     }

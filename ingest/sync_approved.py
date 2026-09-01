@@ -34,6 +34,15 @@ from review_photos import PHOTO_JSON, load_photo_deals, merge_mode, superseded  
 BASE_JSON = os.path.join(REPO, "data", "venue_base.json")
 
 
+RANK = {"verified": 3, "likely": 2, "unconfirmed": 1, "disputed": 0}
+
+
+def upgrade(held, fresh):
+    """Is the Worker's copy at least as confident as the one we already hold?"""
+    best = lambda ds: max((RANK.get(d.get("confidence"), 1) for d in ds), default=1)  # noqa: E731
+    return best(fresh) >= best(held)
+
+
 def main():
     env = dict(os.environ)
     env.update(env_file())
@@ -51,7 +60,7 @@ def main():
     # have applied them one at a time. Supersession depends on it.
     approved.sort(key=lambda s: s["submitted_at"])
 
-    added = 0
+    added = updated = 0
     for sub in approved:
         try:
             extracted = json.loads(sub["extracted"] or "{}")
@@ -62,10 +71,25 @@ def main():
             continue
 
         venue = next((v for v in payload["venues"] if v["id"] == sub["lid"]), None)
-        if venue and any(
-            (d.get("source") or {}).get("photo_id") == sub["id"] for d in venue["deals"]
-        ):
-            continue  # already folded in by an earlier run
+        held = [d for d in (venue or {}).get("deals", [])
+                if (d.get("source") or {}).get("photo_id") == sub["id"]]
+        if held:
+            # Folded in by an earlier run -- but the row on the Worker can have
+            # CHANGED since: a reviewer approving it, or the auto-approve gate,
+            # rewrites the stored extraction to say the deal is verified. A
+            # plain `continue` here meant that upgrade never reached the
+            # bundles, so the card kept the confidence it had at first read.
+            if held == extracted["deals"] or not upgrade(held, extracted["deals"]):
+                # Only ever move UP. Approvals made through the local review
+                # tool upgrade the copy in this file without telling the
+                # Worker, so the Worker's row can be the STALER of the two --
+                # and a re-read that quietly demoted a verified deal back to
+                # unconfirmed would be this sync undoing a person's decision.
+                continue
+            venue["deals"] = [d for d in venue["deals"] if d not in held] + extracted["deals"]
+            updated += len(extracted["deals"])
+            print(f"  {sub['id'][:8]}  {venue['name']}  ~{len(extracted['deals'])} deal(s) re-read")
+            continue
 
         b = base.get(sub["lid"]) or {}
         if venue is None:
@@ -85,7 +109,7 @@ def main():
         added += len(extracted["deals"])
         print(f"  {sub['id'][:8]}  {venue['name']}  +{len(extracted['deals'])} deal(s)")
 
-    if not added:
+    if not added and not updated:
         print("nothing new to fold in")
         return 0
 
@@ -94,7 +118,7 @@ def main():
     with open(tmp, "w", encoding="utf-8") as fh:
         json.dump(payload, fh, indent=1)
     os.replace(tmp, PHOTO_JSON)
-    print(f"\n{added} deal(s) written to data/deals_photo.json")
+    print(f"\n{added} new + {updated} updated deal(s) written to data/deals_photo.json")
     print("Now: python ingest/build_bundles.py, then commit and push.")
     return 0
 
