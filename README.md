@@ -49,6 +49,67 @@ reading of "urgency" — puts on top the bar you have the least chance of reachi
 **The feed never dead-ends.** It searches forward up to 7 days. Before that it was
 blank roughly 18 hours a day, which is most of when a person opens it.
 
+### Reading a menu: a prose page and a structured source are not the same problem
+
+This is the distinction that most extraction bugs have turned out to be, so it is
+worth holding before touching `ingest/`.
+
+**On a prose page, vocabulary is the only evidence there is.** A `$8` sitting next
+to some words might be a happy hour deal, a gift card, a corkage fee or the price
+of a t-shirt, and nothing on the page says which. That is why `NOUNS` and
+`category_of()` exist in `extract_deals.py` — a whitelist of drink and food words,
+guarding against publishing a number that was never a deal. It is a *guard*, and it
+is correctly conservative.
+
+**On a structured source the venue states the fact, and re-deriving it can only
+lose.** Darden's menu API returns `configs.isBeverageItem` on every product inside
+a category slugged `happy-hour`. Asking a word list to re-classify that is strictly
+worse than believing it: it deleted six Seasons 52 flatbreads because nobody had
+ever typed "flatbread" into the list. So the crawler now carries the category the
+source stated, as a `[cat:x]` prefix on the quote, and `strip_category_marker()` in
+the extractor reads it *before* it would think to guess. **Food never touches the
+word list again.** The marker is validated against the board's fixed eight
+categories, so a source cannot invent one by asserting it.
+
+**A drink still needs its type, and no field carries that.** `isBeverageItem: true`
+does not say draft vs wine vs cocktail, and the board has no generic "drink". So
+`darden_category()` walks a ladder — section heading, then dish name, then grape
+varietals — and if none of those answer, **it refuses the drink.** A wine published
+as a cocktail is worse on the board than a wine left off. The varietal list is what
+recovered Seasons 52's reds: the heading is the single ambiguous word `RED`, but
+`PINOT NOIR` and `MALBEC` are not ambiguous at all, and varietals are a closed
+real-world vocabulary in a way food nouns can never be.
+
+**A price inside a happy-hour section is not automatically a deal.** Eddie V's
+files its unchanged dinner appetizers under `happy-hour` — a $36 crab cake at the
+same $36 it costs at 8pm. The `elsewhere` index in `crawl_sites.py` holds every
+price the venue's own menu states for each product slug, and a happy-hour line
+publishes only if it *beats* them. Six Eddie V's appetizers are refused by this
+gate today and should stay refused.
+
+**The silent-drop class.** Several bugs here share one shape: a valid item is
+rejected and nothing anywhere raises an error, so the board just quietly has less
+on it. So far: a `®` in a dish name, accented characters, curly quotes, a missing
+comma in the label pattern (wine is named with one — `SANTA JULIA, PINOT GRIGIO` is
+one item, not two), and a 40-character label cap that was deleting `WOOD-GRILLED
+CORN, AGED CHEDDAR AND SPICED BACON`. When an item is missing and no log complains,
+look here first — and prefer a rule that *refuses loudly* over one that filters.
+
+### The five gates — a code change moves no data on its own
+
+```
+edit ingest/*.py
+  → python ingest/crawl_sites.py [--lids f --recrawl]   → data/crawl_hits.json
+  → python ingest/extract_deals.py                      → data/deals_extracted.json
+  → python ingest/build_bundles.py                      → web/data/zone-*.json
+  → git push → Pages Action (~40s, seen as long as 4m26s) → live site
+```
+
+All five, in order, or the fix exists only in the source. **The check that counts is
+the live URL in a browser** — an intermediate file, a green aggregate and an HTTP
+200 are each blind to the thing that actually breaks. Verify in WebKit as well as
+Chrome; WebKit has discarded CSS Chrome drew.
+
 ---
 
 ## Running it
