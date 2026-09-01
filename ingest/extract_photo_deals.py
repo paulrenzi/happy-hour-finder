@@ -169,7 +169,14 @@ def ask(path):
          # Read is the only tool it needs, and the only one it gets: this is
          # pointed at an image a stranger uploaded, so nothing here should be
          # able to run a command or write a file.
-         "--allowedTools", "Read"],
+         "--allowedTools", "Read",
+         # The harness itself is the bulk of a `claude -p` call -- a nine-token
+         # prompt bills 28,272 input tokens of system prompt and tool schemas.
+         # This pass reads one image and answers; it has no use for this repo's
+         # CLAUDE.md or the dynamic prompt sections, and paying for them once
+         # per submitted photo adds up. Read is still granted above.
+         "--setting-sources", "",
+         "--exclude-dynamic-system-prompt-sections"],
         input=PROMPT.format(path=path, categories=", ".join(sorted(CATEGORIES))),
         capture_output=True, text=True, encoding="utf-8", errors="replace",
         timeout=300,

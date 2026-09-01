@@ -50,7 +50,38 @@
        "end": "18:30"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "select beer",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "red wine",
+       "price_usd": 9.0
+      },
+      {
+       "category": "wine",
+       "label": "white wine",
+       "price_usd": 9.0
+      },
+      {
+       "category": "cocktail",
+       "label": "select cocktails",
+       "price_usd": 12.0
+      },
+      {
+       "category": "food",
+       "label": "steak skewers",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "flatbread",
+       "price_usd": 12.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -58,7 +89,8 @@
       "kind": "venue_site",
       "url": "https://9primewestchester.com",
       "quote": "Happy Hour / Tuesday-Friday 4PM-6:30PM / Sunday 4PM-6:30PM"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },

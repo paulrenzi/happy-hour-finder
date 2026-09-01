@@ -417,7 +417,38 @@
        "end": "19:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "craft ale",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "olives",
+       "price_usd": 4.0
+      },
+      {
+       "category": "wine",
+       "label": "house red/white wine",
+       "price_usd": 7.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Aperol Spritz",
+       "price_usd": 8.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "seltzer",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "label": "papas fritas",
+       "price_usd": 6.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -425,7 +456,8 @@
       "kind": "venue_site",
       "url": "https://barbuzzo.com",
       "quote": "HAPPY HOUR: Monday to Friday - 5pm-7pm (at the bar and outside tables only)"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },

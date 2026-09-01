@@ -1,4 +1,36 @@
 {
+ "9-prime-west-chester": [
+  {
+   "category": "draft",
+   "label": "select beer",
+   "price_usd": 5.0
+  },
+  {
+   "category": "wine",
+   "label": "red wine",
+   "price_usd": 9.0
+  },
+  {
+   "category": "wine",
+   "label": "white wine",
+   "price_usd": 9.0
+  },
+  {
+   "category": "cocktail",
+   "label": "select cocktails",
+   "price_usd": 12.0
+  },
+  {
+   "category": "food",
+   "label": "steak skewers",
+   "price_usd": 9.0
+  },
+  {
+   "category": "food",
+   "label": "flatbread",
+   "price_usd": 12.0
+  }
+ ],
  "al-pastor-exton": [
   {
    "category": "cocktail",
@@ -16,6 +48,38 @@
    "category": "cocktail",
    "label": "all other cocktails",
    "price_usd": 9.0
+  }
+ ],
+ "barbuzzo-philadelphia": [
+  {
+   "category": "draft",
+   "label": "craft ale",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "olives",
+   "price_usd": 4.0
+  },
+  {
+   "category": "wine",
+   "label": "house red/white wine",
+   "price_usd": 7.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Aperol Spritz",
+   "price_usd": 8.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "seltzer",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "papas fritas",
+   "price_usd": 6.0
   }
  ],
  "black-horse-tavern-phoenixville": [

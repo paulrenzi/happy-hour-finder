@@ -46,10 +46,49 @@ from validate_pa import BANNED, CATEGORIES  # noqa: E402
 BUNDLES = os.path.join(REPO, "web", "data")
 OUT = os.path.join(REPO, "data", "deals_prices_llm.json")
 
-BATCH = 8            # venues per model call
+# Measured on 40 real venues, 2026-09-01, counting BOTH directions and weighting
+# by what each model actually costs. `claude -p` ships its whole agent harness on
+# every call -- a nine-token prompt bills 28,272 input tokens -- so the fixed cost
+# per call dwarfs the venue text, and the two levers that matter are how much
+# harness rides along and how many venues share one ride:
+#
+#   opus   b8   207,355 in    3,954 out   54 items   $0.7564   <- what ran before
+#   opus   b20   39,503 in    9,767 out   56 items   $0.3540
+#   sonnet b20   39,703 in   18,481 out   54 items   $0.2660   <- here
+#   haiku  b40   19,390 in   27,273 out   46 items   $0.1489
+#
+# Sonnet at 20 is 2.8x cheaper than the old setting for the SAME item count.
+# Haiku is cheaper still and is deliberately NOT taken: it lost 15% of the items
+# and its recall swung 55/45/46 across identical runs, so its saving is not one
+# that can be relied on. Note also that a smaller model is not automatically
+# cheaper here -- haiku spends its input saving back as output, and at batch 40
+# opus beat haiku on RAW tokens and on recall at once. Batch size is the lever;
+# the model is the smaller adjustment.
+#
+# Whatever the model, verify() still requires every price to appear literally in
+# the venue's own text, so a weaker model cannot put a WRONG price on a card. The
+# only thing it can cost is recall, which is the number measured above.
+BATCH = int(os.environ.get("HHF_PRICE_BATCH", "20"))   # venues per model call
 MAX_QUOTE = 2400     # chars of quote text per venue
 MAX_ITEMS = 6        # what the card can show without becoming a menu
-MODEL = "opus"
+MODEL = os.environ.get("HHF_PRICE_MODEL", "sonnet")
+
+# What `claude -p` may leave behind. This pass wants a reader, not an agent: it
+# has no use for tools, for this repo's CLAUDE.md, or for the dynamic sections
+# of the default system prompt, and each of those is input tokens on EVERY call.
+# Dropping them cut a call from 28,272 tokens to 9,407 and did not cost a single
+# item -- recall went UP. Kept as a list so a future flag rename fails loudly
+# here rather than silently costing 3x.
+LEAN_ARGS = [
+    "--setting-sources", "",
+    "--exclude-dynamic-system-prompt-sections",
+    "--system-prompt",
+    "You extract published happy-hour prices from text. Answer with JSON only.",
+    "--disallowed-tools",
+    "Bash", "Read", "Write", "Edit", "MultiEdit", "Glob", "Grep", "WebFetch",
+    "WebSearch", "Task", "TodoWrite", "NotebookEdit", "BashOutput", "KillShell",
+    "SlashCommand", "ExitPlanMode", "Agent", "Skill", "Artifact", "Monitor",
+]
 
 PROMPT = """\
 You are reading text that bars in Pennsylvania published on their own websites,
@@ -147,7 +186,7 @@ def ask(batch):
         raise RuntimeError("`claude` is not on PATH -- this pass runs on the CLI, "
                            "not on an API key")
     proc = subprocess.run(
-        [exe, "-p", "--model", MODEL, "--output-format", "json"],
+        [exe, "-p", "--model", MODEL, "--output-format", "json"] + LEAN_ARGS,
         input=prompt, capture_output=True, text=True,
         encoding="utf-8", errors="replace",
     )
