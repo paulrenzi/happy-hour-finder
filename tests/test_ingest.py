@@ -24,6 +24,8 @@ from build_bundles import (CACHE_LINE, collapse_name_collisions, decay,  # noqa:
                            norm_name, shell_digest, sw_cache_name)
 import build_bundles  # noqa: E402
 import crawl_sites  # noqa: E402
+import exclusions  # noqa: E402
+import report_holes  # noqa: E402
 from crawl_roundups import fresh_enough, mentions, published_date, venue_index  # noqa: E402
 from crawl_sites import (candidate_links, crawl_one, hh_sections,  # noqa: E402
                          reached_nothing,
@@ -2791,3 +2793,79 @@ class ContainmentBeatsTheUrlOnAPageThatHasASection(unittest.TestCase):
         hits = [{"url": "u", "quote": "$6 sangria"}]
         got = extract_deals.items_from_hits(hits, "u")
         self.assertEqual([i["label"] for i in got], ["sangria"])
+
+
+class ExclusionsTest(unittest.TestCase):
+    """The two doors onto the board.
+
+    The bug this class exists to stop: 'Hotel (Liquor)' is a LICENCE, held by
+    178 venues of which only 87 are hotels. Filtering on it deletes working
+    taverns. Every keep-case below is a real venue that was on the board.
+    """
+
+    def test_bald_birds_is_banned_under_any_trade_name(self):
+        self.assertTrue(exclusions.excluded(
+            "Bald Birds Brewing Company - King of Prussia",
+            "BALD BIRDS BREWING COMPANY", "Brewery"))
+        self.assertTrue(exclusions.excluded(
+            "Bald Birds Brewing", "BALD BIRDS BREWING COMPANY", ""))
+
+    def test_a_hotel_brand_goes_whatever_its_licence_says(self):
+        for name in ("Courtyard by Marriott", "Hilton Philadelphia",
+                     "DoubleTree Suites", "Homewood Suites Valley Forge"):
+            self.assertEqual(exclusions.excluded(name, "", "Restaurant"),
+                             "hotel", name)
+
+    def test_a_tavern_on_a_hotel_licence_stays(self):
+        for name in ("The Olde Black Horse Tavern and Motel",
+                     "The Stray Dog Tavern", "Joseph Ambler Inn",
+                     "CO-OP Restaurant & Bar", "Panorama"):
+            self.assertIsNone(
+                exclusions.excluded(name, name.upper(), "Hotel (Liquor)"), name)
+
+    def test_the_hotel_word_alone_is_not_enough_without_the_licence(self):
+        self.assertIsNone(exclusions.excluded("The Hotel Bar", "", "Restaurant"))
+        self.assertEqual(
+            exclusions.excluded("Valley Forge Hotel", "", "Hotel (Liquor)"),
+            "hotel")
+
+
+class SilentClassTest(unittest.TestCase):
+    """Why a venue publishes NO window -- the population 15x larger than holes."""
+
+    def test_no_row_and_no_pages_are_both_never_crawled(self):
+        self.assertEqual(report_holes.classify_silent(None), "never-crawled")
+        self.assertEqual(report_holes.classify_silent({"pages": []}),
+                         "never-crawled")
+
+    def test_a_page_with_no_line_count_is_not_guessed_at(self):
+        row = {"pages": [{"url": "u", "result": "ok, 0 quote(s)"}]}
+        self.assertEqual(report_holes.classify_silent(row),
+                         "crawled-before-the-line-count")
+
+    def test_two_hundred_ok_and_no_text_is_a_javascript_shell(self):
+        row = {"pages": [{"url": "u", "result": "ok, 0 quote(s)", "lines": 11}]}
+        self.assertEqual(report_holes.classify_silent(row), "page-is-a-shell")
+
+    def test_the_venue_answering_is_not_a_hole(self):
+        row = {"pages": [{"url": "u", "result": "ok, 1 quote(s)", "lines": 300}],
+               "hits": [{"quote": "While we don't have a traditional happy hour"}]}
+        self.assertEqual(report_holes.classify_silent(row),
+                         "venue-says-it-has-none")
+        row["hits"] = [{"quote": "Every hour is happy here!"}]
+        self.assertEqual(report_holes.classify_silent(row),
+                         "venue-says-it-has-none")
+
+    def test_a_full_page_saying_happy_hour_with_no_clock_is_its_own_class(self):
+        row = {"pages": [{"url": "u", "result": "ok, 1 quote(s)", "lines": 300,
+                          "hh": True}],
+               "hits": [{"quote": "happy hour $2 off any beer"}]}
+        self.assertEqual(report_holes.classify_silent(row),
+                         "says-happy-hour-no-window")
+
+    def test_robots_and_fetch_failures_are_told_apart(self):
+        self.assertEqual(report_holes.classify_silent(
+            {"pages": [{"url": "u", "result": "robots.txt refused"}]}),
+            "robots-refused")
+        self.assertEqual(report_holes.classify_silent(
+            {"pages": [{"url": "u", "result": "HTTP 403"}]}), "fetch-failed")

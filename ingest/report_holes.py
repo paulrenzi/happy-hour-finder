@@ -107,11 +107,130 @@ ADVICE = {
 VERDICTS = os.path.join(REPO, "data", "menu_verdicts.json")
 
 
+BASE = os.path.join(REPO, "data", "venue_base.json")
+
+# A page that fetched fine and gave us almost no text is a JavaScript shell. 40
+# lines is a nav, a footer and a cookie banner; the Cheesecake Factory's own
+# /happy-hour page is 13KB of HTML and ELEVEN lines of text.
+SHELL_LINES = 40
+
+# The venue answering the question itself. Founding Farmers: "While we don't
+# have a traditional happy hour or offer discounted pricing on our cocktails".
+# That is not a hole in the scraper, it is an answer, and counting it as a miss
+# sends somebody to look at a page that has already been read.
+DENIAL_RE = re.compile(
+    r"(?:do(?:n'?t| not)|does(?:n'?t| not))\s+(?:currently\s+)?"
+    r"(?:have|offer|run|do)\b[^.]{0,60}happy hour|"
+    r"no (?:traditional |formal )?happy hour|"
+    r"every hour is happy", re.I)
+
+
+def classify_silent(row):
+    """Why this venue publishes no window at all -- the class of work.
+
+    The population report_holes was built for is 'a window and no items'. This
+    is the other one, and it is fifteen times larger: the card says 'Hours not
+    published' and the venue's own site says 3-6pm. Paul found several in King
+    of Prussia with a few clicks, which is the signature of a class nobody has
+    named, not of a venue nobody has looked at.
+    """
+    if not row:
+        return "never-crawled"
+    pages = row.get("pages") or []
+    if not pages:
+        return "never-crawled"
+    ok = [p for p in pages if p.get("result", "").startswith("ok")]
+    if not ok:
+        if any("robots" in p.get("result", "") for p in pages):
+            return "robots-refused"
+        return "fetch-failed"
+    quotes = [h["quote"] for h in row.get("hits") or []]
+    if any(DENIAL_RE.search(q) for q in quotes):
+        return "venue-says-it-has-none"
+    # Recorded by the crawl since 2026-09-01. A page fetched before that has no
+    # line count, and guessing one would invent the very distinction this class
+    # exists to make.
+    counted = [p for p in ok if "lines" in p]
+    if not counted:
+        return "crawled-before-the-line-count"
+    if max(p["lines"] for p in counted) < SHELL_LINES:
+        return "page-is-a-shell"
+    if any(p.get("hh") for p in counted):
+        return "says-happy-hour-no-window"
+    if quotes:
+        return "quotes-but-no-window"
+    return "no-mention-anywhere"
+
+
+SILENT_ADVICE = {
+    "never-crawled": "the frontier never queued this site -- a crawl input bug, "
+                     "and the cheapest venues on the list to reclaim",
+    "robots-refused": "the site refuses our crawler. Nothing in the parser fixes it",
+    "fetch-failed": "every fetch errored -- 403s and timeouts, often one chain at a time",
+    "page-is-a-shell": "200 OK and no text: the page renders in JavaScript. This is "
+                       "the headless tier, and it is the same fix for all of them",
+    "says-happy-hour-no-window": "the page says 'happy hour' and we read no clock. "
+                                 "The window is on another page, in an image, or "
+                                 "written in a form the grammar does not take yet",
+    "quotes-but-no-window": "we kept quotes and none carried a window -- read them; "
+                            "this is where a grammar gap shows",
+    "no-mention-anywhere": "we read the pages in full and the venue never says it. "
+                           "Most of these are genuinely not publishing one",
+    "venue-says-it-has-none": "the venue answered: no happy hour. Not a hole",
+    "crawled-before-the-line-count": "crawled before the crawl recorded how much it "
+                                     "could read -- recrawl to sort these",
+}
+
+
+def silent_report(args):
+    """Every venue with a website and no published window, by class."""
+    hits = json.load(open(HITS, encoding="utf-8"))
+    deals = json.load(open(DEALS, encoding="utf-8"))
+    base = json.load(open(BASE, encoding="utf-8"))
+    with_window = {v["lid"] for v in deals["venues"]
+                   if "lid" in v and any(d.get("windows") for d in v["deals"])}
+
+    holes, no_site = {}, 0
+    for lid, v in base.items():
+        if lid in with_window:
+            continue
+        if args.zone and v.get("zone_id") != args.zone:
+            continue
+        if not v.get("website"):
+            no_site += 1
+            continue
+        k = classify_silent(hits.get(lid))
+        holes.setdefault(k, []).append((v["name"], v.get("website") or ""))
+
+    total = sum(len(x) for x in holes.values())
+    where = f" in {args.zone}" if args.zone else ""
+    print(f"{total} venue(s){where} have a website and NO published window "
+          f"({no_site} more have no website at all)\n")
+    for k, rows in sorted(holes.items(), key=lambda kv: -len(kv[1])):
+        if args.klass and k != args.klass:
+            continue
+        print(f"== {k}  ({len(rows)} venue(s))")
+        print(f"   {SILENT_ADVICE.get(k, '')}")
+        shown = rows if args.klass else rows[: args.limit]
+        for name, site in sorted(shown):
+            print(f"     {name[:42]:44s} {site[:60]}")
+        if len(rows) > len(shown):
+            print(f"     ... and {len(rows) - len(shown)} more "
+                  f"(--class {k} for all of them)")
+        print()
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--class", dest="klass", help="show only this class, with URLs")
     ap.add_argument("--limit", type=int, default=12, help="venues listed per class")
+    ap.add_argument("--silent", action="store_true",
+                    help="the OTHER population: venues with no window at all")
+    ap.add_argument("--zone", help="one zone id, for --silent")
     args = ap.parse_args()
+
+    if args.silent:
+        return silent_report(args)
 
     hits = json.load(open(HITS, encoding="utf-8"))
     deals = json.load(open(DEALS, encoding="utf-8"))

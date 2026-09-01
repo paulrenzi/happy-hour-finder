@@ -19,6 +19,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from validate_pa import (rules_for, state_of, validate_deal,  # noqa: E402
                          validate_food_combo_count)
+from exclusions import excluded  # noqa: E402
 
 DEALS_JSON = os.path.join(REPO, "data", "deals_seed.json")
 EXTRACTED_JSON = os.path.join(REPO, "data", "deals_extracted.json")
@@ -365,6 +366,19 @@ def main():
     # deal is an attribute some of them have -- and the ones that don't are the
     # whole point, because a venue nobody can see is a venue nobody can correct.
     base = json.load(open(BASE_JSON, encoding="utf-8")) if os.path.exists(BASE_JSON) else {}
+    # The second door. build_venue_base.py already refuses these, but the base
+    # is a committed artifact and a rebuild of the SITE must not be able to put
+    # a banned venue back on it just because the base is a day old.
+    dropped = {}
+    for lid in list(base):
+        why = excluded(base[lid].get("name", ""), base[lid].get("plcb_name", ""),
+                       base[lid].get("license_type", ""))
+        if why:
+            dropped.setdefault(why, 0)
+            dropped[why] += 1
+            del base[lid]
+    for why in sorted(dropped):
+        print(f"  {dropped[why]:>5}  venues held off the board: {why}")
     if not base:
         print("  ! data/venue_base.json missing -- shipping ONLY deal-bearing venues.\n"
               "    Run ingest/build_venue_base.py (needs data/venues.csv).")
@@ -495,6 +509,11 @@ def main():
         elif b.get("photo"):
             v["photo"] = b["photo"]
         v["deals"] = deals
+        # A deal can arrive from the crawl or the seed without the base, so the
+        # base filter above is not enough on its own: check the venue itself.
+        if excluded(v.get("name", ""), v.get("plcb_name") or "",
+                    v.get("license_type", "")):
+            continue
         by_zone.setdefault(venue["zone_id"], []).append(v)
 
     # Then every venue the corpus knows about that no source gave us a window

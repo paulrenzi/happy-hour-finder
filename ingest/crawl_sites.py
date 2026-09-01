@@ -1593,7 +1593,17 @@ def crawl_one(session, venue, robots):
                        head_prices=heading_prices(html, text, hh_lines, stacks))
         for q in stacked_prices(lines, hh_lines):
             hits.append({"url": url, "quote": q, "hh": True})
-        pages.append({"url": url, "result": f"ok, {len(found)} quote(s)"})
+        # How much of the page we could actually READ, recorded alongside the
+        # result. A fetch that returns 200 and 11 lines of text and a fetch that
+        # returns 200 and 400 lines are the same row in this file without it,
+        # and they are opposite problems: the first is a JavaScript shell we
+        # cannot see into, the second is a page we read in full that does not
+        # mention a happy hour. Nothing downstream could tell those apart, so
+        # every silent venue looked alike and none of them could be ranked.
+        # ingest/report_holes.py --silent sorts on this.
+        pages.append({"url": url, "result": f"ok, {len(found)} quote(s)",
+                      "lines": len(lines),
+                      "hh": bool(HH_HEADING_RE.search(text))})
         for q in found:
             # `hh` records that this line was INSIDE the venue's own happy-hour
             # section, which is the fact the extractor needs and could not get.

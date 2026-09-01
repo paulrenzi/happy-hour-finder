@@ -112,6 +112,98 @@ probably not worth code.
 
 ---
 
+## The OTHER hole population — "Hours not published" (2026-09-01)
+
+```
+python ingest/report_holes.py --silent                        # every zone
+python ingest/report_holes.py --silent --zone king_of_prussia
+python ingest/report_holes.py --silent --class page-is-a-shell
+```
+
+There are **two** hole populations and only one of them was ever measured.
+
+| population | signature | size | reported by |
+|---|---|---|---|
+| a window and **no items** | card says "happy hour 4-6" and names nothing | ~100 | `report_holes.py` |
+| **no window at all** | card says **"Hours not published"** | **~2,584** | `report_holes.py --silent` |
+
+Paul's complaint — *"the amount of places in just King of Prussia showing under
+'Hours not published' with happy hour menus I can find with a few clicks"* — is
+entirely about the second one, and nothing in the repo could rank it.
+
+**What made it rankable is one field in the crawl.** A fetch that returns 200
+and 11 lines of text and a fetch that returns 200 and 400 lines were **the same
+row** in `crawl_hits.json`, and they are opposite problems: the first is a
+JavaScript shell we cannot see into, the second is a page we read in full that
+does not mention a happy hour. So `crawl_sites.py` now records `lines` and `hh`
+per page, and `classify_silent()` sorts the whole silent population into named
+classes ranked by size. **A silent venue is not a mystery; it is one of eight
+things, and seven of them are ours.**
+
+| class | meaning / the work |
+|---|---|
+| `never-crawled` | the frontier never queued a site we hold — a crawl input bug, and the cheapest venues on the list. Cheesecake Factory, Tommy Bahama and Wegmans in KoP alone |
+| `page-is-a-shell` | 200 OK, under 40 lines of text — renders in JavaScript. **The headless tier, one fix for all of them.** Cheesecake's own `/happy-hour` is 13 KB of HTML and **11 lines** |
+| `says-happy-hour-no-window` | the page says "happy hour" and we read no clock — the window is on another page, in an image, or in a form the grammar refuses |
+| `quotes-but-no-window` | we kept quotes and none carried a window — where a grammar gap shows |
+| `no-mention-anywhere` | read in full, never says it. Most of these genuinely publish none |
+| `venue-says-it-has-none` | **an answer, not a hole.** Founding Farmers: *"we don't have a traditional happy hour"* / *"Every hour is happy here!"* |
+| `robots-refused` / `fetch-failed` | the site refuses us, or the chain errors |
+| `crawled-before-the-line-count` | crawled before 2026-09-01 — **recrawl to sort it**, never guess a line count |
+
+**Are we ready for the next zone? No — and it is now sized.** Three tiers, in
+order of return: recrawl to populate `lines`/`hh`; the headless tier for the JS
+shells; the never-crawled frontier bug. Run the report on a zone *before*
+deciding what to build for it.
+
+### The reclaim classes found behind KoP's 45 silent venues
+
+Seven venues say "happy hour" on their own homepage while we publish nothing.
+None of the causes is venue-specific:
+
+- **the window line never entered the quote** — bartaco's page reads "high tide
+  happy hour / (at the bar) / weekdays 3-6pm" and our quote stops at the first
+  two lines. The grammar is innocent: `days_in('weekdays 3-6pm')` → `{1..5}`.
+- **items but no clock ⇒ we publish nothing** — Peppers and Pizzeria Vetri both
+  name priced items under a "Happy Hour" heading and no window was found.
+- **a start with no end is refused** — Bonefish: "Happy Hour starts at 3:30pm
+  daily." The card already renders "Starts 3pm" (Tommy's proves it). Publishable,
+  and being thrown away.
+- **JavaScript shells** — Cheesecake 11 lines, Bonefish 163 KB and 55 lines.
+
+---
+
+## Who is not on the board — `ingest/exclusions.py` (2026-09-01)
+
+One module, two doors: `build_venue_base.py` (where a venue first exists, and
+in the sibling-LID pass too, so a ban cannot re-enter as an `also_lids` of the
+premises next door) and `build_bundles.py` (so a **stale committed base cannot
+put a banned venue back on the site**).
+
+- **Bald Birds Brewing — banned by Paul, permanently.** Keyed on the PLCB
+  licensee name, matched as *contained*, because the trade name arrives from
+  Google as "Bald Birds Brewing Company - King of Prussia".
+- **Hotels.**
+
+🛑 **`'Hotel (Liquor)'` is a LICENCE CLASS, not a hotel.** 178 venues hold one
+and only 87 are hotels. A licence-based filter — which was nearly shipped —
+would have deleted The Black Horse Tavern, The Stray Dog Tavern, Joseph Ambler
+Inn, Panorama and CO-OP Restaurant & Bar, all of which publish a happy hour and
+were on the board. This is the classifier-audit rule made concrete: **a class
+assigned by one field is a hypothesis; census it against the venues it would
+delete before acting on it.**
+
+So a hotel is recognised by **brand**, plus the narrow case of `hotel|motel` in
+the name *and* the hotel licence *and* no `NOT_A_HOTEL_RE` word. `Inn` is
+deliberately not a signal on its own. And `motel` is **not** in the brand list:
+it was, and it took "The Olde Black Horse Tavern and Motel" — a working tavern —
+off the board, because a brand match skips the carve-out.
+
+Result: 2 Bald Birds + 113 hotels off, **199 deals across 38 zones, 2,783
+venues**. The only deal correctly lost was Desmond Hotel Malvern.
+
+---
+
 ## Findings that cost a session each — do not re-learn these
 
 **A price can have no dollar sign.** North Italia's entire happy-hour menu was
@@ -160,6 +252,14 @@ was stale.
 **Patch this file with a script, not a heredoc.** An unquoted heredoc collapses
 backslash escapes and a repair then reports success and changes nothing. Write
 `.new` and `os.replace`.
+
+🛑 **NEVER put regex- or escape-bearing Python through a bash heredoc — even a
+quoted one.** This has now cost five sessions. The latest went further than a
+failed patch: `\b` was written into `DENIAL_RE` as a literal **backspace byte**
+(`\x08`), the file parsed, the module imported, and the regex silently never
+matched. It shipped, and only a unit test asserting the *match* caught it.
+`assert old in s` on a raw-string source will also fail for the same reason.
+**Use the editor tool, or a script file on disk. Not a heredoc.**
 
 ---
 

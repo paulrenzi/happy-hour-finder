@@ -1820,7 +1820,7 @@
    }
   ]
  },
- "114621": {
+ "7127": {
   "name": "The Black Horse Tavern",
   "deals": [
    {
@@ -3820,44 +3820,6 @@
   ]
  },
  "41866": {
-  "name": "Hard Rock Cafe",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "15:00",
-      "end": "19:00"
-     },
-     {
-      "dow": 2,
-      "start": "15:00",
-      "end": "19:00"
-     },
-     {
-      "dow": 3,
-      "start": "15:00",
-      "end": "19:00"
-     },
-     {
-      "dow": 4,
-      "start": "15:00",
-      "end": "19:00"
-     },
-     {
-      "dow": 5,
-      "start": "15:00",
-      "end": "19:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "44268": {
   "name": "Hard Rock Cafe",
   "deals": [
    {
@@ -5897,49 +5859,6 @@
       "dow": 7,
       "start": "22:00",
       "end": "24:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "32835": {
-  "name": "Desmond Hotel Malvern, a DoubleTree by Hilton",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "14:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "14:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "14:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "14:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "14:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 7,
-      "start": "14:00",
-      "end": "18:00"
      }
     ],
     "source": {

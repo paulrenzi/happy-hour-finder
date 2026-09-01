@@ -37,6 +37,11 @@ OUT_JSON = os.path.join(REPO, "data", "venue_base.json")
 # stay: "is it worth going to" is the user's call, not ours.
 EXCLUDED_LICENSE_TYPES = {"Brewery Storage"}
 
+# Venues that are off the board by NAME, not by licence: the permanent bans and
+# the hotel chains. Kept in ingest/exclusions.py with the reasoning, because
+# 'Hotel (Liquor)' is a licence class and not a hotel -- see that file.
+from exclusions import excluded  # noqa: E402
+
 # Suffixes on a PLCB licensee name. They are the legal entity, never the sign
 # over the door, and they are only ever stripped from the FALLBACK name -- a
 # name Google or OSM gave us is already the trade name and is left alone.
@@ -154,7 +159,7 @@ def main():
     with open(VENUES_CSV, encoding="utf-8", newline="") as fh:
         rows = list(csv.DictReader(fh))
 
-    by_premises, skipped = {}, 0
+    by_premises, skipped, off_board = {}, 0, {}
     for row in rows:
         if row["license_type"] in EXCLUDED_LICENSE_TYPES:
             skipped += 1
@@ -167,6 +172,11 @@ def main():
         # record was resolved against this exact address this month, where an
         # OSM name can be a decade old. The PLCB licensee is the last resort.
         name = place.get("places_name") or site.get("osm_name") or pretty_name(row["name"])
+
+        why = excluded(name, row["name"], row["license_type"])
+        if why:
+            off_board.setdefault(why, []).append(name)
+            continue
 
         v = {
             "lid": lid,
@@ -207,6 +217,9 @@ def main():
     for row in rows:
         if row["license_type"] in EXCLUDED_LICENSE_TYPES:
             continue
+        if excluded((places.get(row["lid"]) or {}).get("places_name", ""),
+                    row["name"], row["license_type"]):
+            continue
         key = premises_key(row["lid"], places.get(row["lid"]) or {},
                            sites.get(row["lid"]) or {}, row)
         lids_for.setdefault(key, []).append(row["lid"])
@@ -226,6 +239,8 @@ def main():
     named = sum(1 for v in out.values() if v["named_by"] != "plcb")
     print(f"{len(rows)} PLCB rows, {skipped} excluded "
           f"({'/'.join(sorted(EXCLUDED_LICENSE_TYPES))})")
+    for why in sorted(off_board):
+        print(f"  {len(off_board[why]):>5}  off the board: {why}")
     print(f"{kept} licences collapsed to {n} venues "
           f"({kept - n} were a second licence at a building already listed)")
     print(f"wrote {n} venues -> {os.path.relpath(OUT_JSON, REPO)} "

@@ -14,16 +14,6 @@
    "deals": []
   },
   {
-   "lid": "133044",
-   "name": "165 Radnor Hotel Trs",
-   "address": "165 King Of Prussia Rd, Radnor PA 19087",
-   "zone_id": "wayne_radnor",
-   "license_type": "Hotel (Liquor)",
-   "id": "133044",
-   "plcb_name": "165 RADNOR HOTEL TRS LLC",
-   "deals": []
-  },
-  {
    "lid": "115189",
    "name": "30 Main",
    "address": "660 Lancaster Ave, Berwyn PA 19312",
@@ -228,34 +218,6 @@
    "deals": []
   },
   {
-   "lid": "7771",
-   "name": "Courtyard",
-   "address": "762 Lancaster Ave, Wayne PA 19087",
-   "zone_id": "wayne_radnor",
-   "license_type": "Hotel (Liquor)",
-   "id": "7771",
-   "plcb_name": "COURTYARD BY MARRIOTT",
-   "website": "https://www.marriott.com/phldv",
-   "lat": 40.0462368,
-   "lng": -75.411561,
-   "geo_precision": "place",
-   "deals": []
-  },
-  {
-   "lid": "7723",
-   "name": "Courtyard Philadelphia Valley Forge/King of Prussia",
-   "address": "1100 Drummers Ln, Wayne PA 19087",
-   "zone_id": "wayne_radnor",
-   "license_type": "Hotel (Liquor)",
-   "id": "7723",
-   "plcb_name": "COURTYARD BY MARRIOTT",
-   "website": "https://www.marriott.com/hotels/travel/phlva-courtyard-philadelphia-valley-forge-king-of-prussia/",
-   "lat": 40.0817759,
-   "lng": -75.4102764,
-   "geo_precision": "place",
-   "deals": []
-  },
-  {
    "lid": "110509",
    "name": "Dan Dan",
    "address": "650 W Lancaster Ave, Wayne PA 19087",
@@ -263,34 +225,6 @@
    "license_type": "Restaurant (Liquor)",
    "id": "110509",
    "plcb_name": "DAN DAN",
-   "deals": []
-  },
-  {
-   "lid": "110567",
-   "name": "Embassy Suites by Hilton Philadelphia Valley Forge",
-   "address": "888 Chesterbrook Blvd, Wayne PA 19087",
-   "zone_id": "wayne_radnor",
-   "license_type": "Hotel (Liquor)",
-   "id": "110567",
-   "plcb_name": "EMBASSY SUITES VALLEY FORGE",
-   "website": "https://www.hilton.com/en/hotels/phlvles-embassy-suites-philadelphia-valley-forge/",
-   "lat": 40.0667051,
-   "lng": -75.4608073,
-   "geo_precision": "place",
-   "deals": []
-  },
-  {
-   "lid": "90333",
-   "name": "Fairfield Inn & Suites",
-   "address": "1005 Westlakes Dr, Berwyn PA 19312",
-   "zone_id": "wayne_radnor",
-   "license_type": "Hotel (Liquor)",
-   "id": "90333",
-   "plcb_name": "FAIRFIELD INN & SUITES",
-   "website": "https://www.marriott.com/phlig",
-   "lat": 40.062026,
-   "lng": -75.4677069,
-   "geo_precision": "place",
    "deals": []
   },
   {
@@ -547,20 +481,6 @@
    "deals": []
   },
   {
-   "lid": "45368",
-   "name": "The Radnor Hotel",
-   "address": "591-595 E Lancaster Ave, Saint Davids PA 19087",
-   "zone_id": "wayne_radnor",
-   "license_type": "Hotel (Liquor)",
-   "id": "45368",
-   "plcb_name": "RADNOR HOTEL",
-   "website": "https://radnorhotel.com/",
-   "lat": 40.0410546,
-   "lng": -75.3661771,
-   "geo_precision": "place",
-   "deals": []
-  },
-  {
    "lid": "89755",
    "name": "The Refectory",
    "address": "800 Lancaster Ave, Villanova PA 19085",
@@ -626,20 +546,6 @@
    "license_type": "Restaurant (Liquor)",
    "id": "72326",
    "plcb_name": "W&W (USA) LLC",
-   "deals": []
-  },
-  {
-   "lid": "98195",
-   "name": "Wayne Hotel",
-   "address": "139 E Lancaster Ave, Wayne PA 19087",
-   "zone_id": "wayne_radnor",
-   "license_type": "Hotel (Liquor)",
-   "id": "98195",
-   "plcb_name": "WAYNE HOTEL ASSOCIATES AND ROSEMARY RESTAURANT LLC A JOINT VENTURE",
-   "website": "https://www.waynehotel.com/",
-   "lat": 40.04434,
-   "lng": -75.386346,
-   "geo_precision": "place",
    "deals": []
   }
  ]
