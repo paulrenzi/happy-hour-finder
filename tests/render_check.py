@@ -98,6 +98,20 @@ def main():
                    .filter((c) => !c.classList.contains("card-unknown"))
                    .map((c) => [".name", ".zone", ".ends"]
                      .map((sel) => c.querySelector(sel)?.textContent).join(" | ")),
+                 // The prices a card actually shows, per bar. Counting CARDS was
+                 // blind to the only failure anyone reported: a venue whose menu
+                 // we read correctly, painting a card with nothing on it. Folded
+                 // items count -- they are in the DOM behind one toggle -- but an
+                 // empty list does not.
+                 itemsByName: Object.fromEntries(
+                   [...document.querySelectorAll("#feed article.card")]
+                     .filter((c) => !c.classList.contains("card-unknown"))
+                     .map((c) => [
+                       [".name", ".zone"].map((sel) =>
+                         c.querySelector(sel)?.textContent?.trim()).join(" @ "),
+                       [...c.querySelectorAll("ul.items li")].map((li) =>
+                         li.textContent.trim()),
+                     ])),
                })"""
         )
         browser.close()
@@ -125,6 +139,37 @@ def main():
     if painted != declared + 1:
         bad.append(f"the build ships {declared} venues with hours (+1 overlay probe) "
                    f"and the page painted {painted} cards")
+    # Every venue the build gives items to must SHOW them. The board painting
+    # 174 cards said nothing about this, so a venue whose menu we parsed
+    # perfectly could ship a blank card and every test stayed green.
+    painted_items = checks["itemsByName"]
+    shipped = {}
+    for fn in sorted(os.listdir(os.path.join(WEB, "data"))):
+        if not fn.startswith("zone-"):
+            continue
+        with open(os.path.join(WEB, "data", fn), encoding="utf-8") as fh:
+            zone = json.load(fh)
+        for venue in zone["venues"]:
+            for deal in venue.get("deals") or []:
+                # Keyed on name AND town: three Chickie's & Pete's are three
+                # bars, and keying on the name alone made one of them answer
+                # for another one's menu.
+                if deal.get("items"):
+                    key = f"{venue['name'].strip()} @ {zone['name']}"
+                    shipped[key] = deal["items"]
+    blank = sorted(n for n, items in shipped.items()
+                   if items and not painted_items.get(n))
+    if blank:
+        bad.append(f"{len(blank)} venue(s) ship items and painted an empty card: "
+                   f"{blank[:3]}")
+    # And the labels have to be the venue's own, not some other bar's.
+    for name, items in sorted(shipped.items()):
+        got = " || ".join(painted_items.get(name) or [])
+        want = str(items[0].get("label") or "").strip()
+        if want and got and want.lower() not in got.lower():
+            bad.append(f"{name!r} ships {want!r} first and its card shows {got[:60]!r}")
+            break
+
     dupes = sorted({c for c in checks["cards"] if checks["cards"].count(c) > 1})
     if dupes:
         bad.append(f"the same bar is on the board twice: {dupes[:3]}")
@@ -132,7 +177,8 @@ def main():
     for line in bad:
         print(f"  FAIL {line}")
     if not bad:
-        print(f"  ok   board painted: {checks['zones'] - 1} zones, "
+        print(f"  ok   {len(shipped)} venues ship items and all painted them; "
+              f"board: {checks['zones'] - 1} zones, "
               f"{checks['feed']} feed rows, {painted} deal cards and no bar twice, "
               f"kicker {checks['kicker']!r}")
     return 1 if bad else 0

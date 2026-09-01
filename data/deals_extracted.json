@@ -2279,7 +2279,7 @@
       },
       {
        "category": "cocktail",
-       "label": "Margaritas - Strawberry",
+       "label": "Margaritas - Strawberry or Li",
        "price_usd": 5.0
       }
      ],
@@ -2513,6 +2513,29 @@
        "category": "cocktail",
        "label": "Sangrias",
        "price_usd": 6.5
+      },
+      {
+       "category": "cocktail",
+       "label": "Mojitos & Margaritas",
+       "price_usd": 6.5
+      },
+      {
+       "category": "food",
+       "label": "Traditional Guacamole",
+       "price_usd": 7.5,
+       "price_max": 7.75
+      },
+      {
+       "category": "food",
+       "label": "Street Tacos (2)",
+       "price_usd": 7.5,
+       "price_max": 7.75
+      },
+      {
+       "category": "food",
+       "label": "Paladar Sliders (2)",
+       "price_usd": 7.5,
+       "price_max": 7.75
       }
      ],
      "confidence": "unconfirmed",
@@ -2706,7 +2729,7 @@
      "items": [
       {
        "category": "draft",
-       "label": "Domestic Drafts",
+       "label": "Domestic Drafts & Bottles",
        "price_usd": 4.0
       },
       {
@@ -3029,7 +3052,7 @@
       },
       {
        "category": "wine",
-       "label": "WHITE WINE",
+       "label": "WHITE WINE & RED WINE",
        "price_usd": 7.0
       },
       {
@@ -4676,6 +4699,11 @@
        "category": "food",
        "label": "Apps",
        "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "label": "Pizzas",
+       "price_usd": 10.0
       }
      ],
      "confidence": "unconfirmed",
@@ -4874,7 +4902,7 @@
       },
       {
        "category": "well",
-       "label": "well drinks",
+       "label": "well drinks and Busch Light w",
        "price_usd": 1.0
       }
      ],
@@ -8024,7 +8052,7 @@
       },
       {
        "category": "wine",
-       "label": "Rose",
+       "label": "Rose or Brut Bubbles",
        "price_usd": 6.0
       }
      ],
@@ -8237,7 +8265,38 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "FOUR CHEESE SPINACH DIP",
+       "discount_pct": 50
+      },
+      {
+       "category": "food",
+       "label": "CHICKEN LETTUCE WRAPS",
+       "discount_pct": 50
+      },
+      {
+       "category": "food",
+       "label": "FRIED CALAMARI",
+       "discount_pct": 50
+      },
+      {
+       "category": "food",
+       "label": "MIGUEL'S QUESO DIP",
+       "discount_pct": 50
+      },
+      {
+       "category": "food",
+       "label": "HAND-BATTERED CHICKEN TENDERS",
+       "discount_pct": 50
+      },
+      {
+       "category": "food",
+       "label": "BONELESS WINGS",
+       "discount_pct": 50
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -9545,7 +9604,7 @@
       },
       {
        "category": "cocktail",
-       "label": "Margaritas",
+       "label": "Margaritas and MORE",
        "price_usd": 6.0
       }
      ],
@@ -9679,7 +9738,7 @@
       },
       {
        "category": "cocktail",
-       "label": "seasonal cocktails",
+       "label": "seasonal cocktails and sangri",
        "price_usd": 9.0
       },
       {

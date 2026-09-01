@@ -125,7 +125,7 @@ NOUNS = [
                  r"mule|spritz|sangrias|highball"),
     ("shot", r"shot|shots"),
     ("food", r"app|apps|appetizer|appetizers|bite|bites|wing|wings|slice|"
-             r"pizza|taco|tacos|oyster|oysters|burger|burgers|snack|snacks|"
+             r"pizza|pizzas|taco|tacos|oyster|oysters|burger|burgers|snack|snacks|"
              r"small plate|small plates|nacho|nachos|fries|pretzel"),
 ]
 
@@ -259,10 +259,72 @@ def category_of(label):
 OFF_RE = re.compile(r"^off\b", re.I)
 
 
+# A quote the crawler built from a PRICED SECTION HEADING and one item under
+# it: 'SNACKS $7.50-7.75 each / $7.50-7.75 Traditional Guacamole'. The heading
+# is carried along because it answers the question the noun list cannot: a
+# guacamole is food because the venue filed it under SNACKS, not because
+# 'guacamole' is a word we happen to know. See heading_prices() in crawl_sites.
+SECTION_ITEM_RE = re.compile(
+    r"^\$(\d{1,3}(?:\.\d\d)?)(?:-\$?(\d{1,3}(?:\.\d\d)?))?\s+([A-Za-z][\w\s&'()-]{1,40})$")
+
+# The same shape, for a section the venue discounts instead of pricing: Yard
+# House's 'HH 1/2 OFF SELECT APPS' names no price at all, and the price its own
+# menu API carries for each dish is the FULL one. Publishing that number would
+# put $14.99 on the board for a $7.50 spinach dip -- the '$X off' mistake again,
+# with the digits sitting right there looking like an answer. The discount is
+# what the venue stated, so the discount is what we publish.
+SECTION_OFF_RE = re.compile(r"^(\d{1,2})% Off\s+([A-Za-z][\w\s&'()-]{1,40})$", re.I)
+
+
+def section_items(text):
+    """[item] for a 'priced heading / item' quote, or [] if this is not one.
+
+    A range is published AS a range. '$7.50-7.75 each' is what the venue said
+    and it is what the card says; picking either end would be stating a price
+    for a dish that does not have it.
+    """
+    parts = [p.strip() for p in text.split(" / ")]
+    if len(parts) != 2:
+        return []
+    cat = category_of(parts[0])
+    if not cat:
+        return []
+    m = SECTION_ITEM_RE.match(parts[1])
+    if not m:
+        off = SECTION_OFF_RE.match(parts[1])
+        if not off:
+            return []
+        pct = int(off.group(1))
+        label = off.group(2).strip(" -'")
+        if not 0 < pct < 100:
+            return []
+        return [{"category": cat, "label": label, "discount_pct": pct}]
+    lo = float(m.group(1))
+    hi = float(m.group(2)) if m.group(2) else lo
+    label = m.group(3).strip(" -'")
+    if not 0 < lo <= hi <= 99 or OFF_RE.search(label):
+        return []
+    item = {"category": cat, "label": label, "price_usd": lo}
+    if hi != lo:
+        item["price_max"] = hi
+    return [item]
+
+
 def items_in(text):
+    section = section_items(text)
+    if section:
+        return section
     out, seen = [], set()
     for m in PRICE_RE.finditer(text):
-        label = re.split(r"\s+(?:and|or|&)\s+", m.group(2).strip())[0].strip(" -'")
+        # '$6.50 Mojitos & Margaritas' is ONE priced label, and splitting it at
+        # the '&' handed category_of the word 'Mojitos', which no noun matches --
+        # so a line the whitelist would have accepted on 'margaritas' was thrown
+        # away by our own truncation. The split still runs, because '$5 Wings and
+        # Fries' really is better labelled 'Wings', but it is now a FALLBACK: the
+        # whole label is offered first and the shortened one only if that fails.
+        whole = m.group(2).strip().strip(" -'")
+        first = re.split(r"\s+(?:and|or|&)\s+", whole)[0].strip(" -'")
+        label = whole if category_of(whole) else first
         if OFF_RE.search(label):
             continue
         cat = category_of(label)

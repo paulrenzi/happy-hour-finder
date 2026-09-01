@@ -103,6 +103,12 @@ BREAK_CLOSE = frozenset("p div li tr h1 h2 h3 h4 h5 h6".split())
 VOID_TAGS = frozenset("br img hr input meta link source col area base embed "
                       "param track wbr".split())
 DROPPED_TAGS = frozenset(("script", "style", "noscript"))
+# A menu writes an item as NAME then description, and the only thing separating
+# them is that the venue emphasised the name: Paladar's snacks are
+# '<em>Street Tacos (2)</em> choice of Braised Beef ...'. Both halves land in one
+# visible line, so without this the label is the whole sentence and no rule can
+# find where the dish's name stops. The venue already answered that in markup.
+EMPH_TAGS = frozenset("em strong b i".split())
 
 
 class _Lines(HTMLParser):
@@ -118,14 +124,17 @@ class _Lines(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.stack, self.nid, self.dropped = [], 0, 0
         self.buf, self.buf_stack = [], None
-        self.lines, self.stacks = [], []
+        self.lines, self.stacks, self.emph = [], [], []
+        self.em_depth, self.em_buf, self.em_first = 0, [], None
 
     def _flush(self):
         line = WS_RE.sub(" ", "".join(self.buf)).strip()
         if line:
             self.lines.append(line)
             self.stacks.append(tuple(self.buf_stack or ()))
+            self.emph.append(WS_RE.sub(" ", self.em_first or "").strip())
         self.buf, self.buf_stack = [], None
+        self.em_buf, self.em_first = [], None
 
     def handle_starttag(self, tag, attrs):
         if tag in DROPPED_TAGS:
@@ -137,6 +146,8 @@ class _Lines(HTMLParser):
         # A tag is a space between the words it separates, void or not; an
         # element that can hold text also opens a box lines can be inside.
         self.buf.append(" ")
+        if tag in EMPH_TAGS:
+            self.em_depth += 1
         if tag not in VOID_TAGS:
             self.nid += 1
             self.stack.append(self.nid)
@@ -154,6 +165,13 @@ class _Lines(HTMLParser):
         if tag in VOID_TAGS:
             return
         self.buf.append(" ")
+        if tag in EMPH_TAGS and self.em_depth:
+            self.em_depth -= 1
+            # Only the FIRST emphasised run of a line names the item; a page
+            # that emphasises half its sentence gets nothing useful, and a run
+            # later in the line is the description talking.
+            if not self.em_depth and self.em_first is None:
+                self.em_first = "".join(self.em_buf)
         if tag in BREAK_CLOSE:
             self._flush()
         if self.stack:
@@ -170,6 +188,8 @@ class _Lines(HTMLParser):
                 self._flush()
             if part.strip() and self.buf_stack is None:
                 self.buf_stack = tuple(self.stack)
+            if self.em_depth and self.em_first is None:
+                self.em_buf.append(part)
             self.buf.append(part)
 
     def close(self):
@@ -177,12 +197,17 @@ class _Lines(HTMLParser):
         self._flush()
 
 
-def text_lines(html):
-    """The visible lines and, for each, the element chain it was found in.
+def text_lines_emph(html):
+    """text_lines(), plus the first emphasised run of each line.
 
-    Markup out, structure preserved as line breaks -- a <br> is a line break in
-    a happy-hour block, and joining those lines glues 'Mon-Fri' to '4-6pm'.
+    Kept separate from text_lines() only so the older two-value signature and
+    its callers stay as they were; both come off ONE parse of the page.
     """
+    p = _parse(html)
+    return p.lines, p.stacks, p.emph
+
+
+def _parse(html):
     p = _Lines()
     try:
         p.feed(html)
@@ -193,6 +218,16 @@ def text_lines(html):
         # lines read so far -- a partial page is what a truncated fetch has
         # always given us, and it is handled everywhere downstream.
         p._flush()
+    return p
+
+
+def text_lines(html):
+    """The visible lines and, for each, the element chain it was found in.
+
+    Markup out, structure preserved as line breaks -- a <br> is a line break in
+    a happy-hour block, and joining those lines glues 'Mon-Fri' to '4-6pm'.
+    """
+    p = _parse(html)
     return p.lines, p.stacks
 
 
@@ -267,7 +302,7 @@ HH_HEADING_RE = re.compile(r"happy\s*hour|social hour|power hour|bar bites", re.
 # section SHORT, which is the safe direction: a section that runs on does not
 # add noise, it publishes a wrong price.
 # The nouns are written singular but a menu writes them PLURAL -- Paladar's
-# happy hour is subdivided by a heading that says 'DRINKS', and `drink` does not
+# happy hour is subdivided by a heading that says 'DRINKS', and `drink` does not
 # match it, so the section closed on the venue's own subheading and all six of its
 # prices sat one line outside it. The asymmetry was accidental, not a safety
 # margin: `snack` and `bite` already survive in the plural through the trailing
@@ -297,6 +332,14 @@ MEAL_HEADING_RE = re.compile(
 
 def _norm(x):
     return WS_RE.sub(" ", x).strip().lower()
+
+
+def marked_headings(html, lines):
+    """Indices of `lines` the page marked up itself as <h1>-<h6>."""
+    marked = {_norm(MARKUP_RE.sub(" ", html_mod.unescape(m.group(1))))
+              for m in HEADING_TAG_RE.finditer(html)}
+    marked.discard("")
+    return [i for i, ln in enumerate(lines) if _norm(ln) in marked]
 
 
 def hh_sections(html, text):
@@ -333,10 +376,7 @@ def hh_sections(html, text):
     section, never a wrong one.
     """
     lines = text.split("\n")
-    marked = {_norm(MARKUP_RE.sub(" ", html_mod.unescape(m.group(1))))
-              for m in HEADING_TAG_RE.finditer(html)}
-    marked.discard("")
-    heads = [i for i, ln in enumerate(lines) if _norm(ln) in marked]
+    heads = marked_headings(html, lines)
 
     if heads:
         opens = [i for i in heads if HH_HEADING_RE.search(lines[i])]
@@ -370,7 +410,89 @@ def hh_sections(html, text):
     return out
 
 
-def quotes(text, menu_doc=False, hh_page=False, hh_lines=frozenset(), stacks=None):
+# A price stated ONCE, on the heading that owns a block of items. Paladar
+# lists its eight happy-hour snacks under '<h2>SNACKS $7.50-7.75 each</h2>' and
+# not one of them carries a dollar sign, so every rule in quotes() looked
+# straight past all eight. The heading is the venue answering for the whole
+# block: it gives the price AND the kind of thing. The items below it are
+# priced lines that simply do not repeat the number.
+SECTION_PRICE_RE = re.compile(r"\$\s?(\d{1,3}(?:\.\d\d)?)\s*(?:-|\u2013|\u2014|to)\s*\$?\s?(\d{1,3}(?:\.\d\d)?)|\$\s?(\d{1,3}(?:\.\d\d)?)")
+# How many lines one priced heading may speak for. A happy-hour block is a
+# short list; a longer run is a menu the heading does not really own, and
+# inheriting a price down it would publish a wrong price on every line of it.
+SECTION_PRICE_CAP = 12
+# An unemphasised line has to stand as its own label, so it has to be short
+# enough to BE one. A sentence is not a label.
+SECTION_LABEL_MAX = 40
+TITLE_RUN_RE = re.compile(r"^(?:(?:[A-Z]\S*|\(\d+\)|&)(?:\s+|$)){1,6}")
+
+
+def item_label(line, emphasised):
+    """The item's name on a menu line, or "" if the line does not offer one.
+
+    Two marks, both the venue's own: the run it EMPHASISED, and failing that the
+    leading run of CAPITALISED words. Neither is a guess about where a name ends
+    -- when the page makes neither mark, nothing is returned and the line is left
+    alone, because a sentence is not a label.
+    """
+    for cand in (emphasised, (TITLE_RUN_RE.match(line) or [""])[0]):
+        cand = (cand or "").strip(" -'")
+        if _labelled(cand) and len(cand) <= SECTION_LABEL_MAX:
+            return cand
+    return ""
+
+
+def heading_prices(html, text, hh_lines, stacks=None):
+    """{line index -> (heading index, low, high)} for lines a PRICED heading owns.
+
+    Only inside a happy-hour section, only under a heading the page marked up
+    itself, and only for lines stating no price of their own -- a line with its
+    own number answers for itself and is never overridden. The run stops at the
+    next heading, at the end of the section, or at the cap, whichever comes first
+    -- and it never leaves the heading's own BOX. Paladar's snack heading is
+    followed by its eight snacks and then by two stray words, 'Sweet' and
+    'Flavors', from a widget further down the page; both sit inside the section
+    and neither is a snack. The page already separates them: the heading and its
+    eight items share one element, the widget does not. This is the same
+    one-box-is-one-item reading item_beside() does for a bare price.
+    """
+    lines = text.split("\n")
+    heads = marked_headings(html, lines)
+    headset = set(heads)
+    out = {}
+    for i in heads:
+        # The heading must be INSIDE a happy hour. hh_sections() puts every line
+        # a happy-hour heading owns into the set, so a subdivision heading like
+        # 'SNACKS $7.50-7.75 each' is in it and the next menu's heading is not.
+        if i not in hh_lines:
+            continue
+        m = SECTION_PRICE_RE.search(lines[i])
+        if not m:
+            continue
+        lo = float(m.group(1) or m.group(3))
+        hi = float(m.group(2) or lo)
+        if not 0 < lo <= hi <= 99:
+            continue
+        # The element holding the heading. Every line the heading speaks for
+        # has to be inside it.
+        box = None
+        if stacks and i < len(stacks) and len(stacks[i]) >= 2:
+            box = stacks[i][-2]
+        n = 0
+        for j in range(i + 1, len(lines)):
+            if j in headset or j not in hh_lines or n >= SECTION_PRICE_CAP:
+                break
+            if box is not None and box not in (stacks[j] if j < len(stacks) else ()):
+                break
+            if "$" in lines[j]:
+                continue
+            out[j] = (i, lo, hi)
+            n += 1
+    return out
+
+
+def quotes(text, menu_doc=False, hh_page=False, hh_lines=frozenset(), stacks=None,
+           head_prices=None, emph=None):
     """The matched lines, plus a neighbour when the match itself has no time.
 
     menu_doc is for a document we reached BECAUSE a happy-hour page linked it as
@@ -401,6 +523,24 @@ def quotes(text, menu_doc=False, hh_page=False, hh_lines=frozenset(), stacks=Non
         inside = i in hh_lines
         loose = menu_doc or hh_page or inside
         bare = (hh_page or inside) and BARE_PRICE_RE.match(ln)
+        owned = (head_prices or {}).get(i)
+        if owned:
+            head, lo, hi = owned
+            # See item_label(): the venue's own marks say where the dish's
+            # name ends, and when it makes none the line is left alone.
+            label = item_label(ln, emph[i] if emph and i < len(emph) else "")
+            if not label:
+                continue
+            price = "$%.2f" % lo + ("-%.2f" % hi if hi != lo else "")
+            # The heading rides along, unchanged, because it is what says both
+            # the price and the KIND of thing -- 'SNACKS' is how a guacamole is
+            # known to be food without the noun list having to know the word.
+            # Both halves are the venue's own text, in the venue's own order.
+            q = lines[head] + " / " + price + " " + label
+            if q not in seen:
+                seen.add(q)
+                out.append(q)
+            continue
         if (not DEAL_RE.search(ln) and not bare
                 and not (loose and (MENU_ITEM_RE.search(ln)
                                    or LEADING_ITEM_RE.search(ln)))):
@@ -778,6 +918,54 @@ def darden_lines(rest):
     return out
 
 
+# The discount a Darden happy-hour section states in its own heading. The menu
+# API gives every dish its FULL price and no happy-hour price at all, so the
+# heading is the only place the deal is written down: 'HH 1/2 OFF SELECT APPS'.
+# A section whose heading names no discount we can read is skipped rather than
+# guessed at -- its dishes are on the happy-hour menu at a price we do not know.
+DARDEN_OFF_RE = re.compile(r"(?:\b1\s*/\s*2\b|\bhalf\b)[-\s]*(?:price|off)|"
+                           r"\b(\d{1,2})\s*%\s*off", re.I)
+# A card is not a menu. Yard House puts 20 dishes on its happy-hour list and the
+# card shows six of them, so the cap is applied HERE, where the order is the
+# venue's own, rather than by whatever survived a later truncation.
+DARDEN_ITEM_CAP = 8
+
+
+def darden_off_pct(heading):
+    """The percentage a section heading takes off, or None if it names none."""
+    m = DARDEN_OFF_RE.search(heading or "")
+    if not m:
+        return None
+    return int(m.group(1)) if m.group(1) else 50
+
+
+def darden_menu_quotes(host, num):
+    """The venue's happy-hour DISHES, from the same API that holds its hours.
+
+    The site itself is an empty JavaScript shell -- the /happy-hour page is 2.7KB
+    of loader and nothing a crawler can read -- so this is not an optimisation,
+    it is the only way these eight chains say anything at all.
+    """
+    api = f"https://www.{host}/api/menu?restaurantNum={num}"
+    req = urllib.request.Request(api, headers={"X-Source-Channel": "WEB", "User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=TIMEOUT) as fh:
+        menu = json.load(fh)
+    out = []
+    for cat in menu.get("categories") or []:
+        if cat.get("slug") != "happy-hour":
+            continue
+        for sub in cat.get("subCategories") or []:
+            head = (sub.get("displayName") or "").strip()
+            pct = darden_off_pct(head)
+            if not head or pct is None:
+                continue
+            for prod in (sub.get("products") or [])[:DARDEN_ITEM_CAP]:
+                name = (prod.get("displayName") or "").strip().rstrip("*").strip()
+                if name:
+                    out.append(f"{head} / {pct}% Off {name}")
+    return api, out
+
+
 def crawl_one(session, venue, robots):
     pages, hits, images = [], [], []
     # A Darden site has nothing to read in its HTML; its API has the hours. Asked
@@ -792,6 +980,15 @@ def crawl_one(session, venue, robots):
         pages.append({"url": api, "result": f"ok, {len(found)} quote(s) from the venue API"})
         for q in found:
             hits.append({"url": venue["website"], "quote": q})
+        ref = darden_ref(venue["website"])
+        try:
+            m_api, dishes = darden_menu_quotes(*ref)
+            pages.append({"url": m_api, "result": f"ok, {len(dishes)} dish(es) from the menu API"})
+            for q in dishes:
+                hits.append({"url": venue["website"], "quote": q})
+        except Exception as e:  # noqa: BLE001 -- the hours stand without the menu
+            pages.append({"url": venue["website"],
+                          "result": f"error: darden menu api {type(e).__name__}"})
     queue = [(venue["website"], 1)]
     fetched = 0
     docs = 0
@@ -831,15 +1028,16 @@ def crawl_one(session, venue, robots):
         # The lines AND the element each was found in: which lines a page put in
         # one box is what says which item a bare price belongs to, and it exists
         # only here, in the markup. See item_beside().
-        lines, stacks = text_lines(html)
+        lines, stacks, emph = text_lines_emph(html)
         text = "\n".join(lines)
         # The URL is no longer the only key. A page that does not name the happy
         # hour in its address very often names it in a heading, and that heading
         # is the venue's own word for the section beneath it -- the same claim
         # the URL was standing in for, read off the page rather than the link.
-        found = quotes(text, menu_doc=is_doc, hh_page=on_hh,
-                       hh_lines=frozenset() if is_doc else hh_sections(html, text),
-                       stacks=stacks)
+        hh_lines = frozenset() if is_doc else hh_sections(html, text)
+        found = quotes(text, menu_doc=is_doc, hh_page=on_hh, hh_lines=hh_lines,
+                       stacks=stacks, emph=emph,
+                       head_prices=heading_prices(html, text, hh_lines, stacks))
         pages.append({"url": url, "result": f"ok, {len(found)} quote(s)"})
         for q in found:
             hits.append({"url": url, "quote": q})

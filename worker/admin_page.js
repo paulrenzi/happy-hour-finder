@@ -170,7 +170,8 @@ function dealBlock(d) {
   if ((d.items || []).length) {
     const ul = el("ul");
     for (const i of d.items) {
-      const price = i.price_usd != null ? "$" + i.price_usd
+      const price = i.price_usd != null
+        ? "$" + i.price_usd + (i.price_max != null ? "\u2013" + i.price_max : "")
         : i.discount_pct != null ? i.discount_pct + "% off"
         : i.amount_off_usd != null ? "$" + i.amount_off_usd + " off" : "—";
       ul.append(el("li", null, price + "  " + (i.label || "")));

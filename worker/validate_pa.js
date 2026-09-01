@@ -140,6 +140,17 @@ export function validateDeal(deal) {
     ) {
       errs.push(`item ${repr(item.label)} has neither a price nor a discount`);
     }
+    // A block priced as a RANGE -- 'SNACKS $7.50-7.75 each'. Mirrors the check
+    // in ingest/validate_pa.py; the two validators have to agree, or a deal the
+    // board publishes is one the worker refuses.
+    if (item.price_max !== undefined && item.price_max !== null) {
+      if (item.price_usd === undefined || item.price_usd === null) {
+        errs.push(`item ${repr(item.label)} has a price_max and no price`);
+      } else if (!(item.price_usd < item.price_max && item.price_max <= 99)) {
+        errs.push(`item ${repr(item.label)} has a price range ` +
+                  `${item.price_usd}-${item.price_max} that is not a range`);
+      }
+    }
   }
 
   const source = deal.source || {};

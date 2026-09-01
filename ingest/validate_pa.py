@@ -159,6 +159,18 @@ def validate_deal(deal):
             and item.get("amount_off_usd") is None
         ):
             errs.append(f"item {item.get('label')!r} has neither a price nor a discount")
+        # A venue that prices a whole block at once states a RANGE -- Paladar's
+        # happy-hour snacks are '$7.50-7.75 each'. The range is published as a
+        # range because neither end is the price of any particular dish, so
+        # choosing one would put a number on a card the venue never charged.
+        hi = item.get("price_max")
+        if hi is not None:
+            lo = item.get("price_usd")
+            if lo is None:
+                errs.append(f"item {item.get('label')!r} has a price_max and no price")
+            elif not lo < hi <= 99:
+                errs.append(f"item {item.get('label')!r} has a price range {lo}-{hi} "
+                            "that is not a range")
 
     source = deal.get("source") or {}
     if not source.get("url") and not source.get("photo_id"):

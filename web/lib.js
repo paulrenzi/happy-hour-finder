@@ -48,7 +48,13 @@ export function money(n) {
 
 /* Split into {amount, label} so the number can carry its own weight. */
 export function itemParts(item) {
-  if (item.price_usd != null) return { amount: money(item.price_usd), label: item.label };
+  if (item.price_usd != null) {
+    // A range is shown as a range. See price_max in ingest/validate_pa.py.
+    const amount = item.price_max != null
+      ? money(item.price_usd) + "\u2013" + money(item.price_max).replace("$", "")
+      : money(item.price_usd);
+    return { amount, label: item.label };
+  }
   if (item.discount_pct != null) return { amount: item.discount_pct + "% off", label: item.label };
   if (item.amount_off_usd != null) return { amount: money(item.amount_off_usd) + " off", label: item.label };
   return { amount: "", label: item.label };
