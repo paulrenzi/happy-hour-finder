@@ -848,6 +848,86 @@ class CrawlExtraction(unittest.TestCase):
         self.assertIn("https://bar.example/food-menu", fetched)
         self.assertTrue(hits)
 
+    def test_a_menu_pdf_one_hop_past_the_happy_hour_page_is_reached(self):
+        # Black Powder Tavern. We had their HOURS -- read straight off their
+        # happy-hour page -- and no menu, because the PDF holding the items and
+        # prices is linked from that page rather than the homepage, one hop
+        # further in than the crawler went. The venue then looked covered,
+        # because it had a card.
+        pages_by_url = {
+            "https://bpt.example/": '<a href="/happy-hour/">Happy Hour</a>',
+            "https://bpt.example/happy-hour/":
+                "Happy Hour Monday - Friday 4:00 p.m. to 6:00 p.m."
+                '<a href="/uploads/HH.pdf">View our Happy Hour menu</a>',
+        }
+
+        def get(url, **kw):
+            r = unittest.mock.Mock(status_code=200)
+            if url.endswith(".pdf"):
+                r.headers = {"content-type": "application/pdf"}
+                r.content = b"%PDF-fake"
+                return r
+            if url.endswith("sitemap.xml"):
+                r.status_code = 404
+                r.headers = {"content-type": "text/html"}
+                r.text = ""
+                return r
+            r.headers = {"content-type": "text/html; charset=utf-8"}
+            r.text = pages_by_url.get(url, "")
+            return r
+
+        session = unittest.mock.Mock(get=get)
+        menu = ("Served Monday - Friday 4:00 p.m. - 6:00 p.m.\n"
+                "CAJUN NACHOS $8\nDRAFT BEERS $6")
+        with unittest.mock.patch.object(crawl_sites, "allowed", lambda u, c: True), \
+                unittest.mock.patch.object(crawl_sites, "DELAY", 0), \
+                unittest.mock.patch.object(crawl_sites, "pdf_text", lambda blob: menu):
+            pages, hits = crawl_one(session, {"website": "https://bpt.example/"}, {})
+
+        self.assertIn("https://bpt.example/uploads/HH.pdf", [p["url"] for p in pages])
+        quoted = " | ".join(h["quote"] for h in hits)
+        self.assertIn("CAJUN NACHOS $8", quoted)
+        self.assertIn("DRAFT BEERS $6", quoted)
+
+    def test_the_menu_pdf_does_not_cost_the_page_budget(self):
+        # Going one level deeper on the SAME budget just means missing something
+        # else, which is the trade PAGE_CAP was sized against. The four HTML
+        # fetches every venue used to get are still four.
+        home = ('<a href="/happy-hour/">Happy Hour</a><a href="/menu">Menu</a>'
+                '<a href="/specials">Specials</a><a href="/drinks">Drinks</a>')
+
+        def get(url, **kw):
+            r = unittest.mock.Mock(status_code=200)
+            if url.endswith(".pdf"):
+                r.headers = {"content-type": "application/pdf"}
+                r.content = b"%PDF-fake"
+                return r
+            r.headers = {"content-type": "text/html; charset=utf-8"}
+            r.text = (home if url == "https://bar.example/"
+                      else '<a href="/uploads/HH.pdf">Happy Hour Menu</a>')
+            return r
+
+        session = unittest.mock.Mock(get=get)
+        with unittest.mock.patch.object(crawl_sites, "allowed", lambda u, c: True), \
+                unittest.mock.patch.object(crawl_sites, "DELAY", 0), \
+                unittest.mock.patch.object(crawl_sites, "pdf_text", lambda b: "WINGS $9"):
+            pages, _ = crawl_one(session, {"website": "https://bar.example/"}, {})
+
+        urls = [p["url"] for p in pages]
+        html_pages = [u for u in urls if not u.endswith(".pdf")]
+        self.assertEqual(len(html_pages), crawl_sites.PAGE_CAP, html_pages)
+        self.assertLessEqual(len([u for u in urls if u.endswith(".pdf")]),
+                             crawl_sites.DOC_CAP)
+
+    def test_a_priced_menu_line_counts_only_inside_a_linked_menu(self):
+        # 'CAJUN NACHOS $8' names no deal word, so DEAL_RE will never match it --
+        # and widening DEAL_RE would let every dinner entree on every site
+        # through. The looser rule is scoped to the document the venue itself
+        # called its happy hour.
+        page = "CAJUN NACHOS $8\nFILET MIGNON $44"
+        self.assertEqual(quotes(page), [])
+        self.assertIn("CAJUN NACHOS $8", quotes(page, menu_doc=True))
+
     def test_registrable_domain_ignores_subdomains_and_ports(self):
         self.assertEqual(registrable("locations.pjspub.com"), "pjspub.com")
         self.assertEqual(registrable("www.pjspub.com:443"), "pjspub.com")

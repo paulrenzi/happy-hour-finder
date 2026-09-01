@@ -37,6 +37,7 @@ OUT = os.path.join(REPO, "data", "crawl_hits.json")
 UA = "happy-hour-finder/0.1 (+https://paulrenzi.github.io/happy-hour-finder/)"
 DELAY = 2.0       # seconds between requests to the same host
 PAGE_CAP = 4      # homepage + up to three promising links
+DOC_CAP = 2       # menu PDFs a happy-hour page links, budgeted separately
 TIMEOUT = 20
 
 # Phase 0 found the deal is as often on a /specials or /menu page as the home
@@ -57,6 +58,10 @@ DEAL_RE = re.compile(
 TIME_CONTEXT_RE = re.compile(r"\d{1,2}(?::\d\d)?\s*(?:am|pm|a\.m\.|p\.m\.|[ap]\b)", re.I)
 CONTEXT_RE = re.compile(
     TIME_CONTEXT_RE.pattern + r"|\$\d|mon|tue|wed|thu|fri|sat|sun", re.I)
+# A priced line on a menu document: a name, then a price. Only ever applied to a
+# document a happy-hour page linked as its menu -- on an ordinary page this
+# matches the dinner menu, which is why it is not part of DEAL_RE.
+MENU_ITEM_RE = re.compile(r"[A-Za-z].{2,60}?\s\$\s?\d{1,3}(?:\.\d\d)?\s*$")
 
 TAG_RE = re.compile(r"<(script|style|noscript)[^>]*>.*?</\1>", re.S | re.I)
 MARKUP_RE = re.compile(r"<[^>]+>")
@@ -75,12 +80,23 @@ def visible_text(html):
     return "\n".join(ln for ln in lines if ln)
 
 
-def quotes(text):
-    """The matched lines, plus a neighbour when the match itself has no time."""
+def quotes(text, menu_doc=False):
+    """The matched lines, plus a neighbour when the match itself has no time.
+
+    menu_doc is for a document we reached BECAUSE a happy-hour page linked it as
+    its menu -- the priced item lines are then the point of the document, and
+    DEAL_RE will not match them: 'CAJUN NACHOS $8' names no deal word, and a
+    dollar amount only counts for DEAL_RE when a drink word follows it. Widening
+    DEAL_RE itself would let every dinner entree on every site through. So the
+    looser rule is scoped to the document the venue itself called its happy
+    hour, which is the answer stored on the record rather than guessed at here.
+    """
     lines = text.split("\n")
     out, seen = [], set()
     for i, ln in enumerate(lines):
-        if not DEAL_RE.search(ln) or len(ln) > 400:
+        if not DEAL_RE.search(ln) and not (menu_doc and MENU_ITEM_RE.search(ln)):
+            continue
+        if len(ln) > 400:
             continue
         block = [ln]
         # A heading ('HAPPY HOUR') is frequently its own line, with the window
@@ -104,7 +120,7 @@ def quotes(text):
         if q not in seen:
             seen.add(q)
             out.append(q)
-    return out[:12]
+    return out[: 24 if menu_doc else 12]
 
 
 def robots_for(base, cache):
@@ -334,15 +350,30 @@ def sitemap_links(session, page_url, robots):
 
 def crawl_one(session, venue, robots):
     pages, hits = [], []
-    queue = [venue["website"]]
+    queue = [(venue["website"], 1)]
     fetched = 0
-    while queue and fetched < PAGE_CAP:
-        url = queue.pop(0)
+    docs = 0
+    while queue and (fetched < PAGE_CAP or docs < DOC_CAP):
+        url, depth = queue.pop(0)
+        # A menu document draws on its own budget, not the page budget. Going
+        # one level deeper on the SAME budget just means missing something else,
+        # which is the trade PAGE_CAP was sized against; a PDF gets its own two
+        # slots instead, so the four HTML fetches every venue used to get are
+        # still four. A page slot is only spent when a page slot is available.
+        is_doc = depth > 1 and re.search(r"\.pdf($|\?)", url, re.I)
+        if is_doc:
+            if docs >= DOC_CAP:
+                continue
+        elif fetched >= PAGE_CAP:
+            continue
         if not allowed(url, robots):
             pages.append({"url": url, "result": refusal(url, robots)})
             continue
         time.sleep(DELAY)
-        fetched += 1
+        if is_doc:
+            docs += 1
+        else:
+            fetched += 1
         try:
             html, err = get(session, url)
         except Exception as e:  # noqa: BLE001 -- one dead site must not end the run
@@ -351,12 +382,25 @@ def crawl_one(session, venue, robots):
         if err:
             pages.append({"url": url, "result": err})
             continue
-        found = quotes(visible_text(html))
+        found = quotes(visible_text(html), menu_doc=is_doc)
         pages.append({"url": url, "result": f"ok, {len(found)} quote(s)"})
         for q in found:
             hits.append({"url": url, "quote": q})
-        if fetched == 1:
-            queue = candidate_links(html, url)[: PAGE_CAP - 1]
+
+        # A page we fetched because it said 'happy hour' is the one place a menu
+        # PDF is worth chasing: Black Powder Tavern's hours were read off their
+        # happy-hour page while the items and prices sat in a PDF that page
+        # linked, one hop further in than the crawler ever went. The venue then
+        # looked covered, because it had a card. So a happy-hour page's own PDF
+        # links are followed -- and only those, and only PDFs.
+        if depth > 1 and re.search(r"happy.?hour|special", url, re.I):
+            queued = {u for u, _ in queue}
+            for u in candidate_links(html, url):
+                if re.search(r"\.pdf($|\?)", u, re.I) and u not in queued:
+                    queue.append((u, depth + 1))
+
+        if fetched == 1 and depth == 1:
+            queue = [(u, 2) for u in candidate_links(html, url)[: PAGE_CAP - 1]]
             # The sitemap used to be consulted only when the page linked
             # nothing at all, which missed the commoner shape: a page that
             # links three menus and no happy hour. City Works' King of Prussia
@@ -365,9 +409,10 @@ def crawl_one(session, venue, robots):
             # sitemap unread. Linked pages still go first -- they are better
             # ordered -- and the sitemap only ever returns happy-hour and
             # specials URLs, so this tops up rather than replaces.
-            if not any(re.search(r"happy.?hour|special", u, re.I) for u in queue):
-                extra = [u for u in sitemap_links(session, url, robots)
-                         if u not in queue]
+            if not any(re.search(r"happy.?hour|special", u, re.I) for u, _ in queue):
+                queued = {u for u, _ in queue}
+                extra = [(u, 2) for u in sitemap_links(session, url, robots)
+                         if u not in queued]
                 queue = (extra + queue)[: PAGE_CAP - 1]
     return pages, hits
 
