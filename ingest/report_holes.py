@@ -50,7 +50,7 @@ def is_chrome(quote):
     return sum(1 for w in TAB_WORDS if w in low) >= 3
 
 
-def classify(venue_hits, pages):
+def classify(venue_hits, pages, images=()):
     """Why this venue has a window and no items -- the class of work, not the fix.
 
     Ordered most-specific first. Each name says what to go and look at, and a
@@ -63,6 +63,11 @@ def classify(venue_hits, pages):
             return "robots-refused"
         return "fetch-failed"
     quotes = [h["quote"] for h in venue_hits]
+    # The words are pixels. No parser reaches these and saying 'no price
+    # published' about them is wrong twice: the venue DID publish the menu, and
+    # the work is a vision pass, not a regex.
+    if images and not any(MONEY.search(q) for q in quotes):
+        return "menu-is-a-picture"
     if any(is_chrome(q) for q in quotes):
         return "chrome-only"
     priced = [q for q in quotes if MONEY.search(q)]
@@ -89,8 +94,17 @@ ADVICE = {
     "nothing-but-the-hours": "the hours quote is all we ever got -- likely a JS menu "
                              "or an API. This was The Capital Grille.",
     "no-price-published": "several quotes, no dollar sign anywhere -- the venue may "
-                          "genuinely not publish prices",
+                          "genuinely not publish prices. AUDIT THIS CLASS BEFORE "
+                          "SIZING IT: 24 of 36 turned out to have prices in the raw "
+                          "HTML (2026-09-01)",
+    "menu-is-a-picture": "the venue posted its happy hour as an IMAGE -- the words are "
+                         "pixels and no parser reaches them. This is the vision pass.",
 }
+
+# Why a venue publishes a window and names no item, when somebody has looked and
+# recorded the answer. Same file the build's ratchet reads: a venue in here is
+# accounted for and is reported below the line, never as a miss.
+VERDICTS = os.path.join(REPO, "data", "menu_verdicts.json")
 
 
 def main():
@@ -103,18 +117,26 @@ def main():
     deals = json.load(open(DEALS, encoding="utf-8"))
     by_lid = {v["lid"]: v for v in deals["venues"] if "lid" in v}
 
-    holes, published = {}, 0
+    verdicts = {}
+    if os.path.exists(VERDICTS):
+        verdicts = json.load(open(VERDICTS, encoding="utf-8")).get("venues", {})
+    holes, published, accounted = {}, 0, []
     for lid, v in by_lid.items():
         for deal in v["deals"]:
             published += 1
             if deal.get("items"):
                 continue
             row = hits.get(lid) or {}
-            k = classify(row.get("hits") or [], row.get("pages") or [])
+            if str(lid) in verdicts:
+                accounted.append((v["name"], verdicts[str(lid)].get("verdict", "?")))
+                continue
+            k = classify(row.get("hits") or [], row.get("pages") or [],
+                         row.get("menu_images") or ())
             holes.setdefault(k, []).append((v["name"], v.get("website") or ""))
 
     total = sum(len(x) for x in holes.values())
-    print(f"{total} of {published} published windows name NO item at all\n")
+    print(f"{total} of {published} published windows name NO item at all"
+          f" ({len(accounted)} more are accounted for below)\n")
     for k, rows in sorted(holes.items(), key=lambda kv: -len(kv[1])):
         if args.klass and k != args.klass:
             continue
@@ -126,6 +148,13 @@ def main():
         if len(rows) > len(shown):
             print(f"     ... and {len(rows) - len(shown)} more "
                   f"(--class {k} for all of them)")
+        print()
+
+    if accounted and not args.klass:
+        print(f"== accounted for  ({len(accounted)} venue(s))")
+        print("   somebody looked and recorded why -- data/menu_verdicts.json")
+        for name, why in sorted(accounted)[: args.limit]:
+            print(f"     {name[:42]:44s} {why}")
         print()
 
 
