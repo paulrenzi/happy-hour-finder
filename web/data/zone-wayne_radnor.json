@@ -57,7 +57,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-31",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -334,7 +334,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -390,19 +390,19 @@
      ],
      "items": [
       {
-       "category": "well",
-       "label": "well drinks",
-       "price_usd": 1.0
+       "category": "cocktail",
+       "label": "Flip's House Margaritas",
+       "price_usd": 6.0
       },
       {
        "category": "well",
-       "label": "well drinks",
+       "label": "Well drinks from 8 to 11pm",
        "price_usd": 4.0
       },
       {
-       "category": "cocktail",
-       "label": "house margaritas",
-       "price_usd": 6.0
+       "category": "well",
+       "label": "well drinks",
+       "price_usd": 1.0
       }
      ],
      "confidence": "unconfirmed",
@@ -412,8 +412,7 @@
       "kind": "venue_site",
       "url": "https://www.flipandbaileys.com/hold-happ",
       "quote": "Happy Hour / Monday - Friday / 5pm-7pm / $2 off all Drinks & Appetizers"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   },
@@ -466,20 +465,44 @@
      ],
      "items": [
       {
-       "category": "wine",
-       "label": "house red & white",
+       "category": "food",
+       "label": "BONELESS FIRE WINGS",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "TRUFFLE FRIES",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "WARM L ASCALA PRETZEL",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "CHEESE PIZZA",
+       "price_usd": 9.0
+      },
+      {
+       "category": "cocktail",
+       "label": "SPRITZ",
        "price_usd": 7.0
+      },
+      {
+       "category": "wine",
+       "label": "SANGRIA",
+       "price_usd": 9.0
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://lascalasfire.com/villanova/menus/happy-hour",
       "quote": "HAPPY HOUR / MON-FRI 3PM-6PM / HOUSE RED & WHITE $7"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   },
@@ -548,7 +571,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -701,6 +724,11 @@
        "category": "draft",
        "label": "beer",
        "price_usd": 6.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "bottles of wine with the purc",
+       "discount_pct": 50
       },
       {
        "category": "bottle_can",

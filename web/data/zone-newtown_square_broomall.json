@@ -165,9 +165,9 @@
      ],
      "items": [
       {
-       "category": "wine",
-       "discount_pct": 50.0,
-       "label": "bottles of wine"
+       "category": "bottle_can",
+       "label": "ALL bottles of wine during ou",
+       "discount_pct": 50
       }
      ],
      "confidence": "unconfirmed",
@@ -177,8 +177,7 @@
       "kind": "venue_site",
       "url": "https://www.laportarestaurant.com/daily-specials",
       "quote": "HAPPY HOUR / Monday - Friday 4 pm - 6 pm / (Closed Tuesday)"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   },
@@ -231,20 +230,44 @@
      ],
      "items": [
       {
+       "category": "food",
+       "label": "BONELESS FIRE WINGS",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "TRUFFLE FRIES",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "WARM L ASCALA PRETZEL",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "CHEESE PIZZA",
+       "price_usd": 9.0
+      },
+      {
        "category": "cocktail",
-       "label": "Aperol Spritz",
+       "label": "APEROL SPRITZ",
+       "price_usd": 9.0
+      },
+      {
+       "category": "cocktail",
+       "label": "LIMONCELLO SPRITZ",
        "price_usd": 9.0
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://lascalasfire.com/newtown-square/menus/happy-hour",
       "quote": "HAPPY HOUR / MON-FRI 3PM-6PM / APEROL SPRITZ $9"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   }

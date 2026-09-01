@@ -204,7 +204,7 @@
       },
       {
        "category": "draft",
-       "label": "off drafts Happy Hour",
+       "label": "off drafts",
        "price_usd": 1.0
       }
      ],
@@ -313,17 +313,17 @@
      "items": [
       {
        "category": "draft",
-       "label": "beer",
+       "label": "Beer",
        "price_usd": 5.0
       },
       {
        "category": "wine",
-       "label": "wine",
+       "label": "Wine",
        "price_usd": 6.0
       },
       {
        "category": "cocktail",
-       "label": "cocktails",
+       "label": "Cocktails",
        "price_usd": 7.0
       }
      ],
@@ -334,8 +334,7 @@
       "kind": "venue_site",
       "url": "https://percyphl.com/",
       "quote": "HAPPY HOUR / THURS\u2013FRI\u2013SAT / 3PM\u20136PM"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   },
@@ -383,7 +382,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-31",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -443,12 +442,12 @@
      "items": [
       {
        "category": "draft",
-       "label": "drafts",
+       "label": "off all drafts",
        "price_usd": 1.0
       },
       {
        "category": "wine",
-       "label": "wine",
+       "label": "off wine",
        "price_usd": 3.0
       }
      ],
@@ -459,8 +458,7 @@
       "kind": "venue_site",
       "url": "https://www.wissahickonbrew.com/kensington/",
       "quote": "DINNER & HAPPY HOUR / Mon-Fri, 4-6pm / smash burger, fries, and a beer"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   }

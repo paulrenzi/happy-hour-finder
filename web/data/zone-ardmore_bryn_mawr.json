@@ -52,7 +52,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -243,7 +243,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-31",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -351,12 +351,12 @@
      "type": "happy_hour",
      "windows": [
       {
-       "dow": 1,
+       "dow": 3,
        "start": "16:30",
        "end": "18:30"
       },
       {
-       "dow": 3,
+       "dow": 4,
        "start": "16:30",
        "end": "18:30"
       },
@@ -373,12 +373,12 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://thepullmanrestaurant.com/bryn-mawr-main-line-the-pullman-restaurant-and-bar-happy-hours-specials",
-      "quote": "Happy Hour / 04:30 PM - 06:30 PM / Wednesday August 12th"
+      "quote": "Happy Hour / 04:30 PM - 06:30 PM / Wednesday September 2nd"
      }
     }
    ]

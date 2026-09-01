@@ -99,7 +99,108 @@ def visible_text(html):
     return "\n".join(ln for ln in lines if ln)
 
 
-def quotes(text, menu_doc=False, hh_page=False):
+# The page's own heading, which is what unlocks the looser priced-line rules on
+# a page whose URL says nothing. See hh_sections().
+HH_HEADING_RE = re.compile(r"happy\s*hour|social hour|power hour|bar bites", re.I)
+# A heading that divides a happy hour up rather than ending it. CO-OP's happy
+# hour is an <h2> and so are its own 'Food Specials' and 'Drink Specials', so
+# rank cannot tell a subdivision from the next menu -- the WORD can. Closing on
+# the next heading of any rank closed CO-OP's section on its own first
+# subdivision and harvested one line; this list is what may appear inside.
+# Anything not on it closes the section, so an unrecognised heading fails the
+# section SHORT, which is the safe direction: a section that runs on does not
+# add noise, it publishes a wrong price.
+SUBDIVISION_RE = re.compile(
+    r"^(?:food|drink|bar|beer|wine|cocktail|liquor|spirit|snack|bite|share|"
+    r"small|sip|draft|draught|bottle|can|shot|feature|select|our)\b|"
+    r"\b(?:specials?|bites|snacks|shareables?|small plates|by the glass)\s*$",
+    re.I)
+HEADING_TAG_RE = re.compile(r"<h[1-6][^>]*>(.*?)</h[1-6]>", re.S | re.I)
+# A section with no heading below it has nothing to close it, so it is capped.
+# Chili's runs 28 lines from its heading to the last price; CO-OP's is 21. 30
+# clears both and still stops well short of a dinner menu.
+SECTION_CAP = 30
+# A fallback heading is a LINE, not a tag, so it has to look like one: short,
+# few words, no price, and not a sentence. 'Join us for the best HAPPY HOUR in
+# town, every day!' is prose and must not open a section -- prose naming the
+# happy hour is on every restaurant page on the internet.
+FALLBACK_MAX_CHARS = 40
+FALLBACK_MAX_WORDS = 5
+# What closes a fallback section, where there are no marked headings to close on
+# at all. Chili's location page ends its happy-hour block with 'Address'.
+MEAL_HEADING_RE = re.compile(
+    r"^(?:.{0,20}\b)?(?:lunch|dinner|brunch|breakfast|dessert|kid|entree|"
+    r"entrée|main|catering|address|location|hours of operation|contact)\b", re.I)
+
+
+def _norm(x):
+    return WS_RE.sub(" ", x).strip().lower()
+
+
+def hh_sections(html, text):
+    """Line indices of `text` that sit inside a happy-hour section of `html`.
+
+    This replaces the URL as the containment key. `hh_page` asked whether the
+    LINK that reached the page named the happy hour, and 65 of the 84 priceless
+    board cards came from a page where the answer was no while the prices sat on
+    it in plain text: Chili's puts its happy hour on the LOCATION page, and
+    CO-OP puts it a third of the way down /menus.
+
+    The containment is not weakened, only re-keyed. A section opens at a heading
+    that names the happy hour and closes at the next heading that names anything
+    else, so the rest of the menu is as far out of reach as it was before --
+    which matters more than it sounds, because CO-OP charges $8 for the deviled
+    eggs at happy hour and $12 for the same dish on the Mid Day menu directly
+    above it. A section that runs on does not add noise, it publishes a WRONG
+    PRICE, and that is the failure this function exists to prevent.
+
+    A heading is an <h1>-<h6> when the page has any. When a page has none at all
+    -- Chili's location pages are divs from top to bottom -- a short standalone
+    line falls back into the role, and the section is capped rather than closed
+    because there is no next heading to close it on. The fallback is refused the
+    moment a page proves it marks its headings up: otherwise El Vez's nav strip,
+    which lists 'Happy Hour' beside Lunch and Dinner, would open a section over
+    the whole dinner menu. On a nav link the failure mode has to be an empty
+    section, never a wrong one.
+    """
+    lines = text.split("\n")
+    marked = {_norm(MARKUP_RE.sub(" ", html_mod.unescape(m.group(1))))
+              for m in HEADING_TAG_RE.finditer(html)}
+    marked.discard("")
+    heads = [i for i, ln in enumerate(lines) if _norm(ln) in marked]
+
+    if heads:
+        opens = [i for i in heads if HH_HEADING_RE.search(lines[i])]
+        # A subdivision of the happy hour does not end it; anything else does.
+        closes = [i for i in heads
+                  if not SUBDIVISION_RE.search(lines[i].strip())
+                  and not HH_HEADING_RE.search(lines[i])]
+    else:
+        def headinglike(ln):
+            return (len(ln) <= FALLBACK_MAX_CHARS and "$" not in ln
+                    and len(ln.split()) <= FALLBACK_MAX_WORDS
+                    and not ln.rstrip().endswith((".", "!", ",", ":", ";")))
+        opens = [i for i, ln in enumerate(lines)
+                 if headinglike(ln) and HH_HEADING_RE.search(ln)]
+        closes = [i for i, ln in enumerate(lines)
+                  if headinglike(ln) and MEAL_HEADING_RE.search(ln)]
+
+    # Two happy-hour headings can nest: CO-OP's page-level 'Bar Bites & Happy
+    # Hour' contains both a 'Mid Day' menu and the happy hour proper. The outer
+    # one is a title, not a section -- the inner one is the venue's own, more
+    # specific word for the same thing, so it wins and the outer is dropped.
+    spans = {}
+    for i in opens:
+        spans[i] = min([j for j in closes if j > i] + [i + 1 + SECTION_CAP, len(lines)])
+    out = set()
+    for i, stop in spans.items():
+        if any(i < j < stop for j in spans):
+            continue
+        out |= set(range(i + 1, stop))
+    return out
+
+
+def quotes(text, menu_doc=False, hh_page=False, hh_lines=frozenset()):
     """The matched lines, plus a neighbour when the match itself has no time.
 
     menu_doc is for a document we reached BECAUSE a happy-hour page linked it as
@@ -118,12 +219,18 @@ def quotes(text, menu_doc=False, hh_page=False):
     price at all, and a sample showed the commonest reason was not that the page
     was silent -- it was that the price and the item were on separate lines and
     each was worthless alone.
+
+    hh_lines is the same allowance again, granted per LINE instead of per page,
+    to the lines a happy-hour HEADING owns -- see hh_sections(). The URL key
+    could only ever answer for a whole page, and most venues do not give their
+    happy hour a page.
     """
     lines = text.split("\n")
     out, seen = [], set()
     for i, ln in enumerate(lines):
-        loose = menu_doc or hh_page
-        bare = hh_page and BARE_PRICE_RE.match(ln)
+        inside = i in hh_lines
+        loose = menu_doc or hh_page or inside
+        bare = (hh_page or inside) and BARE_PRICE_RE.match(ln)
         if (not DEAL_RE.search(ln) and not bare
                 and not (loose and MENU_ITEM_RE.search(ln))):
             continue
@@ -163,7 +270,7 @@ def quotes(text, menu_doc=False, hh_page=False):
         if q not in seen:
             seen.add(q)
             out.append(q)
-    return out[: 24 if (menu_doc or hh_page) else 12]
+    return out[: 24 if (menu_doc or hh_page or hh_lines) else 12]
 
 
 def menu_images(html, page_url):
@@ -454,7 +561,13 @@ def crawl_one(session, venue, robots):
         # rules -- the same test used a few lines below to decide a menu PDF is
         # worth chasing, and the same containment.
         on_hh = bool(depth > 1 and re.search(r"happy.?hour|special", url, re.I))
-        found = quotes(visible_text(html), menu_doc=is_doc, hh_page=on_hh)
+        text = visible_text(html)
+        # The URL is no longer the only key. A page that does not name the happy
+        # hour in its address very often names it in a heading, and that heading
+        # is the venue's own word for the section beneath it -- the same claim
+        # the URL was standing in for, read off the page rather than the link.
+        found = quotes(text, menu_doc=is_doc, hh_page=on_hh,
+                       hh_lines=frozenset() if is_doc else hh_sections(html, text))
         pages.append({"url": url, "result": f"ok, {len(found)} quote(s)"})
         for q in found:
             hits.append({"url": url, "quote": q})
@@ -493,6 +606,23 @@ def crawl_one(session, venue, robots):
     return pages, hits, images[:IMG_CAP]
 
 
+def reached_nothing(pages):
+    """True when a crawl of a venue failed to READ a single page.
+
+    A re-crawl overwrites whatever it finds, so a venue whose host happened to
+    be down at that moment had its good record replaced by an empty one: The
+    Stray Dog Tavern held eight quotes and a published happy hour, and one
+    ConnectTimeout on 2026-09-01 dropped it off the board entirely. Nothing in
+    the record said so -- 'hits: []' reads exactly like a venue that publishes
+    nothing, which is why the loss was invisible until the board count moved.
+
+    So a crawl that read no page is not an answer about the venue, it is an
+    answer about the network, and the caller keeps what it already had.
+    """
+    return bool(pages) and all(str(pg.get("result", "")).startswith("error:")
+                               for pg in pages)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0, help="stop after N venues")
@@ -502,7 +632,18 @@ def main():
     # to, and recrawling all 800 to reach the 66 on a sibling host would cost
     # hours of somebody else's bandwidth for pages we already hold.
     ap.add_argument("--match", help="only venues whose website matches this regex")
+    # Re-keying the price containment on the page's own heading only changes the
+    # answer for the venues that HAVE a page we already reached and did not
+    # harvest. Naming them by licence is the only honest scope: they share no
+    # zone and no domain pattern, so --zone and --match cannot express the set,
+    # and re-crawling all 849 to reach 130 spends other people's bandwidth on
+    # pages whose answer we already hold.
+    ap.add_argument("--lids", help="file of licence ids, one per line")
     args = ap.parse_args()
+
+    only = None
+    if args.lids:
+        only = {ln.strip() for ln in open(args.lids, encoding="utf-8") if ln.strip()}
 
     import requests
 
@@ -514,6 +655,7 @@ def main():
     todo = [(lid, v) for lid, v in sorted(sites.items())
             if (not args.zone or v["zone_id"] == args.zone)
             and (not args.match or re.search(args.match, v["website"], re.I))
+            and (only is None or lid in only)
             and (args.recrawl or lid not in out)]
     if args.limit:
         todo = todo[: args.limit]
@@ -523,6 +665,11 @@ def main():
         pages, hits, images = crawl_one(session, v, robots)
         stats["venues crawled"] += 1
         stats["WITH A DEAL QUOTE" if hits else "nothing published"] += 1
+        if reached_nothing(pages) and out.get(lid, {}).get("hits"):
+            stats["KEPT (host unreachable this run)"] += 1
+            print(f"[{n}/{len(todo)}] {(v['osm_name'] or v['name'])[:38]:<40} "
+                  "-- unreachable, keeping what we hold")
+            continue
         out[lid] = {
             "name": v["name"],
             "osm_name": v["osm_name"],
@@ -541,8 +688,9 @@ def main():
         print(f"[{n}/{len(todo)}] {(v['osm_name'] or v['name'])[:38]:<40} {flag}")
         # Written every venue: a crawl is slow and interrupting it must not
         # throw away the pages already paid for in wall-clock and politeness.
-        with open(OUT, "w", encoding="utf-8") as fh:
+        with open(OUT + ".new", "w", encoding="utf-8") as fh:
             json.dump(out, fh, indent=1, sort_keys=True)
+        os.replace(OUT + ".new", OUT)
 
     print()
     for k, c in stats.most_common():

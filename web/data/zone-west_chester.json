@@ -52,7 +52,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -368,6 +368,21 @@
        "category": "draft",
        "label": "Domestic Drafts",
        "price_usd": 4.0
+      },
+      {
+       "category": "food",
+       "label": "Tacos &",
+       "price_usd": 2.0
+      },
+      {
+       "category": "well",
+       "label": "Well Drinks 8-12",
+       "price_usd": 3.0
+      },
+      {
+       "category": "well",
+       "label": "Well Drinks 10-12 Happy Hour",
+       "price_usd": 3.0
       }
      ],
      "confidence": "unconfirmed",
@@ -421,12 +436,12 @@
      "items": [
       {
        "category": "food",
-       "label": "tacos",
+       "label": "Tacos &",
        "price_usd": 5.0
       },
       {
        "category": "cocktail",
-       "label": "margaritas",
+       "label": "Margaritas",
        "price_usd": 6.0
       }
      ],
@@ -437,8 +452,7 @@
       "kind": "venue_site",
       "url": "https://www.stoveandtap-wc.com/specials",
       "quote": "Food & Drink Specials / 5:00 PM - 7:00 PM / WEDNESDAY"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   },
@@ -491,7 +505,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-31",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",

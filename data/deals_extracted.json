@@ -1,6 +1,6 @@
 {
  "_comment": "Machine-extracted from data/crawl_hits.json by ingest/extract_deals.py. Every deal carries the quote it was read from. Hand-verified deals live in deals_seed.json.",
- "as_of": "2026-08-31",
+ "as_of": "2026-09-01",
  "venues": [
   {
    "id": "lansdale-tavern-lansdale",
@@ -59,7 +59,7 @@
       },
       {
        "category": "draft",
-       "label": "off draft beer",
+       "label": "off draft beer Late Night Men",
        "price_usd": 1.0
       }
      ],
@@ -108,7 +108,18 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "OFF Draft Beer",
+       "price_usd": 2.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Select Cocktails",
+       "price_usd": 6.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -161,7 +172,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -212,7 +223,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -243,7 +254,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-31",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -292,9 +303,40 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "BONELESS FIRE WINGS",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "TRUFFLE FRIES",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "WARM L ASCALA PRETZEL",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "CHEESE PIZZA",
+       "price_usd": 9.0
+      },
+      {
+       "category": "cocktail",
+       "label": "SPRITZ",
+       "price_usd": 7.0
+      },
+      {
+       "category": "wine",
+       "label": "SANGRIA",
+       "price_usd": 9.0
+      }
+     ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -361,7 +403,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-31",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -479,7 +521,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-31",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -525,7 +567,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-31",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -576,7 +618,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -600,12 +642,12 @@
      "type": "happy_hour",
      "windows": [
       {
-       "dow": 1,
+       "dow": 3,
        "start": "16:30",
        "end": "18:30"
       },
       {
-       "dow": 3,
+       "dow": 4,
        "start": "16:30",
        "end": "18:30"
       },
@@ -622,12 +664,12 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://thepullmanrestaurant.com/bryn-mawr-main-line-the-pullman-restaurant-and-bar-happy-hours-specials",
-      "quote": "Happy Hour / 04:30 PM - 06:30 PM / Wednesday August 12th"
+      "quote": "Happy Hour / 04:30 PM - 06:30 PM / Wednesday September 2nd"
      }
     }
    ]
@@ -673,12 +715,12 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://toptomatophilly.com",
-      "quote": "Happy Hour Header - Join us for $5 Happy Hour, Mon-Fri | 4:30-6:30pm!"
+      "quote": "View Late Night Menu / Late Night Kitchen Header - Late Night Kitchen til 12am Fri & Saturday! / Happy Hour Header - Join us for $5 Happy Hour, Mon-Fri | 4:30-6:30pm!"
      }
     }
    ]
@@ -724,7 +766,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -775,7 +817,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -811,7 +853,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-31",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -870,7 +912,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Flagship Other Half Beers",
+       "price_usd": 5.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -918,7 +966,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -964,7 +1012,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1010,7 +1058,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1120,9 +1168,20 @@
        "end": "20:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Cigar City Jai Alai IPA",
+       "price_usd": 9.0
+      },
+      {
+       "category": "draft",
+       "label": "Mahou Lager",
+       "price_usd": 7.0
+      }
+     ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1173,7 +1232,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-31",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1234,7 +1293,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-31",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1275,7 +1334,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1326,7 +1385,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1387,7 +1446,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1446,9 +1505,15 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "bottle_can",
+       "label": "bottles of wine Happy hour da",
+       "discount_pct": 50
+      }
+     ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1484,7 +1549,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-31",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1553,6 +1618,11 @@
        "category": "cocktail",
        "label": "Craft Cocktails",
        "price_usd": 10.0
+      },
+      {
+       "category": "wine",
+       "label": "Wine",
+       "price_usd": 6.0
       }
      ],
      "confidence": "unconfirmed",
@@ -1612,7 +1682,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-31",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1673,7 +1743,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1709,7 +1779,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-31",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1760,7 +1830,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1819,9 +1889,15 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "Oysters & clams",
+       "discount_pct": 50
+      }
+     ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1872,7 +1948,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1908,7 +1984,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-31",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1957,9 +2033,40 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "BONELESS FIRE WINGS",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "TRUFFLE FRIES",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "WARM L ASCALA PRETZEL",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "CHEESE PIZZA",
+       "price_usd": 9.0
+      },
+      {
+       "category": "cocktail",
+       "label": "APEROL SPRITZ",
+       "price_usd": 9.0
+      },
+      {
+       "category": "cocktail",
+       "label": "LIMONCELLO SPRITZ",
+       "price_usd": 9.0
+      }
+     ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -2044,7 +2151,18 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "off all drafts",
+       "price_usd": 1.0
+      },
+      {
+       "category": "wine",
+       "label": "off wine",
+       "price_usd": 3.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
@@ -2105,7 +2223,28 @@
        "end": "14:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "off all beer",
+       "price_usd": 2.0
+      },
+      {
+       "category": "shot",
+       "label": "Green Tea Shots University Ci",
+       "price_usd": 3.0
+      },
+      {
+       "category": "draft",
+       "label": "off Draft Beer",
+       "price_usd": 2.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Margaritas - Strawberry",
+       "price_usd": 5.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -2158,7 +2297,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -2209,7 +2348,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-31",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -2243,7 +2382,23 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Beer",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "Wine",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Cocktails",
+       "price_usd": 7.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
@@ -2299,7 +2454,13 @@
        "end": "22:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Draft Beer",
+       "price_usd": 4.5
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -2378,6 +2539,11 @@
       },
       {
        "category": "bottle_can",
+       "label": "bottles of wine with the purc",
+       "discount_pct": 50
+      },
+      {
+       "category": "bottle_can",
        "label": "bottles of wine",
        "discount_pct": 50
       }
@@ -2434,7 +2600,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -2488,6 +2654,21 @@
        "category": "draft",
        "label": "Domestic Drafts",
        "price_usd": 4.0
+      },
+      {
+       "category": "food",
+       "label": "Tacos &",
+       "price_usd": 2.0
+      },
+      {
+       "category": "well",
+       "label": "Well Drinks 8-12",
+       "price_usd": 3.0
+      },
+      {
+       "category": "well",
+       "label": "Well Drinks 10-12 Happy Hour",
+       "price_usd": 3.0
       }
      ],
      "confidence": "unconfirmed",
@@ -2522,7 +2703,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -2573,7 +2754,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -2617,7 +2798,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "Oysters",
+       "price_usd": 2.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
@@ -2665,7 +2852,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-31",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -3079,6 +3266,11 @@
      ],
      "items": [
       {
+       "category": "cocktail",
+       "label": "Margaritas",
+       "price_usd": 4.0
+      },
+      {
        "category": "food",
        "label": "Appetizers",
        "price_usd": 5.99
@@ -3364,6 +3556,16 @@
       }
      ],
      "items": [
+      {
+       "category": "food",
+       "label": "Tacos &",
+       "price_usd": 4.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Margaritas Weekday Happy Hour",
+       "price_usd": 7.0
+      },
       {
        "category": "draft",
        "label": "off drafts",
@@ -3779,7 +3981,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "wine",
+       "label": "Wines View Happy Hour Menu Da",
+       "price_usd": 6.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -4295,7 +4503,18 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "wine",
+       "label": "Wine",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "label": "Apps",
+       "price_usd": 7.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -4474,7 +4693,23 @@
        "end": "19:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "Flip's House Margaritas",
+       "price_usd": 6.0
+      },
+      {
+       "category": "well",
+       "label": "Well drinks from 8 to 11pm",
+       "price_usd": 4.0
+      },
+      {
+       "category": "well",
+       "label": "well drinks",
+       "price_usd": 1.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -4946,12 +5181,17 @@
      "items": [
       {
        "category": "cocktail",
-       "label": "Margaritas Join us for the be",
+       "label": "Margaritas",
+       "price_usd": 7.0
+      },
+      {
+       "category": "wine",
+       "label": "Wines Join us for the best Ha",
        "price_usd": 7.0
       },
       {
        "category": "cocktail",
-       "label": "Margaritas",
+       "label": "Margaritas Join us for the be",
        "price_usd": 7.0
       }
      ],
@@ -5025,6 +5265,11 @@
        "category": "draft",
        "label": "beer",
        "price_usd": 6.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "bottles of wine with the purc",
+       "discount_pct": 50
       },
       {
        "category": "bottle_can",
@@ -5419,7 +5664,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "Margaritas All Day",
+       "price_usd": 5.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -5618,7 +5869,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "bottle_can",
+       "label": "ALL bottles of wine during ou",
+       "discount_pct": 50
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
@@ -5674,7 +5931,38 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Craft Pints",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "Oysters",
+       "price_usd": 1.0
+      },
+      {
+       "category": "draft",
+       "label": "WB Pints",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "House Wine",
+       "price_usd": 7.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Cocktails",
+       "price_usd": 7.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Cocktails Clock out",
+       "price_usd": 7.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -5730,7 +6018,38 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Craft Pints",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "Oysters",
+       "price_usd": 1.0
+      },
+      {
+       "category": "draft",
+       "label": "WB Pints",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "House Wine",
+       "price_usd": 7.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Cocktails",
+       "price_usd": 7.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Cocktails Clock out",
+       "price_usd": 7.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -5781,7 +6100,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "off pints during Happy Hour",
+       "price_usd": 1.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -6470,11 +6795,6 @@
        "category": "food",
        "label": "oysters during happy hour",
        "price_usd": 2.0
-      },
-      {
-       "category": "cocktail",
-       "label": "off Specialty Cocktails and",
-       "price_usd": 5.0
       }
      ],
      "confidence": "unconfirmed",
@@ -7278,7 +7598,28 @@
        "end": "18:30"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Beers",
+       "price_usd": 6.0
+      },
+      {
+       "category": "wine",
+       "label": "South American Wines and",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Brazilian-Inspired Cocktails",
+       "price_usd": 10.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "South American bottles of win",
+       "discount_pct": 50
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -7373,6 +7714,21 @@
      "items": [
       {
        "category": "draft",
+       "label": "off drafts",
+       "price_usd": 2.0
+      },
+      {
+       "category": "wine",
+       "label": "house wine",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "label": "bar bites Weekend Happy Hour",
+       "price_usd": 7.0
+      },
+      {
+       "category": "draft",
        "label": "Kenwood Lager",
        "price_usd": 4.0
       },
@@ -7437,6 +7793,16 @@
        "category": "food",
        "label": "Small Plates",
        "price_usd": 10.0
+      },
+      {
+       "category": "draft",
+       "label": "Select Beers Half Priced Bott",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "Bottles Every Sunday",
+       "discount_pct": 50
       }
      ],
      "confidence": "unconfirmed",
@@ -7870,7 +8236,7 @@
       },
       {
        "category": "draft",
-       "label": "off drafts Happy Hour",
+       "label": "off drafts",
        "price_usd": 1.0
       }
      ],
@@ -7975,7 +8341,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "flat bread Cocktails Beer Win",
+       "discount_pct": 50
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
@@ -8139,6 +8511,11 @@
       }
      ],
      "items": [
+      {
+       "category": "food",
+       "label": "HAPPY HOUR BITES",
+       "price_usd": 5.0
+      },
       {
        "category": "food",
        "label": "Happy Hour Bites 5-6 PM Monda",
@@ -8788,7 +9165,18 @@
        "end": "19:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "Tacos &",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Margaritas",
+       "price_usd": 6.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -8837,8 +9225,13 @@
      "items": [
       {
        "category": "draft",
-       "label": "off Draught Beers Cannery Hap",
+       "label": "off Draught Beers",
        "price_usd": 1.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Cocktail of the Week Cannery",
+       "price_usd": 10.0
       }
      ],
      "confidence": "unconfirmed",
@@ -8924,7 +9317,7 @@
       },
       {
        "category": "bottle_can",
-       "label": "bottles of wine",
+       "label": "bottles of wine with the purc",
        "discount_pct": 50
       }
      ],

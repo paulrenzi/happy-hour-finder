@@ -62,20 +62,19 @@
      ],
      "items": [
       {
-       "category": "wine",
-       "discount_pct": 50.0,
-       "label": "bottles of wine"
+       "category": "bottle_can",
+       "label": "bottles of wine Happy hour da",
+       "discount_pct": 50
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://rosemaryrp.com/",
       "quote": "HAPPY HOUR / Daily: 4\u20136 PM / Late Night: Fri\u2013Sat 9\u201311 PM"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   }

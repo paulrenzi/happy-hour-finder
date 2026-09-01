@@ -121,6 +121,28 @@ NOUNS = [
 ]
 
 
+def items_from_hits(hits, lead_url):
+    """The priced items for a deal, from every quote entitled to contribute one.
+
+    Until now this was fed only the quotes that state a SCHEDULE, because those
+    are the quotes that become windows. But a price line almost never states a
+    schedule: the venue prints its hours once, at the top, and the prices under
+    them. Paladar's '$4.50 Draft Beer' was crawled, stored in crawl_hits.json
+    and then silently dropped for exactly that reason -- and 59 of the 146
+    priceless venues were in the same position, with the price already on disk.
+
+    So a quote also contributes when it came from the SAME PAGE as the schedule
+    we published. That page is the one the venue itself put its happy hour on,
+    which is the argument the URL key always made; a price from any other page
+    is the dinner menu and is still refused. The quote had to clear the crawl's
+    own containment before it could be stored at all, so this widens which
+    stored quotes are read, never what may be stored.
+    """
+    text = " ".join(h["quote"] for h in hits
+                    if h["url"] == lead_url or windows_from(h["quote"]))
+    return items_in(text)
+
+
 def days_in(text):
     """The set of weekday numbers a fragment names, 1=Mon..7=Sun."""
     if EVERYDAY_RE.search(text):
@@ -455,7 +477,7 @@ def main():
         deal = {
             "type": "happy_hour",
             "windows": windows,
-            "items": items_in(" ".join(c[0]["quote"] for c in cands)),
+            "items": items_from_hits(v["hits"], lead["url"]),
             # A regex read this off a page nobody checked. 'likely' is what a
             # person reading the same page earns; this earns the tier below it.
             "confidence": "unconfirmed",

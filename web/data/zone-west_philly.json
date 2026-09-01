@@ -48,7 +48,7 @@
      "items": [
       {
        "category": "food",
-       "label": "oysters",
+       "label": "Oysters",
        "price_usd": 2.0
       }
      ],
@@ -59,8 +59,7 @@
       "kind": "venue_site",
       "url": "https://oysterhousephilly.com",
       "quote": "Join us for Center City's Best Happy Hour / 4-6 pm Tuesday - Friday"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   }

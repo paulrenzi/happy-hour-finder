@@ -230,7 +230,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-31",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -349,9 +349,9 @@
      ],
      "items": [
       {
-       "category": "food",
-       "discount_pct": 50.0,
-       "label": "flat bread"
+       "category": "draft",
+       "label": "flat bread Cocktails Beer Win",
+       "discount_pct": 50
       }
      ],
      "confidence": "unconfirmed",
@@ -361,8 +361,7 @@
       "kind": "venue_site",
       "url": "https://www.chophousegrille.com/happy-hour",
       "quote": "happy hour / Monday - Friday 4 pm - 6pm. Available in bar area only"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   },
@@ -688,7 +687,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-31",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -746,6 +745,16 @@
       }
      ],
      "items": [
+      {
+       "category": "food",
+       "label": "Tacos &",
+       "price_usd": 4.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Margaritas Weekday Happy Hour",
+       "price_usd": 7.0
+      },
       {
        "category": "draft",
        "label": "off drafts",
@@ -830,6 +839,11 @@
        "category": "cocktail",
        "label": "Craft Cocktails",
        "price_usd": 10.0
+      },
+      {
+       "category": "wine",
+       "label": "Wine",
+       "price_usd": 6.0
       }
      ],
      "confidence": "unconfirmed",

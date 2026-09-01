@@ -38,6 +38,21 @@
      "items": [
       {
        "category": "draft",
+       "label": "off drafts",
+       "price_usd": 2.0
+      },
+      {
+       "category": "wine",
+       "label": "house wine",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "label": "bar bites Weekend Happy Hour",
+       "price_usd": 7.0
+      },
+      {
+       "category": "draft",
        "label": "Kenwood Lager",
        "price_usd": 4.0
       },
@@ -229,6 +244,11 @@
       }
      ],
      "items": [
+      {
+       "category": "food",
+       "label": "HAPPY HOUR BITES",
+       "price_usd": 5.0
+      },
       {
        "category": "food",
        "label": "Happy Hour Bites 5-6 PM Monda",
@@ -538,7 +558,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -599,12 +619,17 @@
      "items": [
       {
        "category": "cocktail",
-       "label": "Margaritas Join us for the be",
+       "label": "Margaritas",
+       "price_usd": 7.0
+      },
+      {
+       "category": "wine",
+       "label": "Wines Join us for the best Ha",
        "price_usd": 7.0
       },
       {
        "category": "cocktail",
-       "label": "Margaritas",
+       "label": "Margaritas Join us for the be",
        "price_usd": 7.0
       }
      ],
@@ -1019,8 +1044,13 @@
      "items": [
       {
        "category": "draft",
-       "label": "off Draught Beers Cannery Hap",
+       "label": "off Draught Beers",
        "price_usd": 1.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Cocktail of the Week Cannery",
+       "price_usd": 10.0
       }
      ],
      "confidence": "unconfirmed",
@@ -1222,13 +1252,8 @@
      ],
      "items": [
       {
-       "category": "cocktail",
-       "label": "Mixed Drinks",
-       "price_usd": 5.0
-      },
-      {
        "category": "wine",
-       "label": "Wines",
+       "label": "Wines View Happy Hour Menu Da",
        "price_usd": 6.0
       }
      ],
@@ -1239,8 +1264,7 @@
       "kind": "venue_site",
       "url": "https://gooddogbar.com/menu/",
       "quote": "Happy Hour / Monday to Friday 3-6pm / $5 Mixed Drinks"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   },
@@ -1488,7 +1512,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1622,7 +1646,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-31",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1811,7 +1835,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1888,11 +1912,6 @@
        "category": "food",
        "label": "oysters during happy hour",
        "price_usd": 2.0
-      },
-      {
-       "category": "cocktail",
-       "label": "off Specialty Cocktails and",
-       "price_usd": 5.0
       }
      ],
      "confidence": "unconfirmed",
@@ -2027,7 +2046,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Flagship Other Half Beers",
+       "price_usd": 5.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -2104,7 +2129,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -2233,7 +2258,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -2471,13 +2496,23 @@
      ],
      "items": [
       {
+       "category": "draft",
+       "label": "off all beer",
+       "price_usd": 2.0
+      },
+      {
        "category": "shot",
-       "label": "Green Tea Shots",
+       "label": "Green Tea Shots University Ci",
        "price_usd": 3.0
       },
       {
+       "category": "draft",
+       "label": "off Draft Beer",
+       "price_usd": 2.0
+      },
+      {
        "category": "cocktail",
-       "label": "Margaritas",
+       "label": "Margaritas - Strawberry",
        "price_usd": 5.0
       }
      ],
@@ -2488,8 +2523,7 @@
       "kind": "venue_site",
       "url": "https://santuccispizza.com/specials/",
       "quote": "North Broad Street Happy Hour (21+): / Monday - Friday 4 PM - 7 PM / Saturday - Sunday 11 AM - 2 PM"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   },
@@ -2714,45 +2748,24 @@
      ],
      "items": [
       {
-       "category": "cocktail",
-       "label": "Peach Ring",
-       "price_usd": 6.0
+       "category": "draft",
+       "label": "Cigar City Jai Alai IPA",
+       "price_usd": 9.0
       },
       {
        "category": "draft",
        "label": "Mahou Lager",
-       "price_usd": 5.0
-      },
-      {
-       "category": "cocktail",
-       "label": "Arnold Palmer",
        "price_usd": 7.0
-      },
-      {
-       "category": "draft",
-       "label": "Cigar City Jai Alai IPA",
-       "price_usd": 7.0
-      },
-      {
-       "category": "cocktail",
-       "label": "Negroni",
-       "price_usd": 8.0
-      },
-      {
-       "category": "draft",
-       "label": "Sip of Sunshine IPA",
-       "price_usd": 9.0
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://thefairmounttavern.com/happy-hour/",
       "quote": "Happy Hour / Monday \u2013 Friday / 5:00 PM \u2013 8:00 PM"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   },
@@ -2805,7 +2818,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -3023,12 +3036,12 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://toptomatophilly.com",
-      "quote": "Happy Hour Header - Join us for $5 Happy Hour, Mon-Fri | 4:30-6:30pm!"
+      "quote": "View Late Night Menu / Late Night Kitchen Header - Late Night Kitchen til 12am Fri & Saturday! / Happy Hour Header - Join us for $5 Happy Hour, Mon-Fri | 4:30-6:30pm!"
      },
      "items_source": "llm_extract"
     }
@@ -3138,7 +3151,7 @@
      "items": [
       {
        "category": "cocktail",
-       "label": "Margaritas",
+       "label": "Margaritas All Day",
        "price_usd": 5.0
       }
      ],
@@ -3149,8 +3162,7 @@
       "kind": "venue_site",
       "url": "https://www.ubarphilly.com/happy-hour",
       "quote": "Happy Hour at U BAR / 4 PM - 6 PM Monday through Friday"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   },

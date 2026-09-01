@@ -999,12 +999,12 @@
     "type": "happy_hour",
     "windows": [
      {
-      "dow": 1,
+      "dow": 3,
       "start": "16:30",
       "end": "18:30"
      },
      {
-      "dow": 3,
+      "dow": 4,
       "start": "16:30",
       "end": "18:30"
      },

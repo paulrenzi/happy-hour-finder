@@ -24,14 +24,16 @@ from build_bundles import (CACHE_LINE, collapse_name_collisions, decay,  # noqa:
                            norm_name, shell_digest, sw_cache_name)
 import crawl_sites  # noqa: E402
 from crawl_roundups import fresh_enough, mentions, published_date, venue_index  # noqa: E402
-from crawl_sites import (candidate_links, crawl_one, menu_images, quotes,  # noqa: E402
-                         registrable, visible_text)
+from crawl_sites import (candidate_links, crawl_one, hh_sections,  # noqa: E402
+                         reached_nothing,
+                         menu_images, quotes, registrable, visible_text)
 from discover_places import HAND_DROPPED  # noqa: E402
 from review_photos import merge_mode, superseded  # noqa: E402
 from discover_sites import collapse_shared, name_core, plcb_key, site_of, street_core  # noqa: E402
 import guess_sites  # noqa: E402
 from guess_sites import candidates  # noqa: E402
 from guess_sites import verify as guess_verify  # noqa: E402
+import extract_deals  # noqa: E402
 from extract_deals import (  # noqa: E402
     clauses,
     days_in,
@@ -1911,6 +1913,213 @@ class OneUnlawfulDayIsNotEvidenceAgainstTheOthers(unittest.TestCase):
 
     def test_nothing_lawful_leaves_nothing(self):
         self.assertEqual(lawful_days([{"dow": 1, "start": "11:00", "end": "22:00"}]), [])
+
+
+
+class AFailedFetchIsNotAnAnswerAboutTheVenue(unittest.TestCase):
+    """A re-crawl that could not read a page must not erase what we hold.
+
+    The Stray Dog Tavern published a happy hour and eight quotes. One
+    ConnectTimeout during the 2026-09-01 re-crawl replaced the record with an
+    empty one and the venue left the board. 'hits: []' is indistinguishable
+    from a venue that publishes nothing, so the loss was silent.
+    """
+
+    def test_every_page_erroring_is_a_failed_crawl(self):
+        self.assertTrue(reached_nothing([{"url": "x", "result": "error: ConnectTimeout"}]))
+
+    def test_one_page_read_is_a_real_answer(self):
+        self.assertFalse(reached_nothing([{"url": "x", "result": "error: 404"},
+                                          {"url": "y", "result": "ok"}]))
+
+    def test_a_venue_with_no_pages_at_all_is_not_called_a_failure(self):
+        # No website to try is a fact about the venue, not about the network.
+        self.assertFalse(reached_nothing([]))
+
+
+
+class TheHeadingIsTheContainment(unittest.TestCase):
+    """What replaces the URL as the key to the looser price rules.
+
+    65 of the 84 priceless board cards came from a page whose URL names neither
+    happy-hour nor specials, and the prices were on it the whole time. Chili's
+    puts its happy hour on the LOCATION page; CO-OP puts it a third of the way
+    down /menus, between 'Mid Day' and 'Dinner'. The URL cannot see either.
+
+    So the key becomes the page's own heading -- and the boundaries of the
+    section it opens are the entire safety argument, because the same page also
+    holds the dinner menu. These are the boundaries, written before the harvest.
+
+    The boundary is asserted on hh_sections() rather than on quotes(), because
+    quotes() answers a different question: DEAL_RE matches the words 'Happy
+    Hour' wherever they appear, section or no section, and always did. What is
+    new here is only WHICH LINES are allowed the looser priced-line rules.
+    """
+
+    def _in_section(self, html):
+        """The lines the containment admits, as text."""
+        text = visible_text(html)
+        lines = text.split("\n")
+        return [lines[i] for i in sorted(hh_sections(html, text))]
+
+    # CO-OP's /menus, cut to shape: a real <h2> opens the happy hour and the
+    # next <h2> closes it. The dinner price below is the one that must not be
+    # harvested -- the Deviled Eggs are $8 at happy hour and $12 at Mid Day, so
+    # a section that runs on does not merely add noise, it prints a WRONG PRICE.
+    COOP = ("<h2>Mid Day</h2><p>Daily from 2pm - 4pm</p>"
+            "<p>Deviled Eggs</p><p>$ 12</p>"
+            "<h2>Happy Hour</h2><p>Weekdays from 3pm - 6pm</p>"
+            "<h3>Food Specials</h3><p>Deviled Eggs</p><p>$ 8</p>"
+            "<h3>Drink Specials</h3><p>Select Beer</p><p>$ 5</p>"
+            "<h2>Dinner</h2><p>Served 4pm to 10pm</p>"
+            "<p>Cheese Board</p><p>$ 24</p>")
+
+    def test_the_section_opens_at_the_heading_that_names_it(self):
+        got = self._in_section(self.COOP)
+        self.assertIn("$ 8", got)
+        self.assertIn("$ 5", got)
+
+    def test_a_sub_heading_does_not_close_its_own_section(self):
+        # Found on the real CO-OP page, not in a fixture: the happy hour is an
+        # <h2> and it is divided into <h3> 'Food Specials' and 'Drink Specials'.
+        # Closing on the next heading of ANY rank closed the section on its own
+        # first sub-heading and harvested one line. A section is closed by a
+        # heading of the same rank or higher -- which is what rank is for.
+        got = self._in_section(self.COOP)
+        self.assertIn("$ 8", got)
+        self.assertIn("$ 5", got)
+        self.assertIn("Drink Specials", got)
+        self.assertNotIn("$ 24", got)
+
+    def test_the_section_closes_at_the_next_heading(self):
+        # $ 24 is dinner. It sits BELOW the happy hour on the same page.
+        self.assertNotIn("$ 24", self._in_section(self.COOP))
+
+    def test_the_section_does_not_reach_backwards(self):
+        # $ 12 is the same dish at its Mid Day price, printed ABOVE the heading.
+        # A price above the heading is not in the section the heading opened.
+        self.assertNotIn("$ 12", self._in_section(self.COOP))
+
+    def test_the_happy_hour_price_is_harvested_with_its_item(self):
+        text = visible_text(self.COOP)
+        got = quotes(text, hh_lines=hh_sections(self.COOP, text))
+        self.assertTrue(any("$ 8" in q and "Deviled Eggs" in q for q in got), got)
+        self.assertFalse(any("$ 24" in q for q in got), got)
+
+    # El Vez lists all six menus as nav links, 'Happy Hour' among them, and then
+    # prints the lunch and dinner menus in full. A nav link is not a heading:
+    # if it opened a section, every price on the page would be a happy-hour
+    # price. The right outcome here is NOTHING, not a wrong answer.
+    ELVEZ = ("<h2>Menus</h2>"
+             "<a>Lunch</a><a>Dinner</a><a>Happy Hour</a><a>Kid's Menu</a>"
+             "<h3>Appetizers</h3><p>Tuna Tostadas $18</p>"
+             "<h3>Entrees</h3><p>Carne Asada $34</p>")
+
+    def test_a_nav_link_named_happy_hour_opens_nothing(self):
+        self.assertEqual(self._in_section(self.ELVEZ), [])
+
+    # Chili's location page has NO heading tags anywhere -- the whole page is
+    # divs. Its happy hour is nonetheless a heading in every sense a reader
+    # cares about: a short line naming the thing, with the window under it and
+    # the prices under that. A page with no headings at all falls back to the
+    # short standalone line, and the section is then capped rather than closed,
+    # because there is no next heading to close it on.
+    CHILIS = ("<div>Hours of Operation</div><div>SUNDAY - THURSDAY</div>"
+              "<div>11:00 AM - 10:00 PM</div>"
+              "<div>Happy Hour</div><div>MONDAY-THURSDAY</div><div>3-6pm</div>"
+              "<div>$3</div><div>Bud Light 16 oz</div>"
+              "<div>$5</div><div>House Red &amp; White Wine</div>")
+
+    def test_a_page_with_no_headings_falls_back_to_the_standalone_line(self):
+        got = self._in_section(self.CHILIS)
+        self.assertIn("$3", got)
+        self.assertIn("$5", got)
+        self.assertNotIn("11:00 AM - 10:00 PM", got)   # above the heading
+
+    def test_the_fallback_price_reaches_the_quote_with_its_item(self):
+        html = self.CHILIS
+        text = visible_text(html)
+        got = quotes(text, hh_lines=hh_sections(html, text))
+        self.assertTrue(any("$3" in q and "Bud Light" in q for q in got), got)
+        self.assertTrue(any("$5" in q and "House Red" in q for q in got), got)
+
+    def test_the_fallback_is_refused_when_the_page_does_have_headings(self):
+        # The same divs, with one real heading elsewhere on the page. Once a
+        # page proves it marks its headings up, an unmarked line is not one --
+        # otherwise El Vez's nav would open a section on every menu page.
+        self.assertEqual(self._in_section("<h1>Our Menus</h1>" + self.CHILIS), [])
+
+    def test_a_sentence_is_not_a_heading(self):
+        # 'Join us for the best HAPPY HOUR in town, every day!' is prose. Prose
+        # that names the happy hour is everywhere; it must not unlock a page.
+        page = ("<div>Join us for the best HAPPY HOUR in town, every day!</div>"
+                "<div>Cheese Board</div><div>$ 24</div>")
+        self.assertEqual(self._in_section(page), [])
+
+    def test_the_section_is_capped_so_a_runaway_cannot_eat_the_menu(self):
+        # No heading follows, so nothing closes the section. The cap does.
+        page = "<div>Happy Hour</div>" + "".join(
+            "<div>Course %d</div><div>$ %d</div>" % (i, 100 + i) for i in range(60))
+        got = self._in_section(page)
+        self.assertIn("$ 100", got)
+        self.assertNotIn("$ 159", got)
+
+    def test_an_unmarked_nav_strip_is_closed_by_the_menu_it_sits_beside(self):
+        # The fallback's real hazard: a page with no marked headings whose only
+        # mention of the happy hour is a nav strip, with a dinner menu under it.
+        # Nothing here is a heading tag, so the fallback DOES open a section --
+        # and the very next nav item closes it before a price is reached.
+        page = ("<div>Menus</div><div>Happy Hour</div><div>Dinner</div>"
+                "<div>Steak</div><div>$ 42</div><div>Salmon</div><div>$ 34</div>")
+        self.assertEqual(self._in_section(page), [])
+
+    def test_an_ordinary_page_is_unchanged_when_no_heading_names_it(self):
+        # The guarantee the URL key gave us, kept: a page that never names its
+        # happy hour harvests nothing, exactly as before.
+        page = ("<h2>Dinner</h2><p>Cheese Board</p><p>$ 24</p>"
+                "<h2>Dessert</h2><p>Churros</p><p>$ 9</p>")
+        text = visible_text(page)
+        self.assertEqual(hh_sections(page, text), set())
+        self.assertEqual(quotes(text, hh_lines=hh_sections(page, text)), [])
+
+
+class APricedQuoteWithNoClockIsStillAPrice(unittest.TestCase):
+    """Paladar's '$4.50 Draft Beer' was crawled, stored, and then dropped.
+
+    items_in() is fed only from the quotes that state a SCHEDULE, because those
+    are the ones that become windows. A price line rarely states a schedule --
+    the venue printed the hours once, at the top, and the prices under them. So
+    the price was on disk the whole time and never reached the card. 59 of the
+    146 priceless venues are in exactly this position and need no crawl at all.
+
+    The containment: an unscheduled priced quote counts only when it came from
+    the SAME PAGE as the schedule we published. That is the page the venue
+    itself put its happy hour on, which is the argument the URL key always made.
+    """
+
+    HH = "https://x.test/happy-hour/"
+
+    def _hits(self, *pairs):
+        return [{"url": u, "quote": q} for u, q in pairs]
+
+    def test_a_price_from_the_lead_page_reaches_the_card(self):
+        items = extract_deals.items_from_hits(
+            self._hits((self.HH, "HAPPY HOUR / Monday-Friday 4-6:30pm"),
+                       (self.HH, "$4.50 Draft Beer")), self.HH)
+        self.assertIn(4.5, [i.get("price_usd") for i in items])
+
+    def test_a_price_from_another_page_does_not(self):
+        # The dinner menu lives at /menus and its prices are not the deal.
+        items = extract_deals.items_from_hits(
+            self._hits((self.HH, "HAPPY HOUR / Monday-Friday 4-6:30pm"),
+                       ("https://x.test/menus", "$34 draft steak")), self.HH)
+        self.assertEqual([i.get("price_usd") for i in items], [])
+
+    def test_the_scheduled_quote_still_contributes_its_own_prices(self):
+        items = extract_deals.items_from_hits(
+            self._hits((self.HH, "HAPPY HOUR 4-6pm / $5 drafts")), self.HH)
+        self.assertIn(5.0, [i.get("price_usd") for i in items])
+
 
 
 class LateNightEndingAtTwelve(unittest.TestCase):

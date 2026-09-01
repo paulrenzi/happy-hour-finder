@@ -52,7 +52,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -233,7 +233,7 @@
       },
       {
        "category": "wine",
-       "label": "South American Wines",
+       "label": "South American Wines and",
        "price_usd": 8.0
       },
       {
@@ -242,9 +242,9 @@
        "price_usd": 10.0
       },
       {
-       "category": "wine",
-       "discount_pct": 50.0,
-       "label": "South American bottles"
+       "category": "bottle_can",
+       "label": "South American bottles of win",
+       "discount_pct": 50
       }
      ],
      "confidence": "unconfirmed",
@@ -254,8 +254,7 @@
       "kind": "venue_site",
       "url": "https://fogodechao.com/location/king-of-prussia/",
       "quote": "Happy Hour / MON - FRI 4:30 PM - 6:30 PM"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   },
@@ -437,7 +436,7 @@
      "items": [
       {
        "category": "draft",
-       "label": "draft beer",
+       "label": "Draft Beer",
        "price_usd": 4.5
       }
      ],
@@ -448,8 +447,7 @@
       "kind": "venue_site",
       "url": "https://paladarlatinkitchen.com/happy-hour/",
       "quote": "HAPPY HOUR DETAILS / Monday-Friday / from 4-6:30pm & Sunday- Thursday 8:30-10pm in the Bar"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   },

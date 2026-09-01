@@ -298,13 +298,8 @@
      "items": [
       {
        "category": "draft",
-       "label": "Cask Beer",
-       "price_usd": 5.0
-      },
-      {
-       "category": "food",
-       "discount_pct": 50.0,
-       "label": "wings"
+       "label": "OFF Draft Beer",
+       "price_usd": 2.0
       },
       {
        "category": "cocktail",
@@ -319,8 +314,7 @@
       "kind": "venue_site",
       "url": "https://www.troublesendbrewing.com/happyhour",
       "quote": "HAPPY HOUR SPECIALS / 4-6 PM | TUESDAY - FRIDAY"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   }
