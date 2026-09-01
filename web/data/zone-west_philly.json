@@ -45,7 +45,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "oysters",
+       "price_usd": 2.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
@@ -53,7 +59,8 @@
       "kind": "venue_site",
       "url": "https://oysterhousephilly.com",
       "quote": "Join us for Center City's Best Happy Hour / 4-6 pm Tuesday - Friday"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   }

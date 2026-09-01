@@ -1,4 +1,94 @@
 {
+ "al-pastor-exton": [
+  {
+   "category": "cocktail",
+   "label": "HOUSE Margaritas",
+   "price_usd": 6.0
+  }
+ ],
+ "anthony-s-cucina-fresca-downingtown": [
+  {
+   "category": "cocktail",
+   "label": "single shot mixed drinks",
+   "price_usd": 5.0
+  },
+  {
+   "category": "cocktail",
+   "label": "all other cocktails",
+   "price_usd": 9.0
+  }
+ ],
+ "black-horse-tavern-phoenixville": [
+  {
+   "category": "draft",
+   "label": "pints",
+   "price_usd": 1.0
+  }
+ ],
+ "black-powder-tavern-wayne": [
+  {
+   "category": "draft",
+   "label": "draft beers",
+   "price_usd": 6.0
+  },
+  {
+   "category": "wine",
+   "label": "house wines",
+   "price_usd": 6.0
+  },
+  {
+   "category": "cocktail",
+   "label": "signature cocktails",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "select wines",
+   "price_usd": 9.0
+  },
+  {
+   "category": "food",
+   "label": "cajun nachos",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "chicken wings",
+   "price_usd": 9.0
+  }
+ ],
+ "bloom-southern-kitchen-chester-springs": [
+  {
+   "category": "food",
+   "label": "cocktail shrimp",
+   "price_usd": 1.0
+  },
+  {
+   "category": "food",
+   "label": "hand cut fries",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "deviled eggs",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "pulled pork sliders",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "wings",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "crab cakes",
+   "price_usd": 9.0
+  }
+ ],
  "chadds-ford-tavern-chadds-ford": [
   {
    "category": "food",
@@ -6,11 +96,108 @@
    "price_usd": 10.0
   }
  ],
+ "chili-s-philadelphia": [
+  {
+   "category": "draft",
+   "label": "select beers",
+   "price_usd": 3.0
+  },
+  {
+   "category": "draft",
+   "label": "select beers",
+   "price_usd": 4.0
+  },
+  {
+   "category": "wine",
+   "label": "beers & wines",
+   "price_usd": 5.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Tequila Classic Marg",
+   "price_usd": 7.0
+  },
+  {
+   "category": "cocktail",
+   "label": "margaritas",
+   "price_usd": 6.0
+  }
+ ],
+ "chophouse-grille-exton": [
+  {
+   "category": "food",
+   "discount_pct": 50.0,
+   "label": "flat bread"
+  }
+ ],
+ "cuba-libre-philadelphia": [
+  {
+   "category": "food",
+   "label": "Havana 'Girl Dinner'",
+   "price_usd": 20.0
+  }
+ ],
+ "dave-buster-s-philadelphia": [
+  {
+   "category": "draft",
+   "label": "22 oz domestic draft",
+   "price_usd": 5.0
+  },
+  {
+   "category": "wine",
+   "label": "glass of wine",
+   "price_usd": 5.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Tres Tequila Rita",
+   "price_usd": 5.0
+  }
+ ],
+ "estia-taverna-inc-radnor": [
+  {
+   "category": "food",
+   "discount_pct": 50.0,
+   "label": "appetizers"
+  },
+  {
+   "category": "cocktail",
+   "label": "crafted cocktails",
+   "price_usd": 6.0
+  },
+  {
+   "category": "wine",
+   "label": "wine by the glass",
+   "price_usd": 6.0
+  },
+  {
+   "category": "draft",
+   "label": "beer",
+   "price_usd": 4.0
+  }
+ ],
  "fava-glen-mills": [
   {
    "category": "food",
    "label": "happy hour food",
    "price_usd": 10.0
+  }
+ ],
+ "flip-and-baileys-llc-rosemont": [
+  {
+   "category": "well",
+   "label": "well drinks",
+   "price_usd": 1.0
+  },
+  {
+   "category": "well",
+   "label": "well drinks",
+   "price_usd": 4.0
+  },
+  {
+   "category": "cocktail",
+   "label": "house margaritas",
+   "price_usd": 6.0
   }
  ],
  "fogo-de-ch-o-king-of-prussia": [
@@ -35,11 +222,138 @@
    "label": "South American bottles"
   }
  ],
+ "frankford-hall-philadelphia": [
+  {
+   "category": "food",
+   "label": "bavarian pretzel",
+   "price_usd": 6.0
+  }
+ ],
+ "good-dog-bar-philadelphia": [
+  {
+   "category": "cocktail",
+   "label": "Mixed Drinks",
+   "price_usd": 5.0
+  },
+  {
+   "category": "wine",
+   "label": "Wines",
+   "price_usd": 6.0
+  }
+ ],
+ "great-american-pub-narberth": [
+  {
+   "category": "food",
+   "label": "Sliders",
+   "price_usd": 6.0
+  }
+ ],
+ "jj-ratigan-brewing-llc-pottstown": [
+  {
+   "category": "shot",
+   "label": "SHOOTERS",
+   "price_usd": 4.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Boardroom Mule",
+   "price_usd": 8.0
+  },
+  {
+   "category": "draft",
+   "label": "CITYWIDE",
+   "price_usd": 7.0
+  },
+  {
+   "category": "wine",
+   "label": "BUBBLY",
+   "price_usd": 9.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Manhattans & Old Fashionds",
+   "price_usd": 9.0
+  },
+  {
+   "category": "draft",
+   "label": "PITCHERS",
+   "price_usd": 12.0
+  }
+ ],
+ "la-porta-ristorante-media": [
+  {
+   "category": "wine",
+   "discount_pct": 50.0,
+   "label": "bottles of wine"
+  }
+ ],
+ "lascala-s-fire-newtown-square": [
+  {
+   "category": "cocktail",
+   "label": "Aperol Spritz",
+   "price_usd": 9.0
+  }
+ ],
+ "lascala-s-fire-villanova": [
+  {
+   "category": "wine",
+   "label": "house red & white",
+   "price_usd": 7.0
+  }
+ ],
+ "limoncello-chester-springs": [
+  {
+   "category": "food",
+   "label": "pizza or flatbread",
+   "price_usd": 20.0
+  },
+  {
+   "category": "food",
+   "label": "gluten free pizza",
+   "price_usd": 20.0
+  }
+ ],
+ "limoncello-west-chester": [
+  {
+   "category": "food",
+   "label": "pizza or flatbread",
+   "price_usd": 20.0
+  },
+  {
+   "category": "food",
+   "label": "gluten free pizza",
+   "price_usd": 20.0
+  }
+ ],
  "main-line-tavern-paoli": [
   {
    "category": "food",
    "discount_pct": 50.0,
    "label": "Half Price"
+  }
+ ],
+ "maison-lotus-wayne": [
+  {
+   "category": "wine",
+   "label": "wines",
+   "price_usd": 7.0
+  },
+  {
+   "category": "draft",
+   "label": "beers",
+   "price_usd": 5.0
+  },
+  {
+   "category": "cocktail",
+   "label": "cocktails",
+   "price_usd": 8.0
+  }
+ ],
+ "oyster-house-philadelphia": [
+  {
+   "category": "food",
+   "label": "oysters",
+   "price_usd": 2.0
   }
  ],
  "p-f-chang-s-warrington": [
@@ -64,11 +378,99 @@
    "label": "half apps"
   }
  ],
+ "paladar-latin-kitchen-rum-bar-king-of-prussia": [
+  {
+   "category": "draft",
+   "label": "draft beer",
+   "price_usd": 4.5
+  }
+ ],
+ "panorama-philadelphia": [
+  {
+   "category": "draft",
+   "label": "beer",
+   "price_usd": 5.0
+  },
+  {
+   "category": "wine",
+   "label": "wine",
+   "price_usd": 8.0
+  },
+  {
+   "category": "cocktail",
+   "label": "cocktails",
+   "price_usd": 10.0
+  }
+ ],
+ "pepperoncini-restaurant-bar-conshohocken": [
+  {
+   "category": "wine",
+   "label": "wine",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "apps",
+   "price_usd": 7.0
+  }
+ ],
+ "percy-philadelphia": [
+  {
+   "category": "draft",
+   "label": "beer",
+   "price_usd": 5.0
+  },
+  {
+   "category": "wine",
+   "label": "wine",
+   "price_usd": 6.0
+  },
+  {
+   "category": "cocktail",
+   "label": "cocktails",
+   "price_usd": 7.0
+  }
+ ],
+ "perky-cafe-phoenixville": [
+  {
+   "category": "food",
+   "label": "cheese steaks",
+   "price_usd": 7.0
+  }
+ ],
+ "pj-whelihan-s-downingtown": [
+  {
+   "category": "food",
+   "discount_pct": 50.0,
+   "label": "wings and starters"
+  }
+ ],
+ "pj-whelihan-s-wynnewood": [
+  {
+   "category": "food",
+   "discount_pct": 50.0,
+   "label": "wings and starters"
+  }
+ ],
  "pub-kitchen-philadelphia": [
   {
    "category": "wine",
    "label": "wine",
    "price_usd": 7.0
+  }
+ ],
+ "revival-pizza-pub-chester-springs": [
+  {
+   "category": "cocktail",
+   "label": "margaritas",
+   "price_usd": 6.0
+  }
+ ],
+ "rosemary-ridley-park": [
+  {
+   "category": "wine",
+   "discount_pct": 50.0,
+   "label": "bottles of wine"
   }
  ],
  "santucci-s-original-square-pizza-philadelphia": [
@@ -88,6 +490,18 @@
    "category": "cocktail",
    "label": "House Margarita (16oz)",
    "price_usd": 5.99
+  }
+ ],
+ "stove-and-tap-west-chester": [
+  {
+   "category": "food",
+   "label": "tacos",
+   "price_usd": 5.0
+  },
+  {
+   "category": "cocktail",
+   "label": "margaritas",
+   "price_usd": 6.0
   }
  ],
  "the-fairmount-tavern-philadelphia": [
@@ -122,6 +536,25 @@
    "price_usd": 9.0
   }
  ],
+ "the-great-american-pub-phoenixville": [
+  {
+   "category": "draft",
+   "label": "Miller Lite Drafts",
+   "price_usd": 3.0
+  }
+ ],
+ "the-stray-dog-tavern-skippack": [
+  {
+   "category": "bottle_can",
+   "label": "Hi Life bottles",
+   "price_usd": 2.0
+  },
+  {
+   "category": "draft",
+   "label": "rotating local craft IPA",
+   "price_usd": 4.0
+  }
+ ],
  "top-tomato-bar-pizza-philadelphia": [
   {
    "category": "draft",
@@ -142,6 +575,81 @@
    "category": "shot",
    "label": "Shots",
    "price_usd": 10.0
+  }
+ ],
+ "troubles-end-brewing-collegeville": [
+  {
+   "category": "draft",
+   "label": "Cask Beer",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "discount_pct": 50.0,
+   "label": "wings"
+  },
+  {
+   "category": "cocktail",
+   "label": "Select Cocktails",
+   "price_usd": 6.0
+  }
+ ],
+ "ubar-philadelphia": [
+  {
+   "category": "cocktail",
+   "label": "Margaritas",
+   "price_usd": 5.0
+  }
+ ],
+ "vedge-philadelphia": [
+  {
+   "category": "food",
+   "label": "SNACKS",
+   "price_usd": 7.0
+  }
+ ],
+ "wissahickon-brewing-co-philadelphia": [
+  {
+   "category": "draft",
+   "label": "drafts",
+   "price_usd": 1.0
+  },
+  {
+   "category": "wine",
+   "label": "wine",
+   "price_usd": 3.0
+  }
+ ],
+ "yakitori-boy-philadelphia": [
+  {
+   "category": "bottle_can",
+   "label": "Sapporo",
+   "price_usd": 5.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Michelob Ultra",
+   "price_usd": 5.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Lady Lavender",
+   "price_usd": 6.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Lychee - Tini",
+   "price_usd": 7.0
+  },
+  {
+   "category": "wine",
+   "label": "Pinot Grigio",
+   "price_usd": 7.0
+  },
+  {
+   "category": "wine",
+   "label": "Cabernet Sauvignon",
+   "price_usd": 7.0
   }
  ]
 }

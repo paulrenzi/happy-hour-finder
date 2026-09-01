@@ -434,7 +434,13 @@
        "end": "22:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "draft beer",
+       "price_usd": 4.5
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -442,7 +448,8 @@
       "kind": "venue_site",
       "url": "https://paladarlatinkitchen.com/happy-hour/",
       "quote": "HAPPY HOUR DETAILS / Monday-Friday / from 4-6:30pm & Sunday- Thursday 8:30-10pm in the Bar"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },

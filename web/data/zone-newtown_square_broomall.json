@@ -154,7 +154,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "wine",
+       "discount_pct": 50.0,
+       "label": "bottles of wine"
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
@@ -162,7 +168,8 @@
       "kind": "venue_site",
       "url": "https://www.laportarestaurant.com/daily-specials",
       "quote": "HAPPY HOUR / Monday - Friday 4 pm - 6 pm / (Closed Tuesday)"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -213,7 +220,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "Aperol Spritz",
+       "price_usd": 9.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
@@ -221,7 +234,8 @@
       "kind": "venue_site",
       "url": "https://lascalasfire.com/newtown-square/menus/happy-hour",
       "quote": "HAPPY HOUR / MON-FRI 3PM-6PM / APEROL SPRITZ $9"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   }

@@ -117,7 +117,38 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "draft beers",
+       "price_usd": 6.0
+      },
+      {
+       "category": "wine",
+       "label": "house wines",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "label": "signature cocktails",
+       "price_usd": 8.0
+      },
+      {
+       "category": "wine",
+       "label": "select wines",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "cajun nachos",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "label": "chicken wings",
+       "price_usd": 9.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -125,7 +156,8 @@
       "kind": "venue_site",
       "url": "https://blackpowdertavern.com/happy-hour-at-black-powder-tavern/",
       "quote": "Happy Hour at Black Powder Tavern / We invite you to come and join us to celebrate Happy Hour on Monday through Friday from 4:00 p.m. until 6:00 p.m."
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -228,7 +260,28 @@
        "end": "17:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "discount_pct": 50.0,
+       "label": "appetizers"
+      },
+      {
+       "category": "cocktail",
+       "label": "crafted cocktails",
+       "price_usd": 6.0
+      },
+      {
+       "category": "wine",
+       "label": "wine by the glass",
+       "price_usd": 6.0
+      },
+      {
+       "category": "draft",
+       "label": "beer",
+       "price_usd": 4.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -236,7 +289,8 @@
       "kind": "venue_site",
       "url": "http://estiarestaurant.com/radnor-pa/menus/happy-hour-radnor.pdf",
       "quote": "HAPPY HOUR MENU / MONDAY - FRIDAY 3:30PM-5PM"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -326,7 +380,23 @@
        "end": "19:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "well",
+       "label": "well drinks",
+       "price_usd": 1.0
+      },
+      {
+       "category": "well",
+       "label": "well drinks",
+       "price_usd": 4.0
+      },
+      {
+       "category": "cocktail",
+       "label": "house margaritas",
+       "price_usd": 6.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -334,7 +404,8 @@
       "kind": "venue_site",
       "url": "https://www.flipandbaileys.com/hold-happ",
       "quote": "Happy Hour / Monday - Friday / 5pm-7pm / $2 off all Drinks & Appetizers"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -385,7 +456,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "wine",
+       "label": "house red & white",
+       "price_usd": 7.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -393,7 +470,8 @@
       "kind": "venue_site",
       "url": "https://lascalasfire.com/villanova/menus/happy-hour",
       "quote": "HAPPY HOUR / MON-FRI 3PM-6PM / HOUSE RED & WHITE $7"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -444,7 +522,23 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "wine",
+       "label": "wines",
+       "price_usd": 7.0
+      },
+      {
+       "category": "draft",
+       "label": "beers",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "label": "cocktails",
+       "price_usd": 8.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -452,7 +546,8 @@
       "kind": "venue_site",
       "url": "https://www.maison-lotus.com/",
       "quote": "Happy Hour Mon to Fri 4-6pm"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },

@@ -50,7 +50,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "HOUSE Margaritas",
+       "price_usd": 6.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
@@ -58,7 +64,8 @@
       "kind": "venue_site",
       "url": "https://eatalpastor.com",
       "quote": "HAPPY HOUR / Join us Monday through Friday from 4 - 6 pm for food and drink specials! Enjoy our exclusive deals and delicious offerings."
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -105,7 +112,18 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "single shot mixed drinks",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "label": "all other cocktails",
+       "price_usd": 9.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
@@ -113,7 +131,8 @@
       "kind": "venue_site",
       "url": "https://anthonyscucinafresca.com/menu/",
       "quote": "Happy Hour Menu / Join us for Happy Hour! Monday through Friday, 4:00pm to 6:00pm. / Single shot mixed drinks \u2013 $5.00 each! All other cocktails in our menu for only $9.00"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -170,7 +189,38 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "cocktail shrimp",
+       "price_usd": 1.0
+      },
+      {
+       "category": "food",
+       "label": "hand cut fries",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "deviled eggs",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "pulled pork sliders",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "label": "wings",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "label": "crab cakes",
+       "price_usd": 9.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
@@ -178,7 +228,8 @@
       "kind": "venue_site",
       "url": "https://www.bloomsouthernkitchen.com/happy-hour-menu",
       "quote": "Happy Hour / Daily from 3-6pm"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -225,7 +276,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "discount_pct": 50.0,
+       "label": "flat bread"
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
@@ -233,7 +290,8 @@
       "kind": "venue_site",
       "url": "https://www.chophousegrille.com/happy-hour",
       "quote": "happy hour / Monday - Friday 4 pm - 6pm. Available in bar area only"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -284,7 +342,38 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Miller Lite Drafts",
+       "price_usd": 4.0
+      },
+      {
+       "category": "draft",
+       "label": "Craft IPAs",
+       "price_usd": 5.0
+      },
+      {
+       "category": "shot",
+       "label": "Single Shot Tito's",
+       "price_usd": 6.0
+      },
+      {
+       "category": "wine",
+       "label": "Any House Glass of Wine",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "label": "Loaded Tots!",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Teremana Margarita",
+       "price_usd": 9.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
@@ -292,7 +381,8 @@
       "kind": "venue_site",
       "url": "http://libertyunionbar.com/chester-springs/specials/",
       "quote": "Happy Hour Menu / Monday, Tuesday, Wednesday, Thursday, Friday \u2022 4:00 PM to 6:00 PM"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -348,7 +438,18 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "pizza or flatbread",
+       "price_usd": 20.0
+      },
+      {
+       "category": "food",
+       "label": "gluten free pizza",
+       "price_usd": 20.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
@@ -356,7 +457,8 @@
       "kind": "venue_site",
       "url": "https://www.limoncellorestaurant.com/happy-hour-menu",
       "quote": "HAPPY HOUR MENU / Sunday-Friday 4:00-6:00PM"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -392,7 +494,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "discount_pct": 50.0,
+       "label": "wings and starters"
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
@@ -400,7 +508,8 @@
       "kind": "venue_site",
       "url": "https://www.pjspub.com/about.php?loc=Downingtown",
       "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },

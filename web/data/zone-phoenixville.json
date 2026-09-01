@@ -43,7 +43,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "pints",
+       "price_usd": 1.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -51,7 +57,8 @@
       "kind": "venue_site",
       "url": "https://blackhorsetaverns.com/phoenixville/",
       "quote": "Happy Hour Monday-Friday 4-6pm"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -147,7 +154,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "margaritas",
+       "price_usd": 6.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -155,7 +168,8 @@
       "kind": "venue_site",
       "url": "https://revivalpizzapub.com/",
       "quote": "RAISE A SLICE TO HAPPY HOUR / Join us Monday through Friday from 4 - 6 pm for food and drink specials! Enjoy our exclusive deals and delicious offerings."
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -202,7 +216,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Miller Lite Drafts",
+       "price_usd": 3.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -210,7 +230,8 @@
       "kind": "venue_site",
       "url": "https://thegreatamericanpub.com/phoenixville/menus/happy-hour/",
       "quote": "Happy Hour Specials / Monday through Friday | DINE-IN ONLY | 4 -6pm / $3 - Miller Lite Drafts"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   }

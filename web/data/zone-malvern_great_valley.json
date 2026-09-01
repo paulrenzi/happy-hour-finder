@@ -382,7 +382,38 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "cocktails (saketini, old fashioned, ginger martini)",
+       "price_usd": 7.0
+      },
+      {
+       "category": "wine",
+       "label": "wines (pinot noir, malbec, pinot grigio, chardonnay)",
+       "price_usd": 8.0
+      },
+      {
+       "category": "draft",
+       "label": "draft beers (stella, kirin)",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "steamed gyozas",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "label": "chicken lettuce cup",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "sweet thai chili wings",
+       "price_usd": 8.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
@@ -390,7 +421,8 @@
       "kind": "venue_site",
       "url": "https://www.teikokurestaurant.com/",
       "quote": "Happy Hour Mon to Fri 4:30-6pm"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   }

@@ -38,7 +38,38 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "shot",
+       "label": "SHOOTERS",
+       "price_usd": 4.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Boardroom Mule",
+       "price_usd": 8.0
+      },
+      {
+       "category": "draft",
+       "label": "CITYWIDE",
+       "price_usd": 7.0
+      },
+      {
+       "category": "wine",
+       "label": "BUBBLY",
+       "price_usd": 9.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Manhattans & Old Fashionds",
+       "price_usd": 9.0
+      },
+      {
+       "category": "draft",
+       "label": "PITCHERS",
+       "price_usd": 12.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
@@ -46,7 +77,8 @@
       "kind": "venue_site",
       "url": "https://www.jjratiganbrewing.com/menu-happy-hour",
       "quote": "Happy Hour / Happy Hour is every MON - THUR from 4 to 6pm. Bar, high-tops seating and outdoors only. Reverse Happy Hour is FRI & SAT from 9 until 11. Downstairs only."
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   }

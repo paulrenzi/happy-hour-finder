@@ -131,7 +131,13 @@
        "end": "22:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "bavarian pretzel",
+       "price_usd": 6.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
@@ -139,7 +145,8 @@
       "kind": "venue_site",
       "url": "https://frankfordhall.com/",
       "quote": "Happy Hour / Monday-Friday 4-6pm / Sunday 8-10pm"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -295,7 +302,23 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "beer",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "wine",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "label": "cocktails",
+       "price_usd": 7.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
@@ -303,7 +326,8 @@
       "kind": "venue_site",
       "url": "https://percyphl.com/",
       "quote": "HAPPY HOUR / THURS\u2013FRI\u2013SAT / 3PM\u20136PM"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -350,7 +374,18 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "drafts",
+       "price_usd": 1.0
+      },
+      {
+       "category": "wine",
+       "label": "wine",
+       "price_usd": 3.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
@@ -358,7 +393,8 @@
       "kind": "venue_site",
       "url": "https://www.wissahickonbrew.com/kensington/",
       "quote": "DINNER & HAPPY HOUR / Mon-Fri, 4-6pm / smash burger, fries, and a beer"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   }

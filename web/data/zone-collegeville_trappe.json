@@ -90,7 +90,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "cheese steaks",
+       "price_usd": 7.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -98,7 +104,8 @@
       "kind": "venue_site",
       "url": "https://theperky.com/menu/specials/",
       "quote": "Daily Specials / Happy Hour Every Weekday from 4 - 6pm / Monday: $7 Cheese Steaks from 11am - 6pm, $19.99 A.Y.C.E Wings 6pm-10pm"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -159,7 +166,18 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "bottle_can",
+       "label": "Hi Life bottles",
+       "price_usd": 2.0
+      },
+      {
+       "category": "draft",
+       "label": "rotating local craft IPA",
+       "price_usd": 4.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -167,7 +185,8 @@
       "kind": "venue_site",
       "url": "https://thestraydogtavern.com/",
       "quote": "Happy Hour / We all need a place to relax after work, so why not do it with a drink in your hand? Join us for Happy Hour 7 days a week from 4pm-6pm for discounted drinks, buck-a-shuck oysters and more! / Our local music scene is great and we wanted to showcase some of the best talent around. Come by on Thursday evenings for open mic or check the entertainment schedule link on top of this page for "
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -268,7 +287,23 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Cask Beer",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "discount_pct": 50.0,
+       "label": "wings"
+      },
+      {
+       "category": "cocktail",
+       "label": "Select Cocktails",
+       "price_usd": 6.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -276,7 +311,8 @@
       "kind": "venue_site",
       "url": "https://www.troublesendbrewing.com/happyhour",
       "quote": "HAPPY HOUR SPECIALS / 4-6 PM | TUESDAY - FRIDAY"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   }

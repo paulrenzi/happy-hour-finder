@@ -189,7 +189,18 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "pizza or flatbread",
+       "price_usd": 20.0
+      },
+      {
+       "category": "food",
+       "label": "gluten free pizza",
+       "price_usd": 20.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -197,7 +208,8 @@
       "kind": "venue_site",
       "url": "https://www.limoncellorestaurant.com/happy-hour-menu",
       "quote": "HAPPY HOUR MENU / Sunday-Friday 4:00-6:00PM"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -402,7 +414,18 @@
        "end": "19:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "tacos",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "label": "margaritas",
+       "price_usd": 6.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -410,7 +433,8 @@
       "kind": "venue_site",
       "url": "https://www.stoveandtap-wc.com/specials",
       "quote": "Food & Drink Specials / 5:00 PM - 7:00 PM / WEDNESDAY"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },

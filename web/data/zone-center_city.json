@@ -393,7 +393,33 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "select beers",
+       "price_usd": 3.0
+      },
+      {
+       "category": "draft",
+       "label": "select beers",
+       "price_usd": 4.0
+      },
+      {
+       "category": "wine",
+       "label": "beers & wines",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Tequila Classic Marg",
+       "price_usd": 7.0
+      },
+      {
+       "category": "cocktail",
+       "label": "margaritas",
+       "price_usd": 6.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -401,7 +427,8 @@
       "kind": "venue_site",
       "url": "https://www.chilis.com/locations/us/pennsylvania/philadelphia/center-city",
       "quote": "Happy Hour / MONDAY-THURSDAY / 3-6pm"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -527,7 +554,13 @@
        "end": "16:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "Havana 'Girl Dinner'",
+       "price_usd": 20.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -535,7 +568,8 @@
       "kind": "venue_site",
       "url": "https://www.cubalibrerestaurant.com/en/philadelphia/menus/happy-hour/",
       "quote": "Happy Hour MENU / HOURS | MON-FRI 4PM-7:30PM / SUNDAY 12PM-4PM AT BAR ONLY"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -656,7 +690,23 @@
        "end": "24:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "22 oz domestic draft",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "glass of wine",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Tres Tequila Rita",
+       "price_usd": 5.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -664,7 +714,8 @@
       "kind": "venue_site",
       "url": "https://www.daveandbusters.com/us/en/about/locations/philadelphia",
       "quote": "Swing by with your crew during Happy Hour to save on brand-new cocktails, classic faves, 22oz domestic drafts & house wine. Available Mon\u2013Fri from 5\u20137PM & Sun\u2013Thu from 10PM\u201312AM.*"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -1036,7 +1087,18 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "Mixed Drinks",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "Wines",
+       "price_usd": 6.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -1044,7 +1106,8 @@
       "kind": "venue_site",
       "url": "https://gooddogbar.com/menu/",
       "quote": "Happy Hour / Monday to Friday 3-6pm / $5 Mixed Drinks"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -1474,7 +1537,38 @@
        "end": "19:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "wine",
+       "label": "Sangria, red or white",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "Malbec - Pinot Noir - Tempranillo",
+       "price_usd": 6.0
+      },
+      {
+       "category": "wine",
+       "label": "Pinot Grigio - Torrontes - Rose",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Bartender drink of the day",
+       "price_usd": 9.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Coconut Mojito",
+       "price_usd": 9.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "Bottle beer: Yuengling, Stella, Peroni, Corona, Miller Lite",
+       "price_usd": 5.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -1482,7 +1576,8 @@
       "kind": "venue_site",
       "url": "http://www.malbecsteakhouse.com/",
       "quote": "HAPPY HOUR Tuesday \u2013 Friday 4 to 7 PM / Sunday 3 to 7 PM"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -1782,7 +1877,23 @@
        "end": "16:30"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "beer",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "wine",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "label": "cocktails",
+       "price_usd": 10.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -1790,7 +1901,8 @@
       "kind": "venue_site",
       "url": "https://www.pennsviewhotel.com/panorama",
       "quote": "Happy Hour / Every Tuesday, Wednesday, Thursday, Friday, Saturday \u2026 \u2022 Tuesday - Friday from 4:30 - 6:00pm \u2026 \u2022 Saturday 3:00 - 4:30pm \u2026 At the Bar / First Come\u2026"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -2802,7 +2914,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "Margaritas",
+       "price_usd": 5.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -2810,7 +2928,8 @@
       "kind": "venue_site",
       "url": "https://www.ubarphilly.com/happy-hour",
       "quote": "Happy Hour at U BAR / 4 PM - 6 PM Monday through Friday"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -2925,7 +3044,13 @@
        "end": "19:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "SNACKS",
+       "price_usd": 7.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -2933,7 +3058,8 @@
       "kind": "venue_site",
       "url": "https://www.vedgerestaurant.com/happyhour",
       "quote": "happy hour menu / HAPPY HOUR TUes - FRi | 5 - 7 PM / SNACKS $7"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -3065,7 +3191,38 @@
        "end": "19:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "bottle_can",
+       "label": "Sapporo",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "Michelob Ultra",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Lady Lavender",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Lychee - Tini",
+       "price_usd": 7.0
+      },
+      {
+       "category": "wine",
+       "label": "Pinot Grigio",
+       "price_usd": 7.0
+      },
+      {
+       "category": "wine",
+       "label": "Cabernet Sauvignon",
+       "price_usd": 7.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -3073,7 +3230,8 @@
       "kind": "venue_site",
       "url": "https://yakitoriboy.com/happy-hour/",
       "quote": "Happy Hour / TUESDAY-FRIDAY: 5-7 PM | / SUNDAY: 5-7 PM"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },

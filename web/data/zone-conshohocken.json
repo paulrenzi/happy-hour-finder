@@ -147,7 +147,18 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "wine",
+       "label": "wine",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "label": "apps",
+       "price_usd": 7.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-06",
      "verified_by": "auto_extract",
@@ -155,7 +166,8 @@
       "kind": "venue_site",
       "url": "https://pepperoncinirestaurant.com/conshohocken-pepperoncini-restaurant-happy-hours-specials",
       "quote": "Happy Hour / mon - fri / 4p - 6p"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },

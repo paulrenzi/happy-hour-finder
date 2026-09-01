@@ -90,7 +90,38 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "Boneless wings, snack size",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "Boneless wings, share size",
+       "price_usd": 10.0
+      },
+      {
+       "category": "draft",
+       "label": "Domestic drafts 16 oz",
+       "price_usd": 3.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "Corona & Corona Light bottles",
+       "price_usd": 4.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Krushes",
+       "price_usd": 6.0
+      },
+      {
+       "category": "wine",
+       "label": "House wine, 6oz pour",
+       "price_usd": 6.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
@@ -98,7 +129,8 @@
       "kind": "venue_site",
       "url": "https://locations.pjspub.com/pa/hatfield/190-forty-foot-road",
       "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   }
