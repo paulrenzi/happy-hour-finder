@@ -5654,6 +5654,57 @@
    ]
   },
   {
+   "id": "the-cheesecake-factory-king-of-prussia",
+   "lid": "48259",
+   "name": "The Cheesecake Factory",
+   "plcb_name": "The Cheesecake Factory",
+   "address": "The Court Pavillion Bldg 570 Mall Blvd A5, King Of Prussia PA 19406",
+   "zone_id": "king_of_prussia",
+   "license_type": "",
+   "website": "https://locations.thecheesecakefactory.com/pa/king-of-prussia-46.html?utm_source=Google&utm_medium=Maps&utm_campaign=Google+Places",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://locations.thecheesecakefactory.com/pa/king-of-prussia-46.html?utm_source=Google&utm_medium=Maps&utm_campaign=Google+Places",
+      "quote": "Happy Hour is served in our bar area Mon - Fri from 4:00 PM-6:00 PM."
+     }
+    }
+   ]
+  },
+  {
    "id": "great-american-pub-narberth",
    "lid": "48382",
    "name": "Great American Pub",

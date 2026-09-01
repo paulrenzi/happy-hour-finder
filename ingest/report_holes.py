@@ -190,7 +190,7 @@ def silent_report(args):
     with_window = {v["lid"] for v in deals["venues"]
                    if "lid" in v and any(d.get("windows") for d in v["deals"])}
 
-    holes, no_site = {}, 0
+    holes, lids, no_site = {}, {}, 0
     for lid, v in base.items():
         if lid in with_window:
             continue
@@ -201,6 +201,20 @@ def silent_report(args):
             continue
         k = classify_silent(hits.get(lid))
         holes.setdefault(k, []).append((v["name"], v.get("website") or ""))
+        lids.setdefault(k, []).append(lid)
+
+    # The report's whole point is to become the next crawl's input. Typing the
+    # licence ids out of a printed table by hand is how a class gets crawled
+    # PARTIALLY and then reported as done.
+    if args.lids_out:
+        want = [k for k in lids if not args.klass or k == args.klass]
+        with open(args.lids_out, "w", encoding="utf-8") as fh:
+            for k in want:
+                for lid in lids[k]:
+                    fh.write(f"{lid}\n")
+        n = sum(len(lids[k]) for k in want)
+        print(f"{n} licence id(s) -> {args.lids_out}"
+              f"{' (' + args.klass + ' only)' if args.klass else ''}\n")
 
     total = sum(len(x) for x in holes.values())
     where = f" in {args.zone}" if args.zone else ""
@@ -227,6 +241,9 @@ def main():
     ap.add_argument("--silent", action="store_true",
                     help="the OTHER population: venues with no window at all")
     ap.add_argument("--zone", help="one zone id, for --silent")
+    ap.add_argument("--lids-out", dest="lids_out",
+                    help="write the reported licence ids to this file, as "
+                         "crawl_sites.py --lids input (honours --class/--zone)")
     args = ap.parse_args()
 
     if args.silent:

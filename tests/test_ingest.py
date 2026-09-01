@@ -2869,3 +2869,53 @@ class SilentClassTest(unittest.TestCase):
             "robots-refused")
         self.assertEqual(report_holes.classify_silent(
             {"pages": [{"url": "u", "result": "HTTP 403"}]}), "fetch-failed")
+
+
+class FrontierIsTheUnionOfBothSiteSources(unittest.TestCase):
+    """The crawl frontier must queue every website we hold, from either source.
+
+    venue_base takes a website from Google Places OR the OSM join, so Places
+    could hand us a site the frontier never saw. Those venues reported as
+    'never-crawled' and read exactly like a venue with no website at all --
+    The Cheesecake Factory, Tommy Bahama and Wegmans in King of Prussia.
+    """
+
+    def _frontier(self, sites, base):
+        import json
+        import unittest.mock
+        real = open
+
+        def fake_open(path, *a, **k):
+            import io
+            if path == crawl_sites.SITES:
+                return io.StringIO(json.dumps(sites))
+            if path == crawl_sites.BASE:
+                return io.StringIO(json.dumps(base))
+            return real(path, *a, **k)
+
+        with unittest.mock.patch("builtins.open", fake_open):
+            return crawl_sites.frontier()
+
+    def test_a_places_only_website_enters_the_frontier(self):
+        out = self._frontier(
+            {}, {"1": {"name": "Cheesecake", "zone_id": "kop",
+                       "address": "a", "website": "https://cheesecake.example"}})
+        self.assertIn("1", out)
+        self.assertEqual(out["1"]["website"], "https://cheesecake.example")
+
+    def test_the_sites_url_wins_where_both_have_one(self):
+        # venue_sites.json carries the deeper, hand-corrected page (Paladar's
+        # /happy-hour). Taking base's root URL instead would trade three new
+        # venues for seventeen worse ones.
+        out = self._frontier(
+            {"1": {"name": "Paladar", "osm_name": None, "address": "a",
+                   "zone_id": "kop",
+                   "website": "https://paladar.example/happy-hour/"}},
+            {"1": {"name": "Paladar", "zone_id": "kop", "address": "a",
+                   "website": "https://paladar.example/"}})
+        self.assertEqual(out["1"]["website"],
+                         "https://paladar.example/happy-hour/")
+
+    def test_a_venue_with_no_website_is_not_queued(self):
+        out = self._frontier({}, {"1": {"name": "No Site", "zone_id": "kop"}})
+        self.assertEqual(out, {})

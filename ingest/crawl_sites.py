@@ -34,7 +34,34 @@ import urllib.robotparser
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITES = os.path.join(REPO, "data", "venue_sites.json")
+BASE = os.path.join(REPO, "data", "venue_base.json")
 OUT = os.path.join(REPO, "data", "crawl_hits.json")
+
+
+def frontier():
+    """Every venue whose website we hold -- from BOTH places we hold one.
+
+    venue_sites.json is the OSM/guess join. venue_base.json takes a website
+    from Google Places OR that join, so Places can hand us a site OSM never
+    had, and those venues were never queued at all: they reported as
+    'never-crawled', which read exactly like a venue with no website. In King
+    of Prussia that was The Cheesecake Factory, Tommy Bahama and Wegmans --
+    sites we already had on file and had simply never asked for.
+
+    The union, not a swap. venue_sites.json's URL WINS where both have one:
+    it is sometimes the deeper, hand-corrected page (Paladar's /happy-hour,
+    Tommy's location page rather than the chain root), and taking base's URL
+    for those would trade three new venues for seventeen worse ones.
+    """
+    sites = json.load(open(SITES, encoding="utf-8"))
+    base = json.load(open(BASE, encoding="utf-8"))
+    for lid, v in base.items():
+        if lid in sites or not v.get("website"):
+            continue
+        sites[lid] = {"name": v["name"], "osm_name": None,
+                      "address": v.get("address", ""),
+                      "zone_id": v.get("zone_id"), "website": v["website"]}
+    return sites
 
 UA = "happy-hour-finder/0.1 (+https://paulrenzi.github.io/happy-hour-finder/)"
 DELAY = 2.0       # seconds between requests to the same host
@@ -1698,7 +1725,7 @@ def main():
 
     import requests
 
-    sites = json.load(open(SITES, encoding="utf-8"))
+    sites = frontier()
     out = json.load(open(OUT, encoding="utf-8")) if os.path.exists(OUT) else {}
     session = requests.Session()
     robots, stats = {}, collections.Counter()
