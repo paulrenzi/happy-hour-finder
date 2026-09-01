@@ -8,6 +8,7 @@ import {
   DOW_SHORT, DOW_LONG, dowOf, fmtClock, fmtMins, fmtMiles, itemParts,
   FILTERS, GROUP, GROUP_LABEL, buildFeed, summarizeWindows, usableMinutes,
   haversineMiles, driveMinutes, ageDays, effectiveConfidence, applyOverlay,
+  dealKey, applyConfirmations,
 } from "./lib.js";
 
 const state = {
@@ -286,7 +287,6 @@ function unknownCard(row) {
       img.remove();
       shot.classList.add("fallback");
     });
-    $(".credit", node).textContent = v.photo.attribution || "";
   } else {
     shot.classList.add("fallback");
     $(".mono", node).textContent = monogramOf(v.name);
@@ -656,10 +656,55 @@ function setFine(node, text) {
     node.textContent = text;
     return;
   }
+  // Two labels rather than a caret: a decorative glyph has to survive every
+  // editor and encoding between here and the page, and one of them ate it.
+  // Words cannot be mangled into a control character.
   const details = el("details", "fineFold");
-  const summary = el("summary", null, "Details");
-  details.append(summary, el("span", null, text));
+  const summary = el("summary");
+  summary.append(
+    el("span", "foldShow", "Show the small print"),
+    el("span", "foldHide", "Hide the small print")
+  );
+  details.append(summary, el("span", "foldText", text));
   node.append(details);
+}
+
+/* "Still on?" -- one tap from somebody who is actually there.
+
+   The ask is deliberately tiny and sits next to the freshness line rather than
+   in the row of buttons, because it is a claim about that line, and because a
+   fourth button is how a card stops being readable on a phone.
+
+   It answers optimistically. A confirmation that fails to reach the Worker
+   costs nobody anything, and a spinner over a one-tap favour is a worse product
+   than a thank-you that was very occasionally not earned. */
+const confirmed = new Set();
+
+function wireStillOn(btn, v, deal) {
+  if (!btn) return;
+  const key = `${v.id}:${dealKey(deal)}`;
+  if (confirmed.has(key)) {
+    btn.textContent = "Thanks";
+    btn.disabled = true;
+    return;
+  }
+  btn.addEventListener("click", async (e) => {
+    e.stopPropagation();
+    confirmed.add(key);
+    btn.textContent = "Thanks";
+    btn.disabled = true;
+    toast("Thanks — that helps the next person");
+    try {
+      await fetch(`${SUBMIT_API}/confirm`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ lid: v.id, key: dealKey(deal) }),
+      });
+    } catch {
+      // Nothing to say and nothing to undo -- the next person's confirmation
+      // carries the same information, and the board is unharmed either way.
+    }
+  });
 }
 
 function card(row, at) {
@@ -681,7 +726,6 @@ function card(row, at) {
       img.remove();
       shot.classList.add("fallback");
     });
-    $(".credit", node).textContent = v.photo.attribution || "";
   } else {
     shot.classList.add("fallback");
     $(".mono", node).textContent = monogramOf(v.name);
@@ -720,19 +764,22 @@ function card(row, at) {
   const conf = $(".conf", node);
   conf.classList.add(row.confidence);
   const age = row.ageDays === 0 ? "today" : `${row.ageDays}d ago`;
-  conf.textContent =
-    row.confidence === "unconfirmed" ? `Unconfirmed — call ahead · ${age}` : `Checked ${age}`;
+  const n = deal.confirmations || 0;
+  conf.textContent = n
+    ? `${n} ${n === 1 ? "person" : "people"} confirmed · ${age}`
+    : row.confidence === "unconfirmed"
+      ? `Unconfirmed — call ahead · ${age}`
+      : `Checked ${age}`;
+  wireStillOn($(".stillOn", node), v, deal);
 
   $(".map", node).href = directionsUrl(v);
   const src = $(".src", node);
   if (deal.source?.url) src.href = deal.source.url;
-  else if (deal.source?.kind === "photo") {
-    // A photo has no URL to link, but it still has a provenance, and every card
-    // on this site says where its hours came from. Saying "from a photo of the
-    // menu" is the honest version of that; removing the element would quietly
-    // make this the one card that cites nothing.
-    src.replaceWith(el("span", "srcNote", "From a photo of their menu"));
-  } else src.remove();
+  // A photo has no URL to link. Where the hours came from -- and who took the
+  // venue photo -- is real and stays on the record, but it belongs on the venue
+  // sheet with the rest of the provenance, not as a line of grey text between a
+  // person and the Directions button.
+  else src.remove();
   $(".wrong", node).addEventListener("click", () => reportWrong(v, deal));
   return node;
 }
@@ -934,6 +981,12 @@ function openVenue(id) {
     box.append(prov);
     body.append(box);
   }
+
+  // The photo credit lives here now, once per venue, instead of on every card
+  // it appears on. It is a licence condition, not decoration, so it does not
+  // get dropped -- it gets put where someone reading about this venue will
+  // find it and someone scanning the board will not trip over it.
+  if (v.photo?.attribution) body.append(el("p", "note", `Photo: ${v.photo.attribution}`));
 
   const acts = el("div", "actions");
   const dir = el("a", "btn go", "Directions");
@@ -1155,7 +1208,8 @@ async function loadOverlay() {
   let res = applyOverlay(state.venues, overlay);
   for (const zid of res.missingZones) await loadZoneVenues(zid);
   if (res.missingZones.length) res = applyOverlay(state.venues, overlay);
-  if (res.added) refresh();
+  const confirms = applyConfirmations(state.venues, overlay.confirms);
+  if (res.added || confirms) refresh();
 }
 
 // A page that cannot say what went wrong is indistinguishable from a broken one.

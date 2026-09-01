@@ -50,3 +50,24 @@ CREATE TABLE IF NOT EXISTS rate (
   n       INTEGER NOT NULL,
   PRIMARY KEY (ip_hash, day)
 );
+
+-- One row per person saying "yes, this happy hour is still on".
+--
+-- deal_key is produced by dealKey() in web/lib.js and stored verbatim: it is a
+-- fingerprint of the deal's WINDOWS, so when the hours change the key changes
+-- and the old confirmations stop counting toward the new ones. That is the
+-- whole safety property -- nothing here can make hours look confirmed that
+-- nobody confirmed.
+--
+-- ip_hash is in the primary key, so one person confirming the same deal five
+-- times is one confirmation. It is the same salted hash used for submissions:
+-- enough to deduplicate, not enough to locate anybody.
+CREATE TABLE IF NOT EXISTS confirmations (
+  lid          TEXT NOT NULL,
+  deal_key     TEXT NOT NULL,
+  ip_hash      TEXT NOT NULL,
+  confirmed_at TEXT NOT NULL,
+  PRIMARY KEY (lid, deal_key, ip_hash)
+);
+
+CREATE INDEX IF NOT EXISTS confirmations_recent ON confirmations (confirmed_at);

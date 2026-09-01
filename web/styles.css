@@ -345,11 +345,22 @@ input[type=range] { width: 100%; height: var(--tap); accent-color: var(--accent)
 
 .fine { margin: 12px 0 0; font-size: 14px; color: var(--muted); line-height: 1.5; }
 .fine:empty { display: none; }
-.fineFold > summary { cursor: pointer; color: var(--fg); font-weight: 600; list-style: none; }
+/* The toggle is a word, not a glyph. The caret this started as was written as
+   a CSS escape through a shell heredoc, which ate the backslash and shipped a
+   literal control character -- so the one thing on the card that was purely
+   decorative was also the only thing that looked broken. */
+.fineFold > summary {
+  display: inline-block; width: auto; cursor: pointer;
+  color: var(--accent-deep); font-weight: 600;
+  text-decoration: underline; text-underline-offset: 3px;
+  list-style: none;
+}
 .fineFold > summary::-webkit-details-marker { display: none; }
-.fineFold > summary::after { content: " be"; }
-.fineFold[open] > summary::after { content: " b4"; }
-.fineFold > span { display: block; margin-top: 6px; }
+.fineFold > summary::marker { content: ""; }
+.fineFold .foldHide { display: none; }
+.fineFold[open] .foldShow { display: none; }
+.fineFold[open] .foldHide { display: inline; }
+.fineFold > .foldText { display: block; margin-top: 8px; }
 
 .meta {
   display: flex; justify-content: space-between; align-items: baseline; gap: 10px;
@@ -361,15 +372,31 @@ input[type=range] { width: 100%; height: var(--tap); accent-color: var(--accent)
 }
 .conf.verified { color: var(--ok); }
 .conf.unconfirmed { color: var(--stale); }
-.credit { font-size: 11px; opacity: 0.8; text-align: right; font-weight: 500; }
+.conf.verified::before, .conf.unconfirmed::before { flex: 0 0 auto; }
+/* A favour, asked quietly. It sits on the freshness line because that is the
+   claim it is about, and it is a link rather than a button because the card
+   already has as many buttons as a phone can hold. */
+.stillOn {
+  flex: 0 0 auto; padding: 4px 0; border: 0; background: none;
+  color: var(--accent-deep); font: inherit; font-size: 13px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 3px; cursor: pointer;
+  white-space: nowrap;
+}
+.stillOn:disabled { color: var(--ok); text-decoration: none; cursor: default; }
+.stillOn:focus-visible { outline: 2px solid var(--accent-deep); outline-offset: 2px; }
 
 .actions { display: flex; gap: 8px; margin-top: 14px; }
+/* Narrow phones are the common case, so a label may never wrap or clip: the
+   buttons size to their words and share what is left over, rather than each
+   taking a third of the row whether "Directions" fits in it or not. */
 .btn {
-  flex: 1; min-height: var(--tap); display: flex; align-items: center; justify-content: center;
+  flex: 1 1 auto; min-width: 0; min-height: var(--tap);
+  display: flex; align-items: center; justify-content: center;
+  padding: 0 12px; white-space: nowrap;
   border: 1px solid var(--line); border-radius: 12px; background: var(--bg);
   color: var(--fg); font: inherit; font-size: 15px; font-weight: 600; text-decoration: none;
 }
-.btn.go { background: var(--accent); border-color: transparent; color: #fff; font-weight: 700; }
+.btn.go { flex: 2 1 auto; background: var(--accent); border-color: transparent; color: #fff; font-weight: 700; }
 .btn.wrong { flex: 0 0 auto; padding: 0 14px; color: var(--dim); }
 .btn:focus-visible { outline: 2px solid var(--accent-deep); outline-offset: 2px; }
 
@@ -564,12 +591,6 @@ body.sheetOpen {
 .noteBox:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 /* Empty until there is something to say, so it never reserves a blank line. */
 .sendStatus:not(:empty) { margin: 12px 0 0; color: var(--accent-deep); font-size: 14.5px; }
-/* Sits where a Source link sits on every other card, and reads as provenance
-   rather than as a button that failed to become a link. */
-.srcNote {
-  align-self: center; color: var(--dim); font-size: 13px; font-style: italic;
-}
-
 .toast {
   position: fixed; left: 50%; bottom: calc(96px + env(safe-area-inset-bottom));
   transform: translateX(-50%); z-index: 20;

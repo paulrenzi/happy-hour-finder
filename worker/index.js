@@ -319,6 +319,114 @@ async function readAndMaybePublish(env, id) {
   }
 }
 
+/* A person looked at the photo, looked at what was read out of it, and said
+   yes. That IS the confirmation, so the deal stops calling itself unconfirmed.
+
+   The upgrade is written back into the stored extraction rather than applied at
+   render time, because two things read these deals -- the live overlay and the
+   nightly fold into the bundles -- and a rule applied in one of them is a rule
+   the other disagrees with. Auto-approved deals are left alone on purpose: no
+   person saw those. */
+async function markReviewed(env, id) {
+  const row = await env.DB.prepare("SELECT extracted FROM submissions WHERE id = ?")
+    .bind(id)
+    .first();
+  if (!row?.extracted) return;
+  let ex;
+  try {
+    ex = JSON.parse(row.extracted);
+  } catch {
+    return;
+  }
+  if (!Array.isArray(ex.deals) || !ex.deals.length) return;
+  for (const deal of ex.deals) {
+    deal.confidence = "verified";
+    deal.verified_by = "photo_review";
+  }
+  await env.DB.prepare("UPDATE submissions SET extracted = ? WHERE id = ?")
+    .bind(JSON.stringify(ex), id)
+    .run();
+}
+
+/* ---- POST /confirm -----------------------------------------------------
+
+   Somebody in the bar saying the hours are still right. It is the cheapest and
+   best evidence this product can get, so the endpoint asks for nothing: no
+   account, no photo, no Turnstile. The only things standing between it and
+   abuse are that a confirmation is idempotent per person per deal, and that a
+   day's worth of them from one address is capped.
+
+   A confirmation for hours that do not exist is meaningless rather than
+   dangerous -- deal_key is a fingerprint of the windows, so a made-up key
+   matches no deal on the board and is never read back by anything. */
+const MAX_CONFIRMS_PER_DAY = 40;
+
+async function confirm(request, env, headers) {
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return json({ error: "Expected JSON." }, 400, headers);
+  }
+  const lid = String(body.lid || "").slice(0, 64).trim();
+  const key = String(body.key || "").slice(0, 300).trim();
+  if (!lid || !key) return json({ error: "Need a venue and a deal." }, 400, headers);
+
+  const ip = request.headers.get("CF-Connecting-IP") || "";
+  const ipHash = await sha256Hex(`${env.IP_SALT || "unsalted"}:${ip}`);
+  const now = new Date().toISOString();
+  const day = now.slice(0, 10);
+
+  const seen = await env.DB.prepare(
+    "SELECT COUNT(*) AS n FROM confirmations WHERE ip_hash = ? AND confirmed_at >= ?"
+  )
+    .bind(ipHash, day)
+    .first();
+  if (seen && seen.n >= MAX_CONFIRMS_PER_DAY) {
+    return json({ error: "That's plenty for one day. Thank you." }, 429, headers);
+  }
+
+  // Re-confirming refreshes the date rather than adding a second vote: the
+  // count has to mean "how many people", or it is just a click counter.
+  await env.DB.prepare(
+    `INSERT INTO confirmations (lid, deal_key, ip_hash, confirmed_at) VALUES (?, ?, ?, ?)
+     ON CONFLICT(lid, deal_key, ip_hash) DO UPDATE SET confirmed_at = excluded.confirmed_at`
+  )
+    .bind(lid, key, ipHash, now)
+    .run();
+
+  const tally = await env.DB.prepare(
+    "SELECT COUNT(*) AS n FROM confirmations WHERE lid = ? AND deal_key = ?"
+  )
+    .bind(lid, key)
+    .first();
+  return json({ ok: true, n: (tally && tally.n) || 1 }, 200, headers);
+}
+
+/* Everything confirmed in the last CONFIRM_WINDOW_DAYS, as {"<lid>:<key>":
+   {n, last}}. Old confirmations are not deleted -- they are just not counted.
+   "Six people said so in March" is not evidence about tonight, and letting it
+   read as though it were is exactly the failure this signal exists to fix. */
+const CONFIRM_WINDOW_DAYS = 45;
+
+async function recentConfirms(env) {
+  const cutoff = new Date(Date.now() - CONFIRM_WINDOW_DAYS * 86400000)
+    .toISOString()
+    .slice(0, 10);
+  const { results } = await env.DB.prepare(
+    `SELECT lid, deal_key, COUNT(*) AS n, MAX(confirmed_at) AS last
+       FROM confirmations WHERE confirmed_at >= ?
+       GROUP BY lid, deal_key LIMIT 5000`
+  )
+    .bind(cutoff)
+    .all();
+  const out = {};
+  for (const r of results) {
+    out[`${r.lid}:${r.deal_key}`] = { n: r.n, last: String(r.last).slice(0, 10) };
+  }
+  return out;
+}
+
 /* ---- GET /live/deals.json ----------------------------------------------
 
    Everything approved, as deals ready to render. The app loads its static
@@ -364,7 +472,17 @@ async function liveDeals(env, headers) {
     byLid.get(lid).deals.push(...ex.deals);
   }
 
-  return json({ venues: [...byLid.values()] }, 200, {
+  // Carried on the same response the board already fetches every minute: a
+  // confirmation should land as fast as an approval, and a second endpoint
+  // would be a second thing to be down.
+  let confirms = {};
+  try {
+    confirms = await recentConfirms(env);
+  } catch (err) {
+    console.error("confirms", String(err));
+  }
+
+  return json({ venues: [...byLid.values()], confirms }, 200, {
     ...headers,
     // Short and shared: an approval should land quickly, but this must not be
     // fetched fresh by every reader on every page load.
@@ -509,6 +627,7 @@ async function admin(request, env, url, headers) {
       .bind(body.status, new Date().toISOString(), (body.note || "").slice(0, 1000) || null, id)
       .run();
     if (!res.meta.changes) return json({ error: "already reviewed" }, 409, headers);
+    if (body.status === "approved") await markReviewed(env, id);
     return json({ id, status: body.status }, 200, headers);
   }
 
@@ -539,6 +658,10 @@ export default {
       if (url.pathname === "/live/deals.json" && request.method === "GET") {
         return await liveDeals(env, headers);
       }
+      if (url.pathname === "/confirm" && request.method === "POST") {
+        return await confirm(request, env, headers);
+      }
+
       if (url.pathname === "/submit" && request.method === "POST") {
         return await submit(request, env, ctx, headers);
       }

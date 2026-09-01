@@ -484,3 +484,58 @@ export function applyOverlay(venues, overlay) {
 
   return { venues, added, missingZones: [...missingZones] };
 }
+
+/* ---- "yes, this is still on" ------------------------------------------
+
+   The strongest evidence a happy hour is real is not that a model read it off a
+   photo, and it is not that Paul approved the read. It is that somebody stood
+   in the bar this week and said so. This is that signal.
+
+   A confirmation is keyed to the WINDOWS, not to the venue. If the hours
+   change, the key changes and every old confirmation stops applying to them --
+   which is the point. Confirming 4-6pm must never make 5-7pm look confirmed.
+
+   The key is only ever produced here, sent to the Worker, and stored verbatim,
+   so there is one implementation of it and nothing to keep in step. */
+export function dealKey(deal) {
+  const w = (deal.windows || [])
+    .map((x) => `${x.dow}:${x.start}-${x.end}`)
+    .sort()
+    .join(",");
+  return `${deal.type || "happy_hour"}|${w}`;
+}
+
+/* How many people it takes before we stop hedging. One stranger agreeing with
+   a menu photo is already better evidence than the photo alone, so the bar is
+   one -- but the count is always shown, because "3 people" and "1 person" are
+   different things to the reader and we should not flatten them. */
+export const CONFIRMS_TO_VERIFY = 1;
+
+/* Fold confirmation counts onto the deals in place.
+
+   It rewrites last_verified_at, which is deliberate: the decay ladder and the
+   "checked N days ago" line both read that field, and a deal somebody stood in
+   front of yesterday IS a deal checked yesterday. Anything else would age out a
+   window we have better evidence for than anything else on the board. */
+export function applyConfirmations(venues, confirms) {
+  if (!confirms) return 0;
+  let touched = 0;
+  for (const v of venues) {
+    for (const lid of lidsOf(v)) {
+      for (const deal of v.deals || []) {
+        const hit = confirms[`${lid}:${dealKey(deal)}`];
+        if (!hit || !hit.n) continue;
+        deal.confirmations = hit.n;
+        if (hit.last && hit.last > (deal.last_verified_at || "")) {
+          deal.last_verified_at = hit.last;
+        }
+        if (hit.n >= CONFIRMS_TO_VERIFY && deal.confidence !== "disputed") {
+          deal.confidence = "verified";
+          deal.verified_by = "patron_confirmation";
+        }
+        touched += 1;
+      }
+    }
+  }
+  return touched;
+}

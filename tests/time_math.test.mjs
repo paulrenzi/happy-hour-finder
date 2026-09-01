@@ -12,7 +12,7 @@ import {
   dowOf, mins, fmtClock, fmtMins, itemParts, haversineMiles, driveMinutes, fmtMiles,
   dealValue, cheapestPrice, FILTERS, windowFor, nextOccurrence, groupFor, GROUP,
   buildFeed, summarizeWindows, usableMinutes, ageDays, effectiveConfidence,
-  GROUP_LABEL, score,
+  GROUP_LABEL, score, dealKey, applyConfirmations,
 } from "../web/lib.js";
 
 const FRI_5PM = new Date(2026, 6, 31, 17, 0);
@@ -429,4 +429,56 @@ test("with a location, the nearest unlisted venue comes first", () => {
 test("the group has a label, so the section header is never blank", () => {
   assert.equal(typeof GROUP_LABEL[GROUP.UNKNOWN], "string");
   assert.ok(GROUP_LABEL[GROUP.UNKNOWN].length > 0);
+});
+
+test("a confirmation is keyed to the hours, so changed hours drop it", () => {
+  const a = { type: "happy_hour", windows: [{ dow: 1, start: "16:00", end: "18:00" }] };
+  const b = { type: "happy_hour", windows: [{ dow: 1, start: "17:00", end: "19:00" }] };
+  const reordered = {
+    type: "happy_hour",
+    windows: [{ dow: 1, start: "16:00", end: "18:00" }],
+  };
+  assert.equal(dealKey(a), dealKey(reordered));
+  assert.notEqual(dealKey(a), dealKey(b));
+});
+
+test("one person standing in the bar outranks an unconfirmed photo read", () => {
+  const deal = {
+    type: "happy_hour",
+    windows: [{ dow: 1, start: "16:00", end: "18:00" }],
+    items: [],
+    confidence: "unconfirmed",
+    last_verified_at: "2026-07-01",
+  };
+  const venues = [{ id: "77", lid: "77", deals: [deal] }];
+  applyConfirmations(venues, { [`77:${dealKey(deal)}`]: { n: 3, last: "2026-08-30" } });
+  assert.equal(deal.confidence, "verified");
+  assert.equal(deal.confirmations, 3);
+  assert.equal(deal.last_verified_at, "2026-08-30");
+});
+
+test("a disputed deal is not talked back up by a confirmation", () => {
+  const deal = {
+    type: "happy_hour",
+    windows: [{ dow: 2, start: "16:00", end: "18:00" }],
+    items: [],
+    confidence: "disputed",
+    last_verified_at: "2026-08-01",
+  };
+  const venues = [{ id: "78", lid: "78", deals: [deal] }];
+  applyConfirmations(venues, { [`78:${dealKey(deal)}`]: { n: 5, last: "2026-08-30" } });
+  assert.equal(deal.confidence, "disputed");
+});
+
+test("a confirmation for hours nobody published matches nothing", () => {
+  const deal = {
+    type: "happy_hour",
+    windows: [{ dow: 3, start: "16:00", end: "18:00" }],
+    items: [],
+    confidence: "likely",
+    last_verified_at: "2026-08-01",
+  };
+  const venues = [{ id: "79", lid: "79", deals: [deal] }];
+  assert.equal(applyConfirmations(venues, { "79:happy_hour|9:00:00-01:00": { n: 9 } }), 0);
+  assert.equal(deal.confidence, "likely");
 });
