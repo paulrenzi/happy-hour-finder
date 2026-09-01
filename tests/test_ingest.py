@@ -272,6 +272,82 @@ class OfflineFallback(unittest.TestCase):
         self.assertIn("boot().catch(", app)
 
 
+class SubmitNameIndex(unittest.TestCase):
+    """The file the submit picker resolves a typed name against.
+
+    Without it the picker can only see what the app has already fetched -- 169
+    venues with hours plus whichever town was opened -- so it answers "no match"
+    about venues we have held all along, and a missing route reads exactly like
+    a missing record. These assert the index covers what the bundles cover, so a
+    build cannot quietly ship a picker that is blind to most of the corpus.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        data = os.path.join(REPO, "web", "data")
+        with open(os.path.join(data, "name-index.json"), encoding="utf-8") as fh:
+            cls.index = json.load(fh)
+        with open(os.path.join(data, "lid-zone.json"), encoding="utf-8") as fh:
+            cls.lid_zone = json.load(fh)
+
+    def test_it_holds_every_venue_the_bundles_ship(self):
+        # Measured against the SHIPPED bundles -- the artifact a reader actually
+        # gets -- not against the index's own length, which would only prove the
+        # index equals itself.
+        #
+        # Keyed on each venue's primary licence ID, deliberately. lid-zone.json
+        # also carries `also_lids`: a venue holding two licences. Those resolve
+        # to a venue that IS indexed, and listing it twice under two licence
+        # numbers would hand the submitter a choice with no answer.
+        shipped = set()
+        data = os.path.join(REPO, "web", "data")
+        for name in os.listdir(data):
+            if not (name.startswith("venues-") or name.startswith("zone-")):
+                continue
+            with open(os.path.join(data, name), encoding="utf-8") as fh:
+                for venue in json.load(fh)["venues"]:
+                    shipped.add(str(venue["lid"]))
+
+        self.assertGreater(len(shipped), 2000, "the bundles did not load")
+        indexed = {row[0] for row in self.index["venues"]}
+        missing = shipped - indexed
+        self.assertEqual(missing, set(),
+                         f"{len(missing)} venue(s) cannot be found by name in the "
+                         f"submit picker, e.g. {sorted(missing)[:5]}")
+
+    def test_a_second_licence_does_not_offer_the_same_bar_twice(self):
+        indexed = {row[0] for row in self.index["venues"]}
+        unresolvable = {lid for lid in self.lid_zone if lid not in indexed}
+        aliases = set()
+        data = os.path.join(REPO, "web", "data")
+        for name in os.listdir(data):
+            if not (name.startswith("venues-") or name.startswith("zone-")):
+                continue
+            with open(os.path.join(data, name), encoding="utf-8") as fh:
+                for venue in json.load(fh)["venues"]:
+                    aliases.update(str(a) for a in (venue.get("also_lids") or []))
+        self.assertTrue(
+            unresolvable <= aliases,
+            f"a LID the site can route to is absent from the picker and is not a "
+            f"second licence: {sorted(unresolvable - aliases)[:5]}")
+
+    def test_every_row_can_be_told_apart_on_screen(self):
+        # A LID, a name, and something a human can use to choose between two
+        # bars with the same name. A row missing any of those is a row that
+        # attaches a menu to the wrong venue with nothing on the card to show it.
+        for lid, name, address, zone in self.index["venues"]:
+            self.assertTrue(lid and name.strip(), f"unusable row: {lid!r} {name!r}")
+            self.assertTrue(address.strip() or zone,
+                            f"{name!r} ({lid}) offers nothing to tell it apart")
+
+    def test_the_zone_of_every_row_has_a_readable_name(self):
+        names = self.index["zone_names"]
+        for row in self.index["venues"]:
+            self.assertIn(row[3], names,
+                          f"{row[1]!r} sits in zone {row[3]!r}, which has no name "
+                          "to show the submitter")
+
+
 class ServiceWorkerCache(unittest.TestCase):
     """The published shell must evict what the last build left on devices."""
 

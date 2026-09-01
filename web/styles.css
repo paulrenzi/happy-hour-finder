@@ -582,6 +582,9 @@ body.sheetOpen {
 .pickerHit:hover, .pickerHit:focus-visible { background: var(--surface); }
 .pickerHit b { display: block; font-size: 15px; }
 .pickerHit span { display: block; color: var(--dim); font-size: 13px; }
+/* "already has hours" -- so a submitter photographing a menu we already publish
+   knows before they send, rather than after a person has read it. */
+.pickerHit .pickerOn { color: var(--accent-deep); font-size: 12px; font-weight: 700; }
 .pickerMiss { margin: 0; padding: 11px 14px; color: var(--dim); font-size: 13.5px; }
 .pickerChosen:not(:empty) {
   margin: 10px 0 0; color: var(--accent-deep); font-size: 14.5px; font-weight: 700;

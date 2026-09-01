@@ -421,6 +421,31 @@ def main():
     with open(os.path.join(OUT_DIR, "lid-zone.json"), "w", encoding="utf-8") as fh:
         json.dump(lid_zone, fh, separators=(",", ":"))
 
+    # Every venue we hold, by name, so a submitter can find their bar.
+    #
+    # The submit picker used to search only what the app had in memory: the 169
+    # venues with hours, plus whatever zone the reader had already opened. Type
+    # "Taku" with no town picked and it answered "no match" about a venue that
+    # has been in our data all along -- and a missing route reads exactly like a
+    # missing record, so the person concludes we do not have their bar and
+    # stops. This is the file that lets it answer honestly.
+    #
+    # Rows, not objects, and fetched only when the picker opens -- never at
+    # boot. It is ~2,900 entries and the reader who is not submitting a photo
+    # should not pay for it. Zone travels with each row because two bars share a
+    # name often enough that the town is what tells them apart.
+    name_index = [
+        [str(v["lid"]), v["name"], v.get("address", ""), v["zone_id"]]
+        for vs in by_zone.values()
+        for v in vs
+        if v.get("lid")
+    ]
+    name_index.sort(key=lambda r: (r[1].lower(), r[0]))
+    with open(os.path.join(OUT_DIR, "name-index.json"), "w", encoding="utf-8") as fh:
+        json.dump({"built_at": today.isoformat(),
+                   "zone_names": zone_names,
+                   "venues": name_index}, fh, separators=(",", ":"))
+
     published = [v for vs in by_zone.values() for v in vs]
     dealful = [v for v in published if v["deals"]]
     # The service worker cache name has always keyed on the count of what ships.

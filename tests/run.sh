@@ -26,6 +26,10 @@ echo "== a bar can be found by name =="
 python tests/search_check.py
 
 echo
+echo "== a menu can be sent for a bar that was never on the board =="
+python tests/picker_check.py
+
+echo
 echo "== a tab left open restamps itself on wake =="
 python tests/stale_clock_check.py
 

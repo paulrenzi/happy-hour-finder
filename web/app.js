@@ -490,6 +490,30 @@ async function shrink(file, maxEdge = 1600, quality = 0.82) {
 /* The venue this menu is for. A photo with no venue is unfilable, so this is
    the one required field -- but it is a search, not a dropdown: the board is
    2,900 licensed premises and no one scrolls that. */
+/* Every licensed venue we hold, by name -- fetched the first time somebody
+   opens the picker, and never at boot. 265 KB is nothing to a person filling in
+   a menu and everything to a reader who just wants to know what is on tonight.
+
+   One in-flight fetch, shared: two keystrokes must not become two downloads. */
+let nameIndexPromise = null;
+
+function loadNameIndex() {
+  if (!nameIndexPromise) {
+    nameIndexPromise = fetch("data/name-index.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(r.status);
+        return r.json();
+      })
+      .catch(() => {
+        // Offline, or the file has not shipped. Fall back to what is in memory
+        // rather than breaking the one field a submission cannot do without.
+        nameIndexPromise = null;
+        return null;
+      });
+  }
+  return nameIndexPromise;
+}
+
 function venuePicker(onPick) {
   const wrap = el("div", "picker");
   const input = el("input", "pickerInput");
@@ -499,31 +523,87 @@ function venuePicker(onPick) {
   const list = el("div", "pickerList");
   const chosen = el("p", "pickerChosen");
 
-  input.addEventListener("input", () => {
+  let index = null;
+  let indexReady = false;
+  // Start the fetch as soon as the picker exists, not on the first keystroke --
+  // by the time anyone has typed two characters it is usually already here.
+  loadNameIndex().then((data) => {
+    index = data;
+    indexReady = true;
+    if (input.value.trim().length >= 2) render();
+  });
+
+  /* Rank a match by WHERE the query lands, not merely whether it does. Typing
+     "taku" must put Taku Japanese Steakhouse above Gyu-Kaku, and a bar whose
+     name starts with what you typed is nearly always the one you meant. */
+  function score(name, q) {
+    const n = name.toLowerCase();
+    const at = n.indexOf(q);
+    if (at < 0) return -1;
+    if (at === 0) return 0;
+    return /[\s&'-]/.test(n[at - 1]) ? 1 : 2;
+  }
+
+  function render() {
     const q = input.value.trim().toLowerCase();
     list.textContent = "";
+    chosen.textContent = "";
     if (q.length < 2) return;
-    const hits = state.venues
-      .filter((v) => v.name.toLowerCase().includes(q))
-      .slice(0, 8);
+
+    // In-memory venues first -- they carry hours, photos and coordinates the
+    // index rows do not -- then everything else we are licensed to know about.
+    // Keyed by LID so a venue already on the board is never offered twice.
+    const seen = new Set();
+    const hits = [];
+    for (const v of state.venues) {
+      const s = score(v.name, q);
+      if (s < 0) continue;
+      const lid = String(v.lid || v.id || "");
+      if (lid && seen.has(lid)) continue;
+      if (lid) seen.add(lid);
+      hits.push({ s, venue: v, zone: v.zone_id, onBoard: !!(v.deals && v.deals.length) });
+    }
+    if (index) {
+      for (const [lid, name, address, zone] of index.venues) {
+        if (seen.has(lid)) continue;
+        const s = score(name, q);
+        if (s < 0) continue;
+        seen.add(lid);
+        hits.push({ s, venue: { lid, id: lid, name, address, zone_id: zone }, zone });
+      }
+    }
+
     if (!hits.length) {
-      // Boot loads every zone's deal-bearing venues, but the 2,900-venue base
-      // arrives one zone at a time. So a miss here usually means "that zone
-      // isn't loaded", not "that bar isn't licensed" -- and telling someone
-      // their bar doesn't exist when we simply haven't fetched it is the wrong
-      // answer to give the one person willing to fill the board in.
+      if (!indexReady) {
+        list.append(el("p", "pickerMiss", "Still loading the venue list — one moment."));
+        return;
+      }
+      // The index is here and holds every licensed premises in the area, so
+      // this really is "we do not have it" -- not "we have not fetched it".
+      // Saying so plainly is the honest answer; it was not available before.
       list.append(
         el("p", "pickerMiss",
-          "No match yet. If it's not a bar with hours already on the board, " +
-            "pick its area at the top of the page first — that loads the rest.")
+          "No licensed venue by that name in the area we cover. Check the " +
+            "spelling, or try a shorter piece of the name — some bars are " +
+            "licensed under a different trading name.")
       );
       return;
     }
-    for (const v of hits) {
+
+    hits.sort((a, b) => a.s - b.s || a.venue.name.localeCompare(b.venue.name));
+    for (const hit of hits.slice(0, 8)) {
+      const v = hit.venue;
       const b = el("button", "pickerHit");
       b.type = "button";
       b.append(el("b", null, v.name));
-      b.append(el("span", null, v.address || ""));
+      // Two bars sharing a name is common and the address is what separates
+      // them -- Taku in King of Prussia against Takumi in Devon, three Dave &
+      // Buster's in three towns. Never resolve that for the submitter: a wrong
+      // LID hangs a menu on the wrong bar and the card shows nothing amiss.
+      const where = [v.address || "", zoneLabel(index, hit.zone)]
+        .filter(Boolean).join(" · ");
+      b.append(el("span", null, where));
+      if (hit.onBoard) b.append(el("span", "pickerOn", "already has hours"));
       b.addEventListener("click", () => {
         onPick(v);
         chosen.textContent = `Menu for ${v.name}`;
@@ -532,10 +612,17 @@ function venuePicker(onPick) {
       });
       list.append(b);
     }
-  });
+  }
 
+  input.addEventListener("input", render);
   wrap.append(input, list, chosen);
   return wrap;
+}
+
+function zoneLabel(index, zoneId) {
+  if (!zoneId) return "";
+  const names = (index && index.zone_names) || {};
+  return names[zoneId] || zoneId.replace(/_/g, " ");
 }
 
 function photoLane(file) {
