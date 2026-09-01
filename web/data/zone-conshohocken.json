@@ -84,11 +84,6 @@
      "type": "happy_hour",
      "windows": [
       {
-       "dow": 2,
-       "start": "15:00",
-       "end": "17:00"
-      },
-      {
        "dow": 6,
        "start": "15:00",
        "end": "17:00"
@@ -101,7 +96,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",

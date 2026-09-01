@@ -57,7 +57,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -117,6 +117,41 @@
       "kind": "venue_site",
       "url": "https://www.chilis.com/locations/us/pennsylvania/philadelphia/south-philly",
       "quote": "Happy Hour / MONDAY-THURSDAY / 3-6pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "102776",
+   "lid": "102776",
+   "slug": "philadelphia-live-hotel-philadelphia",
+   "name": "Philadelphia Live! Hotel",
+   "address": "900 Packer Ave, Philadelphia PA 19148",
+   "zone_id": "south_philly",
+   "website": "https://philadelphia.livecasinohotel.com/",
+   "plcb_name": "LIVE! CASINO & HOTEL PHILADELPHIA",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.9098947,
+   "lng": -75.1642379,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 6,
+       "start": "20:00",
+       "end": "22:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-31",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.livech.com/pittsburgh/events-and-shows/happy-hour",
+      "quote": "\u200b Hold onto your hat, cowboy -- this ain't your average happy hour! Join us every Saturday from 8:00PM - 10:00PM. The drinks are cold, the line dances are hot, the DJ is dropping beats and the mechanical bull is waitin' to test your grit. Our happy hour specials will have you hollerin' \"YEEHAW!\""
      }
     }
    ]

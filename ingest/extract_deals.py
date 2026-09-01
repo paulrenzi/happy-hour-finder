@@ -40,7 +40,13 @@ import sys
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from validate_pa import validate_deal  # noqa: E402
+from validate_pa import (  # noqa: E402
+    MAX_HOURS_PER_DAY,
+    minutes,
+    MAX_HOURS_PER_WEEK,
+    validate_deal,
+    window_hours,
+)
 
 HITS = os.path.join(REPO, "data", "crawl_hits.json")
 SITES = os.path.join(REPO, "data", "venue_sites.json")
@@ -79,6 +85,22 @@ HEDGE_RE = re.compile(
     r"pre.?book|book your|private events?|reserve your|"
     r"\bi (?:have|had|was|went|love|found)\b|\bwe went\b|my (?:new|favorite)\b",
     re.I)
+
+# A bar publishes its lunch, brunch and dinner service in exactly the shape of a
+# happy hour, on the same page, often in the same sentence: Barbuzzo's is
+# 'LUNCH: Saturday & Sunday - 12pm-4pm'. Four hours is lawful, so the statutory
+# cap cannot catch it -- and a lunch menu published as a happy hour is a wrong
+# claim, which is worse than a missing one. A clause that names a different meal
+# states that meal's hours, whatever else the quote says.
+MEAL_RE = re.compile(
+    r"\b(?:lunch|brunch|breakfast|dinner|supper|kitchen (?:hours|open)|"
+    r"menu served|(?:open|serving)\s+(?:daily|from))\b", re.I)
+
+# Which of two windows on one day is the happy hour is not decidable from the
+# clock -- taking the longer picked the bar's opening hours, the shorter picked
+# its 10pm late-night, the earlier picked its lunch. The page already says which
+# is which, so the deciding fact is the WORD, not the time.
+HH_RE = re.compile(r"happy\s*hour|social hour|power hour", re.I)
 
 PRICE_RE = re.compile(r"\$(\d{1,3}(?:\.\d\d)?)\s*([A-Za-z][\w\s&'-]{1,28})")
 HALF_RE = re.compile(r"half.?price(?:d)?\s+([A-Za-z][\w\s&'-]{1,28})", re.I)
@@ -155,7 +177,15 @@ def window_in(text):
     else:
         start = h24(sh, emer) * 60 + int(sm or 0)
         if start >= end:
-            start = h24(sh, "am" if emer == "pm" else "pm") * 60 + int(sm or 0)
+            # '12pm' is the one hour that can mean either end of the day, and
+            # The SideCar's 'LATE NIGHT HAPPY HOUR FRIDAY ONLY 10-12PM' is the
+            # shape that exposes it: read as noon it forced the start back to
+            # 10am and published a Friday morning happy hour. A start that has
+            # to be pm cannot end at noon, so the noon is midnight.
+            if emer == "pm" and eh == 12:
+                end = 24 * 60
+            else:
+                start = h24(sh, "am" if emer == "pm" else "pm") * 60 + int(sm or 0)
     if end == 0:
         end = 24 * 60          # a window ending 'at 12am' ends at midnight
     if not 0 <= start < end <= 24 * 60:
@@ -257,6 +287,11 @@ def windows_from(quote):
             pending = set()
             continue
         for piece in pieces:
+            if MEAL_RE.search(piece):
+                # Not this venue's happy hour, and the days it names belong to
+                # the meal -- so they must not carry forward either.
+                pending = set()
+                continue
             here = days_in(piece)
             if here:
                 pending = here
@@ -270,7 +305,8 @@ def windows_from(quote):
     # Friday'), which reading forwards can never pair up. Falling back to the
     # whole quote is only safe while there is exactly one time range in it --
     # otherwise the pairing would be a guess about which days went with which.
-    if len(quote) <= 200 and len(TIME_RE.findall(quote)) == 1:
+    if len(quote) <= 200 and len(TIME_RE.findall(quote)) == 1 \
+            and not MEAL_RE.search(quote):
         win, ds = window_in(quote), days_in(quote)
         if win and ds:
             return [{"dow": d, "start": win[0], "end": win[1]} for d in sorted(ds)]
@@ -287,15 +323,77 @@ def slug(name, address):
 
 
 def dedupe(windows):
-    """One window per weekday: the longest. Two quotes on one site describe the
-    same happy hour twice far more often than they describe two of them."""
+    """One window per weekday.
+
+    A day claimed twice is either one deal read twice or two different deals,
+    and which it is decides what to publish:
+
+      * They OVERLAP -- one happy hour, described twice. Veda says
+        'Monday - Thursday 4:30PM - 7:00PM' on one page and 4:00 on another.
+        Publish the overlap: every minute of it is claimed by both readings, so
+        nobody is sent to pay full price at a discount that had not started.
+      * They are DISJOINT -- two different deals, and the clock cannot say which
+        is the happy hour. Cedar Point runs 5-7pm and again at 10-11pm; Veda
+        serves lunch 11:30-2:30 and pours happy hour at 4:30. Taking the longer
+        published opening hours, the shorter published the late-night, the
+        earlier published the lunch. So the WORD decides: the window whose quote
+        says 'happy hour' wins, and only when neither does does the earlier one.
+
+    A bar also publishes its OPENING hours on the same page in the same shape --
+    Sor Ynez's 'Tues - Sat 12pm - 9pm' sits one clause away from its 'Happy Hour
+    Tues - Fri 4pm - 7pm', and Valley Forge Pizza's only window is 'Mon - Sun:
+    11:00 AM - 10:00 PM'. Those cannot be a happy hour because the statute caps
+    one, so they never win a day anything lawful claims; they are left for
+    lawful_days() to drop.
+    """
+    def teatime(w):
+        # Two genuine happy hours in one day -- Southern Cross pours at noon and
+        # again at 4:30, Cedar Point at 5 and again at 10 -- and only one fits on
+        # a card. Publish the one a person means when they say 'happy hour',
+        # which is the one overlapping late afternoon most.
+        return min(minutes(w["end"]), 19 * 60) - max(minutes(w["start"]), 16 * 60)
+
+    def rank(w):
+        # A window over the statutory cap cannot be a happy hour, and a window
+        # from a quote that says 'happy hour' is one on the venue's own word.
+        span = minutes(w["end"]) - minutes(w["start"])
+        return (span <= MAX_HOURS_PER_DAY * 60, w.get("_hh", False))
+
     best = {}
     for w in windows:
         cur = best.get(w["dow"])
-        span = int(w["end"][:2]) * 60 - int(w["start"][:2]) * 60
-        if not cur or span > cur[0]:
-            best[w["dow"]] = (span, w)
-    return [w for _dow, (_span, w) in sorted(best.items())]
+        if cur is None:
+            best[w["dow"]] = w
+            continue
+        if rank(w) != rank(cur):
+            best[w["dow"]] = max(w, cur, key=rank)
+            continue
+        lo = max(minutes(cur["start"]), minutes(w["start"]))
+        hi = min(minutes(cur["end"]), minutes(w["end"]))
+        if lo < hi:
+            best[w["dow"]] = dict(w, start="%02d:%02d" % divmod(lo, 60),
+                                  end="%02d:%02d" % divmod(hi, 60))
+        elif teatime(w) != teatime(cur):
+            best[w["dow"]] = max(w, cur, key=teatime)
+        elif minutes(w["start"]) < minutes(cur["start"]):
+            best[w["dow"]] = w
+    return [{k: v for k, v in w.items() if k != "_hh"}
+            for _dow, w in sorted(best.items())]
+
+
+def lawful_days(windows):
+    """The days of a schedule that stand on their own.
+
+    A venue used to be discarded whole when a single day broke the statutory
+    cap: Brewery Techne lost four lawful 'Tuesday thru Friday: 4pm - 6pm'
+    windows because the weekend line beside them reads as 4.5 hours. One
+    unlawful day is a bad reading of that day, not evidence against the others.
+    """
+    kept = sorted((w for w in windows if window_hours(w) <= MAX_HOURS_PER_DAY),
+                  key=lambda w: w["dow"])
+    while kept and sum(window_hours(w) for w in kept) > MAX_HOURS_PER_WEEK:
+        kept.remove(max(kept, key=window_hours))
+    return kept
 
 
 def one_per_osm(hits, sites):
@@ -350,7 +448,10 @@ def main():
         cands.sort(key=lambda c: (len({w["dow"] for w in c[1]}), len(c[0]["quote"])),
                    reverse=True)
         lead = cands[0][0]
-        windows = dedupe([w for _, ws in cands for w in ws])
+        # Each window remembers whether the sentence it came from called itself a
+        # happy hour, so dedupe() can settle a contested day on the venue's word.
+        windows = dedupe([dict(w, _hh=bool(HH_RE.search(h["quote"])))
+                          for h, ws in cands for w in ws])
         deal = {
             "type": "happy_hour",
             "windows": windows,
@@ -368,6 +469,22 @@ def main():
             # even when each quote alone is lawful; fall back to the lead quote.
             deal["windows"] = dedupe(cands[0][1])
             errs = validate_deal(deal)
+        if errs:
+            # Still unlawful: keep the days that are, drop the days that are
+            # not. Then the lead quote has to be one that actually produced a
+            # surviving window, or the card would show a sentence about hours
+            # it no longer publishes.
+            deal["windows"] = lawful_days(windows)
+            survivors = {(w["dow"], w["start"], w["end"]) for w in deal["windows"]}
+            live = [c for c in cands
+                    if any((w["dow"], w["start"], w["end"]) in survivors for w in c[1])]
+            if deal["windows"] and live:
+                lead = live[0][0]
+                deal["source"]["url"] = lead["url"]
+                deal["source"]["quote"] = lead["quote"]
+                errs = validate_deal(deal)
+                if not errs:
+                    stats["  kept after dropping an unlawful day"] += 1
         if errs:
             stats["  REJECTED by the PA validators"] += 1
             if len(rejects) < args.rejects:

@@ -230,7 +230,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -238,6 +238,61 @@
       "quote": "Happy Hour / Daily from 3-6pm"
      },
      "items_source": "llm_extract"
+    }
+   ]
+  },
+  {
+   "id": "44839",
+   "lid": "44839",
+   "slug": "brickside-grille-exton",
+   "name": "Brickside Grille",
+   "address": "554-539 Wellington Sq, Exton PA 19341",
+   "zone_id": "exton_downingtown",
+   "website": "https://www.bricksidegrille.com/",
+   "plcb_name": "BRICKSIDE GRILLE",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.0617237,
+   "lng": -75.6844843,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-31",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.bricksidegrille.com/menus/happy-hour",
+      "quote": "Happy Hour / Monday through Friday, 3:00 pm to 6:00 pm"
+     }
     }
    ]
   },
@@ -296,7 +351,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -387,7 +442,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -463,7 +518,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -514,7 +569,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -629,7 +684,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -662,13 +717,13 @@
      "windows": [
       {
        "dow": 1,
-       "start": "11:00",
-       "end": "14:00"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 2,
-       "start": "11:00",
-       "end": "14:00"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 3,

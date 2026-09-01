@@ -268,7 +268,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -336,6 +336,56 @@
       "quote": "HAPPY HOUR / THURS\u2013FRI\u2013SAT / 3PM\u20136PM"
      },
      "items_source": "llm_extract"
+    }
+   ]
+  },
+  {
+   "id": "104516",
+   "lid": "104516",
+   "slug": "sor-ynez-philadelphia",
+   "name": "Sor Ynez",
+   "address": "246 W Berks St Unit D, Philadelphia PA 19122",
+   "zone_id": "fishtown_kensington",
+   "website": "https://sorynez.com/",
+   "plcb_name": "SOR YNEZ",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.9787238,
+   "lng": -75.1396863,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-31",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://sorynez.com/",
+      "quote": "Tues \u2013 Sat 12pm \u2013 9pm \u2022 Happy Hour Tues \u2013 Fri 4pm \u2013 7pm \u2022 saturday Brunch 12pm-4pm"
+     }
     }
    ]
   },

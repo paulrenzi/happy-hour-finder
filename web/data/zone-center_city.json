@@ -112,12 +112,12 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://www.amadarestaurant.com/amada-philadelphia/",
-      "quote": "HAPPY HOUR / Sunday - Friday: 4:30pm-6:30pm"
+      "quote": "Happy Hour / Sunday - Friday 4:30pm to 6:30pm"
      }
     }
    ]
@@ -301,6 +301,111 @@
    ]
   },
   {
+   "id": "71788",
+   "lid": "71788",
+   "slug": "bar-hygge-philadelphia",
+   "name": "Bar Hygge",
+   "address": "1720 Fairmount Ave, Philadelphia PA 19130",
+   "zone_id": "center_city",
+   "website": "https://www.barhygge.com/",
+   "plcb_name": "JUSTOP LLC",
+   "license_type": "Restaurant (Liquor)",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.barhygge.com/events",
+      "quote": "Happy Hours / Tuesday thru Friday: 4pm - 6pm / Saturday & Sunday: 10am - 2:30pm"
+     }
+    }
+   ],
+   "also_lids": [
+    "71833"
+   ]
+  },
+  {
+   "id": "61894",
+   "lid": "61894",
+   "slug": "barbuzzo-philadelphia",
+   "name": "Barbuzzo",
+   "address": "110 South 13Th St, Philadelphia PA 19107",
+   "zone_id": "center_city",
+   "website": "https://barbuzzo.com",
+   "plcb_name": "RESTAURANT 13 INC",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.9500257,
+   "lng": -75.1620492,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-31",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://barbuzzo.com",
+      "quote": "HAPPY HOUR: Monday to Friday - 5pm-7pm (at the bar and outside tables only)"
+     }
+    }
+   ]
+  },
+  {
    "id": "68001",
    "lid": "68001",
    "slug": "charlie-was-a-sinner-philadelphia",
@@ -324,27 +429,27 @@
       {
        "dow": 1,
        "start": "16:00",
-       "end": "18:00"
+       "end": "17:00"
       },
       {
        "dow": 2,
        "start": "16:00",
-       "end": "18:00"
+       "end": "17:00"
       },
       {
        "dow": 3,
        "start": "16:00",
-       "end": "18:00"
+       "end": "17:00"
       },
       {
        "dow": 4,
        "start": "16:00",
-       "end": "18:00"
+       "end": "17:00"
       },
       {
        "dow": 5,
        "start": "16:00",
-       "end": "18:00"
+       "end": "17:00"
       }
      ],
      "items": [],
@@ -948,28 +1053,28 @@
      "windows": [
       {
        "dow": 1,
-       "start": "11:30",
-       "end": "15:00"
+       "start": "15:00",
+       "end": "17:00"
       },
       {
        "dow": 2,
-       "start": "11:30",
-       "end": "15:00"
+       "start": "15:00",
+       "end": "17:00"
       },
       {
        "dow": 3,
-       "start": "11:30",
-       "end": "15:00"
+       "start": "15:00",
+       "end": "17:00"
       },
       {
        "dow": 4,
-       "start": "11:30",
-       "end": "15:00"
+       "start": "15:00",
+       "end": "17:00"
       },
       {
        "dow": 5,
-       "start": "11:30",
-       "end": "15:00"
+       "start": "15:00",
+       "end": "17:00"
       }
      ],
      "items": [],
@@ -1198,6 +1303,66 @@
    ]
   },
   {
+   "id": "72028",
+   "lid": "72028",
+   "slug": "harp-crown-philadelphia",
+   "name": "Harp & Crown",
+   "address": "1524-26 Chestnut St, Philadelphia PA 19102",
+   "zone_id": "center_city",
+   "website": "https://harpcrown.com",
+   "plcb_name": "HARP & CROWN RESTAURANT GROUP LLC",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.95054,
+   "lng": -75.16686,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://harpcrown.com",
+      "quote": "Happy Hour | Walk-In @ Bar + Lounge: / Mon \u2013 Saturday 4:00pm - 7:00pm / Mon \u2013 Tues 4:00pm - 10:00pm"
+     }
+    }
+   ]
+  },
+  {
    "id": "83984",
    "lid": "83984",
    "slug": "harper-s-garden-philadelphia",
@@ -1374,7 +1539,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1413,7 +1578,7 @@
       {
        "dow": 2,
        "start": "17:00",
-       "end": "21:00"
+       "end": "19:00"
       },
       {
        "dow": 3,
@@ -1432,13 +1597,13 @@
       },
       {
        "dow": 6,
-       "start": "12:00",
-       "end": "15:00"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 7,
-       "start": "12:00",
-       "end": "15:00"
+       "start": "16:00",
+       "end": "18:00"
       }
      ],
      "items": [
@@ -1449,7 +1614,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1508,7 +1673,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1598,7 +1763,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1671,28 +1836,28 @@
      "windows": [
       {
        "dow": 1,
-       "start": "15:00",
-       "end": "19:00"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 2,
-       "start": "15:00",
-       "end": "19:00"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 3,
-       "start": "15:00",
-       "end": "19:00"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 4,
-       "start": "15:00",
-       "end": "19:00"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 5,
-       "start": "15:00",
-       "end": "19:00"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 7,
@@ -2263,27 +2428,27 @@
       {
        "dow": 1,
        "start": "16:00",
-       "end": "19:00"
+       "end": "18:00"
       },
       {
        "dow": 2,
        "start": "16:00",
-       "end": "19:00"
+       "end": "18:00"
       },
       {
        "dow": 3,
        "start": "16:00",
-       "end": "19:00"
+       "end": "18:00"
       },
       {
        "dow": 4,
        "start": "16:00",
-       "end": "19:00"
+       "end": "18:00"
       },
       {
        "dow": 5,
        "start": "16:00",
-       "end": "19:00"
+       "end": "18:00"
       },
       {
        "dow": 6,
@@ -2364,7 +2529,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -2456,28 +2621,28 @@
      "windows": [
       {
        "dow": 1,
-       "start": "11:30",
-       "end": "15:00"
+       "start": "17:00",
+       "end": "19:00"
       },
       {
        "dow": 2,
-       "start": "11:30",
-       "end": "15:00"
+       "start": "17:00",
+       "end": "19:00"
       },
       {
        "dow": 3,
-       "start": "11:30",
-       "end": "15:00"
+       "start": "17:00",
+       "end": "19:00"
       },
       {
        "dow": 4,
-       "start": "11:30",
-       "end": "15:00"
+       "start": "17:00",
+       "end": "19:00"
       },
       {
        "dow": 5,
-       "start": "11:30",
-       "end": "15:00"
+       "start": "17:00",
+       "end": "19:00"
       }
      ],
      "items": [],
@@ -2770,7 +2935,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -2905,7 +3070,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -3024,17 +3189,17 @@
       },
       {
        "dow": 5,
-       "start": "16:00",
+       "start": "17:00",
        "end": "19:00"
       },
       {
        "dow": 6,
-       "start": "16:00",
+       "start": "17:00",
        "end": "19:00"
       },
       {
        "dow": 7,
-       "start": "16:00",
+       "start": "17:00",
        "end": "19:00"
       }
      ],
@@ -3276,7 +3441,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",

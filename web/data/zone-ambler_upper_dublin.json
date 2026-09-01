@@ -68,65 +68,6 @@
    ]
   },
   {
-   "id": "23492",
-   "lid": "23492",
-   "slug": "guiseppes-restauant-ambler",
-   "name": "Guiseppes Restauant",
-   "address": "46 S Bethlehem Pk, Ambler PA 19002",
-   "zone_id": "ambler_upper_dublin",
-   "website": "https://giuseppesofambler.com/",
-   "plcb_name": "GIUSEPPE'S PIZZA REST. OF AMBLER",
-   "license_type": "Restaurant (Liquor)",
-   "lat": 40.157917,
-   "lng": -75.2145017,
-   "geo_precision": "place",
-   "photo": {
-    "attribution": "Photo: nikki tucker / Google",
-    "file": "img/venues/23492.jpg"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://giuseppesofambler.com/specials",
-      "quote": "Happy Hour (Monday-Friday 4pm-6pm)"
-     }
-    }
-   ]
-  },
-  {
    "id": "109577",
    "lid": "109577",
    "slug": "well-crafted-beer-company-llc-ambler",
@@ -172,7 +113,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",

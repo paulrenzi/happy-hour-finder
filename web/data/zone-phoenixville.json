@@ -67,55 +67,6 @@
    ]
   },
   {
-   "id": "88072",
-   "lid": "88072",
-   "slug": "rebel-hill-brewing-phoenixville",
-   "name": "Rebel Hill Brewing",
-   "address": "242 Bridge St, Phoenixville PA 19460",
-   "zone_id": "phoenixville",
-   "website": "https://www.rebelhillbrewing.com/",
-   "plcb_name": "REBEL HILL BREWING COMPANY",
-   "license_type": "Brewery",
-   "lat": 40.133652,
-   "lng": -75.5177982,
-   "geo_precision": "place",
-   "photo": {
-    "attribution": "Photo: Rebel Hill Brewing Company - Brewery on Bridge / Google",
-    "file": "img/venues/88072.jpg"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 2,
-       "start": "17:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 3,
-       "start": "17:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 4,
-       "start": "17:00",
-       "end": "19:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://www.rebelhillbrewing.com/specials",
-      "quote": "HAPPY HOUR / Tuesday-Thursday 5-7 PM"
-     }
-    }
-   ]
-  },
-  {
    "id": "106706",
    "lid": "106706",
    "slug": "revival-pizza-pub-chester-springs",
@@ -204,28 +155,28 @@
      "windows": [
       {
        "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
+       "start": "17:00",
+       "end": "19:00"
       },
       {
        "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
+       "start": "17:00",
+       "end": "19:00"
       },
       {
        "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
+       "start": "17:00",
+       "end": "19:00"
       },
       {
        "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
+       "start": "17:00",
+       "end": "19:00"
       },
       {
        "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
+       "start": "17:00",
+       "end": "19:00"
       }
      ],
      "items": [
@@ -236,12 +187,12 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://thegreatamericanpub.com/phoenixville/menus/happy-hour/",
-      "quote": "Happy Hour Specials / Monday through Friday | DINE-IN ONLY | 4 -6pm / $3 - Miller Lite Drafts"
+      "quote": "Happy Hour Specials / Monday through Friday | DINE-IN ONLY | 5-7pm / $3 - Miller Lite Drafts"
      },
      "items_source": "llm_extract"
     }

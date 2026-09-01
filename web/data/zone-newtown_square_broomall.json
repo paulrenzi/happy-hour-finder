@@ -25,17 +25,17 @@
      "type": "happy_hour",
      "windows": [
       {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
        "dow": 2,
        "start": "16:00",
        "end": "18:00"
       },
       {
        "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
        "start": "16:00",
        "end": "18:00"
       },
@@ -52,12 +52,12 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://alehousenewtownsquare.com/newtown-square-delaware-county-the-ale-house-happy-hours-specials",
-      "quote": "Happy Hour! / 04:00 PM - 06:00 PM / Wednesday August 12th"
+      "quote": "Happy Hour! / 04:00 PM - 06:00 PM / Wednesday September 2nd"
      }
     }
    ]
@@ -84,12 +84,12 @@
      "type": "happy_hour",
      "windows": [
       {
-       "dow": 2,
+       "dow": 3,
        "start": "16:00",
        "end": "18:30"
       },
       {
-       "dow": 3,
+       "dow": 4,
        "start": "16:00",
        "end": "18:30"
       },
@@ -101,12 +101,12 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://charlottesrestaurant.com/newtown-square-charlotte-s-restaurant-happy-hours-specials",
-      "quote": "Happy Hour at Charlottes features drink specials and discounted appetizers. / 04:00 PM - 06:30 PM / Wednesday August 12th"
+      "quote": "Happy Hour at Charlottes features drink specials and discounted appetizers. / 04:00 PM - 06:30 PM / Wednesday September 2nd"
      }
     }
    ]
@@ -156,6 +156,11 @@
        "dow": 5,
        "start": "16:00",
        "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
       }
      ],
      "items": [
@@ -166,7 +171,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",

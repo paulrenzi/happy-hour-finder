@@ -107,6 +107,15 @@
   "queried": "133 S 18TH ST, PHILADELPHIA PA 19103-5238",
   "resolved": "Bar Bombon"
  },
+ "barbuzzo-philadelphia": {
+  "lat": 39.9500257,
+  "lng": -75.1620492,
+  "matched_by": "osm_site",
+  "osm": "node/9078268217",
+  "precision": "place",
+  "queried": "110 SOUTH 13TH ST, PHILADELPHIA PA 19107-4532",
+  "resolved": "Barbuzzo"
+ },
  "barnabys-west-chester": {
   "lat": 39.959608,
   "lng": -75.603943,
@@ -153,6 +162,15 @@
   "precision": "place",
   "queried": "575 CONCHESTER HWY, BOOTHWYN PA 19061",
   "resolved": "Bowlero"
+ },
+ "brickside-grille-exton": {
+  "lat": 40.0617237,
+  "lng": -75.6844843,
+  "matched_by": "osm_site",
+  "osm": "node/2868613728",
+  "precision": "place",
+  "queried": "554-539 WELLINGTON SQ, EXTON PA 19341",
+  "resolved": "Brickside Grille"
  },
  "butcher-and-barkeep-harleysville": {
   "lat": 40.2873691,
@@ -480,15 +498,6 @@
   "queried": "101 N NARBERTH AVE, NARBERTH PA 19072-1923",
   "resolved": "Great American Pub"
  },
- "guiseppes-restauant-ambler": {
-  "lat": 40.157917,
-  "lng": -75.2145017,
-  "matched_by": "osm_site",
-  "osm": "node/2002091709",
-  "precision": "place",
-  "queried": "46 S BETHLEHEM PK, AMBLER PA 19002-5801",
-  "resolved": "Guiseppes Restauant"
- },
  "gullifty-s-rosemont": {
   "lat": 40.0257204,
   "lng": -75.325758,
@@ -506,6 +515,15 @@
   "precision": "place",
   "queried": "1113-31 MARKET ST, PHILADELPHIA PA 19107-2901",
   "resolved": "Hard Rock Cafe"
+ },
+ "harp-crown-philadelphia": {
+  "lat": 39.95054,
+  "lng": -75.16686,
+  "matched_by": "osm_site",
+  "osm": "node/9765915617",
+  "precision": "place",
+  "queried": "1524-26 CHESTNUT ST, PHILADELPHIA PA 19102-2707",
+  "resolved": "Harp & Crown"
  },
  "harper-s-garden-philadelphia": {
   "lat": 39.9523182,
@@ -850,6 +868,15 @@
   "queried": "1700 N FRONT ST, PHILADELPHIA PA 19122-3261",
   "resolved": "Percy"
  },
+ "philadelphia-live-hotel-philadelphia": {
+  "lat": 39.9098947,
+  "lng": -75.1642379,
+  "matched_by": "osm_site",
+  "osm": "way/905642618",
+  "precision": "place",
+  "queried": "900 PACKER AVE, PHILADELPHIA PA 19148-5130",
+  "resolved": "Philadelphia Live! Hotel"
+ },
  "pier-bar-philadelphia": {
   "lat": 39.9674824,
   "lng": -75.1711606,
@@ -913,15 +940,6 @@
   "queried": "1946 LOMBARD ST, PHILADELPHIA PA 19146-1411",
   "resolved": "Pub & Kitchen"
  },
- "rebel-hill-brewing-phoenixville": {
-  "lat": 40.133652,
-  "lng": -75.5177982,
-  "matched_by": "osm_site",
-  "osm": "node/5523297854",
-  "precision": "place",
-  "queried": "242 BRIDGE ST, PHOENIXVILLE PA 19460-3450",
-  "resolved": "Rebel Hill Brewing"
- },
  "revival-pizza-pub-chester-springs": {
   "lat": 40.1160536,
   "lng": -75.6919705,
@@ -975,6 +993,15 @@
   "precision": "place",
   "queried": "1939 S BANCROFT ST, PHILADELPHIA PA 19145",
   "resolved": "Second District Brewing Company"
+ },
+ "sor-ynez-philadelphia": {
+  "lat": 39.9787238,
+  "lng": -75.1396863,
+  "matched_by": "osm_site",
+  "osm": "node/12633433308",
+  "precision": "place",
+  "queried": "246 W BERKS ST UNIT D, PHILADELPHIA PA 19122",
+  "resolved": "Sor Ynez"
  },
  "south-philadelphia-tap-room-philadelphia": {
   "lat": 39.9272653,
@@ -1119,6 +1146,15 @@
   "precision": "place",
   "queried": "129L S 30TH ST, PHILADELPHIA PA 19104",
   "resolved": "The Post"
+ },
+ "the-pullman-restaurant-and-bar-bryn-mawr": {
+  "lat": 40.0215093,
+  "lng": -75.3153609,
+  "matched_by": "osm_site",
+  "osm": "node/3714274818",
+  "precision": "place",
+  "queried": "39 MORRIS AVE, BRYN MAWR PA 19010-3335",
+  "resolved": "The Pullman Restaurant and Bar"
  },
  "the-sidecar-bar-grille-philadelphia": {
   "lat": 39.9417727,

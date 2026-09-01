@@ -822,20 +822,6 @@
    "deals": []
   },
   {
-   "lid": "61894",
-   "name": "Barbuzzo",
-   "address": "110 South 13Th St, Philadelphia PA 19107",
-   "zone_id": "center_city",
-   "license_type": "Restaurant (Liquor)",
-   "id": "61894",
-   "plcb_name": "RESTAURANT 13 INC",
-   "website": "https://barbuzzo.com",
-   "lat": 39.9500257,
-   "lng": -75.1620492,
-   "geo_precision": "place",
-   "deals": []
-  },
-  {
    "lid": "112119",
    "name": "Barcade",
    "address": "1326 Chestnut St, Philadelphia PA 19107",
@@ -1048,13 +1034,15 @@
    "deals": []
   },
   {
+   "id": "71833",
    "lid": "71833",
-   "name": "Brewery Techne",
+   "slug": "bar-hygge-philadelphia-71833",
+   "name": "BREWERY TECHNE",
    "address": "1720-30 Fairmount Ave, Philadelphia PA 19130",
    "zone_id": "center_city",
-   "license_type": "Brewery",
-   "id": "71833",
+   "website": "https://www.barhygge.com/",
    "plcb_name": "BREWERY TECHNE",
+   "license_type": "Brewery",
    "deals": []
   },
   {
@@ -2786,20 +2774,6 @@
    "deals": []
   },
   {
-   "lid": "72028",
-   "name": "Harp & Crown",
-   "address": "1524-26 Chestnut St, Philadelphia PA 19102",
-   "zone_id": "center_city",
-   "license_type": "Restaurant (Liquor)",
-   "id": "72028",
-   "plcb_name": "HARP & CROWN RESTAURANT GROUP LLC",
-   "website": "https://harpcrown.com",
-   "lat": 39.95054,
-   "lng": -75.16686,
-   "geo_precision": "place",
-   "deals": []
-  },
-  {
    "lid": "128372",
    "name": "Heavy Metal Sausage",
    "address": "1316 S Warfield St, Philadelphia PA 19146",
@@ -3228,16 +3202,6 @@
    "license_type": "Restaurant (Liquor)",
    "id": "68946",
    "plcb_name": "JUSTAPLUMBER INC",
-   "deals": []
-  },
-  {
-   "lid": "71788",
-   "name": "Justop",
-   "address": "1720 Fairmount Ave, Philadelphia PA 19130",
-   "zone_id": "center_city",
-   "license_type": "Restaurant (Liquor)",
-   "id": "71788",
-   "plcb_name": "JUSTOP LLC",
    "deals": []
   },
   {

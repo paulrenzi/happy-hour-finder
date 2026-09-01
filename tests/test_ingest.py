@@ -32,7 +32,16 @@ from discover_sites import collapse_shared, name_core, plcb_key, site_of, street
 import guess_sites  # noqa: E402
 from guess_sites import candidates  # noqa: E402
 from guess_sites import verify as guess_verify  # noqa: E402
-from extract_deals import clauses, days_in, items_in, one_sided, window_in, windows_from  # noqa: E402
+from extract_deals import (  # noqa: E402
+    clauses,
+    days_in,
+    dedupe,
+    items_in,
+    lawful_days,
+    one_sided,
+    window_in,
+    windows_from,
+)
 from extract_prices_llm import verify  # noqa: E402
 from fetch_og_images import asset_allowed, css_images, inline_images, og_image  # noqa: E402
 from fetch_venue_photos import IMG_DIR, absorbed_lids, photo_dest  # noqa: E402
@@ -1335,10 +1344,6 @@ class MenuPagesAddedLater(unittest.TestCase):
         self.assertEqual(merge_mode({"deals": [deal]}), "add")
 
 
-if __name__ == "__main__":
-    unittest.main(verbosity=2)
-
-
 class ForbiddenToOneClient(unittest.TestCase):
     """A 403 to requests is not a 403 to us.
 
@@ -1646,10 +1651,6 @@ class OneBarOneCard(unittest.TestCase):
         self.assertNotEqual(norm_name("Amada"), norm_name("Armada"))
 
 
-if __name__ == "__main__":
-    unittest.main()
-
-
 class MenuPricesOnAHappyHourPage(unittest.TestCase):
     """A price and the thing it is for, printed in separate blocks.
 
@@ -1783,3 +1784,117 @@ class ASecondLicenceIsNotACard(unittest.TestCase):
         d = self._zones([{"lid": "44269", "also_lids": ["44268"]}])
         with unittest.mock.patch("fetch_venue_photos.REPO", d):
             self.assertEqual(absorbed_lids(), {"44268"})
+
+
+def _w(dow, start, end, hh=True):
+    return {"dow": dow, "start": start, "end": end, "_hh": hh}
+
+
+class ADayClaimedTwice(unittest.TestCase):
+    """A bar publishes more than one window for one day all the time, and the
+    clock alone cannot say which is the happy hour. Every tie-break tried on the
+    times alone published something false: longest gave Valley Forge Pizza's
+    'Mon - Sun: 11:00 AM - 10:00 PM' opening hours, shortest gave Cedar Point's
+    10pm late-night instead of its 5pm happy hour, earliest gave Veda's lunch.
+    """
+
+    def test_two_readings_that_overlap_publish_only_the_overlap(self):
+        # Veda says 4:30 on one page and 4:00 on another. Sending somebody at
+        # 4:00 to a discount that starts at 4:30 makes them pay full price.
+        got = dedupe([_w(1, "16:00", "19:00"), _w(1, "16:30", "19:00")])
+        self.assertEqual(got, [{"dow": 1, "start": "16:30", "end": "19:00"}])
+
+    def test_the_overlap_is_taken_whichever_order_they_arrive_in(self):
+        a = dedupe([_w(1, "16:30", "19:00"), _w(1, "16:00", "19:00")])
+        b = dedupe([_w(1, "16:00", "19:00"), _w(1, "16:30", "19:00")])
+        self.assertEqual(a, b)
+
+    def test_a_second_happy_hour_later_the_same_night_does_not_win(self):
+        # Cedar Point pours at 5 and again at 10. Only one fits on a card, and
+        # 'happy hour' to a person at teatime is the first one.
+        got = dedupe([_w(2, "22:00", "23:00"), _w(2, "17:00", "19:00")])
+        self.assertEqual(got, [{"dow": 2, "start": "17:00", "end": "19:00"}])
+
+    def test_a_noon_happy_hour_does_not_hide_the_afternoon_one(self):
+        # Southern Cross runs a genuine noon 'brunch happy hour' AND a 4:30 one.
+        got = dedupe([_w(3, "12:00", "14:00"), _w(3, "16:30", "18:30")])
+        self.assertEqual(got, [{"dow": 3, "start": "16:30", "end": "18:30"}])
+
+    def test_opening_hours_never_beat_a_happy_hour(self):
+        # The window over the statutory cap is the bar's opening hours; it holds
+        # the day only while nothing lawful claims it.
+        got = dedupe([_w(4, "11:00", "22:00"), _w(4, "16:00", "18:00")])
+        self.assertEqual(got, [{"dow": 4, "start": "16:00", "end": "18:00"}])
+
+    def test_the_venues_own_word_outranks_a_window_that_never_claimed_one(self):
+        got = dedupe([_w(5, "12:00", "15:00", hh=False), _w(5, "17:00", "19:00")])
+        self.assertEqual(got, [{"dow": 5, "start": "17:00", "end": "19:00"}])
+
+    def test_no_private_marker_reaches_the_published_deal(self):
+        for w in dedupe([_w(1, "16:00", "18:00")]):
+            self.assertNotIn("_hh", w)
+
+
+class AnotherMealIsNotAHappyHour(unittest.TestCase):
+    """Four hours of lunch is lawful, so the statutory cap cannot catch it -- and
+    a lunch menu published as a happy hour is a wrong claim, which is worse than
+    a missing one. Barbuzzo's weekend LUNCH and Sor Ynez's saturday Brunch both
+    reached the board that way."""
+
+    def test_a_lunch_clause_states_lunchs_hours(self):
+        got = windows_from("HAPPY HOUR: Mon - Fri 5pm-7pm / "
+                           "LUNCH: Saturday & Sunday - 12pm-4pm")
+        self.assertEqual({w["dow"] for w in got}, {1, 2, 3, 4, 5})
+
+    def test_the_brunch_window_beside_a_happy_hour_is_left_behind(self):
+        got = windows_from("Tues - Fri 4pm - 7pm • saturday Brunch 12pm-4pm")
+        self.assertEqual({w["dow"] for w in got}, {2, 3, 4, 5})
+
+    def test_a_meal_clause_does_not_lend_its_days_to_a_later_time(self):
+        # The days named by the meal belong to the meal, so they must not carry
+        # forward and pair themselves with the next window on the line.
+        self.assertEqual(windows_from("Dinner: Monday - Thursday / 5pm - 10pm"), [])
+
+    def test_bar_bites_can_still_be_the_happy_hour(self):
+        # Firebirds' happy hour IS called Bar Bites. Refusing the phrase cost a
+        # real card; only a clause naming a SERVICE window is excluded.
+        got = windows_from("Happy Hour / Join us for Bar Bites and Drink Specials "
+                           "every Monday-Friday from 2PM-6PM")
+        self.assertEqual({w["dow"] for w in got}, {1, 2, 3, 4, 5})
+
+
+class OneUnlawfulDayIsNotEvidenceAgainstTheOthers(unittest.TestCase):
+    """A venue used to be discarded whole when a single day broke the statutory
+    cap. Bar Hygge lost four lawful 'Tuesday thru Friday: 4pm - 6pm' windows
+    because the weekend line beside them reads as 4.5 hours."""
+
+    def test_the_lawful_days_survive_their_neighbour(self):
+        ws = [{"dow": d, "start": "16:00", "end": "18:00"} for d in (2, 3, 4, 5)]
+        ws += [{"dow": d, "start": "10:00", "end": "14:30"} for d in (6, 7)]
+        self.assertEqual([w["dow"] for w in lawful_days(ws)], [2, 3, 4, 5])
+
+    def test_a_week_over_the_cap_sheds_its_longest_days_first(self):
+        ws = [{"dow": d, "start": "12:00", "end": "16:00"} for d in range(1, 8)]
+        ws[0] = {"dow": 1, "start": "12:00", "end": "13:00"}
+        kept = lawful_days(ws)
+        self.assertLessEqual(sum((int(w["end"][:2]) - int(w["start"][:2]))
+                                 for w in kept), 24)
+        self.assertIn(1, [w["dow"] for w in kept])
+
+    def test_nothing_lawful_leaves_nothing(self):
+        self.assertEqual(lawful_days([{"dow": 1, "start": "11:00", "end": "22:00"}]), [])
+
+
+class LateNightEndingAtTwelve(unittest.TestCase):
+    """'LATE NIGHT HAPPY HOUR FRIDAY ONLY 10-12PM' read as noon forced the start
+    back to 10am and published a Friday MORNING happy hour."""
+
+    def test_a_pm_start_cannot_end_at_noon(self):
+        self.assertEqual(window_in("10-12PM"), ("22:00", "24:00"))
+
+    def test_a_window_that_really_does_cross_noon_still_does(self):
+        self.assertEqual(window_in("11 - 2 pm"), ("11:00", "14:00"))
+
+
+if __name__ == "__main__":
+    unittest.main(verbosity=2)

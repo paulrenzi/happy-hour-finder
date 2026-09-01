@@ -1,6 +1,6 @@
 {
  "_comment": "Machine-extracted from data/crawl_hits.json by ingest/extract_deals.py. Every deal carries the quote it was read from. Hand-verified deals live in deals_seed.json.",
- "as_of": "2026-08-07",
+ "as_of": "2026-08-31",
  "venues": [
   {
    "id": "lansdale-tavern-lansdale",
@@ -17,38 +17,38 @@
      "windows": [
       {
        "dow": 1,
-       "start": "21:00",
-       "end": "23:00"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 2,
-       "start": "21:00",
-       "end": "23:00"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 3,
-       "start": "21:00",
-       "end": "23:00"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 4,
-       "start": "21:00",
-       "end": "23:00"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 5,
-       "start": "22:00",
-       "end": "24:00"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 6,
-       "start": "22:00",
-       "end": "24:00"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 7,
-       "start": "21:00",
-       "end": "23:00"
+       "start": "16:00",
+       "end": "18:00"
       }
      ],
      "items": [
@@ -223,6 +223,37 @@
    ]
   },
   {
+   "id": "philadelphia-live-hotel-philadelphia",
+   "lid": "102776",
+   "name": "Philadelphia Live! Hotel",
+   "plcb_name": "LIVE! CASINO & HOTEL PHILADELPHIA",
+   "address": "900 PACKER AVE, PHILADELPHIA PA 19148-5130",
+   "zone_id": "south_philly",
+   "license_type": "",
+   "website": "https://philadelphia.livecasinohotel.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 6,
+       "start": "20:00",
+       "end": "22:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-31",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.livech.com/pittsburgh/events-and-shows/happy-hour",
+      "quote": "\u200b Hold onto your hat, cowboy -- this ain't your average happy hour! Join us every Saturday from 8:00PM - 10:00PM. The drinks are cold, the line dances are hot, the DJ is dropping beats and the mechanical bull is waitin' to test your grit. Our happy hour specials will have you hollerin' \"YEEHAW!\""
+     }
+    }
+   ]
+  },
+  {
    "id": "lascala-s-fire-villanova",
    "lid": "103297",
    "name": "LaScala's Fire",
@@ -294,7 +325,7 @@
       {
        "dow": 2,
        "start": "17:00",
-       "end": "21:00"
+       "end": "19:00"
       },
       {
        "dow": 3,
@@ -313,13 +344,13 @@
       },
       {
        "dow": 6,
-       "start": "12:00",
-       "end": "15:00"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 7,
-       "start": "12:00",
-       "end": "15:00"
+       "start": "16:00",
+       "end": "18:00"
       }
      ],
      "items": [
@@ -330,7 +361,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -371,7 +402,7 @@
       {
        "dow": 4,
        "start": "16:00",
-       "end": "20:00"
+       "end": "18:00"
       },
       {
        "dow": 5,
@@ -448,12 +479,58 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://www.chickiesandpetes.com/happy-hour",
       "quote": "Happy Hour available Monday-Friday 4-6 pm and Sunday-Thursday 10pm-12am at bar area only. Where permitted by law. Dine-in only. Prices and times may vary at Parx, Tropicana, Kansas City, and Robbins Ave. locations. Not valid at Allentown, Airport, or Nevada locations."
+     }
+    }
+   ]
+  },
+  {
+   "id": "sor-ynez-philadelphia",
+   "lid": "104516",
+   "name": "Sor Ynez",
+   "plcb_name": "SOR YNEZ",
+   "address": "246 W BERKS ST UNIT D, PHILADELPHIA PA 19122",
+   "zone_id": "fishtown_kensington",
+   "license_type": "",
+   "website": "https://sorynez.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-31",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://sorynez.com/",
+      "quote": "Tues \u2013 Sat 12pm \u2013 9pm \u2022 Happy Hour Tues \u2013 Fri 4pm \u2013 7pm \u2022 saturday Brunch 12pm-4pm"
      }
     }
    ]
@@ -505,6 +582,52 @@
       "kind": "venue_site",
       "url": "https://pierbarphilly.com",
       "quote": "Happy Hour : Monday - Friday from 4-6pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "the-pullman-restaurant-and-bar-bryn-mawr",
+   "lid": "104811",
+   "name": "The Pullman Restaurant and Bar",
+   "plcb_name": "HAM-BOLT LLC",
+   "address": "39 MORRIS AVE, BRYN MAWR PA 19010-3335",
+   "zone_id": "ardmore_bryn_mawr",
+   "license_type": "",
+   "website": "https://thepullmanrestaurant.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 3,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 6,
+       "start": "16:30",
+       "end": "18:30"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://thepullmanrestaurant.com/bryn-mawr-main-line-the-pullman-restaurant-and-bar-happy-hours-specials",
+      "quote": "Happy Hour / 04:30 PM - 06:30 PM / Wednesday August 12th"
      }
     }
    ]
@@ -688,12 +811,12 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://www.bowlero.com/specials/family-unlimited",
-      "quote": "Food & Drink Specials / During Family Unlimited, g et two shareable apps for one low per-person price, plus discounted Craft Lemonades and Dirty Sodas. / Valid every Saturday & Sunday, 11AM\u20133PM, including holidays. Not available at all locations. Selection, pricing and participation may vary. Visit a participating location for complete details. Management reserves all rights."
+      "url": "https://www.bowlero.com/location/limerick-bowl",
+      "quote": "Family Unlimited Food & Drink Specials / Saturday & Sunday | 11AM \u2013 3PM / Valid every Saturday & Sunday, 11AM\u20133PM, including holidays. Not available at all locations. Selection, pricing and participation may vary. Visit a participating location for complete details. Management reserves all rights."
      }
     }
    ]
@@ -1050,7 +1173,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1111,7 +1234,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1361,7 +1484,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1489,7 +1612,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1586,7 +1709,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1785,7 +1908,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1949,27 +2072,27 @@
       {
        "dow": 1,
        "start": "16:00",
-       "end": "19:00"
+       "end": "18:00"
       },
       {
        "dow": 2,
        "start": "16:00",
-       "end": "19:00"
+       "end": "18:00"
       },
       {
        "dow": 3,
        "start": "16:00",
-       "end": "19:00"
+       "end": "18:00"
       },
       {
        "dow": 4,
        "start": "16:00",
-       "end": "19:00"
+       "end": "18:00"
       },
       {
        "dow": 5,
        "start": "16:00",
-       "end": "19:00"
+       "end": "18:00"
       },
       {
        "dow": 6,
@@ -2086,7 +2209,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -2542,7 +2665,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -2588,7 +2711,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -2633,17 +2756,17 @@
       },
       {
        "dow": 5,
-       "start": "16:00",
+       "start": "17:00",
        "end": "19:00"
       },
       {
        "dow": 6,
-       "start": "16:00",
+       "start": "17:00",
        "end": "19:00"
       },
       {
        "dow": 7,
-       "start": "16:00",
+       "start": "17:00",
        "end": "19:00"
       }
      ],
@@ -2751,7 +2874,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -2826,80 +2949,29 @@
      "type": "happy_hour",
      "windows": [
       {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:30"
-      },
-      {
        "dow": 3,
        "start": "16:00",
        "end": "18:30"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:30"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://charlottesrestaurant.com/newtown-square-charlotte-s-restaurant-happy-hours-specials",
-      "quote": "Happy Hour at Charlottes features drink specials and discounted appetizers. / 04:00 PM - 06:30 PM / Wednesday August 12th"
-     }
-    }
-   ]
-  },
-  {
-   "id": "guiseppes-restauant-ambler",
-   "lid": "23492",
-   "name": "Guiseppes Restauant",
-   "plcb_name": "GIUSEPPE'S PIZZA REST. OF AMBLER",
-   "address": "46 S BETHLEHEM PK, AMBLER PA 19002-5801",
-   "zone_id": "ambler_upper_dublin",
-   "license_type": "",
-   "website": "https://giuseppesofambler.com/",
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
       },
       {
        "dow": 4,
        "start": "16:00",
-       "end": "18:00"
+       "end": "18:30"
       },
       {
        "dow": 5,
        "start": "16:00",
-       "end": "18:00"
+       "end": "18:30"
       }
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://giuseppesofambler.com/specials",
-      "quote": "Happy Hour (Monday-Friday 4pm-6pm)"
+      "url": "https://charlottesrestaurant.com/newtown-square-charlotte-s-restaurant-happy-hours-specials",
+      "quote": "Happy Hour at Charlottes features drink specials and discounted appetizers. / 04:00 PM - 06:30 PM / Wednesday September 2nd"
      }
     }
    ]
@@ -2929,7 +3001,7 @@
       },
       {
        "dow": 6,
-       "start": "20:00",
+       "start": "21:00",
        "end": "23:00"
       }
      ],
@@ -3242,12 +3314,12 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://coyotecrossing.com/happy-hour-menu/",
-      "quote": "The best happy hour of Conshohocken / Enjoy the best drinks and dishes at special prices from 4 PM to 6 PM, Monday through Friday. Stop by after work, after class, or anytime you want to break away from the everyday routine. We\u2019ll be waiting for you."
+      "url": "https://coyotecrossing.com/best-happy-hour-menu-conshohocken-near-bridgeport-west-conshohocken/",
+      "quote": "Happy Hour Hours and Specials. Near West Conshohocken and Bridgeport. / Enjoy the best drinks and dishes at special prices from 4 PM to 6 PM, Monday through Friday. Stop by after work, after class, or anytime you want to break away from the everyday routine. We\u2019ll be waiting for you. / Our happy hour runs Monday through Friday, 4 PM to 6 PM, at the bar and on the patio. Expect:"
      }
     }
    ]
@@ -3267,13 +3339,13 @@
      "windows": [
       {
        "dow": 1,
-       "start": "11:00",
-       "end": "14:00"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 2,
-       "start": "11:00",
-       "end": "14:00"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 3,
@@ -3432,12 +3504,12 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://www.bowlero.com/specials/family-unlimited",
-      "quote": "Food & Drink Specials / During Family Unlimited, g et two shareable apps for one low per-person price, plus discounted Craft Lemonades and Dirty Sodas. / Valid every Saturday & Sunday, 11AM\u20133PM, including holidays. Not available at all locations. Selection, pricing and participation may vary. Visit a participating location for complete details. Management reserves all rights."
+      "url": "https://www.bowlero.com/location/bowlero-boothwyn",
+      "quote": "Family Unlimited Food & Drink Specials / Saturday & Sunday | 11AM \u2013 3PM / Valid every Saturday & Sunday, 11AM\u20133PM, including holidays. Not available at all locations. Selection, pricing and participation may vary. Visit a participating location for complete details. Management reserves all rights."
      }
     }
    ]
@@ -3556,6 +3628,57 @@
       "kind": "venue_site",
       "url": "https://www.hardrockcafe.com/location/philadelphia/",
       "quote": "Happy Hour Join us weekdays from 3pm-7pm for Happy Hour"
+     }
+    }
+   ]
+  },
+  {
+   "id": "brickside-grille-exton",
+   "lid": "44839",
+   "name": "Brickside Grille",
+   "plcb_name": "BRICKSIDE GRILLE",
+   "address": "554-539 WELLINGTON SQ, EXTON PA 19341",
+   "zone_id": "exton_downingtown",
+   "license_type": "",
+   "website": "https://www.bricksidegrille.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-31",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.bricksidegrille.com/menus/happy-hour",
+      "quote": "Happy Hour / Monday through Friday, 3:00 pm to 6:00 pm"
      }
     }
    ]
@@ -3821,7 +3944,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -3877,7 +4000,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -3913,7 +4036,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -3964,7 +4087,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -4015,7 +4138,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -4040,28 +4163,28 @@
      "windows": [
       {
        "dow": 1,
-       "start": "11:30",
-       "end": "15:00"
+       "start": "15:00",
+       "end": "17:00"
       },
       {
        "dow": 2,
-       "start": "11:30",
-       "end": "15:00"
+       "start": "15:00",
+       "end": "17:00"
       },
       {
        "dow": 3,
-       "start": "11:30",
-       "end": "15:00"
+       "start": "15:00",
+       "end": "17:00"
       },
       {
        "dow": 4,
-       "start": "11:30",
-       "end": "15:00"
+       "start": "15:00",
+       "end": "17:00"
       },
       {
        "dow": 5,
-       "start": "11:30",
-       "end": "15:00"
+       "start": "15:00",
+       "end": "17:00"
       }
      ],
      "items": [],
@@ -4378,28 +4501,28 @@
      "windows": [
       {
        "dow": 1,
-       "start": "11:30",
-       "end": "15:00"
+       "start": "17:00",
+       "end": "19:00"
       },
       {
        "dow": 2,
-       "start": "11:30",
-       "end": "15:00"
+       "start": "17:00",
+       "end": "19:00"
       },
       {
        "dow": 3,
-       "start": "11:30",
-       "end": "15:00"
+       "start": "17:00",
+       "end": "19:00"
       },
       {
        "dow": 4,
-       "start": "11:30",
-       "end": "15:00"
+       "start": "17:00",
+       "end": "19:00"
       },
       {
        "dow": 5,
-       "start": "11:30",
-       "end": "15:00"
+       "start": "17:00",
+       "end": "19:00"
       }
      ],
      "items": [],
@@ -4455,7 +4578,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -4511,7 +4634,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -4688,17 +4811,17 @@
      "type": "happy_hour",
      "windows": [
       {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
        "dow": 2,
        "start": "16:00",
        "end": "18:00"
       },
       {
        "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
        "start": "16:00",
        "end": "18:00"
       },
@@ -4715,12 +4838,12 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://alehousenewtownsquare.com/newtown-square-delaware-county-the-ale-house-happy-hours-specials",
-      "quote": "Happy Hour! / 04:00 PM - 06:00 PM / Wednesday August 12th"
+      "quote": "Happy Hour! / 04:00 PM - 06:00 PM / Wednesday September 2nd"
      }
     }
    ]
@@ -4916,6 +5039,57 @@
       "kind": "venue_site",
       "url": "https://www.whitedog.com/wayne/specials",
       "quote": "Join us at the bar from 3 - 6 PM Sunday - Friday with select $9 cocktails, $8 wine, $6 beer, and half-priced bottles of wine. Enjoy our specially-priced MENU"
+     }
+    }
+   ]
+  },
+  {
+   "id": "barbuzzo-philadelphia",
+   "lid": "61894",
+   "name": "Barbuzzo",
+   "plcb_name": "RESTAURANT 13 INC",
+   "address": "110 SOUTH 13TH ST, PHILADELPHIA PA 19107-4532",
+   "zone_id": "center_city",
+   "license_type": "",
+   "website": "https://barbuzzo.com",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-31",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://barbuzzo.com",
+      "quote": "HAPPY HOUR: Monday to Friday - 5pm-7pm (at the bar and outside tables only)"
      }
     }
    ]
@@ -5283,7 +5457,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -5437,11 +5611,16 @@
        "dow": 5,
        "start": "16:00",
        "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
       }
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -5655,7 +5834,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -5706,7 +5885,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -5736,22 +5915,22 @@
       },
       {
        "dow": 2,
-       "start": "16:00",
+       "start": "17:00",
        "end": "18:00"
       },
       {
        "dow": 3,
-       "start": "16:00",
+       "start": "17:00",
        "end": "18:00"
       },
       {
        "dow": 4,
-       "start": "16:00",
+       "start": "17:00",
        "end": "18:00"
       },
       {
        "dow": 5,
-       "start": "16:00",
+       "start": "17:00",
        "end": "18:00"
       }
      ],
@@ -5905,7 +6084,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -5941,7 +6120,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -6069,7 +6248,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -6197,27 +6376,27 @@
       {
        "dow": 1,
        "start": "16:00",
-       "end": "18:00"
+       "end": "17:00"
       },
       {
        "dow": 2,
        "start": "16:00",
-       "end": "18:00"
+       "end": "17:00"
       },
       {
        "dow": 3,
        "start": "16:00",
-       "end": "18:00"
+       "end": "17:00"
       },
       {
        "dow": 4,
        "start": "16:00",
-       "end": "18:00"
+       "end": "17:00"
       },
       {
        "dow": 5,
        "start": "16:00",
-       "end": "18:00"
+       "end": "17:00"
       }
      ],
      "items": [],
@@ -6247,28 +6426,28 @@
      "windows": [
       {
        "dow": 1,
-       "start": "15:00",
-       "end": "19:00"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 2,
-       "start": "15:00",
-       "end": "19:00"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 3,
-       "start": "15:00",
-       "end": "19:00"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 4,
-       "start": "15:00",
-       "end": "19:00"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 5,
-       "start": "15:00",
-       "end": "19:00"
+       "start": "16:00",
+       "end": "18:00"
       },
       {
        "dow": 7,
@@ -6457,38 +6636,38 @@
      "windows": [
       {
        "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
+       "start": "17:00",
+       "end": "19:00"
       },
       {
        "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
+       "start": "17:00",
+       "end": "19:00"
       },
       {
        "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
+       "start": "17:00",
+       "end": "19:00"
       },
       {
        "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
+       "start": "17:00",
+       "end": "19:00"
       },
       {
        "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
+       "start": "17:00",
+       "end": "19:00"
       }
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://thegreatamericanpub.com/phoenixville/menus/happy-hour/",
-      "quote": "Happy Hour Specials / Monday through Friday | DINE-IN ONLY | 4 -6pm / $3 - Miller Lite Drafts"
+      "quote": "Happy Hour Specials / Monday through Friday | DINE-IN ONLY | 5-7pm / $3 - Miller Lite Drafts"
      }
     }
    ]
@@ -6529,7 +6708,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -6553,11 +6732,6 @@
      "type": "happy_hour",
      "windows": [
       {
-       "dow": 2,
-       "start": "15:00",
-       "end": "17:00"
-      },
-      {
        "dow": 6,
        "start": "15:00",
        "end": "17:00"
@@ -6570,7 +6744,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -6805,12 +6979,58 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://www.avekitchen.com/happyhour",
       "quote": "Unwind with happy hour specials at Avenue Kitchen in Glen Mills / (Friday + Saturday 4-6 PM, check for updates)."
+     }
+    }
+   ]
+  },
+  {
+   "id": "bar-hygge-philadelphia",
+   "lid": "71788",
+   "name": "Bar Hygge",
+   "plcb_name": "JUSTOP LLC",
+   "address": "1720 FAIRMOUNT AVE, PHILADELPHIA PA 19130-2858",
+   "zone_id": "center_city",
+   "license_type": "",
+   "website": "https://www.barhygge.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.barhygge.com/events",
+      "quote": "Happy Hours / Tuesday thru Friday: 4pm - 6pm / Saturday & Sunday: 10am - 2:30pm"
      }
     }
    ]
@@ -6856,12 +7076,58 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "http://www.malbecsteakhouse.com/",
       "quote": "HAPPY HOUR Tuesday \u2013 Friday 4 to 7 PM / Sunday 3 to 7 PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "bar-hygge-philadelphia-71833",
+   "lid": "71833",
+   "name": "Bar Hygge",
+   "plcb_name": "BREWERY TECHNE",
+   "address": "1720-30 FAIRMOUNT AVE, PHILADELPHIA PA 19130-2858",
+   "zone_id": "center_city",
+   "license_type": "",
+   "website": "https://www.barhygge.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.barhygge.com/events",
+      "quote": "Happy Hours / Tuesday thru Friday: 4pm - 6pm / Saturday & Sunday: 10am - 2:30pm"
      }
     }
    ]
@@ -6907,12 +7173,68 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://www.loscamaradas.com/",
       "quote": "Happy Hour! Discounted drinks and happy hour plates! / Monday to Friday / 5:00 PM - 7:00 PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "harp-crown-philadelphia",
+   "lid": "72028",
+   "name": "Harp & Crown",
+   "plcb_name": "HARP & CROWN RESTAURANT GROUP LLC",
+   "address": "1524-26 CHESTNUT ST, PHILADELPHIA PA 19102-2707",
+   "zone_id": "center_city",
+   "license_type": "",
+   "website": "https://harpcrown.com",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://harpcrown.com",
+      "quote": "Happy Hour | Walk-In @ Bar + Lounge: / Mon \u2013 Saturday 4:00pm - 7:00pm / Mon \u2013 Tues 4:00pm - 10:00pm"
      }
     }
    ]
@@ -7343,7 +7665,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -7441,16 +7763,6 @@
        "dow": 5,
        "start": "15:00",
        "end": "18:00"
-      },
-      {
-       "dow": 6,
-       "start": "14:00",
-       "end": "16:00"
-      },
-      {
-       "dow": 7,
-       "start": "14:00",
-       "end": "16:00"
       }
      ],
      "items": [],
@@ -7588,79 +7900,38 @@
      "windows": [
       {
        "dow": 1,
-       "start": "15:00",
+       "start": "16:00",
        "end": "18:00"
       },
       {
        "dow": 2,
-       "start": "15:00",
+       "start": "16:00",
        "end": "18:00"
       },
       {
        "dow": 3,
-       "start": "15:00",
+       "start": "16:00",
        "end": "18:00"
       },
       {
        "dow": 4,
-       "start": "15:00",
+       "start": "16:00",
        "end": "18:00"
       },
       {
        "dow": 5,
-       "start": "15:00",
+       "start": "16:00",
        "end": "18:00"
       }
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://www.wellcraftedbeer.com/home/lansdale/happyhour",
       "quote": "HAPPY HOUR MENU / Available weekdays 4 to 6 pm."
-     }
-    }
-   ]
-  },
-  {
-   "id": "rebel-hill-brewing-phoenixville",
-   "lid": "88072",
-   "name": "Rebel Hill Brewing",
-   "plcb_name": "REBEL HILL BREWING COMPANY",
-   "address": "242 BRIDGE ST, PHOENIXVILLE PA 19460-3450",
-   "zone_id": "phoenixville",
-   "license_type": "",
-   "website": "https://www.rebelhillbrewing.com/",
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 2,
-       "start": "17:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 3,
-       "start": "17:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 4,
-       "start": "17:00",
-       "end": "19:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://www.rebelhillbrewing.com/specials",
-      "quote": "HAPPY HOUR / Tuesday-Thursday 5-7 PM"
      }
     }
    ]
@@ -7706,7 +7977,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -7767,7 +8038,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -7987,7 +8258,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -8171,12 +8442,12 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://www.amadarestaurant.com/amada-philadelphia/",
-      "quote": "HAPPY HOUR / Sunday - Friday: 4:30pm-6:30pm"
+      "quote": "Happy Hour / Sunday - Friday 4:30pm to 6:30pm"
      }
     }
    ]
@@ -8212,11 +8483,11 @@
       {
        "dow": 4,
        "start": "16:30",
-       "end": "20:30"
+       "end": "18:00"
       },
       {
        "dow": 5,
-       "start": "16:00",
+       "start": "16:30",
        "end": "18:00"
       },
       {
@@ -8253,7 +8524,7 @@
       {
        "dow": 5,
        "start": "15:00",
-       "end": "18:00"
+       "end": "17:00"
       }
      ],
      "items": [
@@ -8417,7 +8688,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -8478,7 +8749,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",

@@ -161,7 +161,7 @@
       },
       {
        "dow": 6,
-       "start": "20:00",
+       "start": "21:00",
        "end": "23:00"
       }
      ],
@@ -243,7 +243,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-08-31",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -325,6 +325,56 @@
       "kind": "venue_site",
       "url": "https://pubofpennvalley.com/menu/",
       "quote": "Happy Hours / 3:30 pm - 5:30 pm & 9:00 pm-11:00 pm / $6 Daily Appetizer Specials (available 3:30pm-5:30pm only)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "104811",
+   "lid": "104811",
+   "slug": "the-pullman-restaurant-and-bar-bryn-mawr",
+   "name": "The Pullman Restaurant and Bar",
+   "address": "39 Morris Ave, Bryn Mawr PA 19010",
+   "zone_id": "ardmore_bryn_mawr",
+   "website": "https://thepullmanrestaurant.com/",
+   "plcb_name": "HAM-BOLT LLC",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.0215093,
+   "lng": -75.3153609,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 3,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 6,
+       "start": "16:30",
+       "end": "18:30"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-08-06",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://thepullmanrestaurant.com/bryn-mawr-main-line-the-pullman-restaurant-and-bar-happy-hours-specials",
+      "quote": "Happy Hour / 04:30 PM - 06:30 PM / Wednesday August 12th"
      }
     }
    ]
