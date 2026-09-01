@@ -434,6 +434,17 @@ export const PAGE_SET_HOURS = 6;
 const submittedAt = (deal) => (deal.source || {}).submitted || "";
 const isPhoto = (deal) => (deal.source || {}).kind === "photo";
 
+/* Six hours tells the two COMMON cases apart, but it cannot tell them apart
+   when they look the same: a second page of the same menu photographed the
+   next day is, by the clock, indistinguishable from a menu that changed. So
+   the reviewer is asked at the moment of approval, and the answer rides on the
+   deal itself. Absent an answer this stays "replace", which is the safe end --
+   a menu that changed and did not supersede leaves contradictory hours on a
+   card, while pages that replaced each other lose items the next photo
+   restores. */
+const addsToBoard = (deals) =>
+  deals.some((d) => (d.source || {}).merge === "add");
+
 /* Every licence ID a venue answers to. A venue can hold more than one. */
 function lidsOf(venue) {
   return [venue.lid, ...(venue.also_lids || [])].filter(Boolean).map(String);
@@ -469,15 +480,17 @@ export function applyOverlay(venues, overlay) {
     );
     if (!fresh.length) continue;
 
-    let newest = "";
-    for (const d of fresh) if (submittedAt(d) > newest) newest = submittedAt(d);
-    const cutoff = new Date(
-      new Date(newest).getTime() - PAGE_SET_HOURS * 3600 * 1000
-    ).toISOString();
+    if (!addsToBoard(fresh)) {
+      let newest = "";
+      for (const d of fresh) if (submittedAt(d) > newest) newest = submittedAt(d);
+      const cutoff = new Date(
+        new Date(newest).getTime() - PAGE_SET_HOURS * 3600 * 1000
+      ).toISOString();
 
-    venue.deals = (venue.deals || []).filter(
-      (d) => !isPhoto(d) || submittedAt(d) >= cutoff
-    );
+      venue.deals = (venue.deals || []).filter(
+        (d) => !isPhoto(d) || submittedAt(d) >= cutoff
+      );
+    }
     venue.deals.push(...fresh);
     added += fresh.length;
   }

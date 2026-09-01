@@ -13,7 +13,7 @@
      GET  /admin/board         what is published per LID, for the reviewer
      POST /admin/extract/<id>  {extracted} | {error}
      POST /admin/read/<id>     read it here and now (needs ANTHROPIC_API_KEY)
-     POST /admin/review/<id>   {status: approved|rejected, note}
+     POST /admin/review/<id>   {status: approved|rejected, note, merge: add|replace}
 
    Live overlay (public):
      GET  /live/deals.json     approved deals not yet in the built bundles
@@ -327,7 +327,7 @@ async function readAndMaybePublish(env, id) {
    nightly fold into the bundles -- and a rule applied in one of them is a rule
    the other disagrees with. Auto-approved deals are left alone on purpose: no
    person saw those. */
-async function markReviewed(env, id) {
+async function markReviewed(env, id, merge) {
   const row = await env.DB.prepare("SELECT extracted FROM submissions WHERE id = ?")
     .bind(id)
     .first();
@@ -342,6 +342,11 @@ async function markReviewed(env, id) {
   for (const deal of ex.deals) {
     deal.confidence = "verified";
     deal.verified_by = "photo_review";
+    // Whether this photo is another page of the menu on the board or a menu
+    // that changed. The clock cannot tell those apart once they are more than
+    // a few hours apart, so the reviewer says, and the answer is stored with
+    // the deal where both readers of it will find the same answer.
+    deal.source = { ...(deal.source || {}), merge: merge === "add" ? "add" : "replace" };
   }
   await env.DB.prepare("UPDATE submissions SET extracted = ? WHERE id = ?")
     .bind(JSON.stringify(ex), id)
@@ -627,7 +632,7 @@ async function admin(request, env, url, headers) {
       .bind(body.status, new Date().toISOString(), (body.note || "").slice(0, 1000) || null, id)
       .run();
     if (!res.meta.changes) return json({ error: "already reviewed" }, 409, headers);
-    if (body.status === "approved") await markReviewed(env, id);
+    if (body.status === "approved") await markReviewed(env, id, body.merge);
     return json({ id, status: body.status }, 200, headers);
   }
 

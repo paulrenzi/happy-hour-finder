@@ -29,7 +29,7 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from extract_photo_deals import api, env_file  # noqa: E402
-from review_photos import PHOTO_JSON, load_photo_deals, superseded  # noqa: E402
+from review_photos import PHOTO_JSON, load_photo_deals, merge_mode, superseded  # noqa: E402
 
 BASE_JSON = os.path.join(REPO, "data", "venue_base.json")
 
@@ -81,7 +81,7 @@ def main():
                 venue["website"] = b["website"]
             payload["venues"].append(venue)
 
-        venue["deals"] = superseded(venue["deals"], sub) + extracted["deals"]
+        venue["deals"] = superseded(venue["deals"], sub, merge_mode(extracted)) + extracted["deals"]
         added += len(extracted["deals"])
         print(f"  {sub['id'][:8]}  {venue['name']}  +{len(extracted['deals'])} deal(s)")
 

@@ -78,6 +78,35 @@ test("pages of one menu add up rather than replacing each other", () => {
   assert.deepEqual(v.deals.map((d) => d.source.photo_id).sort(), ["page1", "page2"]);
 });
 
+test("a page added the next day keeps what is on the board, when told to", () => {
+  // The case the clock gets wrong: more items from the same menu, photographed
+  // a day later. Without the reviewer's answer this reads as a changed menu.
+  const v = venue([photoDeal("page1", "2026-08-30T21:58:00Z", 1)]);
+  const page2 = photoDeal("page2", "2026-08-31T22:48:00Z", 2);
+  page2.source.merge = "add";
+  applyOverlay([v], { venues: [{ lid: "111", deals: [page2] }] });
+  assert.deepEqual(v.deals.map((d) => d.source.photo_id).sort(), ["page1", "page2"]);
+});
+
+test("without that answer a photo a day later still supersedes", () => {
+  const v = venue([photoDeal("page1", "2026-08-30T21:58:00Z", 1)]);
+  const later = photoDeal("later", "2026-08-31T22:48:00Z", 2);
+  later.source.merge = "replace";
+  applyOverlay([v], { venues: [{ lid: "111", deals: [later] }] });
+  assert.deepEqual(v.deals.map((d) => d.source.photo_id), ["later"]);
+});
+
+test("adding a page cannot resurrect hours the overlay already dropped twice", () => {
+  // Applying the same overlay twice is normal -- it happens on every poll.
+  const v = venue([photoDeal("page1", "2026-08-30T21:58:00Z", 1)]);
+  const page2 = photoDeal("page2", "2026-08-31T22:48:00Z", 2);
+  page2.source.merge = "add";
+  const overlay = { venues: [{ lid: "111", deals: [page2] }] };
+  applyOverlay([v], overlay);
+  applyOverlay([v], overlay);
+  assert.equal(v.deals.length, 2);
+});
+
 test("a deal that did not come from a photo is never eaten", () => {
   const v = venue([siteDeal(3), photoDeal("old", "2026-08-01T22:00:00Z", 1)]);
   applyOverlay([v], {

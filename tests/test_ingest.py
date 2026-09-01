@@ -24,7 +24,7 @@ import crawl_sites  # noqa: E402
 from crawl_roundups import fresh_enough, mentions, published_date, venue_index  # noqa: E402
 from crawl_sites import candidate_links, crawl_one, quotes, registrable, visible_text  # noqa: E402
 from discover_places import HAND_DROPPED  # noqa: E402
-from review_photos import superseded  # noqa: E402
+from review_photos import merge_mode, superseded  # noqa: E402
 from discover_sites import collapse_shared, name_core, plcb_key, site_of, street_core  # noqa: E402
 import guess_sites  # noqa: E402
 from guess_sites import candidates  # noqa: E402
@@ -1139,6 +1139,41 @@ class MenuSupersession(unittest.TestCase):
         old = _photo_deal("2026-06-01T18:00:00.000Z", "old-1")
         sub = {"id": "new-1", "submitted_at": "not a timestamp"}
         self.assertEqual(superseded([old], sub), [])
+
+
+class MenuPagesAddedLater(unittest.TestCase):
+    """Six hours cannot tell a second page photographed the next day from a
+    menu that changed. The reviewer is asked, and the answer rides on the deal
+    -- so the two readers of it, the live overlay and the nightly fold, cannot
+    reach different conclusions about the same board."""
+
+    def test_a_reviewer_saying_it_adds_keeps_hours_a_year_older(self):
+        old = _photo_deal("2026-06-01T18:00:00.000Z", "old-1")
+        sub = {"id": "new-1", "submitted_at": "2026-08-31T21:58:23.288Z"}
+        self.assertEqual(superseded([old], sub, "add"), [old])
+
+    def test_adding_still_replaces_the_photos_own_deals(self):
+        # Approving one photo twice must not double its hours on the card.
+        mine = _photo_deal("2026-08-31T21:58:00.000Z", "p1")
+        sub = {"id": "p1", "submitted_at": "2026-08-31T21:58:00.000Z"}
+        self.assertEqual(superseded([mine], sub, "add"), [])
+
+    def test_add_mode_does_not_need_a_readable_timestamp(self):
+        # The answer came from a person, so the clock has nothing left to say.
+        old = _photo_deal("2026-06-01T18:00:00.000Z", "old-1")
+        sub = {"id": "new-1", "submitted_at": "not a timestamp"}
+        self.assertEqual(superseded([old], sub, "add"), [old])
+
+    def test_no_answer_means_replace(self):
+        # Every photo approved before this question existed, and any path that
+        # forgets to ask, has to land on the answer that leaves a card honest.
+        self.assertEqual(merge_mode({}), "replace")
+        self.assertEqual(merge_mode({"deals": [_photo_deal("2026-06-01T18:00:00.000Z", "x")]}), "replace")
+
+    def test_the_answer_is_read_off_the_deal(self):
+        deal = _photo_deal("2026-06-01T18:00:00.000Z", "x")
+        deal["source"]["merge"] = "add"
+        self.assertEqual(merge_mode({"deals": [deal]}), "add")
 
 
 if __name__ == "__main__":

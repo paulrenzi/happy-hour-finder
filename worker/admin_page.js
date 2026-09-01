@@ -70,6 +70,10 @@ export const ADMIN_HTML = `<!doctype html>
   summary { cursor: pointer; min-height: 28px; }
   pre { white-space: pre-wrap; word-break: break-word; font-size: .82rem; }
   .acts { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+  .merge { margin-top: 14px; padding: 10px 12px; border: 1px solid #d8cfc2; border-radius: 10px; }
+  .merge > p { margin: 0 0 8px; font-weight: 700; }
+  .merge label { display: block; margin: 6px 0; cursor: pointer; }
+  .merge label span { color: #6b6357; font-weight: 400; }
   button.go, button.no, button.ghost {
     min-height: var(--tap); padding: 0 18px; border-radius: 999px; font-size: .92rem;
     font-weight: 600; cursor: pointer; border: 1px solid transparent;
@@ -191,7 +195,7 @@ function boardFor(lid) {
     wrap.append(el("p", null, "Nothing published for this venue yet — approving adds the first hours."));
     return wrap;
   }
-  wrap.append(el("p", null, "On the board now (approving replaces this):"));
+  wrap.append(el("p", null, "On the board now:"));
   for (const d of venue.deals) {
     wrap.append(el("p", "win", fmtWindows(d.windows) + "  · " + (d.source && d.source.kind || "?")));
   }
@@ -205,6 +209,35 @@ async function showPhoto(img, id) {
   } catch {
     img.alt = "photo unavailable";
   }
+}
+
+/* Ask only when the answer can change anything.
+
+   If the venue has nothing published, approving adds the first hours either
+   way and a question with one real answer is just a thing to click past. When
+   there IS something on the board, the clock cannot tell "another page of this
+   menu" from "the menu changed" -- so the person looking at the photo says,
+   and "the menu changed" is where the radio starts, because that is the answer
+   that leaves a card honest if it is wrong. */
+function mergeChooser(lid) {
+  const venue = board && board[lid];
+  if (!venue || !(venue.deals || []).length) return null;
+  const wrap = el("div", "merge");
+  wrap.append(el("p", null, "This venue already has hours published. This photo is:"));
+  for (const [value, label, hint] of [
+    ["replace", "A menu that changed", "the hours above come off the board"],
+    ["add", "Another page of the same menu", "these hours are published alongside"],
+  ]) {
+    const l = el("label");
+    const r = el("input");
+    r.type = "radio";
+    r.name = "merge-" + lid;
+    r.value = value;
+    if (value === "replace") r.checked = true;
+    l.append(r, document.createTextNode(" " + label + " "), el("span", null, "— " + hint));
+    wrap.append(l);
+  }
+  return wrap;
 }
 
 function card(sub) {
@@ -256,12 +289,18 @@ function card(sub) {
   if (sub.review_note) detail.append(el("p", "sub", sub.review_note));
 
   if (status === "pending" || status === "extracted") {
+    const chooser = mergeChooser(sub.lid);
+    if (chooser) detail.append(chooser);
+    const merge = () => {
+      const picked = chooser && chooser.querySelector("input:checked");
+      return picked ? picked.value : "replace";
+    };
     const acts = el("div", "acts");
     const ok = el("button", "go", "Approve — publish it");
     const no = el("button", "no", "Reject");
     const publishable = ex && ex.is_menu && ex.deals && ex.deals.length;
     if (!publishable) ok.disabled = true;
-    ok.addEventListener("click", () => review(sub.id, "approved", acts));
+    ok.addEventListener("click", () => review(sub.id, "approved", acts, merge()));
     no.addEventListener("click", () => review(sub.id, "rejected", acts));
     acts.append(ok, no);
     if (sub.extract_error || !ex) {
@@ -285,13 +324,17 @@ function card(sub) {
   return c;
 }
 
-async function review(id, decision, acts) {
+async function review(id, decision, acts, merge) {
   for (const b of acts.querySelectorAll("button")) b.disabled = true;
   try {
     await api("/admin/review/" + id, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ status: decision, note: "reviewed on the admin page" }),
+      body: JSON.stringify({
+        status: decision,
+        note: "reviewed on the admin page",
+        merge: merge || "replace",
+      }),
     });
   } catch (e) {
     acts.append(el("span", "bad", " " + e.message));

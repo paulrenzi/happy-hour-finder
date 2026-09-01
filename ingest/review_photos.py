@@ -127,7 +127,23 @@ def submitted_at(deal):
     return (deal.get("source") or {}).get("submitted") or ""
 
 
-def superseded(deals, sub):
+def merge_mode(extracted):
+    """"add" if the reviewer said this photo is more of the same menu.
+
+    Six hours tells the two common cases apart, but a second page photographed
+    the next day is, by the clock, indistinguishable from a menu that changed.
+    So the reviewer answers it at approval time and the answer rides on the
+    deal. No answer means "replace", which is the safe end: hours that changed
+    and did not supersede leave a card contradicting itself, while pages that
+    replaced each other lose items the next photo puts back.
+    """
+    for deal in (extracted or {}).get("deals") or []:
+        if (deal.get("source") or {}).get("merge") == "add":
+            return "add"
+    return "replace"
+
+
+def superseded(deals, sub, mode="replace"):
     """The deals of this venue that survive approving `sub`.
 
     A newer photo is the newer truth: the menu on the wall today replaces the
@@ -140,6 +156,10 @@ def superseded(deals, sub):
     and keeps every stale one. The result was a venue whose card grew a second,
     contradictory happy hour every time somebody corrected it.
     """
+    if mode == "add":
+        # Another page of the menu already on the board. Only this photo's own
+        # deals come off, so re-approving it cannot double them up.
+        return [d for d in deals if (d.get("source") or {}).get("photo_id") != sub["id"]]
     this = sub["submitted_at"]
     try:
         when = datetime.datetime.fromisoformat(this.replace("Z", "+00:00"))
@@ -180,7 +200,7 @@ def approve(sub, extracted, base):
         if b.get("website"):
             venue["website"] = b["website"]
         payload["venues"].append(venue)
-    venue["deals"] = superseded(venue["deals"], sub) + extracted["deals"]
+    venue["deals"] = superseded(venue["deals"], sub, merge_mode(extracted)) + extracted["deals"]
     with open(PHOTO_JSON, "w", encoding="utf-8") as fh:
         json.dump(payload, fh, indent=1)
     return venue
