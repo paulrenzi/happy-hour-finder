@@ -51,7 +51,43 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "draft beer",
+       "amount_off_usd": 1.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "Surfside Iced Tea cans",
+       "amount_off_usd": 1.0
+      },
+      {
+       "category": "wine",
+       "label": "house wine",
+       "amount_off_usd": 1.0
+      },
+      {
+       "category": "cocktail",
+       "label": "specialty cocktails",
+       "amount_off_usd": 2.0
+      },
+      {
+       "category": "food",
+       "label": "Wings",
+       "amount_off_usd": 4.0
+      },
+      {
+       "category": "food",
+       "label": "Cauliflower Bites",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "label": "Garlic Parmesan Waffle Fries",
+       "price_usd": 6.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -107,6 +143,11 @@
        "category": "food",
        "label": "Smoked Chicken Nachos",
        "price_usd": 10.0
+      },
+      {
+       "category": "draft",
+       "label": "Draft Beer and Wine",
+       "amount_off_usd": 2.0
       },
       {
        "category": "cocktail",
@@ -825,7 +866,23 @@
        "end": "18:30"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "Mini French Fry Board",
+       "price_usd": 10.0
+      },
+      {
+       "category": "draft",
+       "label": "Draft Beers",
+       "price_usd": 6.0
+      },
+      {
+       "category": "wine",
+       "label": "Seasonal Sangria",
+       "price_usd": 6.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -1145,7 +1202,28 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "bottle_can",
+       "label": "HI LIFE BOTTLES",
+       "price_usd": 2.0
+      },
+      {
+       "category": "draft",
+       "label": "ROTATING LOCAL CRAFT IPA",
+       "price_usd": 4.0
+      },
+      {
+       "category": "draft",
+       "label": "WEIHENSTEPHAN DRAFTS",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "HOUSE WINES",
+       "price_usd": 5.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -1339,6 +1417,31 @@
        "category": "cocktail",
        "label": "House Classic Cocktails",
        "price_usd": 10.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Cosmo",
+       "price_usd": 10.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Lemon Drop",
+       "price_usd": 10.0
+      },
+      {
+       "category": "wine",
+       "label": "Red or White Sangria",
+       "price_usd": 10.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Old Fashioned",
+       "price_usd": 10.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Margarita",
+       "price_usd": 10.0
       }
      ],
      "confidence": "unconfirmed",
@@ -1493,7 +1596,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "select apps",
+       "amount_off_usd": 1.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -1897,7 +2006,33 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "All Draft Beers",
+       "price_usd": 6.0
+      },
+      {
+       "category": "wine",
+       "label": "House Wine",
+       "price_usd": 7.0
+      },
+      {
+       "category": "wine",
+       "label": "Red",
+       "price_usd": 7.0
+      },
+      {
+       "category": "wine",
+       "label": "White",
+       "price_usd": 7.0
+      },
+      {
+       "category": "wine",
+       "label": "Prosecco",
+       "price_usd": 7.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -2240,7 +2375,18 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "all drafts",
+       "amount_off_usd": 1.0
+      },
+      {
+       "category": "wine",
+       "label": "wine",
+       "amount_off_usd": 3.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -2303,9 +2449,19 @@
      ],
      "items": [
       {
+       "category": "draft",
+       "label": "all beer",
+       "amount_off_usd": 2.0
+      },
+      {
        "category": "shot",
        "label": "Green Tea Shots",
        "price_usd": 3.0
+      },
+      {
+       "category": "draft",
+       "label": "Draft Beer & Mocktails",
+       "amount_off_usd": 2.0
       },
       {
        "category": "cocktail",
@@ -2363,7 +2519,28 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "wine",
+       "label": "wines",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "label": "bites",
+       "price_usd": 8.0
+      },
+      {
+       "category": "draft",
+       "label": "BEERS",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "label": "COCKTAILS",
+       "price_usd": 8.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -2534,6 +2711,11 @@
       }
      ],
      "items": [
+      {
+       "category": "wine",
+       "label": "Wine by the Glass",
+       "amount_off_usd": 2.0
+      },
       {
        "category": "draft",
        "label": "Draft Beer",
@@ -2735,7 +2917,33 @@
        "end": "16:30"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "wine",
+       "label": "WINE",
+       "price_usd": 8.0
+      },
+      {
+       "category": "wine",
+       "label": "every Wine Flight",
+       "amount_off_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "label": "COCKTAILS",
+       "price_usd": 10.0
+      },
+      {
+       "category": "draft",
+       "label": "BEER",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "SMALL PLATES",
+       "price_usd": 5.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -2795,6 +3003,11 @@
       {
        "category": "draft",
        "label": "Craft Drafts",
+       "price_usd": 5.0
+      },
+      {
+       "category": "draft",
+       "label": "Surfsides & Statesides",
        "price_usd": 5.0
       },
       {
@@ -3119,6 +3332,11 @@
        "category": "draft",
        "label": "DRAFT BEER",
        "price_usd": 6.0
+      },
+      {
+       "category": "draft",
+       "label": "House and Seasonal Options",
+       "price_usd": 6.0
       }
      ],
      "confidence": "unconfirmed",
@@ -3171,14 +3389,55 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "wine",
+       "label": "Sangria",
+       "price_usd": 7.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Frozen Pink Margarita",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "pc Carnitas Tacos",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "pc Baja Fish Taco",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "Tacos",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "pc Cauliflower Esquites Tacos",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "Tuna Ceviche Tacos",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "Nachos de la Casa",
+       "price_usd": 13.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://www.cantinafeliz.com/",
-      "quote": "HAPPY HOUR / Monday - Friday, 3:30pm - 6pm"
+      "url": "https://www.cantinafeliz.com/s/041626-Ambler-Happy-Hour-Web.pdf",
+      "quote": "HAPPY HOUR / MONDAY \u2013 FRIDAY: 3:30PM TO 6:00PM / $4"
      }
     }
    ]
@@ -3222,7 +3481,43 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "CAJUN NACHOS",
+       "price_usd": 8.0
+      },
+      {
+       "category": "draft",
+       "label": "BEER BAKED PRETZEL STICKS",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "CAULIFLOWER BITES",
+       "price_usd": 9.0
+      },
+      {
+       "category": "cocktail",
+       "label": "SIGNATURE COCKTAILS",
+       "price_usd": 8.0
+      },
+      {
+       "category": "wine",
+       "label": "SELECT WINES",
+       "price_usd": 9.0
+      },
+      {
+       "category": "draft",
+       "label": "DRAFT BEERS",
+       "price_usd": 6.0
+      },
+      {
+       "category": "wine",
+       "label": "HOUSE WINES",
+       "price_usd": 6.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -3437,6 +3732,11 @@
        "category": "bottle_can",
        "label": "l You Can Eat Pasta & Salad",
        "price_usd": 9.99
+      },
+      {
+       "category": "food",
+       "label": "Medium Pizzas",
+       "amount_off_usd": 5.0
       }
      ],
      "confidence": "unconfirmed",
@@ -3723,6 +4023,11 @@
        "category": "cocktail",
        "label": "Margaritas",
        "price_usd": 7.0
+      },
+      {
+       "category": "draft",
+       "label": "drafts",
+       "amount_off_usd": 2.0
       }
      ],
      "confidence": "unconfirmed",
@@ -3770,7 +4075,18 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "Select Martinis",
+       "amount_off_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Select Craft Cocktails",
+       "amount_off_usd": 5.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -4092,7 +4408,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "drafts",
+       "amount_off_usd": 1.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -4517,7 +4839,18 @@
        "end": "24:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "bottle_can",
+       "label": "Domestic Bottles",
+       "price_usd": 3.0
+      },
+      {
+       "category": "draft",
+       "label": "Select Craft Beer",
+       "price_usd": 5.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -5031,6 +5364,16 @@
       }
      ],
      "items": [
+      {
+       "category": "food",
+       "label": "all Drinks & Appetizers",
+       "amount_off_usd": 2.0
+      },
+      {
+       "category": "food",
+       "label": "all drinks and appetizers",
+       "amount_off_usd": 2.0
+      },
       {
        "category": "cocktail",
        "label": "Flip's House Margaritas",
@@ -5671,7 +6014,28 @@
        "end": "19:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "Aperol Spritz",
+       "price_usd": 8.0
+      },
+      {
+       "category": "wine",
+       "label": "red sangria",
+       "price_usd": 7.0
+      },
+      {
+       "category": "wine",
+       "label": "white wine",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "label": "barbuzzo burger",
+       "price_usd": 8.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -6617,7 +6981,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "pints",
+       "amount_off_usd": 1.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -6783,6 +7153,26 @@
        "price_usd": 4.0
       },
       {
+       "category": "draft",
+       "label": "Yuengling Lager",
+       "price_usd": 4.0
+      },
+      {
+       "category": "draft",
+       "label": "Miller Lite",
+       "price_usd": 4.0
+      },
+      {
+       "category": "draft",
+       "label": "Coors Lite",
+       "price_usd": 4.0
+      },
+      {
+       "category": "draft",
+       "label": "Michelob Ultra",
+       "price_usd": 4.0
+      },
+      {
        "category": "wine",
        "label": "Wine by the Glass",
        "price_usd": 8.0
@@ -6790,6 +7180,26 @@
       {
        "category": "cocktail",
        "label": "Martinis",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Cosmopolitan",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Orange Pomegranate",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Lemon Drop",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Very Berry",
        "price_usd": 8.0
       },
       {
@@ -7043,7 +7453,28 @@
        "end": "19:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "draft beer",
+       "amount_off_usd": 2.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Featured Happy Hour Cocktails",
+       "amount_off_usd": 2.0
+      },
+      {
+       "category": "well",
+       "label": "Well Drinks too",
+       "price_usd": 5.0
+      },
+      {
+       "category": "draft",
+       "label": "Draft Beer for Happy Hour",
+       "amount_off_usd": 2.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -7207,7 +7638,23 @@
        "end": "17:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "wine",
+       "label": "Crafted Cocktails and Wine by",
+       "price_usd": 6.0
+      },
+      {
+       "category": "draft",
+       "label": "Beer",
+       "price_usd": 4.0
+      },
+      {
+       "category": "food",
+       "label": "Appetizers",
+       "discount_pct": 50
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -7235,27 +7682,27 @@
       {
        "dow": 1,
        "start": "16:00",
-       "end": "17:00"
+       "end": "18:00"
       },
       {
        "dow": 2,
        "start": "16:00",
-       "end": "17:00"
+       "end": "18:00"
       },
       {
        "dow": 3,
        "start": "16:00",
-       "end": "17:00"
+       "end": "18:00"
       },
       {
        "dow": 4,
        "start": "16:00",
-       "end": "17:00"
+       "end": "18:00"
       },
       {
        "dow": 5,
        "start": "16:00",
-       "end": "17:00"
+       "end": "18:00"
       }
      ],
      "items": [],
@@ -7265,7 +7712,7 @@
      "source": {
       "kind": "venue_site",
       "url": "https://charliewasasinner.com/",
-      "quote": "Happy Hour. / Monday-Friday 4pm-6pm / Monday-Friday 3pm-5pm -->"
+      "quote": "Happy Hour (Monday - Friday): 4:00 PM - 6:00 PM"
      }
     }
    ]
@@ -7316,6 +7763,11 @@
      ],
      "items": [
       {
+       "category": "wine",
+       "label": "Specialty Cocktails and Selected Wines",
+       "amount_off_usd": 5.0
+      },
+      {
        "category": "draft",
        "label": "Selected Domestic Beers",
        "price_usd": 5.0
@@ -7324,6 +7776,11 @@
        "category": "food",
        "label": "oysters during happy hour",
        "price_usd": 2.0
+      },
+      {
+       "category": "cocktail",
+       "label": "our Lounge Menu and Signature Cocktails",
+       "amount_off_usd": 5.0
       }
      ],
      "confidence": "unconfirmed",
@@ -8389,6 +8846,11 @@
      ],
      "items": [
       {
+       "category": "draft",
+       "label": "drafts",
+       "amount_off_usd": 2.0
+      },
+      {
        "category": "wine",
        "label": "house wine",
        "price_usd": 7.0
@@ -8974,6 +9436,21 @@
        "category": "draft",
        "label": "Select Beer",
        "price_usd": 5.0
+      },
+      {
+       "category": "draft",
+       "label": "Miller Lite",
+       "price_usd": 5.0
+      },
+      {
+       "category": "draft",
+       "label": "Peroni",
+       "price_usd": 5.0
+      },
+      {
+       "category": "draft",
+       "label": "Dogfish 60 Minute",
+       "price_usd": 5.0
       }
      ],
      "confidence": "unconfirmed",
@@ -9026,7 +9503,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "APPETIZERS",
+       "price_usd": 7.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -9214,7 +9697,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "drafts",
+       "amount_off_usd": 1.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
@@ -9435,6 +9924,11 @@
       }
      ],
      "items": [
+      {
+       "category": "draft",
+       "label": "DRAFT BEERS & WINES BY THE GLASS",
+       "amount_off_usd": 2.0
+      },
       {
        "category": "food",
        "label": "HAPPY HOUR BITES",
@@ -9893,7 +10387,33 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "Spagnola Spritz",
+       "price_usd": 9.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Shrimp Cocktail",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "Raw Oysters",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "House-cut Fries",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "label": "Truffle-Style Fries",
+       "price_usd": 8.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -9925,6 +10445,11 @@
       }
      ],
      "items": [
+      {
+       "category": "draft",
+       "label": "drafts",
+       "amount_off_usd": 1.0
+      },
       {
        "category": "cocktail",
        "label": "margaritas to say Thank you t",
@@ -10075,13 +10600,28 @@
        "price_usd": 9.0
       },
       {
+       "category": "wine",
+       "label": "Hot Honey Rose",
+       "price_usd": 9.0
+      },
+      {
        "category": "cocktail",
        "label": "Dirty Martinis",
        "price_usd": 12.0
       },
       {
        "category": "cocktail",
+       "label": "Stateside Vodka or Bluecoat Gin",
+       "price_usd": 12.0
+      },
+      {
+       "category": "cocktail",
        "label": "Boardroom Mule",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Boardroom Vodka Mules",
        "price_usd": 8.0
       },
       {
@@ -10264,6 +10804,11 @@
       }
      ],
      "items": [
+      {
+       "category": "draft",
+       "label": "Draught Beers",
+       "amount_off_usd": 1.0
+      },
       {
        "category": "cocktail",
        "label": "Cocktail of the Week",

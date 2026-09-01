@@ -119,34 +119,39 @@
      ],
      "items": [
       {
-       "category": "draft",
-       "label": "draft beers",
-       "price_usd": 6.0
+       "category": "food",
+       "label": "CAJUN NACHOS",
+       "price_usd": 8.0
       },
       {
-       "category": "wine",
-       "label": "house wines",
-       "price_usd": 6.0
+       "category": "draft",
+       "label": "BEER BAKED PRETZEL STICKS",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "CAULIFLOWER BITES",
+       "price_usd": 9.0
       },
       {
        "category": "cocktail",
-       "label": "signature cocktails",
+       "label": "SIGNATURE COCKTAILS",
        "price_usd": 8.0
       },
       {
        "category": "wine",
-       "label": "select wines",
+       "label": "SELECT WINES",
        "price_usd": 9.0
       },
       {
-       "category": "food",
-       "label": "cajun nachos",
-       "price_usd": 8.0
+       "category": "draft",
+       "label": "DRAFT BEERS",
+       "price_usd": 6.0
       },
       {
-       "category": "food",
-       "label": "chicken wings",
-       "price_usd": 9.0
+       "category": "wine",
+       "label": "HOUSE WINES",
+       "price_usd": 6.0
       }
      ],
      "confidence": "unconfirmed",
@@ -156,8 +161,7 @@
       "kind": "venue_site",
       "url": "https://blackpowdertavern.com/happy-hour-at-black-powder-tavern/",
       "quote": "Happy Hour at Black Powder Tavern / We invite you to come and join us to celebrate Happy Hour on Monday through Friday from 4:00 p.m. until 6:00 p.m."
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   },
@@ -266,24 +270,19 @@
      ],
      "items": [
       {
-       "category": "food",
-       "discount_pct": 50.0,
-       "label": "appetizers"
-      },
-      {
-       "category": "cocktail",
-       "label": "crafted cocktails",
-       "price_usd": 6.0
-      },
-      {
        "category": "wine",
-       "label": "wine by the glass",
+       "label": "Crafted Cocktails and Wine by",
        "price_usd": 6.0
       },
       {
        "category": "draft",
-       "label": "beer",
+       "label": "Beer",
        "price_usd": 4.0
+      },
+      {
+       "category": "food",
+       "label": "Appetizers",
+       "discount_pct": 50
       }
      ],
      "confidence": "unconfirmed",
@@ -293,8 +292,7 @@
       "kind": "venue_site",
       "url": "http://estiarestaurant.com/radnor-pa/menus/happy-hour-radnor.pdf",
       "quote": "HAPPY HOUR MENU / MONDAY - FRIDAY 3:30PM-5PM"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   },
@@ -389,6 +387,16 @@
       }
      ],
      "items": [
+      {
+       "category": "food",
+       "label": "all Drinks & Appetizers",
+       "amount_off_usd": 2.0
+      },
+      {
+       "category": "food",
+       "label": "all drinks and appetizers",
+       "amount_off_usd": 2.0
+      },
       {
        "category": "cocktail",
        "label": "Flip's House Margaritas",
@@ -560,13 +568,18 @@
        "price_usd": 7.0
       },
       {
+       "category": "food",
+       "label": "bites",
+       "price_usd": 8.0
+      },
+      {
        "category": "draft",
-       "label": "beers",
+       "label": "BEERS",
        "price_usd": 5.0
       },
       {
        "category": "cocktail",
-       "label": "cocktails",
+       "label": "COCKTAILS",
        "price_usd": 8.0
       }
      ],
@@ -577,8 +590,7 @@
       "kind": "venue_site",
       "url": "https://www.maison-lotus.com/",
       "quote": "Happy Hour Mon to Fri 4-6pm"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   },

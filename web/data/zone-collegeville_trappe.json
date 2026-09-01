@@ -173,13 +173,23 @@
      "items": [
       {
        "category": "bottle_can",
-       "label": "Hi Life bottles",
+       "label": "HI LIFE BOTTLES",
        "price_usd": 2.0
       },
       {
        "category": "draft",
-       "label": "rotating local craft IPA",
+       "label": "ROTATING LOCAL CRAFT IPA",
        "price_usd": 4.0
+      },
+      {
+       "category": "draft",
+       "label": "WEIHENSTEPHAN DRAFTS",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "HOUSE WINES",
+       "price_usd": 5.0
       }
      ],
      "confidence": "unconfirmed",
@@ -189,8 +199,7 @@
       "kind": "venue_site",
       "url": "https://thestraydogtavern.com/",
       "quote": "Happy Hour / We all need a place to relax after work, so why not do it with a drink in your hand? Join us for Happy Hour 7 days a week from 4pm-6pm for discounted drinks, buck-a-shuck oysters and more! / Our local music scene is great and we wanted to showcase some of the best talent around. Come by on Thursday evenings for open mic or check the entertainment schedule link on top of this page for "
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   },
@@ -305,6 +314,11 @@
        "category": "food",
        "label": "Smoked Chicken Nachos",
        "price_usd": 10.0
+      },
+      {
+       "category": "draft",
+       "label": "Draft Beer and Wine",
+       "amount_off_usd": 2.0
       },
       {
        "category": "cocktail",

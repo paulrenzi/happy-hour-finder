@@ -50,14 +50,55 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "wine",
+       "label": "Sangria",
+       "price_usd": 7.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Frozen Pink Margarita",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "pc Carnitas Tacos",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "pc Baja Fish Taco",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "Tacos",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "pc Cauliflower Esquites Tacos",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "Tuna Ceviche Tacos",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "Nachos de la Casa",
+       "price_usd": 13.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://www.cantinafeliz.com/",
-      "quote": "HAPPY HOUR / Monday - Friday, 3:30pm - 6pm"
+      "url": "https://www.cantinafeliz.com/s/041626-Ambler-Happy-Hour-Web.pdf",
+      "quote": "HAPPY HOUR / MONDAY \u2013 FRIDAY: 3:30PM TO 6:00PM / $4"
      }
     }
    ]

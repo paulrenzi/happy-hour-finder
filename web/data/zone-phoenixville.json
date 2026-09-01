@@ -51,7 +51,7 @@
       {
        "category": "draft",
        "label": "pints",
-       "price_usd": 1.0
+       "amount_off_usd": 1.0
       }
      ],
      "confidence": "unconfirmed",
@@ -61,8 +61,7 @@
       "kind": "venue_site",
       "url": "https://blackhorsetaverns.com/phoenixville/",
       "quote": "Happy Hour Monday-Friday 4-6pm"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   },

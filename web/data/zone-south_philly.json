@@ -55,7 +55,18 @@
        "end": "24:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "bottle_can",
+       "label": "Domestic Bottles",
+       "price_usd": 3.0
+      },
+      {
+       "category": "draft",
+       "label": "Select Craft Beer",
+       "price_usd": 5.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -272,7 +283,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "drafts",
+       "amount_off_usd": 1.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",

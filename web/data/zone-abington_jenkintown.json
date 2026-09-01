@@ -181,7 +181,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "select apps",
+       "amount_off_usd": 1.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",

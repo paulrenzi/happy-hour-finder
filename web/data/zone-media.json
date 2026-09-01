@@ -146,6 +146,11 @@
        "category": "bottle_can",
        "label": "l You Can Eat Pasta & Salad",
        "price_usd": 9.99
+      },
+      {
+       "category": "food",
+       "label": "Medium Pizzas",
+       "amount_off_usd": 5.0
       }
      ],
      "confidence": "unconfirmed",
@@ -213,6 +218,26 @@
        "price_usd": 4.0
       },
       {
+       "category": "draft",
+       "label": "Yuengling Lager",
+       "price_usd": 4.0
+      },
+      {
+       "category": "draft",
+       "label": "Miller Lite",
+       "price_usd": 4.0
+      },
+      {
+       "category": "draft",
+       "label": "Coors Lite",
+       "price_usd": 4.0
+      },
+      {
+       "category": "draft",
+       "label": "Michelob Ultra",
+       "price_usd": 4.0
+      },
+      {
        "category": "wine",
        "label": "Wine by the Glass",
        "price_usd": 8.0
@@ -220,6 +245,26 @@
       {
        "category": "cocktail",
        "label": "Martinis",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Cosmopolitan",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Orange Pomegranate",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Lemon Drop",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Very Berry",
        "price_usd": 8.0
       },
       {

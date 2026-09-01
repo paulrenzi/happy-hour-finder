@@ -177,9 +177,29 @@
      ],
      "items": [
       {
-       "category": "food",
-       "label": "happy hour food",
+       "category": "cocktail",
+       "label": "Spagnola Spritz",
+       "price_usd": 9.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Shrimp Cocktail",
        "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "Raw Oysters",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "House-cut Fries",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "label": "Truffle-Style Fries",
+       "price_usd": 8.0
       }
      ],
      "confidence": "unconfirmed",
@@ -189,8 +209,7 @@
       "kind": "venue_site",
       "url": "https://favaglenmills.com/",
       "quote": "Join us for Happy Hour Sunday\u2013Friday from 4\u20136 p.m. (extended to 8 p.m. on Mondays and Thursdays) and enjoy select food and drink specials."
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   },

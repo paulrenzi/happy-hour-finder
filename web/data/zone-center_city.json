@@ -37,6 +37,11 @@
      ],
      "items": [
       {
+       "category": "draft",
+       "label": "drafts",
+       "amount_off_usd": 2.0
+      },
+      {
        "category": "wine",
        "label": "house wine",
        "price_usd": 7.0
@@ -245,6 +250,11 @@
      ],
      "items": [
       {
+       "category": "draft",
+       "label": "DRAFT BEERS & WINES BY THE GLASS",
+       "amount_off_usd": 2.0
+      },
+      {
        "category": "food",
        "label": "HAPPY HOUR BITES",
        "price_usd": 5.0
@@ -419,34 +429,24 @@
      ],
      "items": [
       {
-       "category": "draft",
-       "label": "craft ale",
-       "price_usd": 5.0
-      },
-      {
-       "category": "food",
-       "label": "olives",
-       "price_usd": 4.0
-      },
-      {
-       "category": "wine",
-       "label": "house red/white wine",
-       "price_usd": 7.0
-      },
-      {
        "category": "cocktail",
        "label": "Aperol Spritz",
        "price_usd": 8.0
       },
       {
-       "category": "bottle_can",
-       "label": "seltzer",
-       "price_usd": 6.0
+       "category": "wine",
+       "label": "red sangria",
+       "price_usd": 7.0
+      },
+      {
+       "category": "wine",
+       "label": "white wine",
+       "price_usd": 7.0
       },
       {
        "category": "food",
-       "label": "papas fritas",
-       "price_usd": 6.0
+       "label": "barbuzzo burger",
+       "price_usd": 8.0
       }
      ],
      "confidence": "unconfirmed",
@@ -456,8 +456,7 @@
       "kind": "venue_site",
       "url": "https://barbuzzo.com",
       "quote": "HAPPY HOUR: Monday to Friday - 5pm-7pm (at the bar and outside tables only)"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   },
@@ -485,27 +484,27 @@
       {
        "dow": 1,
        "start": "16:00",
-       "end": "17:00"
+       "end": "18:00"
       },
       {
        "dow": 2,
        "start": "16:00",
-       "end": "17:00"
+       "end": "18:00"
       },
       {
        "dow": 3,
        "start": "16:00",
-       "end": "17:00"
+       "end": "18:00"
       },
       {
        "dow": 4,
        "start": "16:00",
-       "end": "17:00"
+       "end": "18:00"
       },
       {
        "dow": 5,
        "start": "16:00",
-       "end": "17:00"
+       "end": "18:00"
       }
      ],
      "items": [],
@@ -515,7 +514,7 @@
      "source": {
       "kind": "venue_site",
       "url": "https://charliewasasinner.com/",
-      "quote": "Happy Hour. / Monday-Friday 4pm-6pm / Monday-Friday 3pm-5pm -->"
+      "quote": "Happy Hour (Monday - Friday): 4:00 PM - 6:00 PM"
      }
     }
    ]
@@ -1048,6 +1047,11 @@
      ],
      "items": [
       {
+       "category": "draft",
+       "label": "Draught Beers",
+       "amount_off_usd": 1.0
+      },
+      {
        "category": "cocktail",
        "label": "Cocktail of the Week",
        "price_usd": 10.0
@@ -1446,7 +1450,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "APPETIZERS",
+       "price_usd": 7.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -1904,6 +1914,11 @@
      ],
      "items": [
       {
+       "category": "wine",
+       "label": "Specialty Cocktails and Selected Wines",
+       "amount_off_usd": 5.0
+      },
+      {
        "category": "draft",
        "label": "Selected Domestic Beers",
        "price_usd": 5.0
@@ -1912,6 +1927,11 @@
        "category": "food",
        "label": "oysters during happy hour",
        "price_usd": 2.0
+      },
+      {
+       "category": "cocktail",
+       "label": "our Lounge Menu and Signature Cocktails",
+       "amount_off_usd": 5.0
       }
      ],
      "confidence": "unconfirmed",
@@ -2113,19 +2133,29 @@
      ],
      "items": [
       {
-       "category": "draft",
-       "label": "beer",
-       "price_usd": 5.0
-      },
-      {
        "category": "wine",
-       "label": "wine",
+       "label": "WINE",
        "price_usd": 8.0
       },
       {
+       "category": "wine",
+       "label": "every Wine Flight",
+       "amount_off_usd": 8.0
+      },
+      {
        "category": "cocktail",
-       "label": "cocktails",
+       "label": "COCKTAILS",
        "price_usd": 10.0
+      },
+      {
+       "category": "draft",
+       "label": "BEER",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "SMALL PLATES",
+       "price_usd": 5.0
       }
      ],
      "confidence": "unconfirmed",
@@ -2135,8 +2165,7 @@
       "kind": "venue_site",
       "url": "https://www.pennsviewhotel.com/panorama",
       "quote": "Happy Hour / Every Tuesday, Wednesday, Thursday, Friday, Saturday \u2026 \u2022 Tuesday - Friday from 4:30 - 6:00pm \u2026 \u2022 Saturday 3:00 - 4:30pm \u2026 At the Bar / First Come\u2026"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   },
@@ -2495,9 +2524,19 @@
      ],
      "items": [
       {
+       "category": "draft",
+       "label": "all beer",
+       "amount_off_usd": 2.0
+      },
+      {
        "category": "shot",
        "label": "Green Tea Shots",
        "price_usd": 3.0
+      },
+      {
+       "category": "draft",
+       "label": "Draft Beer & Mocktails",
+       "amount_off_usd": 2.0
       },
       {
        "category": "cocktail",
@@ -3367,6 +3406,11 @@
       {
        "category": "draft",
        "label": "DRAFT BEER",
+       "price_usd": 6.0
+      },
+      {
+       "category": "draft",
+       "label": "House and Seasonal Options",
        "price_usd": 6.0
       }
      ],

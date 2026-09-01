@@ -119,7 +119,43 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "draft beer",
+       "amount_off_usd": 1.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "Surfside Iced Tea cans",
+       "amount_off_usd": 1.0
+      },
+      {
+       "category": "wine",
+       "label": "house wine",
+       "amount_off_usd": 1.0
+      },
+      {
+       "category": "cocktail",
+       "label": "specialty cocktails",
+       "amount_off_usd": 2.0
+      },
+      {
+       "category": "food",
+       "label": "Wings",
+       "amount_off_usd": 4.0
+      },
+      {
+       "category": "food",
+       "label": "Cauliflower Bites",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "label": "Garlic Parmesan Waffle Fries",
+       "price_usd": 6.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",

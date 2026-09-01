@@ -39,7 +39,7 @@ OUT_DIR = os.path.join(REPO, "web", "data")
 # "nobody has looked" stop being the same state.
 VERDICTS = os.path.join(REPO, "data", "menu_verdicts.json")
 # The ratchet. See the menu ratchet in main(). Lower it with every fix.
-HOLE_BUDGET = 72
+HOLE_BUDGET = 68
 
 
 

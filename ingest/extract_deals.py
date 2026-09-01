@@ -387,10 +387,29 @@ LIST_ITEM_MAX = 40
 LIST_CAP = 12
 
 
+def _comma_items(part):
+    """A comma-separated part split into item names, or left whole if it is prose."""
+    pieces = [x.strip() for x in part.split(",")]
+    if len(pieces) < 2:
+        return [part]
+    for x in pieces:
+        head = re.sub(r"^-?\s?\$\s?\d{1,3}(?:\.\d{1,2})?\s*", "", x)
+        if not head[:1].isupper() or len(head.split()) > 4:
+            return [part]
+    return pieces
+
+
 def shared_price_items(text, cat_hint=None):
     """[item] when one price at the head of a quote owns the names after it."""
     text, marked = strip_category_marker(text)
-    parts = [x.strip() for x in re.split(r"\s+/\s+|,", text) if x.strip()]
+    parts = [x.strip() for x in text.split(" / ") if x.strip()]
+    # A comma separates the items on Hard Rock's list AND the ingredients in
+    # CO-OP's wing description -- 'Wings / House-made hot sauce, fermented
+    # vegetables, blue cheese'. Reading the second as a list publishes 'blue
+    # cheese $12', a thing the venue does not sell. So a comma only splits when
+    # EVERY piece is named the way a menu names a dish: capitalised, and short.
+    # A single lowercase fragment means it is prose, and prose is left whole.
+    parts = [x for p_ in parts for x in _comma_items(p_)]
     if len(parts) < 2:
         return []
     m = LIST_HEAD_RE.match(parts[0])
@@ -412,6 +431,12 @@ def shared_price_items(text, cat_hint=None):
             return []          # not a list of names; do not guess at it
         if CONTEXT_RE.search(name):
             return []          # a schedule line rode along; this is not a list
+        # A name a menu would print, not a sentence about one. Fava's quote is
+        # 'Shrimp Cocktail * / 3 shrimp, cocktail sauce' -- the second block is
+        # the description of the first, and as an item it reads '$10 3 shrimp,
+        # cocktail sauce'. The venue capitalises what it sells.
+        if not name[:1].isupper():
+            continue
         cat = category_of(name) or head_cat
         if not cat or name.lower() in seen:
             continue
@@ -429,7 +454,11 @@ def items_in(text):
         return shared
     out, seen = [], set()
     for m in AMOUNT_OFF_RE.finditer(text):
-        label = re.split(r"\s+/\s+", m.group(2))[0].strip(" -'")
+        # The sentence carries on past the thing being discounted -- '$5 off our
+        # Lounge Menu and Signature Cocktails during happy hour'. The card has
+        # room for the noun, not the clause.
+        label = re.split(r"\s+/\s+|\s+during\s+|\s+all\s+day", m.group(2))[0]
+        label = re.sub(r"\s+(?:and|&|or)$", "", label.strip()).strip(" -'")
         cat = category_of(label)
         if cat and label.lower() not in seen:
             seen.add(label.lower())

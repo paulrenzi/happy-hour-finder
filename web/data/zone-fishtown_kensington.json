@@ -57,34 +57,24 @@
      ],
      "items": [
       {
-       "category": "well",
-       "label": "well drinks",
-       "price_usd": 5.0
+       "category": "draft",
+       "label": "draft beer",
+       "amount_off_usd": 2.0
       },
       {
        "category": "cocktail",
-       "label": "vodka or rum drink",
-       "price_usd": 9.0
+       "label": "Featured Happy Hour Cocktails",
+       "amount_off_usd": 2.0
+      },
+      {
+       "category": "well",
+       "label": "Well Drinks too",
+       "price_usd": 5.0
       },
       {
        "category": "draft",
-       "label": "American lager",
-       "price_usd": 5.0
-      },
-      {
-       "category": "wine",
-       "label": "Pinot Grigio",
-       "price_usd": 9.0
-      },
-      {
-       "category": "food",
-       "label": "chicken waffle slider",
-       "price_usd": 5.0
-      },
-      {
-       "category": "food",
-       "label": "classic fries",
-       "price_usd": 5.0
+       "label": "Draft Beer for Happy Hour",
+       "amount_off_usd": 2.0
       }
      ],
      "confidence": "unconfirmed",
@@ -94,8 +84,7 @@
       "kind": "venue_site",
       "url": "https://cedarpointbarandkitchen.com/happy-hour-specials/",
       "quote": "HAPPY HOUR / Standard Happy Hour runs Sunday through Friday from 5PM to 7PM / Late Night Happy Hour for the Last Hour: Monday \u2013 Thursday 10PM \u2013 11PM (Friday 11PM \u2013 12AM)"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   },
@@ -211,7 +200,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "drafts",
+       "amount_off_usd": 1.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
@@ -443,7 +438,18 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "all drafts",
+       "amount_off_usd": 1.0
+      },
+      {
+       "category": "wine",
+       "label": "wine",
+       "amount_off_usd": 3.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",

@@ -291,7 +291,23 @@
        "end": "18:30"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "Mini French Fry Board",
+       "price_usd": 10.0
+      },
+      {
+       "category": "draft",
+       "label": "Draft Beers",
+       "price_usd": 6.0
+      },
+      {
+       "category": "wine",
+       "label": "Seasonal Sangria",
+       "price_usd": 6.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",

@@ -681,6 +681,11 @@
      ],
      "items": [
       {
+       "category": "wine",
+       "label": "Wine by the Glass",
+       "amount_off_usd": 2.0
+      },
+      {
        "category": "draft",
        "label": "Draft Beer",
        "price_usd": 4.5
@@ -952,7 +957,18 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "Select Martinis",
+       "amount_off_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Select Craft Cocktails",
+       "amount_off_usd": 5.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",

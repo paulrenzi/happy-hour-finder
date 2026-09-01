@@ -212,6 +212,31 @@
        "category": "cocktail",
        "label": "House Classic Cocktails",
        "price_usd": 10.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Cosmo",
+       "price_usd": 10.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Lemon Drop",
+       "price_usd": 10.0
+      },
+      {
+       "category": "wine",
+       "label": "Red or White Sangria",
+       "price_usd": 10.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Old Fashioned",
+       "price_usd": 10.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Margarita",
+       "price_usd": 10.0
       }
      ],
      "confidence": "unconfirmed",
@@ -706,6 +731,11 @@
        "category": "cocktail",
        "label": "Margaritas",
        "price_usd": 7.0
+      },
+      {
+       "category": "draft",
+       "label": "drafts",
+       "amount_off_usd": 2.0
       }
      ],
      "confidence": "unconfirmed",
