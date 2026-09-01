@@ -35,6 +35,13 @@ web/data/*.json          per-zone bundles, ~10–20KB gzipped
 GitHub Pages             web/ only; ingest scripts and raw data stay off the site
 ```
 
+> **The hard part of this project is now the two middle steps.** 107 of the 175
+> windows we publish name a schedule and not one thing you can buy. How a menu
+> becomes items, why it fails, and the five known classes of failure are in
+> **[ARCHITECTURE-MENU-INGEST.md](ARCHITECTURE-MENU-INGEST.md)** — read it before
+> touching `crawl_sites.py` or `extract_deals.py`. `python ingest/report_holes.py`
+> lists the misses, ranked by class, offline.
+
 In the browser, [`web/lib.js`](web/lib.js) holds **all** pure logic — feed assembly,
 ranking, freshness decay, time math — and is the part under test.
 [`web/app.js`](web/app.js) only paints the DOM. Keep that split; it is the reason
