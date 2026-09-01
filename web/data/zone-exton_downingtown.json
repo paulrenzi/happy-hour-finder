@@ -200,33 +200,18 @@
      "items": [
       {
        "category": "food",
-       "label": "cocktail shrimp",
-       "price_usd": 1.0
-      },
-      {
-       "category": "food",
-       "label": "hand cut fries",
-       "price_usd": 5.0
-      },
-      {
-       "category": "food",
-       "label": "deviled eggs",
-       "price_usd": 5.0
-      },
-      {
-       "category": "food",
-       "label": "pulled pork sliders",
-       "price_usd": 7.0
-      },
-      {
-       "category": "food",
-       "label": "wings",
+       "label": "Wings",
        "price_usd": 8.0
       },
       {
        "category": "food",
-       "label": "crab cakes",
-       "price_usd": 9.0
+       "label": "Hand Cut Fries",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "label": "House Classic Cocktails",
+       "price_usd": 10.0
       }
      ],
      "confidence": "unconfirmed",
@@ -236,8 +221,7 @@
       "kind": "venue_site",
       "url": "https://www.bloomsouthernkitchen.com/happy-hour-menu",
       "quote": "Happy Hour / Daily from 3-6pm"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   },
@@ -511,11 +495,6 @@
      "items": [
       {
        "category": "food",
-       "label": "pizza or flatbread",
-       "price_usd": 20.0
-      },
-      {
-       "category": "food",
        "label": "gluten free pizza",
        "price_usd": 20.0
       }
@@ -527,8 +506,7 @@
       "kind": "venue_site",
       "url": "https://www.limoncellorestaurant.com/happy-hour-menu",
       "quote": "HAPPY HOUR MENU / Sunday-Friday 4:00-6:00PM"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   },
@@ -633,7 +611,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -752,7 +730,7 @@
       },
       {
        "category": "cocktail",
-       "label": "Margaritas Weekday Happy Hour",
+       "label": "Margaritas",
        "price_usd": 7.0
       },
       {
@@ -762,7 +740,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",

@@ -248,6 +248,11 @@
      ],
      "items": [
       {
+       "category": "bottle_can",
+       "label": "bottles of wine with the purc",
+       "discount_pct": 50
+      },
+      {
        "category": "cocktail",
        "label": "specialty cocktails",
        "price_usd": 9.0
@@ -271,11 +276,6 @@
        "category": "draft",
        "label": "draft beer with select half-p",
        "price_usd": 6.0
-      },
-      {
-       "category": "bottle_can",
-       "label": "bottles of wine with the purc",
-       "discount_pct": 50
       }
      ],
      "confidence": "unconfirmed",

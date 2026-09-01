@@ -183,7 +183,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -297,6 +297,16 @@
      ],
      "items": [
       {
+       "category": "food",
+       "label": "Korean Fried Chicken Bites",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "Smoked Chicken Nachos",
+       "price_usd": 10.0
+      },
+      {
        "category": "draft",
        "label": "OFF Draft Beer",
        "price_usd": 2.0
@@ -308,7 +318,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",

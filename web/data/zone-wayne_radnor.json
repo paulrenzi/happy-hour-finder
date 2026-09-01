@@ -406,7 +406,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -472,7 +472,7 @@
       {
        "category": "food",
        "label": "TRUFFLE FRIES",
-       "price_usd": 10.0
+       "price_usd": 9.0
       },
       {
        "category": "food",
@@ -486,13 +486,13 @@
       },
       {
        "category": "cocktail",
-       "label": "SPRITZ",
-       "price_usd": 7.0
+       "label": "MARGARITA",
+       "price_usd": 9.0
       },
       {
-       "category": "wine",
-       "label": "SANGRIA",
-       "price_usd": 9.0
+       "category": "cocktail",
+       "label": "ESPRESSO MARTINI",
+       "price_usd": 10.0
       }
      ],
      "confidence": "unconfirmed",
@@ -711,6 +711,11 @@
      ],
      "items": [
       {
+       "category": "bottle_can",
+       "label": "bottles of wine with the purc",
+       "discount_pct": 50
+      },
+      {
        "category": "cocktail",
        "label": "cocktails",
        "price_usd": 9.0
@@ -724,11 +729,6 @@
        "category": "draft",
        "label": "beer",
        "price_usd": 6.0
-      },
-      {
-       "category": "bottle_can",
-       "label": "bottles of wine with the purc",
-       "discount_pct": 50
       },
       {
        "category": "bottle_can",

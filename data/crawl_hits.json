@@ -62,7 +62,7 @@
  },
  "100210": {
   "address": "839 W MAIN ST, LANSDALE PA 19446-2015",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "A warm and welcoming family-friendly spot in Lansdale, offering delicious daily food and drink specials, fun events, and light catering for your smaller gatherings.",
@@ -170,7 +170,7 @@
  },
  "100226": {
   "address": "36 W 3RD AVE, COLLEGEVILLE PA 19426-3605",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "Happy Hour",
@@ -197,6 +197,26 @@
     "url": "https://www.troublesendbrewing.com/happyhour"
    },
    {
+    "quote": "$8 Pimento Cheese Dip",
+    "url": "https://www.troublesendbrewing.com/happyhour"
+   },
+   {
+    "quote": "$9 Loaded Potato Wedges / House cut wedges topped with crispy bacon, cheddar sauce and scallions",
+    "url": "https://www.troublesendbrewing.com/happyhour"
+   },
+   {
+    "quote": "$9 Buffalo Roasted Cauliflower / House Hot Sauce, Tzatziki Ranch, Spring mix and scallions",
+    "url": "https://www.troublesendbrewing.com/happyhour"
+   },
+   {
+    "quote": "$10 Korean Fried Chicken Bites",
+    "url": "https://www.troublesendbrewing.com/happyhour"
+   },
+   {
+    "quote": "$10 Smoked Chicken Nachos / Corn tortilla chips topped with shredded smoked chicken, / cheddar cheese sauce, lettuce and pico",
+    "url": "https://www.troublesendbrewing.com/happyhour"
+   },
+   {
     "quote": "DRINK SPECIALS / $2 OFF Draft Beer and Wine / $6 Select Cocktails",
     "url": "https://www.troublesendbrewing.com/happyhour"
    },
@@ -213,7 +233,7 @@
     "url": "https://www.troublesendbrewing.com/"
    },
    {
-    "result": "ok, 4 quote(s)",
+    "result": "ok, 9 quote(s)",
     "url": "https://www.troublesendbrewing.com/happyhour"
    },
    {
@@ -1770,30 +1790,6 @@
     "url": "https://pierbarphilly.com"
    },
    {
-    "quote": "Happy Hour! / 04:00 PM - 06:00 PM / 04:00 PM - 06:00 PM",
-    "url": "https://pierbarphilly.com/philadelphia-fairmount-pier-bar-happy-hours-specials"
-   },
-   {
-    "quote": "Happy Hour! / 04:00 PM - 06:00 PM / Tuesday September 1st",
-    "url": "https://pierbarphilly.com/philadelphia-fairmount-pier-bar-happy-hours-specials"
-   },
-   {
-    "quote": "Happy Hour! / 04:00 PM - 06:00 PM / Wednesday September 2nd",
-    "url": "https://pierbarphilly.com/philadelphia-fairmount-pier-bar-happy-hours-specials"
-   },
-   {
-    "quote": "Happy Hour! / 04:00 PM - 06:00 PM / Thursday September 3rd",
-    "url": "https://pierbarphilly.com/philadelphia-fairmount-pier-bar-happy-hours-specials"
-   },
-   {
-    "quote": "Happy Hour! / 04:00 PM - 06:00 PM / Friday September 4th",
-    "url": "https://pierbarphilly.com/philadelphia-fairmount-pier-bar-happy-hours-specials"
-   },
-   {
-    "quote": "Happy Hour! / 04:00 PM - 06:00 PM",
-    "url": "https://pierbarphilly.com/philadelphia-fairmount-pier-bar-happy-hours-specials"
-   },
-   {
     "quote": "Specials Menu Happy Hour Brunch / $8.00",
     "url": "https://pierbarphilly.com/philadelphia-fairmount-pier-bar-food-menu"
    },
@@ -1810,7 +1806,7 @@
     "url": "https://pierbarphilly.com"
    },
    {
-    "result": "ok, 6 quote(s)",
+    "result": "error: ConnectionError",
     "url": "https://pierbarphilly.com/philadelphia-fairmount-pier-bar-happy-hours-specials"
    },
    {
@@ -2222,7 +2218,7 @@
  },
  "106742": {
   "address": "40-44 E GAY ST, WEST CHESTER PA 19380",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "Brunch Main Dessert Happy Hour Menu Catering / $15.00",
@@ -2237,7 +2233,7 @@
     "url": "https://opataverna.com/"
    },
    {
-    "result": "error: ConnectionError",
+    "result": "ok, 0 quote(s)",
     "url": "https://opataverna.com/west-chester-opa-taverna-drink-menu"
    },
    {
@@ -2326,7 +2322,7 @@
     "url": "https://www.gypsysaloon.com/menus"
    },
    {
-    "quote": "sips / $ 6 / House Red",
+    "quote": "$6 sips / House Red / House White / House Sparkling / House Mixed Drinks / Draft Beers / Seasonal Sangria",
     "url": "https://www.gypsysaloon.com/menus"
    },
    {
@@ -2346,7 +2342,7 @@
     "url": "https://www.gypsysaloon.com/menus/"
    },
    {
-    "quote": "sips / $ 6 / House Red",
+    "quote": "$6 sips / House Red / House White / House Sparkling / House Mixed Drinks / Draft Beers / Seasonal Sangria",
     "url": "https://www.gypsysaloon.com/menus/"
    }
   ],
@@ -2567,7 +2563,7 @@
  },
  "108084": {
   "address": "1000-1002 CANAL ST, PHILADELPHIA PA 19123",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "Happy Hour / Philadelphia",
@@ -2579,47 +2575,53 @@
    },
    {
     "quote": "OH\u2026Another Happy Hour @ Buffalo | Other Half Brewing",
-    "url": "https://otherhalfbrewing.com/event/clone-ohanother-happy-hour-buffalo-2026-08-18/"
+    "url": "https://otherhalfbrewing.com/event/clone-ohanother-happy-hour-buffalo-2026-09-15/"
    },
    {
-    "quote": "OH\u2026Another Happy Hour @ Buffalo / August 18 2026 4:00 pm - August 21 2026 6:00 pm / Daily Happy Hour at Other Half Buffalo Tuesday-Friday 4pm-6pm",
-    "url": "https://otherhalfbrewing.com/event/clone-ohanother-happy-hour-buffalo-2026-08-18/"
+    "quote": "OH\u2026Another Happy Hour @ Buffalo / September 15 2026 4:00 pm - September 18 2026 6:00 pm / Daily Happy Hour at Other Half Buffalo Tuesday-Friday 4pm-6pm",
+    "url": "https://otherhalfbrewing.com/event/clone-ohanother-happy-hour-buffalo-2026-09-15/"
    },
    {
     "quote": "Daily Happy Hour at Other Half Buffalo Tuesday-Friday 4pm-6pm",
-    "url": "https://otherhalfbrewing.com/event/clone-ohanother-happy-hour-buffalo-2026-08-18/"
+    "url": "https://otherhalfbrewing.com/event/clone-ohanother-happy-hour-buffalo-2026-09-15/"
    },
    {
     "quote": "Come join us for another Happy Hour downtown and enjoy the following specials / $5 Flagship Other Half Beers / $6 for (6) wings",
-    "url": "https://otherhalfbrewing.com/event/clone-ohanother-happy-hour-buffalo-2026-08-18/"
+    "url": "https://otherhalfbrewing.com/event/clone-ohanother-happy-hour-buffalo-2026-09-15/"
    },
    {
     "quote": "Philly Happy Hour | Other Half Brewing",
-    "url": "https://otherhalfbrewing.com/event/clone-philly-happy-hour-2026-08-17/"
+    "url": "https://otherhalfbrewing.com/event/clone-philly-happy-hour-2026-09-14/"
    },
    {
-    "quote": "Philly Happy Hour / August 17 2026 4:00 pm - August 20 2026 6:00 pm / Happy Hour 4pm-6pm Monday to Thursday in the Philly Taproom!",
-    "url": "https://otherhalfbrewing.com/event/clone-philly-happy-hour-2026-08-17/"
+    "quote": "Philly Happy Hour / September 14 2026 4:00 pm - September 17 2026 6:00 pm / Happy Hour 4pm-6pm Monday to Thursday in the Philly Taproom!",
+    "url": "https://otherhalfbrewing.com/event/clone-philly-happy-hour-2026-09-14/"
    },
    {
     "quote": "Happy Hour 4pm-6pm Monday to Thursday in the Philly Taproom!",
-    "url": "https://otherhalfbrewing.com/event/clone-philly-happy-hour-2026-08-17/"
+    "url": "https://otherhalfbrewing.com/event/clone-philly-happy-hour-2026-09-14/"
    },
    {
     "quote": "OH\u2026Another Happy Hour @ Buffalo | Other Half Brewing",
-    "url": "https://otherhalfbrewing.com/event/clone-ohanother-happy-hour-buffalo-2026-08-11/"
+    "url": "https://otherhalfbrewing.com/event/clone-ohanother-happy-hour-buffalo-2026-09-08/"
    },
    {
-    "quote": "OH\u2026Another Happy Hour @ Buffalo / August 11 2026 4:00 pm - August 14 2026 6:00 pm / Daily Happy Hour at Other Half Buffalo Tuesday-Friday 4pm-6pm",
-    "url": "https://otherhalfbrewing.com/event/clone-ohanother-happy-hour-buffalo-2026-08-11/"
+    "quote": "OH\u2026Another Happy Hour @ Buffalo / September 8 2026 4:00 pm - September 11 2026 6:00 pm / Daily Happy Hour at Other Half Buffalo Tuesday-Friday 4pm-6pm",
+    "url": "https://otherhalfbrewing.com/event/clone-ohanother-happy-hour-buffalo-2026-09-08/"
    },
    {
     "quote": "Daily Happy Hour at Other Half Buffalo Tuesday-Friday 4pm-6pm",
-    "url": "https://otherhalfbrewing.com/event/clone-ohanother-happy-hour-buffalo-2026-08-11/"
+    "url": "https://otherhalfbrewing.com/event/clone-ohanother-happy-hour-buffalo-2026-09-08/"
    },
    {
     "quote": "Come join us for another Happy Hour downtown and enjoy the following specials / $5 Flagship Other Half Beers / $6 for (6) wings",
-    "url": "https://otherhalfbrewing.com/event/clone-ohanother-happy-hour-buffalo-2026-08-11/"
+    "url": "https://otherhalfbrewing.com/event/clone-ohanother-happy-hour-buffalo-2026-09-08/"
+   }
+  ],
+  "menu_images": [
+   {
+    "src": "https://craftpeak-cooler-images.imgix.net/other-half-brewing/Happy-Hour_BUF_1x1-2.png?auto=compress%2Cformat&fit=scale&h=1024&ixlib=php-3.3.1&w=1024&wpsize=large&s=4df13a7253407ddb82902d6a0f8fccf4",
+    "url": "https://otherhalfbrewing.com/event/clone-ohanother-happy-hour-buffalo-2026-09-15/"
    }
   ],
   "name": "OTHER HALF BREWERY",
@@ -2631,15 +2633,15 @@
    },
    {
     "result": "ok, 4 quote(s)",
-    "url": "https://otherhalfbrewing.com/event/clone-ohanother-happy-hour-buffalo-2026-08-18/"
+    "url": "https://otherhalfbrewing.com/event/clone-ohanother-happy-hour-buffalo-2026-09-15/"
    },
    {
     "result": "ok, 3 quote(s)",
-    "url": "https://otherhalfbrewing.com/event/clone-philly-happy-hour-2026-08-17/"
+    "url": "https://otherhalfbrewing.com/event/clone-philly-happy-hour-2026-09-14/"
    },
    {
     "result": "ok, 4 quote(s)",
-    "url": "https://otherhalfbrewing.com/event/clone-ohanother-happy-hour-buffalo-2026-08-11/"
+    "url": "https://otherhalfbrewing.com/event/clone-ohanother-happy-hour-buffalo-2026-09-08/"
    }
   ],
   "website": "https://otherhalfbrewing.com/location/philadelphia/",
@@ -2865,23 +2867,23 @@
     "url": "https://www.chilis.com/locations/us/pennsylvania/philadelphia/center-city"
    },
    {
-    "quote": "$3 / Bud Light 16 oz",
+    "quote": "$3 Bud Light 16 oz / Miller Lite 16 oz / Coors Light 16 oz",
     "url": "https://www.chilis.com/locations/us/pennsylvania/philadelphia/center-city"
    },
    {
-    "quote": "Coors Light 16 oz / $4 / Bud Light 22 oz",
+    "quote": "$4 Bud Light 22 oz / Modelo 16 oz / Miller Lite 22 oz / Coors Light 22 oz / Michelob Ultra 16 oz",
     "url": "https://www.chilis.com/locations/us/pennsylvania/philadelphia/center-city"
    },
    {
-    "quote": "Michelob Ultra 16 oz / $5 / Modelo 22 oz",
+    "quote": "$5 Modelo 22 oz / House Red & White Wine / Michelob Ultra 22 oz",
     "url": "https://www.chilis.com/locations/us/pennsylvania/philadelphia/center-city"
    },
    {
-    "quote": "Michelob Ultra 22 oz / $6 / Margarita of the Month",
+    "quote": "$6 Margarita of the Month",
     "url": "https://www.chilis.com/locations/us/pennsylvania/philadelphia/center-city"
    },
    {
-    "quote": "Margarita of the Month / $7 / Tequila Classic Marg",
+    "quote": "$7 Tequila Classic Marg",
     "url": "https://www.chilis.com/locations/us/pennsylvania/philadelphia/center-city"
    },
    {
@@ -3004,23 +3006,23 @@
     "url": "https://www.chilis.com/locations/us/pennsylvania/philadelphia/south-philly"
    },
    {
-    "quote": "$3 / Bud Light 16 oz",
+    "quote": "$3 Bud Light 16 oz / Miller Lite 16 oz / Coors Light 16 oz",
     "url": "https://www.chilis.com/locations/us/pennsylvania/philadelphia/south-philly"
    },
    {
-    "quote": "Coors Light 16 oz / $4 / Bud Light 22 oz",
+    "quote": "$4 Bud Light 22 oz / Modelo 16 oz / Miller Lite 22 oz / Coors Light 22 oz / Michelob Ultra 16 oz",
     "url": "https://www.chilis.com/locations/us/pennsylvania/philadelphia/south-philly"
    },
    {
-    "quote": "Michelob Ultra 16 oz / $5 / Modelo 22 oz",
+    "quote": "$5 Modelo 22 oz / House Red & White Wine / Michelob Ultra 22 oz",
     "url": "https://www.chilis.com/locations/us/pennsylvania/philadelphia/south-philly"
    },
    {
-    "quote": "Michelob Ultra 22 oz / $6 / Margarita of the Month",
+    "quote": "$6 Margarita of the Month",
     "url": "https://www.chilis.com/locations/us/pennsylvania/philadelphia/south-philly"
    },
    {
-    "quote": "Margarita of the Month / $7 / Tequila Classic Marg",
+    "quote": "$7 Tequila Classic Marg",
     "url": "https://www.chilis.com/locations/us/pennsylvania/philadelphia/south-philly"
    },
    {
@@ -3158,23 +3160,23 @@
     "url": "https://green.chilis.com/locations/us/pennsylvania/wyncote/cheltenham"
    },
    {
-    "quote": "$3 / Bud Light 16 oz",
+    "quote": "$3 Bud Light 16 oz / Miller Lite 16 oz / Coors Light 16 oz",
     "url": "https://green.chilis.com/locations/us/pennsylvania/wyncote/cheltenham"
    },
    {
-    "quote": "Coors Light 16 oz / $4 / Bud Light 22 oz",
+    "quote": "$4 Bud Light 22 oz / Modelo 16 oz / Miller Lite 22 oz / Coors Light 22 oz / Michelob Ultra 16 oz",
     "url": "https://green.chilis.com/locations/us/pennsylvania/wyncote/cheltenham"
    },
    {
-    "quote": "Michelob Ultra 16 oz / $5 / Modelo 22 oz",
+    "quote": "$5 Modelo 22 oz / House Red & White Wine / Michelob Ultra 22 oz",
     "url": "https://green.chilis.com/locations/us/pennsylvania/wyncote/cheltenham"
    },
    {
-    "quote": "Michelob Ultra 22 oz / $6 / Margarita of the Month",
+    "quote": "$6 Margarita of the Month",
     "url": "https://green.chilis.com/locations/us/pennsylvania/wyncote/cheltenham"
    },
    {
-    "quote": "Margarita of the Month / $7 / Tequila Classic Marg",
+    "quote": "$7 Tequila Classic Marg",
     "url": "https://green.chilis.com/locations/us/pennsylvania/wyncote/cheltenham"
    },
    {
@@ -3290,7 +3292,7 @@
  },
  "109142": {
   "address": "3911 SKIPPACK PIKE, SKIPPACK PA 19474",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "HAPPY HOUR",
@@ -3468,27 +3470,27 @@
     "url": "https://thefairmounttavern.com/happy-hour/"
    },
    {
-    "quote": "Sip of Sunshine IPA / $9.00",
+    "quote": "$9.00 Sip of Sunshine IPA",
     "url": "https://thefairmounttavern.com/happy-hour/"
    },
    {
-    "quote": "Cigar City Jai Alai IPA / $7.00",
+    "quote": "$7.00 Cigar City Jai Alai IPA",
     "url": "https://thefairmounttavern.com/happy-hour/"
    },
    {
-    "quote": "Mahou Lager / $6.00 / 16oz. Lager from Madrid Spain!",
+    "quote": "$6.00 Mahou Lager",
     "url": "https://thefairmounttavern.com/happy-hour/"
    },
    {
-    "quote": "Peach Ring / $8.00 / Negroni",
+    "quote": "$8.00 Peach Ring",
     "url": "https://thefairmounttavern.com/happy-hour/"
    },
    {
-    "quote": "Negroni / $8.00 / Arnold Palmer",
+    "quote": "$8.00 Negroni",
     "url": "https://thefairmounttavern.com/happy-hour/"
    },
    {
-    "quote": "Arnold Palmer / $7.00 / There is a $1.00 fee for all credit card purchases.",
+    "quote": "$7.00 Arnold Palmer",
     "url": "https://thefairmounttavern.com/happy-hour/"
    },
    {
@@ -3504,27 +3506,27 @@
     "url": "https://www.thefairmounttavern.com/happy-hour/"
    },
    {
-    "quote": "Sip of Sunshine IPA / $9.00",
+    "quote": "$9.00 Sip of Sunshine IPA",
     "url": "https://www.thefairmounttavern.com/happy-hour/"
    },
    {
-    "quote": "Cigar City Jai Alai IPA / $7.00",
+    "quote": "$7.00 Cigar City Jai Alai IPA",
     "url": "https://www.thefairmounttavern.com/happy-hour/"
    },
    {
-    "quote": "Mahou Lager / $6.00 / 16oz. Lager from Madrid Spain!",
+    "quote": "$6.00 Mahou Lager",
     "url": "https://www.thefairmounttavern.com/happy-hour/"
    },
    {
-    "quote": "Peach Ring / $8.00 / Negroni",
+    "quote": "$8.00 Peach Ring",
     "url": "https://www.thefairmounttavern.com/happy-hour/"
    },
    {
-    "quote": "Negroni / $8.00 / Arnold Palmer",
+    "quote": "$8.00 Negroni",
     "url": "https://www.thefairmounttavern.com/happy-hour/"
    },
    {
-    "quote": "Arnold Palmer / $7.00 / There is a $1.00 fee for all credit card purchases.",
+    "quote": "$7.00 Arnold Palmer",
     "url": "https://www.thefairmounttavern.com/happy-hour/"
    },
    {
@@ -3647,87 +3649,67 @@
     "url": "https://www.bloomsouthernkitchen.com/happy-hour-menu"
    },
    {
-    "quote": "Small Plates / $ 5 / Nashville Deviled Eggs",
+    "quote": "$5 Nashville Deviled Eggs / chives, fresno chile (gf)",
     "url": "https://www.bloomsouthernkitchen.com/happy-hour-menu"
    },
    {
-    "quote": "chives, fresno chile (gf) / $ 5",
+    "quote": "$8 Baked Mac & Cheese / smoked gouda, cheddar, jack",
     "url": "https://www.bloomsouthernkitchen.com/happy-hour-menu"
    },
    {
-    "quote": "$ 8 / Baked Mac & Cheese",
+    "quote": "$9 Lowcountry Crab Cakes / horseradish remoulade, lemon",
     "url": "https://www.bloomsouthernkitchen.com/happy-hour-menu"
    },
    {
-    "quote": "smoked gouda, cheddar, jack / $ 8",
+    "quote": "$8 Wings (8) / Buffalo, Nashville hot, mango sweet chili, Texas BBQ, Creole dry rub",
     "url": "https://www.bloomsouthernkitchen.com/happy-hour-menu"
    },
    {
-    "quote": "$ 9 / Lowcountry Crab Cakes",
+    "quote": "$8 Collard Greens & Ham Grilled Cheese Sliders (2)",
     "url": "https://www.bloomsouthernkitchen.com/happy-hour-menu"
    },
    {
-    "quote": "horseradish remoulade, lemon / $ 9",
+    "quote": "$7 Pulled Pork Sliders (2)",
     "url": "https://www.bloomsouthernkitchen.com/happy-hour-menu"
    },
    {
-    "quote": "$ 8 / Wings (8)",
+    "quote": "$1 each",
     "url": "https://www.bloomsouthernkitchen.com/happy-hour-menu"
    },
    {
-    "quote": "Buffalo, Nashville hot, mango sweet chili, Texas BBQ, Creole dry rub / $ 8",
+    "quote": "$8 Soup du Jour / weekly soup made in house",
     "url": "https://www.bloomsouthernkitchen.com/happy-hour-menu"
    },
    {
-    "quote": "$ 8 / Collard Greens & Ham Grilled Cheese Sliders (2)",
+    "quote": "$8 Mama Ruth's Gumbo / house andouille, shrimp, chicken, crab, okra, scallion",
     "url": "https://www.bloomsouthernkitchen.com/happy-hour-menu"
    },
    {
-    "quote": "Collard Greens & Ham Grilled Cheese Sliders (2) / $ 8",
+    "quote": "$5 Hand Cut Fries / sea salt or cajun spiced",
     "url": "https://www.bloomsouthernkitchen.com/happy-hour-menu"
    },
    {
-    "quote": "$ 7 / Pulled Pork Sliders (2)",
+    "quote": "$8 Hush Puppies (4)",
     "url": "https://www.bloomsouthernkitchen.com/happy-hour-menu"
    },
    {
-    "quote": "Pulled Pork Sliders (2) / $ 7",
+    "quote": "$6 Caesar Salad",
     "url": "https://www.bloomsouthernkitchen.com/happy-hour-menu"
    },
    {
-    "quote": "$ 1",
+    "quote": "$5 Field Greens Salad",
     "url": "https://www.bloomsouthernkitchen.com/happy-hour-menu"
    },
    {
-    "quote": "Cocktail Shrimp / $ 1",
+    "quote": "Wine / $ 8",
     "url": "https://www.bloomsouthernkitchen.com/happy-hour-menu"
    },
    {
-    "quote": "Mid Course / $ 8 / Soup du Jour",
+    "quote": "$ 8 / Sparkling",
     "url": "https://www.bloomsouthernkitchen.com/happy-hour-menu"
    },
    {
-    "quote": "weekly soup made in house / $ 8",
-    "url": "https://www.bloomsouthernkitchen.com/happy-hour-menu"
-   },
-   {
-    "quote": "$ 8 / Mama Ruth's Gumbo",
-    "url": "https://www.bloomsouthernkitchen.com/happy-hour-menu"
-   },
-   {
-    "quote": "house andouille, shrimp, chicken, crab, okra, scallion / $ 8 / Sides",
-    "url": "https://www.bloomsouthernkitchen.com/happy-hour-menu"
-   },
-   {
-    "quote": "Sides / $ 5 / Hand Cut Fries",
-    "url": "https://www.bloomsouthernkitchen.com/happy-hour-menu"
-   },
-   {
-    "quote": "sea salt or cajun spiced / $ 5",
-    "url": "https://www.bloomsouthernkitchen.com/happy-hour-menu"
-   },
-   {
-    "quote": "$ 8 / Hush Puppies (4)",
+    "quote": "$10 House Classic Cocktails / Cosmo, Lemon Drop, Red or White Sangria, Old Fashioned, Margarita",
     "url": "https://www.bloomsouthernkitchen.com/happy-hour-menu"
    },
    {
@@ -3743,7 +3725,7 @@
     "url": "https://www.bloomsouthernkitchen.com"
    },
    {
-    "result": "ok, 24 quote(s)",
+    "result": "ok, 19 quote(s)",
     "url": "https://www.bloomsouthernkitchen.com/happy-hour-menu"
    },
    {
@@ -5737,11 +5719,11 @@
     "url": "https://miaragazzaphilly.com/menu"
    },
    {
-    "quote": "All Draft Beers / $ 6.00 / House Wine",
+    "quote": "$6.00 All Draft Beers",
     "url": "https://miaragazzaphilly.com/menu"
    },
    {
-    "quote": "House Wine / $7.00 / Red",
+    "quote": "$7.00 House Wine / Red / White / Prosecco",
     "url": "https://miaragazzaphilly.com/menu"
    },
    {
@@ -5753,11 +5735,11 @@
     "url": "https://miaragazzaphilly.com/menu/"
    },
    {
-    "quote": "All Draft Beers / $ 6.00 / House Wine",
+    "quote": "$6.00 All Draft Beers",
     "url": "https://miaragazzaphilly.com/menu/"
    },
    {
-    "quote": "House Wine / $7.00 / Red",
+    "quote": "$7.00 House Wine / Red / White / Prosecco",
     "url": "https://miaragazzaphilly.com/menu/"
    }
   ],
@@ -5919,35 +5901,35 @@
     "url": "https://www.mainlinetavern.com/menus"
    },
    {
-    "quote": "Oysters & clams / $ 1 / Tavern Wedge",
+    "quote": "$1 Buck a Shuck / Oysters & clams",
     "url": "https://www.mainlinetavern.com/menus"
    },
    {
-    "quote": "$ 10 / Classic Caesar",
+    "quote": "$10 Tavern Wedge",
     "url": "https://www.mainlinetavern.com/menus"
    },
    {
-    "quote": "$ 10 / French Onion Soup",
+    "quote": "$10 Classic Caesar",
     "url": "https://www.mainlinetavern.com/menus"
    },
    {
-    "quote": "Sweet Vidalia onion, garlic herb croutons, gruy\u00e8re / $ 10 / Pommes Frites",
+    "quote": "$10 French Onion Soup / Sweet Vidalia onion, garlic herb croutons, gruy\u00e8re",
     "url": "https://www.mainlinetavern.com/menus"
    },
    {
-    "quote": "Black truffle, parmesan, tavern cheese fondue / $ 10 / Giant Bavarian Pretzel",
+    "quote": "$10 Pommes Frites / Black truffle, parmesan, tavern cheese fondue",
     "url": "https://www.mainlinetavern.com/menus"
    },
    {
-    "quote": "garlic herb butter, tavern cheese fondue / $ 10 / Prime Rib Egg Rolls",
+    "quote": "$10 Giant Bavarian Pretzel / garlic herb butter, tavern cheese fondue",
     "url": "https://www.mainlinetavern.com/menus"
    },
    {
-    "quote": "American cheese, caramelized onion, horseradish chive sauce / $ 14 / Jumbo Bacon Shrimp",
+    "quote": "$14 Prime Rib Egg Rolls / American cheese, caramelized onion, horseradish chive sauce",
     "url": "https://www.mainlinetavern.com/menus"
    },
    {
-    "quote": "Horseradish chive sauce / $ 14 / Tavern Wings",
+    "quote": "$14 Jumbo Bacon Shrimp / Horseradish chive sauce",
     "url": "https://www.mainlinetavern.com/menus"
    },
    {
@@ -5971,35 +5953,35 @@
     "url": "https://www.mainlinetavern.com/menus/"
    },
    {
-    "quote": "Oysters & clams / $ 1 / Tavern Wedge",
+    "quote": "$1 Buck a Shuck / Oysters & clams",
     "url": "https://www.mainlinetavern.com/menus/"
    },
    {
-    "quote": "$ 10 / Classic Caesar",
+    "quote": "$10 Tavern Wedge",
     "url": "https://www.mainlinetavern.com/menus/"
    },
    {
-    "quote": "$ 10 / French Onion Soup",
+    "quote": "$10 Classic Caesar",
     "url": "https://www.mainlinetavern.com/menus/"
    },
    {
-    "quote": "Sweet Vidalia onion, garlic herb croutons, gruy\u00e8re / $ 10 / Pommes Frites",
+    "quote": "$10 French Onion Soup / Sweet Vidalia onion, garlic herb croutons, gruy\u00e8re",
     "url": "https://www.mainlinetavern.com/menus/"
    },
    {
-    "quote": "Black truffle, parmesan, tavern cheese fondue / $ 10 / Giant Bavarian Pretzel",
+    "quote": "$10 Pommes Frites / Black truffle, parmesan, tavern cheese fondue",
     "url": "https://www.mainlinetavern.com/menus/"
    },
    {
-    "quote": "garlic herb butter, tavern cheese fondue / $ 10 / Prime Rib Egg Rolls",
+    "quote": "$10 Giant Bavarian Pretzel / garlic herb butter, tavern cheese fondue",
     "url": "https://www.mainlinetavern.com/menus/"
    },
    {
-    "quote": "American cheese, caramelized onion, horseradish chive sauce / $ 14 / Jumbo Bacon Shrimp",
+    "quote": "$14 Prime Rib Egg Rolls / American cheese, caramelized onion, horseradish chive sauce",
     "url": "https://www.mainlinetavern.com/menus/"
    },
    {
-    "quote": "Horseradish chive sauce / $ 14 / Tavern Wings",
+    "quote": "$14 Jumbo Bacon Shrimp / Horseradish chive sauce",
     "url": "https://www.mainlinetavern.com/menus/"
    }
   ],
@@ -6200,67 +6182,67 @@
     "url": "https://9primewestchester.com/happy-hour-menu"
    },
    {
-    "quote": "Select Beer / $5 / Red Wine Selection",
+    "quote": "$5 Select Beer",
     "url": "https://9primewestchester.com/happy-hour-menu"
    },
    {
-    "quote": "Red Wine Selection / $9 / White Wine Selection",
+    "quote": "$9 Red Wine Selection",
     "url": "https://9primewestchester.com/happy-hour-menu"
    },
    {
-    "quote": "White Wine Selection / $9 / Select Cocktails",
+    "quote": "$9 White Wine Selection",
     "url": "https://9primewestchester.com/happy-hour-menu"
    },
    {
-    "quote": "Select Cocktails / $12 / Small Bites",
+    "quote": "$12 Select Cocktails",
     "url": "https://9primewestchester.com/happy-hour-menu"
    },
    {
-    "quote": "Gorgonzola Fondue / $9 / Rockefeller Oysters",
+    "quote": "$9 Prime Steak Skewers / Gorgonzola Fondue",
     "url": "https://9primewestchester.com/happy-hour-menu"
    },
    {
-    "quote": "Parmesan, Mozzarella, Spinach, Citrus Breadcrumbs / $9 / Spicy Pork Bao Buns",
+    "quote": "$9 Rockefeller Oysters / Parmesan, Mozzarella, Spinach, Citrus Breadcrumbs",
     "url": "https://9primewestchester.com/happy-hour-menu"
    },
    {
-    "quote": "Scallion, Apple, Gochujang Glaze / $9 / Crispy Calamari",
+    "quote": "$9 Spicy Pork Bao Buns / Scallion, Apple, Gochujang Glaze",
     "url": "https://9primewestchester.com/happy-hour-menu"
    },
    {
-    "quote": "Yuzu Kosho Aioli, Pickled Fresno Chilies, Sugo / $9 / Steak Burger Slider",
+    "quote": "$9 Crispy Calamari / Yuzu Kosho Aioli, Pickled Fresno Chilies, Sugo",
     "url": "https://9primewestchester.com/happy-hour-menu"
    },
    {
-    "quote": "Onion Dip, Cheddar, Ketchup, Mustard / $9 / Tuna Taco",
+    "quote": "$9 Steak Burger Slider / Onion Dip, Cheddar, Ketchup, Mustard",
     "url": "https://9primewestchester.com/happy-hour-menu"
    },
    {
-    "quote": "Marinated Tuna, Crispy Wonton, Wasabi Dressing / $9 / Wagyu Cheesesteak Spring Rolls",
+    "quote": "$9 Tuna Taco / Marinated Tuna, Crispy Wonton, Wasabi Dressing",
     "url": "https://9primewestchester.com/happy-hour-menu"
    },
    {
-    "quote": "Long Hot Aioli, Ketchup / $9 / Flatbreads",
+    "quote": "$9 Wagyu Cheesesteak Spring Rolls / Long Hot Aioli, Ketchup",
     "url": "https://9primewestchester.com/happy-hour-menu"
    },
    {
-    "quote": "Fig Jam, Mozzarella, Prosciutto, Gorgonzola, Arugula, Balsamic / $12 / Margherita Flatbread",
+    "quote": "$12 Johnny's Flatbread / Fig Jam, Mozzarella, Prosciutto, Gorgonzola, Arugula, Balsamic",
     "url": "https://9primewestchester.com/happy-hour-menu"
    },
    {
-    "quote": "Tomato Sugo, Cherry Tomatoes, Mozzarella, Basil Pesto / $12 / Calabria",
+    "quote": "$12 Margherita Flatbread / Tomato Sugo, Cherry Tomatoes, Mozzarella, Basil Pesto",
     "url": "https://9primewestchester.com/happy-hour-menu"
    },
    {
-    "quote": "Tomato Sugo, Soppressata, 'Nduja, Mozzarella, Grana, Crushed Red Pepper / $12 / Artisanal Boards",
+    "quote": "$12 Calabria / Tomato Sugo, Soppressata, 'Nduja, Mozzarella, Grana, Crushed Red Pepper",
     "url": "https://9primewestchester.com/happy-hour-menu"
    },
    {
-    "quote": "3 Chef-Curated Cheeses, Fig Jam, Marcona Almonds, Artisanal Crackers / $12 / Butcher's Board",
+    "quote": "$12 Cheese Board / 3 Chef-Curated Cheeses, Fig Jam, Marcona Almonds, Artisanal Crackers",
     "url": "https://9primewestchester.com/happy-hour-menu"
    },
    {
-    "quote": "3 House made and Artisanal Selections, Dijon, Artisanal Crackers / $12 / Get Updates and Exclusive Offers",
+    "quote": "$12 Butcher's Board / 3 House made and Artisanal Selections, Dijon, Artisanal Crackers",
     "url": "https://9primewestchester.com/happy-hour-menu"
    },
    {
@@ -6940,7 +6922,7 @@
  },
  "120981": {
   "address": "1526 N AMERICAN ST, PHILADELPHIA PA 19122-3811",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "DINNER & HAPPY HOUR / Mon-Fri, 4-6pm / smash burger, fries, and a beer",
@@ -7145,7 +7127,7 @@
  },
  "122033": {
   "address": "655-659 N BROAD ST, PHILADELPHIA PA 19123-2418",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "Happy Hour- / $2 off all beer, Wine, and Signature Cocktails / $3 off personal pies, all starters and sides",
@@ -7173,6 +7155,20 @@
    },
    {
     "quote": "North Broad Street Happy Hour (21+): / Monday - Friday 4 PM - 7 PM / Saturday - Sunday 11 AM - 2 PM",
+    "url": "https://santuccispizza.com/specials/"
+   }
+  ],
+  "menu_images": [
+   {
+    "src": "https://images.getbento.com/accounts/d8247c58ed500b7e7477df9a4caca01a/media/images/All_locations_except_mechbrg_and_Paoli_12_Lunch_Special.png?w=1000&fit=max&auto=compress,format&cs=origin&h=1000",
+    "url": "https://santuccispizza.com/specials/"
+   },
+   {
+    "src": "https://images.getbento.com/accounts/d8247c58ed500b7e7477df9a4caca01a/media/images/All_locations_42_Pyramid_Special.png?w=1000&fit=max&auto=compress,format&cs=origin&h=1000",
+    "url": "https://santuccispizza.com/specials/"
+   },
+   {
+    "src": "https://images.getbento.com/accounts/d8247c58ed500b7e7477df9a4caca01a/media/images/All_locations_Take_3_Off_any_large_specialty_pie.png?w=1000&fit=max&auto=compress,format&cs=origin&h=1000",
     "url": "https://santuccispizza.com/specials/"
    }
   ],
@@ -7601,7 +7597,7 @@
  },
  "126965": {
   "address": "770 HORSHAM RD, MONTGOMERYVILLE PA 18936-9617",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "Contact us at (215) 855-4540 for our latest daily food and drink specials .",
@@ -7616,7 +7612,39 @@
     "url": "https://www.thebulltavern.com/specials.html"
    },
    {
+    "quote": "All Day Specials are $6.49",
+    "url": "https://www.thebulltavern.com/specials.html"
+   },
+   {
+    "quote": "- Grilled Prime Rib - $12.99",
+    "url": "https://www.thebulltavern.com/specials.html"
+   },
+   {
     "quote": "DRINK Happy Hour 5pm-7pm",
+    "url": "https://www.thebulltavern.com/specials.html"
+   },
+   {
+    "quote": "- BUD & BUD LIGHT $2.50",
+    "url": "https://www.thebulltavern.com/specials.html"
+   },
+   {
+    "quote": "- 4pc Honey Dip Chicken - $9.99",
+    "url": "https://www.thebulltavern.com/specials.html"
+   },
+   {
+    "quote": "- MILLER LITE & ROLLING ROCK $2.50",
+    "url": "https://www.thebulltavern.com/specials.html"
+   },
+   {
+    "quote": "- Short Ribs - $12.99",
+    "url": "https://www.thebulltavern.com/specials.html"
+   },
+   {
+    "quote": "- COORS LIGHT $2.50 - BLUE MOON $3.50",
+    "url": "https://www.thebulltavern.com/specials.html"
+   },
+   {
+    "quote": "- YUENGLING / LIGHT $2.50 - LABATTS $3.00",
     "url": "https://www.thebulltavern.com/specials.html"
    },
    {
@@ -7636,7 +7664,7 @@
     "url": "https://www.thebulltavern.com/"
    },
    {
-    "result": "ok, 5 quote(s)",
+    "result": "ok, 13 quote(s)",
     "url": "https://www.thebulltavern.com/specials.html"
    },
    {
@@ -8133,7 +8161,7 @@
  },
  "129263": {
   "address": "114 S OLIVE ST, MEDIA PA 19063-3202",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "Happy Hour $4 Off Wines, Cocktails , Pizzas, & Apps. $2 Off Draft Beers",
@@ -8157,11 +8185,11 @@
    },
    {
     "result": "ok, 0 quote(s)",
-    "url": "https://arianomedia.com/-drink-menu?source=header&spot_id=82266&destination=drink_menu&promotion=ipa_day"
+    "url": "https://arianomedia.com/drink-menu"
    },
    {
     "result": "ok, 0 quote(s)",
-    "url": "https://arianomedia.com/drink-menu"
+    "url": "https://arianomedia.com/events"
    }
   ],
   "website": "https://arianomedia.com",
@@ -8260,7 +8288,7 @@
  },
  "129451": {
   "address": "256 MALL BLVD, KING OF PRUSSIA PA 19406",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "HALF PRICE ALL TITOS COCKTAILS / TUESDAY / WEDNESDAY",
@@ -8339,7 +8367,7 @@
  },
  "129847": {
   "address": "142 E MARKET ST, WEST CHESTER PA 19382-3153",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "Happy Hour",
@@ -8664,7 +8692,7 @@
  },
  "130662": {
   "address": "8500 ESSINGTON AVE 2ND FL B&C CONNECTOR SPACE #BC13, PHILADELPHIA PA 19153-7027",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "Join us for Center City's Best Happy Hour / 4-6 pm Tuesday - Friday",
@@ -9214,7 +9242,7 @@
  },
  "131619": {
   "address": "3700 LANCASTER AVE, PHILADELPHIA PA 19104",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "Happy Hour- / $2 off all beer, Wine, and Signature Cocktails / $3 off personal pies, all starters and sides",
@@ -9242,6 +9270,20 @@
    },
    {
     "quote": "North Broad Street Happy Hour (21+): / Monday - Friday 4 PM - 7 PM / Saturday - Sunday 11 AM - 2 PM",
+    "url": "https://santuccispizza.com/specials/"
+   }
+  ],
+  "menu_images": [
+   {
+    "src": "https://images.getbento.com/accounts/d8247c58ed500b7e7477df9a4caca01a/media/images/All_locations_except_mechbrg_and_Paoli_12_Lunch_Special.png?w=1000&fit=max&auto=compress,format&cs=origin&h=1000",
+    "url": "https://santuccispizza.com/specials/"
+   },
+   {
+    "src": "https://images.getbento.com/accounts/d8247c58ed500b7e7477df9a4caca01a/media/images/All_locations_42_Pyramid_Special.png?w=1000&fit=max&auto=compress,format&cs=origin&h=1000",
+    "url": "https://santuccispizza.com/specials/"
+   },
+   {
+    "src": "https://images.getbento.com/accounts/d8247c58ed500b7e7477df9a4caca01a/media/images/All_locations_Take_3_Off_any_large_specialty_pie.png?w=1000&fit=max&auto=compress,format&cs=origin&h=1000",
     "url": "https://santuccispizza.com/specials/"
    }
   ],
@@ -9482,39 +9524,39 @@
     "url": "https://vedaphilly.com/menu-new/"
    },
    {
-    "quote": "$10 / MAHARAJA TONIC",
+    "quote": "$10 OLD FASHIONED GABBAR",
     "url": "https://vedaphilly.com/menu-new/"
    },
    {
-    "quote": "$9 / SPICY MARGARITA",
+    "quote": "$9 MAHARAJA TONIC",
     "url": "https://vedaphilly.com/menu-new/"
    },
    {
-    "quote": "Chili Infused Tequila | Lime | Agave | Chili Rim / $9 / COSMOPOLITAN",
+    "quote": "$9 SPICY MARGARITA / Chili Infused Tequila | Lime | Agave | Chili Rim",
     "url": "https://vedaphilly.com/menu-new/"
    },
    {
-    "quote": "Vodka | Cranberry Juice | Orange Liqueur | Fresh Lime Juice | Orange Peel / $9 / LEMONDROPS",
+    "quote": "$9 COSMOPOLITAN / Vodka | Cranberry Juice | Orange Liqueur | Fresh Lime Juice | Orange Peel",
     "url": "https://vedaphilly.com/menu-new/"
    },
    {
-    "quote": "Vodka | Fresh Lemon Juice | Syrup | Sugar Rim / $9 / HOUSE VODKA",
+    "quote": "$9 LEMONDROPS / Vodka | Fresh Lemon Juice | Syrup | Sugar Rim",
     "url": "https://vedaphilly.com/menu-new/"
    },
    {
-    "quote": "Choice of Soda or Juice / $8 / HOUSE GIN",
+    "quote": "$8 HOUSE VODKA / Choice of Soda or Juice",
     "url": "https://vedaphilly.com/menu-new/"
    },
    {
-    "quote": "Choice of Soda or Juice / $8 / WHITE WINE & RED WINE",
+    "quote": "$8 HOUSE GIN / Choice of Soda or Juice",
     "url": "https://vedaphilly.com/menu-new/"
    },
    {
-    "quote": "WHITE WINE & RED WINE / $7 / DRAFT BEER",
+    "quote": "$7 WHITE WINE & RED WINE",
     "url": "https://vedaphilly.com/menu-new/"
    },
    {
-    "quote": "House and Seasonal Options / $6 / CHILI CAULIFLOWER DRY (V)",
+    "quote": "$6 DRAFT BEER / House and Seasonal Options",
     "url": "https://vedaphilly.com/menu-new/"
    },
    {
@@ -10381,7 +10423,7 @@
  },
  "27076": {
   "address": "738 BETHLEHEM PK, FLOURTOWN PA 19031-1318",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "Happy Hour at the Bar-Top! / $10 Food Menu | $6 Premium Drafts | $7 House Wines | $7 Stateside Cans | $9 Aperol Spritz / 03:30 PM - 05:30 PM",
@@ -10409,7 +10451,7 @@
    },
    {
     "result": "ok, 0 quote(s)",
-    "url": "https://scoogis.com/-events?source=header&spot_id=158598&destination=events&promotion=ipa_day"
+    "url": "https://scoogis.com/-party?source=header&spot_id=158598&destination=private_parties&promotion=private_parties"
    }
   ],
   "website": "https://www.scoogis.com/",
@@ -10440,7 +10482,7 @@
  },
  "28480": {
   "address": "123-125-127 FAYETTE ST, CONSHOHOCKEN PA 19428-1817",
-  "crawled_at": "2026-08-31",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "Happy Hour",
@@ -10745,22 +10787,14 @@
  },
  "32028": {
   "address": "131 E BALTIMORE PK, MEDIA PA 19063",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
-    "quote": "Daily Specials Pizza or Pasta",
-    "url": "https://pinpizza.com/"
-   },
-   {
-    "quote": "Happy Hour / Tuesday Special / Fiesta Thursdays",
+    "quote": "Daily Specials Pizza or Pasta / Tuesday Special",
     "url": "https://pinpizza.com/"
    },
    {
     "quote": "Pinocchio's Restaurant Eat & Drink Specials in Media, PA",
-    "url": "https://pinpizza.com/specials"
-   },
-   {
-    "quote": "Enjoy Nachos, Tacos, Quesadillas, Taco Salad and $4 Margaritas!",
     "url": "https://pinpizza.com/specials"
    },
    {
@@ -10773,6 +10807,10 @@
    },
    {
     "quote": "Daily Specials / All You Can Eat Pasta & Salad - $9.99 / All You Can Eat Pizza & Soda - $8.99 \u2022Dining Room Only",
+    "url": "https://pinpizza.com/specials"
+   },
+   {
+    "quote": "All You Can Eat Pasta & Salad - $9.99",
     "url": "https://pinpizza.com/specials"
    },
    {
@@ -10788,10 +10826,6 @@
     "url": "https://pinpizza.com/specials.asp"
    },
    {
-    "quote": "Enjoy Nachos, Tacos, Quesadillas, Taco Salad and $4 Margaritas!",
-    "url": "https://pinpizza.com/specials.asp"
-   },
-   {
     "quote": "Happy Hour / Monday - Thursday from 4PM - 6PM / Half Priced Beer & Cocktails | $5.99 Appetizers *Wings are Excluded",
     "url": "https://pinpizza.com/specials.asp"
    },
@@ -10801,6 +10835,10 @@
    },
    {
     "quote": "Daily Specials / All You Can Eat Pasta & Salad - $9.99 / All You Can Eat Pizza & Soda - $8.99 \u2022Dining Room Only",
+    "url": "https://pinpizza.com/specials.asp"
+   },
+   {
+    "quote": "All You Can Eat Pasta & Salad - $9.99",
     "url": "https://pinpizza.com/specials.asp"
    },
    {
@@ -10812,11 +10850,25 @@
     "url": "https://pinpizza.com/specials.asp"
    }
   ],
+  "menu_images": [
+   {
+    "src": "https://pinpizza.com/images/monthly-specials-march.jpg",
+    "url": "https://pinpizza.com/specials"
+   },
+   {
+    "src": "https://pinpizza.com/images/happy-hour-specials-2.jpg",
+    "url": "https://pinpizza.com/specials"
+   },
+   {
+    "src": "https://pinpizza.com/images/beer-truck-specials.jpg",
+    "url": "https://pinpizza.com/specials"
+   }
+  ],
   "name": "PINOCCHIO'S FAMILY RESTAURANT",
   "osm_name": "Pinocchio's Restaurant & Beer Garden to Go",
   "pages": [
    {
-    "result": "ok, 2 quote(s)",
+    "result": "ok, 1 quote(s)",
     "url": "https://pinpizza.com/"
    },
    {
@@ -10830,6 +10882,14 @@
    {
     "result": "ok, 0 quote(s)",
     "url": "https://pinpizza.com/draft-beer"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://pinpizza.com/pdfs/monthly-specials-march.pdf"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://pinpizza.com/pdfs/catering-menu-2025-ada.pdf"
    }
   ],
   "website": "https://pinpizza.com/",
@@ -11187,7 +11247,7 @@
  },
  "36829": {
   "address": "DOWNINGTOWN TECH CTR 420 ACORN LN, DOWNINGTOWN PA 19335-3075",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "$4 Tacos & $7 Margaritas",
@@ -11242,6 +11302,16 @@
     "url": "https://downingtown.victorybeer.com/taproomevents/back-to-school-am-happy-hour-for-parents"
    }
   ],
+  "menu_images": [
+   {
+    "src": "http://static1.squarespace.com/static/668bf977ba56a800a38595e4/668bf97aba56a800a385964e/6a0b85e22da45002a0a35402/1779140237351/school+happy+hour+fb+cover.png?format=1500w",
+    "url": "https://downingtown.victorybeer.com/taproomevents/teachers-last-day-happy-hour"
+   },
+   {
+    "src": "http://static1.squarespace.com/static/668bf977ba56a800a38595e4/668bf97aba56a800a385964e/687137d05930dc65af670eaa/1768313990574/School+Happy+Hour+-+VBC+%281%29.png?format=1500w",
+    "url": "https://downingtown.victorybeer.com/taproomevents/back-to-school-am-happy-hour-for-parents"
+   }
+  ],
   "name": "VICTORY BREWING COMPANY LLC",
   "osm_name": "Victory Brewing Company",
   "pages": [
@@ -11260,6 +11330,10 @@
    {
     "result": "ok, 4 quote(s)",
     "url": "https://downingtown.victorybeer.com/taproomevents/back-to-school-am-happy-hour-for-parents"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://downingtown.victorybeer.com/s/_VICTORY-DOWNINGTOWN-PARKESBURG-Spring-2026-Private-Event-Guide-v2-41526.pdf"
    }
   ],
   "website": "https://downingtown.victorybeer.com/",
@@ -11267,7 +11341,7 @@
  },
  "36830": {
   "address": "DOWNINGTOWN TECH CENTER 420 ACORN LN, DOWNINGTOWN PA 19335-3075",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "$4 Tacos & $7 Margaritas",
@@ -11322,6 +11396,16 @@
     "url": "https://downingtown.victorybeer.com/taproomevents/back-to-school-am-happy-hour-for-parents"
    }
   ],
+  "menu_images": [
+   {
+    "src": "http://static1.squarespace.com/static/668bf977ba56a800a38595e4/668bf97aba56a800a385964e/6a0b85e22da45002a0a35402/1779140237351/school+happy+hour+fb+cover.png?format=1500w",
+    "url": "https://downingtown.victorybeer.com/taproomevents/teachers-last-day-happy-hour"
+   },
+   {
+    "src": "http://static1.squarespace.com/static/668bf977ba56a800a38595e4/668bf97aba56a800a385964e/687137d05930dc65af670eaa/1768313990574/School+Happy+Hour+-+VBC+%281%29.png?format=1500w",
+    "url": "https://downingtown.victorybeer.com/taproomevents/back-to-school-am-happy-hour-for-parents"
+   }
+  ],
   "name": "VICTORY BREWING COMPANY LLC",
   "osm_name": "Victory Brewing Company",
   "pages": [
@@ -11340,6 +11424,10 @@
    {
     "result": "ok, 4 quote(s)",
     "url": "https://downingtown.victorybeer.com/taproomevents/back-to-school-am-happy-hour-for-parents"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://downingtown.victorybeer.com/s/_VICTORY-DOWNINGTOWN-PARKESBURG-Spring-2026-Private-Event-Guide-v2-41526.pdf"
    }
   ],
   "website": "https://downingtown.victorybeer.com/",
@@ -11439,7 +11527,7 @@
  },
  "38043": {
   "address": "1714 WALNUT ST, PHILADELPHIA PA 19103-6101",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "HAPPY HOUR PACKAGES NOW AVAILABLE",
@@ -11472,10 +11560,6 @@
    {
     "quote": "Happy Hour",
     "url": "https://pietrospizza.com/files/pietros-happy-hour-packages.pdf"
-   },
-   {
-    "quote": "HAPPY HOUR MENU / MONDAY - FRIDAY 4 - 6 / SUNDAY 7 - 10",
-    "url": "https://pietrospizza.com/files/walnut-street-happy-hour-menu.pdf"
    }
   ],
   "name": "PIETRO'S WALNUT PIZZERIA INC",
@@ -11492,10 +11576,6 @@
    {
     "result": "ok, 6 quote(s)",
     "url": "https://pietrospizza.com/files/pietros-happy-hour-packages.pdf"
-   },
-   {
-    "result": "ok, 1 quote(s)",
-    "url": "https://pietrospizza.com/files/walnut-street-happy-hour-menu.pdf"
    }
   ],
   "website": "https://pietrospizza.com",
@@ -12177,7 +12257,7 @@
  },
  "43721": {
   "address": "863 MONTGOMERY AVE, NARBERTH PA 19072-1541",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "Happy Hour",
@@ -12209,7 +12289,7 @@
  },
  "44242": {
   "address": "1005 HORSHAM RD, NORTH WALES PA 19454-1413",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "Happy Hour",
@@ -12224,7 +12304,19 @@
     "url": "https://josephamblerinn.com/specials-promotions/"
    },
    {
+    "quote": "Cocktails $10",
+    "url": "https://josephamblerinn.com/wp-content/uploads/2026/06/JAI-HH.pdf"
+   },
+   {
+    "quote": "Wine By The Glass $9",
+    "url": "https://josephamblerinn.com/wp-content/uploads/2026/06/JAI-HH.pdf"
+   },
+   {
     "quote": "Happy Hour in the JPUB! / 3:30-5:30 PM",
+    "url": "https://josephamblerinn.com/wp-content/uploads/2026/06/JAI-HH.pdf"
+   },
+   {
+    "quote": "Draughts & Ready to Enjoy $5",
     "url": "https://josephamblerinn.com/wp-content/uploads/2026/06/JAI-HH.pdf"
    },
    {
@@ -12248,12 +12340,16 @@
     "url": "https://josephamblerinn.com/specials-promotions/"
    },
    {
-    "result": "ok, 2 quote(s)",
+    "result": "ok, 5 quote(s)",
     "url": "https://josephamblerinn.com/wp-content/uploads/2026/06/JAI-HH.pdf"
    },
    {
     "result": "ok, 1 quote(s)",
     "url": "https://josephamblerinn.com/contact/"
+   },
+   {
+    "result": "ok, 0 quote(s)",
+    "url": "https://josephamblerinn.com/wp-content/uploads/2026/06/JAI-Dessert-Menu.pdf"
    }
   ],
   "website": "https://www.josephamblerinn.com/",
@@ -12360,7 +12456,7 @@
  },
  "45092": {
   "address": "1509-11 MIFFLIN ST, PHILADELPHIA PA 19145-2231",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "Happy Hour / $1 off drafts / Monday \u2013 Friday | 4pm-6pm",
@@ -13090,7 +13186,7 @@
  },
  "45865": {
   "address": "224 S 15TH ST, PHILADELPHIA PA 19102-3806",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "Happy Hour / Monday to Friday 3-6pm / $5 Mixed Drinks",
@@ -13105,7 +13201,7 @@
     "url": "https://gooddogbar.com/menu/"
    },
    {
-    "quote": "Daily Specials Draughts Drinks Menu",
+    "quote": "Daily Specials Daily Specials Draughts Drinks Menu",
     "url": "https://gooddogbar.com/menu/"
    }
   ],
@@ -13416,7 +13512,7 @@
  },
  "47289": {
   "address": "1900 WEST POINT PIKE, WEST POINT PA 19486",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "HAPPY HOUR BUFFET / $20.00 PER PERSON",
@@ -13639,7 +13735,7 @@
  },
  "48062": {
   "address": "451 WILMINGTON-WEST CHESTER PK, GLEN MILLS PA 19342-9802",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "Dinner Brunch Happy Hour / Tue\u2013Fri from 4 \u00b7 Sat\u2013Sun from 3 / English Onion Soup $11",
@@ -14492,87 +14588,87 @@
     "url": "https://yakitoriboy.com/happy-hour/"
    },
    {
-    "quote": "Lychee - Tini / $7 / Haku Vodka, lychee juice, club soda & fresh lychee fruit",
+    "quote": "$7 Lychee - Tini",
     "url": "https://yakitoriboy.com/happy-hour/"
    },
    {
-    "quote": "Chili Mango / $7 / 8000 Generations Shochu, mango, jalapeno & tajin",
+    "quote": "$7 Chili Mango",
     "url": "https://yakitoriboy.com/happy-hour/"
    },
    {
-    "quote": "Whiskey Boy / $7 / Toki Suntory Whiskey, apersol, fresh lime juice & cherry bitters",
+    "quote": "$7 Whiskey Boy",
     "url": "https://yakitoriboy.com/happy-hour/"
    },
    {
-    "quote": "Lavender Margarita / $7 / Hornitos Blanco Tequila, creme de violette, lavender syrup & fresh lime",
+    "quote": "$7 Lavender Margarita",
     "url": "https://yakitoriboy.com/happy-hour/"
    },
    {
-    "quote": "Ring The Bell / $5 / 12oz can",
+    "quote": "$5 Ring The Bell",
     "url": "https://yakitoriboy.com/happy-hour/"
    },
    {
-    "quote": "Sapporo / $5 / 12oz can",
+    "quote": "$5 Sapporo",
     "url": "https://yakitoriboy.com/happy-hour/"
    },
    {
-    "quote": "White Claw / $6 / Mango Seltzer",
+    "quote": "$6 White Claw",
     "url": "https://yakitoriboy.com/happy-hour/"
    },
    {
-    "quote": "Michelob Ultra / $5 / 12oz can",
+    "quote": "$5 Michelob Ultra",
     "url": "https://yakitoriboy.com/happy-hour/"
    },
    {
-    "quote": "Sunshine State Tropical IPA / $5 / 12oz can",
+    "quote": "$5 Sunshine State Tropical IPA",
     "url": "https://yakitoriboy.com/happy-hour/"
    },
    {
-    "quote": "Cabernet Sauvignon / $7 / Sycamore Lane, California.",
+    "quote": "$7 Cabernet Sauvignon",
     "url": "https://yakitoriboy.com/happy-hour/"
    },
    {
-    "quote": "Pinot Noir / $7 / Sycamore Lane, California.",
+    "quote": "$7 Pinot Noir",
     "url": "https://yakitoriboy.com/happy-hour/"
    },
    {
-    "quote": "Pinot Grigio / $7 / Sycamore Lane, California.",
+    "quote": "$7 Pinot Grigio",
     "url": "https://yakitoriboy.com/happy-hour/"
    },
    {
-    "quote": "Tempranillo / $7 / Spain",
+    "quote": "$7 Tempranillo",
     "url": "https://yakitoriboy.com/happy-hour/"
    },
    {
-    "quote": "Merlot / $7 / Sycamore Lane, California.",
+    "quote": "$7 Merlot",
     "url": "https://yakitoriboy.com/happy-hour/"
    },
    {
-    "quote": "Chardonnay / $7 / Harken, California.",
+    "quote": "$7 Chardonnay",
     "url": "https://yakitoriboy.com/happy-hour/"
    },
    {
-    "quote": "White Zinfandel / $7 / Sycamore Lane, California.",
+    "quote": "$7 White Zinfandel",
     "url": "https://yakitoriboy.com/happy-hour/"
    },
    {
-    "quote": "Gekkeikan Sake Carafe / $10 / Choice of hot or cold.",
+    "quote": "$10 Gekkeikan Sake Carafe",
     "url": "https://yakitoriboy.com/happy-hour/"
    },
    {
-    "quote": "Kitaya Kiri Mango Infused Sake Glass / $10 / Kitaya Kiri Lychee Infused Sake Glass",
+    "quote": "$10 Kitaya Kiri Mango Infused Sake Glass",
     "url": "https://yakitoriboy.com/happy-hour/"
    },
    {
-    "quote": "Kitaya Kiri Lychee Infused Sake Glass / $10 / Mocktails",
+    "quote": "$10 Kitaya Kiri Lychee Infused Sake Glass",
     "url": "https://yakitoriboy.com/happy-hour/"
    },
    {
-    "quote": "Lady Lavender / $6 / Fresh lime juice, lavender syrup, grenadine, club & bitters",
+    "quote": "$6 Lady Lavender",
     "url": "https://yakitoriboy.com/happy-hour/"
    },
    {
-    "quote": "Lychee Mule / $6 / Lychee juice, simple syrup, lime juice, ginger beer & club soda",
+    "quote": "$6 Lychee Mule",
     "url": "https://yakitoriboy.com/happy-hour/"
    },
    {
@@ -14884,22 +14980,18 @@
  },
  "52524": {
   "address": "983 BALTIMORE PK, GLEN MILLS PA 19342-1016",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "Happy Hour",
     "url": "https://locations.pfchangs.com/pa/glenmills/983-baltimore-pike.html"
    },
    {
-    "quote": "Happy Hour / Fri / 3:00 PM",
+    "quote": "Happy Hour / Tue / 3:00 PM",
     "url": "https://locations.pfchangs.com/pa/glenmills/983-baltimore-pike.html"
    },
    {
-    "quote": "Half Priced Half Apps / Fri / 3:00 PM",
-    "url": "https://locations.pfchangs.com/pa/glenmills/983-baltimore-pike.html"
-   },
-   {
-    "quote": "Happy Hour Food and Drink Specials Menu",
+    "quote": "Half Priced Half Apps / Tue / 3:00 PM",
     "url": "https://locations.pfchangs.com/pa/glenmills/983-baltimore-pike.html"
    },
    {
@@ -14931,7 +15023,7 @@
   "osm_name": "P.F. Chang's",
   "pages": [
    {
-    "result": "ok, 4 quote(s)",
+    "result": "ok, 3 quote(s)",
     "url": "https://locations.pfchangs.com/pa/glenmills/983-baltimore-pike.html"
    },
    {
@@ -15348,26 +15440,38 @@
  },
  "54242": {
   "address": "1405 LOCUST ST, PHILADELPHIA PA 19102-3807",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "Happy Hour Menu",
     "url": "https://estiarestaurant.com/philadelphia-pa/philadelphia-pa.asp"
    },
    {
-    "quote": "Come join and be a part of our family! See what promotions we have each day and week. We offer happy hour during the weekdays, 2-3 course meals and more. Click each promotion to learn more about what we have to offer!",
+    "quote": "Happy Hour Menu / $40 Pre-Theatre Menu",
     "url": "https://estiarestaurant.com/philadelphia-pa/philadelphia-pa.asp"
    },
    {
-    "quote": "HAPPY HOUR / Every day 3:30pm - 5:30pm / $6 beers, $10 wines and hand crafted cocktails.",
+    "quote": "Happy Hour Menu / $40 Pre-Theatre Menu / $40 Pre-Theatre Menu",
     "url": "https://estiarestaurant.com/philadelphia-pa/philadelphia-pa.asp"
    },
    {
-    "quote": "$6 beers, $10 wines and hand crafted cocktails.",
+    "quote": "Come join and be a part of our family! See what promotions we have each day and week. We offer happy hour during the weekdays, 2-3 course meals and more. Click each promotion to learn more about what we have to offer! / Going to the theatre? We have the perfect pre-theatre menu to suit any and all tastes for only $40!",
     "url": "https://estiarestaurant.com/philadelphia-pa/philadelphia-pa.asp"
    },
    {
     "quote": "HAPPY HOUR MENU / Zucchini & eggplant fried crispy and served with",
+    "url": "https://estiarestaurant.com/philadelphia-pa/pdfs/estia-philadelphia-happy-hour-menu.pdf"
+   },
+   {
+    "quote": "HAND CRAFTED COCKTAILS $10",
+    "url": "https://estiarestaurant.com/philadelphia-pa/pdfs/estia-philadelphia-happy-hour-menu.pdf"
+   },
+   {
+    "quote": "WINE BY THE GLASS $8",
+    "url": "https://estiarestaurant.com/philadelphia-pa/pdfs/estia-philadelphia-happy-hour-menu.pdf"
+   },
+   {
+    "quote": "BEER $5",
     "url": "https://estiarestaurant.com/philadelphia-pa/pdfs/estia-philadelphia-happy-hour-menu.pdf"
    },
    {
@@ -15383,15 +15487,15 @@
     "url": "https://estiarestaurant.com/philadelphia-pa/philadelphia-pa.asp"
    },
    {
-    "quote": "Come join and be a part of our family! See what promotions we have each day and week. We offer happy hour during the weekdays, 2-3 course meals and more. Click each promotion to learn more about what we have to offer!",
+    "quote": "Happy Hour Menu / $40 Pre-Theatre Menu",
     "url": "https://estiarestaurant.com/philadelphia-pa/philadelphia-pa.asp"
    },
    {
-    "quote": "HAPPY HOUR / Every day 3:30pm - 5:30pm / $6 beers, $10 wines and hand crafted cocktails.",
+    "quote": "Happy Hour Menu / $40 Pre-Theatre Menu / $40 Pre-Theatre Menu",
     "url": "https://estiarestaurant.com/philadelphia-pa/philadelphia-pa.asp"
    },
    {
-    "quote": "$6 beers, $10 wines and hand crafted cocktails.",
+    "quote": "Come join and be a part of our family! See what promotions we have each day and week. We offer happy hour during the weekdays, 2-3 course meals and more. Click each promotion to learn more about what we have to offer! / Going to the theatre? We have the perfect pre-theatre menu to suit any and all tastes for only $40!",
     "url": "https://estiarestaurant.com/philadelphia-pa/philadelphia-pa.asp"
    }
   ],
@@ -15403,7 +15507,7 @@
     "url": "https://estiarestaurant.com/philadelphia-pa/philadelphia-pa.asp"
    },
    {
-    "result": "ok, 3 quote(s)",
+    "result": "ok, 6 quote(s)",
     "url": "https://estiarestaurant.com/philadelphia-pa/pdfs/estia-philadelphia-happy-hour-menu.pdf"
    },
    {
@@ -15719,31 +15823,14 @@
  },
  "55913": {
   "address": "1271 N SANATOGA RD, POTTSTOWN PA 19464-2224",
-  "crawled_at": "2026-08-07",
-  "hits": [
-   {
-    "quote": "Ron\u2019s Crooked Hill Tavern is a family owned and operated Bar/Restaurant located off the beaten path in Sanatoga, PA that offers daily food and drink specials, happy hour, and Friday evening entertainment.",
-    "url": "https://ronscrookedhill.net/"
-   },
-   {
-    "quote": "Late Night Menu / Boardwalk French Fries \u2013 $3.95 / With cheese or gravy \u2013 $4.95.",
-    "url": "https://ronscrookedhill.net/menu/"
-   }
-  ],
+  "crawled_at": "2026-09-01",
+  "hits": [],
   "name": "RRR BAR & GRILL INC",
   "osm_name": "Ron's Crooked Hill Tavern",
   "pages": [
    {
-    "result": "ok, 1 quote(s)",
+    "result": "509 text/html",
     "url": "https://ronscrookedhill.net/"
-   },
-   {
-    "result": "ok, 0 quote(s)",
-    "url": "https://ronscrookedhill.net/specials/"
-   },
-   {
-    "result": "ok, 1 quote(s)",
-    "url": "https://ronscrookedhill.net/menu/"
    }
   ],
   "website": "https://ronscrookedhill.net/",
@@ -15778,7 +15865,7 @@
  },
  "56307": {
   "address": "902-904 CONESTOGA RD GARRETT HILL, ROSEMONT PA 19010",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "Daily food and drink specials / Friendly staff and locals",
@@ -16153,22 +16240,18 @@
  },
  "57949": {
   "address": "THE SHOPPES AT VALLEY SQ 721 EASTON RD, WARRINGTON PA 18976",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "Happy Hour",
     "url": "https://www.pfchangs.com/locations/us/pa/warrington/721-easton-rd/9827-warrington.html"
    },
    {
-    "quote": "Happy Hour / Thu / 3:00 PM",
+    "quote": "Happy Hour / Tue / 3:00 PM",
     "url": "https://www.pfchangs.com/locations/us/pa/warrington/721-easton-rd/9827-warrington.html"
    },
    {
-    "quote": "Half Priced Half Apps / Thu / 3:00 PM",
-    "url": "https://www.pfchangs.com/locations/us/pa/warrington/721-easton-rd/9827-warrington.html"
-   },
-   {
-    "quote": "Happy Hour Food and Drink Specials Menu",
+    "quote": "Half Priced Half Apps / Tue / 3:00 PM",
     "url": "https://www.pfchangs.com/locations/us/pa/warrington/721-easton-rd/9827-warrington.html"
    },
    {
@@ -16200,7 +16283,7 @@
   "osm_name": "P.F. Chang's",
   "pages": [
    {
-    "result": "ok, 4 quote(s)",
+    "result": "ok, 3 quote(s)",
     "url": "https://www.pfchangs.com/locations/us/pa/warrington/721-easton-rd/9827-warrington.html"
    },
    {
@@ -17033,7 +17116,7 @@
  },
  "60222": {
   "address": "1040 N 2ND ST, PHILADELPHIA PA 19123-1551",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "Happy Hour Mon~Fri 5~7p",
@@ -17060,10 +17143,6 @@
     "url": "https://elcaminophilly.com/"
    },
    {
-    "quote": "Industry Late Night Happy Hour / Sundays & Mondays - Burnt out from working all weekend, stop by for 1/2 priced drafts from 10pm to midnight",
-    "url": "https://elcaminophilly.com/"
-   },
-   {
     "quote": "BRUNCH HAPPY HOUR / 10a~12p / \u2022$10 Good Morning Tijuana!",
     "url": "https://elcaminophilly.com/"
    },
@@ -17092,19 +17171,31 @@
     "url": "https://elcaminophilly.com/"
    },
    {
-    "quote": "Industry Late Night Happy Hour / Sundays & Mondays - Burnt out from working all weekend, stop by for 1/2 priced drafts from 10pm to midnight",
+    "quote": "BRUNCH HAPPY HOUR / 10a~12p / \u2022$10 Good Morning Tijuana!",
     "url": "https://elcaminophilly.com/"
    },
    {
-    "quote": "BRUNCH HAPPY HOUR / 10a~12p / \u2022$10 Good Morning Tijuana!",
-    "url": "https://elcaminophilly.com/"
+    "quote": "REFRIED BEANS or BLACK BEANS, RICE $6",
+    "url": "https://elcaminophilly.com/BRUNCH_2025.pdf"
+   },
+   {
+    "quote": "Smoked Chicken Wings . . . . . . . . . .$ 13 $24",
+    "url": "https://elcaminophilly.com/BRUNCH_2025.pdf"
+   },
+   {
+    "quote": "Veggie Wings . . . . . . . . . . . . . . . . . . .$ 15 $28",
+    "url": "https://elcaminophilly.com/BRUNCH_2025.pdf"
+   },
+   {
+    "quote": "Pig Wings . . . . . . . . . . . . . . . . . . . . . .$ 15 $28",
+    "url": "https://elcaminophilly.com/BRUNCH_2025.pdf"
    }
   ],
   "name": "BAR FRED LLC",
   "osm_name": "El Camino Real",
   "pages": [
    {
-    "result": "ok, 8 quote(s)",
+    "result": "ok, 7 quote(s)",
     "url": "https://elcaminophilly.com/"
    },
    {
@@ -17112,11 +17203,11 @@
     "url": "http://www.elcaminophilly.com/drinks_menu.html"
    },
    {
-    "result": "ok, 8 quote(s)",
+    "result": "ok, 7 quote(s)",
     "url": "https://elcaminophilly.com/"
    },
    {
-    "result": "ok, 0 quote(s)",
+    "result": "ok, 4 quote(s)",
     "url": "https://elcaminophilly.com/BRUNCH_2025.pdf"
    }
   ],
@@ -17506,7 +17597,7 @@
  },
  "61260": {
   "address": "1700 BENJAMIN FRANKLIN PKWY, PHILADELPHIA PA 19103-2735",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "Late Night Menu 11pm-12am",
@@ -18229,7 +18320,7 @@
  },
  "62053": {
   "address": "3333 MARKET ST, PHILADELPHIA PA 19104",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "DAILY SPECIALS",
@@ -18666,7 +18757,7 @@
  },
  "62955": {
   "address": "207 W LANCASTER AVE, DOWNINGTOWN PA 19335-2511",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "Happy Hour / Tuesday-Friday 4:30-6:30pm / $5 select pints, $7 pulled pork sandwiches",
@@ -18937,7 +19028,7 @@
  },
  "63811": {
   "address": "1220 LOCUST ST, PHILADELPHIA PA 19107-5605",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "happy hour | United States | Ubarphilly.com",
@@ -19469,7 +19560,7 @@
  },
  "64900": {
   "address": "324 W SWEDESFORD RD, BERWYN PA 19312-1165",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "Happy Hour / Tuesday \u2013 Sunday 4\u20136 pm",
@@ -19500,6 +19591,22 @@
     "url": "https://wills-bills.com/happy-hour"
    },
    {
+    "quote": "$1 Buck-a-Shuck Oysters",
+    "url": "https://wills-bills.com/happy-hour"
+   },
+   {
+    "quote": "$5 WB Craft Pints / Ales, lagers and IPAs brewed right here at Will's & Bill's \u2014 $5 a pint.",
+    "url": "https://wills-bills.com/happy-hour"
+   },
+   {
+    "quote": "$7 Wine & Cocktails",
+    "url": "https://wills-bills.com/happy-hour"
+   },
+   {
+    "quote": "$8 Happy Hour Bites",
+    "url": "https://wills-bills.com/happy-hour"
+   },
+   {
     "quote": "Happy Hour Bites / A set happy-hour food menu \u2014 truffle fries, the Le Smash burger, mussels frites and more. Bites start at $8. / Tuesday\u2013Sunday \u00b7 4\u20136 PM",
     "url": "https://wills-bills.com/happy-hour"
    },
@@ -19512,7 +19619,7 @@
     "url": "https://wills-bills.com/happy-hour"
    },
    {
-    "quote": "Chef-picked pairings that turn a round of drinks into an occasion \u2014 served all happy hour long.",
+    "quote": "Chef-picked pairings that turn a round of drinks into an occasion \u2014 served all happy hour long. / $16 \u00b7 $28 for two",
     "url": "https://wills-bills.com/happy-hour"
    },
    {
@@ -19521,6 +19628,34 @@
    },
    {
     "quote": "Happy-hour pricing is available at the bar, in the dining room, in the booths and on the patio.",
+    "url": "https://wills-bills.com/happy-hour"
+   },
+   {
+    "quote": "Your Happy Hour Plans, Simplified. / Happy hour runs Tuesday through Sunday, 4\u20136 PM.",
+    "url": "https://wills-bills.com/happy-hour"
+   },
+   {
+    "quote": "Happy hour runs Tuesday through Sunday, 4\u20136 PM.",
+    "url": "https://wills-bills.com/happy-hour"
+   },
+   {
+    "quote": "Happy Hour Questions / Is it actually $1 per oyster? + Yes \u2014 buck-a-shuck means $1 each for our fresh oysters on the half shell, served with cocktail sauce and cucumber mignonette during happy hour. / When is happy hour? + Tuesday through Sunday, from 4:00 to 6:00 PM.",
+    "url": "https://wills-bills.com/happy-hour"
+   },
+   {
+    "quote": "Is happy hour only available at the bar? + No. Happy-hour food and drink specials are available throughout the entire restaurant and on the patio. You can enjoy happy-hour pricing whether you sit at the bar, in a booth, at a dining-room table or outside. / Is it actually $1 per oyster? + Yes \u2014 buck-a-shuck means $1 each for our fresh oysters on the half shell, served with cocktail sauce and cucumb",
+    "url": "https://wills-bills.com/happy-hour"
+   },
+   {
+    "quote": "Is it actually $1 per oyster? + Yes \u2014 buck-a-shuck means $1 each for our fresh oysters on the half shell, served with cocktail sauce and cucumber mignonette during happy hour.",
+    "url": "https://wills-bills.com/happy-hour"
+   },
+   {
+    "quote": "When is happy hour? + Tuesday through Sunday, from 4:00 to 6:00 PM.",
+    "url": "https://wills-bills.com/happy-hour"
+   },
+   {
+    "quote": "Buck-a-shuck oysters. House-brewed $5 pints. $7 wine and cocktails. Available at every table \u2014 not just at the bar.",
     "url": "https://wills-bills.com/happy-hour"
    },
    {
@@ -19540,15 +19675,15 @@
     "url": "https://wills-bills.com/event-spaces"
    },
    {
-    "quote": "\" I had a very pleasant experience booking my company happy hour event with Will & Bill\u2019s. Zoe was highly responsive and did a great job helping customize the event to meet my needs, making the booking process simple and seamless.",
+    "quote": "\"I had a very pleasant experience booking my company happy hour event with Will & Bill\u2019s. Zoe was highly responsive and did a great job helping customize the event to meet my needs, making the booking process simple and seamless.",
     "url": "https://wills-bills.com/event-spaces"
    },
    {
-    "quote": "\" Will's + Bill's is such a great place to bring your company happy hour. They have a good mix of food, great drinks and good beers. All of the staff I have ever met has been kind and welcoming. \"",
+    "quote": "\"Will's + Bill's is such a great place to bring your company happy hour. They have a good mix of food, great drinks and good beers. All of the staff I have ever met has been kind and welcoming.\"",
     "url": "https://wills-bills.com/event-spaces"
    },
    {
-    "quote": "\" Had a fantastic time for our company new hire Happy Hour at Wills and Bills! It was the perfect evening to be out on the patio\u2014great atmosphere and even better company. The food was delicious, especially all the dips\u2014they were a huge hit! Looking forward to coming back soon. \"",
+    "quote": "\"Had a fantastic time for our company new hire Happy Hour at Wills and Bills! It was the perfect evening to be out on the patio\u2014great atmosphere and even better company. The food was delicious, especially all the dips\u2014they were a huge hit! Looking forward to coming back soon.\"",
     "url": "https://wills-bills.com/event-spaces"
    },
    {
@@ -19564,7 +19699,7 @@
     "url": "https://wills-bills.com/"
    },
    {
-    "result": "ok, 12 quote(s)",
+    "result": "ok, 23 quote(s)",
     "url": "https://wills-bills.com/happy-hour"
    },
    {
@@ -19828,51 +19963,51 @@
     "url": "http://jerrysbarphilly.com/menus/happy-hour/"
    },
    {
-    "quote": "LOADED HOMEFRIES / $9.00 / Sauteed bell peppers, caramelized onions, scallions, smoked gouda gravy",
+    "quote": "$9.00 LOADED HOMEFRIES",
     "url": "http://jerrysbarphilly.com/menus/happy-hour/"
    },
    {
-    "quote": "STICKY BUN / $10.00 / Raisins, Pecans, Cinnamon, Cream Cheese Frosting",
+    "quote": "$10.00 STICKY BUN",
     "url": "http://jerrysbarphilly.com/menus/happy-hour/"
    },
    {
-    "quote": "HUMMUS TRIO / $18.00",
+    "quote": "$18.00 HUMMUS TRIO",
     "url": "http://jerrysbarphilly.com/menus/happy-hour/"
    },
    {
-    "quote": "BERRY YOGURT PARFAIT / $9.00 / Vanilla Bean Yogurt Layered With House Made Granola and Wild Berries",
+    "quote": "$9.00 BERRY YOGURT PARFAIT",
     "url": "http://jerrysbarphilly.com/menus/happy-hour/"
    },
    {
-    "quote": "BAGEL AND LOX PLATTER / $18.00",
+    "quote": "$18.00 BAGEL AND LOX PLATTER",
     "url": "http://jerrysbarphilly.com/menus/happy-hour/"
    },
    {
-    "quote": "BUTTERMILK PANCAKES / $13.00 / Our Version of a Classic. Add Wildberries +$3",
+    "quote": "$13.00 BUTTERMILK PANCAKES",
     "url": "http://jerrysbarphilly.com/menus/happy-hour/"
    },
    {
-    "quote": "VANILLA BRIOCHE FRENCH TOAST / $14.00 / Vanilla, cinnamon (V)",
+    "quote": "$14.00 VANILLA BRIOCHE FRENCH TOAST",
     "url": "http://jerrysbarphilly.com/menus/happy-hour/"
    },
    {
-    "quote": "STRAWBERRIES & CREAM PANCAKES / $16.00 / Macerated Strawberries, Vanilla Whipped Cream, Mapple Drizzle (V)",
+    "quote": "$16.00 STRAWBERRIES & CREAM PANCAKES",
     "url": "http://jerrysbarphilly.com/menus/happy-hour/"
    },
    {
-    "quote": "CHICKEN & WAFFLES / $18.00 / Hot Honey Fried Chicken, Belgium Sugar Waffle, Choice of Side",
+    "quote": "$18.00 CHICKEN & WAFFLES",
     "url": "http://jerrysbarphilly.com/menus/happy-hour/"
    },
    {
-    "quote": "BANANA'S FOSTER FRENCH TOAST / $16.00 / Carmelized Bananas, Infused Rum Butter",
+    "quote": "$16.00 BANANA'S FOSTER FRENCH TOAST",
     "url": "http://jerrysbarphilly.com/menus/happy-hour/"
    },
    {
-    "quote": "CAESAR SALAD / $13.00",
+    "quote": "$13.00 CAESAR SALAD",
     "url": "http://jerrysbarphilly.com/menus/happy-hour/"
    },
    {
-    "quote": "JERRY'S WEDGE SALAD / $15.00",
+    "quote": "$15.00 JERRY'S WEDGE SALAD",
     "url": "http://jerrysbarphilly.com/menus/happy-hour/"
    },
    {
@@ -19884,35 +20019,35 @@
     "url": "http://jerrysbarphilly.com/menus/happy-hour/"
    },
    {
-    "quote": "GARDEN BOURSIN OMELETTE / $17.00 / Sauteed Mushrooms, Asparagus, Creamy Boursin, Fresh Herbs (V, GF)",
+    "quote": "$17.00 GARDEN BOURSIN OMELETTE",
     "url": "http://jerrysbarphilly.com/menus/happy-hour/"
    },
    {
-    "quote": "BREAKFAST BURRITO / $18.00",
+    "quote": "$18.00 BREAKFAST BURRITO",
     "url": "http://jerrysbarphilly.com/menus/happy-hour/"
    },
    {
-    "quote": "EGGS BENNY / $16.00 / Ham, Poached Egg, Hollandaise, and English Muffin",
+    "quote": "$16.00 EGGS BENNY",
     "url": "http://jerrysbarphilly.com/menus/happy-hour/"
    },
    {
-    "quote": "EGGS JERRY / $17.00",
+    "quote": "$17.00 EGGS JERRY",
     "url": "http://jerrysbarphilly.com/menus/happy-hour/"
    },
    {
-    "quote": "COUNTRY FRIED EGGS BENNY / $18.00",
+    "quote": "$18.00 COUNTRY FRIED EGGS BENNY",
     "url": "http://jerrysbarphilly.com/menus/happy-hour/"
    },
    {
-    "quote": "STEAK & EGGS / $32.00",
+    "quote": "$32.00 STEAK & EGGS",
     "url": "http://jerrysbarphilly.com/menus/happy-hour/"
    },
    {
-    "quote": "TWO EGGS / $14.00 / Two eggs your way, choice of meat, homefries & toast",
+    "quote": "$14.00 TWO EGGS",
     "url": "http://jerrysbarphilly.com/menus/happy-hour/"
    },
    {
-    "quote": "BISCUITS & GRAVY / $16.00 / Scrambled eggs, house-made biscuits, country pork gravy. Served with homefries",
+    "quote": "$16.00 BISCUITS & GRAVY",
     "url": "http://jerrysbarphilly.com/menus/happy-hour/"
    },
    {
@@ -20092,79 +20227,79 @@
     "url": "https://www.spassoitaliangrill.com/media-happy-hour-menu"
    },
    {
-    "quote": "Drinks / $ 4 / Beer",
+    "quote": "$4 Beer / Yuengling Lager, Miller Lite, Coors Lite, Michelob Ultra",
     "url": "https://www.spassoitaliangrill.com/media-happy-hour-menu"
    },
    {
-    "quote": "Yuengling Lager, Miller Lite, Coors Lite, Michelob Ultra / $ 4",
+    "quote": "$5 Beer",
     "url": "https://www.spassoitaliangrill.com/media-happy-hour-menu"
    },
    {
-    "quote": "$ 5 / Beer",
+    "quote": "$8 Wine by the Glass / (Please inquire for today's selection)",
     "url": "https://www.spassoitaliangrill.com/media-happy-hour-menu"
    },
    {
-    "quote": "$ 5",
+    "quote": "$7 Mixed Drinks / Create your own with house liquor or choose: Mojito, Baybreeze, Seabreeze",
     "url": "https://www.spassoitaliangrill.com/media-happy-hour-menu"
    },
    {
-    "quote": "$ 8 / Wine by the Glass",
+    "quote": "$8 Martinis / Cosmopolitan, Orange Pomegranate, Lemon Drop, Very Berry",
     "url": "https://www.spassoitaliangrill.com/media-happy-hour-menu"
    },
    {
-    "quote": "(Please inquire for today's selection) / $ 8",
+    "quote": "$8 Meatballs with Marinara",
     "url": "https://www.spassoitaliangrill.com/media-happy-hour-menu"
    },
    {
-    "quote": "$ 7 / Mixed Drinks",
+    "quote": "$8 Tomato Bruschetta",
     "url": "https://www.spassoitaliangrill.com/media-happy-hour-menu"
    },
    {
-    "quote": "Create your own with house liquor or choose: Mojito, Baybreeze, Seabreeze / $ 7",
+    "quote": "$8 Arancini",
     "url": "https://www.spassoitaliangrill.com/media-happy-hour-menu"
    },
    {
-    "quote": "$ 8 / Martinis",
+    "quote": "$8 Fried Burrata",
     "url": "https://www.spassoitaliangrill.com/media-happy-hour-menu"
    },
    {
-    "quote": "Cosmopolitan, Orange Pomegranate, Lemon Drop, Very Berry / $ 8 / Small Plates",
+    "quote": "$8 Gorgonzola Salad",
     "url": "https://www.spassoitaliangrill.com/media-happy-hour-menu"
    },
    {
-    "quote": "Small Plates / $ 8 / Meatballs with Marinara",
+    "quote": "$12 Cheese",
     "url": "https://www.spassoitaliangrill.com/media-happy-hour-menu"
    },
    {
-    "quote": "Meatballs with Marinara / $ 8",
+    "quote": "$12 Pepperoni",
     "url": "https://www.spassoitaliangrill.com/media-happy-hour-menu"
    },
    {
-    "quote": "$ 8 / Tomato Bruschetta",
+    "quote": "$12 Mushroom",
     "url": "https://www.spassoitaliangrill.com/media-happy-hour-menu"
    },
    {
-    "quote": "Tomato Bruschetta / $ 8",
+    "quote": "$12 Sausage",
     "url": "https://www.spassoitaliangrill.com/media-happy-hour-menu"
    },
    {
-    "quote": "$ 8 / Arancini",
+    "quote": "$12 Margarita",
     "url": "https://www.spassoitaliangrill.com/media-happy-hour-menu"
    },
    {
-    "quote": "Arancini / $ 8",
+    "quote": "$12 Cheese Plate / Served with Green Apples & Honey Jam",
     "url": "https://www.spassoitaliangrill.com/media-happy-hour-menu"
    },
    {
-    "quote": "$ 8 / Fried Burrata",
+    "quote": "$12 Steamed Mussels / Red or White",
     "url": "https://www.spassoitaliangrill.com/media-happy-hour-menu"
    },
    {
-    "quote": "Fried Burrata / $ 8",
+    "quote": "$12 Escargot \"French Style\" / Butter & Garlic",
     "url": "https://www.spassoitaliangrill.com/media-happy-hour-menu"
    },
    {
-    "quote": "$ 8 / Gorgonzola Salad",
+    "quote": "$12 Bucatini all Amatriciana / Bacon & Onions in Pomodoro",
     "url": "https://www.spassoitaliangrill.com/media-happy-hour-menu"
    },
    {
@@ -20184,83 +20319,83 @@
     "url": "https://www.spassoitaliangrill.com/philadelphia-happy-hour"
    },
    {
-    "quote": "Small Plates / $ 8 / Meatballs with Marinara",
+    "quote": "$8 Meatballs with Marinara",
     "url": "https://www.spassoitaliangrill.com/philadelphia-happy-hour"
    },
    {
-    "quote": "Meatballs with Marinara / $ 8",
+    "quote": "$8 Tomato Bruschetta",
     "url": "https://www.spassoitaliangrill.com/philadelphia-happy-hour"
    },
    {
-    "quote": "$ 8 / Tomato Bruschetta",
+    "quote": "$8 Arancini",
     "url": "https://www.spassoitaliangrill.com/philadelphia-happy-hour"
    },
    {
-    "quote": "Tomato Bruschetta / $ 8",
+    "quote": "$8 Spiedini di Mozzarella",
     "url": "https://www.spassoitaliangrill.com/philadelphia-happy-hour"
    },
    {
-    "quote": "$ 8 / Arancini",
+    "quote": "$8 Gorgonzola Salad",
     "url": "https://www.spassoitaliangrill.com/philadelphia-happy-hour"
    },
    {
-    "quote": "Arancini / $ 8",
+    "quote": "$8 Fried Ravioli",
     "url": "https://www.spassoitaliangrill.com/philadelphia-happy-hour"
    },
    {
-    "quote": "$ 8 / Spiedini di Mozzarella",
+    "quote": "$10 Piatto del Contadino / cheese, prosciutto, olives",
     "url": "https://www.spassoitaliangrill.com/philadelphia-happy-hour"
    },
    {
-    "quote": "Spiedini di Mozzarella / $ 8",
+    "quote": "$10 Gamberetti / rock shrimp & white beans with crostini",
     "url": "https://www.spassoitaliangrill.com/philadelphia-happy-hour"
    },
    {
-    "quote": "$ 8 / Gorgonzola Salad",
+    "quote": "$10 Mussels / red or white",
     "url": "https://www.spassoitaliangrill.com/philadelphia-happy-hour"
    },
    {
-    "quote": "Gorgonzola Salad / $ 8",
+    "quote": "$10 Fusilli Lunghi / bacon, onions in pomodoro sauce",
     "url": "https://www.spassoitaliangrill.com/philadelphia-happy-hour"
    },
    {
-    "quote": "$ 8 / Fried Ravioli",
+    "quote": "$10 Penne Spasso / bacon, mushrooms, peas, bluch sauce",
     "url": "https://www.spassoitaliangrill.com/philadelphia-happy-hour"
    },
    {
-    "quote": "Fried Ravioli / $ 8",
+    "quote": "$10 Gnocchi / Gorgonzola or Marinara",
     "url": "https://www.spassoitaliangrill.com/philadelphia-happy-hour"
    },
    {
-    "quote": "$ 10 / Piatto del Contadino",
+    "quote": "$10 Eggplant Parmigiana",
     "url": "https://www.spassoitaliangrill.com/philadelphia-happy-hour"
    },
    {
-    "quote": "cheese, prosciutto, olives / $ 10",
+    "quote": "$10 Eggplant Rollatini",
     "url": "https://www.spassoitaliangrill.com/philadelphia-happy-hour"
    },
    {
-    "quote": "$ 10 / Gamberetti",
+    "quote": "Drink Specials",
     "url": "https://www.spassoitaliangrill.com/philadelphia-happy-hour"
    },
    {
-    "quote": "rock shrimp & white beans with crostini / $ 10",
+    "quote": "$3.50 Domestic Beers / Yuengling Lager, Coors Light, Budweiser, Michelob Ultra",
     "url": "https://www.spassoitaliangrill.com/philadelphia-happy-hour"
    },
    {
-    "quote": "$ 10 / Mussels",
+    "quote": "$5 Imported Beers",
     "url": "https://www.spassoitaliangrill.com/philadelphia-happy-hour"
    },
    {
-    "quote": "red or white / $ 10",
+    "quote": "$8 Wine by The Glass / red or white house selections",
     "url": "https://www.spassoitaliangrill.com/philadelphia-happy-hour"
    },
    {
-    "quote": "$ 10 / Fusilli Lunghi",
+    "quote": "$8.50 Martinis",
     "url": "https://www.spassoitaliangrill.com/philadelphia-happy-hour"
    },
    {
-    "quote": "bacon, onions in pomodoro sauce / $ 10",
+    "quote": "$8.50 Mixed Drinks",
     "url": "https://www.spassoitaliangrill.com/philadelphia-happy-hour"
    },
    {
@@ -20975,7 +21110,7 @@
  },
  "67138": {
   "address": "2370-72 E NORRIS ST, PHILADELPHIA PA 19125-1929",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "HAPPY HOUR SPECIALS MENUS",
@@ -21026,7 +21161,59 @@
     "url": "https://cedarpointbarandkitchen.com/happy-hour-specials/"
    },
    {
+    "quote": "$12 Seagram's 7 Crowns American Whiskey, angostura bitters & demerara sugar.",
+    "url": "https://cedarpointbarandkitchen.com/happy-hour-specials/"
+   },
+   {
+    "quote": "$11 Blanco Tequila, triple sec, house made guava syrup, and lime.",
+    "url": "https://cedarpointbarandkitchen.com/happy-hour-specials/"
+   },
+   {
+    "quote": "$9 Tito's Vodka or Kraken Black Rum & house made ginger lime juice.",
+    "url": "https://cedarpointbarandkitchen.com/happy-hour-specials/"
+   },
+   {
+    "quote": "Golden Road Mango Cart Mango Wheat Ale 4% $7",
+    "url": "https://cedarpointbarandkitchen.com/happy-hour-specials/"
+   },
+   {
+    "quote": "New Trail Double Broken Heels DIPA 9.2% $8",
+    "url": "https://cedarpointbarandkitchen.com/happy-hour-specials/"
+   },
+   {
+    "quote": "Minkeyboodle Raspberry Sour 7% $8",
+    "url": "https://cedarpointbarandkitchen.com/happy-hour-specials/"
+   },
+   {
+    "quote": "Love City Deep Cut Pilsner 5% $7",
+    "url": "https://cedarpointbarandkitchen.com/happy-hour-specials/"
+   },
+   {
+    "quote": "Bitburger Pilsner (import) 4.8% $7",
+    "url": "https://cedarpointbarandkitchen.com/happy-hour-specials/"
+   },
+   {
+    "quote": "Love City Eraserhood Hazy IPA 7.2% $8",
+    "url": "https://cedarpointbarandkitchen.com/happy-hour-specials/"
+   },
+   {
+    "quote": "Founders Solid Gold American Lager 4.4% $5",
+    "url": "https://cedarpointbarandkitchen.com/happy-hour-specials/"
+   },
+   {
     "quote": "* $2 Off Draft Beer for Happy Hour! Happy Hours run from Sunday \u2013 Friday from 5PM \u2013 7PM AND Last Hour Monday \u2013 Friday",
+    "url": "https://cedarpointbarandkitchen.com/happy-hour-specials/"
+   },
+   {
+    "quote": "$9 Castelli / Pinot Grigio / Veneto, Italy",
+    "url": "https://cedarpointbarandkitchen.com/happy-hour-specials/"
+   },
+   {
+    "quote": "$11 Stoneburn / Sauvignon Blanc / Marlborough, New Zealand",
+    "url": "https://cedarpointbarandkitchen.com/happy-hour-specials/"
+   },
+   {
+    "quote": "$11 Morand\u00e9 / Pinot Noir Ros\u00e9 / Vina Morande, Chile",
     "url": "https://cedarpointbarandkitchen.com/happy-hour-specials/"
    },
    {
@@ -21034,15 +21221,51 @@
     "url": "https://cedarpointbarandkitchen.com/happy-hour-specials/"
    },
    {
-    "quote": "Late Night Happy Hour / Monday \u2013 Friday: 10PM \u2013 11PM",
-    "url": "https://cedarpointbarandkitchen.com/happy-hour-specials/"
-   },
-   {
     "quote": "HAPPY HOUR SPECIALS MENUS",
     "url": "https://cedarpointbarandkitchen.com/weekly-specials/"
    },
    {
-    "quote": "DRINK SPECIALS / El Mayor reposado tequila, black currant liqueur, lemon, apple juice, and agave. Cherry garnish. / $13",
+    "quote": "DRINK SPECIALS / $9",
+    "url": "https://cedarpointbarandkitchen.com/weekly-specials/"
+   },
+   {
+    "quote": "$9 / WATERMELON MEZCALITA",
+    "url": "https://cedarpointbarandkitchen.com/weekly-specials/"
+   },
+   {
+    "quote": "$14 / NORTH DAKOTA SPECIAL",
+    "url": "https://cedarpointbarandkitchen.com/weekly-specials/"
+   },
+   {
+    "quote": "$13 / FOOD SPECIALS",
+    "url": "https://cedarpointbarandkitchen.com/weekly-specials/"
+   },
+   {
+    "quote": "$12 Smoked kielbasa, white beans, parsnips. Served with ranch.",
+    "url": "https://cedarpointbarandkitchen.com/weekly-specials/"
+   },
+   {
+    "quote": "$17 Creamy potato and dumpling stew with chicken and veggies.",
+    "url": "https://cedarpointbarandkitchen.com/weekly-specials/"
+   },
+   {
+    "quote": "$15 Toasted brioche with bison sliders, wojapi aioli, fried jalapenos, and feta.",
+    "url": "https://cedarpointbarandkitchen.com/weekly-specials/"
+   },
+   {
+    "quote": "$17 / DRUNK & CHEESY",
+    "url": "https://cedarpointbarandkitchen.com/weekly-specials/"
+   },
+   {
+    "quote": "$15 NORTH DAKOTA CHIPPER GRILLED CHEESE: / Mozzarella, bacon, chocolate covered potato chips. / Choice of fries or salad. / Beer: Mimosa City / Shot: Dickel Rye",
+    "url": "https://cedarpointbarandkitchen.com/weekly-specials/"
+   },
+   {
+    "quote": "$17 / FRIED EGG BLT",
+    "url": "https://cedarpointbarandkitchen.com/weekly-specials/"
+   },
+   {
+    "quote": "$14",
     "url": "https://cedarpointbarandkitchen.com/weekly-specials/"
    },
    {
@@ -21058,11 +21281,87 @@
     "url": "https://cedarpointbarandkitchen.com/weekly-specials/bar/"
    },
    {
-    "quote": "DRINK SPECIALS / El Mayor reposado tequila, black currant liqueur, lemon, apple juice, and agave. Cherry garnish. / $13",
+    "quote": "DRINK SPECIALS / $9",
+    "url": "https://cedarpointbarandkitchen.com/weekly-specials/bar/"
+   },
+   {
+    "quote": "$9 / WATERMELON MEZCALITA",
+    "url": "https://cedarpointbarandkitchen.com/weekly-specials/bar/"
+   },
+   {
+    "quote": "$14 / NORTH DAKOTA SPECIAL",
+    "url": "https://cedarpointbarandkitchen.com/weekly-specials/bar/"
+   },
+   {
+    "quote": "$13",
+    "url": "https://cedarpointbarandkitchen.com/weekly-specials/bar/"
+   },
+   {
+    "quote": "Golden Road Mango Cart Mango Wheat Ale 4% $7",
+    "url": "https://cedarpointbarandkitchen.com/weekly-specials/bar/"
+   },
+   {
+    "quote": "New Trail Double Broken Heels DIPA 9.2% $8",
+    "url": "https://cedarpointbarandkitchen.com/weekly-specials/bar/"
+   },
+   {
+    "quote": "Minkeyboodle Raspberry Sour 7% $8",
+    "url": "https://cedarpointbarandkitchen.com/weekly-specials/bar/"
+   },
+   {
+    "quote": "Love City Deep Cut Pilsner 5% $7",
+    "url": "https://cedarpointbarandkitchen.com/weekly-specials/bar/"
+   },
+   {
+    "quote": "Bitburger Pilsner (import) 4.8% $7",
+    "url": "https://cedarpointbarandkitchen.com/weekly-specials/bar/"
+   },
+   {
+    "quote": "Love City Eraserhood Hazy IPA 7.2% $8",
+    "url": "https://cedarpointbarandkitchen.com/weekly-specials/bar/"
+   },
+   {
+    "quote": "Founders Solid Gold American Lager 4.4% $5",
     "url": "https://cedarpointbarandkitchen.com/weekly-specials/bar/"
    },
    {
     "quote": "* $2 Off Draft Beer for Happy Hour! Happy Hours run from Sunday \u2013 Friday from 5PM \u2013 7PM AND Last Hour Monday \u2013 Friday",
+    "url": "https://cedarpointbarandkitchen.com/weekly-specials/bar/"
+   },
+   {
+    "quote": "Old Fashioned $12",
+    "url": "https://cedarpointbarandkitchen.com/weekly-specials/bar/"
+   },
+   {
+    "quote": "$9 / CUCUMBER WHISKEY SMASH",
+    "url": "https://cedarpointbarandkitchen.com/weekly-specials/bar/"
+   },
+   {
+    "quote": "$13 Smashed cucumbers, Jameson Irish Whiskey, elderflower, simple, and lemon juice.",
+    "url": "https://cedarpointbarandkitchen.com/weekly-specials/bar/"
+   },
+   {
+    "quote": "$12 Gin, grapefruit, hibiscus syrup, lemon and mint. / *Available as a Mocktail",
+    "url": "https://cedarpointbarandkitchen.com/weekly-specials/bar/"
+   },
+   {
+    "quote": "$12 / BECAUSE I SAID SO",
+    "url": "https://cedarpointbarandkitchen.com/weekly-specials/bar/"
+   },
+   {
+    "quote": "$12 Gin, St Elder, lemon, simple, draft ros\u00e9, topped with pink peppercorns.",
+    "url": "https://cedarpointbarandkitchen.com/weekly-specials/bar/"
+   },
+   {
+    "quote": "$13 / DUDE ABIDES (HOT or COLD!)",
+    "url": "https://cedarpointbarandkitchen.com/weekly-specials/bar/"
+   },
+   {
+    "quote": "$12 / BLACK \u2018N\u2019 MILD",
+    "url": "https://cedarpointbarandkitchen.com/weekly-specials/bar/"
+   },
+   {
+    "quote": "$14 / CLASSICS",
     "url": "https://cedarpointbarandkitchen.com/weekly-specials/bar/"
    },
    {
@@ -21070,24 +21369,14 @@
     "url": "https://cedarpointbarandkitchen.com/weekly-specials/bar/"
    },
    {
-    "quote": "**$2 off for Happy Hour!",
+    "quote": "$9 Tito's Vodka or Kraken Black Rum & house made ginger-lime juice.",
     "url": "https://cedarpointbarandkitchen.com/weekly-specials/bar/"
-   },
+   }
+  ],
+  "menu_images": [
    {
-    "quote": "**$2 off for Happy Hour",
-    "url": "https://cedarpointbarandkitchen.com/weekly-specials/bar/"
-   },
-   {
-    "quote": "* $2 Off Wine for Happy Hour, sangria and sparkling included! Sunday \u2013 Thursday from 5PM \u2013 7PM AND Monday \u2013 Thursday 10PM \u2013 11PM",
-    "url": "https://cedarpointbarandkitchen.com/weekly-specials/bar/"
-   },
-   {
-    "quote": "HAPPY HOUR / Sunday \u2013 Friday: 5PM \u2013 7pm / Monday \u2013 Friday: 10PM \u2013 11PM",
-    "url": "https://cedarpointbarandkitchen.com/weekly-specials/bar/"
-   },
-   {
-    "quote": "Late Night Happy Hour / Monday \u2013 Friday: 10PM \u2013 11PM",
-    "url": "https://cedarpointbarandkitchen.com/weekly-specials/bar/"
+    "src": "https://cedarpointbarandkitchen.com/wp-content/uploads/2024/10/Happy-Hour.jpg",
+    "url": "https://cedarpointbarandkitchen.com/happy-hour-specials/"
    }
   ],
   "name": "CEDAR POINT LLC",
@@ -21098,15 +21387,15 @@
     "url": "https://www.cedarpointbarandkitchen.com/"
    },
    {
-    "result": "ok, 12 quote(s)",
+    "result": "ok, 24 quote(s)",
     "url": "https://cedarpointbarandkitchen.com/happy-hour-specials/"
    },
    {
-    "result": "ok, 4 quote(s)",
+    "result": "ok, 14 quote(s)",
     "url": "https://cedarpointbarandkitchen.com/weekly-specials/"
    },
    {
-    "result": "ok, 9 quote(s)",
+    "result": "ok, 24 quote(s)",
     "url": "https://cedarpointbarandkitchen.com/weekly-specials/bar/"
    }
   ],
@@ -21587,14 +21876,10 @@
  },
  "67895": {
   "address": "236 N RADNOR CHESTER RD, RADNOR PA 19085-5106",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "Happy Hour",
-    "url": "https://pietrospizza.com/radnor.asp"
-   },
-   {
-    "quote": "Check out our special promotions ranging from weekly Happy Hour specials, to our seasonal events and menu offerings.",
     "url": "https://pietrospizza.com/radnor.asp"
    },
    {
@@ -21628,17 +21913,13 @@
    {
     "quote": "Happy Hour",
     "url": "https://pietrospizza.com/files/pietros-happy-hour-packages.pdf"
-   },
-   {
-    "quote": "HAPPY HOUR MENU / MONDAY - FRIDAY 4 - 6 / SUNDAY 7 - 10",
-    "url": "https://pietrospizza.com/files/walnut-street-happy-hour-menu.pdf"
    }
   ],
   "name": "PIETROS ITALIAN RESTAURANT INC",
   "osm_name": "Pietro's Pizzeria",
   "pages": [
    {
-    "result": "ok, 2 quote(s)",
+    "result": "ok, 1 quote(s)",
     "url": "https://pietrospizza.com/radnor.asp"
    },
    {
@@ -21648,10 +21929,6 @@
    {
     "result": "ok, 6 quote(s)",
     "url": "https://pietrospizza.com/files/pietros-happy-hour-packages.pdf"
-   },
-   {
-    "result": "ok, 1 quote(s)",
-    "url": "https://pietrospizza.com/files/walnut-street-happy-hour-menu.pdf"
    }
   ],
   "website": "https://pietrospizza.com/radnor.asp",
@@ -21877,7 +22154,7 @@
  },
  "68137": {
   "address": "124-34 S 15TH ST 1500 SANSOM ST, PHILADELPHIA PA 19102-3002",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "Sunday Happy Hour!",
@@ -21889,10 +22166,6 @@
    },
    {
     "quote": "Happy Hour / Join us Monday through Friday in our Lounge from 4 - 6 PM and enjoy half-off all Lounge & Sushi Items, $5 off Specialty Cocktails and Selected Wines, plus $5 Selected Domestic Beers.",
-    "url": "https://www.ocean-prime.com/locations-menus/philadelphia"
-   },
-   {
-    "quote": "Happy Hour / Offered Monday \u2013 Friday in our Lounge from 4:00 \u2013 6:00 PM / $5 off Specialty Cocktails and",
     "url": "https://www.ocean-prime.com/locations-menus/philadelphia"
    },
    {
@@ -21918,21 +22191,13 @@
    {
     "quote": "Happy Hour / Join us in our Lounge Monday-Friday from 3 \u2013 7 p.m. / Enjoy $5 off our Lounge Menu and Signature Cocktails.",
     "url": "https://ocean-prime.com/locations-menus/beverly-hills/"
-   },
-   {
-    "quote": "Happy Hour / Offered Monday \u2013 Friday in our Lounge from 3:00 \u2013 7:00 PM / ENJOY $5 OFF OUR BAR MENU & SIGNATURE COCKTAILS",
-    "url": "https://ocean-prime.com/locations-menus/beverly-hills/"
-   },
-   {
-    "quote": "Ask your Server for our Happy Hour Wine, Beer & Cocktail Features. / gfm CAN BE MADE GLUTEN-FREE FRIENDLY WITH MODIFICATIONS ON REQUEST",
-    "url": "https://ocean-prime.com/locations-menus/beverly-hills/"
    }
   ],
   "name": "OCEAN PRIME",
   "osm_name": "Ocean Prime",
   "pages": [
    {
-    "result": "ok, 5 quote(s)",
+    "result": "ok, 4 quote(s)",
     "url": "https://www.ocean-prime.com/locations-menus/philadelphia"
    },
    {
@@ -21940,7 +22205,7 @@
     "url": "https://ocean-prime.com/locations-menus/"
    },
    {
-    "result": "ok, 7 quote(s)",
+    "result": "ok, 5 quote(s)",
     "url": "https://ocean-prime.com/locations-menus/beverly-hills/"
    },
    {
@@ -23774,7 +24039,7 @@
  },
  "71516": {
   "address": "18-22 W GAY ST, WEST CHESTER PA 19380-3011",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "Daily Specials/Events",
@@ -23802,31 +24067,7 @@
    },
    {
     "quote": "HAPPY HOUR SPECIALS",
-    "url": "http://kildarespubwc.com/drink-menu/"
-   },
-   {
-    "quote": "Daily Specials/Events",
-    "url": "https://kildarespubwc.com"
-   },
-   {
-    "quote": "Daily Specials / Mondays: / $10 Fish and Chips and $4 Michelob Drafts all day",
-    "url": "https://kildarespubwc.com"
-   },
-   {
-    "quote": "Happy Hour Specials: / $3 Off Draft Beer, Wine, and Specialty Cocktails",
-    "url": "https://kildarespubwc.com"
-   },
-   {
-    "quote": "Week Day Happy Hour: / $3 Off Draft Beer, Wine, and Specialty Cocktails",
-    "url": "https://kildarespubwc.com"
-   },
-   {
-    "quote": "Late Night Happy Hour: / $3 Well Mixed Drinks / $4 Michalob Ultra Draft",
-    "url": "https://kildarespubwc.com"
-   },
-   {
-    "quote": "our daily specials and special sports events!",
-    "url": "https://kildarespubwc.com"
+    "url": "https://kildarespubwc.com/drink-menu/"
    }
   ],
   "name": "CHESTER COUNTY PUB COMPANY LLC",
@@ -23838,15 +24079,15 @@
    },
    {
     "result": "ok, 1 quote(s)",
-    "url": "http://kildarespubwc.com/drink-menu/"
+    "url": "https://kildarespubwc.com/drink-menu/"
    },
    {
     "result": "ok, 0 quote(s)",
-    "url": "http://kildarespubwc.com/food-menu/"
+    "url": "https://kildarespubwc.com/food-menu/"
    },
    {
-    "result": "ok, 6 quote(s)",
-    "url": "https://kildarespubwc.com"
+    "result": "ok, 0 quote(s)",
+    "url": "https://kildarespubwc.com/order-catering-or-schedule-your-event/"
    }
   ],
   "website": "https://kildarespubwc.com",
@@ -24741,7 +24982,7 @@
  },
  "72755": {
   "address": "2637 GIRARD AVE, PHILADELPHIA PA 19130-1333",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "The kitchen plates elevated comfort food with room for easy favorites, brunch picks, and vegan options. Settle in for happy hour, live music, outdoor seating, or a relaxed meal that turns into staying a little longer. Guests looking for the must-visit bar and restaurant near Fairmount will feel right at home here.",
@@ -24754,10 +24995,6 @@
    {
     "quote": "Weekend Happy Hour! / $4 Kenwood Lager - $5 Fireball shot / 03:00 PM - 05:00 PM",
     "url": "https://2637brew.com/happy-hours-specials"
-   },
-   {
-    "quote": "House wines - $2 off during Happy Hour",
-    "url": "https://2637brew.com/-drink-menu?source=header&spot_id=138388&destination=drink_menu&promotion=ipa_day"
    }
   ],
   "name": "2637BREW INC",
@@ -24776,8 +25013,8 @@
     "url": "https://2637brew.com/-catering?source=pop_up&spot_id=138388&destination=catering&promotion=catering"
    },
    {
-    "result": "ok, 1 quote(s)",
-    "url": "https://2637brew.com/-drink-menu?source=header&spot_id=138388&destination=drink_menu&promotion=ipa_day"
+    "result": "ok, 0 quote(s)",
+    "url": "https://2637brew.com/-party?source=pop_up&spot_id=138388&destination=private_parties&promotion=private_parties"
    }
   ],
   "website": "https://2637brew.com/",
@@ -24785,7 +25022,7 @@
  },
  "72756": {
   "address": "103 N WAYNE AVE, WAYNE PA 19087-3529",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "Happy Hour Food / $10 Small Plates / Mon - Thur | 4-6pm",
@@ -24796,7 +25033,35 @@
     "url": "https://www.thegoatsbeardphilly.com/manayunk-menu/"
    },
    {
+    "quote": "$10 The Plain Pizza - Detroit Style / signature sauce, mozzarella & cheddar, oregano, parmesan / (small)",
+    "url": "https://www.thegoatsbeardphilly.com/manayunk-menu/"
+   },
+   {
     "quote": "Happy Hour Smashburger / single 4 oz patty, american cheese, charred onions, special sauce, pickles, brioche bun, herb fries",
+    "url": "https://www.thegoatsbeardphilly.com/manayunk-menu/"
+   },
+   {
+    "quote": "$10 Happy Hour Smashburger",
+    "url": "https://www.thegoatsbeardphilly.com/manayunk-menu/"
+   },
+   {
+    "quote": "$10 Caesar Salad / chopped romaine, shaved parmesan, croutons, pink peppercorn caesar dressing",
+    "url": "https://www.thegoatsbeardphilly.com/manayunk-menu/"
+   },
+   {
+    "quote": "$10 Crispy Brussel Sprouts / balsamic vinaigrette, macerated strawberries, goat cheese",
+    "url": "https://www.thegoatsbeardphilly.com/manayunk-menu/"
+   },
+   {
+    "quote": "$10 Cheesesteak Egg Rolls / shaved sirloin, caramelized onions, american cheese, garlic aioli, spicy ketchup",
+    "url": "https://www.thegoatsbeardphilly.com/manayunk-menu/"
+   },
+   {
+    "quote": "$10 TGB Nuggets / spicy",
+    "url": "https://www.thegoatsbeardphilly.com/manayunk-menu/"
+   },
+   {
+    "quote": "$10 Roasted Carrot Hummus / garbanzo beans, madras curry, crudite, naan",
     "url": "https://www.thegoatsbeardphilly.com/manayunk-menu/"
    },
    {
@@ -24820,7 +25085,7 @@
     "url": "https://www.thegoatsbeardphilly.com/location/the-goats-beard-wayne/"
    },
    {
-    "result": "ok, 5 quote(s)",
+    "result": "ok, 12 quote(s)",
     "url": "https://www.thegoatsbeardphilly.com/manayunk-menu/"
    },
    {
@@ -25598,15 +25863,15 @@
     "url": "https://www.coopphilly.com/menus"
    },
    {
-    "quote": "with capers and everything spice / $ 8 / Wings",
+    "quote": "$8 Deviled Eggs / with capers and everything spice",
     "url": "https://www.coopphilly.com/menus"
    },
    {
-    "quote": "House-made hot sauce, fermented vegetables, blue cheese / $ 12 / Focaccia Tomato Pie",
+    "quote": "$12 Wings / House-made hot sauce, fermented vegetables, blue cheese",
     "url": "https://www.coopphilly.com/menus"
    },
    {
-    "quote": "Chef's take on a Philly classic: Garlic focaccia, marinated tomatoes, parmesan / $ 12 / vegetarian",
+    "quote": "$12 Focaccia Tomato Pie / Chef's take on a Philly classic: Garlic focaccia, marinated tomatoes, parmesan / vegetarian",
     "url": "https://www.coopphilly.com/menus"
    },
    {
@@ -25614,15 +25879,15 @@
     "url": "https://www.coopphilly.com/menus"
    },
    {
-    "quote": "Miller Lite, Peroni, Dogfish 60 Minute / $ 5 / House Red / White Wine",
+    "quote": "$5 Select Beer / Miller Lite, Peroni, Dogfish 60 Minute",
     "url": "https://www.coopphilly.com/menus"
    },
    {
-    "quote": "House Red / White Wine / $ 7 / Two Robbers Vodka Soda",
+    "quote": "$7 House Red / White Wine",
     "url": "https://www.coopphilly.com/menus"
    },
    {
-    "quote": "Pineapple / Cara Cara Orange / $ 6 / Dinner",
+    "quote": "$6 Two Robbers Vodka Soda / Pineapple / Cara Cara Orange",
     "url": "https://www.coopphilly.com/menus"
    },
    {
@@ -25642,15 +25907,15 @@
     "url": "https://www.coopphilly.com/menus/"
    },
    {
-    "quote": "with capers and everything spice / $ 8 / Wings",
+    "quote": "$8 Deviled Eggs / with capers and everything spice",
     "url": "https://www.coopphilly.com/menus/"
    },
    {
-    "quote": "House-made hot sauce, fermented vegetables, blue cheese / $ 12 / Focaccia Tomato Pie",
+    "quote": "$12 Wings / House-made hot sauce, fermented vegetables, blue cheese",
     "url": "https://www.coopphilly.com/menus/"
    },
    {
-    "quote": "Chef's take on a Philly classic: Garlic focaccia, marinated tomatoes, parmesan / $ 12 / vegetarian",
+    "quote": "$12 Focaccia Tomato Pie / Chef's take on a Philly classic: Garlic focaccia, marinated tomatoes, parmesan / vegetarian",
     "url": "https://www.coopphilly.com/menus/"
    },
    {
@@ -25658,15 +25923,15 @@
     "url": "https://www.coopphilly.com/menus/"
    },
    {
-    "quote": "Miller Lite, Peroni, Dogfish 60 Minute / $ 5 / House Red / White Wine",
+    "quote": "$5 Select Beer / Miller Lite, Peroni, Dogfish 60 Minute",
     "url": "https://www.coopphilly.com/menus/"
    },
    {
-    "quote": "House Red / White Wine / $ 7 / Two Robbers Vodka Soda",
+    "quote": "$7 House Red / White Wine",
     "url": "https://www.coopphilly.com/menus/"
    },
    {
-    "quote": "Pineapple / Cara Cara Orange / $ 6 / Dinner",
+    "quote": "$6 Two Robbers Vodka Soda / Pineapple / Cara Cara Orange",
     "url": "https://www.coopphilly.com/menus/"
    }
   ],
@@ -25695,7 +25960,7 @@
  },
  "83630": {
   "address": "1934-36 E PASSYUNK AVE, PHILADELPHIA PA 19148-2221",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "HAPPY HOUR | pistolasdelsur / $1 Buck-a-Shuck",
@@ -26398,7 +26663,7 @@
  },
  "86742": {
   "address": "1 WEST AVE, WAYNE PA 19087",
-  "crawled_at": "2026-08-31",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "Oyster Happy Hour (archived) \u2013 Cornerstone Bistro & Artisanal Market",
@@ -28379,7 +28644,7 @@
     "url": "https://favaglenmills.com/"
    },
    {
-    "quote": "Fava Ristorante Italiano - Happy Hour Menu",
+    "quote": "Fava Ristorante Italiano - Happy Hour Menu Skip to main content",
     "url": "https://favaglenmills.com/happy-hour-menu"
    },
    {
@@ -28391,51 +28656,51 @@
     "url": "https://favaglenmills.com/happy-hour-menu"
    },
    {
-    "quote": "Mixers / $9.00 / Vodka | Gin | Whiskey | Rum | Tequila | Scotch",
+    "quote": "$9.00 Mixers / Vodka | Gin | Whiskey | Rum | Tequila | Scotch",
     "url": "https://favaglenmills.com/happy-hour-menu"
    },
    {
-    "quote": "Old Fashioned / $9.00 / Redemption Rye, Angostura bitters, turbinado syrup",
+    "quote": "$9.00 Old Fashioned / Redemption Rye, Angostura bitters, turbinado syrup",
     "url": "https://favaglenmills.com/happy-hour-menu"
    },
    {
-    "quote": "Spagnola Spritz / $9.00",
+    "quote": "$9.00 Spagnola Spritz",
     "url": "https://favaglenmills.com/happy-hour-menu"
    },
    {
-    "quote": "Tina Collins / $9.00",
+    "quote": "$9.00 Tina Collins",
     "url": "https://favaglenmills.com/happy-hour-menu"
    },
    {
-    "quote": "Pickletini / $9.00 / Steel Blu Vodka, pickle juice, Tajin & lime zest rim",
+    "quote": "$9.00 Pickletini / Steel Blu Vodka, pickle juice, Tajin & lime zest rim",
     "url": "https://favaglenmills.com/happy-hour-menu"
    },
    {
-    "quote": "Watermelon Smash (Mocktail) / $9.00",
+    "quote": "$9.00 Watermelon Smash (Mocktail)",
     "url": "https://favaglenmills.com/happy-hour-menu"
    },
    {
-    "quote": "Montepulciano d'Abruzzo / $7.00 / Cabernet Sauvignon",
+    "quote": "$7.00 Montepulciano d'Abruzzo",
     "url": "https://favaglenmills.com/happy-hour-menu"
    },
    {
-    "quote": "Cabernet Sauvignon / $7.00 / Pinot Grigio",
+    "quote": "$7.00 Cabernet Sauvignon",
     "url": "https://favaglenmills.com/happy-hour-menu"
    },
    {
-    "quote": "Pinot Grigio / $7.00 / Chardonnay",
+    "quote": "$7.00 Pinot Grigio",
     "url": "https://favaglenmills.com/happy-hour-menu"
    },
    {
-    "quote": "Chardonnay / $7.00 / Sauvignon Blanc",
+    "quote": "$7.00 Chardonnay",
     "url": "https://favaglenmills.com/happy-hour-menu"
    },
    {
-    "quote": "Sauvignon Blanc / $7.00 / Draft Beer",
+    "quote": "$7.00 Sauvignon Blanc",
     "url": "https://favaglenmills.com/happy-hour-menu"
    },
    {
-    "quote": "8 Rotating taps | Seasonal Selections / $5.00 / Happy Hour Food",
+    "quote": "$5.00 8 Rotating taps | Seasonal Selections",
     "url": "https://favaglenmills.com/happy-hour-menu"
    },
    {
@@ -28443,35 +28708,35 @@
     "url": "https://favaglenmills.com/happy-hour-menu"
    },
    {
-    "quote": "Strawberry Fields * / $10.00",
+    "quote": "$10.00 Strawberry Fields *",
     "url": "https://favaglenmills.com/happy-hour-menu"
    },
    {
-    "quote": "Shrimp Cocktail * / $10.00 / 3 shrimp, cocktail sauce",
+    "quote": "$10.00 Shrimp Cocktail * / 3 shrimp, cocktail sauce",
     "url": "https://favaglenmills.com/happy-hour-menu"
    },
    {
-    "quote": "Raw Oysters (6) * / $10.00 / mignonette",
+    "quote": "$10.00 Raw Oysters (6) * / mignonette",
     "url": "https://favaglenmills.com/happy-hour-menu"
    },
    {
-    "quote": "Insalata Mista * / $7.00 / field greens, fennel, carrot, cherry tomato, cucumber, balsamic vinaigrette",
+    "quote": "$7.00 Insalata Mista * / field greens, fennel, carrot, cherry tomato, cucumber, balsamic vinaigrette",
     "url": "https://favaglenmills.com/happy-hour-menu"
    },
    {
-    "quote": "Classic Caesar * / $8.00 / Romain hearts, focaccia croutons, Parmigiano Reggiano",
+    "quote": "$8.00 Classic Caesar * / Romain hearts, focaccia croutons, Parmigiano Reggiano",
     "url": "https://favaglenmills.com/happy-hour-menu"
    },
    {
-    "quote": "House-cut Fries / $6.00 / Truffle-Style Fries",
+    "quote": "$6.00 House-cut Fries",
     "url": "https://favaglenmills.com/happy-hour-menu"
    },
    {
-    "quote": "Truffle-Style Fries / $8.00 / truffle oil, grated parmesan",
+    "quote": "$8.00 Truffle-Style Fries / truffle oil, grated parmesan",
     "url": "https://favaglenmills.com/happy-hour-menu"
    },
    {
-    "quote": "Roman Artichoke * / $9.00 / spinach, white wine lemon",
+    "quote": "$9.00 Roman Artichoke * / spinach, white wine lemon",
     "url": "https://favaglenmills.com/happy-hour-menu"
    },
    {
@@ -29061,87 +29326,71 @@
     "url": "https://www.jjratiganbrewing.com/menu-happy-hour"
    },
    {
-    "quote": "$ 1 OFF / $ 12 / PITCHERS",
+    "quote": "$12 PITCHERS / select drafts only",
     "url": "https://www.jjratiganbrewing.com/menu-happy-hour"
    },
    {
-    "quote": "select drafts only / $ 12",
+    "quote": "$7 CITYWIDE / Gooder Wooder draft + a shot of bourbon",
     "url": "https://www.jjratiganbrewing.com/menu-happy-hour"
    },
    {
-    "quote": "$ 7 / CITYWIDE",
+    "quote": "$10 FLIGHTS / four 5oz pours",
     "url": "https://www.jjratiganbrewing.com/menu-happy-hour"
    },
    {
-    "quote": "Gooder Wooder draft + a shot of bourbon / $ 7",
+    "quote": "$4 SHOOTERS / Raspberry Kalmakazi, Dirty Boy Cosmo, Mantawny Breeze, Appletini",
     "url": "https://www.jjratiganbrewing.com/menu-happy-hour"
    },
    {
-    "quote": "$ 10 / FLIGHTS",
+    "quote": "$9 $ 9oz POUR",
     "url": "https://www.jjratiganbrewing.com/menu-happy-hour"
    },
    {
-    "quote": "four 5oz pours / $ 10",
+    "quote": "$9 BUBBLY / traditional Blanc de Blancs",
     "url": "https://www.jjratiganbrewing.com/menu-happy-hour"
    },
    {
-    "quote": "$ 4 / SHOOTERS",
+    "quote": "$9 SANGRIA / Hot Honey Rose",
     "url": "https://www.jjratiganbrewing.com/menu-happy-hour"
    },
    {
-    "quote": "Raspberry Kalmakazi, Dirty Boy Cosmo, Mantawny Breeze, Appletini / $ 4",
+    "quote": "$9 Manhattans & Old Fashionds / our house classics, choose bourbon or rye",
     "url": "https://www.jjratiganbrewing.com/menu-happy-hour"
    },
    {
-    "quote": "$ 9",
+    "quote": "$12 Dirty Martinis / Stateside Vodka or Bluecoat Gin",
     "url": "https://www.jjratiganbrewing.com/menu-happy-hour"
    },
    {
-    "quote": "Dry Riesling, Gruner Vetliner, Rose, Bubbly Rose, Chambourcin / $ 9",
+    "quote": "$8 Boardroom Mule / Boardroom Vodka Mules",
     "url": "https://www.jjratiganbrewing.com/menu-happy-hour"
    },
    {
-    "quote": "$ 9oz POUR / $ 9 / BUBBLY",
+    "quote": "$10 Coldbrew Martini / bartenders still can't believe its only 10 during happy hour",
     "url": "https://www.jjratiganbrewing.com/menu-happy-hour"
    },
    {
-    "quote": "traditional Blanc de Blancs / $ 9",
+    "quote": "bartenders still can't believe its only 10 during happy hour",
     "url": "https://www.jjratiganbrewing.com/menu-happy-hour"
    },
    {
-    "quote": "$ 9 / SANGRIA",
+    "quote": "$9 Margaritas / classic, spicy, Palmoa, Cadillac, peach, passion fruit & strawberry",
     "url": "https://www.jjratiganbrewing.com/menu-happy-hour"
    },
    {
-    "quote": "Hot Honey Rose / $ 9 / cans",
+    "quote": "happy hour bites",
     "url": "https://www.jjratiganbrewing.com/menu-happy-hour"
    },
    {
-    "quote": "cocktails / $ 9 / Manhattans & Old Fashionds",
+    "quote": "$10 Daily Bar Snack / different every day... only 10!",
     "url": "https://www.jjratiganbrewing.com/menu-happy-hour"
    },
    {
-    "quote": "our house classics, choose bourbon or rye / $ 9",
+    "quote": "Select appetizers, buy-one get-one for happy hour!",
     "url": "https://www.jjratiganbrewing.com/menu-happy-hour"
    },
    {
-    "quote": "$ 12 / Dirty Martinis",
-    "url": "https://www.jjratiganbrewing.com/menu-happy-hour"
-   },
-   {
-    "quote": "Stateside Vodka or Bluecoat Gin / $ 12",
-    "url": "https://www.jjratiganbrewing.com/menu-happy-hour"
-   },
-   {
-    "quote": "$ 8 / Boardroom Mule",
-    "url": "https://www.jjratiganbrewing.com/menu-happy-hour"
-   },
-   {
-    "quote": "Boardroom Vodka Mules / $ 8",
-    "url": "https://www.jjratiganbrewing.com/menu-happy-hour"
-   },
-   {
-    "quote": "$ 10 / Coldbrew Martini",
+    "quote": "Happy Hour / Monday - Thursday, 4 to 6 / Friday & Saturday, 9 to 11",
     "url": "https://www.jjratiganbrewing.com/menu-happy-hour"
    },
    {
@@ -29185,7 +29434,7 @@
     "url": "https://www.jjratiganbrewing.com/"
    },
    {
-    "result": "ok, 24 quote(s)",
+    "result": "ok, 20 quote(s)",
     "url": "https://www.jjratiganbrewing.com/menu-happy-hour"
    },
    {
@@ -29951,7 +30200,7 @@
  },
  "98360": {
   "address": "2118 WASHINGTON AVE, PHILADELPHIA PA 19146",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "HAPPY HOUR(s) / TUESDAY - FRIDAY: 4pm - 6pm / $1 off Draught Beers",
@@ -29970,6 +30219,42 @@
     "url": "https://www.dockstreetbeer.com/news/happy-hour-at-dock-street-south"
    },
    {
+    "quote": "10oz Draft Beer $3",
+    "url": "https://www.dockstreetbeer.com/news/happy-hour-at-dock-street-south"
+   },
+   {
+    "quote": "Wine $5",
+    "url": "https://www.dockstreetbeer.com/news/happy-hour-at-dock-street-south"
+   },
+   {
+    "quote": "Draft Cocktail $6",
+    "url": "https://www.dockstreetbeer.com/news/happy-hour-at-dock-street-south"
+   },
+   {
+    "quote": "City Wide (10oz lager + bourbon) $6",
+    "url": "https://www.dockstreetbeer.com/news/happy-hour-at-dock-street-south"
+   },
+   {
+    "quote": "World Wide (10oz lager + Vicio Mezcal) $10",
+    "url": "https://www.dockstreetbeer.com/news/happy-hour-at-dock-street-south"
+   },
+   {
+    "quote": "House pickles (V+) $4",
+    "url": "https://www.dockstreetbeer.com/news/happy-hour-at-dock-street-south"
+   },
+   {
+    "quote": "Pulled Chicken Sandwich $8",
+    "url": "https://www.dockstreetbeer.com/news/happy-hour-at-dock-street-south"
+   },
+   {
+    "quote": "Veggie Fritters (V) $5",
+    "url": "https://www.dockstreetbeer.com/news/happy-hour-at-dock-street-south"
+   },
+   {
+    "quote": "Kentucky Beer Cheese (V) $5",
+    "url": "https://www.dockstreetbeer.com/news/happy-hour-at-dock-street-south"
+   },
+   {
     "quote": "Cannery Happy Hour Specials \u2014 Dock Street Brewery",
     "url": "https://www.dockstreetbeer.com/news/happy-hour-specials"
    },
@@ -29980,6 +30265,24 @@
    {
     "quote": "HAPPY HOUR ICED TEA / With Rum, Gin or Vodka: $6",
     "url": "https://www.dockstreetbeer.com/news/happy-hour-specials"
+   },
+   {
+    "quote": "With Rum, Gin or Vodka: $6",
+    "url": "https://www.dockstreetbeer.com/news/happy-hour-specials"
+   },
+   {
+    "quote": "With Whiskey: $7",
+    "url": "https://www.dockstreetbeer.com/news/happy-hour-specials"
+   }
+  ],
+  "menu_images": [
+   {
+    "src": "http://static1.squarespace.com/static/55c8df6be4b051f0536b7701/55c94e69e4b076270ca8ea97/66a3e14ab87f7034aa8c5009/1752517336394/olympics+pizza+special.JPG?format=1500w",
+    "url": "https://www.dockstreetbeer.com/news/olympics-special"
+   },
+   {
+    "src": "https://images.squarespace-cdn.com/content/v1/55c8df6be4b051f0536b7701/1576166857797-F9R8O1HDJSNQL8TOW18O/worldwide+special.JPG",
+    "url": "https://www.dockstreetbeer.com/news/happy-hour-at-dock-street-south"
    }
   ],
   "name": "DOCK STREET BREWERY SOUTH",
@@ -29994,11 +30297,11 @@
     "url": "https://www.dockstreetbeer.com/news/olympics-special"
    },
    {
-    "result": "ok, 2 quote(s)",
+    "result": "ok, 11 quote(s)",
     "url": "https://www.dockstreetbeer.com/news/happy-hour-at-dock-street-south"
    },
    {
-    "result": "ok, 3 quote(s)",
+    "result": "ok, 5 quote(s)",
     "url": "https://www.dockstreetbeer.com/news/happy-hour-specials"
    }
   ],
@@ -30022,7 +30325,7 @@
  },
  "98474": {
   "address": "1600 ARCH ST, PHILADELPHIA PA 19103-2028",
-  "crawled_at": "2026-08-31",
+  "crawled_at": "2026-09-01",
   "hits": [
    {
     "quote": "After Work Starts Here \ud83c\udf7a Join Us for Happy Hour \ud83c\udf7b | Drink Specials + Good Craic \ud83c\udf7a After Work Starts Here \ud83c\udf7a Join Us for Happy Hour \ud83c\udf7b | Drink Specials + Good Craic",
@@ -30041,11 +30344,7 @@
     "url": "https://www.tirnanogphilly.com/menus/happy-hour"
    },
    {
-    "quote": "RORP_CACHE_KEY: ror_component/17.0.1/17.0.1/e19c3627ae0c8255ca37d67322ef5766-production/6034ef11527543f12c600d554fecb5c6/ConsumerApp/consumer/desktop/web/restaurants/15888-20260827004816798045/menus/289297-20250701205430028114//menus/happy-hour",
-    "url": "https://www.tirnanogphilly.com/menus/happy-hour"
-   },
-   {
-    "quote": "Dewar's 12 Year Special Reserve / $14 / Have you tried this item?",
+    "quote": "$14 Back To Menu Share / Scotch - Spirits / Tir Philadelphia / Dewar's 12 Year Special Reserve / Have you tried this item? / Add your review below to help others know what to expect.",
     "url": "https://www.tirnanogphilly.com/items/dewars-12-year-special-reserve"
    },
    {
@@ -30061,7 +30360,7 @@
     "url": "https://tirnanogphilly.com/"
    },
    {
-    "result": "ok, 4 quote(s)",
+    "result": "ok, 3 quote(s)",
     "url": "https://www.tirnanogphilly.com/menus/happy-hour"
    },
    {

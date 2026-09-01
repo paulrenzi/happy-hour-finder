@@ -133,11 +133,6 @@
      ],
      "items": [
       {
-       "category": "cocktail",
-       "label": "Margaritas",
-       "price_usd": 4.0
-      },
-      {
        "category": "food",
        "label": "Appetizers",
        "price_usd": 5.99
@@ -146,10 +141,15 @@
        "category": "draft",
        "label": "Beer & Cocktails",
        "discount_pct": 50
+      },
+      {
+       "category": "bottle_can",
+       "label": "l You Can Eat Pasta & Salad",
+       "price_usd": 9.99
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -206,7 +206,28 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Beer",
+       "price_usd": 4.0
+      },
+      {
+       "category": "wine",
+       "label": "Wine by the Glass",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Martinis",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Margarita",
+       "price_usd": 12.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",

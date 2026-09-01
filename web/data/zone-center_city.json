@@ -48,7 +48,7 @@
       },
       {
        "category": "food",
-       "label": "bar bites Weekend Happy Hour",
+       "label": "bar bites",
        "price_usd": 7.0
       },
       {
@@ -63,7 +63,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -532,28 +532,8 @@
      ],
      "items": [
       {
-       "category": "draft",
-       "label": "select beers",
-       "price_usd": 3.0
-      },
-      {
-       "category": "draft",
-       "label": "select beers",
-       "price_usd": 4.0
-      },
-      {
-       "category": "wine",
-       "label": "beers & wines",
-       "price_usd": 5.0
-      },
-      {
        "category": "cocktail",
-       "label": "Tequila Classic Marg",
-       "price_usd": 7.0
-      },
-      {
-       "category": "cocktail",
-       "label": "margaritas",
+       "label": "Margarita of the Month",
        "price_usd": 6.0
       }
      ],
@@ -564,8 +544,7 @@
       "kind": "venue_site",
       "url": "https://www.chilis.com/locations/us/pennsylvania/philadelphia/center-city",
       "quote": "Happy Hour / MONDAY-THURSDAY / 3-6pm"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   },
@@ -624,17 +603,12 @@
       },
       {
        "category": "wine",
-       "label": "Wines Join us for the best Ha",
-       "price_usd": 7.0
-      },
-      {
-       "category": "cocktail",
-       "label": "Margaritas Join us for the be",
+       "label": "Wines",
        "price_usd": 7.0
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -700,7 +674,7 @@
       {
        "category": "food",
        "label": "CHURRASCO BURGER",
-       "price_usd": 8.0
+       "price_usd": 10.0
       }
      ],
      "confidence": "unconfirmed",
@@ -1048,12 +1022,12 @@
       },
       {
        "category": "cocktail",
-       "label": "Cocktail of the Week Cannery",
+       "label": "Cocktail of the Week",
        "price_usd": 10.0
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1181,23 +1155,28 @@
      ],
      "items": [
       {
-       "category": "draft",
-       "label": "beers",
-       "price_usd": 6.0
+       "category": "cocktail",
+       "label": "HAND CRAFTED COCKTAILS",
+       "price_usd": 10.0
       },
       {
        "category": "wine",
-       "label": "wines",
-       "price_usd": 10.0
+       "label": "WINE BY THE GLASS",
+       "price_usd": 8.0
+      },
+      {
+       "category": "draft",
+       "label": "BEER",
+       "price_usd": 5.0
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://estiarestaurant.com/philadelphia-pa/philadelphia-pa.asp",
-      "quote": "HAPPY HOUR / Every day 3:30pm - 5:30pm / $6 beers, $10 wines and hand crafted cocktails."
+      "url": "https://estiarestaurant.com/philadelphia-pa/pdfs/estia-philadelphia-happy-hour-menu.pdf",
+      "quote": "HAPPY HOUR MENU AVAILABLE EVERYDAY 3:30pm-5:30pm"
      }
     }
    ]
@@ -1252,12 +1231,12 @@
      "items": [
       {
        "category": "wine",
-       "label": "Wines View Happy Hour Menu Da",
+       "label": "Wines",
        "price_usd": 6.0
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1914,7 +1893,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -2053,12 +2032,12 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://otherhalfbrewing.com/event/clone-ohanother-happy-hour-buffalo-2026-08-18/",
-      "quote": "OH\u2026Another Happy Hour @ Buffalo / August 18 2026 4:00 pm - August 21 2026 6:00 pm / Daily Happy Hour at Other Half Buffalo Tuesday-Friday 4pm-6pm"
+      "url": "https://otherhalfbrewing.com/event/clone-ohanother-happy-hour-buffalo-2026-09-15/",
+      "quote": "OH\u2026Another Happy Hour @ Buffalo / September 15 2026 4:00 pm - September 18 2026 6:00 pm / Daily Happy Hour at Other Half Buffalo Tuesday-Friday 4pm-6pm"
      }
     }
    ]
@@ -2500,7 +2479,7 @@
       },
       {
        "category": "shot",
-       "label": "Green Tea Shots University Ci",
+       "label": "Green Tea Shots",
        "price_usd": 3.0
       },
       {
@@ -2515,7 +2494,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -2747,13 +2726,18 @@
      "items": [
       {
        "category": "draft",
-       "label": "Cigar City Jai Alai IPA",
+       "label": "Sip of Sunshine IPA",
        "price_usd": 9.0
       },
       {
        "category": "draft",
-       "label": "Mahou Lager",
+       "label": "Cigar City Jai Alai IPA",
        "price_usd": 7.0
+      },
+      {
+       "category": "draft",
+       "label": "Mahou Lager",
+       "price_usd": 6.0
       }
      ],
      "confidence": "unconfirmed",
@@ -3154,7 +3138,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -3221,7 +3205,23 @@
        "end": "19:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "SPICY MARGARITA",
+       "price_usd": 9.0
+      },
+      {
+       "category": "wine",
+       "label": "WHITE WINE",
+       "price_usd": 7.0
+      },
+      {
+       "category": "draft",
+       "label": "DRAFT BEER",
+       "price_usd": 6.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -3289,8 +3289,7 @@
       "kind": "venue_site",
       "url": "https://www.vedgerestaurant.com/happyhour",
       "quote": "happy hour menu / HAPPY HOUR TUes - FRi | 5 - 7 PM / SNACKS $7"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   },
@@ -3428,34 +3427,19 @@
      ],
      "items": [
       {
-       "category": "bottle_can",
-       "label": "Sapporo",
-       "price_usd": 5.0
+       "category": "cocktail",
+       "label": "Lavender Margarita",
+       "price_usd": 7.0
       },
       {
-       "category": "bottle_can",
-       "label": "Michelob Ultra",
+       "category": "draft",
+       "label": "Sunshine State Tropical IPA",
        "price_usd": 5.0
       },
       {
        "category": "cocktail",
-       "label": "Lady Lavender",
+       "label": "Lychee Mule",
        "price_usd": 6.0
-      },
-      {
-       "category": "cocktail",
-       "label": "Lychee - Tini",
-       "price_usd": 7.0
-      },
-      {
-       "category": "wine",
-       "label": "Pinot Grigio",
-       "price_usd": 7.0
-      },
-      {
-       "category": "wine",
-       "label": "Cabernet Sauvignon",
-       "price_usd": 7.0
       }
      ],
      "confidence": "unconfirmed",
@@ -3465,8 +3449,7 @@
       "kind": "venue_site",
       "url": "https://yakitoriboy.com/happy-hour/",
       "quote": "Happy Hour / TUESDAY-FRIDAY: 5-7 PM | / SUNDAY: 5-7 PM"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   },

@@ -28,6 +28,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+from html.parser import HTMLParser
 import urllib.robotparser
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -82,21 +83,166 @@ MENU_IMG_RE = re.compile(
     r"\.(?:jpe?g|png|webp)", re.I)
 IMG_CAP = 3
 
-TAG_RE = re.compile(r"<(script|style|noscript)[^>]*>.*?</\1>", re.S | re.I)
 MARKUP_RE = re.compile(r"<[^>]+>")
 WS_RE = re.compile(r"[ \t\xa0]+")
 
 
+# A close tag that ends a visible line. Matches the set the old regex pass used,
+# so the text a page yields is unchanged by moving to a real parser.
+BREAK_CLOSE = frozenset("p div li tr h1 h2 h3 h4 h5 h6".split())
+VOID_TAGS = frozenset("br img hr input meta link source col area base embed "
+                      "param track wbr".split())
+DROPPED_TAGS = frozenset(("script", "style", "noscript"))
+
+
+class _Lines(HTMLParser):
+    """visible_text's line split, plus the element each line was found inside.
+
+    The lines are what they always were. What is new is `stacks`: for line k,
+    the chain of open elements the line's first text sits in, as opaque ids.
+    That chain is the only record of which lines a page put in ONE box -- and
+    on a menu, one box is one item. See item_beside().
+    """
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.stack, self.nid, self.dropped = [], 0, 0
+        self.buf, self.buf_stack = [], None
+        self.lines, self.stacks = [], []
+
+    def _flush(self):
+        line = WS_RE.sub(" ", "".join(self.buf)).strip()
+        if line:
+            self.lines.append(line)
+            self.stacks.append(tuple(self.buf_stack or ()))
+        self.buf, self.buf_stack = [], None
+
+    def handle_starttag(self, tag, attrs):
+        if tag in DROPPED_TAGS:
+            self.dropped += 1
+            return
+        if tag == "br":
+            self._flush()
+            return
+        # A tag is a space between the words it separates, void or not; an
+        # element that can hold text also opens a box lines can be inside.
+        self.buf.append(" ")
+        if tag not in VOID_TAGS:
+            self.nid += 1
+            self.stack.append(self.nid)
+
+    def handle_startendtag(self, tag, attrs):
+        if tag == "br":
+            self._flush()
+        else:
+            self.buf.append(" ")
+
+    def handle_endtag(self, tag):
+        if tag in DROPPED_TAGS:
+            self.dropped = max(0, self.dropped - 1)
+            return
+        if tag in VOID_TAGS:
+            return
+        self.buf.append(" ")
+        if tag in BREAK_CLOSE:
+            self._flush()
+        if self.stack:
+            self.stack.pop()
+
+    def handle_data(self, data):
+        if self.dropped:
+            return
+        # A newline in the source is a line break here too, exactly as the
+        # regex pass had it: 'Mon-Fri' and '4-6pm' are often only separated by
+        # the newline the author typed.
+        for k, part in enumerate(data.replace("\xa0", " ").split("\n")):
+            if k:
+                self._flush()
+            if part.strip() and self.buf_stack is None:
+                self.buf_stack = tuple(self.stack)
+            self.buf.append(part)
+
+    def close(self):
+        super().close()
+        self._flush()
+
+
+def text_lines(html):
+    """The visible lines and, for each, the element chain it was found in.
+
+    Markup out, structure preserved as line breaks -- a <br> is a line break in
+    a happy-hour block, and joining those lines glues 'Mon-Fri' to '4-6pm'.
+    """
+    p = _Lines()
+    try:
+        p.feed(html)
+        p.close()
+    except Exception:
+        # The regex pass this replaced could not raise, so a page that the
+        # parser chokes on must not now take the whole crawl with it. Keep the
+        # lines read so far -- a partial page is what a truncated fetch has
+        # always given us, and it is handled everywhere downstream.
+        p._flush()
+    return p.lines, p.stacks
+
+
 def visible_text(html):
-    """Markup out, structure preserved as newlines -- a <br> is a line break in
-    a happy-hour block, and joining those lines glues 'Mon-Fri' to '4-6pm'."""
-    html = TAG_RE.sub(" ", html)
-    html = re.sub(r"<(br|/p|/div|/li|/tr|/h\d)[^>]*>", "\n", html, flags=re.I)
-    # html.unescape, not a hand-written table: a happy-hour line is full of
-    # '&#8211;' and '&rsquo;', and a missed entity lands in the quote verbatim.
-    text = html_mod.unescape(MARKUP_RE.sub(" ", html)).replace("\xa0", " ")
-    lines = [WS_RE.sub(" ", ln).strip() for ln in text.split("\n")]
-    return "\n".join(ln for ln in lines if ln)
+    return "\n".join(text_lines(html)[0])
+
+
+# How far up the tree a bare price may look for the box it shares with its item,
+# and how many lines that box may hold. A menu item is a small element: a name,
+# maybe a description, a price. Walking further finds the whole menu, where the
+# nearest line is not the item -- so both caps refuse rather than reach, and the
+# price stays unpaired.
+ITEM_LEVELS = 4
+ITEM_BOX_LINES = 8
+
+
+def _labelled(line):
+    return (re.search(r"[A-Za-z]{3}", line) and not BARE_PRICE_RE.match(line)
+            and len(line) <= 80)
+
+
+def item_beside(i, lines, stacks):
+    """The item a bare price on line i belongs to, or None.
+
+    '$8' and its dish are on separate lines and each is worthless alone, so the
+    price has to be joined to a neighbour -- but WHICH neighbour differs by
+    page, and getting it wrong publishes a wrong price for a real bar:
+
+        CO-OP    'Deviled Eggs / with capers and everything spice / $ 8'
+                 -- the item is ABOVE. The Wings below it are $12.
+        Chili's  '$3 / Bud Light 16 oz'
+                 -- the item is BELOW.
+
+    Neither order is a rule, and no amount of looking at the two text lines can
+    tell them apart. The page can: both venues put the price and its item in
+    ONE element and the next item in another. CO-OP's is an <li class=menu-item>
+    holding name, description and price; Chili's is a <div> holding the price
+    and the three beers it covers. So the answer is not 'above' or 'below', it
+    is 'inside the same box' -- read off the tree, which is why the pairing has
+    to happen here at crawl time and cannot be recovered later from the text.
+
+    Returns the first other labelled line in that box, in page order: CO-OP's
+    box begins with 'Deviled Eggs', Chili's with the price itself and then
+    'Bud Light 16 oz'.
+    """
+    stack = stacks[i] if i < len(stacks) else ()
+    for depth in range(len(stack), max(0, len(stack) - ITEM_LEVELS), -1):
+        anc = stack[:depth]
+        lo = hi = i
+        while lo - 1 >= 0 and stacks[lo - 1][:depth] == anc:
+            lo -= 1
+        while hi + 1 < len(stacks) and stacks[hi + 1][:depth] == anc:
+            hi += 1
+        if hi == lo:
+            continue                     # the price alone; open the box wider
+        if hi - lo + 1 > ITEM_BOX_LINES:
+            return None                  # too big to be one item -- refuse
+        rest = [lines[j] for j in range(lo, hi + 1) if j != i and _labelled(lines[j])]
+        return rest or None
+    return None
 
 
 # The page's own heading, which is what unlocks the looser priced-line rules on
@@ -200,7 +346,7 @@ def hh_sections(html, text):
     return out
 
 
-def quotes(text, menu_doc=False, hh_page=False, hh_lines=frozenset()):
+def quotes(text, menu_doc=False, hh_page=False, hh_lines=frozenset(), stacks=None):
     """The matched lines, plus a neighbour when the match itself has no time.
 
     menu_doc is for a document we reached BECAUSE a happy-hour page linked it as
@@ -238,17 +384,27 @@ def quotes(text, menu_doc=False, hh_page=False, hh_lines=frozenset()):
             continue
         block = [ln]
         if bare:
-            # Both neighbours, in page order, because the ordering is not
-            # stable: Bloom prints the price above its item, other themes print
-            # it below. Naming the wrong one is a wrong price on a card, so the
-            # crawl keeps the material and the price pass -- whose every item is
-            # checked back against this text -- decides which side it was on.
-            def label(j):
-                l = lines[j] if 0 <= j < len(lines) else ""
-                return l if (re.search(r"[A-Za-z]{3}", l)
-                             and not BARE_PRICE_RE.match(l)
-                             and len(l) <= 80) else None
-            block = [x for x in (label(i - 1), ln, label(i + 1)) if x]
+            box = item_beside(i, lines, stacks) if stacks else None
+            if box:
+                # The page said which lines are one item, so the quote can say
+                # it too: the price first and ITS item next to it, which is the
+                # only order the price pass will read. Everything else in the
+                # box follows as description.
+                block = ["$" + ln.lstrip("$ ") + " " + box[0]] + box[1:]
+            else:
+                # No tree to ask, or a box too big to be one item. Keep both
+                # neighbours in page order and pair NEITHER: the ordering is not
+                # stable -- CO-OP prints the price below its dish, Chili's above
+                # it -- and naming the wrong one is a wrong price on a real bar's
+                # card. A glued quote is deliberately unreadable to the price
+                # pass, so the venue stays unpriced, which is the correct answer
+                # to a question this page has not answered.
+                def label(j):
+                    l = lines[j] if 0 <= j < len(lines) else ""
+                    return l if (re.search(r"[A-Za-z]{3}", l)
+                                 and not BARE_PRICE_RE.match(l)
+                                 and len(l) <= 80) else None
+                block = [x for x in (label(i - 1), ln, label(i + 1)) if x]
         # A heading ('HAPPY HOUR') is frequently its own line, with the window
         # on the next one; keeping only the match would drop the entire deal.
         #
@@ -561,13 +717,18 @@ def crawl_one(session, venue, robots):
         # rules -- the same test used a few lines below to decide a menu PDF is
         # worth chasing, and the same containment.
         on_hh = bool(depth > 1 and re.search(r"happy.?hour|special", url, re.I))
-        text = visible_text(html)
+        # The lines AND the element each was found in: which lines a page put in
+        # one box is what says which item a bare price belongs to, and it exists
+        # only here, in the markup. See item_beside().
+        lines, stacks = text_lines(html)
+        text = "\n".join(lines)
         # The URL is no longer the only key. A page that does not name the happy
         # hour in its address very often names it in a heading, and that heading
         # is the venue's own word for the section beneath it -- the same claim
         # the URL was standing in for, read off the page rather than the link.
         found = quotes(text, menu_doc=is_doc, hh_page=on_hh,
-                       hh_lines=frozenset() if is_doc else hh_sections(html, text))
+                       hh_lines=frozenset() if is_doc else hh_sections(html, text),
+                       stacks=stacks)
         pages.append({"url": url, "result": f"ok, {len(found)} quote(s)"})
         for q in found:
             hits.append({"url": url, "quote": q})

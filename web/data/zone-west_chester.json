@@ -192,11 +192,6 @@
      "items": [
       {
        "category": "food",
-       "label": "pizza or flatbread",
-       "price_usd": 20.0
-      },
-      {
-       "category": "food",
        "label": "gluten free pizza",
        "price_usd": 20.0
       }
@@ -208,8 +203,7 @@
       "kind": "venue_site",
       "url": "https://www.limoncellorestaurant.com/happy-hour-menu",
       "quote": "HAPPY HOUR MENU / Sunday-Friday 4:00-6:00PM"
-     },
-     "items_source": "llm_extract"
+     }
     }
    ]
   },
@@ -381,12 +375,12 @@
       },
       {
        "category": "well",
-       "label": "Well Drinks 10-12 Happy Hour",
+       "label": "Well Drinks 10-12",
        "price_usd": 3.0
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",

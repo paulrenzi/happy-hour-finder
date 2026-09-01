@@ -26,7 +26,8 @@ import crawl_sites  # noqa: E402
 from crawl_roundups import fresh_enough, mentions, published_date, venue_index  # noqa: E402
 from crawl_sites import (candidate_links, crawl_one, hh_sections,  # noqa: E402
                          reached_nothing,
-                         menu_images, quotes, registrable, visible_text)
+                         item_beside, menu_images, quotes, registrable,
+                         text_lines, visible_text)
 from discover_places import HAND_DROPPED  # noqa: E402
 from review_photos import merge_mode, superseded  # noqa: E402
 from discover_sites import collapse_shared, name_core, plcb_key, site_of, street_core  # noqa: E402
@@ -1916,34 +1917,96 @@ class OneUnlawfulDayIsNotEvidenceAgainstTheOthers(unittest.TestCase):
 
 
 
-class WhichSideOfTheJoinTheItemIsOnIsNotRECORDED(unittest.TestCase):
-    """A price glued to its neighbours cannot say which neighbour it belongs to.
+class WhichSideOfTheJoinTheItemIsOnIsREADOFFTHETREE(unittest.TestCase):
+    """A price and its item are the lines the page put in ONE box.
 
-    quotes() joins a bare price line to the lines around it with " / ", because
-    '$8' and its dish are on separate lines and each is worthless alone. It does
-    NOT record which side the dish was on, and the answer differs by page:
+    quotes() has to join a bare price line to a neighbour, because '$8' and its
+    dish are on separate lines and each is worthless alone. WHICH neighbour is
+    not a rule -- it differs by page, and both of these are real:
 
-        CO-OP     'with capers and everything spice / $ 8 / Wings'
-                  -- the $8 is the DEVILED EGGS above it. Wings are $12.
+        CO-OP     'Deviled Eggs / with capers and everything spice / $ 8'
+                  -- the item is ABOVE. The Wings below it are $12.
         Chili's   '$3 / Bud Light 16 oz'
-                  -- the $3 is the Bud Light below it.
+                  -- the item is BELOW.
 
-    Reading the item as the one AFTER the price therefore prices CO-OP's wings
-    at $8 when they are $12 -- a WRONG price on a real bar, which is the one
-    failure this whole containment exists to prevent. So PRICE_RE deliberately
-    still requires the item to follow the price with only whitespace, and the
-    40 venues holding a joined quote stay unpriced until the crawler records
-    the side. Being unpriced is the correct answer to a question we cannot
-    currently answer.
+    Reading the item as the one after the price priced CO-OP's wings at $8 when
+    they are $12 -- a WRONG price on a real bar, which is the one failure this
+    containment exists to prevent -- so for a while the joined quote was made
+    deliberately unreadable and 40 venues stayed unpriced.
+
+    The text cannot answer it. The markup can: both venues wrap the price and
+    its item in one element and the next item in another. So text_lines() now
+    also returns the element chain each line was found in, item_beside() reads
+    the item out of the price's own box, and the pairing happens at CRAWL time
+    -- the extractor cannot recover what the crawler threw away.
+
+    The fixtures below carry the real pages' NESTING, not a flat remembering of
+    them: a fixture written from memory of a page is not the page, and a flat
+    one would make every line a sibling and hide the whole mechanism.
     """
 
-    def test_a_joined_price_is_refused_rather_than_guessed(self):
+    # CO-OP: <li class="menu-item"> holding name, description and price, and
+    # the NEXT item -- $12 Wings -- in an <li> of its own.
+    COOP = ("<h2>Happy Hour</h2><p>Weekdays from 3pm - 6pm</p><ul>"
+            "<li><div><p>Deviled Eggs</p></div>"
+            "<p>with capers and everything spice</p><p><strong>$ 8</strong></p></li>"
+            "<li><div><p>Wings</p></div>"
+            "<p>House-made hot sauce, blue cheese</p><p><strong>$ 12</strong></p></li>"
+            "</ul>")
+
+    # Chili's: one <div> per price, holding the price and the beers it covers.
+    CHILIS = ("<div>Happy Hour</div><div>MONDAY-THURSDAY</div><div>3-6pm</div>"
+              "<div><div>$3</div><div><div>Bud Light 16 oz</div>"
+              "<div>Miller Lite 16 oz</div></div></div>"
+              "<div><div>$4</div><div><div>Modelo 16 oz</div></div></div>")
+
+    def _quotes(self, html):
+        lines, stacks = text_lines(html)
+        text = "\n".join(lines)
+        return quotes(text, hh_lines=hh_sections(html, text), stacks=stacks)
+
+    def test_the_item_above_the_price_is_the_one_priced(self):
+        got = self._quotes(self.COOP)
+        self.assertIn("$8 Deviled Eggs", " | ".join(got))
+        # 'Deviled Eggs' names no noun the price pass recognises, so it is left
+        # out of the item list -- a separate containment, and not this one. What
+        # matters here is that no item comes back priced at the eggs' $8.
+        self.assertEqual([i["price_usd"] for i in items_in(" ".join(got))], [12.0])
+
+    def test_the_next_item_down_keeps_its_own_price(self):
+        # The $8/$12 error: the wings are in the NEXT box and are never $8.
+        wings = [q for q in self._quotes(self.COOP) if "Wings" in q]
+        self.assertEqual(len(wings), 1, wings)
+        self.assertIn("$12 Wings", wings[0])
+        self.assertNotIn("$8", wings[0])
+
+    def test_the_item_below_the_price_is_the_one_priced(self):
+        got = self._quotes(self.CHILIS)
+        self.assertIn("$3 Bud Light 16 oz", " | ".join(got))
+        self.assertNotIn("$3 Modelo", " | ".join(got))
+
+    def test_a_price_alone_in_a_box_too_big_to_be_an_item_is_refused(self):
+        # Every line a sibling of every other: the box the price shares with a
+        # neighbour is the whole page, which is not an item. Refusing leaves the
+        # venue unpriced, which is the correct answer to a question the page has
+        # not answered -- and the quote stays unreadable to the price pass.
+        flat = ("<h2>Happy Hour</h2><p>Weekdays 3pm - 6pm</p>"
+                "<p>Deviled Eggs</p><p>$ 8</p><p>Wings</p><p>$ 12</p>"
+                "<p>Cheese Board</p><p>$ 24</p><p>Nachos</p><p>$ 9</p>"
+                "<p>Fries</p><p>$ 6</p><p>Olives</p><p>$ 7</p>")
+        lines, stacks = text_lines(flat)
+        i = lines.index("$ 8")
+        self.assertIsNone(item_beside(i, lines, stacks))
+        self.assertEqual(items_in(" ".join(self._quotes(flat))), [])
+
+    def test_the_glued_quote_is_still_refused_by_the_price_pass(self):
+        # The old shape, still on disk in crawl_hits.json for every venue not
+        # yet re-crawled. It must keep meaning 'we do not know'.
         self.assertEqual(items_in("with capers and everything spice / $ 8 / Wings"),
                          [])
 
     def test_the_adjacent_form_still_reads(self):
         self.assertEqual(items_in("$6 margaritas")[0]["label"], "margaritas")
-
 
 
 class AFailedFetchIsNotAnAnswerAboutTheVenue(unittest.TestCase):

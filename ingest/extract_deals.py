@@ -104,6 +104,15 @@ HH_RE = re.compile(r"happy\s*hour|social hour|power hour", re.I)
 
 PRICE_RE = re.compile(r"\$(\d{1,3}(?:\.\d\d)?)\s*([A-Za-z][\w\s&'-]{1,28})")
 HALF_RE = re.compile(r"half.?price(?:d)?\s+([A-Za-z][\w\s&'-]{1,28})", re.I)
+# A venue that prints the item FIRST and the price after it -- 'BEER $5',
+# 'Blue Moon draft $4'. PRICE_RE cannot read that form at all, so every such
+# price used to be read as belonging to whatever item came NEXT, one item too
+# far along. Anchored to the END of the quote, which is the one position where
+# the side is not in doubt: the price closes the line, so the item is what
+# precedes it. A price in the MIDDLE of a line is left alone -- that is the
+# ambiguous case, and it is not answered by guessing.
+TRAILING_PRICE_RE = re.compile(
+    r"([A-Za-z][\w\s&'-]{1,28}?)\s\$\s?(\d{1,3}(?:\.\d\d)?)\s*$")
 
 # The noun a price is attached to decides the category; anything unrecognised is
 # not guessed into 'food', it is left out of the item list entirely.
@@ -137,10 +146,26 @@ def items_from_hits(hits, lead_url):
     is the dinner menu and is still refused. The quote had to clear the crawl's
     own containment before it could be stored at all, so this widens which
     stored quotes are read, never what may be stored.
+
+    Read ONE QUOTE AT A TIME, never over the quotes joined together. Joining
+    them invents an adjacency the page never had: 'Beef Quesadilla $7' and
+    'Blue Moon draft $4' are two separate lines on the Great American Pub's
+    menu, and joined with a space PRICE_RE reads '$7 Blue Moon draft' and
+    published the draft at $7 when the pub charges $4. 35 items on 20 venues
+    were priced across such a boundary, Estia's beer among them -- $8 on the
+    board, $5 on its own PDF. A quote is the unit the crawl vouched for, and
+    the price pass may not reach past its edge.
     """
-    text = " ".join(h["quote"] for h in hits
-                    if h["url"] == lead_url or windows_from(h["quote"]))
-    return items_in(text)
+    out, seen = [], set()
+    for h in hits:
+        if not (h["url"] == lead_url or windows_from(h["quote"])):
+            continue
+        for item in items_in(h["quote"]):
+            if item["label"].lower() in seen:
+                continue
+            seen.add(item["label"].lower())
+            out.append(item)
+    return out[:6]
 
 
 def days_in(text):
@@ -237,6 +262,13 @@ def items_in(text):
         if cat and label.lower() not in seen:
             seen.add(label.lower())
             out.append({"category": cat, "label": label, "discount_pct": 50})
+    m = TRAILING_PRICE_RE.search(text)
+    if m:
+        label = m.group(1).strip(" -'")
+        cat = category_of(label)
+        if cat and label.lower() not in seen:
+            seen.add(label.lower())
+            out.append({"category": cat, "label": label, "price_usd": float(m.group(2))})
     return out[:6]
 
 

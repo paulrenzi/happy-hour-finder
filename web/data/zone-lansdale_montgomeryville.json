@@ -122,17 +122,12 @@
      "items": [
       {
        "category": "draft",
-       "label": "off draft beer Happy Hour",
-       "price_usd": 1.0
-      },
-      {
-       "category": "draft",
-       "label": "off draft beer Late Night Men",
+       "label": "off draft beer",
        "price_usd": 1.0
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",

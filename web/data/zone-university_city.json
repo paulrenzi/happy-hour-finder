@@ -50,7 +50,18 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "Wings",
+       "price_usd": 12.0
+      },
+      {
+       "category": "draft",
+       "label": "Select Beer",
+       "price_usd": 5.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -173,6 +184,11 @@
      ],
      "items": [
       {
+       "category": "bottle_can",
+       "label": "bottles of wine with the purc",
+       "discount_pct": 50
+      },
+      {
        "category": "cocktail",
        "label": "cocktails",
        "price_usd": 9.0
@@ -188,19 +204,14 @@
        "price_usd": 6.0
       },
       {
-       "category": "draft",
-       "label": "select beer paired with our s",
-       "price_usd": 7.0
-      },
-      {
-       "category": "bottle_can",
-       "label": "bottles of wine with the purc",
-       "discount_pct": 50
-      },
-      {
        "category": "bottle_can",
        "label": "bottles of wine",
        "discount_pct": 50
+      },
+      {
+       "category": "draft",
+       "label": "select beer paired with our s",
+       "price_usd": 7.0
       }
      ],
      "confidence": "unconfirmed",
