@@ -1,0 +1,9 @@
+# The service worker's cache name is a sha256 over the RAW BYTES of the shell
+# files, computed once on the machine that builds and again in CI to check the
+# stamp shipped. A file rewritten on Windows picks up CRLF, git stores LF, and
+# the two sides then hash different bytes for identical code -- the build fails
+# with nothing wrong in it. Pin the endings so there is only ever one answer.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.woff2 binary
