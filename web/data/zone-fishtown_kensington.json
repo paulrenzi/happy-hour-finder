@@ -57,14 +57,34 @@
      ],
      "items": [
       {
-       "category": "draft",
-       "label": "off draft beer",
-       "price_usd": 2.0
+       "category": "well",
+       "label": "well drinks",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "label": "vodka or rum drink",
+       "price_usd": 9.0
       },
       {
        "category": "draft",
-       "label": "Off Draft Beer for Happy Hour",
-       "price_usd": 2.0
+       "label": "American lager",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "Pinot Grigio",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "chicken waffle slider",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "classic fries",
+       "price_usd": 5.0
       }
      ],
      "confidence": "unconfirmed",
@@ -74,7 +94,8 @@
       "kind": "venue_site",
       "url": "https://cedarpointbarandkitchen.com/happy-hour-specials/",
       "quote": "HAPPY HOUR / Standard Happy Hour runs Sunday through Friday from 5PM to 7PM / Late Night Happy Hour for the Last Hour: Monday \u2013 Thursday 10PM \u2013 11PM (Friday 11PM \u2013 12AM)"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -190,13 +211,7 @@
        "end": "18:00"
       }
      ],
-     "items": [
-      {
-       "category": "draft",
-       "label": "off drafts",
-       "price_usd": 1.0
-      }
-     ],
+     "items": [],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
@@ -428,18 +443,7 @@
        "end": "18:00"
       }
      ],
-     "items": [
-      {
-       "category": "draft",
-       "label": "off all drafts",
-       "price_usd": 1.0
-      },
-      {
-       "category": "wine",
-       "label": "off wine",
-       "price_usd": 3.0
-      }
-     ],
+     "items": [],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",

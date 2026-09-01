@@ -94,7 +94,13 @@
        "end": "17:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "specialty margaritas",
+       "price_usd": 10.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -102,7 +108,8 @@
       "kind": "venue_site",
       "url": "https://jaspersbackyard.com",
       "quote": "View 'Happy Hour' Menu / Weekend Happy Hour - Weekend Happy Hour! 3-5 pm Saturdays & Sundays"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -163,7 +170,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",

@@ -19,6 +19,52 @@ DEALS_JSON = os.path.join(REPO, "data", "deals_seed.json")
 MAX_HOURS_PER_DAY = 4.0
 MAX_HOURS_PER_WEEK = 24.0
 
+# THE NUMBERS ABOVE ARE PENNSYLVANIA'S, AND THEY ARE NOT UNIVERSAL.
+#
+# Every deal on the board is gated on Acts 57 & 86 of 2024 -- a 4h/day and
+# 24h/week cap, a midnight cutoff, 2 food+drink combos per day, and the BANNED
+# list. That was safe while every venue was in one of five PA counties. It stops
+# being safe the moment a venue in another state is published: running a
+# Delaware bar through these rules can SUPPRESS a lawful DE deal and, worse,
+# PUBLISH one PA would have banned. Crossing a state line changes the LAW, not
+# just the data source.
+#
+# So the rules are a table keyed by state, and a state with no entry has no
+# ruleset -- rules_for() returns None and the caller must refuse to publish.
+# Failing closed is the only safe direction here: an unpublished lawful deal
+# costs us a card, a published unlawful one costs the venue.
+#
+# 🛑 DELAWARE IS DELIBERATELY ABSENT. Filling it in is a research task with a
+# named source and Paul's sign-off, not a guess -- do not copy PA's numbers
+# across and do not infer them. Until DE is here, no DE venue can publish.
+RULES = {
+    "PA": {
+        "max_hours_per_day": MAX_HOURS_PER_DAY,
+        "max_hours_per_week": MAX_HOURS_PER_WEEK,
+        "max_food_combos_per_day": 2,
+        "banned": None,          # filled in below, once BANNED exists
+        "authority": "PA Acts 57 & 86 of 2024",
+    },
+}
+
+STATE_RE = re.compile(r"\b([A-Z]{2})\b(?:\s+\d{5}(?:-\d{4})?)?\s*$", re.I)
+
+
+def state_of(address):
+    """The two-letter state an address ends in, or None if it does not say.
+
+    The PLCB export writes '700 W DEKALB PK, KING OF PRUSSIA PA 19406'. An
+    address that names no state is not assumed to be PA -- that assumption is
+    exactly what this module now exists to stop.
+    """
+    m = STATE_RE.search((address or "").strip())
+    return m.group(1) if m else None
+
+
+def rules_for(state):
+    """The ruleset for a state, or None if we do not have that state's law."""
+    return RULES.get(state)
+
 # Claims that are unlawful in PA, so we never render them regardless of source.
 BANNED = [
     r"all[- ]you[- ]can[- ]drink",
@@ -27,6 +73,8 @@ BANNED = [
     r"two for one|2 for 1|2-for-1",
     r"unlimited",
 ]
+
+RULES["PA"]["banned"] = BANNED
 
 TYPES = {"happy_hour", "daily_special", "food_combo"}
 CATEGORIES = {"draft", "bottle_can", "wine", "well", "call", "cocktail", "shot", "food"}

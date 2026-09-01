@@ -51,13 +51,7 @@
        "end": "18:00"
       }
      ],
-     "items": [
-      {
-       "category": "draft",
-       "label": "off draft beer",
-       "price_usd": 1.0
-      }
-     ],
+     "items": [],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -113,11 +107,6 @@
        "category": "food",
        "label": "Smoked Chicken Nachos",
        "price_usd": 10.0
-      },
-      {
-       "category": "draft",
-       "label": "OFF Draft Beer",
-       "price_usd": 2.0
       },
       {
        "category": "cocktail",
@@ -470,7 +459,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -524,7 +513,18 @@
        "end": "24:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "bottle_can",
+       "label": "Domestic Bottles",
+       "price_usd": 3.0
+      },
+      {
+       "category": "draft",
+       "label": "Select Craft Beer",
+       "price_usd": 5.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -646,6 +646,11 @@
     {
      "type": "happy_hour",
      "windows": [
+      {
+       "dow": 1,
+       "start": "16:30",
+       "end": "18:30"
+      },
       {
        "dow": 3,
        "start": "16:30",
@@ -1664,13 +1669,23 @@
        "price_usd": 10.0
       },
       {
+       "category": "cocktail",
+       "label": "House Margaritas",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "label": "Wings",
+       "price_usd": 1.0
+      },
+      {
        "category": "wine",
        "label": "Wine",
        "price_usd": 6.0
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -2195,18 +2210,7 @@
        "end": "18:00"
       }
      ],
-     "items": [
-      {
-       "category": "draft",
-       "label": "off all drafts",
-       "price_usd": 1.0
-      },
-      {
-       "category": "wine",
-       "label": "off wine",
-       "price_usd": 3.0
-      }
-     ],
+     "items": [],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -2269,19 +2273,9 @@
      ],
      "items": [
       {
-       "category": "draft",
-       "label": "off all beer",
-       "price_usd": 2.0
-      },
-      {
        "category": "shot",
        "label": "Green Tea Shots",
        "price_usd": 3.0
-      },
-      {
-       "category": "draft",
-       "label": "off Draft Beer",
-       "price_usd": 2.0
       },
       {
        "category": "cocktail",
@@ -2390,7 +2384,18 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Rotating Draft",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "House Wines",
+       "price_usd": 5.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -2503,10 +2508,15 @@
        "category": "draft",
        "label": "Draft Beer",
        "price_usd": 4.5
+      },
+      {
+       "category": "cocktail",
+       "label": "Sangrias",
+       "price_usd": 6.5
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -2593,7 +2603,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -2698,6 +2708,16 @@
        "category": "draft",
        "label": "Domestic Drafts",
        "price_usd": 4.0
+      },
+      {
+       "category": "draft",
+       "label": "Craft Drafts",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "Glasses of Wine",
+       "price_usd": 6.0
       },
       {
        "category": "food",
@@ -3237,11 +3257,6 @@
      "type": "happy_hour",
      "windows": [
       {
-       "dow": 2,
-       "start": "15:30",
-       "end": "18:00"
-      },
-      {
        "dow": 5,
        "start": "15:30",
        "end": "18:00"
@@ -3280,7 +3295,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -3625,11 +3640,6 @@
        "category": "cocktail",
        "label": "Margaritas",
        "price_usd": 7.0
-      },
-      {
-       "category": "draft",
-       "label": "off drafts",
-       "price_usd": 2.0
       }
      ],
      "confidence": "unconfirmed",
@@ -3830,6 +3840,21 @@
        "category": "food",
        "label": "Daily Appetizer Specials",
        "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "label": "House Martinis",
+       "price_usd": 6.0
+      },
+      {
+       "category": "wine",
+       "label": "House Wine",
+       "price_usd": 6.0
+      },
+      {
+       "category": "draft",
+       "label": "Lager Drafts",
+       "price_usd": 4.0
       }
      ],
      "confidence": "unconfirmed",
@@ -3984,13 +4009,7 @@
        "end": "18:00"
       }
      ],
-     "items": [
-      {
-       "category": "draft",
-       "label": "off drafts",
-       "price_usd": 1.0
-      }
-     ],
+     "items": [],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -4179,6 +4198,57 @@
       "kind": "venue_site",
       "url": "https://www.greatamericanpub.net/happy-hour",
       "quote": "HAPPY HOUR: / MONDAY-FRIDAY / 4PM-6PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "the-capital-grille-philadelphia",
+   "lid": "48915",
+   "name": "The Capital Grille",
+   "plcb_name": "CAPITAL GRILLE HOLDINGS INC",
+   "address": "1346 CHESTNUT ST, PHILADELPHIA PA 19107-4643",
+   "zone_id": "center_city",
+   "license_type": "",
+   "website": "https://m.thecapitalgrille.com/locations/pa/philadelphia/philadelphia/8013",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://m.thecapitalgrille.com/locations/pa/philadelphia/philadelphia/8013",
+      "quote": "Happy Hour / Monday, Tuesday, Wednesday, Thursday, Friday / 3:00 PM - 6:00 PM"
      }
     }
    ]
@@ -4609,7 +4679,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -4916,7 +4986,7 @@
      "source": {
       "kind": "venue_site",
       "url": "https://www.pietrosprime.com",
-      "quote": "HAPPY HOUR / Join us every Monday through Friday from 5-7 PM in the bar area! / .sfxZxsX{--wbu-color-blue-0:#0F2CCF;--wbu-color-blue-100:#2F5DFF;--wbu-color-blue-200:#597DFF;--wbu-color-blue-300:#ACBEFF;--wbu-color-blue-400:#D5DFFF;--wbu-color-blue-500:#EAEFFF;--wbu-color-blue-600:#F5F7FF;--wbu-color-black-0:#151414;--wbu-color-black-100:#383838;--wbu-color-black-200:#525150;--wbu-color-black-300:"
+      "quote": "HAPPY HOUR / Join us every Monday through Friday from 5-7 PM in the bar area!"
      }
     }
    ]
@@ -5156,7 +5226,7 @@
      "type": "happy_hour",
      "windows": [
       {
-       "dow": 2,
+       "dow": 1,
        "start": "16:00",
        "end": "18:00"
       },
@@ -5383,7 +5453,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -5614,6 +5684,57 @@
       "kind": "venue_site",
       "url": "https://stationtaproom.com/",
       "quote": "Happy Hour / Tuesday-Friday 4:30-6:30pm / $5 select pints, $7 pulled pork sandwiches"
+     }
+    }
+   ]
+  },
+  {
+   "id": "the-capital-grille-king-of-prussia",
+   "lid": "63085",
+   "name": "The Capital Grille",
+   "plcb_name": "THE CAPITAL GRILLE 8043",
+   "address": "236 MALL BLVD, KING OF PRUSSIA PA 19406",
+   "zone_id": "king_of_prussia",
+   "license_type": "",
+   "website": "https://m.thecapitalgrille.com/locations/pa/king-of-prussia/king-of-prussia/8043",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://m.thecapitalgrille.com/locations/pa/king-of-prussia/king-of-prussia/8043",
+      "quote": "Happy Hour / Monday, Tuesday, Wednesday, Thursday, Friday / 3:00 PM - 6:00 PM"
      }
     }
    ]
@@ -6206,15 +6327,9 @@
        "end": "18:00"
       }
      ],
-     "items": [
-      {
-       "category": "draft",
-       "label": "off pints during Happy Hour",
-       "price_usd": 1.0
-      }
-     ],
+     "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -6314,7 +6429,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "label": "Burger Night",
+       "price_usd": 10.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -6632,18 +6753,7 @@
        "end": "19:00"
       }
      ],
-     "items": [
-      {
-       "category": "draft",
-       "label": "off draft beer",
-       "price_usd": 2.0
-      },
-      {
-       "category": "draft",
-       "label": "Off Draft Beer for Happy Hour",
-       "price_usd": 2.0
-      }
-     ],
+     "items": [],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -6915,11 +7025,6 @@
       }
      ],
      "items": [
-      {
-       "category": "cocktail",
-       "label": "off Specialty Cocktails",
-       "price_usd": 5.0
-      },
       {
        "category": "draft",
        "label": "Selected Domestic Beers",
@@ -7755,7 +7860,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -7822,6 +7927,57 @@
    ]
   },
   {
+   "id": "seasons-52-king-of-prussia",
+   "lid": "72740",
+   "name": "Seasons 52",
+   "plcb_name": "SEASONS 52 #4510",
+   "address": "160 N GULPH RD STE 101, KING OF PRUSSIA PA 19406-2941",
+   "zone_id": "king_of_prussia",
+   "license_type": "",
+   "website": "https://www.seasons52.com/locations/pa/king-of-prussia/king-of-prussia/4510?cmpid=br:s52_ag:ie_ch:loc_ca:S52GMB_sn:gmb_gt:king-of-prussia-pa-4510_pl:locurl_rd:1009",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.seasons52.com/locations/pa/king-of-prussia/king-of-prussia/4510?cmpid=br:s52_ag:ie_ch:loc_ca:S52GMB_sn:gmb_gt:king-of-prussia-pa-4510_pl:locurl_rd:1009",
+      "quote": "Happy Hour / Monday, Tuesday, Wednesday, Thursday, Friday / 3:00 PM - 6:00 PM"
+     }
+    }
+   ]
+  },
+  {
    "id": "2637brew-philadelphia",
    "lid": "72755",
    "name": "2637brew",
@@ -7847,11 +8003,6 @@
      ],
      "items": [
       {
-       "category": "draft",
-       "label": "off drafts",
-       "price_usd": 2.0
-      },
-      {
        "category": "wine",
        "label": "house wine",
        "price_usd": 7.0
@@ -7870,6 +8021,11 @@
        "category": "shot",
        "label": "Fireball shot",
        "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "Rose",
+       "price_usd": 6.0
       }
      ],
      "confidence": "unconfirmed",
@@ -8038,6 +8194,57 @@
       "kind": "venue_site",
       "url": "https://www.pjspub.com/about.php?loc=Wynnewood",
       "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "yard-house-king-of-prussia",
+   "lid": "73290",
+   "name": "Yard House",
+   "plcb_name": "YARD HOUSE 8371",
+   "address": "160 N GULPH RD, KING OF PRUSSIA PA 19406-2941",
+   "zone_id": "king_of_prussia",
+   "license_type": "",
+   "website": "https://www.yardhouse.com/locations/pa/king-of-prussia/king-of-prussia-king-of-prussia-mall/8371?cmpid=br:yh_ag:ie_ch:loc_ca:YHGMB_sn:gmb_gt:king-of-prussia-pa-8371_pl:locurl_rd:1066",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:30",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.yardhouse.com/locations/pa/king-of-prussia/king-of-prussia-king-of-prussia-mall/8371?cmpid=br:yh_ag:ie_ch:loc_ca:YHGMB_sn:gmb_gt:king-of-prussia-pa-8371_pl:locurl_rd:1066",
+      "quote": "Happy Hour / Monday, Tuesday, Wednesday, Thursday, Friday / 3:30 PM - 6:00 PM"
      }
     }
    ]
@@ -8345,6 +8552,62 @@
    ]
   },
   {
+   "id": "eddie-v-s-prime-seafood-king-of-prussia",
+   "lid": "85395",
+   "name": "Eddie V's Prime Seafood",
+   "plcb_name": "EDDIE V'S #8522",
+   "address": "670 W DEKALB PIKE, KING OF PRUSSIA PA 19406",
+   "zone_id": "king_of_prussia",
+   "license_type": "",
+   "website": "https://www.eddiev.com/locations/pa/king-of-prussia/king-of-prussia/8522?cmpid=br:ev_ag:ie_ch:loc_ca:EVGMB_sn:gmb_gt:king-of-prussia-pa-8522_pl:locurl_rd:1021",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:30"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.eddiev.com/locations/pa/king-of-prussia/king-of-prussia/8522?cmpid=br:ev_ag:ie_ch:loc_ca:EVGMB_sn:gmb_gt:king-of-prussia-pa-8522_pl:locurl_rd:1021",
+      "quote": "Happy Hour / Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday / 4:00 PM - 6:30 PM"
+     }
+    }
+   ]
+  },
+  {
    "id": "interstate-drafthouse-philadelphia",
    "lid": "87212",
    "name": "Interstate Drafthouse",
@@ -8378,13 +8641,7 @@
        "end": "18:00"
       }
      ],
-     "items": [
-      {
-       "category": "draft",
-       "label": "off drafts",
-       "price_usd": 1.0
-      }
-     ],
+     "items": [],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-08-07",
      "verified_by": "auto_extract",
@@ -8566,57 +8823,6 @@
    ]
   },
   {
-   "id": "avola-kitchen-bar-malvern",
-   "lid": "90491",
-   "name": "Avola Kitchen + Bar",
-   "plcb_name": "AVOLA RESTAURANT & BAR",
-   "address": "625 MOREHALL RD STE 500, MALVERN PA 19355",
-   "zone_id": "malvern_great_valley",
-   "license_type": "",
-   "website": "https://avolakitchenandbar.com",
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-09-01",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://avolakitchenandbar.com/malvern-chester-county-east-whiteland-township-avola-kitchen-and-bar-menus",
-      "quote": "Happy Hour / Monday - Friday from 4:00pm to 6:00pm"
-     }
-    }
-   ]
-  },
-  {
    "id": "bad-brother-philadelphia",
    "lid": "91278",
    "name": "Bad Brother",
@@ -8663,12 +8869,12 @@
       },
       {
        "category": "food",
-       "label": "Happy Hour Bites 5-6 PM Monda",
+       "label": "HAPPY HOUR BITES 5-6PM MONDAY",
        "price_usd": 5.0
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -9051,33 +9257,18 @@
      ],
      "items": [
       {
-       "category": "draft",
-       "label": "off drafts and",
-       "price_usd": 1.0
-      },
-      {
        "category": "cocktail",
        "label": "margaritas to say Thank you t",
-       "price_usd": 6.0
-      },
-      {
-       "category": "draft",
-       "label": "off drafts",
-       "price_usd": 1.0
-      },
-      {
-       "category": "cocktail",
-       "label": "margaritas and",
        "price_usd": 6.0
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://www.atticbrewing.com/event-details/teacher-happy-hour-2022-08-26-15-00",
-      "quote": "Teacher Happy Hour / Fri, Aug 26 / Every Friday 3-5pm is Teacher Happy Hour with $1 off drafts and $6 margaritas to say Thank you to all of our hardworking teachers!!!"
+      "url": "https://www.atticbrewing.com/event-details/teacher-happy-hour-2022-09-09-15-00",
+      "quote": "Teacher Happy Hour / Fri, Sep 09 / Every Friday 3-5pm is Teacher Happy Hour with $1 off drafts and $6 margaritas to say Thank you to all of our hardworking teachers!!!"
      }
     }
    ]
@@ -9344,6 +9535,11 @@
      "items": [
       {
        "category": "food",
+       "label": "Burgers",
+       "price_usd": 12.0
+      },
+      {
+       "category": "food",
        "label": "Tacos &",
        "price_usd": 5.0
       },
@@ -9354,7 +9550,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -9399,11 +9595,6 @@
       }
      ],
      "items": [
-      {
-       "category": "draft",
-       "label": "off Draught Beers",
-       "price_usd": 1.0
-      },
       {
        "category": "cocktail",
        "label": "Cocktail of the Week",
@@ -9498,7 +9689,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-07",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",

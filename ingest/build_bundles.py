@@ -17,7 +17,8 @@ import sys
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from validate_pa import validate_deal, validate_food_combo_count  # noqa: E402
+from validate_pa import (rules_for, state_of, validate_deal,  # noqa: E402
+                         validate_food_combo_count)
 
 DEALS_JSON = os.path.join(REPO, "data", "deals_seed.json")
 EXTRACTED_JSON = os.path.join(REPO, "data", "deals_extracted.json")
@@ -334,6 +335,20 @@ def main():
         """The deals of one venue that are fit to publish: past the PA
         validators, and not decayed out from under their own age."""
         nonlocal rejected, hidden
+        # WHOSE LAW? validate_deal() enforces Pennsylvania's Acts 57 & 86 -- a
+        # 4h/day cap, a 24h/week cap, a midnight cutoff and PA's banned claims.
+        # Those are PA's numbers. Crossing a state line changes the LAW, not
+        # just the data source, so a venue in a state we have no ruleset for
+        # cannot be judged here at all: running a Delaware bar through the PA
+        # validators can suppress a lawful DE deal and, worse, publish one PA
+        # would have banned. This is the single door onto the board, so it is
+        # the one place the question has to be asked, and it fails CLOSED.
+        state = state_of(venue.get("address"))
+        if not rules_for(state):
+            rejected += len(venue.get("deals", []))
+            print(f"  rejected: {venue['name']} -- no ruleset for state "
+                  f"{state!r}; its law has not been encoded (see validate_pa.RULES)")
+            return []
         deals = []
         for deal in venue.get("deals", []):
             extra = prices.get(venue["id"])

@@ -179,6 +179,70 @@
    ]
   },
   {
+   "id": "85395",
+   "lid": "85395",
+   "slug": "eddie-v-s-prime-seafood-king-of-prussia",
+   "name": "Eddie V's Prime Seafood",
+   "address": "670 W Dekalb Pike, King Of Prussia PA 19406",
+   "zone_id": "king_of_prussia",
+   "website": "https://www.eddiev.com/locations/pa/king-of-prussia/king-of-prussia/8522?cmpid=br:ev_ag:ie_ch:loc_ca:EVGMB_sn:gmb_gt:king-of-prussia-pa-8522_pl:locurl_rd:1021",
+   "plcb_name": "EDDIE V'S #8522",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.087203900000006,
+   "lng": -75.38558499999999,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Google",
+    "file": "img/venues/85395.jpg"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:30"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:30"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.eddiev.com/locations/pa/king-of-prussia/king-of-prussia/8522?cmpid=br:ev_ag:ie_ch:loc_ca:EVGMB_sn:gmb_gt:king-of-prussia-pa-8522_pl:locurl_rd:1021",
+      "quote": "Happy Hour / Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday / 4:00 PM - 6:30 PM"
+     }
+    }
+   ]
+  },
+  {
    "id": "72540",
    "lid": "72540",
    "slug": "fogo-de-ch-o-king-of-prussia",
@@ -248,7 +312,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -438,15 +502,79 @@
        "category": "draft",
        "label": "Draft Beer",
        "price_usd": 4.5
+      },
+      {
+       "category": "cocktail",
+       "label": "Sangrias",
+       "price_usd": 6.5
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://paladarlatinkitchen.com/happy-hour/",
       "quote": "HAPPY HOUR DETAILS / Monday-Friday / from 4-6:30pm & Sunday- Thursday 8:30-10pm in the Bar"
+     }
+    }
+   ]
+  },
+  {
+   "id": "72740",
+   "lid": "72740",
+   "slug": "seasons-52-king-of-prussia",
+   "name": "Seasons 52",
+   "address": "160 N Gulph Rd Ste 101, King Of Prussia PA 19406",
+   "zone_id": "king_of_prussia",
+   "website": "https://www.seasons52.com/locations/pa/king-of-prussia/king-of-prussia/4510?cmpid=br:s52_ag:ie_ch:loc_ca:S52GMB_sn:gmb_gt:king-of-prussia-pa-4510_pl:locurl_rd:1009",
+   "plcb_name": "SEASONS 52 #4510",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.0857465,
+   "lng": -75.3943464,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Google",
+    "file": "img/venues/72740.jpg"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.seasons52.com/locations/pa/king-of-prussia/king-of-prussia/4510?cmpid=br:s52_ag:ie_ch:loc_ca:S52GMB_sn:gmb_gt:king-of-prussia-pa-4510_pl:locurl_rd:1009",
+      "quote": "Happy Hour / Monday, Tuesday, Wednesday, Thursday, Friday / 3:00 PM - 6:00 PM"
      }
     }
    ]
@@ -639,6 +767,124 @@
       "merge": "replace"
      },
      "fine_print": "DINE IN ONLY"
+    }
+   ]
+  },
+  {
+   "id": "63085",
+   "lid": "63085",
+   "slug": "the-capital-grille-king-of-prussia",
+   "name": "The Capital Grille",
+   "address": "236 Mall Blvd, King Of Prussia PA 19406",
+   "zone_id": "king_of_prussia",
+   "website": "https://m.thecapitalgrille.com/locations/pa/king-of-prussia/king-of-prussia/8043",
+   "plcb_name": "THE CAPITAL GRILLE 8043",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.0911314,
+   "lng": -75.3921936,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Google",
+    "file": "img/venues/63085.jpg"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://m.thecapitalgrille.com/locations/pa/king-of-prussia/king-of-prussia/8043",
+      "quote": "Happy Hour / Monday, Tuesday, Wednesday, Thursday, Friday / 3:00 PM - 6:00 PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "73290",
+   "lid": "73290",
+   "slug": "yard-house-king-of-prussia",
+   "name": "Yard House",
+   "address": "160 N Gulph Rd, King Of Prussia PA 19406",
+   "zone_id": "king_of_prussia",
+   "website": "https://www.yardhouse.com/locations/pa/king-of-prussia/king-of-prussia-king-of-prussia-mall/8371?cmpid=br:yh_ag:ie_ch:loc_ca:YHGMB_sn:gmb_gt:king-of-prussia-pa-8371_pl:locurl_rd:1066",
+   "plcb_name": "YARD HOUSE 8371",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.087834199999996,
+   "lng": -75.3953581,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Google",
+    "file": "img/venues/73290.jpg"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:30",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:30",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.yardhouse.com/locations/pa/king-of-prussia/king-of-prussia-king-of-prussia-mall/8371?cmpid=br:yh_ag:ie_ch:loc_ca:YHGMB_sn:gmb_gt:king-of-prussia-pa-8371_pl:locurl_rd:1066",
+      "quote": "Happy Hour / Monday, Tuesday, Wednesday, Thursday, Friday / 3:30 PM - 6:00 PM"
+     }
     }
    ]
   }

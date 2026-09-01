@@ -4,65 +4,6 @@
  "built_at": "2026-09-01",
  "venues": [
   {
-   "id": "90491",
-   "lid": "90491",
-   "slug": "avola-kitchen-bar-malvern",
-   "name": "Avola Kitchen + Bar",
-   "address": "625 Morehall Rd Ste 500, Malvern PA 19355",
-   "zone_id": "malvern_great_valley",
-   "website": "https://avolakitchenandbar.com",
-   "plcb_name": "AVOLA RESTAURANT & BAR",
-   "license_type": "Restaurant (Liquor)",
-   "lat": 40.0678937,
-   "lng": -75.5360881,
-   "geo_precision": "place",
-   "photo": {
-    "file": "img/venues/avola-kitchen-bar-malvern.jpg",
-    "attribution": "Photo: Avola Kitchen + Bar"
-   },
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-09-01",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://avolakitchenandbar.com/malvern-chester-county-east-whiteland-township-avola-kitchen-and-bar-menus",
-      "quote": "Happy Hour / Monday - Friday from 4:00pm to 6:00pm"
-     }
-    }
-   ]
-  },
-  {
    "id": "104355",
    "lid": "104355",
    "slug": "chickie-s-pete-s-malvern",
@@ -114,7 +55,18 @@
        "end": "24:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "bottle_can",
+       "label": "Domestic Bottles",
+       "price_usd": 3.0
+      },
+      {
+       "category": "draft",
+       "label": "Select Craft Beer",
+       "price_usd": 5.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",

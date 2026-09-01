@@ -248,10 +248,23 @@ def category_of(label):
     return None
 
 
+# '$2 Off Wine by the Glass' is not a $2 glass of wine, and PRICE_RE reads it as
+# one -- label 'Off Wine by the Glass', category wine, price $2.00. Paladar and
+# Sullivan's both print their drink deals in this form, so the moment the crawler
+# stopped throwing those lines away they became wrong prices on the board. The
+# amount is a DISCOUNT, and this pipeline has no field for a dollars-off discount
+# (only discount_pct); inventing one would have to reach validate_pa, lib.js's
+# sort key and the admin page. Unpriced is the right answer to a question we
+# cannot express, so the form is refused outright rather than published wrong.
+OFF_RE = re.compile(r"^off\b", re.I)
+
+
 def items_in(text):
     out, seen = [], set()
     for m in PRICE_RE.finditer(text):
         label = re.split(r"\s+(?:and|or|&)\s+", m.group(2).strip())[0].strip(" -'")
+        if OFF_RE.search(label):
+            continue
         cat = category_of(label)
         if cat and label.lower() not in seen:
             seen.add(label.lower())

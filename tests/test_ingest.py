@@ -45,13 +45,15 @@ from extract_deals import (  # noqa: E402
     window_in,
     windows_from,
 )
+import extract_prices_llm  # noqa: E402
 from extract_prices_llm import verify  # noqa: E402
 from fetch_og_images import asset_allowed, css_images, inline_images, og_image  # noqa: E402
 from fetch_venue_photos import (  # noqa: E402
     IMG_DIR, absorbed_lids, name_agrees, photo_dest,
 )
 from geocode_venues import split_address, strip_range, strategies  # noqa: E402
-from validate_pa import validate_deal, validate_food_combo_count  # noqa: E402
+from validate_pa import (rules_for, state_of, validate_deal,  # noqa: E402
+                         validate_food_combo_count)
 
 
 def deal(**over):
@@ -2228,3 +2230,332 @@ class LateNightEndingAtTwelve(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
+
+
+class ASectionMustNotCloseOnTheHappyHoursOWNSUBHEADING(unittest.TestCase):
+    """The containment closed the section on lines the happy hour itself owns.
+
+    hh_sections() opens at a heading naming the happy hour and closes at the
+    next heading naming anything else. Two kinds of heading were closing it that
+    are not another menu at all, and both were found by reading the pages Paul
+    sent rather than by the suite:
+
+      Paladar    <h3>DRINKS</h3> -- a SUBDIVISION, but SUBDIVISION_RE spelled
+                 its nouns singular, so `drink` did not match 'DRINKS'. The
+                 section closed one line after it opened and all six of the
+                 venue's prices sat outside it. The asymmetry was accidental:
+                 `snack` and `bite` already survived in the plural through the
+                 trailing branch, and `drink` did not.
+
+      Sullivan's <h2>Available in the bar, Monday-Thursday 3pm-6pm</h2> -- the
+                 happy hour's OWN HOURS, marked up as a heading. It closed the
+                 section on the line after the open and put the whole menu out
+                 of reach. No menu is titled with a clock time.
+
+    The fixtures carry the real pages' nesting: the prices are in their own
+    boxes below the subheading, which is the arrangement that was being lost.
+    """
+
+    PALADAR = ("<h1>Happy Hour</h1>"
+               "<h3>HAPPY HOUR DETAILS</h3>"
+               "<div><p>Monday-Friday</p><p>from 4-6:30pm in the Bar</p></div>"
+               "<h3>DRINKS</h3>"
+               "<div><p>$4.50 Draft Beer</p></div>"
+               "<div><p>$6.50 Sangrias (White or Red)</p></div>")
+
+    SULLIVANS = ("<h1>King Of Prussia Happy Hour Menu</h1>"
+                 "<h2>Available in the bar, Monday-Thursday 3pm-6pm</h2>"
+                 "<div><p>$8 Select Red, White &amp; Sparkling Wines</p></div>")
+
+    def section(self, html):
+        lines, _ = crawl_sites.text_lines(html)
+        inside = crawl_sites.hh_sections(html, "\n".join(lines))
+        return [lines[i] for i in sorted(inside)]
+
+    def test_a_plural_subdivision_heading_does_not_close_the_section(self):
+        kept = self.section(self.PALADAR)
+        self.assertIn("$4.50 Draft Beer", kept)
+        self.assertIn("$6.50 Sangrias (White or Red)", kept)
+
+    def test_the_singular_and_plural_forms_agree(self):
+        for word in ("DRINK", "DRINKS", "COCKTAIL", "COCKTAILS",
+                     "BEER", "BEERS", "WINE", "WINES", "SHOT", "SHOTS"):
+            self.assertTrue(crawl_sites.SUBDIVISION_RE.search(word), word)
+
+    def test_a_heading_that_states_the_hours_does_not_close_the_section(self):
+        self.assertIn("$8 Select Red, White & Sparkling Wines",
+                      self.section(self.SULLIVANS))
+
+    def test_a_dinner_menu_heading_still_closes_it(self):
+        html = (self.PALADAR.replace("<h3>DRINKS</h3>", "<h3>DINNER</h3>"))
+        self.assertNotIn("$4.50 Draft Beer", self.section(html))
+
+
+class APriceWrittenFIRSTIsStillAPricedMenuLine(unittest.TestCase):
+    """MENU_ITEM_RE is anchored to the end of the line and reads price-LAST only.
+
+    A venue that prints '$4.50 Draft Beer' publishes exactly as much as one that
+    prints 'Draft Beer $4.50', and the crawler could not see the first form at
+    all -- Paladar has six priced lines on its own happy-hour page and only the
+    one DEAL_RE happened to match on the word 'Draft' was ever stored. The
+    extractor grew the mirror of this (TRAILING_PRICE_RE) a session earlier; the
+    crawler did not, so the lines were thrown away one step before it.
+
+    Scoped to `loose` exactly as MENU_ITEM_RE is, so the containment argument is
+    unchanged: on an arbitrary page neither form is read.
+    """
+
+    def test_a_price_first_line_is_kept_inside_a_happy_hour_section(self):
+        text = "Happy Hour\n$6.50 Sangrias (White or Red)"
+        self.assertTrue(any("Sangrias" in q for q in
+                            crawl_sites.quotes(text, hh_lines={1})))
+
+    def test_it_is_refused_on_a_page_that_named_nothing(self):
+        text = "Our Menu\n$6.50 Sangrias (White or Red)"
+        self.assertFalse(any("Sangrias" in q for q in crawl_sites.quotes(text)))
+
+
+class AnAmountOFFIsNotAPrice(unittest.TestCase):
+    """'$2 Off Wine by the Glass' is not a $2 glass of wine.
+
+    PRICE_RE read it as one -- label 'Off Wine by the Glass', category wine,
+    price $2.00 -- and 17 items across 13 venues were live on the board in that
+    shape: Lansdale Tavern's card said 'off draft beer $1.00'. The moment the
+    crawler stopped discarding these lines the count would have grown.
+
+    The model pass makes the identical mistake and verify() could not catch it,
+    because both the '$5' and the 'martinis' really are in Sullivan's own text:
+    it returned a $5 martini for '$5 Off Select Martinis'. The check is that the
+    number is written somewhere as a PRICE, not only as an amount off.
+
+    There is no dollars-off field in this pipeline (only discount_pct), and
+    inventing one would have to reach validate_pa, lib.js's sort key and the
+    admin page. Unpriced is the right answer to a question we cannot express.
+    """
+
+    def test_the_deterministic_pass_refuses_it(self):
+        self.assertEqual(extract_deals.items_in("$2 Off Wine by the Glass"), [])
+        self.assertEqual(extract_deals.items_in("$1 off drafts"), [])
+
+    def test_a_real_price_on_the_same_page_is_untouched(self):
+        got = extract_deals.items_in("$4.50 Draft Beer")
+        self.assertEqual([(i["label"], i["price_usd"]) for i in got],
+                         [("Draft Beer", 4.5)])
+
+    def test_a_word_merely_starting_with_off_is_not_an_off(self):
+        self.assertEqual(extract_deals.category_of("Offal Plate"), None)
+
+
+class TheModelPassAlsoMustNotReadAnOFFAsAPrice(unittest.TestCase):
+    """verify() checks the digits are in the venue's text, not what they mean.
+
+    Sullivan's page says '$5 Off Select Martinis'. The model returned a $5
+    martini and every existing check passed it, because both the '$5' and the
+    'martinis' really are in the venue's own sentence -- which is the whole
+    safety argument of this pass, and it is not enough on its own. It shipped
+    into data/deals_prices_llm.json on the first run of this session.
+    """
+
+    TEXT = ("King Of Prussia Happy Hour Menu / $5 Off Select Martinis / "
+            "$8 Select Red, White & Sparkling Wines")
+
+    def test_an_amount_only_ever_written_as_off_is_refused(self):
+        clean, why = verify({"category": "cocktail", "label": "martinis",
+                             "price_usd": 5.0,
+                             "evidence": "$5 Off Select Martinis"}, self.TEXT)
+        self.assertIsNone(clean)
+        self.assertIn("OFF", why)
+
+    def test_a_real_price_in_the_same_text_still_passes(self):
+        clean, why = verify(
+            {"category": "wine", "label": "wine", "price_usd": 8.0,
+             "evidence": "$8 Select Red, White & Sparkling Wines"}, self.TEXT)
+        self.assertEqual(why, None)
+        self.assertEqual(clean["price_usd"], 8.0)
+
+    def test_a_price_written_both_ways_is_kept(self):
+        text = "$5 Off Martinis / Draft Beer $5"
+        clean, why = verify({"category": "draft", "label": "draft beer",
+                             "price_usd": 5.0,
+                             "evidence": "Draft Beer $5"}, text)
+        self.assertEqual(why, None)
+
+
+class AVenueThatPublishesItsHoursAsDATANotAsAPage(unittest.TestCase):
+    """Darden's sites have nothing in their HTML for any parser here to read.
+
+    yardhouse.com/happy-hour is a 2,694-byte Next.js shell behind an Akamai bot
+    manager: __NEXT_DATA__ carries empty pageProps and every line of the menu
+    arrives from JavaScript. Yard House, Seasons 52, Eddie V's and The Capital
+    Grille -- four King of Prussia venues -- all came back with nothing, and it
+    read as 'this bar published no happy hour' when in fact it published one and
+    we could not see it. Rendering the page in a real browser does not fix it
+    either: /happy-hour will not show anything until you pick a location.
+
+    Its own API answers, with one header and no browser, and states the hours as
+    structured data under hourCode 'HH'. That is the venue speaking about
+    itself, so it is turned back into a quote and run through the same extractor
+    and the same validators as a line scraped off a page. The point of the
+    grouping below is that days sharing a window are named in ONE sentence:
+    the extractor reads days and a time out of a single quote, so a quote per
+    day would have published only one of the five.
+    """
+
+    REST = {"restaurantHours": [
+        {"day": d, "hoursInfo": [
+            {"hourCode": "HH", "startTime": "3:30 PM", "endTime": "6:00 PM"},
+            {"hourCode": "OP", "startTime": "11:00 AM", "endTime": "11:30 PM"},
+        ]} for d in ("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+    ] + [
+        {"day": "Saturday", "hoursInfo": [
+            {"hourCode": "LNHH", "startTime": "10:00 PM", "endTime": "12:00 PM"},
+        ]},
+    ]}
+
+    def test_a_darden_location_url_is_recognised(self):
+        self.assertEqual(
+            crawl_sites.darden_ref("https://www.yardhouse.com/locations/pa/"
+                                   "king-of-prussia/kop-mall/8371?cmpid=br:yh"),
+            ("yardhouse.com", "8371"))
+
+    def test_a_brand_on_a_mobile_host_is_still_recognised(self):
+        self.assertEqual(
+            crawl_sites.darden_ref("https://m.thecapitalgrille.com/locations/"
+                                   "pa/king-of-prussia/king-of-prussia/8043"),
+            ("thecapitalgrille.com", "8043"))
+
+    def test_an_ordinary_venue_is_left_alone(self):
+        self.assertIsNone(
+            crawl_sites.darden_ref("https://paladarlatinkitchen.com/happy-hour/"))
+
+    def test_days_sharing_a_window_are_named_in_one_quote(self):
+        self.assertEqual(
+            crawl_sites.darden_lines(self.REST),
+            ["Happy Hour / Monday, Tuesday, Wednesday, Thursday, Friday"
+             " / 3:30 PM - 6:00 PM"])
+
+    def test_only_the_happy_hour_code_is_read(self):
+        line = crawl_sites.darden_lines(self.REST)[0]
+        self.assertNotIn("11:00 AM", line)
+        self.assertNotIn("10:00 PM", line)
+
+    def test_the_quote_survives_the_ordinary_extractor(self):
+        got = extract_deals.windows_from(crawl_sites.darden_lines(self.REST)[0])
+        self.assertEqual(sorted(w["dow"] for w in got), [1, 2, 3, 4, 5])
+        self.assertEqual({(w["start"], w["end"]) for w in got},
+                         {("15:30", "18:00")})
+
+
+class WhoseLawIsThisDealBeingJudgedBy(unittest.TestCase):
+    """validate_deal() enforces PENNSYLVANIA's Acts 57 & 86, not liquor law.
+
+    The 4h/day cap, the 24h/week cap, the midnight cutoff, the 2 food+drink
+    combos per day and the BANNED list are all PA's numbers, and every deal on
+    the board is gated on them. That was safe while every venue sat in one of
+    five PA counties. It stops being safe the moment Wilmington is published:
+    judging a Delaware bar by Pennsylvania's statute can SUPPRESS a lawful DE
+    deal and, worse, PUBLISH one PA would have banned. The hazard runs in both
+    directions, which is why a default of 'assume PA' is the wrong shape.
+
+    So the rules are a table keyed by state and a state with no entry has no
+    ruleset. Delaware is deliberately absent: filling it in is a research task
+    with a named authority and Paul's sign-off, not a guess.
+    """
+
+    def test_the_state_is_read_off_the_address(self):
+        self.assertEqual(
+            state_of("700 W DEKALB PK, KING OF PRUSSIA PA 19406"), "PA")
+        self.assertEqual(
+            state_of("1201 N Market St, Wilmington DE 19801"), "DE")
+
+    def test_an_address_naming_no_state_is_not_assumed_to_be_pa(self):
+        self.assertIsNone(state_of("somewhere with no state"))
+        self.assertIsNone(state_of(""))
+        self.assertIsNone(state_of(None))
+
+    def test_pennsylvania_has_a_ruleset_and_delaware_does_not_yet(self):
+        self.assertIsNotNone(rules_for("PA"))
+        self.assertIsNone(rules_for("DE"))
+        self.assertIsNone(rules_for(None))
+
+    def test_the_pa_ruleset_still_carries_pas_own_numbers(self):
+        pa = rules_for("PA")
+        self.assertEqual(pa["max_hours_per_day"], 4.0)
+        self.assertEqual(pa["max_hours_per_week"], 24.0)
+        self.assertEqual(pa["max_food_combos_per_day"], 2)
+        self.assertIn("Acts 57 & 86", pa["authority"])
+
+
+class AGateOnlyAtWRITETimeCannotFixWhatIsALREADYWritten(unittest.TestCase):
+    """verify() runs when an item is first read, and the sidecar is trusted after.
+
+    That is why three `$X off` labels stayed on the LIVE board after the guard
+    that refuses them had already shipped: `data/deals_prices_llm.json` was
+    written before the guard existed, and build_bundles.py consults the file
+    precisely because everything in it was checked once. Black Horse Tavern's
+    "$1 off pints during Happy Hour" was published as `pints $1.00` by a build
+    that ran entirely correct code.
+
+    So verify() has to be re-runnable over the file it already wrote. The
+    general shape: when you tighten a gate, ask what is already through it.
+    """
+
+    def setUp(self):
+        self.dir = tempfile.mkdtemp()
+        self.out = os.path.join(self.dir, "prices.json")
+        self.patches = [
+            unittest.mock.patch.object(extract_prices_llm, "OUT", self.out),
+        ]
+        for p in self.patches:
+            p.start()
+        self.addCleanup(lambda: [p.stop() for p in self.patches])
+
+    def _run(self, sidecar, quotes):
+        with open(self.out, "w", encoding="utf-8") as fh:
+            json.dump(sidecar, fh)
+        with unittest.mock.patch.object(
+                extract_prices_llm, "quotes_by_venue", lambda: quotes):
+            extract_prices_llm.reverify(unittest.mock.Mock())
+        return json.load(open(self.out, encoding="utf-8"))
+
+    def test_an_amount_off_already_in_the_sidecar_is_dropped(self):
+        kept = self._run(
+            {"black-horse": [{"category": "draft", "label": "pints",
+                              "price_usd": 1.0}]},
+            {"black-horse": "$1 off pints during Happy Hour"})
+        self.assertEqual(kept, {})
+
+    def test_a_real_price_already_in_the_sidecar_survives(self):
+        kept = self._run(
+            {"sullivans": [{"category": "food", "label": "Angry Shrimp",
+                            "price_usd": 20.0}]},
+            {"sullivans": "Happy Hour\nAngry Shrimp $20"})
+        self.assertEqual(list(kept), ["sullivans"])
+        self.assertEqual(kept["sullivans"][0]["price_usd"], 20.0)
+
+    def test_a_venue_with_no_quotes_left_is_dropped_not_kept_on_trust(self):
+        kept = self._run(
+            {"gone": [{"category": "food", "label": "fries", "price_usd": 5.0}]},
+            {})
+        self.assertEqual(kept, {})
+
+    def test_the_previous_sidecar_is_kept_because_hits_are_written_mid_crawl(self):
+        self._run({"gone": [{"category": "food", "label": "fries",
+                             "price_usd": 5.0}]}, {})
+        back = json.load(open(self.out + ".bak", encoding="utf-8"))
+        self.assertEqual(list(back), ["gone"])
+
+    def test_an_item_it_cannot_reconstruct_evidence_for_is_kept_not_dropped(self):
+        """'50% off' is written 'half price' and carries no 50 anywhere.
+
+        A reconstruction that finds no candidate line is a failure of the
+        reconstruction, not a verdict on the item -- and the item passed a real
+        verify() once. Dropping here would delete good published data on an
+        artifact, which is how a first attempt at this silently binned 15 live
+        items across 10 venues.
+        """
+        kept = self._run(
+            {"pj-whelihan": [{"category": "food", "label": "wings and starters",
+                              "discount_pct": 50.0}]},
+            {"pj-whelihan": "Happy Hour: half price wings and starters"})
+        self.assertEqual(list(kept), ["pj-whelihan"])

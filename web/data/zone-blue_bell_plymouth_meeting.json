@@ -153,7 +153,38 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "domestic drafts",
+       "price_usd": 3.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "corona",
+       "price_usd": 4.0
+      },
+      {
+       "category": "wine",
+       "label": "house wine",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "label": "krushes",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "label": "boneless wings",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "boneless wings (share)",
+       "price_usd": 10.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -161,7 +192,8 @@
       "kind": "venue_site",
       "url": "https://locations.pjspub.com/pa/conshohocken/200-ridge-pike",
       "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ],
    "also_lids": [
@@ -200,7 +232,38 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "domestic drafts",
+       "price_usd": 3.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "corona",
+       "price_usd": 4.0
+      },
+      {
+       "category": "wine",
+       "label": "house wine",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "label": "krushes",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "label": "boneless wings",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "boneless wings (share)",
+       "price_usd": 10.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -208,7 +271,8 @@
       "kind": "venue_site",
       "url": "https://locations.pjspub.com/pa/blue-bell/799-dekalb-pike",
       "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -272,7 +336,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",

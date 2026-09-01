@@ -37,11 +37,6 @@
      ],
      "items": [
       {
-       "category": "draft",
-       "label": "off drafts",
-       "price_usd": 2.0
-      },
-      {
        "category": "wine",
        "label": "house wine",
        "price_usd": 7.0
@@ -60,6 +55,11 @@
        "category": "shot",
        "label": "Fireball shot",
        "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "Rose",
+       "price_usd": 6.0
       }
      ],
      "confidence": "unconfirmed",
@@ -251,12 +251,12 @@
       },
       {
        "category": "food",
-       "label": "Happy Hour Bites 5-6 PM Monda",
+       "label": "HAPPY HOUR BITES 5-6PM MONDAY",
        "price_usd": 5.0
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -1047,11 +1047,6 @@
       }
      ],
      "items": [
-      {
-       "category": "draft",
-       "label": "off Draught Beers",
-       "price_usd": 1.0
-      },
       {
        "category": "cocktail",
        "label": "Cocktail of the Week",
@@ -1909,11 +1904,6 @@
      ],
      "items": [
       {
-       "category": "cocktail",
-       "label": "off Specialty Cocktails",
-       "price_usd": 5.0
-      },
-      {
        "category": "draft",
        "label": "Selected Domestic Beers",
        "price_usd": 5.0
@@ -2505,19 +2495,9 @@
      ],
      "items": [
       {
-       "category": "draft",
-       "label": "off all beer",
-       "price_usd": 2.0
-      },
-      {
        "category": "shot",
        "label": "Green Tea Shots",
        "price_usd": 3.0
-      },
-      {
-       "category": "draft",
-       "label": "off Draft Beer",
-       "price_usd": 2.0
       },
       {
        "category": "cocktail",
@@ -2586,6 +2566,61 @@
       "kind": "venue_site",
       "url": "https://southgatephilly.com",
       "quote": "Our happy hour menu is offered: / Tuesday-Thursday, 4pm to 6:30pm / Friday, 4pm to 6pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "48915",
+   "lid": "48915",
+   "slug": "the-capital-grille-philadelphia",
+   "name": "The Capital Grille",
+   "address": "1346 Chestnut St, Philadelphia PA 19107",
+   "zone_id": "center_city",
+   "website": "https://m.thecapitalgrille.com/locations/pa/philadelphia/philadelphia/8013",
+   "plcb_name": "CAPITAL GRILLE HOLDINGS INC",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.9507269,
+   "lng": -75.1637185,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://m.thecapitalgrille.com/locations/pa/philadelphia/philadelphia/8013",
+      "quote": "Happy Hour / Monday, Tuesday, Wednesday, Thursday, Friday / 3:00 PM - 6:00 PM"
      }
     }
    ]

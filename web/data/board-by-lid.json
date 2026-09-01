@@ -100,6 +100,49 @@
    }
   ]
  },
+ "85395": {
+  "name": "Eddie V's Prime Seafood",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:30"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:30"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:30"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:30"
+     },
+     {
+      "dow": 6,
+      "start": "16:00",
+      "end": "18:30"
+     },
+     {
+      "dow": 7,
+      "start": "16:00",
+      "end": "18:30"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "72540": {
   "name": "Fogo de Ch\u00e3o",
   "deals": [
@@ -262,6 +305,44 @@
    }
   ]
  },
+ "72740": {
+  "name": "Seasons 52",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "15:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "39702": {
   "name": "Sullivan's Steakhouse",
   "deals": [
@@ -324,6 +405,82 @@
     ],
     "source": {
      "kind": "photo"
+    }
+   }
+  ]
+ },
+ "63085": {
+  "name": "The Capital Grille",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "15:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "73290": {
+  "name": "Yard House",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "15:30",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "15:30",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "15:30",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "15:30",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "15:30",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
     }
    }
   ]
@@ -877,11 +1034,6 @@
     "type": "happy_hour",
     "windows": [
      {
-      "dow": 2,
-      "start": "15:30",
-      "end": "18:00"
-     },
-     {
       "dow": 5,
       "start": "15:30",
       "end": "18:00"
@@ -998,6 +1150,11 @@
    {
     "type": "happy_hour",
     "windows": [
+     {
+      "dow": 1,
+      "start": "16:30",
+      "end": "18:30"
+     },
      {
       "dow": 3,
       "start": "16:30",
@@ -3795,6 +3952,44 @@
    }
   ]
  },
+ "48915": {
+  "name": "The Capital Grille",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "15:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "70846": {
   "name": "The Cheesecake Factory",
   "deals": [
@@ -4486,44 +4681,6 @@
  },
  "45092": {
   "name": "South Philadelphia Tap Room",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "90491": {
-  "name": "Avola Kitchen + Bar",
   "deals": [
    {
     "type": "happy_hour",
@@ -5968,7 +6125,7 @@
     "type": "happy_hour",
     "windows": [
      {
-      "dow": 2,
+      "dow": 1,
       "start": "16:00",
       "end": "18:00"
      },

@@ -257,6 +257,17 @@ def verify(item, text, menu=False):
             found = re.search(rf"(?<![\d.]){price:g}(?![\d.])", low) is not None
         if not found:
             return None, f"price {price:g} not written in the evidence"
+        # The digits being present does not make them a PRICE. Sullivan's says
+        # '$5 Off Select Martinis' and the model returned a $5 martini; every
+        # check above passes, because both the '$5' and the 'martinis' really
+        # are in the venue's own text. '$N off' is a DISCOUNT, and this pipeline
+        # has no field for a dollars-off one (see OFF_RE in extract_deals.py),
+        # so an amount that the evidence only ever writes as 'off' is refused
+        # rather than published as the thing's price. If some occurrence of the
+        # number is a plain price, that one still counts.
+        hits = [m for f in forms for m in re.finditer(re.escape(f), low)]
+        if hits and all(re.match(r"\s*off\b", low[m.end():]) for m in hits):
+            return None, f"{price:g} is written only as an amount OFF, not a price"
         clean = {"category": item["category"], "label": label, "price_usd": price}
     else:
         pct = float(pct)
@@ -268,14 +279,110 @@ def verify(item, text, menu=False):
     return clean, None
 
 
+def evidence_candidates(item, text):
+    """The lines of a venue's quotes that could be the evidence for one item.
+
+    verify() judges an item against its `evidence` -- the venue's own sentence.
+    The sidecar does NOT store evidence (a card has no use for it), so an item
+    already on file cannot simply be re-judged: there is nothing to judge. So
+    reverify reconstructs the candidates and lets verify() rule on each. A line
+    qualifies if it carries the label and the number; if none does, the item is
+    dropped, which is the same answer verify() would have given.
+    """
+    label = (item.get("label") or "").strip()
+    if not label:
+        return []
+    price, pct = item.get("price_usd"), item.get("discount_pct")
+    num = f"{float(price):g}" if price is not None else f"{float(pct):g}"
+    out = []
+    for line in text.splitlines():
+        low = norm(line)
+        if norm(label) in low and num in re.sub(r"\.00\b", "", low):
+            out.append(line.strip())
+    return out
+
+
+def reverify(args):
+    """Re-run verify() over the sidecar we already wrote, with no model calls.
+
+    verify() runs at WRITE time, so a fix to it does not reach items already in
+    the sidecar -- build_bundles.py trusts the file precisely because every item
+    in it was checked once. That is how three `$X off` labels stayed on the live
+    board after the guard that refuses them had shipped: the sidecar predated
+    the guard. This makes verify() authoritative over the whole file rather than
+    only over the moment an item was first read.
+    """
+    out = json.load(open(OUT, encoding="utf-8")) if os.path.exists(OUT) else {}
+    quotes = quotes_by_venue()
+    # This reads crawl_hits.json, which crawl_sites.py rewrites INCREMENTALLY
+    # as it runs. Re-verifying against a half-written hits file drops every
+    # item whose venue has not been recrawled yet, so the previous file is
+    # always kept alongside.
+    with open(OUT + ".bak", "w", encoding="utf-8") as fh:
+        json.dump(out, fh, indent=1, sort_keys=True)
+    print(f"previous sidecar kept at {OUT}.bak")
+    kept, dropped, unchecked, orphan = {}, [], [], 0
+    for vid, items in sorted(out.items()):
+        text = quotes.get(vid)
+        if text is None:
+            # No quotes to check against any more. Keeping it would be trusting
+            # a check we cannot repeat, so it goes.
+            orphan += 1
+            dropped.append((vid, "no quotes to re-read"))
+            continue
+        good = []
+        for item in items:
+            cands = evidence_candidates(item, text)
+            if not cands:
+                # Nothing to judge. The item passed a real verify() once, and a
+                # reconstruction that finds no candidate line is a failure of the
+                # reconstruction, not a verdict on the item -- '50% off' is
+                # written 'half price' and carries no 50 at all. Dropping here
+                # would delete good published data on an artifact, so it stays
+                # and is counted separately.
+                unchecked.append((vid, json.dumps(item)[:100]))
+                good.append(item)
+                continue
+            clean, why = None, "no candidate line passed"
+            for ev in cands:
+                clean, why = verify(dict(item, evidence=ev), text)
+                if clean:
+                    break
+            if clean:
+                good.append(clean)
+            else:
+                dropped.append((vid, f"{why}: {json.dumps(item)[:100]}"))
+        if good:
+            kept[vid] = good
+    n_in = sum(len(v) for v in out.values())
+    n_out = sum(len(v) for v in kept.values())
+    print(f"re-verified {n_in} item(s) across {len(out)} venue(s): "
+          f"{n_out} kept, {n_in - n_out} dropped"
+          + (f" ({orphan} venue(s) no longer have quotes)" if orphan else ""))
+    print(f"{len(unchecked)} item(s) could not be re-checked and were kept "
+          f"(no line in the quotes carries both the label and the number)")
+    for vid, why in dropped:
+        print(f"  dropped {vid[:40]:<42} {why}")
+    with open(OUT + ".new", "w", encoding="utf-8") as fh:
+        json.dump(kept, fh, indent=1, sort_keys=True)
+    os.replace(OUT + ".new", OUT)
+    return 0
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0, help="stop after N venues")
     ap.add_argument("--show", action="store_true")
     ap.add_argument("--rejects", action="store_true")
+    ap.add_argument("--reverify", action="store_true",
+                    help="re-check the items already in the sidecar against the "
+                         "venue's current quotes and drop the ones that no longer "
+                         "pass. No model calls.")
     args = ap.parse_args()
 
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    if args.reverify:
+        return reverify(args)
     need, quotes = published(), quotes_by_venue()
     todo = [(vid, quotes[vid]) for vid in sorted(need) if vid in quotes]
     missing = len(need) - len(todo)

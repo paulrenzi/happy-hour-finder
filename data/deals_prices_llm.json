@@ -153,11 +153,65 @@
    "price_usd": 9.0
   }
  ],
+ "cedar-point-bar-kitchen-philadelphia": [
+  {
+   "category": "well",
+   "label": "well drinks",
+   "price_usd": 5.0
+  },
+  {
+   "category": "cocktail",
+   "label": "vodka or rum drink",
+   "price_usd": 9.0
+  },
+  {
+   "category": "draft",
+   "label": "American lager",
+   "price_usd": 5.0
+  },
+  {
+   "category": "wine",
+   "label": "Pinot Grigio",
+   "price_usd": 9.0
+  },
+  {
+   "category": "food",
+   "label": "chicken waffle slider",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "classic fries",
+   "price_usd": 5.0
+  }
+ ],
  "chadds-ford-tavern-chadds-ford": [
   {
    "category": "food",
    "label": "Tavern Wedge",
    "price_usd": 10.0
+  }
+ ],
+ "chickie-s-pete-s-malvern": [
+  {
+   "category": "bottle_can",
+   "label": "domestic bottles",
+   "price_usd": 3.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "White Claw",
+   "price_usd": 5.0
+  },
+  {
+   "category": "call",
+   "label": "Tito's vodka",
+   "price_usd": 6.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "seltzers",
+   "price_usd": 6.0
   }
  ],
  "chili-s-philadelphia": [
@@ -312,6 +366,13 @@
    "price_usd": 6.0
   }
  ],
+ "jasper-s-backyard-conshohocken": [
+  {
+   "category": "cocktail",
+   "label": "specialty margaritas",
+   "price_usd": 10.0
+  }
+ ],
  "jj-ratigan-brewing-llc-pottstown": [
   {
    "category": "shot",
@@ -440,6 +501,102 @@
    "category": "food",
    "discount_pct": 50.0,
    "label": "half apps"
+  }
+ ],
+ "p-j-whelihan-s-conshohocken": [
+  {
+   "category": "draft",
+   "label": "domestic drafts",
+   "price_usd": 3.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "corona",
+   "price_usd": 4.0
+  },
+  {
+   "category": "wine",
+   "label": "house wine",
+   "price_usd": 6.0
+  },
+  {
+   "category": "cocktail",
+   "label": "krushes",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "boneless wings",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "boneless wings (share)",
+   "price_usd": 10.0
+  }
+ ],
+ "p-j-whelihan-s-pub-and-restaurant-blue-bell": [
+  {
+   "category": "draft",
+   "label": "domestic drafts",
+   "price_usd": 3.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "corona",
+   "price_usd": 4.0
+  },
+  {
+   "category": "wine",
+   "label": "house wine",
+   "price_usd": 6.0
+  },
+  {
+   "category": "cocktail",
+   "label": "krushes",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "boneless wings",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "boneless wings (share)",
+   "price_usd": 10.0
+  }
+ ],
+ "p-j-whelihan-s-west-chester": [
+  {
+   "category": "draft",
+   "label": "domestic drafts",
+   "price_usd": 3.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "corona",
+   "price_usd": 4.0
+  },
+  {
+   "category": "wine",
+   "label": "house wine",
+   "price_usd": 6.0
+  },
+  {
+   "category": "cocktail",
+   "label": "krushes",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "boneless wings",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "boneless wings (share)",
+   "price_usd": 10.0
   }
  ],
  "paladar-latin-kitchen-rum-bar-king-of-prussia": [
@@ -607,6 +764,28 @@
    "price_usd": 3.0
   }
  ],
+ "the-stone-tavern-west-chester": [
+  {
+   "category": "bottle_can",
+   "label": "Coors Lite",
+   "price_usd": 3.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Yuengling",
+   "price_usd": 3.0
+  },
+  {
+   "category": "draft",
+   "label": "Rotating Draft",
+   "price_usd": 5.0
+  },
+  {
+   "category": "wine",
+   "label": "House Wines",
+   "price_usd": 5.0
+  }
+ ],
  "the-stray-dog-tavern-skippack": [
   {
    "category": "bottle_can",
@@ -670,18 +849,6 @@
    "category": "food",
    "label": "SNACKS",
    "price_usd": 7.0
-  }
- ],
- "wissahickon-brewing-co-philadelphia": [
-  {
-   "category": "draft",
-   "label": "drafts",
-   "price_usd": 1.0
-  },
-  {
-   "category": "wine",
-   "label": "wine",
-   "price_usd": 3.0
   }
  ],
  "yakitori-boy-philadelphia": [

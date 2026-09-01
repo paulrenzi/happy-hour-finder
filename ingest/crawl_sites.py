@@ -63,6 +63,16 @@ CONTEXT_RE = re.compile(
 # document a happy-hour page linked as its menu -- on an ordinary page this
 # matches the dinner menu, which is why it is not part of DEAL_RE.
 MENU_ITEM_RE = re.compile(r"[A-Za-z].{2,60}?\s\$\s?\d{1,3}(?:\.\d\d)?\s*$")
+# The same line with the price written FIRST -- '$4.50 Draft Beer', '$6.50
+# Sangrias (White or Red)'. MENU_ITEM_RE is anchored to the end of the line and
+# cannot see this form at all, so a venue that prices its menu price-first was
+# read as having published nothing: Paladar has six priced lines on its own
+# happy-hour page and exactly one of them, the one DEAL_RE happened to match on
+# the word 'Draft', was ever stored. The extractor grew the mirror of this last
+# session (TRAILING_PRICE_RE); the crawler never did, so the lines it needed
+# were being thrown away one step earlier. Scoped to `loose` exactly as
+# MENU_ITEM_RE is -- same containment, same safety argument.
+LEADING_ITEM_RE = re.compile(r"^\$\s?\d{1,3}(?:\.\d\d)?\s+[A-Za-z].{2,60}$")
 # A price sitting on a line of its own. A themed menu puts the item name and its
 # price in separate blocks, so visible_text emits '$ 5' with nothing attached:
 # Bloom Southern Kitchen's happy-hour page yields thirty of these and not one
@@ -256,9 +266,15 @@ HH_HEADING_RE = re.compile(r"happy\s*hour|social hour|power hour|bar bites", re.
 # Anything not on it closes the section, so an unrecognised heading fails the
 # section SHORT, which is the safe direction: a section that runs on does not
 # add noise, it publishes a wrong price.
+# The nouns are written singular but a menu writes them PLURAL -- Paladar's
+# happy hour is subdivided by a heading that says 'DRINKS', and `drink` does not
+# match it, so the section closed on the venue's own subheading and all six of its
+# prices sat one line outside it. The asymmetry was accidental, not a safety
+# margin: `snack` and `bite` already survive in the plural through the trailing
+# branch below, and `drink` did not. The two branches now agree.
 SUBDIVISION_RE = re.compile(
     r"^(?:food|drink|bar|beer|wine|cocktail|liquor|spirit|snack|bite|share|"
-    r"small|sip|draft|draught|bottle|can|shot|feature|select|our)\b|"
+    r"small|sip|draft|draught|bottle|can|shot|feature|select|our)s?\b|"
     r"\b(?:specials?|bites|snacks|shareables?|small plates|by the glass)\s*$",
     re.I)
 HEADING_TAG_RE = re.compile(r"<h[1-6][^>]*>(.*?)</h[1-6]>", re.S | re.I)
@@ -300,6 +316,13 @@ def hh_sections(html, text):
     above it. A section that runs on does not add noise, it publishes a WRONG
     PRICE, and that is the failure this function exists to prevent.
 
+    A heading that states a CLOCK TIME does not close the section either. It is
+    the happy hour's own hours line, marked up as a heading -- Sullivan's opens
+    'King Of Prussia Happy Hour Menu' and the very next heading is 'Available in
+    the bar, Monday-Thursday 3pm-6pm', which closed the section on the line after
+    it opened and put the whole menu out of reach. No menu is titled with a time
+    range, so this cannot let the next menu in.
+
     A heading is an <h1>-<h6> when the page has any. When a page has none at all
     -- Chili's location pages are divs from top to bottom -- a short standalone
     line falls back into the role, and the section is capped rather than closed
@@ -320,7 +343,8 @@ def hh_sections(html, text):
         # A subdivision of the happy hour does not end it; anything else does.
         closes = [i for i in heads
                   if not SUBDIVISION_RE.search(lines[i].strip())
-                  and not HH_HEADING_RE.search(lines[i])]
+                  and not HH_HEADING_RE.search(lines[i])
+                  and not TIME_CONTEXT_RE.search(lines[i])]
     else:
         def headinglike(ln):
             return (len(ln) <= FALLBACK_MAX_CHARS and "$" not in ln
@@ -378,7 +402,8 @@ def quotes(text, menu_doc=False, hh_page=False, hh_lines=frozenset(), stacks=Non
         loose = menu_doc or hh_page or inside
         bare = (hh_page or inside) and BARE_PRICE_RE.match(ln)
         if (not DEAL_RE.search(ln) and not bare
-                and not (loose and MENU_ITEM_RE.search(ln))):
+                and not (loose and (MENU_ITEM_RE.search(ln)
+                                   or LEADING_ITEM_RE.search(ln)))):
             continue
         if len(ln) > 400:
             continue
@@ -679,8 +704,94 @@ def sitemap_links(session, page_url, robots):
     return out
 
 
+# Darden's brands publish their happy hour as DATA, not as a page. The site is a
+# Next.js shell -- 2,694 bytes of HTML with nothing in it, behind an Akamai bot
+# manager -- so every parser this file contains reads zero lines from it, and
+# Yard House, Seasons 52, Eddie V's and The Capital Grille all came back from
+# King of Prussia with nothing. Rendering it in a real browser does not help
+# either: /happy-hour asks you to pick a location before it will show anything.
+#
+# The location page's own API answers directly, needs one header and no browser,
+# and returns the restaurant's happy-hour hours per day under hourCode 'HH'.
+# That is the venue's own structured statement of its hours -- better evidence
+# than a regex over prose, not worse -- so it is turned back into a QUOTE and
+# handed to the same extractor and the same validators as everything else. No
+# new publishing path and no new trust tier: the crawl just learns to read one
+# more format.
+#
+# Only the HH code is read. 'Late Night Happy Hour' carries its own code and an
+# end time of '12:00 PM' meaning midnight, and is left for when there is a
+# reason to want it.
+DARDEN_HOSTS = ("yardhouse.com", "seasons52.com", "eddiev.com",
+                "thecapitalgrille.com", "olivegarden.com", "cheddars.com",
+                "bahamabreeze.com", "longhornsteakhouse.com")
+# .../locations/pa/king-of-prussia/king-of-prussia-king-of-prussia-mall/8371
+DARDEN_NUM_RE = re.compile(r"/locations/(?:[^/]+/){2,3}(\d{3,6})(?:[?#]|$)")
+DARDEN_DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday",
+               "Saturday", "Sunday"]
+
+
+def darden_ref(url):
+    """(host, restaurant number) if this is a Darden location URL, else None."""
+    host = registrable(urllib.parse.urlparse(url).netloc)
+    if host not in DARDEN_HOSTS:
+        return None
+    m = DARDEN_NUM_RE.search(url)
+    return (host, m.group(1)) if m else None
+
+
+def darden_quotes(url):
+    """The venue's happy-hour hours, read from its own API, as quoted lines.
+
+    Days sharing one start and end are named together in a single quote, because
+    the extractor reads days and a window out of ONE sentence -- a quote per day
+    would publish only whichever day the lead quote happened to be.
+    """
+    ref = darden_ref(url)
+    if not ref:
+        return None, []
+    host, num = ref
+    api = f"https://www.{host}/api/restaurants/{num}"
+    req = urllib.request.Request(api, headers={"X-Source-Channel": "WEB", "User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=TIMEOUT) as fh:
+        rest = json.load(fh)["restaurant"]
+    return api, darden_lines(rest)
+
+
+def darden_lines(rest):
+    """The 'HH' hours of one restaurant record, as quoted lines."""
+    by_window = {}
+    for day in rest.get("restaurantHours") or []:
+        name = day.get("day")
+        if name not in DARDEN_DAYS:
+            continue
+        for hi in day.get("hoursInfo") or []:
+            if hi.get("hourCode") != "HH":
+                continue
+            key = (hi.get("startTime"), hi.get("endTime"))
+            if all(key):
+                by_window.setdefault(key, []).append(name)
+    out = []
+    for (start, end), days in by_window.items():
+        days.sort(key=DARDEN_DAYS.index)
+        out.append(f"Happy Hour / {', '.join(days)} / {start} - {end}")
+    return out
+
+
 def crawl_one(session, venue, robots):
     pages, hits, images = [], [], []
+    # A Darden site has nothing to read in its HTML; its API has the hours. Asked
+    # first, and the ordinary crawl still runs after -- it costs one request and
+    # a venue that turns out not to be Darden is unaffected.
+    try:
+        api, found = darden_quotes(venue["website"])
+    except Exception as e:  # noqa: BLE001 -- one dead API must not end the run
+        api, found = None, []
+        pages.append({"url": venue["website"], "result": f"error: darden api {type(e).__name__}"})
+    if api:
+        pages.append({"url": api, "result": f"ok, {len(found)} quote(s) from the venue API"})
+        for q in found:
+            hits.append({"url": venue["website"], "quote": q})
     queue = [(venue["website"], 1)]
     fetched = 0
     docs = 0

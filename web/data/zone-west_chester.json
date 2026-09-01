@@ -271,7 +271,38 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "domestic drafts",
+       "price_usd": 3.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "corona",
+       "price_usd": 4.0
+      },
+      {
+       "category": "wine",
+       "label": "house wine",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "label": "krushes",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "label": "boneless wings",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "boneless wings (share)",
+       "price_usd": 10.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -279,7 +310,8 @@
       "kind": "venue_site",
       "url": "https://locations.pjspub.com/pa/west-chester/1347-wilmington-pike",
       "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
@@ -337,7 +369,7 @@
      "source": {
       "kind": "venue_site",
       "url": "https://www.pietrosprime.com",
-      "quote": "HAPPY HOUR / Join us every Monday through Friday from 5-7 PM in the bar area! / .sfxZxsX{--wbu-color-blue-0:#0F2CCF;--wbu-color-blue-100:#2F5DFF;--wbu-color-blue-200:#597DFF;--wbu-color-blue-300:#ACBEFF;--wbu-color-blue-400:#D5DFFF;--wbu-color-blue-500:#EAEFFF;--wbu-color-blue-600:#F5F7FF;--wbu-color-black-0:#151414;--wbu-color-black-100:#383838;--wbu-color-black-200:#525150;--wbu-color-black-300:"
+      "quote": "HAPPY HOUR / Join us every Monday through Friday from 5-7 PM in the bar area!"
      }
     }
    ]
@@ -394,6 +426,16 @@
        "category": "draft",
        "label": "Domestic Drafts",
        "price_usd": 4.0
+      },
+      {
+       "category": "draft",
+       "label": "Craft Drafts",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "Glasses of Wine",
+       "price_usd": 6.0
       },
       {
        "category": "food",
@@ -462,6 +504,11 @@
      "items": [
       {
        "category": "food",
+       "label": "Burgers",
+       "price_usd": 12.0
+      },
+      {
+       "category": "food",
        "label": "Tacos &",
        "price_usd": 5.0
       },
@@ -472,7 +519,7 @@
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -529,7 +576,18 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Rotating Draft",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "House Wines",
+       "price_usd": 5.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",

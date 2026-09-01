@@ -50,18 +50,19 @@
      "items": [
       {
        "category": "draft",
-       "label": "off pints during Happy Hour",
+       "label": "pints",
        "price_usd": 1.0
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://blackhorsetaverns.com/phoenixville/",
       "quote": "Happy Hour Monday-Friday 4-6pm"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
