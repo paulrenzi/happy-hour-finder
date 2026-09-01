@@ -181,7 +181,12 @@ def shell_digest():
     h = hashlib.sha256()
     for name in SHELL_FILES:
         with open(os.path.join(REPO, "web", name), "rb") as fh:
-            h.update(fh.read())
+            # Line endings are normalised before hashing. A build run on
+            # Windows against a working copy with CRLF in it produced a
+            # DIFFERENT digest from the same commit on CI, where git checks the
+            # files out with LF -- so the stamp the build wrote failed the test
+            # that recomputes it, and the deploy never shipped.
+            h.update(fh.read().replace(b"\r\n", b"\n"))
     h.update(_sw_source_for_digest())
     return h.hexdigest()[:8]
 
@@ -207,7 +212,7 @@ def stamp_service_worker(built_at, n_published):
     new = re.sub(r'const CACHE = "[^"]*";',
                  f'const CACHE = "{sw_cache_name(built_at, n_published)}";', src, count=1)
     if new != src:
-        with open(path, "w", encoding="utf-8") as fh:
+        with open(path, "w", encoding="utf-8", newline="\n") as fh:
             fh.write(new)
         print(f"sw.js cache -> {sw_cache_name(built_at, n_published)}")
 
