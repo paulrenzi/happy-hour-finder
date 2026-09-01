@@ -1,6 +1,11 @@
 # Handoff — five ways a page went missing, and the Delaware door is now locked
 
-**Written 2026-09-01.** Continues `HANDOFF-PRICES-COST-20260901.md`.
+**Written 2026-09-01. HEAD `325cbd2` on `master`, pushed, CI green, live board
+verified in WebKit.** Continues `HANDOFF-PRICES-COST-20260901.md`.
+
+**The board went 169 → 173 venues with a window, 93 → 95 priced, 267 → 284 items** —
+and that number is *net of removing 17 wrong prices that were live*. Suite green at
+**260 Python + JS fail 0**, 174 cards painted.
 
 ---
 
@@ -78,6 +83,11 @@ sidecar with **no model calls**. Two things it had to learn the hard way:
 - 🛑 **`crawl_sites.py` writes `crawl_hits.json` INCREMENTALLY, inside its loop.** Running
   `--reverify` against a half-written hits file dropped **all 137 items**. It now always
   leaves the previous sidecar at `.bak`, and **you must not run it while a crawl is in flight.**
+- 🛑 **It keeps what it cannot re-judge.** A first attempt dropped **15 live items across
+  10 venues** because `50% off` is written *"half price"* and carries no `50` anywhere for
+  the reconstruction to find. **A failed reconstruction is not a verdict.** It now keeps
+  those and reports them separately. On the real sidecar it drops exactly the two it should:
+  Wissahickon's `drafts $1.00` and `wine $3.00`.
 
 ---
 
