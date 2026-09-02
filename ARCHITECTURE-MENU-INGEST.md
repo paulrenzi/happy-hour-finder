@@ -618,15 +618,18 @@ bandwidth to re-learn what we hold.
 
 ```
 python ingest/reach_llm.py town phoenixville --spend       # what the web says the town has ($0.13) -> ground truth candidates
-python ingest/needy.py phoenixville --show --lids run.lids
+python ingest/needy.py phoenixville --show --lids run.lids   # reads BOTH bundle files
 python ingest/reach_llm.py links --lids run.lids --show     # a model picks the HH / town page off each site's link inventory
 python ingest/crawl_sites.py --lids run.lids --recrawl --render   # --lids keeps EVERY page for the verdict
 python ingest/extract_menu_images.py --lids run.lids --show # menus posted as PICTURES (vision + per-image transcript)
 python ingest/reach_llm.py verdict --lids run.lids --show   # a model: does a "no happy hour" page state one anyway?
 python ingest/read_pages_llm.py --lids run.lids --show --rejects
 python ingest/read_windows_llm.py --lids run.lids --show --rejects   # the WINDOW half
+python ingest/read_menus_llm.py ask --lids run.lids --show --rejects 40  # THE MODEL READS THE MENU
+python ingest/read_menus_llm.py build --show                # re-check every quote against the file on disk
 python ingest/extract_deals.py && python ingest/build_venue_base.py && python ingest/build_bundles.py
-python ingest/fetch_venue_photos.py --from-board --spend    # a storefront photo for every new card (~$0.04 each)
+python ingest/fetch_venue_photos.py --from-board --zone phoenixville --every-venue --spend
+                                                           # a photo for EVERY licensee in the town, deals or not (~$0.04 each)
 python ingest/build_venue_base.py && python ingest/build_bundles.py
 bash tests/run.sh && git add -A && git commit && git push
 python scratch/card_diff.py          # WHICH cards moved — a total cannot see this
@@ -987,6 +990,116 @@ five found by a human after the run, zero found by the pass before him.
 - Wix pages carry zero-width characters inside words; `grounded()` strips `​-‍﻿`.
 - `DEAL_RE` still matches "late night menu"; only the picture-wins rule kept Molly's honest.
 - Justop's photo: Google returns the apartment block; no fix.
+
+
+---
+
+## ✅ THE MODEL READS MENUS — built 2026-09-02, and what a blind town cost
+
+`ingest/read_menus_llm.py`. The table in the section above listed five model
+calls and every one of them read something a regex had already chosen. This is
+the sixth and it reads the document:
+
+| call | reads | decides |
+|---|---|---|
+| `read_menus_llm ask` | **the whole page, and the whole transcript of a menu posted as a picture** | **the deals on it** — `{kind, days, start, end, items, quote}` |
+
+`extract_deals`'s grammar is still imported. It is now only ever asked to
+REFUSE — `HEDGE_RE`, `ONE_OFF_RE`, `MEAL_RE`, `days_in()` as a cross-check,
+`_hours()` for the over-4h rule — and `windows_from()` is never asked what a
+window is. Landing is a venue file `data/deals_menus.json`, merged by
+`build_bundles` above the extractor and below a person.
+
+**Grounding, all of it in code.** The quote is a literal substring of the
+document, checked when the answer is written and **re-checked by `build` against
+the file on disk** — the sidecar is not evidence of itself. The clock has to be
+spelled inside the quote; the days have to be named in it; every item's price
+has to sit in its own evidence span; `validate_pa` decides last.
+
+### `kind` is what replaced the day-specials refusal
+
+Paul, 2026-09-02: *"daily specials are a deal type, and they should be picked up
+and added. they are happy hour items."* The refusals in
+`extract_prices_llm.vouched()` and `read_pages_llm.worth_reading()` were the
+reason Sly Fox's card was two items. It now ships its Appy Hour **and** the
+Wednesday $9 growlers, the $12 cheesesteak-and-a-pint, the Thursday $12 burger
+and pint, the Saturday $11 mystery pitcher and the Sunday $2-off Bloody Marys —
+seven deals, each with the venue's own heading on it.
+
+🔑 **A daily special routinely states NO clock of its own.** "Wednesday: $9
+Select Growlers" carries a day and a price and no time, because it runs the
+whole day the pub is open — and the pub's hours are further up the same page.
+So a `daily_special` or `food_combo` may ground its clock in a SECOND span of
+the same document (`clock_quote`), and the card records which. A `happy_hour`
+may not: one that does not state its own hours is not one we can publish, and a
+9-hour "happy hour" is the opening hours by another name.
+
+### 🛑 The guard cost a $50 prime rib — the heading is the venue's own word
+
+The first run read William Penn Inn's dinner PDF and returned three
+`daily_special` rows: Tue–Fri 5:00–6:30, Saturday 4:30–5:30, Sunday 3:00–4:00,
+ten entrées at $35–$50 under each. **Every one was correctly grounded.** The
+clock is on the page, the days are on the page, the prices are on the page, and
+it is a recurring time-bounded priced offer. It is still not a thing to put on
+this board, because the heading two lines above reads **"WILLIAM PENN INN PRIX
+FIXE"**. It is the dinner service, served early.
+
+So the model must return the venue's **own heading** for each deal, checked as a
+literal substring like every other span, and `NOT_A_DEAL_RE` refuses a heading
+that names a meal service whatever `kind` the model chose. It caught Bridget's
+Steakhouse's "Pre-Fixe Dinner Menu" on the very next run. 🔑 **The list is a
+BLOCKLIST on purpose** — a whitelist of deal words would refuse "Wing
+Wednesday", and refusing is the invisible answer, not the safe one.
+
+### 🛑 Three instruments were wrong the moment a venue could hold two deals
+
+All three had been right for exactly as long as every card carried one deal.
+
+1. **`needy.py` read only `venues-<zone>.json`** — which `build_bundles` fills
+   with the venues that have NO deal. So the second half of its own rule, *"or a
+   deal carrying no items"*, **had never selected anything**: 76 of the corpus's
+   214 deal-bearing venues carry a window and no item and not one of them could
+   be reached by a scoped run. It hid Fireside Bar and Grill on the blind town —
+   a venue Google names as having a happy hour.
+2. **`card_diff` read `deals[:1]`** and called that the card. Sly Fox went from
+   one deal to seven and the diff reported it as "2 items → 1". A card is all of
+   its deals.
+3. **`lib.js` pushed one board row per DEAL.** Sly Fox painted seven cards in a
+   row and Sedona two. It is one row per bar now — the deal that answers "can I
+   go now?" first — and the venue sheet still lists every one. `render_check`'s
+   item gate moved with it: a card paints ONE of a venue's deals, so it can no
+   longer name which, and instead asserts that every painted label is one the
+   venue ships and that a venue whose deals ALL carry items never paints blank.
+
+🔑 And outranking the extractor **loses its sidecars**: Bistro on Bridge went
+26 items → 6 on the first build, the same prices verified against the same page,
+dropped because the row carrying them had been outranked. `build_bundles` now
+merges the price sidecars in behind a model-read venue's own items, into the
+richest `happy_hour` only — one deal per venue, or Sedona's 24 prices landed on
+both of its happy-hour blocks and every item painted twice.
+
+### 🎯 The blind town: Ambler / Upper Dublin, 2026-09-02
+
+Chosen because nobody had opened it and none of its zips bleed into a worked
+zone. **35 licensees, 13 with a website, 2 cards before, 2 cards after, 0 new
+venues.** Baseline in `data/ground_truth/ambler_upper_dublin.json`.
+
+| stage | result |
+|---|---|
+| `reach_llm town` | 4 searches, 21 candidates matched to a licensee, 8 not held |
+| `needy` | 15 (13 before the `needy.py` fix, which added the two card-bearing ones) |
+| `reach_llm links` | **7 of 15 could not be fetched at all** — 403, SSLError, ConnectTimeout, ReadTimeout |
+| `crawl --lids --recrawl --render` | 15 crawled, **6 with ZERO pages**, 2 with a deal quote |
+| `extract_menu_images` | 0 — nobody in this town posts a menu as a picture |
+| `reach_llm verdict` | 18 pages, 0 quotes added |
+| `read_menus_llm` | 21 documents, **7 deals across 2 venues** — and it is the only pass that got William Penn Inn and Bridget's in front of a reader at all |
+| photos `--every-venue` | 27 of 33 fetched, 6 refused by the name guard, 2 have none |
+
+🛑 **The reach half is the whole story of this town.** Six of fifteen venues
+returned no page at all, and 14 of the 21 things Google calls a happy hour in
+Ambler have no website on file. Every one of those is invisible to a reader,
+however well it reads. **The next number that matters is Paul's minute against
+this list**, not another pass over the nine pages we did fetch.
 
 
 ---
