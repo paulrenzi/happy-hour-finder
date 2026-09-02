@@ -1204,6 +1204,79 @@ reader can see exactly which lines it was assembled from.
 
 ---
 
+## 🛑🔑 BONEFISH GRILL WILLOW GROVE — the menu was ONE LINK off the page we already had (2026-09-02)
+
+Paul found it by hand:
+`https://bonefishgrill-d8cba7f0a6b8gwd7.a02.azurefd.net/menu/BSH-1_0626.pdf`
+— **3:00PM–6:30PM, EVERY. SINGLE. DAY., ~15 items with prices.** A full card,
+in the town we had just called proven.
+
+🔑 **We fetched the page that links it.** `data/pages/61425__336b7771523f.json`
+is the Willow Grove location page, on disk, from the scoped run. The PDF anchor
+is in that HTML. Nothing was unreachable, nothing was blocked — robots allows
+both hosts — and no budget ran out. **Five independent gates each dropped it on
+their own**, which is why it read as "correctly empty":
+
+1. **`candidate_links()` drops the link as foreign.** The test is
+   `registrable(netloc) != host`, and the menu is on a CDN:
+   `bonefishgrill-d8cba7f0a6b8gwd7.a02.azurefd.net` registers as `azurefd.net`,
+   not `bonefishgrill.com`. **A chain's menu assets do not live on the chain's
+   domain.** The sibling-host widening that rescued locations.pjspub.com was
+   written for subdomains and stops exactly here — yet the CDN host carries the
+   brand's own label in its name, which is the same evidence a subdomain is.
+2. **The anchor's label is not the venue's word for the link.** The `<a>` wraps a
+   card image and its inner text is *"Let's Go!"*; the title **"Social Hour
+   Menu"** sits in the markup **above** the anchor. `candidate_links` reads only
+   `<a>...</a>`, so the one word that identified the document was outside the
+   window it looks at.
+3. **`HH_DOC_RE` does not match the filename.** `BSH-1_0626.pdf` — BSH is
+   *Bonefish Social Hour*, and the venue's abbreviation for its own deal is not
+   a word we could have listed. The rule "follow a PDF that NAMES ITSELF the
+   happy hour" has no purchase on a filename that is a SKU.
+4. **The PDF is linked from a page that is not an HH page**, so the other half
+   of the queueing rule (`on_hh_page`) is false too. Gates 3 and 4 are the whole
+   condition: `if on_hh_page or HH_DOC_RE.search(u)`.
+5. **`EVERYDAY_RE` cannot read `EVERY. SINGLE. DAY.`** — `daily|every ?day|all
+   week|7 days a week|seven days`. `days_in()` returns the empty set on the
+   clock line, so even with the document in hand the days are unnamed.
+   (`window_in()` reads `3:00PM – 6:30PM` correctly — the clock half is fine.)
+
+🛑 **And the on-domain page that names the deal carries no hours and no prices.**
+`www.bonefishgrill.com/social-hour-menu/irresistible-cocktails` exists,
+`url_names_hh()` says True, and it lists item names only. Reaching *it* would
+have produced a card with a heading and nothing to publish. **The PDF is the
+only document in the world that states this venue's happy hour**, so any fix
+that stops short of fetching it is not a fix.
+
+### 🔑 The general shape, which is not about Bonefish
+
+**A chain location page is a link farm to assets on hosts we call foreign,
+labelled outside the anchor, named by an internal SKU.** Five gates, each
+individually defensible, and the product of them is zero. `report_holes` had
+nothing to say because every gate reported success. This is the same class as
+the four silent defects above: **a refusal that never prints is indistinguishable
+from an absence.**
+
+### Named, sized, not yet built
+
+- **A.** Allow a foreign host for a `.pdf` when that host's netloc contains the
+  page's registrable label (`bonefishgrill` in `bonefishgrill-…azurefd.net`).
+  Narrow: it opens CDNs the brand named after itself, not the web.
+- **B.** Give `candidate_links` the ~200 characters **before** the `<a>` as a
+  second label, so a card's title counts. This alone turns gate 3 into a hit,
+  because "Social Hour Menu" is in that window and `DEAL_RE` already knows
+  `social hour`.
+- **C.** `EVERYDAY_RE` must read `every\W*single\W*day`.
+- **D.** ❓ **PAUL'S CALL: `DOC_CAP` is 2 and this page links THREE PDFs**
+  (brunch, gluten-friendly, social hour). With A+B the social-hour one ranks
+  first by label, so 2 is probably enough — but if the label window is noisy the
+  budget decides which menu we read, and the wrong two cost the card.
+
+🛑 **None of this ships until it is proven on the next town Paul names**, and
+the Bonefish card is the acceptance test: 3:00pm–6:30pm, seven days, items priced.
+
+---
+
 ## Standing rules
 
 - **One venue at a time, finished on the live site before the next**, and Paul
