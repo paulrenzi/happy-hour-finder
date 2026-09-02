@@ -400,14 +400,17 @@ def street_key(address):
 
 
 def house_numbers(address):
-    """Every number a range spans, so '208-212' meets '212' AND '208'."""
-    num = re.match(r"\s*(\d+)(?:\s*-\s*(\d+))?[A-Za-z]?\b", address or "")
+    """Every number a range spans, so '208-212' meets '212' AND '208'.
+
+    A range can have more than two parts: Limoncello's licence reads
+    '5-7-9 N Walnut St' and Google calls it '9 N Walnut St', so reading only the
+    first two numbers lost the very one the sign uses -- and the venue read as
+    'NOT A LICENSEE WE HOLD' in a town where we hold it.
+    """
+    num = re.match(r"\s*(\d+(?:\s*-\s*\d+)*)[A-Za-z]?\b", address or "")
     if not num:
         return set()
-    out = {num.group(1)}
-    if num.group(2):
-        out.add(num.group(2))
-    return out
+    return {n.strip() for n in num.group(1).split("-")}
 
 
 def name_key(name):
@@ -417,8 +420,15 @@ def name_key(name):
     return " ".join(s.split())
 
 
-def match_place(place, base_rows):
-    """The base LID this Places row is, or None. Address first, then name."""
+def match_place(place, base_rows, zips=()):
+    """The base LID this Places row is, or None. Address first, then name.
+
+    `zips` is the ZIP set of the zone being searched. Google and the PLCB do
+    not always agree on a ZIP -- The Stone Tavern is 19382 to Google and 19380
+    on its licence, both West Chester -- and requiring them to be equal turned
+    a venue we hold into a venue we do not. Inside one zone that difference is
+    not evidence of a different bar, and the name test is still exact.
+    """
     addr = place.get("formattedAddress", "")
     key = street_key(addr)
     if key[0]:
@@ -435,9 +445,11 @@ def match_place(place, base_rows):
             return by_name[0] if by_name else same[0]
     nk = name_key(place["displayName"]["text"])
     zipc = key[1]
+    local = set(zips)
     cands = [lid for lid, v in base_rows
              if nk and name_key(v["name"]) == nk
-             and (not zipc or zipc in (v.get("address") or ""))]
+             and (not zipc or zipc in (v.get("address") or "")
+                  or (zipc in local and street_key(v.get("address"))[1] in local))]
     return cands[0] if len(cands) == 1 else None
 
 
@@ -506,7 +518,7 @@ def town(args):
             if p.get("id") in seen:
                 continue
             seen.add(p.get("id"))
-            lid = match_place(p, rows)
+            lid = match_place(p, rows, zips)
             site = p.get("websiteUri") or ""
             if lid:
                 found += 1

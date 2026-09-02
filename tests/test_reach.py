@@ -113,6 +113,66 @@ class ASearchedVenueIsMatchedOnAddressFirst(unittest.TestCase):
         self.assertEqual(rl.town_of(""), "")
 
 
+class NotALicenseeWeHoldMustMeanIt(unittest.TestCase):
+    """Two ways the town search called a venue missing that we already had.
+
+    This is the count Paul asked about, so the instrument reporting it has to be
+    right before the number means anything. Four of West Chester's twelve
+    "NOT A LICENSEE WE HOLD" lines were ours; two were these.
+    """
+
+    ROWS = [
+        ("126237", {"name": "The Stone Tavern",
+                    "address": "1227 W Chester Pk, West Chester PA 19380"}),
+        ("59213", {"name": "Limoncello",
+                   "address": "5-7-9 N Walnut St, West Chester PA 19380"}),
+        ("99999", {"name": "Bar Avalon",
+                   "address": "400 Elsewhere Rd, Pottstown PA 19464"}),
+    ]
+    ZIPS = {"19380", "19382"}
+
+    @staticmethod
+    def place(name, address):
+        return {"displayName": {"text": name}, "formattedAddress": address}
+
+    def test_a_house_range_keeps_its_last_number(self):
+        # '5-7-9 N Walnut St' is the licence; '9 N Walnut St' is the sign. Only
+        # the first two numbers were read, so the one Google uses was lost.
+        self.assertEqual(rl.house_numbers("5-7-9 N Walnut St"),
+                         {"5", "7", "9"})
+        self.assertEqual(rl.house_numbers("208-212 Main St"), {"208", "212"})
+        self.assertEqual(rl.house_numbers("1227 W Chester Pk"), {"1227"})
+
+    def test_the_venue_at_a_three_part_range_is_found(self):
+        self.assertEqual(
+            rl.match_place(self.place("Limoncello West Chester",
+                                      "9 N Walnut St, West Chester, PA 19380, USA"),
+                           self.ROWS, self.ZIPS),
+            "59213")
+
+    def test_google_and_the_plcb_may_disagree_on_a_zip_inside_one_town(self):
+        # 19382 to Google, 19380 on the licence, both West Chester. Requiring
+        # them equal turned a venue on our own board into a venue we do not
+        # hold. The name test is still exact and both ZIPs must be the zone's.
+        self.assertEqual(
+            rl.match_place(self.place("The Stone Tavern",
+                                      "1227 West Chester Pike, West Chester, PA 19382, USA"),
+                           self.ROWS, self.ZIPS),
+            "126237")
+
+    def test_a_zip_outside_the_zone_still_does_not_match(self):
+        self.assertIsNone(
+            rl.match_place(self.place("The Stone Tavern",
+                                      "1227 Some Pike, Reading, PA 19601, USA"),
+                           self.ROWS, self.ZIPS))
+
+    def test_a_venue_we_really_do_not_hold_is_still_reported_missing(self):
+        self.assertIsNone(
+            rl.match_place(self.place("Bier and Loathing",
+                                      "113 W Market St, West Chester, PA 19382, USA"),
+                           self.ROWS, self.ZIPS))
+
+
 class CoverageDividesByConfirmedRowsOnly(unittest.TestCase):
     def test_candidates_are_not_in_the_denominator(self):
         rows = [{"lid": "1", "confirmed": True}, {"lid": "2", "confirmed": True},
