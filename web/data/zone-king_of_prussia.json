@@ -50,7 +50,53 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "coconut mojito",
+       "price_usd": 9.0
+      },
+      {
+       "category": "cocktail",
+       "label": "coco melon margarita",
+       "price_usd": 9.0
+      },
+      {
+       "category": "cocktail",
+       "label": "cazuela",
+       "price_usd": 9.95
+      },
+      {
+       "category": "cocktail",
+       "label": "la pi\u00f1a margarita",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "label": "michelada",
+       "price_usd": 8.0
+      },
+      {
+       "category": "wine",
+       "label": "red sangria",
+       "price_usd": 8.75
+      },
+      {
+       "category": "wine",
+       "label": "lopez de haro blanco viura, spain",
+       "price_usd": 6.75
+      },
+      {
+       "category": "wine",
+       "label": "glup glup garnacha, spain",
+       "price_usd": 6.75
+      },
+      {
+       "category": "bottle_can",
+       "label": "tecate, light lager (mexico)",
+       "price_usd": 4.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -58,7 +104,8 @@
       "kind": "venue_site",
       "url": "https://bartaco.com/location/kop/",
       "quote": "high tide happy hour / weekdays 3-6pm / mon-thurs last 1.5 hours before close"
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },

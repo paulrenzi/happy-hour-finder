@@ -250,7 +250,28 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Domestic Drafts",
+       "price_usd": 3.75
+      },
+      {
+       "category": "well",
+       "label": "Mixed Well Drinks",
+       "price_usd": 5.0
+      },
+      {
+       "category": "draft",
+       "label": "Select Micro Drafts",
+       "price_usd": 5.5
+      },
+      {
+       "category": "wine",
+       "label": "House Wines",
+       "price_usd": 7.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
@@ -258,7 +279,8 @@
       "kind": "venue_site",
       "url": "https://trappetavern.com/",
       "quote": "The kitchen is cooking till 2 am Every night! Join us for our unbeatable Happy Hour, Monday-Friday 4-6 pm with drink, food, and draft features."
-     }
+     },
+     "items_source": "llm_extract"
     }
    ]
   },
