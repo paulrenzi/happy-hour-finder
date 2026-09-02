@@ -2094,14 +2094,32 @@ def crawl_one(session, venue, robots):
             docs += 1
         else:
             fetched += 1
+        recovered_by_render = False
         try:
             html, err = get(session, url)
         except Exception as e:  # noqa: BLE001 -- one dead site must not end the run
             pages.append({"url": url, "result": f"error: {type(e).__name__}"})
             continue
         if err:
-            pages.append({"url": url, "result": err})
-            continue
+            # A public, hour-named page can block a polite HTTP client while
+            # still rendering normally. Spend the existing bounded browser
+            # retry before calling that a failed answer.
+            shown = None
+            if render_wanted(url, [], depth, bool(hits)):
+                try:
+                    shown = render(url)
+                except Exception as e:  # noqa: BLE001 -- preserve the failed fetch
+                    pages.append({"url": url,
+                                  "result": f"{err}; render failed: {type(e).__name__}"})
+                    continue
+            if not shown:
+                pages.append({"url": url, "result": err})
+                continue
+            html = shown
+            recovered_by_render = True
+            pages.append({"url": url,
+                          "result": f"rendered after {err}: 0 lines -> "
+                                    f"{len(text_lines_emph(html)[0])}"})
         # Before reading a word of it: is this page even about this venue? A
         # chain serving another location's page at ours is a wrong ANSWER, not
         # a miss, and it is the only failure here that no later gate catches.
@@ -2133,8 +2151,8 @@ def crawl_one(session, venue, robots):
                 pages.append({"url": url,
                               "result": "error: frc menu %s" % type(e).__name__})
         lines, stacks, emph = text_lines_emph(html)
-        rendered = False
-        if render_wanted(url, lines, depth, bool(hits)):
+        rendered = recovered_by_render
+        if not rendered and render_wanted(url, lines, depth, bool(hits)):
             try:
                 shown = render(url)
             except Exception as e:  # noqa: BLE001 -- one dead render, not the run

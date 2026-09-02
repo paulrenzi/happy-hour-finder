@@ -2190,6 +2190,22 @@ class AShellHomepageIsWorthOneRender(unittest.TestCase):
         self.assertIn("https://bar.example/happy-hour", [p["url"] for p in pages])
         self.assertTrue(hits)
 
+    def test_a_blocked_happy_hour_page_gets_the_bounded_browser_retry(self):
+        session = unittest.mock.Mock()
+        session.get.return_value = unittest.mock.Mock(status_code=403,
+                                                       headers={"content-type": "text/html"},
+                                                       text="blocked")
+        rendered = "Happy Hour Monday - Friday 3pm - 6pm $5 drafts"
+        with unittest.mock.patch.object(crawl_sites, "allowed", lambda u, c: True), \
+                unittest.mock.patch.object(crawl_sites, "DELAY", 0), \
+                unittest.mock.patch.object(crawl_sites, "render", lambda u: rendered), \
+                unittest.mock.patch.object(crawl_sites, "sitemap_links", lambda *a: []), \
+                unittest.mock.patch.object(crawl_sites, "save_page", lambda *a, **k: None):
+            pages, hits, _ = crawl_one(session,
+                                        {"website": "https://bar.example/happy-hour"}, {})
+        self.assertTrue(any(p["result"].startswith("rendered after 403") for p in pages))
+        self.assertTrue(hits)
+
 
 class TheVenuesOwnTownPageIsTheVenue(unittest.TestCase):
     """Sly Fox /phoenixville and Sedona /locations/phoenixville-pa/ hold the
