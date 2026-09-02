@@ -293,6 +293,18 @@ def merge_sites(dry_run=True, zone=None):
             "zone_id": row["zone_id"],
         }
 
+    # --merge-sites RETURNS before the resolve pass ever runs (see main()), so
+    # on a zone nobody has resolved yet it is a silent no-op: it merges whatever
+    # places_venues.json already held and reports "+0 to add". That is how the
+    # handoff's one-line `--zone Z --merge-sites --execute` discovered nothing
+    # on Doylestown (2026-09-02). Merging is not the discovery step; say so.
+    if zone and not any(v.get("zone_id") == zone for lid, v in
+                        ((lid, venues.get(lid) or {}) for lid in places)):
+        print(f"  ! NOTHING RESOLVED FOR {zone} -- this merge is a no-op.\n"
+              f"    The resolve pass is a SEPARATE, EARLIER command:\n"
+              f"        python ingest/discover_places.py --zone {zone}\n"
+              f"    then re-run this one.")
+
     print(f"{len(places)} resolved by Places, {len(sites)} already in the frontier")
     print(f"  +{len(added)} to add (address-joined, safe to crawl for evidence)")
     print(f"  {len(held)} held back -- name-joined, discovery only:")

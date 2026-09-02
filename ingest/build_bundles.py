@@ -441,6 +441,18 @@ def main():
     if not base:
         print("  ! data/venue_base.json missing -- shipping ONLY deal-bearing venues.\n"
               "    Run ingest/build_venue_base.py (needs data/venues.csv).")
+    else:
+        # A website reaches the board only through the base. Build the bundles
+        # off a base older than the site frontier and the newly discovered
+        # venues ship WITHOUT a website -- invisible on the card, and it blinds
+        # ingest/needy.py, the selection instrument for every scoped run.
+        # Doylestown, 2026-09-02: 5 needy where there were 33.
+        _sites = os.path.join(REPO, "data", "venue_sites.json")
+        if os.path.exists(_sites) and os.path.exists(BASE_JSON) \
+                and os.path.getmtime(_sites) > os.path.getmtime(BASE_JSON):
+            print("  ! data/venue_sites.json is NEWER than data/venue_base.json --\n"
+                  "    websites discovered since the last base build will NOT ship.\n"
+                  "    Run ingest/build_venue_base.py first, then rebuild.")
 
     # A second licence at one building was collapsed into the row that holds the
     # card; a deal crawled against the sibling LID belongs on that same card.

@@ -112,7 +112,27 @@ edit ingest/*.py
   → git push → Pages Action (~40s, seen as long as 4m26s) → live site
 ```
 
-All five, in order, or the fix exists only in the source. **The check that counts is
+All five, in order, or the fix exists only in the source.
+
+**Discovery has its own chain, and it is two commands, not one.** A website
+Google finds reaches the board only through the base, so a discovery pass that
+stops early is invisible rather than wrong — no error, just a smaller board and
+a smaller `needy.py`:
+
+```
+python ingest/discover_places.py --zone Z              ← the PAID resolve pass
+python ingest/discover_places.py --zone Z --merge-sites --execute
+python ingest/build_venue_base.py                      ← carries websites onto the board
+  → then the five gates above
+```
+
+`--merge-sites` **returns before the resolve pass ever runs**, so passing both
+in one command only merges what a previous run resolved and reports `+0 to add`.
+Skipping `build_venue_base.py` leaves the discovered venues with no `website`
+field, which blinds `ingest/needy.py` — the selection instrument for every
+scoped run. Both were found on Doylestown, 2026-09-02 (`needy` said 5 where
+there were 33); all three tools now print a warning at the moment of decision,
+but the order above is the reason the warnings exist. **The check that counts is
 the live URL in a browser** — an intermediate file, a green aggregate and an HTTP
 200 are each blind to the thing that actually breaks. Verify in WebKit as well as
 Chrome; WebKit has discarded CSS Chrome drew.

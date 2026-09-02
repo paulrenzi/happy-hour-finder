@@ -16,6 +16,27 @@ import argparse, json, os, sys
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
+def warn_if_base_is_stale():
+    """A website discovered but never carried onto the board is invisible here.
+
+    needy() reads the BUILT bundles, and a bundle only carries a website
+    because ingest/build_venue_base.py put one in data/venue_base.json. So a
+    discovery pass that is not followed by a base rebuild + a bundle rebuild
+    shrinks this list silently: on Doylestown (2026-09-02) it named 5 venues
+    where there were 33, which is the scope of every scoped run that followed.
+    """
+    sites = os.path.join(REPO, "data", "venue_sites.json")
+    base = os.path.join(REPO, "data", "venue_base.json")
+    if not (os.path.exists(sites) and os.path.exists(base)):
+        return
+    if os.path.getmtime(sites) > os.path.getmtime(base):
+        print("! data/venue_sites.json is NEWER than data/venue_base.json --\n"
+              "  websites discovered since the last base build are INVISIBLE to\n"
+              "  this selection, so the count below is too low. Run:\n"
+              "      python ingest/build_venue_base.py && python ingest/build_bundles.py\n",
+              file=sys.stderr)
+
+
 def needy(zone):
     # BOTH bundle files. build_bundles splits a zone by whether a venue has a
     # deal at all: zone-<id>.json is the deal-bearing half, venues-<id>.json is
@@ -48,6 +69,7 @@ def main():
     ap.add_argument("--lids", help="write the licence ids to this file")
     a = ap.parse_args()
 
+    warn_if_base_is_stale()
     total, lids = 0, []
     for z in a.zones:
         rows = needy(z)
