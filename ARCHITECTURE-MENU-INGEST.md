@@ -1102,6 +1102,106 @@ however well it reads. **The next number that matters is Paul's minute against
 this list**, not another pass over the nine pages we did fetch.
 
 
+## ✅🔑 WILLOW GROVE / HORSHAM — one town, proven end to end (2026-09-02, late)
+
+Paul: *"We aren't doing big scrapes. You've failed at all of them. **Prove it on
+a single town.**"* Then, once the photos landed: *"Photos are trivial. Where are
+my happy hour menus for the town?"* So the whole recipe was run over exactly one
+zone, and the answer is measured, not asserted.
+
+| | before | after |
+|---|---|---|
+| venues with a website | 9 | **32** |
+| venues with a photo | 0 | **34** |
+| cards carrying hours | 0 | **11** |
+| items on those cards | 0 | **83** |
+| board, corpus-wide | 214 | **225** |
+
+Cost: **$1.68** for the photo/website pass, and one scoped `read_menus_llm` run
+over 32 venues. Anthony's Coal Fired 24 items, Buona Via 19, Palz Tap House 19,
+Miller's Ale House 8, PJ Whelihan's 6, Select Pizza Grill 6, and The Copper
+Crow's weekday 4:30–6:30. Verified live in WebKit against the town's own venue
+names, 35 cards painted, zero page errors.
+
+🔑 **The photo call already had the websites and was throwing them away.** The
+Places Text Search that buys a photo is billed at Pro tier whether or not you
+ask for `websiteUri`, and the field mask did not ask. 162 photos bought across
+the corpus, 162 websites discarded. Adding one field to the mask is why 9
+websites became 32 in this town for no extra money — and website coverage is
+the ceiling on everything downstream.
+
+### 🛑🛑 Four silent defects, each refusing real menus while reporting success
+
+The town read as "correct and empty" until The Copper Crow was walked by hand.
+All four are now covered by `tests/test_menu_reader.py` (16 offline cases —
+`vet()` takes a row and a document, so the entire grounding half tests without
+spending a cent).
+
+1. **A literal backspace byte where `\b` was meant.** Inside an `r"..."` regex a
+   raw `chr(8)` matches nothing and raises nothing, so the guard it belonged to
+   simply **stops existing**. One was mine, in this pass's meridiem check. The
+   second **had been shipping in `extract_deals.items_in()`'s label splitter**,
+   where `all day\b` has therefore never matched. 🔑 This is what a generated
+   edit does when a heredoc or a tool layer eats one backslash. Write patch
+   scripts with the Write tool and spell a backslash `chr(92)`; never a
+   `<<'PY'` heredoc. The build now **fails on any control byte in any source
+   file** — that test is the only thing standing between us and a third one.
+2. **`clock_in()` never generated the zero-padded 12-hour form.** A specials
+   calendar prints `04:30 PM - 06:30 PM`. The only candidates for 16:30 were
+   `16:30` (absent) and `4:30` (refused — the `(?<!\d)` lookbehind sees the
+   leading `0`). **Every venue that writes its hours that way was refused.**
+3. **A bare hour matched inside a longer time.** `11` hit inside `11:00 am`, and
+   the meridiem test then read the `:` as *"no meridiem stated"* and accepted
+   it — so an 11am opening time could evidence an 11pm window. The lookahead is
+   `(?![\d:])`, not `(?!\d)`.
+4. **The specials-calendar page class was refused three ways at once.**
+
+### 🔑 The specials calendar is a page CLASS, and code reads it, not the model
+
+```
+Tuesday September 1st
+Happy Hour (Bars and High Tops ONLY!) - $5 per birria taco     04:30 PM - 06:30 PM
+Wednesday September 2nd
+Happy Hour (Bars and High Tops ONLY!) - $5 off all pizzas      04:30 PM - 06:30 PM
+```
+
+The happy-hour line **names no day and no clock of its own** — both sit on
+adjacent lines — and the dated header makes `ONE_OFF_RE` read the whole thing as
+a party. Three refusals, and this is The Copper Crow and Bridget's Steakhouse in
+Ambler both.
+
+The fix is deliberately **not** to let the model assert the missing spans:
+
+- `clock_near(quote, start, end, source)` — **code** looks for the clock line
+  within ±300 chars of each occurrence of the quote.
+- `day_header(quote, source)` — **code** walks **backwards only**, up to 600
+  chars, for the nearest weekday named *before* the entry. Backwards because an
+  entry belongs to the header above it; a symmetric window would straddle the
+  next day's header and hand a Tuesday deal Wednesday's name.
+- Both are gated on `repeats(heading, source) >= 3` — a heading printed three
+  times is what makes a page a **calendar**. A one-off party is announced once
+  and is still refused.
+- And a `happy_hour` may only take a clock **adjacent** to it, so the opening
+  hours at the top of the page can never become a nine-hour "happy hour".
+
+The card records `clock_quote` and `day_quote` beside the deal quote, so a
+reader can see exactly which lines it was assembled from.
+
+### 🛑 Left open, on purpose, and named
+
+- **The name guard refuses apostrophe and spacing variants.** Richies vs
+  Richie's, Magerks vs MaGerk's, Na Brasa vs NaBrasa — **4 of the 9 refusals in
+  this town**, and the live board currently paints *"Richie's Too"* and
+  *"Richies Bar & Grill"* as two venues. Normalising punctuation before the
+  match is the fix and it was not done.
+- **`scratch/live_check.py` reads only the first 24 hours-unknown cards** and
+  never clicks *Show more*, so it can report a venue missing that is on the
+  board. It falsely reported Palz.
+- **No ground-truth row has ever been confirmed for any town**, so
+  `report_coverage` still prints *"0 confirmed rows — no denominator, no
+  percentage"*. **Paul's minute is still the missing instrument**, on Ambler
+  (`HANDOFF-THE-MINUTE-ON-AMBLER-20260902.md`) or on this town.
+
 ---
 
 ## Standing rules
