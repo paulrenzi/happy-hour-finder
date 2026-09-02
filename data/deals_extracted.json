@@ -1645,38 +1645,43 @@
      "windows": [
       {
        "dow": 1,
-       "start": "16:00",
+       "start": "15:00",
        "end": "18:00"
       },
       {
        "dow": 2,
-       "start": "16:00",
+       "start": "15:00",
        "end": "18:00"
       },
       {
        "dow": 3,
-       "start": "16:00",
+       "start": "15:00",
        "end": "18:00"
       },
       {
        "dow": 4,
-       "start": "16:00",
+       "start": "15:00",
        "end": "18:00"
       },
       {
        "dow": 5,
-       "start": "16:00",
+       "start": "15:00",
        "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "20:00",
+       "end": "22:00"
       }
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-09-01",
+     "last_verified_at": "2026-09-02",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://www.wellcraftedbeer.com/home/lansdale/happyhour",
-      "quote": "HAPPY HOUR MENU / Available weekdays 4 to 6 pm."
+      "url": "https://www.wellcraftedbeer.com/home/ambler/hoppyhour",
+      "quote": "HAPPY HOUR MENU / Available weekdays 3 to 6 pm."
      }
     }
    ]
@@ -6770,7 +6775,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-09-01",
+     "last_verified_at": "2026-09-02",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",

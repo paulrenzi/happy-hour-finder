@@ -332,6 +332,13 @@
    "price_usd": 5.0
   }
  ],
+ "fireside-bar-and-grill-ambler": [
+  {
+   "category": "bottle_can",
+   "label": "Domestic bottles and drafts",
+   "price_usd": 3.0
+  }
+ ],
  "fogo-de-ch-o-king-of-prussia": [
   {
    "category": "draft",
@@ -1370,6 +1377,98 @@
    "category": "wine",
    "discount_pct": 50.0,
    "label": "wine list"
+  }
+ ],
+ "well-crafted-beer-company-llc-ambler": [
+  {
+   "category": "draft",
+   "label": "16 OZ. DRAFTS",
+   "price_usd": 6.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "WELL CRAFTED - DROP HARD SELTZER - 6.5%",
+   "price_usd": 4.0
+  },
+  {
+   "category": "wine",
+   "label": "PINNACLE RIDGE PINOT GRIGIO 2024",
+   "price_usd": 9.0
+  },
+  {
+   "category": "wine",
+   "label": "PINNACLE RIDGE CHARDONNAY 2024",
+   "price_usd": 9.0
+  },
+  {
+   "category": "wine",
+   "label": "ALLEGRO DRY ROSE 2025",
+   "price_usd": 9.0
+  },
+  {
+   "category": "wine",
+   "label": "SETTER RIDGE VINEYARDS PINOT NOIR 2016",
+   "price_usd": 9.0
+  },
+  {
+   "category": "wine",
+   "label": "PINNACLE RIDGE CABERNET FRANC 2020",
+   "price_usd": 9.0
+  },
+  {
+   "category": "cocktail",
+   "label": "BERRY LEMONADE",
+   "price_usd": 9.0
+  },
+  {
+   "category": "cocktail",
+   "label": "BLACK CHERRY SOUR",
+   "price_usd": 9.0
+  },
+  {
+   "category": "cocktail",
+   "label": "CHERRY VANILLA COKE",
+   "price_usd": 6.0
+  },
+  {
+   "category": "cocktail",
+   "label": "SANGRIA",
+   "price_usd": 9.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Espresso Martini",
+   "price_usd": 8.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Blackberry Lemon Drops",
+   "price_usd": 8.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Old Fashioned - Northbound Bourbon",
+   "price_usd": 10.0
+  },
+  {
+   "category": "draft",
+   "label": "16oz Drafts",
+   "price_usd": 6.0
+  },
+  {
+   "category": "draft",
+   "label": "16 oz Select Drafts",
+   "price_usd": 4.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Bloody Mary",
+   "price_usd": 6.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Bellini",
+   "price_usd": 8.0
   }
  ]
 }

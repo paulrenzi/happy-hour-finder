@@ -30,6 +30,7 @@ ZONES_JSON = os.path.join(REPO, "data", "zones.json")
 PRICES_JSON = os.path.join(REPO, "data", "deals_prices_llm.json")
 MENU_IMG_JSON = os.path.join(REPO, "data", "deals_menu_images.json")
 PAGES_JSON = os.path.join(REPO, "data", "deals_pages_llm.json")
+MENUS_JSON = os.path.join(REPO, "data", "deals_menus.json")
 PHOTOS_JSON = os.path.join(REPO, "data", "venue_photos.json")
 COORDS_JSON = os.path.join(REPO, "data", "venue_coords.json")
 BASE_JSON = os.path.join(REPO, "data", "venue_base.json")
@@ -340,7 +341,17 @@ def main():
     print(f"  {len(photos)} photo-submitted venues (highest priority)")
     payload = dict(payload, venues=[dict(v, _rank=0) for v in photos])
     payload = merge_venues(payload, seeded, "hand-seeded", 1)
-    payload = merge(payload, EXTRACTED_JSON, "machine-extracted", 2)
+    # Written by ingest/read_menus_llm.py: a MODEL read the whole page, or the
+    # whole transcript of a menu posted as a picture, and returned the deals on
+    # it -- kind, days, clock and items -- each grounded in a quote checked as a
+    # literal substring of that document and re-checked against the file on disk
+    # at build time. It outranks the extractor because the extractor is a regex
+    # grammar that ships nothing for a phrasing it has not met, and it does NOT
+    # outrank a person: a hand-read seed and an approved photo still win.
+    #
+    # This is also the only source that can put a `daily_special` on a card.
+    payload = merge(payload, MENUS_JSON, "model-read menus", 2)
+    payload = merge(payload, EXTRACTED_JSON, "machine-extracted", 3)
     zones = json.load(open(ZONES_JSON, encoding="utf-8"))
     zone_names = {z["id"]: z["name"] for z in zones["zones"]}
     # Optional: written by ingest/fetch_venue_photos.py. A venue with no entry
@@ -443,6 +454,15 @@ def main():
                   f"{state!r}; its law has not been encoded (see validate_pa.RULES)")
             return []
         deals = []
+        # Which of a model-read venue's deals the price sidecar fills in: ONE of
+        # them, the richest happy hour. Sedona Taphouse publishes two happy-hour
+        # blocks with different menus, and merging the same 24 sidecar prices
+        # into both put every item on the card twice.
+        model_deals = [d for d in venue.get("deals", [])
+                       if d.get("verified_by") == "menu_read_llm"
+                       and d.get("type") == "happy_hour"]
+        sidecar_target = max(model_deals, key=lambda d: len(d.get("items") or []),
+                             default=None)
         for deal in venue.get("deals", []):
             extra = prices.get(venue["id"])
             # A venue with NO items takes the sidecar outright. A venue that
@@ -456,13 +476,31 @@ def main():
             # in the sidecar unused. The extractor's own items are kept behind
             # the page's, deduplicated on label, so nothing is lost either way.
             read_page = venue["id"] in page_read
-            if extra and deal.get("verified_by") == "auto_extract" and (
-                    not deal.get("items") or read_page):
+            # `menu_read_llm` (ingest/read_menus_llm.py) reads the page itself
+            # and brings its own items, so it does not need the sidecars -- but
+            # it must not LOSE them either. It outranks the extractor, and on
+            # its first run that took Bistro on Bridge from 26 items to 6 and
+            # Valley Forge Trattoria from 14 to 6: the same prices, verified
+            # against the same pages, dropped on the floor because the venue row
+            # that carried them had been outranked. The sidecar merges in BEHIND
+            # the model's own items, deduped on label, and only onto a
+            # `happy_hour` -- a daily special must never inherit happy-hour
+            # prices it did not state.
+            model_read = deal is sidecar_target
+            if extra and (model_read or (
+                    deal.get("verified_by") == "auto_extract" and (
+                        not deal.get("items") or read_page))):
                 merged = extra + [i for i in (deal.get("items") or [])
                                   if not any(x["label"].lower() == i["label"].lower()
                                              for x in extra)]
                 # Applied before the validators, not after, so a price the model
                 # read still has to clear the same PA checks as any other item.
+                if model_read:
+                    # The model read the page; the sidecar only fills the gaps.
+                    own = deal.get("items") or []
+                    merged = own + [i for i in extra
+                                    if not any(x["label"].lower() == i["label"].lower()
+                                               for x in own)]
                 deal = dict(deal, items=merged, items_source="llm_extract")
             errs = validate_deal(deal)
             if errs:

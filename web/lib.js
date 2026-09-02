@@ -425,7 +425,30 @@ export function buildFeed(venues, at, { zone = null, filter = "all", sort = "soo
   }
 
   rows.sort((a, b) => score(a, { sort }) - score(b, { sort }) || a.v.name.localeCompare(b.v.name));
-  return rows;
+
+  /* ONE ROW PER BAR. A venue used to hold exactly one deal, so a row per deal
+     and a row per bar were the same thing. They stopped being the same on
+     2026-09-02, when ingest/read_menus_llm.py began publishing a venue's happy
+     hour AND its daily specials AND its food combos as separate deals: Sly Fox
+     painted seven cards in a row, Sedona Taphouse two, and the board read as a
+     bug to anyone scrolling it. The rows are already sorted, so the first one a
+     bar has is the deal that answers "can I go now?" best -- that is the one the
+     board shows, and the venue sheet still lists every deal it has. `others` is
+     how many it is standing in for, so a card can say so. */
+  const seen = new Map();
+  const one = [];
+  for (const row of rows) {
+    const key = row.v.id;
+    const held = seen.get(key);
+    if (held) {
+      held.others += 1;
+      continue;
+    }
+    row.others = 0;
+    seen.set(key, row);
+    one.push(row);
+  }
+  return one;
 }
 
 /* "Mon–Fri 4–6pm, Sat–Sun 2–4pm" -- collapse a week of windows into the line a

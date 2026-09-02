@@ -173,24 +173,37 @@ def main():
         with open(os.path.join(WEB, "data", fn), encoding="utf-8") as fh:
             zone = json.load(fh)
         for venue in zone["venues"]:
-            for deal in venue.get("deals") or []:
-                # Keyed on name AND town: three Chickie's & Pete's are three
-                # bars, and keying on the name alone made one of them answer
-                # for another one's menu.
-                if deal.get("items"):
-                    key = f"{venue['name'].strip()} @ {zone['name']}"
-                    shipped[key] = deal["items"]
-    blank = sorted(n for n, items in shipped.items()
-                   if items and not painted_items.get(n))
+            deals = venue.get("deals") or []
+            if not deals:
+                continue
+            # Keyed on name AND town: three Chickie's & Pete's are three
+            # bars, and keying on the name alone made one of them answer
+            # for another one's menu.
+            key = f"{venue['name'].strip()} @ {zone['name']}"
+            # EVERY label the venue ships, across every deal -- not the last
+            # deal's. A venue holds several deals since 2026-09-02 (a happy hour,
+            # its daily specials, its food combos) and the board paints ONE of
+            # them: the one that answers "can I go now?" first. So the gate can
+            # no longer name which deal a card must show. It still holds the two
+            # things that matter: a venue whose deals ALL carry items may not
+            # paint a blank card, and every label on a card has to be one this
+            # venue actually published.
+            shipped[key] = {"labels": {str(i.get("label") or "").strip().lower()
+                                       for d in deals for i in d.get("items") or []},
+                            "all_priced": all(d.get("items") for d in deals)}
+    blank = sorted(n for n, rec in shipped.items()
+                   if rec["all_priced"] and rec["labels"] and not painted_items.get(n))
     if blank:
-        bad.append(f"{len(blank)} venue(s) ship items and painted an empty card: "
-                   f"{blank[:3]}")
+        bad.append(f"{len(blank)} venue(s) ship items on every deal and painted an "
+                   f"empty card: {blank[:3]}")
     # And the labels have to be the venue's own, not some other bar's.
-    for name, items in sorted(shipped.items()):
-        got = " || ".join(painted_items.get(name) or [])
-        want = str(items[0].get("label") or "").strip()
-        if want and got and want.lower() not in got.lower():
-            bad.append(f"{name!r} ships {want!r} first and its card shows {got[:60]!r}")
+    for name, rec in sorted(shipped.items()):
+        got = painted_items.get(name) or []
+        stray = [g for g in got
+                 if not any(lab and lab in g.lower() for lab in rec["labels"])]
+        if stray:
+            bad.append(f"{name!r} painted {stray[0][:40]!r}, which is not one of "
+                       "the items it ships")
             break
 
     dupes = sorted({c for c in checks["cards"] if checks["cards"].count(c) > 1})

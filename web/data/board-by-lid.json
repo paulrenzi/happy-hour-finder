@@ -2712,6 +2712,641 @@
    }
   ]
  },
+ "58996": {
+  "name": "Bistro on Bridge",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "64975": {
+  "name": "Black Horse Tavern",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "90605": {
+  "name": "il Granaio",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 2,
+      "end": "18:30",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:30",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:30",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:30",
+      "start": "16:00"
+     },
+     {
+      "dow": 6,
+      "end": "16:30",
+      "start": "14:00"
+     },
+     {
+      "dow": 7,
+      "end": "16:30",
+      "start": "14:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "57342": {
+  "name": "MOLLY MAGUIRES RESTAURANT & PUB INC",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 2,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 3,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 4,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 5,
+      "start": "17:00",
+      "end": "19:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "106706": {
+  "name": "Revival Pizza Pub",
+  "deals": [
+   {
+    "type": "daily_special",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "21:00",
+      "start": "11:30"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   },
+   {
+    "type": "daily_special",
+    "windows": [
+     {
+      "dow": 4,
+      "end": "21:00",
+      "start": "11:30"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   },
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "99114": {
+  "name": "Rivertown Taps",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "15:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "91502": {
+  "name": "Sedona Taphouse",
+  "deals": [
+   {
+    "type": "daily_special",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "22:00",
+      "start": "11:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   },
+   {
+    "type": "daily_special",
+    "windows": [
+     {
+      "dow": 3,
+      "end": "22:00",
+      "start": "11:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   },
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   },
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "36841": {
+  "name": "Sly Fox",
+  "deals": [
+   {
+    "type": "daily_special",
+    "windows": [
+     {
+      "dow": 3,
+      "end": "21:00",
+      "start": "11:30"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   },
+   {
+    "type": "daily_special",
+    "windows": [
+     {
+      "dow": 5,
+      "end": "21:00",
+      "start": "11:30"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   },
+   {
+    "type": "daily_special",
+    "windows": [
+     {
+      "dow": 6,
+      "end": "21:00",
+      "start": "11:30"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   },
+   {
+    "type": "daily_special",
+    "windows": [
+     {
+      "dow": 7,
+      "end": "20:00",
+      "start": "11:30"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   },
+   {
+    "type": "food_combo",
+    "windows": [
+     {
+      "dow": 3,
+      "end": "21:00",
+      "start": "11:30"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   },
+   {
+    "type": "food_combo",
+    "windows": [
+     {
+      "dow": 4,
+      "end": "21:00",
+      "start": "11:30"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   },
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "15:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "69448": {
+  "name": "The Great American Pub",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 2,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 3,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 4,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 5,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 6,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 7,
+      "start": "17:00",
+      "end": "19:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "66224": {
+  "name": "Valley Forge Trattoria & Lounge",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "55311": {
+  "name": "Fireside Bar and Grill",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 2,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 3,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 4,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 5,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 6,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "109577": {
+  "name": "Well Crafted Beer Company",
+  "deals": [
+   {
+    "type": "daily_special",
+    "windows": [
+     {
+      "dow": 7,
+      "end": "16:00",
+      "start": "13:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   },
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "15:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   },
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 5,
+      "end": "22:00",
+      "start": "20:00"
+     },
+     {
+      "dow": 6,
+      "end": "22:00",
+      "start": "20:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "93322": {
   "name": "Firebirds Wood Fired Grill",
   "deals": [
@@ -6541,396 +7176,6 @@
    }
   ]
  },
- "58996": {
-  "name": "Bistro on Bridge",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "64975": {
-  "name": "Black Horse Tavern",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "90605": {
-  "name": "il Granaio",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:30"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:30"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:30"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:30"
-     },
-     {
-      "dow": 6,
-      "start": "14:00",
-      "end": "16:30"
-     },
-     {
-      "dow": 7,
-      "start": "14:00",
-      "end": "16:30"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "57342": {
-  "name": "MOLLY MAGUIRES RESTAURANT & PUB INC",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "17:00",
-      "end": "19:00"
-     },
-     {
-      "dow": 2,
-      "start": "17:00",
-      "end": "19:00"
-     },
-     {
-      "dow": 3,
-      "start": "17:00",
-      "end": "19:00"
-     },
-     {
-      "dow": 4,
-      "start": "17:00",
-      "end": "19:00"
-     },
-     {
-      "dow": 5,
-      "start": "17:00",
-      "end": "19:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "106706": {
-  "name": "Revival Pizza Pub",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "99114": {
-  "name": "Rivertown Taps",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 3,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "15:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "91502": {
-  "name": "SEDONA TAPHOUSE",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 6,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 7,
-      "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "36841": {
-  "name": "Sly Fox",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 2,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "15:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "69448": {
-  "name": "The Great American Pub",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "17:00",
-      "end": "19:00"
-     },
-     {
-      "dow": 2,
-      "start": "17:00",
-      "end": "19:00"
-     },
-     {
-      "dow": 3,
-      "start": "17:00",
-      "end": "19:00"
-     },
-     {
-      "dow": 4,
-      "start": "17:00",
-      "end": "19:00"
-     },
-     {
-      "dow": 5,
-      "start": "17:00",
-      "end": "19:00"
-     },
-     {
-      "dow": 6,
-      "start": "17:00",
-      "end": "19:00"
-     },
-     {
-      "dow": 7,
-      "start": "17:00",
-      "end": "19:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "66224": {
-  "name": "Valley Forge Trattoria & Lounge",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
  "63944": {
   "name": "Copperfield Inn at Lakeside",
   "deals": [
@@ -7134,87 +7379,6 @@
      },
      {
       "dow": 7,
-      "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "55311": {
-  "name": "Fireside Bar and Grill",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:30",
-      "end": "18:30"
-     },
-     {
-      "dow": 2,
-      "start": "16:30",
-      "end": "18:30"
-     },
-     {
-      "dow": 3,
-      "start": "16:30",
-      "end": "18:30"
-     },
-     {
-      "dow": 4,
-      "start": "16:30",
-      "end": "18:30"
-     },
-     {
-      "dow": 5,
-      "start": "16:30",
-      "end": "18:30"
-     },
-     {
-      "dow": 6,
-      "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "109577": {
-  "name": "WELL CRAFTED BEER COMPANY LLC",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
       "start": "16:00",
       "end": "18:00"
      }

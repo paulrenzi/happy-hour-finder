@@ -17,9 +17,21 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 def needy(zone):
-    p = os.path.join(REPO, "web", "data", "venues-%s.json" % zone)
+    # BOTH bundle files. build_bundles splits a zone by whether a venue has a
+    # deal at all: zone-<id>.json is the deal-bearing half, venues-<id>.json is
+    # the rest. Reading only the latter made the second clause of the rule above
+    # -- "a deal carrying no items" -- unreachable by construction: 76 of the
+    # corpus's 214 deal-bearing venues carry a window and no item, and not one
+    # of them could ever be selected. Found 2026-09-02 on the Ambler blind run,
+    # where it hid Fireside Bar and Grill, a venue Google names as having a
+    # happy hour.
+    rows = []
+    for fn in ("zone-%s.json" % zone, "venues-%s.json" % zone):
+        p = os.path.join(REPO, "web", "data", fn)
+        if os.path.exists(p):
+            rows += json.load(open(p, encoding="utf-8"))["venues"]
     out = []
-    for v in json.load(open(p, encoding="utf-8"))["venues"]:
+    for v in rows:
         if not v.get("website"):
             continue
         deals = v.get("deals") or []

@@ -22,56 +22,76 @@
    },
    "deals": [
     {
+     "confidence": "unconfirmed",
+     "items": [
+      {
+       "category": "bottle_can",
+       "evidence": "$3 Domestic bottles and drafts",
+       "label": "Domestic bottles",
+       "price_usd": 3.0
+      },
+      {
+       "category": "draft",
+       "evidence": "$3 Domestic bottles and drafts",
+       "label": "Domestic drafts",
+       "price_usd": 3.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "Domestic bottles and drafts",
+       "price_usd": 3.0
+      }
+     ],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "heading": "Join us for BEST happy hour in town!",
+      "kind": "venue_site",
+      "quote": "Saturday 4:00-6:00 / Monday thru Friday 4:30-6:30",
+      "url": "https://www.firesidebarandgrille.com/"
+     },
      "type": "happy_hour",
+     "verified_by": "menu_read_llm",
      "windows": [
       {
        "dow": 1,
-       "start": "16:30",
-       "end": "18:30"
+       "end": "18:30",
+       "start": "16:30"
       },
       {
        "dow": 2,
-       "start": "16:30",
-       "end": "18:30"
+       "end": "18:30",
+       "start": "16:30"
       },
       {
        "dow": 3,
-       "start": "16:30",
-       "end": "18:30"
+       "end": "18:30",
+       "start": "16:30"
       },
       {
        "dow": 4,
-       "start": "16:30",
-       "end": "18:30"
+       "end": "18:30",
+       "start": "16:30"
       },
       {
        "dow": 5,
-       "start": "16:30",
-       "end": "18:30"
+       "end": "18:30",
+       "start": "16:30"
       },
       {
        "dow": 6,
-       "start": "16:00",
-       "end": "18:00"
+       "end": "18:00",
+       "start": "16:00"
       }
      ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-09-01",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://www.firesidebarandgrille.com/",
-      "quote": "Join Us for Happy Hour / Monday thru Friday: 4:30PM - 6:30PM / Saturday: 4:00PM - 6:00PM"
-     }
+     "items_source": "llm_extract"
     }
    ]
   },
   {
    "id": "109577",
    "lid": "109577",
-   "slug": "well-crafted-beer-company-llc-ambler",
-   "name": "WELL CRAFTED BEER COMPANY LLC",
+   "slug": "well-crafted-beer-company-ambler",
+   "name": "Well Crafted Beer Company",
    "address": "300 Brookside Ave Bldg 19 Ste E, Ambler PA 19002",
    "zone_id": "ambler_upper_dublin",
    "website": "https://www.wellcraftedbeer.com/",
@@ -83,43 +103,152 @@
    },
    "deals": [
     {
+     "confidence": "unconfirmed",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "16 oz Select Drafts |4",
+       "label": "16 oz Select Drafts",
+       "price_usd": 4.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "Bloody Mary |6",
+       "label": "Bloody Mary",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "Bellini |8",
+       "label": "Bellini",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "Espresso Martini |8",
+       "label": "Espresso Martini",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "Old Fashioned - Northbound Bourbon |10",
+       "label": "Old Fashioned - Northbound Bourbon",
+       "price_usd": 10.0
+      }
+     ],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "heading": "SUNDAY FUNDAY MENU",
+      "kind": "venue_site",
+      "quote": "Available SUNDAYS 1 to 4 pm.",
+      "url": "https://www.wellcraftedbeer.com/home/ambler/hoppyhour"
+     },
+     "type": "daily_special",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 7,
+       "end": "16:00",
+       "start": "13:00"
+      }
+     ]
+    },
+    {
+     "confidence": "unconfirmed",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "16 OZ. DRAFTS | 6",
+       "label": "16 OZ. DRAFTS",
+       "price_usd": 6.0
+      }
+     ],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "heading": "HAPPY HOUR MENU",
+      "kind": "venue_site",
+      "quote": "Available weekdays 3 to 6 pm.",
+      "url": "https://www.wellcraftedbeer.com/home/ambler/hoppyhour"
+     },
      "type": "happy_hour",
+     "verified_by": "menu_read_llm",
      "windows": [
       {
        "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
+       "end": "18:00",
+       "start": "15:00"
       },
       {
        "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
+       "end": "18:00",
+       "start": "15:00"
       },
       {
        "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
+       "end": "18:00",
+       "start": "15:00"
       },
       {
        "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
+       "end": "18:00",
+       "start": "15:00"
       },
       {
        "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
+       "end": "18:00",
+       "start": "15:00"
+      }
+     ]
+    },
+    {
+     "confidence": "unconfirmed",
+     "items": [
+      {
+       "category": "cocktail",
+       "evidence": "Espresso Martini |8",
+       "label": "Espresso Martini",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "Blackberry Lemon Drops |8",
+       "label": "Blackberry Lemon Drops",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "Old Fashioned - Northbound Bourbon |10",
+       "label": "Old Fashioned - Northbound Bourbon",
+       "price_usd": 10.0
+      },
+      {
+       "category": "draft",
+       "evidence": "16oz Drafts (excludes higher ABV) |6",
+       "label": "16oz Drafts",
+       "price_usd": 6.0
       }
      ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-09-01",
-     "verified_by": "auto_extract",
+     "last_verified_at": "2026-09-02",
      "source": {
+      "heading": "LATE NIGHT HAPPY HOUR MENU",
       "kind": "venue_site",
-      "url": "https://www.wellcraftedbeer.com/home/lansdale/happyhour",
-      "quote": "HAPPY HOUR MENU / Available weekdays 4 to 6 pm."
-     }
+      "quote": "Available Fridays and Saturdays 8 to 10 pm.",
+      "url": "https://www.wellcraftedbeer.com/home/ambler/hoppyhour"
+     },
+     "type": "happy_hour",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 5,
+       "end": "22:00",
+       "start": "20:00"
+      },
+      {
+       "dow": 6,
+       "end": "22:00",
+       "start": "20:00"
+      }
+     ]
     }
    ]
   }

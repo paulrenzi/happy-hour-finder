@@ -19,35 +19,44 @@
    },
    "deals": [
     {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
+     "confidence": "unconfirmed",
      "items": [
+      {
+       "category": "draft",
+       "evidence": "$5 BEERS & PROVERB WINES",
+       "label": "Beers",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "evidence": "$5 BEERS & PROVERB WINES",
+       "label": "Proverb Wines",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "evidence": "$6 FRIES",
+       "label": "Fries",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$9 COCKTAILS",
+       "label": "Cocktails",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "evidence": "$9 MUNCHIES",
+       "label": "Munchies",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "evidence": "$1 Per Half Shell Raw Oysters",
+       "label": "Per Half Shell Raw Oysters",
+       "price_usd": 1.0
+      },
       {
        "category": "draft",
        "label": "Allagash Brewing Company White",
@@ -157,36 +166,44 @@
        "category": "food",
        "label": "Raw Oysters",
        "price_usd": 1.0
-      },
-      {
-       "category": "draft",
-       "label": "BEERS & PROVERB WINES",
-       "price_usd": 5.0
-      },
-      {
-       "category": "food",
-       "label": "FRIES",
-       "price_usd": 6.0
-      },
-      {
-       "category": "cocktail",
-       "label": "COCKTAILS",
-       "price_usd": 9.0
-      },
-      {
-       "category": "food",
-       "label": "Per Half Shell Raw Oysters",
-       "price_usd": 1.0
       }
      ],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-09-01",
-     "verified_by": "auto_extract",
+     "last_verified_at": "2026-09-02",
      "source": {
+      "heading": "Monday-Friday 4:00-6:00PM",
       "kind": "venue_site",
-      "url": "https://bistroonbridge.com/specials-menu/",
-      "quote": "Monday-Friday 4:00-6:00PM"
+      "quote": "Monday-Friday 4:00-6:00PM",
+      "url": "https://bistroonbridge.com/"
      },
+     "type": "happy_hour",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ],
      "items_source": "llm_extract"
     }
    ]
@@ -269,40 +286,80 @@
    },
    "deals": [
     {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:30"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:30"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:30"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:30"
-      },
-      {
-       "dow": 6,
-       "start": "14:00",
-       "end": "16:30"
-      },
-      {
-       "dow": 7,
-       "start": "14:00",
-       "end": "16:30"
-      }
-     ],
+     "confidence": "unconfirmed",
      "items": [
+      {
+       "category": "food",
+       "evidence": "$4 GLASS WINES $8",
+       "label": "ARANCINI",
+       "price_usd": 4.0
+      },
+      {
+       "category": "food",
+       "evidence": "$4 GLASS WINES $8",
+       "label": "HOMEMADE MEATBALLS",
+       "price_usd": 4.0
+      },
+      {
+       "category": "food",
+       "evidence": "$4 GLASS WINES $8",
+       "label": "CRISPY CALAMARI",
+       "price_usd": 4.0
+      },
+      {
+       "category": "food",
+       "evidence": "$4 GLASS WINES $8",
+       "label": "MUSSELS E FINOCCHIO",
+       "price_usd": 4.0
+      },
+      {
+       "category": "food",
+       "evidence": "$4 GLASS WINES $8",
+       "label": "SHORT RIB CROSTINI",
+       "price_usd": 4.0
+      },
+      {
+       "category": "wine",
+       "evidence": "$4 GLASS WINES $8",
+       "label": "GLASS WINES",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$10SPECIALITY COCKTAILS",
+       "label": "SPECIALITY COCKTAILS",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "$10",
+       "label": "CRISPY BRAISED PORK BELLY",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "$10",
+       "label": "FILET MIGNON SLIDERS",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "$10",
+       "label": "CAVATELLI CON SALSICCIA",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "$10",
+       "label": "GNOCCHI CON GUANCIA DI MAIALE",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "$10",
+       "label": "SACCHETTONI",
+       "price_usd": 10.0
+      },
       {
        "category": "wine",
        "label": "Chardonnay",
@@ -357,76 +414,49 @@
        "category": "cocktail",
        "label": "Seasonal Margarita",
        "price_usd": 10.0
-      },
-      {
-       "category": "food",
-       "label": "Arancini",
-       "price_usd": 10.0
-      },
-      {
-       "category": "food",
-       "label": "Homemade Meatballs",
-       "price_usd": 10.0
-      },
-      {
-       "category": "food",
-       "label": "Crispy Calamari",
-       "price_usd": 10.0
-      },
-      {
-       "category": "food",
-       "label": "Mussels E Finocchio",
-       "price_usd": 10.0
-      },
-      {
-       "category": "food",
-       "label": "Short Rib Crostini",
-       "price_usd": 10.0
-      },
-      {
-       "category": "food",
-       "label": "Crispy Braised Pork Belly",
-       "price_usd": 10.0
-      },
-      {
-       "category": "food",
-       "label": "Filet Mignon Sliders",
-       "price_usd": 10.0
-      },
-      {
-       "category": "food",
-       "label": "Cavatelli Con Salsiccia",
-       "price_usd": 10.0
-      },
-      {
-       "category": "food",
-       "label": "Gnocchi Con Guancia Di Maiale",
-       "price_usd": 10.0
-      },
-      {
-       "category": "food",
-       "label": "Sacchettoni",
-       "price_usd": 10.0
-      },
-      {
-       "category": "wine",
-       "label": "GLASS WINES",
-       "price_usd": 4.0
-      },
-      {
-       "category": "wine",
-       "label": "CONSUMING RAW OR UNDERCOOKED POULTRY, SHELLFISH, SEAFOOD OR MEAT",
-       "price_usd": 10.0
       }
      ],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-09-01",
-     "verified_by": "auto_extract",
+     "last_verified_at": "2026-09-02",
      "source": {
+      "heading": "HAPPY HOUR",
       "kind": "venue_site",
-      "url": "https://ilgranaiopa2.com/assets/menu/happy-hour.pdf",
-      "quote": "TUESDAY - FRIDAY 4PM - 6:30PM"
+      "quote": "SATURDAY & SUNDAY 2PM - 4:30PM / TUESDAY - FRIDAY 4PM - 6:30PM",
+      "url": "https://ilgranaiopa2.com/assets/menu/happy-hour.pdf"
      },
+     "type": "happy_hour",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 2,
+       "end": "18:30",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:30",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:30",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:30",
+       "start": "16:00"
+      },
+      {
+       "dow": 6,
+       "end": "16:30",
+       "start": "14:00"
+      },
+      {
+       "dow": 7,
+       "end": "16:30",
+       "start": "14:00"
+      }
+     ],
      "items_source": "llm_extract"
     }
    ]
@@ -528,35 +558,160 @@
    },
    "deals": [
     {
-     "type": "happy_hour",
+     "confidence": "unconfirmed",
+     "items": [
+      {
+       "category": "cocktail",
+       "evidence": "$6 margaritas",
+       "label": "margaritas",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "evidence": "$6 personal / $12 large margherita pizza",
+       "label": "personal margherita pizza",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "evidence": "$6 personal / $12 large margherita pizza",
+       "label": "large margherita pizza",
+       "price_usd": 12.0
+      }
+     ],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "clock_quote": "Monday - Thursday: 11:30 am - 9:00 pm",
+      "heading": "MARGHERITA MONDAY",
+      "kind": "venue_site",
+      "quote": "MONDAYS\nMARGHERITA MONDAY",
+      "url": "https://www.revivalpizzapub.com/daily-specials"
+     },
+     "type": "daily_special",
+     "verified_by": "menu_read_llm",
      "windows": [
       {
        "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
+       "end": "21:00",
+       "start": "11:30"
+      }
+     ]
+    },
+    {
+     "confidence": "unconfirmed",
+     "items": [
+      {
+       "category": "call",
+       "evidence": "$6 TITO'S MIXED DRINKS",
+       "label": "TITO'S MIXED DRINKS",
+       "price_usd": 6.0
       },
       {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
+       "category": "cocktail",
+       "evidence": "$8 TITO'S MARTINIS",
+       "label": "TITO'S MARTINIS",
+       "price_usd": 8.0
       }
      ],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "clock_quote": "Monday - Thursday: 11:30 am - 9:00 pm",
+      "heading": "THURSDAY",
+      "kind": "venue_site",
+      "quote": "THURSDAY\n$6 TITO'S MIXED DRINKS\n$8 TITO'S MARTINIS",
+      "url": "https://www.revivalpizzapub.com/daily-specials"
+     },
+     "type": "daily_special",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 4,
+       "end": "21:00",
+       "start": "11:30"
+      }
+     ]
+    },
+    {
+     "confidence": "unconfirmed",
      "items": [
+      {
+       "category": "food",
+       "evidence": "Garlic Knots\ngarlic conserva, marinara\n$3",
+       "label": "Garlic Knots",
+       "price_usd": 3.0
+      },
+      {
+       "category": "food",
+       "evidence": "Revival Fries\ncooper sharp beer cheese\n$5",
+       "label": "Revival Fries",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "evidence": "Personal Cheese Pizza\ncheese + one topping\n$8",
+       "label": "Personal Cheese Pizza",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "evidence": "Crispy Brussels V\npomegranate, balsamic, parmesan cheese\n$6",
+       "label": "Crispy Brussels",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "evidence": "Cheesesteak Eggrolls\namerican cheese, fried onions, housemade ranch, ketchup\n$7",
+       "label": "Cheesesteak Eggrolls",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "evidence": "Chicken Wings\nhouse buffalo, korean bbq, sticky honey garlic\n$10",
+       "label": "Chicken Wings",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "Truffle Fries V\nfresh parmesan, truffle\n$8",
+       "label": "Truffle Fries",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "evidence": "Mussels\nangry mussels, or garlicky white wine\n$10",
+       "label": "Mussels",
+       "price_usd": 10.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "Cocktails $7",
+       "label": "Cocktails",
+       "price_usd": 7.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "Martinis $10",
+       "label": "Martinis",
+       "price_usd": 10.0
+      },
+      {
+       "amount_off_usd": 2.0,
+       "category": "draft",
+       "evidence": "$2 off Craft Drafts",
+       "label": "Craft Drafts"
+      },
+      {
+       "category": "draft",
+       "evidence": "Miller Lite and Michelob Ultra Draft $3",
+       "label": "Miller Lite and Michelob Ultra Draft",
+       "price_usd": 3.0
+      },
+      {
+       "category": "wine",
+       "evidence": "or House White\n$4.50",
+       "label": "Glass of House Red or House White",
+       "price_usd": 4.5
+      },
       {
        "category": "food",
        "label": "Garlic Knots - garlic conserva, marinara",
@@ -586,36 +741,44 @@
        "category": "food",
        "label": "Mussels - angry mussels, or garlicky white wine",
        "price_usd": 10.0
-      },
-      {
-       "category": "cocktail",
-       "label": "Cocktails",
-       "price_usd": 7.0
-      },
-      {
-       "category": "cocktail",
-       "label": "Martinis",
-       "price_usd": 10.0
-      },
-      {
-       "category": "draft",
-       "label": "Miller Lite and Michelob Ultra Draft",
-       "price_usd": 3.0
-      },
-      {
-       "category": "wine",
-       "label": "Glass of House Red or House White",
-       "price_usd": 4.5
       }
      ],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-09-01",
-     "verified_by": "auto_extract",
+     "last_verified_at": "2026-09-02",
      "source": {
+      "heading": "HAPPY HOUR",
       "kind": "venue_site",
-      "url": "https://revivalpizzapub.com/",
-      "quote": "RAISE A SLICE TO HAPPY HOUR / Join us Monday through Friday from 4 - 6 pm for food and drink specials! Enjoy our exclusive deals and delicious offerings."
+      "quote": "monday- friday 4 PM - 6 PM",
+      "url": "https://static.wixstatic.com/media/ee76f7_ec3256bd3a88404b8afca7dde5e6965f~mv2.png/v1/crop/x_27,y_0,w_777,h_2000/fill/w_600,h_1544,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Revival HH.png"
      },
+     "type": "happy_hour",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ],
      "items_source": "llm_extract"
     }
    ]
@@ -639,25 +802,44 @@
    },
    "deals": [
     {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 3,
-       "start": "15:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "15:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "15:00",
-       "end": "18:00"
-      }
-     ],
+     "confidence": "unconfirmed",
      "items": [
+      {
+       "category": "cocktail",
+       "evidence": "$10 Classic Cocktails",
+       "label": "Classic Cocktails",
+       "price_usd": 10.0
+      },
+      {
+       "category": "wine",
+       "evidence": "$10 Red Wine Pours",
+       "label": "Red Wine Pours",
+       "price_usd": 10.0
+      },
+      {
+       "category": "draft",
+       "discount_pct": 20,
+       "evidence": "20% Off Tap Wall",
+       "label": "Tap Wall"
+      },
+      {
+       "category": "food",
+       "evidence": "Confit Chicken Wings $12",
+       "label": "Confit Chicken Wings",
+       "price_usd": 12.0
+      },
+      {
+       "category": "food",
+       "evidence": "Frito Misto $12",
+       "label": "Frito Misto",
+       "price_usd": 12.0
+      },
+      {
+       "category": "food",
+       "evidence": "Pork Belly $13",
+       "label": "Pork Belly",
+       "price_usd": 13.0
+      },
       {
        "category": "wine",
        "label": "Red Wine Pours: Pinot Noir, Cabernet Sauvignon",
@@ -667,31 +849,34 @@
        "category": "draft",
        "discount_pct": 20.0,
        "label": "Off Tap Wall, includes all 36 taps"
-      },
-      {
-       "category": "food",
-       "label": "Confit Chicken Wings",
-       "price_usd": 12.0
-      },
-      {
-       "category": "food",
-       "label": "Frito Misto",
-       "price_usd": 12.0
-      },
-      {
-       "category": "food",
-       "label": "Pork Belly",
-       "price_usd": 13.0
       }
      ],
-     "confidence": "unconfirmed",
      "last_verified_at": "2026-09-02",
-     "verified_by": "auto_extract",
      "source": {
+      "heading": "Happy Hour",
       "kind": "venue_site",
-      "url": "https://rivertowntaps.com/wp-content/uploads/2026/07/Happy-Hour-Specials.png",
-      "quote": "Happy Hour ( Wednesday through Friday 3pm to 6pm ) $10 Classic Cocktails"
+      "quote": "( Wednesday through Friday 3pm to 6pm )",
+      "url": "https://rivertowntaps.com/wp-content/uploads/2026/07/Happy-Hour-Specials.png"
      },
+     "type": "happy_hour",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "15:00"
+      }
+     ],
      "items_source": "llm_extract"
     }
    ]
@@ -700,7 +885,7 @@
    "id": "91502",
    "lid": "91502",
    "slug": "sedona-taphouse-phoenixville",
-   "name": "SEDONA TAPHOUSE",
+   "name": "Sedona Taphouse",
    "address": "131 Bridge St Ste 5, Phoenixville PA 19460",
    "zone_id": "phoenixville",
    "website": "https://sedonataphouse.com/",
@@ -712,99 +897,194 @@
    },
    "deals": [
     {
-     "type": "happy_hour",
+     "confidence": "unconfirmed",
+     "items": [
+      {
+       "category": "food",
+       "discount_pct": 50,
+       "evidence": "50% off",
+       "label": "Flat Iron Steak Entr\u00e9e"
+      },
+      {
+       "category": "food",
+       "discount_pct": 50,
+       "evidence": "50% off",
+       "label": "Salmon Entr\u00e9e"
+      }
+     ],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "clock_quote": "Monday - Thursday\n11am - 10pm",
+      "heading": "Dine Out for Charity",
+      "kind": "venue_site",
+      "quote": "Monday\nDine Out for Charity",
+      "url": "https://sedonataphouse.com/locations/phoenixville-pa/"
+     },
+     "type": "daily_special",
+     "verified_by": "menu_read_llm",
      "windows": [
       {
        "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 6,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 7,
-       "start": "16:00",
-       "end": "18:00"
+       "end": "22:00",
+       "start": "11:00"
       }
-     ],
+     ]
+    },
+    {
+     "confidence": "unconfirmed",
      "items": [
       {
        "category": "wine",
-       "label": "House Wine by the Glass",
+       "discount_pct": 50,
+       "evidence": "half-off bottles of wine",
+       "label": "bottles of wine"
+      },
+      {
+       "amount_off_usd": 20.0,
+       "category": "wine",
+       "evidence": "$20 off Reserve bottles of wine",
+       "label": "Reserve bottles of wine"
+      }
+     ],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "clock_quote": "Monday - Thursday\n11am - 10pm",
+      "heading": "Wine Down Wednesday",
+      "kind": "venue_site",
+      "quote": "Wednesday\nWine Down Wednesday",
+      "url": "https://sedonataphouse.com/locations/phoenixville-pa/"
+     },
+     "type": "daily_special",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 3,
+       "end": "22:00",
+       "start": "11:00"
+      }
+     ]
+    },
+    {
+     "confidence": "unconfirmed",
+     "items": [
+      {
+       "category": "wine",
+       "evidence": "House Wine by the glass $7.9",
+       "label": "House Wine by the glass",
        "price_usd": 7.9
       },
       {
        "category": "cocktail",
-       "label": "Select Craft Classics",
-       "price_usd": 9.9
+       "evidence": "Red or White Sangria $8.9",
+       "label": "Red or White Sangria",
+       "price_usd": 8.9
+      },
+      {
+       "category": "bottle_can",
+       "discount_pct": 50,
+       "evidence": "1/2 off Bottles + Cans",
+       "label": "Bottles + Cans"
       },
       {
        "category": "food",
+       "evidence": "$9.9",
        "label": "Truffle Fries",
        "price_usd": 9.9
       },
       {
        "category": "food",
+       "evidence": "$9.9",
        "label": "Guacamole",
        "price_usd": 9.9
       },
       {
        "category": "food",
+       "evidence": "$9.9",
        "label": "Goat Cheese + Tomato Bruschetta",
        "price_usd": 9.9
       },
       {
        "category": "food",
+       "evidence": "$10.9",
        "label": "Margherita Flatbread",
        "price_usd": 10.9
       },
       {
        "category": "food",
+       "evidence": "$10.9",
        "label": "BBQ Chicken Flatbread",
        "price_usd": 10.9
       },
       {
        "category": "food",
+       "evidence": "$10.9",
        "label": "South Rim Shrimp Flatbread",
        "price_usd": 10.9
       },
       {
        "category": "food",
+       "evidence": "$10.9",
        "label": "Goat Cheese + Basil Flatbread",
        "price_usd": 10.9
       },
       {
        "category": "food",
+       "evidence": "$11.9",
        "label": "Meat Lovers Flatbread",
        "price_usd": 11.9
       },
       {
        "category": "food",
+       "evidence": "$11.9",
        "label": "Buffalo Chicken Flatbread",
        "price_usd": 11.9
+      },
+      {
+       "category": "food",
+       "evidence": "$12.9",
+       "label": "Salmon Sliders (2)",
+       "price_usd": 12.9
+      },
+      {
+       "category": "food",
+       "evidence": "$12.9",
+       "label": "Pork BBQ Sliders (2)",
+       "price_usd": 12.9
+      },
+      {
+       "category": "food",
+       "evidence": "$12.9",
+       "label": "'Kobe Beef' Sliders (2)",
+       "price_usd": 12.9
+      },
+      {
+       "category": "food",
+       "evidence": "$12.9",
+       "label": "Prince Edward Island Mussels",
+       "price_usd": 12.9
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$9.9 Cocktails",
+       "label": "STH Mule",
+       "price_usd": 9.9
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$9.9 Cocktails",
+       "label": "Prickly Pear Margarita",
+       "price_usd": 9.9
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$9.9 Cocktails",
+       "label": "Classic Old Fashioned",
+       "price_usd": 9.9
+      },
+      {
+       "category": "cocktail",
+       "label": "Select Craft Classics",
+       "price_usd": 9.9
       },
       {
        "category": "food",
@@ -823,31 +1103,6 @@
       },
       {
        "category": "food",
-       "label": "Prince Edward Island Mussels",
-       "price_usd": 12.9
-      },
-      {
-       "category": "cocktail",
-       "label": "Red or White Sangria",
-       "price_usd": 8.9
-      },
-      {
-       "category": "cocktail",
-       "label": "STH Mule",
-       "price_usd": 9.9
-      },
-      {
-       "category": "cocktail",
-       "label": "Prickly Pear Margarita",
-       "price_usd": 9.9
-      },
-      {
-       "category": "cocktail",
-       "label": "Classic Old Fashioned",
-       "price_usd": 9.9
-      },
-      {
-       "category": "food",
        "label": "Salmon Sliders (2) with greens",
        "price_usd": 12.9
       },
@@ -860,27 +1115,78 @@
        "category": "food",
        "label": "'Kobe Beef' Sliders (2) with greens",
        "price_usd": 12.9
+      }
+     ],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "heading": "weekly specials",
+      "kind": "venue_site",
+      "quote": "monday - Friday 4 - 6pm weekly specials",
+      "url": "https://sedonataphouse.com/wp-content/uploads/2019/01/HappyHourMenu_PhxWC_05.12.26.pdf"
+     },
+     "type": "happy_hour",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
       },
       {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ],
+     "items_source": "llm_extract"
+    },
+    {
+     "confidence": "unconfirmed",
+     "items": [
+      {
        "category": "wine",
-       "label": "house wine by the glass and",
+       "evidence": "$7.9 house wine by the glass",
+       "label": "house wine by the glass",
        "price_usd": 7.9
       },
       {
-       "category": "wine",
-       "label": "Reserve Wines",
-       "amount_off_usd": 20.0
+       "category": "cocktail",
+       "evidence": "$9.9 select craft classics",
+       "label": "select craft classics",
+       "price_usd": 9.9
       }
      ],
-     "confidence": "unconfirmed",
      "last_verified_at": "2026-09-02",
-     "verified_by": "auto_extract",
      "source": {
+      "heading": "Toast to Tuesday!",
       "kind": "venue_site",
-      "url": "https://sedonataphouse.com/locations/phoenixville-pa/",
-      "quote": "Join us for Happy Hour from 4pm \u2013 6pm for $7.9 house wine by the glass and $9.9 select craft classics!"
+      "quote": "Toast to Tuesday!\nJoin us for Happy Hour from 4pm \u2013 6pm for $7.9 house wine by the glass and $9.9 select craft classics!",
+      "url": "https://sedonataphouse.com/locations/phoenixville-pa/"
      },
-     "items_source": "llm_extract"
+     "type": "happy_hour",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
     }
    ]
   },
@@ -903,49 +1209,213 @@
    },
    "deals": [
     {
-     "type": "happy_hour",
-     "windows": [
+     "confidence": "unconfirmed",
+     "items": [
       {
-       "dow": 2,
-       "start": "15:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "15:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "15:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "15:00",
-       "end": "18:00"
+       "category": "bottle_can",
+       "evidence": "$9 Select Growlers",
+       "label": "Select Growlers",
+       "price_usd": 9.0
       }
      ],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "clock_quote": "Tuesday- Saturday\n11:30AM- 9:00PM",
+      "heading": "Wednesday: $9 Select Growlers",
+      "kind": "venue_site",
+      "quote": "Wednesday: $9 Select Growlers\n$12 Large Cheesesteak, fries, & a pint",
+      "url": "https://www.slyfoxbeer.com/phoenixville"
+     },
+     "type": "daily_special",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 3,
+       "end": "21:00",
+       "start": "11:30"
+      }
+     ]
+    },
+    {
+     "confidence": "unconfirmed",
+     "items": [],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "clock_quote": "Tuesday- Saturday\n11:30AM- 9:00PM",
+      "heading": "Friday: New weekly food specials",
+      "kind": "venue_site",
+      "quote": "Friday: New weekly food specials",
+      "url": "https://www.slyfoxbeer.com/phoenixville"
+     },
+     "type": "daily_special",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 5,
+       "end": "21:00",
+       "start": "11:30"
+      }
+     ]
+    },
+    {
+     "confidence": "unconfirmed",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "$11 Mystery Pitcher",
+       "label": "Mystery Pitcher",
+       "price_usd": 11.0
+      }
+     ],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "clock_quote": "Tuesday- Saturday\n11:30AM- 9:00PM",
+      "heading": "Saturday: $11 Mystery Pitcher",
+      "kind": "venue_site",
+      "quote": "Saturday: $11 Mystery Pitcher",
+      "url": "https://www.slyfoxbeer.com/phoenixville"
+     },
+     "type": "daily_special",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 6,
+       "end": "21:00",
+       "start": "11:30"
+      }
+     ]
+    },
+    {
+     "confidence": "unconfirmed",
+     "items": [
+      {
+       "amount_off_usd": 2.0,
+       "category": "cocktail",
+       "evidence": "$2 off Bloody Marys",
+       "label": "Bloody Marys"
+      }
+     ],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "clock_quote": "Sunday\n11:30AM- 8:00PM",
+      "heading": "Sunday: $2 off Bloody Marys & BLT Highball",
+      "kind": "venue_site",
+      "quote": "Sunday: $2 off Bloody Marys & BLT Highball",
+      "url": "https://www.slyfoxbeer.com/phoenixville"
+     },
+     "type": "daily_special",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 7,
+       "end": "20:00",
+       "start": "11:30"
+      }
+     ]
+    },
+    {
+     "confidence": "unconfirmed",
      "items": [
       {
        "category": "food",
-       "label": "select appetizers",
-       "amount_off_usd": 2.0
+       "evidence": "$12 Large Cheesesteak, fries, & a pint",
+       "label": "Large Cheesesteak, fries, & a pint",
+       "price_usd": 12.0
+      }
+     ],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "clock_quote": "Tuesday- Saturday\n11:30AM- 9:00PM",
+      "heading": "Wednesday: $9 Select Growlers",
+      "kind": "venue_site",
+      "quote": "Wednesday: $9 Select Growlers\n$12 Large Cheesesteak, fries, & a pint",
+      "url": "https://www.slyfoxbeer.com/phoenixville"
+     },
+     "type": "food_combo",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 3,
+       "end": "21:00",
+       "start": "11:30"
+      }
+     ]
+    },
+    {
+     "confidence": "unconfirmed",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "$12 Burger Speci al & a pint",
+       "label": "Burger Special & a pint",
+       "price_usd": 12.0
+      }
+     ],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "clock_quote": "Tuesday- Saturday\n11:30AM- 9:00PM",
+      "heading": "Thursday: $12 Burger Speci al & a pint",
+      "kind": "venue_site",
+      "quote": "Thursday: $12 Burger Speci al & a pint",
+      "url": "https://www.slyfoxbeer.com/phoenixville"
+     },
+     "type": "food_combo",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 4,
+       "end": "21:00",
+       "start": "11:30"
+      }
+     ]
+    },
+    {
+     "confidence": "unconfirmed",
+     "items": [
+      {
+       "amount_off_usd": 2.0,
+       "category": "food",
+       "evidence": "$2 off select appetizers",
+       "label": "select appetizers"
       },
       {
        "category": "food",
-       "label": "wings from 3PM-6PM",
+       "evidence": "$1 wings from 3PM-6PM",
+       "label": "wings",
        "price_usd": 1.0
       }
      ],
-     "confidence": "unconfirmed",
      "last_verified_at": "2026-09-02",
-     "verified_by": "auto_extract",
      "source": {
+      "heading": "Tuesday-Friday: Appy Hour",
       "kind": "venue_site",
-      "url": "https://www.slyfoxbeer.com/phoenixville",
-      "quote": "DAILY SPECIALS / \u200b Tuesday-Friday: Appy Hour / $2 off select appetizers and $1 wings from 3PM-6PM (dine-in only) \u200b"
-     }
+      "quote": "Tuesday-Friday: Appy Hour\n$2 off select appetizers and $1 wings from 3PM-6PM (dine-in only)",
+      "url": "https://www.slyfoxbeer.com/phoenixville"
+     },
+     "type": "happy_hour",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "15:00"
+      }
+     ]
     }
    ]
   },
@@ -1053,35 +1523,44 @@
    },
    "deals": [
     {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
+     "confidence": "unconfirmed",
      "items": [
+      {
+       "category": "wine",
+       "evidence": "House Wine: $8",
+       "label": "House Wine",
+       "price_usd": 8.0
+      },
+      {
+       "category": "draft",
+       "evidence": "Domestic Drafts and Bottles: $4",
+       "label": "Domestic Drafts",
+       "price_usd": 4.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "Domestic Drafts and Bottles: $4",
+       "label": "Domestic Bottles",
+       "price_usd": 4.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "House Martini: $12",
+       "label": "House Martini",
+       "price_usd": 12.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "House Cosmo: $12",
+       "label": "House Cosmo",
+       "price_usd": 12.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "House Margarita: $12",
+       "label": "House Margarita",
+       "price_usd": 12.0
+      },
       {
        "category": "food",
        "label": "Pretzel bites",
@@ -1136,31 +1615,44 @@
        "category": "draft",
        "label": "Domestic Drafts and Bottles",
        "price_usd": 4.0
-      },
-      {
-       "category": "cocktail",
-       "label": "House Martini",
-       "price_usd": 12.0
-      },
-      {
-       "category": "cocktail",
-       "label": "House Cosmo",
-       "price_usd": 12.0
-      },
-      {
-       "category": "cocktail",
-       "label": "House Margarita",
-       "price_usd": 12.0
       }
      ],
-     "confidence": "unconfirmed",
      "last_verified_at": "2026-09-02",
-     "verified_by": "auto_extract",
      "source": {
+      "heading": "HAPPY HOUR",
       "kind": "venue_site",
-      "url": "https://valleyforgepizza.com/images/happy_hours_page_1.png",
-      "quote": "HAPPY HOUR Monday-Friday 4pm - 6pm DRINK MENU"
+      "quote": "HAPPY HOUR\nMonday-Friday 4pm - 6pm",
+      "url": "https://valleyforgepizza.com/images/happy_hours_page_1.png"
      },
+     "type": "happy_hour",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ],
      "items_source": "llm_extract"
     }
    ]

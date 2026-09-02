@@ -244,8 +244,21 @@ def from_board(args, key):
     resolved, is in the population by construction. Same LID key space and same
     manifest as --from-places; only the population differs.
     """
-    board = json.load(open(BOARD_JSON, encoding="utf-8"))
     base = json.load(open(BASE_JSON, encoding="utf-8"))
+    if args.every_venue:
+        # PHOTOS FOR EVERY VENUE IN A TOWN, DEALS OR NOT. Paul, 2026-09-02: "for
+        # restaurants with hours not published, all of those photos should be
+        # present too, for all towns." board-by-lid.json holds only the venues
+        # that HAVE a window -- 221 of 2,783 -- so the population for that ask
+        # is the zone's licensees, and it is deliberately a per-zone flag: the
+        # no-deal class is ~2,570 venues corpus-wide (~$100), which is a town at
+        # a time inside a scoped run, never one sweep.
+        if not args.zone:
+            sys.exit("--every-venue needs --zone: this is a town at a time, never "
+                     "the whole corpus")
+        board = {lid for lid, v in base.items() if v.get("zone_id") == args.zone}
+    else:
+        board = json.load(open(BOARD_JSON, encoding="utf-8"))
     manifest = json.load(open(LID_MANIFEST, encoding="utf-8")) if os.path.exists(LID_MANIFEST) else {}
 
     covered = shipped_with_a_photo()
@@ -362,6 +375,8 @@ def main():
                     help="use photo references discover_places.py already fetched")
     ap.add_argument("--from-board", action="store_true",
                     help="cover the venues the site actually shows (board-by-lid.json)")
+    ap.add_argument("--every-venue", action="store_true",
+                    help="with --from-board --zone Z: every licensee in Z, deals or not")
     ap.add_argument("--spend", action="store_true",
                     help="with --from-board, actually run the billed lookups")
     ap.add_argument("--zone", help="with --from-places/--from-board, restrict to one zone")

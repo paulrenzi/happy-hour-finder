@@ -1805,12 +1805,14 @@
  },
  "104330": {
   "address": "700 BETHLEHEM PIKE, GLENSIDE PA 19038",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "BACIO VERMOUTH",
   "osm_name": "Bacio's Italian Cuicina",
   "pages": [
    {
+    "hh": false,
+    "lines": 0,
     "result": "ok, 0 quote(s)",
     "url": "https://www.baciocucina.com/"
    }
@@ -4039,27 +4041,42 @@
  },
  "109577": {
   "address": "300 BROOKSIDE AVE BLDG 19 STE E, AMBLER PA 19002-3436",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [
    {
-    "quote": "HAPPY HOUR | wellcraftedbeer",
-    "url": "https://www.wellcraftedbeer.com/home/lansdale/happyhour"
+    "hh": true,
+    "quote": "HAPPY HOUR MENU / Available weekdays 3 to 6 pm.",
+    "url": "https://www.wellcraftedbeer.com/home/ambler/hoppyhour"
    },
    {
-    "quote": "HAPPY HOUR MENU / Available weekdays 4 to 6 pm.",
-    "url": "https://www.wellcraftedbeer.com/home/lansdale/happyhour"
+    "hh": true,
+    "quote": "HAPPY HOUR DISCOUNTS INCLUDE",
+    "url": "https://www.wellcraftedbeer.com/home/ambler/hoppyhour"
+   },
+   {
+    "hh": true,
+    "quote": "LATE NIGHT HAPPY HOUR MENU / Available Fridays and Saturdays 8 to 10 pm. / Blackberry Lemon Drops |8",
+    "url": "https://www.wellcraftedbeer.com/home/ambler/hoppyhour"
    }
   ],
   "name": "WELL CRAFTED BEER COMPANY LLC",
   "osm_name": null,
   "pages": [
    {
+    "result": "render failed: TimeoutError",
+    "url": "https://www.wellcraftedbeer.com/"
+   },
+   {
+    "hh": false,
+    "lines": 1,
     "result": "ok, 0 quote(s)",
     "url": "https://www.wellcraftedbeer.com/"
    },
    {
-    "result": "ok, 2 quote(s)",
-    "url": "https://www.wellcraftedbeer.com/home/lansdale/happyhour"
+    "hh": true,
+    "lines": 109,
+    "result": "ok, 3 quote(s)",
+    "url": "https://www.wellcraftedbeer.com/home/ambler/hoppyhour"
    }
   ],
   "website": "https://www.wellcraftedbeer.com/",
@@ -10945,12 +10962,14 @@
  },
  "132986": {
   "address": "34 E BUTLER AVE, AMBLER PA 19002-4527",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "GYPSY BLU",
   "osm_name": "Gypsy Blu",
   "pages": [
    {
+    "hh": false,
+    "lines": 409,
     "result": "ok, 0 quote(s)",
     "url": "https://www.gypsyblurestaurant.com/"
    }
@@ -11834,7 +11853,7 @@
  },
  "19801": {
   "address": "1032 BETHLEHEM PIKE, SPRING HOUSE PA 19477",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "SPRINGHOUSE TAVERN",
   "osm_name": "Spring House Tavern",
@@ -12008,7 +12027,7 @@
  },
  "23492": {
   "address": "46 S BETHLEHEM PK, AMBLER PA 19002-5801",
-  "crawled_at": "2026-08-31",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "GIUSEPPE'S PIZZA REST. OF AMBLER",
   "osm_name": "Guiseppes Restauant",
@@ -13310,26 +13329,34 @@
  },
  "37332": {
   "address": "1017 DEKALB PIKE, GWYNEDD PA 19436",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "WILLIAM PENN MANAGEMENT CO., INC.",
   "osm_name": "William Penn Inn",
   "pages": [
    {
+    "hh": false,
+    "lines": 66,
     "result": "ok, 0 quote(s)",
     "url": "https://www.williampenninn.com/"
    },
    {
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.williampenninn.com/occasions/"
-   },
-   {
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.williampenninn.com/corporate-events/"
-   },
-   {
+    "hh": false,
+    "lines": 71,
     "result": "ok, 0 quote(s)",
     "url": "https://www.williampenninn.com/dining/menus/"
+   },
+   {
+    "hh": false,
+    "lines": 110,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.williampenninn.com/wp-content/uploads/2026/04/Dinner-Spring-2026-Copy.pdf"
+   },
+   {
+    "hh": false,
+    "lines": 63,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.williampenninn.com/directions/"
    }
   ],
   "website": "https://www.williampenninn.com/",
@@ -15544,26 +15571,34 @@
  },
  "47025": {
   "address": "6-8-10 W BUTLER PK, AMBLER PA 19002-5702",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "KC'S ALLEY",
   "osm_name": "Bridgets Steakhouse",
   "pages": [
    {
+    "hh": false,
+    "lines": 149,
     "result": "ok, 0 quote(s)",
     "url": "https://bridgetssteak.com/"
    },
    {
+    "hh": false,
+    "lines": 66,
     "result": "ok, 0 quote(s)",
     "url": "https://bridgetssteak.com/ambler-philadelphia-ambler-bridgets-steakhouse-happy-hours-specials"
    },
    {
+    "hh": false,
+    "lines": 75,
     "result": "ok, 0 quote(s)",
-    "url": "https://bridgetssteak.com/ambler-philadelphia-ambler-bridgets-steakhouse-events"
+    "url": "https://bridgetssteak.com/ambler-philadelphia-ambler-bridgets-steakhouse-locations"
    },
    {
+    "hh": false,
+    "lines": 56,
     "result": "ok, 0 quote(s)",
-    "url": "https://bridgetssteak.com/ambler-philadelphia-ambler-bridgets-steakhouse-food-menu"
+    "url": "https://bridgetssteak.com/ambler-philadelphia-ambler-bridgets-steakhouse-about"
    }
   ],
   "website": "https://bridgetssteak.com/",
@@ -17499,7 +17534,7 @@
  },
  "53260": {
   "address": "31 N MAIN ST, AMBLER PA 19002-5735",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "BAR 31, LLC",
   "osm_name": "Bar 31",
@@ -18083,7 +18118,7 @@
  },
  "55311": {
   "address": "1211 S BETHLEHEM PK, AMBLER PA 19002-5804",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [
    {
     "quote": "Lunch, Dinner, and Drink Specials are posted on Facebook daily and can also be viewed here on our home page",
@@ -18104,6 +18139,10 @@
    {
     "quote": "Join Us for Happy Hour / Monday thru Friday: 4:30PM - 6:30PM / Saturday: 4:00PM - 6:00PM",
     "url": "https://www.firesidebarandgrille.com/"
+   },
+   {
+    "quote": "Join Us for Happy Hour / Monday thru Friday: 4:30PM - 6:30PM / Saturday: 4:00PM - 6:00PM",
+    "url": "http://www.firesidebarandgrille.com/menus/"
    },
    {
     "quote": "Lunch, Dinner, and Drink Specials are posted on Facebook daily and can also be viewed here on our home page",
@@ -18134,14 +18173,26 @@
   "osm_name": "Fireside Bar and Grill",
   "pages": [
    {
+    "hh": true,
+    "lines": 70,
     "result": "ok, 5 quote(s)",
     "url": "https://www.firesidebarandgrille.com/"
    },
    {
+    "hh": true,
+    "lines": 44,
+    "result": "ok, 1 quote(s)",
+    "url": "http://www.firesidebarandgrille.com/menus/"
+   },
+   {
+    "hh": true,
+    "lines": 70,
     "result": "ok, 5 quote(s)",
     "url": "https://www.firesidebarandgrille.com/"
    },
    {
+    "hh": true,
+    "lines": 44,
     "result": "ok, 1 quote(s)",
     "url": "http://www.firesidebarandgrille.com/menus/"
    }
@@ -21724,24 +21775,32 @@
  },
  "63038": {
   "address": "110 E BUTLER AVE, AMBLER PA 19002",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "FROM THE BOOT",
   "osm_name": "From the Boot",
   "pages": [
    {
+    "hh": false,
+    "lines": 112,
     "result": "ok, 0 quote(s)",
     "url": "https://fromtheboot.com/eat/?location=ambler"
    },
    {
+    "hh": false,
+    "lines": 50,
     "result": "ok, 0 quote(s)",
     "url": "https://fromtheboot.com/book-event/"
    },
    {
+    "hh": false,
+    "lines": 53,
     "result": "ok, 0 quote(s)",
     "url": "https://fromtheboot.com/event-details?id=3d9545e8-11e0-41c5-b561-d7b4f579484b&date=1789516800"
    },
    {
+    "hh": false,
+    "lines": 88,
     "result": "ok, 0 quote(s)",
     "url": "https://fromtheboot.com/events/"
    }
@@ -23322,14 +23381,28 @@
  },
  "65679": {
   "address": "241 N MAIN ST, AMBLER PA 19002-5728",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "FOREST AND MAIN BREWING COMPANY",
   "osm_name": "Forest & Main Pub",
   "pages": [
    {
+    "hh": false,
+    "lines": 155,
     "result": "ok, 0 quote(s)",
     "url": "https://forest-and-main-brewing-co.myshopify.com/pages/the-pub"
+   },
+   {
+    "hh": false,
+    "lines": 157,
+    "result": "ok, 0 quote(s)",
+    "url": "https://forest-and-main-brewing-co.myshopify.com/pages/fishtown"
+   },
+   {
+    "hh": false,
+    "lines": 149,
+    "result": "ok, 0 quote(s)",
+    "url": "https://forest-and-main-brewing-co.myshopify.com/pages/the-pub-draft-list-1"
    }
   ],
   "website": "https://forest-and-main-brewing-co.myshopify.com/pages/the-pub",
@@ -32906,20 +32979,40 @@
  },
  "93677": {
   "address": "131 E BUTLER AVE, AMBLER PA 19002",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "COMLY BROWN ENTERPRISES LLC",
   "osm_name": "Geronimo's Peruvian Cuisine",
   "pages": [
    {
+    "result": "rendered: 34 lines -> 35",
+    "url": "https://www.geronimosambler.com/"
+   },
+   {
+    "hh": false,
+    "lines": 35,
     "result": "ok, 0 quote(s)",
     "url": "https://www.geronimosambler.com/"
    },
    {
+    "result": "rendered: 1 lines -> 128",
+    "url": "https://www.geronimosambler.com/menu"
+   },
+   {
+    "hh": false,
+    "lines": 128,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.geronimosambler.com/menu"
+   },
+   {
+    "hh": false,
+    "lines": 44,
     "result": "ok, 0 quote(s)",
     "url": "https://www.geronimosambler.com/event"
    },
    {
+    "hh": false,
+    "lines": 1,
     "result": "ok, 0 quote(s)",
     "url": "https://www.geronimosambler.com/menu"
    }
@@ -34859,7 +34952,7 @@
  },
  "96954": {
   "address": "1825 LIMEKILN PIKE, DRESHER PA 19025",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "THE FROSTED MUG",
   "osm_name": "Fine Wine & Good Spirits",
@@ -34954,7 +35047,7 @@
  },
  "97771": {
   "address": "1650 LIMEKILN PIKE, DRESHER PA 19025-1114",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "GEORGES MARKET",
   "osm_name": "McDonald's",
@@ -35331,7 +35424,7 @@
  },
  "98621": {
   "address": "1600 LIMEKILN PIKE, GLENSIDE PA 19038",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "LIMEKILN 1600 LLC",
   "osm_name": "LuLu Country Club",
