@@ -83,11 +83,20 @@ item below it. Nothing needs re-crawling to start recording it.
 
 ### 2. Widen the render gate — ~13% of the no-quote class, ~50 venues
 
-> **Built 2026-09-02, not yet run against a town.** `render_wanted()` now also
+> **Built and run 2026-09-02.** `render_wanted()` now also
 > fires for a depth-1 seed page of a venue with no quote yet, and the rendered
 > HTML feeds `candidate_links()`. Six tests cover it, including the end-to-end
 > shape: shell seed → render → `/happy-hour` discovered → quote. The ~13%
 > yield is still the sampled figure, not a measurement.
+>
+> **Run against phoenixville 2026-09-02 (24 needy venues): 4 pages rendered,
+> 0 quotes.** First real firing. It also exposed that `report_holes.py` called
+> a page under 40 lines a shell while the gate refused anything over 25 --
+> Chikara Sushi's 36-line homepage was reported as needing exactly the fix the
+> crawler would not apply to it. The two now share one constant. The run added
+> **no card**: all five quote-carrying venues say "happy hour" and state no
+> clock, and the two windows that looked recoverable were a phone number and a
+> set of business hours. Both refusals are correct.
 
 `render_wanted()` requires `page_is_hh(url)` (the URL must name an hour) **and**
 a page under `RENDER_LINE_FLOOR`. A shell homepage's URL does not name an hour,
