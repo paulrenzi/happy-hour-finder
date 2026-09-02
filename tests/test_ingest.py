@@ -1157,6 +1157,64 @@ class DealExtraction(unittest.TestCase):
                       "Happy Hour 4-6pm on 9/19"):
             self.assertEqual(windows_from(dated), [], dated)
 
+    def test_an_explicit_day_range_beats_the_word_daily_in_one_clause(self):
+        # "Daily Happy Hour at Other Half Buffalo Tuesday-Friday 4pm-6pm" is
+        # one clause making both claims, and 'daily' won -- so the card said
+        # seven days over a quote that says four.
+        self.assertEqual(
+            sorted(extract_deals.days_in(
+                "Daily Happy Hour at Other Half Tuesday-Friday 4pm-6pm")),
+            [2, 3, 4, 5])
+
+    def test_daily_still_wins_when_no_range_disputes_it(self):
+        self.assertEqual(sorted(extract_deals.days_in("Happy Hour daily 4-6pm")),
+                         [1, 2, 3, 4, 5, 6, 7])
+
+    def test_N_dated_entries_at_ONE_clock_is_a_schedule(self):
+        """An events-calendar CMS is how a lot of bars publish, and refusing it
+        whole cost The Pullman a real card. The discriminator is the CLOCK."""
+        def hit(q):
+            return {"url": "https://x.example/events", "quote": q}
+        pullman = [hit("Happy Hour / 04:30 PM - 06:30 PM / Wednesday September 2nd"),
+                   hit("Happy Hour / 04:30 PM - 06:30 PM / Thursday September 3rd"),
+                   hit("Happy Hour / 04:30 PM - 06:30 PM / Friday September 4th")]
+        got, quotes, urls = extract_deals.recurring_windows(pullman)
+        self.assertEqual(sorted(w["dow"] for w in got), [3, 4, 5])
+        self.assertEqual({(w["start"], w["end"]) for w in got}, {("16:30", "18:30")})
+        self.assertEqual(len(quotes), 3)
+
+    def test_two_dates_is_a_coincidence_not_a_schedule(self):
+        def hit(q):
+            return {"url": "https://x.example/events", "quote": q}
+        got, _q, _u = extract_deals.recurring_windows(
+            [hit("Happy Hour / Sat, Sep 5 / 6pm-9pm"),
+             hit("Happy Hour / Sat, Sep 19 / 6pm-9pm")])
+        self.assertEqual(got, [])
+
+    def test_a_calendar_of_DIFFERENT_clocks_publishes_only_what_repeats(self):
+        # Braeloch Brewing: 2-6 once, 6-9 twice, 5-8 four times. Only the
+        # Friday 5-8 is a weekly happy hour, and only it ships.
+        def hit(q):
+            return {"url": "https://x.example/events", "quote": q}
+        got, _q, _u = extract_deals.recurring_windows([
+            hit("Fri, Sep 4 Happy Hour 2pm-6pm"),
+            hit("Happy Hour / Sat, Sep 5 / 6pm-9pm"),
+            hit("Happy Hour / Fri, Sep 11 / 5pm-8pm"),
+            hit("Happy Hour / Sat, Sep 19 / 6pm-9pm"),
+            hit("Happy Hour / Fri, Sep 25 / 5pm-8pm"),
+            hit("Happy Hour / Fri, Oct 2 / 5pm-8pm"),
+            hit("Happy Hour / Fri, Oct 9 / 5pm-8pm"),
+        ])
+        self.assertEqual([(w["dow"], w["start"], w["end"]) for w in got],
+                         [(5, "17:00", "20:00")])
+
+    def test_the_same_date_written_twice_is_still_one_date(self):
+        def hit(q):
+            return {"url": "https://x.example/events", "quote": q}
+        got, _q, _u = extract_deals.recurring_windows(
+            [hit("Happy Hour / Fri, Sep 11 / 5pm-8pm")] * 4)
+        self.assertEqual(got, [])
+
     def test_a_SEASON_is_not_a_date(self):
         # The guard has to be narrower than ONE_OFF_RE, which matches a bare
         # month-and-number -- and that is exactly what 86 West's seasonal line

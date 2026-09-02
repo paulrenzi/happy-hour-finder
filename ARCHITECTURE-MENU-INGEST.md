@@ -1761,6 +1761,327 @@ two literal backspace bytes"* (2026-09-01).
 than a syntax error, because a syntax error stops you.
 
 
+## ✅🔑🔑 A PUBLISHED WINDOW MUST AGREE WITH ITS OWN PRINTED QUOTE (2026-09-02, late)
+
+`tests/window_quote_check.py`, wired into `tests/run.sh`.
+
+Every validator in this repo asked one of two questions: is a deal **well
+formed**, and is its quote **present in the source document**. Nothing asked
+whether the two **AGREE**. So Penn Taproom shipped a `4:30–6:00` card above a
+quote that plainly reads *"4:30 to 6:30 PM"*, in public, and a 449-test suite
+was blind to it. Paul found it by reading a card.
+
+### 🔑 The check must not re-use the grammar that produced the window
+
+Calling `windows_from()` on the quote again agrees with itself by construction,
+and would have **passed** Penn Taproom — the defect *was* that grammar. So this
+reads the quote the dumb way: every clock literal, every day word, no parsing.
+
+| | |
+|---|---|
+| CLOCKS | both ends of a published window must be a time the quote actually says |
+| DAYS | a quote limiting itself to the working week must not have shipped a weekend |
+
+Deliberately **generous**, so a false PASS is possible and a false FAILURE is
+not — a gate that blocks a ship must not cry wolf or it gets switched off.
+`$6 TITO'S` is a price, not six o'clock. `12am` is both ends of a day. A quote
+with no unambiguous clock in it is not judged at all.
+
+### What it found — 26 of 266 cards, five live causes
+
+1. **A day word we do not know reads as NO day, and no day means daily.**
+   `weeknights` (Off the Rail) and `the working week` (Serum Kitchen) both
+   returned the empty set, and the every-day inference published a weekend.
+   🚨 **This will recur.** The vocabulary is `WEEKDAY_RE` / `WEEKEND_RE` /
+   `EVERYDAY_RE` / `DOW` / `DAY_CODE` in `extract_deals.py`; anything a bar can
+   write that is not in one of them becomes a wrong card, not a missing one.
+2. **A window nobody stated.** `dedupe()` publishes the OVERLAP of two
+   disagreeing quotes — argued and correct for one venue read twice, wrong when
+   the two quotes are not about the same bar. Causes found: another BRANCH of
+   the same business, and a customer REVIEW on the venue's own homepage.
+3. **The card printed the richest quote, not a surviving one.** Lansdale
+   Tavern's card showed its *Late Night Menu, 9pm–11pm* over a 4pm window.
+4. **A dated one-off event read as a weekly window.**
+5. `source.quotes` now carries the WHOLE evidence set, because a card's windows
+   can legitimately come from several quotes. A card whose printed line cannot
+   account for what it publishes is a defect either way.
+
+---
+
+## 🛑🔑🔑 THE OTHER BRANCH OF THE SAME BUSINESS (2026-09-02)
+
+A restaurant group puts every location's happy hour on one website and the
+crawler reads them all.
+
+- **Spasso Italian Grill** — Media page says `Every MONDAY - FRIDAY 4:00 - 6:00
+  PM`, Philadelphia page says `Every Tuesday - Friday 5-7PM`. Both were pooled
+  into the Media licence, `dedupe()` published the overlap, and Media's board
+  said **5–6 PM over a quote saying 4:00**.
+- **Santucci's** North Broad shipped its University City hours the same way.
+- **Other Half Brewing's PHILADELPHIA licence shipped BUFFALO, NEW YORK's happy
+  hour**, seven days a week, off `/event/…-happy-hour-buffalo-2026-09-15/`.
+
+`another_branch()` refuses a quote the site itself labels as another location —
+in the head of the line (first `BRANCH_LABEL_WORDS`) or in the URL path.
+
+### 🛑 A gazetteer is the wrong tool here, and it was tried
+
+GeoNames' full US place list is already in the repo (`seed_plcb.py` downloads
+it). Matching URL-path tokens against it **cost 27 cards to win 2**:
+`/happy-hour/` is refused because **Happy, Texas** exists, `/westchester`
+because **Westchester, Illinois** does. An out-of-market city and an ordinary
+English word are the same string.
+
+So out-of-market cities are a small hand-kept set, `OUT_OF_MARKET`, and its
+maintenance cost is the honest price of not refusing a card for the word
+"happy". Add to it when a chain page turns up wearing another city's name.
+
+---
+
+## 🛑🔑 A DATED EVENT IS ONE EVENING — AND N OF THEM AT ONE CLOCK IS A SCHEDULE
+
+Two rules, and they are the same rule read from both ends.
+
+**Braeloch Brewing** (Kennett Square) publishes an events calendar and nothing
+else. `Fri, Sep 4 / 2pm-6pm`, `Sat, Sep 5 / 6pm-9pm`, `Fri, Sep 11 / 5pm-8pm` …
+seven of them. Read as weekdays, three different Friday parties were
+**intersected into a Friday 5–6pm the brewery has never once run**.
+
+So `DATED_CLAUSE_RE` drops a clause naming a calendar date. 🛑 It is **narrower
+than `ONE_OFF_RE`** on purpose: `ONE_OFF_RE` matches a bare month-and-number,
+which is also what 86 West's seasonal `january - march 4-7pm` looks like. A
+date here must be a **weekday beside a month**, an **ordinal**, or a **numeric
+date**.
+
+🛑 And it is applied in **three** places — the clause loop and *both* fallbacks
+— because both fallbacks re-read `days_in()` over the whole quote and let the
+window back in by the back door.
+
+Then the other end. **The Pullman Restaurant** publishes:
+
+```
+Happy Hour / 04:30 PM - 06:30 PM / Wednesday September 2nd
+Happy Hour / 04:30 PM - 06:30 PM / Thursday September 3rd     ...and three more
+```
+
+One clock, five dates, five different weekdays. That **is** a standing happy
+hour; the venue simply has no page saying so in a sentence.
+`recurring_windows()` publishes a clock seen on `RECURRING_MIN_DATES` (3) or
+more distinct dates, on the weekdays those dates fell on.
+
+🔑 **Grouped on the CLOCK, not on the weekday.** A per-weekday count sees The
+Pullman as five groups of one and publishes nothing — exactly backwards, since
+a clock holding across five weekdays is *stronger* evidence than one holding
+across five Fridays. Braeloch's four Fridays at 5–8pm publish; its two
+Saturdays at 6–9 and its single 2–6 do not. The right answer for both bars.
+
+---
+
+## 🔑 THE CONTAINMENT IS ON THE ENTRY, NOT ON THE LINE (roundups)
+
+Delaware Today's *"A Local's Guide to Happy Hours in Wilmington"* names ten bars
+with exact clocks. It matched all ten, dated cleanly, and published **nothing**,
+because each venue's entry divides the job across three lines:
+
+```
+Catherine Rooney's
+Monday-Friday, 3:30-6:30 p.m.                    <- the CLOCK
+"...$1 off all drafts during its happy hour."    <- the WORDS
+1616 Delaware Avenue, Wilmington                 <- the door
+```
+
+`deals_for()` required ONE line to carry both. The venue's **entry** is the unit
+the article vouched for: if any of its lines says happy hour, its clock line is
+a happy-hour clock. Items are read across the entry for the same reason — which
+also took Santino's from 2 items to 11 and 9 Prime from 3 to 12 in West Chester,
+off articles already crawled.
+
+🛑 That widens what a clock may mean, so the opening-hours guard ships with it:
+an entry whose every window is longer than any happy hour is the bar's opening
+times. It is a **heuristic, not a statute**, so it runs in Delaware too, where
+the law sets no cap and would not have caught it.
+
+🛑 **The stale rule has a floor in practice.** An old article is a labelled
+source, not a discarded one — that argument is Paul's and it is right. It does
+not stretch to a Delaware Today bar guide from **March 2009**. Two such rows
+were removed from `roundup_sources.json`: they cost nothing today and were an
+invitation for a better extractor to publish seventeen-year-old hours later.
+The oldest card still shipping is off a March 2019 piece.
+
+---
+
+## ✅🔑 THE SHELL LICENCE RESOLVES — three faults, six real names in one town
+
+Media had six licences naming a holding company, every one reading downstream as
+*"Google has no listing for this venue"*. They were not absent: **Off the Rail,
+Maris, Tap 24, Broad Table Tavern, John's Grille and Pairings Cigar Bar** all
+had a website and a photo.
+
+1. `looks_like_a_geocode()` only fires when Places answers with the **bare
+   street address**. A shell name that dragged the search onto a real business
+   three doors down never reached the nearby fallback at all — it was refused on
+   the street number and filed as a miss. Now the **licence** address is
+   geocoded and the fallback runs on its point.
+2. The nearby search was ranked by **POPULARITY**. 120 m of State Street holds
+   far more than ten bars, so it returned the ten best known, never the
+   shell-licensed rooftop we were standing on. `rankPreference: "DISTANCE"`.
+3. **A door with two numbers.** `109-111 W STATE ST` vs Google's `109 W State
+   St` — `street_numbers()` now spans the range and the comparison is
+   membership.
+
+🔑 **And the rescue never reached its consumer.** `EVIDENCE_SAFE_MATCHES` was
+the literal set `{"text search", "nearby search"}`, and `resolve()` has never
+returned the bare string `"nearby search"` — it returns `"nearby search at the
+geocode"`. So **every venue the address fallback ever rescued was silently held
+out of the crawl frontier as though a NAME had matched it.** Now a prefix test.
+
+*When a producer and its consumer agree by string equality, nothing fails when
+they drift.*
+
+🔧 **Re-run `discover_places.py --zone Z` on any zone whose misses read "street
+number disagrees".** Every one is a candidate.
+
+---
+
+## 🔑 A NAMED ZONE IS THE SCOPE; A RADIUS SET FOR ANOTHER QUESTION IS NOT
+
+Adding `kennett_square` to `data/zones.json` seeded **one** of the town's 97
+active licences. The other 96 were dropped as *"outside radius"*: Kennett Square
+is 24 miles from the King of Prussia origin and `radius_miles` is 20.
+
+`seed_plcb.py` now applies the radius **only to rows no zone claimed**. Adding a
+zone is the decision; the radius is not entitled to overrule it.
+
+Six other zones had been silently clipped by the same number and grew when it
+was fixed: **Warminster 49→74, Doylestown 41→55, Pottstown 47→56, Souderton
+47→55**, Norristown and Springfield +2 each.
+
+🔑 The zone test caught a real collision on the way in — `Kennett Twp` was
+claimed by BOTH `glen_mills_chadds_ford` and the new zone, and `seed_plcb`
+resolves a double claim silently.
+
+---
+
+## 🇺🇸 DELAWARE — a different state, and a different KIND of seed
+
+Five zones (`wilmington`, `newark_de`, `hockessin_greenville`, `new_castle_de`,
+`middletown_de`), 578 venues, seeded from Google Places for $5.81.
+`ingest/seed_places_de.py`.
+
+### 🛑 The seed is Google's list, not the state's, and that is not a detail
+
+Pennsylvania starts from the PLCB's own export of everyone licensed to pour.
+That list is a **DENOMINATOR** — every coverage fraction in this repo is a
+fraction of it, and *"did we miss a bar?"* is answerable. Delaware publishes no
+equivalent: its open-data portal carries business licences with no liquor signal
+(`RETAILER RESTAURANT`, 2,497 statewide) and the ABC licensee list is not
+machine-readable.
+
+So a Delaware coverage number is **not** the same claim as a Media one:
+
+- "0 of 40 publish a happy hour" in Newark ≠ what it means in Media.
+- A Delaware bar Google does not list is invisible to us **and we cannot know
+  it**. In Pennsylvania that class is measurable.
+
+`middletown_de` is **south of the C&D Canal** — the rest of New Castle County,
+riding with the north commercially. If the brief is literally "above the canal"
+it is the one zone to delete.
+
+### The law, and the table that was decorative
+
+`validate_pa.RULES["DE"]` — authority **4 Del. Admin. Code § 908 Rule 3.0
+"Prohibited Practices"** (eff. 02/01/16) plus the Delaware OABCC, signed off by
+Paul 2026-09-02.
+
+🔑 **Delaware sets no hour cap and no cutoff.** No 4h/day, no 24h/week, no
+midnight rule — its law governs the **shape** of the offer, not its length
+(two-for-one 3.1.1.5, unlimited-for-a-set-price 3.1.1.7, giving alcohol away
+3.1.1.1, below cost 3.1.1.3). This is exactly why the old comment forbade
+copying PA's numbers: a lawful five-hour Wilmington happy hour would have been
+refused for breaking a **Pennsylvania** cap — and it would have **looked
+right**, because the two states' banned lists happen to agree almost exactly.
+`DE_BANNED` is written out rather than aliased for that reason.
+
+🛑 **And the table was decorative until this landed.** `validate_deal()` read
+this module's PA constants directly, so `RULES` existed, `rules_for()` had
+exactly one caller, and adding Delaware to it would have changed **nothing**.
+*A table keyed by jurisdiction that nothing reads is not a per-jurisdiction
+rule.* When you add the key, grep every reader in the same commit.
+
+---
+
+## 📸 PHOTOS — the two miscounts and the shell name
+
+- 🔑 **`shipped_with_a_photo()` read only `zone-*.json`.** The venues *without* a
+  window live in `venues-*.json` and carry their photos there. King of Prussia
+  read as 18 of 49 covered when the board draws 48, so a 29-zone sweep offered
+  to **re-buy most of the photos the site already has**. The same miscount that
+  function was written to prevent, one file along.
+- 🔑 **`--from-board` asks Google with the name the CARD shows**, not the
+  licensee. A shell licence is exactly the row whose photo is missing, and
+  Google answered `PA Grill Room` with **Penn Taproom**, `Ptll` with **Jitters**
+  and `37 N Main Street Enterprises` with **Maxwell's On Main** — all three
+  correct, all three then refused by `name_agrees()` for not resembling the
+  shell.
+- 🛑 **Rebuild the base and the bundles BETWEEN photo runs.** Coverage is read
+  off the shipped bundles, so a second run before the rebuild re-bills every
+  venue the first one fetched. `ingest/photo_sweep.sh` does it for you.
+- 🛑 A venue name is not ASCII. `Taquería Moroleón` killed a 29-zone sweep 19
+  zones in, *after* its photo was downloaded and the manifest saved: the only
+  thing that failed was printing the success line on a cp1252 console.
+
+---
+
+## 🔧 THE DAILY ONE-TOWN JOB — the corrected sequence, with Delaware
+
+```sh
+ZONE=<pick one>
+
+# ---- DISCOVERY (PA) — THREE commands plus TWO builds, in this order ----
+python ingest/discover_places.py --zone $ZONE --dry-run          # scope + cost
+python ingest/discover_places.py --zone $ZONE                    # THE PAID RESOLVE
+python ingest/discover_places.py --zone $ZONE --merge-sites --execute
+python ingest/build_venue_base.py
+python ingest/build_bundles.py                 # needy reads the BUNDLES
+
+# ---- DISCOVERY (DE) — no PLCB, so Places IS the seed ----
+python ingest/seed_places_de.py --dry-run
+python ingest/seed_places_de.py --spend
+python ingest/seed_places_de.py --merge-sites
+python ingest/seed_plcb.py                     # appends venues_de.csv
+
+# ---- CHECK THE RENAMES. The suite cannot see one. ----
+git show HEAD:data/venue_base.json > /tmp/old.json    # then diff names
+
+# ---- SELECT + CRAWL ----
+python ingest/needy.py $ZONE --show --lids run.lids
+python ingest/crawl_sites.py --zone $ZONE --recrawl --render     # FIRST run
+python ingest/extract_deals.py
+
+# ---- ROUNDUPS (region-shaped — see the outlet table) ----
+python ingest/crawl_roundups.py --write
+python ingest/extract_roundups.py --show
+
+# ---- PHOTOS ----
+python ingest/fetch_venue_photos.py --from-board --spend        # the cards
+sh ingest/photo_sweep.sh $ZONE                                  # everything else
+
+# ---- SHIP ----
+python ingest/build_bundles.py
+bash tests/run.sh
+git pull --rebase && git add -A && git commit && git push origin master
+python tests/live_front_door.py $ZONE
+```
+
+🛑 **Codex works in this repo too.** Pull before you push.
+
+🛑 **Never run two crawls at once.** `crawl_sites.py` loads `crawl_hits.json` at
+start and writes the whole dict back, so a second crawl — or a `git merge` that
+lands new rows in it while one is running — is silently overwritten. That is how
+Casey's Drexel Hill lost its crawl entry the moment it was merged in.
+
+---
+
 ## Standing rules
 
 - **One venue at a time, finished on the live site before the next**, and Paul
@@ -1768,9 +2089,17 @@ than a syntax error, because a syntax error stops you.
 - Open with one plain-English sentence: no jargon, no paths, no numbers.
 - `bash tests/run.sh` runs everything. A web page is verified by **running** it.
 - This repo has **its own `.env`**. It must never read `shopify-analytics/.env`.
-- Crossing a state line changes the law, not just the data. `RULES["DE"]` is
-  deliberately empty; it needs a named authority and Paul's sign-off, never
-  inference from PA.
+- Crossing a state line changes the law, not just the data. `RULES["DE"]` was
+  filled in 2026-09-02 from a named authority with Paul's sign-off. **A state
+  with no entry still cannot publish**, and a table keyed by jurisdiction is
+  only a rule when something reads it.
+- **A published claim must agree with its own printed evidence**, and the check
+  may never re-use the grammar that produced the claim.
+- **A word the grammar does not know reads as SILENCE**, and whatever the code
+  infers from silence then ships as a fact. A vocabulary gap is a wrong answer,
+  not a missing one.
+- **Never run two crawls at once.** `crawl_sites.py` writes the whole of
+  `crawl_hits.json` back at each checkpoint.
 - **A zone is live only when `python tests/live_front_door.py <zone>` says so** —
   and Pages lags a push by ~1 minute, so re-run once before believing a failure.
 - **Diff `data/venue_base.json` against the last commit after any run that touches

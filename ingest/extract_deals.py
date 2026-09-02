@@ -383,7 +383,18 @@ def items_from_hits(hits, lead_url):
 
 def days_in(text):
     """The set of weekday numbers a fragment names, 1=Mon..7=Sun."""
-    if EVERYDAY_RE.search(text):
+    if EVERYDAY_RE.search(text) and not RANGE_RE.search(text):
+        # 🛑 An explicit RANGE in the same clause beats 'daily'. Other Half
+        # Brewing writes "Daily Happy Hour at Other Half Buffalo
+        # Tuesday-Friday 4pm-6pm" -- one clause, both claims, and 'daily' won,
+        # so the card said seven days over a quote that says four.
+        #
+        # Only a RANGE overrides it, never a single day: the clause splitter
+        # above already exists because "Happy Hour is Tuesday to Friday, 4 to
+        # 6, and can be paired with DAILY drink specials" put 'daily' in the
+        # TAIL, and a single day in a tail is the same shape. A range is a
+        # whole schedule stated outright, which is the one thing specific
+        # enough to overrule the adverb.
         return set(range(1, 8))
     out = set()
     if WEEKDAY_RE.search(text):
@@ -771,6 +782,66 @@ DATED_CLAUSE_RE = re.compile(
     r"|\b\d{1,2}/\d{1,2}(?:/\d{2,4})?\b",
     re.I)
 
+# ...but N dated entries at ONE clock is a SCHEDULE published one evening at a
+# time, and an events-calendar CMS is how a lot of bars publish.
+#
+# The Pullman Restaurant lost its card to the guard above, and should not have:
+#
+#     Happy Hour / 04:30 PM - 06:30 PM / Wednesday September 2nd
+#     Happy Hour / 04:30 PM - 06:30 PM / Thursday September 3rd
+#     Happy Hour / 04:30 PM - 06:30 PM / Friday September 4th        ...and two more
+#
+# One clock, five dates, five different weekdays. That is a standing happy hour
+# and the venue simply has no page that says so in one sentence.
+#
+# 🔑 The discriminator is the CLOCK, not the count. Braeloch Brewing's calendar
+# runs 2-6, 6-9, 5-8, 6-9, 5-8, 5-8, 5-8 -- and under this rule its four
+# Fridays at 5-8pm DO publish (they are a weekly Friday happy hour) while its
+# two Saturdays at 6-9 and its single 2-6 do not. That is the right answer for
+# both bars, which is the test: the rule keeps what repeats and drops what
+# happened once.
+#
+# Each entry must name exactly ONE weekday, so a window is only ever published
+# on the day its own dates fell on. Three distinct dates is the floor -- two is
+# a coincidence, and a fortnight is not a schedule.
+RECURRING_MIN_DATES = 3
+DATE_KEY_RE = re.compile(
+    r"\b(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\.?\s*"
+    r"(\d{1,2})(?:st|nd|rd|th)?\b", re.I)
+
+
+def recurring_windows(hits):
+    """([window], [the quotes that vouch for them]) from an events calendar."""
+    dates, dows, vouch = {}, {}, {}
+    for h in hits:
+        q = h["quote"]
+        if not (HH_RE.search(q) and DATED_CLAUSE_RE.search(q)):
+            continue
+        m = DATE_KEY_RE.search(q)
+        days, win = days_in(q), window_in(q)
+        if not m or len(days) != 1 or not win:
+            continue
+        # 🔑 GROUPED ON THE CLOCK, NOT ON THE WEEKDAY. The Pullman's five
+        # entries are one clock on five DIFFERENT weekdays, so a per-weekday
+        # count sees five groups of one and publishes nothing -- which is
+        # exactly backwards, because a clock holding across five weekdays is
+        # STRONGER evidence of a standing hour than one holding across five
+        # Fridays. The days published are the days its own dates fell on.
+        dates.setdefault(win, set()).add((m.group(1).lower()[:3], int(m.group(2))))
+        dows.setdefault(win, set()).add(next(iter(days)))
+        vouch.setdefault(win, []).append(h)
+    live = [w for w, seen in dates.items() if len(seen) >= RECURRING_MIN_DATES]
+    windows = [{"dow": d, "start": w[0], "end": w[1]}
+               for w in sorted(live) for d in sorted(dows[w])]
+    quotes, urls = [], []
+    for w in sorted(live):
+        for h in vouch[w]:
+            if h["quote"] not in quotes:
+                quotes.append(h["quote"])
+                urls.append(h["url"])
+    return windows, quotes, urls
+
+
 ONE_OFF_RE = re.compile(
     r"\b(?:jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\.?\s*\d{1,2}(?:st|nd|rd|th)?\b|"
     r"\b\d{1,2}(?:st|nd|rd|th)\s+of\s+\w+|"
@@ -1020,14 +1091,43 @@ def places_in(text, places, head_words=None):
     return found
 
 
+# A national chain's other branch is not in OUR vocabulary at all. Other Half
+# Brewing's PHILADELPHIA licence shipped BUFFALO, NEW YORK's happy hour, off
+# https://otherhalfbrewing.com/event/clone-ohanother-happy-hour-buffalo-.../ --
+# and 'buffalo' is not a Chester County municipality, so nothing objected.
+# Philadelphia Live! Hotel did the same with a /pittsburgh/ page.
+#
+# 🛑 A GAZETTEER IS THE WRONG TOOL HERE, and it was tried: GeoNames' full US
+# place list is already in this repo (seed_plcb.py downloads it), and matching
+# URL-path tokens against it cost 27 cards to win 2. `/happy-hour/` is refused
+# because Happy, Texas exists; `/westchester` because Westchester, Illinois
+# does. An out-of-market city and an ordinary English word are the same string.
+#
+# So this is a hand-kept list of cities a Philadelphia-and-Delaware board will
+# never legitimately contain, and its maintenance cost is the honest price of
+# not refusing a card for the word 'happy'. Add to it when a chain page shows
+# up wearing another city's name.
+OUT_OF_MARKET = {
+    "buffalo", "pittsburgh", "baltimore", "brooklyn", "manhattan", "boston",
+    "chicago", "denver", "austin", "nashville", "miami", "orlando", "tampa",
+    "atlanta", "houston", "dallas", "seattle", "cleveland", "columbus",
+    "detroit", "charlotte", "richmond", "raleigh", "savannah", "phoenix",
+    "milwaukee", "cincinnati", "louisville", "memphis", "hoboken", "toronto",
+    "montreal", "vancouver", "london", "dublin",
+}
+
+
 def another_branch(hit, city, places):
     """True when this quote is labelled as a DIFFERENT location's."""
     if not city:
         return False
     found = places_in(hit["quote"], places, head_words=BRANCH_LABEL_WORDS)
-    found |= places_in(urllib.parse.urlsplit(hit["url"]).path.replace("/", " "),
-                       places)
-    return bool(found) and city not in found
+    path = urllib.parse.urlsplit(hit["url"]).path.replace("/", " ")
+    found |= places_in(path, places)
+    if found:
+        return city not in found
+    words = set(re.sub(r"[^a-z0-9]+", " ", (path + " " + hit["quote"]).lower()).split())
+    return bool(words & OUT_OF_MARKET) and city.split()[-1] not in words
 
 
 def one_per_osm(hits, sites):
@@ -1111,6 +1211,15 @@ def main():
                 stats["  quote is opening hours, not a happy hour"] += 1
                 continue
             cands.append((h, ws))
+        # The schedule this venue publishes one evening at a time, if any.
+        rec, rec_quotes, rec_urls = recurring_windows(v["hits"])
+        if rec:
+            # The card's evidence is the REPEAT, so it shows three of the
+            # dated entries rather than one: a reader can see for themselves
+            # that this is a standing hour and not a party.
+            cands.append(({"url": rec_urls[0],
+                           "quote": " / ".join(rec_quotes[:3])}, rec))
+            stats["  schedule published one evening at a time"] += 1
         if not v["hits"]:
             stats["no quote crawled" if not pic_cands else "  window read off a menu picture"] += 1
             cands = pic_cands

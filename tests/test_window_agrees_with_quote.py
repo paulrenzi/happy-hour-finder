@@ -97,6 +97,34 @@ class TheOtherBranchOfTheSameBusiness(unittest.TestCase):
                      "https://x.example/philadelphia-fairmount-pier-bar-happy-hours"),
             "philadelphia", self.PLACES))
 
+    def test_a_national_chains_OTHER_city_is_refused(self):
+        # Other Half Brewing's PHILADELPHIA licence shipped Buffalo, New
+        # York's happy hour. 'buffalo' is in no Chester County zone, so our own
+        # vocabulary had nothing to object with.
+        self.assertTrue(another_branch(
+            self.hit("OH...Another Happy Hour @ Buffalo / Daily Happy Hour at "
+                     "Other Half Buffalo Tuesday-Friday 4pm-6pm",
+                     "https://otherhalfbrewing.com/event/clone-ohanother-happy-"
+                     "hour-buffalo-2026-09-15/"),
+            "philadelphia", self.PLACES))
+
+    def test_the_same_chains_OWN_city_page_is_kept(self):
+        self.assertFalse(another_branch(
+            self.hit("Philly Happy Hour / Happy Hour 4pm-6pm Monday to Thursday "
+                     "in the Philly Taproom!",
+                     "https://otherhalfbrewing.com/event/philly-happy-hour/"),
+            "philadelphia", self.PLACES))
+
+    def test_an_ordinary_word_that_is_also_a_us_town_is_not_a_branch_label(self):
+        # 🛑 A gazetteer was tried here and cost 27 cards to win 2: '/happy-hour/'
+        # is refused by one, because Happy, Texas exists.
+        for path in ("https://x.example/happy-hour/",
+                     "https://x.example/menu/happy-hour-menu",
+                     "https://x.example/westchester"):
+            self.assertFalse(another_branch(
+                self.hit("Happy Hour Monday-Friday 4-6pm", path),
+                "west chester", self.PLACES), path)
+
     def test_a_city_is_read_off_a_plcb_style_address(self):
         self.assertEqual(venue_city("217-219 W State St, Media PA 19063"), "media")
         self.assertEqual(venue_city("1102 Baltimore Pike Suite 101, Glen Mills PA 19342"),
