@@ -1443,6 +1443,324 @@ see is not a deploy.
 
 ---
 
+## ✅🔑🔑 A ROUNDUP *DOES* CARRY AN ADDRESS — the join, and the two things it must refuse (2026-09-02)
+
+`ingest/crawl_roundups.py` opened with a premise written into its own docstring:
+*"a roundup carries no address"*, which is why `mentions()` matched venues **by
+name only**. That premise is **false for at least one common outlet shape**, and
+believing it cost two Doylestown bars that were sitting in a dated article with
+real clocks.
+
+BUCKSCO.Today's Doylestown piece carries addresses in **two** places:
+
+- a **card block at the foot** of the article — `37 N Main St, Doylestown, PA
+  18901` as a paragraph under the heading `Maxwell's On Main (MOMs)`;
+- the **prose opener** — *"Located at 80 W State Street right in the heart of
+  downtown, Penn Taproom seats roughly 70 guests..."*.
+
+Neither venue could **ever** have been joined by name, and this is the point:
+
+| the sign over the door | the licence we hold |
+|---|---|
+| Maxwell's On Main (MOMs) | `37 N MAIN STREET ENTERPRISES LLC` |
+| Penn Taproom | `PA GRILL ROOM LLC` |
+
+> 🔑🔑 **The venue whose licence is a shell is exactly the venue a name
+> join can never reach — and it is also the one no site was ever found for, so it
+> is not in `venue_sites.json` at all.** The address index is therefore built from
+> **`venue_base.json`**, which holds every licence, not from the site join.
+
+### How it is wired
+
+`mentions(text, index, addr_index=None)` still matches **on name first**, unchanged.
+What is new is that a heading the name index cannot resolve is **kept with its
+paragraphs** as an *orphan*, and a **second pass** joins those orphans by the
+street address the paragraphs carry.
+
+```
+headings -> name index          (unchanged; wins outright)
+   |
+   +-- unresolved -> orphans[heading] = [paragraphs]
+                          |
+                          +-- second pass: address_venue(heading, paras, addr_index)
+```
+
+Three design points, each of which was forced by the data:
+
+- **It is a SECOND PASS, not a wider window.** The prose section and the card
+  block are far apart in the document — there are five other venues between
+  Maxwell's paragraph and Maxwell's address. No single-pass lookahead reaches.
+- **It is a FALLBACK.** A heading the name index resolves is **never** re-routed
+  by an address. Address evidence widens reach; it does not overrule a name.
+- **The hit carries the ARTICLE'S HEADING as the display name.** That is the sign
+  over the door, which is precisely what a shell-licenced venue is missing. The
+  licensee still ships as `plcb_name`.
+
+`address_keys()` reuses `street_core()` from `discover_sites.py`, so `37-39 N Main
+St` (the licence) meets `37 N Main St` (the article) **and** `39 N Main St`, the
+same range logic the venue lane already needed for `5-7-9 N Walnut St`.
+
+### The two refusals — both found by running it over the whole corpus BEFORE shipping
+
+**1. Two licences at one door.** 44 W Gay St, West Chester is Lascala's Fire *and*
+Sedona Taphouse. The address key indexes to a **list**; a list of two refuses. The
+same building with two bars must not silently pick one.
+
+**2. 🛑🔑🔑 A DOOR OUTLIVES ITS TENANTS.** This is the important
+one, and it only appeared because the join was run over the corpus rather than the
+one town it was built for. The first run produced:
+
+| article, year | heading | the door today |
+|---|---|---|
+| County Lines, 2024 | `Serum Kitchen & Taphouse` | **Station 142** (142 E Market St) |
+| County Lines, 2021 | `Split Rail Tavern` | **Bierhaul** (15 N Walnut St) |
+
+Both joins were *correct about the building* and would have shipped a card **under
+a name the building stopped using** — the same stale-join shape
+`HandCorrectedJoins` already pins for North Italia and Charkoal's.
+
+> 🔑 **A stale join looks identical to a wrong one from inside the data.** The
+> discriminator is not the address, it is **who last read the sign**. Where the base
+> carries a trade name a **LIVE** source read off that door (`named_by` is `osm` or
+> `places`) and it disagrees with the article's heading, the join is refused. A
+> **licence-only** name (`named_by == "plcb"`) is the shell the join exists to see
+> through, and is **never** held against the heading.
+
+That single rule is what separates "widen reach" from "publish under the wrong
+name", and it is why the join can be allowed to be *looser* than a name match
+without being *weaker*.
+
+### What it bought
+
+| zone | cards before | after | who arrived |
+|---|---|---|---|
+| doylestown | 4 | **6** | Penn Taproom, Maxwell's On Main |
+| west_chester | 20 | **22** | Jitters (`PTLL LLC`), Side Bar (`S BAR 10 INC`) |
+
+Nothing was lost in either zone. Every arrival is a shell licence.
+
+---
+
+## 🛑🔑🔑 A WRONG WINDOW SHIPPED WHILE ITS OWN QUOTE CONTRADICTED IT (2026-09-02)
+
+`pmify()` in `ingest/extract_roundups.py` exists because a roundup writes clocks
+without a meridiem — *"4 to 6"* — and inside an article about happy hours a bare
+1–11 range is a PM range. The pattern made the **minutes on the END of the range
+optional**. So in:
+
+```
+Happy hour runs Monday through Friday from 4:30 to 6:30 PM
+```
+
+it matched the `4:30 to 6` **inside** `4:30 to 6:30 PM` and rewrote the sentence to
+the nonsense `4:30 pm - 6 pm:30 PM`. Penn Taproom's card shipped **4:30–6:00** off
+a quote that plainly says 6:30.
+
+`:` and a digit are now in the forbidden-follow set: a range that **already carries
+its own meridiem** needs nothing from this lane, because `windows_from()` reads it
+unmodified.
+
+> 🛑🔑🔑 **The card and the evidence it cites disagreed, and nothing in
+> the pipeline compares them.** Every validator asks whether a deal is *well formed*
+> and whether its quote is *present in the document*. **No check asks whether the
+> window we published is the window the quote states.** That is a real hole and it
+> is still open — a wrong window is worse than a missing one, and this class is
+> invisible to the entire suite.
+
+---
+
+## 🛑🔑 A CUT LABEL IS NOT A WORD — and it happens at BOTH ends (2026-09-02)
+
+The item regexes cap a label at 29 characters. That cap truncates **in the direction
+the pattern runs**, and both directions shipped a non-word onto a card in one day:
+
+| regex | direction | quote | what shipped |
+|---|---|---|---|
+| `HALF_RE` | forwards | `half-price drafts and discounted appetizers` | `drafts and discounted appetiz` |
+| `TRAILING_PRICE_RE` | **backwards** | `Housemade Buffalo Cauliflower Bites $6` | `ade Buffalo Cauliflower Bites` |
+
+Neither was caught by the existing prose guard, which refuses a label of more than
+four words or one that reads as a clause — both of these are four words and neither
+is a clause.
+
+- Forwards: cut at the conjunction, keeping the first noun. The price is on the
+  first noun, and it is the fallback the priced path already applied.
+- Backwards: anchor on `\b`, so the cut lands on a **word boundary**.
+
+> 🔑 **Short by a whole WORD is a miss. Short by three letters is a wrong thing
+> on a card.** Prefer the miss.
+
+The guard that actually sees this class is board-wide, not unit-level:
+`test_no_shipped_item_label_starts_mid_word` walks **every `zone-*.json` on the
+board** and asserts no item label begins mid-word inside its own quote. A per-regex
+test would have passed both defects, because each regex was doing exactly what it
+was written to do.
+
+---
+
+## 🛑🔑🔑 A GUARD ON ONE LINK OF A CHAIN IS NOT A GUARD ON THE CHAIN (2026-09-02)
+
+A website discovered by a Places pass must walk **three** files before
+`ingest/needy.py` — the selection instrument for every scoped run — can see it:
+
+```
+data/venue_sites.json  ->  data/venue_base.json  ->  web/data/zone-*.json
+      (discovery)            (build_venue_base)        (build_bundles)
+```
+
+`needy()` reads the **built bundles**. On 2026-09-02, Doylestown skipped the middle
+step and the selector named **5** venues where there were **33**. A guard was
+written the same day — and it compared **only the first pair**.
+
+The next town, **media**, then did the other half of the same damage: the base *was*
+rebuilt, the bundles were **not**, the guard stayed **silent**, and `needy` named
+**9** where there were **28**.
+
+> 🛑🔑🔑 **A guard that watches one link of a chain is not a guard on
+> the chain — it is a guard on the link that failed LAST TIME.** `STALE_CHAIN` in
+> `ingest/needy.py` now names every link as `(newer, older, fix)` and warns on any
+> of them.
+
+This matters more than a count: `needy.py` writes `run.lids`, which is the scope
+of every model pass that follows. **A silently short selection is money not spent
+and a town not read**, and it looks exactly like a town that had nothing to do.
+
+---
+
+## 🛑🔑 DROPPING A JOIN IN ONE OF TWO READERS IS NOT DROPPING IT (2026-09-02)
+
+`THE FROSTED MUG`'s licence is **527 E Baltimore Pike**, Media. Google Places
+answered with the **ACME Markets at 527 E Baltimore Ave** — two real and different
+Media streets that share a house number, with names that agree on nothing. The row
+shipped a bar's licence under a supermarket's name, website and photo.
+
+It was hand-dropped into `HAND_DROPPED` — **and the drop did not take.**
+
+`discover_places.merge_sites()` consults `HAND_DROPPED` and keeps the rejected join
+out of `venue_sites.json`, the crawl frontier. But **`build_venue_base.py` reads
+`data/places_venues.json` DIRECTLY**, so the base kept taking the supermarket's
+name, website, photo and coordinate regardless.
+
+> 🔑 **Two files read `places_venues.json`. A drop applied in one of them is not
+> a drop.** Both loops in `build_venue_base.py` now go through a single
+> `place_for(lid)`.
+
+🛑 And they **must** both go through it. `premises_key()` reads the Places name,
+so blanking the record in one loop and not the other builds **two different keys for
+one building** — the sibling lookup then dies with a `KeyError`, which is how this
+was caught. A partial fix here is a crash, not a miss; be grateful, because the
+alternative is silence.
+
+---
+
+## 📖 THE ROUNDUP OUTLET LIST IS REGION-SHAPED — and the Delco half is now proven (2026-09-02)
+
+The `.Today` network publishes one title per county, and they are the outlets that
+actually carry dated happy-hour roundups with days, clocks and addresses:
+
+| county | outlet | proven |
+|---|---|---|
+| Chester | `vista.today`, `countylinesmagazine.com`, Main Line Today | yes |
+| Montgomery | `montco.today` | — |
+| Bucks | `bucksco.today` | yes (Doylestown) |
+| **Delaware** | **`delco.today`** | **yes (Media)** |
+
+🔑 The search that works is `"<town>" happy hour` with `allowed_domains` set to
+that list. A bare web search returns aggregator spam.
+
+### 🎯 THE NEXT BUILD: a roundup that names the venue MID-SENTENCE
+
+Four DELCO.today articles are in `data/roundup_sources.json` for `media`. All four
+crawl, all four date cleanly, and all four match **zero** venues.
+
+🛑 **That is a finding, not an empty town.** Read by hand, the pages say:
+
+- *"**Azie** in Media has a happy hour on weekdays from **4 to 6 PM**"* — and
+  `Azie Media` (lid 58431) is in our base.
+- *"**Off the Rail**, also in Media, has **$3 domestic beers** during happy hours
+  weeknights, **4 to 6 PM**"*
+
+Both are real, both carry a clock, neither reaches the board. The cause is the
+**document shape**: these articles are prose, not a list, and `mentions()` requires
+a **heading**. Worse, the DELCO.today template emits roughly **100 chrome lines that
+pass `is_heading()`** — `Commerce`, `Community`, `Search`, `About` — so the heading
+queue fills with navigation that eats the real paragraphs.
+
+The build is two halves:
+
+1. **Ignore the site chrome.** A heading appearing on *every* article from one
+   outlet is navigation, not a venue. The four crawled pages make this cheap to
+   detect: the junk repeats, the venues do not.
+2. **Match a venue named mid-sentence**, under the containment rule that already
+   exists. 🛑 `Sedona it is.` must still not be Sedona. The safe shape is narrow:
+   the venue name and a happy-hour clause in the **same sentence**, matched on the
+   full multi-word name core, **never** a single word.
+
+**Acceptance test: Azie and Off the Rail on the Media board, 4–6 PM weekdays.**
+The source rows are left in place deliberately — they cost nothing, they date
+cleanly, and they are the evidence.
+
+---
+
+## 🛑 A RENAME IS A SILENT DROP, AND A DISCOVERY PASS RENAMES IN BULK (2026-09-02)
+
+The Media discovery pass changed **16** names in `venue_base.json` in one run — every
+one a PLCB licensee giving way to the trade name Google reads off that same door
+(`Sligo Tap` → `Sligo Irish Pub`, `Difabios Market & Tap` → `DiFabio's Market &
+Tap`). All 16 were improvements. **The suite cannot tell.**
+
+> 🔑 **After any run that touches naming — a discovery pass included — diff
+> `venue_base.json` against the last commit and read the name changes.** The tests
+> only assert a name does not END in a legal suffix, so a name that is *shortened*,
+> *swapped* or *replaced by a neighbour's* passes green.
+
+Two of the 16 changed **street**, and those are the ones to check by hand every time:
+
+| lid | licence address | Places answered | verdict |
+|---|---|---|---|
+| 96258 | `117-121 South Ave` | `117 Veterans Sq` | ✅ same building, names agree |
+| 69935 | `211 W State St` | `211 W State St` | ✅ same door, address-only join |
+| 95653 | `527 E Baltimore **Pike**` | `527 E Baltimore **Ave**` | 🛑 **dropped** |
+
+---
+
+## 🔑 GITHUB PAGES LAGS A PUSH — one NOT LIVE is a deploy in flight (2026-09-02)
+
+`python tests/live_front_door.py <zone>` is still the only command that may say a
+zone is live. Both zones shipped this session **failed it on the first attempt and
+passed on the second**, roughly a minute later, with the venue count climbing in
+between (`named live: 4 of 6` → `6 of 6`).
+
+> 🛑 A single `NOT LIVE` immediately after a push is a **deploy that has not
+> landed**, not a broken build. Re-run before believing it. 🛑 And the inverse still
+> holds: never call a zone live without running this, however obviously correct the
+> build looks.
+
+---
+
+## 🛑🛑🔑🔑 NEVER WRITE A BACKSLASH ESCAPE THROUGH A BASH HEREDOC (2026-09-02)
+
+Patching `ingest/extract_deals.py` through `cat > patch.py <<'EOF'` put a **literal
+backspace byte (0x08)** into the file where `\b` was typed — in the regex *and* in
+the comment above it. Quoting the heredoc delimiter did **not** prevent it. The file
+still parsed, the patcher reported success, and the regex silently did not do what
+it said.
+
+This repo's git history already records the same class: *"four silent defects incl.
+two literal backspace bytes"* (2026-09-01).
+
+> 🔑 **Write patch scripts with a file-writing tool, never a heredoc, whenever the
+> content contains a backslash.** If a heredoc is unavoidable, build the escape from
+> `chr(92)`. Then check before believing it:
+>
+> ```sh
+> python -c "print([hex(ord(c)) for c in open(p,encoding='utf-8').read() if ord(c)<9])"
+> ```
+
+🛑 A corrupted escape produces code that **runs and is wrong**, which is worse
+than a syntax error, because a syntax error stops you.
+
+
 ## Standing rules
 
 - **One venue at a time, finished on the live site before the next**, and Paul
@@ -1453,3 +1771,12 @@ see is not a deploy.
 - Crossing a state line changes the law, not just the data. `RULES["DE"]` is
   deliberately empty; it needs a named authority and Paul's sign-off, never
   inference from PA.
+- **A zone is live only when `python tests/live_front_door.py <zone>` says so** —
+  and Pages lags a push by ~1 minute, so re-run once before believing a failure.
+- **Diff `data/venue_base.json` against the last commit after any run that touches
+  naming.** The suite does not see a rename.
+- **A run that finds nothing gets checked against one human minute** before it is
+  reported as an empty town. Four DELCO.today articles matching zero venues was a
+  document-shape defect, not an absence of happy hours.
+- **Never write a backslash escape through a bash heredoc.** It lands a literal
+  control byte, the patch reports success, and the code runs and is wrong.
