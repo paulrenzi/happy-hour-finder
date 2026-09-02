@@ -2109,3 +2109,107 @@ Casey's Drexel Hill lost its crawl entry the moment it was merged in.
   document-shape defect, not an absence of happy hours.
 - **Never write a backslash escape through a bash heredoc.** It lands a literal
   control byte, the patch reports success, and the code runs and is wrong.
+
+## ✅🔑🔑 A SHELL IS NOT A SUCCESS — the general capture, and the four times we answered it narrowly (2026-09-02)
+
+Paul named two venues we had crawled and published nothing useful for:
+`mcglynnspub.com/food-and-drink-specials` and `twostonespub.com/happyhour`.
+The second was a wrong-price defect (a `$2 OFF` heading priced the lines under
+it) and is fixed elsewhere. The first is the one that matters, because we had
+already found it four times.
+
+### The finding, and its four narrow answers
+
+| When | What was seen | What was built | Why it did not hold |
+|---|---|---|---|
+| 2026-08-07 | `HANDOFF-CEILING`: "the site is a JS shell — Darden serves 2.7 KB and hydrates client-side" | a Darden API adapter | one brand |
+| 2026-09-01 `1a2e2aa` | "a 200 with 11 lines and a 200 with 400 lines were the SAME ROW" | `lines` per page + `report_holes --silent` | **an instrument, and nothing ever refused on it** |
+| 2026-09-01 `c4c9416` | "there's no intelligence running over pages" | `read_pages_llm` + a `--render` tier | keyed on the **URL** naming an hour, cap 40/run. `/food-and-drink-specials` can never qualify |
+| 2026-09-01 `4864e6a` | "a venue can publish its happy hour as DATA… we read it as prose" | `jsonld_quotes()` | **schema.org only** — fifty feet from the general answer |
+| 2026-09-01 | `HANDOFF-INTELLIGENCE-OVER-PAGES`: a full-corpus `--recrawl --render` is "the cheapest remaining win by a wide margin" | nothing — never run | superseded two handoffs deep; and rendering McGlynn's yields 18 lines, so it would not have worked |
+| 2026-09-02 | McGlynn's is Popmenu | a **fifth** adapter was started here | Paul stopped it: *"you're making all of these tweaks to a python bot… it takes an AI model to review the sites one by one"* |
+
+🔑 **Each fix was correct for its venue and narrower than the problem, so the
+problem kept its shape and came back with the next town.** The general
+statement was written down on 09-01. What was missing was never the knowledge.
+A specific fix is always cheaper today than a general one, and nothing forced
+the general one.
+
+### 🛑 The mechanism that let it survive four recognitions
+
+**An instrument was mistaken for a fix.** `lines` was built to *see* shells and
+seeing them felt like progress. Nothing ever **refused** one. A shell page filed
+as `ok, 6 quote(s)`, and a page filed `ok` is nobody's problem. This is the
+general lesson and it is not about scraping:
+
+> 🔑 **A measurement that nothing gates on does not change an outcome. If you
+> build an instrument, name the number that has to move and put the refusal in
+> the same commit.**
+
+### What is built now
+
+**1. The gate.** `SHELL_FLOOR` in `crawl_sites.py` (= `RENDER_LINE_FLOOR`, 40 —
+one concept, one number, shared with `report_holes.py`). A page under it is no
+longer `ok`; the run prints
+
+```
+shell: 22 lines, 121 string(s) recovered from embedded JSON
+```
+
+and the page row carries `shell: true` and `embedded: N`. **The count of these
+is the number that has to fall for any capture change to have worked.**
+
+**2. The capture — general, and it knows no platform.**
+`embedded_json_lines(html)` finds every `= {` in the HTML, lets
+`json.JSONDecoder().raw_decode` say where the object ends, and walks it for
+strings. URLs, hex colours, paths and single words are dropped as not-prose.
+No brand list, no `window.` name, no schema. **The deal was in bytes we had
+already downloaded and were discarding at capture** — every previous fix
+targeted the reader, not its input.
+
+🛑 **These strings are NEVER given to the regex passes.** An unlabelled bag of
+strings would fabricate quotes; `test_the_harvest_never_reaches_the_regex_quote_passes`
+holds that line. They are appended to the saved page under the marker
+`[the page's embedded data, not visible text]` so the model knows the
+provenance differs. **Capture is general and dumb; the judgement belongs to
+`read_menus_llm.py`**, which is the reader that can tell a happy hour from a
+CSS class name.
+
+**3. The keep rule widened.** A shell is saved even when its visible lines never
+say the words — what it said to its own JavaScript *is* the page, and that is
+exactly the venue the old `says_hh or page_is_hh(url)` gate threw away.
+
+### 🔑 Measured, before anything was built (free, no model)
+
+`scratchpad/size_shells.py` refetched all **100** shell venues in the corpus
+(80 of them silent) and counted the ones whose embedded JSON states a window or
+a price:
+
+| | |
+|---|---|
+| shell venues in corpus | 100 |
+| carrying a window or price in embedded JSON | **14** |
+| of those, McGlynn's (the venue Paul named) | recovered |
+
+**14 is a floor, not a ceiling** — the sizing filter is keyword-based and the
+model sees every string. Then, scoped to those 14 lids: 39 cached pages carry
+embedded data, the model grounded **13 deals**, and the board went to **314
+published windows**. Full suite green, `newark_de` live.
+
+🛑 **A sizing script that fetched nothing reported "0 of 100" and looked like a
+finding.** `urllib_get()` returns a `_Plain` response object, not a string; the
+first run's `isinstance(html, str)` guard silently discarded every fetch. It was
+caught only by asking *did anything come back at all* — `visible_max == 0` for
+all 100. **Check that your instrument saw the thing before you believe its
+zero.**
+
+### What this costs on the Max plan
+
+The model never reads the corpus. Capture is stdlib Python — zero tokens for all
+798 crawled venues — and `build_bundles.py` consults the model sidecar only where
+the free pass found nothing. The model is called on ~12% of venues. Per the
+09-01 cost bake-off (`project_hhf_llm_pass_cost_architecture`): sonnet, batched,
+with `LEAN_ARGS`. Haiku was rejected for unstable recall (55/45/46 items on
+identical runs), Opus found the same items at 2.8x. Backlog of 100 shells: a few
+dollars, once. A new town: about ten shells, under a dollar.
+

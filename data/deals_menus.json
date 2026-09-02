@@ -2246,6 +2246,62 @@
    "zone_id": "willow_grove_horsham"
   },
   {
+   "address": "49 St James Place, Ardmore PA 19003",
+   "deals": [
+    {
+     "confidence": "unconfirmed",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "small pizza and a glass of house wine or sangria for just $15",
+       "label": "small pizza and a glass of house wine or sangria",
+       "price_usd": 15.0
+      },
+      {
+       "category": "food",
+       "evidence": "large pizza and a bottle of wine or pitcher of sangria for only $30",
+       "label": "large pizza and a bottle of wine or pitcher of sangria",
+       "price_usd": 30.0
+      }
+     ],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "clock_quote": "Monday - Thursday: 11:30 am - 9:00 pm 11:30 am to 9 pm",
+      "heading": "Sip N' Slice",
+      "kind": "venue_site",
+      "quote": "Every Monday through Wednesday, enjoy a small pizza and a glass of house wine or sangria for just $15. Need more? Upgrade to a large pizza and a bottle of wine or pitcher of sangria for only $30!",
+      "url": "https://www.notyouraveragejoes.com/ardmore"
+     },
+     "type": "food_combo",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "21:00",
+       "start": "11:30"
+      },
+      {
+       "dow": 2,
+       "end": "21:00",
+       "start": "11:30"
+      },
+      {
+       "dow": 3,
+       "end": "21:00",
+       "start": "11:30"
+      }
+     ]
+    }
+   ],
+   "id": "not-your-average-joe-s-ardmore",
+   "license_type": "Restaurant (Liquor)",
+   "lid": "69896",
+   "name": "Not Your Average Joe's",
+   "plcb_name": "NOT YOUR AVERAGE JOES",
+   "website": "https://www.notyouraveragejoes.com/ardmore",
+   "zone_id": "ardmore_bryn_mawr"
+  },
+  {
    "address": "182-184 E Bridge St, Phoenixville PA 19460",
    "deals": [
     {
@@ -2810,6 +2866,513 @@
    "plcb_name": "226 BRIDGE STREET LLC",
    "website": "https://rivertowntaps.com/",
    "zone_id": "phoenixville"
+  },
+  {
+   "address": "108 Peoples Plaza, Newark, DE 19702",
+   "deals": [
+    {
+     "confidence": "unconfirmed",
+     "items": [],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Happy Hour Bites - Monday through Friday 4 pm - 6 pm",
+      "url": "https://www.mcglynnspub.com/food-and-drink-specials"
+     },
+     "type": "happy_hour",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "mcglynns-pub-glasgow-newark",
+   "license_type": "",
+   "lid": "DE1205860cb5",
+   "name": "McGlynns Pub - Glasgow",
+   "plcb_name": "McGlynns Pub - Glasgow",
+   "website": "https://www.mcglynnspub.com/",
+   "zone_id": "newark_de"
+  },
+  {
+   "address": "316 Auto Park Dr, Middletown, DE 19709",
+   "deals": [
+    {
+     "confidence": "unconfirmed",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "$5 Drink Specials",
+       "label": "16 oz Beer",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "evidence": "$5 Drink Specials",
+       "label": "6 oz Wine",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$5 Drink Specials",
+       "label": "Margaritas",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$5 Drink Specials",
+       "label": "Crushes",
+       "price_usd": 5.0
+      }
+     ],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Monday- Friday 4-6pm available at the bar",
+      "url": "https://www.crookedhammockbrewery.com/menus/happy-hour"
+     },
+     "type": "happy_hour",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "crooked-hammock-brewery-middletown",
+   "license_type": "",
+   "lid": "DE520bfab56d",
+   "name": "Crooked Hammock Brewery",
+   "plcb_name": "Crooked Hammock Brewery",
+   "website": "https://www.crookedhammockbrewery.com/locations/middletown",
+   "zone_id": "newark_de"
+  },
+  {
+   "address": "320 Buckley Ml Rd, Wilmington, DE 19807",
+   "deals": [
+    {
+     "confidence": "unconfirmed",
+     "items": [],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "heading": "Happy Hour Food Specials (Monday–Friday, 4–6PM)",
+      "kind": "venue_site",
+      "quote": "Happy Hour Food Specials (Monday–Friday, 4–6PM)",
+      "url": "https://www.mcglynnspub.com/food-and-drink-specials"
+     },
+     "type": "happy_hour",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "mcglynns-pub-greenville-wilmington",
+   "license_type": "",
+   "lid": "DE606f3bb4d8",
+   "name": "McGlynns Pub - Greenville",
+   "plcb_name": "McGlynns Pub - Greenville",
+   "website": "https://www.mcglynnspub.com/",
+   "zone_id": "wilmington"
+  },
+  {
+   "address": "8 Polly Drummond Shopping Center, Newark, DE 19711",
+   "deals": [
+    {
+     "confidence": "unconfirmed",
+     "items": [],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "heading": "Happy Hour Food Specials (Monday–Friday, 4–6PM)",
+      "kind": "venue_site",
+      "quote": "Happy Hour Food Specials (Monday–Friday, 4–6PM)",
+      "url": "https://www.mcglynnspub.com/food-and-drink-specials"
+     },
+     "type": "happy_hour",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "mcglynns-pub-pike-creek-newark",
+   "license_type": "",
+   "lid": "DE7629273777",
+   "name": "McGlynns Pub - Pike Creek",
+   "plcb_name": "McGlynns Pub - Pike Creek",
+   "website": "https://www.mcglynnspub.com/",
+   "zone_id": "newark_de"
+  },
+  {
+   "address": "2038 Foulk Rd, Wilmington, DE 19810",
+   "deals": [
+    {
+     "confidence": "unconfirmed",
+     "items": [
+      {
+       "amount_off_usd": 1.0,
+       "category": "wine",
+       "evidence": "$1 Off Wines & Well Drinks",
+       "label": "Wines"
+      },
+      {
+       "amount_off_usd": 1.0,
+       "category": "well",
+       "evidence": "$1 Off Wines & Well Drinks",
+       "label": "Well Drinks"
+      },
+      {
+       "amount_off_usd": 1.0,
+       "category": "draft",
+       "evidence": "$1 Off Draft Beers",
+       "label": "Draft Beers"
+      }
+     ],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "heading": "Happy Hour Food & Drink Specials",
+      "kind": "venue_site",
+      "quote": "available exclusively at the bars from 3:00 PM to 6:00 PM on weekdays.",
+      "url": "https://www.stanleys-tavern.com/happy-hour"
+     },
+     "type": "happy_hour",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "15:00"
+      }
+     ]
+    }
+   ],
+   "id": "stanley-s-tavern-wilmington",
+   "license_type": "",
+   "lid": "DEc5d692f92b",
+   "name": "Stanley's Tavern",
+   "plcb_name": "Stanley's Tavern",
+   "website": "https://www.stanleys-tavern.com/",
+   "zone_id": "new_castle_de"
+  },
+  {
+   "address": "109 Main St, Odessa, DE 19730",
+   "deals": [
+    {
+     "confidence": "unconfirmed",
+     "items": [
+      {
+       "amount_off_usd": 4.0,
+       "category": "food",
+       "evidence": "$4 off Cheesesteaks from 11:30am to 3pm",
+       "label": "Cheesesteaks"
+      }
+     ],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "heading": "Daily Specials",
+      "kind": "venue_site",
+      "quote": "$4 off Cheesesteaks from 11:30am to 3pm (Dine In Only)",
+      "url": "https://www.cantwells-tavern.com/menus/daily-specials"
+     },
+     "type": "daily_special",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "15:00",
+       "start": "11:30"
+      },
+      {
+       "dow": 2,
+       "end": "15:00",
+       "start": "11:30"
+      },
+      {
+       "dow": 3,
+       "end": "15:00",
+       "start": "11:30"
+      },
+      {
+       "dow": 4,
+       "end": "15:00",
+       "start": "11:30"
+      },
+      {
+       "dow": 5,
+       "end": "15:00",
+       "start": "11:30"
+      },
+      {
+       "dow": 6,
+       "end": "15:00",
+       "start": "11:30"
+      },
+      {
+       "dow": 7,
+       "end": "15:00",
+       "start": "11:30"
+      }
+     ]
+    },
+    {
+     "confidence": "unconfirmed",
+     "items": [
+      {
+       "amount_off_usd": 5.0,
+       "category": "food",
+       "evidence": "$5 Off Salads (Dine In Only) from 11:30am to 3:30pm",
+       "label": "Salads"
+      }
+     ],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "heading": "Daily Specials",
+      "kind": "venue_site",
+      "quote": "$5 Off Salads (Dine In Only) from 11:30am to 3:30pm",
+      "url": "https://www.cantwells-tavern.com/menus/daily-specials"
+     },
+     "type": "daily_special",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "15:30",
+       "start": "11:30"
+      },
+      {
+       "dow": 2,
+       "end": "15:30",
+       "start": "11:30"
+      },
+      {
+       "dow": 3,
+       "end": "15:30",
+       "start": "11:30"
+      },
+      {
+       "dow": 4,
+       "end": "15:30",
+       "start": "11:30"
+      },
+      {
+       "dow": 5,
+       "end": "15:30",
+       "start": "11:30"
+      },
+      {
+       "dow": 6,
+       "end": "15:30",
+       "start": "11:30"
+      },
+      {
+       "dow": 7,
+       "end": "15:30",
+       "start": "11:30"
+      }
+     ]
+    },
+    {
+     "confidence": "unconfirmed",
+     "items": [
+      {
+       "amount_off_usd": 1.0,
+       "category": "cocktail",
+       "evidence": "$1 off All Cocktails",
+       "label": "All Cocktails"
+      },
+      {
+       "amount_off_usd": 5.0,
+       "category": "food",
+       "evidence": "$5 off All Small Plates",
+       "label": "All Small Plates"
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$4 Taylor's Grog",
+       "label": "Taylor's Grog",
+       "price_usd": 4.0
+      },
+      {
+       "category": "draft",
+       "evidence": "$3 Coor's Light Draft",
+       "label": "Coor's Light Draft",
+       "price_usd": 3.0
+      },
+      {
+       "amount_off_usd": 3.0,
+       "category": "wine",
+       "evidence": "$3 off Select Wine's",
+       "label": "Select Wine's"
+      },
+      {
+       "amount_off_usd": 2.0,
+       "category": "cocktail",
+       "evidence": "$2 off Cantwell's Cocktails",
+       "label": "Cantwell's Cocktails"
+      }
+     ],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Happy Hour Monday through Friday 4pm-6pm",
+      "url": "https://www.cantwells-tavern.com/menus/happy-hour"
+     },
+     "type": "happy_hour",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "cantwell-s-tavern-odessa",
+   "license_type": "",
+   "lid": "DEd3e9422996",
+   "name": "Cantwell's Tavern",
+   "plcb_name": "Cantwell's Tavern",
+   "website": "https://www.cantwells-tavern.com/",
+   "zone_id": "new_castle_de"
   }
  ]
 }

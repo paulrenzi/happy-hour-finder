@@ -21566,33 +21566,41 @@
  },
  "53895": {
   "address": "320 W LANCASTER AVE, WAYNE PA 19087-3905",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "LANCASTER DINER INC",
   "osm_name": "Minella's Diner",
   "pages": [
    {
+    "embedded": 92,
     "hh": false,
     "lines": 1,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 1 lines, 92 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.minellasdiner.com/"
    },
    {
+    "embedded": 46,
     "hh": false,
     "lines": 1,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 1 lines, 46 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.minellasdiner.com/shop/breakfast-specials/32"
    },
    {
+    "embedded": 46,
     "hh": false,
     "lines": 1,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 1 lines, 46 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.minellasdiner.com/shop/minellas-sauteed-specialties/38"
    },
    {
+    "embedded": 46,
     "hh": false,
     "lines": 1,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 1 lines, 46 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.minellasdiner.com/shop/greek-specialties/42"
    }
   ],
@@ -32508,7 +32516,7 @@
  },
  "69896": {
   "address": "49 ST JAMES PLACE, ARDMORE PA 19003-2407",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [
    {
     "quote": "Features Dining Brunch Gluten Sensitive Kids Family & Catering Options Happy Hour",
@@ -32519,27 +32527,35 @@
   "osm_name": "Not Your Average Joe's",
   "pages": [
    {
+    "embedded": 216,
     "hh": false,
     "lines": 35,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 35 lines, 216 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.notyouraveragejoes.com/ardmore"
    },
    {
+    "embedded": 216,
+    "hh": false,
+    "lines": 35,
+    "result": "shell: 35 lines, 216 string(s) recovered from embedded JSON",
+    "shell": true,
+    "url": "https://www.notyouraveragejoes.com/ardmore"
+   },
+   {
+    "embedded": 0,
     "hh": false,
     "lines": 1,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 1 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://order.notyouraveragejoes.com/"
    },
    {
-    "hh": false,
-    "lines": 35,
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.notyouraveragejoes.com/ardmore"
-   },
-   {
+    "embedded": 200,
     "hh": true,
     "lines": 23,
-    "result": "ok, 1 quote(s)",
+    "result": "shell: 23 lines, 200 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.notyouraveragejoes.com/menu"
    }
   ],
@@ -44389,27 +44405,35 @@
   "osm_name": "Deer Park Tavern",
   "pages": [
    {
+    "embedded": 99,
     "hh": false,
     "lines": 26,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 26 lines, 99 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.deerparktavern.com/"
    },
    {
+    "embedded": 147,
     "hh": false,
     "lines": 25,
-    "result": "ok, 2 quote(s)",
+    "result": "shell: 25 lines, 147 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.deerparktavern.com/specials"
    },
    {
+    "embedded": 108,
     "hh": false,
     "lines": 21,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 21 lines, 108 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.deerparktavern.com/menus/dinner-specials"
    },
    {
+    "embedded": 108,
     "hh": false,
     "lines": 21,
-    "result": "ok, 2 quote(s)",
+    "result": "shell: 21 lines, 108 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.deerparktavern.com/menus/drink-specials"
    }
   ],
@@ -45209,31 +45233,35 @@
   "osm_name": "McGlynns Pub - Glasgow",
   "pages": [
    {
-    "result": "rendered: 22 lines -> 23",
-    "url": "https://www.mcglynnspub.com/"
-   },
-   {
+    "embedded": 121,
     "hh": false,
-    "lines": 23,
-    "result": "ok, 1 quote(s)",
+    "lines": 22,
+    "result": "shell: 22 lines, 121 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.mcglynnspub.com/"
    },
    {
+    "embedded": 157,
     "hh": true,
     "lines": 25,
-    "result": "ok, 6 quote(s)",
+    "result": "shell: 25 lines, 157 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.mcglynnspub.com/food-and-drink-specials"
    },
    {
+    "embedded": 175,
     "hh": false,
     "lines": 25,
-    "result": "ok, 1 quote(s)",
+    "result": "shell: 25 lines, 175 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.mcglynnspub.com/banquets"
    },
    {
+    "embedded": 147,
     "hh": false,
     "lines": 25,
-    "result": "ok, 1 quote(s)",
+    "result": "shell: 25 lines, 147 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.mcglynnspub.com/events"
    }
   ],
@@ -45554,19 +45582,19 @@
   "osm_name": "Limestone BBQ and Bourbon",
   "pages": [
    {
-    "result": "render failed: TimeoutError",
-    "url": "https://www.limestonebbqandbourbon.com/"
-   },
-   {
+    "embedded": 210,
     "hh": false,
     "lines": 26,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 26 lines, 210 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.limestonebbqandbourbon.com/"
    },
    {
+    "embedded": 54,
     "hh": false,
     "lines": 21,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 21 lines, 54 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.limestonebbqandbourbon.com/bourbon-menu"
    }
   ],
@@ -51710,27 +51738,35 @@
   "osm_name": "Crooked Hammock Brewery",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 22,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 22 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.crookedhammockbrewery.com/locations/middletown"
    },
    {
+    "embedded": 145,
     "hh": true,
     "lines": 21,
-    "result": "ok, 2 quote(s)",
+    "result": "shell: 21 lines, 145 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.crookedhammockbrewery.com/menus/happy-hour"
    },
    {
+    "embedded": 148,
     "hh": true,
     "lines": 20,
-    "result": "ok, 4 quote(s)",
+    "result": "shell: 20 lines, 148 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-lws"
    },
    {
+    "embedded": 148,
     "hh": true,
     "lines": 20,
-    "result": "ok, 4 quote(s)",
+    "result": "shell: 20 lines, 148 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-mdt"
    }
   ],
@@ -52985,31 +53021,35 @@
   "osm_name": "McGlynns Pub - Greenville",
   "pages": [
    {
-    "result": "rendered: 22 lines -> 23",
-    "url": "https://www.mcglynnspub.com/"
-   },
-   {
+    "embedded": 121,
     "hh": false,
-    "lines": 23,
-    "result": "ok, 1 quote(s)",
+    "lines": 22,
+    "result": "shell: 22 lines, 121 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.mcglynnspub.com/"
    },
    {
+    "embedded": 157,
     "hh": true,
     "lines": 25,
-    "result": "ok, 6 quote(s)",
+    "result": "shell: 25 lines, 157 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.mcglynnspub.com/food-and-drink-specials"
    },
    {
+    "embedded": 175,
     "hh": false,
     "lines": 25,
-    "result": "ok, 1 quote(s)",
+    "result": "shell: 25 lines, 175 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.mcglynnspub.com/banquets"
    },
    {
+    "embedded": 147,
     "hh": false,
     "lines": 25,
-    "result": "ok, 1 quote(s)",
+    "result": "shell: 25 lines, 147 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.mcglynnspub.com/events"
    }
   ],
@@ -55495,31 +55535,35 @@
   "osm_name": "McGlynns Pub - Pike Creek",
   "pages": [
    {
-    "result": "rendered: 22 lines -> 23",
-    "url": "https://www.mcglynnspub.com/"
-   },
-   {
+    "embedded": 121,
     "hh": false,
-    "lines": 23,
-    "result": "ok, 1 quote(s)",
+    "lines": 22,
+    "result": "shell: 22 lines, 121 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.mcglynnspub.com/"
    },
    {
+    "embedded": 157,
     "hh": true,
     "lines": 25,
-    "result": "ok, 6 quote(s)",
+    "result": "shell: 25 lines, 157 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.mcglynnspub.com/food-and-drink-specials"
    },
    {
+    "embedded": 175,
     "hh": false,
     "lines": 25,
-    "result": "ok, 1 quote(s)",
+    "result": "shell: 25 lines, 175 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.mcglynnspub.com/banquets"
    },
    {
+    "embedded": 147,
     "hh": false,
     "lines": 25,
-    "result": "ok, 1 quote(s)",
+    "result": "shell: 25 lines, 147 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.mcglynnspub.com/events"
    }
   ],
@@ -59349,25 +59393,27 @@
   "osm_name": "Cafeneo - Newark",
   "pages": [
    {
-    "result": "rendered: 20 lines -> 23",
-    "url": "https://www.cafeneobakery.com/"
-   },
-   {
+    "embedded": 65,
     "hh": false,
-    "lines": 23,
-    "result": "ok, 0 quote(s)",
+    "lines": 20,
+    "result": "shell: 20 lines, 65 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.cafeneobakery.com/"
    },
    {
+    "embedded": 86,
     "hh": false,
     "lines": 18,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 18 lines, 86 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.cafeneobakery.com/events"
    },
    {
+    "embedded": 93,
     "hh": false,
     "lines": 17,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 17 lines, 93 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.cafeneobakery.com/menu"
    }
   ],
@@ -59405,17 +59451,7 @@
    },
    {
     "hh": true,
-    "quote": "Happy Hour / (3pm - Close Monday - Friday) / Beer | $1 Off",
-    "url": "https://www.eggspectation.com/menus/happy-hour"
-   },
-   {
-    "hh": true,
-    "quote": "House Wine by the Glass | $5",
-    "url": "https://www.eggspectation.com/menus/happy-hour"
-   },
-   {
-    "hh": true,
-    "quote": "Signature Mimosa | $7",
+    "quote": "Happy Hour",
     "url": "https://www.eggspectation.com/menus/happy-hour"
    }
   ],
@@ -59423,31 +59459,35 @@
   "osm_name": "Eggspectation - Christiana",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 24,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 24 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.eggspectation.com/newark-de"
    },
    {
-    "result": "rendered: 17 lines -> 22",
-    "url": "https://www.eggspectation.com/menus/happy-hour"
-   },
-   {
+    "embedded": 0,
     "hh": true,
-    "lines": 22,
-    "result": "ok, 4 quote(s)",
+    "lines": 17,
+    "result": "shell: 17 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.eggspectation.com/menus/happy-hour"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 17,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 17 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.eggspectation.com/menus/nightly-specials"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 17,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 17 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.eggspectation.com/menus/specials"
    }
   ],
@@ -61661,9 +61701,11 @@
   "osm_name": "Ashby Hospitality Group",
   "pages": [
    {
+    "embedded": 45,
     "hh": false,
     "lines": 18,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 18 lines, 45 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.ashby-hospitality.com/"
    }
   ],
@@ -63065,31 +63107,35 @@
   "osm_name": "Stanley's Tavern",
   "pages": [
    {
-    "result": "rendered: 23 lines -> 24",
-    "url": "https://www.stanleys-tavern.com/"
-   },
-   {
+    "embedded": 104,
     "hh": true,
-    "lines": 24,
-    "result": "ok, 1 quote(s)",
+    "lines": 23,
+    "result": "shell: 23 lines, 104 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.stanleys-tavern.com/"
    },
    {
+    "embedded": 126,
     "hh": true,
     "lines": 27,
-    "result": "ok, 6 quote(s)",
+    "result": "shell: 27 lines, 126 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.stanleys-tavern.com/happy-hour"
    },
    {
+    "embedded": 116,
     "hh": false,
     "lines": 22,
-    "result": "ok, 3 quote(s)",
+    "result": "shell: 22 lines, 116 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.stanleys-tavern.com/menus/food-and-drink-specials"
    },
    {
+    "embedded": 105,
     "hh": false,
     "lines": 21,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 21 lines, 105 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.stanleys-tavern.com/menus/football-specials"
    }
   ],
@@ -64132,27 +64178,35 @@
   "osm_name": "Cantwell's Tavern",
   "pages": [
    {
+    "embedded": 97,
     "hh": false,
     "lines": 25,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 25 lines, 97 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.cantwells-tavern.com/"
    },
    {
+    "embedded": 102,
     "hh": false,
     "lines": 20,
-    "result": "ok, 2 quote(s)",
+    "result": "shell: 20 lines, 102 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.cantwells-tavern.com/specials"
    },
    {
+    "embedded": 101,
     "hh": false,
     "lines": 20,
-    "result": "ok, 4 quote(s)",
+    "result": "shell: 20 lines, 101 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.cantwells-tavern.com/menus/daily-specials"
    },
    {
+    "embedded": 99,
     "hh": true,
     "lines": 28,
-    "result": "ok, 8 quote(s)",
+    "result": "shell: 28 lines, 99 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.cantwells-tavern.com/menus/happy-hour"
    }
   ],

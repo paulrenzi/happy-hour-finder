@@ -2945,6 +2945,64 @@ class ADiscountHeadingDoesNotPriceTheLinesUnderIt(unittest.TestCase):
             [{"category": "food", "label": "Traditional Guacamole", "price_usd": 7.5}])
 
 
+class APageThatShipsItselfToItsOwnJavaScript(unittest.TestCase):
+    """McGlynn's Pub, 2026-09-02, named by Paul. Twenty-two visible lines and
+    the whole happy hour in window.POPMENU_APOLLO_STATE. Four sessions had
+    answered this shape with a per-platform adapter; this reads it with no
+    platform knowledge at all."""
+
+    SHELL = (
+        '<html><body><div>Welcome</div>'
+        '<script>window.POPMENU_APOLLO_STATE = {"MenuSection:9":{'
+        '"name":"Happy Hour Food Specials",'
+        '"description":"Monday-Friday, 4-6PM at the bar",'
+        '"slug":"/happy-hour","color":"#ffffff",'
+        '"img":"https://cdn.example.com/a.png"},'
+        '"items":["Draft Beer $4","Wings"]};</script></body></html>'
+    )
+
+    def test_the_window_is_recovered_from_the_embedded_state(self):
+        got = crawl_sites.embedded_json_lines(self.SHELL)
+        self.assertIn("Monday-Friday, 4-6PM at the bar", got)
+        self.assertIn("Happy Hour Food Specials", got)
+
+    def test_urls_colours_and_single_words_are_not_prose(self):
+        got = crawl_sites.embedded_json_lines(self.SHELL)
+        self.assertNotIn("https://cdn.example.com/a.png", got)
+        self.assertNotIn("#ffffff", got)
+        self.assertNotIn("/happy-hour", got)
+        self.assertNotIn("Wings", got)   # one word is a label, not a sentence
+
+    def test_a_page_with_no_embedded_object_yields_nothing(self):
+        self.assertEqual(crawl_sites.embedded_json_lines("<p>plain</p>"), [])
+
+    def test_the_harvest_never_reaches_the_regex_quote_passes(self):
+        # The strings are stored for the MODEL. An unlabelled bag of strings
+        # given to quotes() would fabricate deals, so the crawler must not
+        # find a quote in a page whose only content is embedded.
+        lines, stacks, emph = crawl_sites.text_lines_emph(self.SHELL)
+        found = crawl_sites.quotes("\n".join(lines), stacks=stacks, emph=emph)
+        self.assertEqual(found, [])
+
+    def test_the_saved_page_marks_where_the_embedded_text_begins(self):
+        import tempfile, json as _json, os as _os
+        old = crawl_sites.PAGES
+        try:
+            crawl_sites.PAGES = tempfile.mkdtemp()
+            crawl_sites.save_page("L1", "https://x.co/hh", "t", ["Welcome"],
+                                  embedded=["Monday-Friday, 4-6PM at the bar"])
+            fn = _os.path.join(crawl_sites.PAGES,
+                               crawl_sites.page_key("L1", "https://x.co/hh"))
+            page = _json.load(open(fn, encoding="utf-8"))
+        finally:
+            crawl_sites.PAGES = old
+        self.assertEqual(page["visible_lines"], 1)
+        self.assertEqual(page["embedded"], 1)
+        self.assertIn("[the page's embedded data, not visible text]",
+                      page["lines"])
+        self.assertIn("Monday-Friday, 4-6PM at the bar", page["lines"])
+
+
 class AVenueThatPublishesItsHoursAsDATANotAsAPage(unittest.TestCase):
     """Darden's sites have nothing in their HTML for any parser here to read.
 

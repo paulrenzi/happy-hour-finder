@@ -2986,6 +2986,38 @@
   "refused": [],
   "url": "https://www.starbucks.com/store-locator/store/7412/warminster-601-york-road-warminster-pa-189742031-us"
  },
+ "53895|page|https://www.minellasdiner.com/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "53895",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.minellasdiner.com/"
+ },
+ "53895|page|https://www.minellasdiner.com/shop/breakfast-specials/32": {
+  "deals": [],
+  "doc": "page",
+  "lid": "53895",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.minellasdiner.com/shop/breakfast-specials/32"
+ },
+ "53895|page|https://www.minellasdiner.com/shop/greek-specialties/42": {
+  "deals": [],
+  "doc": "page",
+  "lid": "53895",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.minellasdiner.com/shop/greek-specialties/42"
+ },
+ "53895|page|https://www.minellasdiner.com/shop/minellas-sauteed-specialties/38": {
+  "deals": [],
+  "doc": "page",
+  "lid": "53895",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.minellasdiner.com/shop/minellas-sauteed-specialties/38"
+ },
  "54865|page|https://waybackburgers.com/locations/us/pennsylvania/west-chester-2": {
   "deals": [],
   "doc": "page",
@@ -4602,6 +4634,67 @@
   ],
   "url": "https://bierhaul.com/townhousemenu/"
  },
+ "69896|page|https://www.notyouraveragejoes.com/ardmore": {
+  "deals": [
+   {
+    "confidence": "unconfirmed",
+    "items": [
+     {
+      "category": "food",
+      "evidence": "small pizza and a glass of house wine or sangria for just $15",
+      "label": "small pizza and a glass of house wine or sangria",
+      "price_usd": 15.0
+     },
+     {
+      "category": "food",
+      "evidence": "large pizza and a bottle of wine or pitcher of sangria for only $30",
+      "label": "large pizza and a bottle of wine or pitcher of sangria",
+      "price_usd": 30.0
+     }
+    ],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "clock_quote": "Monday - Thursday: 11:30 am - 9:00 pm 11:30 am to 9 pm",
+     "heading": "Sip N' Slice",
+     "kind": "venue_site",
+     "quote": "Every Monday through Wednesday, enjoy a small pizza and a glass of house wine or sangria for just $15. Need more? Upgrade to a large pizza and a bottle of wine or pitcher of sangria for only $30!",
+     "url": "https://www.notyouraveragejoes.com/ardmore"
+    },
+    "type": "food_combo",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "21:00",
+      "start": "11:30"
+     },
+     {
+      "dow": 2,
+      "end": "21:00",
+      "start": "11:30"
+     },
+     {
+      "dow": 3,
+      "end": "21:00",
+      "start": "11:30"
+     }
+    ]
+   }
+  ],
+  "doc": "page",
+  "lid": "69896",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.notyouraveragejoes.com/ardmore"
+ },
+ "69896|page|https://www.notyouraveragejoes.com/menu": {
+  "deals": [],
+  "doc": "page",
+  "lid": "69896",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.notyouraveragejoes.com/menu"
+ },
  "70005|page|https://www.levantebrewing.com/": {
   "deals": [],
   "doc": "page",
@@ -6078,5 +6171,975 @@
    "daily_special: clock None-None is not spelled in the quote"
   ],
   "url": "https://rivertowntaps.com/wp-content/uploads/2026/07/Happy-Hour-Specials.png"
+ },
+ "DE07aab40d0f|page|https://www.deerparktavern.com/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "DE07aab40d0f",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.deerparktavern.com/"
+ },
+ "DE07aab40d0f|page|https://www.deerparktavern.com/menus/dinner-specials": {
+  "deals": [],
+  "doc": "page",
+  "lid": "DE07aab40d0f",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.deerparktavern.com/menus/dinner-specials"
+ },
+ "DE07aab40d0f|page|https://www.deerparktavern.com/menus/drink-specials": {
+  "deals": [],
+  "doc": "page",
+  "lid": "DE07aab40d0f",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.deerparktavern.com/menus/drink-specials"
+ },
+ "DE07aab40d0f|page|https://www.deerparktavern.com/specials": {
+  "deals": [],
+  "doc": "page",
+  "lid": "DE07aab40d0f",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.deerparktavern.com/specials"
+ },
+ "DE1205860cb5|page|https://www.mcglynnspub.com/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "DE1205860cb5",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.mcglynnspub.com/"
+ },
+ "DE1205860cb5|page|https://www.mcglynnspub.com/banquets": {
+  "deals": [],
+  "doc": "page",
+  "lid": "DE1205860cb5",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.mcglynnspub.com/banquets"
+ },
+ "DE1205860cb5|page|https://www.mcglynnspub.com/events": {
+  "deals": [],
+  "doc": "page",
+  "lid": "DE1205860cb5",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.mcglynnspub.com/events"
+ },
+ "DE1205860cb5|page|https://www.mcglynnspub.com/food-and-drink-specials": {
+  "deals": [
+   {
+    "confidence": "unconfirmed",
+    "items": [],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "heading": "Happy Hour",
+     "kind": "venue_site",
+     "quote": "Happy Hour Bites - Monday through Friday 4 pm - 6 pm",
+     "url": "https://www.mcglynnspub.com/food-and-drink-specials"
+    },
+    "type": "happy_hour",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ]
+   }
+  ],
+  "doc": "page",
+  "lid": "DE1205860cb5",
+  "read_at": "2026-09-02",
+  "refused": [
+   "happy_hour: the model returned no days for a quote that names days",
+   "happy_hour: clock 00:00-24:00 is not spelled in the quote",
+   "daily_special: clock 00:00-24:00 is not spelled in the quote"
+  ],
+  "url": "https://www.mcglynnspub.com/food-and-drink-specials"
+ },
+ "DE162f7f2be8|page|https://www.limestonebbqandbourbon.com/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "DE162f7f2be8",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.limestonebbqandbourbon.com/"
+ },
+ "DE162f7f2be8|page|https://www.limestonebbqandbourbon.com/bourbon-menu": {
+  "deals": [],
+  "doc": "page",
+  "lid": "DE162f7f2be8",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.limestonebbqandbourbon.com/bourbon-menu"
+ },
+ "DE520bfab56d|page|https://www.crookedhammockbrewery.com/locations/middletown": {
+  "deals": [],
+  "doc": "page",
+  "lid": "DE520bfab56d",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.crookedhammockbrewery.com/locations/middletown"
+ },
+ "DE520bfab56d|page|https://www.crookedhammockbrewery.com/menus/happy-hour": {
+  "deals": [
+   {
+    "confidence": "unconfirmed",
+    "items": [
+     {
+      "category": "draft",
+      "evidence": "$5 Drink Specials",
+      "label": "16 oz Beer",
+      "price_usd": 5.0
+     },
+     {
+      "category": "wine",
+      "evidence": "$5 Drink Specials",
+      "label": "6 oz Wine",
+      "price_usd": 5.0
+     },
+     {
+      "category": "cocktail",
+      "evidence": "$5 Drink Specials",
+      "label": "Margaritas",
+      "price_usd": 5.0
+     },
+     {
+      "category": "cocktail",
+      "evidence": "$5 Drink Specials",
+      "label": "Crushes",
+      "price_usd": 5.0
+     }
+    ],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "heading": "Happy Hour",
+     "kind": "venue_site",
+     "quote": "Monday- Friday 4-6pm available at the bar",
+     "url": "https://www.crookedhammockbrewery.com/menus/happy-hour"
+    },
+    "type": "happy_hour",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ]
+   }
+  ],
+  "doc": "page",
+  "lid": "DE520bfab56d",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.crookedhammockbrewery.com/menus/happy-hour"
+ },
+ "DE520bfab56d|page|https://www.crookedhammockbrewery.com/menus/happy-hour-lws": {
+  "deals": [
+   {
+    "confidence": "unconfirmed",
+    "items": [
+     {
+      "category": "draft",
+      "evidence": "$6 Drink Specials",
+      "label": "16oz Beers",
+      "price_usd": 6.0
+     }
+    ],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "heading": "Happy Hour",
+     "kind": "venue_site",
+     "quote": "Happy Hour\n$6 Drink Specials\nAvailable Monday- Friday at 4-6pm",
+     "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-lws"
+    },
+    "type": "happy_hour",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ]
+   }
+  ],
+  "doc": "page",
+  "lid": "DE520bfab56d",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-lws"
+ },
+ "DE520bfab56d|page|https://www.crookedhammockbrewery.com/menus/happy-hour-mdt": {
+  "deals": [
+   {
+    "confidence": "unconfirmed",
+    "items": [
+     {
+      "category": "draft",
+      "evidence": "$5 Drink Specials",
+      "label": "16oz Beers",
+      "price_usd": 5.0
+     }
+    ],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "heading": "Happy Hour",
+     "kind": "venue_site",
+     "quote": "Happy Hour\n$5 Drink Specials\nAvailable Monday- Friday at 4-6pm",
+     "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-mdt"
+    },
+    "type": "happy_hour",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ]
+   }
+  ],
+  "doc": "page",
+  "lid": "DE520bfab56d",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-mdt"
+ },
+ "DE606f3bb4d8|page|https://www.mcglynnspub.com/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "DE606f3bb4d8",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.mcglynnspub.com/"
+ },
+ "DE606f3bb4d8|page|https://www.mcglynnspub.com/banquets": {
+  "deals": [],
+  "doc": "page",
+  "lid": "DE606f3bb4d8",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.mcglynnspub.com/banquets"
+ },
+ "DE606f3bb4d8|page|https://www.mcglynnspub.com/events": {
+  "deals": [],
+  "doc": "page",
+  "lid": "DE606f3bb4d8",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.mcglynnspub.com/events"
+ },
+ "DE606f3bb4d8|page|https://www.mcglynnspub.com/food-and-drink-specials": {
+  "deals": [
+   {
+    "confidence": "unconfirmed",
+    "items": [],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "heading": "Happy Hour Food Specials (Monday–Friday, 4–6PM)",
+     "kind": "venue_site",
+     "quote": "Happy Hour Food Specials (Monday–Friday, 4–6PM)",
+     "url": "https://www.mcglynnspub.com/food-and-drink-specials"
+    },
+    "type": "happy_hour",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ]
+   }
+  ],
+  "doc": "page",
+  "lid": "DE606f3bb4d8",
+  "read_at": "2026-09-02",
+  "refused": [
+   "daily_special: clock 00:00-24:00 is not spelled in the quote",
+   "happy_hour: window extends past midnight: 22:00-01:00",
+   "happy_hour: clock 00:00-24:00 is not spelled in the quote"
+  ],
+  "url": "https://www.mcglynnspub.com/food-and-drink-specials"
+ },
+ "DE7629273777|page|https://www.mcglynnspub.com/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "DE7629273777",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.mcglynnspub.com/"
+ },
+ "DE7629273777|page|https://www.mcglynnspub.com/banquets": {
+  "deals": [],
+  "doc": "page",
+  "lid": "DE7629273777",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.mcglynnspub.com/banquets"
+ },
+ "DE7629273777|page|https://www.mcglynnspub.com/events": {
+  "deals": [],
+  "doc": "page",
+  "lid": "DE7629273777",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.mcglynnspub.com/events"
+ },
+ "DE7629273777|page|https://www.mcglynnspub.com/food-and-drink-specials": {
+  "deals": [
+   {
+    "confidence": "unconfirmed",
+    "items": [],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "heading": "Happy Hour Food Specials (Monday–Friday, 4–6PM)",
+     "kind": "venue_site",
+     "quote": "Happy Hour Food Specials (Monday–Friday, 4–6PM)",
+     "url": "https://www.mcglynnspub.com/food-and-drink-specials"
+    },
+    "type": "happy_hour",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ]
+   }
+  ],
+  "doc": "page",
+  "lid": "DE7629273777",
+  "read_at": "2026-09-02",
+  "refused": [
+   "daily_special: clock 00:00-24:00 is not spelled in the quote",
+   "happy_hour: window extends past midnight: 22:00-01:00"
+  ],
+  "url": "https://www.mcglynnspub.com/food-and-drink-specials"
+ },
+ "DEa2d4932451|page|https://www.cafeneobakery.com/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "DEa2d4932451",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.cafeneobakery.com/"
+ },
+ "DEa2d4932451|page|https://www.cafeneobakery.com/events": {
+  "deals": [],
+  "doc": "page",
+  "lid": "DEa2d4932451",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.cafeneobakery.com/events"
+ },
+ "DEa2d4932451|page|https://www.cafeneobakery.com/menu": {
+  "deals": [],
+  "doc": "page",
+  "lid": "DEa2d4932451",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.cafeneobakery.com/menu"
+ },
+ "DEa3cec60d8f|page|https://www.eggspectation.com/menus/happy-hour": {
+  "deals": [],
+  "doc": "page",
+  "lid": "DEa3cec60d8f",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.eggspectation.com/menus/happy-hour"
+ },
+ "DEa3cec60d8f|page|https://www.eggspectation.com/menus/nightly-specials": {
+  "deals": [],
+  "doc": "page",
+  "lid": "DEa3cec60d8f",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.eggspectation.com/menus/nightly-specials"
+ },
+ "DEa3cec60d8f|page|https://www.eggspectation.com/menus/specials": {
+  "deals": [],
+  "doc": "page",
+  "lid": "DEa3cec60d8f",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.eggspectation.com/menus/specials"
+ },
+ "DEa3cec60d8f|page|https://www.eggspectation.com/newark-de": {
+  "deals": [],
+  "doc": "page",
+  "lid": "DEa3cec60d8f",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.eggspectation.com/newark-de"
+ },
+ "DEb78acb8ffc|page|https://www.ashby-hospitality.com/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "DEb78acb8ffc",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.ashby-hospitality.com/"
+ },
+ "DEc5d692f92b|page|https://www.stanleys-tavern.com/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "DEc5d692f92b",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.stanleys-tavern.com/"
+ },
+ "DEc5d692f92b|page|https://www.stanleys-tavern.com/happy-hour": {
+  "deals": [
+   {
+    "confidence": "unconfirmed",
+    "items": [
+     {
+      "amount_off_usd": 1.0,
+      "category": "wine",
+      "evidence": "$1 Off Wines & Well Drinks",
+      "label": "Wines"
+     },
+     {
+      "amount_off_usd": 1.0,
+      "category": "well",
+      "evidence": "$1 Off Wines & Well Drinks",
+      "label": "Well Drinks"
+     },
+     {
+      "amount_off_usd": 1.0,
+      "category": "draft",
+      "evidence": "$1 Off Draft Beers",
+      "label": "Draft Beers"
+     }
+    ],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "heading": "Happy Hour Food & Drink Specials",
+     "kind": "venue_site",
+     "quote": "available exclusively at the bars from 3:00 PM to 6:00 PM on weekdays.",
+     "url": "https://www.stanleys-tavern.com/happy-hour"
+    },
+    "type": "happy_hour",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "15:00"
+     }
+    ]
+   }
+  ],
+  "doc": "page",
+  "lid": "DEc5d692f92b",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.stanleys-tavern.com/happy-hour"
+ },
+ "DEc5d692f92b|page|https://www.stanleys-tavern.com/menus/food-and-drink-specials": {
+  "deals": [],
+  "doc": "page",
+  "lid": "DEc5d692f92b",
+  "read_at": "2026-09-02",
+  "refused": [
+   "food_combo: heading names a meal: 'PICK 2 FOR LUNCH $14!'"
+  ],
+  "url": "https://www.stanleys-tavern.com/menus/food-and-drink-specials"
+ },
+ "DEc5d692f92b|page|https://www.stanleys-tavern.com/menus/football-specials": {
+  "deals": [],
+  "doc": "page",
+  "lid": "DEc5d692f92b",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.stanleys-tavern.com/menus/football-specials"
+ },
+ "DEd3e9422996|page|https://www.cantwells-tavern.com/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "DEd3e9422996",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.cantwells-tavern.com/"
+ },
+ "DEd3e9422996|page|https://www.cantwells-tavern.com/menus/daily-specials": {
+  "deals": [
+   {
+    "confidence": "unconfirmed",
+    "items": [
+     {
+      "amount_off_usd": 4.0,
+      "category": "food",
+      "evidence": "$4 off Cheesesteaks from 11:30am to 3pm",
+      "label": "Cheesesteaks"
+     }
+    ],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "heading": "Daily Specials",
+     "kind": "venue_site",
+     "quote": "$4 off Cheesesteaks from 11:30am to 3pm (Dine In Only)",
+     "url": "https://www.cantwells-tavern.com/menus/daily-specials"
+    },
+    "type": "daily_special",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "15:00",
+      "start": "11:30"
+     },
+     {
+      "dow": 2,
+      "end": "15:00",
+      "start": "11:30"
+     },
+     {
+      "dow": 3,
+      "end": "15:00",
+      "start": "11:30"
+     },
+     {
+      "dow": 4,
+      "end": "15:00",
+      "start": "11:30"
+     },
+     {
+      "dow": 5,
+      "end": "15:00",
+      "start": "11:30"
+     },
+     {
+      "dow": 6,
+      "end": "15:00",
+      "start": "11:30"
+     },
+     {
+      "dow": 7,
+      "end": "15:00",
+      "start": "11:30"
+     }
+    ]
+   },
+   {
+    "confidence": "unconfirmed",
+    "items": [
+     {
+      "amount_off_usd": 5.0,
+      "category": "food",
+      "evidence": "$5 Off Salads (Dine In Only) from 11:30am to 3:30pm",
+      "label": "Salads"
+     }
+    ],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "heading": "Daily Specials",
+     "kind": "venue_site",
+     "quote": "$5 Off Salads (Dine In Only) from 11:30am to 3:30pm",
+     "url": "https://www.cantwells-tavern.com/menus/daily-specials"
+    },
+    "type": "daily_special",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "15:30",
+      "start": "11:30"
+     },
+     {
+      "dow": 2,
+      "end": "15:30",
+      "start": "11:30"
+     },
+     {
+      "dow": 3,
+      "end": "15:30",
+      "start": "11:30"
+     },
+     {
+      "dow": 4,
+      "end": "15:30",
+      "start": "11:30"
+     },
+     {
+      "dow": 5,
+      "end": "15:30",
+      "start": "11:30"
+     },
+     {
+      "dow": 6,
+      "end": "15:30",
+      "start": "11:30"
+     },
+     {
+      "dow": 7,
+      "end": "15:30",
+      "start": "11:30"
+     }
+    ]
+   }
+  ],
+  "doc": "page",
+  "lid": "DEd3e9422996",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.cantwells-tavern.com/menus/daily-specials"
+ },
+ "DEd3e9422996|page|https://www.cantwells-tavern.com/menus/happy-hour": {
+  "deals": [
+   {
+    "confidence": "unconfirmed",
+    "items": [
+     {
+      "amount_off_usd": 1.0,
+      "category": "cocktail",
+      "evidence": "$1 off All Cocktails",
+      "label": "All Cocktails"
+     },
+     {
+      "amount_off_usd": 5.0,
+      "category": "food",
+      "evidence": "$5 off All Small Plates",
+      "label": "All Small Plates"
+     },
+     {
+      "category": "cocktail",
+      "evidence": "$4 Taylor's Grog",
+      "label": "Taylor's Grog",
+      "price_usd": 4.0
+     },
+     {
+      "category": "draft",
+      "evidence": "$3 Coor's Light Draft",
+      "label": "Coor's Light Draft",
+      "price_usd": 3.0
+     },
+     {
+      "amount_off_usd": 3.0,
+      "category": "wine",
+      "evidence": "$3 off Select Wine's",
+      "label": "Select Wine's"
+     },
+     {
+      "amount_off_usd": 2.0,
+      "category": "cocktail",
+      "evidence": "$2 off Cantwell's Cocktails",
+      "label": "Cantwell's Cocktails"
+     }
+    ],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "heading": "Happy Hour",
+     "kind": "venue_site",
+     "quote": "Happy Hour Monday through Friday 4pm-6pm",
+     "url": "https://www.cantwells-tavern.com/menus/happy-hour"
+    },
+    "type": "happy_hour",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ]
+   }
+  ],
+  "doc": "page",
+  "lid": "DEd3e9422996",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.cantwells-tavern.com/menus/happy-hour"
+ },
+ "DEd3e9422996|page|https://www.cantwells-tavern.com/specials": {
+  "deals": [
+   {
+    "confidence": "unconfirmed",
+    "items": [
+     {
+      "amount_off_usd": 4.0,
+      "category": "food",
+      "evidence": "$4 off Cheesesteaks",
+      "label": "Cheesesteaks"
+     }
+    ],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "heading": "Daily Specials",
+     "kind": "venue_site",
+     "quote": "$4 off Cheesesteaks from 11:30am to 3pm (Dine In Only)",
+     "url": "https://www.cantwells-tavern.com/specials"
+    },
+    "type": "daily_special",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "15:00",
+      "start": "11:30"
+     },
+     {
+      "dow": 2,
+      "end": "15:00",
+      "start": "11:30"
+     },
+     {
+      "dow": 3,
+      "end": "15:00",
+      "start": "11:30"
+     },
+     {
+      "dow": 4,
+      "end": "15:00",
+      "start": "11:30"
+     },
+     {
+      "dow": 5,
+      "end": "15:00",
+      "start": "11:30"
+     },
+     {
+      "dow": 6,
+      "end": "15:00",
+      "start": "11:30"
+     },
+     {
+      "dow": 7,
+      "end": "15:00",
+      "start": "11:30"
+     }
+    ]
+   },
+   {
+    "confidence": "unconfirmed",
+    "items": [
+     {
+      "amount_off_usd": 5.0,
+      "category": "food",
+      "evidence": "$5 Off Salads",
+      "label": "Salads"
+     }
+    ],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "heading": "Daily Specials",
+     "kind": "venue_site",
+     "quote": "$5 Off Salads (Dine In Only) from 11:30am to 3:30pm",
+     "url": "https://www.cantwells-tavern.com/specials"
+    },
+    "type": "daily_special",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "15:30",
+      "start": "11:30"
+     },
+     {
+      "dow": 2,
+      "end": "15:30",
+      "start": "11:30"
+     },
+     {
+      "dow": 3,
+      "end": "15:30",
+      "start": "11:30"
+     },
+     {
+      "dow": 4,
+      "end": "15:30",
+      "start": "11:30"
+     },
+     {
+      "dow": 5,
+      "end": "15:30",
+      "start": "11:30"
+     },
+     {
+      "dow": 6,
+      "end": "15:30",
+      "start": "11:30"
+     },
+     {
+      "dow": 7,
+      "end": "15:30",
+      "start": "11:30"
+     }
+    ]
+   }
+  ],
+  "doc": "page",
+  "lid": "DEd3e9422996",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.cantwells-tavern.com/specials"
  }
 }

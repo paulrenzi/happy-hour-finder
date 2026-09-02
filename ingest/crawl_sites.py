@@ -1056,6 +1056,10 @@ def urllib_get(url):
 # apply to it. One concept, one number: report_holes imports this one.
 RENDER_LINE_FLOOR = 40
 RENDER_CAP = 40          # pages per run
+# One concept, one number: the same threshold decides "we could not see into
+# this page" for the render gate, for report_holes.py, and for the shell
+# verdict in the run output.
+SHELL_FLOOR = RENDER_LINE_FLOOR
 _render = {"on": False, "used": 0, "pw": None,
            "browser": None}
 
@@ -1785,6 +1789,62 @@ LD_RE = re.compile(
     re.I | re.S)
 
 
+EMBED_RE = re.compile(r"=\s*(\{)")
+EMBED_CAP = 400          # strings kept per page
+EMBED_MIN = 3            # a string shorter than this is punctuation
+
+
+def embedded_json_lines(html):
+    """Every string a page ships to its own JavaScript, whatever the platform.
+
+    THE GENERAL FORM OF A PROBLEM WE HAVE ANSWERED FOUR TIMES, NARROWLY. A
+    modern site sends the browser a shell -- eleven visible lines -- and the
+    real page as a JSON blob assigned to a global, which the client renders.
+    Darden got an API adapter, Fox Restaurant Concepts got a markup adapter,
+    Vetri got jsonld_quotes(), and each was correct for its venue and narrower
+    than the problem, so the problem came back with the next town. McGlynn's
+    happy hour sits in window.POPMENU_APOLLO_STATE and a fifth adapter was
+    started here before Paul stopped it.
+
+    This knows no platform and never will. It finds every `= {` in the HTML,
+    lets the JSON decoder say where the object ends, and walks it for strings.
+    The deal is in bytes we ALREADY DOWNLOADED; we were discarding them at
+    capture and then reasoning about the eleven lines that were left.
+
+    These lines are NOT given to the regex passes -- an unlabelled bag of
+    strings would fabricate quotes. They are stored for the model, which is
+    the reader that can tell a happy hour from a CSS class name. Capture is
+    general and dumb; the judgement belongs to read_menus_llm.py.
+    """
+    dec = json.JSONDecoder()
+    seen, out = set(), []
+    for m in EMBED_RE.finditer(html):
+        try:
+            obj, _ = dec.raw_decode(html, m.start(1))
+        except ValueError:
+            continue
+        stack = [obj]
+        while stack and len(out) < EMBED_CAP:
+            node = stack.pop()
+            if isinstance(node, dict):
+                stack.extend(node.values())
+            elif isinstance(node, list):
+                stack.extend(node)
+            elif isinstance(node, str):
+                s = " ".join(node.split())
+                # A URL, a hex colour, a class name and a base64 blob are the
+                # bulk of a state tree and none of them is prose.
+                if len(s) < EMBED_MIN or len(s) > 400 or s in seen:
+                    continue
+                if "://" in s or s.startswith(("/", "#", "data:")) or " " not in s:
+                    continue
+                seen.add(s)
+                out.append(s)
+        if len(out) >= EMBED_CAP:
+            break
+    return out
+
+
 def ld_nodes(html):
     """Every object in the page's schema.org graph, however deeply nested.
 
@@ -2019,15 +2079,26 @@ def page_key(lid, url):
     return "%s__%s.json" % (lid, hashlib.sha1(url.encode()).hexdigest()[:12])
 
 
-def save_page(lid, url, title, lines, rendered=False):
-    """Keep a happy-hour page's visible text for the model pass to read."""
+def save_page(lid, url, title, lines, rendered=False, embedded=()):
+    """Keep a happy-hour page's visible text for the model pass to read.
+
+    `embedded` is what the page shipped to its own JavaScript -- see
+    embedded_json_lines(). It is appended to `lines` under a marker rather than
+    stored beside them, because the only consumer is the model, it reads
+    `lines`, and a second field would have needed every reader changed to see
+    it. The marker is there so the model knows the provenance differs.
+    """
     if not lid:
         return
+    body = list(lines)
+    if embedded:
+        body += ["[the page's embedded data, not visible text]"] + list(embedded)
     os.makedirs(PAGES, exist_ok=True)
     tmp = os.path.join(PAGES, page_key(lid, url) + ".new")
     with io.open(tmp, "w", encoding="utf-8") as fh:
         json.dump({"lid": lid, "url": url, "title": title, "rendered": rendered,
-                   "fetched_at": time.strftime("%Y-%m-%d"), "lines": lines},
+                   "fetched_at": time.strftime("%Y-%m-%d"), "lines": body,
+                   "visible_lines": len(lines), "embedded": len(embedded)},
                   fh, ensure_ascii=False)
     os.replace(tmp, os.path.join(PAGES, page_key(lid, url)))
 
@@ -2221,8 +2292,24 @@ def crawl_one(session, venue, robots):
         # every silent venue looked alike and none of them could be ranked.
         # ingest/report_holes.py --silent sorts on this.
         says_hh = bool(HH_HEADING_RE.search(text))
-        pages.append({"url": url, "result": f"ok, {len(found)} quote(s)",
+        # A SHELL IS NOT A SUCCESS. Recording `lines` (2026-09-01) built the
+        # instrument and nothing ever refused on it, so a page we could not see
+        # into filed as `ok, 6 quote(s)` and became invisible -- which is why
+        # the same JavaScript-shell finding was re-made in four sessions. The
+        # verdict now says so in the run output, and the count of these is the
+        # number that has to fall for a capture change to have worked.
+        embedded = []
+        if len(lines) < SHELL_FLOOR and not is_doc:
+            embedded = embedded_json_lines(html)
+        shell = len(lines) < SHELL_FLOOR and not is_doc
+        if shell:
+            result = ("shell: %d lines, %d string(s) recovered from embedded JSON"
+                      % (len(lines), len(embedded)))
+        else:
+            result = f"ok, {len(found)} quote(s)"
+        pages.append({"url": url, "result": result,
                       "lines": len(lines),
+                      **({"shell": True, "embedded": len(embedded)} if shell else {}),
                       "hh": says_hh})
         # Every page that turns out to be about a happy hour is kept in full.
         # The quotes below are what a regex could see; this is what was there.
@@ -2230,9 +2317,12 @@ def crawl_one(session, venue, robots):
         # (reach_llm.py verdict) asks a model whether a page the regex called
         # "no happy hour" states one anyway, and it cannot ask about a page
         # that was thrown away. Sly Fox's /phoenixville never says "happy hour".
-        if says_hh or page_is_hh(url) or _keep_all["on"]:
+        # A shell is kept even when its eleven visible lines never say the
+        # words: what it said to its own JavaScript is the page, and that is
+        # exactly the venue the old gate threw away.
+        if says_hh or page_is_hh(url) or embedded or _keep_all["on"]:
             save_page(lid, url, lines[0] if lines else "", lines,
-                      rendered=bool(rendered))
+                      rendered=bool(rendered), embedded=embedded)
         for q in found:
             # `hh` records that this line was INSIDE the venue's own happy-hour
             # section, which is the fact the extractor needs and could not get.
