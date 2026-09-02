@@ -179,6 +179,15 @@
   "queried": "110 SOUTH 13TH ST, PHILADELPHIA PA 19107-4532",
   "resolved": "Barbuzzo"
  },
+ "bardea-steak-wilmington": {
+  "lat": 39.742174,
+  "lng": -75.549756,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "608 N Market St, Wilmington, DE 19801",
+  "resolved": "Bardea Steak"
+ },
  "barnabys-west-chester": {
   "lat": 39.959608,
   "lng": -75.603943,
@@ -289,6 +298,15 @@
   "queried": "712 MAIN ST, HARLEYSVILLE PA 19438-1636",
   "resolved": "Butcher and Barkeep"
  },
+ "cafe-mezzanotte-wilmington": {
+  "lat": 39.7471543,
+  "lng": -75.5493753,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "230 W 11th St, Wilmington, DE 19801",
+  "resolved": "Cafe Mezzanotte"
+ },
  "cantina-feliz-fort-washington": {
   "lat": 40.1363009,
   "lng": -75.2136073,
@@ -307,14 +325,23 @@
   "queried": "1175 W BALTIMORE PK, MEDIA PA 19063-5127",
   "resolved": "Casa Mia"
  },
- "casey-s-drexel-hill": {
-  "lat": 39.9600125,
-  "lng": -75.2886439,
+ "casa-nonna-wilmington": {
+  "lat": 39.74621,
+  "lng": -75.5487594,
   "matched_by": "osm_site",
-  "osm": "node/5064556125",
+  "osm": null,
   "precision": "place",
-  "queried": "812 LANSDOWNE AVE, DREXEL HILL PA 19026-1526",
-  "resolved": "Casey's"
+  "queried": "111 W 10th St, Wilmington, DE 19801",
+  "resolved": "Casa Nonna"
+ },
+ "catherine-rooney-s-wilmington": {
+  "lat": 39.7576105,
+  "lng": -75.56233379999999,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "1616 Delaware Ave, Wilmington, DE 19806",
+  "resolved": "Catherine Rooney's"
  },
  "cedar-point-bar-kitchen-philadelphia": {
   "lat": 39.97688,
@@ -533,6 +560,15 @@
   "queried": "2118 WASHINGTON AVE, PHILADELPHIA PA 19146",
   "resolved": "Dock Street Brewery South"
  },
+ "dorcea-wilmington": {
+  "lat": 39.7502097,
+  "lng": -75.54941749999999,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "1314 Washington St, Wilmington, DE 19801",
+  "resolved": "DORCEA"
+ },
  "eddie-v-s-prime-seafood-king-of-prussia": {
   "lat": 40.087203900000006,
   "lng": -75.38558499999999,
@@ -750,6 +786,15 @@
   "precision": "building",
   "queried": "30-32 E State St, Media PA 19063",
   "resolved": "30, East State Street, Media, Delaware County, Pennsylvania, 19063, United States"
+ },
+ "james-street-tavern-newport": {
+  "lat": 39.713644599999995,
+  "lng": -75.6096216,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "2 W Market St, Newport, DE 19804",
+  "resolved": "James Street Tavern"
  },
  "jamison-pour-house-jamison": {
   "lat": 40.253694599999996,
@@ -1237,6 +1282,15 @@
   "queried": "226 BRIDGE ST, PHOENIXVILLE PA 19460",
   "resolved": "Rivertown Taps"
  },
+ "rocco-italian-grill-sports-bar-wilmington": {
+  "lat": 39.7517184,
+  "lng": -75.57165049999999,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "701 N Union St, Wilmington, DE 19805",
+  "resolved": "Rocco Italian Grill & Sports Bar"
+ },
  "rosemary-ridley-park": {
   "lat": 39.8795493,
   "lng": -75.3228839,
@@ -1534,6 +1588,15 @@
   "queried": "128 FORD ST, WEST CONSHOHOCKEN PA 19428",
   "resolved": "The Gypsy Saloon"
  },
+ "the-nomad-bar-wilmington": {
+  "lat": 39.7454981,
+  "lng": -75.5495876,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "905 Orange St, Wilmington, DE 19801",
+  "resolved": "The Nomad Bar"
+ },
  "the-plough-the-stars-philadelphia": {
   "lat": 39.9487307,
   "lng": -75.1438899,
@@ -1551,6 +1614,15 @@
   "precision": "place",
   "queried": "129L S 30TH ST, PHILADELPHIA PA 19104",
   "resolved": "The Post"
+ },
+ "the-quoin-restaurant-519-n-market-st-wilmington": {
+  "lat": 39.7418838,
+  "lng": -75.5506375,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "Left Side, 519 N Market St, Wilmington, DE 19801",
+  "resolved": "The Quoin Restaurant"
  },
  "the-sidecar-bar-grille-philadelphia": {
   "lat": 39.9417727,
@@ -1625,6 +1697,15 @@
   "queried": "35 Cricket Terrace, Ardmore PA 19003",
   "resolved": "Tired Hands Fermentaria, 35, Cricket Terrace, Hamilton Court, Wynnewood, Ardmore, Lower Merion Township, Montgomery County, Pennsylvania, 19003, United States"
  },
+ "tonic-seafood-steak-wilmington": {
+  "lat": 39.7473935,
+  "lng": -75.5487835,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "111 W 11th St, Wilmington, DE 19801",
+  "resolved": "Tonic Seafood & Steak"
+ },
  "tony-gs-norristown": {
   "lat": 40.115877,
   "lng": -75.347872,
@@ -1670,6 +1751,15 @@
   "precision": "place",
   "queried": "1137 SPRUCE ST, PHILADELPHIA PA 19107-6738",
   "resolved": "Tria"
+ },
+ "trolley-square-oyster-house-wilmington": {
+  "lat": 39.7584626,
+  "lng": -75.56272899999999,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "1707 Delaware Ave, Wilmington, DE 19806",
+  "resolved": "Trolley Square Oyster House"
  },
  "troubles-end-brewing-collegeville": {
   "lat": 40.1852277,
@@ -1787,6 +1877,15 @@
   "precision": "place",
   "queried": "208 - 210 YORK RD, JENKINTOWN PA 19146",
   "resolved": "W Tavern"
+ },
+ "washington-street-ale-house-wilmington": {
+  "lat": 39.7491147,
+  "lng": -75.5502686,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "1206 Washington St, Wilmington, DE 19801",
+  "resolved": "Washington Street Ale House"
  },
  "well-crafted-beer-co-ste-b100-lansdale": {
   "lat": 40.2437936,

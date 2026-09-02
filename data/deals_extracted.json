@@ -16081,6 +16081,778 @@
      }
     }
    ]
+  },
+  {
+   "id": "cafe-mezzanotte-wilmington",
+   "lid": "DE6192c1db22",
+   "name": "Cafe Mezzanotte",
+   "plcb_name": "Cafe Mezzanotte",
+   "address": "230 W 11th St, Wilmington, DE 19801",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "http://www.cafemezzanotte.net/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://www.cafemezzanotte.net/",
+      "quote": "Happy Hour Specials 3-6 PM",
+      "quotes": [
+       "Happy Hour Specials 3-6 PM",
+       "HAPPY HOUR SPECIALS: / Monday \u2013 Friday 3pm to 6pm Bar Area / Happy Hour Only 3pm-6pm M-F",
+       "Happy Hour Only 3pm-6pm M-F"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "the-nomad-bar-wilmington",
+   "lid": "DE632e1e3095",
+   "name": "The Nomad Bar",
+   "plcb_name": "The Nomad Bar",
+   "address": "905 Orange St, Wilmington, DE 19801",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "http://www.nomadwilmington.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "20:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://www.nomadwilmington.com/events",
+      "quote": "Vinyl Happy Hours / DJ Odd Todd is here every 1st and 3rd Friday of the month! / Check him out from 5-8pm .",
+      "quotes": [
+       "Vinyl Happy Hours / DJ Odd Todd is here every 1st and 3rd Friday of the month! / Check him out from 5-8pm ."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "trolley-square-oyster-house-wilmington",
+   "lid": "DE66e62e19e0",
+   "name": "Trolley Square Oyster House",
+   "plcb_name": "Trolley Square Oyster House",
+   "address": "1707 Delaware Ave, Wilmington, DE 19806",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "http://trolleysquareoysterhouse.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://trolleysquareoysterhouse.com/",
+      "quote": "Happy Hour / Monday \u2013 Friday 4pm \u2013 6pm",
+      "quotes": [
+       "Happy Hour / Monday \u2013 Friday 4pm \u2013 6pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "catherine-rooney-s-wilmington",
+   "lid": "DE7eb20bf7a8",
+   "name": "Catherine Rooney's",
+   "plcb_name": "Catherine Rooney's",
+   "address": "1616 Delaware Ave, Wilmington, DE 19806",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "https://catherinerooneys.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "ALL DRAFTS",
+       "amount_off_usd": 1.0
+      },
+      {
+       "category": "cocktail",
+       "label": "SEASONAL COCKTAILS",
+       "amount_off_usd": 2.0
+      },
+      {
+       "category": "well",
+       "label": "RAIL MIXED DRINKS",
+       "price_usd": 4.0
+      },
+      {
+       "category": "wine",
+       "label": "GLASSES OF HOUSE WINE",
+       "price_usd": 5.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://catherinerooneys.com/wp-content/uploads/2025/09/catherine-rooneys-Happy-Hour-25.pdf",
+      "quote": "HAPPY HOUR / Monday-Friday / 3pm-6pm",
+      "quotes": [
+       "HAPPY HOUR / Monday-Friday / 3pm-6pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "tonic-seafood-steak-wilmington",
+   "lid": "DE81960c2e6e",
+   "name": "Tonic Seafood & Steak",
+   "plcb_name": "Tonic Seafood & Steak",
+   "address": "111 W 11th St, Wilmington, DE 19801",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "http://tonicsns.com/?utm_source=extnet&utm_medium=yext&y_source=1_NTkyNzgxNjYtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://tonicsns.com/?utm_source=extnet&utm_medium=yext&y_source=1_NTkyNzgxNjYtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+      "quote": "Meet Us For Happy Hour! / Join us for happy hour ! Every Monday - Friday 3-6 PM",
+      "quotes": [
+       "Meet Us For Happy Hour! / Join us for happy hour ! Every Monday - Friday 3-6 PM",
+       "Join us for happy hour ! Every Monday - Friday 3-6 PM"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "washington-street-ale-house-wilmington",
+   "lid": "DE98501eeb65",
+   "name": "Washington Street Ale House",
+   "plcb_name": "Washington Street Ale House",
+   "address": "1206 Washington St, Wilmington, DE 19801",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "http://www.wsalehouse.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://www.wsalehouse.com/",
+      "quote": "HAPPY HOUR / 4-6pm / Glass of Wine $1 OFF",
+      "quotes": [
+       "HAPPY HOUR / 4-6pm / Glass of Wine $1 OFF",
+       "Happy Hour: 4PM-6PM",
+       "Happy Hour 4PM-6PM",
+       "HAPPY HOUR 4-6pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "rocco-italian-grill-sports-bar-wilmington",
+   "lid": "DE9b9a033447",
+   "name": "Rocco Italian Grill & Sports Bar",
+   "plcb_name": "Rocco Italian Grill & Sports Bar",
+   "address": "701 N Union St, Wilmington, DE 19805",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "http://roccoitaliangrill.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Select Domestic Drafts",
+       "price_usd": 3.0
+      },
+      {
+       "category": "wine",
+       "label": "Glasses of Select Wine l",
+       "price_usd": 5.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://roccoitaliangrill.com/wilmington-rocco-italian-grill-and-sports-bar-happy-hours-specials",
+      "quote": "Happy Hour! $5 , $7 and $9 Plates | $3 Select Domestic Drafts | $5 Glasses of Select Wine l $6 Seltzers and Teas l $7 Mules 03:00 PM - 06:00 PM",
+      "quotes": [
+       "Happy Hour! $5 , $7 and $9 Plates | $3 Select Domestic Drafts | $5 Glasses of Select Wine l $6 Seltzers and Teas l $7 Mules 03:00 PM - 06:00 PM"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "bardea-steak-wilmington",
+   "lid": "DEa2a51b1b18",
+   "name": "Bardea Steak",
+   "plcb_name": "Bardea Steak",
+   "address": "608 N Market St, Wilmington, DE 19801",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "https://www.bardeasteak.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "Classic Cocktails and Mixed Drinks",
+       "amount_off_usd": 3.0
+      },
+      {
+       "category": "draft",
+       "label": "Beers",
+       "amount_off_usd": 2.0
+      },
+      {
+       "category": "wine",
+       "label": "Wines by The Glass",
+       "amount_off_usd": 3.0
+      },
+      {
+       "category": "wine",
+       "label": "Premium Wines by The Glass",
+       "amount_off_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "Oysters",
+       "price_usd": 12.0
+      },
+      {
+       "category": "food",
+       "label": "Chicken Wings",
+       "price_usd": 10.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.bardeasteak.com/menus",
+      "quote": "Happy Hour: Available in the bar area Tuesday - Friday from 5 pm to 7 pm",
+      "quotes": [
+       "Happy Hour: Available in the bar area Tuesday - Friday from 5 pm to 7 pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "dorcea-wilmington",
+   "lid": "DEa3dcf9e68f",
+   "name": "DORCEA",
+   "plcb_name": "DORCEA",
+   "address": "1314 Washington St, Wilmington, DE 19801",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "http://dorcea.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "all drafts",
+       "amount_off_usd": 2.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://dorcea.com/wilmington-dorcea-drink-menu",
+      "quote": "$2 off all drafts during happy hour | Tuesday-Friday 4 pm-6 pm",
+      "quotes": [
+       "$2 off all drafts during happy hour | Tuesday-Friday 4 pm-6 pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "casa-nonna-wilmington",
+   "lid": "DEab3d90e8aa",
+   "name": "Casa Nonna",
+   "plcb_name": "Casa Nonna",
+   "address": "111 W 10th St, Wilmington, DE 19801",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "https://www.casanonnade.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "Cocktails",
+       "price_usd": 11.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Aperol Spritz",
+       "price_usd": 11.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Lychee Martini",
+       "price_usd": 15.0
+      },
+      {
+       "category": "food",
+       "label": "Vodka, grapefruit, lemon, mint",
+       "price_usd": 15.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Martini  & Old Fashioned",
+       "price_usd": 12.0
+      },
+      {
+       "category": "food",
+       "label": "Chicken Wings",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "Margherita Pizza",
+       "price_usd": 13.0
+      },
+      {
+       "category": "draft",
+       "label": "draft beer",
+       "amount_off_usd": 1.0
+      },
+      {
+       "category": "wine",
+       "label": "wines by the glass",
+       "amount_off_usd": 1.0
+      },
+      {
+       "category": "cocktail",
+       "label": "House Espresso Martini & Old",
+       "price_usd": 12.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.casanonnade.com/menus",
+      "quote": "Happy Hour Available Monday through Friday from 4pm\u20137pm in bar area.",
+      "quotes": [
+       "Happy Hour Available Monday through Friday from 4pm\u20137pm in bar area."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "james-street-tavern-newport",
+   "lid": "DEb511151c02",
+   "name": "James Street Tavern",
+   "plcb_name": "James Street Tavern",
+   "address": "2 W Market St, Newport, DE 19804",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "http://www.jstavern.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "Appetizer Menu",
+       "price_usd": 3.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://www.jstavern.com/new-events/2014/2/1/happy-hour-3-6pm",
+      "quote": "Happy Hour 3-6pm, 9-close Wed-Sat & All Day SUNDAY \u2014 James Street Tavern",
+      "quotes": [
+       "Happy Hour 3-6pm, 9-close Wed-Sat & All Day SUNDAY \u2014 James Street Tavern",
+       "Happy Hour 3-6pm, 9-close Wed-Sat & All Day SUNDAY"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "the-quoin-restaurant-519-n-market-st-wilmington",
+   "lid": "DEc1097cdd42",
+   "name": "The Quoin Restaurant",
+   "plcb_name": "The Quoin Restaurant",
+   "address": "Left Side, 519 N Market St, Wilmington, DE 19801",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "https://thequoinhotel.com/restaurant?utm_source=Google&utm_medium=Local+Search+Restaurant&utm_campaign=Google+My+Business&utm_id=The+Quoin+Restaurant",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://thequoinhotel.com/restaurant/happyhour",
+      "quote": "Happy Hour / Happy Hour: Tuesday - Friday, 4 PM - 6 PM",
+      "quotes": [
+       "Happy Hour / Happy Hour: Tuesday - Friday, 4 PM - 6 PM",
+       "Happy Hour: Tuesday - Friday, 4 PM - 6 PM"
+      ]
+     }
+    }
+   ]
   }
  ]
 }
