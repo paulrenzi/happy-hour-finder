@@ -46,6 +46,37 @@ class AWordWeDoNotKnowReadsAsSilence(unittest.TestCase):
     def test_a_weekend_is_still_a_weekend(self):
         self.assertEqual(days_in("weekend nights"), {6, 7})
 
+    def test_seven_nights_a_week_is_every_day(self):
+        # Social Hour reached the right card only by falling THROUGH to the
+        # every-day inference -- right answer, no evidence.
+        self.assertEqual(days_in("Social Hour | 7 Nights A Week 4:30pm to 6pm"),
+                         {1, 2, 3, 4, 5, 6, 7})
+
+
+class TheGuardForTheNextWordWeDoNotKnow(unittest.TestCase):
+    """Two synonyms were each found by a wrong card in public. The third will
+    be too, unless a quote we could not read stops inferring seven days."""
+
+    def test_an_unknown_week_word_publishes_no_window(self):
+        # Invented on purpose: this is the shape of the next 'weeknights'.
+        self.assertEqual(
+            windows_from("Happy Hour throughout the trading week, 4 - 6 pm"), [])
+
+    def test_school_nights_publishes_no_window(self):
+        self.assertEqual(
+            windows_from("Happy Hour on school nights, 4 - 6 pm"), [])
+
+    def test_a_late_night_happy_hour_still_ships(self):
+        # 'night' as a modifier on the DEAL is not a limit on the WEEK, and
+        # six real cards in the corpus are written this way.
+        got = windows_from("Late Night Happy Hour 10pm-11pm!")
+        self.assertEqual(sorted({w["dow"] for w in got}), [1, 2, 3, 4, 5, 6, 7])
+        self.assertEqual(got[0]["start"], "22:00")
+
+    def test_a_known_week_word_is_untouched(self):
+        got = windows_from("Happy hours weeknights, 4 to 6 PM")
+        self.assertEqual(sorted({w["dow"] for w in got}), [1, 2, 3, 4, 5])
+
 
 class TheOtherBranchOfTheSameBusiness(unittest.TestCase):
     """Spasso Italian Grill's site carries Media's 'MONDAY - FRIDAY 4:00 -

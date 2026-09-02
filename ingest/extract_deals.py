@@ -198,7 +198,14 @@ def code_days(text):
 # "EVERY. SINGLE. DAY." is Bonefish's own words for seven days a week, and
 # days_in() returned the empty set on it -- so the document we could not
 # reach would have been refused for naming no day even once we could.
-EVERYDAY_RE = re.compile(r"\b(?:daily|every ?day|every\W{0,3}single\W{0,3}day|all week|7 days a week|seven days)\b", re.I)
+# '7 nights a week' is the fourth way to say every day, and it was missing too
+# (Social Hour, '7 Nights A Week 4:30pm to 6:00pm'). It reached the right card
+# only by falling through to the every-day inference below -- a right answer
+# off no evidence, which the day-ish guard would have turned into a refusal.
+EVERYDAY_RE = re.compile(
+    r"\b(?:daily|every ?day|every\W{0,3}single\W{0,3}day|all week|"
+    r"(?:7|seven)\s*(?:days|nights|nites)\s*(?:a|per)\s*week|"
+    r"7 days a week|seven days)\b", re.I)
 # 'weeknights' is Monday to Friday said the other way, and it was missing.
 # DELCO.today: 'Off the Rail ... has $3 domestic beers during happy hours
 # weeknights, 4 to 6 PM'. days_in() found no day at all, so the clock fell
@@ -211,6 +218,28 @@ EVERYDAY_RE = re.compile(r"\b(?:daily|every ?day|every\W{0,3}single\W{0,3}day|al
 # Serum Kitchen shipped a Saturday and a Sunday off it.
 WEEKDAY_RE = re.compile(r"\bweek\s*(?:day|night)s?\b|\bwork(?:ing)?\s*week\b", re.I)
 WEEKEND_RE = re.compile(r"\bweekends?\b", re.I)
+
+# The guard for the NEXT word we do not know.
+#
+# 'weeknights' and 'the working week' were each found the same way -- by a
+# wrong card, in public -- and each was fixed by adding one word to the
+# vocabulary above. That fixes the word; it does not fix the class. The next
+# synonym is unknown by construction, so the guard has to key on the SHAPE of
+# a day-limiting word rather than on a list of them.
+#
+# 'week' inside a token is that shape: weekdays, weeknights, weeknites,
+# workweek, weekends and 'the working week' all carry it, and all of them
+# LIMIT the schedule. So does 'school night'. If one of these appears in a
+# quote and the grammar above still resolved NO day, we did not read the
+# sentence -- and the every-day inference must not run, because the quote is
+# the venue saying something about days that we failed to understand.
+#
+# 🛑 'night' on its own is NOT this shape and must never be added. The corpus
+# says so: of the seven day-ish quotes on the inference path, six are 'Late
+# Night Happy Hour', 'Taco Special Night' and 'nightlife vibe' -- a modifier
+# on the deal, not a limit on the week. A guard that took them would refuse
+# six real cards to catch none.
+DAYISH_RE = re.compile(r"\b\w*week\w*\b|\bschool\s*(?:night|nite)s?\b", re.I)
 
 # '4p - 6p' is how a bar writes it about as often as '4pm - 6pm', and requiring
 # the full 'pm' meant Pepperoncini published its window in plain text -- the
@@ -909,7 +938,8 @@ def windows_from(quote):
     if len(quote) <= 200 and len(TIME_RE.findall(quote)) == 1 \
             and HH_RE.search(quote) and not MEAL_RE.search(quote) \
             and not ONE_OFF_RE.search(quote) \
-            and not DATED_CLAUSE_RE.search(quote) and not days_in(quote):
+            and not DATED_CLAUSE_RE.search(quote) and not days_in(quote) \
+            and not DAYISH_RE.search(quote):
         win = window_in(quote)
         if win:
             return [{"dow": d, "start": win[0], "end": win[1]}

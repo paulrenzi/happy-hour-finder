@@ -1,95 +1,147 @@
 {
- "_comment": "Dated local roundups, one per zone. Read by ingest/crawl_roundups.py. A roundup is the outlet speaking, not the bar: its deals ship in their own tier, outlet + date on the card, capped at unconfirmed. Add a row when a human finds one; the crawl never discovers these on its own.",
- "articles": [
-  {
-   "url": "https://countylinesmagazine.com/article/cheers-its-happy-hour-in-west-chester-pa/",
-   "outlet": "County Lines Magazine",
-   "zone_id": "west_chester"
-  },
-  {
-   "url": "https://countylinesmagazine.com/article/happy-hours-in-west-chester-pa/",
-   "outlet": "County Lines Magazine",
-   "zone_id": "west_chester"
-  },
-  {
-   "url": "https://bucksco.today/2026/08/best-restaurants-outdoor-seating-doylestown-pa/",
-   "outlet": "BUCKSCO.Today",
-   "zone_id": "doylestown"
-  },
-  {
-   "url": "https://bucksco.today/2026/04/doylestown-10-destinations/",
-   "outlet": "BUCKSCO.Today",
-   "zone_id": "doylestown"
-  },
-  {
-   "url": "https://bucksco.today/2024/08/86-west-doylestown/",
-   "outlet": "BUCKSCO.Today",
-   "zone_id": "doylestown"
-  },
-  {
-   "url": "https://delco.today/2024/11/happy-hour-deals-delaware-county-drinks/",
-   "outlet": "DELCO.today",
-   "zone_id": "media"
-  },
-  {
-   "url": "https://delco.today/2026/06/six-delco-community-bars-locals-love/",
-   "outlet": "DELCO.today",
-   "zone_id": "media"
-  },
-  {
-   "url": "https://delco.today/2025/04/rooftopbars-delaware-county/",
-   "outlet": "DELCO.today",
-   "zone_id": "media"
-  },
-  {
-   "url": "https://delco.today/2026/08/media-attractions-shops-restaurants/",
-   "outlet": "DELCO.today",
-   "zone_id": "media"
-  },
-  {
-   "url": "https://delawaretoday.com/food/happy-hours-wilmington/",
-   "outlet": "Delaware Today",
-   "zone_id": "wilmington"
-  },
-  {
-   "url": "https://delawaretoday.com/food/restaurant-bars/",
-   "outlet": "Delaware Today",
-   "zone_id": "wilmington"
-  },
-  {
-   "url": "https://delawaretoday.com/food/fine-dining-deals/",
-   "outlet": "Delaware Today",
-   "zone_id": "wilmington"
-  },
-  {
-   "url": "https://www.visitwilmingtonde.com/goodtaste/stories/post/the-ultimate-guide-to-happy-hour-in-wilmington-the-brandywine-valley/",
-   "outlet": "Visit Wilmington Good Taste",
-   "zone_id": "wilmington"
-  },
-  {
-   "url": "https://www.visitwilmingtonde.com/goodtaste/stories/post/drink-and-eat-up-10-awesome-greater-wilmington-happy-hour-hotspots/",
-   "outlet": "Visit Wilmington Good Taste",
-   "zone_id": "wilmington"
-  },
-  {
-   "url": "https://udreview.com/newark-happy-hour-the-definitive-rankings/",
-   "outlet": "The Review (UD)",
-   "zone_id": "newark_de"
-  },
-  {
-   "url": "https://delawaretoday.com/things-to-do/university-of-delaware-guide/",
-   "outlet": "Delaware Today",
-   "zone_id": "newark_de"
-  },
-  {
-   "url": "https://delawaretoday.com/food/outdoor-dining-newark/",
-   "outlet": "Delaware Today",
-   "zone_id": "newark_de"
-  },
-  {
-   "url": "https://www.visitwilmingtonde.com/goodtaste/stories/tag/happy-hour/56c774133cb919044af6b60c/",
-   "outlet": "Visit Wilmington Good Taste",
-   "zone_id": "new_castle_de"
-  }
- ]
+  "_comment": "Dated local roundups, one per zone. Read by ingest/crawl_roundups.py. A roundup is the outlet speaking, not the bar: its deals ship in their own tier, outlet + date on the card, capped at unconfirmed. Add a row when a human finds one; the crawl never discovers these on its own.",
+  "articles": [
+    {
+      "url": "https://countylinesmagazine.com/article/cheers-its-happy-hour-in-west-chester-pa/",
+      "outlet": "County Lines Magazine",
+      "zone_id": "west_chester"
+    },
+    {
+      "url": "https://countylinesmagazine.com/article/happy-hours-in-west-chester-pa/",
+      "outlet": "County Lines Magazine",
+      "zone_id": "west_chester"
+    },
+    {
+      "url": "https://bucksco.today/2026/08/best-restaurants-outdoor-seating-doylestown-pa/",
+      "outlet": "BUCKSCO.Today",
+      "zone_id": "doylestown"
+    },
+    {
+      "url": "https://bucksco.today/2026/04/doylestown-10-destinations/",
+      "outlet": "BUCKSCO.Today",
+      "zone_id": "doylestown"
+    },
+    {
+      "url": "https://bucksco.today/2024/08/86-west-doylestown/",
+      "outlet": "BUCKSCO.Today",
+      "zone_id": "doylestown"
+    },
+    {
+      "url": "https://delco.today/2024/11/happy-hour-deals-delaware-county-drinks/",
+      "outlet": "DELCO.today",
+      "zone_id": "media"
+    },
+    {
+      "url": "https://delco.today/2026/06/six-delco-community-bars-locals-love/",
+      "outlet": "DELCO.today",
+      "zone_id": "media"
+    },
+    {
+      "url": "https://delco.today/2025/04/rooftopbars-delaware-county/",
+      "outlet": "DELCO.today",
+      "zone_id": "media"
+    },
+    {
+      "url": "https://delco.today/2026/08/media-attractions-shops-restaurants/",
+      "outlet": "DELCO.today",
+      "zone_id": "media"
+    },
+    {
+      "url": "https://delawaretoday.com/food/happy-hours-wilmington/",
+      "outlet": "Delaware Today",
+      "zone_id": "wilmington"
+    },
+    {
+      "url": "https://delawaretoday.com/food/restaurant-bars/",
+      "outlet": "Delaware Today",
+      "zone_id": "wilmington"
+    },
+    {
+      "url": "https://delawaretoday.com/food/fine-dining-deals/",
+      "outlet": "Delaware Today",
+      "zone_id": "wilmington"
+    },
+    {
+      "url": "https://www.visitwilmingtonde.com/goodtaste/stories/post/the-ultimate-guide-to-happy-hour-in-wilmington-the-brandywine-valley/",
+      "outlet": "Visit Wilmington Good Taste",
+      "zone_id": "wilmington"
+    },
+    {
+      "url": "https://www.visitwilmingtonde.com/goodtaste/stories/post/drink-and-eat-up-10-awesome-greater-wilmington-happy-hour-hotspots/",
+      "outlet": "Visit Wilmington Good Taste",
+      "zone_id": "wilmington"
+    },
+    {
+      "url": "https://udreview.com/newark-happy-hour-the-definitive-rankings/",
+      "outlet": "The Review (UD)",
+      "zone_id": "newark_de"
+    },
+    {
+      "url": "https://delawaretoday.com/things-to-do/university-of-delaware-guide/",
+      "outlet": "Delaware Today",
+      "zone_id": "newark_de"
+    },
+    {
+      "url": "https://delawaretoday.com/food/outdoor-dining-newark/",
+      "outlet": "Delaware Today",
+      "zone_id": "newark_de"
+    },
+    {
+      "url": "https://www.visitwilmingtonde.com/goodtaste/stories/tag/happy-hour/56c774133cb919044af6b60c/",
+      "outlet": "Visit Wilmington Good Taste",
+      "zone_id": "new_castle_de"
+    },
+    {
+      "url": "https://montco.today/2026/08/iconic-montgomery-county-bars-social-scene/",
+      "outlet": "MONTCO.Today"
+    },
+    {
+      "url": "https://montco.today/2025/02/ardmore-and-jenkintowns-top-bars/",
+      "outlet": "MONTCO.Today",
+      "zone_id": "ardmore_bryn_mawr"
+    },
+    {
+      "url": "https://montco.today/2026/04/patio-season-montco-restaurants/",
+      "outlet": "MONTCO.Today"
+    },
+    {
+      "url": "https://montco.today/2023/08/wine-bars-montgomery-county/",
+      "outlet": "MONTCO.Today"
+    },
+    {
+      "url": "https://montco.today/2025/05/the-rabbit-hole-conshohocken/",
+      "outlet": "MONTCO.Today",
+      "zone_id": "conshohocken"
+    },
+    {
+      "url": "https://montco.today/2024/03/daniels-restaurant-conshohocken/",
+      "outlet": "MONTCO.Today",
+      "zone_id": "conshohocken"
+    },
+    {
+      "url": "https://montco.today/2026/03/montgomery-county-towns-ardmore-ambler/",
+      "outlet": "MONTCO.Today"
+    },
+    {
+      "url": "https://outandaboutnow.com/summer-sippin-2026/",
+      "outlet": "Out & About Magazine"
+    },
+    {
+      "url": "https://outandaboutnow.com/the-big-fish-in-the-small-wonder/",
+      "outlet": "Out & About Magazine"
+    },
+    {
+      "url": "https://outandaboutnow.com/dining-destination/",
+      "outlet": "Out & About Magazine"
+    },
+    {
+      "url": "https://outandaboutnow.com/out-is-in/",
+      "outlet": "Out & About Magazine"
+    },
+    {
+      "url": "https://outandaboutnow.com/greater-wilmington-beer-week-the-players-2026/",
+      "outlet": "Out & About Magazine",
+      "zone_id": "wilmington"
+    }
+  ]
 }
