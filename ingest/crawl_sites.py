@@ -376,6 +376,49 @@ def item_beside(i, lines, stacks):
 
 # The page's own heading, which is what unlocks the looser priced-line rules on
 # a page whose URL says nothing. See hh_sections().
+# A venue does not have to call it a "happy hour". Morton's brands its as
+# /event/power-hour/ and bartaco calls its /kophightidehour/ -- both were read
+# as ordinary pages, so the loose price rules never unlocked and bartaco's menu
+# IMAGE, the only place its menu exists, was never collected. What all of them
+# do say is HOUR (Paul, 2026-09-01: "make sure we are grabbing anything with
+# 'hour' in the name"). 'hours' is excluded deliberately -- /hours is the
+# opening-hours page, not a deal -- and the match is against the PATH only, so
+# a venue merely named Hourglass Tavern does not turn its whole site into a
+# happy-hour menu.
+HH_PATH_RE = re.compile(r"hour(?!s)", re.I)
+
+
+def url_names_hh(url, depth=1):
+    """True when the venue's own URL calls this page an hour or a special.
+
+    'special' still needs depth: a homepage is not a specials page, and
+    /daily-specials prices are Monday's, not the happy hour's. An HOUR in the
+    path is the venue naming the thing at any depth -- bartaco's seed URL IS
+    /kophightidehour/, and requiring depth>1 was why it read as an ordinary page.
+    """
+    path = urllib.parse.urlsplit(url).path + "?" + (urllib.parse.urlsplit(url).query or "")
+    return bool(HH_PATH_RE.search(path)
+                or (depth > 1 and re.search(r"happy.?hour|special", url, re.I)))
+
+
+def page_is_hh(url):
+    """True when the venue's own URL says this whole PAGE is the happy hour.
+
+    Stricter than url_names_hh(): an HOUR in the path only. '/specials' is not
+    granted this -- '/daily-specials' prices are Monday's, and the quotes()
+    docstring is explicit that containment is what lets a quote travel to
+    another page's schedule.
+
+    What it buys is the section. hh_sections() looks for a happy-hour HEADING,
+    and a page that IS the happy-hour menu often has none -- Sullivan's
+    /menus/happyhour-food-drink/ marked exactly one line, so heading_prices()
+    refused all four of its price bands and twenty-six dishes stayed unread on
+    a page we had fetched. A page the venue titled the happy hour is one whose
+    every line is inside it.
+    """
+    return bool(HH_PATH_RE.search(urllib.parse.urlsplit(url).path))
+
+
 HH_HEADING_RE = re.compile(r"happy\s*hour|social hour|power hour|bar bites", re.I)
 # A heading that divides a happy hour up rather than ending it. CO-OP's happy
 # hour is an <h2> and so are its own 'Food Specials' and 'Drink Specials', so
@@ -546,6 +589,17 @@ SECTION_PRICE_RE = re.compile(r"\$\s?(\d{1,3}(?:\.\d\d)?)\s*(?:-|\u2013|\u2014|t
 # short list; a longer run is a menu the heading does not really own, and
 # inheriting a price down it would publish a wrong price on every line of it.
 SECTION_PRICE_CAP = 12
+# A heading that is NOTHING but a price. Sullivan's states its whole happy-hour
+# food menu as four of these -- '$25', '$20', '$15', '$10' -- each followed by
+# five or six dishes, and we published two drink lines out of twenty-six items.
+# The band rule below cannot use the ordinary one: on that page every DISH NAME
+# is an <h3> too, so "stop at the next heading" stopped at the first dish, and
+# the price sits in a sibling column to its items rather than around them, so
+# the box test broke immediately as well. A bare-price heading is not a section
+# title, it is a price band, and what it owns is the marked headings after it.
+BARE_HEADING_PRICE_RE = re.compile(
+    r"^\$\s?\d{1,3}(?:\.\d\d)?(?:\s*(?:-|–|—|to)\s*\$?\s?\d{1,3}(?:\.\d\d)?)?"
+    r"(?:\s*(?:each|ea\.?|\+))?$", re.I)
 # An unemphasised line has to stand as its own label, so it has to be short
 # enough to BE one. A sentence is not a label.
 SECTION_LABEL_MAX = 40
@@ -603,6 +657,24 @@ def heading_prices(html, text, hh_lines, stacks=None):
         box = None
         if stacks and i < len(stacks) and len(stacks[i]) >= 2:
             box = stacks[i][-2]
+        # A price band: the heading says the price and NOTHING else, so its
+        # items are the headings that follow, and it runs to the next PRICED
+        # heading rather than to the next heading of any kind.
+        if BARE_HEADING_PRICE_RE.match(lines[i].strip()):
+            n = 0
+            for j in range(i + 1, len(lines)):
+                if j not in hh_lines or n >= SECTION_PRICE_CAP:
+                    break
+                if j in headset and SECTION_PRICE_RE.search(lines[j]):
+                    break
+                # Only the lines the page itself marked as headings. The
+                # description under each dish is a <p>, and reading those as
+                # items publishes half a sentence at the band's price.
+                if j not in headset or not lines[j].strip():
+                    continue
+                out[j] = (i, lo, hi)
+                n += 1
+            continue
         n = 0
         for j in range(i + 1, len(lines)):
             if j in headset or j not in hh_lines or n >= SECTION_PRICE_CAP:
@@ -942,7 +1014,9 @@ def candidate_links(html, page_url):
             continue
         seen.add(full)
         # A link that says 'happy hour' outranks one that merely says 'menu'.
-        found.append((0 if re.search(r"happy.?hour|special", full + label, re.I) else 1, full))
+        found.append((0 if (url_names_hh(full, 2)
+                             or re.search(r"happy.?hour|hour(?!s)|special", label, re.I))
+                       else 1, full))
     return [u for _, u in sorted(found)]
 
 
@@ -979,7 +1053,7 @@ def sitemap_links(session, page_url, robots):
             queue += [u for u in locs if re.search(r"page|post", u, re.I)][:2] or locs[:1]
             continue
         for u in locs:
-            if re.search(r"happy.?hour|special", u, re.I) and u not in seen:
+            if url_names_hh(u, 2) and u not in seen:
                 seen.add(u)
                 out.append(u)
     return out
@@ -1562,6 +1636,28 @@ BARE_WINDOW_RE = re.compile(
     r"\d{1,2}(?::\d\d)?\s*(?:am|pm|a\.m\.|p\.m\.)\s*$", re.I)
 
 
+def states_a_deal(line):
+    """True when a line does more than NAME the happy hour.
+
+    'Happy Hour' alone is a nav link, a tab, a page title -- it makes no claim
+    about when anything happens, so it must never be joined to a clock sitting
+    beside it. Black Powder Tavern's home page carries exactly that label in a
+    row of opening hours, and pairing them manufactured three windows -- lunch
+    11:30-4, brunch 11-3 and the real 4-6 -- one of which then OUTRANKED the
+    venue's own sentence, 'Happy Hour on Monday through Friday from 4:00 p.m.
+    until 6:00 p.m.'. A correct Mon-Fri window became every day of the week,
+    cited to a quote that says 11:30 to 4.
+
+    Peppers' line is 'Happy Hour! $2 OFF any bar bite | $1 OFF any beer | ...'
+    -- it states a deal, and a deal is the thing a clock can belong to. So the
+    test is what SURVIVES removing the words: a price, or enough other words to
+    be a sentence rather than a label.
+    """
+    rest = HH_HEADING_RE.sub(" ", line)
+    rest = re.sub(r"[^0-9A-Za-z$]+", " ", rest).strip()
+    return bool(re.search(r"\$\s?\d", rest) or len(rest) >= 12)
+
+
 def boxed_windows(lines, stacks):
     """Quotes for a happy hour whose CLOCK is in the box next door.
 
@@ -1592,7 +1688,7 @@ def boxed_windows(lines, stacks):
         for j in range(max(0, i - 4), min(len(lines), i + 5)):
             if j == i or len(stacks[j]) < 2 or stacks[j][-2] != row:
                 continue
-            if not HH_HEADING_RE.search(lines[j]):
+            if not HH_HEADING_RE.search(lines[j]) or not states_a_deal(lines[j]):
                 continue
             if TIME_CONTEXT_RE.search(lines[j]):
                 continue  # it states its own clock; it does not need this one
@@ -1776,7 +1872,7 @@ def crawl_one(session, venue, robots):
         # The venue's own title for the page is what unlocks the looser price
         # rules -- the same test used a few lines below to decide a menu PDF is
         # worth chasing, and the same containment.
-        on_hh = bool(depth > 1 and re.search(r"happy.?hour|special", url, re.I))
+        on_hh = url_names_hh(url, depth)
         # The lines AND the element each was found in: which lines a page put in
         # one box is what says which item a bare price belongs to, and it exists
         # only here, in the markup. See item_beside().
@@ -1801,7 +1897,12 @@ def crawl_one(session, venue, robots):
         # hour in its address very often names it in a heading, and that heading
         # is the venue's own word for the section beneath it -- the same claim
         # the URL was standing in for, read off the page rather than the link.
-        hh_lines = frozenset() if is_doc else hh_sections(html, text)
+        if is_doc:
+            hh_lines = frozenset()
+        elif page_is_hh(url):
+            hh_lines = frozenset(range(len(lines)))
+        else:
+            hh_lines = hh_sections(html, text)
         found = quotes(text, menu_doc=is_doc, hh_page=on_hh, hh_lines=hh_lines,
                        stacks=stacks, emph=emph, mark_hh=True,
                        head_prices=heading_prices(html, text, hh_lines, stacks))
@@ -1852,7 +1953,7 @@ def crawl_one(session, venue, robots):
         # and never followed. The filename is the venue's own word for the
         # document, which is the same claim the page URL was standing in for.
         queued = {u for u, _ in queue}
-        on_hh_page = depth > 1 and re.search(r"happy.?hour|special", url, re.I)
+        on_hh_page = url_names_hh(url, depth)
         for u in candidate_links(html, url):
             if not re.search(r"\.pdf($|\?)", u, re.I) or u in queued:
                 continue
@@ -1877,7 +1978,7 @@ def crawl_one(session, venue, robots):
             # sitemap unread. Linked pages still go first -- they are better
             # ordered -- and the sitemap only ever returns happy-hour and
             # specials URLs, so this tops up rather than replaces.
-            if not any(re.search(r"happy.?hour|special", u, re.I) for u, _ in queue):
+            if not any(url_names_hh(u, d) for u, d in queue):
                 queued = {u for u, _ in queue}
                 extra = [(u, 2) for u in sitemap_links(session, url, robots)
                          if u not in queued]
@@ -1901,6 +2002,36 @@ def reached_nothing(pages):
     """
     return bool(pages) and all(str(pg.get("result", "")).startswith("error:")
                                for pg in pages)
+
+
+def keep_failed_pages(pages, held):
+    """Quotes from pages that errored THIS run and were read fine before.
+
+    reached_nothing() protects the venue whose whole host was down. It does not
+    protect the commoner shape: three pages read, one ConnectionError, and the
+    quotes that one page held are silently gone from the board. Gullifty's lost
+    all five of its items exactly that way on 2026-09-01 -- its /drink-menu
+    fetch failed on a recrawl and the rebuild shipped a card with nothing on
+    it. The window survived, so no count moved and nothing looked wrong.
+
+    A fetch that errored is not an answer about that page, at any scale. So the
+    per-venue rule is applied per PAGE: a URL that failed this time keeps the
+    quotes we already held for it, and only a page we actually READ is allowed
+    to say a page has nothing on it.
+    """
+    failed = {pg["url"] for pg in pages
+              if str(pg.get("result", "")).startswith("error:")}
+    if not failed:
+        return [], []
+    ok_now = {pg["url"] for pg in pages
+              if not str(pg.get("result", "")).startswith("error:")}
+    carried = [h for h in (held.get("hits") or [])
+               if h.get("url") in failed - ok_now]
+    notes = [dict(pg, result=pg["result"] + ", KEPT what we held")
+             for pg in (held.get("pages") or [])
+             if pg["url"] in failed - ok_now
+             and not str(pg.get("result", "")).startswith("error:")]
+    return carried, notes
 
 
 def main():
@@ -1950,6 +2081,12 @@ def main():
             print(f"[{n}/{len(todo)}] {(v['osm_name'] or v['name'])[:38]:<40} "
                   "-- unreachable, keeping what we hold")
             continue
+        # One page failing is not the venue saying that page is empty.
+        carried, notes = keep_failed_pages(pages, out.get(lid) or {})
+        if carried:
+            stats["kept quotes from a page that failed this run"] += 1
+            hits = hits + carried
+            pages = pages + notes
         out[lid] = {
             "name": v["name"],
             "osm_name": v["osm_name"],

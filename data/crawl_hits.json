@@ -815,14 +815,20 @@
   "osm_name": null,
   "pages": [
    {
+    "hh": true,
+    "lines": 43,
     "result": "ok, 1 quote(s)",
     "url": "https://www.garretthillalehouse.com/"
    },
    {
+    "hh": true,
+    "lines": 45,
     "result": "ok, 2 quote(s)",
     "url": "https://www.garretthillalehouse.com/events-specials"
    },
    {
+    "hh": false,
+    "lines": 33,
     "result": "ok, 0 quote(s)",
     "url": "https://www.garretthillalehouse.com/menus"
    }
@@ -1108,10 +1114,14 @@
   "osm_name": "Campus Corner Pizza",
   "pages": [
    {
+    "hh": false,
+    "lines": 1226,
     "result": "ok, 0 quote(s)",
     "url": "http://campuscornerpizza.com/"
    },
    {
+    "hh": false,
+    "lines": 1226,
     "result": "ok, 0 quote(s)",
     "url": "http://campuscornerpizza.com/"
    }
@@ -1343,6 +1353,7 @@
     "url": "https://lascalasfire.com/villanova/"
    },
    {
+    "hh": true,
     "quote": "Happy Hour, Mon-Fri, 3pm-6pm",
     "url": "https://lascalasfire.com/villanova/"
    },
@@ -1491,6 +1502,7 @@
     "url": "https://lascalasfire.com/7th-chestnut"
    },
    {
+    "hh": true,
     "quote": "Happy Hour, Mon-Fri, 3pm-6pm",
     "url": "https://lascalasfire.com/7th-chestnut"
    },
@@ -1503,18 +1515,26 @@
   "osm_name": "LaScala's Fire",
   "pages": [
    {
+    "hh": true,
+    "lines": 402,
     "result": "ok, 4 quote(s)",
     "url": "https://lascalasfire.com/villanova/"
    },
    {
+    "hh": true,
+    "lines": 28,
     "result": "ok, 17 quote(s)",
     "url": "https://lascalasfire.com/villanova/menus/happy-hour"
    },
    {
+    "hh": true,
+    "lines": 28,
     "result": "ok, 17 quote(s)",
     "url": "https://lascalasfire.com/villanova/menus/happy-hour/"
    },
    {
+    "hh": true,
+    "lines": 220,
     "result": "ok, 3 quote(s)",
     "url": "https://lascalasfire.com/7th-chestnut"
    }
@@ -2105,6 +2125,11 @@
   "crawled_at": "2026-09-01",
   "hits": [
    {
+    "hh": true,
+    "quote": "Happy Hour Taco Special Night 04:30 PM - 09:00 PM",
+    "url": "https://thepullmanrestaurant.com/bryn-mawr-main-line-the-pullman-restaurant-and-bar-happy-hours-specials"
+   },
+   {
     "quote": "Happy Hour / 04:30 PM - 06:30 PM / Wednesday September 2nd",
     "url": "https://thepullmanrestaurant.com/bryn-mawr-main-line-the-pullman-restaurant-and-bar-happy-hours-specials"
    },
@@ -2161,18 +2186,26 @@
   "osm_name": "The Pullman Restaurant and Bar",
   "pages": [
    {
+    "hh": false,
+    "lines": 132,
     "result": "ok, 0 quote(s)",
     "url": "https://thepullmanrestaurant.com/"
    },
    {
+    "hh": true,
+    "lines": 56,
     "result": "ok, 7 quote(s)",
     "url": "https://thepullmanrestaurant.com/bryn-mawr-main-line-the-pullman-restaurant-and-bar-happy-hours-specials"
    },
    {
+    "hh": false,
+    "lines": 141,
     "result": "ok, 0 quote(s)",
     "url": "https://thepullmanrestaurant.com/bryn-mawr-main-line-the-pullman-restaurant-and-bar-drink-menu"
    },
    {
+    "hh": true,
+    "lines": 447,
     "result": "ok, 6 quote(s)",
     "url": "https://thepullmanrestaurant.com/bryn-mawr-main-line-the-pullman-restaurant-and-bar-food-menu"
    }
@@ -2955,8 +2988,28 @@
   "osm_name": "Rosa Mexicano",
   "pages": [
    {
-    "result": "500 text/html",
+    "hh": false,
+    "lines": 160,
+    "result": "ok, 0 quote(s)",
     "url": "https://rosamexicano.com/location/ardmore/"
+   },
+   {
+    "hh": false,
+    "lines": 446,
+    "result": "ok, 0 quote(s)",
+    "url": "https://rosamexicano.com/menus/"
+   },
+   {
+    "hh": false,
+    "lines": 447,
+    "result": "ok, 0 quote(s)",
+    "url": "https://rosamexicano.com/menus/?menu=ardmore"
+   },
+   {
+    "hh": false,
+    "lines": 446,
+    "result": "ok, 0 quote(s)",
+    "url": "https://rosamexicano.com/menus/?menu=boston"
    }
   ],
   "website": "https://rosamexicano.com/location/ardmore/",
@@ -4219,18 +4272,26 @@
   "osm_name": null,
   "pages": [
    {
+    "hh": true,
+    "lines": 146,
     "result": "ok, 1 quote(s)",
     "url": "https://exit13gastrobar.com/"
    },
    {
+    "hh": false,
+    "lines": 48,
     "result": "ok, 0 quote(s)",
     "url": "https://exit13gastrobar.com/bryn-mawr-villanova-exit-13-gastrobar-happy-hours-specials"
    },
    {
+    "hh": false,
+    "lines": 201,
     "result": "ok, 0 quote(s)",
     "url": "https://exit13gastrobar.com/bryn-mawr-villanova-exit-13-gastrobar-drink-menu"
    },
    {
+    "hh": false,
+    "lines": 30,
     "result": "ok, 0 quote(s)",
     "url": "https://exit13gastrobar.com/bryn-mawr-villanova-exit-13-gastrobar-events"
    }
@@ -4372,18 +4433,26 @@
   "osm_name": "La Collina",
   "pages": [
    {
+    "hh": false,
+    "lines": 44,
     "result": "ok, 0 quote(s)",
     "url": "https://www.lacollina.us/"
    },
    {
+    "hh": false,
+    "lines": 355,
     "result": "ok, 0 quote(s)",
     "url": "https://www.lacollina.us/menu"
    },
    {
+    "hh": false,
+    "lines": 355,
     "result": "ok, 0 quote(s)",
     "url": "https://www.lacollina.us/menu/"
    },
    {
+    "hh": false,
+    "lines": 92,
     "result": "ok, 0 quote(s)",
     "url": "https://www.lacollina.us/private-events/"
    }
@@ -4439,13 +4508,13 @@
  },
  "110567": {
   "address": "888 CHESTERBROOK BLVD, WAYNE PA 19087-5610",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [],
   "name": "EMBASSY SUITES VALLEY FORGE",
   "osm_name": "Embassy Suites by Hilton Philadelphia Valley Forge",
   "pages": [
    {
-    "result": "403 text/html",
+    "result": "error: ReadTimeout",
     "url": "https://www.hilton.com/en/hotels/phlvles-embassy-suites-philadelphia-valley-forge/"
    }
   ],
@@ -5158,6 +5227,8 @@
   "osm_name": "333 Belrose",
   "pages": [
    {
+    "hh": false,
+    "lines": 7,
     "result": "ok, 0 quote(s)",
     "url": "https://333belrose.com"
    }
@@ -5773,22 +5844,32 @@
   "osm_name": "Amada",
   "pages": [
    {
+    "hh": true,
+    "lines": 101,
     "result": "ok, 3 quote(s)",
     "url": "https://www.amadarestaurant.com/amada-radnor/"
    },
    {
+    "hh": true,
+    "lines": 70,
     "result": "ok, 1 quote(s)",
     "url": "https://www.amadarestaurant.com/specials/"
    },
    {
+    "hh": true,
+    "lines": 63,
     "result": "ok, 2 quote(s)",
     "url": "https://www.amadarestaurant.com/uploads/114704AMAHappyHourMenu0726-nocrop.pdf"
    },
    {
+    "hh": true,
+    "lines": 101,
     "result": "ok, 3 quote(s)",
     "url": "https://www.amadarestaurant.com/amada-radnor/"
    },
    {
+    "hh": true,
+    "lines": 63,
     "result": "ok, 2 quote(s)",
     "url": "https://www.amadarestaurant.com/uploads/114704AMAHappyHourMenu0726-nocrop.pdf"
    }
@@ -5825,7 +5906,7 @@
  },
  "115189": {
   "address": "660 LANCASTER AVE, BERWYN PA 19312-1662",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [],
   "name": "30 MAIN",
   "osm_name": "30 Main",
@@ -6635,10 +6716,14 @@
   "osm_name": "Alessandro's Wood Fired Italian & Bar",
   "pages": [
    {
+    "hh": false,
+    "lines": 99,
     "result": "ok, 0 quote(s)",
     "url": "https://alessandroswoodfired.com/"
    },
    {
+    "hh": false,
+    "lines": 99,
     "result": "ok, 0 quote(s)",
     "url": "https://alessandroswoodfired.com/private-events"
    }
@@ -7118,10 +7203,14 @@
   "osm_name": "PJ Whelihan's",
   "pages": [
    {
+    "hh": true,
+    "lines": 101,
     "result": "ok, 1 quote(s)",
     "url": "https://www.pjspub.com/about.php?loc=Wynnewood"
    },
    {
+    "hh": false,
+    "lines": 76,
     "result": "ok, 7 quote(s)",
     "url": "https://pjspub.com/specials"
    },
@@ -7130,6 +7219,8 @@
     "url": "https://order.pjspub.com/menu/pj-whelihans-restaurant-wynnewood"
    },
    {
+    "hh": false,
+    "lines": 257,
     "result": "ok, 1 quote(s)",
     "url": "https://pjspub.com/drinks-menu"
    }
@@ -7719,14 +7810,20 @@
   "osm_name": null,
   "pages": [
    {
+    "hh": false,
+    "lines": 36,
     "result": "ok, 0 quote(s)",
     "url": "https://www.roacheandobrien.com/"
    },
    {
+    "hh": false,
+    "lines": 1,
     "result": "ok, 0 quote(s)",
     "url": "https://www.roacheandobrien.com/about-1-1"
    },
    {
+    "hh": false,
+    "lines": 31,
     "result": "ok, 0 quote(s)",
     "url": "https://www.roacheandobrien.com/about-1-1-2"
    }
@@ -8099,14 +8196,20 @@
   "osm_name": "Maison Lotus",
   "pages": [
    {
+    "hh": true,
+    "lines": 65,
     "result": "ok, 2 quote(s)",
     "url": "https://www.maison-lotus.com/"
    },
    {
+    "hh": false,
+    "lines": 41,
     "result": "ok, 5 quote(s)",
     "url": "https://www.maison-lotus.com/s/Jan-2026-Maison-Lotus-Cafe-Bakery-HH-4.pdf"
    },
    {
+    "hh": false,
+    "lines": 118,
     "result": "ok, 0 quote(s)",
     "url": "https://www.maison-lotus.com/s/Beverage-Menu-126.pdf"
    }
@@ -8943,10 +9046,14 @@
   "osm_name": null,
   "pages": [
    {
+    "hh": false,
+    "lines": 113,
     "result": "ok, 0 quote(s)",
     "url": "https://www.naturesvin.com/"
    },
    {
+    "hh": true,
+    "lines": 125,
     "result": "ok, 2 quote(s)",
     "url": "https://www.naturesvin.com/private-events"
    }
@@ -9675,14 +9782,20 @@
   "osm_name": "Casey's Pour House",
   "pages": [
    {
+    "hh": false,
+    "lines": 417,
     "result": "ok, 0 quote(s)",
     "url": "http://www.caseyspourhouse.com/"
    },
    {
+    "hh": false,
+    "lines": 417,
     "result": "ok, 0 quote(s)",
     "url": "http://www.caseyspourhouse.com/"
    },
    {
+    "hh": false,
+    "lines": 351,
     "result": "ok, 0 quote(s)",
     "url": "http://www.caseyspourhouse.com/s/CASEYS-BERWYN-08-26-2685x14.pdf"
    }
@@ -9913,10 +10026,14 @@
   "osm_name": "Ogyu",
   "pages": [
    {
+    "hh": true,
+    "lines": 60,
     "result": "ok, 1 quote(s)",
     "url": "https://ogyubbq.com"
    },
    {
+    "hh": true,
+    "lines": 41,
     "result": "ok, 1 quote(s)",
     "url": "https://www.ogyubbq.com/happy-hour-menu"
    }
@@ -9955,10 +10072,14 @@
   "osm_name": "Berwyn Tavern",
   "pages": [
    {
+    "hh": false,
+    "lines": 19,
     "result": "ok, 0 quote(s)",
     "url": "https://www.berwyntavern.net/"
    },
    {
+    "hh": false,
+    "lines": 41,
     "result": "ok, 0 quote(s)",
     "url": "https://www.berwyntavern.net/drink"
    }
@@ -10153,13 +10274,81 @@
  },
  "131343": {
   "address": "321 E LANCASTER AVE, WAYNE PA 19087-4201",
-  "crawled_at": "2026-08-06",
-  "hits": [],
+  "crawled_at": "2026-09-01",
+  "hits": [
+   {
+    "quote": "Happy Hour",
+    "url": "https://acfp.com/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://acfp.com/catering/"
+   },
+   {
+    "quote": "Happy Hour - Anthony Coal Fired Pizza",
+    "url": "https://acfp.com/happy-hour/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://acfp.com/happy-hour/"
+   },
+   {
+    "quote": "$5 Social\u2028Coal Fired Happy Hour",
+    "url": "https://acfp.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "Join us for our $5 Social, your new favorite coal-fired happy hour. Enjoy exclusive $5 bites and sips, great vibes, and the perfect way to unwind all alongside our new coal-fired classics.",
+    "url": "https://acfp.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "$5 Bites",
+    "url": "https://acfp.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "Premium ingredients, authentic coal-fired flavor. All for just $5 during Social Hour.",
+    "url": "https://acfp.com/happy-hour/"
+   },
+   {
+    "quote": "$5 SIPS",
+    "url": "https://acfp.com/happy-hour/"
+   },
+   {
+    "quote": "$5 Sips may vary by location. Must be 21+",
+    "url": "https://acfp.com/happy-hour/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://acfp.com/"
+   }
+  ],
   "name": "FLORIDA COAL FIRED PIZZA LLC",
   "osm_name": "Anthony's Coal Fired Pizza",
   "pages": [
    {
-    "result": "error: ConnectTimeout",
+    "hh": true,
+    "lines": 185,
+    "result": "ok, 1 quote(s)",
+    "url": "https://acfp.com/"
+   },
+   {
+    "hh": true,
+    "lines": 146,
+    "result": "ok, 1 quote(s)",
+    "url": "https://acfp.com/catering/"
+   },
+   {
+    "hh": true,
+    "lines": 171,
+    "result": "ok, 8 quote(s)",
+    "url": "https://acfp.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "lines": 185,
+    "result": "ok, 1 quote(s)",
     "url": "https://acfp.com/"
    }
   ],
@@ -10624,7 +10813,7 @@
  },
  "132810": {
   "address": "34 E LANCASTER AVE, ARDMORE PA 19003-2205",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [],
   "name": "JACK MCSHEA'S RESTAURANT & BAR",
   "osm_name": "Jack McShea's Restaurant & Bar",
@@ -10879,10 +11068,14 @@
   "osm_name": "Vibe Haus",
   "pages": [
    {
+    "hh": false,
+    "lines": 1,
     "result": "ok, 0 quote(s)",
     "url": "https://www.vibehausbrew.com/"
    },
    {
+    "hh": false,
+    "lines": 1,
     "result": "ok, 0 quote(s)",
     "url": "https://vibehausbrew.com/blog/best-berwyn-delivery-restaurants-for-lunch-dinner-and-special-occasions"
    }
@@ -11419,14 +11612,20 @@
   "osm_name": "Black Powder Tavern",
   "pages": [
    {
+    "hh": true,
+    "lines": 60,
     "result": "ok, 1 quote(s)",
     "url": "https://blackpowdertavern.com/"
    },
    {
+    "hh": true,
+    "lines": 52,
     "result": "ok, 5 quote(s)",
     "url": "https://blackpowdertavern.com/happy-hour-at-black-powder-tavern/"
    },
    {
+    "hh": true,
+    "lines": 67,
     "result": "ok, 3 quote(s)",
     "url": "https://blackpowdertavern.com/blog/"
    },
@@ -11435,6 +11634,8 @@
     "url": "https://blackpowdertavern.com/menu.php"
    },
    {
+    "hh": true,
+    "lines": 66,
     "result": "ok, 15 quote(s)",
     "url": "https://blackpowdertavern.com/wp-content/uploads/BPT-Happy-Hour.pdf"
    }
@@ -11751,6 +11952,16 @@
   "crawled_at": "2026-09-01",
   "hits": [
    {
+    "hh": true,
+    "quote": "Happy Hour food and drink specials! See Happy Hour Menu under the menus tab. 03:30 PM - 06:00 PM",
+    "url": "https://gulliftys.com/bryn-mawr-rosemont-gullifty-s-specials-custom"
+   },
+   {
+    "hh": true,
+    "quote": "Join us the last Friday of every month for our Album Club! Mix and mingle with fellow music lovers while sampling featured albums and voting on one to hear in full. Enjoy extended happy hour food and drink specials throughout the event. 06:00 PM - 08:00 PM",
+    "url": "https://gulliftys.com/bryn-mawr-rosemont-gullifty-s-specials-custom"
+   },
+   {
     "quote": "Happy hour at Bryn Mawr | Gullifty's Skip to main content",
     "url": "https://gulliftys.com/bryn-mawr-rosemont-gullifty-s-specials-custom"
    },
@@ -11799,18 +12010,26 @@
   "osm_name": "Gullifty's",
   "pages": [
    {
+    "hh": true,
+    "lines": 127,
     "result": "ok, 0 quote(s)",
     "url": "https://gulliftys.com/"
    },
    {
+    "hh": true,
+    "lines": 76,
     "result": "ok, 9 quote(s)",
     "url": "https://gulliftys.com/bryn-mawr-rosemont-gullifty-s-specials-custom"
    },
    {
+    "hh": true,
+    "lines": 254,
     "result": "ok, 2 quote(s)",
     "url": "https://gulliftys.com/bryn-mawr-rosemont-gullifty-s-drink-menu"
    },
    {
+    "hh": false,
+    "lines": 49,
     "result": "ok, 0 quote(s)",
     "url": "https://gulliftys.com/bryn-mawr-rosemont-gullifty-s-events"
    }
@@ -12083,10 +12302,14 @@
   "osm_name": "Positano Ristorante",
   "pages": [
    {
+    "hh": false,
+    "lines": 70,
     "result": "ok, 0 quote(s)",
     "url": "https://www.positanoristorante.com/"
    },
    {
+    "hh": false,
+    "lines": 43,
     "result": "ok, 0 quote(s)",
     "url": "https://www.positanoristorante.com/menu.html"
    }
@@ -12129,6 +12352,8 @@
   "osm_name": "Neopolitan Delicatessen & Restaurant",
   "pages": [
    {
+    "hh": false,
+    "lines": 188,
     "result": "ok, 0 quote(s)",
     "url": "https://neodeli.com"
    }
@@ -12663,14 +12888,20 @@
   "osm_name": "Local Wine & Kitchen",
   "pages": [
    {
+    "hh": false,
+    "lines": 32,
     "result": "ok, 0 quote(s)",
     "url": "https://www.localwineandkitchen.com/home"
    },
    {
+    "hh": false,
+    "lines": 27,
     "result": "ok, 0 quote(s)",
     "url": "https://www.localwineandkitchen.com/events"
    },
    {
+    "hh": false,
+    "lines": 21,
     "result": "ok, 0 quote(s)",
     "url": "https://www.localwineandkitchen.com/menus"
    }
@@ -13062,10 +13293,14 @@
   "osm_name": "Bella Italia Pizza",
   "pages": [
    {
+    "hh": false,
+    "lines": 62,
     "result": "ok, 0 quote(s)",
     "url": "https://www.bellaitaliapizza.com/"
    },
    {
+    "hh": false,
+    "lines": 43,
     "result": "ok, 0 quote(s)",
     "url": "https://www.bellaitaliapizza.com/menu"
    }
@@ -13209,43 +13444,123 @@
     "url": "https://sullivanssteakhouse.com/king-of-prussia/"
    },
    {
+    "hh": true,
     "quote": "Happy Hour Menu in King of Prussia, PA | Sullivan's Steakhouse",
     "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/"
    },
    {
+    "hh": true,
     "quote": "King Of Prussia Happy Hour Menu / Available in the bar, Monday-Thursday 3pm-6pm / $25",
     "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/"
    },
    {
+    "hh": true,
     "quote": "King of Prussia Menus / $25 / A5 Wagyu Nigiri*",
     "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/"
    },
    {
+    "hh": true,
+    "quote": "$25 / $25.00 A5 Wagyu Nigiri*",
+    "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$25 / $25.00 New England Lobster Roll",
+    "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$25 / $25.00 Shrimp Three Ways",
+    "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$25 / $25.00 Lobster Pot Pie",
+    "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$25 / $25.00 Pork Belly Trio",
+    "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
     "quote": "$20 / Angry Shrimp",
     "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/"
    },
    {
+    "hh": true,
+    "quote": "$20 / $20.00 Angry Shrimp",
+    "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$20 / $20.00 Crab Cake Sliders",
+    "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$20 / $20.00 Jumbo Shrimp Cocktail",
+    "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$20 / $20.00 Beef Carpaccio*",
+    "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$20 / $20.00 Crab & Avocado Salad",
+    "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
     "quote": "$15 / Sweet & Spicy Cauliflower",
     "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/"
    },
    {
+    "hh": true,
+    "quote": "$15 / $15.00 Sweet & Spicy Cauliflower",
+    "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$15 / $15.00 Beef Wellington Bites",
+    "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$15 / $15.00 Shaved Prime Steak Sliders*",
+    "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$15 / $15.00 Sullivan's Signature Angus Burger*",
+    "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
     "quote": "$10 / Cheesesteak Eggrolls",
     "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/"
    },
    {
-    "quote": "$5 Off Select Martinis",
+    "hh": true,
+    "quote": "$10 / $10.00 Cheesesteak Eggrolls",
     "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/"
    },
    {
-    "quote": "$5 Off Select Craft Cocktails",
+    "hh": true,
+    "quote": "$10 / $10.00 Ahi Tuna Poke Stack*",
     "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/"
    },
    {
-    "quote": "$8 Select Red, White & Sparkling Wines",
+    "hh": true,
+    "quote": "$10 / $10.00 Sriracha Shrimp Lettuce Cups",
     "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/"
    },
    {
-    "quote": "Happy Hour Menu",
+    "hh": true,
+    "quote": "$10 / $10.00 Sullivan's Signature Angus Sliders*",
     "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/"
    }
   ],
@@ -13267,7 +13582,7 @@
    {
     "hh": true,
     "lines": 195,
-    "result": "ok, 10 quote(s)",
+    "result": "ok, 24 quote(s)",
     "url": "https://www.sullivanssteakhouse.com/king-of-prussia/menus/happyhour-food-drink/"
    },
    {
@@ -13707,7 +14022,7 @@
  },
  "43278": {
   "address": "2455 YELLOW SPRINGS RD, MALVERN PA 19355-1412",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [],
   "name": "CEDAR HOLLOW INN RESTAURANT & BAR, INC.",
   "osm_name": "Cedar Hollow Inn",
@@ -13756,22 +14071,27 @@
     "url": "https://pubofpennvalley.com/menu/"
    },
    {
+    "hh": true,
     "quote": "$6 Daily Appetizer Specials (available 3:30pm-5:30pm only)",
     "url": "https://pubofpennvalley.com/menu/"
    },
    {
+    "hh": true,
     "quote": "$6 House Martinis/Manhattans/Cosmos",
     "url": "https://pubofpennvalley.com/menu/"
    },
    {
+    "hh": true,
     "quote": "$6 House Wine",
     "url": "https://pubofpennvalley.com/menu/"
    },
    {
+    "hh": true,
     "quote": "$6 House Mixed Drinks",
     "url": "https://pubofpennvalley.com/menu/"
    },
    {
+    "hh": true,
     "quote": "$4 Lager Drafts",
     "url": "https://pubofpennvalley.com/menu/"
    }
@@ -13780,10 +14100,14 @@
   "osm_name": null,
   "pages": [
    {
+    "hh": true,
+    "lines": 94,
     "result": "ok, 2 quote(s)",
     "url": "https://pubofpennvalley.com/"
    },
    {
+    "hh": true,
+    "lines": 75,
     "result": "ok, 6 quote(s)",
     "url": "https://pubofpennvalley.com/menu/"
    }
@@ -14631,18 +14955,26 @@
   "osm_name": "The Radnor Hotel",
   "pages": [
    {
+    "hh": false,
+    "lines": 157,
     "result": "ok, 0 quote(s)",
     "url": "https://radnorhotel.com/"
    },
    {
+    "hh": false,
+    "lines": 86,
     "result": "ok, 0 quote(s)",
     "url": "https://radnorhotel.com/meetings"
    },
    {
+    "hh": false,
+    "lines": 95,
     "result": "ok, 0 quote(s)",
     "url": "https://radnorhotel.com/news"
    },
    {
+    "hh": false,
+    "lines": 67,
     "result": "ok, 0 quote(s)",
     "url": "https://radnorhotel.com/private-events"
    }
@@ -15138,98 +15470,122 @@
   "crawled_at": "2026-09-01",
   "hits": [
    {
+    "hh": true,
     "quote": "FRIED MOZZERELLA BITES $12",
     "url": "https://thegreatamericanpub.com/wp-content/uploads/2025/02/UPDATED-new-menu-with-logo.pdf"
    },
    {
+    "hh": true,
     "quote": "SWEET POTATO FRIES $9",
     "url": "https://thegreatamericanpub.com/wp-content/uploads/2025/02/UPDATED-new-menu-with-logo.pdf"
    },
    {
+    "hh": true,
     "quote": "EGG ROLLS $15",
     "url": "https://thegreatamericanpub.com/wp-content/uploads/2025/02/UPDATED-new-menu-with-logo.pdf"
    },
    {
+    "hh": true,
     "quote": "CHICKEN QUESADILLA $16",
     "url": "https://thegreatamericanpub.com/wp-content/uploads/2025/02/UPDATED-new-menu-with-logo.pdf"
    },
    {
+    "hh": true,
     "quote": "CRISPY FRIED PICKLES $14",
     "url": "https://thegreatamericanpub.com/wp-content/uploads/2025/02/UPDATED-new-menu-with-logo.pdf"
    },
    {
+    "hh": true,
     "quote": "BUFFALO WINGS $16",
     "url": "https://thegreatamericanpub.com/wp-content/uploads/2025/02/UPDATED-new-menu-with-logo.pdf"
    },
    {
+    "hh": true,
     "quote": "CRISPY CHICKEN BITES $14",
     "url": "https://thegreatamericanpub.com/wp-content/uploads/2025/02/UPDATED-new-menu-with-logo.pdf"
    },
    {
+    "hh": true,
     "quote": "CHICKEN FINGERS & FRIES $14",
     "url": "https://thegreatamericanpub.com/wp-content/uploads/2025/02/UPDATED-new-menu-with-logo.pdf"
    },
    {
+    "hh": true,
     "quote": "ARTICHOKE DIP $17",
     "url": "https://thegreatamericanpub.com/wp-content/uploads/2025/02/UPDATED-new-menu-with-logo.pdf"
    },
    {
+    "hh": true,
     "quote": "CHEDDAR FRIES $9",
     "url": "https://thegreatamericanpub.com/wp-content/uploads/2025/02/UPDATED-new-menu-with-logo.pdf"
    },
    {
+    "hh": true,
     "quote": "BRISKET FRIES $14",
     "url": "https://thegreatamericanpub.com/wp-content/uploads/2025/02/UPDATED-new-menu-with-logo.pdf"
    },
    {
+    "hh": true,
     "quote": "PUB NACHOS $16",
     "url": "https://thegreatamericanpub.com/wp-content/uploads/2025/02/UPDATED-new-menu-with-logo.pdf"
    },
    {
+    "hh": true,
     "quote": "PRETZEL BITES $10",
     "url": "https://thegreatamericanpub.com/wp-content/uploads/2025/02/UPDATED-new-menu-with-logo.pdf"
    },
    {
+    "hh": true,
     "quote": "ONION RINGS $12",
     "url": "https://thegreatamericanpub.com/wp-content/uploads/2025/02/UPDATED-new-menu-with-logo.pdf"
    },
    {
+    "hh": true,
     "quote": "PAN FRIED PIEROGIES $15",
     "url": "https://thegreatamericanpub.com/wp-content/uploads/2025/02/UPDATED-new-menu-with-logo.pdf"
    },
    {
+    "hh": true,
     "quote": "HUMMUS PLATE $15",
     "url": "https://thegreatamericanpub.com/wp-content/uploads/2025/02/UPDATED-new-menu-with-logo.pdf"
    },
    {
+    "hh": true,
     "quote": "SEASONAL SOUP $9",
     "url": "https://thegreatamericanpub.com/wp-content/uploads/2025/02/UPDATED-new-menu-with-logo.pdf"
    },
    {
+    "hh": true,
     "quote": "Wrap it up in a tortilla $1",
     "url": "https://thegreatamericanpub.com/wp-content/uploads/2025/02/UPDATED-new-menu-with-logo.pdf"
    },
    {
+    "hh": true,
     "quote": "SPINACH & GOAT CHEESE $17",
     "url": "https://thegreatamericanpub.com/wp-content/uploads/2025/02/UPDATED-new-menu-with-logo.pdf"
    },
    {
+    "hh": true,
     "quote": "WEDGE SALAD $12",
     "url": "https://thegreatamericanpub.com/wp-content/uploads/2025/02/UPDATED-new-menu-with-logo.pdf"
    },
    {
+    "hh": true,
     "quote": "Add Chicken $8",
     "url": "https://thegreatamericanpub.com/wp-content/uploads/2025/02/UPDATED-new-menu-with-logo.pdf"
    },
    {
+    "hh": true,
     "quote": "Add Shrimp $12",
     "url": "https://thegreatamericanpub.com/wp-content/uploads/2025/02/UPDATED-new-menu-with-logo.pdf"
    },
    {
+    "hh": true,
     "quote": "Add Salmon $12",
     "url": "https://thegreatamericanpub.com/wp-content/uploads/2025/02/UPDATED-new-menu-with-logo.pdf"
    },
    {
+    "hh": true,
     "quote": "COBB SALAD $17",
     "url": "https://thegreatamericanpub.com/wp-content/uploads/2025/02/UPDATED-new-menu-with-logo.pdf"
    }
@@ -15238,22 +15594,32 @@
   "osm_name": "Great American Pub",
   "pages": [
    {
+    "hh": false,
+    "lines": 80,
     "result": "ok, 0 quote(s)",
     "url": "https://thegreatamericanpub.com/wayne/"
    },
    {
+    "hh": false,
+    "lines": 142,
     "result": "ok, 0 quote(s)",
     "url": "https://thegreatamericanpub.com/wayne/specials/"
    },
    {
+    "hh": false,
+    "lines": 227,
     "result": "ok, 0 quote(s)",
     "url": "https://thegreatamericanpub.com/wayne/menus/"
    },
    {
+    "hh": false,
+    "lines": 13,
     "result": "ok, 0 quote(s)",
     "url": "https://thegreatamericanpub.com/wp-content/uploads/2024/01/Wayne-Rooftop-1.pdf"
    },
    {
+    "hh": false,
+    "lines": 307,
     "result": "ok, 24 quote(s)",
     "url": "https://thegreatamericanpub.com/wp-content/uploads/2025/02/UPDATED-new-menu-with-logo.pdf"
    }
@@ -15398,30 +15764,37 @@
     "url": "https://www.greatamericanpub.net/happy-hour"
    },
    {
+    "hh": true,
     "quote": "Meatball or Roast Beef Sliders $6",
     "url": "https://www.greatamericanpub.net/happy-hour"
    },
    {
+    "hh": true,
     "quote": "Fried Pickles $5",
     "url": "https://www.greatamericanpub.net/happy-hour"
    },
    {
+    "hh": true,
     "quote": "Beef Quesadilla $7",
     "url": "https://www.greatamericanpub.net/happy-hour"
    },
    {
+    "hh": true,
     "quote": "Blue Moon draft $4",
     "url": "https://www.greatamericanpub.net/happy-hour"
    },
    {
+    "hh": true,
     "quote": "Corona Light Draft $4",
     "url": "https://www.greatamericanpub.net/happy-hour"
    },
    {
+    "hh": true,
     "quote": "Nobilo Sauvignon Blanc $7",
     "url": "https://www.greatamericanpub.net/happy-hour"
    },
    {
+    "hh": true,
     "quote": "Murphys Good Red Blend $7",
     "url": "https://www.greatamericanpub.net/happy-hour"
    }
@@ -15430,18 +15803,26 @@
   "osm_name": "Great American Pub",
   "pages": [
    {
+    "hh": false,
+    "lines": 34,
     "result": "ok, 0 quote(s)",
     "url": "https://www.greatamericanpub.net/"
    },
    {
+    "hh": true,
+    "lines": 37,
     "result": "ok, 10 quote(s)",
     "url": "https://www.greatamericanpub.net/happy-hour"
    },
    {
+    "hh": false,
+    "lines": 117,
     "result": "ok, 0 quote(s)",
     "url": "https://www.greatamericanpub.net/drinks"
    },
    {
+    "hh": false,
+    "lines": 32,
     "result": "ok, 0 quote(s)",
     "url": "https://www.greatamericanpub.net/events"
    }
@@ -17195,18 +17576,26 @@
   "osm_name": "Minella's Diner",
   "pages": [
    {
+    "hh": false,
+    "lines": 1,
     "result": "ok, 0 quote(s)",
     "url": "https://www.minellasdiner.com/"
    },
    {
+    "hh": false,
+    "lines": 1,
     "result": "ok, 0 quote(s)",
     "url": "https://www.minellasdiner.com/shop/breakfast-specials/32"
    },
    {
+    "hh": false,
+    "lines": 1,
     "result": "ok, 0 quote(s)",
     "url": "https://www.minellasdiner.com/shop/minellas-sauteed-specialties/38"
    },
    {
+    "hh": false,
+    "lines": 1,
     "result": "ok, 0 quote(s)",
     "url": "https://www.minellasdiner.com/shop/greek-specialties/42"
    }
@@ -17721,18 +18110,26 @@
   "osm_name": null,
   "pages": [
    {
+    "hh": false,
+    "lines": 57,
     "result": "ok, 1 quote(s)",
     "url": "https://www.flipandbaileys.com/"
    },
    {
+    "hh": true,
+    "lines": 64,
     "result": "ok, 4 quote(s)",
     "url": "https://www.flipandbaileys.com/hold-happ"
    },
    {
+    "hh": true,
+    "lines": 153,
     "result": "ok, 1 quote(s)",
     "url": "https://www.flipandbaileys.com/copy-of-drink-menu"
    },
    {
+    "hh": false,
+    "lines": 123,
     "result": "ok, 0 quote(s)",
     "url": "https://www.flipandbaileys.com/drink-menu"
    }
@@ -17781,98 +18178,122 @@
   "crawled_at": "2026-09-01",
   "hits": [
    {
+    "hh": true,
     "quote": "Aberfeldy 12 Year A touch of sherry and peat. Citrusy \ufb01nish 40% | $19",
     "url": "https://www.teresas-cafe.com/s/Whiskey-Menu-052926-UPDATE-FOR-WEBSITE.pdf"
    },
    {
+    "hh": true,
     "quote": "Aberfeldy 18 Red Wine Cask Bright cherries, delicate yet spicy 43% | $43",
     "url": "https://www.teresas-cafe.com/s/Whiskey-Menu-052926-UPDATE-FOR-WEBSITE.pdf"
    },
    {
+    "hh": true,
     "quote": "Aberfeldy 20 Exceptional Cask Herbal with lemon and cacao 46% | $70",
     "url": "https://www.teresas-cafe.com/s/Whiskey-Menu-052926-UPDATE-FOR-WEBSITE.pdf"
    },
    {
+    "hh": true,
     "quote": "Dalmore 12 Year Sherry Cask Dried fruit, chocolate, and nutmeg 43% | $30",
     "url": "https://www.teresas-cafe.com/s/Whiskey-Menu-052926-UPDATE-FOR-WEBSITE.pdf"
    },
    {
+    "hh": true,
     "quote": "Dalmore 14 Year Figs, roasted, marmalade, coffee and cocoa 43.8% | $45",
     "url": "https://www.teresas-cafe.com/s/Whiskey-Menu-052926-UPDATE-FOR-WEBSITE.pdf"
    },
    {
+    "hh": true,
     "quote": "Dalmore 15 Year Dark chocolate, raisins and lingering oak 40% | $55",
     "url": "https://www.teresas-cafe.com/s/Whiskey-Menu-052926-UPDATE-FOR-WEBSITE.pdf"
    },
    {
+    "hh": true,
     "quote": "Dalmore Cigar Malt Rich with fruitcake and dry raspberries 44% | $65",
     "url": "https://www.teresas-cafe.com/s/Whiskey-Menu-052926-UPDATE-FOR-WEBSITE.pdf"
    },
    {
+    "hh": true,
     "quote": "Distiller\u2019s Art Dailuane 11 Year Red vines, heavy spice, nutty \ufb01nish 59% | $24",
     "url": "https://www.teresas-cafe.com/s/Whiskey-Menu-052926-UPDATE-FOR-WEBSITE.pdf"
    },
    {
+    "hh": true,
     "quote": "Glenglassaugh Sandend Salted caramel, pineapple, & grapefruit 50.5% | $20",
     "url": "https://www.teresas-cafe.com/s/Whiskey-Menu-052926-UPDATE-FOR-WEBSITE.pdf"
    },
    {
+    "hh": true,
     "quote": "Glenmorangie 12 Year Bourbon cask, sweet fruit, caramel \ufb01nish 43% | $22",
     "url": "https://www.teresas-cafe.com/s/Whiskey-Menu-052926-UPDATE-FOR-WEBSITE.pdf"
    },
    {
+    "hh": true,
     "quote": "Glenmorangie 18 Year Big oak and a strong presence of honey 43% | $47",
     "url": "https://www.teresas-cafe.com/s/Whiskey-Menu-052926-UPDATE-FOR-WEBSITE.pdf"
    },
    {
+    "hh": true,
     "quote": "Glenmorangie A Tale of Winter Spicy and rich with layers of red fruit 46% | $33",
     "url": "https://www.teresas-cafe.com/s/Whiskey-Menu-052926-UPDATE-FOR-WEBSITE.pdf"
    },
    {
+    "hh": true,
     "quote": "Glenmorangie LaSanta Finished in sherry casks, dark and rich 46% | $22",
     "url": "https://www.teresas-cafe.com/s/Whiskey-Menu-052926-UPDATE-FOR-WEBSITE.pdf"
    },
    {
+    "hh": true,
     "quote": "Glenmorangie Nectar D\u2019or Finished in Sauternes casks 46% | $30",
     "url": "https://www.teresas-cafe.com/s/Whiskey-Menu-052926-UPDATE-FOR-WEBSITE.pdf"
    },
    {
+    "hh": true,
     "quote": "Glenmorangie Signet Coffee, chocolate and rich as can be 46% | $84",
     "url": "https://www.teresas-cafe.com/s/Whiskey-Menu-052926-UPDATE-FOR-WEBSITE.pdf"
    },
    {
+    "hh": true,
     "quote": "Oban 14 Year This whisky has no \ufb02aws and a cult following 43% | $25",
     "url": "https://www.teresas-cafe.com/s/Whiskey-Menu-052926-UPDATE-FOR-WEBSITE.pdf"
    },
    {
+    "hh": true,
     "quote": "Tullibardine 228 Finished in Burgundy casks, vanilla & chocolate 43% | $14",
     "url": "https://www.teresas-cafe.com/s/Whiskey-Menu-052926-UPDATE-FOR-WEBSITE.pdf"
    },
    {
+    "hh": true,
     "quote": "Highland Park 12 Year A pleasant balance of sweet and peat 43% | $16",
     "url": "https://www.teresas-cafe.com/s/Whiskey-Menu-052926-UPDATE-FOR-WEBSITE.pdf"
    },
    {
+    "hh": true,
     "quote": "Highland Park 18 Year Consistently one of the world\u2019s best 43% | $40",
     "url": "https://www.teresas-cafe.com/s/Whiskey-Menu-052926-UPDATE-FOR-WEBSITE.pdf"
    },
    {
+    "hh": true,
     "quote": "Highland Park 21 Year Caribbean cherry, spice and light smoke 46% | $90",
     "url": "https://www.teresas-cafe.com/s/Whiskey-Menu-052926-UPDATE-FOR-WEBSITE.pdf"
    },
    {
+    "hh": true,
     "quote": "Highland Park Valkyrie Woody sweetness, slight peat and rich 45.9% | $22",
     "url": "https://www.teresas-cafe.com/s/Whiskey-Menu-052926-UPDATE-FOR-WEBSITE.pdf"
    },
    {
+    "hh": true,
     "quote": "Balvenie 12 Year Doublewood First bourbon, then sherry casks 43% | $19",
     "url": "https://www.teresas-cafe.com/s/Whiskey-Menu-052926-UPDATE-FOR-WEBSITE.pdf"
    },
    {
+    "hh": true,
     "quote": "Balvenie 12 Year Single Barrel Vanilla, ginger & cinnamon 43% | $21",
     "url": "https://www.teresas-cafe.com/s/Whiskey-Menu-052926-UPDATE-FOR-WEBSITE.pdf"
    },
    {
+    "hh": true,
     "quote": "Balvenie 14 Year Caribbean Cask Rum barrels add sweetness 43% | $22",
     "url": "https://www.teresas-cafe.com/s/Whiskey-Menu-052926-UPDATE-FOR-WEBSITE.pdf"
    }
@@ -17881,14 +18302,20 @@
   "osm_name": "Teresa's Cafe and Next Door",
   "pages": [
    {
+    "hh": false,
+    "lines": 69,
     "result": "ok, 0 quote(s)",
     "url": "https://www.teresas-cafe.com/"
    },
    {
+    "hh": false,
+    "lines": 219,
     "result": "ok, 0 quote(s)",
     "url": "https://www.teresas-cafe.com/s/Food-Menu-6526-FOR-WEBSITE.pdf"
    },
    {
+    "hh": false,
+    "lines": 208,
     "result": "ok, 24 quote(s)",
     "url": "https://www.teresas-cafe.com/s/Whiskey-Menu-052926-UPDATE-FOR-WEBSITE.pdf"
    }
@@ -18058,6 +18485,8 @@
   "osm_name": "SangKee Asian Bistro",
   "pages": [
    {
+    "hh": false,
+    "lines": 19,
     "result": "ok, 0 quote(s)",
     "url": "http://www.sangkeeasianbistro.com/"
    }
@@ -19165,7 +19594,7 @@
  },
  "60153": {
   "address": "14 PAOLI SHOPPING CENTER, PAOLI PA 19301-1438",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [],
   "name": "BAXTERS",
   "osm_name": "Baxter's American Grill",
@@ -19812,10 +20241,12 @@
     "url": "https://www.whitedog.com/wayne"
    },
    {
+    "hh": true,
     "quote": "Happy Hour / FRIED PICKLESFRIED PICKLES / TRUFFLE PARMESAN FRIES TRUFFLE PARMESAN FRIES (D)",
     "url": "https://www.whitedog.com/cmsAdmin/uploads/wdw-happy-hour-6-25-26.pdf"
    },
    {
+    "hh": true,
     "quote": "Happy HourHappy Hour",
     "url": "https://www.whitedog.com/cmsAdmin/uploads/wdw-happy-hour-6-25-26.pdf"
    },
@@ -19836,10 +20267,12 @@
     "url": "https://www.whitedog.com/chestersprings/"
    },
    {
+    "hh": true,
     "quote": "Happy Hour / FRIED PICKLESFRIED PICKLES / TRUFFLE PARMESAN FRIES TRUFFLE PARMESAN FRIES (D)",
     "url": "https://www.whitedog.com/cmsAdmin/uploads/wdw-happy-hour-6-25-26_001.pdf"
    },
    {
+    "hh": true,
     "quote": "Happy HourHappy Hour",
     "url": "https://www.whitedog.com/cmsAdmin/uploads/wdw-happy-hour-6-25-26_001.pdf"
    }
@@ -19848,22 +20281,32 @@
   "osm_name": "White Dog Cafe",
   "pages": [
    {
+    "hh": true,
+    "lines": 94,
     "result": "ok, 2 quote(s)",
     "url": "https://www.whitedog.com/wayne"
    },
    {
+    "hh": true,
+    "lines": 75,
     "result": "ok, 2 quote(s)",
     "url": "https://www.whitedog.com/cmsAdmin/uploads/wdw-happy-hour-6-25-26.pdf"
    },
    {
+    "hh": true,
+    "lines": 98,
     "result": "ok, 3 quote(s)",
     "url": "https://www.whitedog.com/wayne/specials"
    },
    {
+    "hh": true,
+    "lines": 94,
     "result": "ok, 1 quote(s)",
     "url": "https://www.whitedog.com/chestersprings/"
    },
    {
+    "hh": true,
+    "lines": 75,
     "result": "ok, 2 quote(s)",
     "url": "https://www.whitedog.com/cmsAdmin/uploads/wdw-happy-hour-6-25-26_001.pdf"
    }
@@ -21168,14 +21611,20 @@
   "osm_name": "McCloskey's Tavern",
   "pages": [
    {
+    "hh": false,
+    "lines": 47,
     "result": "ok, 0 quote(s)",
     "url": "https://www.mccloskeystavern.com/"
    },
    {
+    "hh": false,
+    "lines": 49,
     "result": "ok, 0 quote(s)",
     "url": "https://www.mccloskeystavern.com/events"
    },
    {
+    "hh": false,
+    "lines": 25,
     "result": "ok, 0 quote(s)",
     "url": "https://www.mccloskeystavern.com/menu"
    }
@@ -21555,7 +22004,7 @@
  },
  "64194": {
   "address": "821 LANCASTER AVE, WAYNE PA 19087-2550",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [],
   "name": "WHOLE FOODS MARKET GROUP LLC",
   "osm_name": "Fine Wine & Good Spirits",
@@ -21644,18 +22093,26 @@
   "osm_name": "The Grog",
   "pages": [
    {
+    "hh": true,
+    "lines": 91,
     "result": "ok, 1 quote(s)",
     "url": "https://thegroggrill.com/"
    },
    {
+    "hh": false,
+    "lines": 33,
     "result": "ok, 3 quote(s)",
     "url": "https://thegroggrill.com/bryn-mawr-the-grog-grill-happy-hours-specials"
    },
    {
+    "hh": false,
+    "lines": 163,
     "result": "ok, 0 quote(s)",
     "url": "https://thegroggrill.com/bryn-mawr-the-grog-grill-drink-menu"
    },
    {
+    "hh": false,
+    "lines": 19,
     "result": "ok, 0 quote(s)",
     "url": "https://thegroggrill.com/bryn-mawr-the-grog-grill-events"
    }
@@ -21952,6 +22409,7 @@
     "url": "https://wills-bills.com/happy-hour"
    },
    {
+    "hh": true,
     "quote": "Chef-picked pairings that turn a round of drinks into an occasion \u2014 served all happy hour long. / $16 \u00b7 $28 for two",
     "url": "https://wills-bills.com/happy-hour"
    },
@@ -21976,14 +22434,17 @@
     "url": "https://wills-bills.com/happy-hour"
    },
    {
+    "hh": true,
     "quote": "Is happy hour only available at the bar? + No. Happy-hour food and drink specials are available throughout the entire restaurant and on the patio. You can enjoy happy-hour pricing whether you sit at the bar, in a booth, at a dining-room table or outside. / Is it actually $1 per oyster? + Yes \u2014 buck-a-shuck means $1 each for our fresh oysters on the half shell, served with cocktail sauce and cucumb",
     "url": "https://wills-bills.com/happy-hour"
    },
    {
+    "hh": true,
     "quote": "Is it actually $1 per oyster? + Yes \u2014 buck-a-shuck means $1 each for our fresh oysters on the half shell, served with cocktail sauce and cucumber mignonette during happy hour.",
     "url": "https://wills-bills.com/happy-hour"
    },
    {
+    "hh": true,
     "quote": "When is happy hour? + Tuesday through Sunday, from 4:00 to 6:00 PM.",
     "url": "https://wills-bills.com/happy-hour"
    },
@@ -22028,18 +22489,26 @@
   "osm_name": "Will's + Bill's Brewery",
   "pages": [
    {
+    "hh": true,
+    "lines": 65,
     "result": "ok, 1 quote(s)",
     "url": "https://wills-bills.com/"
    },
    {
+    "hh": true,
+    "lines": 110,
     "result": "ok, 24 quote(s)",
     "url": "https://wills-bills.com/happy-hour"
    },
    {
+    "hh": true,
+    "lines": 340,
     "result": "ok, 7 quote(s)",
     "url": "https://wills-bills.com/event-spaces"
    },
    {
+    "hh": true,
+    "lines": 71,
     "result": "ok, 1 quote(s)",
     "url": "https://wills-bills.com/menu"
    }
@@ -22983,10 +23452,14 @@
   "osm_name": null,
   "pages": [
    {
+    "hh": false,
+    "lines": 1756,
     "result": "ok, 0 quote(s)",
     "url": "https://tiredhands.com/"
    },
    {
+    "hh": false,
+    "lines": 1776,
     "result": "ok, 0 quote(s)",
     "url": "https://tiredhands.com/pages/events"
    }
@@ -24316,14 +24789,20 @@
   "osm_name": null,
   "pages": [
    {
+    "hh": false,
+    "lines": 101,
     "result": "ok, 0 quote(s)",
     "url": "https://estiarestaurant.com/"
    },
    {
+    "hh": true,
+    "lines": 147,
     "result": "ok, 2 quote(s)",
     "url": "http://estiarestaurant.com/philadelphia-pa/menus/happy-hour-012615.pdf"
    },
    {
+    "hh": true,
+    "lines": 44,
     "result": "ok, 1 quote(s)",
     "url": "http://estiarestaurant.com/radnor-pa/menus/happy-hour-radnor.pdf"
    }
@@ -24340,54 +24819,67 @@
     "url": "https://pietrospizza.com/radnor.asp"
    },
    {
+    "hh": true,
     "quote": "HAPPY HOUR PACKAGES NOW AVAILABLE",
     "url": "https://pietrospizza.com/files/pietros-radnor-happy-hour-menu.pdf"
    },
    {
+    "hh": true,
     "quote": "HAPPY HOUR MENU",
     "url": "https://pietrospizza.com/files/pietros-radnor-happy-hour-menu.pdf"
    },
    {
+    "hh": true,
     "quote": "Happy hour / $20 Package*",
     "url": "https://pietrospizza.com/files/pietros-happy-hour-packages.pdf"
    },
    {
+    "hh": true,
     "quote": "Happy Hour / $20 Package*",
     "url": "https://pietrospizza.com/files/pietros-happy-hour-packages.pdf"
    },
    {
+    "hh": true,
     "quote": "$20 Package*",
     "url": "https://pietrospizza.com/files/pietros-happy-hour-packages.pdf"
    },
    {
+    "hh": true,
     "quote": "Includes Pietro\u2019s happy hour red and white wine, all draft beer plus, / Truffle Fries",
     "url": "https://pietrospizza.com/files/pietros-happy-hour-packages.pdf"
    },
    {
+    "hh": true,
     "quote": "$15 Package*",
     "url": "https://pietrospizza.com/files/pietros-happy-hour-packages.pdf"
    },
    {
+    "hh": true,
     "quote": "$30 Package*",
     "url": "https://pietrospizza.com/files/pietros-happy-hour-packages.pdf"
    },
    {
+    "hh": true,
     "quote": "Includes Pietro\u2019s happy hour red and white wine, all draft beer, well",
     "url": "https://pietrospizza.com/files/pietros-happy-hour-packages.pdf"
    },
    {
+    "hh": true,
     "quote": "$45 Package*",
     "url": "https://pietrospizza.com/files/pietros-happy-hour-packages.pdf"
    },
    {
+    "hh": true,
     "quote": "Includes Pietro\u2019s happy hour red and white wine, all draft beer,",
     "url": "https://pietrospizza.com/files/pietros-happy-hour-packages.pdf"
    },
    {
+    "hh": true,
     "quote": "Happy Hour",
     "url": "https://pietrospizza.com/files/pietros-happy-hour-packages.pdf"
    },
    {
+    "hh": true,
     "quote": "$4 per a person",
     "url": "https://pietrospizza.com/files/pietros-happy-hour-packages.pdf"
    }
@@ -24396,14 +24888,20 @@
   "osm_name": "Pietro's Pizzeria",
   "pages": [
    {
+    "hh": true,
+    "lines": 82,
     "result": "ok, 1 quote(s)",
     "url": "https://pietrospizza.com/radnor.asp"
    },
    {
+    "hh": true,
+    "lines": 61,
     "result": "ok, 2 quote(s)",
     "url": "https://pietrospizza.com/files/pietros-radnor-happy-hour-menu.pdf"
    },
    {
+    "hh": true,
+    "lines": 107,
     "result": "ok, 11 quote(s)",
     "url": "https://pietrospizza.com/files/pietros-happy-hour-packages.pdf"
    }
@@ -25488,18 +25986,26 @@
   "osm_name": "Not Your Average Joe's",
   "pages": [
    {
+    "hh": false,
+    "lines": 35,
     "result": "ok, 0 quote(s)",
     "url": "https://www.notyouraveragejoes.com/ardmore"
    },
    {
+    "hh": false,
+    "lines": 1,
     "result": "ok, 0 quote(s)",
     "url": "https://order.notyouraveragejoes.com/"
    },
    {
+    "hh": false,
+    "lines": 35,
     "result": "ok, 0 quote(s)",
     "url": "https://www.notyouraveragejoes.com/ardmore"
    },
    {
+    "hh": true,
+    "lines": 23,
     "result": "ok, 1 quote(s)",
     "url": "https://www.notyouraveragejoes.com/menu"
    }
@@ -25557,10 +26063,14 @@
   "osm_name": null,
   "pages": [
    {
+    "hh": false,
+    "lines": 1756,
     "result": "ok, 0 quote(s)",
     "url": "https://tiredhands.com/"
    },
    {
+    "hh": false,
+    "lines": 1776,
     "result": "ok, 0 quote(s)",
     "url": "https://tiredhands.com/pages/events"
    }
@@ -25576,10 +26086,14 @@
   "osm_name": "Tired Hands Fermentaria",
   "pages": [
    {
+    "hh": false,
+    "lines": 1756,
     "result": "ok, 0 quote(s)",
     "url": "https://www.tiredhands.com/"
    },
    {
+    "hh": false,
+    "lines": 1776,
     "result": "ok, 0 quote(s)",
     "url": "https://www.tiredhands.com/pages/events"
    }
@@ -26229,10 +26743,12 @@
     "url": "https://www.autographbrasserie.com/"
    },
    {
+    "hh": true,
     "quote": "HAPPY HOUR",
     "url": "http://www.autographbrasserie.com/cmsAdmin/uploads/happy-hour-03-10-17.pdf"
    },
    {
+    "hh": true,
     "quote": "$39 THREE COURSE",
     "url": "http://www.autographbrasserie.com/cmsAdmin/uploads/happy-hour-03-10-17.pdf"
    },
@@ -26245,18 +26761,26 @@
   "osm_name": "Autograph Brasserie",
   "pages": [
    {
+    "hh": true,
+    "lines": 31,
     "result": "ok, 1 quote(s)",
     "url": "https://www.autographbrasserie.com/"
    },
    {
+    "hh": true,
+    "lines": 58,
     "result": "ok, 2 quote(s)",
     "url": "http://www.autographbrasserie.com/cmsAdmin/uploads/happy-hour-03-10-17.pdf"
    },
    {
+    "hh": false,
+    "lines": 109,
     "result": "ok, 0 quote(s)",
     "url": "https://www.autographbrasserie.com/cmsAdmin/uploads/ab_brunch_3-25-26.pdf"
    },
    {
+    "hh": true,
+    "lines": 25,
     "result": "ok, 1 quote(s)",
     "url": "https://www.autographbrasserie.com/menu"
    }
@@ -27479,10 +28003,14 @@
   "osm_name": null,
   "pages": [
    {
+    "hh": false,
+    "lines": 37,
     "result": "ok, 0 quote(s)",
     "url": "https://www.lacabrabrewing.com/"
    },
    {
+    "hh": true,
+    "lines": 38,
     "result": "ok, 1 quote(s)",
     "url": "https://www.lacabrabrewing.com/privateevents"
    }
@@ -27772,6 +28300,11 @@
   "crawled_at": "2026-09-01",
   "hits": [
    {
+    "hh": true,
+    "quote": "$ 10 / spicy / Roasted Carrot Hummus",
+    "url": "https://www.thegoatsbeardphilly.com/manayunk-menu/"
+   },
+   {
     "quote": "Happy Hour Food / $10 Small Plates / Mon - Thur | 4-6pm",
     "url": "https://www.thegoatsbeardphilly.com/manayunk-menu/"
    },
@@ -27780,38 +28313,47 @@
     "url": "https://www.thegoatsbeardphilly.com/manayunk-menu/"
    },
    {
+    "hh": true,
     "quote": "$10 Small Plates",
     "url": "https://www.thegoatsbeardphilly.com/manayunk-menu/"
    },
    {
+    "hh": true,
     "quote": "$10 The Plain Pizza - Detroit Style / signature sauce, mozzarella & cheddar, oregano, parmesan / (small)",
     "url": "https://www.thegoatsbeardphilly.com/manayunk-menu/"
    },
    {
+    "hh": true,
     "quote": "Happy Hour Smashburger / single 4 oz patty, american cheese, charred onions, special sauce, pickles, brioche bun, herb fries",
     "url": "https://www.thegoatsbeardphilly.com/manayunk-menu/"
    },
    {
+    "hh": true,
     "quote": "$10 Happy Hour Smashburger",
     "url": "https://www.thegoatsbeardphilly.com/manayunk-menu/"
    },
    {
+    "hh": true,
     "quote": "$10 Caesar Salad / chopped romaine, shaved parmesan, croutons, pink peppercorn caesar dressing",
     "url": "https://www.thegoatsbeardphilly.com/manayunk-menu/"
    },
    {
+    "hh": true,
     "quote": "$10 Crispy Brussel Sprouts / balsamic vinaigrette, macerated strawberries, goat cheese",
     "url": "https://www.thegoatsbeardphilly.com/manayunk-menu/"
    },
    {
+    "hh": true,
     "quote": "$10 Cheesesteak Egg Rolls / shaved sirloin, caramelized onions, american cheese, garlic aioli, spicy ketchup",
     "url": "https://www.thegoatsbeardphilly.com/manayunk-menu/"
    },
    {
+    "hh": true,
     "quote": "$10 TGB Nuggets / spicy",
     "url": "https://www.thegoatsbeardphilly.com/manayunk-menu/"
    },
    {
+    "hh": true,
     "quote": "$10 Roasted Carrot Hummus / garbanzo beans, madras curry, crudite, naan",
     "url": "https://www.thegoatsbeardphilly.com/manayunk-menu/"
    },
@@ -27832,18 +28374,26 @@
   "osm_name": "The Goat's Beard",
   "pages": [
    {
+    "hh": false,
+    "lines": 88,
     "result": "ok, 0 quote(s)",
     "url": "https://www.thegoatsbeardphilly.com/location/the-goats-beard-wayne/"
    },
    {
+    "hh": true,
+    "lines": 572,
     "result": "ok, 13 quote(s)",
     "url": "https://www.thegoatsbeardphilly.com/manayunk-menu/"
    },
    {
+    "hh": true,
+    "lines": 242,
     "result": "ok, 1 quote(s)",
     "url": "https://www.thegoatsbeardphilly.com/manayunk-private-events/"
    },
    {
+    "hh": false,
+    "lines": 637,
     "result": "ok, 0 quote(s)",
     "url": "https://www.thegoatsbeardphilly.com/wayne-menu/"
    }
@@ -28229,7 +28779,7 @@
  },
  "7723": {
   "address": "1100 DRUMMERS LN, WAYNE PA 19087-1567",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [],
   "name": "COURTYARD BY MARRIOTT",
   "osm_name": "Courtyard Philadelphia Valley Forge/King of Prussia",
@@ -28244,7 +28794,7 @@
  },
  "7771": {
   "address": "762 LANCASTER AVE, WAYNE PA 19087-2515",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [],
   "name": "COURTYARD BY MARRIOTT",
   "osm_name": "Courtyard",
@@ -28265,6 +28815,8 @@
   "osm_name": "Sushi Nami",
   "pages": [
    {
+    "hh": false,
+    "lines": 0,
     "result": "ok, 0 quote(s)",
     "url": "https://sushinamipaoli.com/"
    }
@@ -28289,10 +28841,14 @@
   "osm_name": "Dandan",
   "pages": [
    {
+    "hh": true,
+    "lines": 91,
     "result": "ok, 1 quote(s)",
     "url": "https://www.dandanrestaurant.com/location/wayne-1/"
    },
    {
+    "hh": true,
+    "lines": 91,
     "result": "ok, 1 quote(s)",
     "url": "https://www.dandanrestaurant.com/location/wayne-1/"
    }
@@ -29807,14 +30363,20 @@
   "osm_name": "DePaul's Table",
   "pages": [
    {
+    "hh": true,
+    "lines": 88,
     "result": "ok, 1 quote(s)",
     "url": "https://www.depaulstable.com/"
    },
    {
+    "hh": true,
+    "lines": 585,
     "result": "ok, 1 quote(s)",
     "url": "https://www.depaulstable.com/menu"
    },
    {
+    "hh": false,
+    "lines": 59,
     "result": "ok, 0 quote(s)",
     "url": "https://www.depaulstable.com/private-events"
    }
@@ -29835,10 +30397,12 @@
     "url": "https://www.cornerstonewayne.com/oyster-happy-hour/"
    },
    {
+    "hh": true,
     "quote": "oysters $ 2.50 / tues-fri from 3:30-5:30",
     "url": "https://www.cornerstonewayne.com/oyster-happy-hour/"
    },
    {
+    "hh": true,
     "quote": "cheeses $ 6.50 / tues-fri from 3:30-5:30",
     "url": "https://www.cornerstonewayne.com/oyster-happy-hour/"
    },
@@ -29851,18 +30415,26 @@
   "osm_name": "Cornerstone Bistro & Artisinal Market",
   "pages": [
    {
+    "hh": false,
+    "lines": 50,
     "result": "ok, 0 quote(s)",
     "url": "https://www.cornerstonewayne.com/"
    },
    {
+    "hh": true,
+    "lines": 57,
     "result": "ok, 4 quote(s)",
     "url": "https://www.cornerstonewayne.com/oyster-happy-hour/"
    },
    {
+    "hh": false,
+    "lines": 65,
     "result": "ok, 1 quote(s)",
     "url": "https://www.cornerstonewayne.com/super-bowl-special/"
    },
    {
+    "hh": false,
+    "lines": 294,
     "result": "ok, 0 quote(s)",
     "url": "https://www.cornerstonewayne.com/events"
    }
@@ -30564,7 +31136,7 @@
  },
  "90333": {
   "address": "1005 WESTLAKES DR, BERWYN PA 19312-2408",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [],
   "name": "FAIRFIELD INN & SUITES",
   "osm_name": "Fairfield Inn & Suites",
@@ -31984,22 +32556,32 @@
   "osm_name": "Amada",
   "pages": [
    {
+    "hh": true,
+    "lines": 95,
     "result": "ok, 3 quote(s)",
     "url": "https://www.amadarestaurant.com/amada-philadelphia/"
    },
    {
+    "hh": true,
+    "lines": 70,
     "result": "ok, 1 quote(s)",
     "url": "https://www.amadarestaurant.com/specials/"
    },
    {
+    "hh": true,
+    "lines": 63,
     "result": "ok, 2 quote(s)",
     "url": "https://www.amadarestaurant.com/uploads/114704AMAHappyHourMenu0726-nocrop.pdf"
    },
    {
+    "hh": true,
+    "lines": 95,
     "result": "ok, 3 quote(s)",
     "url": "https://www.amadarestaurant.com/amada-philadelphia/"
    },
    {
+    "hh": true,
+    "lines": 63,
     "result": "ok, 2 quote(s)",
     "url": "https://www.amadarestaurant.com/uploads/114704AMAHappyHourMenu0726-nocrop.pdf"
    }
@@ -33929,18 +34511,26 @@
   "osm_name": "TJ's Restaurant and Drinkery",
   "pages": [
    {
+    "hh": false,
+    "lines": 103,
     "result": "ok, 0 quote(s)",
     "url": "https://tjsbeer.com"
    },
    {
+    "hh": false,
+    "lines": 60,
     "result": "ok, 1 quote(s)",
     "url": "https://tjsbeer.com/paoli-main-line-tj-s-restaurant-and-drinkery-happy-hours-specials"
    },
    {
+    "hh": false,
+    "lines": 287,
     "result": "ok, 0 quote(s)",
     "url": "https://tjsbeer.com/paoli-main-line-tj-s-restaurant-and-drinkery-drink-menu"
    },
    {
+    "hh": false,
+    "lines": 60,
     "result": "ok, 0 quote(s)",
     "url": "https://tjsbeer.com/paoli-main-line-tj-s-restaurant-and-drinkery-events"
    }
@@ -33956,10 +34546,14 @@
   "osm_name": "Wayne Hotel",
   "pages": [
    {
+    "hh": false,
+    "lines": 122,
     "result": "ok, 0 quote(s)",
     "url": "https://www.waynehotel.com/"
    },
    {
+    "hh": false,
+    "lines": 57,
     "result": "ok, 0 quote(s)",
     "url": "https://www.waynehotel.com/private-events/"
    }

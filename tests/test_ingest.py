@@ -3041,3 +3041,82 @@ class TheOtherTownsPageServedAtOurs(unittest.TestCase):
         self.assertIsNone(crawl_sites.wrong_location(
             self._canon("https://bar.example/happy-hour/"),
             "https://bar.example/happy-hour/"))
+
+
+class OnePageFailingIsNotTheVenueGoingQuiet(unittest.TestCase):
+    """A recrawl must not delete what a failed fetch could not re-read."""
+
+    HELD = {"pages": [{"url": "https://g.example/drinks", "result": "ok, 5 quote(s)"},
+                      {"url": "https://g.example/", "result": "ok, 0 quote(s)"}],
+            "hits": [{"url": "https://g.example/drinks", "quote": "$5 drafts"},
+                     {"url": "https://g.example/", "quote": "Happy Hour 4-6"}]}
+
+    def test_quotes_from_a_page_that_errored_are_carried_forward(self):
+        # Gullifty's shipped a card with nothing on it because one
+        # ConnectionError on a recrawl dropped all five of its items. The
+        # window survived, so no count moved and nothing looked wrong.
+        now = [{"url": "https://g.example/", "result": "ok, 0 quote(s)"},
+               {"url": "https://g.example/drinks", "result": "error: ConnectionError"}]
+        carried, notes = crawl_sites.keep_failed_pages(now, self.HELD)
+        self.assertEqual([h["quote"] for h in carried], ["$5 drafts"])
+        self.assertIn("KEPT what we held", notes[0]["result"])
+
+    def test_a_page_read_fine_this_run_carries_nothing_forward(self):
+        # The page answered. Its answer is the current one, empty or not --
+        # otherwise a venue could never drop a deal it stopped offering.
+        now = [{"url": "https://g.example/drinks", "result": "ok, 0 quote(s)"}]
+        self.assertEqual(crawl_sites.keep_failed_pages(now, self.HELD), ([], []))
+
+    def test_a_url_that_failed_but_also_succeeded_carries_nothing(self):
+        # Both seeds point at the same page and one attempt errored; we still
+        # READ it, so it speaks for itself.
+        now = [{"url": "https://g.example/drinks", "result": "error: ConnectionError"},
+               {"url": "https://g.example/drinks", "result": "ok, 0 quote(s)"}]
+        self.assertEqual(crawl_sites.keep_failed_pages(now, self.HELD), ([], []))
+
+    def test_a_clean_run_does_no_work(self):
+        now = [{"url": "https://g.example/", "result": "ok, 1 quote(s)"}]
+        self.assertEqual(crawl_sites.keep_failed_pages(now, self.HELD), ([], []))
+
+    def test_a_venue_we_held_nothing_for_carries_nothing(self):
+        now = [{"url": "https://g.example/drinks", "result": "error: Timeout"}]
+        self.assertEqual(crawl_sites.keep_failed_pages(now, {}), ([], []))
+
+
+class ABareLabelIsNotAClaim(unittest.TestCase):
+    """'Happy Hour' as a nav link must never claim the clock beside it."""
+
+    ROW = ('<div class="row"><div class="c8">{deal}</div>'
+           '<div class="c4">{clock}</div></div>')
+
+    def _boxed(self, body):
+        lines, stacks, _ = crawl_sites.text_lines_emph(
+            "<html><body><section>" + body + "</section></body></html>")
+        return crawl_sites.boxed_windows(lines, stacks)
+
+    def test_a_bare_happy_hour_label_beside_opening_hours_is_refused(self):
+        # Black Powder Tavern's home page: the label sits in a row of opening
+        # hours. Pairing them manufactured lunch and brunch as happy hours, and
+        # one OUTRANKED the venue's own 'Monday through Friday from 4:00 p.m.
+        # until 6:00 p.m.' -- turning a correct Mon-Fri window into every day,
+        # cited to a quote saying 11:30 to 4.
+        self.assertEqual(self._boxed(
+            self.ROW.format(deal="Happy Hour", clock="11:30 a.m. to 4:00 p.m.")), [])
+
+    def test_a_line_that_states_a_price_is_still_read(self):
+        out = self._boxed(self.ROW.format(deal="Happy Hour! $2 OFF any beer",
+                                          clock="04:00 PM - 06:00 PM"))
+        self.assertEqual(out, ["Happy Hour! $2 OFF any beer 04:00 PM - 06:00 PM"])
+
+    def test_a_sentence_without_a_price_is_still_read(self):
+        out = self._boxed(self.ROW.format(
+            deal="Happy Hour in the tavern and on the patio",
+            clock="04:00 PM - 06:00 PM"))
+        self.assertEqual(len(out), 1)
+
+    def test_states_a_deal_judges_what_survives_removing_the_words(self):
+        self.assertFalse(crawl_sites.states_a_deal("Happy Hour"))
+        self.assertFalse(crawl_sites.states_a_deal("HAPPY HOUR!"))
+        self.assertTrue(crawl_sites.states_a_deal("Happy Hour $5 drafts"))
+        self.assertTrue(
+            crawl_sites.states_a_deal("Happy Hour in the tavern and patio"))
