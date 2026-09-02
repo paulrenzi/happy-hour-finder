@@ -508,6 +508,108 @@ matched. It shipped, and only a unit test asserting the *match* caught it.
 
 ---
 
+## 🔑 The binding constraint moved to the WINDOW (2026-09-02)
+
+The item problem is solved well enough to be boring: point the page reader at a
+town and it comes back with items. The **card** does not follow, because
+
+> 🛑 **A venue with items and no window gets NO CARD.** The window is the card's
+> spine — `Live until ${w.end}` has nothing to render without one — and windows
+> belong exclusively to the deterministic extractor.
+
+`extract_deals.py` corpus-wide, 2026-09-02:
+
+```
+366  venue had quotes
+208    KEPT
+154    quote states no schedule      <-- the whole remaining population
+  4    REJECTED by the PA validators
+```
+
+**154 venues have a happy-hour quote in hand and no schedule in it.** That is
+now larger than every other named hole class combined.
+
+### And the windows are in pages we already paid for
+
+The seven KoP-adjacent towns were run end to end (below). Sonnet read 138
+verified items across 12 venues, **0 refused** — and the board gained **one
+card**. Seven of those twelve have items and no window. The windows were sitting
+in the cached page the whole time:
+
+| venue | the window, in `data/pages/` | where it hides |
+|---|---|---|
+| Blue Bell Inn | 4:30–6:30 PM | happy-hours page, prose |
+| il Granaio | 4–6:30 PM (and 2–4:30) | happy-hour **PDF** |
+| Autograph Brasserie | 7–9:30 PM | happy-hour **PDF** |
+| Bistro on Bridge | to 6:00 PM | homepage |
+| StoneRose | 6pm | |
+
+The quote pass produced no schedule-bearing quote from any of them, and three
+are inside PDFs. **This is the same defect as "no intelligence over pages",
+one field to the left** — a rule engine decided what a schedule looks like, and
+these venues did not spell it that way.
+
+> ⏳ **PAUL'S CALL, and it is the single highest-value decision open on this
+> project.** Letting the reader propose a **window** changes the contract that
+> today says *items only, never a window*. The shape that preserves the
+> discipline: the model returns the **verbatim span**, `verify()` checks the
+> span is really in the page, and the **existing deterministic parser** converts
+> it — so *"no meridiem ⇒ refused, never guessed"* survives untouched and the
+> model still never invents a time. That is a reader proposing evidence, not a
+> source stating a fact. **Nothing has been built. Do not build it without the
+> call.**
+
+---
+
+## Scoped runs — `ingest/needy.py`, and why a full corpus is not on the table
+
+Paul, 2026-09-01: *"we don't want a full corpus run. sonnet isn't cheap at a
+certain scale. we want to run it on only the entries with missing info, and
+ideally in the towns closest to KOP … After those smaller places are scraped
+well, we can do a stand-alone job for west chester because it's large."*
+
+🛑 **The "cheapest remaining win" in the previous handoff — an overnight
+~900-venue recrawl — was withdrawn on this instruction.** A run names its towns.
+
+**A venue is NEEDY when it has a website AND (no deal at all OR a deal with no
+items).** A venue with a window and items is left alone; re-fetching it spends
+bandwidth to re-learn what we hold.
+
+```
+python ingest/needy.py phoenixville wayne_radnor --show --lids run.lids
+python ingest/crawl_sites.py --lids run.lids --recrawl --render
+python ingest/read_pages_llm.py --show --rejects
+python ingest/extract_deals.py && python ingest/build_bundles.py
+bash tests/run.sh && git add -A && git commit && git push
+python scratch/card_diff.py          # WHICH cards moved — a total cannot see this
+python scratch/live_check.py         # the gate that counts, ~2-3 min after push
+```
+
+### The run of 2026-09-02, in full — read this before scoping the next one
+
+96 needy venues: phoenixville 26, wayne_radnor 23, ardmore_bryn_mawr 16,
+norristown_bridgeport 11, blue_bell_plymouth_meeting 11, conshohocken 6,
+audubon_eagleville 3.
+
+| stage | result |
+|---|---|
+| crawl `--lids --recrawl --render` | 93 reached, **33 with a deal quote**, 93 pages cached, 1 WebKit render |
+| `read_pages_llm.py` (sonnet, batch 5) | **138 verified items, 12 venues, 0 refused**, 12 calls |
+| `extract_deals.py` | 208 kept, **154 no schedule** |
+| `card_diff.py` | **one card changed** — Sullivan's 20 → 26 items |
+| live in WebKit | 43 KoP cards painted, no page errors |
+
+> 🔑 **`ingest/needy.py` re-run after all of that still returns 96.** Items
+> without a window do not clear neediness, and that is the finding stated as a
+> number: **the reading is done and the towns still have no cards.** Do not
+> re-run these seven towns hoping for a different answer — the next move on them
+> is the window decision above, not another crawl.
+
+🛑 **West Chester is deliberately untouched.** Paul sequenced it as a stand-alone
+job *after* the small towns are good, and they are not good yet.
+
+---
+
 ## Standing rules
 
 - **One venue at a time, finished on the live site before the next**, and Paul
