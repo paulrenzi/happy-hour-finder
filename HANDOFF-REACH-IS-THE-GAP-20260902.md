@@ -96,7 +96,13 @@ item below it. Nothing needs re-crawling to start recording it.
 > crawler would not apply to it. The two now share one constant. The run added
 > **no card**: all five quote-carrying venues say "happy hour" and state no
 > clock, and the two windows that looked recoverable were a phone number and a
-> set of business hours. Both refusals are correct.
+> set of business hours. ~~Both refusals are correct.~~
+>
+> 🛑 **STRUCK 2026-09-02 by Paul, in one minute with a browser.** The run was
+> a failure, not a correct refusal: Revival, Rivertown Taps, Sly Fox and
+> Sedona Taphouse all publish a happy hour in Phoenixville and none had a
+> real card. See "The four misses" below. **A run that reports a town empty
+> is checked against one human minute before it is called correct.**
 
 `render_wanted()` requires `page_is_hh(url)` (the URL must name an hour) **and**
 a page under `RENDER_LINE_FLOOR`. A shell homepage's URL does not name an hour,
@@ -146,6 +152,37 @@ pass with `ingest/exclusions.py` before anyone quotes a coverage figure again.
 
 ---
 
+## The four misses (2026-09-02) — reach again, every one of them
+
+Paul pulled up four Phoenixville happy hours in one minute after a run had
+called the town empty. Not one was a reading problem; each was a page or a
+picture the crawl never put in front of a reader. All fixed in commit
+`9a1c861`, all four now on the board with the window and items their own
+pages state.
+
+| venue | where the happy hour was | why we never saw it | fix |
+|---|---|---|---|
+| Sly Fox | `/phoenixville`, "Appy Hour" Tue–Fri 3–6 | the link matched no `LINK_WORD`; the page never says "happy hour"; a trailing "saturday" line joined the quote | a link naming the venue's **own town** ranks first (`town_re`); "appy hour" is a heading; a day line **above** a heading owns it |
+| Sedona Taphouse | `/locations/phoenixville-pa/` + `HappyHourMenu_PhxWC.pdf` | town link dropped, then displaced by three `nye-special` sitemap URLs; the PDF anchor is 220 chars of card markup, the link regex allowed 120; "$20 Oﬀ" (ligature) read as a $20 price | town link stays ahead of the sitemap top-up; anchor cap 400; NFKC on PDF text |
+| Rivertown Taps | `Happy-Hour-Specials.png` on `/menu/` | images were only collected on hour-named URLs; the venue has **no text at all** | a self-named HH image counts on any page; the vision pass keeps its transcript in `data/menu_image_transcripts.json` and `extract_deals.picture_spans()` runs the unchanged window grammar over its happy-hour lines |
+| Revival Pizza Pub | `Revival HH.png` on `/happy-hour-menu` | `MENU_IMG_RE` wanted `_hh_`/`-hh-`, URL had `%20HH.png`; the card carried **$6 margaritas** (Margherita Monday) because every quote fed the price pass | standalone `hh` token + unquote; `extract_prices_llm.vouched()` and `read_pages_llm.worth_reading()` refuse day/weekly/lunch-specials URLs |
+
+**Corpus-wide, unrun by the standing constraint:** 16 venues have quotes from
+day/weekly/lunch-specials pages and no happy-hour quote at all (VK Brewing,
+Chap's, Cracker Barrel, Blue Dog among them). Their price sidecars were built
+from those quotes. `--reverify` on the price pass does NOT apply `vouched()`;
+a scoped recrawl of each town will.
+
+**Known warts left on Sedona's card:** a duplicate `house wine by the glass
+and $7.9` from the quote-regex item pass beside the page reader's clean
+`House Wine by the Glass`. Cosmetic; not a wrong price.
+
+**The measurement to add:** a town run should end with the four-venue check
+Paul did by hand — open the top hits for "<town> happy hour" and ask whether
+each has a card. That is the test the funnel table above cannot express.
+
+---
+
 ## Still Paul's call, carried forward, not started
 
 - `clauses()` does not split on a **line break** (Miller's Ale House states two
@@ -161,6 +198,7 @@ pass with `ingest/exclusions.py` before anyone quotes a coverage figure again.
 ## State of the tree
 
 - Everything is committed and pushed on `master`; working tree clean.
+- `9a1c861` (2026-09-02): the four-misses fixes, 355 tests, exit 0.
 - `bash tests/run.sh` **exits 0**.
 - `python ingest/build_bundles.py` produces **no diff** — the live site is in
   sync with the committed data.
