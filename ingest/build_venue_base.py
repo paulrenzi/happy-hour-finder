@@ -190,7 +190,10 @@ def main():
             "tier": row["tier"],
         }
 
-        website = place.get("website") or site.get("website")
+        # Third source, lowest rank: the website Google returned alongside the
+        # photo, for a place whose name already agreed with ours. Before this the
+        # photo run recovered a website for ~3 in 5 site-less venues and dropped it.
+        website = place.get("website") or site.get("website")             or (photos.get(lid) or {}).get("website")
         if website:
             v["website"] = website
 

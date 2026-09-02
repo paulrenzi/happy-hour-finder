@@ -73,7 +73,13 @@ def resolve(key, venue):
         SEARCH,
         headers={
             "X-Goog-Api-Key": key,
-            "X-Goog-FieldMask": "places.id,places.displayName,places.formattedAddress,places.photos",
+            # websiteUri rides the SAME Pro-tier call the photo already bills. It was
+            # left off this mask for the first 162 photos, so every one of those
+            # searches was paid for and the venue's website thrown away -- while
+            # 2,019 licensees sat with no website on file and out of any scraper's
+            # reach. Paul, 2026-09-02: prove it on a single town.
+            "X-Goog-FieldMask": "places.id,places.displayName,places.formattedAddress,"
+                                "places.photos,places.websiteUri",
         },
         json={"textQuery": f"{venue['name']}, {venue['address']}", "maxResultCount": 1},
         timeout=30,
@@ -342,6 +348,11 @@ def from_board(args, key):
             "resolved_address": place.get("formattedAddress"),
             "fetched_at": time.strftime("%Y-%m-%d"),
         }
+        # The website Google holds for the place we just verified by name.
+        # build_venue_base takes it when nothing else supplied one, so a licensee
+        # that had no site becomes one a scrape can reach.
+        if place.get("websiteUri"):
+            manifest[lid]["website"] = place["websiteUri"]
         print(f"[{n}/{len(todo)}] {lid:<8} {b['name'][:34]:<36} {size:>7,} bytes"
               f"  <- {manifest[lid]['resolved_name']}")
         # Written as we go: a lookup already billed must not be thrown away by
