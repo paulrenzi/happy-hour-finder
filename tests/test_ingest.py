@@ -25,6 +25,7 @@ sys.path.insert(0, os.path.join(REPO, "ingest"))
 from build_bundles import (CACHE_LINE, collapse_name_collisions, decay,  # noqa: E402
                            norm_name, shell_digest, sw_cache_name)
 import build_bundles  # noqa: E402
+import audit_rendered_artifacts  # noqa: E402
 import crawl_sites  # noqa: E402
 import extract_deals  # noqa: E402
 import fetch_venue_photos  # noqa: E402
@@ -76,6 +77,48 @@ def deal(**over):
     }
     base.update(over)
     return base
+
+
+class RenderedArtifactAudit(unittest.TestCase):
+    """The visual audit inventories artifacts; it does not trust filenames."""
+
+    def test_opaque_pdf_and_iframe_are_reader_candidates(self):
+        pdf = {"url": "https://cdn.example/assets/7142", "tag": "a"}
+        pdf["kind"] = audit_rendered_artifacts.url_kind(pdf["url"], pdf["tag"])
+        frame = {"url": "https://order.example/widget/abc", "tag": "iframe"}
+        frame["kind"] = audit_rendered_artifacts.url_kind(frame["url"], frame["tag"])
+        self.assertEqual(pdf["kind"], "link")
+        self.assertTrue(audit_rendered_artifacts.candidate(frame))
+        # A generic opaque link is not silently promoted; the browser's
+        # response content-type turns an actual PDF into a document work item.
+        self.assertFalse(audit_rendered_artifacts.candidate(pdf))
+
+    def test_every_previously_read_page_is_audit_scope(self):
+        hits = {
+            "1": {"pages": [{"url": "https://x.example/", "result": "ok, 0 quote(s)"},
+                              {"url": "https://x.example/menu", "result": "404 text/html"}]},
+            "2": {"pages": [{"url": "https://y.example/", "result": "rendered: 3 lines -> 80"}]},
+        }
+        sites = {"1": {"zone_id": "z"}, "2": {"zone_id": "other"}}
+        self.assertEqual(audit_rendered_artifacts.page_urls(hits, None, "z", sites),
+                         [("1", "https://x.example/")])
+
+    def test_a_visible_opaque_image_on_a_happy_hour_page_is_read(self):
+        asset = {"url": "https://cdn.example/uploads/918273", "tag": "img",
+                 "kind": "image", "visible": True, "page_happy_hour_path": True}
+        self.assertTrue(audit_rendered_artifacts.candidate(asset))
+
+    def test_an_img_endpoint_without_a_filename_is_an_image(self):
+        self.assertEqual(
+            audit_rendered_artifacts.url_kind("https://bar.example/assets/uuid?w=560", "img"),
+            "image")
+
+    def test_responsive_variants_are_one_visual_work_item(self):
+        from extract_menu_images import image_key
+        self.assertEqual(image_key("https://x.example/menu-300x150.jpg"),
+                         image_key("https://x.example/menu.jpg"))
+        self.assertEqual(image_key("https://x.example/opaque?w=80&dpr=1"),
+                         image_key("https://x.example/opaque?w=240&dpr=3"))
 
 
 class PaValidators(unittest.TestCase):

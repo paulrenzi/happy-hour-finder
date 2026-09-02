@@ -106,7 +106,7 @@ PAGES:
 """
 
 
-def needy_lids():
+def needy_lids(only=None):
     """The lids of venues that HAVE quotes and whose quotes state no schedule.
 
     This is the 154, computed the same way extract_deals.py counts them -- by
@@ -118,7 +118,13 @@ def needy_lids():
     sites = json.load(open(SITES, encoding="utf-8"))
     out = set()
     for lid, v in one_per_osm(hits, sites):
-        if v["hits"] and not any(windows_from(h["quote"]) for h in v["hits"]):
+        # A scoped rendered-artifact audit may have found its first readable
+        # text in a JavaScript widget.  It has no regex quote yet, which used
+        # to make it ineligible for the very reader that can point at its
+        # verbatim window.  The scope is the safety boundary: it is supplied
+        # by the audited LIDs, not a corpus-wide invitation to guess.
+        if ((v["hits"] or (only and str(lid) in only))
+                and not any(windows_from(h["quote"]) for h in v["hits"])):
             out.add(str(lid))
     return out
 
@@ -133,7 +139,7 @@ def cached_pages(only=None):
     """
     if not os.path.isdir(PAGES):
         return []
-    needy = needy_lids()
+    needy = needy_lids(only)
     out = []
     for fn in sorted(os.listdir(PAGES)):
         if not fn.endswith(".json"):
