@@ -1016,21 +1016,34 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--show", type=int, default=0)
     ap.add_argument("--rejects", type=int, default=0)
+    ap.add_argument("--lids", help="refresh only these licence ids, preserving every other extracted deal")
     args = ap.parse_args()
 
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     hits = json.load(open(HITS, encoding="utf-8"))
     sites = json.load(open(SITES, encoding="utf-8"))
     coords = json.load(open(COORDS, encoding="utf-8")) if os.path.exists(COORDS) else {}
+    only = None
+    prior = []
+    if args.lids:
+        only = {ln.strip() for ln in open(args.lids, encoding="utf-8") if ln.strip()}
+        if os.path.exists(OUT):
+            prior = json.load(open(OUT, encoding="utf-8")).get("venues", [])
 
     pages = page_spans()
     pictures = picture_spans(json.load(open(TRANSCRIPTS, encoding="utf-8"))
                              if os.path.exists(TRANSCRIPTS) else {})
     venues, stats, kept, rejects = [], collections.Counter(), [], []
-    seen_ids = set()
+    # A scoped refresh must leave the rest of the published corpus untouched,
+    # including its stable ids.  This is the extraction analogue of the
+    # crawler's --lids: one bad or newly investigated page is never a reason
+    # to regenerate a statewide answer.
+    seen_ids = {v.get("id") for v in prior if str(v.get("lid")) not in (only or set())}
     places = place_names(json.load(open(BASE, encoding="utf-8"))
                          if os.path.exists(BASE) else {})
     for lid, v in one_per_osm(hits, sites):
+        if only is not None and lid not in only:
+            continue
         # The crawl found a menu picture and the vision pass transcribed it:
         # the happy-hour lines of that transcript are candidates, and they
         # enter through windows_from() like any other. The items come from
@@ -1215,6 +1228,17 @@ def main():
                            "matched_by": "osm_site", "osm": site.get("osm"),
                            "queried": v["address"], "resolved": site.get("osm_name") or ""}
 
+    if only is not None:
+        fresh = {str(v["lid"]): v for v in venues}
+        merged = []
+        for v in prior:
+            lid = str(v.get("lid"))
+            if lid not in only:
+                merged.append(v)
+            elif lid in fresh:
+                merged.append(fresh.pop(lid))
+        venues = merged + list(fresh.values())
+
     with open(OUT, "w", encoding="utf-8") as fh:
         json.dump({"_comment": "Machine-extracted from data/crawl_hits.json by "
                                "ingest/extract_deals.py. Every deal carries the quote it "
@@ -1223,9 +1247,10 @@ def main():
                    "venues": venues}, fh, indent=1)
     # A venue id is derived from its name, so a re-extraction after a rename
     # would otherwise leave the old id behind as a coordinate nothing claims.
-    live = {v["id"] for v in venues}
-    coords = {k: c for k, c in coords.items()
-              if c.get("matched_by") != "osm_site" or k in live}
+    if only is None:
+        live = {v["id"] for v in venues}
+        coords = {k: c for k, c in coords.items()
+                  if c.get("matched_by") != "osm_site" or k in live}
     with open(COORDS, "w", encoding="utf-8") as fh:
         json.dump(coords, fh, indent=1, sort_keys=True)
 

@@ -15218,6 +15218,88 @@
      }
     }
    ]
+  },
+  {
+   "id": "casey-s-drexel-hill",
+   "lid": "125992",
+   "name": "Casey's",
+   "plcb_name": "CASEY'S DREXEL HILL",
+   "address": "812 LANSDOWNE AVE, DREXEL HILL PA 19026-1526",
+   "zone_id": "upper_darby_lansdowne",
+   "license_type": "",
+   "website": "https://www.caseysdh.com",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "margaritas",
+       "price_usd": 8.0
+      },
+      {
+       "category": "well",
+       "label": "well drinks",
+       "price_usd": 5.0
+      },
+      {
+       "category": "draft",
+       "label": "domestic drafts",
+       "price_usd": 3.0
+      },
+      {
+       "category": "food",
+       "label": "bites and make every visit a",
+       "price_usd": 8.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://caseysdh.com/page/happy-hour",
+      "quote": "Early & Late Night Happy Hour Specials / Kick off your evening with happy hour Monday through Friday from 3 PM to 6 PM, then keep the fun going late Thursday to Saturday from 9 PM to midnight. Enjoy $8 margaritas, mules, and martinis, $7 Statesides and Surfsides, $5 well drinks, and $3 domestic drafts. Pair your favorites with $8 bites and make every visit a good time.",
+      "quotes": [
+       "Early & Late Night Happy Hour Specials / Kick off your evening with happy hour Monday through Friday from 3 PM to 6 PM, then keep the fun going late Thursday to Saturday from 9 PM to midnight. Enjoy $8 margaritas, mules, and martinis, $7 Statesides and Surfsides, $5 well drinks, and $3 domestic drafts. Pair your favorites with $8 bites and make every visit a good time.",
+       "Happy Hour | Casey's Drexel Hill / Kick off your evening with happy hour Monday through Friday from 3 PM to 6 PM, then keep the fun going late Thursday to Saturday from 9 PM to midnight. Enjoy $8 margaritas, mules, and martinis, $7 Statesides and Surfsides, $5 well drinks, and $3 domestic drafts. Pair your favorites with $8 bites and make every visit a good time.",
+       "Kick off your evening with happy hour Monday through Friday from 3 PM to 6 PM, then keep the fun going late Thursday to Saturday from 9 PM to midnight. Enjoy $8 margaritas, mules, and martinis, $7 Statesides and Surfsides, $5 well drinks, and $3 domestic drafts. Pair your favorites with $8 bites and make every visit a good time."
+      ]
+     }
+    }
+   ]
   }
  ]
 }
