@@ -43945,6 +43945,33 @@
   "website": "http://www.barxiii.com/",
   "zone_id": "wilmington"
  },
+ "DE015cff3502": {
+  "address": "3901 Concord Pike, Wilmington, DE 19803",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Sweet Nel's",
+  "osm_name": "Sweet Nel's",
+  "pages": [
+   {
+    "result": "rendered: 1 lines -> 185",
+    "url": "http://sweetnels.com/"
+   },
+   {
+    "hh": false,
+    "lines": 185,
+    "result": "ok, 0 quote(s)",
+    "url": "http://sweetnels.com/"
+   },
+   {
+    "hh": false,
+    "lines": 1,
+    "result": "ok, 0 quote(s)",
+    "url": "http://sweetnels.com/?location=ABSES53T27VT5"
+   }
+  ],
+  "website": "http://sweetnels.com/",
+  "zone_id": "hockessin_greenville"
+ },
  "DE017d00facb": {
   "address": "500 N Market St, Wilmington, DE 19801",
   "crawled_at": "2026-09-02",
@@ -44030,6 +44057,44 @@
   "website": "http://www.babshotchicken.com/",
   "zone_id": "newark_de"
  },
+ "DE028fe3171e": {
+  "address": "1016 N Lincoln St, Wilmington, DE 19805",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Three Amigos Mexican Grill Bar",
+  "osm_name": "Three Amigos Mexican Grill Bar",
+  "pages": [
+   {
+    "result": "403 text/html; render failed: TimeoutError",
+    "url": "https://www.toasttab.com/local/order/three-amigos-mexican-grill-1014-north-lincoln-street/r-0f150b50-8c18-440c-a67d-e57af2096a13"
+   }
+  ],
+  "website": "https://www.toasttab.com/local/order/three-amigos-mexican-grill-1014-north-lincoln-street/r-0f150b50-8c18-440c-a67d-e57af2096a13",
+  "zone_id": "hockessin_greenville"
+ },
+ "DE02cfd33da0": {
+  "address": "94 Clinton St, Delaware City, DE 19706",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Sabatina\u2019s Sandwiches",
+  "osm_name": "Sabatina\u2019s Sandwiches",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 81,
+    "result": "ok, 0 quote(s)",
+    "url": "https://sabatinas.com/"
+   },
+   {
+    "hh": false,
+    "lines": 182,
+    "result": "ok, 0 quote(s)",
+    "url": "https://sabatinas.com/menu/"
+   }
+  ],
+  "website": "https://sabatinas.com/",
+  "zone_id": "new_castle_de"
+ },
  "DE03fd0ecb4b": {
   "address": "720 Justison St, Wilmington, DE 19801",
   "crawled_at": "2026-09-02",
@@ -44112,6 +44177,23 @@
   "website": "http://www.vincentesrestaurant.com/",
   "zone_id": "wilmington"
  },
+ "DE052c198109": {
+  "address": "204 W Market St, Wilmington, DE 19804",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Naz's Halal Food - Newport",
+  "osm_name": "Naz's Halal Food - Newport",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 86,
+    "result": "ok, 0 quote(s)",
+    "url": "https://nazshalal.com/"
+   }
+  ],
+  "website": "https://nazshalal.com/",
+  "zone_id": "new_castle_de"
+ },
  "DE057d4ef457": {
   "address": "214 Peoples Plaza, Newark, DE 19702",
   "crawled_at": "2026-09-02",
@@ -44138,6 +44220,33 @@
   ],
   "website": "http://bagelbobacafe.com/",
   "zone_id": "newark_de"
+ },
+ "DE05a84b3614": {
+  "address": "7313 Lancaster Pike #5, Hockessin, DE 19707",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Stone Mill Pizza",
+  "osm_name": "Stone Mill Pizza",
+  "pages": [
+   {
+    "result": "rendered: 0 lines -> 99",
+    "url": "http://www.stonemillpizza.com/"
+   },
+   {
+    "hh": false,
+    "lines": 99,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.stonemillpizza.com/"
+   },
+   {
+    "hh": false,
+    "lines": 0,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.stonemillpizza.com/menu"
+   }
+  ],
+  "website": "http://www.stonemillpizza.com/",
+  "zone_id": "hockessin_greenville"
  },
  "DE07aab40d0f": {
   "address": "108 W Main St, Newark, DE 19711",
@@ -44211,6 +44320,52 @@
   ],
   "website": "https://simmerdownbar.com/?utm_source=google&utm_medium=Local&utm_campaign=Google+My+Business",
   "zone_id": "wilmington"
+ },
+ "DE097b9e3b8a": {
+  "address": "7313 Lancaster Pike, Hockessin, DE 19707",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Famous Rivera Grill",
+  "osm_name": "Famous Rivera Grill",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 45,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.famousriveragrill.com/"
+   }
+  ],
+  "website": "http://www.famousriveragrill.com/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DE098cf14df7": {
+  "address": "3541 Philadelphia Pike, Claymont, DE 19703",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "NY Gyro & Grill",
+  "osm_name": "NY Gyro & Grill",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 48,
+    "result": "ok, 0 quote(s)",
+    "url": "https://nygyrogrill.com/"
+   },
+   {
+    "hh": false,
+    "lines": 48,
+    "result": "ok, 0 quote(s)",
+    "url": "https://nygyrogrill.com/"
+   },
+   {
+    "hh": false,
+    "lines": 216,
+    "result": "ok, 0 quote(s)",
+    "url": "https://nygyrogrill.com/menu"
+   }
+  ],
+  "website": "https://nygyrogrill.com/",
+  "zone_id": "new_castle_de"
  },
  "DE09fd52a099": {
   "address": "3549 Silverside Rd, Wilmington, DE 19810",
@@ -44491,6 +44646,147 @@
   "website": "http://www.thurstonspubde.com/",
   "zone_id": "newark_de"
  },
+ "DE0d904a49e5": {
+  "address": "194 S Dupont Hwy, New Castle, DE 19720",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Enjoy world famous wings and a great beer selection at Hooters of New Castle. Eat-in or carryout, the best food in Delaware can always be found right in New Castle. Daily happy hour specials, drink specials and craft beer on tap.",
+    "url": "https://www.hooters.com/locations/32708-new-castle?utm_source=google&utm_medium=organic&utm_campaign=gmb-website-cta-new+castle-de-new+castle"
+   },
+   {
+    "quote": "Celebrate Tax Day with a BOGO Wings Deal and Drink Specials at Hooters | Hooters",
+    "url": "https://www.hooters.com/about/news/celebrate-tax-day-with-a-bogo-wings-deal-and-drink-specials-at-hooters"
+   },
+   {
+    "quote": "Celebrate Tax Day with a BOGO Wings Deal and Drink Specials at Hooters",
+    "url": "https://www.hooters.com/about/news/celebrate-tax-day-with-a-bogo-wings-deal-and-drink-specials-at-hooters"
+   }
+  ],
+  "name": "Hooters",
+  "osm_name": "Hooters",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 113,
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.hooters.com/locations/32708-new-castle?utm_source=google&utm_medium=organic&utm_campaign=gmb-website-cta-new+castle-de-new+castle"
+   },
+   {
+    "hh": false,
+    "lines": 73,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.hooters.com/about/news/golf-legend-john-daly-to-curate-hooters-summers-specials-menu-featuring-big-john-dogs-plus-buffalo-chicken-dip-and-funnel-fries"
+   },
+   {
+    "hh": false,
+    "lines": 72,
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.hooters.com/about/news/celebrate-tax-day-with-a-bogo-wings-deal-and-drink-specials-at-hooters"
+   },
+   {
+    "hh": false,
+    "lines": 88,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.hooters.com/about/news/hooters-unveils-limited-time-seasonal-specials-to-kick-off-fall"
+   }
+  ],
+  "website": "https://www.hooters.com/locations/32708-new-castle?utm_source=google&utm_medium=organic&utm_campaign=gmb-website-cta-new+castle-de-new+castle",
+  "zone_id": "newark_de"
+ },
+ "DE0d9a44844a": {
+  "address": "2072 Naamans Rd, Wilmington, DE 19810",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Grand East Buffet",
+  "osm_name": "Grand East Buffet",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 125,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.grandeastbuffetde.com/"
+   },
+   {
+    "hh": false,
+    "lines": 125,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.grandeastbuffetde.com/"
+   }
+  ],
+  "website": "http://www.grandeastbuffetde.com/",
+  "zone_id": "new_castle_de"
+ },
+ "DE0fcc6ae5bb": {
+  "address": "60 N College Ave, Newark, DE 19711",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Drip Cafe",
+  "osm_name": "Drip Cafe",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 98,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.dripcafede.com/"
+   },
+   {
+    "hh": false,
+    "lines": 199,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.dripcafede.com/pages/events"
+   },
+   {
+    "hh": false,
+    "lines": 76,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.dripcafede.com/pages/menus"
+   },
+   {
+    "hh": false,
+    "lines": 271,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.dripcafede.com/pages/take-out-menu"
+   }
+  ],
+  "website": "http://www.dripcafede.com/",
+  "zone_id": "newark_de"
+ },
+ "DE0ff4170515": {
+  "address": "528 Montchanin Rd, Montchanin, DE 19710",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Krazy Kat's",
+  "osm_name": "Krazy Kat's",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 97,
+    "result": "ok, 0 quote(s)",
+    "url": "https://krazykatsde.com/"
+   },
+   {
+    "hh": false,
+    "lines": 47,
+    "result": "ok, 0 quote(s)",
+    "url": "https://krazykatsde.com/montchanin-krazy-kats-drink-menu"
+   },
+   {
+    "hh": false,
+    "lines": 47,
+    "result": "ok, 0 quote(s)",
+    "url": "https://krazykatsde.com/montchanin-krazy-kats-events"
+   },
+   {
+    "hh": false,
+    "lines": 271,
+    "result": "ok, 0 quote(s)",
+    "url": "https://krazykatsde.com/montchanin-krazy-kats-food-menu"
+   }
+  ],
+  "website": "https://krazykatsde.com/",
+  "zone_id": "hockessin_greenville"
+ },
  "DE102aa6c988": {
   "address": "801 N Union St, Wilmington, DE 19805",
   "crawled_at": "2026-09-02",
@@ -44532,6 +44828,83 @@
   ],
   "website": "https://www.thechancerymarket.com/market-street-burgers-and-dogs-near-me-wilmington/",
   "zone_id": "wilmington"
+ },
+ "DE1205860cb5": {
+  "address": "108 Peoples Plaza, Newark, DE 19702",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Food & Drink Specials",
+    "url": "https://www.mcglynnspub.com/"
+   },
+   {
+    "quote": "Food & Drink Specials - McGlynns Pub - Family Restaurant, Sports Bar in DE",
+    "url": "https://www.mcglynnspub.com/food-and-drink-specials"
+   },
+   {
+    "quote": "Food & Drink Specials",
+    "url": "https://www.mcglynnspub.com/food-and-drink-specials"
+   },
+   {
+    "quote": "Food & Drink Specials at McGlynns Pub",
+    "url": "https://www.mcglynnspub.com/food-and-drink-specials"
+   },
+   {
+    "quote": "Daily Deals, Happy Hour & Late Night Specials Across Delaware",
+    "url": "https://www.mcglynnspub.com/food-and-drink-specials"
+   },
+   {
+    "quote": "Your Delaware Sports Bar for Daily Specials & Happy Hour",
+    "url": "https://www.mcglynnspub.com/food-and-drink-specials"
+   },
+   {
+    "hh": true,
+    "quote": "Looking for the best food and drink specials in Newark, Greenville, or Dover, DE? McGlynns Pub offers rotating daily specials, happy hour deals, late night bites, and signature drink features at all four of our Delaware sports bar locations.",
+    "url": "https://www.mcglynnspub.com/food-and-drink-specials"
+   },
+   {
+    "quote": "Food & Drink Specials",
+    "url": "https://www.mcglynnspub.com/banquets"
+   },
+   {
+    "quote": "Food & Drink Specials",
+    "url": "https://www.mcglynnspub.com/events"
+   }
+  ],
+  "name": "McGlynns Pub - Glasgow",
+  "osm_name": "McGlynns Pub - Glasgow",
+  "pages": [
+   {
+    "result": "rendered: 22 lines -> 23",
+    "url": "https://www.mcglynnspub.com/"
+   },
+   {
+    "hh": false,
+    "lines": 23,
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.mcglynnspub.com/"
+   },
+   {
+    "hh": true,
+    "lines": 25,
+    "result": "ok, 6 quote(s)",
+    "url": "https://www.mcglynnspub.com/food-and-drink-specials"
+   },
+   {
+    "hh": false,
+    "lines": 25,
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.mcglynnspub.com/banquets"
+   },
+   {
+    "hh": false,
+    "lines": 25,
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.mcglynnspub.com/events"
+   }
+  ],
+  "website": "https://www.mcglynnspub.com/",
+  "zone_id": "newark_de"
  },
  "DE122a63d619": {
   "address": "2878 Creek Rd, Yorklyn, DE 19736",
@@ -44579,6 +44952,60 @@
   "website": "http://www.dewpointbrewing.com/",
   "zone_id": "wilmington"
  },
+ "DE123c7173f7": {
+  "address": "1812 Marsh Rd #403, Wilmington, DE 19810",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Famous Joe's Tavern",
+  "osm_name": "Famous Joe's Tavern",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 70,
+    "result": "ok, 0 quote(s)",
+    "url": "http://famous-joes-tavern.edan.io/"
+   },
+   {
+    "result": "robots.txt disallows",
+    "url": "http://famous-joes-tavern.edan.io/extra"
+   }
+  ],
+  "website": "http://famous-joes-tavern.edan.io/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DE130fbfeec4": {
+  "address": "830 Peoples Plaza, Newark, DE 19702",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Tikka Masala Delaware Indian Cuisine and Bar",
+  "osm_name": "Tikka Masala Delaware Indian Cuisine and Bar",
+  "pages": [
+   {
+    "result": "rendered after 403 text/html: 0 lines -> 103",
+    "url": "https://tikkamasalade.com/?utm_source=google"
+   },
+   {
+    "hh": false,
+    "lines": 103,
+    "result": "ok, 0 quote(s)",
+    "url": "https://tikkamasalade.com/?utm_source=google"
+   },
+   {
+    "result": "403 text/html",
+    "url": "https://tikkamasalade.com/menu"
+   },
+   {
+    "result": "403 text/html",
+    "url": "https://tikkamasalade.com/menu?dialogState=orderDetails"
+   },
+   {
+    "result": "403 text/html",
+    "url": "https://tikkamasalade.com/page/pdf-menus"
+   }
+  ],
+  "website": "https://tikkamasalade.com/?utm_source=google",
+  "zone_id": "newark_de"
+ },
  "DE138e78bd27": {
   "address": "416 N Union St, Wilmington, DE 19805",
   "crawled_at": "2026-09-02",
@@ -44613,6 +45040,59 @@
   ],
   "website": "https://spiritoftheeastusa.com/",
   "zone_id": "wilmington"
+ },
+ "DE1464337baa": {
+  "address": "316 S Maryland Ave, Wilmington, DE 19804",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Homemade Daily Specials / Friday: Roasted Half Chicken / Monday: Chicken and Dumplings",
+    "url": "http://www.cosmos-restaurant.com/"
+   },
+   {
+    "quote": "Homemade Daily Specials / Friday: Roasted Half Chicken / Monday: Chicken and Dumplings",
+    "url": "http://www.cosmos-restaurant.com/"
+   },
+   {
+    "hh": true,
+    "quote": "Add Avocado $1.25",
+    "url": "http://www.cosmos-restaurant.com/wp-content/uploads/menu.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Daily Specials",
+    "url": "http://www.cosmos-restaurant.com/wp-content/uploads/menu.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Add Cheese: $1.00",
+    "url": "http://www.cosmos-restaurant.com/wp-content/uploads/menu.pdf"
+   }
+  ],
+  "name": "Cosmos Restaurant",
+  "osm_name": "Cosmos Restaurant",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 786,
+    "result": "ok, 1 quote(s)",
+    "url": "http://www.cosmos-restaurant.com/"
+   },
+   {
+    "hh": false,
+    "lines": 786,
+    "result": "ok, 1 quote(s)",
+    "url": "http://www.cosmos-restaurant.com/"
+   },
+   {
+    "hh": false,
+    "lines": 626,
+    "result": "ok, 3 quote(s)",
+    "url": "http://www.cosmos-restaurant.com/wp-content/uploads/menu.pdf"
+   }
+  ],
+  "website": "http://www.cosmos-restaurant.com/",
+  "zone_id": "new_castle_de"
  },
  "DE146a0b42fa": {
   "address": "42 W 11th St, Wilmington, DE 19801",
@@ -44673,6 +45153,216 @@
   ],
   "website": "https://www.lecavalierde.com/",
   "zone_id": "wilmington"
+ },
+ "DE155b2a9fb6": {
+  "address": "1 Chesmar Plaza, Newark, DE 19713",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Istanbul Grill",
+  "osm_name": "Istanbul Grill",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 72,
+    "result": "ok, 0 quote(s)",
+    "url": "https://istanbulgrillde.com/"
+   },
+   {
+    "hh": false,
+    "lines": 26,
+    "result": "ok, 0 quote(s)",
+    "url": "https://istanbulgrillde.com/menu/"
+   }
+  ],
+  "website": "https://istanbulgrillde.com/",
+  "zone_id": "newark_de"
+ },
+ "DE159673e6c2": {
+  "address": "144 Lantana Dr, Hockessin, DE 19707",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Drip Cafe",
+  "osm_name": "Drip Cafe",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 98,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.dripcafede.com/"
+   },
+   {
+    "hh": false,
+    "lines": 199,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.dripcafede.com/pages/events"
+   },
+   {
+    "hh": false,
+    "lines": 76,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.dripcafede.com/pages/menus"
+   },
+   {
+    "hh": false,
+    "lines": 271,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.dripcafede.com/pages/take-out-menu"
+   }
+  ],
+  "website": "http://www.dripcafede.com/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DE162f7f2be8": {
+  "address": "2062 Limestone Rd, Wilmington, DE 19808",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Limestone BBQ and Bourbon",
+  "osm_name": "Limestone BBQ and Bourbon",
+  "pages": [
+   {
+    "result": "render failed: TimeoutError",
+    "url": "https://www.limestonebbqandbourbon.com/"
+   },
+   {
+    "hh": false,
+    "lines": 26,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.limestonebbqandbourbon.com/"
+   },
+   {
+    "hh": false,
+    "lines": 21,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.limestonebbqandbourbon.com/bourbon-menu"
+   }
+  ],
+  "website": "https://www.limestonebbqandbourbon.com/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DE171205d57d": {
+  "address": "80 Lantana Dr, Hockessin, DE 19707",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Friendly's",
+  "osm_name": "Friendly's",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 68,
+    "result": "ok, 0 quote(s)",
+    "url": "https://locations.friendlysrestaurants.com/ll/US/DE/Hockessin/80-lantana-drive/"
+   },
+   {
+    "hh": false,
+    "lines": 525,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.friendlysrestaurants.com/menu/"
+   }
+  ],
+  "website": "https://locations.friendlysrestaurants.com/ll/US/DE/Hockessin/80-lantana-drive/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DE184058b326": {
+  "address": "4732 Limestone Rd Suite 0012, Wilmington, DE 19808",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Pre-book your Fantasy Football Draft Party and score half-price wings and starters , a dedicated draft area, free WiFi, drink specials & MORE!",
+    "url": "https://pjspub.com/"
+   },
+   {
+    "quote": "$3 Domestic Drafts",
+    "url": "https://pjspub.com/specials"
+   },
+   {
+    "quote": "$4 Corona & Corona Light",
+    "url": "https://pjspub.com/specials"
+   },
+   {
+    "quote": "$6 House Wine",
+    "url": "https://pjspub.com/specials"
+   },
+   {
+    "quote": "$6 Krushes",
+    "url": "https://pjspub.com/specials"
+   },
+   {
+    "quote": "$5 Boneless Wings (Snack Size)",
+    "url": "https://pjspub.com/specials"
+   },
+   {
+    "quote": "$10 Boneless Wings (Share Size)",
+    "url": "https://pjspub.com/specials"
+   },
+   {
+    "quote": "Pre-book your Fantasy Football Draft Party and score half-price wings and starters , a dedicated draft area, free WiFi, drink specials & MORE!",
+    "url": "https://pjspub.com/specials"
+   },
+   {
+    "quote": "Pre-book your Fantasy Football Draft Party and score half-price wings and starters , a dedicated draft area, free WiFi, drink specials & MORE!",
+    "url": "https://pjspub.com/drinks-menu"
+   },
+   {
+    "quote": "JOIN US FOR HAPPY HOUR / MONDAY - FRIDAY 4-6P",
+    "url": "https://pjspub.com/events"
+   },
+   {
+    "quote": "VIEW HAPPY HOUR SPECIALS / Join us every Tuesday for the best deal in town\u2014exclusively for Pub Club members and students. Grab your crew and dig in! *dine in only",
+    "url": "https://pjspub.com/events"
+   },
+   {
+    "quote": "Think you\u2019ve got what it takes to win Game Show Palooza? \ud83c\udfa4\ud83d\udca1 It\u2019s a high-energy, interactive trivia showdown where quick thinking = big bragging rights. Grab your crew, sip on drink specials, and see if you\u2019ve got the smarts to take the crown! \ud83c\udf7b\ud83d\udd25",
+    "url": "https://pjspub.com/events"
+   },
+   {
+    "quote": "Think you\u2019ve got what it takes to win Game Show Palooza? \ud83c\udfa4\ud83d\udca1 It\u2019s a high-energy, interactive trivia showdown where quick thinking = big bragging rights. Grab your crew, sip on drink specials, and see if you\u2019ve got the smarts to take the crown! \ud83c\udf7b\ud83d\udd25 / Thursday Night Magic at PJs\ud83e\ude84",
+    "url": "https://pjspub.com/events"
+   },
+   {
+    "quote": "Pre-book your Fantasy Football Draft Party and score half-price wings and starters , a dedicated draft area, free WiFi, drink specials & MORE!",
+    "url": "https://pjspub.com/events"
+   }
+  ],
+  "menu_images": [
+   {
+    "src": "https://pjspub.com/media/Images/PJs-Summer-HH-2026.png",
+    "url": "https://pjspub.com/specials"
+   },
+   {
+    "src": "https://pjspub.com/media/Images/Slides/Happy-Hour-FALL-2024-1.jpg",
+    "url": "https://pjspub.com/events"
+   }
+  ],
+  "name": "P.J. Whelihan\u2019s Pub + Restaurant \u2013 Pike Creek",
+  "osm_name": "P.J. Whelihan\u2019s Pub + Restaurant \u2013 Pike Creek",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 81,
+    "result": "ok, 1 quote(s)",
+    "url": "https://pjspub.com/"
+   },
+   {
+    "hh": false,
+    "lines": 76,
+    "result": "ok, 7 quote(s)",
+    "url": "https://pjspub.com/specials"
+   },
+   {
+    "hh": false,
+    "lines": 257,
+    "result": "ok, 1 quote(s)",
+    "url": "https://pjspub.com/drinks-menu"
+   },
+   {
+    "hh": true,
+    "lines": 123,
+    "result": "ok, 5 quote(s)",
+    "url": "https://pjspub.com/events"
+   }
+  ],
+  "website": "https://pjspub.com/",
+  "zone_id": "hockessin_greenville"
  },
  "DE18f838f641": {
   "address": "2502 Foulk Rd, Wilmington, DE 19810",
@@ -44866,6 +45556,76 @@
   "website": "http://www.twostonespub.com/",
   "zone_id": "wilmington"
  },
+ "DE1997551cce": {
+  "address": "100 S Main St, Newark, DE 19711",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Buffalo Wild Wings",
+  "osm_name": "Buffalo Wild Wings",
+  "pages": [
+   {
+    "result": "render failed: TimeoutError",
+    "url": "https://www.buffalowildwings.com/locations/us/de/newark/100-south-main-street/sports-bar-649/?utm_source=google-my-business&utm_medium=organic&utm_campaign=website-link&y_source=1_MjAxNjYxMTI3OS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D"
+   },
+   {
+    "hh": false,
+    "lines": 1,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.buffalowildwings.com/locations/us/de/newark/100-south-main-street/sports-bar-649/?utm_source=google-my-business&utm_medium=organic&utm_campaign=website-link&y_source=1_MjAxNjYxMTI3OS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D"
+   }
+  ],
+  "website": "https://www.buffalowildwings.com/locations/us/de/newark/100-south-main-street/sports-bar-649/?utm_source=google-my-business&utm_medium=organic&utm_campaign=website-link&y_source=1_MjAxNjYxMTI3OS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+  "zone_id": "newark_de"
+ },
+ "DE1a62273d75": {
+  "address": "603 Pulaski Hwy, Bear, DE 19701",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "menu_images": [
+   {
+    "src": "http://beardinerde.com/wp-content/uploads/2025/12/BearDiner_AllSpecials_OCT25-02.jpg",
+    "url": "http://beardinerde.com/specials/"
+   },
+   {
+    "src": "http://beardinerde.com/wp-content/uploads/2025/12/BearDiner_LunchDinnerSpecials_OCT25-03.jpg",
+    "url": "http://beardinerde.com/specials/"
+   },
+   {
+    "src": "http://beardinerde.com/wp-content/uploads/2025/12/BearDiner_LunchDinnerSpecials_OCT25-032.jpg",
+    "url": "http://beardinerde.com/specials/"
+   }
+  ],
+  "name": "Bear Diner",
+  "osm_name": "Bear Diner",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 50,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.beardinerde.com/"
+   },
+   {
+    "hh": false,
+    "lines": 28,
+    "result": "ok, 0 quote(s)",
+    "url": "http://beardinerde.com/specials/"
+   },
+   {
+    "hh": false,
+    "lines": 30,
+    "result": "ok, 0 quote(s)",
+    "url": "http://beardinerde.com/our-menu/"
+   },
+   {
+    "hh": false,
+    "lines": 30,
+    "result": "ok, 0 quote(s)",
+    "url": "https://beardinerde.com/our-menu/"
+   }
+  ],
+  "website": "http://www.beardinerde.com/",
+  "zone_id": "newark_de"
+ },
  "DE1a63b2b4e7": {
   "address": "29A Trolley Square, Wilmington, DE 19806",
   "crawled_at": "2026-09-02",
@@ -44880,6 +45640,495 @@
   ],
   "website": "https://sandwichmob.com/?utm_source=google",
   "zone_id": "wilmington"
+ },
+ "DE1c1eac2272": {
+  "address": "2089 Philadelphia Pike, Claymont, DE 19703",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "$2.25 1. Egg Roll",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/soup/28-house-special-soup"
+   },
+   {
+    "quote": "$2.50 2. Pizza Roll",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/soup/28-house-special-soup"
+   },
+   {
+    "quote": "$2.25 3. Spring Roll",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/soup/28-house-special-soup"
+   },
+   {
+    "quote": "$2.50 4. Shrimp Roll",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/soup/28-house-special-soup"
+   },
+   {
+    "quote": "$6.95 5. Fried Wonton",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/soup/28-house-special-soup"
+   },
+   {
+    "quote": "$5.95 6. Shrimp Toast (4)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/soup/28-house-special-soup"
+   },
+   {
+    "quote": "$8.50 7. Fried Dumplings (8)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/soup/28-house-special-soup"
+   },
+   {
+    "quote": "$8.50 7. Steamed Dumplings (8)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/soup/28-house-special-soup"
+   },
+   {
+    "quote": "Fried: $8.50",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/soup/28-house-special-soup"
+   },
+   {
+    "quote": "Steamed: $8.50",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/soup/28-house-special-soup"
+   },
+   {
+    "quote": "$6.50 8. Fried Chinese Donut (10)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/soup/28-house-special-soup"
+   },
+   {
+    "quote": "Sm.: $3.75",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/soup/28-house-special-soup"
+   },
+   {
+    "quote": "Lg.: $6.95",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/soup/28-house-special-soup"
+   },
+   {
+    "quote": "$8.25 10. Teriyaki Chicken on Stick (4)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/soup/28-house-special-soup"
+   },
+   {
+    "quote": "$9.75 10a. Teriyaki Beef on Stick (4)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/soup/28-house-special-soup"
+   },
+   {
+    "quote": "$4.50 10b. Shrimp on Stick (2)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/soup/28-house-special-soup"
+   },
+   {
+    "quote": "$5.50 11. Fantail Shrimp (2)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/soup/28-house-special-soup"
+   },
+   {
+    "quote": "$7.95 12. Crabmeat Rangoon (8)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/soup/28-house-special-soup"
+   },
+   {
+    "quote": "$7.75 13. Chicken Finger",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/soup/28-house-special-soup"
+   },
+   {
+    "quote": "Sm.: $10.50",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/soup/28-house-special-soup"
+   },
+   {
+    "quote": "Lg.: $19.95",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/soup/28-house-special-soup"
+   },
+   {
+    "quote": "Sm.: $9.50",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/soup/28-house-special-soup"
+   },
+   {
+    "quote": "Lg.: $17.95",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/soup/28-house-special-soup"
+   },
+   {
+    "quote": "$18.95 16. Pu Pu Platter (for 2)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/soup/28-house-special-soup"
+   },
+   {
+    "quote": "$2.25 1. Egg Roll",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chow-mein/33-house-special-chow-mein"
+   },
+   {
+    "quote": "$2.50 2. Pizza Roll",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chow-mein/33-house-special-chow-mein"
+   },
+   {
+    "quote": "$2.25 3. Spring Roll",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chow-mein/33-house-special-chow-mein"
+   },
+   {
+    "quote": "$2.50 4. Shrimp Roll",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chow-mein/33-house-special-chow-mein"
+   },
+   {
+    "quote": "$6.95 5. Fried Wonton",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chow-mein/33-house-special-chow-mein"
+   },
+   {
+    "quote": "$5.95 6. Shrimp Toast (4)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chow-mein/33-house-special-chow-mein"
+   },
+   {
+    "quote": "$8.50 7. Fried Dumplings (8)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chow-mein/33-house-special-chow-mein"
+   },
+   {
+    "quote": "$8.50 7. Steamed Dumplings (8)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chow-mein/33-house-special-chow-mein"
+   },
+   {
+    "quote": "Fried: $8.50",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chow-mein/33-house-special-chow-mein"
+   },
+   {
+    "quote": "Steamed: $8.50",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chow-mein/33-house-special-chow-mein"
+   },
+   {
+    "quote": "$6.50 8. Fried Chinese Donut (10)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chow-mein/33-house-special-chow-mein"
+   },
+   {
+    "quote": "Sm.: $3.75",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chow-mein/33-house-special-chow-mein"
+   },
+   {
+    "quote": "Lg.: $6.95",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chow-mein/33-house-special-chow-mein"
+   },
+   {
+    "quote": "$8.25 10. Teriyaki Chicken on Stick (4)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chow-mein/33-house-special-chow-mein"
+   },
+   {
+    "quote": "$9.75 10a. Teriyaki Beef on Stick (4)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chow-mein/33-house-special-chow-mein"
+   },
+   {
+    "quote": "$4.50 10b. Shrimp on Stick (2)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chow-mein/33-house-special-chow-mein"
+   },
+   {
+    "quote": "$5.50 11. Fantail Shrimp (2)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chow-mein/33-house-special-chow-mein"
+   },
+   {
+    "quote": "$7.95 12. Crabmeat Rangoon (8)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chow-mein/33-house-special-chow-mein"
+   },
+   {
+    "quote": "$7.75 13. Chicken Finger",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chow-mein/33-house-special-chow-mein"
+   },
+   {
+    "quote": "Sm.: $10.50",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chow-mein/33-house-special-chow-mein"
+   },
+   {
+    "quote": "Lg.: $19.95",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chow-mein/33-house-special-chow-mein"
+   },
+   {
+    "quote": "Sm.: $9.50",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chow-mein/33-house-special-chow-mein"
+   },
+   {
+    "quote": "Lg.: $17.95",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chow-mein/33-house-special-chow-mein"
+   },
+   {
+    "quote": "$18.95 16. Pu Pu Platter (for 2)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chow-mein/33-house-special-chow-mein"
+   },
+   {
+    "quote": "$2.25 1. Egg Roll",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chop-suey/33-house-special-chop-suey"
+   },
+   {
+    "quote": "$2.50 2. Pizza Roll",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chop-suey/33-house-special-chop-suey"
+   },
+   {
+    "quote": "$2.25 3. Spring Roll",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chop-suey/33-house-special-chop-suey"
+   },
+   {
+    "quote": "$2.50 4. Shrimp Roll",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chop-suey/33-house-special-chop-suey"
+   },
+   {
+    "quote": "$6.95 5. Fried Wonton",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chop-suey/33-house-special-chop-suey"
+   },
+   {
+    "quote": "$5.95 6. Shrimp Toast (4)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chop-suey/33-house-special-chop-suey"
+   },
+   {
+    "quote": "$8.50 7. Fried Dumplings (8)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chop-suey/33-house-special-chop-suey"
+   },
+   {
+    "quote": "$8.50 7. Steamed Dumplings (8)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chop-suey/33-house-special-chop-suey"
+   },
+   {
+    "quote": "Fried: $8.50",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chop-suey/33-house-special-chop-suey"
+   },
+   {
+    "quote": "Steamed: $8.50",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chop-suey/33-house-special-chop-suey"
+   },
+   {
+    "quote": "$6.50 8. Fried Chinese Donut (10)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chop-suey/33-house-special-chop-suey"
+   },
+   {
+    "quote": "Sm.: $3.75",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chop-suey/33-house-special-chop-suey"
+   },
+   {
+    "quote": "Lg.: $6.95",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chop-suey/33-house-special-chop-suey"
+   },
+   {
+    "quote": "$8.25 10. Teriyaki Chicken on Stick (4)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chop-suey/33-house-special-chop-suey"
+   },
+   {
+    "quote": "$9.75 10a. Teriyaki Beef on Stick (4)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chop-suey/33-house-special-chop-suey"
+   },
+   {
+    "quote": "$4.50 10b. Shrimp on Stick (2)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chop-suey/33-house-special-chop-suey"
+   },
+   {
+    "quote": "$5.50 11. Fantail Shrimp (2)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chop-suey/33-house-special-chop-suey"
+   },
+   {
+    "quote": "$7.95 12. Crabmeat Rangoon (8)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chop-suey/33-house-special-chop-suey"
+   },
+   {
+    "quote": "$7.75 13. Chicken Finger",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chop-suey/33-house-special-chop-suey"
+   },
+   {
+    "quote": "Sm.: $10.50",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chop-suey/33-house-special-chop-suey"
+   },
+   {
+    "quote": "Lg.: $19.95",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chop-suey/33-house-special-chop-suey"
+   },
+   {
+    "quote": "Sm.: $9.50",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chop-suey/33-house-special-chop-suey"
+   },
+   {
+    "quote": "Lg.: $17.95",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chop-suey/33-house-special-chop-suey"
+   },
+   {
+    "quote": "$18.95 16. Pu Pu Platter (for 2)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chop-suey/33-house-special-chop-suey"
+   }
+  ],
+  "name": "Jing Fong Restaurant",
+  "osm_name": "Jing Fong Restaurant",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 210,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.jingfongclaymontde.com/"
+   },
+   {
+    "hh": false,
+    "lines": 1510,
+    "result": "ok, 24 quote(s)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/soup/28-house-special-soup"
+   },
+   {
+    "hh": false,
+    "lines": 1510,
+    "result": "ok, 24 quote(s)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chow-mein/33-house-special-chow-mein"
+   },
+   {
+    "hh": false,
+    "lines": 1510,
+    "result": "ok, 24 quote(s)",
+    "url": "https://www.jingfongclaymontde.com/order/main-menu/chop-suey/33-house-special-chop-suey"
+   }
+  ],
+  "website": "https://www.jingfongclaymontde.com/",
+  "zone_id": "new_castle_de"
+ },
+ "DE1c26fef60b": {
+  "address": "3800 N Dupont Hwy, New Castle, DE 19720",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "EMMACULATE SPORTS BAR",
+  "osm_name": "EMMACULATE SPORTS BAR",
+  "pages": [
+   {
+    "result": "rendered: 1 lines -> 96",
+    "url": "http://www.emmaculatesportsbar.com/"
+   },
+   {
+    "hh": false,
+    "lines": 96,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.emmaculatesportsbar.com/"
+   },
+   {
+    "hh": false,
+    "lines": 1,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.emmaculatesportsbar.com"
+   }
+  ],
+  "website": "http://www.emmaculatesportsbar.com/",
+  "zone_id": "new_castle_de"
+ },
+ "DE1c499fcbf0": {
+  "address": "350 Christiana Mall, Newark, DE 19702",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Dine-in, Happy Hour, Weekend Brunch, Takeout and Delivery available / Mon - Thu: / 11:00 AM - 10:00 PM",
+    "url": "https://locations.thecheesecakefactory.com/de/newark-151.html?utm_source=Google&utm_medium=Maps&utm_campaign=Google+Places"
+   },
+   {
+    "quote": "Happy Hour / Mon - Fri: 4:00 PM-6:00 PM",
+    "url": "https://locations.thecheesecakefactory.com/de/newark-151.html?utm_source=Google&utm_medium=Maps&utm_campaign=Google+Places"
+   },
+   {
+    "quote": "Happy Hour is served in our bar area Mon - Fri from 4:00 PM-6:00 PM.",
+    "url": "https://locations.thecheesecakefactory.com/de/newark-151.html?utm_source=Google&utm_medium=Maps&utm_campaign=Google+Places"
+   },
+   {
+    "quote": "Happy Hour Menu",
+    "url": "https://locations.thecheesecakefactory.com/de/newark-151.html?utm_source=Google&utm_medium=Maps&utm_campaign=Google+Places"
+   }
+  ],
+  "name": "The Cheesecake Factory",
+  "osm_name": "The Cheesecake Factory",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 182,
+    "result": "ok, 4 quote(s)",
+    "url": "https://locations.thecheesecakefactory.com/de/newark-151.html?utm_source=Google&utm_medium=Maps&utm_campaign=Google+Places"
+   },
+   {
+    "result": "robots.txt disallows",
+    "url": "https://menu.thecheesecakefactory.com/de/newark-151/happy-hour/?utm_source&"
+   },
+   {
+    "result": "robots.txt disallows",
+    "url": "https://menu.thecheesecakefactory.com/de/newark-151/?utm_source&"
+   },
+   {
+    "hh": false,
+    "lines": 1,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.thecheesecakefactory.com/locations/newark-de/menu/"
+   }
+  ],
+  "website": "https://locations.thecheesecakefactory.com/de/newark-151.html?utm_source=Google&utm_medium=Maps&utm_campaign=Google+Places",
+  "zone_id": "newark_de"
+ },
+ "DE1c7d76faa0": {
+  "address": "94 E Main St, Newark, DE 19711",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "The Green Mansion Bar",
+  "osm_name": "The Green Mansion Bar",
+  "pages": [
+   {
+    "result": "robots.txt unreadable (403), treated as disallow",
+    "url": "https://www.hyatt.com/info/hyatt-place-newark-main-street-menu"
+   }
+  ],
+  "website": "https://www.hyatt.com/info/hyatt-place-newark-main-street-menu",
+  "zone_id": "newark_de"
+ },
+ "DE1d19b1ee4d": {
+  "address": "42 E Main St, Newark, DE 19711",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "m2o Burgers & Salads",
+  "osm_name": "m2o Burgers & Salads",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 96,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.m2oburgers.com/"
+   }
+  ],
+  "website": "http://www.m2oburgers.com/",
+  "zone_id": "newark_de"
+ },
+ "DE1d4ef4d971": {
+  "address": "7465 Lancaster Pike Ste L 2nd Floor, Hockessin, DE 19707",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "6 Paupers Tavern & Restaurant",
+  "osm_name": "6 Paupers Tavern & Restaurant",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 62,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.sixpaupers.com/"
+   },
+   {
+    "hh": false,
+    "lines": 413,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.sixpaupers.com/menus"
+   },
+   {
+    "hh": false,
+    "lines": 413,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.sixpaupers.com/menus/"
+   },
+   {
+    "hh": false,
+    "lines": 210,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.sixpaupers.com/private-dining/"
+   }
+  ],
+  "website": "https://www.sixpaupers.com/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DE1d6a06aabf": {
+  "address": "147 E Main St, Newark, DE 19711",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Rockwell's On Main",
+  "osm_name": "Rockwell's On Main",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 63,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.rockwellsonmain.com/"
+   },
+   {
+    "hh": false,
+    "lines": 74,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.rockwellsonmain.com/private-events/"
+   }
+  ],
+  "website": "https://www.rockwellsonmain.com/",
+  "zone_id": "newark_de"
  },
  "DE1d84c4f479": {
   "address": "11A Trolley Square, Wilmington, DE 19806",
@@ -44907,6 +46156,41 @@
   ],
   "website": "https://www.hayworthandfinch.com/",
   "zone_id": "wilmington"
+ },
+ "DE1de136e0d7": {
+  "address": "10 W Main St, Christiana, DE 19702",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Christiana Pub",
+  "osm_name": "Christiana Pub",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 55,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.christianapub.com/"
+   },
+   {
+    "hh": false,
+    "lines": 11,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.christianapub.com/Menu.aspx"
+   },
+   {
+    "hh": false,
+    "lines": 11,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.christianapub.com/calendar.aspx"
+   },
+   {
+    "hh": false,
+    "lines": 11,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.christianapub.com/menu.aspx"
+   }
+  ],
+  "website": "http://www.christianapub.com/",
+  "zone_id": "newark_de"
  },
  "DE1ea8a9c186": {
   "address": "303 Ruthar Dr Suites E & F, Newark, DE 19711",
@@ -45073,6 +46357,35 @@
   "website": "https://docklandsriverfront.com/",
   "zone_id": "wilmington"
  },
+ "DE1fc312fb72": {
+  "address": "2120 Fashion Center Blvd, Christiana, DE 19702",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Shake Shack Christiana",
+  "osm_name": "Shake Shack Christiana",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 128,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.shakeshack.com/location/christiana-de/?utm_source=google&utm_medium=listing"
+   },
+   {
+    "hh": false,
+    "lines": 79,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.shakeshack.com/"
+   },
+   {
+    "hh": false,
+    "lines": 128,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.shakeshack.com/location/christiana-de/?utm_source=google&utm_medium=listing"
+   }
+  ],
+  "website": "https://www.shakeshack.com/location/christiana-de/?utm_source=google&utm_medium=listing",
+  "zone_id": "newark_de"
+ },
  "DE1ff9f7bfed": {
   "address": "101 S Market St, Wilmington, DE 19801",
   "crawled_at": "2026-09-02",
@@ -45107,6 +46420,74 @@
   ],
   "website": "http://www.banksseafoodkitchen.com/",
   "zone_id": "wilmington"
+ },
+ "DE2051ed40d9": {
+  "address": "711 Ace Memorial Dr, Hockessin, DE 19707",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Mar Y Tierra Restaurante",
+  "osm_name": "Mar Y Tierra Restaurante",
+  "pages": [
+   {
+    "result": "render failed: TimeoutError",
+    "url": "https://marytierrarestaurante.org/"
+   },
+   {
+    "hh": false,
+    "lines": 22,
+    "result": "ok, 0 quote(s)",
+    "url": "https://marytierrarestaurante.org/"
+   },
+   {
+    "hh": false,
+    "lines": 3,
+    "result": "ok, 0 quote(s)",
+    "url": "https://marytierrarestaurante.org/order/casa-puebla-711-ace-memorial-dr/item-especial-taco_55d3632e-f474-4511-b9e1-640cd7a1822d"
+   },
+   {
+    "hh": false,
+    "lines": 420,
+    "result": "ok, 0 quote(s)",
+    "url": "https://marytierrarestaurante.org/order"
+   }
+  ],
+  "website": "https://marytierrarestaurante.org/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DE2165044f8e": {
+  "address": "209 Newark Shopping Center, 230 E Main St, Newark, DE 19711",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Caf\u00e9 67",
+  "osm_name": "Caf\u00e9 67",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 93,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.newark.coop/cafe-67"
+   },
+   {
+    "hh": false,
+    "lines": 46,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.newark.coop/special-orders"
+   },
+   {
+    "hh": false,
+    "lines": 47,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.newark.coop/co-op-deals"
+   },
+   {
+    "hh": false,
+    "lines": 42,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.newark.coop/events-and-calendar"
+   }
+  ],
+  "website": "https://www.newark.coop/cafe-67",
+  "zone_id": "newark_de"
  },
  "DE21c9f24386": {
   "address": "415 N Lincoln St, Wilmington, DE 19805",
@@ -45261,6 +46642,23 @@
   "website": "http://www.lapizzeriametro.com/",
   "zone_id": "wilmington"
  },
+ "DE253814a680": {
+  "address": "2303 Concord Pike, Wilmington, DE 19803",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Le Shio",
+  "osm_name": "Le Shio",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 46,
+    "result": "ok, 0 quote(s)",
+    "url": "http://leshioasianfusion.com/"
+   }
+  ],
+  "website": "http://leshioasianfusion.com/",
+  "zone_id": "hockessin_greenville"
+ },
  "DE25a539bee0": {
   "address": "4391 Kirkwood Hwy, Wilmington, DE 19808",
   "crawled_at": "2026-09-02",
@@ -45312,6 +46710,64 @@
   ],
   "website": "https://www.scalessas.com/",
   "zone_id": "wilmington"
+ },
+ "DE25f13df8fb": {
+  "address": "304 Buckley Ml Rd, Greenville, DE 19807",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "La Tolteca Mexican Kitchen and Bar - Greenville, DE",
+  "osm_name": "La Tolteca Mexican Kitchen and Bar - Greenville, DE",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 52,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.tolteca.co/"
+   },
+   {
+    "hh": false,
+    "lines": 119,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.tolteca.co/drinks"
+   },
+   {
+    "hh": false,
+    "lines": 43,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.tolteca.co/menu"
+   },
+   {
+    "hh": false,
+    "lines": 43,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.tolteca.co/menu"
+   }
+  ],
+  "website": "http://www.tolteca.co/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DE2697ece4eb": {
+  "address": "7460 Lancaster Pike, Hockessin, DE 19707",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Two Cousin's Pizza",
+  "osm_name": "Two Cousin's Pizza",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 97,
+    "result": "ok, 0 quote(s)",
+    "url": "http://twocousinspizzeria.com/"
+   },
+   {
+    "hh": false,
+    "lines": 217,
+    "result": "ok, 0 quote(s)",
+    "url": "https://twocousinspizzeria.com/menu"
+   }
+  ],
+  "website": "http://twocousinspizzeria.com/",
+  "zone_id": "hockessin_greenville"
  },
  "DE26f3edb53d": {
   "address": "400 Justison St, Wilmington, DE 19801",
@@ -45546,6 +47002,23 @@
   "website": "https://www.delpezmexicanpub.com/",
   "zone_id": "wilmington"
  },
+ "DE2a16ee5e43": {
+  "address": "4700 Limestone Rd, Wilmington, DE 19808",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Pike Creek",
+  "osm_name": "Pike Creek",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 468,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.regencycenters.com/property/detail/155/Pike-Creek"
+   }
+  ],
+  "website": "https://www.regencycenters.com/property/detail/155/Pike-Creek",
+  "zone_id": "hockessin_greenville"
+ },
  "DE2a689e0278": {
   "address": "1055 N Market St, Wilmington, DE 19801",
   "crawled_at": "2026-09-02",
@@ -45578,6 +47051,52 @@
   ],
   "website": "https://www.hoteldupont.com/",
   "zone_id": "wilmington"
+ },
+ "DE2acaf76f98": {
+  "address": "4015 Concord Pike, Wilmington, DE 19803",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Yokai Ramen Bistro",
+  "osm_name": "Yokai Ramen Bistro",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 32,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.yokairamenbistrodelaware.com/"
+   },
+   {
+    "hh": false,
+    "lines": 99,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.yokairamenbistrodelaware.com/crmrihd1/yokai-ramen-bistro-wilmington-19803/order-online"
+   }
+  ],
+  "website": "https://www.yokairamenbistrodelaware.com/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DE2d33dbf145": {
+  "address": "3801 Kennett Pike, Wilmington, DE 19807",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Pizza by Elizabeths",
+  "osm_name": "Pizza by Elizabeths",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 19,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.pizzabyelizabeths.com/"
+   },
+   {
+    "hh": false,
+    "lines": 7,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.pizzabyelizabeths.com/pages/menus.html"
+   }
+  ],
+  "website": "http://www.pizzabyelizabeths.com/",
+  "zone_id": "hockessin_greenville"
  },
  "DE2fadbe3447": {
   "address": "2000 Pennsylvania Ave, Wilmington, DE 19806",
@@ -45858,6 +47377,35 @@
   "website": "https://www.santafemexicangrill.com/",
   "zone_id": "wilmington"
  },
+ "DE31ca3208fa": {
+  "address": "19266 Coastal Hwy Unit 1, Rehoboth Beach, DE 19971",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "First State Brewing Company",
+  "osm_name": "First State Brewing Company",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 87,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.firststatebrewing.com/"
+   },
+   {
+    "hh": false,
+    "lines": 40,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.firststatebrewing.com/menus"
+   },
+   {
+    "hh": false,
+    "lines": 36,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.firststatebrewing.com/private-events-catering"
+   }
+  ],
+  "website": "https://www.firststatebrewing.com/",
+  "zone_id": "hockessin_greenville"
+ },
  "DE33f2fdc5bf": {
   "address": "411 S Walnut St, Wilmington, DE 19801",
   "crawled_at": "2026-09-02",
@@ -45997,6 +47545,235 @@
   ],
   "website": "http://deadpresidentspub.com/",
   "zone_id": "wilmington"
+ },
+ "DE36b27edf66": {
+  "address": "5335B Limestone Rd, Wilmington, DE 19808",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Daily Veg - Pike Creek",
+  "osm_name": "Daily Veg - Pike Creek",
+  "pages": [
+   {
+    "result": "rendered after 403 text/html: 0 lines -> 132",
+    "url": "https://dailyveg.com/?utm_source=google"
+   },
+   {
+    "hh": false,
+    "lines": 132,
+    "result": "ok, 0 quote(s)",
+    "url": "https://dailyveg.com/?utm_source=google"
+   },
+   {
+    "result": "403 text/html",
+    "url": "https://dailyveg.com/menu"
+   },
+   {
+    "result": "403 text/html",
+    "url": "https://dailyveg.com/menu?dialogState=orderDetails"
+   },
+   {
+    "result": "403 text/html",
+    "url": "https://dailyveg.com/page/menu-pdf"
+   }
+  ],
+  "website": "https://dailyveg.com/?utm_source=google",
+  "zone_id": "hockessin_greenville"
+ },
+ "DE3c67f8614a": {
+  "address": "400 Lantana Dr, Hockessin, DE 19707",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "hh": true,
+    "quote": "Happy Hour: Daily 4:30 pm - 6:30 pm&nbsp;",
+    "url": "https://www.redfiregrill.net/food-and-drink"
+   },
+   {
+    "hh": true,
+    "quote": "Beers",
+    "url": "https://www.redfiregrill.net/food-and-drink"
+   },
+   {
+    "hh": true,
+    "quote": "Seasonal",
+    "url": "https://www.redfiregrill.net/food-and-drink"
+   },
+   {
+    "hh": true,
+    "quote": "Peroni",
+    "url": "https://www.redfiregrill.net/food-and-drink"
+   },
+   {
+    "hh": true,
+    "quote": "PDG Pale Ale",
+    "url": "https://www.redfiregrill.net/food-and-drink"
+   },
+   {
+    "hh": true,
+    "quote": "Fiddlehead IPA",
+    "url": "https://www.redfiregrill.net/food-and-drink"
+   },
+   {
+    "hh": true,
+    "quote": "Wines",
+    "url": "https://www.redfiregrill.net/food-and-drink"
+   },
+   {
+    "hh": true,
+    "quote": "Pinot Grigio",
+    "url": "https://www.redfiregrill.net/food-and-drink"
+   },
+   {
+    "hh": true,
+    "quote": "Malbec",
+    "url": "https://www.redfiregrill.net/food-and-drink"
+   },
+   {
+    "hh": true,
+    "quote": "Mixers",
+    "url": "https://www.redfiregrill.net/food-and-drink"
+   },
+   {
+    "hh": true,
+    "quote": "White Peach Cosmo",
+    "url": "https://www.redfiregrill.net/food-and-drink"
+   },
+   {
+    "hh": true,
+    "quote": "Pheonix",
+    "url": "https://www.redfiregrill.net/food-and-drink"
+   },
+   {
+    "hh": true,
+    "quote": "RF Old Fashioned",
+    "url": "https://www.redfiregrill.net/food-and-drink"
+   },
+   {
+    "hh": true,
+    "quote": "Snacks",
+    "url": "https://www.redfiregrill.net/food-and-drink"
+   },
+   {
+    "hh": true,
+    "quote": "Sweet Potato Fries",
+    "url": "https://www.redfiregrill.net/food-and-drink"
+   },
+   {
+    "hh": true,
+    "quote": "Fried Mozzarella",
+    "url": "https://www.redfiregrill.net/food-and-drink"
+   },
+   {
+    "hh": true,
+    "quote": "Jumbo Pretzel",
+    "url": "https://www.redfiregrill.net/food-and-drink"
+   },
+   {
+    "hh": true,
+    "quote": "Redfire Slider Shot",
+    "url": "https://www.redfiregrill.net/food-and-drink"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://www.redfiregrill.net/food-and-drink"
+   }
+  ],
+  "name": "Redfire Grill & Steakhouse",
+  "osm_name": "Redfire Grill & Steakhouse",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 131,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.redfiregrill.net/"
+   },
+   {
+    "hh": false,
+    "lines": 272,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.redfiregrill.net/customized-events"
+   },
+   {
+    "hh": false,
+    "lines": 272,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.redfiregrill.net/customized-events/"
+   },
+   {
+    "hh": true,
+    "lines": 366,
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.redfiregrill.net/food-and-drink"
+   }
+  ],
+  "website": "https://www.redfiregrill.net/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DE3d7b1b6cca": {
+  "address": "5335b Limestone Rd, Wilmington, DE 19808",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Opa! Opa! Limestone Road",
+  "osm_name": "Opa! Opa! Limestone Road",
+  "pages": [
+   {
+    "result": "403 text/html; render failed: TimeoutError",
+    "url": "https://order.toasttab.com/online/opa-opa-pike-creek-new-5335b-limestone-road"
+   }
+  ],
+  "website": "https://order.toasttab.com/online/opa-opa-pike-creek-new-5335b-limestone-road",
+  "zone_id": "hockessin_greenville"
+ },
+ "DE3e9e2545b5": {
+  "address": "4157 Concord Pike, Wilmington, DE 19803",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "menu_images": [
+   {
+    "src": "https://media.longhornsteakhouse.com/images/site/ext/pages/flos-filet/lhspecials-calendar-icon-mobile.png",
+    "url": "https://www.longhornsteakhouse.com/specials/flos-filet"
+   }
+  ],
+  "name": "LongHorn Steakhouse",
+  "osm_name": "LongHorn Steakhouse",
+  "pages": [
+   {
+    "result": "ok, 0 quote(s) from the venue API",
+    "url": "https://www.longhornsteakhouse.com/api/restaurants/5619"
+   },
+   {
+    "result": "ok, 0 dish(es) from the menu API",
+    "url": "https://www.longhornsteakhouse.com/api/menu?restaurantNum=5619"
+   },
+   {
+    "result": "rendered: 0 lines -> 92",
+    "url": "https://www.longhornsteakhouse.com/locations/de/wilmington/wilmington-de/5619?cmpid=br:lh_ag:ie_ch:loc_ca:LHGMB_sn:gmb_gt:wilmington-de-5619_pl:locurl_rd:1535"
+   },
+   {
+    "hh": false,
+    "lines": 92,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.longhornsteakhouse.com/locations/de/wilmington/wilmington-de/5619?cmpid=br:lh_ag:ie_ch:loc_ca:LHGMB_sn:gmb_gt:wilmington-de-5619_pl:locurl_rd:1535"
+   },
+   {
+    "hh": false,
+    "lines": 47,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.longhornsteakhouse.com/specials"
+   },
+   {
+    "result": "404 text/html",
+    "url": "https://www.longhornsteakhouse.com/specials/fathers-day"
+   },
+   {
+    "hh": false,
+    "lines": 62,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.longhornsteakhouse.com/specials/flos-filet"
+   }
+  ],
+  "website": "https://www.longhornsteakhouse.com/locations/de/wilmington/wilmington-de/5619?cmpid=br:lh_ag:ie_ch:loc_ca:LHGMB_sn:gmb_gt:wilmington-de-5619_pl:locurl_rd:1535",
+  "zone_id": "hockessin_greenville"
  },
  "DE3ff1558be4": {
   "address": "1616 Delaware Ave, Wilmington, DE 19806",
@@ -46215,6 +47992,282 @@
   "website": "https://www.liquidalchemybeverage.com/",
   "zone_id": "wilmington"
  },
+ "DE493f7928d5": {
+  "address": "4017 Kennett Pike, Greenville, DE 19807",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "happy hour",
+    "url": "http://www.barreverie.com/"
+   },
+   {
+    "quote": "Happy Hour / 3-6PM weekDAYS / martini mondays",
+    "url": "http://www.barreverie.com/events"
+   },
+   {
+    "hh": true,
+    "quote": "Click here to view our Happy Hour menu. / martini mondays / $3 off martiniS",
+    "url": "http://www.barreverie.com/events"
+   },
+   {
+    "quote": "half-price wine / tuesdays & Sundays",
+    "url": "http://www.barreverie.com/events"
+   },
+   {
+    "quote": "\u2014 happy hour \u2014 / Offered Weekdays from 3-6pm.",
+    "url": "https://www.barreverie.com/dine"
+   }
+  ],
+  "menu_images": [
+   {
+    "src": "http://www.barreverie.com/s/Bar-Rev-New-HH-Menu-July-2025.PNG",
+    "url": "http://www.barreverie.com/"
+   },
+   {
+    "src": "https://www.barreverie.com/s/BR-Happy-Hour-43lm.png",
+    "url": "https://www.barreverie.com/dine"
+   }
+  ],
+  "name": "Bar Reverie",
+  "osm_name": "Bar Reverie",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 45,
+    "result": "ok, 1 quote(s)",
+    "url": "http://www.barreverie.com/"
+   },
+   {
+    "hh": false,
+    "lines": 42,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.barreverie.com/drink"
+   },
+   {
+    "hh": true,
+    "lines": 59,
+    "result": "ok, 3 quote(s)",
+    "url": "http://www.barreverie.com/events"
+   },
+   {
+    "hh": true,
+    "lines": 53,
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.barreverie.com/dine"
+   }
+  ],
+  "website": "http://www.barreverie.com/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DE49f9a80762": {
+  "address": "4301 Kirkwood Hwy, Wilmington, DE 19808",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "hh": true,
+    "quote": "Applebee's Happy Hour in Wilmington - Apps & Drinks Deals Everyday!",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/4301-kirkwood-highway-76020/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Applebee\u2019s\u00ae Happy Hour Bar Near You in Wilmington",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/4301-kirkwood-highway-76020/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Join the fun at Applebee's in Wilmington for Happy Hour. Enjoy cocktails, delicious appetizers, high-quality burgers, and thrilling sports games on 4301 Kirkwood Highway .",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/4301-kirkwood-highway-76020/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour / Indulge in the best deals in the neighborhood at Applebee's in Wilmington on Kirkwood Highway. From crisp cocktails to cold draft beers, our bar is the perfect place to relax, catch up with friends, and enjoy a variety drink specials. Call ahead to learn more about our current happy hour specials!",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/4301-kirkwood-highway-76020/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Visit us during Happy Hour At Applebee's On Kirkwood Highway / Indulge in the best deals in the neighborhood at Applebee's in Wilmington on Kirkwood Highway. From crisp cocktails to cold draft beers, our bar is the perfect place to relax, catch up with friends, and enjoy a variety drink specials. Call ahead to learn more about our current happy hour specials!",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/4301-kirkwood-highway-76020/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Indulge in the best deals in the neighborhood at Applebee's in Wilmington on Kirkwood Highway. From crisp cocktails to cold draft beers, our bar is the perfect place to relax, catch up with friends, and enjoy a variety drink specials. Call ahead to learn more about our current happy hour specials!",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/4301-kirkwood-highway-76020/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "See Drink Specials",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/4301-kirkwood-highway-76020/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Ask about Happy Hour Deals In Wilmington At our Applebee's Restaurant Bar",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/4301-kirkwood-highway-76020/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Visit Applebee\u2019s on 4301 Kirkwood Highway and ask about our Happy Hour specials. / Catch the game while enjoying your favorite drinks at Applebee\u2019s Bar in Wilmington. With TVs tuned to the latest sports events, you'll never miss a moment. Whether you're a dedicated fan or looking for a fun spot to hang out with friends, make our bar your go to spot to watch the game. Visit us today at 4301 Kirkwoo",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/4301-kirkwood-highway-76020/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "What time is happy hour at Applebee's bar?",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/4301-kirkwood-highway-76020/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Applebee\u2019s Happy Hour times vary by location. For the most accurate information about Happy Hour availability and times, contact your local Applebee\u2019s location.",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/4301-kirkwood-highway-76020/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Do I need a reservation for Applebee's Happy Hour? / Absolutely! You are welcome to bring a large group to Happy Hour at Applebee's. Come on in and enjoy a great time with your friends, family, or colleagues during Happy Hour.",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/4301-kirkwood-highway-76020/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Can I bring a large group to Happy Hour? / Absolutely! You are welcome to bring a large group to Happy Hour at Applebee's. Come on in and enjoy a great time with your friends, family, or colleagues during Happy Hour.",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/4301-kirkwood-highway-76020/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Absolutely! You are welcome to bring a large group to Happy Hour at Applebee's. Come on in and enjoy a great time with your friends, family, or colleagues during Happy Hour.",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/4301-kirkwood-highway-76020/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Do you offer non-alcoholic drink options during Happy Hour?",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/4301-kirkwood-highway-76020/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Applebee's offers a variety of beverages, including non-alcoholic options, which may be available during happy hour. To learn about our non-alcoholic drink deals during happy hour, check with your local Applebee's restaurant, as our offerings may vary by location.",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/4301-kirkwood-highway-76020/happy-hour"
+   },
+   {
+    "quote": "Wilmington Drink Specials Near You Served Now - Cocktails To Go Available!",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/4301-kirkwood-highway-76020/specials"
+   },
+   {
+    "quote": "Pair your meal with the latest drink special from our Applebee\u2019s bar in Wilmington. Try our fun & festive cocktail drinks made with premium spirits and served in our large Mucho glass. These cocktail drinks are good for dine-in or to-go orders where permitted by law.",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/4301-kirkwood-highway-76020/specials"
+   },
+   {
+    "quote": "Does Applebee's in Wilmington have monthly drink specials?",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/4301-kirkwood-highway-76020/specials"
+   },
+   {
+    "quote": "While Applebee's doesn't offer specific monthly drink specials, we do feature exciting seasonal drink specials that are available for a limited time. Be sure to check our menu or ask your server about the current seasonal drinks being promoted, so you can enjoy our latest cocktail creations.",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/4301-kirkwood-highway-76020/specials"
+   }
+  ],
+  "menu_images": [
+   {
+    "src": "https://assets.restaurants.applebees.com/images/specialty/happy-hour-hero.webp",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/4301-kirkwood-highway-76020/happy-hour"
+   },
+   {
+    "src": "https://assets.restaurants.applebees.com/images/specialty/applebees-happy-hour-drinks.png",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/4301-kirkwood-highway-76020/happy-hour"
+   },
+   {
+    "src": "https://assets.restaurants.applebees.com/images/specialty/applebees-happy-hour.webp",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/4301-kirkwood-highway-76020/happy-hour"
+   }
+  ],
+  "name": "Applebee's Grill + Bar",
+  "osm_name": "Applebee's Grill + Bar",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 138,
+    "result": "ok, 0 quote(s)",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/4301-kirkwood-highway-76020?utm_source=google&utm_medium=organic&utm_campaign=google_my_business&utm_term=76020&utm_content=website"
+   },
+   {
+    "hh": true,
+    "lines": 81,
+    "result": "ok, 16 quote(s)",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/4301-kirkwood-highway-76020/happy-hour"
+   },
+   {
+    "hh": false,
+    "lines": 88,
+    "result": "ok, 4 quote(s)",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/4301-kirkwood-highway-76020/specials"
+   },
+   {
+    "hh": false,
+    "lines": 83,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.applebees.com/en/game-day/nfl-wings"
+   }
+  ],
+  "website": "https://restaurants.applebees.com/en-us/de/wilmington/4301-kirkwood-highway-76020?utm_source=google&utm_medium=organic&utm_campaign=google_my_business&utm_term=76020&utm_content=website",
+  "zone_id": "hockessin_greenville"
+ },
+ "DE4b92352eaa": {
+  "address": "4801 Limestone Rd, Marshallton, DE 19808",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "PureBread Deli - Pike Creek",
+  "osm_name": "PureBread Deli - Pike Creek",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 54,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.purebreaddeli.com/"
+   },
+   {
+    "hh": false,
+    "lines": 328,
+    "result": "ok, 0 quote(s)",
+    "url": "https://purebreaddeli.com/menu"
+   }
+  ],
+  "website": "http://www.purebreaddeli.com/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DE4c7752fa33": {
+  "address": "5329A Limestone Rd, Wilmington, DE 19808",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "El Diablo Burritos, Pike Creek",
+  "osm_name": "El Diablo Burritos, Pike Creek",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 16,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.eldiabloburritos.com/"
+   },
+   {
+    "hh": false,
+    "lines": 41,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.eldiabloburritos.com/drinks"
+   }
+  ],
+  "website": "http://www.eldiabloburritos.com/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DE4db2ced5a0": {
+  "address": "4706 Limestone Rd, Wilmington, DE 19808",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Barcelona Pizza Pike Creek",
+  "osm_name": "Barcelona Pizza Pike Creek",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 45,
+    "result": "ok, 0 quote(s)",
+    "url": "http://barcelonapizzausa.com/"
+   }
+  ],
+  "website": "http://barcelonapizzausa.com/",
+  "zone_id": "hockessin_greenville"
+ },
  "DE4ef1b646e3": {
   "address": "2000 Pennsylvania Ave, Wilmington, DE 19806",
   "crawled_at": "2026-09-02",
@@ -46249,6 +48302,65 @@
   ],
   "website": "http://morobistro.com/",
   "zone_id": "wilmington"
+ },
+ "DE5069b33022": {
+  "address": "3604 Silverside Rd, Wilmington, DE 19810",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Happy Hour",
+    "url": "http://www.mybistro.com/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "http://www.mybistro.com/"
+   }
+  ],
+  "name": "Corner Bistro",
+  "osm_name": "Corner Bistro",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 60,
+    "result": "ok, 1 quote(s)",
+    "url": "http://www.mybistro.com/"
+   },
+   {
+    "hh": true,
+    "lines": 60,
+    "result": "ok, 1 quote(s)",
+    "url": "http://www.mybistro.com/"
+   }
+  ],
+  "website": "http://www.mybistro.com/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DE513c1b0071": {
+  "address": "6949 Lancaster Pike, Hockessin, DE 19707",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "The Well Coffeehouse and Marketplace",
+  "osm_name": "The Well Coffeehouse and Marketplace",
+  "pages": [
+   {
+    "result": "rendered: 34 lines -> 35",
+    "url": "http://www.thewellde.com/"
+   },
+   {
+    "hh": false,
+    "lines": 35,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.thewellde.com/"
+   },
+   {
+    "hh": false,
+    "lines": 1,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.thewellde.com/menu"
+   }
+  ],
+  "website": "http://www.thewellde.com/",
+  "zone_id": "hockessin_greenville"
  },
  "DE51b796a0df": {
   "address": "1410 N Dupont St, Wilmington, DE 19806",
@@ -46409,6 +48521,187 @@
   ],
   "website": "https://www.thesycamorewinebar.com/",
   "zone_id": "wilmington"
+ },
+ "DE5d68ef6097": {
+  "address": "36707 Crooked Hammock Way, Lewes, DE 19958",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "hh": true,
+    "quote": "Drinks",
+    "url": "https://www.crookedhammockbrewery.com/menus/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "$5 Drink Specials",
+    "url": "https://www.crookedhammockbrewery.com/menus/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour menu - Crooked Hammock Brewery",
+    "url": "https://www.crookedhammockbrewery.com/menus/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour / Monday- Friday 4-6pm available at the bar",
+    "url": "https://www.crookedhammockbrewery.com/menus/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "$6 Drink Specials",
+    "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-lws"
+   },
+   {
+    "hh": true,
+    "quote": "16oz Beers $6.0",
+    "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-lws"
+   },
+   {
+    "hh": true,
+    "quote": "Crushes $6.0",
+    "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-lws"
+   },
+   {
+    "hh": true,
+    "quote": "Classic Margarita $6.0",
+    "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-lws"
+   },
+   {
+    "hh": true,
+    "quote": "6oz Wine $6.0",
+    "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-lws"
+   },
+   {
+    "hh": true,
+    "quote": "Food",
+    "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-lws"
+   },
+   {
+    "hh": true,
+    "quote": "BOGO 50% Off Appetizers *Loyalty Exclusive*",
+    "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-lws"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour menu - Crooked Hammock Brewery",
+    "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-lws"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour / $6 Drink Specials / Available Monday- Friday at 4-6pm",
+    "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-lws"
+   },
+   {
+    "hh": true,
+    "quote": "$6 Drink Specials",
+    "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-lws"
+   },
+   {
+    "hh": true,
+    "quote": "$6 Drink Specials / $6.00 Available Monday- Friday",
+    "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-lws"
+   },
+   {
+    "hh": true,
+    "quote": "$5 Drink Specials",
+    "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-mdt"
+   },
+   {
+    "hh": true,
+    "quote": "16oz Beers $5.0",
+    "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-mdt"
+   },
+   {
+    "hh": true,
+    "quote": "Crushes $5.0",
+    "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-mdt"
+   },
+   {
+    "hh": true,
+    "quote": "Classic Margarita $5.0",
+    "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-mdt"
+   },
+   {
+    "hh": true,
+    "quote": "6oz Wine $5.0",
+    "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-mdt"
+   },
+   {
+    "hh": true,
+    "quote": "Food",
+    "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-mdt"
+   },
+   {
+    "hh": true,
+    "quote": "BOGO 50% Off Appetizers *Loyalty Exclusive*",
+    "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-mdt"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour menu - Crooked Hammock Brewery",
+    "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-mdt"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour / $5 Drink Specials / Available Monday- Friday at 4-6pm",
+    "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-mdt"
+   },
+   {
+    "hh": true,
+    "quote": "$5 Drink Specials",
+    "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-mdt"
+   },
+   {
+    "hh": true,
+    "quote": "$5 Drink Specials / $5.00 Available Monday- Friday",
+    "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-mdt"
+   }
+  ],
+  "name": "Crooked Hammock Brewery",
+  "osm_name": "Crooked Hammock Brewery",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 22,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.crookedhammockbrewery.com/locations/lewes"
+   },
+   {
+    "hh": true,
+    "lines": 21,
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.crookedhammockbrewery.com/menus/happy-hour"
+   },
+   {
+    "hh": true,
+    "lines": 20,
+    "result": "ok, 4 quote(s)",
+    "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-lws"
+   },
+   {
+    "hh": true,
+    "lines": 20,
+    "result": "ok, 4 quote(s)",
+    "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-mdt"
+   }
+  ],
+  "website": "https://www.crookedhammockbrewery.com/locations/lewes",
+  "zone_id": "hockessin_greenville"
+ },
+ "DE5e51a9ef19": {
+  "address": "1313 McKennans Church Rd, Wilmington, DE 19808",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Milltown Tavern",
+  "osm_name": "Milltown Tavern",
+  "pages": [
+   {
+    "result": "robots.txt disallows",
+    "url": "https://www.facebook.com/Milltown-Tavern-104727844944587/"
+   }
+  ],
+  "website": "https://www.facebook.com/Milltown-Tavern-104727844944587/",
+  "zone_id": "hockessin_greenville"
  },
  "DE606f3bb4d8": {
   "address": "320 Buckley Ml Rd, Wilmington, DE 19807",
@@ -46679,6 +48972,59 @@
   "website": "https://merenguehouse.toast.site/",
   "zone_id": "wilmington"
  },
+ "DE62a5b3c678": {
+  "address": "1300 Centerville Rd, Wilmington, DE 19808",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "HAPPY HOUR / We love giving guests something extra to enjoy with every visit. Our weekly and daily specials are a big part of what makes El Maya Mexican Grill a local favorite. Stop by during happy hour or plan your visit around one of our popular drink specials for great value and bold flavor. Whether you\u2019re meeting friends or unwinding after a long day, there\u2019s always something worth looking for",
+    "url": "https://www.elmayamexicangrillde.com/"
+   },
+   {
+    "quote": "We love giving guests something extra to enjoy with every visit. Our weekly and daily specials are a big part of what makes El Maya Mexican Grill a local favorite. Stop by during happy hour or plan your visit around one of our popular drink specials for great value and bold flavor. Whether you\u2019re meeting friends or unwinding after a long day, there\u2019s always something worth looking forward to.",
+    "url": "https://www.elmayamexicangrillde.com/"
+   },
+   {
+    "quote": "Happy Hour: / Monday to Friday, 4:00 pm \u2013 6:00 pm",
+    "url": "https://www.elmayamexicangrillde.com/"
+   },
+   {
+    "hh": true,
+    "quote": "Decent Atmosphere. We sat in the bar area for happy hour. Food and Drinks were very reasonably priced for Happy hour.",
+    "url": "https://www.elmayamexicangrillde.com/"
+   }
+  ],
+  "name": "El Maya Mexican Grill",
+  "osm_name": "El Maya Mexican Grill",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 154,
+    "result": "ok, 4 quote(s)",
+    "url": "https://www.elmayamexicangrillde.com/"
+   },
+   {
+    "hh": false,
+    "lines": 182,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.elmayamexicangrillde.com/mexican-food-wilmington-de"
+   },
+   {
+    "hh": false,
+    "lines": 158,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.elmayamexicangrillde.com/mexican-drinks-wilmington-de"
+   },
+   {
+    "hh": false,
+    "lines": 211,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.elmayamexicangrillde.com/mexican-entrees-wilmington"
+   }
+  ],
+  "website": "https://www.elmayamexicangrillde.com/",
+  "zone_id": "hockessin_greenville"
+ },
  "DE632e1e3095": {
   "address": "905 Orange St, Wilmington, DE 19801",
   "crawled_at": "2026-09-02",
@@ -46720,6 +49066,29 @@
   ],
   "website": "http://www.nomadwilmington.com/",
   "zone_id": "wilmington"
+ },
+ "DE656e17c55f": {
+  "address": "703 Ace Memorial Dr, Hockessin, DE 19707",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Okura Japanese Restaurant",
+  "osm_name": "Okura Japanese Restaurant",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 483,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.okurahockessin.com/"
+   },
+   {
+    "hh": false,
+    "lines": 483,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.okurahockessin.com/"
+   }
+  ],
+  "website": "http://www.okurahockessin.com/",
+  "zone_id": "hockessin_greenville"
  },
  "DE65dfca998f": {
   "address": "900 N Market St, Wilmington, DE 19801",
@@ -46776,6 +49145,29 @@
   ],
   "website": "http://trolleysquareoysterhouse.com/",
   "zone_id": "wilmington"
+ },
+ "DE66f95ec8d8": {
+  "address": "4708 Limestone Rd, Wilmington, DE 19808",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Sushi Xtreme",
+  "osm_name": "Sushi Xtreme",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 52,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.sushixtreme.net/"
+   },
+   {
+    "hh": false,
+    "lines": 10,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.sushixtreme.net/menu/"
+   }
+  ],
+  "website": "https://www.sushixtreme.net/",
+  "zone_id": "hockessin_greenville"
  },
  "DE67606688b2": {
   "address": "1412 N Dupont St, Wilmington, DE 19806",
@@ -46845,6 +49237,119 @@
   ],
   "website": "http://www.cafesitaly.com/",
   "zone_id": "wilmington"
+ },
+ "DE6c5ba2ece7": {
+  "address": "3662 Concord Pike, Wilmington, DE 19803",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "MISSION BBQ",
+  "osm_name": "MISSION BBQ",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 115,
+    "result": "ok, 0 quote(s)",
+    "url": "http://mission-bbq.com/"
+   },
+   {
+    "hh": false,
+    "lines": 33,
+    "result": "ok, 0 quote(s)",
+    "url": "https://mission-bbq.com/servants-heart/rebecca-catering-service-specialist-hamilton-nj/"
+   },
+   {
+    "hh": false,
+    "lines": 33,
+    "result": "ok, 0 quote(s)",
+    "url": "https://mission-bbq.com/servants-heart/kathryn-wedding-specialist-in-maryland-catering/"
+   },
+   {
+    "hh": false,
+    "lines": 33,
+    "result": "ok, 0 quote(s)",
+    "url": "https://mission-bbq.com/servants-heart/kimmy-catering-service-specialist-california-md/"
+   }
+  ],
+  "website": "http://mission-bbq.com/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DE6da252adc0": {
+  "address": "1812 Marsh Rd Ste 15, Wilmington, DE 19810",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Kids Shelleen\u2019s Branmar Plaza Late Night Menu Sunday thru Wednesday 9pm-close",
+    "url": "https://www.harryshospitalitygroup.com/kid-shelleens/branmar-plaza/"
+   },
+   {
+    "hh": true,
+    "quote": "DAILY SPECIALS",
+    "url": "https://www.harryshospitalitygroup.com/wp-content/uploads/2024/10/Daily-Specials-09-2026.pdf"
+   },
+   {
+    "quote": "Kids Shelleen\u2019s Branmar Plaza Late Night Menu Sunday thru Wednesday 9pm-close",
+    "url": "https://www.harryshospitalitygroup.com/kid-shelleens/branmar-plaza/"
+   },
+   {
+    "quote": "Kids Shelleen\u2019s Branmar Plaza Late Night Menu Sunday thru Wednesday 9pm-close",
+    "url": "https://www.harryshospitalitygroup.com/kid-shelleens/branmar-plaza/menus/"
+   },
+   {
+    "quote": "HAPPY HOUR / Monday through Saturday, 3-6PM / $1 off Draught Beers & Wines by the Glass, $4 Rail Mixed Drinks",
+    "url": "https://www.harryshospitalitygroup.com/kid-shelleens/branmar-plaza/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "$1 off Draught Beers & Wines by the Glass, $4 Rail Mixed Drinks",
+    "url": "https://www.harryshospitalitygroup.com/kid-shelleens/branmar-plaza/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "$6 Spritzes, $8 Crushes-orange, grapefruite, key lime",
+    "url": "https://www.harryshospitalitygroup.com/kid-shelleens/branmar-plaza/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "DAILY SPECIALS",
+    "url": "https://www.harryshospitalitygroup.com/wp-content/uploads/2024/10/Daily-Specials-09-2026.pdf"
+   }
+  ],
+  "name": "Kid Shelleen's - Branmar Plaza",
+  "osm_name": "Kid Shelleen's - Branmar Plaza",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 81,
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.harryshospitalitygroup.com/kid-shelleens/branmar-plaza/"
+   },
+   {
+    "hh": false,
+    "lines": 56,
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.harryshospitalitygroup.com/wp-content/uploads/2024/10/Daily-Specials-09-2026.pdf"
+   },
+   {
+    "hh": false,
+    "lines": 81,
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.harryshospitalitygroup.com/kid-shelleens/branmar-plaza/"
+   },
+   {
+    "hh": true,
+    "lines": 72,
+    "result": "ok, 4 quote(s)",
+    "url": "https://www.harryshospitalitygroup.com/kid-shelleens/branmar-plaza/menus/"
+   },
+   {
+    "hh": false,
+    "lines": 56,
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.harryshospitalitygroup.com/wp-content/uploads/2024/10/Daily-Specials-09-2026.pdf"
+   }
+  ],
+  "website": "https://www.harryshospitalitygroup.com/kid-shelleens/branmar-plaza/",
+  "zone_id": "hockessin_greenville"
  },
  "DE6e24b3e554": {
   "address": "520 N Union St, Wilmington, DE 19805",
@@ -47009,6 +49514,81 @@
   "website": "https://www.ezmewilmington.com/",
   "zone_id": "wilmington"
  },
+ "DE71f8e43636": {
+  "address": "1145 Savannah Rd, Lewes, DE 19958",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Lewes Brewing Company",
+  "osm_name": "Lewes Brewing Company",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 88,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.lewesbrewing.com/"
+   },
+   {
+    "hh": false,
+    "lines": 58,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.lewesbrewing.com/events/"
+   },
+   {
+    "hh": false,
+    "lines": 185,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.lewesbrewing.com/menus"
+   },
+   {
+    "hh": false,
+    "lines": 185,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.lewesbrewing.com/menus/"
+   }
+  ],
+  "website": "https://www.lewesbrewing.com/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DE72fb6e1636": {
+  "address": "1845 Marsh Rd, Wilmington, DE 19810",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Happy Hour",
+    "url": "https://www.322bbq.com/"
+   }
+  ],
+  "name": "322 BBQ & Tavern - Wilmington",
+  "osm_name": "322 BBQ & Tavern - Wilmington",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 129,
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.322bbq.com/"
+   },
+   {
+    "hh": false,
+    "lines": 97,
+    "result": "ok, 0 quote(s)",
+    "url": "https://322bbq.com/products/mullica-hill/mh-specials/mh-pitmasters-pork-dip"
+   },
+   {
+    "hh": false,
+    "lines": 97,
+    "result": "ok, 0 quote(s)",
+    "url": "https://322bbq.com/products/mullica-hill/mh-specials/mh-smokin-long-hot-smash"
+   },
+   {
+    "hh": false,
+    "lines": 97,
+    "result": "ok, 0 quote(s)",
+    "url": "https://322bbq.com/products/mullica-hill/mh-specials/mh-cuban-press"
+   }
+  ],
+  "website": "https://www.322bbq.com/",
+  "zone_id": "hockessin_greenville"
+ },
  "DE748f1300a4": {
   "address": "1139 W 7th St, Wilmington, DE 19805",
   "crawled_at": "2026-09-02",
@@ -47087,6 +49667,29 @@
   ],
   "website": "http://riverfrontde.mytimothysrestaurants.com/",
   "zone_id": "wilmington"
+ },
+ "DE76263094ac": {
+  "address": "4001 Kennett Pike, Wilmington, DE 19807",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "PureBread Deli - Greenville",
+  "osm_name": "PureBread Deli - Greenville",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 54,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.purebreaddeli.com/"
+   },
+   {
+    "hh": false,
+    "lines": 328,
+    "result": "ok, 0 quote(s)",
+    "url": "https://purebreaddeli.com/menu"
+   }
+  ],
+  "website": "http://www.purebreaddeli.com/",
+  "zone_id": "hockessin_greenville"
  },
  "DE7701db276e": {
   "address": "401 Philadelphia Pike, Wilmington, DE 19809",
@@ -47226,6 +49829,41 @@
   ],
   "website": "https://m.facebook.com/pages/McLarens-Irish-Pub/100869789957789",
   "zone_id": "wilmington"
+ },
+ "DE79dd48dd7f": {
+  "address": "723 Ace Memorial Dr, Hockessin, DE 19707",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Luigi's Cafe Pizza & Pasta",
+  "osm_name": "Luigi's Cafe Pizza & Pasta",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 266,
+    "result": "ok, 0 quote(s)",
+    "url": "https://luigiscafe.net/"
+   },
+   {
+    "hh": false,
+    "lines": 194,
+    "result": "ok, 0 quote(s)",
+    "url": "https://luigiscafe.net/homeCustomSpecials"
+   },
+   {
+    "hh": false,
+    "lines": 266,
+    "result": "ok, 0 quote(s)",
+    "url": "https://luigiscafe.net/"
+   },
+   {
+    "hh": false,
+    "lines": 803,
+    "result": "ok, 0 quote(s)",
+    "url": "https://luigiscafe.net/homeCustomMenu"
+   }
+  ],
+  "website": "https://luigiscafe.net/",
+  "zone_id": "hockessin_greenville"
  },
  "DE7a64e05696": {
   "address": "1323 McKennans Church Rd, Wilmington, DE 19808",
@@ -47415,6 +50053,40 @@
   "website": "https://ironhillbrewery.com/",
   "zone_id": "wilmington"
  },
+ "DE81580cd48f": {
+  "address": "116 W Main St, Middletown, DE 19709",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Happy Hours / Wedding Receptions",
+    "url": "https://www.volunteerbrewing.com/privateevents"
+   }
+  ],
+  "name": "Volunteer Brewing Company",
+  "osm_name": "Volunteer Brewing Company",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 63,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.volunteerbrewing.com/"
+   },
+   {
+    "hh": false,
+    "lines": 63,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.volunteerbrewing.com"
+   },
+   {
+    "hh": true,
+    "lines": 57,
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.volunteerbrewing.com/privateevents"
+   }
+  ],
+  "website": "http://www.volunteerbrewing.com/",
+  "zone_id": "hockessin_greenville"
+ },
  "DE81960c2e6e": {
   "address": "111 W 11th St, Wilmington, DE 19801",
   "crawled_at": "2026-09-02",
@@ -47499,6 +50171,100 @@
   ],
   "website": "http://tonicsns.com/?utm_source=extnet&utm_medium=yext&y_source=1_NTkyNzgxNjYtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
   "zone_id": "wilmington"
+ },
+ "DE83d45b779c": {
+  "address": "3100 Naamans Rd #1, Wilmington, DE 19810",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Honest Indian Restaurant",
+  "osm_name": "Honest Indian Restaurant",
+  "pages": [
+   {
+    "result": "rendered after 403 text/html: 0 lines -> 124",
+    "url": "https://honestdelaware.com/?utm_source=google"
+   },
+   {
+    "hh": false,
+    "lines": 124,
+    "result": "ok, 0 quote(s)",
+    "url": "https://honestdelaware.com/?utm_source=google"
+   },
+   {
+    "result": "403 text/html",
+    "url": "https://honestdelaware.com/menu"
+   },
+   {
+    "result": "403 text/html",
+    "url": "https://honestdelaware.com/menu?dialogState=orderDetails"
+   }
+  ],
+  "website": "https://honestdelaware.com/?utm_source=google",
+  "zone_id": "hockessin_greenville"
+ },
+ "DE844dda363d": {
+  "address": "2020 Naamans Rd, Wilmington, DE 19810",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Daily Specials - Harry's Hospitality Group",
+    "url": "https://www.harryshospitalitygroup.com/kid-shelleens/weekly-specials/"
+   },
+   {
+    "quote": "Weddings / Daily Specials",
+    "url": "https://www.harryshospitalitygroup.com/kid-shelleens/weekly-specials/"
+   },
+   {
+    "quote": "Daily Specials / Monday \u2013 Friday / 11am \u2013 Midnight Mon-Thursday",
+    "url": "https://www.harryshospitalitygroup.com/kid-shelleens/weekly-specials/"
+   }
+  ],
+  "name": "Harry's Savoy Grill",
+  "osm_name": "Harry's Savoy Grill",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 99,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.harryshospitalitygroup.com/harrys-savoy-grill/"
+   },
+   {
+    "hh": false,
+    "lines": 43,
+    "result": "ok, 3 quote(s)",
+    "url": "https://www.harryshospitalitygroup.com/kid-shelleens/weekly-specials/"
+   },
+   {
+    "hh": false,
+    "lines": 58,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.harryshospitalitygroup.com/cocktail-hour/"
+   },
+   {
+    "hh": false,
+    "lines": 89,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.harryshospitalitygroup.com/harrys-savoy-ballroom/plan-your-event/"
+   }
+  ],
+  "website": "https://www.harryshospitalitygroup.com/harrys-savoy-grill/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DE85a469c428": {
+  "address": "3838 Kennett Pike, Wilmington, DE 19807",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Brew HaHa!",
+  "osm_name": "Brew HaHa!",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 70,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.brewhaha.com/"
+   }
+  ],
+  "website": "http://www.brewhaha.com/",
+  "zone_id": "hockessin_greenville"
  },
  "DE8656fe60e2": {
   "address": "1901 Delaware Ave, Wilmington, DE 19806",
@@ -47696,6 +50462,119 @@
   "website": "http://www.loganhouse.com/",
   "zone_id": "wilmington"
  },
+ "DE914999684c": {
+  "address": "4019 Kennett Pike, Greenville, DE 19807",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Soup & \u00bd Sandwich $13.95",
+    "url": "https://www.bbctavernandgrill.com/specials"
+   },
+   {
+    "quote": "Soup & Salad $13.95",
+    "url": "https://www.bbctavernandgrill.com/specials"
+   },
+   {
+    "quote": "Chicken or Steak Quesadillas $14",
+    "url": "https://www.bbctavernandgrill.com/specials"
+   },
+   {
+    "quote": "You choose White or Red, Bartenders Pick the Bottle $20",
+    "url": "https://www.bbctavernandgrill.com/specials"
+   },
+   {
+    "quote": "$10 Patr\u00f3n Mugs",
+    "url": "https://www.bbctavernandgrill.com/specials"
+   },
+   {
+    "quote": "Hot Roast Beef Sandwich $19",
+    "url": "https://www.bbctavernandgrill.com/specials"
+   },
+   {
+    "quote": "Starting at 3pm, Half Price Select Bottles of Wine",
+    "url": "https://www.bbctavernandgrill.com/specials"
+   },
+   {
+    "quote": "Crab Imperial Twins $20",
+    "url": "https://www.bbctavernandgrill.com/specials"
+   },
+   {
+    "quote": "Fish N Chips $14.50",
+    "url": "https://www.bbctavernandgrill.com/specials"
+   },
+   {
+    "quote": "$8 Mimosas",
+    "url": "https://www.bbctavernandgrill.com/specials"
+   },
+   {
+    "quote": "$8 Bloody Marys",
+    "url": "https://www.bbctavernandgrill.com/specials"
+   },
+   {
+    "quote": "$21 Bloody & Burger",
+    "url": "https://www.bbctavernandgrill.com/specials"
+   }
+  ],
+  "name": "BBC Tavern and Grill",
+  "osm_name": "BBC Tavern and Grill",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 49,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.bbctavernandgrill.com/"
+   },
+   {
+    "hh": false,
+    "lines": 93,
+    "result": "ok, 12 quote(s)",
+    "url": "https://www.bbctavernandgrill.com/specials"
+   },
+   {
+    "hh": false,
+    "lines": 1,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.bbctavernandgrill.com/menu"
+   }
+  ],
+  "website": "http://www.bbctavernandgrill.com/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DE9373a73667": {
+  "address": "2015 Limestone Rd, Wilmington, DE 19808",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Rice Restaurant",
+  "osm_name": "Rice Restaurant",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 27,
+    "result": "ok, 0 quote(s)",
+    "url": "http://rice2015.com/"
+   },
+   {
+    "hh": false,
+    "lines": 51,
+    "result": "ok, 0 quote(s)",
+    "url": "https://rice2015.com/chefs-special-rolls/"
+   },
+   {
+    "hh": false,
+    "lines": 57,
+    "result": "ok, 0 quote(s)",
+    "url": "https://rice2015.com/specials-soups-salads-appetizers/"
+   },
+   {
+    "hh": false,
+    "lines": 27,
+    "result": "ok, 0 quote(s)",
+    "url": "http://rice2015.com/"
+   }
+  ],
+  "website": "http://rice2015.com/",
+  "zone_id": "hockessin_greenville"
+ },
  "DE93e13a0a09": {
   "address": "7A Trolley Square, Wilmington, DE 19806",
   "crawled_at": "2026-09-02",
@@ -47712,6 +50591,39 @@
   ],
   "website": "https://opaopagyros.com/",
   "zone_id": "wilmington"
+ },
+ "DE94b10a7fb7": {
+  "address": "7288 Lancaster Pike, Hockessin, DE 19707",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Aunt Berta's Kitchen of Hockessin",
+  "osm_name": "Aunt Berta's Kitchen of Hockessin",
+  "pages": [
+   {
+    "result": "rendered after 403 text/html: 0 lines -> 176",
+    "url": "https://auntbertaskitchen.com/hockessin?utm_source=google"
+   },
+   {
+    "hh": false,
+    "lines": 176,
+    "result": "ok, 0 quote(s)",
+    "url": "https://auntbertaskitchen.com/hockessin?utm_source=google"
+   },
+   {
+    "result": "403 text/html",
+    "url": "https://auntbertaskitchen.com/menu"
+   },
+   {
+    "result": "403 text/html",
+    "url": "https://auntbertaskitchen.com/menu/auntbertasnc?dialogState=orderDetails"
+   },
+   {
+    "result": "403 text/html",
+    "url": "https://auntbertaskitchen.com/menu/auntbertasoaklyn?dialogState=orderDetails"
+   }
+  ],
+  "website": "https://auntbertaskitchen.com/hockessin?utm_source=google",
+  "zone_id": "hockessin_greenville"
  },
  "DE94d9c5de8b": {
   "address": "216 W 9th St, Wilmington, DE 19801",
@@ -47740,6 +50652,76 @@
   ],
   "website": "https://www.fairecafe.com/",
   "zone_id": "wilmington"
+ },
+ "DE95fd6ac85a": {
+  "address": "700 Lantana Dr, Hockessin, DE 19707",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "La Tonalteca - Hockessin,DE",
+  "osm_name": "La Tonalteca - Hockessin,DE",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 79,
+    "result": "ok, 0 quote(s)",
+    "url": "https://latonalteca.com/restaurant/hockessin/"
+   },
+   {
+    "hh": false,
+    "lines": 79,
+    "result": "ok, 0 quote(s)",
+    "url": "https://latonalteca.com/restaurant/hockessin/"
+   },
+   {
+    "hh": false,
+    "lines": 119,
+    "result": "ok, 0 quote(s)",
+    "url": "https://latonalteca.com/restaurant/hockessin/breakfast-menu/"
+   },
+   {
+    "hh": false,
+    "lines": 431,
+    "result": "ok, 0 quote(s)",
+    "url": "https://latonalteca.com/restaurant/hockessin/menu/"
+   }
+  ],
+  "website": "https://latonalteca.com/restaurant/hockessin/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DE9619667499": {
+  "address": "37251 Rehoboth Ave, Rehoboth Beach, DE 19971",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Revelation Craft Brewing",
+  "osm_name": "Revelation Craft Brewing",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 72,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.revbeer.com/"
+   },
+   {
+    "hh": false,
+    "lines": 86,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.revbeer.com/georgetown/"
+   },
+   {
+    "hh": false,
+    "lines": 108,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.revbeer.com/rehoboth/"
+   },
+   {
+    "hh": false,
+    "lines": 108,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.revbeer.com/rehoboth//"
+   }
+  ],
+  "website": "http://www.revbeer.com/",
+  "zone_id": "hockessin_greenville"
  },
  "DE97601b60f6": {
   "address": "1900 Lancaster Ave, Wilmington, DE 19805",
@@ -47945,6 +50927,85 @@
   "website": "http://roccoitaliangrill.com/",
   "zone_id": "wilmington"
  },
+ "DE9bb9e13eec": {
+  "address": "7288 Lancaster Pike #2, Hockessin, DE 19707",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Quinn's Cafe",
+  "osm_name": "Quinn's Cafe",
+  "pages": [
+   {
+    "result": "rendered after 500 text/html: 0 lines -> 3",
+    "url": "http://www.quinnscafe.com/"
+   },
+   {
+    "hh": false,
+    "lines": 3,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.quinnscafe.com/"
+   }
+  ],
+  "website": "http://www.quinnscafe.com/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DE9d3a75157c": {
+  "address": "4737 Concord Pike #810, Wilmington, DE 19803",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Mex A Mex",
+  "osm_name": "Mex A Mex",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 113,
+    "result": "ok, 0 quote(s)",
+    "url": "http://mexamexde.com/"
+   },
+   {
+    "hh": false,
+    "lines": 122,
+    "result": "ok, 0 quote(s)",
+    "url": "http://mexamexde.com/drink-menu"
+   },
+   {
+    "hh": false,
+    "lines": 34,
+    "result": "ok, 0 quote(s)",
+    "url": "http://mexamexde.com/events"
+   },
+   {
+    "hh": false,
+    "lines": 267,
+    "result": "ok, 0 quote(s)",
+    "url": "http://mexamexde.com/food-menu"
+   }
+  ],
+  "website": "http://mexamexde.com/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DE9e3cb8e9b5": {
+  "address": "4704 Limestone Rd, Wilmington, DE 19808",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Kabab and Curry",
+  "osm_name": "Kabab and Curry",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 72,
+    "result": "ok, 0 quote(s)",
+    "url": "https://kababandcurrydelaware.com/"
+   },
+   {
+    "hh": false,
+    "lines": 225,
+    "result": "ok, 0 quote(s)",
+    "url": "https://kababandcurrydelaware.com/menu.pdf"
+   }
+  ],
+  "website": "https://kababandcurrydelaware.com/",
+  "zone_id": "hockessin_greenville"
+ },
  "DE9f130c056c": {
   "address": "5812 Kennett Pike, Wilmington, DE 19807",
   "crawled_at": "2026-09-02",
@@ -47979,6 +51040,62 @@
   ],
   "website": "http://www.buckleystavern.com/",
   "zone_id": "wilmington"
+ },
+ "DE9f4c355df7": {
+  "address": "3701 Lancaster Pike, Wilmington, DE 19805",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Fish and Chips Lunch $14",
+    "url": "http://www.febysfishery.com/wilmington-feby-s-fishery-happy-hours-specials"
+   },
+   {
+    "quote": "1 1/4 lb Whole Maine Lobster with two sides $34",
+    "url": "http://www.febysfishery.com/wilmington-feby-s-fishery-happy-hours-specials"
+   },
+   {
+    "quote": "Dinner Special | Feby's Clambake - A 1 1/4 lb Maine Lobster, Clams and Shrimp served with two sides for $39",
+    "url": "http://www.febysfishery.com/wilmington-feby-s-fishery-happy-hours-specials"
+   },
+   {
+    "quote": "1 1/4 lb Whole Maine Lobster with Two Sides $34",
+    "url": "http://www.febysfishery.com/wilmington-feby-s-fishery-happy-hours-specials"
+   },
+   {
+    "quote": "All You Can Eat Steamed Shrimp $28.99",
+    "url": "http://www.febysfishery.com/wilmington-feby-s-fishery-happy-hours-specials"
+   }
+  ],
+  "name": "Feby's Fishery",
+  "osm_name": "Feby's Fishery",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 120,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.febysfishery.com/"
+   },
+   {
+    "hh": false,
+    "lines": 68,
+    "result": "ok, 5 quote(s)",
+    "url": "http://www.febysfishery.com/wilmington-feby-s-fishery-happy-hours-specials"
+   },
+   {
+    "hh": false,
+    "lines": 48,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.febysfishery.com/wilmington-feby-s-fishery-drink-menu"
+   },
+   {
+    "hh": false,
+    "lines": 40,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.febysfishery.com/wilmington-feby-s-fishery-events"
+   }
+  ],
+  "website": "http://www.febysfishery.com/",
+  "zone_id": "hockessin_greenville"
  },
  "DEa077f4e311": {
   "address": "1851 Marsh Rd, Wilmington, DE 19810",
@@ -48068,6 +51185,47 @@
   "website": "https://wilmingtonbrewworks.com/brew-works-north/",
   "zone_id": "wilmington"
  },
+ "DEa0ac8b0e47": {
+  "address": "4702 Limestone Rd, Wilmington, DE 19808",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "menu_images": [
+   {
+    "src": "http://soybeanasiangrille.com/wp-content/uploads/2020/02/Soybean-Happy-Hour-scaled.jpg",
+    "url": "http://www.soybeanasiangrille.com/"
+   }
+  ],
+  "name": "Soybean Asian Grille",
+  "osm_name": "Soybean Asian Grille",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 42,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.soybeanasiangrille.com/"
+   },
+   {
+    "hh": false,
+    "lines": 194,
+    "result": "ok, 0 quote(s)",
+    "url": "https://soybeanasiangrille.com/dinner-menu/"
+   },
+   {
+    "hh": false,
+    "lines": 92,
+    "result": "ok, 0 quote(s)",
+    "url": "https://soybeanasiangrille.com/drinks-cocktails/"
+   },
+   {
+    "hh": false,
+    "lines": 38,
+    "result": "ok, 0 quote(s)",
+    "url": "https://soybeanasiangrille.com/kids-menu/"
+   }
+  ],
+  "website": "http://www.soybeanasiangrille.com/",
+  "zone_id": "hockessin_greenville"
+ },
  "DEa165b2c264": {
   "address": "612 N Market St, Wilmington, DE 19801",
   "crawled_at": "2026-09-02",
@@ -48132,6 +51290,29 @@
   ],
   "website": "https://www.harryshospitalitygroup.com/kid-shelleens/",
   "zone_id": "wilmington"
+ },
+ "DEa2484dc015": {
+  "address": "222 Main St, Wilmington, DE 19804",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Mary's Kountry Kitchen",
+  "osm_name": "Mary's Kountry Kitchen",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 19,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.marys-kountry-kitchen.com/"
+   },
+   {
+    "hh": false,
+    "lines": 156,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.marys-kountry-kitchen.com/menu"
+   }
+  ],
+  "website": "http://www.marys-kountry-kitchen.com/",
+  "zone_id": "hockessin_greenville"
  },
  "DEa2a51b1b18": {
   "address": "608 N Market St, Wilmington, DE 19801",
@@ -48427,6 +51608,35 @@
   "website": "https://www.makersalleyde.com/",
   "zone_id": "wilmington"
  },
+ "DEa9c9eec8a5": {
+  "address": "109 Patriot Dr, Middletown, DE 19709",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "First State Brewing Company",
+  "osm_name": "First State Brewing Company",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 87,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.firststatebrewing.com/"
+   },
+   {
+    "hh": false,
+    "lines": 40,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.firststatebrewing.com/menus"
+   },
+   {
+    "hh": false,
+    "lines": 36,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.firststatebrewing.com/private-events-catering"
+   }
+  ],
+  "website": "https://www.firststatebrewing.com/",
+  "zone_id": "hockessin_greenville"
+ },
  "DEaa5896b840": {
   "address": "1711 Delaware Ave, Wilmington, DE 19806",
   "crawled_at": "2026-09-02",
@@ -48461,6 +51671,54 @@
   ],
   "website": "http://www.crowbarwilmington.com/",
   "zone_id": "wilmington"
+ },
+ "DEaa6e86bb93": {
+  "address": "425 Hockessin Cor, Hockessin, DE 19707",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Maine Lobster Roll $35",
+    "url": "http://www.backburner.com/hockessin-hockessin-corner-back-burner-happy-hours-specials"
+   },
+   {
+    "quote": "Surf & Turf $34",
+    "url": "http://www.backburner.com/hockessin-hockessin-corner-back-burner-happy-hours-specials"
+   },
+   {
+    "quote": "Burger Night $11",
+    "url": "http://www.backburner.com/hockessin-hockessin-corner-back-burner-happy-hours-specials"
+   }
+  ],
+  "name": "Back Burner Restaurant & Tavern",
+  "osm_name": "Back Burner Restaurant & Tavern",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 96,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.backburner.com/"
+   },
+   {
+    "hh": false,
+    "lines": 47,
+    "result": "ok, 3 quote(s)",
+    "url": "http://www.backburner.com/hockessin-hockessin-corner-back-burner-happy-hours-specials"
+   },
+   {
+    "hh": false,
+    "lines": 55,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.backburner.com/hockessin-hockessin-corner-back-burner-drink-menu"
+   },
+   {
+    "hh": false,
+    "lines": 31,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.backburner.com/hockessin-hockessin-corner-back-burner-events"
+   }
+  ],
+  "website": "http://www.backburner.com/",
+  "zone_id": "hockessin_greenville"
  },
  "DEab3d90e8aa": {
   "address": "111 W 10th St, Wilmington, DE 19801",
@@ -48807,6 +52065,27 @@
   "website": "http://midnightflavor.toast.site/",
   "zone_id": "wilmington"
  },
+ "DEaece6a11cd": {
+  "address": "4727 Concord Pike, Wilmington, DE 19803",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Palettes Restaurant and Lounge",
+  "osm_name": "Palettes Restaurant and Lounge",
+  "pages": [
+   {
+    "result": "rendered after 403 text/html: 0 lines -> 50",
+    "url": "http://doubletree3.hilton.com/en/hotels/delaware/doubletree-by-hilton-hotel-wilmington-ILGCPDT/dining/index.html"
+   },
+   {
+    "hh": false,
+    "lines": 50,
+    "result": "ok, 0 quote(s)",
+    "url": "http://doubletree3.hilton.com/en/hotels/delaware/doubletree-by-hilton-hotel-wilmington-ILGCPDT/dining/index.html"
+   }
+  ],
+  "website": "http://doubletree3.hilton.com/en/hotels/delaware/doubletree-by-hilton-hotel-wilmington-ILGCPDT/dining/index.html",
+  "zone_id": "hockessin_greenville"
+ },
  "DEb511151c02": {
   "address": "2 W Market St, Newport, DE 19804",
   "crawled_at": "2026-09-02",
@@ -48913,6 +52192,79 @@
   "website": "https://www.pinjicafe.net/",
   "zone_id": "wilmington"
  },
+ "DEb64944d1a2": {
+  "address": "4710 Limestone Rd, Wilmington, DE 19808",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Kyushu Ramen and Dumplings House",
+  "osm_name": "Kyushu Ramen and Dumplings House",
+  "pages": [
+   {
+    "result": "rendered: 29 lines -> 33",
+    "url": "https://kyushuramen.com/"
+   },
+   {
+    "hh": false,
+    "lines": 33,
+    "result": "ok, 0 quote(s)",
+    "url": "https://kyushuramen.com/"
+   }
+  ],
+  "website": "https://kyushuramen.com/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DEb77d59d688": {
+  "address": "2107 Concord Pike, Wilmington, DE 19803",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Crab Du Jour Cajun Seafood & Bar",
+  "osm_name": "Crab Du Jour Cajun Seafood & Bar",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 12,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.crabdujourwilmingtonde.com/"
+   }
+  ],
+  "website": "https://www.crabdujourwilmingtonde.com/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DEb7d15f0565": {
+  "address": "3660 Concord Pike, Wilmington, DE 19803",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "First Watch",
+  "osm_name": "First Watch",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 259,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.firstwatch.com/locations/concord-pike/?utm_source=gbp-listing&utm_medium=organic&utm_campaign=gbp-listing&utm_content=concord-pike"
+   },
+   {
+    "hh": false,
+    "lines": 814,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.firstwatch.com/menu"
+   },
+   {
+    "hh": false,
+    "lines": 363,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.firstwatch.com/menu/blazing-dragon"
+   },
+   {
+    "hh": false,
+    "lines": 382,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.firstwatch.com/menu/maple-bacon-croissant-sandwich"
+   }
+  ],
+  "website": "https://www.firstwatch.com/locations/concord-pike/?utm_source=gbp-listing&utm_medium=organic&utm_campaign=gbp-listing&utm_content=concord-pike",
+  "zone_id": "hockessin_greenville"
+ },
  "DEb824e64d10": {
   "address": "3 S Orange St, Wilmington, DE 19801",
   "crawled_at": "2026-09-02",
@@ -48934,6 +52286,51 @@
   "website": "https://online.skytab.com/85d3b625e902e05ff6e58f718d813bf9",
   "zone_id": "wilmington"
  },
+ "DEb84ec26ee0": {
+  "address": "2600 Concord Pike, Wilmington, DE 19803",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "menu_images": [
+   {
+    "src": "https://images.squarespace-cdn.com/content/v1/6798e62535a8dd453b82f16c/0d1b8e2d-a05f-45e5-8032-aa6f46863d6a/CharcoalPit_Specials_SEPT_Insert.png",
+    "url": "http://charcoalpit.net/monthly-specials"
+   }
+  ],
+  "name": "Charcoal Pit",
+  "osm_name": "Charcoal Pit",
+  "pages": [
+   {
+    "result": "rendered: 36 lines -> 38",
+    "url": "http://charcoalpit.net/"
+   },
+   {
+    "hh": false,
+    "lines": 38,
+    "result": "ok, 0 quote(s)",
+    "url": "http://charcoalpit.net/"
+   },
+   {
+    "hh": false,
+    "lines": 35,
+    "result": "ok, 0 quote(s)",
+    "url": "http://charcoalpit.net/monthly-specials"
+   },
+   {
+    "hh": false,
+    "lines": 45,
+    "result": "ok, 0 quote(s)",
+    "url": "http://charcoalpit.net/menu-1-1"
+   },
+   {
+    "hh": false,
+    "lines": 35,
+    "result": "ok, 0 quote(s)",
+    "url": "http://charcoalpit.net/menu-1-1-1"
+   }
+  ],
+  "website": "http://charcoalpit.net/",
+  "zone_id": "hockessin_greenville"
+ },
  "DEb85c1b0818": {
   "address": "210 N Union St #3437, Wilmington, DE 19805",
   "crawled_at": "2026-09-02",
@@ -48948,6 +52345,237 @@
   ],
   "website": "https://www.facebook.com/p/Comegys-Pub-100039268432380/",
   "zone_id": "wilmington"
+ },
+ "DEb9a7243795": {
+  "address": "2530 Concord Pike, Wilmington, DE 19803",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "hh": true,
+    "quote": "Happy Hour: Offered At The BarMonday, Wednesday, Thrusday, Friday4pm-6pmSunday2pm-4pm",
+    "url": "https://lafetedelaware.com/menus"
+   },
+   {
+    "hh": true,
+    "quote": "Food",
+    "url": "https://lafetedelaware.com/menus"
+   },
+   {
+    "hh": true,
+    "quote": "Salade Verte",
+    "url": "https://lafetedelaware.com/menus"
+   },
+   {
+    "hh": true,
+    "quote": "Brandade Croquettes",
+    "url": "https://lafetedelaware.com/menus"
+   },
+   {
+    "hh": true,
+    "quote": "Oysters",
+    "url": "https://lafetedelaware.com/menus"
+   },
+   {
+    "hh": true,
+    "quote": "Pommes Frites $10.00",
+    "url": "https://lafetedelaware.com/menus"
+   },
+   {
+    "hh": true,
+    "quote": "Beverage",
+    "url": "https://lafetedelaware.com/menus"
+   },
+   {
+    "hh": true,
+    "quote": "Wine",
+    "url": "https://lafetedelaware.com/menus"
+   },
+   {
+    "hh": true,
+    "quote": "Cocktails $10.00",
+    "url": "https://lafetedelaware.com/menus"
+   },
+   {
+    "hh": true,
+    "quote": "One-to-One Mixer $7.00",
+    "url": "https://lafetedelaware.com/menus"
+   },
+   {
+    "hh": true,
+    "quote": "Domestic Beer $4.00",
+    "url": "https://lafetedelaware.com/menus"
+   },
+   {
+    "hh": true,
+    "quote": "Stateside Seltzer $5.00",
+    "url": "https://lafetedelaware.com/menus"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://lafetedelaware.com/menus"
+   },
+   {
+    "quote": "8 - Happy Hour",
+    "url": "https://lafetedelaware.com/menus"
+   },
+   {
+    "quote": "10 - Happy Hour",
+    "url": "https://lafetedelaware.com/menus"
+   },
+   {
+    "quote": "10 - Happy Hour / Pommes Frites",
+    "url": "https://lafetedelaware.com/menus"
+   },
+   {
+    "quote": "Join us on Monday for Half Price Wine Night and travel the wine world through our list.",
+    "url": "https://lafetedelaware.com/menus"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour: Offered At The BarMonday, Wednesday, Thrusday, Friday4pm-6pmSunday2pm-4pm",
+    "url": "https://lafetedelaware.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "Food",
+    "url": "https://lafetedelaware.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "Salade Verte",
+    "url": "https://lafetedelaware.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "Brandade Croquettes",
+    "url": "https://lafetedelaware.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "Oysters",
+    "url": "https://lafetedelaware.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "Pommes Frites $10.00",
+    "url": "https://lafetedelaware.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "Beverage",
+    "url": "https://lafetedelaware.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "Wine",
+    "url": "https://lafetedelaware.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "Cocktails $10.00",
+    "url": "https://lafetedelaware.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "One-to-One Mixer $7.00",
+    "url": "https://lafetedelaware.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "Domestic Beer $4.00",
+    "url": "https://lafetedelaware.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "Stateside Seltzer $5.00",
+    "url": "https://lafetedelaware.com/menus/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://lafetedelaware.com/menus/"
+   },
+   {
+    "quote": "8 - Happy Hour",
+    "url": "https://lafetedelaware.com/menus/"
+   },
+   {
+    "quote": "10 - Happy Hour",
+    "url": "https://lafetedelaware.com/menus/"
+   },
+   {
+    "quote": "10 - Happy Hour / Pommes Frites",
+    "url": "https://lafetedelaware.com/menus/"
+   },
+   {
+    "quote": "Join us on Monday for Half Price Wine Night and travel the wine world through our list.",
+    "url": "https://lafetedelaware.com/menus/"
+   }
+  ],
+  "name": "La F\u00eate",
+  "osm_name": "La F\u00eate",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 67,
+    "result": "ok, 0 quote(s)",
+    "url": "https://lafetedelaware.com/"
+   },
+   {
+    "hh": true,
+    "lines": 400,
+    "result": "ok, 5 quote(s)",
+    "url": "https://lafetedelaware.com/menus"
+   },
+   {
+    "hh": true,
+    "lines": 400,
+    "result": "ok, 5 quote(s)",
+    "url": "https://lafetedelaware.com/menus/"
+   },
+   {
+    "hh": false,
+    "lines": 56,
+    "result": "ok, 0 quote(s)",
+    "url": "https://lafetedelaware.com/news-and-events/"
+   }
+  ],
+  "website": "https://lafetedelaware.com/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DEb9a75eb340": {
+  "address": "300 Buckley Ml Rd, Wilmington, DE 19807",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "First Watch",
+  "osm_name": "First Watch",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 259,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.firstwatch.com/locations/barley-mill/?utm_source=gbp-listing&utm_medium=organic&utm_campaign=gbp-listing&utm_content=barley-mill"
+   },
+   {
+    "hh": false,
+    "lines": 814,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.firstwatch.com/menu"
+   },
+   {
+    "hh": false,
+    "lines": 363,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.firstwatch.com/menu/blazing-dragon"
+   },
+   {
+    "hh": false,
+    "lines": 382,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.firstwatch.com/menu/maple-bacon-croissant-sandwich"
+   }
+  ],
+  "website": "https://www.firstwatch.com/locations/barley-mill/?utm_source=gbp-listing&utm_medium=organic&utm_campaign=gbp-listing&utm_content=barley-mill",
+  "zone_id": "hockessin_greenville"
  },
  "DEba10f45bd9": {
   "address": "303 Justison St, Wilmington, DE 19801",
@@ -49052,6 +52680,110 @@
   ],
   "website": "https://decowilmington.com/",
   "zone_id": "wilmington"
+ },
+ "DEbe3587798e": {
+  "address": "3250 Ave N Blvd, Wilmington, DE 19803",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Half Price Artisan Pizzas",
+    "url": "https://www.barnandlodge.com/wilmington/menu/"
+   },
+   {
+    "quote": "$5 WELL DRINKS",
+    "url": "https://www.barnandlodge.com/wilmington/menu/"
+   },
+   {
+    "quote": "$5 Wines By The Glass",
+    "url": "https://www.barnandlodge.com/wilmington/menu/"
+   }
+  ],
+  "name": "Blackwall Barn & Lodge Wilmington",
+  "osm_name": "Blackwall Barn & Lodge Wilmington",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 127,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.barnandlodge.com/wilmington/"
+   },
+   {
+    "hh": false,
+    "lines": 127,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.barnandlodge.com/wilmington/"
+   },
+   {
+    "hh": false,
+    "lines": 97,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.barnandlodge.com/wilmington/events-promotions/"
+   },
+   {
+    "hh": false,
+    "lines": 440,
+    "result": "ok, 3 quote(s)",
+    "url": "https://www.barnandlodge.com/wilmington/menu/"
+   }
+  ],
+  "website": "https://www.barnandlodge.com/wilmington/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DEbf57878d36": {
+  "address": "711 Ace Memorial Dr, Hockessin, DE 19707",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Casa Puebla Restaurante",
+  "osm_name": "Casa Puebla Restaurante",
+  "pages": [
+   {
+    "result": "rendered after 404 text/html: 0 lines -> 4",
+    "url": "http://casapueblarestaurante.com/"
+   },
+   {
+    "hh": false,
+    "lines": 4,
+    "result": "ok, 0 quote(s)",
+    "url": "http://casapueblarestaurante.com/"
+   }
+  ],
+  "website": "http://casapueblarestaurante.com/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DEc076f7c64a": {
+  "address": "4752 Limestone Rd, Wilmington, DE 19808",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Valle Cucina",
+  "osm_name": "Valle Cucina",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 61,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.vallecucina.com/"
+   },
+   {
+    "hh": false,
+    "lines": 78,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.vallecucina.com/menu/valle-cucina-4752-limestone-road"
+   },
+   {
+    "hh": false,
+    "lines": 20,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.vallecucina.com/menu/valle-cucina-4752-limestone-road/group_496f023d-23d0-4008-b091-57e7e402a95d/item-blackened-grouper_6e13843d-d484-4c02-aa22-b728e0914a30"
+   },
+   {
+    "hh": false,
+    "lines": 28,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.vallecucina.com/menu/valle-cucina-4752-limestone-road/group_496f023d-23d0-4008-b091-57e7e402a95d/item-blackened-tuna-bites_7595793e-32a1-4f1c-b5ae-a43fd3add0ae"
+   }
+  ],
+  "website": "http://www.vallecucina.com/",
+  "zone_id": "hockessin_greenville"
  },
  "DEc0a730a4c6": {
   "address": "902 N Market St, Wilmington, DE 19801",
@@ -49188,6 +52920,209 @@
   "website": "https://delawarepark.com/dining/brewing/",
   "zone_id": "wilmington"
  },
+ "DEc667a1b050": {
+  "address": "7288 Lancaster Pike, Hockessin, DE 19707",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "$10.00 handcrafted Mojitos. Dine-in only.",
+    "url": "http://mexicantablerestaurant.com/specials"
+   }
+  ],
+  "name": "Mexican Table",
+  "osm_name": "Mexican Table",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 108,
+    "result": "ok, 0 quote(s)",
+    "url": "http://mexicantablerestaurant.com/"
+   },
+   {
+    "hh": false,
+    "lines": 47,
+    "result": "ok, 1 quote(s)",
+    "url": "http://mexicantablerestaurant.com/specials"
+   },
+   {
+    "hh": false,
+    "lines": 176,
+    "result": "ok, 0 quote(s)",
+    "url": "http://mexicantablerestaurant.com/drink-menu"
+   },
+   {
+    "hh": false,
+    "lines": 1524,
+    "result": "ok, 0 quote(s)",
+    "url": "http://mexicantablerestaurant.com/events"
+   }
+  ],
+  "website": "http://mexicantablerestaurant.com/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DEc909151729": {
+  "address": "1600 Rocky Run Pkwy, Wilmington, DE 19803",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "hh": true,
+    "quote": "Applebee's Happy Hour in Wilmington - Apps & Drinks Deals Everyday!",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/1600-rocky-run-pkwy.-98072/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Applebee\u2019s\u00ae Happy Hour Bar Near You in Wilmington",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/1600-rocky-run-pkwy.-98072/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Join the fun at Applebee's in Wilmington for Happy Hour. Enjoy cocktails, delicious appetizers, high-quality burgers, and thrilling sports games on 1600 Rocky Run Pkwy. .",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/1600-rocky-run-pkwy.-98072/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour / Indulge in the best deals in the neighborhood at Applebee's in Wilmington on Rocky Run Pkwy.. From crisp cocktails to cold draft beers, our bar is the perfect place to relax, catch up with friends, and enjoy a variety drink specials. Call ahead to learn more about our current happy hour specials!",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/1600-rocky-run-pkwy.-98072/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Visit us during Happy Hour At Applebee's On Rocky Run Pkwy. / Indulge in the best deals in the neighborhood at Applebee's in Wilmington on Rocky Run Pkwy.. From crisp cocktails to cold draft beers, our bar is the perfect place to relax, catch up with friends, and enjoy a variety drink specials. Call ahead to learn more about our current happy hour specials!",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/1600-rocky-run-pkwy.-98072/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Indulge in the best deals in the neighborhood at Applebee's in Wilmington on Rocky Run Pkwy.. From crisp cocktails to cold draft beers, our bar is the perfect place to relax, catch up with friends, and enjoy a variety drink specials. Call ahead to learn more about our current happy hour specials!",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/1600-rocky-run-pkwy.-98072/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "See Drink Specials",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/1600-rocky-run-pkwy.-98072/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Ask about Happy Hour Deals In Wilmington At our Applebee's Restaurant Bar",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/1600-rocky-run-pkwy.-98072/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Visit Applebee\u2019s on 1600 Rocky Run Pkwy. and ask about our Happy Hour specials. / Catch the game while enjoying your favorite drinks at Applebee\u2019s Bar in Wilmington. With TVs tuned to the latest sports events, you'll never miss a moment. Whether you're a dedicated fan or looking for a fun spot to hang out with friends, make our bar your go to spot to watch the game. Visit us today at 1600 Rocky Ru",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/1600-rocky-run-pkwy.-98072/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "What time is happy hour at Applebee's bar?",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/1600-rocky-run-pkwy.-98072/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Applebee\u2019s Happy Hour times vary by location. For the most accurate information about Happy Hour availability and times, contact your local Applebee\u2019s location.",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/1600-rocky-run-pkwy.-98072/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Do I need a reservation for Applebee's Happy Hour? / Absolutely! You are welcome to bring a large group to Happy Hour at Applebee's. Come on in and enjoy a great time with your friends, family, or colleagues during Happy Hour.",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/1600-rocky-run-pkwy.-98072/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Can I bring a large group to Happy Hour? / Absolutely! You are welcome to bring a large group to Happy Hour at Applebee's. Come on in and enjoy a great time with your friends, family, or colleagues during Happy Hour.",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/1600-rocky-run-pkwy.-98072/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Absolutely! You are welcome to bring a large group to Happy Hour at Applebee's. Come on in and enjoy a great time with your friends, family, or colleagues during Happy Hour.",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/1600-rocky-run-pkwy.-98072/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Do you offer non-alcoholic drink options during Happy Hour?",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/1600-rocky-run-pkwy.-98072/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Applebee's offers a variety of beverages, including non-alcoholic options, which may be available during happy hour. To learn about our non-alcoholic drink deals during happy hour, check with your local Applebee's restaurant, as our offerings may vary by location.",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/1600-rocky-run-pkwy.-98072/happy-hour"
+   },
+   {
+    "quote": "Wilmington Drink Specials Near You Served Now - Cocktails To Go Available!",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/1600-rocky-run-pkwy.-98072/specials"
+   },
+   {
+    "quote": "Pair your meal with the latest drink special from our Applebee\u2019s bar in Wilmington. Try our fun & festive cocktail drinks made with premium spirits and served in our large Mucho glass. These cocktail drinks are good for dine-in or to-go orders where permitted by law.",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/1600-rocky-run-pkwy.-98072/specials"
+   },
+   {
+    "quote": "Does Applebee's in Wilmington have monthly drink specials?",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/1600-rocky-run-pkwy.-98072/specials"
+   },
+   {
+    "quote": "While Applebee's doesn't offer specific monthly drink specials, we do feature exciting seasonal drink specials that are available for a limited time. Be sure to check our menu or ask your server about the current seasonal drinks being promoted, so you can enjoy our latest cocktail creations.",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/1600-rocky-run-pkwy.-98072/specials"
+   }
+  ],
+  "menu_images": [
+   {
+    "src": "https://assets.restaurants.applebees.com/images/specialty/happy-hour-hero.webp",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/1600-rocky-run-pkwy.-98072/happy-hour"
+   },
+   {
+    "src": "https://assets.restaurants.applebees.com/images/specialty/applebees-happy-hour-drinks.png",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/1600-rocky-run-pkwy.-98072/happy-hour"
+   },
+   {
+    "src": "https://assets.restaurants.applebees.com/images/specialty/applebees-happy-hour.webp",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/1600-rocky-run-pkwy.-98072/happy-hour"
+   }
+  ],
+  "name": "Applebee's Grill + Bar",
+  "osm_name": "Applebee's Grill + Bar",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 138,
+    "result": "ok, 0 quote(s)",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/1600-rocky-run-pkwy.-98072?utm_source=google&utm_medium=organic&utm_campaign=google_my_business&utm_term=98072&utm_content=website"
+   },
+   {
+    "hh": true,
+    "lines": 81,
+    "result": "ok, 16 quote(s)",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/1600-rocky-run-pkwy.-98072/happy-hour"
+   },
+   {
+    "hh": false,
+    "lines": 88,
+    "result": "ok, 4 quote(s)",
+    "url": "https://restaurants.applebees.com/en-us/de/wilmington/1600-rocky-run-pkwy.-98072/specials"
+   },
+   {
+    "hh": false,
+    "lines": 83,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.applebees.com/en/game-day/nfl-wings"
+   }
+  ],
+  "website": "https://restaurants.applebees.com/en-us/de/wilmington/1600-rocky-run-pkwy.-98072?utm_source=google&utm_medium=organic&utm_campaign=google_my_business&utm_term=98072&utm_content=website",
+  "zone_id": "hockessin_greenville"
+ },
+ "DEcc7b3451b2": {
+  "address": "4500 Linden Hill Rd, Wilmington, DE 19808",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Chuck Lager Legendary Kitchen",
+  "osm_name": "Chuck Lager Legendary Kitchen",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 40,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.chucklager.com/"
+   }
+  ],
+  "website": "http://www.chucklager.com/",
+  "zone_id": "hockessin_greenville"
+ },
  "DEccfe997995": {
   "address": "1624 Delaware Ave, Wilmington, DE 19806",
   "crawled_at": "2026-09-02",
@@ -49202,6 +53137,41 @@
   ],
   "website": "https://www.facebook.com/SikarLounge/",
   "zone_id": "wilmington"
+ },
+ "DEcd78eb16e4": {
+  "address": "128 Patriot Dr Suites 11 and 12, Middletown, DE 19709",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "JAKL Beer Works",
+  "osm_name": "JAKL Beer Works",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 68,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.jaklbeerworks.com/"
+   },
+   {
+    "hh": false,
+    "lines": 68,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.jaklbeerworks.com/"
+   },
+   {
+    "hh": false,
+    "lines": 18,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.jaklbeerworks.com/events-and-food"
+   },
+   {
+    "hh": false,
+    "lines": 18,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.jaklbeerworks.com/menu"
+   }
+  ],
+  "website": "http://www.jaklbeerworks.com/",
+  "zone_id": "hockessin_greenville"
  },
  "DEcdda3fde5c": {
   "address": "3605 Old Capitol Trl c8, Wilmington, DE 19808",
@@ -49363,6 +53333,41 @@
   "website": "http://www.littlevinniespizza.com/",
   "zone_id": "wilmington"
  },
+ "DEd7e9ec48e8": {
+  "address": "1318 Old Lancaster Pike, Hockessin, DE 19707",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Lettie's Kitchen",
+  "osm_name": "Lettie's Kitchen",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 50,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.lettieskitchen.com/"
+   },
+   {
+    "hh": false,
+    "lines": 89,
+    "result": "ok, 0 quote(s)",
+    "url": "https://lettieskitchen.com/fried-chicken-menu/"
+   },
+   {
+    "hh": false,
+    "lines": 216,
+    "result": "ok, 0 quote(s)",
+    "url": "https://lettieskitchen.com/letties-kitchen-catering-menu/"
+   },
+   {
+    "hh": false,
+    "lines": 134,
+    "result": "ok, 0 quote(s)",
+    "url": "https://lettieskitchen.com/menu/"
+   }
+  ],
+  "website": "http://www.lettieskitchen.com/",
+  "zone_id": "hockessin_greenville"
+ },
  "DEd8325476cf": {
   "address": "620 N Market St, Wilmington, DE 19801",
   "crawled_at": "2026-09-02",
@@ -49407,6 +53412,29 @@
   ],
   "website": "https://www.bardeafoodanddrink.com/",
   "zone_id": "wilmington"
+ },
+ "DEd91a4ae8f9": {
+  "address": "4713 Kirkwood Hwy, Wilmington, DE 19808",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Sakura Japanese Restaurant",
+  "osm_name": "Sakura Japanese Restaurant",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 29,
+    "result": "ok, 0 quote(s)",
+    "url": "http://sakurasushide.com/"
+   },
+   {
+    "hh": false,
+    "lines": 9,
+    "result": "ok, 0 quote(s)",
+    "url": "http://sakurasushide.com/menu/"
+   }
+  ],
+  "website": "http://sakurasushide.com/",
+  "zone_id": "hockessin_greenville"
  },
  "DEdb8863aaae": {
   "address": "1601 Concord Pike Ste 77-79, Wilmington, DE 19803",
@@ -49688,6 +53716,46 @@
   "website": "http://www.snuffmillbutchery.com/",
   "zone_id": "wilmington"
  },
+ "DEdbbcfdbdb0": {
+  "address": "906 N Union St, Wilmington, DE 19805",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Daily Specials / $10.95",
+    "url": "http://www.kozykorner-restaurant.com/breakfast-menu"
+   }
+  ],
+  "name": "Kozy Korner Restaurant",
+  "osm_name": "Kozy Korner Restaurant",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 45,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.kozykorner-restaurant.com/"
+   },
+   {
+    "hh": false,
+    "lines": 157,
+    "result": "ok, 1 quote(s)",
+    "url": "http://www.kozykorner-restaurant.com/breakfast-menu"
+   },
+   {
+    "hh": false,
+    "lines": 49,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.kozykorner-restaurant.com/catering-menu"
+   },
+   {
+    "hh": false,
+    "lines": 160,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.kozykorner-restaurant.com/lunch-menu"
+   }
+  ],
+  "website": "http://www.kozykorner-restaurant.com/",
+  "zone_id": "hockessin_greenville"
+ },
  "DEdd1ee4fc31": {
   "address": "2619 Ebright Rd, Wilmington, DE 19810",
   "crawled_at": "2026-09-02",
@@ -49797,6 +53865,264 @@
   "website": "http://www.anejode.com/",
   "zone_id": "wilmington"
  },
+ "DEe016563850": {
+  "address": "5525 Concord Pike, Wilmington, DE 19803",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "HAPPY HOUR / Monday \u2013 Thursday 3:00 pm \u2013 6:00 pm",
+    "url": "https://sullivanssteakhouse.com/wilmington/"
+   },
+   {
+    "quote": "Happy Hour Menu",
+    "url": "https://sullivanssteakhouse.com/wilmington/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour Menu in Wilmington, DE | Sullivan's Steakhouse",
+    "url": "https://www.sullivanssteakhouse.com/wilmington/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "Wilmington Happy Hour Menu / Available in the bar, Monday-Thursday 3pm-6pm / $25",
+    "url": "https://www.sullivanssteakhouse.com/wilmington/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "Wilmington Menus / $25 / A5 Wagyu Nigiri*",
+    "url": "https://www.sullivanssteakhouse.com/wilmington/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$25 / $25.00 A5 Wagyu Nigiri*",
+    "url": "https://www.sullivanssteakhouse.com/wilmington/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$25 / $25.00 New England Lobster Roll",
+    "url": "https://www.sullivanssteakhouse.com/wilmington/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$25 / $25.00 Shrimp Three Ways",
+    "url": "https://www.sullivanssteakhouse.com/wilmington/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$25 / $25.00 Lobster Pot Pie",
+    "url": "https://www.sullivanssteakhouse.com/wilmington/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$25 / $25.00 Pork Belly Trio",
+    "url": "https://www.sullivanssteakhouse.com/wilmington/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$20 / Angry Shrimp",
+    "url": "https://www.sullivanssteakhouse.com/wilmington/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$20 / $20.00 Angry Shrimp",
+    "url": "https://www.sullivanssteakhouse.com/wilmington/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$20 / $20.00 Crab Cake Sliders",
+    "url": "https://www.sullivanssteakhouse.com/wilmington/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$20 / $20.00 Jumbo Shrimp Cocktail",
+    "url": "https://www.sullivanssteakhouse.com/wilmington/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$20 / $20.00 Beef Carpaccio*",
+    "url": "https://www.sullivanssteakhouse.com/wilmington/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$20 / $20.00 Crab & Avocado Salad",
+    "url": "https://www.sullivanssteakhouse.com/wilmington/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$15 / Sweet & Spicy Cauliflower",
+    "url": "https://www.sullivanssteakhouse.com/wilmington/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$15 / $15.00 Sweet & Spicy Cauliflower",
+    "url": "https://www.sullivanssteakhouse.com/wilmington/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$15 / $15.00 Beef Wellington Bites",
+    "url": "https://www.sullivanssteakhouse.com/wilmington/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$15 / $15.00 Shaved Prime Steak Sliders*",
+    "url": "https://www.sullivanssteakhouse.com/wilmington/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$15 / $15.00 Sullivan's Signature Angus Burger*",
+    "url": "https://www.sullivanssteakhouse.com/wilmington/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$10 / Cheesesteak Eggrolls",
+    "url": "https://www.sullivanssteakhouse.com/wilmington/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$10 / $10.00 Cheesesteak Eggrolls",
+    "url": "https://www.sullivanssteakhouse.com/wilmington/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$10 / $10.00 Ahi Tuna Poke Stack*",
+    "url": "https://www.sullivanssteakhouse.com/wilmington/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$10 / $10.00 Sriracha Shrimp Lettuce Cups",
+    "url": "https://www.sullivanssteakhouse.com/wilmington/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": true,
+    "quote": "$10 / $10.00 Sullivan's Signature Angus Sliders*",
+    "url": "https://www.sullivanssteakhouse.com/wilmington/menus/happyhour-food-drink/"
+   }
+  ],
+  "name": "Sullivan's Steakhouse",
+  "osm_name": "Sullivan's Steakhouse",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 202,
+    "result": "ok, 2 quote(s)",
+    "url": "https://sullivanssteakhouse.com/wilmington/"
+   },
+   {
+    "hh": true,
+    "lines": 195,
+    "result": "ok, 24 quote(s)",
+    "url": "https://www.sullivanssteakhouse.com/wilmington/menus/happyhour-food-drink/"
+   },
+   {
+    "hh": false,
+    "lines": 121,
+    "result": "ok, 0 quote(s)",
+    "url": "https://sullivanssteakhouse.com/private-dining/?source_location=wilmington"
+   },
+   {
+    "hh": false,
+    "lines": 158,
+    "result": "ok, 0 quote(s)",
+    "url": "https://sullivanssteakhouse.com/promotions/"
+   },
+   {
+    "hh": false,
+    "lines": 168,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.sullivanssteakhouse.com/wp-content/uploads/2026/08/sullivans-steakhouse-Allergen-Menu-08-26.pdf"
+   }
+  ],
+  "website": "https://sullivanssteakhouse.com/wilmington/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DEe0af02cae3": {
+  "address": "4805 Limestone Rd, Wilmington, DE 19808",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Happy Hour",
+    "url": "https://acfp.com/location/pike-creek/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour - Anthony Coal Fired Pizza",
+    "url": "https://acfp.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour",
+    "url": "https://acfp.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "$5 Social\u2028Coal Fired Happy Hour",
+    "url": "https://acfp.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "Join us for our $5 Social, your new favorite coal-fired happy hour. Enjoy exclusive $5 bites and sips, great vibes, and the perfect way to unwind all alongside our new coal-fired classics.",
+    "url": "https://acfp.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "$5 Bites",
+    "url": "https://acfp.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "Premium ingredients, authentic coal-fired flavor. All for just $5 during Social Hour.",
+    "url": "https://acfp.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "$5 SIPS",
+    "url": "https://acfp.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "$5 Sips may vary by location. Must be 21+",
+    "url": "https://acfp.com/happy-hour/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://acfp.com/book-an-event/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://acfp.com/location/pike-creek/"
+   }
+  ],
+  "name": "Anthony's Coal Fired Pizza & Wings",
+  "osm_name": "Anthony's Coal Fired Pizza & Wings",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 192,
+    "result": "ok, 1 quote(s)",
+    "url": "https://acfp.com/location/pike-creek/"
+   },
+   {
+    "hh": true,
+    "lines": 171,
+    "result": "ok, 8 quote(s)",
+    "url": "https://acfp.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "lines": 165,
+    "result": "ok, 1 quote(s)",
+    "url": "https://acfp.com/book-an-event/"
+   },
+   {
+    "hh": true,
+    "lines": 192,
+    "result": "ok, 1 quote(s)",
+    "url": "https://acfp.com/location/pike-creek/"
+   }
+  ],
+  "website": "https://acfp.com/location/pike-creek/",
+  "zone_id": "hockessin_greenville"
+ },
  "DEe10d96271f": {
   "address": "936 Justison St, Wilmington, DE 19801",
   "crawled_at": "2026-09-02",
@@ -49811,6 +54137,236 @@
   ],
   "website": "https://riverfrontde.com/?utm_source=google",
   "zone_id": "wilmington"
+ },
+ "DEe14a2d36af": {
+  "address": "4837 Limestone Rd, Wilmington, DE 19808",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "$19.95 Product title goes here / Color: / White",
+    "url": "https://www.playabowls.com/menu-category/february-special"
+   },
+   {
+    "quote": "$83.50 Subtotal",
+    "url": "https://www.playabowls.com/menu-category/february-special"
+   },
+   {
+    "quote": "$19.95 Product title goes here / Color: / White",
+    "url": "https://www.playabowls.com/menu-category/special-bowl"
+   },
+   {
+    "quote": "$83.50 Subtotal",
+    "url": "https://www.playabowls.com/menu-category/special-bowl"
+   },
+   {
+    "quote": "$19.95 Product title goes here / Color: / White",
+    "url": "https://www.playabowls.com/post/cupid-called-hes-got-all-new-february-specials-just-for-you"
+   },
+   {
+    "quote": "$83.50 Subtotal",
+    "url": "https://www.playabowls.com/post/cupid-called-hes-got-all-new-february-specials-just-for-you"
+   }
+  ],
+  "name": "Playa Bowls",
+  "osm_name": "Playa Bowls",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 122,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.playabowls.com/location/pike-creek"
+   },
+   {
+    "hh": false,
+    "lines": 136,
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.playabowls.com/menu-category/february-special"
+   },
+   {
+    "hh": false,
+    "lines": 135,
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.playabowls.com/menu-category/special-bowl"
+   },
+   {
+    "hh": false,
+    "lines": 138,
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.playabowls.com/post/cupid-called-hes-got-all-new-february-specials-just-for-you"
+   }
+  ],
+  "website": "https://www.playabowls.com/location/pike-creek",
+  "zone_id": "hockessin_greenville"
+ },
+ "DEe1ac956a08": {
+  "address": "228 Lantana Dr, Hockessin, DE 19707",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Harpers Asian Bistro",
+  "osm_name": "Harpers Asian Bistro",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 42,
+    "result": "ok, 0 quote(s)",
+    "url": "https://harpersbistro.com/"
+   }
+  ],
+  "website": "https://harpersbistro.com/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DEe23b75aacd": {
+  "address": "1304 Old Lancaster Pike, Hockessin, DE 19707",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Chefs Haven",
+  "osm_name": "Chefs Haven",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 114,
+    "result": "ok, 0 quote(s)",
+    "url": "http://chefshaven.com/"
+   }
+  ],
+  "website": "http://chefshaven.com/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DEe77cce8899": {
+  "address": "4723 Concord Pike, Wilmington, DE 19803",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Daily Specials & Happy Hour",
+    "url": "http://homebasedelaware.com/"
+   },
+   {
+    "quote": "Daily Specials & Happy Hour | Home Base Delaware | Sports Bar and Grill in Wilmington, DE",
+    "url": "http://homebasedelaware.com/daily-specials/"
+   },
+   {
+    "quote": "Daily Specials & Happy Hour",
+    "url": "http://homebasedelaware.com/daily-specials/"
+   },
+   {
+    "quote": "Daily Specials / HAPPY HOUR: Monday - Saturday till 7 PM. (Dine-in Only) / $4 Miller Lites & Bud Lights",
+    "url": "http://homebasedelaware.com/daily-specials/"
+   },
+   {
+    "quote": "HAPPY HOUR: Monday - Saturday till 7 PM. (Dine-in Only)",
+    "url": "http://homebasedelaware.com/daily-specials/"
+   },
+   {
+    "quote": "$4 Miller Lites & Bud Lights",
+    "url": "http://homebasedelaware.com/daily-specials/"
+   },
+   {
+    "quote": "$5 Well Drinks",
+    "url": "http://homebasedelaware.com/daily-specials/"
+   },
+   {
+    "quote": "$6 Wines, Seltzers and half Priced Bottles of Wine",
+    "url": "http://homebasedelaware.com/daily-specials/"
+   },
+   {
+    "quote": "$2 Off of all Starters, $4 off of Wings",
+    "url": "http://homebasedelaware.com/daily-specials/"
+   },
+   {
+    "quote": "$4 Miller lite, Coors Lite, Bud Light. $4 Off of Wings",
+    "url": "http://homebasedelaware.com/daily-specials/"
+   },
+   {
+    "quote": "$6 Miler Lite, Bud Light or Coors Lite Tall Boys",
+    "url": "http://homebasedelaware.com/daily-specials/"
+   },
+   {
+    "quote": "Daily Specials (Dine in Only) / Monday - Philly me Up Mondays: $4 Off of All Cheesesteak Items / Tuesday - Taco & Tequila: $2 off of tacos, nachos, and quesadillas - $5 House Margaritas, $3 House Tequila Shots. (All Night)",
+    "url": "http://homebasedelaware.com/daily-specials/"
+   },
+   {
+    "quote": "Friday - Happy Hour till 7 PM.",
+    "url": "http://homebasedelaware.com/daily-specials/"
+   },
+   {
+    "quote": "Saturday - Happy Hour till 7 PM Brunch - $20 Mimosa Carafes till 4 PM.",
+    "url": "http://homebasedelaware.com/daily-specials/"
+   },
+   {
+    "quote": "Daily Specials & Happy Hour",
+    "url": "http://homebasedelaware.com/live-music/"
+   },
+   {
+    "quote": "Daily Specials & Happy Hour",
+    "url": "http://homebasedelaware.com/menus"
+   },
+   {
+    "quote": "HAPPY HOUR AND Daily Specials",
+    "url": "http://homebasedelaware.com/menus"
+   },
+   {
+    "quote": "Late Night Menu",
+    "url": "http://homebasedelaware.com/menus"
+   },
+   {
+    "quote": "Late night Menu available from 11 PM - Close",
+    "url": "http://homebasedelaware.com/menus"
+   },
+   {
+    "quote": "HAPPY HOUR: Monday - Saturday till 7 PM",
+    "url": "http://homebasedelaware.com/menus"
+   },
+   {
+    "quote": "$5 Well Drinks",
+    "url": "http://homebasedelaware.com/menus"
+   },
+   {
+    "quote": "$6 Wines, Seltzers and half Priced Bottles of Wine",
+    "url": "http://homebasedelaware.com/menus"
+   },
+   {
+    "quote": "Friday - Happy Hour till 7 PM.",
+    "url": "http://homebasedelaware.com/menus"
+   },
+   {
+    "quote": "Saturday - Happy Hour till 7 PM Brunch - $20 Mimosa Carafes and $4 Mimosas/Belinis till 4 PM.",
+    "url": "http://homebasedelaware.com/menus"
+   },
+   {
+    "quote": "PINT | PITCHER | TOWER | HAPPY HOUR TOWER",
+    "url": "http://homebasedelaware.com/menus"
+   }
+  ],
+  "name": "HomeBase Delaware",
+  "osm_name": "HomeBase Delaware",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 128,
+    "result": "ok, 1 quote(s)",
+    "url": "http://homebasedelaware.com/"
+   },
+   {
+    "hh": true,
+    "lines": 140,
+    "result": "ok, 13 quote(s)",
+    "url": "http://homebasedelaware.com/daily-specials/"
+   },
+   {
+    "hh": true,
+    "lines": 383,
+    "result": "ok, 1 quote(s)",
+    "url": "http://homebasedelaware.com/live-music/"
+   },
+   {
+    "hh": true,
+    "lines": 840,
+    "result": "ok, 10 quote(s)",
+    "url": "http://homebasedelaware.com/menus"
+   }
+  ],
+  "website": "http://homebasedelaware.com/",
+  "zone_id": "hockessin_greenville"
  },
  "DEe9a929ee19": {
   "address": "829 N Market St, Wilmington, DE 19801",
@@ -49859,6 +54415,187 @@
   ],
   "website": "https://www.roostwilmington.com/",
   "zone_id": "wilmington"
+ },
+ "DEe9cc683054": {
+  "address": "5600 Concord Pike Unit 5614, Wilmington, DE 19803",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "hh": true,
+    "quote": "BREAKFAST FAVORITES Substitute Gluten-Free Bread or Bun for $2",
+    "url": "https://cdn.metrodiner.io/wp-content/uploads/2020/02/GlutenFriendly_11.2024_LR.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "BURGERS & SANDWICHES Substitute Gluten-Free Bread or Bun for $2",
+    "url": "https://cdn.metrodiner.io/wp-content/uploads/2020/02/GlutenFriendly_11.2024_LR.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Breakfast Sandwich Platter $65",
+    "url": "https://cdn.metrodiner.io/wp-content/uploads/2025/09/Catering-Menu_6.2025_9x12_WEB.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "...Add spicy honey sauce for $5",
+    "url": "https://cdn.metrodiner.io/wp-content/uploads/2025/09/Catering-Menu_6.2025_9x12_WEB.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Fresh\u0007Seasonal\u0007Fruit\u000790 CAL. $70",
+    "url": "https://cdn.metrodiner.io/wp-content/uploads/2025/09/Catering-Menu_6.2025_9x12_WEB.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "13\u0007Biscuits\u0007\u201cDiner\u0007Dozen\u201d 160 CAL. $20",
+    "url": "https://cdn.metrodiner.io/wp-content/uploads/2025/09/Catering-Menu_6.2025_9x12_WEB.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Homefries 110 CAL. $30",
+    "url": "https://cdn.metrodiner.io/wp-content/uploads/2025/09/Catering-Menu_6.2025_9x12_WEB.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Hickory\u0007Smoked\u0007Bacon\u0007200 CAL. $50",
+    "url": "https://cdn.metrodiner.io/wp-content/uploads/2025/09/Catering-Menu_6.2025_9x12_WEB.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Country\u0007Sausage 400 CAL. $50",
+    "url": "https://cdn.metrodiner.io/wp-content/uploads/2025/09/Catering-Menu_6.2025_9x12_WEB.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Turkey\u0007Sausage 200 CAL. $50",
+    "url": "https://cdn.metrodiner.io/wp-content/uploads/2025/09/Catering-Menu_6.2025_9x12_WEB.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Honest\u0007to\u0007Goodness\u0007Grits\u0007 220 CAL. $22",
+    "url": "https://cdn.metrodiner.io/wp-content/uploads/2025/09/Catering-Menu_6.2025_9x12_WEB.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Cheesiest\u0007Grits 220 CAL. $25",
+    "url": "https://cdn.metrodiner.io/wp-content/uploads/2025/09/Catering-Menu_6.2025_9x12_WEB.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Fresh\u0007Fruit,\u0007Yogurt\u0007&\u0007Granola\u0007430 CAL. $45",
+    "url": "https://cdn.metrodiner.io/wp-content/uploads/2025/09/Catering-Menu_6.2025_9x12_WEB.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Roasted\u0007Street\u0007Corn 180 CAL. $30",
+    "url": "https://cdn.metrodiner.io/wp-content/uploads/2025/09/Catering-Menu_6.2025_9x12_WEB.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Mashed\u0007Potatoes\u0007&\u0007Gravy\u0007250 CAL. $40",
+    "url": "https://cdn.metrodiner.io/wp-content/uploads/2025/09/Catering-Menu_6.2025_9x12_WEB.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Steamed\u0007Green\u0007Beans 120 CAL. $30",
+    "url": "https://cdn.metrodiner.io/wp-content/uploads/2025/09/Catering-Menu_6.2025_9x12_WEB.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Coleslaw 210 CAL. $30",
+    "url": "https://cdn.metrodiner.io/wp-content/uploads/2025/09/Catering-Menu_6.2025_9x12_WEB.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Mac\u0007&\u0007Cheese\u0007230 CAL. $30",
+    "url": "https://cdn.metrodiner.io/wp-content/uploads/2025/09/Catering-Menu_6.2025_9x12_WEB.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "French\u0007Fries 230 CAL. $30",
+    "url": "https://cdn.metrodiner.io/wp-content/uploads/2025/09/Catering-Menu_6.2025_9x12_WEB.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Chips\u0007(8) 220 CAL. $20",
+    "url": "https://cdn.metrodiner.io/wp-content/uploads/2025/09/Catering-Menu_6.2025_9x12_WEB.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Individual\u0007Chips\u0007220 CAL. $3",
+    "url": "https://cdn.metrodiner.io/wp-content/uploads/2025/09/Catering-Menu_6.2025_9x12_WEB.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "House\u0007or\u0007Caesar\u0007Salad 300-450 CAL. $35",
+    "url": "https://cdn.metrodiner.io/wp-content/uploads/2025/09/Catering-Menu_6.2025_9x12_WEB.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Freshly\u0007Brewed\u0007Coffee\u00070 CAL. $25",
+    "url": "https://cdn.metrodiner.io/wp-content/uploads/2025/09/Catering-Menu_6.2025_9x12_WEB.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Freshly\u0007Brewed\u0007Ice\u0007Tea\u0007120 CAL. $15",
+    "url": "https://cdn.metrodiner.io/wp-content/uploads/2025/09/Catering-Menu_6.2025_9x12_WEB.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Lemonade\u0007150 CAL. $15",
+    "url": "https://cdn.metrodiner.io/wp-content/uploads/2025/09/Catering-Menu_6.2025_9x12_WEB.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Orange\u0007Juice 150 CAL. $25",
+    "url": "https://cdn.metrodiner.io/wp-content/uploads/2025/09/Catering-Menu_6.2025_9x12_WEB.pdf"
+   }
+  ],
+  "name": "Metro Diner",
+  "osm_name": "Metro Diner",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 179,
+    "result": "ok, 0 quote(s)",
+    "url": "https://metrodiner.com/locations/delaware/concord-pike/?utm_source=gmb-listing-map&utm_medium=organic&utm_campaign=google-my-business"
+   },
+   {
+    "hh": false,
+    "lines": 86,
+    "result": "ok, 0 quote(s)",
+    "url": "https://metrodiner.com/fish-fry-fridays/"
+   },
+   {
+    "hh": false,
+    "lines": 155,
+    "result": "ok, 2 quote(s)",
+    "url": "https://cdn.metrodiner.io/wp-content/uploads/2020/02/GlutenFriendly_11.2024_LR.pdf"
+   },
+   {
+    "hh": false,
+    "lines": 150,
+    "result": "ok, 24 quote(s)",
+    "url": "https://cdn.metrodiner.io/wp-content/uploads/2025/09/Catering-Menu_6.2025_9x12_WEB.pdf"
+   }
+  ],
+  "website": "https://metrodiner.com/locations/delaware/concord-pike/?utm_source=gmb-listing-map&utm_medium=organic&utm_campaign=google-my-business",
+  "zone_id": "hockessin_greenville"
+ },
+ "DEeb95f29fd3": {
+  "address": "683 Yorklyn Rd, Hockessin, DE 19707",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Graze Craze Charcuterie Boards & Boxes",
+  "osm_name": "Graze Craze Charcuterie Boards & Boxes",
+  "pages": [
+   {
+    "result": "403 text/html; render failed: TimeoutError",
+    "url": "https://order.toasttab.com/online/graze-craze-hockessin-de"
+   }
+  ],
+  "website": "https://order.toasttab.com/online/graze-craze-hockessin-de",
+  "zone_id": "hockessin_greenville"
  },
  "DEecfe85bffb": {
   "address": "1909 W 6th St, Wilmington, DE 19805",
@@ -49973,6 +54710,23 @@
   "website": "http://eldiabloburritos.com/",
   "zone_id": "wilmington"
  },
+ "DEf19b78f920": {
+  "address": "7460 Lancaster Pike, Hockessin, DE 19707",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "The Perfect Cup Cafe",
+  "osm_name": "The Perfect Cup Cafe",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 58,
+    "result": "ok, 0 quote(s)",
+    "url": "https://theperfectcupcafe.com/"
+   }
+  ],
+  "website": "https://theperfectcupcafe.com/",
+  "zone_id": "hockessin_greenville"
+ },
  "DEf31d98e1ae": {
   "address": "1313 N Market St, Wilmington, DE 19801",
   "crawled_at": "2026-09-02",
@@ -50055,6 +54809,87 @@
   ],
   "website": "https://friedchikentacoloco.toast.site/order?diningOption=takeout&rwg_token=AFd1xnHOX9z5aYlFEjF1BrQM9sUSGlmdko8tTIp-vv1rcHTagWGFGOqFFq7eaEZiPy5g4W8wEzDTY8_QY0mC_DjqxmxX6A3JOOakM7iO802nkjVRUArGkCQ%3D",
   "zone_id": "wilmington"
+ },
+ "DEf34c17cadf": {
+  "address": "4147 Concord Pike, Wilmington, DE 19803",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "La Tolteca - Wilmington,DE",
+  "osm_name": "La Tolteca - Wilmington,DE",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 50,
+    "result": "ok, 0 quote(s)",
+    "url": "https://latolteca.com/restaurant/"
+   },
+   {
+    "hh": false,
+    "lines": 50,
+    "result": "ok, 0 quote(s)",
+    "url": "https://latolteca.com/restaurant/"
+   },
+   {
+    "hh": false,
+    "lines": 415,
+    "result": "ok, 0 quote(s)",
+    "url": "https://latolteca.com/restaurant/buffalo/menu/"
+   },
+   {
+    "hh": false,
+    "lines": 438,
+    "result": "ok, 0 quote(s)",
+    "url": "https://latolteca.com/restaurant/wilmington/menu/"
+   }
+  ],
+  "website": "https://latolteca.com/restaurant/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DEf51a59a1fd": {
+  "address": "5337 Limestone Rd B, Wilmington, DE 19808",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Cafe Pomodoro",
+  "osm_name": "Cafe Pomodoro",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 51,
+    "result": "ok, 0 quote(s)",
+    "url": "https://cafepomodorode.com/"
+   },
+   {
+    "hh": false,
+    "lines": 222,
+    "result": "ok, 0 quote(s)",
+    "url": "https://cafepomodorode.com/cafepomodoro/catering"
+   },
+   {
+    "hh": false,
+    "lines": 484,
+    "result": "ok, 0 quote(s)",
+    "url": "https://cafepomodorode.com/take-out-menu/"
+   }
+  ],
+  "website": "https://cafepomodorode.com/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DEf91a1dccc3": {
+  "address": "GPS: 528, 528 Montchanin Rd, Montchanin, DE 19710",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "The Inn at Montchanin Village & Spa - A Historic Hotel of America",
+  "osm_name": "The Inn at Montchanin Village & Spa - A Historic Hotel of America",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 90,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.montchanin.com/"
+   }
+  ],
+  "website": "http://www.montchanin.com/",
+  "zone_id": "hockessin_greenville"
  },
  "DEfabc801388": {
   "address": "5343 Limestone Rd, Wilmington, DE 19808",
@@ -50175,6 +55010,85 @@
   ],
   "website": "http://www.tylersrestaurant.com/",
   "zone_id": "wilmington"
+ },
+ "DEfefcbdbb6e": {
+  "address": "307 Rocky Run Pkwy, Wilmington, DE 19803",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Happy Hour",
+    "url": "https://sangamwilmington.com/"
+   }
+  ],
+  "name": "Sangam Indian Restaurant",
+  "osm_name": "Sangam Indian Restaurant",
+  "pages": [
+   {
+    "result": "rendered: 1 lines -> 66",
+    "url": "https://sangamwilmington.com/"
+   },
+   {
+    "hh": true,
+    "lines": 66,
+    "result": "ok, 1 quote(s)",
+    "url": "https://sangamwilmington.com/"
+   },
+   {
+    "hh": false,
+    "lines": 1,
+    "result": "ok, 0 quote(s)",
+    "url": "https://sangamwilmington.com/indian-restaurant-menu/category/biryani"
+   },
+   {
+    "hh": false,
+    "lines": 1,
+    "result": "ok, 0 quote(s)",
+    "url": "https://sangamwilmington.com/indian-restaurant-menu/category/curries"
+   },
+   {
+    "hh": false,
+    "lines": 1,
+    "result": "ok, 0 quote(s)",
+    "url": "https://sangamwilmington.com/indian-restaurant-menu/category/dosa"
+   }
+  ],
+  "website": "https://sangamwilmington.com/",
+  "zone_id": "hockessin_greenville"
+ },
+ "DEfeff137508": {
+  "address": "4563 New Linden Hill Rd, Wilmington, DE 19808",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Kyoto Japanese Cuisine",
+  "osm_name": "Kyoto Japanese Cuisine",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 127,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.smorefood.com/order-online/kyoto-japanese-cuisine-wilmington-19808-x67vpkq5?utm_source=gmb&utm_medium=website"
+   },
+   {
+    "hh": false,
+    "lines": 127,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.smorefood.com/order-online/kyoto-japanese-cuisine-wilmington-19808-x67vpkq5?menu=All+Day+Menu"
+   },
+   {
+    "hh": false,
+    "lines": 83,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.smorefood.com/order-online/kyoto-japanese-cuisine-wilmington-19808-x67vpkq5?menu=Lunch+Menu"
+   },
+   {
+    "hh": false,
+    "lines": 127,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.smorefood.com/order-online/kyoto-japanese-cuisine-wilmington-19808-x67vpkq5?utm_source=gmb&utm_medium=website"
+   }
+  ],
+  "website": "https://www.smorefood.com/order-online/kyoto-japanese-cuisine-wilmington-19808-x67vpkq5?utm_source=gmb&utm_medium=website",
+  "zone_id": "hockessin_greenville"
  },
  "DEff6bbca472": {
   "address": "821 N Market St, Wilmington, DE 19801",

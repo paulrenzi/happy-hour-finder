@@ -553,41 +553,6 @@
    ]
   },
   {
-   "id": "philadelphia-live-hotel-philadelphia",
-   "lid": "102776",
-   "name": "Philadelphia Live! Hotel",
-   "plcb_name": "LIVE! CASINO & HOTEL PHILADELPHIA",
-   "address": "900 PACKER AVE, PHILADELPHIA PA 19148-5130",
-   "zone_id": "south_philly",
-   "license_type": "",
-   "website": "https://philadelphia.livecasinohotel.com/",
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 6,
-       "start": "20:00",
-       "end": "22:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-09-01",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://www.livech.com/pittsburgh/events-and-shows/happy-hour",
-      "quote": "\u200b Hold onto your hat, cowboy -- this ain't your average happy hour! Join us every Saturday from 8:00PM - 10:00PM. The drinks are cold, the line dances are hot, the DJ is dropping beats and the mechanical bull is waitin' to test your grit. Our happy hour specials will have you hollerin' \"YEEHAW!\"",
-      "quotes": [
-       "\u200b Hold onto your hat, cowboy -- this ain't your average happy hour! Join us every Saturday from 8:00PM - 10:00PM. The drinks are cold, the line dances are hot, the DJ is dropping beats and the mechanical bull is waitin' to test your grit. Our happy hour specials will have you hollerin' \"YEEHAW!\"",
-       "Happy Hour / Skip to Main Content Date: Every Saturday / \u200b Time: 8:00PM - 10:00PM"
-      ]
-     }
-    }
-   ]
-  },
-  {
    "id": "lascala-s-fire-villanova",
    "lid": "103297",
    "name": "LaScala's Fire",
@@ -1113,7 +1078,62 @@
       "url": "https://pierbarphilly.com/philadelphia-fairmount-pier-bar-happy-hours-specials",
       "quote": "Happy Hour! / 04:00 PM - 06:00 PM",
       "quotes": [
-       "Happy Hour! / 04:00 PM - 06:00 PM"
+       "Happy Hour! / 04:00 PM - 06:00 PM",
+       "Happy Hour! / 04:00 PM - 06:00 PM / Wednesday September 2nd / Happy Hour! / 04:00 PM - 06:00 PM / Thursday September 3rd / Happy Hour! / 04:00 PM - 06:00 PM / Friday September 4th"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "the-pullman-restaurant-and-bar-bryn-mawr",
+   "lid": "104811",
+   "name": "The Pullman Restaurant and Bar",
+   "plcb_name": "HAM-BOLT LLC",
+   "address": "39 MORRIS AVE, BRYN MAWR PA 19010-3335",
+   "zone_id": "ardmore_bryn_mawr",
+   "license_type": "",
+   "website": "https://thepullmanrestaurant.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 3,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 4,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 6,
+       "start": "16:30",
+       "end": "18:30"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://thepullmanrestaurant.com/bryn-mawr-main-line-the-pullman-restaurant-and-bar-happy-hours-specials",
+      "quote": "Happy Hour / 04:30 PM - 06:30 PM / Wednesday September 2nd / Happy Hour / 04:30 PM - 06:30 PM / Thursday September 3rd / Happy Hour / 04:30 PM - 06:30 PM / Friday September 4th",
+      "quotes": [
+       "Happy Hour / 04:30 PM - 06:30 PM / Wednesday September 2nd / Happy Hour / 04:30 PM - 06:30 PM / Thursday September 3rd / Happy Hour / 04:30 PM - 06:30 PM / Friday September 4th"
       ]
      }
     }
@@ -1438,41 +1458,17 @@
        "dow": 4,
        "start": "16:00",
        "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 6,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 7,
-       "start": "16:00",
-       "end": "18:00"
       }
      ],
-     "items": [
-      {
-       "category": "draft",
-       "label": "Flagship Other Half Beers",
-       "price_usd": 5.0
-      }
-     ],
+     "items": [],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-01",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://otherhalfbrewing.com/event/clone-ohanother-happy-hour-buffalo-2026-09-15/",
-      "quote": "OH\u2026Another Happy Hour @ Buffalo / September 15 2026 4:00 pm - September 18 2026 6:00 pm / Daily Happy Hour at Other Half Buffalo Tuesday-Friday 4pm-6pm",
+      "url": "https://otherhalfbrewing.com/event/clone-philly-happy-hour-2026-09-14/",
+      "quote": "Philly Happy Hour / September 14 2026 4:00 pm - September 17 2026 6:00 pm / Happy Hour 4pm-6pm Monday to Thursday in the Philly Taproom!",
       "quotes": [
-       "OH\u2026Another Happy Hour @ Buffalo / September 15 2026 4:00 pm - September 18 2026 6:00 pm / Daily Happy Hour at Other Half Buffalo Tuesday-Friday 4pm-6pm",
-       "OH\u2026Another Happy Hour @ Buffalo / September 8 2026 4:00 pm - September 11 2026 6:00 pm / Daily Happy Hour at Other Half Buffalo Tuesday-Friday 4pm-6pm",
-       "Daily Happy Hour at Other Half Buffalo Tuesday-Friday 4pm-6pm",
        "Philly Happy Hour / September 14 2026 4:00 pm - September 17 2026 6:00 pm / Happy Hour 4pm-6pm Monday to Thursday in the Philly Taproom!",
        "Happy Hour 4pm-6pm Monday to Thursday in the Philly Taproom!"
       ]
@@ -2098,11 +2094,6 @@
      "type": "happy_hour",
      "windows": [
       {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
        "dow": 2,
        "start": "16:00",
        "end": "18:00"
@@ -2119,16 +2110,6 @@
       },
       {
        "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 6,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 7,
        "start": "16:00",
        "end": "18:00"
       }
@@ -5449,7 +5430,8 @@
       "url": "https://charlottesrestaurant.com/newtown-square-charlotte-s-restaurant-happy-hours-specials",
       "quote": "Happy Hour at Charlottes features drink specials and discounted appetizers. / 04:00 PM - 06:30 PM",
       "quotes": [
-       "Happy Hour at Charlottes features drink specials and discounted appetizers. / 04:00 PM - 06:30 PM"
+       "Happy Hour at Charlottes features drink specials and discounted appetizers. / 04:00 PM - 06:30 PM",
+       "Happy Hour at Charlottes features drink specials and discounted appetizers. / 04:00 PM - 06:30 PM / Wednesday September 2nd / Happy Hour at Charlottes features drink specials and discounted appetizers. / 04:00 PM - 06:30 PM / Thursday September 3rd / Happy Hour at Charlottes features drink specials and discounted appetizers. / 04:00 PM - 06:30 PM / Friday September 4th"
       ]
      }
     }
@@ -5732,65 +5714,6 @@
    ]
   },
   {
-   "id": "desmond-hotel-malvern-a-doubletree-by-hilton-malvern",
-   "lid": "32835",
-   "name": "Desmond Hotel Malvern, a DoubleTree by Hilton",
-   "plcb_name": "THE DESMOND",
-   "address": "1 LIBERTY BLVD, MALVERN PA 19355-1419",
-   "zone_id": "malvern_great_valley",
-   "license_type": "",
-   "website": "https://www.desmondgv.com/",
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "14:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "14:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "14:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "14:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "14:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 7,
-       "start": "14:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-09-01",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://www.desmondgv.com/calendar/",
-      "quote": "2:00 pm - 6:00 pm: Happy Hour Sun - Fri at Fox & Hounds Pub",
-      "quotes": [
-       "2:00 pm - 6:00 pm: Happy Hour Sun - Fri at Fox & Hounds Pub"
-      ]
-     }
-    }
-   ]
-  },
-  {
    "id": "coyote-crossing-conshohocken",
    "lid": "36229",
    "name": "Coyote Crossing",
@@ -5825,16 +5748,6 @@
       },
       {
        "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 6,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 7,
        "start": "16:00",
        "end": "18:00"
       }
@@ -6444,60 +6357,6 @@
       "quote": "Happy Hour in the JPUB! / 3:30-5:30 PM",
       "quotes": [
        "Happy Hour in the JPUB! / 3:30-5:30 PM"
-      ]
-     }
-    }
-   ]
-  },
-  {
-   "id": "hard-rock-cafe-philadelphia-44268",
-   "lid": "44268",
-   "name": "Hard Rock Cafe",
-   "plcb_name": "PHILADELPHIA MARRIOTT",
-   "address": "1201 MARKET ST & 1113-31 MARKET ST, PHILADELPHIA PA 19107-2817",
-   "zone_id": "center_city",
-   "license_type": "",
-   "website": "https://www.hardrockcafe.com/location/philadelphia/",
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "15:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 2,
-       "start": "15:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 3,
-       "start": "15:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 4,
-       "start": "15:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 5,
-       "start": "15:00",
-       "end": "19:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://www.hardrockcafe.com/location/philadelphia/",
-      "quote": "Happy Hour Join us weekdays from 3pm-7pm for Happy Hour",
-      "quotes": [
-       "Happy Hour Join us weekdays from 3pm-7pm for Happy Hour"
       ]
      }
     }
@@ -8548,7 +8407,8 @@
       "url": "https://alehousenewtownsquare.com/newtown-square-delaware-county-the-ale-house-happy-hours-specials",
       "quote": "Happy Hour! / 04:00 PM - 06:00 PM",
       "quotes": [
-       "Happy Hour! / 04:00 PM - 06:00 PM"
+       "Happy Hour! / 04:00 PM - 06:00 PM",
+       "Happy Hour! / 04:00 PM - 06:00 PM / Wednesday September 2nd / Happy Hour! / 04:00 PM - 06:00 PM / Thursday September 3rd / Happy Hour! / 04:00 PM - 06:00 PM / Friday September 4th"
       ]
      }
     }
@@ -13673,6 +13533,40 @@
    ]
   },
   {
+   "id": "braeloch-brewing-kennett-square",
+   "lid": "88001",
+   "name": "Braeloch Brewing",
+   "plcb_name": "BRAELOCH BREWING",
+   "address": "225  BIRCH ST, KENNETT SQUARE PA 19348",
+   "zone_id": "kennett_square",
+   "license_type": "",
+   "website": "https://braelochbrewing.beer/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "20:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://braelochbrewing.beer/events",
+      "quote": "Happy Hour / Fri, Sep 11 / 5pm\u20138pm / Happy Hour / Fri, Sep 25 / 5pm\u20138pm / Happy Hour / Fri, Oct 2 / 5pm\u20138pm",
+      "quotes": [
+       "Happy Hour / Fri, Sep 11 / 5pm\u20138pm / Happy Hour / Fri, Sep 25 / 5pm\u20138pm / Happy Hour / Fri, Oct 2 / 5pm\u20138pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
    "id": "chophouse-grille-exton",
    "lid": "89606",
    "name": "ChopHouse Grille",
@@ -15369,6 +15263,66 @@
    ]
   },
   {
+   "id": "fiesta-maya-mexican-grill-newark",
+   "lid": "DE004a8c7d86",
+   "name": "Fiesta Maya | Mexican Grill",
+   "plcb_name": "Fiesta Maya | Mexican Grill",
+   "address": "200 Pencader Plaza, Newark, DE 19711",
+   "zone_id": "newark_de",
+   "license_type": "",
+   "website": "https://www.fiestamayamexicangrill.com/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=9562526365037300102",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "lime margaritas",
+       "price_usd": 4.99
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.fiestamayamexicangrill.com/specials",
+      "quote": "Happy Hour / 3 PM - 6 PM (M-F) / Taco Tuesday",
+      "quotes": [
+       "Happy Hour / 3 PM - 6 PM (M-F) / Taco Tuesday"
+      ]
+     }
+    }
+   ]
+  },
+  {
    "id": "bar-xiii-delaware-wilmington",
    "lid": "DE01470ee0d8",
    "name": "Bar XIII Delaware",
@@ -15650,6 +15604,61 @@
       "quotes": [
        "Monday-Friday 3-6pm Food & Drink Specials",
        "Happy Hour / Monday\u2013Friday | 3\u20136pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "the-cheesecake-factory-newark",
+   "lid": "DE1c499fcbf0",
+   "name": "The Cheesecake Factory",
+   "plcb_name": "The Cheesecake Factory",
+   "address": "350 Christiana Mall, Newark, DE 19702",
+   "zone_id": "newark_de",
+   "license_type": "",
+   "website": "https://locations.thecheesecakefactory.com/de/newark-151.html?utm_source=Google&utm_medium=Maps&utm_campaign=Google+Places",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://locations.thecheesecakefactory.com/de/newark-151.html?utm_source=Google&utm_medium=Maps&utm_campaign=Google+Places",
+      "quote": "Happy Hour is served in our bar area Mon - Fri from 4:00 PM-6:00 PM.",
+      "quotes": [
+       "Happy Hour is served in our bar area Mon - Fri from 4:00 PM-6:00 PM.",
+       "Happy Hour / Mon - Fri: 4:00 PM-6:00 PM"
       ]
      }
     }
@@ -16019,6 +16028,70 @@
    ]
   },
   {
+   "id": "redfire-grill-steakhouse-hockessin",
+   "lid": "DE3c67f8614a",
+   "name": "Redfire Grill & Steakhouse",
+   "plcb_name": "Redfire Grill & Steakhouse",
+   "address": "400 Lantana Dr, Hockessin, DE 19707",
+   "zone_id": "hockessin_greenville",
+   "license_type": "",
+   "website": "https://www.redfiregrill.net/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 2,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 3,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 4,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 6,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 7,
+       "start": "16:30",
+       "end": "18:30"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.redfiregrill.net/food-and-drink",
+      "quote": "Happy Hour: Daily 4:30 pm - 6:30 pm&nbsp;",
+      "quotes": [
+       "Happy Hour: Daily 4:30 pm - 6:30 pm&nbsp;"
+      ]
+     }
+    }
+   ]
+  },
+  {
    "id": "goobers-diner-wilmington",
    "lid": "DE4264e33ba0",
    "name": "Goobers Diner",
@@ -16077,6 +16150,67 @@
       "quote": "Happy hour / 03:00 PM - 05:00 PM",
       "quotes": [
        "Happy hour / 03:00 PM - 05:00 PM"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "bar-reverie-greenville",
+   "lid": "DE493f7928d5",
+   "name": "Bar Reverie",
+   "plcb_name": "Bar Reverie",
+   "address": "4017 Kennett Pike, Greenville, DE 19807",
+   "zone_id": "hockessin_greenville",
+   "license_type": "",
+   "website": "http://www.barreverie.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "martiniS",
+       "amount_off_usd": 3.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://www.barreverie.com/events",
+      "quote": "Happy Hour / 3-6PM weekDAYS / martini mondays",
+      "quotes": [
+       "Happy Hour / 3-6PM weekDAYS / martini mondays",
+       "\u2014 happy hour \u2014 / Offered Weekdays from 3-6pm."
       ]
      }
     }
@@ -16143,6 +16277,60 @@
        "Happy Hour Specials 3-6 PM",
        "HAPPY HOUR SPECIALS: / Monday \u2013 Friday 3pm to 6pm Bar Area / Happy Hour Only 3pm-6pm M-F",
        "Happy Hour Only 3pm-6pm M-F"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "el-maya-mexican-grill-wilmington",
+   "lid": "DE62a5b3c678",
+   "name": "El Maya Mexican Grill",
+   "plcb_name": "El Maya Mexican Grill",
+   "address": "1300 Centerville Rd, Wilmington, DE 19808",
+   "zone_id": "hockessin_greenville",
+   "license_type": "",
+   "website": "https://www.elmayamexicangrillde.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.elmayamexicangrillde.com/",
+      "quote": "Happy Hour: / Monday to Friday, 4:00 pm \u2013 6:00 pm",
+      "quotes": [
+       "Happy Hour: / Monday to Friday, 4:00 pm \u2013 6:00 pm"
       ]
      }
     }
@@ -16231,6 +16419,76 @@
       "quote": "Happy Hour / Monday \u2013 Friday 4pm \u2013 6pm",
       "quotes": [
        "Happy Hour / Monday \u2013 Friday 4pm \u2013 6pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "kid-shelleen-s-branmar-plaza-wilmington",
+   "lid": "DE6da252adc0",
+   "name": "Kid Shelleen's - Branmar Plaza",
+   "plcb_name": "Kid Shelleen's - Branmar Plaza",
+   "address": "1812 Marsh Rd Ste 15, Wilmington, DE 19810",
+   "zone_id": "hockessin_greenville",
+   "license_type": "",
+   "website": "https://www.harryshospitalitygroup.com/kid-shelleens/branmar-plaza/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Draught Beers & Wines by the Glass",
+       "amount_off_usd": 1.0
+      },
+      {
+       "category": "well",
+       "label": "Rail Mixed Drinks",
+       "price_usd": 4.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.harryshospitalitygroup.com/kid-shelleens/branmar-plaza/menus/",
+      "quote": "HAPPY HOUR / Monday through Saturday, 3-6PM / $1 off Draught Beers & Wines by the Glass, $4 Rail Mixed Drinks",
+      "quotes": [
+       "HAPPY HOUR / Monday through Saturday, 3-6PM / $1 off Draught Beers & Wines by the Glass, $4 Rail Mixed Drinks"
       ]
      }
     }
@@ -16849,6 +17107,451 @@
       "quotes": [
        "Happy Hour / Happy Hour: Tuesday - Friday, 4 PM - 6 PM",
        "Happy Hour: Tuesday - Friday, 4 PM - 6 PM"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "1937-brewing-co-wilmington",
+   "lid": "DEc46bc95585",
+   "name": "1937 Brewing Co",
+   "plcb_name": "1937 Brewing Co",
+   "address": "777 Delaware Park Blvd, Wilmington, DE 19804",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "https://delawarepark.com/dining/brewing/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 3,
+       "start": "14:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "14:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "14:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "All Other High Steaks Beers",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "Personal Pizzas",
+       "price_usd": 8.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://delawarepark.com/dining/brewing/",
+      "quote": "HAPPY HOUR / Wednesday \u2013 Friday | 2pm to 6pm / $3 Legal Light & Delaware Park Lagers | $5 All Other High Steaks Beers | $8 Personal Pizzas",
+      "quotes": [
+       "HAPPY HOUR / Wednesday \u2013 Friday | 2pm to 6pm / $3 Legal Light & Delaware Park Lagers | $5 All Other High Steaks Beers | $8 Personal Pizzas"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "taco-grande-wilmington",
+   "lid": "DEcfc7c9decb",
+   "name": "Taco Grande",
+   "plcb_name": "Taco Grande",
+   "address": "600 Justison St, Wilmington, DE 19801",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "http://www.tacogrande.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "Tacos",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "Tacos* (Chicken",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "Shrimp or Ground Beef)",
+       "price_usd": 5.0
+      },
+      {
+       "category": "shot",
+       "label": "TG House Tequila Shots",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Margarita Pitchers",
+       "price_usd": 20.0
+      },
+      {
+       "category": "cocktail",
+       "label": "House Margaritas",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Flavored Margaritas",
+       "price_usd": 7.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://tacogrande.com/weekly-specials/",
+      "quote": "Happy Hour / Monday All Day / Tuesday \u2013 Friday 4P-6P",
+      "quotes": [
+       "Happy Hour / Monday All Day / Tuesday \u2013 Friday 4P-6P"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "little-vinnie-s-pizza-pasta-wilmington",
+   "lid": "DEd7a6e46b80",
+   "name": "Little Vinnie's Pizza & Pasta",
+   "plcb_name": "Little Vinnie's Pizza & Pasta",
+   "address": "1706 Faulkland Rd, Wilmington, DE 19805",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "http://www.littlevinniespizza.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "17:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://www.littlevinniespizza.com/",
+      "quote": "\u2014 Happy Hour \u2013 M-F 3-5pm* $1 off mixed drinks + wine by the glass\u2014",
+      "quotes": [
+       "\u2014 Happy Hour \u2013 M-F 3-5pm* $1 off mixed drinks + wine by the glass\u2014"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "bardea-food-drink-wilmington",
+   "lid": "DEd8325476cf",
+   "name": "Bardea Food & Drink",
+   "plcb_name": "Bardea Food & Drink",
+   "address": "620 N Market St, Wilmington, DE 19801",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "https://www.bardeafoodanddrink.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.bardeafoodanddrink.com/menus/",
+      "quote": "Happy Hour: Available in the bar area Monday-Friday 5pm-7pm",
+      "quotes": [
+       "Happy Hour: Available in the bar area Monday-Friday 5pm-7pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "sullivan-s-steakhouse-wilmington",
+   "lid": "DEe016563850",
+   "name": "Sullivan's Steakhouse",
+   "plcb_name": "Sullivan's Steakhouse",
+   "address": "5525 Concord Pike, Wilmington, DE 19803",
+   "zone_id": "hockessin_greenville",
+   "license_type": "",
+   "website": "https://sullivanssteakhouse.com/wilmington/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "Jumbo Shrimp Cocktail",
+       "price_usd": 20.0
+      },
+      {
+       "category": "food",
+       "label": "Beef Wellington Bites",
+       "price_usd": 15.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.sullivanssteakhouse.com/wilmington/menus/happyhour-food-drink/",
+      "quote": "Wilmington Happy Hour Menu / Available in the bar, Monday-Thursday 3pm-6pm / $25",
+      "quotes": [
+       "Wilmington Happy Hour Menu / Available in the bar, Monday-Thursday 3pm-6pm / $25",
+       "HAPPY HOUR / Monday \u2013 Thursday 3:00 pm \u2013 6:00 pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "the-chancery-market-wilmington",
+   "lid": "DEf31d98e1ae",
+   "name": "The Chancery Market",
+   "plcb_name": "The Chancery Market",
+   "address": "1313 N Market St, Wilmington, DE 19801",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "https://www.thechancerymarket.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "SELECT DRAFT BEER",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "HOUSE WINE",
+       "price_usd": 6.0
+      },
+      {
+       "category": "well",
+       "label": "RAIL DRINKS WITH ONE MIXER",
+       "price_usd": 7.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.thechancerymarket.com/eat-drink",
+      "quote": "HAPPY HOUR EVERY DAY! / 4PM - 7PM / $5 SELECT DRAFT BEER",
+      "quotes": [
+       "HAPPY HOUR EVERY DAY! / 4PM - 7PM / $5 SELECT DRAFT BEER",
+       "HAPPY HOUR FROM 4PM - 7PM"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "chelsea-tavern-wilmington",
+   "lid": "DEff6bbca472",
+   "name": "Chelsea Tavern",
+   "plcb_name": "Chelsea Tavern",
+   "address": "821 N Market St, Wilmington, DE 19801",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "http://www.chelseatavern.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://www.chelseatavern.com/happy-hours-specials",
+      "quote": "Happy Hour / Early Happy Hour -- Monday thru Friday 3pm-6pm / Late Night Happy Hour \u2013 Monday thru Friday 11pm-1am",
+      "quotes": [
+       "Happy Hour / Early Happy Hour -- Monday thru Friday 3pm-6pm / Late Night Happy Hour \u2013 Monday thru Friday 11pm-1am",
+       "Early Happy Hour -- Monday thru Friday 3pm-6pm"
       ]
      }
     }

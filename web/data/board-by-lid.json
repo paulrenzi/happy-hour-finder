@@ -1516,6 +1516,44 @@
    }
   ]
  },
+ "104811": {
+  "name": "The Pullman Restaurant and Bar",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 3,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 4,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 5,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 6,
+      "start": "16:30",
+      "end": "18:30"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "70056": {
   "name": "Tired Hands Fermentaria",
   "deals": [
@@ -6041,21 +6079,6 @@
       "dow": 4,
       "start": "16:00",
       "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 6,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 7,
-      "start": "16:00",
-      "end": "18:00"
      }
     ],
     "source": {
@@ -7317,133 +7340,6 @@
    }
   ]
  },
- "109005": {
-  "name": "Chili's",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "15:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "102776": {
-  "name": "Philadelphia Live! Hotel",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 6,
-      "start": "20:00",
-      "end": "22:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "83231": {
-  "name": "Second District Brewing Company",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "45092": {
-  "name": "South Philadelphia Tap Room",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
  "103758": {
   "name": "Benny the Bum's",
   "deals": [
@@ -8009,6 +7905,115 @@
    }
   ]
  },
+ "109005": {
+  "name": "Chili's",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "15:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "83231": {
+  "name": "Second District Brewing Company",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "45092": {
+  "name": "South Philadelphia Tap Room",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "81364": {
   "name": "Al Pastor",
   "deals": [
@@ -8566,11 +8571,6 @@
     "type": "happy_hour",
     "windows": [
      {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
       "dow": 2,
       "start": "16:00",
       "end": "18:00"
@@ -8587,16 +8587,6 @@
      },
      {
       "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 6,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 7,
       "start": "16:00",
       "end": "18:00"
      }
@@ -8708,6 +8698,24 @@
       "dow": 2,
       "start": "16:00",
       "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "88001": {
+  "name": "Braeloch Brewing",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 5,
+      "start": "17:00",
+      "end": "20:00"
      }
     ],
     "source": {
@@ -9802,6 +9810,110 @@
    }
   ]
  },
+ "DE004a8c7d86": {
+  "name": "Fiesta Maya | Mexican Grill",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "15:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "DE1c499fcbf0": {
+  "name": "The Cheesecake Factory",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "DEc46bc95585": {
+  "name": "1937 Brewing Co",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 3,
+      "start": "14:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "14:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "14:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "DE01470ee0d8": {
   "name": "Bar XIII Delaware",
   "deals": [
@@ -9842,6 +9954,44 @@
       "dow": 7,
       "start": "18:00",
       "end": "20:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "DEd8325476cf": {
+  "name": "Bardea Food & Drink",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 2,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 3,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 4,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 5,
+      "start": "17:00",
+      "end": "19:00"
      }
     ],
     "source": {
@@ -10019,6 +10169,44 @@
  },
  "DE7eb20bf7a8": {
   "name": "Catherine Rooney's",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "15:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "DEff6bbca472": {
+  "name": "Chelsea Tavern",
   "deals": [
    {
     "type": "happy_hour",
@@ -10336,6 +10524,44 @@
    }
   ]
  },
+ "DEd7a6e46b80": {
+  "name": "Little Vinnie's Pizza & Pasta",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "15:00",
+      "end": "17:00"
+     },
+     {
+      "dow": 2,
+      "start": "15:00",
+      "end": "17:00"
+     },
+     {
+      "dow": 3,
+      "start": "15:00",
+      "end": "17:00"
+     },
+     {
+      "dow": 4,
+      "start": "15:00",
+      "end": "17:00"
+     },
+     {
+      "dow": 5,
+      "start": "15:00",
+      "end": "17:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "DE9b9a033447": {
   "name": "Rocco Italian Grill & Sports Bar",
   "deals": [
@@ -10462,6 +10688,87 @@
       "dow": 7,
       "start": "17:00",
       "end": "21:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "DEcfc7c9decb": {
+  "name": "Taco Grande",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "DEf31d98e1ae": {
+  "name": "The Chancery Market",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 6,
+      "start": "16:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 7,
+      "start": "16:00",
+      "end": "19:00"
      }
     ],
     "source": {
@@ -10750,6 +11057,206 @@
      {
       "dow": 7,
       "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "DE493f7928d5": {
+  "name": "Bar Reverie",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "15:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "DE62a5b3c678": {
+  "name": "El Maya Mexican Grill",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "DE6da252adc0": {
+  "name": "Kid Shelleen's - Branmar Plaza",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 6,
+      "start": "15:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "DE3c67f8614a": {
+  "name": "Redfire Grill & Steakhouse",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 2,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 3,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 4,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 5,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 6,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 7,
+      "start": "16:30",
+      "end": "18:30"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "DEe016563850": {
+  "name": "Sullivan's Steakhouse",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "15:00",
       "end": "18:00"
      }
     ],

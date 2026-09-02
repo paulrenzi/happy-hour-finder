@@ -1177,8 +1177,21 @@ def main():
     seen_ids = {v.get("id") for v in prior if str(v.get("lid")) not in (only or set())}
     places = place_names(json.load(open(BASE, encoding="utf-8"))
                          if os.path.exists(BASE) else {})
+    base_rows = json.load(open(BASE, encoding="utf-8")) if os.path.exists(BASE) else {}
     for lid, v in one_per_osm(hits, sites):
         if only is not None and lid not in only:
+            continue
+        # 🛑 A venue taken OUT of the corpus must stop publishing. This loop
+        # walks crawl_hits.json, which is an archive of everything ever
+        # crawled and is never pruned -- so seventeen southern-Delaware rows
+        # removed from the seed went on producing deals, and Crooked Hammock
+        # Brewery in LEWES kept its coordinate 90 miles outside the market.
+        # build_bundles already refuses such a deal at the door ("matched no
+        # venue in the base"), which is exactly why nobody noticed: the card
+        # never shipped, but the corpus and the coordinate cache still carried
+        # it. Refuse it here, where it is cheap and visible.
+        if base_rows and lid not in base_rows:
+            stats["  no longer in the corpus"] += 1
             continue
         # The crawl found a menu picture and the vision pass transcribed it:
         # the happy-hour lines of that transcript are candidates, and they

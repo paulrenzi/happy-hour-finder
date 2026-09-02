@@ -148,8 +148,30 @@ def search(key, query, kind, requests, token=None):
     return d.get("places", []), d.get("nextPageToken")
 
 
+# 🛑 NORTHERN Delaware, as a box, because ", DE" is not a location.
+#
+# A text search for "brewery in Hockessin, Delaware" returned Crooked Hammock
+# Brewery in LEWES -- ninety miles south, on the ocean -- and 16 more from
+# Rehoboth Beach, Dover, Smyrna and Millsboro. Every one of them is genuinely
+# in Delaware, which is all the state test asked. Places widens a query it
+# cannot satisfy locally, and the whole state is a small enough haystack that
+# it succeeds.
+#
+# The box is northern New Castle County plus MOT: north of Smyrna, east of the
+# Maryland line. Caught by tests/test_ingest.py's geocode disc, which is the
+# only check in the repo that ever looks at where a venue actually IS.
+DE_BOX = {"lat": (39.35, 39.92), "lng": (-75.90, -75.35)}
+
+
 def in_delaware(place):
-    return ", DE " in (place.get("formattedAddress") or "")
+    if ", DE " not in (place.get("formattedAddress") or ""):
+        return False
+    loc = place.get("location") or {}
+    lat, lng = loc.get("latitude"), loc.get("longitude")
+    if lat is None or lng is None:
+        return False
+    return (DE_BOX["lat"][0] < lat < DE_BOX["lat"][1]
+            and DE_BOX["lng"][0] < lng < DE_BOX["lng"][1])
 
 
 SITES_JSON = os.path.join(REPO, "data", "venue_sites.json")

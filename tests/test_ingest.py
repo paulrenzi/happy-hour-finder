@@ -577,12 +577,32 @@ class SeedCorpus(unittest.TestCase):
         for venue in self.seed["venues"]:
             self.assertTrue(venue["id"] in self.coords, f"{venue['name']} was never geocoded")
 
-    def test_no_venue_resolved_outside_the_disc(self):
+    # The market, as boxes. The first is the 20-mile disc around King of
+    # Prussia; the second is northern Delaware, added 2026-09-02 and NOT a
+    # widening of the first -- Middletown DE sits below the disc's southern
+    # edge, and a single box big enough for both would swallow half of
+    # Maryland.
+    #
+    # 🔑 This is the only check in the repo that looks at where a venue
+    # actually IS, and it earned that on its first Delaware run: a Places text
+    # search for "brewery in Hockessin, Delaware" returned Crooked Hammock
+    # Brewery in LEWES, ninety miles south on the ocean, plus sixteen more from
+    # Rehoboth, Dover and Smyrna. Every one is genuinely in Delaware, which is
+    # all the seeder's state test asked -- Places widens a query it cannot
+    # satisfy locally, and a small state is a small enough haystack to succeed.
+    MARKET_BOXES = [
+        ((39.6, 40.6), (-76.0, -74.8)),      # King of Prussia, 20 miles
+        ((39.35, 39.92), (-75.90, -75.35)),  # northern Delaware + MOT
+    ]
+
+    def test_no_venue_resolved_outside_the_market(self):
         for venue in self.corpus:
             at = self.coords.get(venue["id"])
             if at:
-                self.assertTrue(39.6 < at["lat"] < 40.6 and -76.0 < at["lng"] < -74.8,
-                                f"{venue['name']} resolved outside the 20-mile disc")
+                self.assertTrue(
+                    any(lo < at["lat"] < hi and wlo < at["lng"] < whi
+                        for (lo, hi), (wlo, whi) in self.MARKET_BOXES),
+                    f"{venue['name']} resolved outside every market box")
 
     def test_geocode_records_keep_the_address_they_were_asked_for(self):
         # The audit trail that makes a wrong match findable later.

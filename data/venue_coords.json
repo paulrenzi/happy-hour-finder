@@ -8,6 +8,15 @@
   "queried": "BSMT 831-833 CHRISTIAN ST & 831 CHRISTIAN ST, PHILADELPHIA PA 19147-3927",
   "resolved": "12 Steps Down"
  },
+ "1937-brewing-co-wilmington": {
+  "lat": 39.7040521,
+  "lng": -75.670391,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "777 Delaware Park Blvd, Wilmington, DE 19804",
+  "resolved": "1937 Brewing Co"
+ },
  "2637brew-philadelphia": {
   "lat": 39.9742756,
   "lng": -75.1801781,
@@ -161,6 +170,15 @@
   "queried": "133 S 18TH ST, PHILADELPHIA PA 19103-5238",
   "resolved": "Bar Bombon"
  },
+ "bar-reverie-greenville": {
+  "lat": 39.780352099999995,
+  "lng": -75.5988141,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "4017 Kennett Pike, Greenville, DE 19807",
+  "resolved": "Bar Reverie"
+ },
  "bar-xiii-delaware-wilmington": {
   "lat": 39.7864091,
   "lng": -75.4758731,
@@ -178,6 +196,15 @@
   "precision": "place",
   "queried": "110 SOUTH 13TH ST, PHILADELPHIA PA 19107-4532",
   "resolved": "Barbuzzo"
+ },
+ "bardea-food-drink-wilmington": {
+  "lat": 39.7424927,
+  "lng": -75.5496883,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "620 N Market St, Wilmington, DE 19801",
+  "resolved": "Bardea Food & Drink"
  },
  "bardea-steak-wilmington": {
   "lat": 39.742174,
@@ -270,6 +297,15 @@
   "precision": "place",
   "queried": "575 CONCHESTER HWY, BOOTHWYN PA 19061",
   "resolved": "Bowlero"
+ },
+ "braeloch-brewing-kennett-square": {
+  "lat": 39.842465700000005,
+  "lng": -75.7069222,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "225  BIRCH ST, KENNETT SQUARE PA 19348",
+  "resolved": "Braeloch Brewing"
  },
  "brasil-s-nightclub-philadelphia": {
   "lat": 39.9481789,
@@ -387,6 +423,15 @@
   "precision": "place",
   "queried": "3207 WEST CHESTER PK, NEWTOWN SQUARE PA 19073-4200",
   "resolved": "Charlotte's Restaurant"
+ },
+ "chelsea-tavern-wilmington": {
+  "lat": 39.744039799999996,
+  "lng": -75.5491862,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "821 N Market St, Wilmington, DE 19801",
+  "resolved": "Chelsea Tavern"
  },
  "chili-s-philadelphia": {
   "lat": 39.9532308,
@@ -524,15 +569,6 @@
   "queried": "7 E LANCASTER AVE, ARDMORE PA 19003-2318",
   "resolved": "DePaul's Table"
  },
- "desmond-hotel-malvern-a-doubletree-by-hilton-malvern": {
-  "lat": 40.0557551,
-  "lng": -75.5267083,
-  "matched_by": "osm_site",
-  "osm": "way/144903398",
-  "precision": "place",
-  "queried": "1 LIBERTY BLVD, MALVERN PA 19355-1419",
-  "resolved": "Desmond Hotel Malvern, a DoubleTree by Hilton"
- },
  "devil-s-alley-bar-grill-philadelphia": {
   "lat": 39.952015,
   "lng": -75.172231,
@@ -578,6 +614,15 @@
   "queried": "670 W DEKALB PIKE, KING OF PRUSSIA PA 19406",
   "resolved": "Eddie V's Prime Seafood"
  },
+ "el-maya-mexican-grill-wilmington": {
+  "lat": 39.733646199999995,
+  "lng": -75.6224,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "1300 Centerville Rd, Wilmington, DE 19808",
+  "resolved": "El Maya Mexican Grill"
+ },
  "el-vez-philadelphia": {
   "lat": 39.949702,
   "lng": -75.161896,
@@ -604,6 +649,15 @@
   "precision": "place",
   "queried": "1102 BALTIMORE PIKE SUITE 101, GLEN MILLS PA 19342-1013",
   "resolved": "Fava"
+ },
+ "fiesta-maya-mexican-grill-newark": {
+  "lat": 39.6592268,
+  "lng": -75.7367597,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "200 Pencader Plaza, Newark, DE 19711",
+  "resolved": "Fiesta Maya | Mexican Grill"
  },
  "firebirds-wood-fired-grill-north-wales": {
   "lat": 40.2077081,
@@ -850,6 +904,15 @@
   "queried": "1005 HORSHAM RD, NORTH WALES PA 19454-1413",
   "resolved": "Joseph Ambler Inn"
  },
+ "kid-shelleen-s-branmar-plaza-wilmington": {
+  "lat": 39.8037144,
+  "lng": -75.50412039999999,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "1812 Marsh Rd Ste 15, Wilmington, DE 19810",
+  "resolved": "Kid Shelleen's - Branmar Plaza"
+ },
  "la-porta-ristorante-media": {
   "lat": 39.9389816,
   "lng": -75.460135,
@@ -939,6 +1002,15 @@
   "precision": "place",
   "queried": "5-7-9 N WALNUT ST, WEST CHESTER PA 19380-3138",
   "resolved": "Limoncello"
+ },
+ "little-vinnie-s-pizza-pasta-wilmington": {
+  "lat": 39.7470205,
+  "lng": -75.6116241,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "1706 Faulkland Rd, Wilmington, DE 19805",
+  "resolved": "Little Vinnie's Pizza & Pasta"
  },
  "lloyd-whiskey-bar-philadelpphia": {
   "lat": 39.9717762,
@@ -1165,15 +1237,6 @@
   "queried": "1700 N FRONT ST, PHILADELPHIA PA 19122-3261",
   "resolved": "Percy"
  },
- "philadelphia-live-hotel-philadelphia": {
-  "lat": 39.9098947,
-  "lng": -75.1642379,
-  "matched_by": "osm_site",
-  "osm": "way/905642618",
-  "precision": "place",
-  "queried": "900 PACKER AVE, PHILADELPHIA PA 19148-5130",
-  "resolved": "Philadelphia Live! Hotel"
- },
  "pier-bar-philadelphia": {
   "lat": 39.9674824,
   "lng": -75.1711606,
@@ -1254,6 +1317,15 @@
   "precision": "place",
   "queried": "202 & 206 E LANCASTER AVE, DOWNINGTOWN PA 19335-2957",
   "resolved": "R5 Wines"
+ },
+ "redfire-grill-steakhouse-hockessin": {
+  "lat": 39.776199999999996,
+  "lng": -75.71103570000001,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "400 Lantana Dr, Hockessin, DE 19707",
+  "resolved": "Redfire Grill & Steakhouse"
  },
  "renata-s-kitchen-bar-philadelphia": {
   "lat": 39.9497351,
@@ -1507,6 +1579,24 @@
   "queried": "700 W DEKALB PK, KING OF PRUSSIA PA 19406",
   "resolved": "Sullivan's Steakhouse"
  },
+ "sullivan-s-steakhouse-wilmington": {
+  "lat": 39.8331338,
+  "lng": -75.5426292,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "5525 Concord Pike, Wilmington, DE 19803",
+  "resolved": "Sullivan's Steakhouse"
+ },
+ "taco-grande-wilmington": {
+  "lat": 39.733834699999996,
+  "lng": -75.56035539999999,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "600 Justison St, Wilmington, DE 19801",
+  "resolved": "Taco Grande"
+ },
  "teikoku-newtown-square": {
   "lat": 39.9714758,
   "lng": -75.4699749,
@@ -1542,6 +1632,24 @@
   "precision": "place",
   "queried": "1346 CHESTNUT ST, PHILADELPHIA PA 19107-4643",
   "resolved": "The Capital Grille"
+ },
+ "the-chancery-market-wilmington": {
+  "lat": 39.748898,
+  "lng": -75.5460602,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "1313 N Market St, Wilmington, DE 19801",
+  "resolved": "The Chancery Market"
+ },
+ "the-cheesecake-factory-newark": {
+  "lat": 39.6787384,
+  "lng": -75.6510922,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "350 Christiana Mall, Newark, DE 19702",
+  "resolved": "The Cheesecake Factory"
  },
  "the-cheesecake-factory-philadelphia": {
   "lat": 39.9494459,
@@ -1614,6 +1722,15 @@
   "precision": "place",
   "queried": "129L S 30TH ST, PHILADELPHIA PA 19104",
   "resolved": "The Post"
+ },
+ "the-pullman-restaurant-and-bar-bryn-mawr": {
+  "lat": 40.0215093,
+  "lng": -75.3153609,
+  "matched_by": "osm_site",
+  "osm": "node/3714274818",
+  "precision": "place",
+  "queried": "39 MORRIS AVE, BRYN MAWR PA 19010-3335",
+  "resolved": "The Pullman Restaurant and Bar"
  },
  "the-quoin-restaurant-519-n-market-st-wilmington": {
   "lat": 39.7418838,
