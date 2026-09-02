@@ -50,11 +50,12 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from crawl_sites import DELAY, TIMEOUT, UA, allowed, quotes, visible_text  # noqa: E402
-from discover_sites import name_core  # noqa: E402
+from discover_sites import name_agrees, name_core, street_core  # noqa: E402
 from validate_pa import ROUNDUP_MAX_AGE_DAYS  # noqa: E402
 
 SOURCES = os.path.join(REPO, "data", "roundup_sources.json")
 SITES = os.path.join(REPO, "data", "venue_sites.json")
+BASE = os.path.join(REPO, "data", "venue_base.json")
 OUT = os.path.join(REPO, "data", "roundup_hits.json")
 
 # A roundup names a venue in prose, so the address join the venue lane uses is
@@ -171,6 +172,83 @@ def venue_index(sites, zone_id=None):
     return index
 
 
+# The address join (2026-09-02). "A roundup carries no address" was the
+# premise of matching on name alone, and BUCKSCO.Today's Doylestown piece
+# disproved it: a card block at the foot of the article puts '37 N Main St,
+# Doylestown, PA 18901' as a paragraph under the heading 'Maxwell's On Main
+# (MOMs)', and the prose section opens 'Located at 80 W State Street'. Neither
+# bar could be named -- Maxwell's licence is the shell '37 N MAIN STREET
+# ENTERPRISES LLC', Penn Taproom's is 'PA GRILL ROOM LLC' -- and both had
+# real clocks. A house number and a street inside the article's own zone is
+# STRONGER evidence than a name, so it widens yield without loosening the
+# grounding. It is a fallback: a heading the name index resolves is never
+# re-routed by an address.
+STREET_SUFFIX = (r"St|Street|Ave|Avenue|Rd|Road|Blvd|Boulevard|Ln|Lane|Dr|Drive|"
+                 r"Pike|Pk|Hwy|Highway|Way|Ct|Court|Pl|Place|Sq|Square|Pkwy|Parkway|"
+                 r"Tpke|Turnpike|Cir|Circle|Ter|Terrace")
+ADDRESS_RE = re.compile(
+    r"\b(\d+(?:-\d+)*)[A-Za-z]?\s+((?:[NSEW]\.?\s+)?[A-Za-z][A-Za-z.']*"
+    r"(?:\s+[A-Za-z][A-Za-z.']*){0,3}?\s+(?:" + STREET_SUFFIX + r")\b\.?)")
+
+
+def address_keys(address):
+    """{(house, street core)} for every number a range spans -- '37-39 N Main
+    St' meets '37 N Main St, Doylestown, PA 18901' AND '39 N Main St'."""
+    m = ADDRESS_RE.search(address or "")
+    if not m:
+        return set()
+    core = street_core(m.group(2))
+    return {(n, core) for n in m.group(1).split("-") if n} if core else set()
+
+
+def address_index(base, zone_id=None):
+    """(house, street core) -> [venue], for the article's zone only when given.
+
+    Built from the BASE, not the site join: the venue whose licence is a shell
+    is exactly the one no site was ever found for, so it is not in
+    venue_sites.json at all. Two licences at one door (44 W Gay St is Lascala's
+    AND Sedona) index as a list of two, and the join refuses the key.
+    """
+    index = {}
+    for lid, v in (base or {}).items():
+        if zone_id and v.get("zone_id") != zone_id:
+            continue
+        for key in address_keys(v.get("address")):
+            index.setdefault(key, []).append(dict(v, lid=lid))
+    return index
+
+
+def address_venue(heading, paragraphs, index):
+    """The one venue whose door the paragraphs name, or None.
+
+    A door outlives its tenants. On the first corpus run this joined 'Serum
+    Kitchen & Taphouse' (County Lines, May 2024) to 142 E Market St, where
+    Google now reads the sign as 'Station 142', and 'Split Rail Tavern' (2021)
+    to the door that is Bierhaul today. Both would have shipped a card under a
+    name the building stopped using -- the stale-join shape HandCorrectedJoins
+    already names. So where the base carries a trade name a LIVE source read
+    off the door (OSM, Places) and it does not agree with the heading, the join
+    is refused. A licence-only name ('PA GRILL ROOM LLC', '37 N MAIN STREET
+    ENTERPRISES LLC') is the shell the join exists to see through, and is
+    never held against the heading.
+    """
+    for para in paragraphs:
+        for m in ADDRESS_RE.finditer(para):
+            core = street_core(m.group(2))
+            hits = []
+            for n in m.group(1).split("-"):
+                for v in index.get((n, core), []):
+                    if v not in hits:
+                        hits.append(v)
+            if len(hits) != 1:
+                continue
+            v = hits[0]
+            if v.get("named_by", "plcb") != "plcb" and not name_agrees(heading, v["name"]):
+                continue
+            return v
+    return None
+
+
 # A roundup is a list: a heading that IS the venue's name, then a paragraph
 # about it. A heading is short, is not a sentence, and carries no clause
 # punctuation -- "The Social" is a heading, "Sedona it is." is not.
@@ -233,7 +311,7 @@ def _heading_venue(line, index):
     return best[1] if best else None
 
 
-def mentions(text, index):
+def mentions(text, index, addr_index=None):
     """Venues this article names, each with the paragraph the article wrote.
 
     A roundup is a heading (the venue's name) followed by one paragraph. The
@@ -253,21 +331,29 @@ def mentions(text, index):
     takes its turn in the queue, so the paragraph under it is discarded
     rather than handed to the previous bar.
 
-    Matching is on the venue name because a roundup carries no address --
-    which is precisely why this lane is capped at "unconfirmed" and scoped to
-    the article's own zone.
+    Matching is on the venue name first. A heading no name resolves is kept
+    with its paragraphs, and a SECOND pass joins it by the street address
+    those paragraphs carry (the card block at the foot of the article, or a
+    'Located at 80 W State Street' in the prose) -- see address_index(). The
+    two halves of one entry are far apart in the document, which is why it
+    is a second pass and not a wider window. The hit carries the article's
+    heading as its name: the sign over the door, where the licence is a shell.
     """
     lines = [ln.strip() for ln in text.split("\n") if ln.strip()]
     found, queue, prev_heading, last = {}, [], None, None
+    orphans, last_head = {}, None
 
-    def record(venue, ln):
+    def record(venue, ln, name=None, joined_by=None):
         if venue is None:
             return None
         rec = found.setdefault(venue["lid"], {
-            "lid": venue["lid"], "name": venue["name"],
+            "lid": venue["lid"], "name": name or venue["name"],
+            "plcb_name": venue.get("plcb_name") or venue["name"],
             "address": venue["address"], "zone_id": venue.get("zone_id"),
             "quotes": [],
         })
+        if joined_by:
+            rec["joined_by"] = joined_by
         if ln not in rec["quotes"]:
             rec["quotes"].append(ln)
         return rec
@@ -299,15 +385,28 @@ def mentions(text, index):
                     break
             heading, venue = queue[pick]
             queue = queue[pick + 1:]
+            last_head = heading
             last = record(venue, ln)
+            if venue is None:
+                orphans.setdefault(heading, []).append(ln)
         elif last is not None and prev_heading is not None:
             # A second paragraph under the same heading.
             record({"lid": last["lid"], "name": last["name"],
+                    "plcb_name": last.get("plcb_name"),
                     "address": last["address"], "zone_id": last["zone_id"]}, ln)
+        elif last_head is not None and last_head in orphans:
+            orphans[last_head].append(ln)
+    # Second pass: the headings nobody could name, joined by the door.
+    for heading, paras in orphans.items():
+        venue = address_venue(heading, paras, addr_index or {})
+        if venue is None or venue["lid"] in found:
+            continue
+        for ln in paras:
+            record(venue, ln, name=heading, joined_by="address")
     return [v for v in found.values() if v["quotes"]]
 
 
-def crawl_one(session, article, sites, robots, today=None):
+def crawl_one(session, article, sites, robots, today=None, base=None):
     """One article -> a hit, or a dict saying why it was dropped."""
     url = article["url"]
     if not allowed(url, robots):
@@ -324,7 +423,8 @@ def crawl_one(session, article, sites, robots, today=None):
                 "dropped": "undated"}
     today = today or datetime.date.today()
     text = visible_text(html)
-    hits = mentions(text, venue_index(sites, article.get("zone_id")))
+    hits = mentions(text, venue_index(sites, article.get("zone_id")),
+                    address_index(base, article.get("zone_id")))
     return {
         "url": url,
         "outlet": article["outlet"],
@@ -350,6 +450,7 @@ def main():
         return
     articles = json.load(open(SOURCES, encoding="utf-8"))["articles"]
     sites = json.load(open(SITES, encoding="utf-8"))
+    base = json.load(open(BASE, encoding="utf-8")) if os.path.exists(BASE) else {}
     session = requests.Session()
     robots = {}
     out, last_host = [], None
@@ -360,7 +461,7 @@ def main():
             time.sleep(DELAY)
         last_host = host
         try:
-            hit = crawl_one(session, article, sites, robots)
+            hit = crawl_one(session, article, sites, robots, base=base)
         except Exception as e:  # noqa: BLE001 -- one dead outlet is not a failed run
             hit = {"url": article["url"], "outlet": article["outlet"], "dropped": str(e)[:120]}
         out.append(hit)

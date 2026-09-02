@@ -191,6 +191,71 @@
    ]
   },
   {
+   "id": "63165",
+   "lid": "63165",
+   "slug": "maxwell-s-on-main-moms-doylestown",
+   "name": "Maxwell\u2019s On Main (MOMs)",
+   "address": "37-39 N Main St, Doylestown PA 18901",
+   "zone_id": "doylestown",
+   "website": null,
+   "plcb_name": "37 N MAIN STREET ENTERPRISES LLC",
+   "license_type": "Restaurant (Liquor)",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 6,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 7,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "roundup_extract",
+     "source": {
+      "kind": "roundup",
+      "url": "https://bucksco.today/2026/08/best-restaurants-outdoor-seating-doylestown-pa/",
+      "outlet": "BUCKSCO.Today",
+      "published": "2026-08-12",
+      "quote": "Happy hour runs daily from 5 to 7 PM. Priced at mid-range, and reservations are recommended for weekend evenings.",
+      "note": "BUCKSCO.Today, August 2026"
+     }
+    }
+   ]
+  },
+  {
    "id": "39404",
    "lid": "39404",
    "slug": "new-britain-inn-new-britain",
@@ -262,6 +327,72 @@
       "kind": "venue_site",
       "url": "http://www.newbritaininn.com/happy-hour/",
       "quote": "HAPPY HOUR / MONDAY - FRIDAY (4:00 PM to 6:00 PM) / $2.75 Domestic Drafts"
+     }
+    }
+   ]
+  },
+  {
+   "id": "63321",
+   "lid": "63321",
+   "slug": "penn-taproom-doylestown",
+   "name": "Penn Taproom",
+   "address": "80 W State St, Doylestown PA 18901",
+   "zone_id": "doylestown",
+   "website": null,
+   "plcb_name": "PA GRILL ROOM LLC",
+   "license_type": "Restaurant (Liquor)",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 2,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 3,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 4,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "17:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "drafts",
+       "discount_pct": 50
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "roundup_extract",
+     "source": {
+      "kind": "roundup",
+      "url": "https://bucksco.today/2026/08/best-restaurants-outdoor-seating-doylestown-pa/",
+      "outlet": "BUCKSCO.Today",
+      "published": "2026-08-12",
+      "quote": "Happy hour runs Monday through Friday from 4:30 to 6:30 PM and Sunday from 3 to 5 PM, with half-price drafts and discounted appetizers, though those deals apply to the bar area only.",
+      "note": "BUCKSCO.Today, August 2026"
      }
     }
    ]

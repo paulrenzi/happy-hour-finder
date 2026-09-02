@@ -2522,6 +2522,44 @@
    }
   ]
  },
+ "114480": {
+  "name": "Jitters West Chester",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "roundup"
+    }
+   }
+  ]
+ },
  "71516": {
   "name": "Kildare's Irish Pub",
   "deals": [
@@ -2891,6 +2929,34 @@
     ],
     "source": {
      "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "61942": {
+  "name": "Side Bar & Restaurant",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "19:00"
+     }
+    ],
+    "source": {
+     "kind": "roundup"
     }
    }
   ]
@@ -7715,6 +7781,54 @@
    }
   ]
  },
+ "63165": {
+  "name": "Maxwell\u2019s On Main (MOMs)",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 2,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 3,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 4,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 5,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 6,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 7,
+      "start": "17:00",
+      "end": "19:00"
+     }
+    ],
+    "source": {
+     "kind": "roundup"
+    }
+   }
+  ]
+ },
  "39404": {
   "name": "New Britain Inn",
   "deals": [
@@ -7749,6 +7863,49 @@
     ],
     "source": {
      "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "63321": {
+  "name": "Penn Taproom",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 2,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 3,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 4,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 5,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 7,
+      "start": "15:00",
+      "end": "17:00"
+     }
+    ],
+    "source": {
+     "kind": "roundup"
     }
    }
   ]

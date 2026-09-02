@@ -3561,3 +3561,164 @@ class ASuppliedTradeNameCanBeTheLegalEntity(unittest.TestCase):
         from build_venue_base import _trade
         self.assertIsNone(_trade(None))
         self.assertIsNone(_trade("  "))
+
+
+class RoundupAddressJoin(unittest.TestCase):
+    """A roundup DOES carry an address, and it is the stronger key.
+
+    BUCKSCO.Today's Doylestown piece (2026-08-12) names two bars with real
+    clocks that no name could join: Maxwell's On Main sits on the licence
+    '37 N MAIN STREET ENTERPRISES LLC' and Penn Taproom on 'PA GRILL ROOM LLC'.
+    The article puts '37 N Main St, Doylestown, PA 18901' under Maxwell's
+    heading in a card block at the foot, and opens Penn Taproom's prose with
+    'Located at 80 W State Street'. Both are the acceptance test for the join.
+    """
+
+    BASE = {
+        "63165": {"lid": "63165", "name": "37 N Main Street Enterprises",
+                  "plcb_name": "37 N MAIN STREET ENTERPRISES LLC", "named_by": "plcb",
+                  "address": "37-39 N Main St, Doylestown PA 18901", "zone_id": "doylestown"},
+        "63321": {"lid": "63321", "name": "PA Grill Room", "plcb_name": "PA GRILL ROOM LLC",
+                  "named_by": "plcb", "address": "80 W State St, Doylestown PA 18901",
+                  "zone_id": "doylestown"},
+        "129847": {"lid": "129847", "name": "Station 142 Stage + Bar + Kitchen",
+                   "plcb_name": "FTROOP142 LLC", "named_by": "osm",
+                   "address": "142 E Market St, West Chester PA 19382", "zone_id": "west_chester"},
+        "1": {"lid": "1", "name": "Lascala's Fire", "plcb_name": "LASCALA'S FIRE", "named_by": "osm",
+              "address": "44 W Gay St, West Chester PA 19380", "zone_id": "west_chester"},
+        "2": {"lid": "2", "name": "Sedona Taphouse", "plcb_name": "WCTHG LL LLC", "named_by": "osm",
+              "address": "44 W Gay St, West Chester PA 19380", "zone_id": "west_chester"},
+    }
+
+    ARTICLE = """7 Idyllic Outdoor Dining Options in Doylestown
+Penn Taproom – Best Downtown Patio
+Located at 80 W State Street right in the heart of downtown, Penn Taproom seats roughly 70 guests outside.
+Happy hour runs Monday through Friday from 4:30 to 6:30 PM and Sunday from 3 to 5 PM, with half-price drafts.
+Maxwell’s On Main (MOMs) – Best Rooftop Experience
+Maxwell’s On Main is one of those restaurants that rewards repeat visits.
+Happy hour runs daily from 5 to 7 PM. Priced at mid-range, and reservations are recommended for weekend evenings.
+03 — Best Rooftop Experience
+Maxwell’s On Main (MOMs)
+37 N Main St, Doylestown, PA 18901
+(215) 340-1880
+Visit Maxwell’s On Main’s Website ↗
+"""
+
+    def hits(self, text, zone="doylestown", sites=None):
+        import crawl_roundups as cr
+        return {h["lid"]: h for h in cr.mentions(
+            text, venue_index(sites or {}, zone), cr.address_index(self.BASE, zone))}
+
+    def test_the_card_block_address_joins_the_shell_licence(self):
+        h = self.hits(self.ARTICLE)["63165"]
+        self.assertEqual(h["joined_by"], "address")
+        self.assertEqual(h["name"], "Maxwell’s On Main (MOMs)", "the sign, not the shell")
+        self.assertEqual(h["plcb_name"], "37 N MAIN STREET ENTERPRISES LLC")
+        self.assertTrue(any(q.startswith("Happy hour runs daily") for q in h["quotes"]),
+                        "the prose section's paragraph reaches the venue")
+
+    def test_an_address_in_the_prose_joins_too(self):
+        h = self.hits(self.ARTICLE)["63321"]
+        self.assertEqual(h["name"], "Penn Taproom")
+        self.assertTrue(any("4:30 to 6:30" in q for q in h["quotes"]))
+
+    def test_without_the_address_index_nothing_changes(self):
+        import crawl_roundups as cr
+        self.assertEqual(cr.mentions(self.ARTICLE, venue_index({}, "doylestown")), [])
+
+    def test_a_range_licence_meets_the_single_number_on_the_sign(self):
+        import crawl_roundups as cr
+        self.assertEqual(cr.address_keys("37-39 N Main St, Doylestown PA 18901"),
+                         {("37", "main"), ("39", "main")})
+        self.assertEqual(cr.address_keys("5-7-9 N Walnut St, West Chester PA 19380"),
+                         {("5", "walnut"), ("7", "walnut"), ("9", "walnut")})
+        self.assertEqual(cr.address_keys("2100 Lower State Rd, Doylestown, PA 18901"),
+                         {("2100", "lower state")})
+        self.assertEqual(cr.address_keys("County Line Rd East Of Bethlehem Pk"), set())
+
+    def test_the_join_is_scoped_to_the_articles_zone(self):
+        text = "Maxwell’s On Main (MOMs)\n37 N Main St, Doylestown, PA 18901\n"
+        self.assertEqual(self.hits(text, zone="west_chester"), {})
+
+    def test_two_licences_at_one_door_are_refused(self):
+        # 44 W Gay St is Lascala's Fire AND Sedona Taphouse.
+        text = "Some New Bar\n44 W Gay St, West Chester, PA 19380\nHappy hour 4 to 6.\n"
+        self.assertEqual(self.hits(text, zone="west_chester"), {})
+
+    def test_a_live_trade_name_that_disagrees_refuses_the_join(self):
+        # County Lines, May 2024: 'Serum Kitchen & Taphouse' at 142 E Market
+        # St. Google now reads that door as 'Station 142'. A card under a name
+        # the building stopped using is worse than a miss.
+        text = "Serum Kitchen & Taphouse\nHappy Hour 4 to 6 at 142 E Market St.\n"
+        self.assertEqual(self.hits(text, zone="west_chester"), {})
+
+    def test_a_live_trade_name_that_agrees_joins(self):
+        text = "Station 142\nHappy Hour 4 to 6 at 142 E Market St.\n"
+        self.assertIn("129847", self.hits(text, zone="west_chester"))
+
+    def test_a_heading_the_name_index_resolves_is_never_rerouted(self):
+        # The address is a fallback. A heading the name index already owns
+        # keeps its paragraphs even when they carry a different door.
+        sites = {"9": {"name": "PENN TAPROOM", "osm_name": None,
+                       "address": "1 Other St, Doylestown PA 18901", "zone_id": "doylestown"}}
+        got = self.hits(self.ARTICLE, sites=sites)
+        self.assertIn("9", got)
+        self.assertNotIn("63321", got)
+
+
+class ARoundupClockKeepsItsMinutes(unittest.TestCase):
+    """'4:30 to 6:30 PM' shipped as 4:30-6:00, and nothing raised.
+
+    pmify() adds the meridiem a roundup omits. The minutes on the END of its
+    range were optional, so the pattern matched the '4:30 to 6' inside
+    '4:30 to 6:30 PM' and rewrote the sentence to '4:30 pm - 6 pm:30 PM'. Penn
+    Taproom's card then carried a half-hour the article does not claim. A
+    wrong window is worse than a missing one.
+    """
+
+    def test_a_range_that_already_has_its_meridiem_is_left_alone(self):
+        from extract_roundups import pmify
+        for text in ("Happy hour runs Monday through Friday from 4:30 to 6:30 PM",
+                     "5 to 7 PM", "3 to 5 PM", "4:30 to 6:30 p.m."):
+            self.assertEqual(pmify(text), text)
+
+    def test_a_bare_range_still_gets_one(self):
+        from extract_roundups import pmify
+        self.assertEqual(pmify("Happy Hour runs Tuesday to Friday, 4 to 6."),
+                         "Happy Hour runs Tuesday to Friday, 4 pm - 6 pm.")
+        self.assertEqual(pmify("Happy Hour 4:30 to 6:30, weekdays"),
+                         "Happy Hour 4:30 pm - 6:30 pm, weekdays")
+
+    def test_the_penn_taproom_quote_reads_end_to_end(self):
+        from extract_roundups import windows_in_paragraph
+        got = windows_in_paragraph(
+            "Happy hour runs Monday through Friday from 4:30 to 6:30 PM and "
+            "Sunday from 3 to 5 PM, with half-price drafts and discounted "
+            "appetizers, though those deals apply to the bar area only.")
+        weekday = [w for w in got if w["dow"] in (1, 2, 3, 4, 5)]
+        self.assertEqual(len(weekday), 5)
+        for w in weekday:
+            self.assertEqual((w["start"], w["end"]), ("16:30", "18:30"))
+        self.assertEqual([(w["start"], w["end"]) for w in got if w["dow"] == 7],
+                         [("15:00", "17:00")])
+
+
+class ACutLabelIsNotAWord(unittest.TestCase):
+    """The item regexes cap a label at 29 characters.
+
+    'half-price drafts and discounted appetizers' arrived as 'drafts and
+    discounted appetiz' -- four words, so the prose guard passed it, and the
+    last one is not a word. The price is on the first noun.
+    """
+
+    def test_a_conjoined_pair_is_cut_at_the_conjunction(self):
+        from extract_roundups import tidy_items
+        got = tidy_items([{"category": "draft", "label": "drafts and discounted appetiz",
+                           "discount_pct": 50}])
+        self.assertEqual([i["label"] for i in got], ["drafts"])
+
+    def test_a_single_noun_is_untouched(self):
+        from extract_roundups import tidy_items
+        for label in ("select drafts", "house wine", "wine by the glass", "martinis"):
+            got = tidy_items([{"category": "draft", "label": label, "price_usd": 5.0}])
+            self.assertEqual([i["label"] for i in got], [label], label)

@@ -284,6 +284,61 @@
    ]
   },
   {
+   "id": "114480",
+   "lid": "114480",
+   "slug": "jitters-west-chester-west-chester",
+   "name": "Jitters West Chester",
+   "address": "144-146 W Gay St, West Chester PA 19380",
+   "zone_id": "west_chester",
+   "website": null,
+   "plcb_name": "PTLL LLC",
+   "license_type": "Restaurant (Liquor)",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "roundup_extract",
+     "source": {
+      "kind": "roundup",
+      "url": "https://countylinesmagazine.com/article/cheers-its-happy-hour-in-west-chester-pa/",
+      "outlet": "County Lines Magazine",
+      "published": "2024-05-30",
+      "quote": "When it\u2019s nice, check out the redesigned \u201cFlorida Room,\u201d a back patio that would make Jimmy Buffet proud. Happy Hour runs weekdays, 4 to 6. Beers are $2, well drinks $3, plus limited food specials like the $4 dog and tot combo. 146 W. Gay St. Jitters-WC.com",
+      "note": "County Lines Magazine, May 2024"
+     }
+    }
+   ]
+  },
+  {
    "id": "71516",
    "lid": "71516",
    "slug": "kildare-s-irish-pub-west-chester",
@@ -1252,6 +1307,71 @@
       "kind": "venue_site",
       "url": "https://sedonataphouse.com/locations/west-chester-pa/",
       "quote": "Join us for Happy Hour from 4pm \u2013 6pm for $7.9 house wine by the glass and $9.9 select craft classics!"
+     }
+    }
+   ]
+  },
+  {
+   "id": "61942",
+   "lid": "61942",
+   "slug": "side-bar-restaurant-west-chester",
+   "name": "Side Bar & Restaurant",
+   "address": "10-12-14 E Gay St, West Chester PA 19380",
+   "zone_id": "west_chester",
+   "website": "https://sidebarandrestaurant.com/",
+   "plcb_name": "S BAR 10 INC",
+   "license_type": "Restaurant (Liquor)",
+   "photo": {
+    "attribution": "Photo: Matt B / Google",
+    "file": "img/venues/61942.jpg"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "select drafts",
+       "price_usd": 4.0
+      },
+      {
+       "category": "wine",
+       "label": "house wine",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "appetizers",
+       "discount_pct": 50
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "roundup_extract",
+     "source": {
+      "kind": "roundup",
+      "url": "https://countylinesmagazine.com/article/cheers-its-happy-hour-in-west-chester-pa/",
+      "outlet": "County Lines Magazine",
+      "published": "2024-05-30",
+      "quote": "Side Bar has an extensive beer selection, but you\u2019ll have to wait until Wednesday to sip at a discount. Happy Hour runs Wednesday to Friday, 4 to 7, with $4 select drafts, $5 house wine, $5 Tito\u2019s and half-price appetizers, like sweet potato tater tots. 10 E. Gay St. SideBarAndRestaurant.com",
+      "note": "County Lines Magazine, May 2024"
      }
     }
    ]

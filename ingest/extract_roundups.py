@@ -45,7 +45,13 @@ OUT = os.path.join(REPO, "data", "deals_roundup.json")
 BARE_RANGE_RE = re.compile(
     r"(?<![$\d:])\b(1[01]|[1-9])(?::([0-5]\d))?\s*(?:to|-|–|—|until|till)\s*"
     r"(1[01]|[1-9])(?::([0-5]\d))?\b"
-    r"(?!\s*(?:am|pm|a\.m|p\.m|[ap]\b|%|off|oz|years?|days?|people|guests|\$))",
+    # ':' and a digit are in the forbidden-follow set because the minutes on
+    # the END of the range are OPTIONAL: without them, '4:30 to 6:30 PM'
+    # matched as '4:30 to 6' and pmify rewrote it to '4:30 pm - 6 pm:30 PM',
+    # shipping Penn Taproom a 4:30-6:00 window off a quote that says 6:30. A
+    # range that already carries its own meridiem needs no help from this
+    # lane -- windows_from reads it unchanged.
+    r"(?!\s*(?::|\d|am|pm|a\.m|p\.m|[ap]\b|%|off|oz|years?|days?|people|guests|\$))",
     re.I)
 
 MONTHS = ["January", "February", "March", "April", "May", "June", "July",
@@ -102,6 +108,12 @@ def tidy_items(items):
     keep = []
     for it in items:
         label = re.sub(r"\s+(?:and|or|&|with|plus)$", "", it["label"].strip(" ,-"))
+        # The item regexes cap a label at 29 characters, so a conjoined pair
+        # arrives CUT: 'half-price drafts and discounted appetizers' gave
+        # 'drafts and discounted appetiz', a word that is not a word. The
+        # first noun is the one the price is on and the one the card has room
+        # for -- the same fallback the priced path already applies.
+        label = re.split(r"\s+(?:and|or|&|plus)\s+", label)[0].strip(" ,-")
         # 'wine and cocktails and everyb' is the extractor's 30-char cut of a
         # sentence, not a noun: more than four words is prose.
         if len(label) < 3 or len(label.split()) > 4 or CLAUSE_RE.search(label):
@@ -179,7 +191,7 @@ def main():
                 "id": slug(name, vh["address"]),
                 "lid": vh["lid"],
                 "name": name,
-                "plcb_name": site.get("name") or vh["name"],
+                "plcb_name": site.get("name") or vh.get("plcb_name") or vh["name"],
                 "address": vh["address"],
                 "zone_id": vh.get("zone_id"),
                 "license_type": "",

@@ -12,6 +12,7 @@
     {
      "lid": "97130",
      "name": "THE ARTILLERY BREWING COMPANY",
+     "plcb_name": "THE ARTILLERY BREWING COMPANY",
      "address": "333 GRANITE ALLEY, WEST CHESTER PA 19380-4179",
      "zone_id": "west_chester",
      "quotes": [
@@ -21,6 +22,7 @@
     {
      "lid": "47717",
      "name": "P. J. RYAN'S, INC.",
+     "plcb_name": "P. J. RYAN'S, INC.",
      "address": "124 W GAY ST, WEST CHESTER PA 19380-2915",
      "zone_id": "west_chester",
      "quotes": [
@@ -30,6 +32,7 @@
     {
      "lid": "110649",
      "name": "THE RAMS HEAD BAR & GRILL",
+     "plcb_name": "THE RAMS HEAD BAR & GRILL",
      "address": "40 E MARKET ST, WEST CHESTER PA 19382-3151",
      "zone_id": "west_chester",
      "quotes": [
@@ -39,6 +42,7 @@
     {
      "lid": "96391",
      "name": "158 LICENSE LLC",
+     "plcb_name": "158 LICENSE LLC",
      "address": "158 W GAY ST, WEST CHESTER PA 19380-2915",
      "zone_id": "west_chester",
      "quotes": [
@@ -48,6 +52,7 @@
     {
      "lid": "103733",
      "name": "WRONG CROWD BEER CO",
+     "plcb_name": "WRONG CROWD BEER CO",
      "address": "342 HANNUM AVE, WEST CHESTER PA 19380-2859",
      "zone_id": "west_chester",
      "quotes": [
@@ -57,6 +62,7 @@
     {
      "lid": "119098",
      "name": "WCTHG LL LLC",
+     "plcb_name": "WCTHG LL LLC",
      "address": "9 N HIGH ST, WEST CHESTER PA 19382",
      "zone_id": "west_chester",
      "quotes": [
@@ -67,6 +73,7 @@
     {
      "lid": "72618",
      "name": "IPASTA",
+     "plcb_name": "IPASTA",
      "address": "134-136 E GAY ST, WEST CHESTER PA 19380-3147",
      "zone_id": "west_chester",
      "quotes": [
@@ -76,6 +83,7 @@
     {
      "lid": "106742",
      "name": "OPA TAVERNA INC",
+     "plcb_name": "OPA TAVERNA INC",
      "address": "40-44 E GAY ST, WEST CHESTER PA 19380",
      "zone_id": "west_chester",
      "quotes": [
@@ -85,6 +93,7 @@
     {
      "lid": "58333",
      "name": "PIETROS PRIME INC",
+     "plcb_name": "PIETROS PRIME INC",
      "address": "125 W MARKET ST, WEST CHESTER PA 19382-2901",
      "zone_id": "west_chester",
      "quotes": [
@@ -94,6 +103,7 @@
     {
      "lid": "69681",
      "name": "ROOTS CAFE LLC",
+     "plcb_name": "ROOTS CAFE LLC",
      "address": "133 E GAY ST, WEST CHESTER PA 19380-3146",
      "zone_id": "west_chester",
      "quotes": [
@@ -103,6 +113,7 @@
     {
      "lid": "71516",
      "name": "CHESTER COUNTY PUB COMPANY LLC",
+     "plcb_name": "CHESTER COUNTY PUB COMPANY LLC",
      "address": "18-22 W GAY ST, WEST CHESTER PA 19380-3011",
      "zone_id": "west_chester",
      "quotes": [
@@ -112,6 +123,7 @@
     {
      "lid": "62944",
      "name": "MAS WEST CHESTER LLC",
+     "plcb_name": "MAS WEST CHESTER LLC",
      "address": "102 E MARKET ST, WEST CHESTER PA 19382-3153",
      "zone_id": "west_chester",
      "quotes": [
@@ -121,11 +133,79 @@
     {
      "lid": "101577",
      "name": "SEDONA TAPHOUSE",
+     "plcb_name": "SEDONA TAPHOUSE",
      "address": "44 W GAY ST, WEST CHESTER PA 19380",
      "zone_id": "west_chester",
      "quotes": [
       "When you\u2019ve got a group to impress, Sedona it is. The Southwest-inspired steakhouse maintains a sizeable and eclectic Happy Hour menu, with guacamole, flatbreads and sliders all under $10. Add half-price bottled beers and $6.90 wine and cocktails and everybody\u2019s happy. Specials run weekdays from 4 to 6. Just get there early. It can get very crowded. 44 W. Gay St., Ste. 1. SedonaTaphouse.com"
      ]
+    },
+    {
+     "lid": "114480",
+     "name": "Jitters West Chester",
+     "plcb_name": "PTLL LLC",
+     "address": "144-146 W Gay St, West Chester PA 19380",
+     "zone_id": "west_chester",
+     "quotes": [
+      "When it\u2019s nice, check out the redesigned \u201cFlorida Room,\u201d a back patio that would make Jimmy Buffet proud. Happy Hour runs weekdays, 4 to 6. Beers are $2, well drinks $3, plus limited food specials like the $4 dog and tot combo. 146 W. Gay St. Jitters-WC.com"
+     ],
+     "joined_by": "address"
+    },
+    {
+     "lid": "101307",
+     "name": "Slow Hand",
+     "plcb_name": "SLOW HAND",
+     "address": "30 N Church St, West Chester PA 19380",
+     "zone_id": "west_chester",
+     "quotes": [
+      "You want a good drink, but you don\u2019t want to fight for it. That\u2019s when Slow Hand is perfect. Choose from a selection of sophisticated snacks like the $5 blackened shrimp deviled eggs to enjoy with a well-made old fashioned, margarita or negroni for $8. See, your night is already looking up. Weekdays, 4 to 6. $5 drafts and $7 house wine also available. 30 N. Church St. SlowHand-WC.com"
+     ],
+     "joined_by": "address"
+    },
+    {
+     "lid": "52121",
+     "name": "Teca",
+     "plcb_name": "TECA-R",
+     "address": "36-38 E Gay St, West Chester PA 19380",
+     "zone_id": "west_chester",
+     "quotes": [
+      "At Teca it\u2019s all about sharing, from its tapas-influenced menu to Happy Hour specials that includes wine by the bottle ($29 for house wine). Plus $7 wine by the glass, $5 drafts, $7 well drinks and 8 for $8 tapas. The food menu includes flatbread, mussels and mushroom bruschetta. Happy Hour runs Tuesday to Friday, 4 to 6. 38 E. Gay St. TecaRestaurants.com"
+     ],
+     "joined_by": "address"
+    },
+    {
+     "lid": "130939",
+     "name": "Barnaby\u2019s",
+     "plcb_name": "BARNABY'S OF WEST CHESTER",
+     "address": "7-15 S High St, West Chester PA 19382",
+     "zone_id": "west_chester",
+     "quotes": [
+      "Perhaps not surprisingly from the bar with seven rooms and at least a dozen TVs, Barnaby\u2019s Happy Hour has something for everyone. Weekdays, 5 to 7, choose $4 drafts, $5 house wines, $6 specialty drinks and $6 Statesides, Surfsides and High Noons. Plus, $2 off all starters. On Thursday and Friday, unwind with live acoustic sets. 15 S. High St. BarnabysWestChester.com"
+     ],
+     "joined_by": "address"
+    },
+    {
+     "lid": "59213",
+     "name": "Limoncello Ristorante",
+     "plcb_name": "LIMONCELLO",
+     "address": "5-7-9 N Walnut St, West Chester PA 19380",
+     "zone_id": "west_chester",
+     "quotes": [
+      "Limoncello has a great bar and, when the weather is nice, a great patio. Unfortunately, everyone knows it. Get there early for Happy Hour specials like $12 martinis, $8 wines, $5 drafts and discounted apps, like calamari fritti served with three dipping sauces. Order a grapefruit paloma and give into the bar\u2019s buzzy energy. Happy Hour runs Tuesday through Friday, 4 to 6. 9 N. Walnut St. LimoncelloRestaurant.com"
+     ],
+     "joined_by": "address"
+    },
+    {
+     "lid": "61942",
+     "name": "Side Bar & Restaurant",
+     "plcb_name": "S BAR 10 INC",
+     "address": "10-12-14 E Gay St, West Chester PA 19380",
+     "zone_id": "west_chester",
+     "quotes": [
+      "Side Bar has an extensive beer selection, but you\u2019ll have to wait until Wednesday to sip at a discount. Happy Hour runs Wednesday to Friday, 4 to 7, with $4 select drafts, $5 house wine, $5 Tito\u2019s and half-price appetizers, like sweet potato tater tots. 10 E. Gay St. SideBarAndRestaurant.com",
+      "For more food and drink specials, visit West Chester during the Open-Air Market, when Gay St. shuts down for warm-weather weekends (Friday morning to Monday morning), or come for West Chester TAPS on summer Wednesdays (at participating locations). More at DowntownWestChester.com ."
+     ],
+     "joined_by": "address"
     }
    ]
   },
@@ -140,6 +220,7 @@
     {
      "lid": "97130",
      "name": "THE ARTILLERY BREWING COMPANY",
+     "plcb_name": "THE ARTILLERY BREWING COMPANY",
      "address": "333 GRANITE ALLEY, WEST CHESTER PA 19380-4179",
      "zone_id": "west_chester",
      "quotes": [
@@ -149,6 +230,7 @@
     {
      "lid": "103733",
      "name": "WRONG CROWD BEER CO",
+     "plcb_name": "WRONG CROWD BEER CO",
      "address": "342 HANNUM AVE, WEST CHESTER PA 19380-2859",
      "zone_id": "west_chester",
      "quotes": [
@@ -158,6 +240,7 @@
     {
      "lid": "71516",
      "name": "CHESTER COUNTY PUB COMPANY LLC",
+     "plcb_name": "CHESTER COUNTY PUB COMPANY LLC",
      "address": "18-22 W GAY ST, WEST CHESTER PA 19380-3011",
      "zone_id": "west_chester",
      "quotes": [
@@ -167,6 +250,7 @@
     {
      "lid": "110649",
      "name": "THE RAMS HEAD BAR & GRILL",
+     "plcb_name": "THE RAMS HEAD BAR & GRILL",
      "address": "40 E MARKET ST, WEST CHESTER PA 19382-3151",
      "zone_id": "west_chester",
      "quotes": [
@@ -176,6 +260,7 @@
     {
      "lid": "47717",
      "name": "P. J. RYAN'S, INC.",
+     "plcb_name": "P. J. RYAN'S, INC.",
      "address": "124 W GAY ST, WEST CHESTER PA 19380-2915",
      "zone_id": "west_chester",
      "quotes": [
@@ -185,6 +270,7 @@
     {
      "lid": "72618",
      "name": "IPASTA",
+     "plcb_name": "IPASTA",
      "address": "134-136 E GAY ST, WEST CHESTER PA 19380-3147",
      "zone_id": "west_chester",
      "quotes": [
@@ -194,6 +280,7 @@
     {
      "lid": "62944",
      "name": "MAS WEST CHESTER LLC",
+     "plcb_name": "MAS WEST CHESTER LLC",
      "address": "102 E MARKET ST, WEST CHESTER PA 19382-3153",
      "zone_id": "west_chester",
      "quotes": [
@@ -203,6 +290,7 @@
     {
      "lid": "106742",
      "name": "OPA TAVERNA INC",
+     "plcb_name": "OPA TAVERNA INC",
      "address": "40-44 E GAY ST, WEST CHESTER PA 19380",
      "zone_id": "west_chester",
      "quotes": [
@@ -212,6 +300,7 @@
     {
      "lid": "58333",
      "name": "PIETROS PRIME INC",
+     "plcb_name": "PIETROS PRIME INC",
      "address": "125 W MARKET ST, WEST CHESTER PA 19382-2901",
      "zone_id": "west_chester",
      "quotes": [
@@ -221,6 +310,7 @@
     {
      "lid": "101577",
      "name": "SEDONA TAPHOUSE",
+     "plcb_name": "SEDONA TAPHOUSE",
      "address": "44 W GAY ST, WEST CHESTER PA 19380",
      "zone_id": "west_chester",
      "quotes": [
@@ -230,11 +320,45 @@
     {
      "lid": "96391",
      "name": "158 LICENSE LLC",
+     "plcb_name": "158 LICENSE LLC",
      "address": "158 W GAY ST, WEST CHESTER PA 19380-2915",
      "zone_id": "west_chester",
      "quotes": [
       "Nachos, pork belly bao buns, flatbreads, fried cheese curds, mac\u2019n\u2019cheese, fried Brussels sprouts, crispy calamari: they\u2019re all $8. Domestic draft beers are only $3. The house red, just $4. All week, from 4 to 6. At 3, you\u2019ll be counting the minutes. 158 W. Gay St., StoveAndTap.com ."
      ]
+    },
+    {
+     "lid": "114480",
+     "name": "Jitters Sports Bar",
+     "plcb_name": "PTLL LLC",
+     "address": "144-146 W Gay St, West Chester PA 19380",
+     "zone_id": "west_chester",
+     "quotes": [
+      "Jitters is small, friendly, local and intimate, except on game days. It offers Happy Hour 4:30 to 6:30 every weekday. That\u2019s $1 dollar off drafts and well drinks. And, it offers half-off on \u201cappetizer stuff.\u201d 146 W. Gay St., Facebook ."
+     ],
+     "joined_by": "address"
+    },
+    {
+     "lid": "61942",
+     "name": "Side Bar & Restaurant",
+     "plcb_name": "S BAR 10 INC",
+     "address": "10-12-14 E Gay St, West Chester PA 19380",
+     "zone_id": "west_chester",
+     "quotes": [
+      "You have to wait until Wednesday for Happy Hour at Side Bar. But then they offer their house wine for $5 and their draft beer for $4, plus a Tito\u2019s drink for $5. For now, though, you\u2019ll have to pay full price for your food. 10 E. Gay St., SideBarAndRestaurant.com ."
+     ],
+     "joined_by": "address"
+    },
+    {
+     "lid": "130939",
+     "name": "Barnaby\u2019s",
+     "plcb_name": "BARNABY'S OF WEST CHESTER",
+     "address": "7-15 S High St, West Chester PA 19382",
+     "zone_id": "west_chester",
+     "quotes": [
+      "They don\u2019t have a formal Happy Hour at Barnaby\u2019s, though special prices run all the time, and there are themes each day. For example, on Taco Tuesday, you can get a Corona for $3. Wednesday is Wing Night along with $3 for Yuengling Lager pints. Thursday, have nachos and $3 Miller Lites. More on Monday, Fridays, weekends. For those who don\u2019t want to watch for the magic hour. 15 S. High St., BarnabysWestChester.com ."
+     ],
+     "joined_by": "address"
     }
    ]
   },
@@ -249,6 +373,7 @@
     {
      "lid": "114456",
      "name": "TERRAIN",
+     "plcb_name": "TERRAIN",
      "address": "2100 LOWER STATE RD, DOYLESTOWN PA 18901",
      "zone_id": "doylestown",
      "quotes": [
@@ -264,6 +389,7 @@
     {
      "lid": "54116",
      "name": "FRANK'S KNIGHT HOUSE, LLC",
+     "plcb_name": "FRANK'S KNIGHT HOUSE, LLC",
      "address": "86-96 W STATE ST, DOYLESTOWN PA 18901-4222",
      "zone_id": "doylestown",
      "quotes": [
@@ -279,6 +405,7 @@
     {
      "lid": "98196",
      "name": "DOYLESTOWN TAVERN LLC",
+     "plcb_name": "DOYLESTOWN TAVERN LLC",
      "address": "380 N MAIN ST, DOYLESTOWN PA 18901-3715",
      "zone_id": "doylestown",
      "quotes": [
@@ -292,6 +419,43 @@
       "Bookmark this list, check back as the seasons change, and use it as your starting point every time the weather gives you a reason to eat outside.",
       "380 N Main St, Doylestown, PA 18901"
      ]
+    },
+    {
+     "lid": "63321",
+     "name": "Penn Taproom",
+     "plcb_name": "PA GRILL ROOM LLC",
+     "address": "80 W State St, Doylestown PA 18901",
+     "zone_id": "doylestown",
+     "quotes": [
+      "Located at 80 W State Street right in the heart of downtown, Penn Taproom seats roughly 70 guests outside under trees and umbrellas, with enough foot traffic passing.",
+      "It is a genuinely great people-watching spot, and the food and drink are good enough to justify the time you will spend there.",
+      "The menu is casual and crowd-pleasing: smash burgers, tacos, and a rotating lineup of craft beers on tap that keeps regulars checking back.",
+      "Prices are on the affordable side, making it one of the more budget-friendly options on this list.",
+      "Happy hour runs Monday through Friday from 4:30 to 6:30 PM and Sunday from 3 to 5 PM, with half-price drafts and discounted appetizers, though those deals apply to the bar area only.",
+      "The patio is dog-friendly, with water bowls provided.",
+      "One logistical note worth knowing: the restaurant does not take reservations for outdoor seating, so patio tables are first come, first served. Arriving early on weekends pays off.",
+      "Best time to visit: Weekday happy hour or a sunny Saturday afternoon. Get there early if you want a table outside.",
+      "80 W State St, Doylestown, PA 18901"
+     ],
+     "joined_by": "address"
+    },
+    {
+     "lid": "63165",
+     "name": "Maxwell\u2019s On Main (MOMs)",
+     "plcb_name": "37 N MAIN STREET ENTERPRISES LLC",
+     "address": "37-39 N Main St, Doylestown PA 18901",
+     "zone_id": "doylestown",
+     "quotes": [
+      "Maxwell\u2019s On Main is one of those restaurants that rewards repeat visits because the experience changes depending on where you sit.",
+      "The building is a historic two-level venue on Main Street with three distinct outdoor options: sidewalk dining at street level, an open-air dining room, and a second-floor rooftop patio that overlooks the heart of downtown Doylestown.",
+      "The kitchen draws on genuine Southern roots, and the menu shows it. Jambalaya, gumbo, shrimp and grits, crawfish boulettes, and fried chicken with bourbon sweet potato mash are signatures here, sitting alongside smash burgers and a Sunday brunch menu that draws a loyal crowd.",
+      "The restaurant is one of the only places in Doylestown serving oysters.",
+      "Live bands play every weekend, which adds real energy to the outdoor atmosphere on Friday and Saturday nights.",
+      "Happy hour runs daily from 5 to 7 PM. Priced at mid-range, and reservations are recommended for weekend evenings.",
+      "Best time to visit: A warm Friday or Saturday evening with live music on the rooftop, or Sunday brunch from 11 AM to 3 PM.",
+      "37 N Main St, Doylestown, PA 18901"
+     ],
+     "joined_by": "address"
     }
    ]
   },
@@ -315,6 +479,7 @@
     {
      "lid": "54116",
      "name": "FRANK'S KNIGHT HOUSE, LLC",
+     "plcb_name": "FRANK'S KNIGHT HOUSE, LLC",
      "address": "86-96 W STATE ST, DOYLESTOWN PA 18901-4222",
      "zone_id": "doylestown",
      "quotes": [
