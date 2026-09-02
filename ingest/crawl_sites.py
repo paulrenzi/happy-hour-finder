@@ -618,6 +618,14 @@ def hh_sections(html, text):
 # block: it gives the price AND the kind of thing. The items below it are
 # priced lines that simply do not repeat the number.
 SECTION_PRICE_RE = re.compile(r"\$\s?(\d{1,3}(?:\.\d\d)?)\s*(?:-|\u2013|\u2014|to)\s*\$?\s?(\d{1,3}(?:\.\d\d)?)|\$\s?(\d{1,3}(?:\.\d\d)?)")
+# A heading that states a DISCOUNT, not a price: Two Stones heads its drafts
+# '$2 OFF' and its cocktails '$3 OFF'. SECTION_PRICE_RE reads the '$2' and
+# nothing after it, so every draft under that heading was stamped '$2.00' and
+# the board sold a Delco Lager for two dollars at four Two Stones -- 20 wrong
+# prices on 4 live cards (Paul, 2026-09-02). The amount is carried down to the
+# items exactly as before; what changes is the WORD it is carried with, so the
+# extractor's dollars-off rule reads it and its price rule cannot.
+SECTION_OFF_HEAD_RE = re.compile(r"\$\s?\d{1,3}(?:\.\d\d)?\s*off\b", re.I)
 # How many lines one priced heading may speak for. A happy-hour block is a
 # short list; a longer run is a menu the heading does not really own, and
 # inheriting a price down it would publish a wrong price on every line of it.
@@ -685,6 +693,8 @@ def heading_prices(html, text, hh_lines, stacks=None):
         hi = float(m.group(2) or lo)
         if not 0 < lo <= hi <= 99:
             continue
+        # '$2 OFF' owns its lines the same way '$2' does; it just does not price them.
+        off = bool(SECTION_OFF_HEAD_RE.search(lines[i]))
         # The element holding the heading. Every line the heading speaks for
         # has to be inside it.
         box = None
@@ -705,7 +715,7 @@ def heading_prices(html, text, hh_lines, stacks=None):
                 # items publishes half a sentence at the band's price.
                 if j not in headset or not lines[j].strip():
                     continue
-                out[j] = (i, lo, hi)
+                out[j] = (i, lo, hi, off)
                 n += 1
             continue
         n = 0
@@ -716,7 +726,7 @@ def heading_prices(html, text, hh_lines, stacks=None):
                 break
             if "$" in lines[j]:
                 continue
-            out[j] = (i, lo, hi)
+            out[j] = (i, lo, hi, off)
             n += 1
     return out
 
@@ -759,13 +769,18 @@ def quotes(text, menu_doc=False, hh_page=False, hh_lines=frozenset(), stacks=Non
         bare = (hh_page or inside) and BARE_PRICE_RE.match(ln)
         owned = (head_prices or {}).get(i)
         if owned:
-            head, lo, hi = owned
+            head, lo, hi, off = owned
             # See item_label(): the venue's own marks say where the dish's
             # name ends, and when it makes none the line is left alone.
             label = item_label(ln, emph[i] if emph and i < len(emph) else "")
             if not label:
                 continue
             price = "$%.2f" % lo + ("-%.2f" % hi if hi != lo else "")
+            # A discount heading hands its items the word 'off' with the
+            # number: '$2 OFF / $2.00 off Delco Lager' is a dollars-off line to
+            # the extractor, and '$2 OFF / $2.00 Delco Lager' was a $2 beer.
+            if off:
+                price += " off"
             # The heading rides along, unchanged, because it is what says both
             # the price and the KIND of thing -- 'SNACKS' is how a guacamole is
             # known to be food without the noun list having to know the word.

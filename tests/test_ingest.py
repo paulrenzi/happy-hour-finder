@@ -2900,6 +2900,51 @@ class TheModelPassAlsoMustNotReadAnOFFAsAPrice(unittest.TestCase):
         self.assertEqual(why, None)
 
 
+class ADiscountHeadingDoesNotPriceTheLinesUnderIt(unittest.TestCase):
+    """Two Stones heads its happy-hour drafts '$2 OFF' and its cocktails '$3 OFF'.
+
+    heading_prices() read the '$2' off that heading and stamped it, as a PRICE,
+    on every draft beneath it; the extractor then read '$2 OFF / $2.00 Delco
+    Lager' as a two-dollar beer. Four Two Stones cards carried 20 such prices
+    on the live board (Paul, 2026-09-02: "im still seeing things missing").
+    The amount still travels down; the word 'off' now travels with it, and the
+    extractor reads the older on-disk form under that heading the same way.
+    """
+
+    HTML = ("<div><h3>Happy Hour</h3>"
+            "<div><h4>$2 OFF</h4><p>Delco Lager</p><p>Pony Boi</p></div>"
+            "<div><h4>$3 OFF</h4><p>The Mule</p></div></div>")
+
+    def quotes(self):
+        lines, stacks, emph = crawl_sites.text_lines_emph(self.HTML)
+        text = "\n".join(lines)
+        hh = frozenset(range(len(lines)))
+        head = crawl_sites.heading_prices(self.HTML, text, hh, stacks)
+        return crawl_sites.quotes(text, hh_lines=hh, stacks=stacks, emph=emph,
+                                  head_prices=head)
+
+    def test_the_crawler_carries_the_word_off_down_with_the_amount(self):
+        found = self.quotes()
+        self.assertIn("$2 OFF / $2.00 off Delco Lager", found)
+        self.assertIn("$3 OFF / $3.00 off The Mule", found)
+        self.assertNotIn("$2 OFF / $2.00 Delco Lager", found)
+
+    def test_the_extractor_reads_it_as_a_discount(self):
+        self.assertEqual(
+            extract_deals.items_in("$2 OFF / $2.00 off Delco Lager"),
+            [{"category": "draft", "label": "Delco Lager", "amount_off_usd": 2.0}])
+
+    def test_the_older_on_disk_form_under_that_heading_is_a_discount_too(self):
+        self.assertEqual(
+            extract_deals.items_in("$3 OFF / $3.00 The Mule"),
+            [{"category": "cocktail", "label": "The Mule", "amount_off_usd": 3.0}])
+
+    def test_a_priced_heading_is_untouched(self):
+        self.assertEqual(
+            extract_deals.items_in("SNACKS $7.50 each / $7.50 Traditional Guacamole"),
+            [{"category": "food", "label": "Traditional Guacamole", "price_usd": 7.5}])
+
+
 class AVenueThatPublishesItsHoursAsDATANotAsAPage(unittest.TestCase):
     """Darden's sites have nothing in their HTML for any parser here to read.
 

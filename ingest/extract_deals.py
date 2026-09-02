@@ -522,6 +522,8 @@ OFF_RE = re.compile(r"^off\b", re.I)
 # a discount.
 AMOUNT_OFF_RE = re.compile(
     r"\$\s?(\d{1,3}(?:\.\d{1,2})?)\s*off\s+([A-Za-z][\w\s&'-]{1,40})", re.I)
+# The whole heading is the discount: '$2 OFF', '$3 off'. See section_items().
+SECTION_OFF_HEAD_RE = re.compile(r"^\$\s?(\d{1,3}(?:\.\d\d)?)\s*off\s*$", re.I)
 
 
 # A quote the crawler built from a PRICED SECTION HEADING and one item under
@@ -588,6 +590,26 @@ def section_items(text):
         return []
     if not cat:
         cat = category_of(parts[0])
+    # A heading that is a DISCOUNT -- Two Stones' '$2 OFF' over its drafts.
+    # The crawler now writes the item as '$2.00 off Delco Lager'; the older
+    # form, '$2.00 Delco Lager' under that same heading, is on disk for every
+    # venue crawled before the fix and reads as a two-dollar beer. The heading
+    # says what the number is, so under a '$N off' heading the number is the
+    # discount whichever way the item line spells it. The kind of thing comes
+    # from the item when the heading ('$2 OFF') cannot say.
+    head_off = SECTION_OFF_HEAD_RE.match(parts[0])
+    if head_off:
+        m = AMOUNT_OFF_RE.match(parts[1]) or SECTION_ITEM_RE.match(parts[1])
+        if not m:
+            return []
+        amount = float(m.group(1))
+        label = m.group(m.lastindex).strip(" -'")
+        if amount != float(head_off.group(1)) or not 0 < amount <= 99:
+            return []
+        cat = cat or category_of(label)
+        if not cat or OFF_RE.search(label):
+            return []
+        return [{"category": cat, "label": label, "amount_off_usd": amount}]
     if not cat:
         return []
     m = SECTION_ITEM_RE.match(parts[1])
