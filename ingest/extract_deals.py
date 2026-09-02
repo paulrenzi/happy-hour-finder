@@ -959,7 +959,8 @@ def main():
         if not cands:
             stats["  quote states no schedule"] += 1
             if len(rejects) < args.rejects:
-                rejects.append((v["osm_name"] or v["name"], v["hits"][0]["quote"]))
+                rejects.append((v["osm_name"] or v["name"],
+                                v["hits"][0]["quote"] if v["hits"] else "(no quote)"))
             continue
 
         # The richest quote names the deal; the rest of the site's quotes only

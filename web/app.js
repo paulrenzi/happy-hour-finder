@@ -1102,15 +1102,7 @@ function openVenue(id) {
           : `Last checked ${age}. Source: `
       )
     );
-    if (deal.source?.url) {
-      const a = el("a", null, deal.source.kind.replace("_", " "));
-      a.href = deal.source.url;
-      a.target = "_blank";
-      a.rel = "noopener";
-      prov.append(a);
-    } else {
-      prov.append(document.createTextNode(deal.source?.kind || "unknown"));
-    }
+    prov.append(sourceLink(deal));
     if (deal.source?.note) prov.append(document.createTextNode(` — ${deal.source.note}`));
     box.append(prov);
     body.append(box);
@@ -1217,18 +1209,33 @@ function reportWrong(v, deal) {
 
   const p = el("p", "note");
   p.append(document.createTextNode("What we have now came from: "));
-  if (deal.source?.url) {
-    const a = el("a", null, deal.source.kind.replace("_", " "));
-    a.href = deal.source.url;
-    a.target = "_blank";
-    a.rel = "noopener";
-    p.append(a);
-  } else {
-    p.append(document.createTextNode(deal.source?.kind || "unknown"));
-  }
+  p.append(sourceLink(deal));
   if (deal.source?.note) p.append(document.createTextNode(` — ${deal.source.note}`));
   body.append(p);
   openSheet();
+}
+
+// Who is speaking. A venue's own page is "venue site"; a roundup is the
+// OUTLET, named, with the month it went to print -- a magazine's 2024 list is
+// worth reading and worth a call, and the card must not pass it off as the
+// bar's own word.
+function sourceLink(deal) {
+  const src = deal.source || {};
+  let label = (src.kind || "unknown").replace("_", " ");
+  if (src.kind === "roundup" && src.outlet) {
+    label = src.outlet;
+    if (src.published) {
+      const [y, m] = src.published.split("-");
+      const month = new Date(Number(y), Number(m) - 1, 1).toLocaleString("en-US", { month: "long" });
+      label += ` (${month} ${y})`;
+    }
+  }
+  if (!src.url) return document.createTextNode(label);
+  const a = el("a", null, label);
+  a.href = src.url;
+  a.target = "_blank";
+  a.rel = "noopener";
+  return a;
 }
 
 function toast(text) {

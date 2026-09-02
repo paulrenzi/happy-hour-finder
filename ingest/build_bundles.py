@@ -20,9 +20,13 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from validate_pa import (rules_for, state_of, validate_deal,  # noqa: E402
                          validate_food_combo_count)
 from exclusions import excluded  # noqa: E402
+from discover_sites import name_agrees  # noqa: E402
 
 DEALS_JSON = os.path.join(REPO, "data", "deals_seed.json")
 EXTRACTED_JSON = os.path.join(REPO, "data", "deals_extracted.json")
+# Written by ingest/extract_roundups.py: a dated local article read for the
+# bars it names. Lowest rank -- the outlet speaking, never the bar.
+ROUNDUP_JSON = os.path.join(REPO, "data", "deals_roundup.json")
 # Approved menu-photo submissions (ingest/review_photos.py). Distinct from
 # PHOTOS_JSON below, which is venue hero images and has nothing to do with deals.
 PHOTO_DEALS_JSON = os.path.join(REPO, "data", "deals_photo.json")
@@ -297,10 +301,12 @@ def main():
         `hidden` would take the crawler's still-good window off the board with
         it and the card would go blank. A stale window is a bug; a venue that
         silently loses the hours it had is worse."""
-        seen = {}
+        seen, by_lid = {}, {}
         for v in payload["venues"]:
             seen.setdefault(v["id"], v)
             seen.setdefault(norm_addr(v["address"]), v)
+            if v.get("lid"):
+                by_lid.setdefault(str(v["lid"]), v)
         fresh, dupes = [], []
         for v in more:
             # Which venue this one lost to, kept with it: the fallback has to ask
@@ -308,7 +314,23 @@ def main():
             # number is on the board. Two licences at one building have two
             # different numbers, so asking about its own would always say no and
             # every duplicate would publish a second card for the same bar.
-            beat_by = seen.get(v["id"]) or seen.get(norm_addr(v["address"]))
+            beat_by = seen.get(v["id"]) or by_lid.get(str(v.get("lid") or ""))
+            if beat_by is None:
+                at_addr = seen.get(norm_addr(v["address"]))
+                # Same address is only the same bar when a name agrees too.
+                # 44 W Gay St, West Chester is Lascala's Fire AND Sedona
+                # Taphouse -- two bars, two licences, one building -- and the
+                # address alone made Sedona lose to Lascala's and vanish, its
+                # fully-read window never reaching the board. A corporate
+                # shell ("WCTHG LL LLC") vs a trade name still agrees through
+                # the plcb_name the source carries, which is what the second
+                # licence case needs.
+                if at_addr is not None and (
+                        name_agrees(v["name"], at_addr["name"])
+                        or name_agrees(v.get("plcb_name") or "", at_addr["name"])
+                        or name_agrees(v["name"], at_addr.get("plcb_name") or "")
+                        or name_agrees(v.get("plcb_name") or "", at_addr.get("plcb_name") or "")):
+                    beat_by = at_addr
             if beat_by is None:
                 fresh.append(dict(v, _rank=rank))
             else:
@@ -352,6 +374,11 @@ def main():
     # This is also the only source that can put a `daily_special` on a card.
     payload = merge(payload, MENUS_JSON, "model-read menus", 2)
     payload = merge(payload, EXTRACTED_JSON, "machine-extracted", 3)
+    # Written by ingest/extract_roundups.py. A dated article about the town's
+    # happy hours, read for the bars it names. It fills a card only where
+    # nothing above it did -- and in West Chester that was most of the town,
+    # because the bars do not put their happy hour on their own sites.
+    payload = merge(payload, ROUNDUP_JSON, "roundup-read", 4)
     zones = json.load(open(ZONES_JSON, encoding="utf-8"))
     zone_names = {z["id"]: z["name"] for z in zones["zones"]}
     # Optional: written by ingest/fetch_venue_photos.py. A venue with no entry

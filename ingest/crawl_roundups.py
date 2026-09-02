@@ -15,6 +15,16 @@ Paul's call, 2026-08-06 -- two decisions this module exists to enforce:
      vista.today Phoenixville piece is from October 2024 and is discarded here,
      not demoted downstream.
 
+     REVISED 2026-09-02 (Paul, after the West Chester re-analysis): the age is
+     a LABEL, not a discard. Ten of the town's silent venues were looked at by
+     hand and NONE of them publish their happy hour on their own site in any
+     form we could read -- while one County Lines piece (May 2024) names 27 of
+     them with days, clocks and prices. Discarding it published nothing, which
+     is the invisible answer, not the safe one. So an old article is kept,
+     `stale_days` is written on the hit, and the card names the outlet AND the
+     month it was published so the reader can weigh it. fresh_enough() still
+     exists and still answers the 120-day question; it just no longer decides.
+
 Writes data/roundup_hits.json -- one entry per article, each with the outlet,
 the publish date, and the venue mentions that carried a deal quote.
 
@@ -144,50 +154,139 @@ def fresh_enough(published, today=None):
 
 
 def venue_index(sites, zone_id=None):
-    """name_core -> venue record, for the article's zone only when given."""
+    """name_core -> venue record, for the article's zone only when given.
+
+    Both names a venue carries are indexed: the licensee name ("THE RAMS HEAD
+    BAR & GRILL") and the trade name the site join found ("Santino's Tap &
+    Table"). A roundup uses the sign over the door, which is the second one.
+    """
     index = {}
     for lid, v in sites.items():
         if zone_id and v.get("zone_id") != zone_id:
             continue
-        core = name_core(v.get("name"))
-        if core:
-            index.setdefault(core, dict(v, lid=lid))
+        for name in (v.get("name"), v.get("osm_name")):
+            core = name_core(name)
+            if core:
+                index.setdefault(core, dict(v, lid=lid))
     return index
 
 
-def mentions(text, index):
-    """Venues this article names, each with the deal quotes around the mention.
+# A roundup is a list: a heading that IS the venue's name, then a paragraph
+# about it. A heading is short, is not a sentence, and carries no clause
+# punctuation -- "The Social" is a heading, "Sedona it is." is not.
+HEADING_MAX = 60
+HEADING_WORDS = 7
+# A period only ends a sentence when something follows it: 'Wrong Crowd Beer
+# Co.' is a heading, 'Sedona it is. The' is not.
+NOT_HEADING_RE = re.compile(r"[.!?]\s|[,;:]|\b(?:runs?|from|until|with)\b|\$", re.I)
 
-    Matching is on the venue name because a roundup carries no address -- which
-    is precisely why this lane is capped at "unconfirmed" and scoped to the
-    article's own zone. A one-word core ("Taku", "Bluebird") is too weak to
-    stand alone in prose and is skipped rather than guessed at.
+
+def is_heading(line):
+    return (bool(line) and len(line) <= HEADING_MAX
+            and len(line.split()) <= HEADING_WORDS
+            and not NOT_HEADING_RE.search(line))
+
+
+def _heading_venue(line, index):
+    """The venue this heading is FOR, or None.
+
+    Matching is on the whole heading, never a substring of prose: 'Sedona
+    Taphouse' the heading is Sedona; 'Sedona it is.' the sentence is not. A
+    one-word core ('Teca', 'Artillery') is allowed here for exactly that
+    reason -- the line is the name and nothing else.
     """
-    lines = text.split("\n")
-    lowered = [ln.lower() for ln in lines]
-    found = {}
-    for core, venue in index.items():
-        if len(core.split()) < MIN_NAME_WORDS:
-            continue
-        needle = core
-        for i, ln in enumerate(lowered):
-            if needle not in re.sub(r"[^\w\s]", " ", ln):
+    core = name_core(line)
+    if not core:
+        return None
+    hit = index.get(core)
+    if hit:
+        return hit
+    # 'Kildare's Irish Pub' vs 'Kildare's', 'Más Mexicali Cantina' vs 'Mas
+    # Mexicali': one core contains the other. The smaller side must be two
+    # real words -- on one word, the site's 'Shop' menu link matched SHOP RITE.
+    words = set(core.split())
+    best = None
+    for vcore, v in index.items():
+        vwords = set(vcore.split())
+        if words <= vwords or vwords <= words:
+            shared = words & vwords
+            if len(shared) >= 2 and any(len(w) >= 4 for w in shared) \
+                    and (best is None or len(shared) > best[0]):
+                best = (len(shared), v)
+    return best[1] if best else None
+
+
+def mentions(text, index):
+    """Venues this article names, each with the paragraph the article wrote.
+
+    A roundup is a heading (the venue's name) followed by one paragraph. The
+    paragraph is the quote, whole: the deal is a sentence in it -- 'Happy
+    Hour runs Monday through Friday, 5 to 7, with $5 Tito's' -- and
+    cherry-picking lines with the crawl's DEAL_RE lost the days from the
+    clock.
+
+    Headings and paragraphs do not strictly alternate. The County Lines page
+    repeats a heading ('Sedona Taphouse' twice) and, worse, PAIRS them --
+    'Santino's' / 'Sterling Pig' / Santino's paragraph / 'Sterling Pig' /
+    Sterling Pig's paragraph -- so a fixed 'next six lines' window filed
+    Santino's deal under Sterling Pig and Stove & Tap's under The Social. So:
+    headings queue up, a paragraph goes to the OLDEST heading still waiting,
+    and a heading that repeats the one before it is the same heading. A
+    heading we do not hold (a section title, a bar outside the base) still
+    takes its turn in the queue, so the paragraph under it is discarded
+    rather than handed to the previous bar.
+
+    Matching is on the venue name because a roundup carries no address --
+    which is precisely why this lane is capped at "unconfirmed" and scoped to
+    the article's own zone.
+    """
+    lines = [ln.strip() for ln in text.split("\n") if ln.strip()]
+    found, queue, prev_heading, last = {}, [], None, None
+
+    def record(venue, ln):
+        if venue is None:
+            return None
+        rec = found.setdefault(venue["lid"], {
+            "lid": venue["lid"], "name": venue["name"],
+            "address": venue["address"], "zone_id": venue.get("zone_id"),
+            "quotes": [],
+        })
+        if ln not in rec["quotes"]:
+            rec["quotes"].append(ln)
+        return rec
+
+    def names(heading):
+        # 'Opa Taverna' -> opa; 'Santino's Tap & Table' -> santino, table.
+        # A paragraph writes "Opa's", "at Santino's": prefix match on a word.
+        return [w for w in name_core(heading).split() if len(w) >= 3 and w != "s"]
+
+    for ln in lines:
+        if is_heading(ln):
+            if ln == prev_heading:
                 continue
-            # The deal is rarely on the same line as the name -- a roundup entry
-            # is a heading plus a paragraph. Read the block, not the line.
-            block = "\n".join(lines[i:i + 6])
-            qs = quotes(block)
-            if qs:
-                found.setdefault(venue["lid"], {
-                    "lid": venue["lid"], "name": venue["name"],
-                    "address": venue["address"], "zone_id": venue.get("zone_id"),
-                    "quotes": [],
-                })
-                for q in qs:
-                    if q not in found[venue["lid"]]["quotes"]:
-                        found[venue["lid"]]["quotes"].append(q)
-            break
-    return list(found.values())
+            prev_heading = ln
+            queue.append((ln, _heading_venue(ln, index)))
+            continue
+        if queue:
+            # The paragraph goes to the queued heading it NAMES, newest first
+            # -- Santino's paragraph says Santino's even when Sterling Pig's
+            # heading sits between them. Anything queued before that heading
+            # never got a paragraph (a section title) and is dropped. A
+            # paragraph naming none of them belongs to the newest heading.
+            low = ln.lower()
+            pick = len(queue) - 1
+            for i in range(len(queue) - 1, -1, -1):
+                if any(re.search(r"\b" + re.escape(w), low) for w in names(queue[i][0])):
+                    pick = i
+                    break
+            heading, venue = queue[pick]
+            queue = queue[pick + 1:]
+            last = record(venue, ln)
+        elif last is not None and prev_heading is not None:
+            # A second paragraph under the same heading.
+            record({"lid": last["lid"], "name": last["name"],
+                    "address": last["address"], "zone_id": last["zone_id"]}, ln)
+    return [v for v in found.values() if v["quotes"]]
 
 
 def crawl_one(session, article, sites, robots, today=None):
@@ -200,15 +299,20 @@ def crawl_one(session, article, sites, robots, today=None):
         return {"url": url, "outlet": article["outlet"], "dropped": f"http {r.status_code}"}
     html = r.text
     published = published_date(html)
-    if not fresh_enough(published, today):
-        return {"url": url, "outlet": article["outlet"], "published": published,
-                "dropped": "undated" if not published else f"older than {ROUNDUP_MAX_AGE_DAYS}d"}
+    if not published:
+        # Still a refusal: the card must name the month, and an undated page
+        # cannot be labelled at all.
+        return {"url": url, "outlet": article["outlet"], "published": None,
+                "dropped": "undated"}
+    today = today or datetime.date.today()
     text = visible_text(html)
     hits = mentions(text, venue_index(sites, article.get("zone_id")))
     return {
         "url": url,
         "outlet": article["outlet"],
         "published": published,
+        "stale_days": max(0, (today - datetime.date.fromisoformat(published)).days),
+        "fresh": fresh_enough(published, today),
         "zone_id": article.get("zone_id"),
         "venues": hits,
     }
@@ -245,12 +349,15 @@ def main():
         if hit.get("dropped"):
             print(f"  drop  {article['outlet']:<24} {hit['dropped']}  {article['url']}")
         else:
+            age = "" if hit["fresh"] else f"  (STALE: {hit['stale_days']}d old, labelled on the card)"
             print(f"  keep  {article['outlet']:<24} {hit['published']}  "
-                  f"{len(hit['venues'])} venues  {article['url']}")
+                  f"{len(hit['venues'])} venues  {article['url']}{age}")
 
     kept = [h for h in out if not h.get("dropped")]
-    print(f"\n{len(kept)}/{len(out)} articles inside the {ROUNDUP_MAX_AGE_DAYS}-day window, "
-          f"{sum(len(h['venues']) for h in kept)} venue mentions with a deal quote")
+    fresh = [h for h in kept if h["fresh"]]
+    print(f"\n{len(kept)}/{len(out)} articles dated ({len(fresh)} inside the "
+          f"{ROUNDUP_MAX_AGE_DAYS}-day window), "
+          f"{sum(len(h['venues']) for h in kept)} venue mentions")
     if args.write:
         with open(OUT, "w", encoding="utf-8") as fh:
             json.dump({"built_at": datetime.date.today().isoformat(), "articles": out},

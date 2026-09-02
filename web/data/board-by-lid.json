@@ -2418,6 +2418,39 @@
    }
   ]
  },
+ "97130": {
+  "name": "Artillery Brewing Company",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "roundup"
+    }
+   }
+  ]
+ },
  "69684": {
   "name": "Avalon Restaurant",
   "deals": [
@@ -2485,6 +2518,44 @@
     ],
     "source": {
      "kind": "instagram"
+    }
+   }
+  ]
+ },
+ "71516": {
+  "name": "Kildare's Irish Pub",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "roundup"
     }
    }
   ]
@@ -2566,6 +2637,39 @@
     ],
     "source": {
      "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "62944": {
+  "name": "M\u00e1s Mexicali Cantina",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "roundup"
     }
    }
   ]
@@ -2664,6 +2768,24 @@
    }
   ]
  },
+ "69681": {
+  "name": "Roots Cafe",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 6,
+      "start": "17:00",
+      "end": "20:00"
+     }
+    ],
+    "source": {
+     "kind": "roundup"
+    }
+   }
+  ]
+ },
  "47717": {
   "name": "Ryan\u2019s Pub",
   "deals": [
@@ -2679,6 +2801,92 @@
       "dow": 4,
       "start": "20:00",
       "end": "22:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "110649": {
+  "name": "Santino's Tap & Table",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 2,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 3,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 4,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 5,
+      "start": "17:00",
+      "end": "19:00"
+     }
+    ],
+    "source": {
+     "kind": "roundup"
+    }
+   }
+  ]
+ },
+ "101577": {
+  "name": "Sedona Taphouse",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 6,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 7,
+      "start": "16:00",
+      "end": "18:00"
      }
     ],
     "source": {
@@ -2820,6 +3028,34 @@
     ],
     "source": {
      "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "103733": {
+  "name": "Wrong Crowd Beer Company",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "15:00",
+      "end": "17:00"
+     }
+    ],
+    "source": {
+     "kind": "roundup"
     }
    }
   ]
