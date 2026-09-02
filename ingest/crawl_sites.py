@@ -969,20 +969,35 @@ def urllib_get(url):
 # same containment and the same validators. Nothing is trusted differently for
 # having come through a browser; it is the same fetch with the JavaScript run.
 #
-# Bounded on purpose, because it is ~40x the cost of a fetch: only a page whose
-# URL names an HOUR (page_is_hh) and which came back with almost no text. That
-# is the shape that cannot be anything BUT a shell -- a page we read in full and
-# which says nothing about a happy hour is a different answer, and rendering it
-# was already measured at zero yield for King of Prussia (2026-09-01).
+# Bounded on purpose, because it is ~40x the cost of a fetch: only a page that
+# came back with almost no text, and of those only two shapes. A page whose URL
+# names an HOUR (page_is_hh) -- that is the shape that cannot be anything BUT a
+# shell. And, since 2026-09-02, the venue's own SEED page (depth 1) when the
+# venue has no quote yet. Until then the gate required the hour-named URL, and
+# a shell homepage never yields one: it has no links to harvest, so the
+# hour-named page is never discovered, so the gate could never fire on the
+# class it existed for. Measured across all 390 no-quote venues, zero pages
+# had ever been rendered, --render on or off -- the gate was keyed on the thing
+# the failure destroys. A rendered seed feeds candidate_links() below, which is
+# where the gain is: the hour-named page becomes reachable at all.
+#
+# A page we read in full and which says nothing about a happy hour is a
+# different answer, and rendering it was already measured at zero yield for
+# King of Prussia (2026-09-01). The line floor keeps that rule.
 RENDER_LINE_FLOOR = 25
 RENDER_CAP = 40          # pages per run
 _render = {"on": False, "used": 0, "pw": None,
            "browser": None}
 
 
-def render_wanted(url, lines):
-    return (_render["on"] and _render["used"] < RENDER_CAP
-            and page_is_hh(url) and len(lines) < RENDER_LINE_FLOOR)
+def render_wanted(url, lines, depth=2, quoted=True):
+    """One render for a shell: an hour-named URL, or a seed page of a venue
+    that has no quote yet. `quoted` is whether the venue already holds one."""
+    if not (_render["on"] and _render["used"] < RENDER_CAP):
+        return False
+    if len(lines) >= RENDER_LINE_FLOOR:
+        return False
+    return page_is_hh(url) or (depth == 1 and not quoted)
 
 
 def render(url):
@@ -1969,7 +1984,7 @@ def crawl_one(session, venue, robots):
                               "result": "error: frc menu %s" % type(e).__name__})
         lines, stacks, emph = text_lines_emph(html)
         rendered = False
-        if render_wanted(url, lines):
+        if render_wanted(url, lines, depth, bool(hits)):
             try:
                 shown = render(url)
             except Exception as e:  # noqa: BLE001 -- one dead render, not the run
@@ -2150,10 +2165,12 @@ def main():
     # and re-crawling all 849 to reach 130 spends other people's bandwidth on
     # pages whose answer we already hold.
     ap.add_argument("--lids", help="file of licence ids, one per line")
-    # Off by default: a render costs ~40x a fetch and only a JavaScript shell at
-    # a URL naming an hour is ever worth one. See render_wanted().
+    # Off by default: a render costs ~40x a fetch and only a JavaScript shell is
+    # ever worth one -- at a URL naming an hour, or the seed page of a venue
+    # with no quote. See render_wanted().
     ap.add_argument("--render", action="store_true",
-                    help="render a happy-hour page that came back a shell (WebKit)")
+                    help="render a page that came back a shell (WebKit): an "
+                         "hour-named URL, or a quoteless venue's seed page")
     args = ap.parse_args()
     _render["on"] = args.render
 

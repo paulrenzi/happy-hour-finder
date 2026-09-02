@@ -2036,6 +2036,82 @@ class AFailedFetchIsNotAnAnswerAboutTheVenue(unittest.TestCase):
 
 
 
+class AShellHomepageIsWorthOneRender(unittest.TestCase):
+    """The render gate used to be keyed on the thing the failure destroys.
+
+    It required an hour-named URL AND a page under the line floor. A shell
+    homepage's URL names no hour, and a shell yields no links, so the
+    hour-named URL was never discovered and the gate could never fire on the
+    class it existed for: across all 390 no-quote venues, zero pages had ever
+    been rendered (2026-09-02). A seed page of a venue with no quote is now
+    worth one render, and the rendered HTML feeds the link harvest.
+    """
+
+    def setUp(self):
+        self._saved = dict(crawl_sites._render)
+        crawl_sites._render.update({"on": True, "used": 0})
+
+    def tearDown(self):
+        crawl_sites._render.update(self._saved)
+
+    def test_a_shell_seed_page_of_a_quoteless_venue_renders(self):
+        self.assertTrue(crawl_sites.render_wanted("https://bar.example/", ["x"] * 3,
+                                                  depth=1, quoted=False))
+
+    def test_a_shell_seed_page_of_a_venue_already_quoted_does_not(self):
+        self.assertFalse(crawl_sites.render_wanted("https://bar.example/", ["x"] * 3,
+                                                   depth=1, quoted=True))
+
+    def test_a_shell_deeper_in_still_needs_an_hour_named_url(self):
+        self.assertFalse(crawl_sites.render_wanted("https://bar.example/menu",
+                                                   ["x"] * 3, depth=2, quoted=False))
+        self.assertTrue(crawl_sites.render_wanted("https://bar.example/happy-hour",
+                                                  ["x"] * 3, depth=2, quoted=True))
+
+    def test_a_page_read_in_full_is_never_rendered(self):
+        # Measured at zero yield for King of Prussia (2026-09-01); the floor keeps it.
+        self.assertFalse(crawl_sites.render_wanted("https://bar.example/", ["x"] * 80,
+                                                   depth=1, quoted=False))
+
+    def test_the_cap_and_the_switch_still_bound_it(self):
+        crawl_sites._render["on"] = False
+        self.assertFalse(crawl_sites.render_wanted("https://bar.example/", [], 1, False))
+        crawl_sites._render.update({"on": True, "used": crawl_sites.RENDER_CAP})
+        self.assertFalse(crawl_sites.render_wanted("https://bar.example/", [], 1, False))
+
+    def test_the_rendered_seed_is_where_the_hour_named_link_comes_from(self):
+        # Fetched: a Laravel-style shell, no links. Rendered: the real homepage
+        # linking /happy-hour. The crawl must find that page through the render.
+        shell = "<html><body><div id=app></div><script src=a.js></script></body></html>"
+        full = "<html><body>" + "".join(
+            "<p>Welcome to the bar, line %d of the homepage text</p>" % i
+            for i in range(40)) + '<a href="/happy-hour">Happy Hour</a></body></html>'
+
+        def get(url, **kw):
+            r = unittest.mock.Mock(status_code=200,
+                                   headers={"content-type": "text/html; charset=utf-8"})
+            # The happy-hour page itself reads in full, so only the seed renders.
+            hh = "Happy Hour 4pm - 6pm<br>" + "<p>a menu line</p>" * 40
+            r.text = shell if url == "https://bar.example/" else hh
+            return r
+
+        session = unittest.mock.Mock(get=get)
+        rendered = []
+
+        def render(url):
+            rendered.append(url)
+            return full
+
+        with unittest.mock.patch.object(crawl_sites, "allowed", lambda u, c: True),                 unittest.mock.patch.object(crawl_sites, "DELAY", 0),                 unittest.mock.patch.object(crawl_sites, "render", render),                 unittest.mock.patch.object(crawl_sites, "sitemap_links",
+                                           lambda *a: []),                 unittest.mock.patch.object(crawl_sites, "save_page", lambda *a, **k: None):
+            pages, hits, _ = crawl_one(session, {"website": "https://bar.example/"}, {})
+        self.assertEqual(rendered, ["https://bar.example/"])
+        results = [p["result"] for p in pages]
+        self.assertTrue(any(r.startswith("rendered: ") for r in results), results)
+        self.assertIn("https://bar.example/happy-hour", [p["url"] for p in pages])
+        self.assertTrue(hits)
+
+
 class TheHeadingIsTheContainment(unittest.TestCase):
     """What replaces the URL as the key to the looser price rules.
 

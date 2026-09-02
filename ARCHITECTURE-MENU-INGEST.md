@@ -108,7 +108,12 @@ shippable:
 
 A page whose HTML holds no page is rendered in WebKit (`--render`), then read by
 the same readers with the same containment. Bounded hard, because it is ~40x a
-fetch: only a page whose URL **names an hour** that came back under 25 lines.
+fetch: only a page that came back under 25 lines, and of those only one whose
+URL **names an hour** — or, since 2026-09-02, the **seed page of a venue with
+no quote yet**. The second shape is the fix from §"THE WHOLE FUNNEL" below: a
+shell homepage has no links, so the hour-named URL was never discovered and the
+gate could never fire. The rendered seed now feeds `candidate_links()`, which is
+where the gain is. `RENDER_CAP = 40` per run still bounds the spend.
 
 The Cheesecake Factory is the case that motivated it — 13KB of Laravel shell,
 **11 visible lines**, no API. Rendered: **161 lines, 24 quotes.** And it shows
@@ -724,6 +729,10 @@ rendered.
 The fix is one condition, not a redesign: a page that comes back under the line
 floor is a shell *whatever its URL says*, and the homepage of a venue with no
 quote is worth one render. `RENDER_CAP` already bounds the spend.
+
+**Built 2026-09-02.** `render_wanted(url, lines, depth, quoted)` now also fires
+for a depth-1 seed page of a venue holding no quote. Not yet run against a town
+— the yield number above is still the sampled ~13%, not a measurement.
 
 ### The smaller, named causes
 

@@ -65,6 +65,14 @@ strong finding. Validate a probe against a case whose answer you already know.
 
 ### 1. Store the visible line count in `crawl_hits.json` — do this first
 
+> **Checked 2026-09-02: this was already built the day before** (commit
+> `1a2e2aa`, 2026-09-01). `crawl_sites.py` writes `"lines"` on every ok page
+> and `report_holes.py --silent` classifies on it, with
+> `crawled-before-the-line-count` for the rows that predate it. What is
+> missing is the DATA, not the code: 454 of 2,079 ok pages carry the count,
+> and 80 of 566 no-quote venues have it on any page. It fills in as scoped
+> recrawls run. Nothing below needed re-deriving on this point.
+
 `"ok, 0 quote(s)"` currently means **both** *"we read the page and it has no
 happy hour"* **and** *"the page was a JavaScript shell and we read nothing"*.
 No line count is stored, so **the 390-venue no-quote class cannot be separated
@@ -74,6 +82,12 @@ already in hand. Cheapest item on the list, unblocks the measurement of every
 item below it. Nothing needs re-crawling to start recording it.
 
 ### 2. Widen the render gate — ~13% of the no-quote class, ~50 venues
+
+> **Built 2026-09-02, not yet run against a town.** `render_wanted()` now also
+> fires for a depth-1 seed page of a venue with no quote yet, and the rendered
+> HTML feeds `candidate_links()`. Six tests cover it, including the end-to-end
+> shape: shell seed → render → `/happy-hour` discovered → quote. The ~13%
+> yield is still the sampled figure, not a measurement.
 
 `render_wanted()` requires `page_is_hh(url)` (the URL must name an hour) **and**
 a page under `RENDER_LINE_FLOOR`. A shell homepage's URL does not name an hour,
