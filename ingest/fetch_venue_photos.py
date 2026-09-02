@@ -316,7 +316,18 @@ def from_board(args, key):
             continue
         if args.zone and b.get("zone_id") != args.zone:
             continue
-        todo.append((lid, b))
+        # 🔑 SEARCH ON THE NAME THE CARD SHOWS, not the licensee.
+        # A shell licence is exactly the row whose base name is a holding
+        # company, and it is exactly the row we most need a photo for. Google
+        # answered 'PA Grill Room' with Penn Taproom, 'Ptll' with Jitters and
+        # '37 N Main Street Enterprises' with Maxwell's -- all three CORRECT,
+        # all three then refused by name_agrees() for not looking like the
+        # shell. The board already knows the sign over the door, because the
+        # address join or the site join put it there; ask with that. The
+        # address key and the name-agrees guard are unchanged, so this cannot
+        # accept a place the licensee's own name would not have.
+        card = (board.get(lid) or {}).get("name") if isinstance(board, dict) else None
+        todo.append((lid, dict(b, name=card or b["name"])))
     if args.limit:
         todo = todo[: args.limit]
 
