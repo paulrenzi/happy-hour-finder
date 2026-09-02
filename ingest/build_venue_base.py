@@ -94,12 +94,26 @@ def pretty_name(raw):
     return name
 
 
+# What may be stripped from a name Google or OSM SUPPLIED. Much narrower than
+# ENTITY_SUFFIX_RE, which is only ever safe on a PLCB licensee: CO, COMPANY and
+# GROUP are real words on a real sign -- Wrong Crowd Beer Company, Victory
+# Brewing Company, Bagels & Co. Stripping those turned good trade names into
+# `Bagels &`. Only the forms nobody paints on a window are listed here.
+TRADE_ENTITY_SUFFIX_RE = re.compile(
+    r"[\s,]+(?:LLC|L\.L\.C\.|INC|INC\.|LP|L\.P\.|LLP|LTD|CORP|CORPORATION)\.?$",
+    re.I,
+)
+
+
 def _trade(name):
     """A supplied trade name, or None when it is only the legal entity."""
     name = (name or "").strip()
     if not name:
         return None
-    return pretty_name(name) if ENTITY_SUFFIX_RE.search(name) else name
+    stripped = TRADE_ENTITY_SUFFIX_RE.sub("", name).strip()
+    if not stripped:
+        return None
+    return pretty_name(stripped) if stripped != name else name
 
 
 def pretty_address(raw):

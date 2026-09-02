@@ -111,7 +111,25 @@ The base left a Places/OSM name alone on the rule that it "is already the trade 
 Google lists this Doylestown bar as **`FACENDA SPIRITS LLC`** — its paperwork. That
 shipped a card whose only content was the licensee.
 **Fix:** `_trade()` strips an entity suffix from a *supplied* name too. The sign over
-a door never ends in LLC. Three regression tests.
+a door never ends in LLC. Four regression tests.
+
+🛑 **The first version of this fix was WRONG and is worth remembering.** It reused
+`ENTITY_SUFFIX_RE`, which lists `CO|COMPANY|GROUP|ENTERPRISES|…` — correct for a PLCB
+*licensee*, and destructive on a *supplied* name, because those are real words on real
+signs. It renamed 14 good venues across the corpus: `Wrong Crowd Beer Company` →
+`Wrong Crowd Beer`, `Victory Brewing Company` → `Victory Brewing`, and visibly
+**`Bagels & Co.` → `Bagels &`**. `tests/run.sh` was **green** for all of it — the suite
+only asserts a name does not END in a legal suffix, so a name it *shortened* passes.
+Caught by diffing `venue_base.json` against the previous commit, which is the check
+that actually sees this class. **A rename is a silent-drop too.** There is now a
+separate, much narrower `TRADE_ENTITY_SUFFIX_RE` (LLC/INC/LP/LLP/LTD/CORP only) and a
+test naming the seven words that belong on a sign.
+
+🔑 **After any change to naming or matching, diff the base against the last commit:**
+```sh
+git show <last>:data/venue_base.json > /tmp/old.json
+# then compare name-by-name; the suite will not catch a rename
+```
 
 ---
 

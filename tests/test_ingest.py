@@ -3547,6 +3547,16 @@ class ASuppliedTradeNameCanBeTheLegalEntity(unittest.TestCase):
         for name in ("86 West", "Chambers 19 Bistro & Bar", "The Hattery Stove & Still"):
             self.assertEqual(_trade(name), name)
 
+    def test_words_that_belong_on_a_sign_are_never_stripped(self):
+        # CO, COMPANY and GROUP are in ENTITY_SUFFIX_RE because they end a PLCB
+        # LICENSEE. They are also real words on real signs, and reusing that
+        # regex on a SUPPLIED name turned `Bagels & Co.` into `Bagels &`.
+        from build_venue_base import _trade
+        for name in ("Wrong Crowd Beer Company", "Victory Brewing Company",
+                     "Bagels & Co.", "Hi-Lo Taco Co.", "Wissahickon Brewing Co",
+                     "Whole Foods Market Group", "Sunset Hill Brewing Company"):
+            self.assertEqual(_trade(name), name)
+
     def test_no_trade_name_at_all_falls_through(self):
         from build_venue_base import _trade
         self.assertIsNone(_trade(None))
