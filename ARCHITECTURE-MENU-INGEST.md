@@ -1364,6 +1364,75 @@ intact.
 
 ---
 
+## 🛑🔑🔑 THE FUNNEL SAYS THE WALL IS YIELD, NOT REACH (2026-09-02)
+
+Read this before proposing another extraction fix. `python ingest/report_funnel.py`:
+
+```
+zone                          lic  site crawl    ok quote  card   card/quote
+west_chester                   62    49    49    46    20    13    65%
+king_of_prussia                49    49    49    43    22    19    86%
+willow_grove_horsham           43    32    32    29    14    11    79%
+ALL                          2788   888   888   769   380   236    62%
+```
+
+**Two walls, and neither is the one the last several sessions were fixing.**
+
+**Wall 1 - supply.** 888 of 2788 venues have a website at all (32%). Zones with a
+discovery pass run 79-100%; zones without run 10-25%. **Bought with money, not
+cleverness** (~$2/town of Google Places `websiteUri`). Understood, not interesting.
+
+**Wall 2 - yield.** 769 sites crawl OK and only 380 produce a quote. **Half of
+every page we successfully fetch yields nothing.** West Chester: 46 crawled fine,
+26 published nothing. Those are not unreachable venues - we got their pages, read
+them, and published nothing.
+
+🔑 **Wall 2 is the project, and it does not close one venue at a time.** Every
+session so far has fixed a genuine instance of it - a CDN host, a label above an
+anchor, `EVERY. SINGLE. DAY.` Each fix was correct and each recovered roughly one
+venue. **At one venue per fix this never finishes.** The next architectural move
+has to change the class, not the instance.
+
+### The yield that passes is thin, in six named classes
+
+`python ingest/report_holes.py` - of 231 published windows, **117 name no item at
+all**: `no-price-published` 37, `priced-but-unreadable` 26, `nothing-but-the-hours`
+25, `menu-is-a-picture` 11, `chrome-only` 11, `menu-is-a-document` 7.
+
+🛑🔑 **`no-price-published` is mostly OURS, not the venue's silence.** The tool's
+own audit note records **24 of 36 had prices in the raw HTML**. The largest
+"the venue doesn't publish prices" class is a **retrieval failure reporting itself
+as an absence** - the same shape as every silent defect here: *a refusal that never
+prints is indistinguishable from an absence.*
+
+Also on the West Chester run, `extract_deals` **rejected 17 quotes as "opening
+hours, not a happy hour" against 8 windows kept.** The classifier discards twice
+what it keeps, and that ratio has never been sampled.
+
+### 🛑🔑🔑 "IT IS LIVE" MUST BE ONE COMMAND, AND IT IS THIS ONE
+
+```
+python tests/live_front_door.py <zone>
+```
+
+Root URL, **fresh WebKit context (no service worker, no HTTP cache)**, drive the
+zone picker like a person, compare what is **painted** against the **locally built**
+bundle. Expected names come from the built file, never a CLI argument - a typed
+name carries a straight apostrophe, the board carries a curly one, and that
+mismatch once made the old check cry wolf about Ryan's Pub.
+
+🔑 **Every wrong "it's live" came from answering a smaller question**:
+`render_check.py` runs the LOCAL page; fetching `data/zone-*.json` proves a FILE
+shipped. **Neither proves the board a visitor opens draws the work.** It lives in
+`tests/` and not `scratch/` on purpose - the previous instrument was gitignored,
+so its own fix never shipped.
+
+Corollary, still open: **a user holding a stale service worker does not have the
+fix.** `web/sw.js` records this class twice already. A deploy that a person cannot
+see is not a deploy.
+
+---
+
 ## Standing rules
 
 - **One venue at a time, finished on the live site before the next**, and Paul
