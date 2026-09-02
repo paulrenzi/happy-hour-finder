@@ -289,10 +289,24 @@ The hero card:
 
 "Ends in 42 min" is the killer line. It converts browsing into going.
 
-### Time slider
+### Time slider — BUILT, THEN REMOVED (2026-09-02)
 
-A single control: *arrival time*. Drag it to 6:30pm and the map/list repaints for what's live then.
-Handles the two real use cases — "right now" and "we're meeting at 6."
+The spec's reasoning was sound and the product disagreed with it. A board whose whole promise is
+*what's on right now* was also asking the reader to set a time, and the strip label it painted —
+"Arriving Fri 5:30pm" — read as a filter they had switched on by accident rather than a question
+they had answered. Paul's words: "confusing as hell."
+
+So the slider is gone from the strip. What survives:
+
+- **The Day chips still work.** Picking a future day means "the evening" (16:00), which is the
+  only thing anyone meant by "we're meeting at 6" anyway.
+- **`state.offset` still exists** and is still read off the `#t=` hash, so an old shared link
+  opens exactly as its sender saw it. Nothing writes it any more.
+- `arrivalTime()` and `isNow()` are unchanged; the header clock IS the arrival moment.
+
+The lesson worth keeping is not "sliders are bad": it is that **a control the reader did not ask
+for reads as a filter they cannot see themselves having set.** The default view has to be the
+whole answer, not a starting position.
 
 ### Table stakes
 

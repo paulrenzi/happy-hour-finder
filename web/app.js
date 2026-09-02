@@ -925,10 +925,11 @@ function render() {
 
   const clock = at.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
   $("#clock").textContent = isNow() ? clock : `${DOW_SHORT[dowOf(at) - 1]} ${clock}`;
-  $("#whenLabel").textContent = isNow()
-    ? "Right now"
-    : `Arriving ${state.day ? DOW_LONG[dowOf(at) - 1] + " " : ""}${clock}`;
-  $("#when").value = state.offset;
+  // The arrival-time slider was removed from the strip (2026-09-02): a board
+  // whose whole promise is "what's on RIGHT NOW" was also asking the reader to
+  // set a time, and the "Arriving Fri 5:30pm" label read as a filter they had
+  // switched on by accident. The clock in the header is the arrival moment.
+  // state.offset survives only so an old shared #t= link still opens correctly.
 
   const live = rows.filter((r) => r.group === GROUP.LIVE).length;
   const soon = rows.filter((r) => r.group === GROUP.SOON).length;
@@ -1476,13 +1477,6 @@ async function boot() {
     "© OpenStreetMap contributors, ODbL. Drive times are estimates. " +
     "Deal windows are transcribed from the source linked on each card — always call ahead.";
 
-  $("#when").addEventListener("input", (e) => {
-    const v = Number(e.target.value);
-    // The slider means "when I arrive", so on today it cannot point backwards.
-    const nowSlot = Math.floor((new Date().getHours() * 60 + new Date().getMinutes()) / 15);
-    state.offset = state.day === 0 && v >= 0 && v <= nowSlot ? -1 : v;
-    refresh();
-  });
   $("#nowBtn").addEventListener("click", () => {
     state.day = 0;
     state.offset = -1;
