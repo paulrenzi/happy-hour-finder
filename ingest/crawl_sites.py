@@ -1467,6 +1467,169 @@ BLANK_RE = re.compile(r"^[\s\u200b\u200c\u00a0\u2060]*$")
 STACK_CAP = 12
 
 
+LD_RE = re.compile(
+    r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
+    re.I | re.S)
+
+
+def ld_nodes(html):
+    """Every object in the page's schema.org graph, however deeply nested.
+
+    @graph, arrays and hasMenuSection/hasMenuItem all nest, so a flat pass over
+    the top-level objects finds the Restaurant and misses the Menu hanging off
+    it. A JSON document is a tree and the only honest way to read one is to
+    walk it.
+    """
+    out = []
+
+    def walk(node):
+        if isinstance(node, dict):
+            out.append(node)
+            for v in node.values():
+                walk(v)
+        elif isinstance(node, list):
+            for v in node:
+                walk(v)
+
+    for m in LD_RE.finditer(html):
+        try:
+            walk(json.loads(m.group(1).strip()))
+        except Exception:  # noqa: BLE001 -- one malformed block is not the page
+            continue
+    return out
+
+
+def _ld_type(node):
+    t = node.get("@type")
+    return {x for x in (t if isinstance(t, list) else [t]) if x}
+
+
+def jsonld_quotes(html):
+    """The happy hour a page publishes as DATA rather than as prose.
+
+    Pizzeria Vetri states its entire happy hour -- the window and all three
+    priced sections -- in a schema.org Menu block on /menus/, and the visible
+    page says only the words 'Happy Hour' behind a JavaScript tab. We fetched
+    that page, read it as prose, and reported the venue as saying happy hour
+    with no window. The window was in our hands the whole time.
+
+    This is a W3C-backed standard, not a venue quirk: the site said what it
+    meant in the form meant for machines, and we were the machine that did not
+    look. Read the Menu whose name or description names a happy hour, take its
+    description as the hours line, and take its sections and items as the menu.
+
+    Only a Menu that NAMES itself the happy hour is read. A restaurant's main
+    Menu block is its dinner menu, and publishing that as happy hour items is
+    the failure this corpus fears most -- the regular price, presented as a
+    deal. So an unnamed or differently-named menu is passed over in silence.
+    """
+    out = []
+    for node in ld_nodes(html):
+        if "Menu" not in _ld_type(node):
+            continue
+        name = str(node.get("name") or "").strip()
+        desc = str(node.get("description") or "").strip()
+        if not HH_HEADING_RE.search(name):
+            continue
+        # The description is where these blocks put the hours: 'Weekdays: 4 PM
+        # - 6 PM'. Quoted WITH the menu's own name so the extractor sees the
+        # claim the way the venue made it, not a bare clock with no subject.
+        if desc:
+            out.append(f"{name}: {desc}")
+        for sec in node.get("hasMenuSection") or []:
+            if not isinstance(sec, dict):
+                continue
+            sname = str(sec.get("name") or "").strip()
+            if sname:
+                out.append(sname)
+            for item in sec.get("hasMenuItem") or []:
+                if not isinstance(item, dict):
+                    continue
+                iname = str(item.get("name") or "").strip()
+                offer = item.get("offers") or {}
+                if isinstance(offer, list):
+                    offer = offer[0] if offer else {}
+                price = (offer or {}).get("price") if isinstance(offer, dict) else None
+                if iname and price:
+                    out.append(f"{iname} ${price}")
+                elif iname:
+                    out.append(iname)
+    return list(dict.fromkeys(out))
+
+
+BARE_WINDOW_RE = re.compile(
+    r"^\s*\d{1,2}(?::\d\d)?\s*(?:am|pm|a\.m\.|p\.m\.)?\s*(?:-|–|—|to)\s*"
+    r"\d{1,2}(?::\d\d)?\s*(?:am|pm|a\.m\.|p\.m\.)\s*$", re.I)
+
+
+def boxed_windows(lines, stacks):
+    """Quotes for a happy hour whose CLOCK is in the box next door.
+
+    Peppers publishes a real window and we published nothing, because the page
+    is a two-column row: the deal is in one cell and '04:00 PM - 06:00 PM' is
+    in its sibling. Read down the page as prose those are two unrelated lines,
+    one with no time and one with no subject, and each is worthless alone.
+
+    This is the same fact as item_beside(), one field over: which lines a page
+    put in ONE box is read off the markup, and the box says the clock and the
+    deal are the same claim. Joining records that merely FOLLOW each other
+    invents adjacencies, so the shared box is required -- a bare clock with no
+    happy-hour line in its own box is passed over, not guessed at.
+
+    The box is the IMMEDIATE parent, not an ancestor within a few levels. On
+    Peppers' page every day is a row of two cells inside one section, so an
+    ancestor test made the whole section one box and paired the happy hour with
+    the clock of the row ABOVE it -- publishing 4-9pm, which belongs to that
+    day's other special. Two cells of the same row share a parent; two rows do
+    not. That is the whole difference between the right window and a plausible
+    wrong one, and it is the off-by-one this file has hit before.
+    """
+    out = []
+    for i, line in enumerate(lines):
+        if not BARE_WINDOW_RE.match(line) or len(stacks[i]) < 2:
+            continue
+        row = stacks[i][-2]
+        for j in range(max(0, i - 4), min(len(lines), i + 5)):
+            if j == i or len(stacks[j]) < 2 or stacks[j][-2] != row:
+                continue
+            if not HH_HEADING_RE.search(lines[j]):
+                continue
+            if TIME_CONTEXT_RE.search(lines[j]):
+                continue  # it states its own clock; it does not need this one
+            out.append(f"{lines[j]} {line.strip()}")
+            break
+    return list(dict.fromkeys(out))
+
+
+LOC_RE = re.compile(r"/locations?/([a-z0-9-]+)", re.I)
+CANON_RE = re.compile(
+    r'<link[^>]+rel=["\']canonical["\'][^>]*href=["\']([^"\']+)["\']', re.I)
+
+
+def wrong_location(html, url):
+    """The other town's page, served at ours.
+
+    cityworksrestaurant.com/locations/king-of-prussia/happy-hour/ returns 200
+    and a complete happy-hour page that says 'the best Happy Hour in Frisco',
+    canonical /locations/frisco/happy-hour-menu/. Reading a window off it would
+    have published a Texas schedule under a King of Prussia bar, sourced,
+    quoted and wrong -- and every gate we have would have passed it, because
+    the quote is real and the fetch was clean.
+
+    A chain that serves one location's page at another's URL has told us so in
+    its own canonical tag. Believe it: when the canonical names a DIFFERENT
+    location slug than the URL we asked for, this page is not about this venue.
+    """
+    want = LOC_RE.search(url)
+    canon = CANON_RE.search(html or "")
+    if not (want and canon):
+        return None
+    got = LOC_RE.search(canon.group(1))
+    if got and got.group(1).lower() != want.group(1).lower():
+        return got.group(1).lower()
+    return None
+
+
 def stacked_prices(lines, hh_lines):
     """Quotes for the 'one price, then the dishes it covers' layout.
 
@@ -1602,6 +1765,14 @@ def crawl_one(session, venue, robots):
         if err:
             pages.append({"url": url, "result": err})
             continue
+        # Before reading a word of it: is this page even about this venue? A
+        # chain serving another location's page at ours is a wrong ANSWER, not
+        # a miss, and it is the only failure here that no later gate catches.
+        elsewhere = wrong_location(html, url)
+        if elsewhere:
+            pages.append({"url": url,
+                          "result": f"refused: canonical says {elsewhere}, not us"})
+            continue
         # The venue's own title for the page is what unlocks the looser price
         # rules -- the same test used a few lines below to decide a menu PDF is
         # worth chasing, and the same containment.
@@ -1635,6 +1806,12 @@ def crawl_one(session, venue, robots):
                        stacks=stacks, emph=emph, mark_hh=True,
                        head_prices=heading_prices(html, text, hh_lines, stacks))
         for q in stacked_prices(lines, hh_lines):
+            hits.append({"url": url, "quote": q, "hh": True})
+        # The two things the prose pass cannot see: what the page said to
+        # machines, and what it said in the box next door.
+        for q in jsonld_quotes(html):
+            hits.append({"url": url, "quote": q, "hh": True})
+        for q in boxed_windows(lines, stacks):
             hits.append({"url": url, "quote": q, "hh": True})
         # How much of the page we could actually READ, recorded alongside the
         # result. A fetch that returns 200 and 11 lines of text and a fetch that

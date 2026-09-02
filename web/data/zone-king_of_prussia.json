@@ -820,6 +820,166 @@
    ]
   },
   {
+   "id": "101064",
+   "lid": "101064",
+   "slug": "peppers-italian-restaurant-and-bar-king-of-prussia",
+   "name": "PEPPERS ITALIAN RESTAURANT AND BAR",
+   "address": "175 Town Center Rd, King Of Prussia PA 19406",
+   "zone_id": "king_of_prussia",
+   "website": "https://peppersitalianrestaurantandbar.com/",
+   "plcb_name": "PEPPERS ITALIAN RESTAURANT AND BAR",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.094338199999996,
+   "lng": -75.3695037,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Google",
+    "file": "img/venues/101064.jpg"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "any bar bite",
+       "amount_off_usd": 2.0
+      },
+      {
+       "category": "draft",
+       "label": "any beer",
+       "amount_off_usd": 1.0
+      },
+      {
+       "category": "wine",
+       "label": "any wine",
+       "amount_off_usd": 2.0
+      },
+      {
+       "category": "cocktail",
+       "label": "any cocktail 04",
+       "amount_off_usd": 2.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://peppersitalianrestaurantandbar.com/king-of-prussia-peppers-by-amedeo-s-restaurant-and-bar-happy-hours-specials",
+      "quote": "Happy Hour! $2 OFF any bar bite | $1 OFF any beer | $2 OFF any wine | $2 OFF any cocktail 04:00 PM - 06:00 PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "82083",
+   "lid": "82083",
+   "slug": "pizzeria-vetri-king-of-prussia",
+   "name": "Pizzeria Vetri",
+   "address": "150 Main Street Ste 100, King Of Prussia PA 19406",
+   "zone_id": "king_of_prussia",
+   "website": "https://www.pizzeriavetri.com/location/king-of-prussia/",
+   "plcb_name": "PIZZERIA VETRI",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.0838603,
+   "lng": -75.4045909,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Google",
+    "file": "img/venues/82083.jpg"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "Select Neapolitan Pizzas",
+       "price_usd": 10.0
+      },
+      {
+       "category": "wine",
+       "label": "Wine on Tap",
+       "price_usd": 6.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.pizzeriavetri.com/menus/",
+      "quote": "Happy Hour: Weekdays: 4 PM - 6 PM"
+     }
+    }
+   ]
+  },
+  {
    "id": "70157",
    "lid": "70157",
    "slug": "red-lobster-king-of-prussia",

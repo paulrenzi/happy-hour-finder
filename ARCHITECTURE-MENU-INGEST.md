@@ -140,6 +140,38 @@ per page, and `classify_silent()` sorts the whole silent population into named
 classes ranked by size. **A silent venue is not a mystery; it is one of eight
 things, and seven of them are ours.**
 
+### 🔑 What King of Prussia turned out to be, once every class was worked (2026-09-01)
+
+KoP is the proving zone: fill it to the brim with very little fallthrough, then
+Phoenixville / Ardmore / Wayne. It went **16 → 18 venues on the board** across
+one session, and — this is the part worth carrying forward — **the residue is
+mostly not fallthrough.**
+
+| what the 34 silent KoP venues actually are | n |
+|---|---|
+| **genuinely do not publish one** — read in full, and re-checked at a 40-page budget | 21 |
+| **we cannot fetch the page at all** — robots.txt refusal, 403, timeout | 6 |
+| **says happy hour, window unread** — the real remaining work | 6 |
+| venue answered: it has none | 1 |
+
+Of the 21: eight were classed `page-is-a-shell` and assumed to be the headless
+tier. **All eight were rendered in WebKit and not one mentions a happy hour.**
+True Food Kitchen goes 0 → 193 lines of text and still says nothing; Eataly
+renders 396 lines and says nothing. **The headless tier returns zero for King of
+Prussia.** The rest are a supermarket, a department store, a cinema and chains
+whose location pages carry no hours.
+
+> 🛑 **This is the third time a class was sized on a suspicion about its CAUSE
+> and counted as if it were a pile of work** — after the hotel licences and the
+> "no-price" venues. `page-is-a-shell` is a description of a page, not a
+> diagnosis of why. **Render one before budgeting for all of them.**
+
+> 🔑 So *"every menu that exists on a website"* and *"a full board"* are not the
+> same target, and KoP is the proof: most of what is missing there is missing
+> from the **venue's own site**, not from our reader. Closing the rest means
+> going somewhere other than the venue's website — which is a product decision,
+> not a scraper fix, and it is Paul's.
+
 | class | meaning / the work |
 |---|---|
 | `never-crawled` | the frontier never queued a site we hold — a crawl input bug, and the cheapest venues on the list. Cheesecake Factory, Tommy Bahama and Wegmans in KoP alone |
@@ -242,6 +274,73 @@ venues**. The only deal correctly lost was Desmond Hotel Malvern.
 ---
 
 ## Findings that cost a session each — do not re-learn these
+
+**The page budget was not the constraint, and we assumed it was for two
+sessions (2026-09-01).** The suspicion was that `PAGE_CAP = 4` was starving the
+crawl — the log looked damning, with Maggiano's spending its four fetches on
+`/banquets/` and `/menus/catering` and Topgolf on a Special Olympics page. So
+it was measured: every silent King of Prussia venue was re-fetched with a
+**40-page** budget, following every internal candidate link and the whole
+sitemap. **Exactly one venue of 38 turned up a "happy hour" on a page the
+crawler had not already fetched**, and it was a chain marketing sentence with
+no window in it.
+
+> 🔑 **The pages were already in our hands. What was missing was the reading.**
+> Three of the four venues reclaimed that day were fixed by reading a page we
+> had fetched weeks earlier, differently. Before raising a cap, re-read what
+> the cap already brought back.
+
+**A venue can publish its happy hour as DATA, and we were the machine that did
+not look.** Pizzeria Vetri states the whole thing — the window *and* three
+priced sections — in a `<script type="application/ld+json">` schema.org `Menu`
+block on `/menus/`, whose `description` is literally `"Weekdays: 4 PM - 6 PM"`.
+The visible page says only the words "Happy Hour", behind a JavaScript tab. We
+fetched that page, read it as prose, and filed the venue under
+*says-happy-hour-no-window*. Now read by `jsonld_quotes()`.
+
+> 🔑 This is a **W3C-backed standard, not a venue quirk** — the reason to build
+> it for one KoP venue despite the "a class holding one venue is not worth
+> code" rule. **Look for the machine-readable version before reaching for a
+> headless browser.** It is cheaper, it is exact, and it is already downloaded.
+>
+> 🛑 Only a `Menu` that **names itself** the happy hour is read. A restaurant's
+> main `Menu` block is its dinner menu, and publishing that as happy-hour items
+> is the worst failure available here: the regular price, presented as a deal.
+
+**The WINDOW belongs to a box, exactly as a price does.** Peppers publishes a
+real window and we published nothing, because the page is a two-column row: the
+deal sits in `col-sm-8` and `04:00 PM - 06:00 PM` in its sibling `col-sm-4`.
+Read down the page as prose those are two useless lines — one with no time, one
+with no subject. This is the same fact as `item_beside()`, one field over:
+**which lines a page put in ONE box is read off the markup.** Now
+`boxed_windows()`.
+
+> 🛑 **The box is the IMMEDIATE parent, not an ancestor within a few levels.**
+> The first version used an ancestor test, which made Peppers' whole section one
+> box and paired the happy hour with the clock of the **row above** — publishing
+> 4–9pm, which belongs to that day's other special. Two cells of one row share a
+> parent; two rows do not. That is the entire difference between the right
+> window and a plausible wrong one, and it is the day↔special off-by-one this
+> corpus has hit before. Joining records that merely *follow* each other invents
+> adjacencies.
+
+**🚨 A chain will serve another town's page at our town's URL, 200 OK.**
+`cityworksrestaurant.com/locations/king-of-prussia/happy-hour/` returns a
+complete, well-formed happy-hour page that says *"City Works has the best Happy
+Hour in **Frisco**"*, canonical `/locations/frisco/happy-hour-menu/`. Reading
+the window off it would have published a **Texas schedule under a King of
+Prussia bar** — sourced, quoted, and wrong.
+
+> 🛑 **Every gate we have would have passed it.** The fetch was clean, the quote
+> is real, the window parses, the validators are about Pennsylvania law and this
+> *is* a lawful window. Nothing downstream asks whether the page was about this
+> venue. This is the only failure class here that produces a confident wrong
+> ANSWER rather than a miss, so it is refused at the crawler: `wrong_location()`
+> believes the site's own canonical tag over the URL we asked for.
+>
+> 🔑 A wrong answer is worse than a hole. A hole is reported by
+> `report_holes.py`; a wrong window is invisible until a customer drives there.
+
 
 **A price can have no dollar sign.** North Italia's entire happy-hour menu was
 inline HTML on the first byte the whole time. The handoff said "JS-rendered

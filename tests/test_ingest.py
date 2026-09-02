@@ -2929,3 +2929,115 @@ class FrontierIsTheUnionOfBothSiteSources(unittest.TestCase):
     def test_a_venue_with_no_website_is_not_queued(self):
         out = self._frontier({}, {"1": {"name": "No Site", "zone_id": "kop"}})
         self.assertEqual(out, {})
+
+
+class TheMenuAPagePublishesAsData(unittest.TestCase):
+    """schema.org Menu blocks: the happy hour stated for machines."""
+
+    def _ld(self, doc):
+        return ('<html><head><script type="application/ld+json">'
+                + json.dumps(doc) + "</script></head><body>x</body></html>")
+
+    def test_a_named_happy_hour_menu_yields_its_hours_and_its_items(self):
+        # Pizzeria Vetri's shape, and the reason the venue read as silent: the
+        # visible page says only the words 'Happy Hour' behind a JS tab.
+        html = self._ld({
+            "@context": "https://schema.org", "@type": "Menu",
+            "name": "Happy Hour", "description": "Weekdays: 4 PM - 6 PM",
+            "hasMenuSection": [{
+                "@type": "MenuSection", "name": "$7 Spritzes",
+                "hasMenuItem": [{"@type": "MenuItem", "name": "Aperol Spritz",
+                                 "offers": {"@type": "Offer", "price": "7"}}]}]})
+        out = crawl_sites.jsonld_quotes(html)
+        self.assertIn("Happy Hour: Weekdays: 4 PM - 6 PM", out)
+        self.assertIn("$7 Spritzes", out)
+        self.assertIn("Aperol Spritz $7", out)
+
+    def test_a_menu_that_is_not_the_happy_hour_is_passed_over(self):
+        # The regular dinner menu published as happy hour items is the worst
+        # failure available here: the full price, presented as a deal.
+        html = self._ld({"@type": "Menu", "name": "Dinner",
+                         "description": "Nightly from 5",
+                         "hasMenuSection": [{"@type": "MenuSection",
+                                             "name": "Entrees"}]})
+        self.assertEqual(crawl_sites.jsonld_quotes(html), [])
+
+    def test_a_menu_nested_under_a_restaurant_is_still_found(self):
+        # @graph and hasMenu both nest; a flat pass finds the Restaurant and
+        # misses the Menu hanging off it.
+        html = self._ld({"@graph": [{"@type": "Restaurant", "name": "V",
+                                     "hasMenu": {"@type": "Menu",
+                                                 "name": "Happy Hour",
+                                                 "description": "M-F 4-6"}}]})
+        self.assertIn("Happy Hour: M-F 4-6", crawl_sites.jsonld_quotes(html))
+
+    def test_malformed_json_does_not_take_the_page_with_it(self):
+        html = ('<script type="application/ld+json">{not json</script>'
+                + self._ld({"@type": "Menu", "name": "Happy Hour",
+                            "description": "M-F 4-6"}))
+        self.assertIn("Happy Hour: M-F 4-6", crawl_sites.jsonld_quotes(html))
+
+
+class TheClockInTheBoxNextDoor(unittest.TestCase):
+    """A window that lives in a sibling cell, not on the deal's own line."""
+
+    ROW = ('<div class="row"><div class="col-sm-8">{deal}</div>'
+           '<div class="col-sm-4">{clock}</div></div>')
+
+    def _boxed(self, body):
+        lines, stacks, _ = crawl_sites.text_lines_emph(
+            "<html><body><section>" + body + "</section></body></html>")
+        return crawl_sites.boxed_windows(lines, stacks)
+
+    def test_the_deal_and_the_clock_are_joined_across_the_row(self):
+        out = self._boxed(self.ROW.format(deal="Happy Hour! $2 OFF any beer",
+                                          clock="04:00 PM - 06:00 PM"))
+        self.assertEqual(out, ["Happy Hour! $2 OFF any beer 04:00 PM - 06:00 PM"])
+
+    def test_a_clock_never_reaches_into_the_row_above(self):
+        # Peppers lists every day as its own row. An ancestor-based box made
+        # the whole section one box and paired the happy hour with the previous
+        # row's 4-9pm, which belongs to that day's other special.
+        out = self._boxed(
+            self.ROW.format(deal="Wing Night $1 wings", clock="04:00 PM - 09:00 PM")
+            + self.ROW.format(deal="Happy Hour! $2 OFF any beer",
+                              clock="04:00 PM - 06:00 PM"))
+        self.assertEqual(out, ["Happy Hour! $2 OFF any beer 04:00 PM - 06:00 PM"])
+
+    def test_a_bare_clock_with_no_deal_in_its_row_is_left_alone(self):
+        self.assertEqual(
+            self._boxed(self.ROW.format(deal="Kitchen hours",
+                                        clock="04:00 PM - 06:00 PM")), [])
+
+    def test_a_deal_that_states_its_own_clock_is_not_given_a_second_one(self):
+        self.assertEqual(
+            self._boxed(self.ROW.format(deal="Happy Hour 3-5pm daily",
+                                        clock="04:00 PM - 06:00 PM")), [])
+
+
+class TheOtherTownsPageServedAtOurs(unittest.TestCase):
+    """A chain's canonical tag naming a location that is not this one."""
+
+    def _canon(self, href):
+        return f'<html><head><link rel="canonical" href="{href}"/></head></html>'
+
+    def test_a_canonical_naming_another_location_refuses_the_page(self):
+        # City Works serves Frisco, Texas' complete happy hour page at the King
+        # of Prussia URL. Every gate we have would pass the window it states.
+        self.assertEqual(
+            crawl_sites.wrong_location(
+                self._canon("https://cw.example/locations/frisco/happy-hour-menu/"),
+                "https://cw.example/locations/king-of-prussia/happy-hour/"),
+            "frisco")
+
+    def test_our_own_canonical_is_not_a_refusal(self):
+        self.assertIsNone(crawl_sites.wrong_location(
+            self._canon("https://cw.example/locations/king-of-prussia/"),
+            "https://cw.example/locations/king-of-prussia/happy-hour/"))
+
+    def test_a_page_with_no_location_in_its_url_is_not_judged(self):
+        # Most of the corpus is single-site venues with no /locations/ path at
+        # all, and a rule that refuses those refuses nearly everything.
+        self.assertIsNone(crawl_sites.wrong_location(
+            self._canon("https://bar.example/happy-hour/"),
+            "https://bar.example/happy-hour/"))

@@ -167,6 +167,88 @@
    ]
   },
   {
+   "id": "peppers-italian-restaurant-and-bar-king-of-prussia",
+   "lid": "101064",
+   "name": "PEPPERS ITALIAN RESTAURANT AND BAR",
+   "plcb_name": "PEPPERS ITALIAN RESTAURANT AND BAR",
+   "address": "175 TOWN CENTER RD, KING OF PRUSSIA PA 19406",
+   "zone_id": "king_of_prussia",
+   "license_type": "",
+   "website": "https://peppersitalianrestaurantandbar.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "any bar bite",
+       "amount_off_usd": 2.0
+      },
+      {
+       "category": "draft",
+       "label": "any beer",
+       "amount_off_usd": 1.0
+      },
+      {
+       "category": "wine",
+       "label": "any wine",
+       "amount_off_usd": 2.0
+      },
+      {
+       "category": "cocktail",
+       "label": "any cocktail 04",
+       "amount_off_usd": 2.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://peppersitalianrestaurantandbar.com/king-of-prussia-peppers-by-amedeo-s-restaurant-and-bar-happy-hours-specials",
+      "quote": "Happy Hour! $2 OFF any bar bite | $1 OFF any beer | $2 OFF any wine | $2 OFF any cocktail 04:00 PM - 06:00 PM"
+     }
+    }
+   ]
+  },
+  {
    "id": "the-sidecar-bar-grille-philadelphia",
    "lid": "101345",
    "name": "The SideCar Bar & Grille",
@@ -11038,6 +11120,68 @@
       "kind": "venue_site",
       "url": "https://www.pjspub.com/about.php?loc=Oaks",
       "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "pizzeria-vetri-king-of-prussia",
+   "lid": "82083",
+   "name": "Pizzeria Vetri",
+   "plcb_name": "PIZZERIA VETRI",
+   "address": "150 MAIN STREET  STE 100, KING OF PRUSSIA PA 19406-5001",
+   "zone_id": "king_of_prussia",
+   "license_type": "",
+   "website": "https://www.pizzeriavetri.com/location/king-of-prussia/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "Select Neapolitan Pizzas",
+       "price_usd": 10.0
+      },
+      {
+       "category": "wine",
+       "label": "Wine on Tap",
+       "price_usd": 6.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.pizzeriavetri.com/menus/",
+      "quote": "Happy Hour: Weekdays: 4 PM - 6 PM"
      }
     }
    ]
