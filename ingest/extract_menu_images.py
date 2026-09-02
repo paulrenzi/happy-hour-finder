@@ -49,23 +49,75 @@ OUT = os.path.join(REPO, "data", "deals_menu_images.json")
 # 3pm to 6pm" exists only as pixels, so without this the venue had items
 # on file and no card to put them on.
 TRANSCRIPTS = os.path.join(REPO, "data", "menu_image_transcripts.json")
+# The rendered-artifact audit records what a visitor can see after JavaScript
+# and lazy loading.  Its image entries are deliberately not filtered by file
+# name: an opaque CMS upload on a page that calls itself happy hour is still a
+# menu worth the vision reader's `is_menu` decision.
+AUDIT = os.path.join(REPO, "data", "rendered_artifacts.json")
 UA = "happy-hour-finder-ingest/1.0 (+https://paulrenzi.github.io/happy-hour-finder/)"
 MAX_BYTES = 12_000_000
 
 
+def image_key(url):
+    """One responsive image, not five reads of its size variants."""
+    parts = urllib.parse.urlsplit(url)
+    query = urllib.parse.parse_qsl(parts.query, keep_blank_values=True)
+    query = [(k, v) for k, v in query if k.lower() not in {"w", "h", "width", "height", "dpr", "fit", "fm", "format"}]
+    path = re.sub(r"-\d{2,4}x\d{2,4}(?=\.(?:jpe?g|png|webp|gif|avif)$)", "",
+                  parts.path, flags=re.I)
+    return urllib.parse.urlunsplit((parts.scheme, parts.netloc, path,
+                                    urllib.parse.urlencode(query), ""))
+
+
+def image_rank(url):
+    """Prefer the largest responsive rendition when one image has many URLs."""
+    query = dict(urllib.parse.parse_qsl(urllib.parse.urlsplit(url).query))
+    def num(key):
+        try:
+            return float(query.get(key, 0))
+        except ValueError:
+            return 0
+    return max(num("w"), num("width"), num("h"), num("height")) * max(num("dpr"), 1)
+
+
 def targets():
-    """[(venue_id, name, image_url)] for every menu image the crawl recorded."""
+    """[(venue_id, name, image_url)] for every image a page exposed as a menu.
+
+    The legacy crawler's filename-named menu images remain valid input.  The
+    rendered audit adds lazy and opaque images from pages that visibly call
+    themselves happy hour.  Both still go through the same visual `is_menu`,
+    transcript-grounding, and PA-validation gates below.
+    """
     hits = json.load(open(HITS, encoding="utf-8"))
     sites = json.load(open(SITES, encoding="utf-8"))
-    out, seen = [], set()
+    out, seen = [], {}
+
+    def add(venue_id, name, url, lid):
+        key = image_key(url)
+        prior = seen.get(key)
+        if prior is None or image_rank(url) > image_rank(prior[2]):
+            seen[key] = (venue_id, name, url, lid)
     for lid, v in one_per_osm(hits, sites):
         vid = slug(v["osm_name"] or v["name"], v["address"])
         for im in v.get("menu_images") or []:
-            if im["src"] in seen:
+            add(vid, v["osm_name"] or v["name"], im["src"], lid)
+    if os.path.exists(AUDIT):
+        by_lid = {str(lid): (slug(v["osm_name"] or v["name"], v["address"]),
+                            v["osm_name"] or v["name"])
+                  for lid, v in one_per_osm(hits, sites)}
+        audit = json.load(open(AUDIT, encoding="utf-8"))
+        for row in audit.values():
+            lid = str(row.get("lid") or "")
+            owner = by_lid.get(lid)
+            if not owner:
                 continue
-            seen.add(im["src"])
-            out.append((vid, v["osm_name"] or v["name"], im["src"], lid))
-    return out
+            for asset in row.get("assets") or []:
+                if (asset.get("kind") != "image" or not asset.get("candidate")
+                        or not asset.get("visible") or not asset.get("url")
+                        or not asset.get("url")):
+                    continue
+                add(owner[0], owner[1], asset["url"], lid)
+    return list(seen.values())
 
 
 def fetch(url):
