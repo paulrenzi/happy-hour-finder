@@ -334,24 +334,6 @@
   "queried": "3207 WEST CHESTER PK, NEWTOWN SQUARE PA 19073-4200",
   "resolved": "Charlotte's Restaurant"
  },
- "chickie-s-and-pete-s-philadelphia": {
-  "lat": 39.9115895,
-  "lng": -75.1747709,
-  "matched_by": "osm_site",
-  "osm": "node/3944585958",
-  "precision": "place",
-  "queried": "1526 PACKER AVE, PHILADELPHIA PA 19145-5407",
-  "resolved": "Chickie's and Pete's"
- },
- "chickie-s-pete-s-malvern": {
-  "lat": 40.0544018,
-  "lng": -75.526371,
-  "matched_by": "osm_site",
-  "osm": "node/10297176990",
-  "precision": "place",
-  "queried": "THE GROVE 10 LIBERTY BLVD, MALVERN PA 19355",
-  "resolved": "Chickie's & Pete's"
- },
  "chili-s-philadelphia": {
   "lat": 39.9532308,
   "lng": -75.1610942,
@@ -368,15 +350,6 @@
   "osm": "way/441422766",
   "precision": "place",
   "queried": "2320 OREGON AVE, PHILADELPHIA PA 19145",
-  "resolved": "Chili's"
- },
- "chili-s-philadelphia-109062": {
-  "lat": 40.0747533,
-  "lng": -75.1579181,
-  "matched_by": "osm_site",
-  "osm": "way/376479757",
-  "precision": "place",
-  "queried": "2451 CHELTENHAM AVE, Philadelphia PA 19150",
   "resolved": "Chili's"
  },
  "chophouse-grille-exton": {
@@ -460,24 +433,6 @@
   "precision": "place",
   "queried": "214 SUGARTOWN RD, WAYNE PA 19087",
   "resolved": "Dandan"
- },
- "dave-buster-s-king-of-prussia-king-of-prussia": {
-  "lat": 40.0925576,
-  "lng": -75.3962714,
-  "matched_by": "osm_site",
-  "osm": null,
-  "precision": "place",
-  "queried": "310 GODDARD BLVD STE 200, KING OF PRUSSIA PA 19406",
-  "resolved": "Dave & Buster's King of Prussia"
- },
- "dave-buster-s-philadelphia": {
-  "lat": 39.956051,
-  "lng": -75.1377109,
-  "matched_by": "osm_site",
-  "osm": "way/334264527",
-  "precision": "place",
-  "queried": "325 N CHRISTOPHER COLUMBUS BLVD, PHILADELPHIA PA 19106",
-  "resolved": "Dave & Buster's"
  },
  "dbg-philadelphia": {
   "lat": 39.9499718,
@@ -623,6 +578,15 @@
   "queried": "46 E STATE ST UNIT G, , DOYLESTOWN PA 18901-4360",
   "resolved": "Frost Doylestown"
  },
+ "giuseppes-s-pizza-family-restaurant-warminster": {
+  "lat": 40.217348900000005,
+  "lng": -75.1192148,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "1380 WEST ST RD, WARMINSTER PA 18974",
+  "resolved": "Giuseppes\u2019s Pizza & Family Restaurant"
+ },
  "goats-beard-wayne": {
   "lat": 40.044243,
   "lng": -75.387808,
@@ -714,6 +678,15 @@
   "precision": "building",
   "queried": "30-32 E State St, Media PA 19063",
   "resolved": "30, East State Street, Media, Delaware County, Pennsylvania, 19063, United States"
+ },
+ "jamison-pour-house-jamison": {
+  "lat": 40.253694599999996,
+  "lng": -75.0900403,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "2160 OLD YORK RD, JAMISON PA 18929-1618",
+  "resolved": "Jamison Pour House"
  },
  "jasper-s-backyard-conshohocken": {
   "lat": 40.078094,
@@ -1165,33 +1138,6 @@
   "queried": "202 & 206 E LANCASTER AVE, DOWNINGTOWN PA 19335-2957",
   "resolved": "R5 Wines"
  },
- "red-lobster-king-of-prussia": {
-  "lat": 40.0907107,
-  "lng": -75.3734357,
-  "matched_by": "osm_site",
-  "osm": "way/851738343",
-  "precision": "place",
-  "queried": "425 W DEKALB PK, KING OF PRUSSIA PA 19406-2304",
-  "resolved": "Red Lobster"
- },
- "red-lobster-lansdale": {
-  "lat": 40.2475215,
-  "lng": -75.2450645,
-  "matched_by": "osm_site",
-  "osm": "way/521340829",
-  "precision": "place",
-  "queried": "FIVE POINT PLZ 640 COWPATH RD, LANSDALE PA 19446-1563",
-  "resolved": "Red Lobster"
- },
- "red-lobster-springfield": {
-  "lat": 39.9239712,
-  "lng": -75.3121893,
-  "matched_by": "osm_site",
-  "osm": "way/1012319774",
-  "precision": "place",
-  "queried": "1 BALTIMORE PK, SPRINGFIELD PA 19064-3732",
-  "resolved": "Red Lobster"
- },
  "renata-s-kitchen-bar-philadelphia": {
   "lat": 39.9497351,
   "lng": -75.2029655,
@@ -1480,15 +1426,6 @@
   "queried": "1700 FAIRMOUNT AVE, PHILADELPHIA PA 19130-2812",
   "resolved": "The Fairmount Tavern"
  },
- "the-goat-s-beard-wayne": {
-  "lat": 40.0442432,
-  "lng": -75.3878082,
-  "matched_by": "osm_site",
-  "osm": "node/13384627661",
-  "precision": "place",
-  "queried": "103 N WAYNE AVE, WAYNE PA 19087-3529",
-  "resolved": "The Goat's Beard"
- },
  "the-great-american-pub-phoenixville": {
   "lat": 40.134039,
   "lng": -75.5143516,
@@ -1616,6 +1553,15 @@
   "precision": "road",
   "queried": "1991 W Main St, Norristown PA 19403",
   "resolved": "West Main Street, Norristown, Montgomery County, Pennsylvania, 19403, United States"
+ },
+ "tony-s-place-bar-grill-warminster": {
+  "lat": 40.213310899999996,
+  "lng": -75.0701107,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "1297 GREELEY AVE IVYLAND, WARMINSTER PA 18974-1717",
+  "resolved": "Tony's Place Bar & Grill"
  },
  "top-tomato-bar-pizza-philadelphia": {
   "lat": 39.9495962,
@@ -1788,15 +1734,6 @@
   "precision": "amenity",
   "queried": "324 W Swedesford Rd, Berwyn PA 19312",
   "resolved": "Will's + Bill's Brewery, 324, West Swedesford Road, Chesterbrook, Tredyffrin Township, Chester County, Pennsylvania, 19087, United States"
- },
- "wissahickon-brewing-co-philadelphia": {
-  "lat": 39.9745786,
-  "lng": -75.1400343,
-  "matched_by": "osm_site",
-  "osm": "node/7383526243",
-  "precision": "place",
-  "queried": "1526 N AMERICAN ST, PHILADELPHIA PA 19122-3811",
-  "resolved": "Wissahickon Brewing Co"
  },
  "yakitori-boy-philadelphia": {
   "lat": 39.955961,

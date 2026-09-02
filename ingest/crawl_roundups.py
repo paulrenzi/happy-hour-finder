@@ -254,6 +254,35 @@ def address_venue(heading, paragraphs, index):
 # punctuation -- "The Social" is a heading, "Sedona it is." is not.
 HEADING_MAX = 60
 HEADING_WORDS = 7
+
+# The site's own furniture, learned from the outlet rather than listed by hand.
+# DELCO.today's page template emits about a hundred short lines -- 'Commerce',
+# 'Community', 'Search', 'Partner / Advertise', 'This field is hidden when
+# viewing the form' -- every one of which passes is_heading(). They queue up
+# ahead of the article and eat its paragraphs, which is why four cleanly dated
+# Media articles matched zero venues. A line that appears on EVERY page from
+# one outlet is navigation, not a venue; the venues do not repeat.
+#
+# The guard is on the CONTENT, not on a page count: a line carrying a price, a
+# clock or the words 'happy hour' is never chrome however often it repeats, so
+# two articles from an outlet that share a paragraph cannot silence it.
+CHROME_MIN_PAGES = 2
+NOT_CHROME_RE = re.compile(r"\$|\d\s*(?::\d\d)?\s*(?:am|pm)\b|happy\s*hour", re.I)
+
+
+def outlet_chrome(texts):
+    """Lines every one of an outlet's pages carries -- its navigation."""
+    texts = [t for t in texts if t]
+    if len(texts) < CHROME_MIN_PAGES:
+        return set()
+    seen = {}
+    for t in texts:
+        for ln in {ln.strip() for ln in t.split("\n") if ln.strip()}:
+            seen[ln] = seen.get(ln, 0) + 1
+    return {ln for ln, n in seen.items()
+            if n == len(texts) and not NOT_CHROME_RE.search(ln)}
+
+
 # A period only ends a sentence when something follows it: 'Wrong Crowd Beer
 # Co.' is a heading, 'Sedona it is. The' is not.
 NOT_HEADING_RE = re.compile(r"[.!?]\s|[,;:]|\b(?:runs?|from|until|with)\b|\$", re.I)
@@ -311,7 +340,64 @@ def _heading_venue(line, index):
     return best[1] if best else None
 
 
-def mentions(text, index, addr_index=None):
+# ---------------------------------------------------------------- prose lists
+#
+# Not every roundup is a list. DELCO.today writes its happy-hour pieces as
+# paragraphs that name the bar INSIDE a sentence -- 'Azie in Media has a happy
+# hour on weekdays from 4 to 6 PM', 'Off the Rail, also in Media, has $3
+# domestic beers during happy hours weeknights, 4 to 6 PM' -- and the heading
+# matcher cannot see either one, because there is no heading.
+#
+# 🛑 The danger this shape carries is the reason the heading rule existed: a
+# venue's name turns up in prose that is not about it. In the Off the Rail
+# sentence above, 'views of State Street below' names State Street Pub, three
+# doors down and on the same board. Publishing $3 domestic beers under that bar
+# is worse than publishing nothing at all. Three narrowings, together:
+#
+#   1. The sentence must say happy hour. Same containment rule as the rest.
+#   2. The venue's name core must be MULTI-WORD and every word of it present.
+#      One word is never enough -- 'Sedona it is.' stays not-Sedona.
+#   3. The name must be the sentence's SUBJECT: its first matched word inside
+#      the opening few. 'State Street' sits at word 26 of that sentence and is
+#      refused on position alone, which is the guard that actually does the
+#      work, since a happy-hour sentence names its bar first.
+#
+# Two venues both qualifying in one sentence is an ambiguity, not a choice, and
+# the sentence is dropped.
+SUBJECT_MAX_WORDS = 6
+WORD_RE = re.compile(r"[a-z0-9]+")
+SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?])\s+")
+
+
+def sentences(paragraph):
+    return [s.strip() for s in SENTENCE_SPLIT_RE.split(paragraph or "") if s.strip()]
+
+
+def subject_venue(sentence, index):
+    """The venue a happy-hour sentence is ABOUT, or None."""
+    from extract_deals import HH_RE
+
+    if not HH_RE.search(sentence):
+        return None
+    words = WORD_RE.findall(sentence.lower())
+    best = []
+    for core, v in index.items():
+        parts = [w for w in core.split() if len(w) >= 2]
+        if len(parts) < 2:
+            continue
+        at = []
+        for w in parts:
+            hit = next((i for i, t in enumerate(words) if t.startswith(w)), None)
+            if hit is None:
+                break
+            at.append(hit)
+        if len(at) != len(parts) or min(at) > SUBJECT_MAX_WORDS:
+            continue
+        best.append((min(at), v))
+    return best[0][1] if len(best) == 1 else None
+
+
+def mentions(text, index, addr_index=None, chrome=frozenset()):
     """Venues this article names, each with the paragraph the article wrote.
 
     A roundup is a heading (the venue's name) followed by one paragraph. The
@@ -339,7 +425,8 @@ def mentions(text, index, addr_index=None):
     is a second pass and not a wider window. The hit carries the article's
     heading as its name: the sign over the door, where the licence is a shell.
     """
-    lines = [ln.strip() for ln in text.split("\n") if ln.strip()]
+    lines = [ln.strip() for ln in text.split("\n") if ln.strip()
+             and ln.strip() not in chrome]
     found, queue, prev_heading, last = {}, [], None, None
     orphans, last_head = {}, None
 
@@ -403,30 +490,57 @@ def mentions(text, index, addr_index=None):
             continue
         for ln in paras:
             record(venue, ln, name=heading, joined_by="address")
+    # Third pass: the article that has no headings at all, and names its bars
+    # inside sentences. The QUOTE is the sentence, not the line: a paragraph
+    # can carry two bars, and handing each the whole paragraph would put the
+    # other one's clock on its card.
+    for ln in lines:
+        for s in sentences(ln):
+            venue = subject_venue(s, index)
+            if venue is None or venue["lid"] in found:
+                continue
+            record(venue, s, joined_by="sentence")
     return [v for v in found.values() if v["quotes"]]
 
 
-def crawl_one(session, article, sites, robots, today=None, base=None):
-    """One article -> a hit, or a dict saying why it was dropped."""
+def fetch_one(session, article, robots):
+    """One article -> its visible text and publish date, or why it was dropped.
+
+    Split out from the read so that EVERY page of an outlet is in hand before
+    any of them is matched: the chrome an outlet repeats is only knowable
+    across its pages, and it has to be known before the first match runs.
+    """
     url = article["url"]
+    stub = {"url": url, "outlet": article["outlet"]}
     if not allowed(url, robots):
-        return {"url": url, "outlet": article["outlet"], "dropped": "robots.txt"}
+        return dict(stub, dropped="robots.txt")
     r = session.get(url, timeout=TIMEOUT, headers={"User-Agent": UA}, allow_redirects=True)
     if r.status_code != 200:
-        return {"url": url, "outlet": article["outlet"], "dropped": f"http {r.status_code}"}
-    html = r.text
-    published = published_date(html)
+        return dict(stub, dropped=f"http {r.status_code}")
+    published = published_date(r.text)
     if not published:
         # Still a refusal: the card must name the month, and an undated page
         # cannot be labelled at all.
-        return {"url": url, "outlet": article["outlet"], "published": None,
-                "dropped": "undated"}
+        return dict(stub, published=None, dropped="undated")
+    return dict(stub, published=published, text=visible_text(r.text))
+
+
+def crawl_one(session, article, sites, robots, today=None, base=None, chrome=frozenset()):
+    """One article -> a hit, or a dict saying why it was dropped."""
+    got = fetch_one(session, article, robots)
+    if got.get("dropped"):
+        return got
+    return read_one(article, got["text"], got["published"], sites,
+                    today=today, base=base, chrome=chrome)
+
+
+def read_one(article, text, published, sites, today=None, base=None, chrome=frozenset()):
+    """The pure half: an article's text -> its venue mentions."""
     today = today or datetime.date.today()
-    text = visible_text(html)
     hits = mentions(text, venue_index(sites, article.get("zone_id")),
-                    address_index(base, article.get("zone_id")))
+                    address_index(base, article.get("zone_id")), chrome=chrome)
     return {
-        "url": url,
+        "url": article["url"],
         "outlet": article["outlet"],
         "published": published,
         "stale_days": max(0, (today - datetime.date.fromisoformat(published)).days),
@@ -455,15 +569,31 @@ def main():
     robots = {}
     out, last_host = [], None
 
+    # Fetch every page first. The chrome pass needs an outlet's whole set.
+    fetched = []
     for article in articles:
         host = urllib.parse.urlsplit(article["url"]).netloc
         if host == last_host:
             time.sleep(DELAY)
         last_host = host
         try:
-            hit = crawl_one(session, article, sites, robots, base=base)
+            fetched.append(fetch_one(session, article, robots))
         except Exception as e:  # noqa: BLE001 -- one dead outlet is not a failed run
-            hit = {"url": article["url"], "outlet": article["outlet"], "dropped": str(e)[:120]}
+            fetched.append({"url": article["url"], "outlet": article["outlet"],
+                            "dropped": str(e)[:120]})
+
+    chrome_by_outlet = {}
+    for outlet in {a["outlet"] for a in articles}:
+        texts = [g.get("text") for a, g in zip(articles, fetched)
+                 if a["outlet"] == outlet and g.get("text")]
+        chrome_by_outlet[outlet] = outlet_chrome(texts)
+
+    for article, got in zip(articles, fetched):
+        if got.get("dropped"):
+            hit = got
+        else:
+            hit = read_one(article, got["text"], got["published"], sites, base=base,
+                           chrome=chrome_by_outlet.get(article["outlet"], frozenset()))
         out.append(hit)
         if hit.get("dropped"):
             print(f"  drop  {article['outlet']:<24} {hit['dropped']}  {article['url']}")

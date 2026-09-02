@@ -101,6 +101,24 @@ def street_number(s):
     return m.group(1) if m else None
 
 
+# A door with two numbers on it. The PLCB writes the whole frontage a licence
+# occupies -- "109-111 W STATE ST 2ND FLOOR" -- and Google writes the one number
+# the business answers to, "109 W State St". Reading only the first number is
+# right half the time by luck and wrong the other half: Media's DKD 109 LLC (the
+# shell licence over Off the Rail) resolved to nothing for exactly this reason.
+# So the LICENCE side spans a set and the comparison is membership, not equality.
+_RANGE_NUM = re.compile(r"\b(\d+(?:-\d+)+)\b(?=[^,]*\b(?:" + STREET_SUFFIX + r")\b)", re.I)
+
+
+def street_numbers(s):
+    """Every house number the licence's frontage covers, as a set of strings."""
+    m = _RANGE_NUM.search((s or "").strip())
+    if m:
+        return {n for n in m.group(1).split("-") if n}
+    n = street_number(s)
+    return {n} if n else set()
+
+
 CORP_NOISE = re.compile(
     r"\b(inc|llc|lp|llp|co|corp|company|restaurants?|the|of|at)\b|#\s*\d+|\d+", re.I
 )
@@ -179,10 +197,18 @@ def text_search(key, venue):
 
 
 def nearby_search(key, lat, lng, licence_addr):
-    """Whatever business stands at the licence address, when the row named a shell."""
+    """Whatever business stands at the licence address, when the row named a shell.
+
+    Ranked by DISTANCE, not by the default popularity. On a dense main street
+    120 m holds far more than ten bars, and popularity order returns the ten
+    best-known ones -- which is never the shell-licensed rooftop we are looking
+    for. Media's 109 W State St sat eleventh behind its own neighbours and read
+    as "no place at this address"; asking for the nearest ten put it second.
+    """
     places = post(key, NEARBY, {
         "includedTypes": FOOD_TYPES,
         "maxResultCount": 10,
+        "rankPreference": "DISTANCE",
         "locationRestriction": {
             "circle": {
                 "center": {"latitude": lat, "longitude": lng},
@@ -190,13 +216,27 @@ def nearby_search(key, lat, lng, licence_addr):
             }
         },
     })
-    want = street_number(licence_addr)
+    want = street_numbers(licence_addr)
     # Prefer an exact street-number agreement; the nearest neighbour is a guess,
     # and a guess here is exactly the name-join we refuse to make elsewhere.
     for p in places:
-        if want and street_number(p.get("formattedAddress")) == want:
+        if want and street_number(p.get("formattedAddress")) in want:
             return p
     return None
+
+
+def geocode_point(key, licence_addr):
+    """The licence address's own point -- the address alone, with no name.
+
+    Deliberately the geocode: asking for a street address and nothing else is
+    how you get the spot rather than a business standing near it, and the spot
+    is what the nearby search needs a centre for.
+    """
+    places = post(key, SEARCH, {"textQuery": licence_addr, "maxResultCount": 1})
+    loc = (places[0].get("location") or {}) if places else {}
+    if loc.get("latitude") is None:
+        return None
+    return loc["latitude"], loc["longitude"]
 
 
 def resolve(key, venue):
@@ -211,16 +251,32 @@ def resolve(key, venue):
         how = "nearby search at the geocode"
     if not place:
         return None, "no place at this address"
-    ours = street_number(venue["address"])
+    ours = street_numbers(venue["address"])
     theirs = street_number(place.get("formattedAddress"))
-    if ours != theirs:
+    if theirs not in ours:
         pname = (place.get("displayName") or {}).get("text", "")
         paddr = place.get("formattedAddress")
         # A mall tenant's suite number is often the PLCB's street number.
-        if ours and re.search(r"\b(?:ste|suite|unit)\s*" + ours + r"\b", paddr or "", re.I):
+        if any(re.search(r"\b(?:ste|suite|unit)\s*" + n + r"\b", paddr or "", re.I)
+               for n in ours):
             return place, "suite number matches the licence street number"
         if name_agrees(venue["name"], pname, venue["address"], paddr):
             return place, "name agrees, same town (addresses differ)"
+        # The shell row that landed on a NEIGHBOUR, not on a geocode. This was
+        # the hole: looks_like_a_geocode() only fires when Places answers with
+        # the bare street address, so a shell name that dragged the search onto
+        # a real business three doors down never reached the nearby fallback at
+        # all -- it was refused on the street number and filed as a miss. Media
+        # lost Off the Rail ("DKD 109 LLC") and Maris ("BARNIEU RESTAURANT
+        # MANAGEMENT, LLC") that way, both on State Street, both with sites.
+        # So: throw away the answer, geocode the LICENCE address, and look at
+        # what stands on that spot. The street-number guard is unchanged, which
+        # is what keeps this from becoming a nearest-neighbour guess.
+        point = geocode_point(key, venue["address"])
+        if point:
+            near = nearby_search(key, point[0], point[1], venue["address"])
+            if near:
+                return near, "nearby search at the licence address"
         return None, "street number disagrees"
     return place, how
 
@@ -233,7 +289,23 @@ SITES_JSON = os.path.join(REPO, "data", "venue_sites.json")
 # a photo and a link off, which is all it was ever allowed to do. Promoting one
 # into the crawl frontier would make a happy hour attributable to a licence on
 # the strength of a name, which is the line the address-only rule draws.
-EVIDENCE_SAFE_MATCHES = {"text search", "nearby search"}
+#
+# 🛑 This is a PREFIX test, not a set of literals, because the set was one.
+# resolve() has never returned the bare string "nearby search" -- it returns
+# "nearby search at the geocode" and now "nearby search at the licence address"
+# -- so every venue the address fallback ever rescued was silently held back
+# from the crawl frontier as though it had been name-joined. The rescue and the
+# thing that consumes it drifted apart with nothing failing.
+#
+# The suite-number and name-agrees joins stay OUT. A suite match is an address
+# join in spirit, but it is the one shape where our number and Google's number
+# mean different things, so it keeps its discovery-only status until a run needs
+# it and can weigh it.
+EVIDENCE_SAFE_PREFIXES = ("text search", "nearby search")
+
+
+def evidence_safe(matched_by):
+    return (matched_by or "").startswith(EVIDENCE_SAFE_PREFIXES)
 
 # Licences whose site was removed BY HAND after a neighbour in the same plaza
 # was found claiming the row -- absent beats publishing under another business's
@@ -278,7 +350,7 @@ def merge_sites(dry_run=True, zone=None):
         if lid in HAND_DROPPED:
             dropped.append((lid, p.get("places_name", ""), HAND_DROPPED[lid]))
             continue
-        if p.get("matched_by") not in EVIDENCE_SAFE_MATCHES:
+        if not evidence_safe(p.get("matched_by")):
             held.append((lid, p.get("places_name", ""), p.get("matched_by")))
             continue
         added[lid] = {

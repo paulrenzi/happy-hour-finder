@@ -14,6 +14,10 @@ echo "== the shipped corpus still validates =="
 python ingest/validate_pa.py
 
 echo
+echo "== every published window agrees with its own quote =="
+python tests/window_quote_check.py
+
+echo
 echo "== the shipped modules parse in a real browser engine =="
 python tests/parse_check.py
 

@@ -429,54 +429,6 @@
    }
   ]
  },
- "70157": {
-  "name": "Red Lobster",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 6,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 7,
-      "start": "15:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
  "72740": {
   "name": "Seasons 52",
   "deals": [
@@ -1683,6 +1635,44 @@
    }
   ]
  },
+ "58431": {
+  "name": "Azie Media",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "roundup"
+    }
+   }
+  ]
+ },
  "130324": {
   "name": "Casa Mia",
   "deals": [
@@ -1850,6 +1840,44 @@
    }
   ]
  },
+ "101350": {
+  "name": "Off the Rail - Media",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "roundup"
+    }
+   }
+  ]
+ },
  "32028": {
   "name": "Pinocchio's Restaurant & Beer Garden to Go",
   "deals": [
@@ -1944,22 +1972,22 @@
      },
      {
       "dow": 2,
-      "start": "17:00",
+      "start": "16:00",
       "end": "18:00"
      },
      {
       "dow": 3,
-      "start": "17:00",
+      "start": "16:00",
       "end": "18:00"
      },
      {
       "dow": 4,
-      "start": "17:00",
+      "start": "16:00",
       "end": "18:00"
      },
      {
       "dow": 5,
-      "start": "17:00",
+      "start": "16:00",
       "end": "18:00"
      }
     ],
@@ -2727,44 +2755,6 @@
    }
   ]
  },
- "71516": {
-  "name": "Kildare's Irish Pub",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "roundup"
-    }
-   }
-  ]
- },
  "112265": {
   "name": "Lascala's Fire",
   "deals": [
@@ -2842,39 +2832,6 @@
     ],
     "source": {
      "kind": "venue_site"
-    }
-   }
-  ]
- },
- "62944": {
-  "name": "M\u00e1s Mexicali Cantina",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "roundup"
     }
    }
   ]
@@ -3100,26 +3057,46 @@
    }
   ]
  },
- "61942": {
-  "name": "Side Bar & Restaurant",
+ "101307": {
+  "name": "Serum Kitchen & Taphouse",
   "deals": [
    {
     "type": "happy_hour",
     "windows": [
      {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
       "dow": 3,
       "start": "16:00",
-      "end": "19:00"
+      "end": "18:00"
      },
      {
       "dow": 4,
       "start": "16:00",
-      "end": "19:00"
+      "end": "18:00"
      },
      {
       "dow": 5,
       "start": "16:00",
-      "end": "19:00"
+      "end": "18:00"
+     },
+     {
+      "dow": 6,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 7,
+      "start": "16:00",
+      "end": "18:00"
      }
     ],
     "source": {
@@ -3261,34 +3238,6 @@
     ],
     "source": {
      "kind": "venue_site"
-    }
-   }
-  ]
- },
- "103733": {
-  "name": "Wrong Crowd Beer Company",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "15:00",
-      "end": "17:00"
-     }
-    ],
-    "source": {
-     "kind": "roundup"
     }
    }
   ]
@@ -3704,44 +3653,6 @@
       "dow": 5,
       "end": "18:00",
       "start": "16:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "121704": {
-  "name": "Select Pizza Grill of Huntingdon Valley",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
      }
     ],
     "source": {
@@ -4548,54 +4459,6 @@
      {
       "dow": 7,
       "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "70198": {
-  "name": "Red Lobster",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 6,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 7,
-      "start": "15:00",
       "end": "18:00"
      }
     ],
@@ -5523,49 +5386,6 @@
    }
   ]
  },
- "33647": {
-  "name": "Dave & Buster's",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "17:00",
-      "end": "19:00"
-     },
-     {
-      "dow": 2,
-      "start": "17:00",
-      "end": "19:00"
-     },
-     {
-      "dow": 3,
-      "start": "17:00",
-      "end": "19:00"
-     },
-     {
-      "dow": 4,
-      "start": "17:00",
-      "end": "19:00"
-     },
-     {
-      "dow": 5,
-      "start": "17:00",
-      "end": "19:00"
-     },
-     {
-      "dow": 7,
-      "start": "22:00",
-      "end": "24:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
  "62290": {
   "name": "DBG",
   "deals": [
@@ -6404,27 +6224,27 @@
     "windows": [
      {
       "dow": 1,
-      "start": "17:00",
+      "start": "16:00",
       "end": "18:00"
      },
      {
       "dow": 2,
-      "start": "17:00",
+      "start": "16:00",
       "end": "18:00"
      },
      {
       "dow": 3,
-      "start": "17:00",
+      "start": "16:00",
       "end": "18:00"
      },
      {
       "dow": 4,
-      "start": "17:00",
+      "start": "16:00",
       "end": "18:00"
      },
      {
       "dow": 5,
-      "start": "17:00",
+      "start": "16:00",
       "end": "18:00"
      },
      {
@@ -6557,27 +6377,27 @@
      {
       "dow": 1,
       "start": "16:00",
-      "end": "18:00"
+      "end": "19:00"
      },
      {
       "dow": 2,
       "start": "16:00",
-      "end": "18:00"
+      "end": "19:00"
      },
      {
       "dow": 3,
       "start": "16:00",
-      "end": "18:00"
+      "end": "19:00"
      },
      {
       "dow": 4,
       "start": "16:00",
-      "end": "18:00"
+      "end": "19:00"
      },
      {
       "dow": 5,
       "start": "16:00",
-      "end": "18:00"
+      "end": "19:00"
      },
      {
       "dow": 6,
@@ -7563,49 +7383,6 @@
    }
   ]
  },
- "49542": {
-  "name": "Chickie's and Pete's",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 7,
-      "start": "22:00",
-      "end": "24:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
  "109005": {
   "name": "Chili's",
   "deals": [
@@ -7773,49 +7550,6 @@
       "dow": 7,
       "start": "16:30",
       "end": "19:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "59775": {
-  "name": "Chickie's & Pete's",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 7,
-      "start": "22:00",
-      "end": "24:00"
      }
     ],
     "source": {
@@ -8077,183 +7811,6 @@
    }
   ]
  },
- "104355": {
-  "name": "Chickie's & Pete's",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 7,
-      "start": "22:00",
-      "end": "24:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "90129": {
-  "name": "Joey Chops",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 6,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 7,
-      "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "118403": {
-  "name": "Main Line Tavern",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 6,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 7,
-      "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "50423": {
-  "name": "Teikoku",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:30",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:30",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:30",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:30",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:30",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
  "67138": {
   "name": "Cedar Point Bar & Kitchen",
   "deals": [
@@ -8467,44 +8024,6 @@
    }
   ]
  },
- "120981": {
-  "name": "Wissahickon Brewing Co",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
  "63944": {
   "name": "Copperfield Inn at Lakeside",
   "deals": [
@@ -8548,168 +8067,6 @@
       "dow": 7,
       "start": "11:00",
       "end": "15:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "109062": {
-  "name": "Chili's",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "15:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "68604": {
-  "name": "Se\u00f1or Salsa",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "14:00",
-      "end": "17:00"
-     },
-     {
-      "dow": 2,
-      "start": "14:00",
-      "end": "17:00"
-     },
-     {
-      "dow": 3,
-      "start": "14:00",
-      "end": "17:00"
-     },
-     {
-      "dow": 4,
-      "start": "14:00",
-      "end": "17:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "93544": {
-  "name": "The Ways Restaurant & Brewery",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 6,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 7,
-      "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "110382": {
-  "name": "W Tavern",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 6,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 7,
-      "start": "16:00",
-      "end": "18:00"
      }
     ],
     "source": {
@@ -9187,6 +8544,135 @@
    }
   ]
  },
+ "68604": {
+  "name": "Se\u00f1or Salsa",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "14:00",
+      "end": "17:00"
+     },
+     {
+      "dow": 2,
+      "start": "14:00",
+      "end": "17:00"
+     },
+     {
+      "dow": 3,
+      "start": "14:00",
+      "end": "17:00"
+     },
+     {
+      "dow": 4,
+      "start": "14:00",
+      "end": "17:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "93544": {
+  "name": "The Ways Restaurant & Brewery",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 6,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 7,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "110382": {
+  "name": "W Tavern",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 6,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 7,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "110744": {
   "name": "Rosemary",
   "deals": [
@@ -9325,6 +8811,140 @@
      {
       "dow": 5,
       "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "90129": {
+  "name": "Joey Chops",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 6,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 7,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "118403": {
+  "name": "Main Line Tavern",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 6,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 7,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "50423": {
+  "name": "Teikoku",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:30",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:30",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:30",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:30",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:30",
       "end": "18:00"
      }
     ],
@@ -9592,6 +9212,110 @@
    }
   ]
  },
+ "19287": {
+  "name": "Giuseppes\u2019s Pizza & Family Restaurant",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 2,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 3,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 4,
+      "start": "17:00",
+      "end": "19:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "59155": {
+  "name": "Jamison Pour House",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "55339": {
+  "name": "Tony's Place Bar & Grill",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "15:00",
+      "end": "17:00"
+     },
+     {
+      "dow": 2,
+      "start": "15:00",
+      "end": "17:00"
+     },
+     {
+      "dow": 3,
+      "start": "15:00",
+      "end": "17:00"
+     },
+     {
+      "dow": 4,
+      "start": "15:00",
+      "end": "17:00"
+     },
+     {
+      "dow": 5,
+      "start": "15:00",
+      "end": "17:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "42334": {
   "name": "Bowlero",
   "deals": [
@@ -9739,54 +9463,6 @@
    }
   ]
  },
- "70163": {
-  "name": "Red Lobster",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 6,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 7,
-      "start": "15:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
  "95912": {
   "name": "Agave Mexican Cuisine",
   "deals": [
@@ -9923,34 +9599,14 @@
     "type": "happy_hour",
     "windows": [
      {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
       "dow": 4,
       "start": "16:30",
-      "end": "18:00"
+      "end": "20:30"
      },
      {
       "dow": 5,
       "start": "16:30",
-      "end": "18:00"
-     },
-     {
-      "dow": 7,
-      "start": "16:00",
-      "end": "18:00"
+      "end": "18:30"
      }
     ],
     "source": {

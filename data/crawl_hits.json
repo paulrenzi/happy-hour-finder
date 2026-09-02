@@ -883,6 +883,77 @@
   "website": "https://www.thesidecarbar.com/",
   "zone_id": "center_city"
  },
+ "101350": {
+  "address": "109-111 W STATE ST 2ND FLOOR, MEDIA PA 19063-3203",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Happy Hour",
+    "url": "https://offtherailmedia.com/"
+   },
+   {
+    "quote": "Book a happy hour or private event",
+    "url": "https://offtherailmedia.com/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://offtherailmedia.com/media-www-offtherailmedia-com-off-the-rail-drink-menu"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://offtherailmedia.com/media-www-offtherailmedia-com-off-the-rail-events"
+   },
+   {
+    "hh": true,
+    "quote": "Off the Rail - Happy Hour Skip to Main Content",
+    "url": "https://offtherailmedia.com/media-www-offtherailmedia-com-off-the-rail-happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour",
+    "url": "https://offtherailmedia.com/media-www-offtherailmedia-com-off-the-rail-happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Ask our server on the daily specials.",
+    "url": "https://offtherailmedia.com/media-www-offtherailmedia-com-off-the-rail-happy-hour"
+   }
+  ],
+  "name": "DKD 109 LLC",
+  "osm_name": "Off the Rail - Media",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 113,
+    "result": "ok, 2 quote(s)",
+    "url": "https://offtherailmedia.com/"
+   },
+   {
+    "hh": true,
+    "lines": 102,
+    "result": "ok, 1 quote(s)",
+    "url": "https://offtherailmedia.com/media-www-offtherailmedia-com-off-the-rail-drink-menu"
+   },
+   {
+    "hh": true,
+    "lines": 37,
+    "result": "ok, 1 quote(s)",
+    "url": "https://offtherailmedia.com/media-www-offtherailmedia-com-off-the-rail-events"
+   },
+   {
+    "result": "rendered: 34 lines -> 35",
+    "url": "https://offtherailmedia.com/media-www-offtherailmedia-com-off-the-rail-happy-hour"
+   },
+   {
+    "hh": true,
+    "lines": 35,
+    "result": "ok, 3 quote(s)",
+    "url": "https://offtherailmedia.com/media-www-offtherailmedia-com-off-the-rail-happy-hour"
+   }
+  ],
+  "website": "https://offtherailmedia.com/",
+  "zone_id": "media"
+ },
  "101392": {
   "address": "11 FELLOWSHIP DR, GLEN MILLS PA 19342",
   "crawled_at": "2026-08-07",
@@ -1776,6 +1847,29 @@
   ],
   "website": "https://lascalasfire.com/villanova/",
   "zone_id": "wayne_radnor"
+ },
+ "103370": {
+  "address": "255 E ST RD, WARMINSTER PA 18974-3305",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "EVANG LLC",
+  "osm_name": "Rey Azteca Street Road - Warminster",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 21,
+    "result": "ok, 0 quote(s)",
+    "url": "http://reyaztecawarminster.com/"
+   },
+   {
+    "hh": false,
+    "lines": 121,
+    "result": "ok, 0 quote(s)",
+    "url": "http://reyaztecawarminster.com/lunch.html"
+   }
+  ],
+  "website": "http://reyaztecawarminster.com/",
+  "zone_id": "warminster_warrington"
  },
  "103419": {
   "address": "1750 ASHBOURNE RD BUILDING 4, ELKINS PARK PA 19027",
@@ -3247,6 +3341,41 @@
   ],
   "website": "https://www.sunsethillbrewingco.com/",
   "zone_id": "pottstown"
+ },
+ "107189": {
+  "address": "780 FALCON CIR, SUITE 200, WARMINSTER PA 18974-5130",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "THE FUGE LLC",
+  "osm_name": "The Fuge",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 150,
+    "result": "ok, 0 quote(s)",
+    "url": "http://fugeevents.com/"
+   },
+   {
+    "hh": false,
+    "lines": 150,
+    "result": "ok, 0 quote(s)",
+    "url": "https://fugeevents.com"
+   },
+   {
+    "hh": false,
+    "lines": 150,
+    "result": "ok, 0 quote(s)",
+    "url": "https://fugeevents.com/"
+   },
+   {
+    "hh": false,
+    "lines": 44,
+    "result": "ok, 0 quote(s)",
+    "url": "https://fugeevents.com/3d-tours/"
+   }
+  ],
+  "website": "http://fugeevents.com/",
+  "zone_id": "warminster_warrington"
  },
  "107438": {
   "address": "1136 ARCH ST UNIT 436 & 488, PHILADELPHIA PA 19107",
@@ -5546,16 +5675,28 @@
  },
  "110966": {
   "address": "1380 EASTON RD  UNIT 14 & 15, WARRINGTON PA 18976-1818",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "SOPRANO'S PIZZERIA",
   "osm_name": "Jade Island",
   "pages": [
    {
+    "result": "rendered: 27 lines -> 31",
+    "url": "http://newjadeisland.com/"
+   },
+   {
+    "hh": false,
+    "lines": 31,
     "result": "ok, 0 quote(s)",
     "url": "http://newjadeisland.com/"
    },
    {
+    "result": "403 text/html",
+    "url": "https://sopranospizzanow.com/?utm_source=google"
+   },
+   {
+    "hh": false,
+    "lines": 434,
     "result": "ok, 0 quote(s)",
     "url": "http://newjadeisland.com/menu.asp"
    }
@@ -8126,6 +8267,29 @@
   "website": "https://sedonataphouse.com/locations/newtown-square-pa/",
   "zone_id": "newtown_square_broomall"
  },
+ "118613": {
+  "address": "544 YORK RD, WARMINSTER PA 18974-4511",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "MIKES 544 YORK ROAD LLC",
+  "osm_name": "Mike\u2019s York Road Tavern",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 119,
+    "result": "ok, 0 quote(s)",
+    "url": "http://mikesyorkroad.com/"
+   },
+   {
+    "hh": false,
+    "lines": 51,
+    "result": "ok, 0 quote(s)",
+    "url": "http://mikesyorkroad.com/restaurant-%26-banquet-menu"
+   }
+  ],
+  "website": "http://mikesyorkroad.com/",
+  "zone_id": "warminster_warrington"
+ },
  "118675": {
   "address": "2049 E HAGERT ST, PHILADELPHIA PA 19125-1631",
   "crawled_at": "2026-08-07",
@@ -10233,6 +10397,29 @@
   "website": "https://sedonataphouse.com/locations/newtown-square-pa/",
   "zone_id": "newtown_square_broomall"
  },
+ "125979": {
+  "address": "171 JACKSONVILLE RD, IVYLAND PA 18974-1515",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "SPRING MILL MANOR INC",
+  "osm_name": "Spring Mill Manor",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 130,
+    "result": "ok, 0 quote(s)",
+    "url": "https://springmillmanor.com/"
+   },
+   {
+    "hh": false,
+    "lines": 107,
+    "result": "ok, 0 quote(s)",
+    "url": "https://springmillmanor.com/event-space/"
+   }
+  ],
+  "website": "https://springmillmanor.com/",
+  "zone_id": "warminster_warrington"
+ },
  "125992": {
   "address": "812 LANSDOWNE AVE, DREXEL HILL PA 19026-1526",
   "crawled_at": "2026-08-07",
@@ -10708,20 +10895,32 @@
  },
  "128827": {
   "address": "460 W STREET RD, WARMINSTER  PA 18974",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "PHILOMENA SANTUCCIS",
   "osm_name": null,
   "pages": [
    {
+    "hh": false,
+    "lines": 76,
     "result": "ok, 0 quote(s)",
     "url": "https://philomenasantuccis.com/"
    },
    {
+    "hh": false,
+    "lines": 76,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.philomenasantuccis.com/"
+   },
+   {
+    "hh": false,
+    "lines": 133,
     "result": "ok, 0 quote(s)",
     "url": "https://philomenasantuccis.com/events/"
    },
    {
+    "hh": false,
+    "lines": 70,
     "result": "ok, 0 quote(s)",
     "url": "https://philomenasantuccis.com/menus/"
    }
@@ -10950,6 +11149,41 @@
   ],
   "website": "https://www.hyatt.com/en-US/hotel/pennsylvania/hyatt-place-philadelphia-king-of-prussia/phlzk",
   "zone_id": "king_of_prussia"
+ },
+ "129195": {
+  "address": "80 JACKSONVILLE RD, IVYLAND PA 18974-1514",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "EJS BUSINESS LLC",
+  "osm_name": "Spring Mill Country Club",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 55,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.springmillcountryclub.com/"
+   },
+   {
+    "hh": false,
+    "lines": 289,
+    "result": "ok, 0 quote(s)",
+    "url": "https://springmillcountryclub.com/Dining-Menus"
+   },
+   {
+    "hh": false,
+    "lines": 84,
+    "result": "ok, 0 quote(s)",
+    "url": "https://springmillcountryclub.com/default.aspx?p=TrackHyperlink&URL=https%3a%2f%2fspringmillcountryclub.com%2fweddings-and-events%2fprivate-events&ssid=112376560429&fid=14259150235"
+   },
+   {
+    "hh": false,
+    "lines": 57,
+    "result": "ok, 0 quote(s)",
+    "url": "https://springmillcountryclub.com/default.aspx?p=TrackHyperlink&URL=weddings-and-events%2fweddings&ssid=112373718112&fid=14259150235"
+   }
+  ],
+  "website": "https://www.springmillcountryclub.com/",
+  "zone_id": "warminster_warrington"
  },
  "129201": {
   "address": "112 CHESTNUT ST, PHILADELPHIA PA 19106-3009",
@@ -11724,6 +11958,21 @@
   "website": "https://casamiamedia.com",
   "zone_id": "media"
  },
+ "13040": {
+  "address": "2275 OLD YORK RD, JAMISON PA 18929",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "WARWICK TAVERN",
+  "osm_name": "Warwick Tavern Inc",
+  "pages": [
+   {
+    "result": "robots.txt disallows",
+    "url": "http://www.facebook.com/TheWarwickTavern/"
+   }
+  ],
+  "website": "http://www.facebook.com/TheWarwickTavern/",
+  "zone_id": "warminster_warrington"
+ },
  "130465": {
   "address": "6 PARK AVE FIRST FLOOR & BASEMENT, SWARTHMORE PA 19081",
   "crawled_at": "2026-09-02",
@@ -11996,22 +12245,63 @@
   "website": "https://ogyubbq.com",
   "zone_id": "ardmore_bryn_mawr"
  },
+ "130897": {
+  "address": "1512 N MAIN ST BLDG 9 STE 900, WARRINGTON PA 18976",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "hh": true,
+    "quote": "$1.75 UPCHARGE FOR JUICE OR MILK REFILLS.",
+    "url": "https://plazaazteca.com/wp-content/uploads/2026/03/Warrington-Food-Menu-Sheet-12x18-0125-WEB.pdf"
+   }
+  ],
+  "name": "BLUE AGAVE MEXICAN GRILL INC",
+  "osm_name": "Plaza Azteca Warrington",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 73,
+    "result": "ok, 0 quote(s)",
+    "url": "https://plazaazteca.com/warrington"
+   },
+   {
+    "hh": false,
+    "lines": 202,
+    "result": "ok, 0 quote(s)",
+    "url": "https://plazaazteca.com/wp-content/uploads/2026/03/PA-Warrington-Drink-Menu-8.5x14-0226-WEB.pdf"
+   },
+   {
+    "hh": false,
+    "lines": 487,
+    "result": "ok, 1 quote(s)",
+    "url": "https://plazaazteca.com/wp-content/uploads/2026/03/Warrington-Food-Menu-Sheet-12x18-0125-WEB.pdf"
+   }
+  ],
+  "website": "https://plazaazteca.com/warrington",
+  "zone_id": "warminster_warrington"
+ },
  "130949": {
   "address": "800 ALMSHOUSE RD, JAMISON PA 18929-1103",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "WARWICK FARM BREWING",
   "osm_name": null,
   "pages": [
    {
+    "hh": false,
+    "lines": 97,
     "result": "ok, 0 quote(s)",
     "url": "https://www.warwickfarmbrewing.com/"
    },
    {
+    "hh": false,
+    "lines": 64,
     "result": "ok, 0 quote(s)",
     "url": "https://www.warwickfarmbrewing.com/events-calendar/"
    },
    {
+    "hh": false,
+    "lines": 192,
     "result": "ok, 0 quote(s)",
     "url": "https://www.warwickfarmbrewing.com/takeout-menu/"
    }
@@ -12428,20 +12718,32 @@
  },
  "131375": {
   "address": "880 JACKSONVILLE RD, IVYLAND PA 18974-4808",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "TAORMINA'S PIZZA & PASTA",
   "osm_name": "Taormina's Pizza & Pasta",
   "pages": [
    {
+    "hh": false,
+    "lines": 69,
     "result": "ok, 0 quote(s)",
     "url": "https://taorminasivyland.com/"
    },
    {
+    "hh": false,
+    "lines": 69,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.taorminasivyland.com/"
+   },
+   {
+    "hh": false,
+    "lines": 44,
     "result": "ok, 0 quote(s)",
     "url": "https://taorminasivyland.com/menu/"
    },
    {
+    "hh": false,
+    "lines": 44,
     "result": "ok, 0 quote(s)",
     "url": "https://taorminasivyland.com/menus/"
    }
@@ -13050,6 +13352,74 @@
   ],
   "website": "https://baldbirdsbrewing.com/",
   "zone_id": "king_of_prussia"
+ },
+ "133035": {
+  "address": "355 YORK RD, WARMINSTER PA 18974-4506",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "HAPPY HOUR MENU",
+    "url": "https://www.ciaopazzo.com/"
+   },
+   {
+    "quote": "355 York Road in Warminster, PA , providing easy access, plenty of parking and safe curbside pick-up. We encourage you to have a seat at the bar for drinks and sample our happy hour specials, dine in comfort in our new restaurant or place an order to take-out.",
+    "url": "https://www.ciaopazzo.com/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour Menu | Ciao Pazzo",
+    "url": "https://www.ciaopazzo.com/happy-hour-menu"
+   },
+   {
+    "hh": true,
+    "quote": "HAPPY HOUR MENU",
+    "url": "https://www.ciaopazzo.com/happy-hour-menu"
+   },
+   {
+    "quote": "HAPPY HOUR MENU",
+    "url": "https://www.ciaopazzo.com/dinner-menu"
+   },
+   {
+    "quote": "HAPPY HOUR MENU",
+    "url": "https://www.ciaopazzo.com/lunch-menu657a784c"
+   }
+  ],
+  "menu_images": [
+   {
+    "src": "https://irp.cdn-website.com/717a831c/dms3rep/multi/opt/CiaoPazzo+Happy+Hour+Menu_Page_1-1920w.jpg",
+    "url": "https://www.ciaopazzo.com/happy-hour-menu"
+   }
+  ],
+  "name": "CIAO PAZZO",
+  "osm_name": "CIAO PAZZO",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 51,
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.ciaopazzo.com/"
+   },
+   {
+    "hh": true,
+    "lines": 43,
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.ciaopazzo.com/happy-hour-menu"
+   },
+   {
+    "hh": true,
+    "lines": 43,
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.ciaopazzo.com/dinner-menu"
+   },
+   {
+    "hh": true,
+    "lines": 43,
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.ciaopazzo.com/lunch-menu657a784c"
+   }
+  ],
+  "website": "https://www.ciaopazzo.com/",
+  "zone_id": "warminster_warrington"
  },
  "133052": {
   "address": "1001 INTREPID AVE, PHILADELPHIA PA 19112-1227",
@@ -13753,6 +14123,214 @@
   "website": "https://glensidepub.com/",
   "zone_id": "abington_jenkintown"
  },
+ "19287": {
+  "address": "1380 WEST ST RD, WARMINSTER PA 18974",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Happy Hour Menu",
+    "url": "http://giuseppesthebestpizza.com/"
+   },
+   {
+    "quote": "Happy Hour Menu",
+    "url": "https://www.giuseppesthebestpizza.com/announcements/back-by-popular-demand-sip-shop-at-giuseppes-of-warminster/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://www.giuseppesthebestpizza.com/announcements/back-by-popular-demand-sip-shop-at-giuseppes-of-warminster/"
+   },
+   {
+    "quote": "Happy Hour Menu",
+    "url": "https://www.giuseppesthebestpizza.com/announcements/upcoming-events-at-giuseppes-of-warminster/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://www.giuseppesthebestpizza.com/announcements/upcoming-events-at-giuseppes-of-warminster/"
+   },
+   {
+    "hh": true,
+    "quote": "[cat:food] $6.25 / Not Served with Fries / Giuseppe\u2019s Fries",
+    "url": "https://www.giuseppesthebestpizza.com/menu-options/happy-hour-menu/"
+   },
+   {
+    "hh": true,
+    "quote": "[cat:food] $6.50 / Please Specify Cajun or Grilled / Steamed Mussels",
+    "url": "https://www.giuseppesthebestpizza.com/menu-options/happy-hour-menu/"
+   },
+   {
+    "hh": true,
+    "quote": "[cat:food] $7.50 / Please Specify Red or White Sauce / Bruschetta",
+    "url": "https://www.giuseppesthebestpizza.com/menu-options/happy-hour-menu/"
+   },
+   {
+    "hh": true,
+    "quote": "[cat:food] $7.00 / Please Specify Meat or Cheese / Penne Vodka",
+    "url": "https://www.giuseppesthebestpizza.com/menu-options/happy-hour-menu/"
+   },
+   {
+    "hh": true,
+    "quote": "[cat:food] $6.25 / GIFT CARDS / The Perfect Thank You Gift!",
+    "url": "https://www.giuseppesthebestpizza.com/menu-options/happy-hour-menu/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour Menu - Giuseppe's Pizza & Family Restaurant",
+    "url": "https://www.giuseppesthebestpizza.com/menu-options/happy-hour-menu/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour Menu",
+    "url": "https://www.giuseppesthebestpizza.com/menu-options/happy-hour-menu/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour Menu / Monday thru Thursday 5pm-7pm. Bar & Patio Area Only. No Take Out. Dine In Only. No Substitutions",
+    "url": "https://www.giuseppesthebestpizza.com/menu-options/happy-hour-menu/"
+   },
+   {
+    "hh": true,
+    "quote": "Download Happy Hour Menu in PDF / Monday thru Thursday 5pm-7pm. Bar & Patio Area Only. No Take Out. Dine In Only. No Substitutions",
+    "url": "https://www.giuseppesthebestpizza.com/menu-options/happy-hour-menu/"
+   },
+   {
+    "hh": true,
+    "quote": "HAPPY HOUR MENU / $7.00",
+    "url": "https://www.giuseppesthebestpizza.com/menu-options/happy-hour-menu/"
+   },
+   {
+    "hh": true,
+    "quote": "$7.00 Nachos",
+    "url": "https://www.giuseppesthebestpizza.com/menu-options/happy-hour-menu/"
+   },
+   {
+    "hh": true,
+    "quote": "$6.25 Poppers",
+    "url": "https://www.giuseppesthebestpizza.com/menu-options/happy-hour-menu/"
+   },
+   {
+    "hh": true,
+    "quote": "$6.25 Mozzarella Sticks",
+    "url": "https://www.giuseppesthebestpizza.com/menu-options/happy-hour-menu/"
+   },
+   {
+    "hh": true,
+    "quote": "$6.25 Broccoli Bites",
+    "url": "https://www.giuseppesthebestpizza.com/menu-options/happy-hour-menu/"
+   },
+   {
+    "hh": true,
+    "quote": "$6.25 Chicken Fingers / Not Served with Fries",
+    "url": "https://www.giuseppesthebestpizza.com/menu-options/happy-hour-menu/"
+   },
+   {
+    "hh": true,
+    "quote": "$6.25 Giuseppe\u2019s Fries",
+    "url": "https://www.giuseppesthebestpizza.com/menu-options/happy-hour-menu/"
+   },
+   {
+    "hh": true,
+    "quote": "$6.25 Skins with Bacon or Broccoli",
+    "url": "https://www.giuseppesthebestpizza.com/menu-options/happy-hour-menu/"
+   },
+   {
+    "hh": true,
+    "quote": "$6.25 Fried Zuccini",
+    "url": "https://www.giuseppesthebestpizza.com/menu-options/happy-hour-menu/"
+   },
+   {
+    "hh": true,
+    "quote": "$6.50 Chicken & Cheese Quesadillas / Please Specify Cajun or Grilled",
+    "url": "https://www.giuseppesthebestpizza.com/menu-options/happy-hour-menu/"
+   },
+   {
+    "hh": true,
+    "quote": "$7.50 Steamed Mussels / Please Specify Red or White Sauce",
+    "url": "https://www.giuseppesthebestpizza.com/menu-options/happy-hour-menu/"
+   },
+   {
+    "hh": true,
+    "quote": "$6.25 Bruschetta",
+    "url": "https://www.giuseppesthebestpizza.com/menu-options/happy-hour-menu/"
+   },
+   {
+    "hh": true,
+    "quote": "$6.25 Fried Mushrooms",
+    "url": "https://www.giuseppesthebestpizza.com/menu-options/happy-hour-menu/"
+   },
+   {
+    "hh": true,
+    "quote": "$7.00 Ravioli",
+    "url": "https://www.giuseppesthebestpizza.com/menu-options/happy-hour-menu/"
+   },
+   {
+    "hh": true,
+    "quote": "$7.00 Tortellini in Red Sauce / Please Specify Meat or Cheese",
+    "url": "https://www.giuseppesthebestpizza.com/menu-options/happy-hour-menu/"
+   },
+   {
+    "hh": true,
+    "quote": "$7.00 Penne Vodka",
+    "url": "https://www.giuseppesthebestpizza.com/menu-options/happy-hour-menu/"
+   },
+   {
+    "hh": true,
+    "quote": "$6.25 Small Caprese Salad",
+    "url": "https://www.giuseppesthebestpizza.com/menu-options/happy-hour-menu/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour Menu / Monday thru Thursday 5pm-7pm",
+    "url": "https://www.giuseppesthebestpizza.com/giuseppepizza/files/giuseppes-happy-hour-2025-pricing.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour Men u",
+    "url": "https://www.giuseppesthebestpizza.com/giuseppepizza/files/giuseppes-happy-hour-2025-pricing.pdf"
+   }
+  ],
+  "name": "GIUSEPPE'S PIZZA REST OF WARMINSTER",
+  "osm_name": "Giuseppes\u2019s Pizza & Family Restaurant",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 162,
+    "result": "ok, 1 quote(s)",
+    "url": "http://giuseppesthebestpizza.com/"
+   },
+   {
+    "hh": true,
+    "lines": 157,
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.giuseppesthebestpizza.com/announcements/back-by-popular-demand-sip-shop-at-giuseppes-of-warminster/"
+   },
+   {
+    "hh": true,
+    "lines": 148,
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.giuseppesthebestpizza.com/announcements/upcoming-events-at-giuseppes-of-warminster/"
+   },
+   {
+    "hh": true,
+    "lines": 172,
+    "result": "ok, 21 quote(s)",
+    "url": "https://www.giuseppesthebestpizza.com/menu-options/happy-hour-menu/"
+   },
+   {
+    "hh": true,
+    "lines": 50,
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.giuseppesthebestpizza.com/giuseppepizza/files/giuseppes-happy-hour-2025-pricing.pdf"
+   },
+   {
+    "hh": false,
+    "lines": 270,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.giuseppesthebestpizza.com/giuseppepizza/files/catering-menu-2025.pdf"
+   }
+  ],
+  "website": "http://giuseppesthebestpizza.com/",
+  "zone_id": "warminster_warrington"
+ },
  "19496": {
   "address": "416 MAIN ST, TRAPPE PA 19426-2607",
   "crawled_at": "2026-09-01",
@@ -13797,7 +14375,7 @@
  },
  "19537": {
   "address": "1475 W ST RD, WARMINSTER PA 18974-3114",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "BOWLING REFRESHMENT, INC.",
   "osm_name": "Thunderbird Lanes",
@@ -13805,6 +14383,12 @@
    {
     "result": "error: ConnectionError",
     "url": "https://www.phillybowl.com/"
+   },
+   {
+    "hh": false,
+    "lines": 222,
+    "result": "ok, 0 quote(s)",
+    "url": "https://warminster.thunderbirdlanes.com/"
    }
   ],
   "website": "https://www.phillybowl.com/",
@@ -14419,6 +15003,29 @@
   ],
   "website": "https://thegreatamericanpub.com",
   "zone_id": "conshohocken"
+ },
+ "28535": {
+  "address": "472 MADISON AVE, WARMINSTER PA 18974-4841",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "MADISON TAVERN",
+  "osm_name": "Kenney's Madison Tavern",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 392,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.kenneysmadison.com/"
+   },
+   {
+    "hh": false,
+    "lines": 16,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.kenneysmadison.com/menu-download"
+   }
+  ],
+  "website": "http://www.kenneysmadison.com/",
+  "zone_id": "warminster_warrington"
  },
  "28637": {
   "address": "238-240 N 9TH ST, PHILADELPHIA PA 19107",
@@ -16223,6 +16830,54 @@
   "website": "https://www.adelinasitalian.com",
   "zone_id": "northwest_philly"
  },
+ "40668": {
+  "address": "307-313-315-317 W COUNTY LINE RD, HATBORO PA 19040",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Join us happy hour 4-6 Monday thru Friday for $3 off Eggrolls and chicken fingers!",
+    "url": "http://redstallionbar.com/"
+   },
+   {
+    "quote": "Available for $4 during happy hour, 4-6 weekdays! No limit! -6",
+    "url": "http://redstallionbar.com/"
+   },
+   {
+    "quote": "Join us happy hour 4-6 Monday thru Friday for $3 off Quesadillas!",
+    "url": "http://redstallionbar.com/"
+   },
+   {
+    "quote": "Join us happy hour 4-6 Monday thru Friday for $3 off Eggrolls and chicken fingers!",
+    "url": "https://redstallionbar.com/"
+   },
+   {
+    "quote": "Available for $4 during happy hour, 4-6 weekdays! No limit! -6",
+    "url": "https://redstallionbar.com/"
+   },
+   {
+    "quote": "Join us happy hour 4-6 Monday thru Friday for $3 off Quesadillas!",
+    "url": "https://redstallionbar.com/"
+   }
+  ],
+  "name": "RED STALLION",
+  "osm_name": "Red Stallion",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 212,
+    "result": "ok, 3 quote(s)",
+    "url": "http://redstallionbar.com/"
+   },
+   {
+    "hh": true,
+    "lines": 212,
+    "result": "ok, 3 quote(s)",
+    "url": "https://redstallionbar.com/"
+   }
+  ],
+  "website": "http://redstallionbar.com/",
+  "zone_id": "warminster_warrington"
+ },
  "40777": {
   "address": "306 MARKET ST, PHILADELPHIA PA 19106-2704",
   "crawled_at": "2026-08-06",
@@ -17669,6 +18324,21 @@
   "website": "https://www.fadoirishpub.com/philadelphia/",
   "zone_id": "center_city"
  },
+ "46164": {
+  "address": "489 E COUNTY LINE RD, HATBORO PA 19040-1204",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "ARCHIE'S BIG HEADS",
+  "osm_name": "Archie's Big Heads",
+  "pages": [
+   {
+    "result": "404 text/html",
+    "url": "https://www.bigheadsbar.com/town-country/town-country-events/"
+   }
+  ],
+  "website": "https://www.bigheadsbar.com/town-country/town-country-events/",
+  "zone_id": "warminster_warrington"
+ },
  "46311": {
   "address": "2912 SWEDE RD, NORRISTOWN PA 19401-1336",
   "crawled_at": "2026-09-01",
@@ -17998,6 +18668,36 @@
   ],
   "website": "https://www.maggianos.com/locations/Pennsylvania/King%20of%20Prussia/205-mall-blvd.",
   "zone_id": "king_of_prussia"
+ },
+ "47449": {
+  "address": "1499 W ST RD, WARMINSTER PA 18974-3114",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Drink Specials",
+    "url": "https://www.bigheadsbar.com/warminster-square/"
+   },
+   {
+    "quote": "FOOD + DRINK SPECIALS",
+    "url": "https://www.bigheadsbar.com/warminster-square/"
+   },
+   {
+    "quote": "Check out our food menu and daily drink specials!",
+    "url": "https://www.bigheadsbar.com/warminster-square/"
+   }
+  ],
+  "name": "BIG HEADS OF WARMINSTER SQUARE, LLC.",
+  "osm_name": "Big Heads Warminster",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 49,
+    "result": "ok, 3 quote(s)",
+    "url": "https://www.bigheadsbar.com/warminster-square/"
+   }
+  ],
+  "website": "https://www.bigheadsbar.com/warminster-square/",
+  "zone_id": "warminster_warrington"
  },
  "47717": {
   "address": "124 W GAY ST, WEST CHESTER PA 19380-2915",
@@ -20158,6 +20858,200 @@
   "website": "https://devilsalleybarandgrill.com/",
   "zone_id": "center_city"
  },
+ "53485": {
+  "address": "214 WEST STATE ST, MEDIA PA 19063-3319",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Happy Hour",
+    "url": "https://www.marisseafood.com/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://www.marisseafood.com/menu-1"
+   },
+   {
+    "quote": "HALF-PRICE OLIVES / HALF-PRICE FRIED CALAMARI",
+    "url": "https://www.marisseafood.com/menu-1"
+   },
+   {
+    "quote": "HALF-PRICE FRIED CALAMARI",
+    "url": "https://www.marisseafood.com/menu-1"
+   },
+   {
+    "quote": "HALF-PRICE MARIS CHIPS",
+    "url": "https://www.marisseafood.com/menu-1"
+   },
+   {
+    "quote": "HALF-PRICE SPREADS PIKILIA",
+    "url": "https://www.marisseafood.com/menu-1"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://www.marisseafood.com/menu"
+   },
+   {
+    "quote": "HAPPY HOUR",
+    "url": "https://www.marisseafood.com/menu"
+   },
+   {
+    "quote": "HALF-PRICE OLIVES / HALF-PRICE FRIED CALAMARI",
+    "url": "https://www.marisseafood.com/menu"
+   },
+   {
+    "quote": "HALF-PRICE FRIED CALAMARI",
+    "url": "https://www.marisseafood.com/menu"
+   },
+   {
+    "quote": "HALF-PRICE MARIS CHIPS",
+    "url": "https://www.marisseafood.com/menu"
+   },
+   {
+    "quote": "HALF-PRICE SPREADS PIKILIA",
+    "url": "https://www.marisseafood.com/menu"
+   },
+   {
+    "hh": true,
+    "quote": "HADES\u2019 HELL-IXER $17",
+    "url": "https://www.marisseafood.com/s/MarisDrinksMenu.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "SPARTAN\u2019S SIP $18",
+    "url": "https://www.marisseafood.com/s/MarisDrinksMenu.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "MARIS MUSE $16",
+    "url": "https://www.marisseafood.com/s/MarisDrinksMenu.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "ZEUSSPRESSO MARTINI $18",
+    "url": "https://www.marisseafood.com/s/MarisDrinksMenu.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "GREEK LOVER $17",
+    "url": "https://www.marisseafood.com/s/MarisDrinksMenu.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "TYRI-TINI $16",
+    "url": "https://www.marisseafood.com/s/MarisDrinksMenu.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "GODDESS TONIC $17",
+    "url": "https://www.marisseafood.com/s/MarisDrinksMenu.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "PISTACHIO MARTINI $19",
+    "url": "https://www.marisseafood.com/s/MarisDrinksMenu.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "KARPOUZI MARTINI $18",
+    "url": "https://www.marisseafood.com/s/MarisDrinksMenu.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "POSEIDON\u2019S PUNCH $16",
+    "url": "https://www.marisseafood.com/s/MarisDrinksMenu.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "ATHENA\u2019S GARDEN $17",
+    "url": "https://www.marisseafood.com/s/MarisDrinksMenu.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "STERLING PIG BREWERY TECHNICOLOR HAZE $8",
+    "url": "https://www.marisseafood.com/s/MarisDrinksMenu.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "PERONI LAGER $8",
+    "url": "https://www.marisseafood.com/s/MarisDrinksMenu.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "STELLA ARTOIS PILSNER $7",
+    "url": "https://www.marisseafood.com/s/MarisDrinksMenu.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "STERLING PIG BREWERY $8",
+    "url": "https://www.marisseafood.com/s/MarisDrinksMenu.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "GUINNESS $8",
+    "url": "https://www.marisseafood.com/s/MarisDrinksMenu.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "TROUBLES END SKALD LIGHT LAGER $7",
+    "url": "https://www.marisseafood.com/s/MarisDrinksMenu.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "FIG & BASIL FIZZ $10",
+    "url": "https://www.marisseafood.com/s/MarisDrinksMenu.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "SANTORINI BLUSH $10",
+    "url": "https://www.marisseafood.com/s/MarisDrinksMenu.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "CRETAN MULE $10",
+    "url": "https://www.marisseafood.com/s/MarisDrinksMenu.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "ATHLETIC N/A $7",
+    "url": "https://www.marisseafood.com/s/MarisDrinksMenu.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "GUINNESS N/A $8",
+    "url": "https://www.marisseafood.com/s/MarisDrinksMenu.pdf"
+   }
+  ],
+  "name": "BARNIEU RESTAURANT MANAGEMENT, LLC",
+  "osm_name": "Maris",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 61,
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.marisseafood.com/"
+   },
+   {
+    "hh": true,
+    "lines": 67,
+    "result": "ok, 5 quote(s)",
+    "url": "https://www.marisseafood.com/menu-1"
+   },
+   {
+    "hh": true,
+    "lines": 662,
+    "result": "ok, 6 quote(s)",
+    "url": "https://www.marisseafood.com/menu"
+   },
+   {
+    "hh": false,
+    "lines": 141,
+    "result": "ok, 22 quote(s)",
+    "url": "https://www.marisseafood.com/s/MarisDrinksMenu.pdf"
+   }
+  ],
+  "website": "https://www.marisseafood.com/",
+  "zone_id": "media"
+ },
  "53551": {
   "address": "200 PAINTERS CROSSING, WEST CHESTER PA 19382-8451",
   "crawled_at": "2026-09-01",
@@ -20921,6 +21815,193 @@
   "website": "https://www.longhornsteakhouse.com/locations/pa/pottstown/pottstown/5249",
   "zone_id": "pottstown"
  },
+ "55339": {
+  "address": "1297 GREELEY AVE IVYLAND, WARMINSTER PA 18974-1717",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Happy Hour",
+    "url": "https://tonysplaceivyland.com/"
+   },
+   {
+    "quote": "Enjoy live entertainment in a relaxing atmosphere with all of your favorite food and drink specials Tony\u2019s Place is known for.",
+    "url": "https://tonysplaceivyland.com/"
+   },
+   {
+    "hh": true,
+    "quote": "$6 / Golden Fried Coins, Spicy Chipotle Dip / Fried Mozzarella",
+    "url": "https://tonysplaceivyland.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "$6 / Served with Marinara / Pretzel Bites",
+    "url": "https://tonysplaceivyland.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "$6 / White Cheese 'Fondue\" / Buratta & Prosciutto",
+    "url": "https://tonysplaceivyland.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "$8 / Toppings Additional Charge / Wagyu Sliders",
+    "url": "https://tonysplaceivyland.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "$6 / Seasonal Cocktails / $1 OFF / Watermelon Basil Martini / Ultimate Pimm's Cup / Rum Punch Bucket / Key Lime Crush / Blueberry Old Fashioned / White Peach Sangria / our full menu / View Our Menu",
+    "url": "https://tonysplaceivyland.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour - Tonys Place",
+    "url": "https://tonysplaceivyland.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour",
+    "url": "https://tonysplaceivyland.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour / Monday - Friday 3-5PM",
+    "url": "https://tonysplaceivyland.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour! / Monday - Friday 3-5PM / Unwind with us every weekday from 3pm to 5pm! Enjoy fantastic discounts on our mouthwatering food and delightful drinks. Whether you\u2019re craving a savory bite or a refreshing cocktail, we\u2019ve got you covered.",
+    "url": "https://tonysplaceivyland.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour Bites / $6 / Golden Fried Coins, Spicy Chipotle Dip",
+    "url": "https://tonysplaceivyland.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "$6 Crispy Pickles",
+    "url": "https://tonysplaceivyland.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "$6 Fried Mozzarella",
+    "url": "https://tonysplaceivyland.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "$6 Pretzel Bites",
+    "url": "https://tonysplaceivyland.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "$8 Buratta & Prosciutto",
+    "url": "https://tonysplaceivyland.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "$8 Baked Quesadilla",
+    "url": "https://tonysplaceivyland.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "$8 Buffalo Chicken Dip",
+    "url": "https://tonysplaceivyland.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "$8 Peaches & Goat Cheese Toast",
+    "url": "https://tonysplaceivyland.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "$8 Tony's Boneless Wings",
+    "url": "https://tonysplaceivyland.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "$8 Small Classic Cheese Pizza or Tomato Pie",
+    "url": "https://tonysplaceivyland.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "$9 Wagyu Sliders",
+    "url": "https://tonysplaceivyland.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "$10 Steamed Clams",
+    "url": "https://tonysplaceivyland.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "** Happy Hour Pricing Not Available for To Go Orders. ** / $6/Glass",
+    "url": "https://tonysplaceivyland.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour Drinks / $6/Glass",
+    "url": "https://tonysplaceivyland.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "$1 OFF",
+    "url": "https://tonysplaceivyland.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "$6 Stateside / Surfside Cans",
+    "url": "https://tonysplaceivyland.com/happy-hour/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://tonysplaceivyland.com/menus/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://tonysplaceivyland.com/upcoming-events/"
+   }
+  ],
+  "menu_images": [
+   {
+    "src": "https://tonysplaceivyland.com/wp-content/uploads/2024/07/Happy-Hour-01.png",
+    "url": "https://tonysplaceivyland.com/happy-hour/"
+   },
+   {
+    "src": "https://tonysplaceivyland.com/wp-content/uploads/2024/07/Happy-Hour-Banner-Tans-02.png",
+    "url": "https://tonysplaceivyland.com/happy-hour/"
+   }
+  ],
+  "name": "JMAL, INC.",
+  "osm_name": "Tony's Place Bar & Grill",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 109,
+    "result": "ok, 2 quote(s)",
+    "url": "https://tonysplaceivyland.com/"
+   },
+   {
+    "hh": true,
+    "lines": 133,
+    "result": "ok, 20 quote(s)",
+    "url": "https://tonysplaceivyland.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "lines": 71,
+    "result": "ok, 1 quote(s)",
+    "url": "https://tonysplaceivyland.com/menus/"
+   },
+   {
+    "hh": true,
+    "lines": 121,
+    "result": "ok, 1 quote(s)",
+    "url": "https://tonysplaceivyland.com/upcoming-events/"
+   }
+  ],
+  "website": "https://tonysplaceivyland.com/",
+  "zone_id": "warminster_warrington"
+ },
  "55464": {
   "address": "917 BETHLEHEM PK, NORTH WALES PA 19454-1489",
   "crawled_at": "2026-09-01",
@@ -20947,6 +22028,21 @@
   ],
   "website": "https://pumpernicksdeli.com/",
   "zone_id": "lansdale_montgomeryville"
+ },
+ "55600": {
+  "address": "1373 EASTON RD, WARRINGTON PA 18976-1824",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "WINFAR INC",
+  "osm_name": "Villa Barolo",
+  "pages": [
+   {
+    "result": "403 text/html",
+    "url": "http://villabarolo.com/"
+   }
+  ],
+  "website": "http://villabarolo.com/",
+  "zone_id": "warminster_warrington"
  },
  "55632": {
   "address": "3600 SANSOM ST, PHILADELPHIA PA 19104-3212",
@@ -21148,6 +22244,57 @@
   ],
   "website": "https://continentalmidtown.com",
   "zone_id": "center_city"
+ },
+ "56543": {
+  "address": "240 EASTON RD, WARRINGTON PA 18976-2514",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "menu_images": [
+   {
+    "src": "https://media.longhornsteakhouse.com/images/site/ext/pages/flos-filet/lhspecials-calendar-icon-mobile.png",
+    "url": "https://www.longhornsteakhouse.com/specials/flos-filet"
+   }
+  ],
+  "name": "LONGHORN STEAKHOUSE",
+  "osm_name": "LongHorn Steakhouse",
+  "pages": [
+   {
+    "result": "ok, 0 quote(s) from the venue API",
+    "url": "https://www.longhornsteakhouse.com/api/restaurants/5260"
+   },
+   {
+    "result": "ok, 0 dish(es) from the menu API",
+    "url": "https://www.longhornsteakhouse.com/api/menu?restaurantNum=5260"
+   },
+   {
+    "result": "rendered: 0 lines -> 94",
+    "url": "https://www.longhornsteakhouse.com/locations/pa/warrington/warrington-pa/5260?cmpid=br:lh_ag:ie_ch:loc_ca:LHGMB_sn:gmb_gt:warrington-pa-5260_pl:locurl_rd:1212"
+   },
+   {
+    "hh": false,
+    "lines": 94,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.longhornsteakhouse.com/locations/pa/warrington/warrington-pa/5260?cmpid=br:lh_ag:ie_ch:loc_ca:LHGMB_sn:gmb_gt:warrington-pa-5260_pl:locurl_rd:1212"
+   },
+   {
+    "hh": false,
+    "lines": 47,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.longhornsteakhouse.com/specials"
+   },
+   {
+    "result": "404 text/html",
+    "url": "https://www.longhornsteakhouse.com/specials/fathers-day"
+   },
+   {
+    "hh": false,
+    "lines": 62,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.longhornsteakhouse.com/specials/flos-filet"
+   }
+  ],
+  "website": "https://www.longhornsteakhouse.com/locations/pa/warrington/warrington-pa/5260?cmpid=br:lh_ag:ie_ch:loc_ca:LHGMB_sn:gmb_gt:warrington-pa-5260_pl:locurl_rd:1212",
+  "zone_id": "warminster_warrington"
  },
  "56549": {
   "address": "124-126 N WAYNE AVE, WAYNE PA 19087-3315",
@@ -21566,6 +22713,21 @@
   "website": "https://jimssouthstreet.com",
   "zone_id": "center_city"
  },
+ "57400": {
+  "address": "1051 W COUNTY LINE RD, HATBORO PA 19040-1002",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "HARRIGANS PUB",
+  "osm_name": "Harrigan's Pub",
+  "pages": [
+   {
+    "result": "robots.txt unreadable (403), treated as disallow",
+    "url": "https://harriganspubwarminster.com/"
+   }
+  ],
+  "website": "https://harriganspubwarminster.com/",
+  "zone_id": "warminster_warrington"
+ },
  "57450": {
   "address": "4509 ISLAND AVE, PHILADELPHIA PA 19153-3885",
   "crawled_at": "2026-08-07",
@@ -21683,7 +22845,7 @@
  },
  "57883": {
   "address": "1585 EASTON RD, WARRINGTON PA 18976-1505",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-02",
   "hits": [
    {
     "quote": "Happy Hour",
@@ -21694,20 +22856,28 @@
   "osm_name": "TJ Smith's",
   "pages": [
    {
+    "hh": false,
+    "lines": 63,
     "result": "ok, 0 quote(s)",
     "url": "https://www.tjsmiths.com/"
    },
    {
+    "hh": false,
+    "lines": 63,
+    "result": "ok, 0 quote(s)",
+    "url": "http://tjsmiths.com/"
+   },
+   {
+    "hh": false,
+    "lines": 280,
     "result": "ok, 0 quote(s)",
     "url": "https://www.tjsmiths.com/catering"
    },
    {
+    "hh": true,
+    "lines": 59,
     "result": "ok, 1 quote(s)",
     "url": "https://www.tjsmiths.com/events/"
-   },
-   {
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.tjsmiths.com/menus/"
    }
   ],
   "website": "https://www.tjsmiths.com/",
@@ -21742,41 +22912,60 @@
  },
  "57949": {
   "address": "THE SHOPPES AT VALLEY SQ 721 EASTON RD, WARRINGTON PA 18976",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [
    {
     "quote": "Happy Hour",
     "url": "https://www.pfchangs.com/locations/us/pa/warrington/721-easton-rd/9827-warrington.html"
    },
    {
-    "quote": "Happy Hour / Tue / 3:00 PM",
+    "quote": "Happy Hour / Wed / 3:00 PM",
     "url": "https://www.pfchangs.com/locations/us/pa/warrington/721-easton-rd/9827-warrington.html"
    },
    {
-    "quote": "Half Priced Half Apps / Tue / 3:00 PM",
+    "hh": true,
+    "quote": "Half Priced Half Apps / Wed / 3:00 PM",
     "url": "https://www.pfchangs.com/locations/us/pa/warrington/721-easton-rd/9827-warrington.html"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://locations.pfchangs.com/pa/warrington/721-easton-rd.html?utm_source=google_gbp&utm_medium=organic"
+   },
+   {
+    "quote": "Happy Hour / Wed / 3:00 PM",
+    "url": "https://locations.pfchangs.com/pa/warrington/721-easton-rd.html?utm_source=google_gbp&utm_medium=organic"
+   },
+   {
+    "hh": true,
+    "quote": "Half Priced Half Apps / Wed / 3:00 PM",
+    "url": "https://locations.pfchangs.com/pa/warrington/721-easton-rd.html?utm_source=google_gbp&utm_medium=organic"
    },
    {
     "quote": "Happy Hour",
     "url": "https://www.pfchangs.com/celebrations"
    },
    {
+    "hh": true,
     "quote": "P.F. Chang's | Happy Hour",
     "url": "https://www.pfchangs.com/menu/happy-hour"
    },
    {
+    "hh": true,
     "quote": "Happy Hour",
     "url": "https://www.pfchangs.com/menu/happy-hour"
    },
    {
+    "hh": true,
     "quote": "Happy Hour / $5.99 Select Beer, $6.99 Select Wine, $8.99 Select Cocktails and Half Priced Half Apps / Monday - Friday 3-6*",
     "url": "https://www.pfchangs.com/menu/happy-hour"
    },
    {
+    "hh": true,
     "quote": "$5.99 Select Beer, $6.99 Select Wine, $8.99 Select Cocktails and Half Priced Half Apps",
     "url": "https://www.pfchangs.com/menu/happy-hour"
    },
    {
+    "hh": true,
     "quote": "Stop by on Wednesdays* and enjoy half-price bottles of wine and champagne all day long. Bring your friends or coworkers and unwind with your favorite pours. From bold Merlot to crisp Ros\u00e9, our wine list has something for everyone.",
     "url": "https://www.pfchangs.com/menu/happy-hour"
    }
@@ -21785,20 +22974,28 @@
   "osm_name": "P.F. Chang's",
   "pages": [
    {
+    "hh": true,
+    "lines": 342,
     "result": "ok, 3 quote(s)",
     "url": "https://www.pfchangs.com/locations/us/pa/warrington/721-easton-rd/9827-warrington.html"
    },
    {
+    "hh": true,
+    "lines": 342,
+    "result": "ok, 3 quote(s)",
+    "url": "https://locations.pfchangs.com/pa/warrington/721-easton-rd.html?utm_source=google_gbp&utm_medium=organic"
+   },
+   {
+    "hh": true,
+    "lines": 108,
     "result": "ok, 1 quote(s)",
     "url": "https://www.pfchangs.com/celebrations"
    },
    {
+    "hh": true,
+    "lines": 98,
     "result": "ok, 5 quote(s)",
     "url": "https://www.pfchangs.com/menu/happy-hour"
-   },
-   {
-    "result": "robots.txt disallows",
-    "url": "https://catering.pfchangs.com/menu/9827"
    }
   ],
   "website": "https://www.pfchangs.com/locations/us/pa/warrington/721-easton-rd/9827-warrington.html",
@@ -22468,6 +23665,80 @@
   "website": "https://www.kungfunecktie.com/",
   "zone_id": "fishtown_kensington"
  },
+ "59155": {
+  "address": "2160 OLD YORK RD, JAMISON PA 18929-1618",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Happy Hour",
+    "url": "http://www.jamisonpourhouse.com/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour \u2013 Jamison Pourhouse \u2013 Jamison PA",
+    "url": "https://jamisonpourhouse.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour",
+    "url": "https://jamisonpourhouse.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour / Happy Hour Tues-Friday 4pm-6pm $1 OFF ALL DRINKS / Monday: 11:30am-9pm",
+    "url": "https://jamisonpourhouse.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour Tues-Friday 4pm-6pm $1 OFF ALL DRINKS",
+    "url": "https://jamisonpourhouse.com/happy-hour/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://jamisonpourhouse.com/beer-menu/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://jamisonpourhouse.com/food-menu/"
+   }
+  ],
+  "menu_images": [
+   {
+    "src": "https://jamisonpourhouse.com/wp-content/uploads/2022/07/JPHHappy-Hour.jpg",
+    "url": "https://jamisonpourhouse.com/happy-hour/"
+   }
+  ],
+  "name": "2160 YORK RD INC",
+  "osm_name": "Jamison Pour House",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 62,
+    "result": "ok, 1 quote(s)",
+    "url": "http://www.jamisonpourhouse.com/"
+   },
+   {
+    "hh": true,
+    "lines": 55,
+    "result": "ok, 4 quote(s)",
+    "url": "https://jamisonpourhouse.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "lines": 55,
+    "result": "ok, 1 quote(s)",
+    "url": "https://jamisonpourhouse.com/beer-menu/"
+   },
+   {
+    "hh": true,
+    "lines": 200,
+    "result": "ok, 1 quote(s)",
+    "url": "https://jamisonpourhouse.com/food-menu/"
+   }
+  ],
+  "website": "http://www.jamisonpourhouse.com/",
+  "zone_id": "warminster_warrington"
+ },
  "59213": {
   "address": "5-7-9 N WALNUT ST, WEST CHESTER PA 19380-3138",
   "crawled_at": "2026-09-01",
@@ -22562,6 +23833,41 @@
   ],
   "website": "https://www.jeffersonvillegolfclub.org/",
   "zone_id": "norristown_bridgeport"
+ },
+ "5960": {
+  "address": "1225 W ST RD, WARMINSTER PA 18974-3134",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "WARMINSTER'S FIVE PONDS GOLF CLUB",
+  "osm_name": "Five Ponds Golf Club",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 263,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.5pondsgc.com/"
+   },
+   {
+    "hh": false,
+    "lines": 281,
+    "result": "ok, 0 quote(s)",
+    "url": "https://5pondsgc.com/warminster-best-golf-course/"
+   },
+   {
+    "hh": false,
+    "lines": 184,
+    "result": "ok, 0 quote(s)",
+    "url": "https://5pondsgc.com/warminster-golf-instruction/"
+   },
+   {
+    "hh": false,
+    "lines": 113,
+    "result": "ok, 0 quote(s)",
+    "url": "https://5pondsgc.com/club-events/"
+   }
+  ],
+  "website": "http://www.5pondsgc.com/",
+  "zone_id": "warminster_warrington"
  },
  "59606": {
   "address": "514 W GERMANTOWN PK SPACE 400, PLYMOUTH MEETING PA 19462",
@@ -23055,6 +24361,58 @@
   ],
   "website": "https://alehousenewtownsquare.com",
   "zone_id": "newtown_square_broomall"
+ },
+ "60920": {
+  "address": "1405 MAIN ST, WARRINGTON PA 18976-2492",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "WEGMANS FOOD MARKETS INC",
+  "osm_name": "Wegmans",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 124,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.wegmans.com/stores/warrington-pa/?cid=GMB_Wegmans_2024:aw:ow:gb:gb:ao::"
+   },
+   {
+    "hh": false,
+    "lines": 72,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.wegmans.com/events"
+   }
+  ],
+  "website": "https://www.wegmans.com/stores/warrington-pa/?cid=GMB_Wegmans_2024:aw:ow:gb:gb:ao::",
+  "zone_id": "warminster_warrington"
+ },
+ "60932": {
+  "address": "2600 YORK RD, JAMISON PA 18929-1044",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "BUCKS COUNTY COUNTRY CLUB",
+  "osm_name": "The Bucks Club",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 50,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.thebucksclub.com/"
+   },
+   {
+    "hh": false,
+    "lines": 36,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.thebucksclub.com/calendar"
+   },
+   {
+    "hh": false,
+    "lines": 71,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.thebucksclub.com/events"
+   }
+  ],
+  "website": "http://www.thebucksclub.com/",
+  "zone_id": "warminster_warrington"
  },
  "60972": {
   "address": "708 W RIDGE PK, LIMERICK PA 19468-1422",
@@ -26286,6 +27644,259 @@
   "website": "https://www.panerabread.com/en-us/cafe/locations/pa/collegeville/51-town-center-drive/",
   "zone_id": "collegeville_trappe"
  },
+ "65398": {
+  "address": "500 EASTON RD, WARRINGTON PA 18976-2420",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "hh": true,
+    "quote": "Happy Hour",
+    "url": "https://www.chickiesandpetes.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour / Monday - Friday 4-6 PM",
+    "url": "https://www.chickiesandpetes.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Late Night Happy Hour Sunday-Thursday 10PM-12AM",
+    "url": "https://www.chickiesandpetes.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "$3 Domestic Bottles",
+    "url": "https://www.chickiesandpetes.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "$5 White Claw",
+    "url": "https://www.chickiesandpetes.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "$6 Tito's Handmade Vodka",
+    "url": "https://www.chickiesandpetes.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "$6 Seltzers (Stateside Vodka Soda & Surfside included)",
+    "url": "https://www.chickiesandpetes.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour available Monday-Friday 4-6 pm and Sunday-Thursday 10pm-12am at bar area only. Where permitted by law. Dine-in only. Prices and times may vary at Parx, Tropicana, Kansas City, and Robbins Ave. locations. Not valid at Allentown, Airport, or Nevada locations.",
+    "url": "https://www.chickiesandpetes.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "$4 Domestic Bottles",
+    "url": "https://www.chickiesandpetes.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "$6 White Claw",
+    "url": "https://www.chickiesandpetes.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "$7 Seltzers (Stateside Vodka Soda & Surfside included)",
+    "url": "https://www.chickiesandpetes.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour is available at the Parx location, Monday through Friday, from 4-6 PM at the bar area only. Where permitted by law. Dine-in only. Prices and times may vary by location. Not valid at Tropicana, Allentown, Kansas City, Airport, or Nevada locations.",
+    "url": "https://www.chickiesandpetes.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "$5 Domestic Bottles",
+    "url": "https://www.chickiesandpetes.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "$7 White Claws",
+    "url": "https://www.chickiesandpetes.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "$8 Tito's Handmade Vodka",
+    "url": "https://www.chickiesandpetes.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "$8 Seltzers (Stateside Vodka Soda & Surfside included)",
+    "url": "https://www.chickiesandpetes.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour available Monday-Friday 4-6 pm at bar area only. Where permitted by law. Dine-in only. Only valid at Tropicana location.",
+    "url": "https://www.chickiesandpetes.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "$5 Select Craft Beer",
+    "url": "https://www.chickiesandpetes.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour available Monday-Friday 4-6 pm and Sunday-Thursday 10pm-close at the bar area only. Where permitted by law. Dine-in only. Only valid at Kansas City locations.",
+    "url": "https://www.chickiesandpetes.com/happy-hour"
+   },
+   {
+    "quote": "Flyers Playoff Drink Specials | Chickie's & Pete's",
+    "url": "https://www.chickiesandpetes.com/blog/flyers-playoff-drink-specials"
+   },
+   {
+    "quote": "Flyers Playoff Drink Specials",
+    "url": "https://www.chickiesandpetes.com/blog/flyers-playoff-drink-specials"
+   },
+   {
+    "quote": "Happy Hour / Crabfries\u00ae / Come see what all the hype is about! Our crinkle-cut fries are hand-tossed in a secret blend of spices and served with two sides of our white cheese sauce. Get them to share or keep them all for yourself - a visit to Chickie's & Pete's\u00ae is never complete without an order.",
+    "url": "https://chickiesandpetes.com/menu"
+   },
+   {
+    "quote": "Happy Hour at The Bar / Monday - Friday 4-6 PM / Late Night Happy Hour Sunday-Thursday 10PM-12AM*",
+    "url": "https://chickiesandpetes.com/menu"
+   },
+   {
+    "quote": "Late Night Happy Hour Sunday-Thursday 10PM-12AM*",
+    "url": "https://chickiesandpetes.com/menu"
+   },
+   {
+    "quote": "Happy Hour available Monday-Friday 4-6 pm and Sunday-Thursday 10pm-12am at bar area only. Where permitted by law. Dine-in only. Prices and times may vary at Parx, Tropicana, Kansas City, and Robbins Ave. locations. Not valid at Allentown or Nevada locations.",
+    "url": "https://chickiesandpetes.com/menu"
+   },
+   {
+    "quote": "Happy Hour is available at the Parx location, Monday through Friday, from 4-6 PM at the bar area only. Where permitted by law. Dine-in only. Prices and times may vary by location. Not valid at Tropicana, Allentown, Kansas City, Airport, or Nevada locations.",
+    "url": "https://chickiesandpetes.com/menu"
+   },
+   {
+    "quote": "Happy Hour available Monday-Friday 4-6 pm at bar area only. Where permitted by law. Dine-in only. Only valid at Tropicana location.",
+    "url": "https://chickiesandpetes.com/menu"
+   },
+   {
+    "quote": "Happy Hour available Monday-Friday 4-6 pm and Sunday-Thursday 10pm-close at the bar area only. Where permitted by law. Dine-in only. Only valid at Kansas City locations.",
+    "url": "https://chickiesandpetes.com/menu"
+   }
+  ],
+  "name": "CHICKIES & PETES",
+  "osm_name": "Chickie's & Pete's",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 275,
+    "result": "ok, 0 quote(s)",
+    "url": "https://chickiesandpetes.com/location/warrington/?utm_source=gmb&utm_medium=organic&utm_campaign=warrington"
+   },
+   {
+    "hh": true,
+    "lines": 92,
+    "result": "ok, 19 quote(s)",
+    "url": "https://www.chickiesandpetes.com/happy-hour"
+   },
+   {
+    "hh": false,
+    "lines": 52,
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.chickiesandpetes.com/blog/flyers-playoff-drink-specials"
+   },
+   {
+    "hh": true,
+    "lines": 280,
+    "result": "ok, 7 quote(s)",
+    "url": "https://chickiesandpetes.com/menu"
+   }
+  ],
+  "website": "https://chickiesandpetes.com/location/warrington/?utm_source=gmb&utm_medium=organic&utm_campaign=warrington",
+  "zone_id": "warminster_warrington"
+ },
+ "65592": {
+  "address": "1580 EASTON RD, WARRINGTON PA 18976-1506",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "We offer a high-end traditional steakhouse experience, in a comfortable and modern environment. Our menu features everything from prime steaks and fresh seafood, to happy hour bar fare.",
+    "url": "http://kcprimewarrington.com/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour: Happy Hour",
+    "url": "http://kcprimewarrington.com/menus"
+   },
+   {
+    "quote": "Happy Hour / Sunday Prix Fixe",
+    "url": "http://kcprimewarrington.com/menus"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "http://kcprimewarrington.com/menus"
+   },
+   {
+    "hh": true,
+    "quote": "$4 Draft Beers",
+    "url": "http://kcprimewarrington.com/menus"
+   },
+   {
+    "hh": true,
+    "quote": "$8 Wine by the Glass",
+    "url": "http://kcprimewarrington.com/menus"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour: Happy Hour",
+    "url": "http://kcprimewarrington.com/menus/"
+   },
+   {
+    "quote": "Happy Hour / Sunday Prix Fixe",
+    "url": "http://kcprimewarrington.com/menus/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "http://kcprimewarrington.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "$4 Draft Beers",
+    "url": "http://kcprimewarrington.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "$8 Wine by the Glass",
+    "url": "http://kcprimewarrington.com/menus/"
+   }
+  ],
+  "name": "KC PRIME STEAKHOUSE",
+  "osm_name": "KC Prime",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 131,
+    "result": "ok, 1 quote(s)",
+    "url": "http://kcprimewarrington.com/"
+   },
+   {
+    "hh": true,
+    "lines": 518,
+    "result": "ok, 4 quote(s)",
+    "url": "http://kcprimewarrington.com/menus"
+   },
+   {
+    "hh": true,
+    "lines": 518,
+    "result": "ok, 4 quote(s)",
+    "url": "http://kcprimewarrington.com/menus/"
+   },
+   {
+    "hh": false,
+    "lines": 270,
+    "result": "ok, 0 quote(s)",
+    "url": "http://kcprimewarrington.com/private-events"
+   }
+  ],
+  "website": "http://kcprimewarrington.com/",
+  "zone_id": "warminster_warrington"
+ },
  "65599": {
   "address": "1160 1ST AVE, KING OF PRUSSIA PA 19406-1355",
   "crawled_at": "2026-09-01",
@@ -27035,6 +28646,45 @@
   ],
   "website": "https://www.honeybaked.com/stores/2524",
   "zone_id": "glen_mills_chadds_ford"
+ },
+ "66026": {
+  "address": "51 BUCK RD, HUNTINGDON VALLEY PA 19006",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "hh": true,
+    "quote": "HAPPY HOUR / MON-TUE \u2022 3-5 / WED-THU \u2022 3-7",
+    "url": "https://www.nakedbrewingcompany.com/_files/ugd/247cfa_ce45c08c73974fc4b50153d155d06e27.pdf"
+   }
+  ],
+  "name": "NAKED BREWING COMPANY",
+  "osm_name": "Naked Brewing Company - Huntingdon Valley",
+  "pages": [
+   {
+    "result": "rendered: 1 lines -> 41",
+    "url": "https://nakedbrewingcompany.com/?utm_source=google&utm_medium=organic&utm_campaign=google_my_business_HV"
+   },
+   {
+    "hh": false,
+    "lines": 41,
+    "result": "ok, 0 quote(s)",
+    "url": "https://nakedbrewingcompany.com/?utm_source=google&utm_medium=organic&utm_campaign=google_my_business_HV"
+   },
+   {
+    "hh": false,
+    "lines": 1,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.nakedbrewingcompany.com/about"
+   },
+   {
+    "hh": true,
+    "lines": 175,
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.nakedbrewingcompany.com/_files/ugd/247cfa_ce45c08c73974fc4b50153d155d06e27.pdf"
+   }
+  ],
+  "website": "https://nakedbrewingcompany.com/?utm_source=google&utm_medium=organic&utm_campaign=google_my_business_HV",
+  "zone_id": "warminster_warrington"
  },
  "66037": {
   "address": "920 BALTIMORE PK, GLEN MILLS PA 19342-3335",
@@ -27862,6 +29512,21 @@
   "website": "https://www.cedarpointbarandkitchen.com/",
   "zone_id": "fishtown_kensington"
  },
+ "67156": {
+  "address": "2650 KELLY RD, WARRINGTON PA 18976-3622",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "HOMEWOOD SUITES DOYLESTOWN",
+  "osm_name": "Homewood Suites by Hilton Doylestown, PA",
+  "pages": [
+   {
+    "result": "403 text/html",
+    "url": "https://www.hilton.com/en/hotels/phlwahw-homewood-suites-doylestown-pa/?SEO_id=GMB-AMER-HG-PHLWAHW"
+   }
+  ],
+  "website": "https://www.hilton.com/en/hotels/phlwahw-homewood-suites-doylestown-pa/?SEO_id=GMB-AMER-HG-PHLWAHW",
+  "zone_id": "warminster_warrington"
+ },
  "67233": {
   "address": "601 SKIPPACK PK, BLUE BELL PA 19422-1709",
   "crawled_at": "2026-09-01",
@@ -28195,6 +29860,39 @@
   ],
   "website": "https://www.anthonysatpaxon.com/",
   "zone_id": "newtown_square_broomall"
+ },
+ "67620": {
+  "address": "620 EASTON RD WARRINGTON PLAZA, WARRINGTON PA 18976-2043",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "WARRINGTON PIZZA",
+  "osm_name": "Wendy's",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 176,
+    "result": "ok, 0 quote(s)",
+    "url": "https://locations.wendys.com/united-states/pa/warrington/620-easton-road?utm_source=Yext&utm_medium=Google_My_Business&utm_campaign=Local_Search"
+   },
+   {
+    "hh": false,
+    "lines": 42,
+    "result": "ok, 0 quote(s)",
+    "url": "https://locations.wendys.com/united-states/pa/warrington"
+   },
+   {
+    "hh": false,
+    "lines": 127,
+    "result": "ok, 0 quote(s)",
+    "url": "https://locations.wendys.com/united-states/pa/warrington/620-easton-road/kids-meals.html"
+   },
+   {
+    "result": "404 text/html",
+    "url": "https://menu.wendys.com"
+   }
+  ],
+  "website": "https://locations.wendys.com/united-states/pa/warrington/620-easton-road?utm_source=Yext&utm_medium=Google_My_Business&utm_campaign=Local_Search",
+  "zone_id": "warminster_warrington"
  },
  "67689": {
   "address": "8900 BARTRAM AVE, PHILADELPHIA PA 19153-3112",
@@ -28800,6 +30498,41 @@
   "website": "https://plazaazteca.com/exton",
   "zone_id": "exton_downingtown"
  },
+ "68362": {
+  "address": "750 COUNTRY CLUB LN, WARRINGTON PA 18976-2049",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "hh": true,
+    "quote": "or Onion Rings for $2",
+    "url": "https://fairwaysgolfclub.com/wp-content/uploads/2026/09/FWMenu_2026_6.24.26.pdf"
+   }
+  ],
+  "name": "FAIRWAYS GOLF CLUB",
+  "osm_name": "Fairways Golf Club",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 71,
+    "result": "ok, 0 quote(s)",
+    "url": "http://fairwaysgolfclub.com/"
+   },
+   {
+    "hh": false,
+    "lines": 74,
+    "result": "ok, 0 quote(s)",
+    "url": "https://fairwaysgolfclub.com/fairways-golf-club-in-warrington-launches-year-round-golf-simulator-with-pga-level-tech/"
+   },
+   {
+    "hh": false,
+    "lines": 27,
+    "result": "ok, 1 quote(s)",
+    "url": "https://fairwaysgolfclub.com/wp-content/uploads/2026/09/FWMenu_2026_6.24.26.pdf"
+   }
+  ],
+  "website": "http://fairwaysgolfclub.com/",
+  "zone_id": "warminster_warrington"
+ },
  "68363": {
   "address": "PHILADELPHIA INTERNATIONAL AIRPORT 8000 ESSINGTON AVE, PHILADELPHIA PA 19153",
   "crawled_at": "2026-08-06",
@@ -29132,6 +30865,291 @@
   ],
   "website": "https://www.mercato-wc.com/",
   "zone_id": "west_chester"
+ },
+ "69037": {
+  "address": "281 EASTON RD, WARRINGTON PA 18976-2517",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "$4 June Weekday",
+    "url": "https://www.redrobin.com/june-specials"
+   },
+   {
+    "quote": "$4 Chips and Salsa",
+    "url": "https://www.redrobin.com/june-specials"
+   },
+   {
+    "quote": "$4 Bottomless Root Beer Float",
+    "url": "https://www.redrobin.com/june-specials"
+   },
+   {
+    "quote": "$4 Doh! Ring Shorty",
+    "url": "https://www.redrobin.com/june-specials"
+   },
+   {
+    "quote": "$4 Milkshakes",
+    "url": "https://www.redrobin.com/june-specials"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour pricing available for Canada locations only. 2 - 5 pm",
+    "url": "https://www.redrobin.com/happy-hour-ca"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour - Canada | Red Robin Skip to main content Home Main navigation",
+    "url": "https://www.redrobin.com/happy-hour-ca"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour / Monday \u2013 Friday / 2 - 5 pm",
+    "url": "https://www.redrobin.com/happy-hour-ca"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour pricing available for Canada locations only. / Spiked Freckled Lemonade $8",
+    "url": "https://www.redrobin.com/happy-hour-ca"
+   },
+   {
+    "hh": true,
+    "quote": "Drinks - Happy Hour / Spiked Freckled Lemonade $8 / Vodka, strawberries and lemonade. Garnished with a sugar rim and lemon wedge.",
+    "url": "https://www.redrobin.com/happy-hour-ca"
+   },
+   {
+    "hh": true,
+    "quote": "Spiked Freckled Lemonade $8",
+    "url": "https://www.redrobin.com/happy-hour-ca"
+   },
+   {
+    "hh": true,
+    "quote": "Spiked Freckled Lemonade $8 / $8.00 Vodka,",
+    "url": "https://www.redrobin.com/happy-hour-ca"
+   },
+   {
+    "hh": true,
+    "quote": "House Margarita $7",
+    "url": "https://www.redrobin.com/happy-hour-ca"
+   },
+   {
+    "hh": true,
+    "quote": "House Margarita $7 / $7.00 Choose",
+    "url": "https://www.redrobin.com/happy-hour-ca"
+   },
+   {
+    "hh": true,
+    "quote": "Stanley Park Drafts $6.50 / $8",
+    "url": "https://www.redrobin.com/happy-hour-ca"
+   },
+   {
+    "hh": true,
+    "quote": "Open Sauvignon Blanc $6.50 / $9",
+    "url": "https://www.redrobin.com/happy-hour-ca"
+   },
+   {
+    "hh": true,
+    "quote": "Inniskillin Cabernet Sauvignon $8 / $11",
+    "url": "https://www.redrobin.com/happy-hour-ca"
+   },
+   {
+    "hh": true,
+    "quote": "Grower\u2019s Ciders $5",
+    "url": "https://www.redrobin.com/happy-hour-ca"
+   },
+   {
+    "hh": true,
+    "quote": "Caesar (1 oz) $7",
+    "url": "https://www.redrobin.com/happy-hour-ca"
+   },
+   {
+    "hh": true,
+    "quote": "Burgers, Wraps & Sandwiches - Happy Hour / Bacon Cheeseburger $18",
+    "url": "https://www.redrobin.com/happy-hour-ca"
+   },
+   {
+    "hh": true,
+    "quote": "Bacon Cheeseburger $18",
+    "url": "https://www.redrobin.com/happy-hour-ca"
+   },
+   {
+    "hh": true,
+    "quote": "Bacon Cheeseburger $18 / $18.00 Applewood-smoked",
+    "url": "https://www.redrobin.com/happy-hour-ca"
+   },
+   {
+    "hh": true,
+    "quote": "Whiskey River\u00ae BBQ chicken Sandwich $18",
+    "url": "https://www.redrobin.com/happy-hour-ca"
+   },
+   {
+    "hh": true,
+    "quote": "Whiskey River\u00ae BBQ chicken Sandwich $18 / $18.00 Our",
+    "url": "https://www.redrobin.com/happy-hour-ca"
+   },
+   {
+    "hh": true,
+    "quote": "Veggie Burger $17",
+    "url": "https://www.redrobin.com/happy-hour-ca"
+   },
+   {
+    "hh": true,
+    "quote": "Veggie Burger $17 / $17.00 Veggie",
+    "url": "https://www.redrobin.com/happy-hour-ca"
+   },
+   {
+    "hh": true,
+    "quote": "Crispy Chicken Wrap $16",
+    "url": "https://www.redrobin.com/happy-hour-ca"
+   },
+   {
+    "hh": true,
+    "quote": "Crispy Chicken Wrap $16 / $16.00 Crispy",
+    "url": "https://www.redrobin.com/happy-hour-ca"
+   },
+   {
+    "hh": true,
+    "quote": "Appetizers - Happy Hour / Bar Wings $15",
+    "url": "https://www.redrobin.com/happy-hour-ca"
+   },
+   {
+    "hh": true,
+    "quote": "Bar Wings $15",
+    "url": "https://www.redrobin.com/happy-hour-ca"
+   },
+   {
+    "hh": true,
+    "quote": "$5 / Chips & Salsa / Crispy Fried Pickles",
+    "url": "https://www.redrobin.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "$6 / Pretzel Bites / Queso Fundido",
+    "url": "https://www.redrobin.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "$7 / Crispy Jalape\u00f1o Coins / Mini Corn Dogs / 5 Bone-in Wings / Sippable Drinks",
+    "url": "https://www.redrobin.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "$5 / 16 oz. domestic drafts / Upgrade to 22 oz. for only $2 more. / 6 oz. wine / Red or White",
+    "url": "https://www.redrobin.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "$7 / 16 oz. Craft Drafts / Upgrade to 22 oz. for only $2 more.",
+    "url": "https://www.redrobin.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour | Red Robin Skip to main content Home Main navigation",
+    "url": "https://www.redrobin.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Enjoy Happy hour 3-6pm",
+    "url": "https://www.redrobin.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Monday-Friday / Enjoy snackable portions made for mixing, matching and sharing. Available only during Happy Hour. Ask your server for more information! Only available at participating locations.",
+    "url": "https://www.redrobin.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "$5 Chips & Salsa / Crispy Fried Pickles",
+    "url": "https://www.redrobin.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "$6 Pretzel Bites / Queso Fundido",
+    "url": "https://www.redrobin.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "$7 Crispy Jalape\u00f1o Coins / Mini Corn Dogs / 5 Bone-in Wings",
+    "url": "https://www.redrobin.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "$7 / $7.00 Sippable Drinks",
+    "url": "https://www.redrobin.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "$5 16 oz. domestic drafts / Upgrade to 22 oz. for only $2 more. / 6 oz. wine / Red or White",
+    "url": "https://www.redrobin.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "$6 Small Margarita / Small Spiked Freckled Lemonade / Small Long Island Iced Tea",
+    "url": "https://www.redrobin.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "$7 16 oz. Craft Drafts / Upgrade to 22 oz. for only $2 more.",
+    "url": "https://www.redrobin.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "$7 / $7.00 Footer",
+    "url": "https://www.redrobin.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "$7 / $7.00 Signup",
+    "url": "https://www.redrobin.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "$7 / $7.00 Sign",
+    "url": "https://www.redrobin.com/happy-hour"
+   }
+  ],
+  "menu_images": [
+   {
+    "src": "https://www.redrobin.com/sites/default/files/2026-03/happy-hour-canada-hero.jpg",
+    "url": "https://www.redrobin.com/happy-hour-ca"
+   },
+   {
+    "src": "https://www.redrobin.com/sites/default/files/2026-03/happy-hour-canada-hero-mobile.jpg",
+    "url": "https://www.redrobin.com/happy-hour-ca"
+   },
+   {
+    "src": "https://www.redrobin.com/sites/default/files/2026-07/happy-hour-hero_1.jpg",
+    "url": "https://www.redrobin.com/happy-hour"
+   }
+  ],
+  "name": "RED ROBIN GOURMET BURGERS & BREWS",
+  "osm_name": "Red Robin Gourmet Burgers and Brews",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 88,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.redrobin.com/locations/pa/warrington/valley-gate-442"
+   },
+   {
+    "hh": false,
+    "lines": 69,
+    "result": "ok, 5 quote(s)",
+    "url": "https://www.redrobin.com/june-specials"
+   },
+   {
+    "hh": true,
+    "lines": 107,
+    "result": "ok, 24 quote(s)",
+    "url": "https://www.redrobin.com/happy-hour-ca"
+   },
+   {
+    "hh": true,
+    "lines": 73,
+    "result": "ok, 13 quote(s)",
+    "url": "https://www.redrobin.com/happy-hour"
+   }
+  ],
+  "website": "https://www.redrobin.com/locations/pa/warrington/valley-gate-442",
+  "zone_id": "warminster_warrington"
  },
  "69118": {
   "address": "705 N 2ND ST, PHILADELPHIA PA 19123-3007",
@@ -30795,6 +32813,27 @@
   "website": "https://barbombon.com/",
   "zone_id": "center_city"
  },
+ "70686": {
+  "address": "201 EASTON RD, WARRINGTON PA 18976",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "BUFFALO WILD WINGS",
+  "osm_name": "Buffalo Wild Wings",
+  "pages": [
+   {
+    "result": "render failed: TimeoutError",
+    "url": "https://www.buffalowildwings.com/locations/us/pa/warrington/201-easton-road/sports-bar-1205/?utm_source=google-my-business&utm_medium=organic&utm_campaign=website-link&y_source=1_MjAxNjYxMTI5Ni03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D"
+   },
+   {
+    "hh": false,
+    "lines": 1,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.buffalowildwings.com/locations/us/pa/warrington/201-easton-road/sports-bar-1205/?utm_source=google-my-business&utm_medium=organic&utm_campaign=website-link&y_source=1_MjAxNjYxMTI5Ni03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D"
+   }
+  ],
+  "website": "https://www.buffalowildwings.com/locations/us/pa/warrington/201-easton-road/sports-bar-1205/?utm_source=google-my-business&utm_medium=organic&utm_campaign=website-link&y_source=1_MjAxNjYxMTI5Ni03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+  "zone_id": "warminster_warrington"
+ },
  "70777": {
   "address": "29 AIRPORT SQ, NORTH WALES PA 19454-1419",
   "crawled_at": "2026-09-01",
@@ -31040,6 +33079,40 @@
   ],
   "website": "https://www.marriott.com/hotels/travel/phlsa-sheraton-suites-philadelphia-airport/",
   "zone_id": "west_philly"
+ },
+ "70868": {
+  "address": "1949 MEETINGHOUSE RD, JAMISON PA 18929-1146",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Every Heritage Creek night golf event begins with a one-hour happy hour.",
+    "url": "https://www.heritagecreekgolfclub.com/event-hosting/night-glow-golf/"
+   }
+  ],
+  "name": "HERITAGE CREEK GOLF LLC",
+  "osm_name": "Heritage Creek Golf Club",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 68,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.heritagecreekgolfclub.com/"
+   },
+   {
+    "hh": false,
+    "lines": 73,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.heritagecreekgolfclub.com/event-hosting/"
+   },
+   {
+    "hh": true,
+    "lines": 71,
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.heritagecreekgolfclub.com/event-hosting/night-glow-golf/"
+   }
+  ],
+  "website": "http://www.heritagecreekgolfclub.com/",
+  "zone_id": "warminster_warrington"
  },
  "70872": {
   "address": "126 S 16TH ST, PHILADELPHIA PA 19102-2820",
@@ -32076,6 +34149,41 @@
   "website": "https://www.kimbertongolfclub.com/",
   "zone_id": "phoenixville"
  },
+ "72459": {
+  "address": "240 VETERANS WAY, WARMINSTER PA 18974-3534",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "HOLIDAY INN EXPRESS & SUITES",
+  "osm_name": "Holiday Inn Express & Suites Warminster - Horsham by IHG",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 295,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.ihg.com/holidayinnexpress/hotels/us/en/warminster/wrmpa/hoteldetail?cm_mmc=GoogleMaps-_-EX-_-US-_-WRMPA"
+   },
+   {
+    "hh": false,
+    "lines": 237,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.ihg.com/holidayinnexpress/hotels/ae/ar/warminster/wrmpa/hoteldetail"
+   },
+   {
+    "hh": false,
+    "lines": 237,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.ihg.com/holidayinnexpress/hotels/br/pt/warminster/wrmpa/hoteldetail"
+   },
+   {
+    "hh": false,
+    "lines": 237,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.ihg.com/holidayinnexpress/hotels/cn/zh/warminster/wrmpa/hoteldetail"
+   }
+  ],
+  "website": "https://www.ihg.com/holidayinnexpress/hotels/us/en/warminster/wrmpa/hoteldetail?cm_mmc=GoogleMaps-_-EX-_-US-_-WRMPA",
+  "zone_id": "warminster_warrington"
+ },
  "72540": {
   "address": "KING OF PRUSSIA TOWN CENTER  155 MAIN ST, KING OF PRUSSIA PA 19406",
   "crawled_at": "2026-09-01",
@@ -32863,6 +34971,41 @@
   "website": "https://www.thegoatsbeardphilly.com/location/the-goats-beard-wayne/",
   "zone_id": "wayne_radnor"
  },
+ "72775": {
+  "address": "485-487 YORK RD, WARMINSTER PA 18974-4517",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "487 YORK ROAD INC",
+  "osm_name": "Reese's Tavern",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 57,
+    "result": "ok, 0 quote(s)",
+    "url": "https://reesestavern.com/"
+   },
+   {
+    "hh": false,
+    "lines": 37,
+    "result": "ok, 0 quote(s)",
+    "url": "https://reesestavern.com/beer-menu/"
+   },
+   {
+    "hh": false,
+    "lines": 37,
+    "result": "ok, 0 quote(s)",
+    "url": "https://reesestavern.com/events/"
+   },
+   {
+    "hh": false,
+    "lines": 37,
+    "result": "ok, 0 quote(s)",
+    "url": "https://reesestavern.com/menu/"
+   }
+  ],
+  "website": "https://reesestavern.com/",
+  "zone_id": "warminster_warrington"
+ },
  "72806": {
   "address": "4160 MONUMENT RD, PHILADELPHIA PA 19131-1726",
   "crawled_at": "2026-09-01",
@@ -33501,6 +35644,21 @@
   ],
   "website": "https://www.walnutlanegolf.com/",
   "zone_id": "manayunk"
+ },
+ "81271": {
+  "address": "1133-1141 YORK RD, WARMINSTER PA 18974",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "WEIS MARKETS INC",
+  "osm_name": "Weis Markets",
+  "pages": [
+   {
+    "result": "robots.txt unreadable (403), treated as disallow",
+    "url": "https://www.weismarkets.com/stores/weis-markets-warminster-141/11583"
+   }
+  ],
+  "website": "https://www.weismarkets.com/stores/weis-markets-warminster-141/11583",
+  "zone_id": "warminster_warrington"
  },
  "81363": {
   "address": "50 THREE TUN RD, MALVERN PA 19355",
@@ -35028,6 +37186,29 @@
   "website": "https://bloomsdaycafe.com/",
   "zone_id": "center_city"
  },
+ "86242": {
+  "address": "720 WEST STREET RD, WARMINSTER PA 18974",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "THE GIANT COMPANY LLC",
+  "osm_name": "GIANT",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 94,
+    "result": "ok, 0 quote(s)",
+    "url": "https://stores.giantfoodstores.com/pa/warminster/720-west-street-rd?y_source=1_NDE5NTc5NC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D"
+   },
+   {
+    "hh": false,
+    "lines": 125,
+    "result": "ok, 0 quote(s)",
+    "url": "https://stores.giantfoodstores.com/pa/warminster/720-west-street-rd/delivery"
+   }
+  ],
+  "website": "https://stores.giantfoodstores.com/pa/warminster/720-west-street-rd?y_source=1_NDE5NTc5NC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+  "zone_id": "warminster_warrington"
+ },
  "86255": {
   "address": "1028 ARCH ST, PHILADELPHIA PA 19107",
   "crawled_at": "2026-08-06",
@@ -36033,6 +38214,23 @@
   ],
   "website": "https://avolakitchenandbar.com",
   "zone_id": "malvern_great_valley"
+ },
+ "90502": {
+  "address": "440 ALMSHOUSE RD, JAMISON PA 18929",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "NESHAMINY VALLEY GOLF CLUB",
+  "osm_name": "Neshaminy Valley Golf Club - OPEN to PUBLIC",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 35,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.neshaminygolf.com/"
+   }
+  ],
+  "website": "http://www.neshaminygolf.com/",
+  "zone_id": "warminster_warrington"
  },
  "90534": {
   "address": "970 RITTENHOUSE RD SUITE 400, EAGLEVILLE PA 19403",
@@ -37197,6 +39395,21 @@
   ],
   "website": "https://www.hilton.com/en/hotels/phlapes-embassy-suites-philadelphia-airport/",
   "zone_id": "west_philly"
+ },
+ "92829": {
+  "address": "230 VETERANS WAY, WARMINSTER PA 18974",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "HOME 2 AND SUITES",
+  "osm_name": "Home2 Suites by Hilton Warminster Horsham",
+  "pages": [
+   {
+    "result": "403 text/html",
+    "url": "https://www.hilton.com/en/hotels/phlwmht-home2-suites-warminster-horsham/?SEO_id=GMB-AMER-HT-PHLWMHT"
+   }
+  ],
+  "website": "https://www.hilton.com/en/hotels/phlwmht-home2-suites-warminster-horsham/?SEO_id=GMB-AMER-HT-PHLWMHT",
+  "zone_id": "warminster_warrington"
  },
  "92845": {
   "address": "1 W COURT ST, DOYLESTOWN PA 18901-4210",
@@ -39096,6 +41309,33 @@
   ],
   "website": "https://www.artifactales.com/",
   "zone_id": "willow_grove_horsham"
+ },
+ "96136": {
+  "address": "855 EASTON RD, WARRINGTON PA 18976-1855",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "PATS SELECT OF WARRINGTON LLC",
+  "osm_name": "Select Pizza | Grill",
+  "pages": [
+   {
+    "result": "rendered: 1 lines -> 99",
+    "url": "https://www.selectwarrington.com/"
+   },
+   {
+    "hh": false,
+    "lines": 99,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.selectwarrington.com/"
+   },
+   {
+    "hh": false,
+    "lines": 1,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.selectwarrington.com"
+   }
+  ],
+  "website": "https://www.selectwarrington.com/",
+  "zone_id": "warminster_warrington"
  },
  "96258": {
   "address": "117-121 SOUTH AVE, MEDIA PA 19063-3218",

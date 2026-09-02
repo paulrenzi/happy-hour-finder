@@ -46,40 +46,6 @@
    "deals": []
   },
   {
-   "lid": "58431",
-   "name": "Azie Media",
-   "address": "217-219 W State St, Media PA 19063",
-   "zone_id": "media",
-   "license_type": "Hotel (Liquor)",
-   "id": "58431",
-   "plcb_name": "AZIE RESTAURANT",
-   "website": "http://azie-restaurant.com/",
-   "lat": 39.918588899999996,
-   "lng": -75.3927929,
-   "geo_precision": "place",
-   "deals": []
-  },
-  {
-   "lid": "64352",
-   "name": "Barnieu Restaurant Group",
-   "address": "36-38 W State St, Media PA 19063",
-   "zone_id": "media",
-   "license_type": "Restaurant (Liquor)",
-   "id": "64352",
-   "plcb_name": "BARNIEU RESTAURANT GROUP LLC",
-   "deals": []
-  },
-  {
-   "lid": "53485",
-   "name": "Barnieu Restaurant Management",
-   "address": "214 West State St, Media PA 19063",
-   "zone_id": "media",
-   "license_type": "Restaurant (Liquor)",
-   "id": "53485",
-   "plcb_name": "BARNIEU RESTAURANT MANAGEMENT, LLC",
-   "deals": []
-  },
-  {
    "lid": "72630",
    "name": "Brick & Brew",
    "address": "26 W State St, Media PA 19063",
@@ -90,6 +56,20 @@
    "website": "http://bricknbrewpub.com/",
    "lat": 39.917950399999995,
    "lng": -75.3905379,
+   "geo_precision": "place",
+   "deals": []
+  },
+  {
+   "lid": "67012",
+   "name": "Broad Table Tavern",
+   "address": "10-12 S Chester Rd, Swarthmore PA 19081",
+   "zone_id": "media",
+   "license_type": "Hotel (Liquor)",
+   "id": "67012",
+   "plcb_name": "PARRISH LLC",
+   "website": "https://www.broadtabletavern.com/",
+   "lat": 39.9016491,
+   "lng": -75.3511398,
    "geo_precision": "place",
    "deals": []
   },
@@ -136,16 +116,6 @@
    "deals": []
   },
   {
-   "lid": "101350",
-   "name": "Dkd 109",
-   "address": "109-111 W State St 2Nd Floor, Media PA 19063",
-   "zone_id": "media",
-   "license_type": "Restaurant (Liquor)",
-   "id": "101350",
-   "plcb_name": "DKD 109 LLC",
-   "deals": []
-  },
-  {
    "lid": "112003",
    "name": "Epic Double Decker",
    "address": "415 E Baltimore Ave, Media PA 19063",
@@ -160,23 +130,17 @@
    "deals": []
   },
   {
-   "lid": "73416",
-   "name": "Four Friends Enterprise",
-   "address": "12 W State St, Media PA 19063",
-   "zone_id": "media",
-   "license_type": "Restaurant (Liquor)",
-   "id": "73416",
-   "plcb_name": "FOUR FRIENDS ENTERPRISE LLC",
-   "deals": []
-  },
-  {
    "lid": "69812",
-   "name": "Jm Winner",
+   "name": "John's Grille",
    "address": "110-116 S Monroe St, Media PA 19063",
    "zone_id": "media",
    "license_type": "Restaurant (Liquor)",
    "id": "69812",
    "plcb_name": "JM WINNER INC",
+   "website": "https://www.facebook.com/pages/Johns-Grill-Inc/115852268436754",
+   "lat": 39.9172294,
+   "lng": -75.3878744,
+   "geo_precision": "place",
    "deals": []
   },
   {
@@ -204,6 +168,20 @@
    "website": "http://margaretkuoskitchen.com/",
    "lat": 39.916746499999995,
    "lng": -75.43386900000002,
+   "geo_precision": "place",
+   "deals": []
+  },
+  {
+   "lid": "53485",
+   "name": "Maris",
+   "address": "214 West State St, Media PA 19063",
+   "zone_id": "media",
+   "license_type": "Restaurant (Liquor)",
+   "id": "53485",
+   "plcb_name": "BARNIEU RESTAURANT MANAGEMENT, LLC",
+   "website": "https://www.marisseafood.com/",
+   "lat": 39.9182749,
+   "lng": -75.3926994,
    "geo_precision": "place",
    "deals": []
   },
@@ -270,13 +248,17 @@
    "deals": []
   },
   {
-   "lid": "67012",
-   "name": "Parrish",
-   "address": "10-12 S Chester Rd, Swarthmore PA 19081",
+   "lid": "73416",
+   "name": "Pairings Cigar Bar",
+   "address": "12 W State St, Media PA 19063",
    "zone_id": "media",
-   "license_type": "Hotel (Liquor)",
-   "id": "67012",
-   "plcb_name": "PARRISH LLC",
+   "license_type": "Restaurant (Liquor)",
+   "id": "73416",
+   "plcb_name": "FOUR FRIENDS ENTERPRISE LLC",
+   "website": "http://www.pairingscigarbar.com/",
+   "lat": 39.917775999999996,
+   "lng": -75.39000999999999,
+   "geo_precision": "place",
    "deals": []
   },
   {
@@ -370,6 +352,20 @@
    "website": "https://swarthmore.coop/",
    "lat": 39.902358,
    "lng": -75.348916,
+   "geo_precision": "place",
+   "deals": []
+  },
+  {
+   "lid": "64352",
+   "name": "Tap 24",
+   "address": "36-38 W State St, Media PA 19063",
+   "zone_id": "media",
+   "license_type": "Restaurant (Liquor)",
+   "id": "64352",
+   "plcb_name": "BARNIEU RESTAURANT GROUP LLC",
+   "website": "https://tap24media.com/",
+   "lat": 39.917913999999996,
+   "lng": -75.39088799999999,
    "geo_precision": "place",
    "deals": []
   },

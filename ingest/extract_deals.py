@@ -36,6 +36,7 @@ import json
 import os
 import re
 import sys
+import urllib.parse
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -52,6 +53,7 @@ HITS = os.path.join(REPO, "data", "crawl_hits.json")
 SITES = os.path.join(REPO, "data", "venue_sites.json")
 OUT = os.path.join(REPO, "data", "deals_extracted.json")
 COORDS = os.path.join(REPO, "data", "venue_coords.json")
+BASE = os.path.join(REPO, "data", "venue_base.json")
 PAGES = os.path.join(REPO, "data", "pages")
 WINDOWS_LLM = os.path.join(REPO, "data", "windows_pages_llm.json")
 TRANSCRIPTS = os.path.join(REPO, "data", "menu_image_transcripts.json")
@@ -196,7 +198,14 @@ def code_days(text):
 # days_in() returned the empty set on it -- so the document we could not
 # reach would have been refused for naming no day even once we could.
 EVERYDAY_RE = re.compile(r"\b(?:daily|every ?day|every\W{0,3}single\W{0,3}day|all week|7 days a week|seven days)\b", re.I)
-WEEKDAY_RE = re.compile(r"\bweekdays?\b", re.I)
+# 'weeknights' is Monday to Friday said the other way, and it was missing.
+# DELCO.today: 'Off the Rail ... has $3 domestic beers during happy hours
+# weeknights, 4 to 6 PM'. days_in() found no day at all, so the clock fell
+# through to the every-day inference below and the card shipped SEVEN days off
+# a quote that plainly says five. A word we do not know reads as silence, and
+# silence here means daily -- so a gap in this vocabulary is not a miss, it is
+# a wrong card.
+WEEKDAY_RE = re.compile(r"\bweek\s*(?:day|night)s?\b", re.I)
 WEEKEND_RE = re.compile(r"\bweekends?\b", re.I)
 
 # '4p - 6p' is how a bar writes it about as often as '4pm - 6pm', and requiring
@@ -215,8 +224,17 @@ TIME_RE = re.compile(
 HEDGE_RE = re.compile(
     r"vary by location|varies by location|contact your local|check with your|"
     r"only valid at|at participating|participating locations|coming soon|"
+    r"canada locations? only|only (?:at |in )?canada|"
     r"pre.?book|book your|private events?|reserve your|"
-    r"\bi (?:have|had|was|went|love|found)\b|\bwe went\b|my (?:new|favorite)\b",
+    r"\bi (?:have|had|was|went|love|found)\b|\bwe went\b|my (?:new|favorite)\b|"
+    # A review that opens on the venue rather than on the reviewer. Pier Bar
+    # embeds 'Good happy hour spot (M-F 5-7p) with a cute theme...' on its own
+    # homepage; none of the first-person markers above are in it, so it read
+    # as the bar speaking, and its 5-7 was intersected with the bar's own
+    # 4-6 into a 5-6 window that neither the reviewer nor the bar ever said.
+    r"\bif you (?:like|love|want|enjoy|are|need)\b|"
+    r"\b(?:great|good|nice|cute|lovely|amazing|awesome|best) "
+    r"(?:\w+ ){0,2}(?:spot|place|vibe|vibes|find|hangout)\b",
     re.I)
 
 # A bar publishes its lunch, brunch and dinner service in exactly the shape of a
@@ -234,6 +252,23 @@ MEAL_RE = re.compile(
 # its 10pm late-night, the earlier picked its lunch. The page already says which
 # is which, so the deciding fact is the WORD, not the time.
 HH_RE = re.compile(r"happy\s*hour|social hour|power hour", re.I)
+FOREIGN_PROMO_URL_RE = re.compile(r"(?:^|[-_/])ca(?:[-_/]|$)", re.I)
+
+
+def refused_source_urls(hits):
+    """URLs that explicitly cannot evidence a PA location's hours.
+
+    The crawler splits a page into several quotes. A jurisdiction or
+    participating-location disclaimer may land in a different quote from the
+    clock, but it still governs the entire page.
+    """
+    refused = set()
+    for hit in hits:
+        url = hit.get("url", "")
+        path = urllib.parse.urlsplit(url).path
+        if HEDGE_RE.search(hit.get("quote", "")) or FOREIGN_PROMO_URL_RE.search(path):
+            refused.add(url)
+    return refused
 
 # A fragment that states a schedule rather than naming a thing you can buy. The
 # same test crawl_sites makes; a list of item names contains none of this.
@@ -875,6 +910,90 @@ def lawful_days(windows):
     return kept
 
 
+# ------------------------------------------------------- the OTHER branch
+#
+# A restaurant group puts every location's happy hour on one website, and the
+# crawler reads them all. Spasso Italian Grill has a Media page saying 'Media |
+# Happy Hour / Every MONDAY - FRIDAY 4:00 - 6:00 PM' and a Philadelphia page
+# saying 'Philadelphia | Happy Hour / Every Tuesday - Friday 5-7PM'. Both were
+# pooled into the Media licence's deal, dedupe() published the OVERLAP, and the
+# Media board shipped Tuesday-Friday 5-6 PM: an hour short at the front, off a
+# quote printed on the same card that plainly says 4:00. Santucci's shipped its
+# North Broad card intersected with its University City one the same way.
+#
+# 🔑 A window nobody stated is not a cautious answer, it is a made-up one. The
+# site itself labels which branch is speaking -- in the head of the line, or in
+# the URL path -- and where it does, we can simply believe it.
+ZONES = os.path.join(REPO, "data", "zones.json")
+BRANCH_LABEL_WORDS = 3  # a branch label opens the line; it is not buried in it
+_MUNI_NOISE = re.compile(r"\b(twp|township|boro|borough|city|county)\b\.?", re.I)
+# A compass point is half of a zone's name and none of a venue's town.
+_NOT_A_PLACE = {"west", "east", "north", "south", "northwest", "northeast",
+                "southwest", "southeast", "main", "line", "greater"}
+
+
+def place_names(base=None):
+    """Every town, district and municipality name we know, lowercased."""
+    out = set()
+    if os.path.exists(ZONES):
+        for z in json.load(open(ZONES, encoding="utf-8"))["zones"]:
+            # A zone NAME is a compound -- 'Philadelphia - University City /
+            # West', 'Blue Bell / Plymouth Meeting' -- and only its parts are
+            # things a restaurant group writes on a page. Kept whole, the
+            # vocabulary held no entry for 'University City', and Santucci's
+            # North Broad card went on shipping its University City hours.
+            for part in re.split(r"[—–/,&]|\band\b", z["name"]):
+                part = part.strip().lower()
+                if len(part) >= 4 and part not in _NOT_A_PLACE:
+                    out.add(part)
+            for muni, _county in z.get("municipalities") or []:
+                name = _MUNI_NOISE.sub(" ", muni).strip().lower()
+                if len(name) >= 4:
+                    out.add(name)
+    for v in (base or {}).values():
+        city = venue_city(v.get("address"))
+        if city:
+            out.add(city)
+    return {p for p in out if len(p) >= 4}
+
+
+def venue_city(address):
+    """'217-219 W State St, Media PA 19063' -> 'media'."""
+    tail = (address or "").rsplit(",", 1)[-1]
+    tail = re.sub(r"\b[A-Z]{2}\b\s*\d{5}(?:-\d{4})?\s*$", "", tail.strip())
+    return re.sub(r"\s+", " ", tail).strip().lower() or None
+
+
+def places_in(text, places, head_words=None):
+    """The place names this text states, optionally only near its head."""
+    if head_words is not None:
+        text = " ".join(text.split()[:head_words + 4])
+    low = " " + re.sub(r"[^a-z0-9]+", " ", (text or "").lower()) + " "
+    words = low.split()
+    found = set()
+    for p in places:
+        n = len(p.split())
+        if any(words[i:i + n] == p.split() for i in range(len(words) - n + 1)):
+            if head_words is None:
+                found.add(p)
+            else:
+                at = next(i for i in range(len(words) - n + 1)
+                          if words[i:i + n] == p.split())
+                if at < head_words:
+                    found.add(p)
+    return found
+
+
+def another_branch(hit, city, places):
+    """True when this quote is labelled as a DIFFERENT location's."""
+    if not city:
+        return False
+    found = places_in(hit["quote"], places, head_words=BRANCH_LABEL_WORDS)
+    found |= places_in(urllib.parse.urlsplit(hit["url"]).path.replace("/", " "),
+                       places)
+    return bool(found) and city not in found
+
+
 def one_per_osm(hits, sites):
     """[(lid, crawl_hits_entry)] -- one entry per real bar, in a stable order.
 
@@ -909,6 +1028,8 @@ def main():
                              if os.path.exists(TRANSCRIPTS) else {})
     venues, stats, kept, rejects = [], collections.Counter(), [], []
     seen_ids = set()
+    places = place_names(json.load(open(BASE, encoding="utf-8"))
+                         if os.path.exists(BASE) else {})
     for lid, v in one_per_osm(hits, sites):
         # The crawl found a menu picture and the vision pass transcribed it:
         # the happy-hour lines of that transcript are candidates, and they
@@ -919,9 +1040,16 @@ def main():
         pic_cands = [({"url": url, "quote": span}, ws)
                      for span in spans for ws in [windows_from(span)] if ws]
         cands = []
+        city = venue_city(v["address"])
+        refused_urls = refused_source_urls(v["hits"])
         for h in v["hits"]:
+            if h["url"] in refused_urls:
+                continue
             ws = windows_from(h["quote"])
             if not ws:
+                continue
+            if another_branch(h, city, places):
+                stats["  quote is another location of the same business"] += 1
                 continue
             # A clock that runs longer than any happy hour may is the venue's
             # OPENING hours: Valley Forge Pizza's /happy-hours page says
@@ -978,6 +1106,29 @@ def main():
         # happy hour, so dedupe() can settle a contested day on the venue's word.
         windows = dedupe([dict(w, _hh=bool(HH_RE.search(h["quote"])))
                           for h, ws in cands for w in ws])
+        # ...but the quote SHOWN must be one that survived. The richest quote
+        # is not always a published one: Lansdale Tavern's longest was its
+        # 'Late Night Menu / Sunday - Thursday: 9pm - 11pm', which dedupe threw
+        # out in favour of the homepage's 4-6pm -- and the card then printed a
+        # sentence about 9pm over a 4pm window. Reading a card is how a wrong
+        # window gets found, so the sentence under it has to be about it.
+        shipped = {(w["dow"], w["start"], w["end"]) for w in windows}
+        lead = next((c[0] for c in cands
+                     if any((w["dow"], w["start"], w["end"]) in shipped for w in c[1])),
+                    lead)
+        # Every quote that fed a published window, not only the one printed.
+        # A bar states its day happy hour in one line and its night one in
+        # another (Bar Bombon), or restates its hours on a second page with a
+        # different clock (Fava) -- and the card carried ONE of them as its
+        # whole evidence, so its own quote could not account for what it
+        # published. Keeping the set is what makes tests/window_quote_check.py
+        # able to ask an honest question.
+        days = {w["dow"] for w in windows}
+        support = []
+        for q in [lead["quote"]] + [c[0]["quote"] for c in cands
+                                    if any(w["dow"] in days for w in c[1])]:
+            if q not in support:
+                support.append(q)
         deal = {
             "type": "happy_hour",
             "windows": windows,
@@ -987,7 +1138,9 @@ def main():
             "confidence": "unconfirmed",
             "last_verified_at": v["crawled_at"],
             "verified_by": "auto_extract",
-            "source": {"kind": "venue_site", "url": lead["url"], "quote": lead["quote"]},
+            "source": {"kind": "venue_site", "url": lead["url"],
+                       "quote": lead["quote"],
+                       "quotes": support},
         }
         errs = validate_deal(deal)
         if errs:
@@ -1008,6 +1161,13 @@ def main():
                 lead = live[0][0]
                 deal["source"]["url"] = lead["url"]
                 deal["source"]["quote"] = lead["quote"]
+                left = {w["dow"] for w in deal["windows"]}
+                still = []
+                for q in [lead["quote"]] + [c[0]["quote"] for c in cands
+                                            if any(w["dow"] in left for w in c[1])]:
+                    if q not in still:
+                        still.append(q)
+                deal["source"]["quotes"] = still
                 errs = validate_deal(deal)
                 if not errs:
                     stats["  kept after dropping an unlawful day"] += 1

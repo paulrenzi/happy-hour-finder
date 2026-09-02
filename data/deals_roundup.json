@@ -132,6 +132,114 @@
    ]
   },
   {
+   "id": "azie-media-media",
+   "lid": "58431",
+   "name": "Azie Media",
+   "plcb_name": "AZIE RESTAURANT",
+   "address": "217-219 W STATE ST, MEDIA PA 19063-3112",
+   "zone_id": "media",
+   "license_type": "",
+   "website": "http://azie-restaurant.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "roundup_extract",
+     "source": {
+      "kind": "roundup",
+      "url": "https://delco.today/2025/04/rooftopbars-delaware-county/",
+      "outlet": "DELCO.today",
+      "published": "2025-04-17",
+      "quote": "Azie in Media has a happy hour on weekdays from 4 to 6 PM, and an indoor and outdoor bar area with scenic views of Media.",
+      "note": "DELCO.today, April 2025"
+     }
+    }
+   ]
+  },
+  {
+   "id": "off-the-rail-media-media",
+   "lid": "101350",
+   "name": "Off the Rail - Media",
+   "plcb_name": "DKD 109 LLC",
+   "address": "109-111 W STATE ST 2ND FLOOR, MEDIA PA 19063-3203",
+   "zone_id": "media",
+   "license_type": "",
+   "website": "https://offtherailmedia.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "roundup_extract",
+     "source": {
+      "kind": "roundup",
+      "url": "https://delco.today/2025/04/rooftopbars-delaware-county/",
+      "outlet": "DELCO.today",
+      "published": "2025-04-17",
+      "quote": "Off the Rail , also in Media, has $3 domestic beers during happy hours weeknights, 4 to 6 PM, enjoyed at its rooftop bar with views of State Street below.",
+      "note": "DELCO.today, April 2025"
+     }
+    }
+   ]
+  },
+  {
    "id": "artillery-brewing-company-west-chester",
    "lid": "97130",
    "name": "Artillery Brewing Company",
@@ -181,66 +289,6 @@
       "outlet": "County Lines Magazine",
       "published": "2024-05-30",
       "quote": "There is something cathartic about ordering a “Fog of War” after a tough day. If you’re in a fighting mood, head to Artillery Brewing Company, where the focus is on the beer — and the veterans. Feeling battered? Call in “The Militia.” You’ll feel better as soon as you do. Happy Hours, Tuesday to Friday, 4 to 6. $2 off listed pints. 333 Granite Alley. ArtilleryBrewing.com",
-      "note": "County Lines Magazine, May 2024"
-     }
-    }
-   ]
-  },
-  {
-   "id": "ryan-s-pub-west-chester",
-   "lid": "47717",
-   "name": "Ryan’s Pub",
-   "plcb_name": "P. J. RYAN'S, INC.",
-   "address": "124 W GAY ST, WEST CHESTER PA 19380-2915",
-   "zone_id": "west_chester",
-   "license_type": "",
-   "website": "https://ryans-pub.com",
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "17:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 2,
-       "start": "17:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 3,
-       "start": "17:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 4,
-       "start": "17:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 5,
-       "start": "17:00",
-       "end": "19:00"
-      }
-     ],
-     "items": [
-      {
-       "category": "cocktail",
-       "label": "specialty cocktails",
-       "amount_off_usd": 2.0
-      }
-     ],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-09-02",
-     "verified_by": "roundup_extract",
-     "source": {
-      "kind": "roundup",
-      "url": "https://countylinesmagazine.com/article/cheers-its-happy-hour-in-west-chester-pa/",
-      "outlet": "County Lines Magazine",
-      "published": "2024-05-30",
-      "quote": "At Ryan’s, Happy Hour is simple: $1 off all beers, drinks and wine plus $2 off specialty cocktails and martinis. Apps like battered pickle chips or saucy poutine are $6. Drink specials run weekdays, 5 to 7, food until 8. 124 W. Gay St. Ryans-Pub.com",
       "note": "County Lines Magazine, May 2024"
      }
     }
@@ -306,50 +354,6 @@
       "outlet": "County Lines Magazine",
       "published": "2024-05-30",
       "quote": "Looking for a place to pop in for a quick drink? There’s plenty of room at Santino’s snaking granite bar. Happy Hour runs Monday through Friday, 5 to 7. Enjoy $5 Tito’s, $6 wine and $3.50 domestic bottles. 40 E. Market St. SantinosTapAndTable.com",
-      "note": "County Lines Magazine, May 2024"
-     }
-    }
-   ]
-  },
-  {
-   "id": "wrong-crowd-beer-company-west-chester",
-   "lid": "103733",
-   "name": "Wrong Crowd Beer Company",
-   "plcb_name": "WRONG CROWD BEER CO",
-   "address": "342 HANNUM AVE, WEST CHESTER PA 19380-2859",
-   "zone_id": "west_chester",
-   "license_type": "",
-   "website": "https://wrongcrowdbeer.com/",
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "15:00",
-       "end": "17:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-09-02",
-     "verified_by": "roundup_extract",
-     "source": {
-      "kind": "roundup",
-      "url": "https://countylinesmagazine.com/article/cheers-its-happy-hour-in-west-chester-pa/",
-      "outlet": "County Lines Magazine",
-      "published": "2024-05-30",
-      "quote": "Wrong Crowd is located just outside the downtown district in a converted warehouse, but you’re not there for the scenery. Last year Wrong Crowd was named one of the country’s fastest-growing breweries. Want to know why? Stop by during Happy Hour and try a pint for just $4. Happy Hour runs Wednesday and Thursday, 4 to 6, and Friday, 3 to 5. 342 Hannum Ave. WrongCrowdBeer.com",
       "note": "County Lines Magazine, May 2024"
      }
     }
@@ -426,71 +430,6 @@
    ]
   },
   {
-   "id": "opa-taverna-west-chester",
-   "lid": "106742",
-   "name": "Opa Taverna",
-   "plcb_name": "OPA TAVERNA INC",
-   "address": "40-44 E GAY ST, WEST CHESTER PA 19380",
-   "zone_id": "west_chester",
-   "license_type": "",
-   "website": "https://opataverna.com/",
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "15:00",
-       "end": "17:00"
-      },
-      {
-       "dow": 2,
-       "start": "15:00",
-       "end": "17:00"
-      },
-      {
-       "dow": 3,
-       "start": "15:00",
-       "end": "17:00"
-      },
-      {
-       "dow": 4,
-       "start": "15:00",
-       "end": "17:00"
-      }
-     ],
-     "items": [
-      {
-       "category": "wine",
-       "label": "wines",
-       "price_usd": 8.0
-      },
-      {
-       "category": "draft",
-       "label": "select beers",
-       "price_usd": 5.0
-      },
-      {
-       "category": "food",
-       "label": "apps",
-       "price_usd": 10.0
-      }
-     ],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-09-02",
-     "verified_by": "roundup_extract",
-     "source": {
-      "kind": "roundup",
-      "url": "https://countylinesmagazine.com/article/cheers-its-happy-hour-in-west-chester-pa/",
-      "outlet": "County Lines Magazine",
-      "published": "2024-05-30",
-      "quote": "When the weather is nice, duck out early and enjoy a glass of sangria and some people-watching from Opa’s Gay Street patio. Happy Hour runs Monday through Thursday, 3 to 5, with $8 wines and sangria, $5 select beers and $10 apps. Menu includes Greek favorites like hummus, spanakopita and Opa chips. 40-44 E. Gay St. OpaTaverna.com",
-      "note": "County Lines Magazine, May 2024"
-     }
-    }
-   ]
-  },
-  {
    "id": "roots-cafe-west-chester",
    "lid": "69681",
    "name": "Roots Cafe",
@@ -519,174 +458,6 @@
       "outlet": "County Lines Magazine",
       "published": "2024-05-30",
       "quote": "New to the Happy Hour lineup is Roots, hosting in the garden on summer Saturdays, 5 to 8. Enjoy live music, $10 drink specials, $10 tapas menu. Nibble wings, chicken sandwich sliders, crispy fingerlings and even rainbow carrots. 133 E. Gay St. RootsCafeWC.com",
-      "note": "County Lines Magazine, May 2024"
-     }
-    }
-   ]
-  },
-  {
-   "id": "kildare-s-irish-pub-west-chester",
-   "lid": "71516",
-   "name": "Kildare's Irish Pub",
-   "plcb_name": "CHESTER COUNTY PUB COMPANY LLC",
-   "address": "18-22 W GAY ST, WEST CHESTER PA 19380-3011",
-   "zone_id": "west_chester",
-   "license_type": "",
-   "website": "https://kildarespubwc.com",
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-09-02",
-     "verified_by": "roundup_extract",
-     "source": {
-      "kind": "roundup",
-      "url": "https://countylinesmagazine.com/article/cheers-its-happy-hour-in-west-chester-pa/",
-      "outlet": "County Lines Magazine",
-      "published": "2024-05-30",
-      "quote": "Looking for a spirited Irish bar? Kildare’s is the place. It gets packed with college students as the night goes on, but the early evening hours deliver a more mixed crowd. Happy Hour runs weekdays, 4 to 6. All drinks are $3 off, flatbreads are $8, and nachos are half-off. 18 W. Gay St. KildaresPubWC.com",
-      "note": "County Lines Magazine, May 2024"
-     }
-    }
-   ]
-  },
-  {
-   "id": "m-s-mexicali-cantina-west-chester",
-   "lid": "62944",
-   "name": "Más Mexicali Cantina",
-   "plcb_name": "MAS WEST CHESTER LLC",
-   "address": "102 E MARKET ST, WEST CHESTER PA 19382-3153",
-   "zone_id": "west_chester",
-   "license_type": "",
-   "website": "https://www.masmexicali.com/",
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-09-02",
-     "verified_by": "roundup_extract",
-     "source": {
-      "kind": "roundup",
-      "url": "https://countylinesmagazine.com/article/cheers-its-happy-hour-in-west-chester-pa/",
-      "outlet": "County Lines Magazine",
-      "published": "2024-05-30",
-      "quote": "Work is done. Your colleagues are waiting. Grab the gang and go to Más, preferably to the rooftop, where the margaritas are $5 and the apps are half-off. The relaxed So-Cal vibe will soon have you on beach time. Happy Hour is Tuesday to Friday, 4 to 6, and can be paired with daily drink specials like $4 Coronas or $3 Tequila Sunrises for even more savings. 102 E. Market St. MasMexicali.com",
-      "note": "County Lines Magazine, May 2024"
-     }
-    }
-   ]
-  },
-  {
-   "id": "sedona-taphouse-west-chester",
-   "lid": "101577",
-   "name": "Sedona Taphouse",
-   "plcb_name": "SEDONA TAPHOUSE",
-   "address": "44 W GAY ST, WEST CHESTER PA 19380",
-   "zone_id": "west_chester",
-   "license_type": "",
-   "website": "https://sedonataphouse.com/locations/west-chester-pa/",
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [
-      {
-       "category": "wine",
-       "label": "wine",
-       "price_usd": 6.9
-      },
-      {
-       "category": "draft",
-       "label": "bottled beers",
-       "discount_pct": 50
-      }
-     ],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-09-02",
-     "verified_by": "roundup_extract",
-     "source": {
-      "kind": "roundup",
-      "url": "https://countylinesmagazine.com/article/cheers-its-happy-hour-in-west-chester-pa/",
-      "outlet": "County Lines Magazine",
-      "published": "2024-05-30",
-      "quote": "When you’ve got a group to impress, Sedona it is. The Southwest-inspired steakhouse maintains a sizeable and eclectic Happy Hour menu, with guacamole, flatbreads and sliders all under $10. Add half-price bottled beers and $6.90 wine and cocktails and everybody’s happy. Specials run weekdays from 4 to 6. Just get there early. It can get very crowded. 44 W. Gay St., Ste. 1. SedonaTaphouse.com",
       "note": "County Lines Magazine, May 2024"
      }
     }
@@ -741,6 +512,81 @@
       "outlet": "County Lines Magazine",
       "published": "2024-05-30",
       "quote": "When it’s nice, check out the redesigned “Florida Room,” a back patio that would make Jimmy Buffet proud. Happy Hour runs weekdays, 4 to 6. Beers are $2, well drinks $3, plus limited food specials like the $4 dog and tot combo. 146 W. Gay St. Jitters-WC.com",
+      "note": "County Lines Magazine, May 2024"
+     }
+    }
+   ]
+  },
+  {
+   "id": "serum-kitchen-taphouse-west-chester",
+   "lid": "101307",
+   "name": "Serum Kitchen & Taphouse",
+   "plcb_name": "SLOW HAND",
+   "address": "30 N Church St, West Chester PA 19380",
+   "zone_id": "west_chester",
+   "license_type": "",
+   "website": "",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "wine",
+       "label": "glasses of house wine",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "label": "house margaritas",
+       "price_usd": 8.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "roundup_extract",
+     "source": {
+      "kind": "roundup",
+      "url": "https://countylinesmagazine.com/article/cheers-its-happy-hour-in-west-chester-pa/",
+      "outlet": "County Lines Magazine",
+      "published": "2024-05-30",
+      "quote": "Newcomer Serum Kitchen & Taphouse offers Happy Hour all working week long, 4 to 6. Choose from a selection of $10 apps like smoked pork sliders or steak skewers and fries. Wash them down with $5 side-pull lagers, $8 glasses of house wine and, if you are really ready to say goodbye to the day, $8 house margaritas or old fashioneds. 142 E. Market St. SerumKitchenAndTaphouse.com",
       "note": "County Lines Magazine, May 2024"
      }
     }
@@ -812,9 +658,9 @@
    ]
   },
   {
-   "id": "barnaby-s-west-chester",
+   "id": "lively-west-chester",
    "lid": "130939",
-   "name": "Barnaby’s",
+   "name": "Lively",
    "plcb_name": "BARNABY'S OF WEST CHESTER",
    "address": "7-15 S High St, West Chester PA 19382",
    "zone_id": "west_chester",
@@ -937,120 +783,6 @@
       "published": "2024-05-30",
       "quote": "Limoncello has a great bar and, when the weather is nice, a great patio. Unfortunately, everyone knows it. Get there early for Happy Hour specials like $12 martinis, $8 wines, $5 drafts and discounted apps, like calamari fritti served with three dipping sauces. Order a grapefruit paloma and give into the bar’s buzzy energy. Happy Hour runs Tuesday through Friday, 4 to 6. 9 N. Walnut St. LimoncelloRestaurant.com",
       "note": "County Lines Magazine, May 2024"
-     }
-    }
-   ]
-  },
-  {
-   "id": "side-bar-restaurant-west-chester",
-   "lid": "61942",
-   "name": "Side Bar & Restaurant",
-   "plcb_name": "S BAR 10 INC",
-   "address": "10-12-14 E Gay St, West Chester PA 19380",
-   "zone_id": "west_chester",
-   "license_type": "",
-   "website": "",
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 3,
-       "start": "16:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 4,
-       "start": "16:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "19:00"
-      }
-     ],
-     "items": [
-      {
-       "category": "draft",
-       "label": "select drafts",
-       "price_usd": 4.0
-      },
-      {
-       "category": "wine",
-       "label": "house wine",
-       "price_usd": 5.0
-      },
-      {
-       "category": "food",
-       "label": "appetizers",
-       "discount_pct": 50
-      }
-     ],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-09-02",
-     "verified_by": "roundup_extract",
-     "source": {
-      "kind": "roundup",
-      "url": "https://countylinesmagazine.com/article/cheers-its-happy-hour-in-west-chester-pa/",
-      "outlet": "County Lines Magazine",
-      "published": "2024-05-30",
-      "quote": "Side Bar has an extensive beer selection, but you’ll have to wait until Wednesday to sip at a discount. Happy Hour runs Wednesday to Friday, 4 to 7, with $4 select drafts, $5 house wine, $5 Tito’s and half-price appetizers, like sweet potato tater tots. 10 E. Gay St. SideBarAndRestaurant.com",
-      "note": "County Lines Magazine, May 2024"
-     }
-    }
-   ]
-  },
-  {
-   "id": "pietro-s-prime-west-chester",
-   "lid": "58333",
-   "name": "Pietro’s Prime",
-   "plcb_name": "PIETROS PRIME INC",
-   "address": "125 W MARKET ST, WEST CHESTER PA 19382-2901",
-   "zone_id": "west_chester",
-   "license_type": "",
-   "website": "https://www.pietrosprime.com",
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "17:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 2,
-       "start": "17:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 3,
-       "start": "17:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 4,
-       "start": "17:00",
-       "end": "19:00"
-      },
-      {
-       "dow": 5,
-       "start": "17:00",
-       "end": "19:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-09-02",
-     "verified_by": "roundup_extract",
-     "source": {
-      "kind": "roundup",
-      "url": "https://countylinesmagazine.com/article/happy-hours-in-west-chester-pa/",
-      "outlet": "County Lines Magazine",
-      "published": "2021-12-31",
-      "quote": "The work day’s done and you’re ready for a drink, maybe some light piano. Pietro’s will treat you right. Enjoy your drink of choice at the beautiful bar, at $1 off. Check out the martini list! And half price on its upscale apps menu, including black & white tuna, Pietro’s crab cake or Shanghai calamari. Happy Hour is from 5 to 7, Monday–Friday. Don’t miss it! 125 W. Market St., PietrosPrime.com .",
-      "note": "County Lines Magazine, December 2021"
      }
     }
    ]
