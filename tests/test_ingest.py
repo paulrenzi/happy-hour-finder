@@ -3722,3 +3722,142 @@ class ACutLabelIsNotAWord(unittest.TestCase):
         for label in ("select drafts", "house wine", "wine by the glass", "martinis"):
             got = tidy_items([{"category": "draft", "label": label, "price_usd": 5.0}])
             self.assertEqual([i["label"] for i in got], [label], label)
+
+
+class TheSelectorGuardsTheWholeChain(unittest.TestCase):
+    """A website walks venue_sites -> venue_base -> web/data before needy sees it.
+
+    The guard written on 2026-09-02 for Doylestown compared only the first
+    pair. On Media the next day the base WAS rebuilt and the bundles were not,
+    so the guard stayed silent while needy named 9 venues where there were 26 --
+    the same silent scope cap, one link along. A guard on one link of a chain
+    is not a guard on the chain.
+    """
+
+    def test_every_link_of_the_chain_is_watched(self):
+        import needy
+        pairs = {(a, b) for a, b, _ in needy.STALE_CHAIN}
+        self.assertIn(("data/venue_sites.json", "data/venue_base.json"), pairs)
+        self.assertIn(("data/venue_base.json", "web/data/index.json"), pairs)
+
+    def test_a_stale_link_anywhere_raises_the_warning(self):
+        import needy, tempfile, time
+        with tempfile.TemporaryDirectory() as d:
+            for rel in ("data/venue_sites.json", "data/venue_base.json",
+                        "web/data/index.json"):
+                p = os.path.join(d, *rel.split("/"))
+                os.makedirs(os.path.dirname(p), exist_ok=True)
+                open(p, "w").write("{}")
+                time.sleep(0.01)
+            old_repo, needy.REPO = needy.REPO, d
+            try:
+                # In order: nothing is stale.
+                self.assertFalse(self._warns(needy))
+                # Touch the base alone: the bundles are now behind it.
+                os.utime(os.path.join(d, "data", "venue_base.json"), None)
+                self.assertTrue(self._warns(needy), "a stale BUNDLE must warn")
+                # Touch the sites alone: the base is now behind it.
+                os.utime(os.path.join(d, "data", "venue_sites.json"), None)
+                self.assertTrue(self._warns(needy), "a stale BASE must warn")
+            finally:
+                needy.REPO = old_repo
+
+    @staticmethod
+    def _warns(needy):
+        import io, contextlib
+        buf = io.StringIO()
+        with contextlib.redirect_stderr(buf):
+            got = needy.warn_if_base_is_stale()
+        return got and "INVISIBLE" in buf.getvalue()
+
+
+class ANeighbourAtTheSameHouseNumberIsNotTheVenue(unittest.TestCase):
+    """Media, 2026-09-02: THE FROSTED MUG is 527 E Baltimore PIKE.
+
+    Places answered with the ACME Markets at 527 E Baltimore AVE -- two real
+    and different Media streets that share a house number. The names agree on
+    nothing, so the row shipped a bar's licence under a supermarket's name,
+    website and photo.
+    """
+
+    def test_the_frosted_mug_stays_dropped(self):
+        from discover_places import HAND_DROPPED
+        self.assertIn("95653", HAND_DROPPED)
+
+    def test_it_is_not_in_the_frontier(self):
+        sites = json.load(open(os.path.join(REPO, "data", "venue_sites.json"),
+                               encoding="utf-8"))
+        self.assertNotIn("95653", sites)
+
+    def test_no_media_venue_ships_under_a_supermarket(self):
+        base = json.load(open(os.path.join(REPO, "data", "venue_base.json"),
+                              encoding="utf-8"))
+        v = base.get("95653")
+        if v:
+            self.assertNotIn("acme", (v.get("name") or "").lower())
+
+
+class AHandDropIsHonouredByEveryReader(unittest.TestCase):
+    """Two files read data/places_venues.json, and a drop must reach both.
+
+    discover_places.merge_sites() keeps a rejected join out of the crawl
+    frontier. build_venue_base.py reads the Places record DIRECTLY, so The
+    Frosted Mug -- dropped from the frontier on 2026-09-02 -- kept taking its
+    name, website and photo from the ACME Markets at the other Baltimore
+    street. A drop applied in one of two readers is not a drop.
+    """
+
+    def test_the_base_takes_nothing_from_a_dropped_places_record(self):
+        base = json.load(open(os.path.join(REPO, "data", "venue_base.json"),
+                              encoding="utf-8"))
+        from discover_places import HAND_DROPPED
+        places = json.load(open(os.path.join(REPO, "data", "places_venues.json"),
+                                encoding="utf-8"))
+        for lid in HAND_DROPPED:
+            v = base.get(lid)
+            if not v or lid not in places:
+                continue
+            claimed = (places[lid].get("places_name") or "").lower()
+            self.assertNotEqual((v.get("name") or "").lower(), claimed,
+                                f"{lid} still carries the dropped Places name")
+            self.assertFalse(v.get("website"), f"{lid} still carries a website")
+
+
+class ATrailingPriceLabelIsCutOnAWordBoundary(unittest.TestCase):
+    """The label runs backwards from the price and is capped at 29 characters.
+
+    'Housemade Buffalo Cauliflower Bites $6' shipped State Street Pub an item
+    called 'ade Buffalo Cauliflower Bites' (Media, 2026-09-02) -- the mirror
+    of the roundup's 'drafts and discounted appetiz'. A label short by a whole
+    word is a miss; one short by three letters is a wrong thing on a card.
+    """
+
+    def test_a_long_dish_name_is_cut_at_a_word(self):
+        from extract_deals import TRAILING_PRICE_RE
+        m = TRAILING_PRICE_RE.search("Housemade Buffalo Cauliflower Bites $6")
+        self.assertEqual(m.group(1), "Buffalo Cauliflower Bites")
+
+    def test_a_label_that_fits_is_untouched(self):
+        from extract_deals import TRAILING_PRICE_RE
+        for text, label in (("Volcano Fries $7", "Volcano Fries"),
+                            ("BBQ Pulled Pork Nachos $7", "BBQ Pulled Pork Nachos"),
+                            ("Margaritas $5", "Margaritas")):
+            self.assertEqual(TRAILING_PRICE_RE.search(text).group(1), label, text)
+
+    def test_no_shipped_item_label_starts_mid_word(self):
+        # The whole board, not just this one venue: a cut label is invisible
+        # unless somebody reads the card.
+        import glob
+        bad = []
+        for path in glob.glob(os.path.join(REPO, "web", "data", "zone-*.json")):
+            with open(path, encoding="utf-8") as fh:
+                venues = json.load(fh)["venues"]
+            for v in venues:
+                for d in v.get("deals", []):
+                    for it in d.get("items", []):
+                        q = (d.get("source") or {}).get("quote") or ""
+                        label = it["label"]
+                        i = q.find(label)
+                        if i > 0 and q[i - 1].isalpha():
+                            bad.append((v["name"], label))
+        self.assertEqual(bad, [], "item labels cut mid-word")

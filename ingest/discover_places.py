@@ -246,6 +246,12 @@ EVIDENCE_SAFE_MATCHES = {"text search", "nearby search"}
 HAND_DROPPED = {
     "127673": "First Watch is not the Residence Inn at 127 S Gulph Rd",
     "86292": "PrimoHoagies is not the Giant at 700 Nutt Rd",
+    # Media, 2026-09-02. THE FROSTED MUG's licence is 527 E Baltimore PIKE;
+    # Places answered with the ACME Markets at 527 E Baltimore AVE. Two real
+    # and different Media streets that share a house number, and the names
+    # agree on nothing -- so the row shipped a bar's licence under a
+    # supermarket's name, website and photo.
+    "95653": "ACME Markets on Baltimore Ave is not The Frosted Mug on Baltimore Pike",
 }
 
 

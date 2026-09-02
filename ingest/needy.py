@@ -16,25 +16,47 @@ import argparse, json, os, sys
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
+# The chain a website walks before this selector can see it. Every link is a
+# separate command, and skipping ANY of them shrinks the list with no error.
+STALE_CHAIN = (
+    ("data/venue_sites.json", "data/venue_base.json",
+     "python ingest/build_venue_base.py && python ingest/build_bundles.py"),
+    ("data/venue_base.json", "web/data/index.json",
+     "python ingest/build_bundles.py"),
+)
+
+
+def newest_bundle_mtime():
+    """The built board's age, from the index the build always rewrites."""
+    p = os.path.join(REPO, "web", "data", "index.json")
+    return os.path.getmtime(p) if os.path.exists(p) else None
+
+
 def warn_if_base_is_stale():
     """A website discovered but never carried onto the board is invisible here.
 
-    needy() reads the BUILT bundles, and a bundle only carries a website
-    because ingest/build_venue_base.py put one in data/venue_base.json. So a
-    discovery pass that is not followed by a base rebuild + a bundle rebuild
-    shrinks this list silently: on Doylestown (2026-09-02) it named 5 venues
-    where there were 33, which is the scope of every scoped run that followed.
+    needy() reads the BUILT bundles, so the website has to walk the whole
+    chain: venue_sites.json -> venue_base.json -> web/data/. On Doylestown
+    (2026-09-02) a missing base rebuild named 5 venues where there were 33,
+    which is the scope -- and the cost -- of every scoped run that follows.
+
+    🔑 The first version of this guard compared only the first pair, and on
+    Media the next day it stayed SILENT while doing exactly the same damage: a
+    base rebuilt and bundles that were not named 9 venues where there were 26.
+    A guard that watches one link of a chain is not a guard on the chain.
     """
-    sites = os.path.join(REPO, "data", "venue_sites.json")
-    base = os.path.join(REPO, "data", "venue_base.json")
-    if not (os.path.exists(sites) and os.path.exists(base)):
-        return
-    if os.path.getmtime(sites) > os.path.getmtime(base):
-        print("! data/venue_sites.json is NEWER than data/venue_base.json --\n"
-              "  websites discovered since the last base build are INVISIBLE to\n"
-              "  this selection, so the count below is too low. Run:\n"
-              "      python ingest/build_venue_base.py && python ingest/build_bundles.py\n",
-              file=sys.stderr)
+    stale = False
+    for newer, older, fix in STALE_CHAIN:
+        a, b = os.path.join(REPO, *newer.split("/")), os.path.join(REPO, *older.split("/"))
+        if not (os.path.exists(a) and os.path.exists(b)):
+            continue
+        if os.path.getmtime(a) > os.path.getmtime(b):
+            stale = True
+            print(f"! {newer} is NEWER than {older} --\n"
+                  "  websites discovered since then are INVISIBLE to this\n"
+                  "  selection, so the count below is too low. Run:\n"
+                  f"      {fix}\n", file=sys.stderr)
+    return stale
 
 
 def needy(zone):

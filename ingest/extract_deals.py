@@ -257,8 +257,14 @@ HALF_RE = re.compile(r"half.?price(?:d)?\s+([A-Za-z][\w\s&'-]{1,28})", re.I)
 # the side is not in doubt: the price closes the line, so the item is what
 # precedes it. A price in the MIDDLE of a line is left alone -- that is the
 # ambiguous case, and it is not answered by guessing.
+# The label runs BACKWARDS from the price and is capped at 29 characters, so a
+# long dish name arrives cut from the LEFT: 'Housemade Buffalo Cauliflower
+# Bites $6' shipped State Street Pub an item called 'ade Buffalo Cauliflower
+# Bites' (Media, 2026-09-02). A word-boundary anchor makes the cut land on a
+# word boundary -- the label is then short by a whole WORD rather than by
+# three letters, which is a miss instead of a wrong thing on a card.
 TRAILING_PRICE_RE = re.compile(
-    r"([A-Za-z][\w\s&'-]{1,28}?)\s\$\s?(\d{1,3}(?:\.\d\d)?)\s*$")
+    r"\b([A-Za-z][\w\s&'-]{1,28}?)\s\$\s?(\d{1,3}(?:\.\d\d)?)\s*$")
 
 # The noun a price is attached to decides the category; anything unrecognised is
 # not guessed into 'food', it is left out of the item list entirely.

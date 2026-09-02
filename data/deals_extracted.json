@@ -639,6 +639,67 @@
    ]
   },
   {
+   "id": "la-catrina-media",
+   "lid": "103506",
+   "name": "La Catrina",
+   "plcb_name": "La Catrina",
+   "address": "11-13 W State St, Media PA 19063",
+   "zone_id": "media",
+   "license_type": "",
+   "website": "https://www.lacatrinamedia.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.lacatrinamedia.com/",
+      "quote": "Happy Hour / Everyday | 4 - 6pm"
+     }
+    }
+   ]
+  },
+  {
    "id": "las-bugambilias-philadelphia",
    "lid": "103534",
    "name": "Las Bugambilias",
@@ -1433,6 +1494,78 @@
       "kind": "venue_site",
       "url": "https://otherhalfbrewing.com/event/clone-ohanother-happy-hour-buffalo-2026-09-15/",
       "quote": "OH\u2026Another Happy Hour @ Buffalo / September 15 2026 4:00 pm - September 18 2026 6:00 pm / Daily Happy Hour at Other Half Buffalo Tuesday-Friday 4pm-6pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "state-street-pub-media",
+   "lid": "108693",
+   "name": "State Street Pub",
+   "plcb_name": "MEDIADIVE LLC",
+   "address": "37 E STATE ST, MEDIA PA 19063-2917",
+   "zone_id": "media",
+   "license_type": "",
+   "website": "https://www.statestreetpubmedia.com",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 2,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 3,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 4,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:30",
+       "end": "18:30"
+      }
+     ],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "Margaritas",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "Volcano Fries",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "label": "BBQ Pulled Pork Nachos",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "label": "Buffalo Cauliflower Bites",
+       "price_usd": 6.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.statestreetpubmedia.com/s/Happy-Hour.pdf",
+      "quote": "Happy Hour / Monday - Friday / 4:30 PM - 6:30 PM"
      }
     }
    ]
@@ -2244,7 +2377,7 @@
       },
       {
        "category": "draft",
-       "label": "e of fixings and any beer for",
+       "label": "of fixings and any beer for",
        "price_usd": 15.0
       }
      ],
@@ -3274,7 +3407,7 @@
       },
       {
        "category": "food",
-       "label": "ini Burgers & Housemade Chips",
+       "label": "Burgers & Housemade Chips",
        "price_usd": 10.0
       },
       {
@@ -4509,12 +4642,58 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-08-06",
+     "last_verified_at": "2026-09-02",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
       "url": "https://casamiamedia.com",
       "quote": "HAPPY HOUR SPECIALS / Join us from 4:00 - 6:00 PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "luna-s-mexican-grill-swarthmore",
+   "lid": "130465",
+   "name": "Luna's Mexican Grill",
+   "plcb_name": "LUNA'S MEXICAN GRILL",
+   "address": "6 PARK AVE FIRST FLOOR & BASEMENT, SWARTHMORE PA 19081",
+   "zone_id": "media",
+   "license_type": "",
+   "website": "http://lunasmexicangrillswat.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://lunasmexicangrillswat.com/specials",
+      "quote": "Happy Hour Tuesday - Friday 03:00 PM - 06:00 PM"
      }
     }
    ]
@@ -4972,12 +5151,12 @@
       },
       {
        "category": "food",
-       "label": "pc Carnitas Tacos",
+       "label": "Carnitas Tacos",
        "price_usd": 9.0
       },
       {
        "category": "food",
-       "label": "pc Baja Fish Taco",
+       "label": "Baja Fish Taco",
        "price_usd": 10.0
       },
       {
@@ -4987,7 +5166,7 @@
       },
       {
        "category": "food",
-       "label": "pc Cauliflower Esquites Tacos",
+       "label": "Cauliflower Esquites Tacos",
        "price_usd": 9.0
       },
       {
@@ -5401,7 +5580,7 @@
       },
       {
        "category": "bottle_can",
-       "label": "l You Can Eat Pasta & Salad",
+       "label": "You Can Eat Pasta & Salad",
        "price_usd": 9.99
       },
       {
@@ -7186,6 +7365,88 @@
       "kind": "venue_site",
       "url": "http://tecawestchester.com/west-chester-west-chester-teca-restaurant-and-bar-food-menu",
       "quote": "Happy Hour offered Tuesday-Friday, 4-6PM at the bar."
+     }
+    }
+   ]
+  },
+  {
+   "id": "sligo-irish-pub-media",
+   "lid": "53093",
+   "name": "Sligo Irish Pub",
+   "plcb_name": "SLIGO TAP",
+   "address": "113 W STATE ST, MEDIA PA 19063-3203",
+   "zone_id": "media",
+   "license_type": "",
+   "website": "https://www.sligomedia.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 2,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 3,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 4,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 6,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 7,
+       "start": "16:30",
+       "end": "18:30"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "DRAFTS",
+       "amount_off_usd": 2.0
+      },
+      {
+       "category": "wine",
+       "label": "HOUSE WINES",
+       "price_usd": 5.0
+      },
+      {
+       "category": "draft",
+       "label": "BOTTLED BEER",
+       "amount_off_usd": 1.0
+      },
+      {
+       "category": "food",
+       "label": "PUB SNACKS",
+       "price_usd": 5.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.sligomedia.com/",
+      "quote": "HAPPY HOUR / 4:30 \u2013 6:30 PM / $2 OFF DRAFTS"
      }
     }
    ]

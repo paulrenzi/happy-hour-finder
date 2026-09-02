@@ -40,6 +40,7 @@ EXCLUDED_LICENSE_TYPES = {"Brewery Storage"}
 # Venues that are off the board by NAME, not by licence: the permanent bans and
 # the hotel chains. Kept in ingest/exclusions.py with the reasoning, because
 # 'Hotel (Liquor)' is a licence class and not a hotel -- see that file.
+from discover_places import HAND_DROPPED  # noqa: E402
 from exclusions import excluded  # noqa: E402
 
 # Suffixes on a PLCB licensee name. They are the legal entity, never the sign
@@ -176,6 +177,21 @@ def main():
 
     places = load_json(PLACES_JSON)
     sites = load_json(SITES_JSON)
+
+    def place_for(lid):
+        """The Places record for a licence, or nothing if the join was dropped.
+
+        A hand-drop has to be honoured HERE too, not only in the crawl
+        frontier. discover_places.merge_sites() keeps a rejected join out of
+        venue_sites.json, but this file reads places_venues.json DIRECTLY --
+        so The Frosted Mug, dropped on 2026-09-02, still took its name,
+        website, photo and coordinate from the ACME Markets that Places
+        answered with. Dropping a join in one of two readers is not dropping
+        it. Both loops below go through this: premises_key() reads the Places
+        name, so blanking it in one loop and not the other builds two
+        different keys for one building and the sibling lookup dies.
+        """
+        return {} if lid in HAND_DROPPED else (places.get(lid) or {})
     photos = load_json(PHOTOS_LID_JSON)
 
     with open(VENUES_CSV, encoding="utf-8", newline="") as fh:
@@ -187,7 +203,14 @@ def main():
             skipped += 1
             continue
         lid = row["lid"]
-        place = places.get(lid) or {}
+        # A hand-drop has to be honoured HERE too, not only in the crawl
+        # frontier. discover_places.merge_sites() keeps a rejected join out of
+        # venue_sites.json, but this file reads places_venues.json DIRECTLY --
+        # so The Frosted Mug, dropped from the frontier on 2026-09-02, still
+        # took its name, website and photo from the ACME Markets that Places
+        # answered with. Dropping a join in one of the two readers is not
+        # dropping it.
+        place = place_for(lid)
         site = sites.get(lid) or {}
 
         # A trade name beats a legal one, and Google's beats OSM's: the Places
@@ -246,10 +269,10 @@ def main():
     for row in rows:
         if row["license_type"] in EXCLUDED_LICENSE_TYPES:
             continue
-        if excluded((places.get(row["lid"]) or {}).get("places_name", ""),
+        if excluded(place_for(row["lid"]).get("places_name", ""),
                     row["name"], row["license_type"]):
             continue
-        key = premises_key(row["lid"], places.get(row["lid"]) or {},
+        key = premises_key(row["lid"], place_for(row["lid"]),
                            sites.get(row["lid"]) or {}, row)
         lids_for.setdefault(key, []).append(row["lid"])
 

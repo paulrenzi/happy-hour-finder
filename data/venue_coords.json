@@ -859,6 +859,15 @@
   "queried": "918 S 22ND ST, PHILADELPHIA PA 19146-2562",
   "resolved": "Los Camaradas"
  },
+ "luna-s-mexican-grill-swarthmore": {
+  "lat": 39.9019261,
+  "lng": -75.35006539999999,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "6 PARK AVE FIRST FLOOR & BASEMENT, SWARTHMORE PA 19081",
+  "resolved": "Luna's Mexican Grill"
+ },
  "main-line-tavern-paoli": {
   "lat": 40.0410007,
   "lng": -75.4977461,
@@ -1300,6 +1309,15 @@
   "queried": "44 W GAY ST, WEST CHESTER PA 19380",
   "resolved": "Sedona Taphouse"
  },
+ "sligo-irish-pub-media": {
+  "lat": 39.918438599999995,
+  "lng": -75.39154769999999,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "113 W STATE ST, MEDIA PA 19063-3203",
+  "resolved": "Sligo Irish Pub"
+ },
  "sly-fox-phoenixville": {
   "lat": 40.1309336,
   "lng": -75.5475666,
@@ -1353,6 +1371,15 @@
   "precision": "place",
   "queried": "1 W STATE ST, MEDIA PA 19063-3310",
   "resolved": "Spasso Italian Grill"
+ },
+ "state-street-pub-media": {
+  "lat": 39.9178175,
+  "lng": -75.3879727,
+  "matched_by": "osm_site",
+  "osm": "node/2012628972",
+  "precision": "place",
+  "queried": "37 E STATE ST, MEDIA PA 19063-2917",
+  "resolved": "State Street Pub"
  },
  "station-142-stage-bar-kitchen-west-chester": {
   "lat": 39.9607386,
