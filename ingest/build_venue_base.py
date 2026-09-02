@@ -94,6 +94,14 @@ def pretty_name(raw):
     return name
 
 
+def _trade(name):
+    """A supplied trade name, or None when it is only the legal entity."""
+    name = (name or "").strip()
+    if not name:
+        return None
+    return pretty_name(name) if ENTITY_SUFFIX_RE.search(name) else name
+
+
 def pretty_address(raw):
     """`929-931 MACDADE BLVD, COLLINGDALE PA 19023-3720` -> title case, ZIP+4
     dropped. The card shows this under the name; the join never reads it."""
@@ -171,7 +179,11 @@ def main():
         # A trade name beats a legal one, and Google's beats OSM's: the Places
         # record was resolved against this exact address this month, where an
         # OSM name can be a decade old. The PLCB licensee is the last resort.
-        name = place.get("places_name") or site.get("osm_name") or pretty_name(row["name"])
+        # A trade name that IS the legal entity is not a trade name. Google
+        # lists FACENDA SPIRITS LLC in Doylestown under its paperwork, so the
+        # "already the trade name, leave it alone" rule shipped the one thing
+        # the card may never show. The sign over a door never ends in LLC.
+        name = _trade(place.get("places_name")) or _trade(site.get("osm_name"))             or pretty_name(row["name"])
 
         why = excluded(name, row["name"], row["license_type"])
         if why:

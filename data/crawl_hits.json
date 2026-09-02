@@ -1897,6 +1897,57 @@
   "website": "https://www.bennythebums.com",
   "zone_id": "northeast_philly"
  },
+ "103858": {
+  "address": "46 E STATE ST UNIT G, , DOYLESTOWN PA 18901-4360",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Happy Hour - Everyday* / Tuesday - Thursday 4 to 5:30 pm, Fri - Sat 3:30 to 5:00 pm",
+    "url": "https://frostdoylestown.com/"
+   },
+   {
+    "hh": true,
+    "quote": "Join Us For Happy Hour - Everyday* / Tuesday - Thursday 4 to 5:30 pm, Fri - Sat 3:30 to 5:00 pm / * - Except during Holidays, Special Events & Sundays",
+    "url": "https://frostdoylestown.com/"
+   },
+   {
+    "quote": "HAPPY HOUR",
+    "url": "https://www.frostdoylestown.com/menus/"
+   },
+   {
+    "quote": "Join us for Happy Hour Everyday! / Tuesday - Thursday 4 to 5:30 pm / Fri - Sat 3:30 to 5:00 pm",
+    "url": "https://www.frostdoylestown.com/menus/"
+   }
+  ],
+  "name": "MARS2 LLC",
+  "osm_name": "Frost Doylestown",
+  "pages": [
+   {
+    "result": "rendered: 31 lines -> 32",
+    "url": "https://frostdoylestown.com/"
+   },
+   {
+    "hh": true,
+    "lines": 32,
+    "result": "ok, 2 quote(s)",
+    "url": "https://frostdoylestown.com/"
+   },
+   {
+    "hh": false,
+    "lines": 21,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.frostdoylestown.com/events/"
+   },
+   {
+    "hh": true,
+    "lines": 458,
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.frostdoylestown.com/menus/"
+   }
+  ],
+  "website": "https://frostdoylestown.com/",
+  "zone_id": "doylestown"
+ },
  "103938": {
   "address": "1500  EASTON RD, WILLOW GROVE PA 19090",
   "crawled_at": "2026-08-07",
@@ -2431,6 +2482,41 @@
   ],
   "website": "https://www.lepainquotidien.com/us/en/locations/502:%208th_&_walnut/801-walnut-st",
   "zone_id": "center_city"
+ },
+ "104819": {
+  "address": "18 W STATE ST P O BOX 2005, DOYLESTOWN PA 18901-2005",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "THE HATTERY STOVE & STILL",
+  "osm_name": "The Hattery Stove & Still",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 79,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.hatterydoylestown.com/"
+   },
+   {
+    "hh": false,
+    "lines": 90,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.hatterydoylestown.com/events/"
+   },
+   {
+    "hh": false,
+    "lines": 65,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.hatterydoylestown.com/events/contact-events/"
+   },
+   {
+    "hh": true,
+    "lines": 102,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.hatterydoylestown.com/events/corporate-events/"
+   }
+  ],
+  "website": "http://www.hatterydoylestown.com/",
+  "zone_id": "doylestown"
  },
  "105005": {
   "address": "1356 N 2ND ST, PHILADELPHIA PA 19122",
@@ -3392,6 +3478,35 @@
   "website": "https://www.anthonysmalvern.com",
   "zone_id": "malvern_great_valley"
  },
+ "108677": {
+  "address": "62-64 W STATE ST, DOYLESTOWN PA 18901",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "CROSS CULTURE",
+  "osm_name": "Cross Culture Indian Restaurant",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 22,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.crosscultureindiancuisine.net/index.html"
+   },
+   {
+    "hh": false,
+    "lines": 239,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.crosscultureindiancuisine.net/entire-menu.html"
+   },
+   {
+    "hh": false,
+    "lines": 32,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.crosscultureindiancuisine.net/menu.html"
+   }
+  ],
+  "website": "https://www.crosscultureindiancuisine.net/index.html",
+  "zone_id": "doylestown"
+ },
  "108693": {
   "address": "37 E STATE ST, MEDIA PA 19063-2917",
   "crawled_at": "2026-09-01",
@@ -3469,20 +3584,36 @@
  },
  "108811": {
   "address": "237 W BUTLER AVE, CHALFONT PA 18914-3020",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "EMBERS SMOKEHOUSE & TAP",
   "osm_name": null,
   "pages": [
    {
+    "result": "rendered: 31 lines -> 82",
+    "url": "https://www.emberssmokehouseandtap.com/"
+   },
+   {
+    "hh": false,
+    "lines": 82,
     "result": "ok, 0 quote(s)",
     "url": "https://www.emberssmokehouseandtap.com/"
    },
    {
+    "hh": false,
+    "lines": 65,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.emberssmokehouseandtap.com/community-events"
+   },
+   {
+    "hh": false,
+    "lines": 288,
     "result": "ok, 0 quote(s)",
     "url": "https://www.emberssmokehouseandtap.com/menu"
    },
    {
+    "hh": false,
+    "lines": 65,
     "result": "ok, 0 quote(s)",
     "url": "https://www.emberssmokehouseandtap.com/menus"
    }
@@ -6001,6 +6132,47 @@
   "website": "https://charkoals.com/",
   "zone_id": "king_of_prussia"
  },
+ "113169": {
+  "address": "19 N MAIN ST, DOYLESTOWN PA 18901-4314",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Happy Hour",
+    "url": "http://www.chambers19.com/"
+   },
+   {
+    "quote": "HAPPY HOUR! / Monday-Friday from 4 to 6 PM! It\u2019s our favorite time of the day too! We offer HALF PRICED Tito\u2019s Handmade Vodka cocktails, beer specials, $6 wines, a dedicated food menu and more!. Definitely worth a visit after work. This pricing is extended to both bars. Bring your whole office or friend group and we can offer even more. Call us for options, at 215.348.1940. / Thursday is Pasta Nig",
+    "url": "https://www.chambers19.com/specials/"
+   },
+   {
+    "hh": true,
+    "quote": "Monday-Friday from 4 to 6 PM! It\u2019s our favorite time of the day too! We offer HALF PRICED Tito\u2019s Handmade Vodka cocktails, beer specials, $6 wines, a dedicated food menu and more!. Definitely worth a visit after work. This pricing is extended to both bars. Bring your whole office or friend group and we can offer even more. Call us for options, at 215.348.1940.",
+    "url": "https://www.chambers19.com/specials/"
+   },
+   {
+    "quote": "Starting at $16",
+    "url": "https://www.chambers19.com/specials/"
+   }
+  ],
+  "name": "CHAMBERS",
+  "osm_name": "Chambers 19 Bistro & Bar",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 66,
+    "result": "ok, 1 quote(s)",
+    "url": "http://www.chambers19.com/"
+   },
+   {
+    "hh": true,
+    "lines": 67,
+    "result": "ok, 3 quote(s)",
+    "url": "https://www.chambers19.com/specials/"
+   }
+  ],
+  "website": "http://www.chambers19.com/",
+  "zone_id": "doylestown"
+ },
  "113226": {
   "address": "330 OREGON AVE, PHILADELPHIA PA 19148-4723",
   "crawled_at": "2026-08-06",
@@ -6152,7 +6324,7 @@
  },
  "114456": {
   "address": "2100 LOWER STATE RD, DOYLESTOWN PA 18901",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "TERRAIN",
   "osm_name": "Terrain at DelVal",
@@ -8405,6 +8577,68 @@
   "website": "https://locations.jamba.com/pa/philadelphia/philadelphia-intl-airport-space-c-9a",
   "zone_id": "west_philly"
  },
+ "120055": {
+  "address": "19 W COURT ST, DOYLESTOWN PA 18901-4210",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "ARTIFACT BREWING",
+  "osm_name": "Artifact Brewing",
+  "pages": [
+   {
+    "result": "rendered: 20 lines -> 22",
+    "url": "https://www.artifactales.com/"
+   },
+   {
+    "hh": false,
+    "lines": 22,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.artifactales.com/"
+   },
+   {
+    "hh": false,
+    "lines": 32,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.artifactales.com/events/2021/12/24/open-for-business-special-hours"
+   },
+   {
+    "hh": false,
+    "lines": 15,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.artifactales.com/events"
+   }
+  ],
+  "website": "https://www.artifactales.com/",
+  "zone_id": "doylestown"
+ },
+ "120204": {
+  "address": "140 VETERANS LN, DOYLESTOWN PA 18901-3424",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "D & J RESTAURANT GROUP LLC",
+  "osm_name": "Vela",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 50,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.veladoylestown.com/"
+   },
+   {
+    "hh": false,
+    "lines": 36,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.veladoylestown.com/events"
+   },
+   {
+    "hh": false,
+    "lines": 29,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.veladoylestown.com/menus"
+   }
+  ],
+  "website": "https://www.veladoylestown.com/",
+  "zone_id": "doylestown"
+ },
  "120279": {
   "address": "3675 MARKET ST STE 100, PHILADELPHIA PA 19104-2897",
   "crawled_at": "2026-08-06",
@@ -9065,6 +9299,39 @@
   "website": "https://triplebottombrewing.com",
   "zone_id": "center_city"
  },
+ "121960": {
+  "address": "1133 N EASTON RD, DOYLESTOWN PA 18901-1010",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "PLUMSTEADVILLE PUB",
+  "osm_name": "Northside Tavern",
+  "pages": [
+   {
+    "result": "rendered: 29 lines -> 58",
+    "url": "http://northsidetavernpa.com/"
+   },
+   {
+    "hh": false,
+    "lines": 58,
+    "result": "ok, 0 quote(s)",
+    "url": "http://northsidetavernpa.com/"
+   },
+   {
+    "hh": false,
+    "lines": 31,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.northsidetavernpa.com/events-catering"
+   },
+   {
+    "hh": false,
+    "lines": 12,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.northsidetavernpa.com/menu"
+   }
+  ],
+  "website": "http://northsidetavernpa.com/",
+  "zone_id": "doylestown"
+ },
  "121979": {
   "address": "3745 EQUUS BLVD, NEWTOWN SQUARE PA 19073",
   "crawled_at": "2026-09-01",
@@ -9238,21 +9505,30 @@
  },
  "122360": {
   "address": "1745 S EASTON RD STE E1, DOYLESTOWN PA 18901-2812",
-  "crawled_at": "2026-08-06",
-  "hits": [],
-  "name": "WHOLE FOODS MARKET GROUP LLC",
-  "osm_name": "Honeygrow",
-  "pages": [
+  "crawled_at": "2026-09-02",
+  "hits": [
    {
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.honeygrow.com/location/doylestown/"
-   },
-   {
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.honeygrow.com/menu/"
+    "quote": "Pizza how you want it, from custom orders to daily specials. Vegan and vegetarian options.",
+    "url": "https://www.wholefoodsmarket.com/stores/doylestown?utm_source=google&utm_medium=organic&utm_campaign=listings&ref_=US_TRF_ALL_UFG_WFM_FRSOC_1001338"
    }
   ],
-  "website": "https://www.honeygrow.com/location/doylestown/",
+  "name": "WHOLE FOODS MARKET GROUP LLC",
+  "osm_name": "Whole Foods Market",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 94,
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.wholefoodsmarket.com/stores/doylestown?utm_source=google&utm_medium=organic&utm_campaign=listings&ref_=US_TRF_ALL_UFG_WFM_FRSOC_1001338"
+   },
+   {
+    "hh": false,
+    "lines": 87,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.wholefoodsmarket.com/special-diets"
+   }
+  ],
+  "website": "https://www.wholefoodsmarket.com/stores/doylestown?utm_source=google&utm_medium=organic&utm_campaign=listings&ref_=US_TRF_ALL_UFG_WFM_FRSOC_1001338",
   "zone_id": "doylestown"
  },
  "122412": {
@@ -9773,12 +10049,14 @@
  },
  "126401": {
   "address": "24 N MAIN ST #7, DOYLESTOWN PA 18901-4330",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "FACENDA SPIRITS LLC",
   "osm_name": null,
   "pages": [
    {
+    "hh": false,
+    "lines": 78,
     "result": "ok, 0 quote(s)",
     "url": "https://www.facendaspirits.com/"
    }
@@ -12396,6 +12674,35 @@
   "website": "https://www.marriott.com/phlcs",
   "zone_id": "south_philly"
  },
+ "133104": {
+  "address": "625 N MAIN ST, DOYLESTOWN PA 18901-3997",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "POCO'S",
+  "osm_name": "Poco's Restaurant, Bar & Comedy Cabaret",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 49,
+    "result": "ok, 0 quote(s)",
+    "url": "https://pocos.com/"
+   },
+   {
+    "hh": false,
+    "lines": 46,
+    "result": "ok, 0 quote(s)",
+    "url": "https://pocos.com/drink-menus/"
+   },
+   {
+    "hh": false,
+    "lines": 42,
+    "result": "ok, 0 quote(s)",
+    "url": "https://pocos.com/menus/"
+   }
+  ],
+  "website": "https://pocos.com/",
+  "zone_id": "doylestown"
+ },
  "133261": {
   "address": "1115 WEST CHESTER PK, WEST CHESTER PA 19382-5004",
   "crawled_at": "2026-09-02",
@@ -14359,6 +14666,90 @@
   "website": "https://www.localwineandkitchen.com/home",
   "zone_id": "ardmore_bryn_mawr"
  },
+ "36618": {
+  "address": "1456 FERRY RD STE 300, NEW BRITAIN PA 18901",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "#1. Guacamole Cheesesteak Wrap with American cheese, served with chips $7.95",
+    "url": "http://www.roman-delight.com/daily-specials/friday-july-5th-lunch-specials"
+   },
+   {
+    "quote": "#2. Spinach Salad topped with grilled shrimp, roasted red peppers, fresh mozzarella and bacon $8.95",
+    "url": "http://www.roman-delight.com/daily-specials/friday-july-5th-lunch-specials"
+   },
+   {
+    "quote": "Bar Specials",
+    "url": "http://www.roman-delight.com/daily-specials/friday-july-5th-lunch-specials"
+   },
+   {
+    "quote": "Daily Specials",
+    "url": "http://www.roman-delight.com/daily-specials/friday-july-5th-lunch-specials"
+   },
+   {
+    "quote": "#1. Sausage Cacciatore Sandwich served with French fries $7.95",
+    "url": "http://www.roman-delight.com/daily-specials/lunch-specials-monday-july-8th"
+   },
+   {
+    "quote": "#2. Grilled Chicken Italiano Sandwich with roasted red peppers, fresh spinach and provolone cheese on a kaiser roll, served with French fries $7.95",
+    "url": "http://www.roman-delight.com/daily-specials/lunch-specials-monday-july-8th"
+   },
+   {
+    "quote": "Bar Specials",
+    "url": "http://www.roman-delight.com/daily-specials/lunch-specials-monday-july-8th"
+   },
+   {
+    "quote": "Daily Specials",
+    "url": "http://www.roman-delight.com/daily-specials/lunch-specials-monday-july-8th"
+   },
+   {
+    "quote": "#1. Lunch size baked ziti served with garlic bread $6.95",
+    "url": "http://www.roman-delight.com/daily-specials/monday-july-1-lunch-specials"
+   },
+   {
+    "quote": "#2. Grilled Chicken Cordon Bleu Wrap served with French fries $7.95",
+    "url": "http://www.roman-delight.com/daily-specials/monday-july-1-lunch-specials"
+   },
+   {
+    "quote": "Bar Specials",
+    "url": "http://www.roman-delight.com/daily-specials/monday-july-1-lunch-specials"
+   },
+   {
+    "quote": "Daily Specials",
+    "url": "http://www.roman-delight.com/daily-specials/monday-july-1-lunch-specials"
+   }
+  ],
+  "name": "ROMAN DELIGHT OF FOUNTAINVILLE INC",
+  "osm_name": "Roman Delight of Fountainville",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 35,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.roman-delight.com/"
+   },
+   {
+    "hh": false,
+    "lines": 61,
+    "result": "ok, 4 quote(s)",
+    "url": "http://www.roman-delight.com/daily-specials/friday-july-5th-lunch-specials"
+   },
+   {
+    "hh": false,
+    "lines": 61,
+    "result": "ok, 4 quote(s)",
+    "url": "http://www.roman-delight.com/daily-specials/lunch-specials-monday-july-8th"
+   },
+   {
+    "hh": false,
+    "lines": 62,
+    "result": "ok, 4 quote(s)",
+    "url": "http://www.roman-delight.com/daily-specials/monday-july-1-lunch-specials"
+   }
+  ],
+  "website": "http://www.roman-delight.com/",
+  "zone_id": "doylestown"
+ },
  "36829": {
   "address": "DOWNINGTOWN TECH CTR 420 ACORN LN, DOWNINGTOWN PA 19335-3075",
   "crawled_at": "2026-09-01",
@@ -14610,6 +15001,73 @@
   "website": "https://nicksroastbeef.com/philadelphia-pa/",
   "zone_id": "south_philly"
  },
+ "37002": {
+  "address": "81 W STATE ST, DOYLESTOWN PA 18901-4236",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "PAGANINI RISTORANTE",
+  "osm_name": "Paganini Ristorante",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 1112,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.paganinidoylestown.com/"
+   },
+   {
+    "result": "404 text/html",
+    "url": "http://www.paganinidoylestown.com/.brunch-specials"
+   },
+   {
+    "result": "404 text/html",
+    "url": "http://www.paganinidoylestown.com/.dinner-pasta"
+   },
+   {
+    "result": "404 text/html",
+    "url": "http://www.paganinidoylestown.com/.lunch-specials"
+   }
+  ],
+  "website": "http://www.paganinidoylestown.com/",
+  "zone_id": "doylestown"
+ },
+ "37201": {
+  "address": "51 W COURT ST, DOYLESTOWN PA 18901-4223",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Daily Specials",
+    "url": "http://letsgotovilla.com/"
+   },
+   {
+    "quote": "Drink Specials",
+    "url": "http://letsgotovilla.com/"
+   }
+  ],
+  "name": "VILLA RISTORANTE CAPRI",
+  "osm_name": "Villa Capri",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 127,
+    "result": "ok, 2 quote(s)",
+    "url": "http://letsgotovilla.com/"
+   },
+   {
+    "hh": false,
+    "lines": 81,
+    "result": "ok, 0 quote(s)",
+    "url": "http://letsgotovilla.com/events"
+   },
+   {
+    "hh": false,
+    "lines": 222,
+    "result": "ok, 0 quote(s)",
+    "url": "http://letsgotovilla.com/s/villa-menu-59.pdf"
+   }
+  ],
+  "website": "http://letsgotovilla.com/",
+  "zone_id": "doylestown"
+ },
  "37332": {
   "address": "1017 DEKALB PIKE, GWYNEDD PA 19436",
   "crawled_at": "2026-09-02",
@@ -14853,6 +15311,87 @@
   ],
   "website": "https://www.queenofshebaphiladelphia.com/",
   "zone_id": "university_city"
+ },
+ "39404": {
+  "address": "376 W BUTLER AVE, NEW BRITAIN PA 18901-5112",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Happy Hour",
+    "url": "http://www.newbritaininn.com/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour \u2013 New Britain Inn",
+    "url": "http://www.newbritaininn.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "HAPPY HOUR / MONDAY - FRIDAY (4:00 PM to 6:00 PM)",
+    "url": "http://www.newbritaininn.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "HAPPY HOUR / MONDAY - FRIDAY (4:00 PM to 6:00 PM) / $2.75 Domestic Drafts",
+    "url": "http://www.newbritaininn.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "$2.75 Domestic Drafts",
+    "url": "http://www.newbritaininn.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "$1.00 OFF Craft & Import Drafts",
+    "url": "http://www.newbritaininn.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "$0.50 OFF Bottled Beers",
+    "url": "http://www.newbritaininn.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "$0.50 OFF Spirits & Wine",
+    "url": "http://www.newbritaininn.com/happy-hour/"
+   }
+  ],
+  "menu_images": [
+   {
+    "src": "https://newbritaininn.com/wp-content/uploads/NBI-Chef-Specials-1.jpg",
+    "url": "http://www.newbritaininn.com/dinner-specials/"
+   }
+  ],
+  "name": "MY 4 DAUGHTERS, INC.",
+  "osm_name": "New Britain Inn",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 64,
+    "result": "ok, 1 quote(s)",
+    "url": "http://www.newbritaininn.com/"
+   },
+   {
+    "hh": false,
+    "lines": 51,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.newbritaininn.com/dinner-specials/"
+   },
+   {
+    "hh": true,
+    "lines": 43,
+    "result": "ok, 7 quote(s)",
+    "url": "http://www.newbritaininn.com/happy-hour/"
+   },
+   {
+    "hh": false,
+    "lines": 51,
+    "result": "ok, 0 quote(s)",
+    "url": "https://newbritaininn.com/dinner-specials/"
+   }
+  ],
+  "website": "http://www.newbritaininn.com/",
+  "zone_id": "doylestown"
  },
  "39617": {
   "address": "240 N GULPH RD, KING OF PRUSSIA PA 19406-2804",
@@ -15117,6 +15656,41 @@
   ],
   "website": "https://ploughstars.com",
   "zone_id": "center_city"
+ },
+ "39810": {
+  "address": "128-130 W STATE ST, DOYLESTOWN PA 18901-3636",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "THE MESQUITO GRILLE",
+  "osm_name": "Mesquito Grille",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 76,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.mesquitogrille.com/"
+   },
+   {
+    "hh": false,
+    "lines": 42,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.mesquitogrille.com/location.html"
+   },
+   {
+    "hh": false,
+    "lines": 86,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.mesquitogrille.com/catering.html"
+   },
+   {
+    "hh": false,
+    "lines": 44,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.mesquitogrille.com/drink-menu.html"
+   }
+  ],
+  "website": "https://www.mesquitogrille.com/",
+  "zone_id": "doylestown"
  },
  "39903": {
   "address": "530 SOUTH ST, PHILADELPHIA PA 19147-2219",
@@ -16509,6 +17083,35 @@
   ],
   "website": "https://www.finewineandgoodspirits.com/store-4658",
   "zone_id": "souderton_harleysville"
+ },
+ "45258": {
+  "address": "41 EAST STATE STREET, DOYLESTOWN PA 18901",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "41 BLU'S, INC.",
+  "osm_name": "LULA",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 42,
+    "result": "ok, 0 quote(s)",
+    "url": "https://luladoylestown.com/"
+   },
+   {
+    "hh": false,
+    "lines": 84,
+    "result": "ok, 0 quote(s)",
+    "url": "https://luladoylestown.com/menu/lula-doylestown-41-e-state-st"
+   },
+   {
+    "hh": false,
+    "lines": 95,
+    "result": "ok, 0 quote(s)",
+    "url": "https://luladoylestown.com/menu"
+   }
+  ],
+  "website": "https://luladoylestown.com/",
+  "zone_id": "doylestown"
  },
  "45368": {
   "address": "591-595 E LANCASTER AVE, SAINT DAVIDS PA 19087-5109",
@@ -18632,6 +19235,23 @@
   "website": "https://camposdeli.com/philadelphia-sandwich-shop",
   "zone_id": "center_city"
  },
+ "51584": {
+  "address": "110 VETERANS LN, DOYLESTOWN PA 18901-3412",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "OOKA JAPANESE RESTAURANT",
+  "osm_name": "OOKA",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 67,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.ookasushi.com/index.html"
+   }
+  ],
+  "website": "http://www.ookasushi.com/index.html",
+  "zone_id": "doylestown"
+ },
  "51786": {
   "address": "942 RACE ST, PHILADELPHIA PA 19107-2408",
   "crawled_at": "2026-08-06",
@@ -19256,6 +19876,163 @@
   ],
   "website": "https://www.minellasdiner.com/",
   "zone_id": "wayne_radnor"
+ },
+ "54116": {
+  "address": "86-96 W STATE ST, DOYLESTOWN PA 18901-4222",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Happy Hour",
+    "url": "http://the86west.com/"
+   },
+   {
+    "quote": "Best Happy Hour in Bucks County",
+    "url": "http://the86west.com/"
+   },
+   {
+    "quote": "We have plenty of noteworthy offerings, from cocktails and tacos to sushi and sliders, be sure to check out our happy hour and menus.",
+    "url": "http://the86west.com/"
+   },
+   {
+    "quote": "Happy Hour / TESTIMONIALS",
+    "url": "http://the86west.com/"
+   },
+   {
+    "hh": true,
+    "quote": "Best Happy Hour in Bucks County / TESTIMONIALS",
+    "url": "http://the86west.com/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour \u2013 86 West",
+    "url": "http://the86west.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour",
+    "url": "http://the86west.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "Download Our Happy Hour Menu / SUNDAY to TUESDAY",
+    "url": "http://the86west.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour \u2013 86 West",
+    "url": "https://the86west.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour",
+    "url": "https://the86west.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "Download Our Happy Hour Menu / SUNDAY to TUESDAY",
+    "url": "https://the86west.com/happy-hour/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "http://the86west.com/main-menu/"
+   },
+   {
+    "hh": true,
+    "quote": "HAPPY HOUR / filet mozzarella $24.5",
+    "url": "https://the86west.com/wp-content/uploads/Buy1_50_HappyHour_menu_08-03-26.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "classic edamame $12",
+    "url": "https://the86west.com/wp-content/uploads/Buy1_50_HappyHour_menu_08-03-26.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "pot stickers $14",
+    "url": "https://the86west.com/wp-content/uploads/Buy1_50_HappyHour_menu_08-03-26.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "kung fu cauliflower $14",
+    "url": "https://the86west.com/wp-content/uploads/Buy1_50_HappyHour_menu_08-03-26.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "zucchini fries $12",
+    "url": "https://the86west.com/wp-content/uploads/Buy1_50_HappyHour_menu_08-03-26.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Lobster Blast $20",
+    "url": "https://the86west.com/wp-content/uploads/Buy1_50_HappyHour_menu_08-03-26.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Aka $18",
+    "url": "https://the86west.com/wp-content/uploads/Buy1_50_HappyHour_menu_08-03-26.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Green Dragon $20",
+    "url": "https://the86west.com/wp-content/uploads/Buy1_50_HappyHour_menu_08-03-26.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "HAPPY HOUR",
+    "url": "https://the86west.com/wp-content/uploads/Buy1_50_HappyHour_menu_08-03-26.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Half Price Drinks / mon - sun / january - march 4-7pm",
+    "url": "https://the86west.com/wp-content/uploads/Buy1_50_HappyHour_menu_08-03-26.pdf"
+   }
+  ],
+  "menu_images": [
+   {
+    "src": "https://the86west.com/wp-content/uploads/Buy1_50_HappyHour_menu_08-03-26_Page_1.jpg",
+    "url": "http://the86west.com/happy-hour/"
+   },
+   {
+    "src": "https://the86west.com/wp-content/uploads/Buy1_50_HappyHour_menu_08-03-26_Page_2.jpg",
+    "url": "http://the86west.com/happy-hour/"
+   }
+  ],
+  "name": "FRANK'S KNIGHT HOUSE, LLC",
+  "osm_name": "86 West",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 96,
+    "result": "ok, 5 quote(s)",
+    "url": "http://the86west.com/"
+   },
+   {
+    "hh": true,
+    "lines": 65,
+    "result": "ok, 3 quote(s)",
+    "url": "http://the86west.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "lines": 65,
+    "result": "ok, 3 quote(s)",
+    "url": "https://the86west.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "lines": 65,
+    "result": "ok, 1 quote(s)",
+    "url": "http://the86west.com/main-menu/"
+   },
+   {
+    "hh": true,
+    "lines": 54,
+    "result": "ok, 10 quote(s)",
+    "url": "https://the86west.com/wp-content/uploads/Buy1_50_HappyHour_menu_08-03-26.pdf"
+   }
+  ],
+  "website": "http://the86west.com/",
+  "zone_id": "doylestown"
  },
  "54124": {
   "address": "115 GARDEN GOLF BLVD, NORTH WALES PA 19454",
@@ -20215,6 +20992,33 @@
   ],
   "website": "https://www.mollymaguiresphoenixville.com/",
   "zone_id": "phoenixville"
+ },
+ "57360": {
+  "address": "42 SHEWELL AVE, DOYLESTOWN PA 18901-3751",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "HONEY",
+  "osm_name": "Honey",
+  "pages": [
+   {
+    "result": "render failed: TimeoutError",
+    "url": "http://www.honeyrestaurant.com/"
+   },
+   {
+    "hh": false,
+    "lines": 36,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.honeyrestaurant.com/"
+   },
+   {
+    "hh": false,
+    "lines": 229,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.honeyrestaurant.com/honey-menu"
+   }
+  ],
+  "website": "http://www.honeyrestaurant.com/",
+  "zone_id": "doylestown"
  },
  "5739": {
   "address": "400 AND 402 SOUTH ST, PHILADELPHIA PA 19147-1521",
@@ -23549,6 +24353,120 @@
   "website": "https://www.metrodinerbar.com/",
   "zone_id": "lansdale_montgomeryville"
  },
+ "63778": {
+  "address": "CHALFONT VILLAGE SHOPPING CENTER 241 W BUTLER AVE, CHALFONT PA 18914-3020",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Daily Specials",
+    "url": "http://www.skylinechalfont.com/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "http://www.skylinechalfont.com/"
+   },
+   {
+    "quote": "Happy Hour / Our bar area is separated from our neighborhood family-friendly restaurant. Our 12+ TVs (including 4 big screens) make viewing any sporting event or TV special easily accessed from any section of our entire space. If you\u2019re looking to watch something, just ask, and we\u2019ll be happy to put it on for you. We take pride in the culture our tavern has developed over 40+ years. With sports en",
+    "url": "http://www.skylinechalfont.com/"
+   },
+   {
+    "quote": "Daily Specials \u2013 Skyline Tavern",
+    "url": "http://www.skylinechalfont.com/daily-specials/"
+   },
+   {
+    "quote": "Daily Specials",
+    "url": "http://www.skylinechalfont.com/daily-specials/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "http://www.skylinechalfont.com/daily-specials/"
+   },
+   {
+    "quote": "Daily Specials / Sunday - Thursday 11 AM - 12 AM / Friday - Saturday 11 AM - 2 AM",
+    "url": "http://www.skylinechalfont.com/daily-specials/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour \u2013 Skyline Tavern",
+    "url": "http://www.skylinechalfont.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "Daily Specials",
+    "url": "http://www.skylinechalfont.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour",
+    "url": "http://www.skylinechalfont.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour / Sunday - Thursday 11 AM - 12 AM / Friday - Saturday 11 AM - 2 AM",
+    "url": "http://www.skylinechalfont.com/happy-hour/"
+   },
+   {
+    "quote": "Daily Specials \u2013 Skyline Tavern",
+    "url": "https://skylinechalfont.com/daily-specials/"
+   },
+   {
+    "quote": "Daily Specials",
+    "url": "https://skylinechalfont.com/daily-specials/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://skylinechalfont.com/daily-specials/"
+   },
+   {
+    "quote": "Daily Specials / Sunday - Thursday 11 AM - 12 AM / Friday - Saturday 11 AM - 2 AM",
+    "url": "https://skylinechalfont.com/daily-specials/"
+   }
+  ],
+  "menu_images": [
+   {
+    "src": "https://skylinechalfont.com/wp-content/uploads/2026/03/Skyline-Tavern-Daily-Food-Specials-Menu-updated.jpg",
+    "url": "http://www.skylinechalfont.com/daily-specials/"
+   },
+   {
+    "src": "https://skylinechalfont.com/wp-content/uploads/2026/03/Skyline-Tavern-Daily-Food-Specials-Menu-updated-scaled.jpg",
+    "url": "http://www.skylinechalfont.com/daily-specials/"
+   },
+   {
+    "src": "https://skylinechalfont.com/wp-content/uploads/2024/08/Skyline-Happy-Hour-flier.jpg",
+    "url": "http://www.skylinechalfont.com/happy-hour/"
+   }
+  ],
+  "name": "SKYLINE TAVERN",
+  "osm_name": "Skyline Tavern & Restaurant",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 62,
+    "result": "ok, 3 quote(s)",
+    "url": "http://www.skylinechalfont.com/"
+   },
+   {
+    "hh": true,
+    "lines": 47,
+    "result": "ok, 4 quote(s)",
+    "url": "http://www.skylinechalfont.com/daily-specials/"
+   },
+   {
+    "hh": true,
+    "lines": 47,
+    "result": "ok, 4 quote(s)",
+    "url": "http://www.skylinechalfont.com/happy-hour/"
+   },
+   {
+    "hh": true,
+    "lines": 47,
+    "result": "ok, 4 quote(s)",
+    "url": "https://skylinechalfont.com/daily-specials/"
+   }
+  ],
+  "website": "http://www.skylinechalfont.com/",
+  "zone_id": "doylestown"
+ },
  "63789": {
   "address": "PLYMOUTH MEETING MALL  500 W GERMANTOWN PK  , PLYMOUTH MEETING  PA 19462-1353",
   "crawled_at": "2026-08-06",
@@ -25621,6 +26539,97 @@
   ],
   "website": "https://stores.giantfoodstores.com/pa/west-chester/1393-dilworthtown-xing?y_source=1_NDE5NTM2OS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
   "zone_id": "west_chester"
+ },
+ "66211": {
+  "address": "WARRINGTON COUNTRY CLUB 1360 ALMSHOUSE RD, WARRINGTON PA 18976-1207",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "hh": true,
+    "quote": "$105 or $110 option.",
+    "url": "https://www.thewarrington.com/_files/ugd/30c05d_6e23a09490c34e94a16b1bd376acb8af.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "of our partners is included at the $105 or $110",
+    "url": "https://www.thewarrington.com/_files/ugd/30c05d_6e23a09490c34e94a16b1bd376acb8af.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Wedding Cake (included in $105 & $110",
+    "url": "https://www.thewarrington.com/_files/ugd/30c05d_6e23a09490c34e94a16b1bd376acb8af.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "THREE HOURS ~ $12",
+    "url": "https://www.thewarrington.com/_files/ugd/30c05d_7af0aa6e8b374d23b06ca708a8abe4f9.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "ONE HOUR - $12.00 ~ TWO HOUR - $16.00",
+    "url": "https://www.thewarrington.com/_files/ugd/30c05d_7af0aa6e8b374d23b06ca708a8abe4f9.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "THREE HOUR - $20.00 ~ FOUR HOUR - $24.00",
+    "url": "https://www.thewarrington.com/_files/ugd/30c05d_7af0aa6e8b374d23b06ca708a8abe4f9.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "FIVE HOUR - $28.00",
+    "url": "https://www.thewarrington.com/_files/ugd/30c05d_7af0aa6e8b374d23b06ca708a8abe4f9.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "ONE HOUR - $15.00 ~ TWO HOUR - $19.00",
+    "url": "https://www.thewarrington.com/_files/ugd/30c05d_7af0aa6e8b374d23b06ca708a8abe4f9.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "THREE HOUR - $23.00 ~ FOUR HOUR - $27.00",
+    "url": "https://www.thewarrington.com/_files/ugd/30c05d_7af0aa6e8b374d23b06ca708a8abe4f9.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "FIVE HOUR - $31.00",
+    "url": "https://www.thewarrington.com/_files/ugd/30c05d_7af0aa6e8b374d23b06ca708a8abe4f9.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "$16 Additional per person",
+    "url": "https://www.thewarrington.com/_files/ugd/30c05d_7af0aa6e8b374d23b06ca708a8abe4f9.pdf"
+   }
+  ],
+  "name": "PENNSFORD LLC",
+  "osm_name": "The Warrington",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 87,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.thewarrington.com/"
+   },
+   {
+    "hh": false,
+    "lines": 150,
+    "result": "ok, 3 quote(s)",
+    "url": "https://www.thewarrington.com/_files/ugd/30c05d_6e23a09490c34e94a16b1bd376acb8af.pdf"
+   },
+   {
+    "hh": false,
+    "lines": 133,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.thewarrington.com/special-events"
+   },
+   {
+    "hh": false,
+    "lines": 159,
+    "result": "ok, 8 quote(s)",
+    "url": "https://www.thewarrington.com/_files/ugd/30c05d_7af0aa6e8b374d23b06ca708a8abe4f9.pdf"
+   }
+  ],
+  "website": "http://www.thewarrington.com/",
+  "zone_id": "doylestown"
  },
  "66224": {
   "address": "1130 VALLEY FORGE RD, PHOENIXVILLE PA 19460-2682",
@@ -28246,6 +29255,280 @@
   "website": "https://www.tiredhands.com/",
   "zone_id": "ardmore_bryn_mawr"
  },
+ "70089": {
+  "address": "194 W ASHLAND AVE, DOYLESTOWN PA 18901-4163",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "hh": true,
+    "quote": "JUMBO SHRIMP COCKTAIL (5) $17",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-allday.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "CRAB CAKE $18",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-allday.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "$11 CAESAR SALAD",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-allday.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "GRILLED CHICKEN $8 | GRILLED SALMON $12 | GRILLED SHRIMP $10 | SEARED TUNA $12",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-allday.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "SHORT RIB TACO (3) $18",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-allday.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "THE STATION CHICKEN $26",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-allday.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "CORONA LIGHT (4.0%) $7",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-allday.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "MICHELOB ULTRA (4.2%) $6",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-allday.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "MILLER LITE (4.2%) $6",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-allday.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "YUENGLING (4.5%) $6",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-allday.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "CORONA (4.6%) $7",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-allday.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "HEINEKEN (5.0%) $7",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-allday.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "MODELO ESPECIAL (4.4%) $7",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-allday.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "STELLA ARTOIS (5.2%) $7",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-allday.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "STELLA ARTOIS LIBERTE (N/A) $7",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-allday.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "PERONI (5.1%) $7",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-allday.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "MILLER LITE (4.2%) $7",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-allday.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "BLUE MOON (5.4%) $7",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-allday.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "SEASONAL CIDER (16 OZ.) $7",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-allday.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "FIDDLEHEAD (6.2%) $7",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-allday.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "GUINESS (4.2%) $8",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-allday.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "LAGUNITAS (6.2%) $8",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-allday.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "LEVANTE C&C(5.9%) $8",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-allday.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "MANGO CART (4.0%) $7",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-allday.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "STEAK FRITES $38",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-brunch.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "$29 FISH FRANCESE $31",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-brunch.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "RISOTTO PRIMAVERA $22",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-brunch.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "CHICKEN PARMIGIANA $23",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-brunch.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "SHRIMP & GRITS $27",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-brunch.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "BRUNCH SMASH BURGER $19",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-brunch.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "ANDOUILLE SAUSAGE HASH $19",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-brunch.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "BELGIAN WAFFLE $17",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-brunch.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "HAPPY STACK $10",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-brunch.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "TUNA TARTARE $18",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-brunch.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "JUMBO SHRIMP COCKTAIL (5) $17",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-brunch.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "CRISPY SHRIMP TACO(3) $16",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-brunch.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "ADD CHICKEN $8 SHRIMP $10 SALMON $12 SEARED TUNA $12",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-brunch.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "GRILLED ROMAINE WEDGE $12",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-brunch.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "HEN\u2019S EGG $3",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-brunch.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "CORONA LIGHT (4.0%) $7",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-brunch.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "MICHELOB ULTRA (4.2%) $6",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-brunch.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "MILLER LITE (4.2%) $6",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-brunch.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "YUENGLING (4.5%) $6",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-brunch.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "CORONA (4.6%) $7",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-brunch.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "HEINEKEN (5.0%) $7",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-brunch.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "MODELO ESPECIAL (4.4%) $7",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-brunch.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "STELLA ARTOIS (5.2%) $7",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-brunch.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "STELLA ARTOIS LIBERTE (N/A) $7",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-brunch.pdf"
+   }
+  ],
+  "name": "194 W ASHLAND LLC",
+  "osm_name": "The Station Doylestown",
+  "pages": [
+   {
+    "result": "rendered: 8 lines -> 214",
+    "url": "https://thestationdoylestown.com/"
+   },
+   {
+    "hh": false,
+    "lines": 214,
+    "result": "ok, 0 quote(s)",
+    "url": "https://thestationdoylestown.com/"
+   },
+   {
+    "hh": false,
+    "lines": 381,
+    "result": "ok, 24 quote(s)",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-allday.pdf"
+   },
+   {
+    "hh": false,
+    "lines": 338,
+    "result": "ok, 24 quote(s)",
+    "url": "https://thestationdoylestown.com/assets/menu/menu-brunch.pdf"
+   }
+  ],
+  "website": "https://thestationdoylestown.com/",
+  "zone_id": "doylestown"
+ },
  "70157": {
   "address": "425 W DEKALB PK, KING OF PRUSSIA PA 19406-2304",
   "crawled_at": "2026-09-01",
@@ -28491,6 +29774,46 @@
   ],
   "website": "https://samsbrickovenpizza.com/",
   "zone_id": "havertown"
+ },
+ "70317": {
+  "address": "480 N MAIN ST, DOYLESTOWN PA 18901-3404",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "We have happy hour covered! Shop domestic and local beers, from pale ales to IPAs and stouts. Plus, enjoy our broad selection of wine from Champagne to Chardonnay. Cheers!",
+    "url": "https://local.acmemarkets.com/pa/doylestown/480-n-main-st/Beer-Wine-Liquor.html"
+   }
+  ],
+  "name": "ACME MARKETS INC",
+  "osm_name": "ACME Markets",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 234,
+    "result": "ok, 0 quote(s)",
+    "url": "https://local.acmemarkets.com/pa/doylestown/480-n-main-st.html"
+   },
+   {
+    "hh": false,
+    "lines": 24,
+    "result": "ok, 0 quote(s)",
+    "url": "https://local.acmemarkets.com/pa/doylestown.html"
+   },
+   {
+    "hh": true,
+    "lines": 193,
+    "result": "ok, 1 quote(s)",
+    "url": "https://local.acmemarkets.com/pa/doylestown/480-n-main-st/Beer-Wine-Liquor.html"
+   },
+   {
+    "hh": false,
+    "lines": 195,
+    "result": "ok, 0 quote(s)",
+    "url": "https://local.acmemarkets.com/pa/doylestown/480-n-main-st/bakery.html"
+   }
+  ],
+  "website": "https://local.acmemarkets.com/pa/doylestown/480-n-main-st.html",
+  "zone_id": "doylestown"
  },
  "70417": {
   "address": "2034 CHESTNUT ST, PHILADELPHIA PA 19103-4495",
@@ -29052,21 +30375,37 @@
  },
  "71070": {
   "address": "1745 S EASTON RD, DOYLESTOWN PA 18901-2812",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "PICCOLO TRATTORIA AT DOYLESTOWN INC",
-  "osm_name": "Honeygrow",
+  "osm_name": "Piccolo Trattoria",
   "pages": [
    {
+    "hh": false,
+    "lines": 69,
     "result": "ok, 0 quote(s)",
-    "url": "https://www.honeygrow.com/location/doylestown/"
+    "url": "http://www.piccolotrattoria.com/"
    },
    {
+    "hh": false,
+    "lines": 108,
     "result": "ok, 0 quote(s)",
-    "url": "https://www.honeygrow.com/menu/"
+    "url": "http://www.piccolotrattoria.com/doylestown"
+   },
+   {
+    "hh": false,
+    "lines": 79,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.piccolotrattoria.com/catering-menu"
+   },
+   {
+    "hh": false,
+    "lines": 67,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.piccolotrattoria.com/menu"
    }
   ],
-  "website": "https://www.honeygrow.com/location/doylestown/",
+  "website": "http://www.piccolotrattoria.com/",
   "zone_id": "doylestown"
  },
  "71150": {
@@ -32709,6 +34048,35 @@
   "website": "https://www.chick-fil-a.com/locations/pa/philadelphia-international-airport-concourse-e",
   "zone_id": "west_philly"
  },
+ "85845": {
+  "address": "22 S MAIN ST, DOYLESTOWN PA 18901-4668",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "HOPSSCOTCH",
+  "osm_name": "Hops/Scotch",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 246,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.hopsscotch22.com/"
+   },
+   {
+    "hh": false,
+    "lines": 246,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.hopsscotch22.com/"
+   },
+   {
+    "hh": false,
+    "lines": 62,
+    "result": "ok, 0 quote(s)",
+    "url": "https://hopsscotch22.com/wp-content/uploads/2026/03/ONLINE-COCKTAIL-MENU.pdf"
+   }
+  ],
+  "website": "http://www.hopsscotch22.com/",
+  "zone_id": "doylestown"
+ },
  "86052": {
   "address": "50 THREE TUN RD UNIT #3, MALVERN PA 19355",
   "crawled_at": "2026-08-06",
@@ -34930,6 +36298,21 @@
   "website": "https://www.hilton.com/en/hotels/phlapes-embassy-suites-philadelphia-airport/",
   "zone_id": "west_philly"
  },
+ "92845": {
+  "address": "1 W COURT ST, DOYLESTOWN PA 18901-4210",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "LCGB OF DOYLESTOWN LLC",
+  "osm_name": "Lilly's Gourmet",
+  "pages": [
+   {
+    "result": "error: ConnectTimeout",
+    "url": "http://www.lillysgourmet.com/"
+   }
+  ],
+  "website": "http://www.lillysgourmet.com/",
+  "zone_id": "doylestown"
+ },
  "92901": {
   "address": "5400 FERNE BLVD, DREXEL HILL PA 19026",
   "crawled_at": "2026-09-01",
@@ -34951,17 +36334,48 @@
  },
  "92968": {
   "address": "1661 EASTON RD UNIT A2, WARRINGTON PA 18976",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "THE GIANT COMPANY LLC",
   "osm_name": "Mei Ting Asian Fusion",
   "pages": [
    {
-    "result": "error: ConnectionError",
+    "hh": false,
+    "lines": 6,
+    "result": "ok, 0 quote(s)",
     "url": "http://www.mei-ting.com/"
    }
   ],
   "website": "http://www.mei-ting.com/",
+  "zone_id": "doylestown"
+ },
+ "92992": {
+  "address": "4275 COUNTY LINE RD, CHALFONT PA 18914-2212",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "THE GIANT COMPANY LLC",
+  "osm_name": "GIANT",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 76,
+    "result": "ok, 0 quote(s)",
+    "url": "https://stores.giantfoodstores.com/pa/chalfont/4275-county-line-rd?y_source=1_NDE5NTY2Mi03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D"
+   },
+   {
+    "hh": false,
+    "lines": 101,
+    "result": "ok, 0 quote(s)",
+    "url": "https://pharmacy.giantfoodstores.com/pa/chalfont/4275-county-line-road"
+   },
+   {
+    "hh": false,
+    "lines": 125,
+    "result": "ok, 0 quote(s)",
+    "url": "https://stores.giantfoodstores.com/pa/chalfont/4275-county-line-rd/delivery"
+   }
+  ],
+  "website": "https://stores.giantfoodstores.com/pa/chalfont/4275-county-line-rd?y_source=1_NDE5NTY2Mi03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
   "zone_id": "doylestown"
  },
  "93176": {
@@ -35150,6 +36564,21 @@
   ],
   "website": "https://www.geronimosambler.com/",
   "zone_id": "ambler_upper_dublin"
+ },
+ "93849": {
+  "address": "136 E BUTLER AVE, CHALFONT PA 18914-3002",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "THE BAR AT 1720",
+  "osm_name": "1720 Bar & Restaurant",
+  "pages": [
+   {
+    "result": "403 text/html",
+    "url": "https://1720chalfont.com/"
+   }
+  ],
+  "website": "https://1720chalfont.com/",
+  "zone_id": "doylestown"
  },
  "93942": {
   "address": "116 & 118 S 20TH ST, PHILADELPHIA PA 19103-9136",
@@ -37442,6 +38871,21 @@
   ],
   "website": "https://www.waynehotel.com/",
   "zone_id": "wayne_radnor"
+ },
+ "98196": {
+  "address": "380 N MAIN ST, DOYLESTOWN PA 18901-3715",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "DOYLESTOWN TAVERN LLC",
+  "osm_name": "Farmhouse Tavern",
+  "pages": [
+   {
+    "result": "403 text/html",
+    "url": "https://farmhousetavern.com/"
+   }
+  ],
+  "website": "https://farmhousetavern.com/",
+  "zone_id": "doylestown"
  },
  "98359": {
   "address": "240 MARKET ST, PHILADELPHIA PA 19106",

@@ -1,7 +1,30 @@
 {
  "_comment": "Dated local roundups, one per zone. Read by ingest/crawl_roundups.py. A roundup is the outlet speaking, not the bar: its deals ship in their own tier, outlet + date on the card, capped at unconfirmed. Add a row when a human finds one; the crawl never discovers these on its own.",
  "articles": [
-  {"url": "https://countylinesmagazine.com/article/cheers-its-happy-hour-in-west-chester-pa/", "outlet": "County Lines Magazine", "zone_id": "west_chester"},
-  {"url": "https://countylinesmagazine.com/article/happy-hours-in-west-chester-pa/", "outlet": "County Lines Magazine", "zone_id": "west_chester"}
+  {
+   "url": "https://countylinesmagazine.com/article/cheers-its-happy-hour-in-west-chester-pa/",
+   "outlet": "County Lines Magazine",
+   "zone_id": "west_chester"
+  },
+  {
+   "url": "https://countylinesmagazine.com/article/happy-hours-in-west-chester-pa/",
+   "outlet": "County Lines Magazine",
+   "zone_id": "west_chester"
+  },
+  {
+   "url": "https://bucksco.today/2026/08/best-restaurants-outdoor-seating-doylestown-pa/",
+   "outlet": "BUCKSCO.Today",
+   "zone_id": "doylestown"
+  },
+  {
+   "url": "https://bucksco.today/2026/04/doylestown-10-destinations/",
+   "outlet": "BUCKSCO.Today",
+   "zone_id": "doylestown"
+  },
+  {
+   "url": "https://bucksco.today/2024/08/86-west-doylestown/",
+   "outlet": "BUCKSCO.Today",
+   "zone_id": "doylestown"
+  }
  ]
 }

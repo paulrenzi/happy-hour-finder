@@ -767,6 +767,57 @@
    ]
   },
   {
+   "id": "frost-doylestown-doylestown",
+   "lid": "103858",
+   "name": "Frost Doylestown",
+   "plcb_name": "MARS2 LLC",
+   "address": "46 E STATE ST UNIT G, , DOYLESTOWN PA 18901-4360",
+   "zone_id": "doylestown",
+   "license_type": "",
+   "website": "https://frostdoylestown.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "17:30"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "17:30"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "17:30"
+      },
+      {
+       "dow": 5,
+       "start": "15:30",
+       "end": "17:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:30",
+       "end": "17:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://frostdoylestown.com/",
+      "quote": "Join Us For Happy Hour - Everyday* / Tuesday - Thursday 4 to 5:30 pm, Fri - Sat 3:30 to 5:00 pm / * - Except during Holidays, Special Events & Sundays"
+     }
+    }
+   ]
+  },
+  {
    "id": "panache-blue-bell",
    "lid": "103994",
    "name": "Panache",
@@ -2311,6 +2362,63 @@
       "kind": "venue_site",
       "url": "https://lascalasfire.com/west-chester/menus/happy-hour/",
       "quote": "HAPPY HOUR / MON-FRI 3PM-6PM / RICOTTA BOARD $10"
+     }
+    }
+   ]
+  },
+  {
+   "id": "chambers-19-bistro-bar-doylestown",
+   "lid": "113169",
+   "name": "Chambers 19 Bistro & Bar",
+   "plcb_name": "CHAMBERS",
+   "address": "19 N MAIN ST, DOYLESTOWN PA 18901-4314",
+   "zone_id": "doylestown",
+   "license_type": "",
+   "website": "http://www.chambers19.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "wine",
+       "label": "wines",
+       "price_usd": 6.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.chambers19.com/specials/",
+      "quote": "HAPPY HOUR! / Monday-Friday from 4 to 6 PM! It\u2019s our favorite time of the day too! We offer HALF PRICED Tito\u2019s Handmade Vodka cocktails, beer specials, $6 wines, a dedicated food menu and more!. Definitely worth a visit after work. This pricing is extended to both bars. Bring your whole office or friend group and we can offer even more. Call us for options, at 215.348.1940. / Thursday is Pasta Nig"
      }
     }
    ]
@@ -5662,6 +5770,78 @@
    ]
   },
   {
+   "id": "new-britain-inn-new-britain",
+   "lid": "39404",
+   "name": "New Britain Inn",
+   "plcb_name": "MY 4 DAUGHTERS, INC.",
+   "address": "376 W BUTLER AVE, NEW BRITAIN PA 18901-5112",
+   "zone_id": "doylestown",
+   "license_type": "",
+   "website": "http://www.newbritaininn.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Domestic Drafts",
+       "price_usd": 2.75
+      },
+      {
+       "category": "draft",
+       "label": "Craft & Import Drafts",
+       "amount_off_usd": 1.0
+      },
+      {
+       "category": "draft",
+       "label": "Bottled Beers",
+       "amount_off_usd": 0.5
+      },
+      {
+       "category": "wine",
+       "label": "Spirits & Wine",
+       "amount_off_usd": 0.5
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://www.newbritaininn.com/happy-hour/",
+      "quote": "HAPPY HOUR / MONDAY - FRIDAY (4:00 PM to 6:00 PM) / $2.75 Domestic Drafts"
+     }
+    }
+   ]
+  },
+  {
    "id": "sullivan-s-steakhouse-king-of-prussia",
    "lid": "39702",
    "name": "Sullivan's Steakhouse",
@@ -7150,6 +7330,73 @@
       "kind": "venue_site",
       "url": "https://pepperoncinirestaurant.com/conshohocken-pepperoncini-restaurant-happy-hours-specials",
       "quote": "Happy Hour / mon - fri / 4p - 6p"
+     }
+    }
+   ]
+  },
+  {
+   "id": "86-west-doylestown",
+   "lid": "54116",
+   "name": "86 West",
+   "plcb_name": "FRANK'S KNIGHT HOUSE, LLC",
+   "address": "86-96 W STATE ST, DOYLESTOWN PA 18901-4222",
+   "zone_id": "doylestown",
+   "license_type": "",
+   "website": "http://the86west.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "zucchini fries",
+       "price_usd": 12.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://the86west.com/wp-content/uploads/Buy1_50_HappyHour_menu_08-03-26.pdf",
+      "quote": "Half Price Drinks / mon - sun / january - march 4-7pm"
      }
     }
    ]

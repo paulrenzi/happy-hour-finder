@@ -7591,6 +7591,168 @@
    }
   ]
  },
+ "54116": {
+  "name": "86 West",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 6,
+      "start": "16:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 7,
+      "start": "16:00",
+      "end": "19:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "113169": {
+  "name": "Chambers 19 Bistro & Bar",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "103858": {
+  "name": "Frost Doylestown",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "17:30"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "17:30"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "17:30"
+     },
+     {
+      "dow": 5,
+      "start": "15:30",
+      "end": "17:00"
+     },
+     {
+      "dow": 6,
+      "start": "15:30",
+      "end": "17:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "39404": {
+  "name": "New Britain Inn",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "104355": {
   "name": "Chickie's & Pete's",
   "deals": [

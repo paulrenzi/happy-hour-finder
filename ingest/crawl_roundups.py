@@ -181,10 +181,27 @@ HEADING_WORDS = 7
 NOT_HEADING_RE = re.compile(r"[.!?]\s|[,;:]|\b(?:runs?|from|until|with)\b|\$", re.I)
 
 
+# Several outlets write a list heading as "<Venue> - <why it made the list>":
+# BUCKSCO.Today's Doylestown piece heads its entries "86 West - Best for Groups
+# and Drinks". The tail pushed the line past HEADING_WORDS, so the heading was
+# never seen, the prose under it went to no venue, and the only quote the town
+# produced was the address line in the article's card block at the foot. The
+# venue name is the part before the dash.
+DASH_SPLIT_RE = re.compile(r"\s+[–—-]\s+")
+
+
+def heading_text(line):
+    """A heading line reduced to the venue name it opens with."""
+    return DASH_SPLIT_RE.split(line, 1)[0].strip() if line else line
+
+
 def is_heading(line):
-    return (bool(line) and len(line) <= HEADING_MAX
-            and len(line.split()) <= HEADING_WORDS
-            and not NOT_HEADING_RE.search(line))
+    # The sentence test stays on the WHOLE line -- splitting first would let a
+    # prose sentence with a dash in it pass on its short opening clause.
+    if not line or NOT_HEADING_RE.search(line):
+        return False
+    core = heading_text(line)
+    return len(core) <= HEADING_MAX and len(core.split()) <= HEADING_WORDS
 
 
 def _heading_venue(line, index):
@@ -262,10 +279,11 @@ def mentions(text, index):
 
     for ln in lines:
         if is_heading(ln):
-            if ln == prev_heading:
+            head = heading_text(ln)
+            if head == prev_heading:
                 continue
-            prev_heading = ln
-            queue.append((ln, _heading_venue(ln, index)))
+            prev_heading = head
+            queue.append((head, _heading_venue(head, index)))
             continue
         if queue:
             # The paragraph goes to the queued heading it NAMES, newest first

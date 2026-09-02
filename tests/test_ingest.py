@@ -3494,3 +3494,60 @@ class ABareLabelIsNotAClaim(unittest.TestCase):
         self.assertTrue(crawl_sites.states_a_deal("Happy Hour $5 drafts"))
         self.assertTrue(
             crawl_sites.states_a_deal("Happy Hour in the tavern and patio"))
+
+
+class RoundupHeadingShapes(unittest.TestCase):
+    """A list heading is often "<Venue> - <why it made the list>".
+
+    BUCKSCO.Today's Doylestown piece (2026-08-12) heads its entries "86 West -
+    Best for Groups and Drinks". The tail pushed every one of them past
+    HEADING_WORDS, so no heading was seen, the prose under it was filed to no
+    venue, and the town's only roundup quote was the address line in the card
+    block at the foot of the article.
+    """
+
+    def test_a_dash_suffixed_heading_is_a_heading(self):
+        import crawl_roundups as cr
+        for line in ("86 West - Best for Groups and Drinks",
+                     "86 West — Best for Groups and Drinks",
+                     "Maxwell's On Main (MOMs) – Best Rooftop Experience"):
+            self.assertTrue(cr.is_heading(line), line)
+
+    def test_the_venue_name_is_the_part_before_the_dash(self):
+        import crawl_roundups as cr
+        self.assertEqual(cr.heading_text("86 West - Best for Groups and Drinks"),
+                         "86 West")
+        self.assertEqual(cr.heading_text("Farmhouse Tavern"), "Farmhouse Tavern")
+
+    def test_prose_with_a_dash_in_it_is_still_not_a_heading(self):
+        # The sentence test stays on the WHOLE line. Splitting first would let
+        # a paragraph pass on its short opening clause.
+        import crawl_roundups as cr
+        for line in ("Open since 1953 - the longest running tavern in town, "
+                     "it offers outdoor seating and a solid pub menu.",
+                     "Happy hour runs Monday through Friday from 4:30 to 6:30."):
+            self.assertFalse(cr.is_heading(line), line)
+
+
+class ASuppliedTradeNameCanBeTheLegalEntity(unittest.TestCase):
+    """Google lists FACENDA SPIRITS LLC in Doylestown under its paperwork.
+
+    The base left a Places/OSM name alone on the rule that it "is already the
+    trade name" -- and so shipped the one thing a card may never show. The sign
+    over a door never ends in LLC.
+    """
+
+    def test_an_entity_suffixed_trade_name_is_stripped(self):
+        from build_venue_base import _trade
+        self.assertEqual(_trade("FACENDA SPIRITS LLC"), "Facenda Spirits")
+        self.assertEqual(_trade("Facenda Spirits LLC"), "Facenda Spirits")
+
+    def test_a_real_trade_name_is_left_exactly_as_given(self):
+        from build_venue_base import _trade
+        for name in ("86 West", "Chambers 19 Bistro & Bar", "The Hattery Stove & Still"):
+            self.assertEqual(_trade(name), name)
+
+    def test_no_trade_name_at_all_falls_through(self):
+        from build_venue_base import _trade
+        self.assertIsNone(_trade(None))
+        self.assertIsNone(_trade("  "))
