@@ -1,4 +1,51 @@
 {
+ "bartaco-king-of-prussia": [
+  {
+   "category": "cocktail",
+   "label": "coconut mojito",
+   "price_usd": 9.0
+  },
+  {
+   "category": "cocktail",
+   "label": "coco melon margarita",
+   "price_usd": 9.0
+  },
+  {
+   "category": "cocktail",
+   "label": "cazuela",
+   "price_usd": 9.95
+  },
+  {
+   "category": "cocktail",
+   "label": "la pi\u00f1a margarita",
+   "price_usd": 8.0
+  },
+  {
+   "category": "cocktail",
+   "label": "michelada",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "red sangria",
+   "price_usd": 8.75
+  },
+  {
+   "category": "wine",
+   "label": "lopez de haro blanco viura, spain",
+   "price_usd": 6.75
+  },
+  {
+   "category": "wine",
+   "label": "glup glup garnacha, spain",
+   "price_usd": 6.75
+  },
+  {
+   "category": "bottle_can",
+   "label": "tecate, light lager (mexico)",
+   "price_usd": 4.0
+  }
+ ],
  "bella-trattoria-spring-city": [
   {
    "category": "wine",
@@ -46,7 +93,7 @@
  "liberty-union-bar-and-grill-chester-springs": [
   {
    "category": "draft",
-   "label": "Miller Lite Drafts",
+   "label": "Miller Lite drafts",
    "price_usd": 4.0
   },
   {
@@ -56,12 +103,12 @@
   },
   {
    "category": "shot",
-   "label": "Single Shot Tito's",
+   "label": "Single shot Tito's",
    "price_usd": 6.0
   },
   {
    "category": "wine",
-   "label": "Any House Glass of Wine",
+   "label": "Any house glass of wine",
    "price_usd": 7.0
   },
   {
@@ -73,6 +120,21 @@
    "category": "cocktail",
    "label": "Teremana Margarita",
    "price_usd": 9.0
+  },
+  {
+   "category": "food",
+   "label": "Firecracker Chicken Bites",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Philly Roast Pork Eggrolls",
+   "price_usd": 11.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Maker's Mark Old Fashioned",
+   "price_usd": 12.0
   }
  ],
  "malbec-argentine-steakhouse-philadelphia": [
@@ -102,9 +164,59 @@
    "price_usd": 9.0
   },
   {
-   "category": "bottle_can",
-   "label": "Bottle beer: Yuengling, Stella, Peroni, Corona, Miller Lite",
+   "category": "wine",
+   "label": "San Huberto Malbec bottle",
+   "price_usd": 29.0
+  },
+  {
+   "category": "food",
+   "label": "Patatas Bravas & Chorizo",
+   "price_usd": 15.0
+  },
+  {
+   "category": "food",
+   "label": "Empanadas: mushrooms & cheese / shrimp & cheese",
    "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "Salmon Tartare",
+   "price_usd": 15.0
+  },
+  {
+   "category": "food",
+   "label": "Grilled Brochette: steak or chicken",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Grilled Brochette: seasonal vegetables",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Chorizo / Grill Sausage",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Rib-Eye Pinwheel",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Half Dozen Mussels & Sausage, marinara sauce",
+   "price_usd": 15.0
+  },
+  {
+   "category": "food",
+   "label": "One Dozen Mussels Only, marinara or wine sauce",
+   "price_usd": 15.0
+  },
+  {
+   "category": "food",
+   "label": "Malbec Burger with French fries or house salad",
+   "price_usd": 16.0
   }
  ],
  "north-third-philadelphia": [
@@ -137,6 +249,36 @@
    "category": "bottle_can",
    "label": "Kenwood Original Lager",
    "price_usd": 3.0
+  },
+  {
+   "category": "food",
+   "label": "Hot Dog of the Day",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Hand Cut Fries",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "Tempura Cauliflower",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "Buffalo Chicken Tacos",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Caesar Salad",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Smash Burger",
+   "price_usd": 7.0
   }
  ],
  "ogyu-ardmore": [
@@ -147,13 +289,35 @@
   },
   {
    "category": "wine",
-   "label": "House wine, red or white",
+   "label": "House wine, choose one: red or white",
    "price_usd": 8.0
   },
   {
    "category": "food",
-   "label": "Nori taco (spicy tuna, salmon or yellowtail)",
+   "label": "Nori taco - spicy tuna, spicy salmon or spicy yellowtail",
    "price_usd": 5.0
+  }
+ ],
+ "other-half-brewing-philadelphia": [
+  {
+   "category": "food",
+   "label": "6 wings",
+   "price_usd": 6.0
+  },
+  {
+   "category": "draft",
+   "label": "Flagship drafts",
+   "price_usd": 5.0
+  },
+  {
+   "category": "wine",
+   "label": "Wines",
+   "price_usd": 8.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Select cocktails",
+   "price_usd": 8.0
   }
  ],
  "p-j-welihan-s-pub-restaurant-hatfield": [
@@ -196,11 +360,6 @@
   },
   {
    "category": "cocktail",
-   "label": "Specialty Martinis",
-   "price_usd": 10.0
-  },
-  {
-   "category": "cocktail",
    "label": "Surfsides & Statesides",
    "price_usd": 6.0
   },
@@ -210,30 +369,120 @@
    "price_usd": 2.5
   },
   {
+   "category": "call",
+   "label": "Ketel Mixed Drinks (single pour)",
+   "price_usd": 5.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Specialty Martinis",
+   "price_usd": 10.0
+  },
+  {
    "category": "bottle_can",
    "label": "Premium Bottles",
    "price_usd": 4.0
   },
   {
-   "category": "call",
-   "label": "Ketel Mixed Drinks",
+   "category": "draft",
+   "label": "Local Craft Drafts",
    "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "Small Pizza",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Mussels",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "Clams",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "(3) Pretzel Rods",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "Chicken Fingers & Fries",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "Cheesesteak Eggrolls",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "Buffalo Eggrolls",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "Football Fries",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "Chicken Nachos",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Fried Cheese",
+   "price_usd": 7.0
   }
  ],
  "teikoku-newtown-square": [
   {
    "category": "cocktail",
-   "label": "cocktails (saketini, old fashioned, ginger martini)",
+   "label": "saketini",
+   "price_usd": 7.0
+  },
+  {
+   "category": "cocktail",
+   "label": "old fashioned",
+   "price_usd": 7.0
+  },
+  {
+   "category": "cocktail",
+   "label": "ginger martini",
    "price_usd": 7.0
   },
   {
    "category": "wine",
-   "label": "wines (pinot noir, malbec, pinot grigio, chardonnay)",
+   "label": "pinot noir",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "malbec",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "pinot grigio",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "chardonnay",
    "price_usd": 8.0
   },
   {
    "category": "draft",
-   "label": "draft beers (stella, kirin)",
+   "label": "stella",
+   "price_usd": 5.0
+  },
+  {
+   "category": "draft",
+   "label": "kirin",
    "price_usd": 5.0
   },
   {
@@ -250,6 +499,88 @@
    "category": "food",
    "label": "sweet thai chili wings",
    "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "chicken sate skewers",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "spring rolls",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "house greens",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "edamame",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "shrimp tempura roll",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "spicy tuna roll",
+   "price_usd": 9.0
+  },
+  {
+   "category": "food",
+   "label": "spicy salmon roll",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "spicy yellowtail roll",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "teikoku roll",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "california roll",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "vegetable roll",
+   "price_usd": 4.0
+  },
+  {
+   "category": "food",
+   "label": "tempura corn - togarashi dusted, gorgonzola cream sauce",
+   "price_usd": 9.0
+  }
+ ],
+ "trappe-tavern-trappe": [
+  {
+   "category": "draft",
+   "label": "Domestic Drafts",
+   "price_usd": 3.75
+  },
+  {
+   "category": "well",
+   "label": "Mixed Well Drinks",
+   "price_usd": 5.0
+  },
+  {
+   "category": "draft",
+   "label": "Select Micro Drafts",
+   "price_usd": 5.5
+  },
+  {
+   "category": "wine",
+   "label": "House Wines",
+   "price_usd": 7.0
   }
  ],
  "valley-forge-trattoria-lounge-phoenixville": [
