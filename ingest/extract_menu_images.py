@@ -43,6 +43,12 @@ from extract_prices_llm import verify  # noqa: E402
 
 CACHE = os.path.join(REPO, "data", "menu_images")
 OUT = os.path.join(REPO, "data", "deals_menu_images.json")
+# The model's verbatim transcript of each menu picture, kept so that
+# extract_deals.py can run its own window grammar over the happy-hour lines.
+# Rivertown Taps publishes NOTHING in text: its "Wednesday through Friday
+# 3pm to 6pm" exists only as pixels, so without this the venue had items
+# on file and no card to put them on.
+TRANSCRIPTS = os.path.join(REPO, "data", "menu_image_transcripts.json")
 UA = "happy-hour-finder-ingest/1.0 (+https://paulrenzi.github.io/happy-hour-finder/)"
 MAX_BYTES = 12_000_000
 
@@ -145,6 +151,8 @@ def main():
     print(f"{len(todo)} menu image(s) to read\n")
 
     out = json.load(open(OUT, encoding="utf-8")) if os.path.exists(OUT) else {}
+    scripts = (json.load(open(TRANSCRIPTS, encoding="utf-8"))
+               if os.path.exists(TRANSCRIPTS) else {})
     for n, (vid, name, url) in enumerate(todo, 1):
         try:
             path = fetch(url)
@@ -162,6 +170,8 @@ def main():
         items, dropped = items_from(read)
         if items:
             out[vid] = items
+        if read.get("transcript"):
+            scripts[vid] = {"url": url, "transcript": read["transcript"]}
         print(f"[{n}/{len(todo)}] {name[:34]:<36} {len(items)} item(s)"
               + (f", {len(dropped)} dropped" if dropped else ""))
         if args.show:
@@ -178,6 +188,10 @@ def main():
         with open(tmp, "w", encoding="utf-8") as fh:
             json.dump(out, fh, indent=1, sort_keys=True)
         os.replace(tmp, OUT)
+        tmp = TRANSCRIPTS + ".new"
+        with open(tmp, "w", encoding="utf-8") as fh:
+            json.dump(scripts, fh, indent=1, sort_keys=True)
+        os.replace(tmp, TRANSCRIPTS)
 
     print(f"\n{len(out)} venue(s) on file -> {OUT}")
 

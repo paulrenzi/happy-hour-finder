@@ -74,6 +74,20 @@ OUT = os.path.join(REPO, "data", "deals_prices_llm.json")
 # only thing it can cost is recall, which is the number measured above.
 BATCH = int(os.environ.get("HHF_PRICE_BATCH", "20"))   # venues per model call
 MAX_QUOTE = 2400     # chars of quote text per venue
+
+# A page of daily / weekly / lunch specials is not the happy hour. Revival's
+# card carried "$6 margaritas" (Margherita Monday, from /daily-specials)
+# because every quote a venue had was joined and fed to the model.
+DAY_SPECIALS_URL_RE = re.compile(
+    r"(?:daily|weekly|weekday|lunch|takeout|brunch|mon(?:day)?|tue(?:s|sday)?|"
+    r"wed(?:nesday)?|thu(?:rs|rsday)?|fri(?:day)?|sat(?:urday)?|sun(?:day)?)"
+    r"[-_ ]?specials?", re.I)
+
+
+def vouched(hit):
+    """May this crawl hit feed the price pass? A hit the crawl marked hh may;
+    otherwise only when its page is not a day-specials page."""
+    return bool(hit.get("hh")) or not DAY_SPECIALS_URL_RE.search(hit.get("url", ""))
 # No item cap. The card folds after 3 and holds the rest behind "+N more", so
 # the display never needed one; capping here only threw away menu we had read.
 MODEL = os.environ.get("HHF_PRICE_MODEL", "sonnet")
@@ -169,7 +183,9 @@ def quotes_by_venue():
         if not v["hits"]:
             continue
         vid = slug(v["osm_name"] or v["name"], v["address"])
-        text = "\n".join(h["quote"] for h in v["hits"])
+        text = "\n".join(h["quote"] for h in v["hits"] if vouched(h))
+        if not text:
+            continue
         out.setdefault(vid, text[:MAX_QUOTE])
     return out
 

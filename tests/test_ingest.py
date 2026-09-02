@@ -26,6 +26,7 @@ import build_bundles  # noqa: E402
 import crawl_sites  # noqa: E402
 import exclusions  # noqa: E402
 import report_holes  # noqa: E402
+import read_pages_llm  # noqa: E402
 from crawl_roundups import fresh_enough, mentions, published_date, venue_index  # noqa: E402
 from crawl_sites import (candidate_links, crawl_one, hh_sections,  # noqa: E402
                          reached_nothing,
@@ -2110,6 +2111,170 @@ class AShellHomepageIsWorthOneRender(unittest.TestCase):
         self.assertTrue(any(r.startswith("rendered: ") for r in results), results)
         self.assertIn("https://bar.example/happy-hour", [p["url"] for p in pages])
         self.assertTrue(hits)
+
+
+class TheVenuesOwnTownPageIsTheVenue(unittest.TestCase):
+    """Sly Fox /phoenixville and Sedona /locations/phoenixville-pa/ hold the
+    happy hour and match no LINK_WORD. A link naming the venue's own town is
+    the venue's page and ranks first."""
+
+    HTML = ('<a href="/beereventservices">Events</a>'
+            '<a href="https://www.slyfoxbeer.com/phoenixville">Phoenixville</a>'
+            '<a href="/menu">Menu</a>')
+
+    def test_town_link_ranks_first(self):
+        town = crawl_sites.town_re("520 Kimberton Rd, Phoenixville PA 19460")
+        got = candidate_links(self.HTML, "https://www.slyfoxbeer.com/", town)
+        self.assertEqual(got[0], "https://www.slyfoxbeer.com/phoenixville")
+        self.assertEqual(len(got), 3)
+
+    def test_hyphenated_locations_slug(self):
+        town = crawl_sites.town_re("131 Bridge St, Phoenixville PA 19460")
+        html = '<a href="/locations/phoenixville-pa/">Our Location</a>'
+        got = candidate_links(html, "https://sedonataphouse.com/", town)
+        self.assertEqual(got, ["https://sedonataphouse.com/locations/phoenixville-pa/"])
+
+    def test_multi_word_town(self):
+        town = crawl_sites.town_re("160 N Gulph Rd, King of Prussia PA 19406")
+        for slug in ("king-of-prussia", "kingofprussia", "King_of_Prussia"):
+            self.assertTrue(town.search("/locations/" + slug), slug)
+        self.assertFalse(town.search("/kingston"))
+
+    def test_no_town_is_the_old_rule(self):
+        self.assertIsNone(crawl_sites.town_re("no address"))
+        got = candidate_links(self.HTML, "https://www.slyfoxbeer.com/", None)
+        self.assertEqual(got, ["https://www.slyfoxbeer.com/beereventservices",
+                               "https://www.slyfoxbeer.com/menu"])
+
+    def test_a_menu_card_anchor_is_a_link(self):
+        # 220 characters of image div and heading inside the <a>: Sedona's PDF.
+        html = ('<a href="/wp-content/uploads/HappyHourMenu_PhxWC.pdf"> '
+                '<div class="menu-card__image" style="background-image: url('
+                'https://sedonataphouse.com/wp-content/uploads/2019/01/'
+                'kobe-sliders-fries-beer-2-600x450.jpg)"></div> '
+                '<h3>Happy Hour Menu</h3> </a>')
+        got = candidate_links(html, 'https://sedonataphouse.com/locations/phoenixville-pa/')
+        self.assertEqual(got, ['https://sedonataphouse.com/wp-content/uploads/HappyHourMenu_PhxWC.pdf'])
+
+    def test_another_town_is_not_ours(self):
+        town = crawl_sites.town_re("520 Kimberton Rd, Phoenixville PA 19460")
+        html = '<a href="/pottstown">Pottstown</a>'
+        self.assertEqual(candidate_links(html, "https://www.slyfoxbeer.com/", town), [])
+
+
+class AnImageThatNamesItselfTheHappyHour(unittest.TestCase):
+    """Revival's menu is "Revival HH.png" on a Wix page; Rivertown's is
+    Happy-Hour-Specials.png on /menu/. Both are the menu, on any page."""
+
+    def test_standalone_hh_token_and_percent20(self):
+        html = '<img src="https://static.wixstatic.com/media/x~mv2.png/v1/fill/Revival%20HH.png">'
+        got = menu_images(html, "https://www.revivalpizzapub.com/happy-hour-menu")
+        self.assertEqual(len(got), 1)
+        self.assertIn("Revival HH.png", got[0])
+
+    def test_hh_inside_a_word_is_not_the_token(self):
+        html = '<img src="/img/shhh-quiet.png">'
+        self.assertEqual(menu_images(html, "https://x.example/happy-hour"), [])
+
+    def test_self_named_only_on_a_menu_page(self):
+        html = ('<img src="/2026/07/Happy-Hour-Specials-791x1024.png">'
+                '<img src="/2026/07/weekly-specials.png">')
+        got = menu_images(html, "https://rivertowntaps.com/menu/", self_named=True)
+        self.assertEqual(got, ["https://rivertowntaps.com/2026/07/Happy-Hour-Specials.png"])
+
+    def test_hh_page_keeps_the_wider_rule(self):
+        html = ('<img src="/2026/07/Happy-Hour-Specials.png">'
+                '<img src="/2026/07/weekly-specials.png">')
+        self.assertEqual(len(menu_images(html, "https://x.example/happy-hour/")), 2)
+
+
+class APunOnTheThingIsTheThing(unittest.TestCase):
+    """Sly Fox calls it "Appy Hour" and never says happy hour."""
+
+    TEXT = ("DAILY SPECIALS\nTuesday-Friday: Appy Hour\n"
+            "$2 off select appetizers and $1 wings from 3PM-6PM (dine-in only)\n")
+
+    def test_heading_and_quote(self):
+        self.assertTrue(crawl_sites.HH_HEADING_RE.search("Tuesday-Friday: Appy Hour"))
+        qs = quotes(self.TEXT)
+        self.assertTrue(any("3PM-6PM" in q for q in qs), qs)
+
+
+class TheDayAboveTheHeadingOwnsIt(unittest.TestCase):
+    """Sly Fox lists its specials as day / name / detail / time, one per
+    line, so the day under a time is the NEXT special's heading."""
+
+    LINES = ['thursday', '$12 burger & a pint', 'tuesday-friday', 'appy hour',
+             'on wings & select apps', '3:00pm-6:00pm', 'saturday',
+             'mystery pitcher']
+
+    def test_saturday_is_not_the_appy_hours(self):
+        qs = quotes(chr(10).join(self.LINES))
+        q = [x for x in qs if 'appy hour' in x][0]
+        self.assertEqual(q, 'tuesday-friday / appy hour / 3:00pm-6:00pm')
+        ws = extract_deals.windows_from(q)
+        self.assertEqual({w['dow'] for w in ws}, {2, 3, 4, 5})
+
+    def test_no_day_above_keeps_the_forward_rule(self):
+        q = quotes(chr(10).join(['HAPPY HOUR', 'mon - fri', '4pm - 6pm']))[0]
+        self.assertEqual(q, 'HAPPY HOUR / mon - fri / 4pm - 6pm')
+
+
+class ALigatureIsNotADifferentWord(unittest.TestCase):
+    def test_off_set_as_one_glyph(self):
+        self.assertEqual(crawl_sites.pdf_clean('$20 O\ufb00 Reserve Wines / Tru\ufb04e Fries'),
+                         '$20 Off Reserve Wines / Truffle Fries')
+
+
+class ADaysSpecialsAreNotTheHappyHoursPrices(unittest.TestCase):
+    """Revival's card said $6 margaritas: Margherita Monday off /daily-specials."""
+
+    def test_vouched(self):
+        v = extract_prices_llm.vouched
+        self.assertFalse(v({"url": "https://r.example/daily-specials", "quote": "x"}))
+        self.assertTrue(v({"url": "https://r.example/daily-specials", "quote": "x", "hh": True}))
+        self.assertTrue(v({"url": "https://r.example/happy-hour", "quote": "x"}))
+        self.assertFalse(v({"url": "https://r.example/menus/weekly_specials.pdf", "quote": "x"}))
+
+
+class AMenuPictureCanStateTheHours(unittest.TestCase):
+    """Rivertown Taps publishes nothing in text; its happy hour is a PNG on
+    /menu/ that says "( Wednesday through Friday 3pm to 6pm )". The vision
+    pass keeps its transcript, and the deal extractor runs windows_from()
+    over the happy-hour lines of it and nothing else."""
+
+    SCRIPT = ("Happy Hour\n( Wednesday through Friday 3pm to 6pm )\n"
+              "$10 Classic Cocktails\n-Margarita\nLunch Special\n"
+              "( Wednesday through Sunday open to 4pm )\n$15 Pasta & Salad Combo\n"
+              "Sunday Brunch\nBrunch served every Sunday from 11am - 2pm")
+
+    def test_only_the_happy_hour_lines_are_spans(self):
+        got = extract_deals.picture_spans(
+            {"rivertown-taps-phoenixville": {"url": "https://x/hh.png", "transcript": self.SCRIPT}})
+        url, spans = got["rivertown-taps-phoenixville"]
+        self.assertEqual(url, "https://x/hh.png")
+        self.assertEqual(len(spans), 1)
+        self.assertNotIn("Brunch", spans[0])
+        ws = extract_deals.windows_from(spans[0])
+        self.assertEqual({w["dow"] for w in ws}, {3, 4, 5})
+        self.assertEqual({(w["start"], w["end"]) for w in ws}, {("15:00", "18:00")})
+
+    def test_a_sheet_with_no_happy_hour_line_proposes_nothing(self):
+        self.assertEqual(extract_deals.picture_spans(
+            {"v": {"url": "u", "transcript": "Lunch Special\nopen to 4pm"}}), {})
+
+
+class ADaysSpecialsPageIsNotWorthAHappyHourRead(unittest.TestCase):
+    """Revival's /daily-specials says HAPPY HOUR MENU in its nav and states
+    seven prices. The page reader must not spend a call on it."""
+
+    TEXT = 'HAPPY HOUR MENU / MARGHERITA MONDAY / $6 margaritas / $8 martinis'
+
+    def test_refused_by_its_own_url(self):
+        wr = read_pages_llm.worth_reading
+        self.assertFalse(wr('https://r.example/daily-specials', self.TEXT))
+        self.assertTrue(wr('https://r.example/happy-hour-menu', self.TEXT))
+        self.assertTrue(wr('https://r.example/menus', self.TEXT))
 
 
 class OneNumberSaysWhatAShellIs(unittest.TestCase):

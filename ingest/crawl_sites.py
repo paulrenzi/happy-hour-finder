@@ -92,7 +92,7 @@ LINK_WORDS = re.compile(
     r"happy.?hour|special|deal|drink|bar.?menu|menu|events?|promo", re.I)
 # A hit has to name the thing. 'Happy' alone matches 'Happy Birthday parties'.
 DEAL_RE = re.compile(
-    r"happy hour|happy-hour|drink special|daily special|late night menu|"
+    r"happy hour|happy-hour|appy hour|drink special|daily special|late night menu|"
     r"industry night|power hour|social hour|bar special|half.?price|"
     r"\$\d+(?:\.\d\d)?\s*(?:draft|drafts|beer|wells|well drinks|wine|cocktails?|"
     r"apps|appetizers|margaritas|shots)", re.I)
@@ -104,6 +104,10 @@ DEAL_RE = re.compile(
 TIME_CONTEXT_RE = re.compile(r"\d{1,2}(?::\d\d)?\s*(?:am|pm|a\.m\.|p\.m\.|[ap]\b)", re.I)
 CONTEXT_RE = re.compile(
     TIME_CONTEXT_RE.pattern + r"|\$\d|mon|tue|wed|thu|fri|sat|sun", re.I)
+# A line that is nothing but days: 'tuesday-friday', 'Mon - Thu', 'Sat & Sun'.
+DAY_LINE_RE = re.compile(
+    r"\s*(?:mon|tue|wed|thu|fri|sat|sun)[a-z]*\.?s?"
+    r"(?:\s*(?:-|–|—|to|thru|through|&|and|,|/)\s*(?:mon|tue|wed|thu|fri|sat|sun)[a-z]*\.?s?)*\s*:?\s*$", re.I)
 # A priced line on a menu document: a name, then a price. Only ever applied to a
 # document a happy-hour page linked as its menu -- on an ordinary page this
 # matches the dinner menu, which is why it is not part of DEAL_RE.
@@ -140,9 +144,16 @@ HH_DOC_RE = re.compile(
     r"(?:happy.?hour|happyhour|(?:^|[/\-_])hh[-_.]|drink.?menu|bar.?menu|specials?)"
     r"[^/]*\.pdf($|\?)", re.I)
 
+# A standalone HH token: Revival's Wix upload is literally "Revival HH.png".
+_HH_TOKEN = r"(?<![a-z0-9])hh(?![a-z0-9])"
 MENU_IMG_RE = re.compile(
-    r"(?:happy.?hour|_hh_|-hh-|specials?|drink.?menu|bar.?menu)[^\"'\s]*"
+    r"(?:happy.?hour|" + _HH_TOKEN + r"|specials?|drink.?menu|bar.?menu)[^\"'\s]*"
     r"\.(?:jpe?g|png|webp)", re.I)
+# The stricter form: an image that names ITSELF the happy hour. Trusted on
+# any page, because Rivertown Taps puts Happy-Hour-Specials.png on /menu/,
+# a page whose URL names no hour, and the old rule never looked there.
+HH_IMG_RE = re.compile(
+    r"(?:happy.?hour|" + _HH_TOKEN + r")[^\"'\s]*\.(?:jpe?g|png|webp)", re.I)
 IMG_CAP = 3
 
 MARKUP_RE = re.compile(r"<[^>]+>")
@@ -429,7 +440,9 @@ def page_is_hh(url):
     return bool(HH_PATH_RE.search(urllib.parse.urlsplit(url).path))
 
 
-HH_HEADING_RE = re.compile(r"happy\s*hour|social hour|power hour|bar bites", re.I)
+# "Appy Hour" is Sly Fox Phoenixville's name for its Tue-Fri 3-6 appetizer
+# happy hour; the page never says "happy hour" anywhere.
+HH_HEADING_RE = re.compile(r"happy\s*hour|appy\s*hour|social hour|power hour|bar bites", re.I)
 # A heading that divides a happy hour up rather than ending it. CO-OP's happy
 # hour is an <h2> and so are its own 'Food Specials' and 'Drink Specials', so
 # rank cannot tell a subdivision from the next menu -- the WORD can. Closing on
@@ -796,7 +809,19 @@ def quotes(text, menu_doc=False, hh_page=False, hh_lines=frozenset(), stacks=Non
             near = lines[i + 1:i + 4]
             ctx = [l for l in near if CONTEXT_RE.search(l)]
             timed = [l for l in ctx if TIME_CONTEXT_RE.search(l)]
-            keep = (timed + [l for l in ctx if l not in timed])[:2]
+            # A day line directly ABOVE the heading is the heading's day, and
+            # then a bare day below the time is the NEXT block's heading. Sly
+            # Fox lists 'tuesday-friday / appy hour / ... / 3:00pm-6:00pm /
+            # saturday / mystery pitcher', and reading forward only gave its
+            # appetizer hour a Saturday it does not have.
+            above = lines[i - 1] if i else ""
+            day_above = (len(above) <= 40 and DAY_LINE_RE.match(above)
+                         and not TIME_CONTEXT_RE.search(above))
+            if day_above:
+                block = [above] + block
+                keep = timed[:1]
+            else:
+                keep = (timed + [l for l in ctx if l not in timed])[:2]
             # Page order, so 'mon - fri' still reads before '4p - 6p'.
             block += [l for l in near if l in keep]
         q = " / ".join(block)[:400]
@@ -817,8 +842,11 @@ def quotes(text, menu_doc=False, hh_page=False, hh_lines=frozenset(), stacks=Non
     return out
 
 
-def menu_images(html, page_url):
+def menu_images(html, page_url, self_named=False):
     """Image URLs on this page that name themselves a happy-hour or drinks menu.
+
+    self_named=True is the rule for a page whose URL names no hour: only an
+    image that says happy hour (or HH) in its own filename counts there.
 
     Filename only. Alt text and surrounding copy were both tried and both let
     the page furniture through -- a hero shot in a <div> captioned 'Happy Hour'
@@ -828,8 +856,8 @@ def menu_images(html, page_url):
     out, seen = [], set()
     pat = r'''(?:src|href|data-src)=(['"])(.+?)\1'''
     for m in re.finditer(pat, html, re.I):
-        href = html_mod.unescape(m.group(2))
-        if not MENU_IMG_RE.search(href):
+        href = urllib.parse.unquote(html_mod.unescape(m.group(2)))
+        if not (HH_IMG_RE if self_named else MENU_IMG_RE).search(href):
             continue
         full = urllib.parse.urljoin(page_url, href).split("#")[0]
         # A theme emits the same upload at six widths ('-300x150', '-1024x512');
@@ -906,6 +934,17 @@ def refusal(url, cache):
             if code else "robots.txt disallows")
 
 
+def pdf_clean(text):
+    """PDF text with its typographic ligatures spelled out.
+
+    A designed menu sets "Off" as the single glyph U+FB00, so Sedona Taphouse's
+    "$20 O\ufb00 Reserve Wines" read as a $20 PRICE: no regex saw the word off.
+    NFKC maps every ligature back to its letters and touches nothing else the
+    readers care about.
+    """
+    return unicodedata.normalize("NFKC", text)
+
+
 def pdf_text(blob):
     """The text of a PDF menu, or '' if it cannot be read.
 
@@ -920,7 +959,7 @@ def pdf_text(blob):
         reader = pypdf.PdfReader(io.BytesIO(blob))
         # A drinks menu is one or two pages; a 60-page franchise document is not
         # this venue's happy hour and is not worth the parse.
-        return "\n".join(p.extract_text() or "" for p in reader.pages[:6])
+        return pdf_clean("\n".join(p.extract_text() or "" for p in reader.pages[:6]))
     except Exception:  # noqa: BLE001 -- an unreadable menu is not a crawl failure
         return ""
 
@@ -1064,8 +1103,30 @@ def registrable(netloc):
     return ".".join(netloc.lower().split(":")[0].split(".")[-2:])
 
 
-def candidate_links(html, page_url):
+def town_re(address):
+    """A regex for the venue's own town, read off its licence address.
+
+    "520 Kimberton Rd, Phoenixville PA 19460" -> matches /phoenixville,
+    /locations/phoenixville-pa/, "King of Prussia" -> king-of-prussia and
+    kingofprussia, but not /kingston. None when no town can be read.
+    """
+    m = re.search(r",\s*([A-Za-z][A-Za-z .']*?)\s+PA\b", address or "")
+    if not m:
+        return None
+    words = [re.escape(w) for w in re.split(r"[\s.]+", m.group(1).strip()) if w]
+    if not words:
+        return None
+    return re.compile(r"(?<![a-z])" + r"[\s_\-]*".join(words) + r"(?![a-z])", re.I)
+
+
+def candidate_links(html, page_url, town=None):
     """Links whose text or href suggests a menu or specials page.
+
+    A link naming the venue's OWN TOWN is the venue's page, whatever else it
+    says: Sly Fox's /phoenixville and Sedona Taphouse's
+    /locations/phoenixville-pa/ are where those two state their happy hours,
+    and neither href nor label contained a LINK_WORD, so both were dropped
+    while the budget went to three "nye-special" pages. It ranks first.
 
     Sibling hosts on the same registrable domain count as the same site. A
     chain puts each location on locations.<brand>.com but keeps the specials on
@@ -1078,10 +1139,12 @@ def candidate_links(html, page_url):
     """
     host = registrable(urllib.parse.urlsplit(page_url).netloc)
     found, seen = [], set()
-    for m in re.finditer(r'<a\s[^>]*href=["\']([^"\']+)["\'][^>]*>(.{0,120}?)</a>',
+    for m in re.finditer(r'<a\s[^>]*href=["\']([^"\']+)["\'][^>]*>(.{0,400}?)</a>',
                          html, re.I | re.S):
         href, label = m.group(1), MARKUP_RE.sub(" ", m.group(2))
-        if not LINK_WORDS.search(href) and not LINK_WORDS.search(label):
+        ours = bool(town and (town.search(urllib.parse.unquote(href))
+                              or town.search(label)))
+        if not ours and not LINK_WORDS.search(href) and not LINK_WORDS.search(label):
             continue
         full = urllib.parse.urljoin(page_url, href).split("#")[0]
         if registrable(urllib.parse.urlsplit(full).netloc) != host or full in seen:
@@ -1093,7 +1156,7 @@ def candidate_links(html, page_url):
             continue
         seen.add(full)
         # A link that says 'happy hour' outranks one that merely says 'menu'.
-        found.append((0 if (url_names_hh(full, 2)
+        found.append((0 if (ours or url_names_hh(full, 2)
                              or re.search(r"happy.?hour|hour(?!s)|special", label, re.I))
                        else 1, full))
     return [u for _, u in sorted(found)]
@@ -2056,10 +2119,9 @@ def crawl_one(session, venue, robots):
             # the same lines are stored, and only lines the crawl already
             # vouched for may now travel between pages of the same site.
             hits.append({"url": url, "quote": q["quote"], **({"hh": True} if q["hh"] else {})})
-        if on_hh:
-            for src in menu_images(html, url):
-                if not any(im["src"] == src for im in images):
-                    images.append({"url": url, "src": src})
+        for src in menu_images(html, url, self_named=not on_hh):
+            if not any(im["src"] == src for im in images):
+                images.append({"url": url, "src": src})
 
         # A page we fetched because it said 'happy hour' is the one place a menu
         # PDF is worth chasing: Black Powder Tavern's hours were read off their
@@ -2075,7 +2137,8 @@ def crawl_one(session, venue, robots):
         # document, which is the same claim the page URL was standing in for.
         queued = {u for u, _ in queue}
         on_hh_page = url_names_hh(url, depth)
-        for u in candidate_links(html, url):
+        town = town_re(venue.get("address"))
+        for u in candidate_links(html, url, town):
             if not re.search(r"\.pdf($|\?)", u, re.I) or u in queued:
                 continue
             if on_hh_page or HH_DOC_RE.search(u):
@@ -2090,7 +2153,7 @@ def crawl_one(session, venue, robots):
             # /locations/ index.
             seeds = [q for q in queue if q[1] == 1]
             queue = seeds + [(u, 2) for u in
-                             candidate_links(html, url)[: PAGE_CAP - 1]]
+                             candidate_links(html, url, town)[: PAGE_CAP - 1]]
             # The sitemap used to be consulted only when the page linked
             # nothing at all, which missed the commoner shape: a page that
             # links three menus and no happy hour. City Works' King of Prussia
@@ -2104,7 +2167,13 @@ def crawl_one(session, venue, robots):
                 extra = [(u, 2) for u in sitemap_links(session, url, robots)
                          if u not in queued]
                 rest = [q for q in queue if q[1] != 1]
-                queue = seeds + (extra + rest)[: PAGE_CAP - 1]
+                # The venue's own town page stays ahead of the sitemap: Sedona
+                # Taphouse's /locations/phoenixville-pa/ was displaced by three
+                # "nye-special" sitemap URLs and never fetched.
+                ours = [q for q in rest
+                        if town and town.search(urllib.parse.unquote(q[0]))]
+                rest = [q for q in rest if q not in ours]
+                queue = seeds + (ours + extra + rest)[: PAGE_CAP - 1]
     return pages, hits, images[:IMG_CAP]
 
 

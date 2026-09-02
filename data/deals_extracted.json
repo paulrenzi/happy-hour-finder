@@ -1,6 +1,6 @@
 {
  "_comment": "Machine-extracted from data/crawl_hits.json by ingest/extract_deals.py. Every deal carries the quote it was read from. Hand-verified deals live in deals_seed.json.",
- "as_of": "2026-09-01",
+ "as_of": "2026-09-02",
  "venues": [
   {
    "id": "lansdale-tavern-lansdale",
@@ -5181,6 +5181,63 @@
       "kind": "venue_site",
       "url": "https://downingtown.victorybeer.com/",
       "quote": "Weekday Happy Hour / $2 off drafts, liquor pours,, wine + shareables / Monday - Friday, 4pm to 6pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "sly-fox-phoenixville",
+   "lid": "36841",
+   "name": "Sly Fox",
+   "plcb_name": "CHESTER COUNTY BREWING COMPANY, INC.",
+   "address": "520 KIMBERTON RD, PHOENIXVILLE PA 19460-4737",
+   "zone_id": "phoenixville",
+   "license_type": "",
+   "website": "https://www.slyfoxbeer.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "select appetizers",
+       "amount_off_usd": 2.0
+      },
+      {
+       "category": "food",
+       "label": "wings from 3PM-6PM",
+       "price_usd": 1.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.slyfoxbeer.com/phoenixville",
+      "quote": "DAILY SPECIALS / \u200b Tuesday-Friday: Appy Hour / $2 off select appetizers and $1 wings from 3PM-6PM (dine-in only) \u200b"
      }
     }
    ]
@@ -12205,6 +12262,78 @@
    ]
   },
   {
+   "id": "sedona-taphouse-phoenixville",
+   "lid": "91502",
+   "name": "SEDONA TAPHOUSE",
+   "plcb_name": "SEDONA TAPHOUSE",
+   "address": "131 BRIDGE ST STE 5, PHOENIXVILLE PA 19460",
+   "zone_id": "phoenixville",
+   "license_type": "",
+   "website": "https://sedonataphouse.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "wine",
+       "label": "house wine by the glass and",
+       "price_usd": 7.9
+      },
+      {
+       "category": "wine",
+       "label": "Reserve Wines",
+       "amount_off_usd": 20.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://sedonataphouse.com/locations/phoenixville-pa/",
+      "quote": "Join us for Happy Hour from 4pm \u2013 6pm for $7.9 house wine by the glass and $9.9 select craft classics!"
+     }
+    }
+   ]
+  },
+  {
    "id": "chadds-ford-tavern-chadds-ford",
    "lid": "91807",
    "name": "Chadds Ford Tavern",
@@ -13361,6 +13490,47 @@
       "kind": "venue_site",
       "url": "https://whitedog.com/glenmills/specials",
       "quote": "HAPPY HOUR / Join us on the patio or at the bar and high tops from 3 - 6 PM Sunday - Friday for $9 specialty cocktails, $8 glasses of wine, $7 select draft beer, and our specially priced MENU. / Our patio is open for dining, weather permitting. Umbrellas are scattered for sun coverage. We welcome well-behaved pups."
+     }
+    }
+   ]
+  },
+  {
+   "id": "rivertown-taps-phoenixville",
+   "lid": "99114",
+   "name": "Rivertown Taps",
+   "plcb_name": "226 BRIDGE STREET LLC",
+   "address": "226 BRIDGE ST, PHOENIXVILLE PA 19460",
+   "zone_id": "phoenixville",
+   "license_type": "",
+   "website": "https://rivertowntaps.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://rivertowntaps.com/wp-content/uploads/2026/07/Happy-Hour-Specials.png",
+      "quote": "Happy Hour ( Wednesday through Friday 3pm to 6pm ) $10 Classic Cocktails"
      }
     }
    ]

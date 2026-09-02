@@ -57,7 +57,7 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from extract_deals import HITS, SITES, one_per_osm, slug  # noqa: E402
-from extract_prices_llm import ask_with, verify  # noqa: E402
+from extract_prices_llm import DAY_SPECIALS_URL_RE, ask_with, verify  # noqa: E402
 from validate_pa import CATEGORIES  # noqa: E402
 
 PAGES = os.path.join(REPO, "data", "pages")
@@ -176,8 +176,15 @@ def worth_reading(url, text):
     it is simply not worth a call, and it stays in the cache for a rule that
     knows better later.
     """
-    if HH_URL_RE.search(urllib.parse.urlsplit(url).path):
+    path = urllib.parse.urlsplit(url).path
+    if HH_URL_RE.search(path):
         return True
+    # A page the venue calls its DAILY / weekly / lunch specials is a different
+    # menu, whatever its nav says: Revival's /daily-specials carries the words
+    # 'HAPPY HOUR MENU' in a link and seven prices, and every one of them --
+    # Margherita Monday's $6 margaritas first -- shipped as the happy hour.
+    if DAY_SPECIALS_URL_RE.search(path):
+        return False
     return len(PRICEY_RE.findall(text)) >= 2 and HH_TEXT_RE.search(text) is not None
 
 

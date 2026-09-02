@@ -460,6 +460,16 @@
   "address": "1300 HARES HILL RD, KIMBERTON PA 19442",
   "crawled_at": "2026-09-01",
   "hits": [],
+  "menu_images": [
+   {
+    "src": "https://images.squarespace-cdn.com/content/v1/5caa5ced11f784762cbd26e2/1686096018749-E2RN5CTRBICDIOUV9BYB/Mr.Mody+HH.jpg",
+    "url": "https://www.stonehousegrillepa.com/"
+   },
+   {
+    "src": "https://images.squarespace-cdn.com/content/v1/5caa5ced11f784762cbd26e2/b4807233-2398-4fc5-843b-49f32eeb2bf3/HH+Final+Logo+Black++(1).jpg",
+    "url": "https://www.stonehousegrillepa.com/"
+   }
+  ],
   "name": "STONE HOUSE GRILLE LLC",
   "osm_name": null,
   "pages": [
@@ -2481,14 +2491,17 @@
     "url": "https://www.revivalpizzapub.com/daily-specials"
    },
    {
+    "hh": true,
     "quote": "HAPPY HOUR MENU | Revival Pizza Pub",
     "url": "https://www.revivalpizzapub.com/happy-hour-menu"
    },
    {
+    "hh": true,
     "quote": "HAPPY HOUR MENU",
     "url": "https://www.revivalpizzapub.com/happy-hour-menu"
    },
    {
+    "hh": true,
     "quote": "DAILY SPECIALS",
     "url": "https://www.revivalpizzapub.com/happy-hour-menu"
    },
@@ -2499,6 +2512,12 @@
    {
     "quote": "DAILY SPECIALS",
     "url": "https://www.revivalpizzapub.com/lunch-specials"
+   }
+  ],
+  "menu_images": [
+   {
+    "src": "https://static.wixstatic.com/media/ee76f7_ec3256bd3a88404b8afca7dde5e6965f~mv2.png/v1/crop/x_27,y_0,w_777,h_2000/fill/w_600,h_1544,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Revival HH.png",
+    "url": "https://www.revivalpizzapub.com/happy-hour-menu"
    }
   ],
   "name": "REVIVAL",
@@ -4233,6 +4252,10 @@
    {
     "src": "http://static1.squarespace.com/static/614a61700cb2111064e0e274/63e68db019a20621c2f591dc/68a88964c59eec45ec5861a5/1755875838168/Green+and+Cream+Retro+Style+Happy+Hour+Facebook+Post.png?format=1500w",
     "url": "https://www.bellatrattoriasc.com/events/friyay-happy-hour"
+   },
+   {
+    "src": "https://images.squarespace-cdn.com/content/v1/614a61700cb2111064e0e274/1755875821897-RDHW9U1Q7PV80ORV741P/Green+and+Cream+Retro+Style+Happy+Hour+Facebook+Post.png",
+    "url": "https://www.bellatrattoriasc.com/events"
    }
   ],
   "name": "BELLA TRATTORIA",
@@ -5713,7 +5736,12 @@
  "114948": {
   "address": "95 NUTT RD, PHOENIXVILLE PA 19460-3952",
   "crawled_at": "2026-09-01",
-  "hits": [],
+  "hits": [
+   {
+    "quote": "Let me tell you why Soko Bar should be your go-to Philadelphia Union sports bar in Phoenixville and beyond. During Philadelphia Union matches, Soko Bag transforms into a hub of excitement and great fun, offering irresistible food and drink specials that take the viewing experience to new heights. / Whether you\u2019re craving a refreshing craft beer like our Basement Blonde (Blonde Ale) or Choco Jawn (",
+    "url": "https://sokobag.com/philadelphia-union-sports-bar-in-phoenixville/"
+   }
+  ],
   "name": "SOKO BAG",
   "osm_name": "Soko Bag Korean Fried Chicken",
   "pages": [
@@ -5725,9 +5753,15 @@
    },
    {
     "hh": false,
-    "lines": 248,
+    "lines": 112,
     "result": "ok, 0 quote(s)",
-    "url": "https://sokobag.com/"
+    "url": "https://sokobag.com/drone-mystery-in-phoenixville-fbi-links-soko-bag-to-fried-chicken-delivery-test/"
+   },
+   {
+    "hh": false,
+    "lines": 116,
+    "result": "ok, 1 quote(s)",
+    "url": "https://sokobag.com/philadelphia-union-sports-bar-in-phoenixville/"
    },
    {
     "hh": false,
@@ -13216,26 +13250,47 @@
  },
  "36841": {
   "address": "520 KIMBERTON RD, PHOENIXVILLE PA 19460-4737",
-  "crawled_at": "2026-09-01",
-  "hits": [],
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "DAILY SPECIALS / \u200b Tuesday-Friday: Appy Hour / $2 off select appetizers and $1 wings from 3PM-6PM (dine-in only) \u200b",
+    "url": "https://www.slyfoxbeer.com/phoenixville"
+   },
+   {
+    "quote": "\u200b Tuesday-Friday: Appy Hour",
+    "url": "https://www.slyfoxbeer.com/phoenixville"
+   },
+   {
+    "quote": "tuesday-friday / appy hour / 3:00pm-6:00pm",
+    "url": "https://www.slyfoxbeer.com/phoenixville"
+   }
+  ],
   "name": "CHESTER COUNTY BREWING COMPANY, INC.",
   "osm_name": "Sly Fox",
   "pages": [
    {
-    "result": "rendered: 39 lines -> 42",
+    "hh": false,
+    "lines": 39,
+    "result": "ok, 0 quote(s)",
     "url": "https://www.slyfoxbeer.com/"
    },
    {
-    "hh": false,
-    "lines": 42,
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.slyfoxbeer.com/"
+    "hh": true,
+    "lines": 103,
+    "result": "ok, 3 quote(s)",
+    "url": "https://www.slyfoxbeer.com/phoenixville"
    },
    {
     "hh": false,
     "lines": 63,
     "result": "ok, 0 quote(s)",
     "url": "https://www.slyfoxbeer.com/beereventservices"
+   },
+   {
+    "hh": false,
+    "lines": 32,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.slyfoxbeer.com/events"
    }
   ],
   "website": "https://www.slyfoxbeer.com/",
@@ -18670,6 +18725,16 @@
   "address": "193-195-197 BRIDGE ST, PHOENIXVILLE PA 19460-3401",
   "crawled_at": "2026-09-01",
   "hits": [],
+  "menu_images": [
+   {
+    "src": "https://www.mollymaguiresphoenixville.com/wp-content/uploads/Mollys-Happy-Hour-Website.jpg",
+    "url": "https://www.mollymaguiresphoenixville.com/"
+   },
+   {
+    "src": "https://www.mollymaguiresphoenixville.com/wp-content/uploads/Happy-Hour-Phoenixville.png",
+    "url": "https://www.mollymaguiresphoenixville.com/"
+   }
+  ],
   "name": "MOLLY MAGUIRES RESTAURANT & PUB INC",
   "osm_name": null,
   "pages": [
@@ -28357,9 +28422,9 @@
    },
    {
     "hh": false,
-    "lines": 404,
+    "lines": 51,
     "result": "ok, 0 quote(s)",
-    "url": "https://fooderybeer.squarespace.com/events"
+    "url": "https://fooderybeer.squarespace.com/phoenixville"
    }
   ],
   "website": "https://fooderybeer.squarespace.com/phoenixville",
@@ -30054,21 +30119,21 @@
    },
    {
     "hh": false,
-    "lines": 612,
+    "lines": 430,
     "result": "ok, 0 quote(s)",
-    "url": "https://thecolonialtheatre.com/events/"
+    "url": "https://thecolonialtheatre.com/events/guest-presentations/laurie-gilmore-author-of-big-bad-wolf-live-in-phoenixville/"
    },
    {
     "hh": false,
-    "lines": 433,
+    "lines": 430,
     "result": "ok, 0 quote(s)",
-    "url": "https://thecolonialtheatre.com/events/colonial-events/introduction-to-screenwriting/"
+    "url": "https://thecolonialtheatre.com/events/guest-presentations/victoria-aveyard-author-of-tempest-live-in-phoenixville/"
    },
    {
     "hh": false,
-    "lines": 439,
+    "lines": 408,
     "result": "ok, 0 quote(s)",
-    "url": "https://thecolonialtheatre.com/events/guest-presentations/"
+    "url": "https://thecolonialtheatre.com/films/festival/the-4th-annual-phoenixville-film-festival/?doing_wp_cron=1786571721.3924911022186279296875"
    }
   ],
   "website": "https://thecolonialtheatre.com/",
@@ -31739,8 +31804,36 @@
  },
  "91502": {
   "address": "131 BRIDGE ST STE 5, PHOENIXVILLE PA 19460",
-  "crawled_at": "2026-09-01",
-  "hits": [],
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Phoenixville, PA | Sedona Taphouse | The Best Happy Hour in Town",
+    "url": "https://sedonataphouse.com/locations/phoenixville-pa/"
+   },
+   {
+    "quote": "Join us for Happy Hour from 4pm \u2013 6pm for $7.9 house wine by the glass and $9.9 select craft classics!",
+    "url": "https://sedonataphouse.com/locations/phoenixville-pa/"
+   },
+   {
+    "quote": "Happy Hour Menu / 'Dine Out for Charity' Menu (Available Mondays)",
+    "url": "https://sedonataphouse.com/locations/phoenixville-pa/"
+   },
+   {
+    "hh": true,
+    "quote": "$1 from every plate benefits a local",
+    "url": "https://sedonataphouse.com/wp-content/uploads/2019/01/HappyHourMenu_PhxWC_05.12.26.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "$20 Off Reserve Wines",
+    "url": "https://sedonataphouse.com/wp-content/uploads/2019/01/HappyHourMenu_PhxWC_05.12.26.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Green Dragon Tea, Pearl Vodka, lime, POM juice, Q ginger beer. $13",
+    "url": "https://sedonataphouse.com/wp-content/uploads/2019/01/pville-specials-8.25.pdf"
+   }
+  ],
   "name": "SEDONA TAPHOUSE",
   "osm_name": null,
   "pages": [
@@ -31749,6 +31842,12 @@
     "lines": 130,
     "result": "ok, 0 quote(s)",
     "url": "https://sedonataphouse.com/"
+   },
+   {
+    "hh": true,
+    "lines": 190,
+    "result": "ok, 3 quote(s)",
+    "url": "https://sedonataphouse.com/locations/phoenixville-pa/"
    },
    {
     "hh": false,
@@ -31764,9 +31863,15 @@
    },
    {
     "hh": false,
-    "lines": 114,
-    "result": "ok, 0 quote(s)",
-    "url": "https://sedonataphouse.com/nye-special-short-ribs-dinner-2/"
+    "lines": 53,
+    "result": "ok, 2 quote(s)",
+    "url": "https://sedonataphouse.com/wp-content/uploads/2019/01/HappyHourMenu_PhxWC_05.12.26.pdf"
+   },
+   {
+    "hh": false,
+    "lines": 30,
+    "result": "ok, 1 quote(s)",
+    "url": "https://sedonataphouse.com/wp-content/uploads/2019/01/pville-specials-8.25.pdf"
    }
   ],
   "website": "https://sedonataphouse.com/",
@@ -32119,7 +32224,7 @@
  },
  "92374": {
   "address": "785 STARR ST, PHOENIXVILLE PA 19460",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [
    {
     "quote": "#1 - Any 8\" Sandwich, side of fries and soda... $14.99",
@@ -35322,8 +35427,14 @@
  },
  "99114": {
   "address": "226 BRIDGE ST, PHOENIXVILLE PA 19460",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
+  "menu_images": [
+   {
+    "src": "https://rivertowntaps.com/wp-content/uploads/2026/07/Happy-Hour-Specials.png",
+    "url": "https://rivertowntaps.com/menu/"
+   }
+  ],
   "name": "226 BRIDGE STREET LLC",
   "osm_name": "Rivertown Taps",
   "pages": [

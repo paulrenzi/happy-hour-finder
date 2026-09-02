@@ -1,7 +1,7 @@
 {
  "zone_id": "phoenixville",
  "name": "Phoenixville",
- "built_at": "2026-09-01",
+ "built_at": "2026-09-02",
  "venues": [
   {
    "id": "58996",
@@ -480,9 +480,54 @@
      ],
      "items": [
       {
-       "category": "cocktail",
-       "label": "margaritas",
+       "category": "food",
+       "label": "Garlic Knots - garlic conserva, marinara",
+       "price_usd": 3.0
+      },
+      {
+       "category": "food",
+       "label": "Revival Fries - cooper sharp beer cheese",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "Personal Cheese Pizza - cheese + one topping",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "label": "Crispy Brussels V - pomegranate, balsamic, parmesan cheese",
        "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "label": "Truffle Fries V - fresh parmesan, truffle",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "label": "Mussels - angry mussels, or garlicky white wine",
+       "price_usd": 10.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Cocktails",
+       "price_usd": 7.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Martinis",
+       "price_usd": 10.0
+      },
+      {
+       "category": "draft",
+       "label": "Miller Lite and Michelob Ultra Draft",
+       "price_usd": 3.0
+      },
+      {
+       "category": "wine",
+       "label": "Glass of House Red or House White",
+       "price_usd": 4.5
       }
      ],
      "confidence": "unconfirmed",
@@ -494,6 +539,323 @@
       "quote": "RAISE A SLICE TO HAPPY HOUR / Join us Monday through Friday from 4 - 6 pm for food and drink specials! Enjoy our exclusive deals and delicious offerings."
      },
      "items_source": "llm_extract"
+    }
+   ]
+  },
+  {
+   "id": "99114",
+   "lid": "99114",
+   "slug": "rivertown-taps-phoenixville",
+   "name": "Rivertown Taps",
+   "address": "226 Bridge St, Phoenixville PA 19460",
+   "zone_id": "phoenixville",
+   "website": "https://rivertowntaps.com/",
+   "plcb_name": "226 BRIDGE STREET LLC",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.1337608,
+   "lng": -75.5172339,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "wine",
+       "label": "Red Wine Pours: Pinot Noir, Cabernet Sauvignon",
+       "price_usd": 10.0
+      },
+      {
+       "category": "draft",
+       "discount_pct": 20.0,
+       "label": "Off Tap Wall, includes all 36 taps"
+      },
+      {
+       "category": "food",
+       "label": "Confit Chicken Wings",
+       "price_usd": 12.0
+      },
+      {
+       "category": "food",
+       "label": "Frito Misto",
+       "price_usd": 12.0
+      },
+      {
+       "category": "food",
+       "label": "Pork Belly",
+       "price_usd": 13.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://rivertowntaps.com/wp-content/uploads/2026/07/Happy-Hour-Specials.png",
+      "quote": "Happy Hour ( Wednesday through Friday 3pm to 6pm ) $10 Classic Cocktails"
+     },
+     "items_source": "llm_extract"
+    }
+   ]
+  },
+  {
+   "id": "91502",
+   "lid": "91502",
+   "slug": "sedona-taphouse-phoenixville",
+   "name": "SEDONA TAPHOUSE",
+   "address": "131 Bridge St Ste 5, Phoenixville PA 19460",
+   "zone_id": "phoenixville",
+   "website": "https://sedonataphouse.com/",
+   "plcb_name": "SEDONA TAPHOUSE",
+   "license_type": "Restaurant (Liquor)",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "wine",
+       "label": "House Wine by the Glass",
+       "price_usd": 7.9
+      },
+      {
+       "category": "cocktail",
+       "label": "Select Craft Classics",
+       "price_usd": 9.9
+      },
+      {
+       "category": "food",
+       "label": "Truffle Fries",
+       "price_usd": 9.9
+      },
+      {
+       "category": "food",
+       "label": "Guacamole",
+       "price_usd": 9.9
+      },
+      {
+       "category": "food",
+       "label": "Goat Cheese + Tomato Bruschetta",
+       "price_usd": 9.9
+      },
+      {
+       "category": "food",
+       "label": "Margherita Flatbread",
+       "price_usd": 10.9
+      },
+      {
+       "category": "food",
+       "label": "BBQ Chicken Flatbread",
+       "price_usd": 10.9
+      },
+      {
+       "category": "food",
+       "label": "South Rim Shrimp Flatbread",
+       "price_usd": 10.9
+      },
+      {
+       "category": "food",
+       "label": "Goat Cheese + Basil Flatbread",
+       "price_usd": 10.9
+      },
+      {
+       "category": "food",
+       "label": "Meat Lovers Flatbread",
+       "price_usd": 11.9
+      },
+      {
+       "category": "food",
+       "label": "Buffalo Chicken Flatbread",
+       "price_usd": 11.9
+      },
+      {
+       "category": "food",
+       "label": "Salmon Sliders",
+       "price_usd": 12.9
+      },
+      {
+       "category": "food",
+       "label": "Pork BBQ Sliders",
+       "price_usd": 12.9
+      },
+      {
+       "category": "food",
+       "label": "'Kobe Beef' Sliders",
+       "price_usd": 12.9
+      },
+      {
+       "category": "food",
+       "label": "Prince Edward Island Mussels",
+       "price_usd": 12.9
+      },
+      {
+       "category": "cocktail",
+       "label": "Red or White Sangria",
+       "price_usd": 8.9
+      },
+      {
+       "category": "cocktail",
+       "label": "STH Mule",
+       "price_usd": 9.9
+      },
+      {
+       "category": "cocktail",
+       "label": "Prickly Pear Margarita",
+       "price_usd": 9.9
+      },
+      {
+       "category": "cocktail",
+       "label": "Classic Old Fashioned",
+       "price_usd": 9.9
+      },
+      {
+       "category": "food",
+       "label": "Salmon Sliders (2) with greens",
+       "price_usd": 12.9
+      },
+      {
+       "category": "food",
+       "label": "Pork BBQ Sliders (2) with greens",
+       "price_usd": 12.9
+      },
+      {
+       "category": "food",
+       "label": "'Kobe Beef' Sliders (2) with greens",
+       "price_usd": 12.9
+      },
+      {
+       "category": "wine",
+       "label": "house wine by the glass and",
+       "price_usd": 7.9
+      },
+      {
+       "category": "wine",
+       "label": "Reserve Wines",
+       "amount_off_usd": 20.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://sedonataphouse.com/locations/phoenixville-pa/",
+      "quote": "Join us for Happy Hour from 4pm \u2013 6pm for $7.9 house wine by the glass and $9.9 select craft classics!"
+     },
+     "items_source": "llm_extract"
+    }
+   ]
+  },
+  {
+   "id": "36841",
+   "lid": "36841",
+   "slug": "sly-fox-phoenixville",
+   "name": "Sly Fox",
+   "address": "520 Kimberton Rd, Phoenixville PA 19460",
+   "zone_id": "phoenixville",
+   "website": "https://www.slyfoxbeer.com/",
+   "plcb_name": "CHESTER COUNTY BREWING COMPANY, INC.",
+   "license_type": "Brewery",
+   "lat": 40.1309336,
+   "lng": -75.5475666,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "select appetizers",
+       "amount_off_usd": 2.0
+      },
+      {
+       "category": "food",
+       "label": "wings from 3PM-6PM",
+       "price_usd": 1.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.slyfoxbeer.com/phoenixville",
+      "quote": "DAILY SPECIALS / \u200b Tuesday-Friday: Appy Hour / $2 off select appetizers and $1 wings from 3PM-6PM (dine-in only) \u200b"
+     }
     }
    ]
   },

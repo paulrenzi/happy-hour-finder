@@ -54,6 +54,7 @@ OUT = os.path.join(REPO, "data", "deals_extracted.json")
 COORDS = os.path.join(REPO, "data", "venue_coords.json")
 PAGES = os.path.join(REPO, "data", "pages")
 WINDOWS_LLM = os.path.join(REPO, "data", "windows_pages_llm.json")
+TRANSCRIPTS = os.path.join(REPO, "data", "menu_image_transcripts.json")
 
 
 def norm(text):
@@ -90,6 +91,27 @@ def page_spans():
                 if any(norm(sp) in t for t in text_by_lid.get(lid, []))]
         if live:
             out[lid] = (rec.get("url", ""), live)
+    return out
+
+
+def picture_spans(scripts):
+    """{venue_id: (image_url, [span])} from the vision pass's transcripts.
+
+    A span is a line that names the happy hour plus the two lines under it,
+    which is where a menu sheet states its hours ("Happy Hour" / "( Wednesday
+    through Friday 3pm to 6pm )"). The rest of the sheet -- the lunch special
+    that runs "open to 4pm", the Sunday brunch -- is never a candidate. The
+    span is converted by windows_from(), unmodified, so the picture is held
+    to exactly the grammar a crawled quote is.
+    """
+    out = {}
+    for vid, rec in (scripts or {}).items():
+        lines = [ln.strip() for ln in (rec.get("transcript") or "").splitlines()
+                 if ln.strip()]
+        spans = [" ".join(lines[i:i + 3]) for i, ln in enumerate(lines)
+                 if len(ln) <= 40 and HH_RE.search(ln)]
+        if spans:
+            out[vid] = (rec.get("url", ""), spans)
     return out
 
 
@@ -861,14 +883,29 @@ def main():
     coords = json.load(open(COORDS, encoding="utf-8")) if os.path.exists(COORDS) else {}
 
     pages = page_spans()
+    pictures = picture_spans(json.load(open(TRANSCRIPTS, encoding="utf-8"))
+                             if os.path.exists(TRANSCRIPTS) else {})
     venues, stats, kept, rejects = [], collections.Counter(), [], []
     seen_ids = set()
     for lid, v in one_per_osm(hits, sites):
-        if not v["hits"]:
-            stats["no quote crawled"] += 1
-            continue
-        stats["venue had quotes"] += 1
         cands = []
+        if not v["hits"]:
+            # No text at all, but the crawl found a menu picture and the vision
+            # pass transcribed it: the happy-hour lines of that transcript are
+            # the only candidates, and they enter through windows_from() like
+            # any other. The items come from the picture sidecar at bundle time.
+            url, spans = pictures.get(slug(v["osm_name"] or v["name"], v["address"]),
+                                      ("", []))
+            for span in spans:
+                ws = windows_from(span)
+                if ws:
+                    cands.append(({"url": url, "quote": span}, ws))
+            if not cands:
+                stats["no quote crawled"] += 1
+                continue
+            stats["  window read off a menu picture"] += 1
+        else:
+            stats["venue had quotes"] += 1
         for h in v["hits"]:
             ws = windows_from(h["quote"])
             if ws:

@@ -1,7 +1,7 @@
 {
  "zone_id": "phoenixville",
  "name": "Phoenixville",
- "built_at": "2026-09-01",
+ "built_at": "2026-09-02",
  "venues": [
   {
    "lid": "109775",
@@ -198,20 +198,6 @@
    "deals": []
   },
   {
-   "lid": "99114",
-   "name": "Rivertown Taps",
-   "address": "226 Bridge St, Phoenixville PA 19460",
-   "zone_id": "phoenixville",
-   "license_type": "Restaurant (Liquor)",
-   "id": "99114",
-   "plcb_name": "226 BRIDGE STREET LLC",
-   "website": "https://rivertowntaps.com/",
-   "lat": 40.1337608,
-   "lng": -75.5172339,
-   "geo_precision": "place",
-   "deals": []
-  },
-  {
    "lid": "84758",
    "name": "Root Down",
    "address": "1 N Main St, Phoenixville PA 19460",
@@ -226,17 +212,6 @@
    "deals": []
   },
   {
-   "lid": "91502",
-   "name": "Sedona Taphouse",
-   "address": "131 Bridge St Ste 5, Phoenixville PA 19460",
-   "zone_id": "phoenixville",
-   "license_type": "Restaurant (Liquor)",
-   "id": "91502",
-   "plcb_name": "SEDONA TAPHOUSE",
-   "website": "https://sedonataphouse.com/",
-   "deals": []
-  },
-  {
    "lid": "95247",
    "name": "Seven Stars Inn",
    "address": "Route 23 R D 2, Phoenixville PA 19460",
@@ -244,20 +219,6 @@
    "license_type": "Restaurant (Liquor)",
    "id": "95247",
    "plcb_name": "SEVEN STARS INN",
-   "deals": []
-  },
-  {
-   "lid": "36841",
-   "name": "Sly Fox",
-   "address": "520 Kimberton Rd, Phoenixville PA 19460",
-   "zone_id": "phoenixville",
-   "license_type": "Brewery",
-   "id": "36841",
-   "plcb_name": "CHESTER COUNTY BREWING COMPANY, INC.",
-   "website": "https://www.slyfoxbeer.com/",
-   "lat": 40.1309336,
-   "lng": -75.5475666,
-   "geo_precision": "place",
    "deals": []
   },
   {
