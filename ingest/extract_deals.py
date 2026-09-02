@@ -746,6 +746,28 @@ def one_sided(piece):
 # reading it as 'every day' would put a Toys For Tots night on 14 December and a
 # bartaco Fourth of July party on the board as a standing happy hour, seven days
 # a week, forever.
+# A clause that names a CALENDAR DATE states one evening, not a schedule.
+#
+# Braeloch Brewing (Kennett Square, 2026-09-02) publishes an events calendar
+# and nothing else: 'Happy Hour / Fri, Sep 4 / 2pm-6pm', 'Happy Hour / Sat, Sep
+# 19 / 6pm-9pm', seven of them. Every clause names a real happy hour and none
+# names a weekly one -- and the extractor read 'Fri' and 'Sat' as weekdays,
+# then dedupe() INTERSECTED three different Friday parties into a Friday
+# 5-6pm the brewery has never once run.
+#
+# 🛑 Narrower than ONE_OFF_RE, deliberately, because this one runs on every
+# clause of every quote. ONE_OFF_RE matches a bare month-and-number, which is
+# also what 86 West's seasonal 'january - march 4-7pm' looks like -- using it
+# here would take that card off the board. So a date must be a WEEKDAY next to
+# a month, an ORDINAL, or a numeric date: shapes a schedule does not have.
+DATED_CLAUSE_RE = re.compile(
+    r"\b(?:mon|tue|tues|wed|weds|thu|thur|thurs|fri|sat|sun)[a-z]*\.?,?\s+"
+    r"(?:jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\.?\s*\d{1,2}\b"
+    r"|\b(?:jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\.?\s*"
+    r"\d{1,2}(?:st|nd|rd|th)\b"
+    r"|\b\d{1,2}/\d{1,2}(?:/\d{2,4})?\b",
+    re.I)
+
 ONE_OFF_RE = re.compile(
     r"\b(?:jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\.?\s*\d{1,2}(?:st|nd|rd|th)?\b|"
     r"\b\d{1,2}(?:st|nd|rd|th)\s+of\s+\w+|"
@@ -782,9 +804,10 @@ def windows_from(quote):
             pending = set()
             continue
         for piece in pieces:
-            if MEAL_RE.search(piece):
+            if MEAL_RE.search(piece) or DATED_CLAUSE_RE.search(piece):
                 # Not this venue's happy hour, and the days it names belong to
-                # the meal -- so they must not carry forward either.
+                # the meal (or to one evening in September) -- so they must not
+                # carry forward either.
                 pending = set()
                 continue
             here = days_in(piece)
@@ -811,7 +834,8 @@ def windows_from(quote):
     # and a DATE, which is the difference between a happy hour and a party.
     if len(quote) <= 200 and len(TIME_RE.findall(quote)) == 1 \
             and HH_RE.search(quote) and not MEAL_RE.search(quote) \
-            and not ONE_OFF_RE.search(quote) and not days_in(quote):
+            and not ONE_OFF_RE.search(quote) \
+            and not DATED_CLAUSE_RE.search(quote) and not days_in(quote):
         win = window_in(quote)
         if win:
             return [{"dow": d, "start": win[0], "end": win[1]}
@@ -820,8 +844,16 @@ def windows_from(quote):
     # Friday'), which reading forwards can never pair up. Falling back to the
     # whole quote is only safe while there is exactly one time range in it --
     # otherwise the pairing would be a guess about which days went with which.
+    #
+    # 🛑 ...and a DATED clause must be refused here too. Skipping it in the
+    # loop above is not enough on its own: this fallback re-reads days_in()
+    # over the WHOLE quote, so Braeloch Brewing's 'Happy Hour / Sat, Sep 19 /
+    # 6pm-9pm' came back as a WEEKLY Saturday window by the back door -- and
+    # with seven such parties on the page, dedupe() then intersected three
+    # different Fridays into a 5-6pm the brewery has never run. A guard on one
+    # path is a memorial to the path that failed last time.
     if len(quote) <= 200 and len(TIME_RE.findall(quote)) == 1 \
-            and not MEAL_RE.search(quote):
+            and not MEAL_RE.search(quote) and not DATED_CLAUSE_RE.search(quote):
         win, ds = window_in(quote), days_in(quote)
         if win and ds:
             return [{"dow": d, "start": win[0], "end": win[1]} for d in sorted(ds)]

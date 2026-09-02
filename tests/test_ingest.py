@@ -1135,8 +1135,36 @@ class DealExtraction(unittest.TestCase):
 
     def test_days_stated_after_the_time_are_still_paired(self):
         # An event listing writes them last; reading only forwards loses it.
-        got = windows_from("Happy Hour / 04:30 PM - 06:30 PM / Friday August 7th")
+        got = windows_from("Happy Hour / 04:30 PM - 06:30 PM / Friday")
         self.assertEqual(got, [{"dow": 5, "start": "16:30", "end": "18:30"}])
+
+    def test_a_dated_event_is_one_evening_and_never_a_weekly_window(self):
+        # 🛑 REVERSED 2026-09-02, and the old expectation is in the line above
+        # with its date taken off. This used to assert that "Friday August 7th"
+        # published a window every Friday. It does not: that is ONE Friday, and
+        # a card claiming a standing weekly happy hour off it is a claim the
+        # venue never made and is stale within the week.
+        #
+        # Braeloch Brewing (Kennett Square) is the case that exposed it. Its
+        # whole site is an events calendar -- 'Happy Hour / Fri, Sep 4 /
+        # 2pm-6pm', 'Happy Hour / Sat, Sep 19 / 6pm-9pm', seven of them, every
+        # one a real party and none a weekly schedule. Read as weekdays, three
+        # different Fridays were then INTERSECTED into a Friday 5-6pm the
+        # brewery has never once run.
+        for dated in ("Happy Hour / Sat, Sep 19 / 6pm-9pm",
+                      "Fri, Sep 4 Happy Hour 2pm-6pm",
+                      "Happy Hour / 04:30 PM - 06:30 PM / Friday August 7th",
+                      "Happy Hour 4-6pm on 9/19"):
+            self.assertEqual(windows_from(dated), [], dated)
+
+    def test_a_SEASON_is_not_a_date(self):
+        # The guard has to be narrower than ONE_OFF_RE, which matches a bare
+        # month-and-number -- and that is exactly what 86 West's seasonal line
+        # looks like. Using ONE_OFF_RE per clause would take its card off the
+        # board.
+        got = windows_from("Half Price Drinks / mon - sun / january - march 4-7pm")
+        self.assertEqual(len(got), 7)
+        self.assertEqual({(w["start"], w["end"]) for w in got}, {("16:00", "19:00")})
 
     def test_a_hedged_chain_page_publishes_nothing_about_this_address(self):
         self.assertEqual(
