@@ -353,7 +353,8 @@ function unknownCard(row) {
   $(".zone", node).textContent = dist ? `${zoneName} · ${dist}` : zoneName;
   $(".kind", node).textContent = licenseLabel(v.license_type);
 
-  $(".map", node).href = directionsUrl(v);
+  // No Directions on an unknown card: nobody is driving to a bar whose happy
+  // hour we cannot name. The one action that matters is telling us the hours.
   const site = $(".site", node);
   if (v.website) site.href = v.website;
   else site.remove();
@@ -438,17 +439,6 @@ function submitHours(v) {
   send.href = href;
   acts.append(send);
 
-  const copy = el("button", "btn", "Copy the details");
-  copy.type = "button";
-  copy.addEventListener("click", async () => {
-    try {
-      await navigator.clipboard.writeText(`${lines.join("\n")}\nLID ${v.lid || v.id}`);
-      toast("Copied");
-    } catch {
-      /* clipboard denied -- the mail button is still there */
-    }
-  });
-  acts.append(copy);
   body.append(acts);
 
   acts.append(photoButton(v, "Or send a photo of the menu"));

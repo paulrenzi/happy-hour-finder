@@ -34,7 +34,13 @@ import urllib.request
 from html.parser import HTMLParser
 import urllib.robotparser
 
-REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# A venue name the console cannot encode must not kill a 150-venue crawl on
+# its progress line (Newark, 2026-09-02: cp1252 stdout, first venue, 0 saved).
+for _stream in (sys.stdout, sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        _stream.reconfigure(errors="replace", line_buffering=True)
+
+REPO =os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITES = os.path.join(REPO, "data", "venue_sites.json")
 BASE = os.path.join(REPO, "data", "venue_base.json")
 OUT = os.path.join(REPO, "data", "crawl_hits.json")
