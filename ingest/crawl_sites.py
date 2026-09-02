@@ -976,7 +976,7 @@ def urllib_get(url):
 # was already measured at zero yield for King of Prussia (2026-09-01).
 RENDER_LINE_FLOOR = 25
 RENDER_CAP = 40          # pages per run
-_render = {"on": False, "blocked": False, "used": 0, "pw": None,
+_render = {"on": False, "used": 0, "pw": None,
            "browser": None}
 
 
@@ -1922,28 +1922,8 @@ def crawl_one(session, venue, robots):
         elif fetched >= PAGE_CAP:
             continue
         if not allowed(url, robots):
-            # PAUL'S CALL, 2026-09-01, asked and reaffirmed: a page the venue
-            # publishes for the public, which we can only reach with a browser,
-            # is read with a browser. The Cheesecake Factory serves its King of
-            # Prussia happy-hour menu at menu.thecheesecakefactory.com and that
-            # host's robots.txt is 'User-agent: * / Disallow: /'.
-            #
-            # Recorded plainly because it is a policy choice and not a bug fix:
-            # rendering does not make us less of an automated client, and this
-            # is us deciding to read a page the site asked crawlers not to. It
-            # is bounded to the narrowest case that motivated it -- a page whose
-            # URL NAMES AN HOUR, only under --render-blocked, only one page-slot
-            # each, at the same politeness delay as any other fetch. Nothing
-            # else about the crawl ignores robots.txt: it is still fetched, and
-            # still obeyed, for every other page of every other site.
-            if not (_render["blocked"] and page_is_hh(url)):
-                pages.append({"url": url, "result": refusal(url, robots)})
-                continue
-            pages.append({"url": url,
-                          "result": "robots disallows; rendered by decision"})
-            forced = True
-        else:
-            forced = False
+            pages.append({"url": url, "result": refusal(url, robots)})
+            continue
         time.sleep(DELAY)
         if is_doc:
             docs += 1
@@ -1989,7 +1969,7 @@ def crawl_one(session, venue, robots):
                               "result": "error: frc menu %s" % type(e).__name__})
         lines, stacks, emph = text_lines_emph(html)
         rendered = False
-        if forced or render_wanted(url, lines):
+        if render_wanted(url, lines):
             try:
                 shown = render(url)
             except Exception as e:  # noqa: BLE001 -- one dead render, not the run
@@ -2174,14 +2154,8 @@ def main():
     # a URL naming an hour is ever worth one. See render_wanted().
     ap.add_argument("--render", action="store_true",
                     help="render a happy-hour page that came back a shell (WebKit)")
-    # Deliberately a separate flag from --render, and deliberately not implied
-    # by it: this one overrides a site's robots.txt for happy-hour pages. See
-    # the note at the refusal in crawl_one().
-    ap.add_argument("--render-blocked", action="store_true",
-                    help="also read an hour-named page the site's robots.txt disallows")
     args = ap.parse_args()
-    _render["on"] = args.render or args.render_blocked
-    _render["blocked"] = args.render_blocked
+    _render["on"] = args.render
 
     only = None
     if args.lids:

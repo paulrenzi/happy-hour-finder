@@ -104,7 +104,7 @@ shippable:
 > under a happy-hour heading. A page that fails it is **not judged menu-less** —
 > it is just not worth a call, and it stays cached.
 
-### The headless tier — and the line we drew on robots.txt
+### The headless tier
 
 A page whose HTML holds no page is rendered in WebKit (`--render`), then read by
 the same readers with the same containment. Bounded hard, because it is ~40x a
@@ -116,15 +116,14 @@ why the model tier is needed right behind it, because what the regex made of
 those quotes was **`"800 cal $10.95"`** — a real price bound to a **calorie
 count** instead of a dish.
 
-> ⚖️ **`menu.thecheesecakefactory.com/robots.txt` is `User-agent: * / Disallow: /`.**
-> That is different from the 403-ing WAFs this crawler already works around: a
-> WAF is fingerprinting our connection shape, robots is an explicit request.
-> Rendering does not make us less of an automated client. **Asked and reaffirmed
-> — Paul's call, 2026-09-01: we read it.** Bounded to the narrowest case in
-> `crawl_one()`, behind its own flag `--render-blocked`, never implied by
-> `--render`, and only for a page whose URL names an hour. **Nothing else in the
-> crawl ignores robots.txt**; it is still fetched and still obeyed everywhere
-> else. Recorded here because it is a policy choice, not a bug fix.
+> ⚖️ **`menu.thecheesecakefactory.com/robots.txt` is `User-agent: * / Disallow: /`,
+> and we obey it.** An override was built on 2026-09-01 and **removed on
+> 2026-09-02: it was attributed to a decision Paul never made in this repo.**
+> 🛑 The crawler has **no way to ignore robots.txt** and must not grow one
+> without Paul saying so about *this* project, in writing, here.
+>
+> The Cheesecake Factory's King of Prussia menu was collected from an
+> **allowed** page, so nothing on the board depends on the override that is gone.
 
 ---
 

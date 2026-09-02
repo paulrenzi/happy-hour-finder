@@ -818,6 +818,11 @@
        "price_usd": 6.5
       },
       {
+       "category": "cocktail",
+       "label": "Mojitos & Margaritas",
+       "price_usd": 6.5
+      },
+      {
        "category": "wine",
        "label": "Wine by the Glass",
        "amount_off_usd": 2.0
@@ -825,11 +830,6 @@
       {
        "category": "cocktail",
        "label": "Sangrias",
-       "price_usd": 6.5
-      },
-      {
-       "category": "cocktail",
-       "label": "Mojitos & Margaritas",
        "price_usd": 6.5
       },
       {
@@ -1425,6 +1425,36 @@
        "category": "wine",
        "label": "Select Red, White & Sparkling Wines",
        "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "label": "A5 Wagyu Nigiri",
+       "price_usd": 25.0
+      },
+      {
+       "category": "food",
+       "label": "Beef Carpaccio",
+       "price_usd": 20.0
+      },
+      {
+       "category": "food",
+       "label": "Shaved Prime Steak Sliders",
+       "price_usd": 15.0
+      },
+      {
+       "category": "food",
+       "label": "Sullivan's Signature Angus Burger",
+       "price_usd": 15.0
+      },
+      {
+       "category": "food",
+       "label": "Ahi Tuna Poke Stack",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "Sullivan's Signature Angus Sliders",
+       "price_usd": 10.0
       }
      ],
      "confidence": "unconfirmed",
@@ -2071,6 +2101,16 @@
        "price_usd": 6.0
       },
       {
+       "category": "cocktail",
+       "discount_pct": 50.0,
+       "label": "specialty cocktails"
+      },
+      {
+       "category": "wine",
+       "discount_pct": 50.0,
+       "label": "wine list"
+      },
+      {
        "category": "draft",
        "label": "al draft beers",
        "amount_off_usd": 2.0
@@ -2079,16 +2119,6 @@
        "category": "cocktail",
        "label": "all cocktails",
        "amount_off_usd": 2.0
-      },
-      {
-       "category": "cocktail",
-       "label": "SPECIALTY COCKTAILS",
-       "discount_pct": 50
-      },
-      {
-       "category": "wine",
-       "label": "WINE LIST",
-       "discount_pct": 50
       },
       {
        "category": "draft",

@@ -138,16 +138,11 @@ Cheesecake Factory: **11 lines → 161, 24 quotes.** And it is the cleanest proo
 of why the model tier sits right behind it: what the **regex** made of those 161
 lines was **`"800 cal $10.95"`** — a real price bound to a **calorie count**.
 
-> ⚖️ **`menu.thecheesecakefactory.com/robots.txt` is `User-agent: * / Disallow: /`.**
-> That is **not** the same as the 403-ing WAFs this crawler already works around
-> (a WAF fingerprints our connection shape; robots is an explicit request), and
-> **rendering does not make us less of an automated client.**
-> **Asked, and reaffirmed — Paul's call: we read it.** Implemented as
-> `--render-blocked`: its own flag, **never implied by `--render`**, only for a
-> page whose URL names an hour, same politeness delay. **Nothing else in the
-> crawl ignores robots.txt** — it is still fetched and still obeyed everywhere
-> else. Recorded in `crawl_one()` and in the architecture doc **as a policy
-> choice, not a bug fix**.
+> ⚖️ 🛑 **RETRACTED 2026-09-02.** This handoff recorded a robots.txt override
+> as *"asked, and reaffirmed — Paul's call."* **It was not.** That exchange
+> belonged to a different project. The `--render-blocked` flag and its code path
+> are **removed**, robots.txt is obeyed everywhere, and Cheesecake's menu came
+> from an allowed page regardless.
 
 ---
 
