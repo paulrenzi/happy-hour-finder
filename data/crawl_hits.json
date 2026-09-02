@@ -1168,10 +1168,14 @@
   "osm_name": "Dandan",
   "pages": [
    {
+    "hh": true,
+    "lines": 91,
     "result": "ok, 1 quote(s)",
     "url": "https://www.dandanrestaurant.com/location/ardmore/"
    },
    {
+    "hh": true,
+    "lines": 91,
     "result": "ok, 1 quote(s)",
     "url": "https://www.dandanrestaurant.com/location/ardmore/"
    }
@@ -1752,7 +1756,7 @@
  },
  "104087": {
   "address": "615  RIGHTERS FERRY RD, BALA CYNWYD PA 19004",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [],
   "name": "MAIN LINE HOTEL LP",
   "osm_name": "Residence Inn",
@@ -23331,14 +23335,20 @@
   "osm_name": "Valley Forge Trattoria & Lounge",
   "pages": [
    {
+    "hh": true,
+    "lines": 42,
     "result": "ok, 1 quote(s)",
     "url": "https://www.valleyforgepizza.com"
    },
    {
+    "hh": true,
+    "lines": 20,
     "result": "ok, 2 quote(s)",
     "url": "https://www.valleyforgepizza.com/happy-hours"
    },
    {
+    "hh": false,
+    "lines": 277,
     "result": "ok, 0 quote(s)",
     "url": "https://www.valleyforgepizza.com/images/dine_in_menu.pdf"
    }
@@ -25180,18 +25190,26 @@
   "osm_name": "The Great American Pub",
   "pages": [
    {
+    "hh": true,
+    "lines": 92,
     "result": "ok, 1 quote(s)",
     "url": "https://thegreatamericanpub.com/phoenixville"
    },
    {
+    "hh": true,
+    "lines": 79,
     "result": "ok, 4 quote(s)",
     "url": "https://thegreatamericanpub.com/phoenixville/menus/happy-hour/"
    },
    {
+    "hh": true,
+    "lines": 183,
     "result": "ok, 2 quote(s)",
     "url": "https://thegreatamericanpub.com/phoenixville/specials/"
    },
    {
+    "hh": true,
+    "lines": 75,
     "result": "ok, 6 quote(s)",
     "url": "https://thegreatamericanpub.com/phoenixville/specials/weekly-specials/"
    }
@@ -25871,10 +25889,14 @@
   "osm_name": "Bluebird Distilling",
   "pages": [
    {
+    "hh": false,
+    "lines": 70,
     "result": "ok, 0 quote(s)",
     "url": "https://www.bluebirddistilling.com/"
    },
    {
+    "hh": false,
+    "lines": 343,
     "result": "ok, 0 quote(s)",
     "url": "https://www.bluebirddistilling.com/menu"
    }
@@ -27151,10 +27173,14 @@
   "osm_name": null,
   "pages": [
    {
+    "hh": false,
+    "lines": 48,
     "result": "ok, 0 quote(s)",
     "url": "https://www.kimbertongolfclub.com/"
    },
    {
+    "hh": false,
+    "lines": 47,
     "result": "ok, 0 quote(s)",
     "url": "https://www.kimbertongolfclub.com/events/"
    }
@@ -27534,18 +27560,26 @@
   "osm_name": "The Foodery",
   "pages": [
    {
+    "hh": false,
+    "lines": 51,
     "result": "ok, 0 quote(s)",
     "url": "https://fooderybeer.squarespace.com/phoenixville"
    },
    {
+    "hh": false,
+    "lines": 33,
     "result": "ok, 0 quote(s)",
     "url": "https://fooderybeer.squarespace.com/deli-phoenixville-menu"
    },
    {
+    "hh": false,
+    "lines": 404,
     "result": "ok, 0 quote(s)",
     "url": "https://fooderybeer.squarespace.com/events"
    },
    {
+    "hh": false,
+    "lines": 33,
     "result": "ok, 0 quote(s)",
     "url": "https://fooderybeer.squarespace.com/menu"
    }
@@ -29047,7 +29081,7 @@
  },
  "84049": {
   "address": "10 GENERAL WARREN BLVD, MALVERN PA 19355-1226",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-01",
   "hits": [],
   "name": "CHARLESTOWN VILLAGE",
   "osm_name": "Residence Inn",
@@ -29145,14 +29179,20 @@
   "osm_name": "Liberty Union Bar & Grill",
   "pages": [
    {
+    "hh": false,
+    "lines": 35,
     "result": "ok, 0 quote(s)",
     "url": "http://libertyunionbar.com/"
    },
    {
+    "hh": false,
+    "lines": 317,
     "result": "ok, 0 quote(s)",
     "url": "http://libertyunionbar.com/chester-springs/menus/main"
    },
    {
+    "hh": false,
+    "lines": 323,
     "result": "ok, 0 quote(s)",
     "url": "http://libertyunionbar.com/kimberton/menus/main"
    }
@@ -29168,20 +29208,28 @@
   "osm_name": null,
   "pages": [
    {
+    "hh": false,
+    "lines": 463,
     "result": "ok, 0 quote(s)",
     "url": "https://thecolonialtheatre.com/"
    },
    {
+    "hh": false,
+    "lines": 612,
     "result": "ok, 0 quote(s)",
     "url": "https://thecolonialtheatre.com/events/"
    },
    {
-    "result": "ok, 0 quote(s)",
-    "url": "https://thecolonialtheatre.com/events/colonial-events/"
-   },
-   {
+    "hh": false,
+    "lines": 433,
     "result": "ok, 0 quote(s)",
     "url": "https://thecolonialtheatre.com/events/colonial-events/introduction-to-screenwriting/"
+   },
+   {
+    "hh": false,
+    "lines": 439,
+    "result": "ok, 0 quote(s)",
+    "url": "https://thecolonialtheatre.com/events/guest-presentations/"
    }
   ],
   "website": "https://thecolonialtheatre.com/",
@@ -29200,10 +29248,14 @@
   "osm_name": "Root Down",
   "pages": [
    {
+    "hh": false,
+    "lines": 80,
     "result": "ok, 1 quote(s)",
     "url": "https://rootdownbrewing.com/"
    },
    {
+    "hh": false,
+    "lines": 64,
     "result": "ok, 0 quote(s)",
     "url": "https://rootdownbrewing.com/rootdown-events/"
    }
@@ -30070,10 +30122,14 @@
   "osm_name": "Rebel Hill Brewing",
   "pages": [
    {
+    "hh": false,
+    "lines": 21,
     "result": "ok, 0 quote(s)",
     "url": "https://www.rebelhillbrewing.com/"
    },
    {
+    "hh": false,
+    "lines": 86,
     "result": "ok, 0 quote(s)",
     "url": "https://www.rebelhillbrewing.com/drink-rebelhill"
    }
@@ -30617,18 +30673,43 @@
    {
     "quote": "Happy Hour",
     "url": "https://ilgranaiopa2.com/menus.html"
+   },
+   {
+    "hh": true,
+    "quote": "HAPPY HOUR",
+    "url": "https://ilgranaiopa2.com/assets/menu/happy-hour.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "$4 GLASS WINES $8",
+    "url": "https://ilgranaiopa2.com/assets/menu/happy-hour.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "SPINACH PASTA, WHITE WINE SHALLOT CREAM SAUCE / $10 / CONSUMING RAW OR UNDERCOOKED POULTRY, SHELLFISH, SEAFOOD OR MEAT",
+    "url": "https://ilgranaiopa2.com/assets/menu/happy-hour.pdf"
    }
   ],
   "name": "ILGRANAIO PHOENIXVILLE",
   "osm_name": "il Granaio",
   "pages": [
    {
+    "hh": false,
+    "lines": 15,
     "result": "ok, 0 quote(s)",
     "url": "https://ilgranaiopa2.com/"
    },
    {
+    "hh": true,
+    "lines": 10,
     "result": "ok, 1 quote(s)",
     "url": "https://ilgranaiopa2.com/menus.html"
+   },
+   {
+    "hh": true,
+    "lines": 122,
+    "result": "ok, 3 quote(s)",
+    "url": "https://ilgranaiopa2.com/assets/menu/happy-hour.pdf"
    }
   ],
   "website": "https://ilgranaiopa2.com/",
@@ -30789,18 +30870,26 @@
   "osm_name": null,
   "pages": [
    {
+    "hh": false,
+    "lines": 130,
     "result": "ok, 0 quote(s)",
     "url": "https://sedonataphouse.com/"
    },
    {
+    "hh": false,
+    "lines": 114,
     "result": "ok, 0 quote(s)",
     "url": "https://sedonataphouse.com/nye-special-short-ribs-dinner/"
    },
    {
+    "hh": false,
+    "lines": 114,
     "result": "ok, 0 quote(s)",
     "url": "https://sedonataphouse.com/nye-special-salmon-dinner-2/"
    },
    {
+    "hh": false,
+    "lines": 114,
     "result": "ok, 0 quote(s)",
     "url": "https://sedonataphouse.com/nye-special-short-ribs-dinner-2/"
    }
@@ -31182,98 +31271,122 @@
     "url": "https://www.hogislandsteaks.com/lunch-specials"
    },
    {
+    "hh": true,
     "quote": "FRENCH FRIES $7.50",
     "url": "https://www.hogislandsteaks.com/s/HogIslandMenu7825.pdf"
    },
    {
+    "hh": true,
     "quote": "STEAK CUT FRIES $7.50",
     "url": "https://www.hogislandsteaks.com/s/HogIslandMenu7825.pdf"
    },
    {
+    "hh": true,
     "quote": "CHEESE WHIZ FRIES $9.00",
     "url": "https://www.hogislandsteaks.com/s/HogIslandMenu7825.pdf"
    },
    {
+    "hh": true,
     "quote": "OLD BAY FRIES $7.50",
     "url": "https://www.hogislandsteaks.com/s/HogIslandMenu7825.pdf"
    },
    {
+    "hh": true,
     "quote": "GRAVY FRIES $8.50",
     "url": "https://www.hogislandsteaks.com/s/HogIslandMenu7825.pdf"
    },
    {
+    "hh": true,
     "quote": "STEAK SUPREME FRIES $16.99",
     "url": "https://www.hogislandsteaks.com/s/HogIslandMenu7825.pdf"
    },
    {
+    "hh": true,
     "quote": "MEGA FRIES $16.99",
     "url": "https://www.hogislandsteaks.com/s/HogIslandMenu7825.pdf"
    },
    {
+    "hh": true,
     "quote": "PIZZA FRIES $9.50",
     "url": "https://www.hogislandsteaks.com/s/HogIslandMenu7825.pdf"
    },
    {
+    "hh": true,
     "quote": "MOZZARELLA FRIES $8.50",
     "url": "https://www.hogislandsteaks.com/s/HogIslandMenu7825.pdf"
    },
    {
+    "hh": true,
     "quote": "MOZZARELLA GRAVY FRIES $9.50",
     "url": "https://www.hogislandsteaks.com/s/HogIslandMenu7825.pdf"
    },
    {
+    "hh": true,
     "quote": "ONION RINGS $10.99",
     "url": "https://www.hogislandsteaks.com/s/HogIslandMenu7825.pdf"
    },
    {
+    "hh": true,
     "quote": "CHICKEN FINGERS $11.99",
     "url": "https://www.hogislandsteaks.com/s/HogIslandMenu7825.pdf"
    },
    {
+    "hh": true,
     "quote": "BUFFALO CHICKEN FINGERS $12.99",
     "url": "https://www.hogislandsteaks.com/s/HogIslandMenu7825.pdf"
    },
    {
+    "hh": true,
     "quote": "NOT REALLY POUTINE $16.99",
     "url": "https://www.hogislandsteaks.com/s/HogIslandMenu7825.pdf"
    },
    {
+    "hh": true,
     "quote": "GARDEN SALAD WITH MOZZARELLA CHEESE $11.99",
     "url": "https://www.hogislandsteaks.com/s/HogIslandMenu7825.pdf"
    },
    {
+    "hh": true,
     "quote": "CAESAR SALAD ROMAINE LETTUCE, PARMESAN CHEESE & CROUTONS $11.99",
     "url": "https://www.hogislandsteaks.com/s/HogIslandMenu7825.pdf"
    },
    {
+    "hh": true,
     "quote": "GRILLED CHICKEN SALAD WITH MOZZARELLA CHEESE $16.99",
     "url": "https://www.hogislandsteaks.com/s/HogIslandMenu7825.pdf"
    },
    {
+    "hh": true,
     "quote": "GRILLED SHRIMP SALAD WITH MOZZARELLA CHEESE $16.99",
     "url": "https://www.hogislandsteaks.com/s/HogIslandMenu7825.pdf"
    },
    {
+    "hh": true,
     "quote": "CHEF SALAD TURKEY, HAM, PROVOLONE AND AMERICAN CHEESE $16.99",
     "url": "https://www.hogislandsteaks.com/s/HogIslandMenu7825.pdf"
    },
    {
+    "hh": true,
     "quote": "TUNA SALAD TUNA SALAD & MOZZARELLA CHEESE $16.99",
     "url": "https://www.hogislandsteaks.com/s/HogIslandMenu7825.pdf"
    },
    {
+    "hh": true,
     "quote": "ANTIPASTO SALAD HAM, CAPICOLA, GENOA SALAMI, & PROVOLONE $16.99",
     "url": "https://www.hogislandsteaks.com/s/HogIslandMenu7825.pdf"
    },
    {
+    "hh": true,
     "quote": "TURKEY SALAD WITH AMERICAN CHEESE $16.99",
     "url": "https://www.hogislandsteaks.com/s/HogIslandMenu7825.pdf"
    },
    {
+    "hh": true,
     "quote": "SPECIAL SALAD ROMAINE LETTUCE, TOMATOES, RED ONIONS, ROASTED RED PEPPERS & FRESH MOZZARELLA $12.99",
     "url": "https://www.hogislandsteaks.com/s/HogIslandMenu7825.pdf"
    },
    {
+    "hh": true,
     "quote": "KALAMATA OLIVES & FETA CHEESE $16.99",
     "url": "https://www.hogislandsteaks.com/s/HogIslandMenu7825.pdf"
    }
@@ -31282,18 +31395,26 @@
   "osm_name": "Hog Island Steaks",
   "pages": [
    {
+    "hh": false,
+    "lines": 38,
     "result": "ok, 0 quote(s)",
     "url": "https://www.hogislandsteaks.com"
    },
    {
+    "hh": false,
+    "lines": 39,
     "result": "ok, 9 quote(s)",
     "url": "https://www.hogislandsteaks.com/lunch-specials"
    },
    {
+    "hh": false,
+    "lines": 30,
     "result": "ok, 0 quote(s)",
     "url": "https://www.hogislandsteaks.com/menu-photos"
    },
    {
+    "hh": false,
+    "lines": 712,
     "result": "ok, 24 quote(s)",
     "url": "https://www.hogislandsteaks.com/s/HogIslandMenu7825.pdf"
    }
@@ -34278,10 +34399,14 @@
   "osm_name": "Rivertown Taps",
   "pages": [
    {
+    "hh": false,
+    "lines": 76,
     "result": "ok, 0 quote(s)",
     "url": "https://rivertowntaps.com/"
    },
    {
+    "hh": false,
+    "lines": 49,
     "result": "ok, 0 quote(s)",
     "url": "https://rivertowntaps.com/menu/"
    }
