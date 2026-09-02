@@ -1054,6 +1054,67 @@
    ]
   },
   {
+   "id": "double-visions-horsham",
+   "lid": "10518",
+   "name": "Double Visions",
+   "plcb_name": "Double Visions",
+   "address": "1138-42 Easton Rd, Horsham PA 19044",
+   "zone_id": "willow_grove_horsham",
+   "license_type": "",
+   "website": "https://www.doublevisionsgogo.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "17:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.doublevisionsgogo.com/",
+      "quote": "Happy Hour daily 3PM-5PM"
+     }
+    }
+   ]
+  },
+  {
    "id": "top-tomato-bar-pizza-philadelphia",
    "lid": "105744",
    "name": "Top Tomato Bar & Pizza",
@@ -2942,6 +3003,88 @@
    ]
   },
   {
+   "id": "select-pizza-grill-of-huntingdon-valley-huntingdon-valley",
+   "lid": "121704",
+   "name": "Select Pizza Grill of Huntingdon Valley",
+   "plcb_name": "Select Pizza Grill of Huntingdon Valley",
+   "address": "2190 County Line Rd, Huntingdon Valley PA 19006",
+   "zone_id": "willow_grove_horsham",
+   "license_type": "",
+   "website": "https://www.thecagecocktailbar.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Draft Beer",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "label": "ALL Signature Cocktails",
+       "price_usd": 11.0
+      },
+      {
+       "category": "food",
+       "label": "Double Truffle Fries",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "ini Burgers & Housemade Chips",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "Korean Tacos",
+       "price_usd": 13.0
+      },
+      {
+       "category": "food",
+       "label": "Mini Burgers & Housemade Chip",
+       "price_usd": 10.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.thecagecocktailbar.com/menus/",
+      "quote": "Happy Hour Audubon & Huntingdon Valley: Monday - Friday 4pm-6pm!"
+     }
+    }
+   ]
+  },
+  {
    "id": "santucci-s-original-square-pizza-philadelphia",
    "lid": "122033",
    "name": "Santucci's Original Square Pizza",
@@ -3024,6 +3167,57 @@
    ]
   },
   {
+   "id": "buona-v-horsham",
+   "lid": "122326",
+   "name": "Buona V",
+   "plcb_name": "Buona V",
+   "address": "426 Horsham Rd, Horsham PA 19044",
+   "zone_id": "willow_grove_horsham",
+   "license_type": "",
+   "website": "http://www.buonavia.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 2,
+       "start": "15:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 3,
+       "start": "15:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 4,
+       "start": "15:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 5,
+       "start": "15:30",
+       "end": "18:30"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://www.buonavia.com/",
+      "quote": "Italian Seafood & Grill-Upscale but casual Tuscan villa atmosphere-Specializing in Seafood-Daily specials - Happy Hour-Private Party Rooms - Cocktail Parties -Take out-Business carry out & off-premise Catering. / Happy Hour Monday-Friday 3:30 pm - 6:30 pm at The Bar!"
+     }
+    }
+   ]
+  },
+  {
    "id": "maison-lotus-wayne",
    "lid": "122420",
    "name": "Maison Lotus",
@@ -3091,6 +3285,57 @@
       "kind": "venue_site",
       "url": "https://www.maison-lotus.com/",
       "quote": "Happy Hour Mon to Fri 4-6pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "towey-s-hatboro-tavern-hatboro",
+   "lid": "12422",
+   "name": "Towey's Hatboro Tavern",
+   "plcb_name": "Towey's Hatboro Tavern",
+   "address": "117 S York Rd, Hatboro PA 19040",
+   "zone_id": "willow_grove_horsham",
+   "license_type": "",
+   "website": "http://toweystavern.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://toweystavern.com/",
+      "quote": "Happy Hours / Karaoke is every Friday at 9:30 pm. / Happy hours are Monday to Friday from 4:00 pm - 6:00 pm for a dollar off on all beers and mixed drinks."
      }
     }
    ]
@@ -4204,6 +4449,68 @@
       "kind": "venue_site",
       "url": "https://www.thestablesbeergarden.com/happy-hour",
       "quote": "HAPPY HOUR / Join us for Happy Hour every Tuesday - Friday from 4 pm - 6 pm!"
+     }
+    }
+   ]
+  },
+  {
+   "id": "anthony-s-coal-fired-pizza-horsham",
+   "lid": "131341",
+   "name": "Anthony's Coal Fired Pizza",
+   "plcb_name": "FLORIDA COAL FIRED PIZZA LLC",
+   "address": "100 WELSH RD UNIT K, HORSHAM PA 19044-2249",
+   "zone_id": "willow_grove_horsham",
+   "license_type": "",
+   "website": "https://acfp.com/locations/horsham/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "bites and sips",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "Bites",
+       "price_usd": 5.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://acfp.com/happy-hour/",
+      "quote": "MON - FRI \u2022 3-6 PM"
      }
     }
    ]
@@ -9113,6 +9420,57 @@
    ]
   },
   {
+   "id": "miller-s-ale-house-willow-grove",
+   "lid": "65850",
+   "name": "Miller's Ale House",
+   "plcb_name": "MILLER'S WILLOW GROVE ALE HOUSE",
+   "address": "2300 EASTON RD, WILLOW GROVE PA 19090-1105",
+   "zone_id": "willow_grove_horsham",
+   "license_type": "",
+   "website": "https://millersalehouse.com/locations/willow-grove/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "17:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://millersalehouse.com/locations/willow-grove/",
+      "quote": "Mon - Thurs 3:00 PM - 6:00 PM"
+     }
+    }
+   ]
+  },
+  {
    "id": "p-j-whelihan-s-west-chester",
    "lid": "66141",
    "name": "P.J. Whelihan's",
@@ -9508,6 +9866,57 @@
    ]
   },
   {
+   "id": "palz-tap-house-huntingdon-valley",
+   "lid": "68012",
+   "name": "Palz Tap House",
+   "plcb_name": "PALZ TAP HOUSE",
+   "address": "1902 COUNTY LINE RD, HUNTINGDON VALLEY PA 19006-1738",
+   "zone_id": "willow_grove_horsham",
+   "license_type": "",
+   "website": "https://www.palztaphouse.net/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://le-cdn.website-editor.net/s/80e1cb790a7e44b0b253106cea2b7778/dms3rep/multi/opt/new+happy+hour-1920w.png?Expires=1790514370&Signature=V4hVWlIjf4l6QChkNtnjKEsWSLs662W8d5X6zvcQ~1SCHCOMPPaT8u8hyBmFjjeV5Ml9IpH5eYK7vqCa01mKWVPXUWbkiRo85vL4PP6SSadnvmta4t3qnAwOLo3~16vanDwJZDgECUWfFvS4WKJVFC5YBfSDIddH9O2ImmxTkIGc0gR1HigW2dtq-lIPYlGHb~BkQPr~k3CDvE6RdK2am4C~cBMtkNaTWAO5L1q9-aEvvJT~7zUB5nP52NoZ~eoWIlm~beTmVd2kBMN8-W9d245~3~44z4v-9lwZrySTlF~kDAHlJnoWhV48nJatF0nNfB~Vbd1e7VmYBxoXii0eZQ__&Key-Pair-Id=K2NXBXLF010TJW",
+      "quote": "HAPPY HOURS MONDAY-FRIDAY 4-6PM | FRIDAY & SATURDAY 10-MIDNIGHT HAPPY HOUR"
+     }
+    }
+   ]
+  },
+  {
    "id": "ocean-prime-philadelphia",
    "lid": "68137",
    "name": "Ocean Prime",
@@ -9738,6 +10147,73 @@
       "kind": "venue_site",
       "url": "https://www.godocspub.com/specials/",
       "quote": "Happy Hour 4PM\u20136PM \u2014 beers, wells & wines $1 off"
+     }
+    }
+   ]
+  },
+  {
+   "id": "crooked-eye-brewery-llc-hatboro",
+   "lid": "69140",
+   "name": "CROOKED EYE BREWERY LLC",
+   "plcb_name": "CROOKED EYE BREWERY LLC",
+   "address": "13 E MONTGOMERY AVE STE 2 , HATBORO PA 19040-2618",
+   "zone_id": "willow_grove_horsham",
+   "license_type": "",
+   "website": "https://crookedeyebrewery.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "pints from 4-6pm",
+       "amount_off_usd": 1.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://crookedeyebrewery.com/events",
+      "quote": "Happy Hour $1 off pints from 4-6pm"
      }
     }
    ]
@@ -13448,6 +13924,42 @@
       "kind": "venue_site",
       "url": "https://www.stoveandtap-wc.com/specials",
       "quote": "Food & Drink Specials / 5:00 PM - 7:00 PM / WEDNESDAY"
+     }
+    }
+   ]
+  },
+  {
+   "id": "pjw-horsham-suite-300-horsham",
+   "lid": "96478",
+   "name": "Pjw Horsham",
+   "plcb_name": "Pjw Horsham",
+   "address": "101 Easton Rd, Suite 300, Horsham PA 19044",
+   "zone_id": "willow_grove_horsham",
+   "license_type": "",
+   "website": "https://locations.pjspub.com/pa/horsham/101-easton-rd",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://locations.pjspub.com/pa/horsham/101-easton-rd",
+      "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
      }
     }
    ]

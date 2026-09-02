@@ -23,6 +23,316 @@
   "refused": [],
   "url": "https://www.stonehousegrillepa.com/weekend-menu-additions"
  },
+ "101437|page|http://coppercrowhorsham.com/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "101437",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "http://coppercrowhorsham.com/"
+ },
+ "101437|page|http://coppercrowhorsham.com/horsham-the-copper-crow-catering": {
+  "deals": [],
+  "doc": "page",
+  "lid": "101437",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "http://coppercrowhorsham.com/horsham-the-copper-crow-catering"
+ },
+ "101437|page|http://coppercrowhorsham.com/horsham-the-copper-crow-drink-menu": {
+  "deals": [],
+  "doc": "page",
+  "lid": "101437",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "http://coppercrowhorsham.com/horsham-the-copper-crow-drink-menu"
+ },
+ "101437|page|http://coppercrowhorsham.com/horsham-the-copper-crow-happy-hours-specials": {
+  "deals": [
+   {
+    "confidence": "unconfirmed",
+    "items": [],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "clock_quote": "04:30 PM - 09:00 PM",
+     "heading": "BYOW Tuesdays",
+     "kind": "venue_site",
+     "quote": "BYOW Tuesdays | We’re waiving our corkage fee so you can enjoy your favorite bottle of wine while you #eatcrow every Tuesday night!",
+     "url": "http://coppercrowhorsham.com/horsham-the-copper-crow-happy-hours-specials"
+    },
+    "type": "daily_special",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 2,
+      "end": "21:00",
+      "start": "16:30"
+     }
+    ]
+   },
+   {
+    "confidence": "unconfirmed",
+    "items": [
+     {
+      "category": "food",
+      "evidence": "Pick 2 for $25!",
+      "label": "two select dishes from a condensed lunch menu",
+      "price_usd": 25.0
+     }
+    ],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "clock_quote": "11:30 AM - 02:30 PM",
+     "heading": "Pick 2 for $25!",
+     "kind": "venue_site",
+     "quote": "Pick 2 for $25! Enjoy two select dishes from a condensed lunch menu for $25.",
+     "url": "http://coppercrowhorsham.com/horsham-the-copper-crow-happy-hours-specials"
+    },
+    "type": "food_combo",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "14:30",
+      "start": "11:30"
+     },
+     {
+      "dow": 2,
+      "end": "14:30",
+      "start": "11:30"
+     },
+     {
+      "dow": 3,
+      "end": "14:30",
+      "start": "11:30"
+     },
+     {
+      "dow": 4,
+      "end": "14:30",
+      "start": "11:30"
+     },
+     {
+      "dow": 5,
+      "end": "14:30",
+      "start": "11:30"
+     },
+     {
+      "dow": 6,
+      "end": "14:30",
+      "start": "11:30"
+     },
+     {
+      "dow": 7,
+      "end": "14:30",
+      "start": "11:30"
+     }
+    ]
+   },
+   {
+    "_refused_items": [
+     "Margherita pizzas: the amount off is not in its own evidence"
+    ],
+    "confidence": "unconfirmed",
+    "items": [
+     {
+      "category": "food",
+      "evidence": "$5 per birria taco",
+      "label": "birria taco",
+      "price_usd": 5.0
+     },
+     {
+      "amount_off_usd": 5.0,
+      "category": "wine",
+      "evidence": "$5 off bottles of wine",
+      "label": "bottles of wine"
+     },
+     {
+      "category": "cocktail",
+      "evidence": "$5 Kiki mixed drinks",
+      "label": "Kiki mixed drinks",
+      "price_usd": 5.0
+     },
+     {
+      "category": "draft",
+      "evidence": "$5 select draft beers",
+      "label": "select draft beers",
+      "price_usd": 5.0
+     },
+     {
+      "category": "wine",
+      "evidence": "$7 glass of house red or white wine",
+      "label": "glass of house red or white wine",
+      "price_usd": 7.0
+     },
+     {
+      "amount_off_usd": 5.0,
+      "category": "food",
+      "evidence": "$5 off all pizzas",
+      "label": "all pizzas"
+     },
+     {
+      "amount_off_usd": 5.0,
+      "category": "food",
+      "evidence": "$5 off all small plates",
+      "label": "all small plates"
+     },
+     {
+      "amount_off_usd": 5.0,
+      "category": "food",
+      "evidence": "$5 off all burgers",
+      "label": "all burgers"
+     }
+    ],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "clock_quote": "04:30 PM - 06:30 PM",
+     "heading": "Happy Hour (Bars and High Tops ONLY!)",
+     "kind": "venue_site",
+     "quote": "Happy Hour (Bars and High Tops ONLY!) • $5 per birria taco | $5 off bottles of wine | $5 Kiki mixed drinks (Martinis $2 additional charge) | $5 select draft beers | $7 glass of house red or white wine",
+     "url": "http://coppercrowhorsham.com/horsham-the-copper-crow-happy-hours-specials"
+    },
+    "type": "happy_hour",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 2,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 3,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 4,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 5,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 6,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 7,
+      "end": "18:30",
+      "start": "16:30"
+     }
+    ]
+   }
+  ],
+  "doc": "page",
+  "lid": "101437",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "http://coppercrowhorsham.com/horsham-the-copper-crow-happy-hours-specials"
+ },
+ "103195|page|https://www.wawa.com/locations/0148?utm_source=gmblisting&utm_medium=organic&utm_campaign=locallisting": {
+  "deals": [],
+  "doc": "page",
+  "lid": "103195",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.wawa.com/locations/0148?utm_source=gmblisting&utm_medium=organic&utm_campaign=locallisting"
+ },
+ "103195|page|https://www.wawa.com/menu/beverages": {
+  "deals": [],
+  "doc": "page",
+  "lid": "103195",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.wawa.com/menu/beverages"
+ },
+ "103195|page|https://www.wawa.com/menu/breakfast": {
+  "deals": [],
+  "doc": "page",
+  "lid": "103195",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.wawa.com/menu/breakfast"
+ },
+ "103195|page|https://www.wawa.com/menu/lunch-dinner/hoagies-specialty-sandwiches/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "103195",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.wawa.com/menu/lunch-dinner/hoagies-specialty-sandwiches/"
+ },
+ "10518|page|https://doublevisionsgogo.com/event-archives/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "10518",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://doublevisionsgogo.com/event-archives/"
+ },
+ "10518|page|https://doublevisionsgogo.com/events/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "10518",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://doublevisionsgogo.com/events/"
+ },
+ "10518|page|https://www.doublevisionsgogo.com/": {
+  "deals": [
+   {
+    "confidence": "unconfirmed",
+    "items": [],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "heading": "Happy Hour",
+     "kind": "venue_site",
+     "quote": "Enjoy an extra hour of Happy Hour on Fridays 3PM-6PM",
+     "url": "https://www.doublevisionsgogo.com/"
+    },
+    "type": "happy_hour",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "15:00"
+     }
+    ]
+   }
+  ],
+  "doc": "page",
+  "lid": "10518",
+  "read_at": "2026-09-02",
+  "refused": [
+   "happy_hour: the model returned no days for a quote that names days"
+  ],
+  "url": "https://www.doublevisionsgogo.com/"
+ },
+ "105486|page|http://www.multiflow.net/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "105486",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "http://www.multiflow.net/"
+ },
+ "105499|page|http://www.multiflow.net/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "105499",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "http://www.multiflow.net/"
+ },
  "106706|image|https://static.wixstatic.com/media/ee76f7_ec3256bd3a88404b8afca7dde5e6965f~mv2.png/v1/crop/x_27,y_0,w_777,h_2000/fill/w_600,h_1544,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Revival HH.png": {
   "deals": [
    {
@@ -526,6 +836,139 @@
   "refused": [],
   "url": "https://www.bellatrattoriasc.com/ourmenu"
  },
+ "110483|page|http://www.cyrenitysips.com/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "110483",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "http://www.cyrenitysips.com/"
+ },
+ "111227|page|https://steelpenny.com/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "111227",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://steelpenny.com/"
+ },
+ "111227|page|https://steelpenny.com/menu": {
+  "deals": [],
+  "doc": "page",
+  "lid": "111227",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://steelpenny.com/menu"
+ },
+ "111227|page|https://steelpenny.com/menu/steel-penny-cafe-451a-oakdale-ave": {
+  "deals": [],
+  "doc": "page",
+  "lid": "111227",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://steelpenny.com/menu/steel-penny-cafe-451a-oakdale-ave"
+ },
+ "113135|page|https://locations.outback.com/pennsylvania/horsham": {
+  "deals": [],
+  "doc": "page",
+  "lid": "113135",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://locations.outback.com/pennsylvania/horsham"
+ },
+ "113135|page|https://locations.outback.com/pennsylvania/horsham/724-blair-mill-road?y_source=1_NjM5MTUxMTUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D": {
+  "deals": [
+   {
+    "confidence": "unconfirmed",
+    "items": [],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "clock_quote": "Monday 11:00 AM - 9:30 PM",
+     "heading": "Kids Eat Free Mondays",
+     "kind": "venue_site",
+     "quote": "Kids Eat Free Mondays",
+     "url": "https://locations.outback.com/pennsylvania/horsham/724-blair-mill-road?y_source=1_NjM5MTUxMTUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D"
+    },
+    "type": "daily_special",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "21:30",
+      "start": "11:00"
+     }
+    ]
+   },
+   {
+    "confidence": "unconfirmed",
+    "items": [],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "clock_quote": "Tuesday 11:00 AM - 9:30 PM",
+     "heading": "Tuesday Tails",
+     "kind": "venue_site",
+     "quote": "Tuesday Tails",
+     "url": "https://locations.outback.com/pennsylvania/horsham/724-blair-mill-road?y_source=1_NjM5MTUxMTUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D"
+    },
+    "type": "daily_special",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 2,
+      "end": "21:30",
+      "start": "11:00"
+     }
+    ]
+   },
+   {
+    "confidence": "unconfirmed",
+    "items": [],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "clock_quote": "Wednesday 11:00 AM - 9:30 PM",
+     "heading": "Walkabout Wednesdays",
+     "kind": "venue_site",
+     "quote": "Walkabout Wednesdays",
+     "url": "https://locations.outback.com/pennsylvania/horsham/724-blair-mill-road?y_source=1_NjM5MTUxMTUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D"
+    },
+    "type": "daily_special",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 3,
+      "end": "21:30",
+      "start": "11:00"
+     }
+    ]
+   },
+   {
+    "confidence": "unconfirmed",
+    "items": [],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "clock_quote": "Thursday 11:00 AM - 9:30 PM",
+     "heading": "$5 Bevvy Thursdays",
+     "kind": "venue_site",
+     "quote": "$5 Bevvy Thursdays",
+     "url": "https://locations.outback.com/pennsylvania/horsham/724-blair-mill-road?y_source=1_NjM5MTUxMTUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D"
+    },
+    "type": "daily_special",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 4,
+      "end": "21:30",
+      "start": "11:00"
+     }
+    ]
+   }
+  ],
+  "doc": "page",
+  "lid": "113135",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://locations.outback.com/pennsylvania/horsham/724-blair-mill-road?y_source=1_NjM5MTUxMTUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D"
+ },
  "114948|page|https://sokobag.com/": {
   "deals": [],
   "doc": "page",
@@ -557,6 +1000,54 @@
   "read_at": "2026-09-02",
   "refused": [],
   "url": "https://sokobag.com/philadelphia-union-sports-bar-in-phoenixville/"
+ },
+ "117291|page|https://www.olivegarden.com/locations/pa/willow-grove/willow-grove-easton-rd/6489?cmpid=br:og_ag:ie_ch:loc_ca:OGGMB_sn:gmb_gt:willow-grove-pa-6489_pl:locurl_rd:1914": {
+  "deals": [],
+  "doc": "page",
+  "lid": "117291",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.olivegarden.com/locations/pa/willow-grove/willow-grove-easton-rd/6489?cmpid=br:og_ag:ie_ch:loc_ca:OGGMB_sn:gmb_gt:willow-grove-pa-6489_pl:locurl_rd:1914"
+ },
+ "117291|page|https://www.olivegarden.com/specials": {
+  "deals": [],
+  "doc": "page",
+  "lid": "117291",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.olivegarden.com/specials"
+ },
+ "119038|page|https://www.concordanceferments.com/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "119038",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.concordanceferments.com/"
+ },
+ "119038|page|https://www.concordanceferments.com/beer": {
+  "deals": [],
+  "doc": "page",
+  "lid": "119038",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.concordanceferments.com/beer"
+ },
+ "119038|page|https://www.concordanceferments.com/happenings": {
+  "deals": [],
+  "doc": "page",
+  "lid": "119038",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.concordanceferments.com/happenings"
+ },
+ "119038|page|https://www.concordanceferments.com/menus": {
+  "deals": [],
+  "doc": "page",
+  "lid": "119038",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.concordanceferments.com/menus"
  },
  "119459|page|https://www.twelve78brewing.com/": {
   "deals": [],
@@ -590,6 +1081,440 @@
   "refused": [],
   "url": "https://www.twelve78brewing.com/hours-and-location/"
  },
+ "121704|page|https://www.thecagecocktailbar.com/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "121704",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.thecagecocktailbar.com/"
+ },
+ "121704|page|https://www.thecagecocktailbar.com/huntingdonvalley/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "121704",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.thecagecocktailbar.com/huntingdonvalley/"
+ },
+ "121704|page|https://www.thecagecocktailbar.com/location/the-cage-coming-soon/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "121704",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.thecagecocktailbar.com/location/the-cage-coming-soon/"
+ },
+ "121704|page|https://www.thecagecocktailbar.com/menus/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "121704",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.thecagecocktailbar.com/menus/"
+ },
+ "122326|image|https://static.orderchop.site/wp-content/uploads/20250401170807/Happy-Hour-Menu-4-1-25_Page_1.jpg": {
+  "deals": [],
+  "doc": "image",
+  "lid": "122326",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://static.orderchop.site/wp-content/uploads/20250401170807/Happy-Hour-Menu-4-1-25_Page_1.jpg"
+ },
+ "122326|image|https://static.orderchop.site/wp-content/uploads/20250401170816/Happy-Hour-Menu-4-1-25_Page_2.jpg": {
+  "deals": [
+   {
+    "confidence": "unconfirmed",
+    "items": [
+     {
+      "category": "draft",
+      "evidence": "DRAFT BEER 5",
+      "label": "DRAFT BEER",
+      "price_usd": 5.0
+     },
+     {
+      "category": "draft",
+      "evidence": "DRAFT DOMESTIC 4",
+      "label": "DRAFT DOMESTIC",
+      "price_usd": 4.0
+     },
+     {
+      "category": "wine",
+      "evidence": "RED WINE BY THE GLASS 7",
+      "label": "RED WINE BY THE GLASS",
+      "price_usd": 7.0
+     },
+     {
+      "category": "wine",
+      "evidence": "WHITE WINE BY THE GLASS 7",
+      "label": "WHITE WINE BY THE GLASS",
+      "price_usd": 7.0
+     },
+     {
+      "category": "wine",
+      "evidence": "ROSE 7",
+      "label": "ROSE",
+      "price_usd": 7.0
+     }
+    ],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "heading": "Happy Hour Beer & Wine",
+     "kind": "venue_site",
+     "quote": "MONDAY - FRIDAY 3:30 - 6:30",
+     "url": "https://static.orderchop.site/wp-content/uploads/20250401170816/Happy-Hour-Menu-4-1-25_Page_2.jpg"
+    },
+    "type": "happy_hour",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:30",
+      "start": "15:30"
+     },
+     {
+      "dow": 2,
+      "end": "18:30",
+      "start": "15:30"
+     },
+     {
+      "dow": 3,
+      "end": "18:30",
+      "start": "15:30"
+     },
+     {
+      "dow": 4,
+      "end": "18:30",
+      "start": "15:30"
+     },
+     {
+      "dow": 5,
+      "end": "18:30",
+      "start": "15:30"
+     }
+    ]
+   }
+  ],
+  "doc": "image",
+  "lid": "122326",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://static.orderchop.site/wp-content/uploads/20250401170816/Happy-Hour-Menu-4-1-25_Page_2.jpg"
+ },
+ "122326|image|https://static.orderchop.site/wp-content/uploads/20250401170823/Happy-Hour-Menu-4-1-25_Page_3.jpg": {
+  "deals": [],
+  "doc": "image",
+  "lid": "122326",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://static.orderchop.site/wp-content/uploads/20250401170823/Happy-Hour-Menu-4-1-25_Page_3.jpg"
+ },
+ "122326|page|http://www.buonavia.com/": {
+  "deals": [
+   {
+    "confidence": "unconfirmed",
+    "items": [],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "heading": "Happy Hour",
+     "kind": "venue_site",
+     "quote": "Happy Hour Monday-Friday 3:30 pm - 6:30 pm at The Bar!",
+     "url": "http://www.buonavia.com/"
+    },
+    "type": "happy_hour",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:30",
+      "start": "15:30"
+     },
+     {
+      "dow": 2,
+      "end": "18:30",
+      "start": "15:30"
+     },
+     {
+      "dow": 3,
+      "end": "18:30",
+      "start": "15:30"
+     },
+     {
+      "dow": 4,
+      "end": "18:30",
+      "start": "15:30"
+     },
+     {
+      "dow": 5,
+      "end": "18:30",
+      "start": "15:30"
+     }
+    ]
+   },
+   {
+    "confidence": "unconfirmed",
+    "items": [],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "heading": "happy hour specials",
+     "kind": "venue_site",
+     "quote": "happy hour specials Monday-Friday, 4:00 pm-6:30 pm.",
+     "url": "http://www.buonavia.com/"
+    },
+    "type": "happy_hour",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:30",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:30",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:30",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:30",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:30",
+      "start": "16:00"
+     }
+    ]
+   }
+  ],
+  "doc": "page",
+  "lid": "122326",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "http://www.buonavia.com/"
+ },
+ "122326|page|http://www.buonavia.com/event/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "122326",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "http://www.buonavia.com/event/"
+ },
+ "122326|page|https://buonavia.com/happenings/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "122326",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://buonavia.com/happenings/"
+ },
+ "122326|page|https://buonavia.com/menus/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "122326",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://buonavia.com/menus/"
+ },
+ "12422|page|http://toweystavern.com/": {
+  "deals": [
+   {
+    "_refused_items": [
+     "beers: the amount off is not in its own evidence",
+     "mixed drinks: the amount off is not in its own evidence"
+    ],
+    "confidence": "unconfirmed",
+    "items": [],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "heading": "Happy Hours",
+     "kind": "venue_site",
+     "quote": "Happy hours are Monday to Friday from 4:00 pm - 6:00 pm for a dollar off on all beers and mixed drinks.",
+     "url": "http://toweystavern.com/"
+    },
+    "type": "happy_hour",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ]
+   }
+  ],
+  "doc": "page",
+  "lid": "12422",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "http://toweystavern.com/"
+ },
+ "12422|page|http://toweystavern.com/specials": {
+  "deals": [
+   {
+    "_refused_items": [
+     "bottled drinks: the amount off is not in its own evidence",
+     "draft drinks: the amount off is not in its own evidence",
+     "mixed drinks: the amount off is not in its own evidence"
+    ],
+    "confidence": "unconfirmed",
+    "items": [],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "heading": "Drink Specials",
+     "kind": "venue_site",
+     "quote": "Happy hour is Monday through Friday 4:00 pm - 6:00 pm! You get $1.00 off on all bottled, draft, and mixed drinks",
+     "url": "http://toweystavern.com/specials"
+    },
+    "type": "happy_hour",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ]
+   }
+  ],
+  "doc": "page",
+  "lid": "12422",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "http://toweystavern.com/specials"
+ },
+ "12422|page|https://www.toweystavern.com/specials": {
+  "deals": [
+   {
+    "_refused_items": [
+     "bottled drinks: the amount off is not in its own evidence",
+     "draft drinks: the amount off is not in its own evidence",
+     "mixed drinks: the amount off is not in its own evidence"
+    ],
+    "confidence": "unconfirmed",
+    "items": [],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "heading": "Drink Specials",
+     "kind": "venue_site",
+     "quote": "Happy hour is Monday through Friday 4:00 pm - 6:00 pm! You get $1.00 off on all bottled, draft, and mixed drinks",
+     "url": "https://www.toweystavern.com/specials"
+    },
+    "type": "happy_hour",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ]
+   }
+  ],
+  "doc": "page",
+  "lid": "12422",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.toweystavern.com/specials"
+ },
+ "125402|page|https://www.wawa.com/locations/8122?utm_source=gmblisting&utm_medium=organic&utm_campaign=locallisting": {
+  "deals": [],
+  "doc": "page",
+  "lid": "125402",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.wawa.com/locations/8122?utm_source=gmblisting&utm_medium=organic&utm_campaign=locallisting"
+ },
+ "125402|page|https://www.wawa.com/menu/beverages": {
+  "deals": [],
+  "doc": "page",
+  "lid": "125402",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.wawa.com/menu/beverages"
+ },
+ "125402|page|https://www.wawa.com/menu/breakfast": {
+  "deals": [],
+  "doc": "page",
+  "lid": "125402",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.wawa.com/menu/breakfast"
+ },
+ "125402|page|https://www.wawa.com/menu/lunch-dinner/hoagies-specialty-sandwiches/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "125402",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.wawa.com/menu/lunch-dinner/hoagies-specialty-sandwiches/"
+ },
  "126367|page|https://springhollowgolf.com/bar-grille/": {
   "deals": [],
   "doc": "page",
@@ -622,6 +1547,240 @@
   "refused": [],
   "url": "https://bowenarrowwinery.com/"
  },
+ "131341|page|https://acfp.com/daily-specials/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "131341",
+  "read_at": "2026-09-02",
+  "refused": [
+   "daily_special: clock None-None is not spelled in the quote",
+   "daily_special: clock None-None is not spelled in the quote",
+   "daily_special: clock None-None is not spelled in the quote",
+   "daily_special: clock None-None is not spelled in the quote",
+   "daily_special: clock None-None is not spelled in the quote"
+  ],
+  "url": "https://acfp.com/daily-specials/"
+ },
+ "131341|page|https://acfp.com/happy-hour/": {
+  "deals": [
+   {
+    "confidence": "unconfirmed",
+    "items": [
+     {
+      "category": "food",
+      "evidence": "$5 Bites",
+      "label": "The Slider Stack",
+      "price_usd": 5.0
+     },
+     {
+      "category": "food",
+      "evidence": "$5 Bites",
+      "label": "Kickin' Chicken Flatbread",
+      "price_usd": 5.0
+     },
+     {
+      "category": "food",
+      "evidence": "$5 Bites",
+      "label": "Spinach & Artichoke al Forno",
+      "price_usd": 5.0
+     },
+     {
+      "category": "food",
+      "evidence": "$5 Bites",
+      "label": "Hot & Stuffed",
+      "price_usd": 5.0
+     },
+     {
+      "category": "food",
+      "evidence": "$5 Bites",
+      "label": "Coal Heat Cauli",
+      "price_usd": 5.0
+     },
+     {
+      "category": "bottle_can",
+      "evidence": "$5 Sips",
+      "label": "michelob ultra",
+      "price_usd": 5.0
+     },
+     {
+      "category": "bottle_can",
+      "evidence": "$5 Sips",
+      "label": "Bud Light",
+      "price_usd": 5.0
+     },
+     {
+      "category": "bottle_can",
+      "evidence": "$5 Sips",
+      "label": "Heineken",
+      "price_usd": 5.0
+     },
+     {
+      "category": "bottle_can",
+      "evidence": "$5 Sips",
+      "label": "budweiser",
+      "price_usd": 5.0
+     },
+     {
+      "category": "bottle_can",
+      "evidence": "$5 Sips",
+      "label": "Coors Light",
+      "price_usd": 5.0
+     },
+     {
+      "category": "bottle_can",
+      "evidence": "$5 Sips",
+      "label": "Modelo Especial",
+      "price_usd": 5.0
+     },
+     {
+      "category": "bottle_can",
+      "evidence": "$5 Sips",
+      "label": "Miller Lite",
+      "price_usd": 5.0
+     },
+     {
+      "category": "bottle_can",
+      "evidence": "$5 Sips",
+      "label": "Corona",
+      "price_usd": 5.0
+     },
+     {
+      "category": "call",
+      "evidence": "$5 Sips",
+      "label": "Tito's Handmade",
+      "price_usd": 5.0
+     },
+     {
+      "category": "call",
+      "evidence": "$5 Sips",
+      "label": "Aviation American",
+      "price_usd": 5.0
+     },
+     {
+      "category": "call",
+      "evidence": "$5 Sips",
+      "label": "Jack Daniel's",
+      "price_usd": 5.0
+     },
+     {
+      "category": "call",
+      "evidence": "$5 Sips",
+      "label": "Bacardi",
+      "price_usd": 5.0
+     },
+     {
+      "category": "call",
+      "evidence": "$5 Sips",
+      "label": "Hornitos®",
+      "price_usd": 5.0
+     },
+     {
+      "category": "wine",
+      "evidence": "$5 Sips",
+      "label": "Pinot Grigio",
+      "price_usd": 5.0
+     },
+     {
+      "category": "wine",
+      "evidence": "$5 Sips",
+      "label": "Cabernet Sauvignon",
+      "price_usd": 5.0
+     },
+     {
+      "category": "wine",
+      "evidence": "$5 Sips",
+      "label": "Red Sangria",
+      "price_usd": 5.0
+     },
+     {
+      "category": "wine",
+      "evidence": "$5 Sips",
+      "label": "Sauvignon Blanc",
+      "price_usd": 5.0
+     },
+     {
+      "category": "wine",
+      "evidence": "$5 Sips",
+      "label": "Pinot Noir",
+      "price_usd": 5.0
+     },
+     {
+      "category": "wine",
+      "evidence": "$5 Sips",
+      "label": "White Sangria",
+      "price_usd": 5.0
+     }
+    ],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "heading": "$5 Social Coal Fired Happy Hour",
+     "kind": "venue_site",
+     "quote": "MON - FRI • 3-6 PM • Dine-In Only",
+     "url": "https://acfp.com/happy-hour/"
+    },
+    "type": "happy_hour",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "15:00"
+     }
+    ]
+   }
+  ],
+  "doc": "page",
+  "lid": "131341",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://acfp.com/happy-hour/"
+ },
+ "131341|page|https://acfp.com/locations/horsham/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "131341",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://acfp.com/locations/horsham/"
+ },
+ "131341|page|https://acfp.com/lunch-specials/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "131341",
+  "read_at": "2026-09-02",
+  "refused": [
+   "food_combo: heading names a meal: 'LUNCH STARTING AT $9.99'"
+  ],
+  "url": "https://acfp.com/lunch-specials/"
+ },
+ "132870|page|https://www.yumenorthwales.com/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "132870",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.yumenorthwales.com/"
+ },
  "132986|page|https://www.gypsyblurestaurant.com/": {
   "deals": [],
   "doc": "page",
@@ -629,6 +1788,14 @@
   "read_at": "2026-09-02",
   "refused": [],
   "url": "https://www.gypsyblurestaurant.com/"
+ },
+ "133695|page|https://www.sushiwaorder.com": {
+  "deals": [],
+  "doc": "page",
+  "lid": "133695",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.sushiwaorder.com"
  },
  "134444|page|https://www.chikarapa.com/": {
   "deals": [],
@@ -903,6 +2070,38 @@
   ],
   "url": "https://www.williampenninn.com/wp-content/uploads/2026/04/Dinner-Spring-2026-Copy.pdf"
  },
+ "38301|page|https://www.chinagardeninnwillowgrove.com/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "38301",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.chinagardeninnwillowgrove.com/"
+ },
+ "38301|page|https://www.chinagardeninnwillowgrove.com/2pte8mch/china-garden-inn-willow-grove-19090/order-online": {
+  "deals": [],
+  "doc": "page",
+  "lid": "38301",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.chinagardeninnwillowgrove.com/2pte8mch/china-garden-inn-willow-grove-19090/order-online"
+ },
+ "41066|page|http://www.commonwealthgolfclub.com/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "41066",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "http://www.commonwealthgolfclub.com/"
+ },
+ "41066|page|http://www.commonwealthgolfclub.com/Dining": {
+  "deals": [],
+  "doc": "page",
+  "lid": "41066",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "http://www.commonwealthgolfclub.com/Dining"
+ },
  "47025|page|https://bridgetssteak.com/": {
   "deals": [],
   "doc": "page",
@@ -940,6 +2139,14 @@
   "read_at": "2026-09-02",
   "refused": [],
   "url": "https://bridgetssteak.com/ambler-philadelphia-ambler-bridgets-steakhouse-locations"
+ },
+ "53240|page|https://www.starbucks.com/store-locator/store/7412/warminster-601-york-road-warminster-pa-189742031-us": {
+  "deals": [],
+  "doc": "page",
+  "lid": "53240",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.starbucks.com/store-locator/store/7412/warminster-601-york-road-warminster-pa-189742031-us"
  },
  "55311|page|http://www.firesidebarandgrille.com/menus/": {
   "deals": [
@@ -1413,6 +2620,22 @@
   "refused": [],
   "url": "https://bistroonbridge.com/specials-menu/"
  },
+ "61425|page|https://locations.bonefishgrill.com/pennsylvania/willow-grove": {
+  "deals": [],
+  "doc": "page",
+  "lid": "61425",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://locations.bonefishgrill.com/pennsylvania/willow-grove"
+ },
+ "61425|page|https://locations.bonefishgrill.com/pennsylvania/willow-grove/1015-easton-road": {
+  "deals": [],
+  "doc": "page",
+  "lid": "61425",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://locations.bonefishgrill.com/pennsylvania/willow-grove/1015-easton-road"
+ },
  "63002|page|https://thevalleyhousemalvern.com/": {
   "deals": [],
   "doc": "page",
@@ -1476,6 +2699,168 @@
   "read_at": "2026-09-02",
   "refused": [],
   "url": "https://forest-and-main-brewing-co.myshopify.com/pages/the-pub-draft-list-1"
+ },
+ "65850|page|https://millersalehouse.com/locations/willow-grove/": {
+  "deals": [
+   {
+    "confidence": "unconfirmed",
+    "items": [
+     {
+      "category": "draft",
+      "evidence": "$3 Select Domestic Drafts",
+      "label": "Select Domestic Drafts",
+      "price_usd": 3.0
+     },
+     {
+      "category": "bottle_can",
+      "evidence": "$4 Select Seltzers & Marg",
+      "label": "Select Seltzers",
+      "price_usd": 4.0
+     },
+     {
+      "category": "cocktail",
+      "evidence": "$4 Select Seltzers & Marg",
+      "label": "Marg",
+      "price_usd": 4.0
+     },
+     {
+      "category": "cocktail",
+      "evidence": "$5 Select Cocktails & Wine",
+      "label": "Select Cocktails",
+      "price_usd": 5.0
+     },
+     {
+      "category": "wine",
+      "evidence": "$5 Select Cocktails & Wine",
+      "label": "Wine",
+      "price_usd": 5.0
+     },
+     {
+      "category": "cocktail",
+      "evidence": "$6 Select Premium Cocktails",
+      "label": "Select Premium Cocktails",
+      "price_usd": 6.0
+     }
+    ],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "heading": "New Happiest Hours",
+     "kind": "venue_site",
+     "quote": "Mon - Thurs 3:00 PM - 6:00 PM",
+     "url": "https://millersalehouse.com/locations/willow-grove/"
+    },
+    "type": "happy_hour",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "15:00"
+     }
+    ]
+   },
+   {
+    "confidence": "unconfirmed",
+    "items": [
+     {
+      "category": "draft",
+      "evidence": "$3 Select Domestic Drafts",
+      "label": "Select Domestic Drafts",
+      "price_usd": 3.0
+     },
+     {
+      "category": "bottle_can",
+      "evidence": "$4 Select Seltzers & Marg",
+      "label": "Select Seltzers",
+      "price_usd": 4.0
+     },
+     {
+      "category": "cocktail",
+      "evidence": "$4 Select Seltzers & Marg",
+      "label": "Marg",
+      "price_usd": 4.0
+     },
+     {
+      "category": "cocktail",
+      "evidence": "$5 Select Cocktails & Wine",
+      "label": "Select Cocktails",
+      "price_usd": 5.0
+     },
+     {
+      "category": "wine",
+      "evidence": "$5 Select Cocktails & Wine",
+      "label": "Wine",
+      "price_usd": 5.0
+     },
+     {
+      "category": "cocktail",
+      "evidence": "$6 Select Premium Cocktails",
+      "label": "Select Premium Cocktails",
+      "price_usd": 6.0
+     }
+    ],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "heading": "New Happiest Hours",
+     "kind": "venue_site",
+     "quote": "Fri 3:00 PM - 5:00 PM",
+     "url": "https://millersalehouse.com/locations/willow-grove/"
+    },
+    "type": "happy_hour",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 5,
+      "end": "17:00",
+      "start": "15:00"
+     }
+    ]
+   }
+  ],
+  "doc": "page",
+  "lid": "65850",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://millersalehouse.com/locations/willow-grove/"
+ },
+ "65850|page|https://millersalehouse.com/locations/willow-grove/birthday-in-willow-grove/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "65850",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://millersalehouse.com/locations/willow-grove/birthday-in-willow-grove/"
+ },
+ "65850|page|https://millersalehouse.com/locations/willow-grove/burgers-in-willow-grove/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "65850",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://millersalehouse.com/locations/willow-grove/burgers-in-willow-grove/"
+ },
+ "65850|page|https://millersalehouse.com/locations/willow-grove/catering-in-willow-grove/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "65850",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://millersalehouse.com/locations/willow-grove/catering-in-willow-grove/"
  },
  "66224|image|https://valleyforgepizza.com/images/happy_hours_page_1.png": {
   "deals": [
@@ -1689,6 +3074,386 @@
   "refused": [],
   "url": "https://www.valleyforgepizza.com/images/dine_in_menu.pdf"
  },
+ "68012|image|https://le-cdn.website-editor.net/s/80e1cb790a7e44b0b253106cea2b7778/dms3rep/multi/opt/new+happy+hour-1920w.png?Expires=1790514370&Signature=V4hVWlIjf4l6QChkNtnjKEsWSLs662W8d5X6zvcQ~1SCHCOMPPaT8u8hyBmFjjeV5Ml9IpH5eYK7vqCa01mKWVPXUWbkiRo85vL4PP6SSadnvmta4t3qnAwOLo3~16vanDwJZDgECUWfFvS4WKJVFC5YBfSDIddH9O2ImmxTkIGc0gR1HigW2dtq-lIPYlGHb~BkQPr~k3CDvE6RdK2am4C~cBMtkNaTWAO5L1q9-aEvvJT~7zUB5nP52NoZ~eoWIlm~beTmVd2kBMN8-W9d245~3~44z4v-9lwZrySTlF~kDAHlJnoWhV48nJatF0nNfB~Vbd1e7VmYBxoXii0eZQ__&Key-Pair-Id=K2NXBXLF010TJW": {
+  "deals": [
+   {
+    "confidence": "unconfirmed",
+    "items": [
+     {
+      "category": "wine",
+      "evidence": "HOUSE WINES / 7",
+      "label": "HOUSE WINES",
+      "price_usd": 7.0
+     },
+     {
+      "category": "cocktail",
+      "evidence": "SPECIALTY MARTINIS / 10",
+      "label": "SPECIALTY MARTINIS",
+      "price_usd": 10.0
+     },
+     {
+      "category": "bottle_can",
+      "evidence": "SURFSIDES & STATESIDES / 6",
+      "label": "SURFSIDES & STATESIDES",
+      "price_usd": 6.0
+     },
+     {
+      "amount_off_usd": 2.0,
+      "category": "cocktail",
+      "evidence": "MONTHLY COCKTAILS / 2 OFF",
+      "label": "MONTHLY COCKTAILS"
+     },
+     {
+      "category": "draft",
+      "evidence": "DOMESTIC DRAFTS / 2.5",
+      "label": "DOMESTIC DRAFTS",
+      "price_usd": 2.5
+     },
+     {
+      "category": "bottle_can",
+      "evidence": "PREMIUM BOTTLES / 4",
+      "label": "PREMIUM BOTTLES",
+      "price_usd": 4.0
+     },
+     {
+      "category": "cocktail",
+      "evidence": "KETEL MIXED DRINKS / 5",
+      "label": "KETEL MIXED DRINKS",
+      "price_usd": 5.0
+     },
+     {
+      "category": "draft",
+      "evidence": "LOCAL CRAFT DRAFTS / 5",
+      "label": "LOCAL CRAFT DRAFTS",
+      "price_usd": 5.0
+     },
+     {
+      "category": "food",
+      "evidence": "SMALL PIZZA / 7",
+      "label": "SMALL PIZZA",
+      "price_usd": 7.0
+     },
+     {
+      "category": "food",
+      "evidence": "MUSSELS / 6",
+      "label": "MUSSELS",
+      "price_usd": 6.0
+     },
+     {
+      "category": "food",
+      "evidence": "CLAMS / 6",
+      "label": "CLAMS",
+      "price_usd": 6.0
+     },
+     {
+      "category": "food",
+      "evidence": "(3) PRETZEL RODS / 5",
+      "label": "(3) PRETZEL RODS",
+      "price_usd": 5.0
+     },
+     {
+      "category": "food",
+      "evidence": "CHICKEN FINGERS & FRIES / 6",
+      "label": "CHICKEN FINGERS & FRIES",
+      "price_usd": 6.0
+     },
+     {
+      "category": "food",
+      "evidence": "CHEESESTEAK EGGROLLS / 6",
+      "label": "CHEESESTEAK EGGROLLS",
+      "price_usd": 6.0
+     },
+     {
+      "category": "food",
+      "evidence": "BUFFALO EGGROLLS / 6",
+      "label": "BUFFALO EGGROLLS",
+      "price_usd": 6.0
+     },
+     {
+      "category": "food",
+      "evidence": "FOOTBALL FRIES / 6",
+      "label": "FOOTBALL FRIES",
+      "price_usd": 6.0
+     },
+     {
+      "category": "food",
+      "evidence": "CHICKEN NACHOS / 8",
+      "label": "CHICKEN NACHOS",
+      "price_usd": 8.0
+     },
+     {
+      "category": "food",
+      "evidence": "FRIED CHEESE / 7",
+      "label": "FRIED CHEESE",
+      "price_usd": 7.0
+     }
+    ],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "heading": "HAPPY HOUR",
+     "kind": "venue_site",
+     "quote": "MONDAY-FRIDAY 4-6PM",
+     "url": "https://le-cdn.website-editor.net/s/80e1cb790a7e44b0b253106cea2b7778/dms3rep/multi/opt/new+happy+hour-1920w.png?Expires=1790514370&Signature=V4hVWlIjf4l6QChkNtnjKEsWSLs662W8d5X6zvcQ~1SCHCOMPPaT8u8hyBmFjjeV5Ml9IpH5eYK7vqCa01mKWVPXUWbkiRo85vL4PP6SSadnvmta4t3qnAwOLo3~16vanDwJZDgECUWfFvS4WKJVFC5YBfSDIddH9O2ImmxTkIGc0gR1HigW2dtq-lIPYlGHb~BkQPr~k3CDvE6RdK2am4C~cBMtkNaTWAO5L1q9-aEvvJT~7zUB5nP52NoZ~eoWIlm~beTmVd2kBMN8-W9d245~3~44z4v-9lwZrySTlF~kDAHlJnoWhV48nJatF0nNfB~Vbd1e7VmYBxoXii0eZQ__&Key-Pair-Id=K2NXBXLF010TJW"
+    },
+    "type": "happy_hour",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ]
+   },
+   {
+    "confidence": "unconfirmed",
+    "items": [
+     {
+      "category": "wine",
+      "evidence": "HOUSE WINES / 7",
+      "label": "HOUSE WINES",
+      "price_usd": 7.0
+     },
+     {
+      "category": "cocktail",
+      "evidence": "SPECIALTY MARTINIS / 10",
+      "label": "SPECIALTY MARTINIS",
+      "price_usd": 10.0
+     },
+     {
+      "category": "bottle_can",
+      "evidence": "SURFSIDES & STATESIDES / 6",
+      "label": "SURFSIDES & STATESIDES",
+      "price_usd": 6.0
+     },
+     {
+      "amount_off_usd": 2.0,
+      "category": "cocktail",
+      "evidence": "MONTHLY COCKTAILS / 2 OFF",
+      "label": "MONTHLY COCKTAILS"
+     },
+     {
+      "category": "draft",
+      "evidence": "DOMESTIC DRAFTS / 2.5",
+      "label": "DOMESTIC DRAFTS",
+      "price_usd": 2.5
+     },
+     {
+      "category": "bottle_can",
+      "evidence": "PREMIUM BOTTLES / 4",
+      "label": "PREMIUM BOTTLES",
+      "price_usd": 4.0
+     },
+     {
+      "category": "cocktail",
+      "evidence": "KETEL MIXED DRINKS / 5",
+      "label": "KETEL MIXED DRINKS",
+      "price_usd": 5.0
+     },
+     {
+      "category": "draft",
+      "evidence": "LOCAL CRAFT DRAFTS / 5",
+      "label": "LOCAL CRAFT DRAFTS",
+      "price_usd": 5.0
+     },
+     {
+      "category": "food",
+      "evidence": "SMALL PIZZA / 7",
+      "label": "SMALL PIZZA",
+      "price_usd": 7.0
+     },
+     {
+      "category": "food",
+      "evidence": "MUSSELS / 6",
+      "label": "MUSSELS",
+      "price_usd": 6.0
+     },
+     {
+      "category": "food",
+      "evidence": "CLAMS / 6",
+      "label": "CLAMS",
+      "price_usd": 6.0
+     },
+     {
+      "category": "food",
+      "evidence": "(3) PRETZEL RODS / 5",
+      "label": "(3) PRETZEL RODS",
+      "price_usd": 5.0
+     },
+     {
+      "category": "food",
+      "evidence": "CHICKEN FINGERS & FRIES / 6",
+      "label": "CHICKEN FINGERS & FRIES",
+      "price_usd": 6.0
+     },
+     {
+      "category": "food",
+      "evidence": "CHEESESTEAK EGGROLLS / 6",
+      "label": "CHEESESTEAK EGGROLLS",
+      "price_usd": 6.0
+     },
+     {
+      "category": "food",
+      "evidence": "BUFFALO EGGROLLS / 6",
+      "label": "BUFFALO EGGROLLS",
+      "price_usd": 6.0
+     },
+     {
+      "category": "food",
+      "evidence": "FOOTBALL FRIES / 6",
+      "label": "FOOTBALL FRIES",
+      "price_usd": 6.0
+     },
+     {
+      "category": "food",
+      "evidence": "CHICKEN NACHOS / 8",
+      "label": "CHICKEN NACHOS",
+      "price_usd": 8.0
+     },
+     {
+      "category": "food",
+      "evidence": "FRIED CHEESE / 7",
+      "label": "FRIED CHEESE",
+      "price_usd": 7.0
+     }
+    ],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "heading": "HAPPY HOUR",
+     "kind": "venue_site",
+     "quote": "FRIDAY & SATURDAY 10-MIDNIGHT",
+     "url": "https://le-cdn.website-editor.net/s/80e1cb790a7e44b0b253106cea2b7778/dms3rep/multi/opt/new+happy+hour-1920w.png?Expires=1790514370&Signature=V4hVWlIjf4l6QChkNtnjKEsWSLs662W8d5X6zvcQ~1SCHCOMPPaT8u8hyBmFjjeV5Ml9IpH5eYK7vqCa01mKWVPXUWbkiRo85vL4PP6SSadnvmta4t3qnAwOLo3~16vanDwJZDgECUWfFvS4WKJVFC5YBfSDIddH9O2ImmxTkIGc0gR1HigW2dtq-lIPYlGHb~BkQPr~k3CDvE6RdK2am4C~cBMtkNaTWAO5L1q9-aEvvJT~7zUB5nP52NoZ~eoWIlm~beTmVd2kBMN8-W9d245~3~44z4v-9lwZrySTlF~kDAHlJnoWhV48nJatF0nNfB~Vbd1e7VmYBxoXii0eZQ__&Key-Pair-Id=K2NXBXLF010TJW"
+    },
+    "type": "happy_hour",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 5,
+      "end": "24:00",
+      "start": "22:00"
+     },
+     {
+      "dow": 6,
+      "end": "24:00",
+      "start": "22:00"
+     }
+    ]
+   }
+  ],
+  "doc": "image",
+  "lid": "68012",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://le-cdn.website-editor.net/s/80e1cb790a7e44b0b253106cea2b7778/dms3rep/multi/opt/new+happy+hour-1920w.png?Expires=1790514370&Signature=V4hVWlIjf4l6QChkNtnjKEsWSLs662W8d5X6zvcQ~1SCHCOMPPaT8u8hyBmFjjeV5Ml9IpH5eYK7vqCa01mKWVPXUWbkiRo85vL4PP6SSadnvmta4t3qnAwOLo3~16vanDwJZDgECUWfFvS4WKJVFC5YBfSDIddH9O2ImmxTkIGc0gR1HigW2dtq-lIPYlGHb~BkQPr~k3CDvE6RdK2am4C~cBMtkNaTWAO5L1q9-aEvvJT~7zUB5nP52NoZ~eoWIlm~beTmVd2kBMN8-W9d245~3~44z4v-9lwZrySTlF~kDAHlJnoWhV48nJatF0nNfB~Vbd1e7VmYBxoXii0eZQ__&Key-Pair-Id=K2NXBXLF010TJW"
+ },
+ "68012|page|https://www.palztaphouse.net/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "68012",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.palztaphouse.net/"
+ },
+ "68012|page|https://www.palztaphouse.net/beercocktails": {
+  "deals": [],
+  "doc": "page",
+  "lid": "68012",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.palztaphouse.net/beercocktails"
+ },
+ "68012|page|https://www.palztaphouse.net/monthly-menu---happy-hour": {
+  "deals": [],
+  "doc": "page",
+  "lid": "68012",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.palztaphouse.net/monthly-menu---happy-hour"
+ },
+ "69140|page|https://crookedeyebrewery.com/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "69140",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://crookedeyebrewery.com/"
+ },
+ "69140|page|https://crookedeyebrewery.com/events": {
+  "deals": [
+   {
+    "confidence": "unconfirmed",
+    "items": [],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "heading": "Thirsty Thursday!",
+     "kind": "venue_site",
+     "quote": "Every Thursday\nThirsty Thursday! Happy Hour 5 to 7.",
+     "url": "https://crookedeyebrewery.com/events"
+    },
+    "type": "happy_hour",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 4,
+      "end": "19:00",
+      "start": "17:00"
+     }
+    ]
+   },
+   {
+    "confidence": "unconfirmed",
+    "items": [
+     {
+      "amount_off_usd": 1.0,
+      "category": "draft",
+      "evidence": "$1 off pints from 4-6pm",
+      "label": "pints"
+     }
+    ],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "heading": "Happy Hour",
+     "kind": "venue_site",
+     "quote": "Fri 4-11PM\nHappy Hour $1 off pints from 4-6pm",
+     "url": "https://crookedeyebrewery.com/events"
+    },
+    "type": "happy_hour",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ]
+   }
+  ],
+  "doc": "page",
+  "lid": "69140",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://crookedeyebrewery.com/events"
+ },
  "70435|page|https://www.bluebirddistilling.com/": {
   "deals": [],
   "doc": "page",
@@ -1704,6 +3469,30 @@
   "read_at": "2026-09-02",
   "refused": [],
   "url": "https://www.bluebirddistilling.com/menu"
+ },
+ "72034|page|https://pharmacy.giantfoodstores.com/pa/willow-grove/315-york-road": {
+  "deals": [],
+  "doc": "page",
+  "lid": "72034",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://pharmacy.giantfoodstores.com/pa/willow-grove/315-york-road"
+ },
+ "72034|page|https://stores.giantfoodstores.com/pa/willow-grove/315-york-rd/delivery": {
+  "deals": [],
+  "doc": "page",
+  "lid": "72034",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://stores.giantfoodstores.com/pa/willow-grove/315-york-rd/delivery"
+ },
+ "72034|page|https://stores.giantfoodstores.com/pa/willow-grove/315-york-rd?y_source=1_NDE5NTU4NC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D": {
+  "deals": [],
+  "doc": "page",
+  "lid": "72034",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://stores.giantfoodstores.com/pa/willow-grove/315-york-rd?y_source=1_NDE5NTU4NC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D"
  },
  "72427|page|https://www.kimbertongolfclub.com/": {
   "deals": [],
@@ -1856,6 +3645,14 @@
   "read_at": "2026-09-02",
   "refused": [],
   "url": "https://www.rebelhillbrewing.com/eat-rebelhill"
+ },
+ "88180|page|http://mermaidspirits.com/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "88180",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "http://mermaidspirits.com/"
  },
  "90605|page|https://ilgranaiopa2.com/assets/menu/happy-hour.pdf": {
   "deals": [
@@ -2397,6 +4194,38 @@
   ],
   "url": "https://sedonataphouse.com/wp-content/uploads/2019/01/HappyHourMenu_PhxWC_05.12.26.pdf"
  },
+ "92310|page|https://www.acmemarkets.com/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "92310",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.acmemarkets.com/"
+ },
+ "92310|page|https://www.acmemarkets.com/lp/specialty-diets.html": {
+  "deals": [],
+  "doc": "page",
+  "lid": "92310",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.acmemarkets.com/lp/specialty-diets.html"
+ },
+ "92310|page|https://www.acmemarkets.com/lp/specialty-diets/dairy-free-diet.html": {
+  "deals": [],
+  "doc": "page",
+  "lid": "92310",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.acmemarkets.com/lp/specialty-diets/dairy-free-diet.html"
+ },
+ "92310|page|https://www.acmemarkets.com/lp/specialty-diets/gluten-free-diet.html": {
+  "deals": [],
+  "doc": "page",
+  "lid": "92310",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.acmemarkets.com/lp/specialty-diets/gluten-free-diet.html"
+ },
  "92374|page|https://www.hogislandsteaks.com": {
   "deals": [],
   "doc": "page",
@@ -2440,6 +4269,183 @@
   "read_at": "2026-09-02",
   "refused": [],
   "url": "https://www.geronimosambler.com/event"
+ },
+ "96061|page|https://www.artifactales.com/": {
+  "deals": [],
+  "doc": "page",
+  "lid": "96061",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.artifactales.com/"
+ },
+ "96061|page|https://www.artifactales.com/events": {
+  "deals": [],
+  "doc": "page",
+  "lid": "96061",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.artifactales.com/events"
+ },
+ "96061|page|https://www.artifactales.com/events/2021/12/24/open-for-business-special-hours": {
+  "deals": [],
+  "doc": "page",
+  "lid": "96061",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://www.artifactales.com/events/2021/12/24/open-for-business-special-hours"
+ },
+ "96478|page|https://locations.pjspub.com/locations/pa/horsham": {
+  "deals": [],
+  "doc": "page",
+  "lid": "96478",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://locations.pjspub.com/locations/pa/horsham"
+ },
+ "96478|page|https://locations.pjspub.com/pa/horsham/101-easton-rd": {
+  "deals": [
+   {
+    "confidence": "unconfirmed",
+    "items": [],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "heading": "Happy Hour",
+     "kind": "venue_site",
+     "quote": "Happy Hour\nMonday 4:00 PM - 6:00 PM\nTuesday 4:00 PM - 6:00 PM\nWednesday 4:00 PM - 6:00 PM\nThursday 4:00 PM - 6:00 PM\nFriday 4:00 PM - 6:00 PM",
+     "url": "https://locations.pjspub.com/pa/horsham/101-easton-rd"
+    },
+    "type": "happy_hour",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ]
+   }
+  ],
+  "doc": "page",
+  "lid": "96478",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://locations.pjspub.com/pa/horsham/101-easton-rd"
+ },
+ "96478|page|https://pjspub.com/drinks-menu": {
+  "deals": [],
+  "doc": "page",
+  "lid": "96478",
+  "read_at": "2026-09-02",
+  "refused": [
+   "daily_special: clock 00:00-24:00 is not spelled in the quote"
+  ],
+  "url": "https://pjspub.com/drinks-menu"
+ },
+ "96478|page|https://pjspub.com/specials": {
+  "deals": [
+   {
+    "confidence": "unconfirmed",
+    "items": [
+     {
+      "category": "draft",
+      "evidence": "$3 Domestic Drafts",
+      "label": "Domestic Drafts",
+      "price_usd": 3.0
+     },
+     {
+      "category": "bottle_can",
+      "evidence": "$4 Corona & Corona Light",
+      "label": "Corona & Corona Light",
+      "price_usd": 4.0
+     },
+     {
+      "category": "wine",
+      "evidence": "$6 House Wine",
+      "label": "House Wine",
+      "price_usd": 6.0
+     },
+     {
+      "category": "cocktail",
+      "evidence": "$6 Krushes",
+      "label": "Krushes",
+      "price_usd": 6.0
+     },
+     {
+      "category": "food",
+      "evidence": "$5 Boneless Wings (Snack Size)",
+      "label": "Boneless Wings (Snack Size)",
+      "price_usd": 5.0
+     },
+     {
+      "category": "food",
+      "evidence": "$10 Boneless Wings (Share Size)",
+      "label": "Boneless Wings (Share Size)",
+      "price_usd": 10.0
+     }
+    ],
+    "last_verified_at": "2026-09-02",
+    "source": {
+     "heading": "MON - FRI 4PM - 6PM",
+     "kind": "venue_site",
+     "quote": "MON - FRI 4PM - 6PM",
+     "url": "https://pjspub.com/specials"
+    },
+    "type": "happy_hour",
+    "verified_by": "menu_read_llm",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ]
+   }
+  ],
+  "doc": "page",
+  "lid": "96478",
+  "read_at": "2026-09-02",
+  "refused": [],
+  "url": "https://pjspub.com/specials"
  },
  "99114|image|https://rivertowntaps.com/wp-content/uploads/2026/07/Happy-Hour-Specials.png": {
   "deals": [

@@ -808,6 +808,87 @@
   "website": "https://locations.jamba.com/pa/philadelphia/philadelphia-intl-airport-space-c-9a",
   "zone_id": "ridley_tinicum"
  },
+ "101437": {
+  "address": "116 Welsh Rd Ste 116, Horsham PA 19044",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "hh": true,
+    "quote": "Happy Hour (Bars and High Tops ONLY!) \u2022 $5 per birria taco | $5 off bottles of wine | $5 Kiki mixed drinks (Martinis $2 additional charge) | $5 select draft beers | $7 glass of house red or white wine 04:30 PM - 06:30 PM",
+    "url": "http://coppercrowhorsham.com/horsham-the-copper-crow-happy-hours-specials"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour (Bars and High Tops ONLY!) \u2022 $5 off all pizzas | $5 off bottles of wine | $5 Kiki mixed drinks (Martinis $2 additional charge | $5 select draft beers | $7 glass of house red or white 04:30 PM - 06:30 PM",
+    "url": "http://coppercrowhorsham.com/horsham-the-copper-crow-happy-hours-specials"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour (Bars and High Tops ONLY!) \u2022 $5 off all small plates | $5 off bottles of wine | $5 Kiki mixed drinks (Martinis $2 additional charge | $5 select draft beers | $7 glass of house red or white 04:30 PM - 06:30 PM",
+    "url": "http://coppercrowhorsham.com/horsham-the-copper-crow-happy-hours-specials"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour (Bars and High Tops ONLY!) \u2022 $5 off all burgers | $5 off bottles of wine | $5 Kiki mixed drinks (Martinis $2 additional charge | $5 select draft beers | $7 glass of house red or white 04:30 PM - 06:30 PM",
+    "url": "http://coppercrowhorsham.com/horsham-the-copper-crow-happy-hours-specials"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour (Bars and High Tops ONLY!) \u2022 5$ off Margherita pizzas | 5$ off bottles of wine | $5 Kiki mixed drinks (Martinis $2 additional charge) | $5 select draft beers | $7 glass of house red or white wine 04:30 PM - 06:30 PM",
+    "url": "http://coppercrowhorsham.com/horsham-the-copper-crow-happy-hours-specials"
+   },
+   {
+    "quote": "Happy Hour (Bars and High Tops ONLY!) \u2022 $5 per birria taco | $5 off bottles of wine | $5 Kiki mixed drinks (Martinis $2 additional charge) | $5 select draft beers | $7 glass of house red or white wine",
+    "url": "http://coppercrowhorsham.com/horsham-the-copper-crow-happy-hours-specials"
+   },
+   {
+    "quote": "Happy Hour (Bars and High Tops ONLY!) \u2022 $5 off all pizzas | $5 off bottles of wine | $5 Kiki mixed drinks (Martinis $2 additional charge | $5 select draft beers | $7 glass of house red or white",
+    "url": "http://coppercrowhorsham.com/horsham-the-copper-crow-happy-hours-specials"
+   },
+   {
+    "quote": "Happy Hour (Bars and High Tops ONLY!) \u2022 $5 off all small plates | $5 off bottles of wine | $5 Kiki mixed drinks (Martinis $2 additional charge | $5 select draft beers | $7 glass of house red or white",
+    "url": "http://coppercrowhorsham.com/horsham-the-copper-crow-happy-hours-specials"
+   },
+   {
+    "quote": "Happy Hour (Bars and High Tops ONLY!) \u2022 $5 off all burgers | $5 off bottles of wine | $5 Kiki mixed drinks (Martinis $2 additional charge | $5 select draft beers | $7 glass of house red or white",
+    "url": "http://coppercrowhorsham.com/horsham-the-copper-crow-happy-hours-specials"
+   },
+   {
+    "quote": "Happy Hour (Bars and High Tops ONLY!) \u2022 5$ off Margherita pizzas | 5$ off bottles of wine | $5 Kiki mixed drinks (Martinis $2 additional charge) | $5 select draft beers | $7 glass of house red or white wine",
+    "url": "http://coppercrowhorsham.com/horsham-the-copper-crow-happy-hours-specials"
+   }
+  ],
+  "name": "Copper Crow",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": false,
+    "lines": 127,
+    "result": "ok, 0 quote(s)",
+    "url": "http://coppercrowhorsham.com/"
+   },
+   {
+    "hh": true,
+    "lines": 75,
+    "result": "ok, 5 quote(s)",
+    "url": "http://coppercrowhorsham.com/horsham-the-copper-crow-happy-hours-specials"
+   },
+   {
+    "hh": false,
+    "lines": 40,
+    "result": "ok, 0 quote(s)",
+    "url": "http://coppercrowhorsham.com/horsham-the-copper-crow-catering"
+   },
+   {
+    "hh": false,
+    "lines": 419,
+    "result": "ok, 0 quote(s)",
+    "url": "http://coppercrowhorsham.com/horsham-the-copper-crow-drink-menu"
+   }
+  ],
+  "website": "http://coppercrowhorsham.com/",
+  "zone_id": "willow_grove_horsham"
+ },
  "101476": {
   "address": "157 GARRETT AVE, BRYN MAWR PA 19010-1332",
   "crawled_at": "2026-09-01",
@@ -1338,6 +1419,41 @@
   ],
   "website": "https://www.rexpizzapa.com",
   "zone_id": "center_city"
+ },
+ "103195": {
+  "address": "1139 Horsham Rd, Ambler PA 19002",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Wawa",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": false,
+    "lines": 40,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.wawa.com/locations/0148?utm_source=gmblisting&utm_medium=organic&utm_campaign=locallisting"
+   },
+   {
+    "hh": false,
+    "lines": 9,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.wawa.com/menu/lunch-dinner/hoagies-specialty-sandwiches/"
+   },
+   {
+    "hh": false,
+    "lines": 9,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.wawa.com/menu/beverages"
+   },
+   {
+    "hh": false,
+    "lines": 9,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.wawa.com/menu/breakfast"
+   }
+  ],
+  "website": "https://www.wawa.com/locations/0148?utm_source=gmblisting&utm_medium=organic&utm_campaign=locallisting",
+  "zone_id": "willow_grove_horsham"
  },
  "103240": {
   "address": "690 W DEKALB PK STE 2890, KING OF PRUSSIA PA 19406-5029",
@@ -2259,6 +2375,44 @@
   "website": "http://www.chulaespuebla.com/",
   "zone_id": "fishtown_kensington"
  },
+ "10518": {
+  "address": "1138-42 Easton Rd, Horsham PA 19044",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "1138 Easton Rd. Horsham, PA. Open 2PM-2AM 7 days a week. Happy Hour daily 3PM-5PM. Enjoy an extra hour of Happy Hour on Fridays 3PM-6PM",
+    "url": "https://www.doublevisionsgogo.com/"
+   },
+   {
+    "quote": "Double Visions is a place like no other. We\u2019ve been in business since 1984. We are family owned with a heavy involvement in charity work in the local community. We pride ourselves in the safety of our entertainers and clientele. If asked, we would be described locally as \u201ccheers with boobs\u201d. We are the place for you if you want a great happy hour or looking to ring the bell for a night out!",
+    "url": "https://www.doublevisionsgogo.com/"
+   }
+  ],
+  "name": "Double Visions",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": true,
+    "lines": 30,
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.doublevisionsgogo.com/"
+   },
+   {
+    "hh": false,
+    "lines": 119,
+    "result": "ok, 0 quote(s)",
+    "url": "https://doublevisionsgogo.com/event-archives/"
+   },
+   {
+    "hh": false,
+    "lines": 306,
+    "result": "ok, 0 quote(s)",
+    "url": "https://doublevisionsgogo.com/events/"
+   }
+  ],
+  "website": "https://www.doublevisionsgogo.com/",
+  "zone_id": "willow_grove_horsham"
+ },
  "105237": {
   "address": "106 JAMESTOWN AVE, PHILADELPHIA PA 19127",
   "crawled_at": "2026-09-01",
@@ -2312,6 +2466,40 @@
   ],
   "website": "https://www.zigzagbbq.com/",
   "zone_id": "fishtown_kensington"
+ },
+ "105486": {
+  "address": "1434 -1438 County Line Rd, Huntingdon Valley PA 19006",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Multi-Flow Industries",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": false,
+    "lines": 39,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.multiflow.net/"
+   }
+  ],
+  "website": "http://www.multiflow.net/",
+  "zone_id": "willow_grove_horsham"
+ },
+ "105499": {
+  "address": "1434 -1438 County Line Rd, Huntingdon Valley PA 19006",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Multi-Flow Industries",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": false,
+    "lines": 39,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.multiflow.net/"
+   }
+  ],
+  "website": "http://www.multiflow.net/",
+  "zone_id": "willow_grove_horsham"
  },
  "105744": {
   "address": "116-120 S 11TH ST, PHILADELPHIA PA 19107-4801",
@@ -3699,6 +3887,21 @@
   "website": "https://carboncopyphilly.com/",
   "zone_id": "university_city"
  },
+ "109078": {
+  "address": "2840 Pine Rd Unit A-1, Huntingdon Valley PA 19006",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Timeout on Pine",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "error: SSLError",
+    "url": "https://www.timeoutpa.com/"
+   }
+  ],
+  "website": "https://www.timeoutpa.com/",
+  "zone_id": "willow_grove_horsham"
+ },
  "109142": {
   "address": "3911 SKIPPACK PIKE, SKIPPACK PA 19474",
   "crawled_at": "2026-09-01",
@@ -4455,6 +4658,23 @@
   "website": "https://wtavern19090.wixsite.com/my-site/",
   "zone_id": "abington_jenkintown"
  },
+ "110483": {
+  "address": "31 S York Rd, Hatboro PA 19040",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Cyrenity Sips Winery",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": false,
+    "lines": 106,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.cyrenitysips.com/"
+   }
+  ],
+  "website": "http://www.cyrenitysips.com/",
+  "zone_id": "willow_grove_horsham"
+ },
  "110489": {
   "address": "37-41 ASHLAND AVE, BALA CYNWYD PA 19004",
   "crawled_at": "2026-09-01",
@@ -4990,6 +5210,41 @@
   "website": "https://www.grandmasphilly.com/",
   "zone_id": "center_city"
  },
+ "111227": {
+  "address": "451A Oakdale Ave, Hatboro PA 19040",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Steel Penny Cafe",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": false,
+    "lines": 77,
+    "result": "ok, 0 quote(s)",
+    "url": "https://steelpenny.com/"
+   },
+   {
+    "hh": false,
+    "lines": 329,
+    "result": "ok, 0 quote(s)",
+    "url": "https://steelpenny.com/menu"
+   },
+   {
+    "hh": false,
+    "lines": 329,
+    "result": "ok, 0 quote(s)",
+    "url": "https://steelpenny.com/menu"
+   },
+   {
+    "hh": false,
+    "lines": 329,
+    "result": "ok, 0 quote(s)",
+    "url": "https://steelpenny.com/menu/steel-penny-cafe-451a-oakdale-ave"
+   }
+  ],
+  "website": "https://steelpenny.com/",
+  "zone_id": "willow_grove_horsham"
+ },
  "111404": {
   "address": "127 BRIDGE ST, MONT CLARE PA 19453-5013",
   "crawled_at": "2026-09-01",
@@ -5321,18 +5576,57 @@
   "zone_id": "northwest_philly"
  },
  "113135": {
-  "address": "720 BLAIR MILL RD, HORSHAM PA 19044",
-  "crawled_at": "2026-08-06",
-  "hits": [],
-  "name": "OUTBACK STEAKHOUSE",
-  "osm_name": "Homewood Suites",
-  "pages": [
+  "address": "720 Blair Mill Rd, Horsham PA 19044",
+  "crawled_at": "2026-09-02",
+  "hits": [
    {
-    "result": "403 text/html",
-    "url": "https://www.hilton.com/en/hotels/phlhshw-homewood-suites-horsham-willow-grove/"
+    "quote": "Happy Hour",
+    "url": "https://locations.outback.com/pennsylvania/horsham/724-blair-mill-road?y_source=1_NjM5MTUxMTUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D"
    }
   ],
-  "website": "https://www.hilton.com/en/hotels/phlhshw-homewood-suites-horsham-willow-grove/",
+  "name": "Outback Steakhouse",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": true,
+    "lines": 159,
+    "result": "ok, 1 quote(s)",
+    "url": "https://locations.outback.com/pennsylvania/horsham/724-blair-mill-road?y_source=1_NjM5MTUxMTUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D"
+   },
+   {
+    "result": "robots.txt unreadable (403), treated as disallow",
+    "url": "https://www.outback.com/offers/weekday-value"
+   },
+   {
+    "result": "robots.txt unreadable (403), treated as disallow",
+    "url": "https://www.outback.com/offers/beverages"
+   },
+   {
+    "result": "robots.txt unreadable (403), treated as disallow",
+    "url": "https://www.outback.com/menu/horsham"
+   },
+   {
+    "hh": false,
+    "lines": 60,
+    "result": "ok, 0 quote(s)",
+    "url": "https://locations.outback.com/pennsylvania/horsham"
+   },
+   {
+    "hh": false,
+    "lines": 60,
+    "result": "ok, 0 quote(s)",
+    "url": "https://locations.outback.com/pennsylvania/horsham"
+   },
+   {
+    "result": "robots.txt unreadable (403), treated as disallow",
+    "url": "https://www.outback.com/catering/menu/horsham"
+   },
+   {
+    "result": "robots.txt unreadable (403), treated as disallow",
+    "url": "https://www.outback.com/menu/horsham"
+   }
+  ],
+  "website": "https://locations.outback.com/pennsylvania/horsham/724-blair-mill-road?y_source=1_NjM5MTUxMTUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
   "zone_id": "willow_grove_horsham"
  },
  "113149": {
@@ -6320,6 +6614,70 @@
   "website": "https://locations.jamba.com/pa/philadelphia/philadelphia-intl-airport-space-c-9a",
   "zone_id": "west_philly"
  },
+ "117291": {
+  "address": "2402 Easton Rd, Willow Grove PA 19090",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "$ 6 Take Home Entre\u00e9s / Purchase any entr\u00e9e online or in-restaurant and take home a freshly prepared and chilled classic for only $6.",
+    "url": "https://www.olivegarden.com/specials"
+   },
+   {
+    "quote": "$100 minimum order before tax",
+    "url": "https://www.olivegarden.com/specials"
+   }
+  ],
+  "menu_images": [
+   {
+    "src": "https://media.olivegarden.com/en_us/images/marketing/og-specials-nepb-bg-desktop.png",
+    "url": "https://www.olivegarden.com/specials"
+   },
+   {
+    "src": "https://media.olivegarden.com/images/OG_Redesign_Assets/Desktop/Desktop_Special_Offercard_Family_Style_Meals.png",
+    "url": "https://www.olivegarden.com/specials"
+   },
+   {
+    "src": "https://media.olivegarden.com/images/OG_Redesign_Assets/Desktop/Desktop_Special_Offercard_$6_Take_Home_Entree\u2560\u00fcs.png",
+    "url": "https://www.olivegarden.com/specials"
+   }
+  ],
+  "name": "Olive Garden",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "ok, 0 quote(s) from the venue API",
+    "url": "https://www.olivegarden.com/api/restaurants/6489"
+   },
+   {
+    "result": "ok, 0 dish(es) from the menu API",
+    "url": "https://www.olivegarden.com/api/menu?restaurantNum=6489"
+   },
+   {
+    "result": "rendered: 0 lines -> 103",
+    "url": "https://www.olivegarden.com/locations/pa/willow-grove/willow-grove-easton-rd/6489?cmpid=br:og_ag:ie_ch:loc_ca:OGGMB_sn:gmb_gt:willow-grove-pa-6489_pl:locurl_rd:1914"
+   },
+   {
+    "hh": false,
+    "lines": 103,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.olivegarden.com/locations/pa/willow-grove/willow-grove-easton-rd/6489?cmpid=br:og_ag:ie_ch:loc_ca:OGGMB_sn:gmb_gt:willow-grove-pa-6489_pl:locurl_rd:1914"
+   },
+   {
+    "hh": false,
+    "lines": 95,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.olivegarden.com/specials"
+   },
+   {
+    "hh": false,
+    "lines": 95,
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.olivegarden.com/specials"
+   }
+  ],
+  "website": "https://www.olivegarden.com/locations/pa/willow-grove/willow-grove-easton-rd/6489?cmpid=br:og_ag:ie_ch:loc_ca:OGGMB_sn:gmb_gt:willow-grove-pa-6489_pl:locurl_rd:1914",
+  "zone_id": "willow_grove_horsham"
+ },
  "117317": {
   "address": "200 W RIDGE PIKE STE 117, CONSHOHOCKEN  PA 19428",
   "crawled_at": "2026-09-01",
@@ -6993,22 +7351,34 @@
  },
  "119038": {
   "address": "18 HORSHAM RD, HATBORO PA 19040-3920",
-  "crawled_at": "2026-08-07",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "CONCORDANCE FERMENTS LLC",
   "osm_name": null,
   "pages": [
    {
+    "hh": false,
+    "lines": 95,
     "result": "ok, 0 quote(s)",
     "url": "https://www.concordanceferments.com/"
    },
    {
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.concordanceferments.com/about-4"
-   },
-   {
+    "hh": false,
+    "lines": 286,
     "result": "ok, 0 quote(s)",
     "url": "https://www.concordanceferments.com/menus"
+   },
+   {
+    "hh": false,
+    "lines": 92,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.concordanceferments.com/beer"
+   },
+   {
+    "hh": false,
+    "lines": 44,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.concordanceferments.com/happenings"
    }
   ],
   "website": "https://www.concordanceferments.com/",
@@ -8008,6 +8378,286 @@
   "website": "https://www.eataly.com/us_en/stores/king-prussia",
   "zone_id": "king_of_prussia"
  },
+ "121704": {
+  "address": "2190 County Line Rd, Huntingdon Valley PA 19006",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Happy Hour / Wine Down Monday",
+    "url": "https://www.thecagecocktailbar.com/"
+   },
+   {
+    "hh": true,
+    "quote": "$ 13.00 / raw / Ahi Tuna Wonton Chips*",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "$ 13.00 / raw / Seasonal Guacamole",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "$ 13.00 / raw / Korean Tacos*",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "$ 13.00 / peanut / Double Truffle Fries",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "$ 13.00 / nuts, peanut, vegetarian / All Flatbreads",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "$ 13.00 / raw / Korean Tacos*",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "$ 13.00 / peanut / Chicken Yakitori*",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "$ 12.00 / peanut / Double Truffle Fries",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour Audubon & Huntingdon Valley: Monday - Friday 4pm-6pm!",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "HAPPY HOUR DRINK",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "1/2 Price House Wine By The Glass",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "Draft Beer $5.00",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "ALL Signature Cocktails $11.00",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "HAPPY HOUR FOOD",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "Whipped Feta Dip $12.00",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "Crispy Tuna Rice* $13.00",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "Ahi Tuna Wonton Chips* $13.00",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "Seasonal Guacamole $10.00",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "ALL Flatbreads $13.00",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "Tuna Pok\u00e9 Tartare* $13.00",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "Korean Tacos* $13.00",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "Double Truffle Fries $9.00",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "Cheesesteak Roll-Ups $11.00",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "Buffalo Shrimp* $13.00",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour Warrington: Monday - Friday 4pm-6pm!",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "All Signature Cocktails $11.00",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "Avocado Hummus $13.00",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "Shiitake Potstickers* $13.00",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "All Flatbreads $13.00",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "Mini Burgers & Housemade Chips $10.00",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "Chicken Yakitori* $12.00",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "quote": "Happy Hour Audubon & Huntingdon Valley",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "quote": "Happy Hour Warrington",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "quote": "HAPPY HOUR DRINK",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "quote": "Half price",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "quote": "HAPPY HOUR FOOD",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "$12.00 Whipped Feta Dip",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "$13.00 Crispy Tuna Rice* / Spicy tuna topped with seared tuna and caramel soy. / raw",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "$13.00 Ahi Tuna Wonton Chips* / raw",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "$10.00 Seasonal Guacamole / Oaxaca fresh avocado guacamole. Served with tri-coloured gluten-free corn chips.",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "$13.00 ALL Flatbreads / *Margherita | Sweet Chili Chorizo | Chipotle Chicken*",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "$13.00 Tuna Pok\u00e9 Tartare* / raw",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "$13.00 Korean Tacos* / peanut",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "$9.00 Double Truffle Fries / Golden-fried French fries tossed in truffle oil and topped with Parmesan cheese. / Served with truffle aioli sauce",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "$13.00 Avocado Hummus",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "$13.00 Shiitake Potstickers* / nuts, peanut, vegetarian",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "$13.00 All Flatbreads / *Margherita | Roasted Veggie | Chipotle Chicken | Short Rib*",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "$10.00 Mini Burgers & Housemade Chips / Bite-sized burgers on mini Brioche buns with ketchup and mustard.",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": true,
+    "quote": "$12.00 Chicken Yakitori* / peanut",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   }
+  ],
+  "name": "Select Pizza Grill of Huntingdon Valley",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": true,
+    "lines": 161,
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.thecagecocktailbar.com/"
+   },
+   {
+    "hh": true,
+    "lines": 618,
+    "result": "ok, 18 quote(s)",
+    "url": "https://www.thecagecocktailbar.com/menus/"
+   },
+   {
+    "hh": false,
+    "lines": 152,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.thecagecocktailbar.com/huntingdonvalley/"
+   },
+   {
+    "hh": false,
+    "lines": 174,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.thecagecocktailbar.com/location/the-cage-coming-soon/"
+   }
+  ],
+  "website": "https://www.thecagecocktailbar.com/",
+  "zone_id": "willow_grove_horsham"
+ },
  "121883": {
   "address": "915 SPRING GARDEN ST, PHILADELPHIA PA 19123",
   "crawled_at": "2026-08-31",
@@ -8181,6 +8831,72 @@
   "website": "https://northboundrestaurant.com/",
   "zone_id": "souderton_harleysville"
  },
+ "122326": {
+  "address": "426 Horsham Rd, Horsham PA 19044",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Italian Seafood & Grill-Upscale but casual Tuscan villa atmosphere-Specializing in Seafood-Daily specials - Happy Hour-Private Party Rooms - Cocktail Parties -Take out-Business carry out & off-premise Catering. / Happy Hour Monday-Friday 3:30 pm - 6:30 pm at The Bar!",
+    "url": "http://www.buonavia.com/"
+   },
+   {
+    "quote": "Happy Hour Monday-Friday 3:30 pm - 6:30 pm at The Bar!",
+    "url": "http://www.buonavia.com/"
+   },
+   {
+    "quote": "Our full bar is great for Happy Hour, meeting up with friends, date night, or watching the game. In addition, we offer our full lunch and dinner menu all week long, along with happy hour specials Monday-Friday, 4:00 pm-6:30 pm.",
+    "url": "http://www.buonavia.com/"
+   },
+   {
+    "quote": "HAPPY HOUR",
+    "url": "https://buonavia.com/menus/"
+   }
+  ],
+  "menu_images": [
+   {
+    "src": "https://static.orderchop.site/wp-content/uploads/20250401170807/Happy-Hour-Menu-4-1-25_Page_1.jpg",
+    "url": "https://buonavia.com/happenings/"
+   },
+   {
+    "src": "https://static.orderchop.site/wp-content/uploads/20250401170816/Happy-Hour-Menu-4-1-25_Page_2.jpg",
+    "url": "https://buonavia.com/happenings/"
+   },
+   {
+    "src": "https://static.orderchop.site/wp-content/uploads/20250401170823/Happy-Hour-Menu-4-1-25_Page_3.jpg",
+    "url": "https://buonavia.com/happenings/"
+   }
+  ],
+  "name": "Buona V",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": true,
+    "lines": 38,
+    "result": "ok, 3 quote(s)",
+    "url": "http://www.buonavia.com/"
+   },
+   {
+    "hh": false,
+    "lines": 28,
+    "result": "ok, 0 quote(s)",
+    "url": "https://buonavia.com/happenings/"
+   },
+   {
+    "hh": false,
+    "lines": 32,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.buonavia.com/event/"
+   },
+   {
+    "hh": true,
+    "lines": 36,
+    "result": "ok, 1 quote(s)",
+    "url": "https://buonavia.com/menus/"
+   }
+  ],
+  "website": "http://www.buonavia.com/",
+  "zone_id": "willow_grove_horsham"
+ },
  "122360": {
   "address": "1745 S EASTON RD STE E1, DOYLESTOWN PA 18901-2812",
   "crawled_at": "2026-08-06",
@@ -8307,6 +9023,152 @@
   ],
   "website": "http://kimsbbqrestaurant.com/",
   "zone_id": "north_philly"
+ },
+ "12422": {
+  "address": "117 S York Rd, Hatboro PA 19040",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Drink Specials",
+    "url": "http://toweystavern.com/"
+   },
+   {
+    "quote": "Visit us for our drink specials that are available along with our happy hour specials. Give us a call at 215-394-8806. We have the game Golden Tee Golf as well as a dart board. / Karaoke is every Friday at 9:30 pm.",
+    "url": "http://toweystavern.com/"
+   },
+   {
+    "quote": "Happy Hours / Karaoke is every Friday at 9:30 pm. / Happy hours are Monday to Friday from 4:00 pm - 6:00 pm for a dollar off on all beers and mixed drinks.",
+    "url": "http://toweystavern.com/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy hours are Monday to Friday from 4:00 pm - 6:00 pm for a dollar off on all beers and mixed drinks.",
+    "url": "http://toweystavern.com/"
+   },
+   {
+    "quote": "Drink Specials | Happy Hour Specials | Hatboro, PA",
+    "url": "http://toweystavern.com/specials"
+   },
+   {
+    "quote": "Drink Specials",
+    "url": "http://toweystavern.com/specials"
+   },
+   {
+    "quote": "Towey's Tavern makes it easy for you to have a great night without breaking the bank. Visit us at select times for discounts on all kinds of drinks. Whether it's happy hours or a certain day of the week for a select beer, we save you money. Call us at 215-394-8806.",
+    "url": "http://toweystavern.com/specials"
+   },
+   {
+    "quote": "Happy hour is Monday through Friday 4:00 pm - 6:00 pm! You get $1.00 off on all bottled, draft, and mixed drinks",
+    "url": "http://toweystavern.com/specials"
+   },
+   {
+    "quote": "Drink Specials | Happy Hour Specials | Hatboro, PA",
+    "url": "https://www.toweystavern.com/specials"
+   },
+   {
+    "quote": "Drink Specials",
+    "url": "https://www.toweystavern.com/specials"
+   },
+   {
+    "quote": "Towey's Tavern makes it easy for you to have a great night without breaking the bank. Visit us at select times for discounts on all kinds of drinks. Whether it's happy hours or a certain day of the week for a select beer, we save you money. Call us at 215-394-8806.",
+    "url": "https://www.toweystavern.com/specials"
+   },
+   {
+    "quote": "Happy hour is Monday through Friday 4:00 pm - 6:00 pm! You get $1.00 off on all bottled, draft, and mixed drinks",
+    "url": "https://www.toweystavern.com/specials"
+   },
+   {
+    "quote": "Drink Specials | Happy Hour Specials | Hatboro, PA",
+    "url": "http://toweystavern.com/specials"
+   },
+   {
+    "quote": "Drink Specials",
+    "url": "http://toweystavern.com/specials"
+   },
+   {
+    "quote": "Towey's Tavern makes it easy for you to have a great night without breaking the bank. Visit us at select times for discounts on all kinds of drinks. Whether it's happy hours or a certain day of the week for a select beer, we save you money. Call us at 215-394-8806.",
+    "url": "http://toweystavern.com/specials"
+   },
+   {
+    "quote": "Happy hour is Monday through Friday 4:00 pm - 6:00 pm! You get $1.00 off on all bottled, draft, and mixed drinks",
+    "url": "http://toweystavern.com/specials"
+   }
+  ],
+  "menu_images": [
+   {
+    "src": "https://le-cdn.hibuwebsites.com/c79749b8b45a4d3fab4ed77c402b6d78/dms3rep/multi/opt/Specials-C-1920w.jpg",
+    "url": "http://toweystavern.com/specials"
+   }
+  ],
+  "name": "Towey's Hatboro Tavern",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": true,
+    "lines": 64,
+    "result": "ok, 4 quote(s)",
+    "url": "http://toweystavern.com/"
+   },
+   {
+    "hh": true,
+    "lines": 54,
+    "result": "ok, 4 quote(s)",
+    "url": "http://toweystavern.com/specials"
+   },
+   {
+    "hh": true,
+    "lines": 54,
+    "result": "ok, 4 quote(s)",
+    "url": "https://www.toweystavern.com/specials"
+   },
+   {
+    "hh": true,
+    "lines": 54,
+    "result": "ok, 4 quote(s)",
+    "url": "http://toweystavern.com/specials"
+   }
+  ],
+  "website": "http://toweystavern.com/",
+  "zone_id": "willow_grove_horsham"
+ },
+ "125402": {
+  "address": "412 S York Rd, Hatboro PA 19040",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Wawa #8122",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "rendered: 9 lines -> 83",
+    "url": "https://www.wawa.com/locations/8122?utm_source=gmblisting&utm_medium=organic&utm_campaign=locallisting"
+   },
+   {
+    "hh": false,
+    "lines": 83,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.wawa.com/locations/8122?utm_source=gmblisting&utm_medium=organic&utm_campaign=locallisting"
+   },
+   {
+    "hh": false,
+    "lines": 9,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.wawa.com/menu/lunch-dinner/hoagies-specialty-sandwiches/"
+   },
+   {
+    "hh": false,
+    "lines": 9,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.wawa.com/menu/beverages"
+   },
+   {
+    "hh": false,
+    "lines": 9,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.wawa.com/menu/breakfast"
+   }
+  ],
+  "website": "https://www.wawa.com/locations/8122?utm_source=gmblisting&utm_medium=organic&utm_campaign=locallisting",
+  "zone_id": "willow_grove_horsham"
  },
  "125405": {
   "address": "The Court Unit C263A 690 W Dekalb Pike, King Of Prussia PA 19406",
@@ -10286,71 +11148,95 @@
  },
  "131341": {
   "address": "100 WELSH RD UNIT K, HORSHAM PA 19044-2249",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [
    {
     "quote": "Happy Hour",
     "url": "https://acfp.com/locations/horsham/"
    },
    {
+    "hh": true,
     "quote": "Happy Hour - Anthony Coal Fired Pizza",
     "url": "https://acfp.com/happy-hour/"
    },
    {
+    "hh": true,
     "quote": "Happy Hour",
     "url": "https://acfp.com/happy-hour/"
    },
    {
+    "hh": true,
     "quote": "$5 Social\u2028Coal Fired Happy Hour",
     "url": "https://acfp.com/happy-hour/"
    },
    {
+    "hh": true,
     "quote": "Join us for our $5 Social, your new favorite coal-fired happy hour. Enjoy exclusive $5 bites and sips, great vibes, and the perfect way to unwind all alongside our new coal-fired classics.",
     "url": "https://acfp.com/happy-hour/"
    },
    {
+    "hh": true,
     "quote": "$5 Bites",
     "url": "https://acfp.com/happy-hour/"
    },
    {
-    "quote": "Premium ingredients, authentic coal-fired flavor. All for just five bucks during Social Hour.",
+    "hh": true,
+    "quote": "Premium ingredients, authentic coal-fired flavor. All for just $5 during Social Hour.",
     "url": "https://acfp.com/happy-hour/"
    },
    {
+    "hh": true,
     "quote": "$5 SIPS",
     "url": "https://acfp.com/happy-hour/"
    },
    {
+    "hh": true,
     "quote": "$5 Sips may vary by location. Must be 21+",
     "url": "https://acfp.com/happy-hour/"
    },
    {
-    "quote": "Happy Hour",
-    "url": "https://acfp.com/book-an-event/"
+    "quote": "Daily Specials - Anthony Coal Fired Pizza",
+    "url": "https://acfp.com/daily-specials/"
    },
    {
     "quote": "Happy Hour",
-    "url": "https://acfp.com/locations/horsham/"
+    "url": "https://acfp.com/daily-specials/"
+   },
+   {
+    "quote": "Daily Specials",
+    "url": "https://acfp.com/daily-specials/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://acfp.com/lunch-specials/"
    }
   ],
   "name": "FLORIDA COAL FIRED PIZZA LLC",
   "osm_name": "Anthony's Coal Fired Pizza",
   "pages": [
    {
+    "hh": true,
+    "lines": 199,
     "result": "ok, 1 quote(s)",
     "url": "https://acfp.com/locations/horsham/"
    },
    {
+    "hh": true,
+    "lines": 171,
     "result": "ok, 8 quote(s)",
     "url": "https://acfp.com/happy-hour/"
    },
    {
-    "result": "ok, 1 quote(s)",
-    "url": "https://acfp.com/book-an-event/"
+    "hh": true,
+    "lines": 157,
+    "result": "ok, 3 quote(s)",
+    "url": "https://acfp.com/daily-specials/"
    },
    {
+    "hh": true,
+    "lines": 147,
     "result": "ok, 1 quote(s)",
-    "url": "https://acfp.com/locations/horsham/"
+    "url": "https://acfp.com/lunch-specials/"
    }
   ],
   "website": "https://acfp.com/locations/horsham/",
@@ -10930,6 +11816,27 @@
   "website": "https://www.starbucks.com/store-locator/store/1025027/dilworth-park-1-s-15th-street-philadelphia-pa-19102-us",
   "zone_id": "center_city"
  },
+ "132870": {
+  "address": "1460 Bethlehem Pk Ste 200, North Wales PA 19454",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Yume Sushi",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "rendered: 33 lines -> 38",
+    "url": "https://www.yumenorthwales.com/"
+   },
+   {
+    "hh": false,
+    "lines": 38,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.yumenorthwales.com/"
+   }
+  ],
+  "website": "https://www.yumenorthwales.com/",
+  "zone_id": "willow_grove_horsham"
+ },
  "132943": {
   "address": "191 WASHINGTON ST, CONSHOHOCKEN PA 19428-2065",
   "crawled_at": "2026-08-06",
@@ -11471,24 +12378,36 @@
  },
  "133695": {
   "address": "575 HORSHAM RD, HORSHAM PA 19044-1746",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "THE SCRATCH KITCHEN BY GALLOS",
   "osm_name": "Sushiwa Poke & Roll",
   "pages": [
    {
+    "result": "rendered: 1 lines -> 70",
+    "url": "https://www.sushiwaorder.com"
+   },
+   {
+    "hh": false,
+    "lines": 70,
     "result": "ok, 0 quote(s)",
     "url": "https://www.sushiwaorder.com"
    },
    {
+    "hh": false,
+    "lines": 1,
     "result": "ok, 0 quote(s)",
     "url": "https://www.sushiwaorder.com/product/2-roll-lunch-special/3ST7JJD3KUCYS6Z4T6PXY7P7"
    },
    {
+    "hh": false,
+    "lines": 1,
     "result": "ok, 0 quote(s)",
     "url": "https://www.sushiwaorder.com/product/sushiwa-special-assortment-platter/2UVDBLSKFQBV6GX7JEYTQGBF"
    },
    {
+    "hh": false,
+    "lines": 1,
     "result": "ok, 0 quote(s)",
     "url": "https://www.sushiwaorder.com/shop/lunch-special/QYDURO6ZWR5K3PWNGBYOLT7U"
    }
@@ -13462,16 +14381,20 @@
  },
  "38301": {
   "address": "1007 EASTON RD, WILLOW GROVE PA 19090",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "CHINA GARDEN INN, CORP.",
   "osm_name": "China Garden Inn",
   "pages": [
    {
+    "hh": false,
+    "lines": 27,
     "result": "ok, 0 quote(s)",
     "url": "https://www.chinagardeninnwillowgrove.com/"
    },
    {
+    "hh": false,
+    "lines": 90,
     "result": "ok, 0 quote(s)",
     "url": "https://www.chinagardeninnwillowgrove.com/2pte8mch/china-garden-inn-willow-grove-19090/order-online"
    }
@@ -14014,6 +14937,42 @@
   ],
   "website": "https://www.greenroomphiladelphia.com/",
   "zone_id": "center_city"
+ },
+ "41066": {
+  "address": "300 Tournament Dr, Horsham PA 19044",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "This main dining area offers a lively family dining experience. Sit and watch your favorite sporting event on the large flat screen TVs or sit at the large bar and watch the bartender create seasonal drink specials. The beautiful stone fireplace provides a warm atmosphere on chilly days.",
+    "url": "http://www.commonwealthgolfclub.com/Dining"
+   }
+  ],
+  "name": "Commonwealth National Country Club",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "rendered: 33 lines -> 37",
+    "url": "http://www.commonwealthgolfclub.com/"
+   },
+   {
+    "hh": false,
+    "lines": 37,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.commonwealthgolfclub.com/"
+   },
+   {
+    "result": "rendered: 32 lines -> 37",
+    "url": "http://www.commonwealthgolfclub.com/Dining"
+   },
+   {
+    "hh": false,
+    "lines": 37,
+    "result": "ok, 1 quote(s)",
+    "url": "http://www.commonwealthgolfclub.com/Dining"
+   }
+  ],
+  "website": "http://www.commonwealthgolfclub.com/",
+  "zone_id": "willow_grove_horsham"
  },
  "41389": {
   "address": "205 S 18TH ST, PHILADELPHIA PA 19103-5956",
@@ -17519,14 +18478,26 @@
  },
  "53240": {
   "address": "601 YORK RD, WILLOW GROVE PA 19090-2627",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "BIG HEADS OF WILLOW GROVE, INC.",
   "osm_name": "Starbucks",
   "pages": [
    {
+    "result": "rendered: 0 lines -> 51",
+    "url": "https://www.starbucks.com/store-locator/store/7412/warminster-601-york-road-warminster-pa-189742031-us"
+   },
+   {
+    "hh": false,
+    "lines": 51,
     "result": "ok, 0 quote(s)",
     "url": "https://www.starbucks.com/store-locator/store/7412/warminster-601-york-road-warminster-pa-189742031-us"
+   },
+   {
+    "hh": false,
+    "lines": 0,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.starbucks.com/menu"
    }
   ],
   "website": "https://www.starbucks.com/store-locator/store/7412/warminster-601-york-road-warminster-pa-189742031-us",
@@ -20660,7 +21631,7 @@
  },
  "61425": {
   "address": "1015 EASTON RD, WILLOW GROVE PA 19090-2023",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [
    {
     "quote": "Social Hour Menu",
@@ -20677,18 +21648,24 @@
    {
     "quote": "Social Hour",
     "url": "https://locations.bonefishgrill.com/pennsylvania/willow-grove/1015-easton-road"
+   },
+   {
+    "quote": "Social Hour",
+    "url": "https://locations.bonefishgrill.com/pennsylvania/willow-grove"
+   },
+   {
+    "quote": "Social Hour",
+    "url": "https://locations.bonefishgrill.com/pennsylvania/willow-grove"
    }
   ],
   "name": "BONEFISH GRILL",
   "osm_name": "Bonefish Grill",
   "pages": [
    {
+    "hh": true,
+    "lines": 159,
     "result": "ok, 4 quote(s)",
     "url": "https://locations.bonefishgrill.com/pennsylvania/willow-grove/1015-easton-road"
-   },
-   {
-    "result": "robots.txt unreadable (403), treated as disallow",
-    "url": "https://www.bonefishgrill.com/special-event?unit=301&amp;eventid=782279"
    },
    {
     "result": "robots.txt unreadable (403), treated as disallow",
@@ -20696,7 +21673,27 @@
    },
    {
     "result": "robots.txt unreadable (403), treated as disallow",
+    "url": "https://www.bonefishgrill.com/courses-cocktails"
+   },
+   {
+    "hh": true,
+    "lines": 55,
+    "result": "ok, 1 quote(s)",
+    "url": "https://locations.bonefishgrill.com/pennsylvania/willow-grove"
+   },
+   {
+    "hh": true,
+    "lines": 55,
+    "result": "ok, 1 quote(s)",
+    "url": "https://locations.bonefishgrill.com/pennsylvania/willow-grove"
+   },
+   {
+    "result": "robots.txt unreadable (403), treated as disallow",
     "url": "https://www.bonefishgrill.com/catering/menu/bonefish-willow-grove-pa"
+   },
+   {
+    "result": "robots.txt unreadable (403), treated as disallow",
+    "url": "https://www.bonefishgrill.com/order/menu/bonefish-willow-grove-pa"
    }
   ],
   "website": "https://locations.bonefishgrill.com/pennsylvania/willow-grove/1015-easton-road",
@@ -23913,109 +24910,39 @@
  },
  "65850": {
   "address": "2300 EASTON RD, WILLOW GROVE PA 19090-1105",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [
    {
     "quote": "Refreshing Drink Specials",
     "url": "https://millersalehouse.com/locations/willow-grove/"
-   },
-   {
-    "quote": "Restaurant Deals & Drink Specials | Miller's Ale House Skip to Main Content \ud83d\ude9a Score $5 off on ALL $40+ online orders ! Use code ENJOY5 at checkout! View Terms",
-    "url": "https://millersalehouse.com/specials/"
-   },
-   {
-    "quote": "6 for $10.99",
-    "url": "https://millersalehouse.com/specials/"
-   },
-   {
-    "quote": "Full Rack for $16.99",
-    "url": "https://millersalehouse.com/specials/"
-   },
-   {
-    "quote": "12 for $11.99",
-    "url": "https://millersalehouse.com/specials/"
-   },
-   {
-    "quote": "24 for $23.99",
-    "url": "https://millersalehouse.com/specials/"
-   },
-   {
-    "quote": "Starting at $22.99",
-    "url": "https://millersalehouse.com/specials/"
-   },
-   {
-    "quote": "$7.99 Soup & Salad Duo",
-    "url": "https://millersalehouse.com/specials/"
-   },
-   {
-    "quote": "$8.49 Dad's Homemade Meatloaf",
-    "url": "https://millersalehouse.com/specials/"
-   },
-   {
-    "quote": "$8.49 English Fish & Chips / Our beer-battered white fish, served with our crispy fries.",
-    "url": "https://millersalehouse.com/specials/"
-   },
-   {
-    "quote": "$14.99 Brunch Burger - AVAILABLE ALL DAY",
-    "url": "https://millersalehouse.com/specials/"
-   },
-   {
-    "quote": "$16.99 Mediterranean Zingers \u00ae Caesar Wrap",
-    "url": "https://millersalehouse.com/specials/"
-   },
-   {
-    "quote": "$69.99 Wings Box",
-    "url": "https://millersalehouse.com/specials/"
-   },
-   {
-    "quote": "$79.99 Zings Box",
-    "url": "https://millersalehouse.com/specials/"
-   },
-   {
-    "quote": "$79.99 Zings & Wings Box",
-    "url": "https://millersalehouse.com/specials/"
-   },
-   {
-    "quote": "$5.99 House Margarita",
-    "url": "https://millersalehouse.com/specials/"
-   },
-   {
-    "quote": "$10.99 Miller Lite\u00ae or Coors Light\u00ae",
-    "url": "https://millersalehouse.com/specials/"
-   },
-   {
-    "quote": "$15.49 Tito's Strawberry Lemonade Pitcher Blue Moon\u00ae",
-    "url": "https://millersalehouse.com/specials/"
-   }
-  ],
-  "menu_images": [
-   {
-    "src": "https://cdn-ilemfhc.nitrocdn.com/MWphTueXEkFFGuCyzLapxigJIfvGnBVc/assets/images/optimized/rev-c9cf5ad/millersalehouse.com/wp-content/uploads/2023/03/Light-Beer-Pitcher-Specials-Carousel-1075-x-725.jpg",
-    "url": "https://millersalehouse.com/specials/"
-   },
-   {
-    "src": "https://cdn-ilemfhc.nitrocdn.com/MWphTueXEkFFGuCyzLapxigJIfvGnBVc/assets/images/optimized/rev-c9cf5ad/millersalehouse.com/wp-content/uploads/2023/03/Titos-Strawberry-Lemonade-Specials-Carousel-1075-x-725.jpg",
-    "url": "https://millersalehouse.com/specials/"
    }
   ],
   "name": "MILLER'S WILLOW GROVE ALE HOUSE",
   "osm_name": "Miller's Ale House",
   "pages": [
    {
+    "hh": true,
+    "lines": 136,
     "result": "ok, 1 quote(s)",
     "url": "https://millersalehouse.com/locations/willow-grove/"
    },
    {
-    "result": "ok, 17 quote(s)",
-    "url": "https://millersalehouse.com/specials/"
+    "hh": false,
+    "lines": 114,
+    "result": "ok, 0 quote(s)",
+    "url": "https://millersalehouse.com/locations/willow-grove/birthday-in-willow-grove/"
    },
    {
+    "hh": false,
+    "lines": 123,
     "result": "ok, 0 quote(s)",
-    "url": "https://millersalehouse.com/menu/"
+    "url": "https://millersalehouse.com/locations/willow-grove/burgers-in-willow-grove/"
    },
    {
+    "hh": false,
+    "lines": 100,
     "result": "ok, 0 quote(s)",
-    "url": "https://millersalehouse.com/menu/zingers/"
+    "url": "https://millersalehouse.com/locations/willow-grove/catering-in-willow-grove/"
    }
   ],
   "website": "https://millersalehouse.com/locations/willow-grove/",
@@ -25375,6 +26302,21 @@
   "website": "https://www.shakeshack.com/location/university-city/",
   "zone_id": "university_city"
  },
+ "67952": {
+  "address": "2100 County Line Rd, Huntingdon Valley PA 19006",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Weis Markets",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "robots.txt unreadable (403), treated as disallow",
+    "url": "https://www.weismarkets.com/stores#/4343"
+   }
+  ],
+  "website": "https://www.weismarkets.com/stores#/4343",
+  "zone_id": "willow_grove_horsham"
+ },
  "68001": {
   "address": "131 S 13TH ST, PHILADELPHIA PA 19107-4917",
   "crawled_at": "2026-09-01",
@@ -25453,19 +26395,24 @@
  },
  "68012": {
   "address": "1902 COUNTY LINE RD, HUNTINGDON VALLEY PA 19006-1738",
-  "crawled_at": "2026-08-31",
+  "crawled_at": "2026-09-02",
   "hits": [
    {
     "quote": "Monthly Menu & Happy Hour",
     "url": "https://www.palztaphouse.net/"
    },
    {
+    "hh": true,
     "quote": "Monthly Menu & Happy Hour",
     "url": "https://www.palztaphouse.net/monthly-menu---happy-hour"
    },
    {
     "quote": "Monthly Menu & Happy Hour",
-    "url": "https://www.palztaphouse.net/menu"
+    "url": "https://www.palztaphouse.net/beercocktails"
+   },
+   {
+    "quote": "Refreshing and great for the beach, Crushin' It is soon to be your summer staple. With Citra, Mosaic, and Azacca hops blending together to accentuate the fresh flavors of orange juice, Crushin' It is dry, approachable, and perfectly balanced. Relax in the sand. Enjoy a no shower happy hour. This beer is best paired with good friends, sunshine, and SPF 30.",
+    "url": "https://www.palztaphouse.net/beercocktails"
    }
   ],
   "menu_images": [
@@ -25478,20 +26425,26 @@
   "osm_name": "Palz Tap House",
   "pages": [
    {
+    "hh": true,
+    "lines": 53,
     "result": "ok, 1 quote(s)",
     "url": "https://www.palztaphouse.net/"
    },
    {
+    "hh": true,
+    "lines": 42,
     "result": "ok, 1 quote(s)",
     "url": "https://www.palztaphouse.net/monthly-menu---happy-hour"
    },
    {
-    "result": "404 text/html",
-    "url": "https://www.palztaphouse.net/beer-menu-and-coctails"
+    "hh": true,
+    "lines": 123,
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.palztaphouse.net/beercocktails"
    },
    {
-    "result": "ok, 1 quote(s)",
-    "url": "https://www.palztaphouse.net/menu"
+    "result": "404 text/html",
+    "url": "https://www.palztaphouse.net/beer-menu-and-coctails"
    }
   ],
   "website": "https://www.palztaphouse.net/",
@@ -25955,14 +26908,35 @@
  },
  "69140": {
   "address": "13 E MONTGOMERY AVE STE 2 , HATBORO PA 19040-2618",
-  "crawled_at": "2026-08-07",
-  "hits": [],
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Thirsty Thursday! Happy Hour 5 to 7.",
+    "url": "https://crookedeyebrewery.com/events"
+   },
+   {
+    "quote": "Happy Hour $1 off pints from 4-6pm",
+    "url": "https://crookedeyebrewery.com/events"
+   }
+  ],
   "name": "CROOKED EYE BREWERY LLC",
   "osm_name": null,
   "pages": [
    {
+    "result": "rendered: 23 lines -> 29",
+    "url": "https://crookedeyebrewery.com/"
+   },
+   {
+    "hh": false,
+    "lines": 29,
     "result": "ok, 0 quote(s)",
     "url": "https://crookedeyebrewery.com/"
+   },
+   {
+    "hh": true,
+    "lines": 29,
+    "result": "ok, 2 quote(s)",
+    "url": "https://crookedeyebrewery.com/events"
    }
   ],
   "website": "https://crookedeyebrewery.com/",
@@ -27954,6 +28928,35 @@
   "website": "https://harpcrown.com",
   "zone_id": "center_city"
  },
+ "72034": {
+  "address": "315 York Rd, Willow Grove PA 19090",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "The Giant Company",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": false,
+    "lines": 70,
+    "result": "ok, 0 quote(s)",
+    "url": "https://stores.giantfoodstores.com/pa/willow-grove/315-york-rd?y_source=1_NDE5NTU4NC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D"
+   },
+   {
+    "hh": false,
+    "lines": 100,
+    "result": "ok, 0 quote(s)",
+    "url": "https://pharmacy.giantfoodstores.com/pa/willow-grove/315-york-road"
+   },
+   {
+    "hh": false,
+    "lines": 125,
+    "result": "ok, 0 quote(s)",
+    "url": "https://stores.giantfoodstores.com/pa/willow-grove/315-york-rd/delivery"
+   }
+  ],
+  "website": "https://stores.giantfoodstores.com/pa/willow-grove/315-york-rd?y_source=1_NDE5NTU4NC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+  "zone_id": "willow_grove_horsham"
+ },
  "72075": {
   "address": "1602 SPRUCE ST, PHILADELPHIA PA 19103-6740",
   "crawled_at": "2026-08-06",
@@ -29624,6 +30627,21 @@
   "website": "https://www.fermenteryform.com/",
   "zone_id": "fishtown_kensington"
  },
+ "81756": {
+  "address": "1461 Bethlehem Pike , North Wales PA 19454",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Amc 309 Cinema 9",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "403 text/html",
+    "url": "https://www.amctheatres.com/movie-theatres/philadelphia/amc-309-cinema-9?utm_medium=organic&utm_source=google&utm_campaign=local"
+   }
+  ],
+  "website": "https://www.amctheatres.com/movie-theatres/philadelphia/amc-309-cinema-9?utm_medium=organic&utm_source=google&utm_campaign=local",
+  "zone_id": "willow_grove_horsham"
+ },
  "82015": {
   "address": "1600 N BROAD ST, PHILADELPHIA PA 19121-3489",
   "crawled_at": "2026-09-01",
@@ -31220,6 +32238,27 @@
   "website": "https://www.rebelhillbrewing.com/",
   "zone_id": "phoenixville"
  },
+ "88180": {
+  "address": "2052 County Line Rd, Huntingdon Valley PA 19006",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Mermaid Spirits",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "rendered: 0 lines -> 71",
+    "url": "http://mermaidspirits.com/"
+   },
+   {
+    "hh": false,
+    "lines": 71,
+    "result": "ok, 0 quote(s)",
+    "url": "http://mermaidspirits.com/"
+   }
+  ],
+  "website": "http://mermaidspirits.com/",
+  "zone_id": "willow_grove_horsham"
+ },
  "88258": {
   "address": "525 ARCH ST, PHILADELPHIA PA 19106-1514",
   "crawled_at": "2026-08-06",
@@ -32364,6 +33403,55 @@
   ],
   "website": "https://www.northitalia.com/locations/king-of-prussia-pa/",
   "zone_id": "king_of_prussia"
+ },
+ "92310": {
+  "address": "200 Blair Mill Rd, Horsham PA 19044",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "menu_images": [
+   {
+    "src": "https://www.acmemarkets.com/content/dam/specialty-diets/specialty-diets-category-tile-keto.png?$mod-unified-tab-view$",
+    "url": "https://www.acmemarkets.com/lp/specialty-diets.html"
+   },
+   {
+    "src": "https://www.acmemarkets.com/content/dam/specialty-diets/specialty-diets-category-tile-vegan.png?$mod-unified-tab-view$",
+    "url": "https://www.acmemarkets.com/lp/specialty-diets.html"
+   },
+   {
+    "src": "https://www.acmemarkets.com/content/dam/specialty-diets/specialty-diets-category-tile-meatless.png?$mod-unified-tab-view$",
+    "url": "https://www.acmemarkets.com/lp/specialty-diets.html"
+   }
+  ],
+  "name": "The Frosted Mug",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": false,
+    "lines": 452,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.acmemarkets.com/"
+   },
+   {
+    "hh": false,
+    "lines": 476,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.acmemarkets.com/lp/specialty-diets.html"
+   },
+   {
+    "hh": false,
+    "lines": 446,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.acmemarkets.com/lp/specialty-diets/dairy-free-diet.html"
+   },
+   {
+    "hh": false,
+    "lines": 441,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.acmemarkets.com/lp/specialty-diets/gluten-free-diet.html"
+   }
+  ],
+  "website": "https://www.acmemarkets.com/",
+  "zone_id": "willow_grove_horsham"
  },
  "92374": {
   "address": "785 STARR ST, PHOENIXVILLE PA 19460",
@@ -34528,6 +35616,39 @@
   "website": "https://www.hilton.com/en/hotels/phlsphx-hampton-suites-philadelphia-media",
   "zone_id": "media"
  },
+ "96061": {
+  "address": "2 S York Rd Ste 2, Hatboro PA 19040",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Artifact Brewing",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "rendered: 20 lines -> 22",
+    "url": "https://www.artifactales.com/"
+   },
+   {
+    "hh": false,
+    "lines": 22,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.artifactales.com/"
+   },
+   {
+    "hh": false,
+    "lines": 32,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.artifactales.com/events/2021/12/24/open-for-business-special-hours"
+   },
+   {
+    "hh": false,
+    "lines": 15,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.artifactales.com/events"
+   }
+  ],
+  "website": "https://www.artifactales.com/",
+  "zone_id": "willow_grove_horsham"
+ },
  "96329": {
   "address": "116 WALLACE AVE, DOWNINGTOWN PA 19335",
   "crawled_at": "2026-08-07",
@@ -34699,6 +35820,60 @@
   ],
   "website": "https://www.pizzatabirreria.com",
   "zone_id": "south_philly"
+ },
+ "96478": {
+  "address": "101 Easton Rd, Suite 300, Horsham PA 19044",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM",
+    "url": "https://locations.pjspub.com/pa/horsham/101-easton-rd"
+   },
+   {
+    "quote": "Pre-book your Fantasy Football Draft Party and score half-price wings and starters , a dedicated draft area, free WiFi, drink specials & MORE!",
+    "url": "https://pjspub.com/specials"
+   },
+   {
+    "quote": "Pre-book your Fantasy Football Draft Party and score half-price wings and starters , a dedicated draft area, free WiFi, drink specials & MORE!",
+    "url": "https://pjspub.com/drinks-menu"
+   }
+  ],
+  "menu_images": [
+   {
+    "src": "https://pjspub.com/media/Images/PJs-Summer-HH-2026.png",
+    "url": "https://pjspub.com/specials"
+   }
+  ],
+  "name": "Pjw Horsham",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": true,
+    "lines": 101,
+    "result": "ok, 1 quote(s)",
+    "url": "https://locations.pjspub.com/pa/horsham/101-easton-rd"
+   },
+   {
+    "hh": false,
+    "lines": 76,
+    "result": "ok, 1 quote(s)",
+    "url": "https://pjspub.com/specials"
+   },
+   {
+    "hh": false,
+    "lines": 257,
+    "result": "ok, 1 quote(s)",
+    "url": "https://pjspub.com/drinks-menu"
+   },
+   {
+    "hh": false,
+    "lines": 21,
+    "result": "ok, 0 quote(s)",
+    "url": "https://locations.pjspub.com/locations/pa/horsham"
+   }
+  ],
+  "website": "https://locations.pjspub.com/pa/horsham/101-easton-rd",
+  "zone_id": "willow_grove_horsham"
  },
  "96508": {
   "address": "2500 W MORELAND RD, WILLOW GROVE PA 19090-4003",

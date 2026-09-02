@@ -74,6 +74,9 @@ BATCH = int(os.environ.get("HHF_MENU_BATCH", "3"))
 DOC_CAP = 9000          # chars of one page or transcript handed to the model
 QUOTE_CAP = 700         # a quote may be a whole menu block, not a whole page
 HEADING_CAP = 120       # the venue's own name for the deal, as it prints it
+ADJACENT = 300          # chars between a happy hour and the clock line it owns
+CALENDAR_MIN = 3        # printings of one heading that make a calendar recurring
+CALENDAR_LOOKBACK = 600 # chars back to the date header an entry sits under
 MAX_DEALS = 8           # deals one document may state
 MAX_ITEMS = 40
 TODAY = datetime.date.today().isoformat()
@@ -150,12 +153,14 @@ For each deal return:
   that is read as every day. Never guess a day the document does not state.
 - `start`, `end`: 24-hour "HH:MM". Midnight is "24:00". Both must be times the
   document actually states.
-- `clock_quote`: only for a `daily_special` or `food_combo` that names NO time of
-  its own -- "Wednesday: $9 Select Growlers" runs the whole day the venue is
-  open. Copy the document's OWN hours line for that day, exactly ("Tuesday-
-  Saturday 11:30AM- 9:00PM"), and put the day's opening and closing time in
-  `start` and `end`. A happy hour must state its own hours; leave this out for
-  one, and leave it out whenever the deal states its own times.
+- `clock_quote`: for a deal whose own text names NO time. Two cases. A calendar
+  or specials page states the deal on one line and its hours on the next
+  ("Happy Hour (Bars and High Tops ONLY!) ..." then "04:30 PM - 06:30 PM") --
+  copy that clock line here. And a `daily_special` like "Wednesday: $9 Select
+  Growlers" runs the whole day the venue is open -- copy the document's own
+  hours line for that day ("Tuesday- Saturday 11:30AM- 9:00PM"). Either way copy
+  it EXACTLY and put the times in `start` and `end`. Leave it out whenever the
+  deal states its own times.
 - `items`: the priced things this deal offers, as
   `{{"label", "price", "category", "evidence"}}`.
   `label` is the thing being sold as the venue names it. `price` is the dollar
@@ -253,21 +258,149 @@ def in_source(span, source):
 
 def clock_in(hhmm, quote):
     """Is this 24h time spelled in the quote, in any of the ways a menu spells
-    it? '16:00' is published as '4', '4pm', '4:00 PM', '16:00', "4 o'clock"."""
+    it? '16:00' is published as '4', '4pm', '4:00 PM', '16:00', '04:00 PM'."""
     if not re.fullmatch(r"\d{1,2}:\d{2}", hhmm or ""):
         return False
     h, m = (int(x) for x in hhmm.split(":"))
     text = ed.norm(quote)
-    forms = {f"{h}:{m:02d}", f"{h:02d}:{m:02d}"}
     h12 = h % 12 or 12
-    forms |= {f"{h12}:{m:02d}"}
+    # ZERO-PADDED 12-HOUR IS A REAL SPELLING AND IT WAS MISSING. A specials
+    # calendar prints "04:30 PM - 06:30 PM", and without the padded form the
+    # only candidates were "16:30" and "4:30" -- the first absent, the second
+    # refused by the (?<!\d) lookbehind because a 0 sits in front of it. Every
+    # venue that writes its hours that way was refused, silently, as "correct".
+    forms = {f"{h}:{m:02d}", f"{h:02d}:{m:02d}", f"{h12}:{m:02d}", f"{h12:02d}:{m:02d}"}
     if m == 0:
-        forms |= {str(h12), f"{h12}:00", f"{h12} o'clock"}
+        forms |= {str(h12), f"{h12:02d}", f"{h12}:00", f"{h12} o'clock"}
         if h == 24:
             forms |= {"midnight", "12", "12:00"}
         if h == 12:
             forms.add("noon")
-    return any(re.search(rf"(?<!\d){re.escape(f)}(?!\d)", text) for f in forms)
+    want_pm = 12 <= h < 24
+    for f in forms:
+        # (?![\d:]) rather than (?!\d): the bare-hour form "11" otherwise matches
+        # INSIDE "11:00 am", and the meridiem test below then sees ":" as "no
+        # meridiem stated" and accepts it -- so an 11am opening time evidenced
+        # an 11pm window.
+        for mt in re.finditer(rf"(?<!\d){re.escape(f)}(?![\d:])", text):
+            # A meridiem printed right after the time has to AGREE with the
+            # 24-hour value the model claimed, or "04:30 AM" happily evidences a
+            # 4:30 PM happy hour. Noon is the one place 12 is already pm.
+            after = text[mt.end():mt.end() + 6]
+            mer = re.match(r"\s*([ap])\.?m?\.?\b", after)
+            if mer and (mer.group(1) == "p") != want_pm and not (h == 12 and want_pm):
+                continue
+            return True
+    return False
+
+
+def clock_near(quote, start, end, source):
+    """The stretch of document beside this deal that spells both of its times.
+
+    Returns the span, or None. A calendar page prints the deal on one line and
+    "04:30 PM - 06:30 PM" on the next; a menu prints the heading, the hours and
+    then the list. Either way the hours are within a couple of lines, and a
+    window that wide cannot reach the opening-hours block at the top of the page.
+    """
+    if not (re.fullmatch(r"\d{1,2}:\d{2}", start or "")
+            and re.fullmatch(r"\d{1,2}:\d{2}", end or "")):
+        return None
+    hay = ed.norm(clean(source))
+    needle = ed.norm(clean(quote))
+    at = hay.find(needle)
+    while at >= 0:
+        lo = max(0, at - ADJACENT)
+        hi = min(len(hay), at + len(needle) + ADJACENT)
+        window = hay[lo:hi]
+        if clock_in(start, window) and clock_in(end, window):
+            return window
+        at = hay.find(needle, at + 1)
+    return None
+
+
+def day_header(quote, source):
+    """(span, days) for the nearest weekday named BEFORE this deal, or (None, set()).
+
+    A specials CALENDAR states the day once, as the header over the entry:
+
+        Tuesday September 1st
+        BYOW Tuesdays | ...                       04:30 PM - 09:00 PM
+        Happy Hour (Bars and High Tops ONLY!) ... 04:30 PM - 06:30 PM
+        Wednesday September 2nd
+
+    The happy-hour line therefore names no day at all, and requiring the day
+    inside the quote refused The Copper Crow's real weekday happy hour five
+    times over -- once per day it runs. Bridget's Steakhouse in Ambler is the
+    same layout, so this is a page CLASS, not a venue.
+
+    Backwards only, and the NEAREST one, because that is how a calendar reads:
+    an entry belongs to the header above it, never the one below. A symmetric
+    window would straddle the next day's header and could hand a Tuesday deal
+    Wednesday's name.
+    """
+    hay = ed.norm(clean(source))
+    needle = ed.norm(clean(quote))
+    at = hay.find(needle)
+    if at < 0:
+        return None, set()
+    before = hay[max(0, at - CALENDAR_LOOKBACK):at]
+    last, days = None, set()
+    for mt in re.finditer(ed.SINGLE_RE, before):
+        here = ed.days_in(mt.group(0))
+        if here:
+            last, days = mt.group(0), here
+    if not last:
+        return None, set()
+    return before[before.rfind(last):][:80].strip() or last, days
+
+
+
+def repeats(heading, source):
+    """How many times this heading appears in the document.
+
+    A DATE IN THE QUOTE MEANS ONE-OFF ONLY IF THE DEAL HAPPENS ONCE. The Copper
+    Crow publishes its standing happy hour on a specials CALENDAR: the same
+    "Happy Hour (Bars and High Tops ONLY!)" under Tuesday September 1st,
+    Wednesday September 2nd, and so on, each with its own prices and its own
+    4:30-6:30 clock line. ONE_OFF_RE saw a date and refused all five, and a real
+    weekday happy hour with five priced items was lost -- as it was for
+    Bridget's Steakhouse in Ambler, the same page format.
+
+    A party is announced once. A standing deal on a calendar is printed on every
+    date it runs, so the venue's own heading repeating across the document is
+    the evidence, and it is counted here rather than claimed by the model.
+    """
+    hay, needle = ed.norm(clean(source)), ed.norm(clean(heading))
+    if len(needle) < 6:
+        return 0
+    return hay.count(needle)
+
+
+def adjacent(quote, clock_quote, source):
+    """Do these two spans sit within ADJACENT chars of each other in the source?
+
+    Measured on the normalised text, because that is the form both spans were
+    matched in, and against every occurrence of the deal quote: a calendar
+    repeats one happy hour under seven dates, and only one of them is beside
+    the clock line the model picked.
+    """
+    hay = ed.norm(clean(source))
+    needle, clk = ed.norm(clean(quote)), ed.norm(clean(clock_quote))
+    at_clk = hay.find(clk)
+    if at_clk < 0:
+        return False
+    start = 0
+    while True:
+        at = hay.find(needle, start)
+        if at < 0:
+            return False
+        # Either order: the clock line may sit above the deal or below it.
+        if at <= at_clk:
+            if at_clk - (at + len(needle)) <= ADJACENT:
+                return True
+        elif at - (at_clk + len(clk)) <= ADJACENT:
+            return True
+        start = at + 1
 
 
 def days_in(quote):
@@ -299,13 +432,20 @@ def vet(row, source, url):
         return None, "quote is not in the document"
     if ed.HEDGE_RE.search(quote):
         return None, "quote hedges ('check with us', 'see our socials')"
-    if ed.ONE_OFF_RE.search(quote):
+    if ed.ONE_OFF_RE.search(quote) and repeats(heading, source) < CALENDAR_MIN:
         return None, "quote names a DATE -- a party, not a standing deal"
-    if ed.MEAL_RE.search(quote) and kind == "happy_hour":
-        return None, "quote is a meal service (lunch, brunch, dinner)"
+    # The MEAL guard belongs on the venue's own HEADING, which is checked above.
+    # On the quote it is a trap: a calendar's day-block puts the happy hour and
+    # the lunch deal in the same few lines, so a quote that correctly spans the
+    # happy hour picks up the word "lunch" from its neighbour and the venue's
+    # real happy hour is refused as a lunch service. The venue's own word for
+    # the thing wins -- so this only bites when the heading does NOT say it is
+    # a happy hour.
+    if ed.MEAL_RE.search(quote) and kind == "happy_hour"             and not ed.HH_RE.search(heading):
+        return None, "quote is a meal service and the heading does not say happy hour"
 
     start, end = row.get("start"), row.get("end")
-    clock_src, clock_quote = quote, None
+    clock_src, clock_quote, day_quote = quote, None, None
     if not (clock_in(start, quote) and clock_in(end, quote)):
         # A DAILY SPECIAL ROUTINELY STATES NO TIME. Sly Fox's card was short
         # because of exactly this: "Wednesday: $9 Select Growlers" carries a day
@@ -319,9 +459,36 @@ def vet(row, source, url):
         # hour that does not state its own hours is not one we can publish, and
         # a 9-hour "happy hour" is the venue's opening hours by any other name.
         cq = in_source((row.get("clock_quote") or "")[:QUOTE_CAP], source)
-        if kind == "happy_hour" or not cq or not (clock_in(start, cq)
-                                                  and clock_in(end, cq)):
+        if not cq or not (clock_in(start, cq) and clock_in(end, cq)):
+            # The model was ASKED for the clock line and routinely does not send
+            # one, so the program goes and finds it: the text immediately around
+            # this deal, in the document, that spells both times. That is a
+            # stronger grounding than the model's own span, not a weaker one --
+            # code located it and code checked it, and it cannot be a line the
+            # model invented. If nothing beside the deal states the hours, the
+            # deal is refused exactly as before.
+            cq = clock_near(quote, start, end, source)
+        if not cq:
             return None, f"clock {start}-{end} is not spelled in the quote"
+        # A HAPPY HOUR MAY USE THE SECOND SPAN ONLY IF IT IS RIGHT BESIDE IT.
+        #
+        # An events-calendar page states the deal on one line and its clock on
+        # the next: The Copper Crow's specials page reads "Happy Hour (Bars and
+        # High Tops ONLY!) - $5 per birria taco ..." and then, as its own line,
+        # "04:30 PM - 06:30 PM". The venue IS stating its happy hour's hours; it
+        # is a two-line layout, and refusing it lost a real 4:30-6:30 happy hour
+        # with five priced items on every weekday. Bridget's Steakhouse in
+        # Ambler is the same page format, so this is a class, not a venue.
+        #
+        # Proximity is what makes the span belong to THIS deal. Without it a
+        # happy hour would borrow the opening hours from the top of the page,
+        # which is the exact confusion the over-4h rule below exists to catch.
+        # A daily special has no such neighbour -- "Wednesday: $9 Select
+        # Growlers" is nowhere near the pub's hours block -- so it still reads
+        # anywhere in the document.
+        if kind == "happy_hour" and not adjacent(quote, cq, source):
+            return None, (f"clock {start}-{end} is not in the quote, and the span "
+                          f"that has it is not beside it")
         clock_src, clock_quote = cq, cq
 
     days = [d for d in (row.get("days") or []) if isinstance(d, int) and 1 <= d <= 7]
@@ -336,7 +503,16 @@ def vet(row, source, url):
         spread = ed.EVERYDAY_RE.search(quote) or ed.WEEKDAY_RE.search(quote) \
             or ed.WEEKEND_RE.search(quote)
         if missing and not said and not spread:
-            return None, f"days {days} are not named in the quote"
+            # On a calendar page the day is the header ABOVE the entry, so the
+            # program goes and reads it rather than refusing the deal. Gated on
+            # the heading repeating, which is what makes a page a calendar: an
+            # ordinary page has no header to borrow and is refused as before.
+            span, header_days = (None, set())
+            if repeats(heading, source) >= CALENDAR_MIN:
+                span, header_days = day_header(quote, source)
+            if not header_days or set(days) - header_days:
+                return None, f"days {days} are not named in the quote"
+            day_quote = span
     else:
         # A clock and no day at all is every day -- the rule extract_deals
         # settled and wrote down, applied here unchanged.
@@ -375,6 +551,8 @@ def vet(row, source, url):
     }
     if clock_quote:
         deal["source"]["clock_quote"] = clock_quote
+    if day_quote:
+        deal["source"]["day_quote"] = day_quote
     errs = validate_deal(deal)
     if errs:
         return None, errs[0]

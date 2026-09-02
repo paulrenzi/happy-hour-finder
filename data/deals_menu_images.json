@@ -63,6 +63,83 @@
    "price_usd": 5.0
   }
  ],
+ "buona-v-horsham": [
+  {
+   "category": "cocktail",
+   "label": "Aperol Spritz - Prosecco, Aperol, club soda",
+   "price_usd": 8.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Mint Mule - Vodka, Ginger beer, Lime juice",
+   "price_usd": 8.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Bellini - Prosecco, peach syrup",
+   "price_usd": 8.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Cosmo - Vodka, cranberry juice, triple sec, lemon juice",
+   "price_usd": 8.0
+  },
+  {
+   "category": "draft",
+   "label": "Draft Beer - Imported & Microbrews",
+   "price_usd": 5.0
+  },
+  {
+   "category": "draft",
+   "label": "Draft Domestic - Yuengling & Miller Lite",
+   "price_usd": 4.0
+  },
+  {
+   "category": "wine",
+   "label": "Rose",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Ricotta Crostini",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Clams Casino",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Caprese",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Buona Via Mussels",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Margherita Flatbread",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Rustica Flatbread",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Italian Meatballs",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Cheese Steak Rolls",
+   "price_usd": 7.0
+  }
+ ],
  "hilltown-tavern-fairmount-philadelphia": [
   {
    "category": "food",
@@ -376,9 +453,19 @@
  ],
  "palz-tap-house-huntingdon-valley": [
   {
+   "category": "call",
+   "label": "Ketel Mixed Drinks (single pour)",
+   "price_usd": 5.0
+  },
+  {
    "category": "wine",
    "label": "House Wines",
    "price_usd": 7.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Specialty Martinis",
+   "price_usd": 10.0
   },
   {
    "category": "cocktail",
@@ -391,19 +478,14 @@
    "price_usd": 2.5
   },
   {
-   "category": "call",
-   "label": "Ketel Mixed Drinks (single pour)",
-   "price_usd": 5.0
-  },
-  {
-   "category": "cocktail",
-   "label": "Specialty Martinis",
-   "price_usd": 10.0
-  },
-  {
    "category": "bottle_can",
    "label": "Premium Bottles",
    "price_usd": 4.0
+  },
+  {
+   "category": "call",
+   "label": "Ketel Mixed Drinks",
+   "price_usd": 5.0
   },
   {
    "category": "draft",

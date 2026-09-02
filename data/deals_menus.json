@@ -3,6 +3,229 @@
  "as_of": "2026-09-02",
  "venues": [
   {
+   "address": "116 Welsh Rd Ste 116, Horsham PA 19044",
+   "deals": [
+    {
+     "confidence": "unconfirmed",
+     "items": [],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "clock_quote": "04:30 PM - 09:00 PM",
+      "heading": "BYOW Tuesdays",
+      "kind": "venue_site",
+      "quote": "BYOW Tuesdays | We’re waiving our corkage fee so you can enjoy your favorite bottle of wine while you #eatcrow every Tuesday night!",
+      "url": "http://coppercrowhorsham.com/horsham-the-copper-crow-happy-hours-specials"
+     },
+     "type": "daily_special",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 2,
+       "end": "21:00",
+       "start": "16:30"
+      }
+     ]
+    },
+    {
+     "confidence": "unconfirmed",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "Pick 2 for $25!",
+       "label": "two select dishes from a condensed lunch menu",
+       "price_usd": 25.0
+      }
+     ],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "clock_quote": "11:30 AM - 02:30 PM",
+      "heading": "Pick 2 for $25!",
+      "kind": "venue_site",
+      "quote": "Pick 2 for $25! Enjoy two select dishes from a condensed lunch menu for $25.",
+      "url": "http://coppercrowhorsham.com/horsham-the-copper-crow-happy-hours-specials"
+     },
+     "type": "food_combo",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "14:30",
+       "start": "11:30"
+      },
+      {
+       "dow": 2,
+       "end": "14:30",
+       "start": "11:30"
+      },
+      {
+       "dow": 3,
+       "end": "14:30",
+       "start": "11:30"
+      },
+      {
+       "dow": 4,
+       "end": "14:30",
+       "start": "11:30"
+      },
+      {
+       "dow": 5,
+       "end": "14:30",
+       "start": "11:30"
+      },
+      {
+       "dow": 6,
+       "end": "14:30",
+       "start": "11:30"
+      },
+      {
+       "dow": 7,
+       "end": "14:30",
+       "start": "11:30"
+      }
+     ]
+    },
+    {
+     "confidence": "unconfirmed",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "$5 per birria taco",
+       "label": "birria taco",
+       "price_usd": 5.0
+      },
+      {
+       "amount_off_usd": 5.0,
+       "category": "wine",
+       "evidence": "$5 off bottles of wine",
+       "label": "bottles of wine"
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$5 Kiki mixed drinks",
+       "label": "Kiki mixed drinks",
+       "price_usd": 5.0
+      },
+      {
+       "category": "draft",
+       "evidence": "$5 select draft beers",
+       "label": "select draft beers",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "evidence": "$7 glass of house red or white wine",
+       "label": "glass of house red or white wine",
+       "price_usd": 7.0
+      },
+      {
+       "amount_off_usd": 5.0,
+       "category": "food",
+       "evidence": "$5 off all pizzas",
+       "label": "all pizzas"
+      },
+      {
+       "amount_off_usd": 5.0,
+       "category": "food",
+       "evidence": "$5 off all small plates",
+       "label": "all small plates"
+      },
+      {
+       "amount_off_usd": 5.0,
+       "category": "food",
+       "evidence": "$5 off all burgers",
+       "label": "all burgers"
+      }
+     ],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "clock_quote": "04:30 PM - 06:30 PM",
+      "heading": "Happy Hour (Bars and High Tops ONLY!)",
+      "kind": "venue_site",
+      "quote": "Happy Hour (Bars and High Tops ONLY!) • $5 per birria taco | $5 off bottles of wine | $5 Kiki mixed drinks (Martinis $2 additional charge) | $5 select draft beers | $7 glass of house red or white wine",
+      "url": "http://coppercrowhorsham.com/horsham-the-copper-crow-happy-hours-specials"
+     },
+     "type": "happy_hour",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:30",
+       "start": "16:30"
+      },
+      {
+       "dow": 2,
+       "end": "18:30",
+       "start": "16:30"
+      },
+      {
+       "dow": 3,
+       "end": "18:30",
+       "start": "16:30"
+      },
+      {
+       "dow": 4,
+       "end": "18:30",
+       "start": "16:30"
+      },
+      {
+       "dow": 5,
+       "end": "18:30",
+       "start": "16:30"
+      },
+      {
+       "dow": 6,
+       "end": "18:30",
+       "start": "16:30"
+      },
+      {
+       "dow": 7,
+       "end": "18:30",
+       "start": "16:30"
+      }
+     ]
+    }
+   ],
+   "id": "copper-crow-horsham",
+   "license_type": "Restaurant (Liquor)",
+   "lid": "101437",
+   "name": "Copper Crow",
+   "plcb_name": "COPPER CROW",
+   "website": "http://coppercrowhorsham.com/",
+   "zone_id": "willow_grove_horsham"
+  },
+  {
+   "address": "1138-42 Easton Rd, Horsham PA 19044",
+   "deals": [
+    {
+     "confidence": "unconfirmed",
+     "items": [],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Enjoy an extra hour of Happy Hour on Fridays 3PM-6PM",
+      "url": "https://www.doublevisionsgogo.com/"
+     },
+     "type": "happy_hour",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "15:00"
+      }
+     ]
+    }
+   ],
+   "id": "double-visions-horsham",
+   "license_type": "Restaurant (Liquor)",
+   "lid": "10518",
+   "name": "Double Visions",
+   "plcb_name": "DOUBLE VISIONS",
+   "website": "https://www.doublevisionsgogo.com/",
+   "zone_id": "willow_grove_horsham"
+  },
+  {
    "address": "240 Windgate Dr, Chester Springs PA 19425",
    "deals": [
     {
@@ -366,6 +589,426 @@
    "plcb_name": "WELL CRAFTED BEER COMPANY LLC",
    "website": "https://www.wellcraftedbeer.com/",
    "zone_id": "ambler_upper_dublin"
+  },
+  {
+   "address": "720 Blair Mill Rd, Horsham PA 19044",
+   "deals": [
+    {
+     "confidence": "unconfirmed",
+     "items": [],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "clock_quote": "Monday 11:00 AM - 9:30 PM",
+      "heading": "Kids Eat Free Mondays",
+      "kind": "venue_site",
+      "quote": "Kids Eat Free Mondays / Tuesday Tails / Walkabout Wednesdays / $5 Bevvy Thursdays",
+      "url": "https://locations.outback.com/pennsylvania/horsham/724-blair-mill-road?y_source=1_NjM5MTUxMTUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D"
+     },
+     "type": "daily_special",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "21:30",
+       "start": "11:00"
+      },
+      {
+       "dow": 2,
+       "end": "21:30",
+       "start": "11:00"
+      },
+      {
+       "dow": 3,
+       "end": "21:30",
+       "start": "11:00"
+      },
+      {
+       "dow": 4,
+       "end": "21:30",
+       "start": "11:00"
+      }
+     ]
+    }
+   ],
+   "id": "outback-steakhouse-horsham",
+   "license_type": "Restaurant (Liquor)",
+   "lid": "113135",
+   "name": "Outback Steakhouse",
+   "plcb_name": "OUTBACK STEAKHOUSE",
+   "website": "https://locations.outback.com/pennsylvania/horsham/724-blair-mill-road?y_source=1_NjM5MTUxMTUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "zone_id": "willow_grove_horsham"
+  },
+  {
+   "address": "426 Horsham Rd, Horsham PA 19044",
+   "deals": [
+    {
+     "confidence": "unconfirmed",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "DRAFT BEER 5",
+       "label": "DRAFT BEER",
+       "price_usd": 5.0
+      },
+      {
+       "category": "draft",
+       "evidence": "DRAFT DOMESTIC 4",
+       "label": "DRAFT DOMESTIC",
+       "price_usd": 4.0
+      },
+      {
+       "category": "wine",
+       "evidence": "RED WINE BY THE GLASS 7",
+       "label": "RED WINE BY THE GLASS",
+       "price_usd": 7.0
+      },
+      {
+       "category": "wine",
+       "evidence": "WHITE WINE BY THE GLASS 7",
+       "label": "WHITE WINE BY THE GLASS",
+       "price_usd": 7.0
+      },
+      {
+       "category": "wine",
+       "evidence": "ROSE 7",
+       "label": "ROSE",
+       "price_usd": 7.0
+      }
+     ],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "heading": "Happy Hour Beer & Wine",
+      "kind": "venue_site",
+      "quote": "MONDAY - FRIDAY 3:30 - 6:30",
+      "url": "https://static.orderchop.site/wp-content/uploads/20250401170816/Happy-Hour-Menu-4-1-25_Page_2.jpg"
+     },
+     "type": "happy_hour",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:30",
+       "start": "15:30"
+      },
+      {
+       "dow": 2,
+       "end": "18:30",
+       "start": "15:30"
+      },
+      {
+       "dow": 3,
+       "end": "18:30",
+       "start": "15:30"
+      },
+      {
+       "dow": 4,
+       "end": "18:30",
+       "start": "15:30"
+      },
+      {
+       "dow": 5,
+       "end": "18:30",
+       "start": "15:30"
+      }
+     ]
+    },
+    {
+     "confidence": "unconfirmed",
+     "items": [],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "heading": "happy hour specials",
+      "kind": "venue_site",
+      "quote": "happy hour specials Monday-Friday, 4:00 pm-6:30 pm.",
+      "url": "http://www.buonavia.com/"
+     },
+     "type": "happy_hour",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:30",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:30",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:30",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:30",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:30",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "buona-v-horsham",
+   "license_type": "Restaurant (Liquor)",
+   "lid": "122326",
+   "name": "Buona V",
+   "plcb_name": "BUONA V LLC",
+   "website": "http://www.buonavia.com/",
+   "zone_id": "willow_grove_horsham"
+  },
+  {
+   "address": "117 S York Rd, Hatboro PA 19040",
+   "deals": [
+    {
+     "confidence": "unconfirmed",
+     "items": [],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "heading": "Happy Hours",
+      "kind": "venue_site",
+      "quote": "Happy hours are Monday to Friday from 4:00 pm - 6:00 pm for a dollar off on all beers and mixed drinks.",
+      "url": "http://toweystavern.com/"
+     },
+     "type": "happy_hour",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "towey-s-hatboro-tavern-hatboro",
+   "license_type": "Restaurant (Liquor)",
+   "lid": "12422",
+   "name": "Towey's Hatboro Tavern",
+   "plcb_name": "TOWEY'S HATBORO TAVERN INC.",
+   "website": "http://toweystavern.com/",
+   "zone_id": "willow_grove_horsham"
+  },
+  {
+   "address": "100 Welsh Rd Unit K, Horsham PA 19044",
+   "deals": [
+    {
+     "confidence": "unconfirmed",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "$5 Bites",
+       "label": "The Slider Stack",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "evidence": "$5 Bites",
+       "label": "Kickin' Chicken Flatbread",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "evidence": "$5 Bites",
+       "label": "Spinach & Artichoke al Forno",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "evidence": "$5 Bites",
+       "label": "Hot & Stuffed",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "evidence": "$5 Bites",
+       "label": "Coal Heat Cauli",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "$5 Sips",
+       "label": "michelob ultra",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "$5 Sips",
+       "label": "Bud Light",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "$5 Sips",
+       "label": "Heineken",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "$5 Sips",
+       "label": "budweiser",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "$5 Sips",
+       "label": "Coors Light",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "$5 Sips",
+       "label": "Modelo Especial",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "$5 Sips",
+       "label": "Miller Lite",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "$5 Sips",
+       "label": "Corona",
+       "price_usd": 5.0
+      },
+      {
+       "category": "call",
+       "evidence": "$5 Sips",
+       "label": "Tito's Handmade",
+       "price_usd": 5.0
+      },
+      {
+       "category": "call",
+       "evidence": "$5 Sips",
+       "label": "Aviation American",
+       "price_usd": 5.0
+      },
+      {
+       "category": "call",
+       "evidence": "$5 Sips",
+       "label": "Jack Daniel's",
+       "price_usd": 5.0
+      },
+      {
+       "category": "call",
+       "evidence": "$5 Sips",
+       "label": "Bacardi",
+       "price_usd": 5.0
+      },
+      {
+       "category": "call",
+       "evidence": "$5 Sips",
+       "label": "Hornitos®",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "evidence": "$5 Sips",
+       "label": "Pinot Grigio",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "evidence": "$5 Sips",
+       "label": "Cabernet Sauvignon",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "evidence": "$5 Sips",
+       "label": "Red Sangria",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "evidence": "$5 Sips",
+       "label": "Sauvignon Blanc",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "evidence": "$5 Sips",
+       "label": "Pinot Noir",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "evidence": "$5 Sips",
+       "label": "White Sangria",
+       "price_usd": 5.0
+      }
+     ],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "heading": "$5 Social Coal Fired Happy Hour",
+      "kind": "venue_site",
+      "quote": "MON - FRI • 3-6 PM • Dine-In Only",
+      "url": "https://acfp.com/happy-hour/"
+     },
+     "type": "happy_hour",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "15:00"
+      }
+     ]
+    }
+   ],
+   "id": "anthony-s-coal-fired-pizza-horsham",
+   "license_type": "Restaurant (Liquor)",
+   "lid": "131341",
+   "name": "Anthony's Coal Fired Pizza",
+   "plcb_name": "FLORIDA COAL FIRED PIZZA LLC",
+   "website": "https://acfp.com/locations/horsham/",
+   "zone_id": "willow_grove_horsham"
   },
   {
    "address": "520 Kimberton Rd, Phoenixville PA 19460",
@@ -748,6 +1391,95 @@
    "zone_id": "phoenixville"
   },
   {
+   "address": "2300 Easton Rd, Willow Grove PA 19090",
+   "deals": [
+    {
+     "confidence": "unconfirmed",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "$3 Select Domestic Drafts",
+       "label": "Select Domestic Drafts",
+       "price_usd": 3.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "$4 Select Seltzers & Marg",
+       "label": "Select Seltzers",
+       "price_usd": 4.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$4 Select Seltzers & Marg",
+       "label": "Marg",
+       "price_usd": 4.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$5 Select Cocktails & Wine",
+       "label": "Select Cocktails",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "evidence": "$5 Select Cocktails & Wine",
+       "label": "Wine",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$6 Select Premium Cocktails",
+       "label": "Select Premium Cocktails",
+       "price_usd": 6.0
+      }
+     ],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "heading": "New Happiest Hours",
+      "kind": "venue_site",
+      "quote": "Mon - Thurs 3:00 PM - 6:00 PM / Fri 3:00 PM - 5:00 PM",
+      "url": "https://millersalehouse.com/locations/willow-grove/"
+     },
+     "type": "happy_hour",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 5,
+       "end": "17:00",
+       "start": "15:00"
+      }
+     ]
+    }
+   ],
+   "id": "miller-s-ale-house-willow-grove",
+   "license_type": "Restaurant (Liquor)",
+   "lid": "65850",
+   "name": "Miller's Ale House",
+   "plcb_name": "MILLER'S WILLOW GROVE ALE HOUSE",
+   "website": "https://millersalehouse.com/locations/willow-grove/",
+   "zone_id": "willow_grove_horsham"
+  },
+  {
    "address": "1130 Valley Forge Rd, Phoenixville PA 19460",
    "deals": [
     {
@@ -835,6 +1567,236 @@
    "plcb_name": "VALLEY FORGE PIZZA",
    "website": "https://www.valleyforgepizza.com",
    "zone_id": "phoenixville"
+  },
+  {
+   "address": "1902 County Line Rd, Huntingdon Valley PA 19006",
+   "deals": [
+    {
+     "confidence": "unconfirmed",
+     "items": [
+      {
+       "category": "wine",
+       "evidence": "HOUSE WINES / 7",
+       "label": "HOUSE WINES",
+       "price_usd": 7.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "SPECIALTY MARTINIS / 10",
+       "label": "SPECIALTY MARTINIS",
+       "price_usd": 10.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "SURFSIDES & STATESIDES / 6",
+       "label": "SURFSIDES & STATESIDES",
+       "price_usd": 6.0
+      },
+      {
+       "amount_off_usd": 2.0,
+       "category": "cocktail",
+       "evidence": "MONTHLY COCKTAILS / 2 OFF",
+       "label": "MONTHLY COCKTAILS"
+      },
+      {
+       "category": "draft",
+       "evidence": "DOMESTIC DRAFTS / 2.5",
+       "label": "DOMESTIC DRAFTS",
+       "price_usd": 2.5
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "PREMIUM BOTTLES / 4",
+       "label": "PREMIUM BOTTLES",
+       "price_usd": 4.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "KETEL MIXED DRINKS / 5",
+       "label": "KETEL MIXED DRINKS",
+       "price_usd": 5.0
+      },
+      {
+       "category": "draft",
+       "evidence": "LOCAL CRAFT DRAFTS / 5",
+       "label": "LOCAL CRAFT DRAFTS",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "evidence": "SMALL PIZZA / 7",
+       "label": "SMALL PIZZA",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "evidence": "MUSSELS / 6",
+       "label": "MUSSELS",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "evidence": "CLAMS / 6",
+       "label": "CLAMS",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "evidence": "(3) PRETZEL RODS / 5",
+       "label": "(3) PRETZEL RODS",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "evidence": "CHICKEN FINGERS & FRIES / 6",
+       "label": "CHICKEN FINGERS & FRIES",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "evidence": "CHEESESTEAK EGGROLLS / 6",
+       "label": "CHEESESTEAK EGGROLLS",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "evidence": "BUFFALO EGGROLLS / 6",
+       "label": "BUFFALO EGGROLLS",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "evidence": "FOOTBALL FRIES / 6",
+       "label": "FOOTBALL FRIES",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "evidence": "CHICKEN NACHOS / 8",
+       "label": "CHICKEN NACHOS",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "evidence": "FRIED CHEESE / 7",
+       "label": "FRIED CHEESE",
+       "price_usd": 7.0
+      }
+     ],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "heading": "HAPPY HOUR",
+      "kind": "venue_site",
+      "quote": "MONDAY-FRIDAY 4-6PM / FRIDAY & SATURDAY 10-MIDNIGHT",
+      "url": "https://le-cdn.website-editor.net/s/80e1cb790a7e44b0b253106cea2b7778/dms3rep/multi/opt/new+happy+hour-1920w.png?Expires=1790514370&Signature=V4hVWlIjf4l6QChkNtnjKEsWSLs662W8d5X6zvcQ~1SCHCOMPPaT8u8hyBmFjjeV5Ml9IpH5eYK7vqCa01mKWVPXUWbkiRo85vL4PP6SSadnvmta4t3qnAwOLo3~16vanDwJZDgECUWfFvS4WKJVFC5YBfSDIddH9O2ImmxTkIGc0gR1HigW2dtq-lIPYlGHb~BkQPr~k3CDvE6RdK2am4C~cBMtkNaTWAO5L1q9-aEvvJT~7zUB5nP52NoZ~eoWIlm~beTmVd2kBMN8-W9d245~3~44z4v-9lwZrySTlF~kDAHlJnoWhV48nJatF0nNfB~Vbd1e7VmYBxoXii0eZQ__&Key-Pair-Id=K2NXBXLF010TJW"
+     },
+     "type": "happy_hour",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "24:00",
+       "start": "22:00"
+      },
+      {
+       "dow": 6,
+       "end": "24:00",
+       "start": "22:00"
+      }
+     ]
+    }
+   ],
+   "id": "palz-tap-house-huntingdon-valley",
+   "license_type": "Restaurant (Liquor)",
+   "lid": "68012",
+   "name": "Palz Tap House",
+   "plcb_name": "PALZ TAP HOUSE",
+   "website": "https://www.palztaphouse.net/",
+   "zone_id": "willow_grove_horsham"
+  },
+  {
+   "address": "13 E Montgomery Ave Ste 2 , Hatboro PA 19040",
+   "deals": [
+    {
+     "confidence": "unconfirmed",
+     "items": [
+      {
+       "amount_off_usd": 1.0,
+       "category": "draft",
+       "evidence": "$1 off pints from 4-6pm",
+       "label": "pints"
+      }
+     ],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Fri 4-11PM\nHappy Hour $1 off pints from 4-6pm",
+      "url": "https://crookedeyebrewery.com/events"
+     },
+     "type": "happy_hour",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    },
+    {
+     "confidence": "unconfirmed",
+     "items": [],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "heading": "Thirsty Thursday!",
+      "kind": "venue_site",
+      "quote": "Every Thursday\nThirsty Thursday! Happy Hour 5 to 7.",
+      "url": "https://crookedeyebrewery.com/events"
+     },
+     "type": "happy_hour",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 4,
+       "end": "19:00",
+       "start": "17:00"
+      }
+     ]
+    }
+   ],
+   "id": "crooked-eye-brewery-hatboro",
+   "license_type": "Brewery",
+   "lid": "69140",
+   "name": "Crooked Eye Brewery",
+   "plcb_name": "CROOKED EYE BREWERY LLC",
+   "website": "https://crookedeyebrewery.com/",
+   "zone_id": "willow_grove_horsham"
   },
   {
    "address": "182-184 E Bridge St, Phoenixville PA 19460",
@@ -1233,6 +2195,95 @@
    "plcb_name": "SEDONA TAPHOUSE",
    "website": "https://sedonataphouse.com/",
    "zone_id": "phoenixville"
+  },
+  {
+   "address": "101 Easton Rd, Suite 300, Horsham PA 19044",
+   "deals": [
+    {
+     "confidence": "unconfirmed",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "$3 Domestic Drafts",
+       "label": "Domestic Drafts",
+       "price_usd": 3.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "$4 Corona & Corona Light",
+       "label": "Corona & Corona Light",
+       "price_usd": 4.0
+      },
+      {
+       "category": "wine",
+       "evidence": "$6 House Wine",
+       "label": "House Wine",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$6 Krushes",
+       "label": "Krushes",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "evidence": "$5 Boneless Wings (Snack Size)",
+       "label": "Boneless Wings (Snack Size)",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "evidence": "$10 Boneless Wings (Share Size)",
+       "label": "Boneless Wings (Share Size)",
+       "price_usd": 10.0
+      }
+     ],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "heading": "MON - FRI 4PM - 6PM",
+      "kind": "venue_site",
+      "quote": "MON - FRI 4PM - 6PM",
+      "url": "https://pjspub.com/specials"
+     },
+     "type": "happy_hour",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "pjw-horsham-suite-300-horsham",
+   "license_type": "Restaurant (Liquor)",
+   "lid": "96478",
+   "name": "Pjw Horsham",
+   "plcb_name": "PJW HORSHAM LLC",
+   "website": "https://locations.pjspub.com/pa/horsham/101-easton-rd",
+   "zone_id": "willow_grove_horsham"
   },
   {
    "address": "226 Bridge St, Phoenixville PA 19460",

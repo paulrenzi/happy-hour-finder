@@ -604,7 +604,7 @@ def items_in(text):
         # The sentence carries on past the thing being discounted -- '$5 off our
         # Lounge Menu and Signature Cocktails during happy hour'. The card has
         # room for the noun, not the clause.
-        label = re.split(r"\s+/\s+|\s+during\s+|\s+all\s+day", m.group(2))[0]
+        label = re.split(r"\s+/\s+|\s+during\s+|\s+all\s+day\b", m.group(2))[0]
         label = re.sub(r"\s+(?:and|&|or)$", "", label.strip()).strip(" -'")
         cat = category_of(label)
         if cat and label.lower() not in seen:
