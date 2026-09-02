@@ -192,7 +192,10 @@ def code_days(text):
             return set()          # ambiguous: refuse the construction whole
         return set(got)
     return set()
-EVERYDAY_RE = re.compile(r"\b(?:daily|every ?day|all week|7 days a week|seven days)\b", re.I)
+# "EVERY. SINGLE. DAY." is Bonefish's own words for seven days a week, and
+# days_in() returned the empty set on it -- so the document we could not
+# reach would have been refused for naming no day even once we could.
+EVERYDAY_RE = re.compile(r"\b(?:daily|every ?day|every\W{0,3}single\W{0,3}day|all week|7 days a week|seven days)\b", re.I)
 WEEKDAY_RE = re.compile(r"\bweekdays?\b", re.I)
 WEEKEND_RE = re.compile(r"\bweekends?\b", re.I)
 

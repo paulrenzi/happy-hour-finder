@@ -1123,6 +1123,67 @@ def town_re(address):
     return re.compile(r"(?<![a-z])" + r"[\s_\-]*".join(words) + r"(?![a-z])", re.I)
 
 
+# How far above an <a> the venue's own word for it may sit. Not a tunable: the
+# menu CAROUSEL on a chain location page SHUFFLES its titles, so the text
+# immediately before a link is routinely another menu's name -- Bonefish's
+# social-hour PDF is preceded by "Catering Menu". What is reliable is that the
+# same document is ALSO linked from the promo block that announces it ("WHAT'S
+# BETTER THAN HAPPY HOUR? NEW SOCIAL HOUR!"), and that heading is ~400 chars up.
+# Every anchor for a URL is read and the evidence unioned, so one honest
+# occurrence is enough and a shuffled title cannot mislabel anything.
+LABEL_LOOKBACK = 400
+
+# What a page calls a document when the FILENAME cannot say it. Bonefish's menu
+# is 'BSH-1_0626.pdf' -- the chain's SKU for its own Social Hour -- so HH_DOC_RE
+# has nothing to match, and the location page linking it is not itself a
+# happy-hour page. Both halves of the queue rule were false, and the only
+# document stating that venue's happy hour sat one link off a page already on
+# disk.
+# The PHRASE, never a bare "hour": at 400 characters a lone word is ambient
+# text, and this decides whether to spend a request and publish what comes back.
+DOC_NEAR_HH_RE = re.compile(r"happy.?hour|social.?hour|power.?hour", re.I)
+
+DOC_HREF_RE = re.compile(r'<a\s[^>]*href=["\']([^"\'\s]*\.pdf(?:\?[^"\']*)?)["\']', re.I)
+
+
+def same_site(url, host, is_doc=False):
+    """Is this link the same SITE as the page it was found on?
+
+    The registrable domain, plus one deliberate widening for DOCUMENTS. A chain
+    serves its menus off a CDN host named after the brand --
+    'bonefishgrill-d8cba7f0a6b8gwd7.a02.azurefd.net' registers as azurefd.net --
+    so the only happy-hour menu Bonefish publishes was foreign by this test and
+    dropped. The brand's own label inside the CDN host is the same evidence a
+    sibling subdomain is.
+
+    Only a document may travel: an HTML page on a foreign host is somebody
+    else's page, and that is the test this widening must not weaken.
+    """
+    netloc = urllib.parse.urlsplit(url).netloc.lower()
+    if registrable(netloc) == host:
+        return True
+    if not is_doc:
+        return False
+    brand = host.split(".")[0]
+    return len(brand) >= 5 and brand in re.sub(r"[^a-z0-9]", "", netloc)
+
+
+def hh_named_docs(html, page_url):
+    """PDF links whose PAGE calls them an hour, when the filename cannot.
+
+    The venue's word for the link is markup above the anchor: Bonefish wraps the
+    <a> round a card image whose only text is "Let's Go!", while the title
+    "Social Hour Menu" sits in the div before it. Read for .pdf links only, and
+    only to decide whether one document is worth one request.
+    """
+    out = set()
+    for m in DOC_HREF_RE.finditer(html):
+        near = MARKUP_RE.sub(" ", html[max(0, m.start() - LABEL_LOOKBACK):m.start()])
+        if DOC_NEAR_HH_RE.search(near):
+            out.add(urllib.parse.urljoin(page_url, m.group(1)).split("#")[0])
+    return out
+
+
 def candidate_links(html, page_url, town=None):
     """Links whose text or href suggests a menu or specials page.
 
@@ -1146,12 +1207,22 @@ def candidate_links(html, page_url, town=None):
     for m in re.finditer(r'<a\s[^>]*href=["\']([^"\']+)["\'][^>]*>(.{0,400}?)</a>',
                          html, re.I | re.S):
         href, label = m.group(1), MARKUP_RE.sub(" ", m.group(2))
+        full = urllib.parse.urljoin(page_url, href).split("#")[0]
+        is_doc = bool(re.search(r"\.pdf($|\?)", full, re.I))
+        # A card titles its link ABOVE the <a>. Bonefish's anchor wraps an image
+        # whose only words are "Let's Go!", with "Social Hour Menu" in the div
+        # before it -- so the one word identifying the document sat outside the
+        # window this loop read. For DOCUMENTS only: a page's ambient text would
+        # make every link on a location page look like the venue's own.
+        near = (MARKUP_RE.sub(
+            " ", html[max(0, m.start() - LABEL_LOOKBACK):m.start()])
+            if is_doc else "")
         ours = bool(town and (town.search(urllib.parse.unquote(href))
                               or town.search(label)))
-        if not ours and not LINK_WORDS.search(href) and not LINK_WORDS.search(label):
+        if not (ours or LINK_WORDS.search(href) or LINK_WORDS.search(label)
+                or (near and LINK_WORDS.search(near))):
             continue
-        full = urllib.parse.urljoin(page_url, href).split("#")[0]
-        if registrable(urllib.parse.urlsplit(full).netloc) != host or full in seen:
+        if not same_site(full, host, is_doc) or full in seen:
             continue
         # .pdf is deliberately absent: a link labelled 'Happy Hour Menu' that
         # points at a PDF is the deal itself, and dropping it by extension threw
@@ -1161,7 +1232,8 @@ def candidate_links(html, page_url, town=None):
         seen.add(full)
         # A link that says 'happy hour' outranks one that merely says 'menu'.
         found.append((0 if (ours or url_names_hh(full, 2)
-                             or re.search(r"happy.?hour|hour(?!s)|special", label, re.I))
+                             or re.search(r"happy.?hour|hour(?!s)|special", label, re.I)
+                             or (near and DOC_NEAR_HH_RE.search(near)))
                        else 1, full))
     return [u for _, u in sorted(found)]
 
@@ -2151,10 +2223,12 @@ def crawl_one(session, venue, robots):
         queued = {u for u, _ in queue}
         on_hh_page = url_names_hh(url, depth)
         town = town_re(venue.get("address"))
+        # ...and a document the PAGE calls an hour, when the filename is a SKU.
+        named = hh_named_docs(html, url)
         for u in candidate_links(html, url, town):
             if not re.search(r"\.pdf($|\?)", u, re.I) or u in queued:
                 continue
-            if on_hh_page or HH_DOC_RE.search(u):
+            if on_hh_page or HH_DOC_RE.search(u) or u in named:
                 queue.append((u, depth + 1))
 
         if fetched == 1 and depth == 1:

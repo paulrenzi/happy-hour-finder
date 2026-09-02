@@ -24,6 +24,8 @@ from build_bundles import (CACHE_LINE, collapse_name_collisions, decay,  # noqa:
                            norm_name, shell_digest, sw_cache_name)
 import build_bundles  # noqa: E402
 import crawl_sites  # noqa: E402
+import extract_deals  # noqa: E402
+import fetch_venue_photos  # noqa: E402
 import exclusions  # noqa: E402
 import report_holes  # noqa: E402
 import read_pages_llm  # noqa: E402
@@ -3341,6 +3343,119 @@ class OnePageFailingIsNotTheVenueGoingQuiet(unittest.TestCase):
         now = [{"url": "https://g.example/drinks", "result": "error: Timeout"}]
         self.assertEqual(crawl_sites.keep_failed_pages(now, {}), ([], []))
 
+
+
+class AChainsMenuLivesOnACdnHostUnderAnInternalName(unittest.TestCase):
+    """Bonefish Grill Willow Grove: 3:00-6:30PM every day, ~15 priced items,
+    published only as BSH-1_0626.pdf on bonefishgrill-<hash>.a02.azurefd.net.
+
+    We had already fetched the page that links it. Five gates each dropped it on
+    their own, and every gate reported success -- which is why the town read as
+    correctly empty. Each assertion below is one of them.
+    """
+
+    HTML = (
+        '<div class="Menus">'
+        '  <div class="Menus-item"><img alt="" itemprop="thumbnailUrl">'
+        '    Catering Menu'
+        '    <a class="Menus-menuItem" href="https://brandbar-9f2c1a.a02.azurefd.net'
+        '/menu/BSH-1_0626.pdf" target="_blank">Let&#39;s Go!</a></div>'
+        '  <div class="Menus-item"><img alt="" itemprop="thumbnailUrl">'
+        '    Social Hour Menu'
+        '    <a class="Menus-menuItem" href="https://brandbar-9f2c1a.a02.azurefd.net'
+        '/menu/BFGBrunchMenuT62.pdf">Let&#39;s Go!</a></div>'
+        '</div>'
+        '<div class="Event"><h2>WHAT&#39;S BETTER THAN HAPPY HOUR? NEW SOCIAL HOUR!'
+        ' EVERY. SINGLE. DAY.</h2>'
+        '<div class="Event-description">Enjoy delicious new menu items and'
+        ' irresistible hand-crafted cocktails starting at $7, available every'
+        ' single day.</div>'
+        '<a class="Event-cta" href="https://brandbar-9f2c1a.a02.azurefd.net'
+        '/menu/BSH-1_0626.pdf">Let&#39;s Go!</a></div>'
+    )
+    PAGE = "https://locations.brandbar.com/pennsylvania/willow-grove/1015-easton-road"
+    DOC = "https://brandbar-9f2c1a.a02.azurefd.net/menu/BSH-1_0626.pdf"
+
+    def test_a_document_on_the_brands_own_cdn_is_not_a_foreign_link(self):
+        # registrable() reads azurefd.net, not brandbar.com, so the only menu
+        # this venue publishes was dropped before anything looked at its words.
+        self.assertTrue(crawl_sites.same_site(self.DOC, "brandbar.com", is_doc=True))
+
+    def test_an_html_page_on_that_host_is_still_foreign(self):
+        # The widening is for documents only. A page on someone else's host is
+        # someone else's page, and that is the test this must not weaken.
+        self.assertFalse(crawl_sites.same_site(
+            "https://brandbar-9f2c1a.a02.azurefd.net/specials", "brandbar.com"))
+
+    def test_an_unrelated_cdn_is_still_foreign(self):
+        self.assertFalse(crawl_sites.same_site(
+            "https://cdn.squarespace.com/menu/hh.pdf", "brandbar.com", is_doc=True))
+
+    def test_the_link_survives_and_ranks_with_the_named_documents(self):
+        links = candidate_links(self.HTML, self.PAGE)
+        self.assertIn(self.DOC, links)
+        # Rank 0 is the group a page named an hour; it beats every ordinary
+        # link. On the live page this document is first outright.
+        self.assertLess(links.index(self.DOC), 2)
+
+    def test_the_page_names_the_document_even_though_the_filename_cannot(self):
+        # BSH is the chain's SKU for its own Social Hour, so HH_DOC_RE has
+        # nothing to match and the linking page is not a happy-hour page --
+        # both halves of the queue rule were false.
+        self.assertFalse(crawl_sites.HH_DOC_RE.search(self.DOC))
+        self.assertFalse(crawl_sites.url_names_hh(self.PAGE, 1))
+        self.assertIn(self.DOC, crawl_sites.hh_named_docs(self.HTML, self.PAGE))
+
+    def test_a_shuffled_carousel_can_name_the_wrong_document_too(self):
+        """The accepted cost, pinned so nobody discovers it as a surprise.
+
+        This fixture is the pathological case: "Social Hour Menu" sits directly
+        above the BRUNCH link, so the brunch menu is named as well. Nothing in
+        the markup distinguishes a shuffled carousel from a correct one, so the
+        choice is which way to be wrong -- and one wasted PDF fetch, bounded by
+        DOC_CAP, against losing the only document that states a venue's happy
+        hour is not a close call. A brunch menu naming no hour is then refused
+        by the reader, where a miss would have been silent.
+
+        What must always hold is that the RIGHT document is among them.
+        """
+        named = crawl_sites.hh_named_docs(self.HTML, self.PAGE)
+        self.assertIn(self.DOC, named)
+        self.assertLessEqual(len(named), crawl_sites.DOC_CAP)
+
+    def test_every_single_day_is_seven_days(self):
+        # The clock always parsed. The days did not, so even with the document
+        # in hand the deal would have been refused for naming no day.
+        line = "3:00PM - 6:30PM   |    EVERY. SINGLE. DAY."
+        self.assertEqual(extract_deals.window_in(line), ("15:00", "18:30"))
+        self.assertEqual(extract_deals.days_in(line), {1, 2, 3, 4, 5, 6, 7})
+
+
+class APossessiveIsNotADifferentBar(unittest.TestCase):
+    """Four of the nine photo refusals in Willow Grove were punctuation.
+
+    The name Google holds carries the apostrophe the sign over the door has;
+    the licensee typed it without. Splitting on the mark left 'richie' facing
+    'richies' with nothing in common, and the venue got no photo and no website.
+    """
+
+    @staticmethod
+    def agrees(ours, theirs):
+        return fetch_venue_photos.name_agrees(
+            {"name": ours, "plcb_name": ""}, {"displayName": {"text": theirs}})
+
+    def test_the_apostrophe_is_not_a_difference(self):
+        self.assertTrue(self.agrees("Richies Bar & Grill", "Richie's Bar & Grill"))
+        self.assertTrue(self.agrees("Magerks", "MaGerk's Pub & Grill"))
+
+    def test_the_spacing_is_not_a_difference(self):
+        self.assertTrue(self.agrees("Na Brasa", "NaBrasa Brazilian Steakhouse"))
+
+    def test_two_different_bars_are_still_two_bars(self):
+        # The guard exists because an apartment block shares a bar's address.
+        self.assertFalse(self.agrees("Amada", "Armada Cafe"))
+        self.assertFalse(self.agrees(
+            "Justop", "1720 Fairmount Luxury Apartments"))
 
 class ABareLabelIsNotAClaim(unittest.TestCase):
     """'Happy Hour' as a nav link must never claim the clock beside it."""

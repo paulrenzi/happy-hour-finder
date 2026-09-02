@@ -100,9 +100,30 @@ GENERIC = {
 }
 
 
+def _fold(word):
+    """'Richie's', 'Richies' and 'Richie' are one bar's name.
+
+    The apostrophe the sign over the door carries is the one a licensee drops,
+    and splitting on it left 'richie' facing 'richies' with nothing in common.
+    Punctuation goes before the split so the possessive rejoins its word, and a
+    trailing 's' comes off anything long enough that dropping it cannot collide
+    two real words. FOUR of the nine refusals in Willow Grove were this:
+    Richies/Richie's, Magerks/MaGerk's, Na Brasa/NaBrasa.
+    """
+    return word[:-1] if len(word) >= 7 and word.endswith("s") else word
+
+
+def _squash(text):
+    """The name with every space and mark taken out. 'NaBrasa' and 'Na Brasa'
+    are one name and no token test can see it -- one side has no token at all."""
+    return re.sub(r"[^a-z0-9]", "", (text or "").lower())
+
+
 def _tokens(text):
     out = set()
-    for word in re.split(r"[^a-z0-9]+", (text or "").lower()):
+    flat = re.sub(r"['’]", "", (text or "").lower())
+    for word in re.split(r"[^a-z0-9]+", flat):
+        word = _fold(word)
         if len(word) >= 4 and word not in GENERIC:
             out.add(word)
     return out
@@ -124,6 +145,11 @@ def name_agrees(venue, place):
     ours = _tokens(venue.get("name")) | _tokens(venue.get("plcb_name"))
     theirs = _tokens(place.get("displayName", {}).get("text"))
     if not ours or not theirs or ours & theirs:
+        return True
+    # Spacing is not a difference either.
+    mine_flat = _squash(venue.get("name"))
+    got_flat = _squash(place.get("displayName", {}).get("text"))
+    if len(mine_flat) >= 6 and mine_flat in got_flat:
         return True
     # "Sly Fox" is two three-letter words, so it has no token at all and the
     # licensee name (Chester County Brewing Company) shares none with what
