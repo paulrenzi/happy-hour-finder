@@ -1393,6 +1393,16 @@ anchor, `EVERY. SINGLE. DAY.` Each fix was correct and each recovered roughly on
 venue. **At one venue per fix this never finishes.** The next architectural move
 has to change the class, not the instance.
 
+🛑 **"Add a rendering crawler" is NOT the move -- it exists and West Chester
+used it.** `crawl_sites.py --render` launches WebKit; that run **rendered 14
+pages** and yield was still 20 of 46. The live question is whether
+`render_wanted()`'s gate is too narrow: it fires only under
+`RENDER_LINE_FLOOR = 40` lines, only at an hour-named URL or a quoteless
+venue's **seed** page, `RENDER_CAP = 40` per run. A homepage returning 60
+lines of real chrome that hides its menu behind JS **can never be rendered**.
+The floor is not arbitrary -- rendering a fully-read page measured **zero
+yield** on King of Prussia -- so moving it needs a measurement, not a guess.
+
 ### The yield that passes is thin, in six named classes
 
 `python ingest/report_holes.py` - of 231 published windows, **117 name no item at

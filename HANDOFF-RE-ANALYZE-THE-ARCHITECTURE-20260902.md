@@ -129,10 +129,23 @@ Do not open a town. Do not spend a dollar. Answer these, in order:
    **Pull ten of them by hand and look at what is on the page.**
    - If the deal is visibly there in the HTML we already fetched, the
      architecture is fine and the **selection logic** is broken.
-   - If the deal is behind JS, an API, an image, or a PDF, the **architecture is
-     wrong** and needs a rendering crawler, not more regex.
+   - If the deal is behind JS, an API, an image, or a PDF, the reach step is.
 
    **This one question decides whether the project continues.**
+
+   🛑 **Do NOT propose "add a rendering crawler" -- it already exists and this
+   run already used it.** `ingest/crawl_sites.py --render` launches WebKit, and
+   the West Chester run **rendered 14 pages**. Yield was still 20 of 46. So the
+   open question is not *whether* to render but **whether `render_wanted()`'s
+   gate is too narrow**: it fires only under `RENDER_LINE_FLOOR = 40` lines, only
+   at an hour-named URL or a quoteless venue's **seed** page, and caps at
+   `RENDER_CAP = 40` pages per run. A venue whose homepage returns 60 lines of
+   real chrome and hides its menu behind JS **can never be rendered**. That gate,
+   and the `no-price-published` audit below, are the two concrete leads.
+   The file's own comments record that this gate was **already once keyed on the
+   thing its failure destroys**, and that rendering a fully-read page measured
+   **zero yield** for King of Prussia -- so the floor exists for a reason and
+   moving it needs a measurement, not a guess.
 2. **Audit `no-price-published` properly.** The 24/36 note is from 2026-09-01 and
    was never acted on. If it holds, ~25 venues are one fix away.
 3. **Why does the hours-vs-happy-hour classifier reject 17 and keep 8?** Sample
