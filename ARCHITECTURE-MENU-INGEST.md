@@ -645,6 +645,111 @@ audubon_eagleville 3.
 🛑 **West Chester is deliberately untouched.** Paul sequenced it as a stand-alone
 job *after* the small towns are good, and they are not good yet.
 
+## 🔑 THE WHOLE FUNNEL, MEASURED END TO END (2026-09-02)
+
+Paul asked the only question that matters at this stage: *"if I name an area,
+what percentage of the web pages with happy hour listings do we pull in — are we
+at that point yet, or do we need more functionality?"* Everything below is
+**measured off the data on disk**, not estimated, because the previous answers to
+this question were estimates and two of them were wrong.
+
+### The corpus funnel
+
+| stage | all zones | King of Prussia (the most-worked zone) |
+|---|---|---|
+| PLCB licensees | 2,788 | 49 |
+| website on file **and crawled** | 848 | 49 |
+| at least one page fetched ok | 731 | 43 |
+| a page said "happy hour" | 361 | 22 |
+| **card on the board** | **216** | **19** |
+
+> 🔑 **Once a readable page mentions a happy hour, we convert 86% of it in KoP
+> (60% corpus-wide).** That half of the pipeline is genuinely solved, and the
+> window reader is why. **The gap is everything to the LEFT of that column.**
+
+### 🛑 Two claims I made from brand knowledge, and the pages refused both
+
+Both are struck. Read this before repeating either.
+
+1. ~~"About ten of KoP's 21 no-quote venues plainly run happy hours, so real
+   recall is nearer 65%."~~ **RETRACTED.** That was a claim about brands, not
+   about pages. When the pages were actually fetched, City Works, Davio's, True
+   Food Kitchen, Plaza Azteca and Maggiano's all **read fine** — 75 to 179
+   visible lines each. Their location pages simply do not say "happy hour". A
+   venue I am confident about is still a venue I have not read.
+2. ~~"The dominant cause is enumeration — `PAGE_CAP = 4` starves us of the
+   happy-hour page."~~ **RETRACTED.** Measured across a 30-venue sample of the
+   no-quote class: **zero** unvisited candidate links were happy-hour-named. The
+   ranking in `candidate_links()` already puts an hour-named link first and the
+   crawl already fetches it. The links we skip are `menu`, `events`, `about`.
+
+### 🛑 The instrumentation gap that forced a live probe — fix this first
+
+`crawl_hits.json` records a page result as `"ok, 0 quote(s)"`. **That one string
+means two completely different things:**
+
+- we read the page in full and it has no happy hour on it, **or**
+- the page was a JavaScript shell, we read *nothing*, and found no happy hour
+  for the same reason a blindfolded man finds no happy hour.
+
+**The record cannot tell them apart, because the line count is never stored.**
+That is why answering Paul's question needed 60 live fetches of pages we had
+already fetched. **One field — the visible line count — in each page result
+separates the largest hole class in the project without a single new fetch.**
+It is the cheapest thing on this list and it should go in before anything else.
+
+### The no-quote class, sized by sampling (30 of 390)
+
+| what it turned out to be | share | what it needs |
+|---|---|---|
+| genuinely read, no happy hour published anywhere we can reach | ~87% | mostly nothing — see the licence-class note |
+| a JavaScript shell we could not read at all (0–15 lines) | **~13%** | the render gate, widened |
+
+A large part of that 87% is **not a bar**. The sample contained Starbucks,
+Chipotle, Five Guys, Jamba, Saxbys, GIANT, a catering company and an expo
+centre. This is the standing trap restated: **a PLCB licence class is not the
+thing it names.** Some meaningful share of the 390 is *correctly* empty, and any
+recall percentage that treats all 390 as misses is overstating the hole.
+
+### 🔑 The render gate can never fire on the class that needs it
+
+`render_wanted()` requires `page_is_hh(url)` — the URL must name an hour — **and**
+a page under `RENDER_LINE_FLOOR`. But a shell homepage's URL does not name an
+hour, and a shell yields no links, so no hour-named URL is ever discovered for
+it. **The gate is keyed on the thing the failure destroys.** The ~13% shell
+class is therefore structurally unreachable today, and `--render` being on
+changes nothing for it: across all 390 no-quote venues, **zero** pages were ever
+rendered.
+
+The fix is one condition, not a redesign: a page that comes back under the line
+floor is a shell *whatever its URL says*, and the homepage of a venue with no
+quote is worth one render. `RENDER_CAP` already bounds the spend.
+
+### The smaller, named causes
+
+- **A cross-domain ordering host is dropped.** True Food Kitchen's menu lives at
+  `order.truefoodkitchen.com` — a different registrable domain, so
+  `candidate_links()` refuses it by the host test. That test was widened once
+  already for sibling hosts on the same domain; ordering platforms are the next
+  case, and they are the same shape as the Darden "menu is an API record" finding.
+- **The canonical guard is small but has a self-refusal.** Only 2 pages in the
+  entire corpus were refused by it, so it is not a coverage problem — but one of
+  the two is True Food's KoP page **refusing itself** (`canonical says
+  king-of-prussia, not us`). Worth one look, not a project.
+- **Fetch failures are 142 pages**, dominated by `robots.txt unreadable (403),
+  treated as disallow` (86) and `robots.txt disallows` (56). These stay refused.
+  Robots is obeyed here and the earlier override is retracted.
+
+### 🎯 So: are we at the point where naming an area is enough?
+
+**No, and the reason is not the scraper.** For a town that has had a discovery
+pass, the reading pipeline is in good shape. For a town that has not, we do not
+have the websites at all: North Philly has a website for **7 of 206** licensees,
+Center City for 134 of 574. **Website discovery, not extraction, is what decides
+what a newly-named town returns.** The first question about any town Paul names
+is whether it has had a discovery pass — `ingest/discover_sites.py` — and the
+funnel table above is how to answer it in one command.
+
 ---
 
 ## Standing rules
