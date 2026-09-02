@@ -62,6 +62,17 @@
       "outlet": "BUCKSCO.Today",
       "published": "2026-08-12",
       "quote": "Happy hour runs Monday through Friday from 4:30 to 6:30 PM and Sunday from 3 to 5 PM, with half-price drafts and discounted appetizers, though those deals apply to the bar area only.",
+      "quotes": [
+       "Located at 80 W State Street right in the heart of downtown, Penn Taproom seats roughly 70 guests outside under trees and umbrellas, with enough foot traffic passing.",
+       "It is a genuinely great people-watching spot, and the food and drink are good enough to justify the time you will spend there.",
+       "The menu is casual and crowd-pleasing: smash burgers, tacos, and a rotating lineup of craft beers on tap that keeps regulars checking back.",
+       "Prices are on the affordable side, making it one of the more budget-friendly options on this list.",
+       "Happy hour runs Monday through Friday from 4:30 to 6:30 PM and Sunday from 3 to 5 PM, with half-price drafts and discounted appetizers, though those deals apply to the bar area only.",
+       "The patio is dog-friendly, with water bowls provided.",
+       "One logistical note worth knowing: the restaurant does not take reservations for outdoor seating, so patio tables are first come, first served. Arriving early on weekends pays off.",
+       "Best time to visit: Weekday happy hour or a sunny Saturday afternoon. Get there early if you want a table outside.",
+       "80 W State St, Doylestown, PA 18901"
+      ],
       "note": "BUCKSCO.Today, August 2026"
      }
     }
@@ -126,6 +137,16 @@
       "outlet": "BUCKSCO.Today",
       "published": "2026-08-12",
       "quote": "Happy hour runs daily from 5 to 7 PM. Priced at mid-range, and reservations are recommended for weekend evenings.",
+      "quotes": [
+       "Maxwell’s On Main is one of those restaurants that rewards repeat visits because the experience changes depending on where you sit.",
+       "The building is a historic two-level venue on Main Street with three distinct outdoor options: sidewalk dining at street level, an open-air dining room, and a second-floor rooftop patio that overlooks the heart of downtown Doylestown.",
+       "The kitchen draws on genuine Southern roots, and the menu shows it. Jambalaya, gumbo, shrimp and grits, crawfish boulettes, and fried chicken with bourbon sweet potato mash are signatures here, sitting alongside smash burgers and a Sunday brunch menu that draws a loyal crowd.",
+       "The restaurant is one of the only places in Doylestown serving oysters.",
+       "Live bands play every weekend, which adds real energy to the outdoor atmosphere on Friday and Saturday nights.",
+       "Happy hour runs daily from 5 to 7 PM. Priced at mid-range, and reservations are recommended for weekend evenings.",
+       "Best time to visit: A warm Friday or Saturday evening with live music on the rooftop, or Sunday brunch from 11 AM to 3 PM.",
+       "37 N Main St, Doylestown, PA 18901"
+      ],
       "note": "BUCKSCO.Today, August 2026"
      }
     }
@@ -180,6 +201,9 @@
       "outlet": "DELCO.today",
       "published": "2025-04-17",
       "quote": "Azie in Media has a happy hour on weekdays from 4 to 6 PM, and an indoor and outdoor bar area with scenic views of Media.",
+      "quotes": [
+       "Azie in Media has a happy hour on weekdays from 4 to 6 PM, and an indoor and outdoor bar area with scenic views of Media."
+      ],
       "note": "DELCO.today, April 2025"
      }
     }
@@ -234,7 +258,621 @@
       "outlet": "DELCO.today",
       "published": "2025-04-17",
       "quote": "Off the Rail , also in Media, has $3 domestic beers during happy hours weeknights, 4 to 6 PM, enjoyed at its rooftop bar with views of State Street below.",
+      "quotes": [
+       "Off the Rail , also in Media, has $3 domestic beers during happy hours weeknights, 4 to 6 PM, enjoyed at its rooftop bar with views of State Street below."
+      ],
       "note": "DELCO.today, April 2025"
+     }
+    }
+   ]
+  },
+  {
+   "id": "tonic-seafood-steak-wilmington",
+   "lid": "DE81960c2e6e",
+   "name": "Tonic Seafood & Steak",
+   "plcb_name": "Tonic Seafood & Steak",
+   "address": "111 W 11th St, Wilmington, DE 19801",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "http://tonicsns.com/?utm_source=extnet&utm_medium=yext&y_source=1_NTkyNzgxNjYtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "roundup_extract",
+     "source": {
+      "kind": "roundup",
+      "url": "https://delawaretoday.com/food/happy-hours-wilmington/",
+      "outlet": "Delaware Today",
+      "published": "2024-10-28",
+      "quote": "Monday-Friday, 4-7 p.m.",
+      "quotes": [
+       "Monday-Friday, 4-7 p.m.",
+       "Looking for deals on upscale bites? Tonic’s happy hour menu is the place to find them! Enjoy $4 off small plates like crispy calamari, steamed mussels, short rib egg rolls and more. Plus, sip on draft beer, wine, and rail drinks for $2 off during happy hour.",
+       "111 West 11th Street, Wilmington"
+      ],
+      "note": "Delaware Today, October 2024"
+     }
+    }
+   ]
+  },
+  {
+   "id": "kid-shelleen-s-trolley-square-wilmington",
+   "lid": "DEa1932d1c0d",
+   "name": "Kid Shelleen's - Trolley Square",
+   "plcb_name": "Kid Shelleen's - Trolley Square",
+   "address": "1801 W 14th St, Wilmington, DE 19806",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "https://www.harryshospitalitygroup.com/kid-shelleens/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "well",
+       "label": "rail mixed drinks",
+       "price_usd": 4.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "roundup_extract",
+     "source": {
+      "kind": "roundup",
+      "url": "https://delawaretoday.com/food/happy-hours-wilmington/",
+      "outlet": "Delaware Today",
+      "published": "2024-10-28",
+      "quote": "Monday-Saturday, 3-6 p.m.",
+      "quotes": [
+       "Monday-Saturday, 3-6 p.m.",
+       "Kid Shelleen’s offers happy hour deals at both the Trolley Square and Branmar Plaza locations. Enjoy $8 crushes, $6 spritzes and $4 rail mixed drinks.",
+       "14th & Scott Streets, Wilmington",
+       "1812 Marsh Road, Suite 15, Wilmington"
+      ],
+      "note": "Delaware Today, October 2024"
+     }
+    }
+   ]
+  },
+  {
+   "id": "catherine-rooney-s-wilmington",
+   "lid": "DE7eb20bf7a8",
+   "name": "Catherine Rooney's",
+   "plcb_name": "Catherine Rooney's",
+   "address": "1616 Delaware Ave, Wilmington, DE 19806",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "https://catherinerooneys.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 2,
+       "start": "15:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 3,
+       "start": "15:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 4,
+       "start": "15:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 5,
+       "start": "15:30",
+       "end": "18:30"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "pretzel nuggets",
+       "price_usd": 8.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "roundup_extract",
+     "source": {
+      "kind": "roundup",
+      "url": "https://delawaretoday.com/food/happy-hours-wilmington/",
+      "outlet": "Delaware Today",
+      "published": "2024-10-28",
+      "quote": "Monday-Friday, 3:30-6:30 p.m.",
+      "quotes": [
+       "Monday-Friday, 3:30-6:30 p.m.",
+       "Catherine Rooney’s offers $1 off all drafts and $2 off seasonal cocktails at the bar during its Wilmington happy hour. If you’re hungry, you can enjoy $6 fried mozzarella and $8 pretzel nuggets, loaded potato skins and more.",
+       "1616 Delaware Avenue, Wilmington"
+      ],
+      "note": "Delaware Today, October 2024"
+     }
+    }
+   ]
+  },
+  {
+   "id": "trolley-tap-house-wilmington",
+   "lid": "DE2223037f1a",
+   "name": "Trolley Tap House",
+   "plcb_name": "Trolley Tap House",
+   "address": "1616 Delaware Ave, Wilmington, DE 19806",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "http://www.trolleytaphouse.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "seasonal cocktails",
+       "amount_off_usd": 2.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "roundup_extract",
+     "source": {
+      "kind": "roundup",
+      "url": "https://delawaretoday.com/food/happy-hours-wilmington/",
+      "outlet": "Delaware Today",
+      "published": "2024-10-28",
+      "quote": "Monday-Friday, 4-7 p.m.",
+      "quotes": [
+       "Monday-Friday, 4-7 p.m.",
+       "Happy hour deals include $2 off seasonal cocktails and beer flights, $1 off all drafts and $3 house mixed drinks.",
+       "1616 Delaware Avenue, Wilmington"
+      ],
+      "note": "Delaware Today, October 2024"
+     }
+    }
+   ]
+  },
+  {
+   "id": "big-fish-grill-on-the-riverfront-wilmington",
+   "lid": "DE03fd0ecb4b",
+   "name": "Big Fish Grill on the Riverfront",
+   "plcb_name": "Big Fish Grill on the Riverfront",
+   "address": "720 Justison St, Wilmington, DE 19801",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "http://www.bigfishriverfront.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "margarita",
+       "price_usd": 9.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "roundup_extract",
+     "source": {
+      "kind": "roundup",
+      "url": "https://delawaretoday.com/food/happy-hours-wilmington/",
+      "outlet": "Delaware Today",
+      "published": "2024-10-28",
+      "quote": "Monday-Friday, 4-6 p.m.",
+      "quotes": [
+       "Monday-Friday, 4-6 p.m.",
+       "Big Fish Grill’s Riverfront location offers light bites and drinks at great prices during its afternoon happy hour. Get six wings for $10, drunken mussels for $8 or blackened filet medallions for $10. At the bar, grab a $9 margarita or a $6 mixed drink. See the full happy hour menu online.",
+       "720 Justison Street, Wilmington"
+      ],
+      "note": "Delaware Today, October 2024"
+     }
+    }
+   ]
+  },
+  {
+   "id": "timothy-s-riverfront-grill-wilmington",
+   "lid": "DE749053386a",
+   "name": "Timothy's Riverfront Grill",
+   "plcb_name": "Timothy's Riverfront Grill",
+   "address": "930 Justison St, Wilmington, DE 19801",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "http://riverfrontde.mytimothysrestaurants.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 2,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 3,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 4,
+       "start": "16:30",
+       "end": "18:30"
+      },
+      {
+       "dow": 5,
+       "start": "16:30",
+       "end": "18:30"
+      }
+     ],
+     "items": [
+      {
+       "category": "well",
+       "label": "rail mixed drinks",
+       "price_usd": 4.5
+      },
+      {
+       "category": "draft",
+       "label": "domestic drafts",
+       "price_usd": 3.5
+      },
+      {
+       "category": "food",
+       "label": "appetizers like mac",
+       "price_usd": 8.99
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "roundup_extract",
+     "source": {
+      "kind": "roundup",
+      "url": "https://delawaretoday.com/food/happy-hours-wilmington/",
+      "outlet": "Delaware Today",
+      "published": "2024-10-28",
+      "quote": "Monday-Friday, 4:30-6:30 p.m.",
+      "quotes": [
+       "Monday-Friday, 4:30-6:30 p.m.",
+       "Timothy’s happy hour specials include $4.50 rail mixed drinks, $3.50 domestic drafts and $.50 off craft drafts. On the food menu, enjoy $8.99 appetizers like mac and cheese bites, loaded fries, Tuscany flatbread and more.",
+       "930 Justison Street, Wilmington"
+      ],
+      "note": "Delaware Today, October 2024"
+     }
+    }
+   ]
+  },
+  {
+   "id": "trolley-square-oyster-house-wilmington",
+   "lid": "DE66e62e19e0",
+   "name": "Trolley Square Oyster House",
+   "plcb_name": "Trolley Square Oyster House",
+   "address": "1707 Delaware Ave, Wilmington, DE 19806",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "http://trolleysquareoysterhouse.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "glasses of wine",
+       "amount_off_usd": 1.0
+      },
+      {
+       "category": "well",
+       "label": "mixed rail drinks",
+       "price_usd": 6.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "roundup_extract",
+     "source": {
+      "kind": "roundup",
+      "url": "https://delawaretoday.com/food/happy-hours-wilmington/",
+      "outlet": "Delaware Today",
+      "published": "2024-10-28",
+      "quote": "Tuesday-Friday, 4-6 p.m.",
+      "quotes": [
+       "Tuesday-Friday, 4-6 p.m.",
+       "Trolley Square Oyster House offers bar bites and drink specials Tuesday to Friday from 4-6 p.m. Happy hour drinkers can enjoy $1 off glasses of wine and draft beer. The happy hour menu also includes $6 mixed rail drinks and buck-a-shuck oysters.",
+       "1707 Delaware Avenue, Wilmington"
+      ],
+      "note": "Delaware Today, October 2024"
+     }
+    }
+   ]
+  },
+  {
+   "id": "washington-street-ale-house-wilmington",
+   "lid": "DE98501eeb65",
+   "name": "Washington Street Ale House",
+   "plcb_name": "Washington Street Ale House",
+   "address": "1206 Washington St, Wilmington, DE 19801",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "http://www.wsalehouse.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "nachos",
+       "price_usd": 9.0
+      },
+      {
+       "category": "cocktail",
+       "label": "cocktails",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "label": "specialty cocktails",
+       "price_usd": 8.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "roundup_extract",
+     "source": {
+      "kind": "roundup",
+      "url": "https://delawaretoday.com/food/happy-hours-wilmington/",
+      "outlet": "Delaware Today",
+      "published": "2024-10-28",
+      "quote": "Monday-Saturday, 4-6 p.m.",
+      "quotes": [
+       "Monday-Saturday, 4-6 p.m.",
+       "At Washington Street Ale House, enjoy $11 fried chicken sliders, $9 nachos, $8 cocktails and more during happy hour in Wilmington. See the full menu, including the $8 specialty cocktails, for more.",
+       "1206 Washington Street, Wilmington",
+       "Related: 6 Pumpkin Beers From Delaware Breweries to Sip This Fall"
+      ],
+      "note": "Delaware Today, October 2024"
+     }
+    }
+   ]
+  },
+  {
+   "id": "del-pez-riverfront-wilmington",
+   "lid": "DE26f3edb53d",
+   "name": "Del Pez Riverfront",
+   "plcb_name": "Del Pez Riverfront",
+   "address": "400 Justison St, Wilmington, DE 19801",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "https://www.delpezmexicanpub.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "margaritas",
+       "price_usd": 6.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "roundup_extract",
+     "source": {
+      "kind": "roundup",
+      "url": "https://delawaretoday.com/food/happy-hours-wilmington/",
+      "outlet": "Delaware Today",
+      "published": "2024-10-28",
+      "quote": "Monday-Friday, 3-6 p.m.",
+      "quotes": [
+       "Monday-Friday, 3-6 p.m.",
+       "Along with happy hour deals like $6 margaritas, this Mexican gastropub offers a “Social Hour” menu with shareable bites, flights and more. The two-bite taco trio includes miniature versions of fan-favorite tacos, while the three pub sliders come topped with cheddar, caramelized onions, beer-battered pickles and Del Pez’s secret sauce.",
+       "400 Justison Street, Wilmington"
+      ],
+      "note": "Delaware Today, October 2024"
      }
     }
    ]
@@ -289,6 +927,9 @@
       "outlet": "County Lines Magazine",
       "published": "2024-05-30",
       "quote": "There is something cathartic about ordering a “Fog of War” after a tough day. If you’re in a fighting mood, head to Artillery Brewing Company, where the focus is on the beer — and the veterans. Feeling battered? Call in “The Militia.” You’ll feel better as soon as you do. Happy Hours, Tuesday to Friday, 4 to 6. $2 off listed pints. 333 Granite Alley. ArtilleryBrewing.com",
+      "quotes": [
+       "There is something cathartic about ordering a “Fog of War” after a tough day. If you’re in a fighting mood, head to Artillery Brewing Company, where the focus is on the beer — and the veterans. Feeling battered? Call in “The Militia.” You’ll feel better as soon as you do. Happy Hours, Tuesday to Friday, 4 to 6. $2 off listed pints. 333 Granite Alley. ArtilleryBrewing.com"
+      ],
       "note": "County Lines Magazine, May 2024"
      }
     }
@@ -343,6 +984,51 @@
        "category": "bottle_can",
        "label": "domestic bottles",
        "price_usd": 3.5
+      },
+      {
+       "category": "wine",
+       "label": "wines",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "label": "appetizers",
+       "discount_pct": 50
+      },
+      {
+       "category": "draft",
+       "label": "domestic drafts",
+       "price_usd": 3.0
+      },
+      {
+       "category": "wine",
+       "label": "wines",
+       "price_usd": 4.0
+      },
+      {
+       "category": "cocktail",
+       "label": "cocktails",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "label": "Tap nachos",
+       "price_usd": 8.0
+      },
+      {
+       "category": "draft",
+       "label": "drafts",
+       "price_usd": 4.0
+      },
+      {
+       "category": "wine",
+       "label": "house wine",
+       "price_usd": 4.0
+      },
+      {
+       "category": "food",
+       "label": "small plates featuring Southe",
+       "price_usd": 6.0
       }
      ],
      "confidence": "unconfirmed",
@@ -354,6 +1040,13 @@
       "outlet": "County Lines Magazine",
       "published": "2024-05-30",
       "quote": "Looking for a place to pop in for a quick drink? There’s plenty of room at Santino’s snaking granite bar. Happy Hour runs Monday through Friday, 5 to 7. Enjoy $5 Tito’s, $6 wine and $3.50 domestic bottles. 40 E. Market St. SantinosTapAndTable.com",
+      "quotes": [
+       "Looking for a place to pop in for a quick drink? There’s plenty of room at Santino’s snaking granite bar. Happy Hour runs Monday through Friday, 5 to 7. Enjoy $5 Tito’s, $6 wine and $3.50 domestic bottles. 40 E. Market St. SantinosTapAndTable.com",
+       "The day starts happy at Sterling Pig. Happy Hour begins when the bar opens at 4. Choose from a rotating list of small-batch beers, all crafted by the Sterling Pig “brew crew,” each $2 off. Plus, select half-price appetizers, like the Texas taquitos and Bavarian pretzel, along with $6 wines and $5 Boardroom mixed drinks. Happy Hour on weekdays, 4 to 6. 113 W. Market St. SterlingPig.com",
+       "Every Monday through Friday from 5 to 7, Stove & Tap hosts Tappy Hour. As you’d expect, it’s full of drink specials, like $3 domestic drafts, $4 wines and $8 cocktails, but there’s also a fair selection of modern American pub fare. Order $8 Tap nachos or crispy Brussels sprouts for the table and you’ll be the hit of Tappy Hour. 153 W. Gay St. StoveAndTap-WC.com",
+       "The Social’s full wraparound bar offers plenty of space for you and your friends to sidle up to. There are sofas, too, if you prefer your space. Happy Hour is Wednesday through Friday, 4 to 6 at the bar. Choose from $4 drafts, $4 house wine and $6 small plates featuring Southern home cooking. Cheers! 117 E. Gay St. TheSocialWC.com",
+       "Wrong Crowd is located just outside the downtown district in a converted warehouse, but you’re not there for the scenery. Last year Wrong Crowd was named one of the country’s fastest-growing breweries. Want to know why? Stop by during Happy Hour and try a pint for just $4. Happy Hour runs Wednesday and Thursday, 4 to 6, and Friday, 3 to 5. 342 Hannum Ave. WrongCrowdBeer.com"
+      ],
       "note": "County Lines Magazine, May 2024"
      }
     }
@@ -413,6 +1106,51 @@
        "category": "food",
        "label": "apps",
        "price_usd": 13.0
+      },
+      {
+       "category": "wine",
+       "label": "wines",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "label": "cocktails",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "apps",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "oysters",
+       "price_usd": 2.0
+      },
+      {
+       "category": "wine",
+       "label": "wines",
+       "price_usd": 6.0
+      },
+      {
+       "category": "draft",
+       "label": "drafts",
+       "price_usd": 4.0
+      },
+      {
+       "category": "wine",
+       "label": "wines",
+       "price_usd": 8.0
+      },
+      {
+       "category": "draft",
+       "label": "select beers",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "apps",
+       "price_usd": 10.0
       }
      ],
      "confidence": "unconfirmed",
@@ -424,6 +1162,16 @@
       "outlet": "County Lines Magazine",
       "published": "2024-05-30",
       "quote": "The newish upscale steakhouse, 9 Prime, recently added Happy Hours, 3 to 5:30, Monday through Friday. Stop by for bites and drinks ($5 select beers, $10 wines, $13 apps) and a seat at their chic bar. 9 N. High St. 9PrimeWestChester.com",
+      "quotes": [
+       "You got up. You got dressed. Maybe you even ironed. Whether you’re celebrating a moral victory or just want a nice glass of wine and something fun to nibble on, these establishments have elevated Happy Hour to an experience.",
+       "The newish upscale steakhouse, 9 Prime, recently added Happy Hours, 3 to 5:30, Monday through Friday. Stop by for bites and drinks ($5 select beers, $10 wines, $13 apps) and a seat at their chic bar. 9 N. High St. 9PrimeWestChester.com",
+       "You’re in the mood for a real drink and a little culinary magic to match. Tuesday through Friday, 4 to 6, and, in a nice little twist, Sunday, 2 to 4, Bar Avalon serves $8 wines, $10 cocktails and a fair selection of $10 apps. Order a cheese and meatboard or eggplant chips for the gang. Yum. 116 E. Gay St. AvalonRestaurant.net",
+       "In the mood for homemade Italian food? Dolce Zola’s Happy Hour runs Tuesday to Thursday. Enjoy 20% off cocktails, wine, appetizers, select pastas and Grandma’s meatballs. Manjia! 134 E. Gay St. DolceZola.com",
+       "Often Happy Hour decisions are made on atmosphere and drink specials, but every once in a while, it’s the food that seals the deal. That’s the case with Greystone, where Happy Hour means $2 oysters. Order a half-dozen and an $8 fresh-squeezed crush and you have summer in hand. Happy Hour runs weekdays, 4 to 6, featuring discounted food, beer and wine. 7 N. Church St. GreystoneOysterBarWC.com",
+       "Sometimes all you want is your best friend and a spirited dish session. Head to Mercato’s cozy corner bar and order two wines and a plate of the Margarita Pinsa to share. It’s an Italian escape well worth the $20. Happy Hour runs weekdays, 4 to 6, and includes discounted cocktails, $6 wines, $4 drafts and small bite specials. 33 W. Market St. Mercato-WC.com",
+       "When the weather is nice, duck out early and enjoy a glass of sangria and some people-watching from Opa’s Gay Street patio. Happy Hour runs Monday through Thursday, 3 to 5, with $8 wines and sangria, $5 select beers and $10 apps. Menu includes Greek favorites like hummus, spanakopita and Opa chips. 40-44 E. Gay St. OpaTaverna.com",
+       "The work day’s done, and you need a drink. Head to Pietro’s, order a martini and feel the stress melt away. The Nina is a classic. The espresso martini is legendary. Apps are half-off from 5 to 7. Need suggestions? Try the black and white tuna, Pietro’s crab cake or the truffle Parmesan fries. 125 W. Market St. PietrosPrime.com"
+      ],
       "note": "County Lines Magazine, May 2024"
      }
     }
@@ -458,6 +1206,9 @@
       "outlet": "County Lines Magazine",
       "published": "2024-05-30",
       "quote": "New to the Happy Hour lineup is Roots, hosting in the garden on summer Saturdays, 5 to 8. Enjoy live music, $10 drink specials, $10 tapas menu. Nibble wings, chicken sandwich sliders, crispy fingerlings and even rainbow carrots. 133 E. Gay St. RootsCafeWC.com",
+      "quotes": [
+       "New to the Happy Hour lineup is Roots, hosting in the garden on summer Saturdays, 5 to 8. Enjoy live music, $10 drink specials, $10 tapas menu. Nibble wings, chicken sandwich sliders, crispy fingerlings and even rainbow carrots. 133 E. Gay St. RootsCafeWC.com"
+      ],
       "note": "County Lines Magazine, May 2024"
      }
     }
@@ -502,7 +1253,13 @@
        "end": "18:00"
       }
      ],
-     "items": [],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "specialty cocktails",
+       "amount_off_usd": 2.0
+      }
+     ],
      "confidence": "unconfirmed",
      "last_verified_at": "2026-09-02",
      "verified_by": "roundup_extract",
@@ -512,6 +1269,10 @@
       "outlet": "County Lines Magazine",
       "published": "2024-05-30",
       "quote": "When it’s nice, check out the redesigned “Florida Room,” a back patio that would make Jimmy Buffet proud. Happy Hour runs weekdays, 4 to 6. Beers are $2, well drinks $3, plus limited food specials like the $4 dog and tot combo. 146 W. Gay St. Jitters-WC.com",
+      "quotes": [
+       "When it’s nice, check out the redesigned “Florida Room,” a back patio that would make Jimmy Buffet proud. Happy Hour runs weekdays, 4 to 6. Beers are $2, well drinks $3, plus limited food specials like the $4 dog and tot combo. 146 W. Gay St. Jitters-WC.com",
+       "At Ryan’s, Happy Hour is simple: $1 off all beers, drinks and wine plus $2 off specialty cocktails and martinis. Apps like battered pickle chips or saucy poutine are $6. Drink specials run weekdays, 5 to 7, food until 8. 124 W. Gay St. Ryans-Pub.com"
+      ],
       "note": "County Lines Magazine, May 2024"
      }
     }
@@ -554,16 +1315,6 @@
        "dow": 5,
        "start": "16:00",
        "end": "18:00"
-      },
-      {
-       "dow": 6,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 7,
-       "start": "16:00",
-       "end": "18:00"
       }
      ],
      "items": [
@@ -576,6 +1327,16 @@
        "category": "cocktail",
        "label": "house margaritas",
        "price_usd": 8.0
+      },
+      {
+       "category": "draft",
+       "label": "drafts",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "house wine also available",
+       "price_usd": 7.0
       }
      ],
      "confidence": "unconfirmed",
@@ -587,6 +1348,10 @@
       "outlet": "County Lines Magazine",
       "published": "2024-05-30",
       "quote": "Newcomer Serum Kitchen & Taphouse offers Happy Hour all working week long, 4 to 6. Choose from a selection of $10 apps like smoked pork sliders or steak skewers and fries. Wash them down with $5 side-pull lagers, $8 glasses of house wine and, if you are really ready to say goodbye to the day, $8 house margaritas or old fashioneds. 142 E. Market St. SerumKitchenAndTaphouse.com",
+      "quotes": [
+       "Newcomer Serum Kitchen & Taphouse offers Happy Hour all working week long, 4 to 6. Choose from a selection of $10 apps like smoked pork sliders or steak skewers and fries. Wash them down with $5 side-pull lagers, $8 glasses of house wine and, if you are really ready to say goodbye to the day, $8 house margaritas or old fashioneds. 142 E. Market St. SerumKitchenAndTaphouse.com",
+       "You want a good drink, but you don’t want to fight for it. That’s when Slow Hand is perfect. Choose from a selection of sophisticated snacks like the $5 blackened shrimp deviled eggs to enjoy with a well-made old fashioned, margarita or negroni for $8. See, your night is already looking up. Weekdays, 4 to 6. $5 drafts and $7 house wine also available. 30 N. Church St. SlowHand-WC.com"
+      ],
       "note": "County Lines Magazine, May 2024"
      }
     }
@@ -652,6 +1417,9 @@
       "outlet": "County Lines Magazine",
       "published": "2024-05-30",
       "quote": "At Teca it’s all about sharing, from its tapas-influenced menu to Happy Hour specials that includes wine by the bottle ($29 for house wine). Plus $7 wine by the glass, $5 drafts, $7 well drinks and 8 for $8 tapas. The food menu includes flatbread, mussels and mushroom bruschetta. Happy Hour runs Tuesday to Friday, 4 to 6. 38 E. Gay St. TecaRestaurants.com",
+      "quotes": [
+       "At Teca it’s all about sharing, from its tapas-influenced menu to Happy Hour specials that includes wine by the bottle ($29 for house wine). Plus $7 wine by the glass, $5 drafts, $7 well drinks and 8 for $8 tapas. The food menu includes flatbread, mussels and mushroom bruschetta. Happy Hour runs Tuesday to Friday, 4 to 6. 38 E. Gay St. TecaRestaurants.com"
+      ],
       "note": "County Lines Magazine, May 2024"
      }
     }
@@ -717,6 +1485,12 @@
       "outlet": "County Lines Magazine",
       "published": "2024-05-30",
       "quote": "Perhaps not surprisingly from the bar with seven rooms and at least a dozen TVs, Barnaby’s Happy Hour has something for everyone. Weekdays, 5 to 7, choose $4 drafts, $5 house wines, $6 specialty drinks and $6 Statesides, Surfsides and High Noons. Plus, $2 off all starters. On Thursday and Friday, unwind with live acoustic sets. 15 S. High St. BarnabysWestChester.com",
+      "quotes": [
+       "You just landed the big account or nabbed that promotion you’ve been working so hard for — you’re ready to celebrate. You want energy. Go to any of these and you’ll be rewarded. Just go now — energy means people, and these places can get crowded.",
+       "Perhaps not surprisingly from the bar with seven rooms and at least a dozen TVs, Barnaby’s Happy Hour has something for everyone. Weekdays, 5 to 7, choose $4 drafts, $5 house wines, $6 specialty drinks and $6 Statesides, Surfsides and High Noons. Plus, $2 off all starters. On Thursday and Friday, unwind with live acoustic sets. 15 S. High St. BarnabysWestChester.com",
+       "Weekdays from 4 to 6, Iron Hill holds court on Hoppy Hour. Get there early, order the $3.50 fried chicken sandwich, and enjoy a little me time before their U-shaped bar fills up. Standard pours are $2 off, wine and cocktails are $7.50, and select apps are $7.50. 3 W. Gay St. IronHillBrewery.com",
+       "Looking for a spirited Irish bar? Kildare’s is the place. It gets packed with college students as the night goes on, but the early evening hours deliver a more mixed crowd. Happy Hour runs weekdays, 4 to 6. All drinks are $3 off, flatbreads are $8, and nachos are half-off. 18 W. Gay St. KildaresPubWC.com"
+      ],
       "note": "County Lines Magazine, May 2024"
      }
     }
@@ -771,6 +1545,31 @@
        "category": "draft",
        "label": "drafts",
        "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "wine",
+       "price_usd": 6.9
+      },
+      {
+       "category": "draft",
+       "label": "bottled beers",
+       "discount_pct": 50
+      },
+      {
+       "category": "draft",
+       "label": "select drafts",
+       "price_usd": 4.0
+      },
+      {
+       "category": "wine",
+       "label": "house wine",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "appetizers",
+       "discount_pct": 50
       }
      ],
      "confidence": "unconfirmed",
@@ -782,7 +1581,84 @@
       "outlet": "County Lines Magazine",
       "published": "2024-05-30",
       "quote": "Limoncello has a great bar and, when the weather is nice, a great patio. Unfortunately, everyone knows it. Get there early for Happy Hour specials like $12 martinis, $8 wines, $5 drafts and discounted apps, like calamari fritti served with three dipping sauces. Order a grapefruit paloma and give into the bar’s buzzy energy. Happy Hour runs Tuesday through Friday, 4 to 6. 9 N. Walnut St. LimoncelloRestaurant.com",
+      "quotes": [
+       "Limoncello has a great bar and, when the weather is nice, a great patio. Unfortunately, everyone knows it. Get there early for Happy Hour specials like $12 martinis, $8 wines, $5 drafts and discounted apps, like calamari fritti served with three dipping sauces. Order a grapefruit paloma and give into the bar’s buzzy energy. Happy Hour runs Tuesday through Friday, 4 to 6. 9 N. Walnut St. LimoncelloRestaurant.com",
+       "Work is done. Your colleagues are waiting. Grab the gang and go to Más, preferably to the rooftop, where the margaritas are $5 and the apps are half-off. The relaxed So-Cal vibe will soon have you on beach time. Happy Hour is Tuesday to Friday, 4 to 6, and can be paired with daily drink specials like $4 Coronas or $3 Tequila Sunrises for even more savings. 102 E. Market St. MasMexicali.com",
+       "When you’ve got a group to impress, Sedona it is. The Southwest-inspired steakhouse maintains a sizeable and eclectic Happy Hour menu, with guacamole, flatbreads and sliders all under $10. Add half-price bottled beers and $6.90 wine and cocktails and everybody’s happy. Specials run weekdays from 4 to 6. Just get there early. It can get very crowded. 44 W. Gay St., Ste. 1. SedonaTaphouse.com",
+       "Side Bar has an extensive beer selection, but you’ll have to wait until Wednesday to sip at a discount. Happy Hour runs Wednesday to Friday, 4 to 7, with $4 select drafts, $5 house wine, $5 Tito’s and half-price appetizers, like sweet potato tater tots. 10 E. Gay St. SideBarAndRestaurant.com",
+       "For more food and drink specials, visit West Chester during the Open-Air Market, when Gay St. shuts down for warm-weather weekends (Friday morning to Monday morning), or come for West Chester TAPS on summer Wednesdays (at participating locations). More at DowntownWestChester.com ."
+      ],
       "note": "County Lines Magazine, May 2024"
+     }
+    }
+   ]
+  },
+  {
+   "id": "two-stones-pub-wilmington-wilmington",
+   "lid": "DE18f838f641",
+   "name": "Two Stones Pub Wilmington",
+   "plcb_name": "Two Stones Pub Wilmington",
+   "address": "2502 Foulk Rd, Wilmington, DE 19810",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "http://www.twostonespub.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "pretzel bites to",
+       "price_usd": 4.0
+      },
+      {
+       "category": "food",
+       "label": "chicken wings",
+       "price_usd": 7.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "roundup_extract",
+     "source": {
+      "kind": "roundup",
+      "url": "https://www.visitwilmingtonde.com/goodtaste/stories/post/drink-and-eat-up-10-awesome-greater-wilmington-happy-hour-hotspots/",
+      "outlet": "Visit Wilmington Good Taste",
+      "published": "2019-03-12",
+      "quote": "Luckily, Two Stones has a few locations dotted throughout the greater Wilmington area to cover hungry and thirsty patrons’ happy hour needs. From $4 pretzel bites to $7 chicken wings, a pub grub menu of a dozen small plates offers varied choices at different pricing tiers. House drafts, craft cans, glasses of wine, and handcrafted cocktails follow suit and range from $3 - $6. The pub has gained a reputation for being the go-to destination for mussels. Step up your happy hour game and go off-menu and order a bowl of bivalves especially when the chef gets creative and runs a special that features riffs like Thai curry or short rib mussels. (Note: Happy hour runs Monday – Friday from 3 PM – 6 PM.)",
+      "quotes": [
+       "4737 Concord Pike #810 Wilmington, DE 19803; located inside Concord Mall; (302) 358-2455)",
+       "(2502 Foulk Rd. Wilmington, DE 19810; (302) 439-3231)",
+       "Luckily, Two Stones has a few locations dotted throughout the greater Wilmington area to cover hungry and thirsty patrons’ happy hour needs. From $4 pretzel bites to $7 chicken wings, a pub grub menu of a dozen small plates offers varied choices at different pricing tiers. House drafts, craft cans, glasses of wine, and handcrafted cocktails follow suit and range from $3 - $6. The pub has gained a reputation for being the go-to destination for mussels. Step up your happy hour game and go off-menu and order a bowl of bivalves especially when the chef gets creative and runs a special that features riffs like Thai curry or short rib mussels. (Note: Happy hour runs Monday – Friday from 3 PM – 6 PM.)"
+      ],
+      "note": "Visit Wilmington Good Taste, March 2019"
      }
     }
    ]

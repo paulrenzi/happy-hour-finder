@@ -1113,69 +1113,7 @@
       "url": "https://pierbarphilly.com/philadelphia-fairmount-pier-bar-happy-hours-specials",
       "quote": "Happy Hour! / 04:00 PM - 06:00 PM",
       "quotes": [
-       "Happy Hour! / 04:00 PM - 06:00 PM",
-       "Happy Hour! / 04:00 PM - 06:00 PM / Wednesday September 2nd",
-       "Happy Hour! / 04:00 PM - 06:00 PM / Thursday September 3rd",
-       "Happy Hour! / 04:00 PM - 06:00 PM / Friday September 4th",
-       "Happy Hour! / 04:00 PM - 06:00 PM / Monday September 7th"
-      ]
-     }
-    }
-   ]
-  },
-  {
-   "id": "the-pullman-restaurant-and-bar-bryn-mawr",
-   "lid": "104811",
-   "name": "The Pullman Restaurant and Bar",
-   "plcb_name": "HAM-BOLT LLC",
-   "address": "39 MORRIS AVE, BRYN MAWR PA 19010-3335",
-   "zone_id": "ardmore_bryn_mawr",
-   "license_type": "",
-   "website": "https://thepullmanrestaurant.com/",
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "16:30",
-       "end": "18:30"
-      },
-      {
-       "dow": 3,
-       "start": "16:30",
-       "end": "18:30"
-      },
-      {
-       "dow": 4,
-       "start": "16:30",
-       "end": "18:30"
-      },
-      {
-       "dow": 5,
-       "start": "16:30",
-       "end": "18:30"
-      },
-      {
-       "dow": 6,
-       "start": "16:30",
-       "end": "18:30"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-09-01",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://thepullmanrestaurant.com/bryn-mawr-main-line-the-pullman-restaurant-and-bar-happy-hours-specials",
-      "quote": "Happy Hour / 04:30 PM - 06:30 PM / Wednesday September 2nd",
-      "quotes": [
-       "Happy Hour / 04:30 PM - 06:30 PM / Wednesday September 2nd",
-       "Happy Hour / 04:30 PM - 06:30 PM / Thursday September 3rd",
-       "Happy Hour / 04:30 PM - 06:30 PM / Saturday September 5th",
-       "Happy Hour / 04:30 PM - 06:30 PM / Friday September 4th",
-       "Happy Hour / 04:30 PM - 06:30 PM / Monday September 7th"
+       "Happy Hour! / 04:00 PM - 06:00 PM"
       ]
      }
     }
@@ -2708,6 +2646,60 @@
       "quote": "Happy Hour / Sunday - Friday 4:30pm to 6:30pm",
       "quotes": [
        "Happy Hour / Sunday - Friday 4:30pm to 6:30pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "giordano-s-kennett-square",
+   "lid": "115247",
+   "name": "Giordano's",
+   "plcb_name": "JAMESTOWN HOSPITALITY KENNETT",
+   "address": "633 E CYPRESS ST, KENNETT SQUARE PA 19348-2446",
+   "zone_id": "kennett_square",
+   "license_type": "",
+   "website": "https://www.giordanoksq.com/?y_source=1_MTAwNzE4MTM3NC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.giordanoksq.com/?y_source=1_MTAwNzE4MTM3NC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+      "quote": "Happy Hour / Monday\u2013Friday 4\u20136 PM / Domestic Drafts \u2014 $1 off",
+      "quotes": [
+       "Happy Hour / Monday\u2013Friday 4\u20136 PM / Domestic Drafts \u2014 $1 off"
       ]
      }
     }
@@ -4567,40 +4559,6 @@
    ]
   },
   {
-   "id": "marsha-s-south-street-philadelphia",
-   "lid": "130105",
-   "name": "Marsha's South Street",
-   "plcb_name": "MARSHA'S",
-   "address": "430 SOUTH ST, PHILADELPHIA PA 19147-1535",
-   "zone_id": "center_city",
-   "license_type": "",
-   "website": "https://www.marshassouthstreet.com",
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 6,
-       "start": "16:00",
-       "end": "20:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-09-01",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://www.marshassouthstreet.com/events/halftime-rb-happy-hour",
-      "quote": "Chill vibes, dope beats, and a dash of R&B karaoke\u2026 it\u2019s the kind of weekend pop-up Happy Hour that feels like home. Pull up, link up, and let\u2019s kick off this new vibe the right way. / \ud83d\udd53 Saturday 12/13/25 / \u23f0 4\u20138PM (Day Party)",
-      "quotes": [
-       "Chill vibes, dope beats, and a dash of R&B karaoke\u2026 it\u2019s the kind of weekend pop-up Happy Hour that feels like home. Pull up, link up, and let\u2019s kick off this new vibe the right way. / \ud83d\udd53 Saturday 12/13/25 / \u23f0 4\u20138PM (Day Party)"
-      ]
-     }
-    }
-   ]
-  },
-  {
    "id": "casa-mia-media",
    "lid": "130324",
    "name": "Casa Mia",
@@ -5491,10 +5449,7 @@
       "url": "https://charlottesrestaurant.com/newtown-square-charlotte-s-restaurant-happy-hours-specials",
       "quote": "Happy Hour at Charlottes features drink specials and discounted appetizers. / 04:00 PM - 06:30 PM",
       "quotes": [
-       "Happy Hour at Charlottes features drink specials and discounted appetizers. / 04:00 PM - 06:30 PM",
-       "Happy Hour at Charlottes features drink specials and discounted appetizers. / 04:00 PM - 06:30 PM / Wednesday September 2nd",
-       "Happy Hour at Charlottes features drink specials and discounted appetizers. / 04:00 PM - 06:30 PM / Thursday September 3rd",
-       "Happy Hour at Charlottes features drink specials and discounted appetizers. / 04:00 PM - 06:30 PM / Friday September 4th"
+       "Happy Hour at Charlottes features drink specials and discounted appetizers. / 04:00 PM - 06:30 PM"
       ]
      }
     }
@@ -5561,9 +5516,7 @@
        "Happy Hour food and drink specials! See Happy Hour Menu under the menus tab. / 03:30 PM - 06:00 PM",
        "Happy Hour food and drink specials! See Happy Hour Menu under the menus tab. 03:30 PM - 06:00 PM",
        "Saturday Night Food & Drink Specials from 8-11pm! Includes $1.25 Wings, $7 Lil' G Burgers, $6 Lil' Nachos, $7 Lil' Burrata, $5 Surfsides & Statesides, $6 House Mixed Drinks, $4 Mic Ultra Drafts, $4 Garage Beer Lime Drafts, $5 Levante Cloudy & Cumbersome Drafts. Dine-in Only.",
-       "Join us the last Friday of every month for our Album Club! Mix and mingle with fellow music lovers while sampling featured albums and voting on one to hear in full. Enjoy extended happy hour food and drink specials throughout the event. 06:00 PM - 08:00 PM",
-       "Quizzo with Johnny Cheesesteaks! Enjoy all the fun and games with awesome food and drink specials, and prizes for the winners! / 09:00 PM - 11:00 PM / Saturday September 5th",
-       "Happy Hour food and drink specials! See Happy Hour Menu under the menus tab. / 03:30 PM - 06:00 PM / Friday September 4th"
+       "Join us the last Friday of every month for our Album Club! Mix and mingle with fellow music lovers while sampling featured albums and voting on one to hear in full. Enjoy extended happy hour food and drink specials throughout the event. 06:00 PM - 08:00 PM"
       ]
      }
     }
@@ -5968,9 +5921,7 @@
       "url": "https://downingtown.victorybeer.com/",
       "quote": "Weekday Happy Hour / $2 off drafts, liquor pours,, wine + shareables / Monday - Friday, 4pm to 6pm",
       "quotes": [
-       "Weekday Happy Hour / $2 off drafts, liquor pours,, wine + shareables / Monday - Friday, 4pm to 6pm",
-       "Join us at Victory Downingtown on Monday, August 25 from 11AM\u20132PM for a well-earned Back to School Morning Happy Hour made just for parents.",
-       "Join us at Victory Downingtown on Tuesday, August 25 from 11AM\u20132PM for a well-earned Back to School Happy Hour made just for parents."
+       "Weekday Happy Hour / $2 off drafts, liquor pours,, wine + shareables / Monday - Friday, 4pm to 6pm"
       ]
      }
     }
@@ -8597,12 +8548,7 @@
       "url": "https://alehousenewtownsquare.com/newtown-square-delaware-county-the-ale-house-happy-hours-specials",
       "quote": "Happy Hour! / 04:00 PM - 06:00 PM",
       "quotes": [
-       "Happy Hour! / 04:00 PM - 06:00 PM",
-       "Happy Hour! / 04:00 PM - 06:00 PM / Wednesday September 2nd",
-       "Happy Hour! / 04:00 PM - 06:00 PM / Thursday September 3rd",
-       "Happy Hour! / 04:00 PM - 06:00 PM / Saturday September 5th",
-       "Happy Hour! / 04:00 PM - 06:00 PM / Friday September 4th",
-       "Happy Hour! / 04:00 PM - 06:00 PM / Monday September 7th"
+       "Happy Hour! / 04:00 PM - 06:00 PM"
       ]
      }
     }
@@ -11120,6 +11066,87 @@
    ]
   },
   {
+   "id": "two-stones-pub-kennett-square-kennett-square",
+   "lid": "68585",
+   "name": "Two Stones Pub Kennett Square",
+   "plcb_name": "KENNETT 2SP LICENSE LLC",
+   "address": "843 E BALTIMORE PK, KENNETT SQUARE PA 19348-1801",
+   "zone_id": "kennett_square",
+   "license_type": "",
+   "website": "http://www.twostonespub.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Delco Lager",
+       "price_usd": 2.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Craft Cocktails",
+       "price_usd": 3.0
+      },
+      {
+       "category": "cocktail",
+       "label": "The Mule",
+       "price_usd": 3.0
+      },
+      {
+       "category": "cocktail",
+       "label": "The Spritz",
+       "price_usd": 3.0
+      },
+      {
+       "category": "wine",
+       "label": "Seasonal Sangria",
+       "price_usd": 3.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://www.twostonespub.com/",
+      "quote": "Monday-Friday 3-6pm Food & Drink Specials",
+      "quotes": [
+       "Monday-Friday 3-6pm Food & Drink Specials",
+       "Happy Hour / Monday\u2013Friday | 3\u20136pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
    "id": "se-or-salsa-abington",
    "lid": "68604",
    "name": "Se\u00f1or Salsa",
@@ -11523,6 +11550,66 @@
    ]
   },
   {
+   "id": "victory-brewing-company-kennett-square-kennett-square",
+   "lid": "70490",
+   "name": "Victory Brewing Company Kennett Square",
+   "plcb_name": "VICTORY BREWING COMPANY LLC",
+   "address": "650 W CYPRESS ST, KENNETT SQUARE PA 19348-3049",
+   "zone_id": "kennett_square",
+   "license_type": "",
+   "website": "https://kennettsquare.victorybeer.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "drafts",
+       "amount_off_usd": 2.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://kennettsquare.victorybeer.com/",
+      "quote": "Weekday Happy Hour / $2 off drafts, liquor pours, wine + shareables / Monday - Friday, 4pm to 6pm",
+      "quotes": [
+       "Weekday Happy Hour / $2 off drafts, liquor pours, wine + shareables / Monday - Friday, 4pm to 6pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
    "id": "jasper-s-backyard-conshohocken",
    "lid": "70520",
    "name": "Jasper's Backyard",
@@ -11603,8 +11690,7 @@
       "quotes": [
        "Happy Hour! (available at the bars or high tops) / 03:00 PM - 05:00 PM",
        "View 'Happy Hour' Menu / Weekend Happy Hour - Weekend Happy Hour! 3-5 pm Saturdays & Sundays",
-       "Weekend Happy Hour - Weekend Happy Hour! 3-5 pm Saturdays & Sundays",
-       "Happy Hour! (available at the bars or high tops) / 03:00 PM - 05:00 PM / Sunday September 6th"
+       "Weekend Happy Hour - Weekend Happy Hour! 3-5 pm Saturdays & Sundays"
       ]
      }
     }
@@ -12102,8 +12188,7 @@
       "quote": "happy hour / 05:00 PM - 07:00 PM",
       "quotes": [
        "happy hour / 05:00 PM - 07:00 PM",
-       "Happy Hour! Discounted drinks and happy hour plates! / Monday to Friday / 5:00 PM - 7:00 PM",
-       "happy hour / 05:00 PM - 07:00 PM / Monday September 7th"
+       "Happy Hour! Discounted drinks and happy hour plates! / Monday to Friday / 5:00 PM - 7:00 PM"
       ]
      }
     }
@@ -15017,6 +15102,70 @@
    ]
   },
   {
+   "id": "hilltop-crab-house-restaurant-bar-toughkenamon",
+   "lid": "96976",
+   "name": "Hilltop Crab House Restaurant & Bar",
+   "plcb_name": "SDH HILLTOP LLC",
+   "address": "8980 GAP NEWPORT PK, TOUGHKENAMON PA 19374-1041",
+   "zone_id": "kennett_square",
+   "license_type": "",
+   "website": "https://www.hilltopcrab.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.hilltopcrab.com/",
+      "quote": "Happy Hour / Daily 4 \u2013 6 PM",
+      "quotes": [
+       "Happy Hour / Daily 4 \u2013 6 PM"
+      ]
+     }
+    }
+   ]
+  },
+  {
    "id": "dock-street-brewery-south-philadelphia",
    "lid": "98360",
    "name": "Dock Street Brewery South",
@@ -15214,6 +15363,720 @@
       "quote": "Happy Hour ( Wednesday through Friday 3pm to 6pm ) $10 Classic Cocktails",
       "quotes": [
        "Happy Hour ( Wednesday through Friday 3pm to 6pm ) $10 Classic Cocktails"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "bar-xiii-delaware-wilmington",
+   "lid": "DE01470ee0d8",
+   "name": "Bar XIII Delaware",
+   "plcb_name": "Bar XIII Delaware",
+   "address": "1706 Philadelphia Pike, Wilmington, DE 19809",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "http://www.barxiii.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "18:00",
+       "end": "20:00"
+      },
+      {
+       "dow": 2,
+       "start": "18:00",
+       "end": "20:00"
+      },
+      {
+       "dow": 3,
+       "start": "18:00",
+       "end": "20:00"
+      },
+      {
+       "dow": 4,
+       "start": "18:00",
+       "end": "20:00"
+      },
+      {
+       "dow": 5,
+       "start": "18:00",
+       "end": "20:00"
+      },
+      {
+       "dow": 6,
+       "start": "18:00",
+       "end": "20:00"
+      },
+      {
+       "dow": 7,
+       "start": "18:00",
+       "end": "20:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://www.barxiii.com/",
+      "quote": "HAPPY HOUR: 6pm-8pm",
+      "quotes": [
+       "HAPPY HOUR: 6pm-8pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "big-fish-grill-on-the-riverfront-wilmington",
+   "lid": "DE03fd0ecb4b",
+   "name": "Big Fish Grill on the Riverfront",
+   "plcb_name": "Big Fish Grill on the Riverfront",
+   "address": "720 Justison St, Wilmington, DE 19801",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "http://www.bigfishriverfront.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://www.bigfishriverfront.com/wilmington-wilmington-big-fish-grill-on-the-riverfront-happy-hours-specials",
+      "quote": "Happy Hour at the Bar & High Tops! 04:00 PM - 06:00 PM",
+      "quotes": [
+       "Happy Hour at the Bar & High Tops! 04:00 PM - 06:00 PM",
+       "Happy Hour! / 04:00 PM - 06:00 PM"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "le-cavalier-wilmington",
+   "lid": "DE146a0b42fa",
+   "name": "Le Cavalier",
+   "plcb_name": "Le Cavalier",
+   "address": "42 W 11th St, Wilmington, DE 19801",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "https://www.lecavalierde.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "beers",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "label": "rotating cocktails",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "bar snacks",
+       "discount_pct": 50
+      },
+      {
+       "category": "wine",
+       "label": "wines",
+       "price_usd": 10.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.lecavalierde.com/menus",
+      "quote": "These rotating dishes are offered all week, with a special price on their featured day during Happy Hour. / Join us Monday through Friday from 4\u20136 PM for Happy Hour featuring: / \u2022 $5 beers",
+      "quotes": [
+       "These rotating dishes are offered all week, with a special price on their featured day during Happy Hour. / Join us Monday through Friday from 4\u20136 PM for Happy Hour featuring: / \u2022 $5 beers",
+       "Our bar menu is available every day, but each weekday we highlight a different feature as part of our daily specials. / Join us Monday through Friday from 4\u20136 PM for Happy Hour featuring:",
+       "Join us Monday through Friday from 4\u20136 PM for Happy Hour featuring:"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "two-stones-pub-wilmington-wilmington",
+   "lid": "DE18f838f641",
+   "name": "Two Stones Pub Wilmington",
+   "plcb_name": "Two Stones Pub Wilmington",
+   "address": "2502 Foulk Rd, Wilmington, DE 19810",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "http://www.twostonespub.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Delco Lager",
+       "price_usd": 2.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Craft Cocktails",
+       "price_usd": 3.0
+      },
+      {
+       "category": "cocktail",
+       "label": "The Mule",
+       "price_usd": 3.0
+      },
+      {
+       "category": "cocktail",
+       "label": "The Spritz",
+       "price_usd": 3.0
+      },
+      {
+       "category": "wine",
+       "label": "Seasonal Sangria",
+       "price_usd": 3.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://www.twostonespub.com/",
+      "quote": "Monday-Friday 3-6pm Food & Drink Specials",
+      "quotes": [
+       "Monday-Friday 3-6pm Food & Drink Specials",
+       "Happy Hour / Monday\u2013Friday | 3\u20136pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "del-pez-riverfront-wilmington",
+   "lid": "DE26f3edb53d",
+   "name": "Del Pez Riverfront",
+   "plcb_name": "Del Pez Riverfront",
+   "address": "400 Justison St, Wilmington, DE 19801",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "https://www.delpezmexicanpub.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "wine",
+       "label": "Wine",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "House red, white, or rose",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "Shareable Bites",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "Two Bite Taco Trio",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "label": "La Casa Margarita by the Carafe",
+       "price_usd": 22.0
+      },
+      {
+       "category": "cocktail",
+       "label": "On the Rocks, serves 2-4",
+       "price_usd": 22.0
+      },
+      {
+       "category": "draft",
+       "label": "Select craft on draft",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "Quesadilla Bites",
+       "price_usd": 7.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Taste the Rainbow Margarita F",
+       "price_usd": 16.0
+      },
+      {
+       "category": "draft",
+       "label": "Select Craft Beer on Draft",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "Select Bottles & Cans",
+       "price_usd": 4.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.delpezmexicanpub.com/wilmington-happy-hour-menu",
+      "quote": "Wilmington Happy Hour Menu / Monday-Friday from 3-6 pm, a selection of craft beverages & shareable small bites",
+      "quotes": [
+       "Wilmington Happy Hour Menu / Monday-Friday from 3-6 pm, a selection of craft beverages & shareable small bites",
+       "Newark Happy Hour Menu / Monday-Friday from 3-6 pm, a selection of craft beverages & sharable small bites"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "santa-fe-mexican-grill-wilmington-wilmington",
+   "lid": "DE2fadbe3447",
+   "name": "Santa Fe Mexican Grill - Wilmington",
+   "plcb_name": "Santa Fe Mexican Grill - Wilmington",
+   "address": "2000 Pennsylvania Ave, Wilmington, DE 19806",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "https://www.santafemexicangrill.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "wine",
+       "label": "Wine",
+       "price_usd": 4.0
+      },
+      {
+       "category": "wine",
+       "label": "Selected Wines by the Glass",
+       "price_usd": 4.0
+      },
+      {
+       "category": "draft",
+       "label": "Domestic Beers",
+       "price_usd": 3.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Skinny Margarita",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "Tacos Americanos",
+       "price_usd": 13.0
+      },
+      {
+       "category": "draft",
+       "label": "All Draft Beer",
+       "price_usd": 5.0
+      },
+      {
+       "category": "well",
+       "label": "Rail Drinks",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "Street Tacos",
+       "price_usd": 12.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.santafemexicangrill.com/wilmington-happy-hour",
+      "quote": "Wilmington Happy Hour Menu / Join us for food & drink specials Monday - Friday 4:00 pm - 6:00 pm. Available at the bar & high top seating.",
+      "quotes": [
+       "Wilmington Happy Hour Menu / Join us for food & drink specials Monday - Friday 4:00 pm - 6:00 pm. Available at the bar & high top seating.",
+       "Join us for food & drink specials Monday - Friday 4:00 pm - 6:00 pm. Available at the bar & high top seating.",
+       "Newark Happy Hour Menu Monday - Friday 3:00 pm - 6:00 pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "suite-4-eleven-wilmington",
+   "lid": "DE33f2fdc5bf",
+   "name": "Suite 4 Eleven",
+   "plcb_name": "Suite 4 Eleven",
+   "address": "411 S Walnut St, Wilmington, DE 19801",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "http://suite4eleven.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "21:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "21:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "21:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "21:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "21:00"
+      },
+      {
+       "dow": 6,
+       "start": "17:00",
+       "end": "21:00"
+      },
+      {
+       "dow": 7,
+       "start": "17:00",
+       "end": "21:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://suite4eleven.com/events",
+      "quote": "Enjoy Happy Hour 5\u20139 PM and an energetic nightlife vibe.",
+      "quotes": [
+       "Enjoy Happy Hour 5\u20139 PM and an energetic nightlife vibe."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "dead-presidents-pub-restaurant-wilmington",
+   "lid": "DE35c46628ec",
+   "name": "Dead Presidents Pub & Restaurant",
+   "plcb_name": "Dead Presidents Pub & Restaurant",
+   "address": "618 N Union St, Wilmington, DE 19805",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "http://deadpresidentspub.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Miller Lite & Yuengling Draft",
+       "price_usd": 2.5
+      },
+      {
+       "category": "shot",
+       "label": "Jameson shots",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "Burgers",
+       "price_usd": 8.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "Wine by the Bottle 6pm",
+       "discount_pct": 50
+      },
+      {
+       "category": "shot",
+       "label": "Fireball Shots and",
+       "price_usd": 4.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://deadpresidentspub.com/events/our-specials/",
+      "quote": "Happy Hour / Monday \u2013 Friday 4pm \u2013 6pm / $2.50 Miller Lite & Yuengling Drafts and $4 Fireballs and $5 Jameson shots",
+      "quotes": [
+       "Happy Hour / Monday \u2013 Friday 4pm \u2013 6pm / $2.50 Miller Lite & Yuengling Drafts and $4 Fireballs and $5 Jameson shots",
+       "Happy Hour starts an hour early for our hardworking teachers and anyone else ready to start the weekend early! 3pm \u2013 6pm Includes $2.50 Miller lite and Yuengling Drafts, $4 Fireball Shots and $5 Jameson shots."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "goobers-diner-wilmington",
+   "lid": "DE4264e33ba0",
+   "name": "Goobers Diner",
+   "plcb_name": "Goobers Diner",
+   "address": "1203 N Lincoln St, Wilmington, DE 19806",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "http://goobersdiner-de.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "17:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://goobersdiner-de.com/",
+      "quote": "Happy hour / 03:00 PM - 05:00 PM",
+      "quotes": [
+       "Happy hour / 03:00 PM - 05:00 PM"
       ]
      }
     }

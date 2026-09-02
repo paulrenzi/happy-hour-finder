@@ -62,7 +62,8 @@ HAS_A_CLOCK_RE = re.compile(r"(?<![$\d])\b\d{1,2}(?::[0-5]\d|\s*[ap]\.?m?\.?\b)"
 # BOTH halves -- 'Monday - Friday 4 PM - 7 PM / Saturday - Sunday 11 AM - 2 PM'
 # -- covers the week legitimately, and Veda, Santucci's, Lansdale Tavern and 86
 # West were all flagged by the wider rule for doing exactly that.
-WEEKDAY_ONLY_RE = re.compile(r"\bweek\s*(?:day|night)s?\b", re.I)
+WEEKDAY_ONLY_RE = re.compile(
+    r"\bweek\s*(?:day|night)s?\b|\bwork(?:ing)?\s*week\b", re.I)
 WEEKEND_RE = re.compile(r"\bweekends?\b|\bsat(?:ur)?(?:day)?s?\b|\bsun(?:day)?s?\b"
                         r"|\bdaily\b|\bevery ?day\b|\ball week\b|\b7 days\b", re.I)
 

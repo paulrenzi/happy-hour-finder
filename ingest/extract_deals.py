@@ -206,7 +206,10 @@ EVERYDAY_RE = re.compile(r"\b(?:daily|every ?day|every\W{0,3}single\W{0,3}day|al
 # a quote that plainly says five. A word we do not know reads as silence, and
 # silence here means daily -- so a gap in this vocabulary is not a miss, it is
 # a wrong card.
-WEEKDAY_RE = re.compile(r"\bweek\s*(?:day|night)s?\b", re.I)
+# ...and 'the working week' is the third way to say Monday to Friday, found the
+# same way: County Lines writes "Happy Hour all working week long, 4 to 6" and
+# Serum Kitchen shipped a Saturday and a Sunday off it.
+WEEKDAY_RE = re.compile(r"\bweek\s*(?:day|night)s?\b|\bwork(?:ing)?\s*week\b", re.I)
 WEEKEND_RE = re.compile(r"\bweekends?\b", re.I)
 
 # '4p - 6p' is how a bar writes it about as often as '4pm - 6pm', and requiring

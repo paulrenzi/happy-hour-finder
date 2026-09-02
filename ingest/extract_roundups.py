@@ -34,6 +34,7 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from extract_deals import HH_RE, dedupe, items_in, slug, windows_from  # noqa: E402
+from validate_pa import MAX_HOURS_PER_DAY, window_hours  # noqa: E402
 from validate_pa import state_of, validate_deal  # noqa: E402
 
 HITS = os.path.join(REPO, "data", "roundup_hits.json")
@@ -128,17 +129,44 @@ def month_label(iso):
 
 
 def deals_for(venue_hit, article, crawled_at):
-    """One venue's paragraph(s) -> [deal] (zero or one)."""
-    for quote in venue_hit["quotes"]:
-        if not HH_RE.search(quote):
-            continue
+    """One venue's paragraph(s) -> [deal] (zero or one).
+
+    🔑 THE CONTAINMENT IS ON THE ENTRY, NOT ON THE LINE. It used to be on the
+    line: a quote had to say "happy hour" itself before its clock could be
+    read. Delaware Today's "A Local's Guide to Happy Hours in Wilmington"
+    breaks that shape and it is a common one -- the venue's entry is three
+    lines, and they divide the job:
+
+        Catherine Rooney's
+        Monday-Friday, 3:30-6:30 p.m.                    <- the CLOCK
+        "...$1 off all drafts during its happy hour."    <- the WORDS
+        1616 Delaware Avenue, Wilmington                 <- the door
+
+    No single line has both, so ten Wilmington bars with exact published
+    clocks were refused, and the article read as naming nothing. The venue's
+    entry is the unit the article vouched for: if ANY of its lines says happy
+    hour, its clock line is a happy-hour clock.
+
+    🛑 That widens what a clock may mean, so the opening-hours guard comes
+    with it: an entry whose every window is longer than any happy hour is the
+    bar's opening times, and is refused. That check is a HEURISTIC, not a
+    statute, so it applies in Delaware too -- where the law sets no cap and
+    would not have caught it.
+    """
+    quotes = venue_hit["quotes"]
+    contained = any(HH_RE.search(q) for q in quotes)
+    for quote in quotes:
+        if not contained:
+            break
         windows = windows_in_paragraph(quote)
-        if not windows:
+        if not windows or all(window_hours(w) > MAX_HOURS_PER_DAY for w in windows):
             continue
         deal = {
             "type": "happy_hour",
             "windows": windows,
-            "items": tidy_items(items_in(quote)),
+            # Items come from every line of the entry, for the same reason:
+            # the prices are in the prose and the clock is on its own line.
+            "items": tidy_items([i for q in quotes for i in items_in(q)]),
             "confidence": "unconfirmed",
             # The day WE read the article and it still said this. The article's
             # own date is on the source, and on the card.
@@ -150,6 +178,10 @@ def deals_for(venue_hit, article, crawled_at):
                 "outlet": article["outlet"],
                 "published": article["published"],
                 "quote": quote,
+                # The whole entry, so tests/window_quote_check.py can
+                # ask an honest question of a card whose clock and
+                # whose words are on different lines.
+                "quotes": quotes,
                 "note": f"{article['outlet']}, {month_label(article['published'])}",
             },
         }

@@ -161,6 +161,15 @@
   "queried": "133 S 18TH ST, PHILADELPHIA PA 19103-5238",
   "resolved": "Bar Bombon"
  },
+ "bar-xiii-delaware-wilmington": {
+  "lat": 39.7864091,
+  "lng": -75.4758731,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "1706 Philadelphia Pike, Wilmington, DE 19809",
+  "resolved": "Bar XIII Delaware"
+ },
  "barbuzzo-philadelphia": {
   "lat": 39.9500257,
   "lng": -75.1620492,
@@ -188,6 +197,15 @@
   "precision": "place",
   "queried": "9991-93 BUSTLETON AVE, PHILADELPHIA PA 19115",
   "resolved": "Benny the Bum's"
+ },
+ "big-fish-grill-on-the-riverfront-wilmington": {
+  "lat": 39.732679,
+  "lng": -75.56101199999999,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "720 Justison St, Wilmington, DE 19801",
+  "resolved": "Big Fish Grill on the Riverfront"
  },
  "black-horse-plymouth-meeting": {
   "lat": 40.108229,
@@ -443,6 +461,24 @@
   "queried": "1311-13 SANSOM ST, PHILADELPHIA PA 19107-4523",
   "resolved": "DBG"
  },
+ "dead-presidents-pub-restaurant-wilmington": {
+  "lat": 39.75115600000001,
+  "lng": -75.571381,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "618 N Union St, Wilmington, DE 19805",
+  "resolved": "Dead Presidents Pub & Restaurant"
+ },
+ "del-pez-riverfront-wilmington": {
+  "lat": 39.7354935,
+  "lng": -75.55987499999999,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "400 Justison St, Wilmington, DE 19801",
+  "resolved": "Del Pez Riverfront"
+ },
  "depaul-s-table-ardmore": {
   "lat": 40.0080061,
   "lng": -75.2908039,
@@ -578,6 +614,15 @@
   "queried": "46 E STATE ST UNIT G, , DOYLESTOWN PA 18901-4360",
   "resolved": "Frost Doylestown"
  },
+ "giordano-s-kennett-square": {
+  "lat": 39.850824599999996,
+  "lng": -75.7001891,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "633 E CYPRESS ST, KENNETT SQUARE PA 19348-2446",
+  "resolved": "Giordano's"
+ },
  "giuseppes-s-pizza-family-restaurant-warminster": {
   "lat": 40.217348900000005,
   "lng": -75.1192148,
@@ -596,6 +641,15 @@
   "precision": "amenity",
   "queried": "103 N Wayne Ave, Wayne PA 19087",
   "resolved": "The Goat's Beard, 103, North Wayne Avenue, Wayne, Radnor Township, Delaware County, Pennsylvania, 19087, United States"
+ },
+ "goobers-diner-wilmington": {
+  "lat": 39.756131599999996,
+  "lng": -75.5671199,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "1203 N Lincoln St, Wilmington, DE 19806",
+  "resolved": "Goobers Diner"
  },
  "good-dog-bar-philadelphia": {
   "lat": 39.9487884,
@@ -659,6 +713,15 @@
   "precision": "place",
   "queried": "1109 WALNUT ST, PHILADELPHIA PA 19107-4908",
   "resolved": "Hi-Lo Taco Co."
+ },
+ "hilltop-crab-house-restaurant-bar-toughkenamon": {
+  "lat": 39.806961099999995,
+  "lng": -75.7480087,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "8980 GAP NEWPORT PK, TOUGHKENAMON PA 19374-1041",
+  "resolved": "Hilltop Crab House Restaurant & Bar"
  },
  "interstate-drafthouse-philadelphia": {
   "lat": 39.9718422,
@@ -778,6 +841,15 @@
   "queried": "789 EAST LANCASTER AVE, VILLANOVA PA 19085",
   "resolved": "LaScala's Fire"
  },
+ "le-cavalier-wilmington": {
+  "lat": 39.7464836,
+  "lng": -75.54784579999999,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "42 W 11th St, Wilmington, DE 19801",
+  "resolved": "Le Cavalier"
+ },
  "liberty-union-bar-and-grill-chester-springs": {
   "lat": 40.0770239,
   "lng": -75.6875295,
@@ -867,15 +939,6 @@
   "precision": "place",
   "queried": "400-02 S 2ND ST, PHILADELPHIA PA 19147-1608",
   "resolved": "Malbec Argentine Steakhouse"
- },
- "marsha-s-south-street-philadelphia": {
-  "lat": 39.9416796,
-  "lng": -75.1503534,
-  "matched_by": "osm_site",
-  "osm": "node/13426985662",
-  "precision": "place",
-  "queried": "430 SOUTH ST, PHILADELPHIA PA 19147-1535",
-  "resolved": "Marsha's South Street"
  },
  "mia-ragazza-philadelphia": {
   "lat": 40.026143,
@@ -1192,6 +1255,15 @@
   "queried": "124 W GAY ST, WEST CHESTER PA 19380-2915",
   "resolved": "Ryan\u2019s Pub"
  },
+ "santa-fe-mexican-grill-wilmington-wilmington": {
+  "lat": 39.756206399999996,
+  "lng": -75.5689712,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "2000 Pennsylvania Ave, Wilmington, DE 19806",
+  "resolved": "Santa Fe Mexican Grill - Wilmington"
+ },
  "santucci-s-original-square-pizza-philadelphia": {
   "lat": 39.9594333,
   "lng": -75.1966701,
@@ -1354,6 +1426,15 @@
   "queried": "158 W GAY ST, WEST CHESTER PA 19380-2915",
   "resolved": "Stove and Tap"
  },
+ "suite-4-eleven-wilmington": {
+  "lat": 39.7319943,
+  "lng": -75.55373469999999,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "411 S Walnut St, Wilmington, DE 19801",
+  "resolved": "Suite 4 Eleven"
+ },
  "sullivan-s-steakhouse-king-of-prussia": {
   "lat": 40.0866596,
   "lng": -75.3867881,
@@ -1461,15 +1542,6 @@
   "precision": "place",
   "queried": "129L S 30TH ST, PHILADELPHIA PA 19104",
   "resolved": "The Post"
- },
- "the-pullman-restaurant-and-bar-bryn-mawr": {
-  "lat": 40.0215093,
-  "lng": -75.3153609,
-  "matched_by": "osm_site",
-  "osm": "node/3714274818",
-  "precision": "place",
-  "queried": "39 MORRIS AVE, BRYN MAWR PA 19010-3335",
-  "resolved": "The Pullman Restaurant and Bar"
  },
  "the-sidecar-bar-grille-philadelphia": {
   "lat": 39.9417727,
@@ -1599,6 +1671,24 @@
   "queried": "36 W 3RD AVE, COLLEGEVILLE PA 19426-3605",
   "resolved": "Troubles End Brewing"
  },
+ "two-stones-pub-kennett-square-kennett-square": {
+  "lat": 39.863525599999996,
+  "lng": -75.6836794,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "843 E BALTIMORE PK, KENNETT SQUARE PA 19348-1801",
+  "resolved": "Two Stones Pub Kennett Square"
+ },
+ "two-stones-pub-wilmington-wilmington": {
+  "lat": 39.825306999999995,
+  "lng": -75.4990121,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "2502 Foulk Rd, Wilmington, DE 19810",
+  "resolved": "Two Stones Pub Wilmington"
+ },
  "ubar-philadelphia": {
   "lat": 39.947752,
   "lng": -75.161535,
@@ -1652,6 +1742,15 @@
   "precision": "place",
   "queried": "DOWNINGTOWN TECH CTR 420 ACORN LN, DOWNINGTOWN PA 19335-3075",
   "resolved": "Victory Brewing Company"
+ },
+ "victory-brewing-company-kennett-square-kennett-square": {
+  "lat": 39.8444365,
+  "lng": -75.71964779999999,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "650 W CYPRESS ST, KENNETT SQUARE PA 19348-3049",
+  "resolved": "Victory Brewing Company Kennett Square"
  },
  "village-whiskey-philadelphia": {
   "lat": 39.9513934,
