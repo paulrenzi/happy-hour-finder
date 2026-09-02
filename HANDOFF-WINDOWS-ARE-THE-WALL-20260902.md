@@ -45,27 +45,51 @@ no schedule-bearing quote from any of them.
 
 ---
 
-## ⏳ THE DECISION THAT UNBLOCKS EVERYTHING — Paul's, not a session's
+## ✅ THE DECISION WAS MADE — 2026-09-02, Paul: **YES**
 
-**May the page reader propose a WINDOW?** Today the contract is *items only, never a
-window*, and that contract is what makes the model shippable.
+**The page reader may propose a WINDOW.** Built and shipped the same session,
+in the approved shape: verbatim span → checked in code against the page (twice:
+in the reader, and again in `extract_deals.py`, so the sidecar is never evidence
+of itself) → converted by `windows_from()`, **the existing parser, unmodified.**
+*"No meridiem ⇒ refused, never guessed"* is untouched; the model never states a
+time. `ingest/read_windows_llm.py`, sidecar `data/windows_pages_llm.json`,
+8 tests in `tests/test_window_reader.py`. Commit `07473a6`.
 
-The shape that keeps the discipline intact:
+**First run:** 31 eligible pages (only venues whose quotes state no schedule are
+ever sent), 6 calls, 6 spans / 5 venues, 3 refused. **208 → 213 kept, no existing
+card changed**, and the new cards arrived carrying items that had already been
+read and stranded — Bistro on Bridge 26, il Granaio 23 (from a PDF, both its
+windows), Anthony's Coal Fired 26, StoneRose 11, Garrett Hill window-only.
+Verified live in WebKit on the phoenixville board, no page errors.
 
-- the model returns the **verbatim span** it read the window from
-- `verify()` checks that span really occurs in the page — **in code**
-- the **existing deterministic parser** converts the span to a window, so
-  **"no meridiem ⇒ refused, never guessed" is untouched** and the model never invents
-  a time
+🔑 **The refusals are the pass working:** Bonefish is a start with no end,
+Cornerstone has no meridiem, Miller's Ale House states two clauses across a line
+break `clauses()` will not split. The model pointed at the right sentence each
+time and the deterministic parser declined it.
 
-That is a reader proposing **evidence**, not a source stating a **fact** — the same
-distinction the item pass already survives on.
+🛑 **Two claims in this handoff were wrong** — reading the cached pages corrected
+them. **Autograph Brasserie is not 7–9:30 PM**; that `6:30-9:30 PM` is GIRLS
+NIGHT OUT and its happy-hour section states no hours at all. **Blue Bell Inn's
+4:30–6:30 is in no page we hold** — it needs a re-crawl, not a reader. A window
+quoted in a handoff is a claim about a page; check it against the bytes first.
 
-🛑 **Nothing has been built. Do not build it without the call.** If the answer is yes,
-it is worth roughly the 154 venues; if no, the 154 need a different plan and the towns
-stay thin.
+### What is next on this, and what it is worth
 
----
+Only **27 of the 154** had a cached page to read; the rest arrive as towns get
+crawled. So the next scoped town run should carry the window pass:
+
+```
+python ingest/needy.py <towns> --show --lids run.lids
+python ingest/crawl_sites.py --lids run.lids --recrawl --render
+python ingest/read_pages_llm.py --show --rejects        # items
+python ingest/read_windows_llm.py --show --rejects      # windows
+python ingest/extract_deals.py && python ingest/build_bundles.py
+```
+
+⏳ **Two parser gaps the refusals named, both Paul's call, neither built:**
+`clauses()` does not split on a line break (Miller's), and a no-meridiem range
+like `tues-fri from 3:30-5:30` is refused on a page that also says HAPPY HOUR —
+where an afternoon reading is close to certain but still an inference.
 
 ## 🛑 Scope rules that are already settled — do not reopen them
 
