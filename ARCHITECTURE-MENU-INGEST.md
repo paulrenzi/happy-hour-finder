@@ -1277,6 +1277,93 @@ the Bonefish card is the acceptance test: 3:00pm–6:30pm, seven days, items pri
 
 ---
 
+## ✅🔑 WEST CHESTER — one town, and the count question answered (2026-09-02)
+
+Paul picked it and asked two things: are we missing restaurants from our total,
+and get pictures for everything.
+
+| | before | after |
+|---|---|---|
+| venues with a website | 22 | **49** (of 62) |
+| venues with a photo | 9 | **44** |
+| the needy list | 23 | **42** |
+| cards carrying hours | 9 | **13** |
+
+Cost: **$2.07** photos/websites + $0.10 for the town search + one scoped
+`read_menus_llm` run. New: **Opa Taverna 33 items**, Lascala's Fire 16, Avalon
+Restaurant, Ryan's Pub, Teca-R. Corpus 225 → 230 published windows. Verified
+live in WebKit against the town's own venue names, 37 cards painted, zero page
+errors.
+
+🔑 **The website lift is the whole run.** 22 → 49 websites took the needy list
+23 → 42, and a venue with no website is a venue the crawl cannot read. This is
+the Willow Grove lesson holding on a second town: the cheap certain data comes
+first, and everything downstream is bounded by it.
+
+### 🛑🛑 "NOT A LICENSEE WE HOLD" was wrong a third of the time
+
+The instrument answering Paul's question was itself the thing to fix. The town
+search called **12** venues missing; **four were already ours**:
+
+1. **`house_numbers()` read only the first two parts of a range.** Limoncello's
+   licence is `5-7-9 N Walnut St`; Google calls it `9 N Walnut St`. The one
+   number the sign uses was the one dropped.
+2. **`match_place()` required Google and the PLCB to agree on a ZIP.** The Stone
+   Tavern is 19382 to Google and 19380 on its licence — both West Chester.
+   Inside one zone that is not evidence of a different bar; the name test is
+   still exact and both ZIPs must be the zone's own.
+3. Bar Avalon and two others we hold under a different trade name or in a
+   neighbouring zone, found by the photo pass and by name.
+
+36/12 → **38 matched, 10 unmatched**, of which two more are ours in an adjacent
+zone. **Eight are genuinely absent from the licence base** — The Social, LoCali
+Wine Lounge, High Street Caffe, Bier and Loathing, Bottle Room, R Five Wines,
+Concordville Bar and Grille, and Victory Brewing Downingtown's taproom. They are
+in `data/ground_truth/west_chester.json` under `unmatched`. **Adding a
+non-licensee to a licence-derived base is Paul's call, not a session's.**
+
+### 🛑🛑🔑 A chain's events calendar is every town at once
+
+The West Chester card shipped **"Pottstown – Trivia Every Wednesday!"** and
+**"Drexel Hill – Quizzo Tuesday"**. Artillery Brewing publishes one events page
+for every location it owns, each row prefixed with its town.
+
+🔑 **Both were correctly grounded.** Those words really are on that page, the
+quote check passed, the clock and day came off adjacent lines exactly as the
+calendar rule intends. **No grounding check can see this** — it is the
+`$50 prix fixe` failure again: right evidence, wrong thing.
+
+`another_towns_row()` refuses a row headed with a town the licence base knows
+that is not the venue's own. Narrow on purpose — **prefix position only**, so
+`Wings - $5` and `Bar Bites: half price` are untouched — and checked in `vet()`
+**and again in `build()`**, so rows already written before the guard existed are
+dropped rather than shipped once more.
+
+### Checked, and NOT a regression
+
+**Sedona Taphouse left the board.** It is the second active licence at
+**44 W Gay St**, where Lascala's Fire now trades; the PLCB still lists both as
+Active because status lags a tenancy. One building, one card — `merge_venues`
+keyed on (house number, ZIP) is doing what it was written to do, and Sedona
+falls back to the hours-unknown list under its own name. Its licence row is
+intact.
+
+### Left open, named
+
+- **`scratch/live_check.py` reported Ryan's Pub missing from a board it was
+  painted on** — the board carries the curly apostrophe, a typed name carries a
+  straight one. Fixed locally; `scratch/` is gitignored, so the fix does not
+  ship and the next session will meet it again.
+- **`reach_llm links` lost one batch to a `JSONDecodeError`** (5 of 42 venues,
+  three of which have unreachable sites). The batch's reply is not saved, so
+  there is nothing to look at afterwards — that is the fix, not a retry.
+- Three cards ship a window with **0 items** (Avalon, Pietro's Prime, Teca-R).
+  Those venues publish hours and no prices. Honest, not broken.
+- **No ground-truth row is confirmed for this town either.** `report_coverage`
+  still has no denominator. **Paul's minute is still the missing instrument.**
+
+---
+
 ## Standing rules
 
 - **One venue at a time, finished on the live site before the next**, and Paul
