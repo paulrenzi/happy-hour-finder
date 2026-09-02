@@ -374,21 +374,25 @@
  },
  "100252": {
   "address": "1710 N 5TH ST, PHILADELPHIA PA 19122-2909",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "HUMAN ROBOT",
   "osm_name": "Poe's Sandwich Joint",
   "pages": [
    {
+    "embedded": 34,
     "hh": false,
     "lines": 0,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 0 lines, 34 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://poesjoint.square.site"
    },
    {
+    "embedded": 13,
     "hh": false,
     "lines": 1,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 1 lines, 13 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://poesjoint.square.site/shop/specials/HOXVO36CLPG2NARM6AV3I2DQ"
    }
   ],
@@ -447,21 +451,25 @@
  },
  "100806": {
   "address": "1623 BALTIMORE PIKE, CHADDS FORD PA 19317",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "ANTICA ITALIAN RESTAURANT",
   "osm_name": "Antica Italian Restaurant & BYOB",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 17,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 17 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.anticapa.com"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 8,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 8 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.anticapa.com/menus.html"
    }
   ],
@@ -2328,9 +2336,11 @@
   "osm_name": "Bacio's Italian Cuicina",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 0,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 0 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.baciocucina.com/"
    }
   ],
@@ -2912,7 +2922,7 @@
   "pages": [
    {
     "hh": false,
-    "lines": 39,
+    "lines": 125,
     "result": "ok, 0 quote(s)",
     "url": "http://www.multiflow.net/"
    }
@@ -2929,7 +2939,7 @@
   "pages": [
    {
     "hh": false,
-    "lines": 39,
+    "lines": 125,
     "result": "ok, 0 quote(s)",
     "url": "http://www.multiflow.net/"
    }
@@ -3458,15 +3468,17 @@
  },
  "107668": {
   "address": "330 GODDARD BLVD, KING OF PRUSSIA PA 19406-2900",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "TAKU STEAKHOUSE LLC",
   "osm_name": "Taku Japanese Steakhouse",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 15,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 15 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.takukop.com/"
    }
   ],
@@ -6412,16 +6424,34 @@
  },
  "113002": {
   "address": "333 BELROSE LN, RADNOR PA 19087-4416",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "333 BELROSE, LLC",
   "osm_name": "333 Belrose",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 7,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 7 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://333belrose.com"
+   },
+   {
+    "embedded": 0,
+    "hh": false,
+    "lines": 19,
+    "result": "shell: 19 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
+    "url": "https://www.333belrose.com/menus"
+   },
+   {
+    "embedded": 0,
+    "hh": false,
+    "lines": 1,
+    "result": "shell: 1 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
+    "url": "https://www.333belrose.com/private-events"
    }
   ],
   "website": "https://333belrose.com",
@@ -6683,15 +6713,17 @@
  },
  "113965": {
   "address": "170 N GULPH RD, KING OF PRUSSIA PA 19406",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "NEIMAN MARCUS",
   "osm_name": "Neiman Marcus",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 6,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 6 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://stores.neimanmarcus.com/stores/kingofprussia/pa/kingofprussia/1030"
    }
   ],
@@ -9159,25 +9191,27 @@
   "osm_name": "Artifact Brewing",
   "pages": [
    {
-    "result": "rendered: 20 lines -> 22",
-    "url": "https://www.artifactales.com/"
-   },
-   {
+    "embedded": 125,
     "hh": false,
-    "lines": 22,
-    "result": "ok, 0 quote(s)",
+    "lines": 20,
+    "result": "shell: 20 lines, 125 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.artifactales.com/"
    },
    {
+    "embedded": 128,
     "hh": false,
     "lines": 32,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 32 lines, 128 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.artifactales.com/events/2021/12/24/open-for-business-special-hours"
    },
    {
+    "embedded": 127,
     "hh": false,
     "lines": 15,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 15 lines, 127 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.artifactales.com/events"
    }
   ],
@@ -9397,27 +9431,33 @@
  },
  "120855": {
   "address": "560 W LANCASTER AVE, HAVERFORD PA 19041-1209",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "ROACHE & O'BRIEN",
   "osm_name": null,
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 36,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 36 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.roacheandobrien.com/"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 1,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 1 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.roacheandobrien.com/about-1-1"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 31,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 31 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.roacheandobrien.com/about-1-1-2"
    }
   ],
@@ -9546,15 +9586,17 @@
  },
  "121628": {
   "address": "160 N GULPH RD SPACE 1034A, KING OF PRUSSIA PA 19406",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "EATALY KOP LLC",
   "osm_name": "Eataly King of Prussia",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 1,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 1 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.eataly.com/us_en/stores/king-prussia"
    }
   ],
@@ -10112,27 +10154,35 @@
   "osm_name": null,
   "pages": [
    {
+    "embedded": 0,
     "hh": true,
     "lines": 38,
-    "result": "ok, 3 quote(s)",
+    "result": "shell: 38 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://www.buonavia.com/"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 28,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 28 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://buonavia.com/happenings/"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 32,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 32 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://www.buonavia.com/event/"
    },
    {
+    "embedded": 0,
     "hh": true,
     "lines": 36,
-    "result": "ok, 1 quote(s)",
+    "result": "shell: 36 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://buonavia.com/menus/"
    }
   ],
@@ -13388,13 +13438,11 @@
   "osm_name": null,
   "pages": [
    {
-    "result": "rendered: 33 lines -> 38",
-    "url": "https://www.yumenorthwales.com/"
-   },
-   {
+    "embedded": 7,
     "hh": false,
-    "lines": 38,
-    "result": "ok, 0 quote(s)",
+    "lines": 33,
+    "result": "shell: 33 lines, 7 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.yumenorthwales.com/"
    }
   ],
@@ -13749,21 +13797,25 @@
  },
  "133297": {
   "address": "402 SWEDESFORD RD, BERWYN PA 19312",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "VIBE HAUS INDIAN PLATES AND TAPS",
   "osm_name": "Vibe Haus",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 1,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 1 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.vibehausbrew.com/"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 1,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 1 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://vibehausbrew.com/blog/best-berwyn-delivery-restaurants-for-lunch-dinner-and-special-occasions"
    }
   ],
@@ -15876,27 +15928,33 @@
  },
  "36563": {
   "address": "39-41 W LANCASTER AVE, ARDMORE PA 19003-1408",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "CAFE SAN PIETRO",
   "osm_name": "Local Wine & Kitchen",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 32,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 32 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.localwineandkitchen.com/home"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 27,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 27 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.localwineandkitchen.com/events"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 21,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 21 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.localwineandkitchen.com/menus"
    }
   ],
@@ -17176,23 +17234,19 @@
   "osm_name": null,
   "pages": [
    {
-    "result": "rendered: 33 lines -> 37",
+    "embedded": 0,
+    "hh": false,
+    "lines": 33,
+    "result": "shell: 33 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://www.commonwealthgolfclub.com/"
    },
    {
+    "embedded": 0,
     "hh": false,
-    "lines": 37,
-    "result": "ok, 0 quote(s)",
-    "url": "http://www.commonwealthgolfclub.com/"
-   },
-   {
-    "result": "rendered: 32 lines -> 37",
-    "url": "http://www.commonwealthgolfclub.com/Dining"
-   },
-   {
-    "hh": false,
-    "lines": 37,
-    "result": "ok, 1 quote(s)",
+    "lines": 32,
+    "result": "shell: 32 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://www.commonwealthgolfclub.com/Dining"
    }
   ],
@@ -19731,7 +19785,7 @@
  },
  "48919": {
   "address": "690 S TROOPER RD, NORRISTOWN PA 19403",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "RARE HOSPITALITY INTERNATIONAL INC",
   "osm_name": "LongHorn Steakhouse",
@@ -19745,9 +19799,11 @@
     "url": "https://www.longhornsteakhouse.com/api/menu?restaurantNum=5180"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 0,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 0 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://m.longhornsteakhouse.com/locations/pa/norristown/norristown-west-norriton/5180"
    }
   ],
@@ -22932,15 +22988,17 @@
  },
  "57106": {
   "address": "339 E LANCASTER AVE, WYNNEWOOD PA 19096-1920",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "SANG KEE ASIAN BISTRO INC",
   "osm_name": "SangKee Asian Bistro",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 19,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 19 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://www.sangkeeasianbistro.com/"
    }
   ],
@@ -23075,7 +23133,7 @@
  },
  "57609": {
   "address": "216 W BEIDLER RD STE 600, KING OF PRUSSIA PA 19406-1708",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [
    {
     "quote": "Check our Facebook page for daily specials & entertainment!",
@@ -23086,15 +23144,19 @@
   "osm_name": "Angelo's Pizza Co",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 22,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 22 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.angelospizzakop.com/"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 10,
-    "result": "ok, 1 quote(s)",
+    "result": "shell: 10 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://www.screwballsbarandgrille.com/"
    }
   ],
@@ -23633,15 +23695,17 @@
  },
  "58639": {
   "address": "150 W DEKALB PK #130, KING OF PRUSSIA PA 19406-2327",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "WILD RICE",
   "osm_name": "Wild Rice Pan Asian Restaurant",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 4,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 4 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://food.zuppler.com/#/restaurants/wildrice/171"
    }
   ],
@@ -26524,7 +26588,7 @@
  },
  "63085": {
   "address": "236 MALL BLVD, KING OF PRUSSIA PA 19406",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [
    {
     "hh": true,
@@ -26624,15 +26688,19 @@
     "url": "https://www.thecapitalgrille.com/api/menu?restaurantNum=8043"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 0,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 0 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://m.thecapitalgrille.com/locations/pa/king-of-prussia/king-of-prussia/8043"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 0,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 0 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.thecapitalgrille.com/locations/pa/king-of-prussia/king-of-prussia/8043?cmpid=br:tcg_ag:ie_ch:loc_ca:TCGGMB_sn:gmb_gt:king-of-prussia-pa-8043_pl:locurl_rd:1038"
    }
   ],
@@ -30864,27 +30932,33 @@
  },
  "68056": {
   "address": "190 N GULPH RD, KING OF PRUSSIA PA 19406-2932",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "NORDSTROM MARKETPLACE CAFE",
   "osm_name": "Marketplace Cafe at Nordstrom",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 0,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 0 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.nordstrom.com/store-details/nordstrom-the-plaza-at-king-of-prussia?utm_source=google&utm_medium=organic&utm_campaign=food&utm_content=32629&utm_channel=low_nd_seo_local&sp_source=google&sp_campaign=food"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 0,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 0 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.nordstromrack.com/c/kids/special-occasion"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 0,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 0 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.nordstromrack.com/c/men/clothing/suits-and-sport-coats/special-occasion"
    }
   ],
@@ -31901,19 +31975,19 @@
   "osm_name": null,
   "pages": [
    {
-    "result": "rendered: 23 lines -> 29",
-    "url": "https://crookedeyebrewery.com/"
-   },
-   {
+    "embedded": 0,
     "hh": false,
-    "lines": 29,
-    "result": "ok, 0 quote(s)",
+    "lines": 23,
+    "result": "shell: 23 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://crookedeyebrewery.com/"
    },
    {
+    "embedded": 0,
     "hh": true,
     "lines": 29,
-    "result": "ok, 2 quote(s)",
+    "result": "shell: 29 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://crookedeyebrewery.com/events"
    }
   ],
@@ -32275,31 +32349,35 @@
   "osm_name": "Roots Cafe",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 19,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 19 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.rootscafewc.com/"
    },
    {
-    "result": "rendered: 13 lines -> 20",
-    "url": "https://www.rootscafewc.com/happy-hour"
-   },
-   {
+    "embedded": 0,
     "hh": true,
-    "lines": 20,
-    "result": "ok, 2 quote(s)",
+    "lines": 13,
+    "result": "shell: 13 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.rootscafewc.com/happy-hour"
    },
    {
+    "embedded": 0,
     "hh": true,
     "lines": 16,
-    "result": "ok, 2 quote(s)",
+    "result": "shell: 16 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.rootscafewc.com/menus/tarot-happy-hour"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 18,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 18 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.rootscafewc.com/drinks-menu"
    }
   ],
@@ -32570,13 +32648,11 @@
   "osm_name": "320 Market Cafe",
   "pages": [
    {
-    "result": "rendered: 30 lines -> 32",
-    "url": "http://www.the320marketcafe.com/"
-   },
-   {
+    "embedded": 0,
     "hh": false,
-    "lines": 32,
-    "result": "ok, 0 quote(s)",
+    "lines": 30,
+    "result": "shell: 30 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://www.the320marketcafe.com/"
    }
   ],
@@ -33670,13 +33746,11 @@
   "osm_name": "Buffalo Wild Wings",
   "pages": [
    {
-    "result": "render failed: TimeoutError",
-    "url": "https://www.buffalowildwings.com/locations/us/pa/warrington/201-easton-road/sports-bar-1205/?utm_source=google-my-business&utm_medium=organic&utm_campaign=website-link&y_source=1_MjAxNjYxMTI5Ni03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D"
-   },
-   {
+    "embedded": 0,
     "hh": false,
     "lines": 1,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 1 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.buffalowildwings.com/locations/us/pa/warrington/201-easton-road/sports-bar-1205/?utm_source=google-my-business&utm_medium=organic&utm_campaign=website-link&y_source=1_MjAxNjYxMTI5Ni03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D"
    }
   ],
@@ -35393,7 +35467,7 @@
  },
  "72655": {
   "address": "644 LANCASTER AVE, BERWYN PA 19312-1663",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [
    {
     "quote": "For call aheads and casual happy hours, please email directly at natalie@lacabrabrewing.com.",
@@ -35404,15 +35478,25 @@
   "osm_name": null,
   "pages": [
    {
+    "embedded": 123,
     "hh": false,
     "lines": 37,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 37 lines, 123 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.lacabrabrewing.com/"
    },
    {
+    "hh": false,
+    "lines": 41,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.lacabrabrewing.com/brewhouse"
+   },
+   {
+    "embedded": 125,
     "hh": true,
     "lines": 38,
-    "result": "ok, 1 quote(s)",
+    "result": "shell: 38 lines, 125 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.lacabrabrewing.com/privateevents"
    }
   ],
@@ -36018,15 +36102,17 @@
  },
  "73179": {
   "address": "1301 SKIPPACK PK, BLUE BELL PA 19422-1254",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "BLUE BELL MARKET LLC",
   "osm_name": "Golden Sea",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 15,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 15 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://goldenseabluebell.com/"
    }
   ],
@@ -36313,15 +36399,17 @@
  },
  "80379": {
   "address": "29 & 35 E LANCASTER AVE, ARDMORE PA 19003-2319",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "RIPPLEWOOD",
   "osm_name": "Sushi Nami",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 0,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 0 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://sushinamipaoli.com/"
    }
   ],
@@ -37337,13 +37425,11 @@
   "osm_name": null,
   "pages": [
    {
-    "result": "rendered: 7 lines -> 11",
-    "url": "http://www.westbranchdistilling.com/"
-   },
-   {
+    "embedded": 0,
     "hh": false,
-    "lines": 11,
-    "result": "ok, 0 quote(s)",
+    "lines": 7,
+    "result": "shell: 7 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://www.westbranchdistilling.com/"
    }
   ],
@@ -37898,15 +37984,17 @@
  },
  "85694": {
   "address": "160 N GULPH RD OUTLOT D, KING OF PRUSSIA PA 19406-2941",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "TRUE FOOD KITCHEN",
   "osm_name": null,
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 1,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 1 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.truefoodkitchen.com/locations/king-of-prussia/"
    },
    {
@@ -39169,9 +39257,11 @@
   "osm_name": "Neshaminy Valley Golf Club - OPEN to PUBLIC",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 35,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 35 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://www.neshaminygolf.com/"
    }
   ],
@@ -39701,13 +39791,11 @@
   "osm_name": "Andiaro",
   "pages": [
    {
-    "result": "rendered: 27 lines -> 32",
-    "url": "https://andiario.com"
-   },
-   {
+    "embedded": 127,
     "hh": false,
-    "lines": 32,
-    "result": "ok, 0 quote(s)",
+    "lines": 27,
+    "result": "shell: 27 lines, 127 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://andiario.com"
    }
   ],
@@ -40494,10 +40582,18 @@
   "osm_name": "Mei Ting Asian Fusion",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 6,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 6 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://www.mei-ting.com/"
+   },
+   {
+    "hh": false,
+    "lines": 78,
+    "result": "ok, 0 quote(s)",
+    "url": "https://stores.giantfoodstores.com/pa/warrington/1661-south-easton-road"
    }
   ],
   "website": "http://www.mei-ting.com/",
@@ -42192,19 +42288,11 @@
   "osm_name": "Margaret Kuo's Kitchen",
   "pages": [
    {
-    "result": "rendered: 14 lines -> 20",
-    "url": "http://margaretkuoskitchen.com/"
-   },
-   {
-    "hh": false,
-    "lines": 20,
-    "result": "ok, 0 quote(s)",
-    "url": "http://margaretkuoskitchen.com/"
-   },
-   {
+    "embedded": 7,
     "hh": false,
     "lines": 14,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 14 lines, 7 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://margaretkuoskitchen.com/"
    },
    {
@@ -42359,25 +42447,27 @@
   "osm_name": null,
   "pages": [
    {
-    "result": "rendered: 20 lines -> 22",
-    "url": "https://www.artifactales.com/"
-   },
-   {
+    "embedded": 125,
     "hh": false,
-    "lines": 22,
-    "result": "ok, 0 quote(s)",
+    "lines": 20,
+    "result": "shell: 20 lines, 125 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.artifactales.com/"
    },
    {
+    "embedded": 128,
     "hh": false,
     "lines": 32,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 32 lines, 128 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.artifactales.com/events/2021/12/24/open-for-business-special-hours"
    },
    {
+    "embedded": 127,
     "hh": false,
     "lines": 15,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 15 lines, 127 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.artifactales.com/events"
    }
   ],
@@ -43863,21 +43953,27 @@
   "osm_name": "Peking Media Restaurant",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 27,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 27 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.pekingmedia.com/"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 27,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 27 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.pekingmediapennsylvania.com/"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 27,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 27 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.pekingmedia.com/dzb5nxih/peking-media-restaurant-media-19063/order-online"
    }
   ],
@@ -43959,25 +44055,27 @@
   "osm_name": "Nordstrom Grill",
   "pages": [
    {
-    "result": "rendered: 0 lines -> 8",
-    "url": "https://www.nordstrom.com/store-details/nordstrom-christiana-mall?utm_source=google&utm_medium=organic&utm_campaign=food&utm_content=36639&utm_channel=low_nd_seo_local&sp_source=google&sp_campaign=food"
-   },
-   {
-    "hh": false,
-    "lines": 8,
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.nordstrom.com/store-details/nordstrom-christiana-mall?utm_source=google&utm_medium=organic&utm_campaign=food&utm_content=36639&utm_channel=low_nd_seo_local&sp_source=google&sp_campaign=food"
-   },
-   {
+    "embedded": 0,
     "hh": false,
     "lines": 0,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 0 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
+    "url": "https://www.nordstrom.com/store-details/nordstrom-christiana-mall?utm_source=google&utm_medium=organic&utm_campaign=food&utm_content=36639&utm_channel=low_nd_seo_local&sp_source=google&sp_campaign=food"
+   },
+   {
+    "embedded": 0,
+    "hh": false,
+    "lines": 0,
+    "result": "shell: 0 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.nordstromrack.com/c/kids/special-occasion"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 0,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 0 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.nordstromrack.com/c/men/clothing/suits-and-sport-coats/special-occasion"
    }
   ],
@@ -44124,13 +44222,11 @@
   "osm_name": "Empire",
   "pages": [
    {
-    "result": "rendered: 31 lines -> 35",
-    "url": "http://empirenewark.com/"
-   },
-   {
+    "embedded": 0,
     "hh": false,
-    "lines": 35,
-    "result": "ok, 0 quote(s)",
+    "lines": 31,
+    "result": "shell: 31 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://empirenewark.com/"
    }
   ],
@@ -44300,9 +44396,11 @@
   "osm_name": "Vincente's Restaurant",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 19,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 19 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://www.vincentesrestaurant.com/"
    }
   ],
@@ -44471,13 +44569,11 @@
   "osm_name": "Simmer Down",
   "pages": [
    {
-    "result": "render failed: TimeoutError",
-    "url": "https://simmerdownbar.com/?utm_source=google&utm_medium=Local&utm_campaign=Google+My+Business"
-   },
-   {
+    "embedded": 0,
     "hh": false,
     "lines": 8,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 8 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://simmerdownbar.com/?utm_source=google&utm_medium=Local&utm_campaign=Google+My+Business"
    }
   ],
@@ -45153,19 +45249,11 @@
   "osm_name": "Lounge at Eighth",
   "pages": [
    {
-    "result": "rendered: 1 lines -> 29",
-    "url": "https://www.loungeat8th.com/"
-   },
-   {
-    "hh": false,
-    "lines": 29,
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.loungeat8th.com/"
-   },
-   {
+    "embedded": 0,
     "hh": false,
     "lines": 1,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 1 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.loungeat8th.com/"
    }
   ],
@@ -45590,10 +45678,10 @@
     "url": "https://www.limestonebbqandbourbon.com/"
    },
    {
-    "embedded": 54,
+    "embedded": 210,
     "hh": false,
     "lines": 21,
-    "result": "shell: 21 lines, 54 string(s) recovered from embedded JSON",
+    "result": "shell: 21 lines, 210 string(s) recovered from embedded JSON",
     "shell": true,
     "url": "https://www.limestonebbqandbourbon.com/bourbon-menu"
    }
@@ -45965,13 +46053,11 @@
   "osm_name": "Buffalo Wild Wings",
   "pages": [
    {
-    "result": "render failed: TimeoutError",
-    "url": "https://www.buffalowildwings.com/locations/us/de/newark/100-south-main-street/sports-bar-649/?utm_source=google-my-business&utm_medium=organic&utm_campaign=website-link&y_source=1_MjAxNjYxMTI3OS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D"
-   },
-   {
+    "embedded": 0,
     "hh": false,
     "lines": 1,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 1 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.buffalowildwings.com/locations/us/de/newark/100-south-main-street/sports-bar-649/?utm_source=google-my-business&utm_medium=organic&utm_campaign=website-link&y_source=1_MjAxNjYxMTI3OS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D"
    }
   ],
@@ -45986,9 +46072,11 @@
   "osm_name": "Shaka Ramen",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 38,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 38 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://www.shakaramen.us/"
    },
    {
@@ -46560,19 +46648,19 @@
   "osm_name": "Hayworth & Finch Caf\u00e9",
   "pages": [
    {
-    "result": "rendered: 30 lines -> 31",
-    "url": "https://www.hayworthandfinch.com/"
-   },
-   {
+    "embedded": 0,
     "hh": false,
-    "lines": 31,
-    "result": "ok, 0 quote(s)",
+    "lines": 30,
+    "result": "shell: 30 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.hayworthandfinch.com/"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 1,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 1 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.hayworthandfinch.com/menu"
    }
   ],
@@ -47072,13 +47160,11 @@
   "osm_name": "Friendship BBQ, Newark\u53cb\u60c5\u5ba2\u4e32",
   "pages": [
    {
-    "result": "rendered: 21 lines -> 25",
-    "url": "http://bbqnewark.com/"
-   },
-   {
+    "embedded": 0,
     "hh": false,
-    "lines": 25,
-    "result": "ok, 0 quote(s)",
+    "lines": 21,
+    "result": "shell: 21 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://bbqnewark.com/"
    }
   ],
@@ -48143,15 +48229,19 @@
   "osm_name": "Pizza by Elizabeths",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 19,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 19 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://www.pizzabyelizabeths.com/"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 7,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 7 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://www.pizzabyelizabeths.com/pages/menus.html"
    }
   ],
@@ -50004,20 +50094,8 @@
   "osm_name": "Spare Rib Xpress",
   "pages": [
    {
-    "result": "rendered after 404 text/html: 0 lines -> 25",
+    "result": "404 text/html",
     "url": "http://www.bowlerama.us/spare-rib"
-   },
-   {
-    "hh": false,
-    "lines": 25,
-    "result": "ok, 0 quote(s)",
-    "url": "http://www.bowlerama.us/spare-rib"
-   },
-   {
-    "hh": false,
-    "lines": 24,
-    "result": "ok, 0 quote(s)",
-    "url": "http://www.bowlerama.us/keglersmenu"
    }
   ],
   "website": "http://www.bowlerama.us/spare-rib",
@@ -50262,31 +50340,35 @@
   "osm_name": "Route 40 Diner",
   "pages": [
    {
-    "result": "rendered: 32 lines -> 35",
-    "url": "https://route40diner.com/"
-   },
-   {
+    "embedded": 7,
     "hh": false,
-    "lines": 35,
-    "result": "ok, 0 quote(s)",
+    "lines": 32,
+    "result": "shell: 32 lines, 7 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://route40diner.com/"
    },
    {
+    "embedded": 7,
     "hh": false,
     "lines": 20,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 20 lines, 7 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://route40diner.com/our-menu/"
    },
    {
+    "embedded": 7,
     "hh": false,
     "lines": 32,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 32 lines, 7 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://route40diner.com/"
    },
    {
+    "embedded": 7,
     "hh": false,
     "lines": 20,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 20 lines, 7 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://route40diner.com/our-menu/"
    }
   ],
@@ -50370,19 +50452,19 @@
   "osm_name": "Liquid Alchemy Beverages",
   "pages": [
    {
-    "result": "rendered: 29 lines -> 34",
-    "url": "https://www.liquidalchemybeverage.com/"
-   },
-   {
+    "embedded": 0,
     "hh": false,
-    "lines": 34,
-    "result": "ok, 0 quote(s)",
+    "lines": 29,
+    "result": "shell: 29 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.liquidalchemybeverage.com/"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 37,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 37 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.liquidalchemybeverage.com/home"
    }
   ],
@@ -50397,13 +50479,7 @@
   "osm_name": "Los Machados Mexican Restaurant",
   "pages": [
    {
-    "result": "rendered after 404 text/html: 0 lines -> 4",
-    "url": "http://www.losmachadosde.com/"
-   },
-   {
-    "hh": false,
-    "lines": 4,
-    "result": "ok, 0 quote(s)",
+    "result": "404 text/html",
     "url": "http://www.losmachadosde.com/"
    }
   ],
@@ -50703,31 +50779,35 @@
   "osm_name": "Argilla Brewing Co. @ Pietro's Pizza",
   "pages": [
    {
-    "result": "rendered: 35 lines -> 36",
-    "url": "http://www.argillabrewing.com/"
-   },
-   {
-    "hh": false,
-    "lines": 36,
-    "result": "ok, 2 quote(s)",
-    "url": "http://www.argillabrewing.com/"
-   },
-   {
+    "embedded": 0,
     "hh": false,
     "lines": 35,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 35 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
+    "url": "http://www.argillabrewing.com/"
+   },
+   {
+    "embedded": 0,
+    "hh": false,
+    "lines": 35,
+    "result": "shell: 35 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.argillabrewing.com/event-details/polar-bear-plunge-fundraiser-benefiting-special-olympics-6"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 35,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 35 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.argillabrewing.com/event-details/polar-bear-plunge-fundraiser-benefiting-special-olympics-5"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 35,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 35 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.argillabrewing.com/event-details/polar-bear-plunge-fundraiser-benefiting-special-olympics-4"
    }
   ],
@@ -51534,19 +51614,19 @@
   "osm_name": "The Well Coffeehouse and Marketplace",
   "pages": [
    {
-    "result": "rendered: 34 lines -> 35",
-    "url": "http://www.thewellde.com/"
-   },
-   {
+    "embedded": 0,
     "hh": false,
-    "lines": 35,
-    "result": "ok, 0 quote(s)",
+    "lines": 34,
+    "result": "shell: 34 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://www.thewellde.com/"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 1,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 1 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.thewellde.com/menu"
    }
   ],
@@ -52141,9 +52221,11 @@
   "osm_name": "Ramen Kumamoto",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 36,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 36 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://www.ramenkumamoto.com/"
    }
   ],
@@ -52467,31 +52549,35 @@
   "osm_name": "Stewart's Brewing Company",
   "pages": [
    {
+    "embedded": 60,
     "hh": false,
     "lines": 22,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 22 lines, 60 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://stewartsbrewingcompany.com/"
    },
    {
-    "result": "rendered: 16 lines -> 23",
-    "url": "https://www.stewartsbrewingcompany.com/hoppy-hour-menu"
-   },
-   {
+    "embedded": 60,
     "hh": false,
-    "lines": 23,
-    "result": "ok, 0 quote(s)",
+    "lines": 16,
+    "result": "shell: 16 lines, 60 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.stewartsbrewingcompany.com/hoppy-hour-menu"
    },
    {
+    "embedded": 67,
     "hh": false,
     "lines": 18,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 18 lines, 67 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.stewartsbrewingcompany.com/menus/specialty-cocktails"
    },
    {
+    "embedded": 78,
     "hh": false,
     "lines": 17,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 17 lines, 78 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://stewartsbrewingcompany.com/events-calendar"
    }
   ],
@@ -52638,19 +52724,19 @@
   "osm_name": "Vicky's Famous Fried Fish",
   "pages": [
    {
-    "result": "rendered: 19 lines -> 20",
-    "url": "http://vickysfamousfriedfish.com/"
-   },
-   {
+    "embedded": 0,
     "hh": false,
-    "lines": 20,
-    "result": "ok, 0 quote(s)",
+    "lines": 19,
+    "result": "shell: 19 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://vickysfamousfriedfish.com/"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 1,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 1 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.vickysfamousfriedfish.com/menu"
    }
   ],
@@ -52781,13 +52867,11 @@
   "osm_name": "Oishii Sushi & Ramen",
   "pages": [
    {
-    "result": "rendered: 32 lines -> 39",
-    "url": "http://www.oishiisushiramen.com/"
-   },
-   {
+    "embedded": 7,
     "hh": false,
-    "lines": 39,
-    "result": "ok, 0 quote(s)",
+    "lines": 32,
+    "result": "shell: 32 lines, 7 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://www.oishiisushiramen.com/"
    }
   ],
@@ -53398,50 +53482,17 @@
  "DE653f2bc1d1": {
   "address": "30 Clinton St, Delaware City, DE 19706",
   "crawled_at": "2026-09-02",
-  "hits": [
-   {
-    "quote": "happy Hour! / Join us from 3pm-6pm every weekday for our",
-    "url": "http://www.dollyspankers.com/"
-   },
-   {
-    "quote": "happy Hour specials!",
-    "url": "http://www.dollyspankers.com/"
-   },
-   {
-    "quote": "HAPPY HOUR MENU",
-    "url": "http://www.dollyspankers.com/"
-   }
-  ],
+  "hits": [],
   "name": "Dolly Spanker's",
   "osm_name": "Dolly Spanker's",
   "pages": [
    {
-    "result": "rendered: 4 lines -> 33",
+    "embedded": 0,
+    "hh": false,
+    "lines": 4,
+    "result": "shell: 4 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://www.dollyspankers.com/"
-   },
-   {
-    "hh": true,
-    "lines": 33,
-    "result": "ok, 3 quote(s)",
-    "url": "http://www.dollyspankers.com/"
-   },
-   {
-    "hh": false,
-    "lines": 0,
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.dollyspankers.com/_files/ugd/67519a_f29ad4c6e8f0447c9bca75f1aab4f78a.pdf"
-   },
-   {
-    "hh": false,
-    "lines": 12,
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.dollyspankers.com/delaware-city-events"
-   },
-   {
-    "hh": false,
-    "lines": 12,
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.dollyspankers.com/menu"
    }
   ],
   "website": "http://www.dollyspankers.com/",
@@ -53628,9 +53679,11 @@
   "osm_name": "Wilma's",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 29,
-    "result": "ok, 1 quote(s)",
+    "result": "shell: 29 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://www.goodtimewilmas.com/"
    }
   ],
@@ -53702,13 +53755,11 @@
   "osm_name": "Buffalo Wild Wings",
   "pages": [
    {
-    "result": "render failed: TimeoutError",
-    "url": "https://www.buffalowildwings.com/locations/us/de/bear/1887-pulaski-highway/sports-bar-438?utm_source=google-my-business&utm_medium=organic&utm_campaign=website-link&y_source=1_MjAxNjYxMTc2OS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D"
-   },
-   {
+    "embedded": 0,
     "hh": false,
     "lines": 1,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 1 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.buffalowildwings.com/locations/us/de/bear/1887-pulaski-highway/sports-bar-438?utm_source=google-my-business&utm_medium=organic&utm_campaign=website-link&y_source=1_MjAxNjYxMTc2OS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D"
    }
   ],
@@ -57228,21 +57279,27 @@
   "osm_name": "Hibachi Grill & Supreme Buffet",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 6,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 6 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://www.hibachipeoplesplaza.com/"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 17,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 17 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://www.hibachipeoplesplaza.com/events.html"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 6,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 6 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://www.hibachipeoplesplaza.com/menu.html"
    }
   ],
@@ -57333,13 +57390,11 @@
   "osm_name": "Chiles Locos Mexican Food",
   "pages": [
    {
-    "result": "rendered: 33 lines -> 37",
-    "url": "https://chileslocosmexicanfood.com/"
-   },
-   {
+    "embedded": 0,
     "hh": false,
-    "lines": 37,
-    "result": "ok, 0 quote(s)",
+    "lines": 33,
+    "result": "shell: 33 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://chileslocosmexicanfood.com/"
    }
   ],
@@ -57840,9 +57895,11 @@
   "osm_name": "Opa! Opa!",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 17,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 17 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://opaopagyros.com/"
    }
   ],
@@ -58612,13 +58669,7 @@
   "osm_name": "Quinn's Cafe",
   "pages": [
    {
-    "result": "rendered after 500 text/html: 0 lines -> 3",
-    "url": "http://www.quinnscafe.com/"
-   },
-   {
-    "hh": false,
-    "lines": 3,
-    "result": "ok, 0 quote(s)",
+    "result": "500 text/html",
     "url": "http://www.quinnscafe.com/"
    }
   ],
@@ -58633,13 +58684,19 @@
   "osm_name": "Carusos Bistro",
   "pages": [
    {
-    "result": "rendered: 12 lines -> 28",
+    "embedded": 0,
+    "hh": false,
+    "lines": 12,
+    "result": "shell: 12 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://carusosbistrode.com/"
    },
    {
+    "embedded": 0,
     "hh": false,
-    "lines": 28,
-    "result": "ok, 0 quote(s)",
+    "lines": 12,
+    "result": "shell: 12 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://carusosbistrode.com/"
    }
   ],
@@ -58654,31 +58711,35 @@
   "osm_name": "Wilmington Diner",
   "pages": [
    {
-    "result": "rendered: 1 lines -> 30",
-    "url": "https://wilmingtondinerde.com/"
-   },
-   {
-    "hh": false,
-    "lines": 30,
-    "result": "ok, 0 quote(s)",
-    "url": "https://wilmingtondinerde.com/"
-   },
-   {
+    "embedded": 37,
     "hh": false,
     "lines": 1,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 1 lines, 37 string(s) recovered from embedded JSON",
+    "shell": true,
+    "url": "https://wilmingtondinerde.com/"
+   },
+   {
+    "embedded": 28,
+    "hh": false,
+    "lines": 1,
+    "result": "shell: 1 lines, 28 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.wilmingtondinerde.com/product/basket-specials/406"
    },
    {
+    "embedded": 28,
     "hh": false,
     "lines": 1,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 1 lines, 28 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.wilmingtondinerde.com/product/wilmington-special/437"
    },
    {
+    "embedded": 29,
     "hh": false,
     "lines": 1,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 1 lines, 29 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.wilmingtondinerde.com/shop/griddle-specialties/QJ3IBD4XH6AX47G5ZINKM225"
    }
   ],
@@ -59112,9 +59173,11 @@
   "osm_name": "The Garden at Bardea",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 15,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 15 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.thegardenwilm.com/"
    }
   ],
@@ -61540,20 +61603,12 @@
   "osm_name": "V&M Bistro",
   "pages": [
    {
-    "result": "rendered: 1 lines -> 36",
-    "url": "http://www.vmbistro.com/"
-   },
-   {
+    "embedded": 0,
     "hh": false,
-    "lines": 36,
-    "result": "ok, 0 quote(s)",
+    "lines": 1,
+    "result": "shell: 1 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://www.vmbistro.com/"
-   },
-   {
-    "hh": false,
-    "lines": 15,
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.vmbistro.com/menu"
    }
   ],
   "website": "http://www.vmbistro.com/",
@@ -61636,13 +61691,11 @@
   "osm_name": "Kyushu Ramen and Dumplings House",
   "pages": [
    {
-    "result": "rendered: 29 lines -> 33",
-    "url": "https://kyushuramen.com/"
-   },
-   {
+    "embedded": 0,
     "hh": false,
-    "lines": 33,
-    "result": "ok, 0 quote(s)",
+    "lines": 29,
+    "result": "shell: 29 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://kyushuramen.com/"
    }
   ],
@@ -61684,9 +61737,11 @@
   "osm_name": "Crab Du Jour Cajun Seafood & Bar",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 12,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 12 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.crabdujourwilmingtonde.com/"
    }
   ],
@@ -61755,13 +61810,11 @@
   "osm_name": "Flavours Bowls & Rolls",
   "pages": [
    {
-    "result": "rendered: 1 lines -> 6",
-    "url": "https://online.skytab.com/85d3b625e902e05ff6e58f718d813bf9"
-   },
-   {
+    "embedded": 0,
     "hh": false,
-    "lines": 6,
-    "result": "ok, 0 quote(s)",
+    "lines": 1,
+    "result": "shell: 1 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://online.skytab.com/85d3b625e902e05ff6e58f718d813bf9"
    }
   ],
@@ -61836,9 +61889,11 @@
   "osm_name": "El Tapatio Mexican Restaurant",
   "pages": [
    {
+    "embedded": 1,
     "hh": false,
     "lines": 6,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 6 lines, 1 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://eltapatiode.com/"
    }
   ],
@@ -62345,13 +62400,7 @@
   "osm_name": "Casa Puebla Restaurante",
   "pages": [
    {
-    "result": "rendered after 404 text/html: 0 lines -> 4",
-    "url": "http://casapueblarestaurante.com/"
-   },
-   {
-    "hh": false,
-    "lines": 4,
-    "result": "ok, 0 quote(s)",
+    "result": "404 text/html",
     "url": "http://casapueblarestaurante.com/"
    }
   ],
@@ -62535,9 +62584,11 @@
   "osm_name": "Oath \u201884",
   "pages": [
    {
+    "embedded": 121,
     "hh": false,
     "lines": 23,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 23 lines, 121 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.oath84.com/"
    }
   ],
@@ -63753,17 +63804,19 @@
   "osm_name": "The Highlands",
   "pages": [
    {
-    "result": "rendered: 31 lines -> 35",
-    "url": "https://thestannesclub.com/middletown-the-st-anne-s-club-the-st-anne-s-club-highlands"
-   },
-   {
+    "embedded": 0,
     "hh": false,
-    "lines": 35,
-    "result": "ok, 0 quote(s)",
+    "lines": 31,
+    "result": "shell: 31 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://thestannesclub.com/middletown-the-st-anne-s-club-the-st-anne-s-club-highlands"
    },
    {
-    "result": "error: ConnectionError",
+    "embedded": 0,
+    "hh": false,
+    "lines": 31,
+    "result": "shell: 31 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://thestannesclub.com/middletown-the-st-anne-s-club-the-st-anne-s-club-events"
    }
   ],
@@ -64221,19 +64274,19 @@
   "osm_name": "Sid's at C26 - BBQ & Jerky",
   "pages": [
    {
-    "result": "rendered: 30 lines -> 31",
-    "url": "https://www.sidsbbqandjerky.com/"
-   },
-   {
+    "embedded": 0,
     "hh": false,
-    "lines": 31,
-    "result": "ok, 0 quote(s)",
+    "lines": 30,
+    "result": "shell: 30 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.sidsbbqandjerky.com/"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 1,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 1 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.sidsbbqandjerky.com/menu"
    }
   ],
@@ -64493,15 +64546,19 @@
   "osm_name": "Sakura Japanese Restaurant",
   "pages": [
    {
+    "embedded": 1,
     "hh": false,
     "lines": 29,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 29 lines, 1 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://sakurasushide.com/"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 9,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 9 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://sakurasushide.com/menu/"
    }
   ],
@@ -65592,19 +65649,19 @@
   "osm_name": "Middletown Diner",
   "pages": [
    {
-    "result": "rendered: 26 lines -> 29",
-    "url": "http://www.middletowndiner.com/"
-   },
-   {
+    "embedded": 7,
     "hh": false,
-    "lines": 29,
-    "result": "ok, 0 quote(s)",
+    "lines": 26,
+    "result": "shell: 26 lines, 7 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://www.middletowndiner.com/"
    },
    {
+    "embedded": 7,
     "hh": false,
     "lines": 10,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 10 lines, 7 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://middletowndiner.com/our-menu/"
    }
   ],
@@ -65636,20 +65693,12 @@
   "osm_name": "Crab Du Jour Cajun Seafood & Bar",
   "pages": [
    {
-    "result": "rendered: 1 lines -> 39",
-    "url": "https://crabdujour.com/"
-   },
-   {
-    "hh": false,
-    "lines": 39,
-    "result": "ok, 0 quote(s)",
-    "url": "https://crabdujour.com/"
-   },
-   {
+    "embedded": 0,
     "hh": false,
     "lines": 1,
-    "result": "ok, 0 quote(s)",
-    "url": "https://crabdujour.com/menu"
+    "result": "shell: 1 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
+    "url": "https://crabdujour.com/"
    }
   ],
   "website": "https://crabdujour.com/",
@@ -65902,15 +65951,19 @@
   "osm_name": "Two Claws",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 35,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 35 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://www.twoclawscajun.com/"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 27,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 27 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://twoclawscajun.com/menu/"
    }
   ],
@@ -66656,15 +66709,19 @@
   "osm_name": "Nasi Malay Thai Sushi",
   "pages": [
    {
+    "embedded": 7,
     "hh": false,
     "lines": 38,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 38 lines, 7 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://www.nasidelaware.com/"
    },
    {
+    "embedded": 7,
     "hh": false,
     "lines": 22,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 22 lines, 7 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.nasidelaware.com/menu/"
    }
   ],
@@ -66807,9 +66864,11 @@
   "osm_name": "Kelly's Tavern",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 19,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 19 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://kellystavern.com/"
    }
   ],
@@ -67114,13 +67173,11 @@
   "osm_name": "Dani\u2019s Pizza Italian Restaurant",
   "pages": [
    {
-    "result": "render failed: TimeoutError",
-    "url": "https://friedchikentacoloco.toast.site/order?diningOption=takeout&rwg_token=AFd1xnHOX9z5aYlFEjF1BrQM9sUSGlmdko8tTIp-vv1rcHTagWGFGOqFFq7eaEZiPy5g4W8wEzDTY8_QY0mC_DjqxmxX6A3JOOakM7iO802nkjVRUArGkCQ%3D"
-   },
-   {
+    "embedded": 7,
     "hh": false,
-    "lines": 10,
-    "result": "ok, 0 quote(s)",
+    "lines": 9,
+    "result": "shell: 9 lines, 7 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://friedchikentacoloco.toast.site/order?diningOption=takeout&rwg_token=AFd1xnHOX9z5aYlFEjF1BrQM9sUSGlmdko8tTIp-vv1rcHTagWGFGOqFFq7eaEZiPy5g4W8wEzDTY8_QY0mC_DjqxmxX6A3JOOakM7iO802nkjVRUArGkCQ%3D"
    }
   ],
@@ -67351,32 +67408,28 @@
   "osm_name": "Java Bean Cafe",
   "pages": [
    {
-    "result": "rendered: 0 lines -> 34",
-    "url": "http://java-bean-cafe.square.site/"
-   },
-   {
+    "embedded": 4,
     "hh": false,
-    "lines": 34,
-    "result": "ok, 0 quote(s)",
+    "lines": 0,
+    "result": "shell: 0 lines, 4 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://java-bean-cafe.square.site/"
    },
    {
+    "embedded": 1,
     "hh": false,
     "lines": 1,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 1 lines, 1 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://java-bean-cafe.square.site/product/specialty-latte/AESXK3QOKF3PNMA32M5IMVXF"
    },
    {
+    "embedded": 1,
     "hh": false,
     "lines": 1,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 1 lines, 1 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://java-bean-cafe.square.site/product/tuesday-special-breakfast-tacos/TVKYLCGYFHNIYPZLIEJPLGDD"
-   },
-   {
-    "hh": false,
-    "lines": 0,
-    "result": "ok, 0 quote(s)",
-    "url": "http://java-bean-cafe.square.site/s/shop"
    }
   ],
   "website": "http://java-bean-cafe.square.site/",
@@ -67576,21 +67629,27 @@
   "osm_name": "Oishii Ocean - Japanese & Cajun Seafood",
   "pages": [
    {
+    "embedded": 0,
     "hh": false,
     "lines": 30,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 30 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://www.oishiiocean.com/"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 1,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 1 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.oishiiocean.com/menu"
    },
    {
+    "embedded": 0,
     "hh": false,
     "lines": 15,
-    "result": "ok, 0 quote(s)",
+    "result": "shell: 15 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "https://www.oishiiocean.com/online-ordering"
    }
   ],
@@ -67605,13 +67664,11 @@
   "osm_name": "Tex-Mex Burriro",
   "pages": [
    {
-    "result": "rendered: 0 lines -> 12",
-    "url": "http://www.texmexburriro.com/"
-   },
-   {
+    "embedded": 0,
     "hh": false,
-    "lines": 12,
-    "result": "ok, 0 quote(s)",
+    "lines": 0,
+    "result": "shell: 0 lines, 0 string(s) recovered from embedded JSON",
+    "shell": true,
     "url": "http://www.texmexburriro.com/"
    }
   ],

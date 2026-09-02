@@ -2253,13 +2253,13 @@
      "items": [
       {
        "category": "food",
-       "evidence": "small pizza and a glass of house wine or sangria for just $15",
+       "evidence": "just $15",
        "label": "small pizza and a glass of house wine or sangria",
        "price_usd": 15.0
       },
       {
        "category": "food",
-       "evidence": "large pizza and a bottle of wine or pitcher of sangria for only $30",
+       "evidence": "only $30",
        "label": "large pizza and a bottle of wine or pitcher of sangria",
        "price_usd": 30.0
       }
@@ -2875,9 +2875,9 @@
      "items": [],
      "last_verified_at": "2026-09-02",
      "source": {
-      "heading": "Happy Hour",
+      "heading": "Happy Hour Food Specials (Monday–Friday, 4–6PM)",
       "kind": "venue_site",
-      "quote": "Happy Hour Bites - Monday through Friday 4 pm - 6 pm",
+      "quote": "Happy Hour Food Specials (Monday–Friday, 4–6PM)",
       "url": "https://www.mcglynnspub.com/food-and-drink-specials"
      },
      "type": "happy_hour",
@@ -2920,6 +2920,38 @@
    "zone_id": "newark_de"
   },
   {
+   "address": "2667 Kirkwood Hwy, Newark, DE 19711",
+   "deals": [
+    {
+     "confidence": "unconfirmed",
+     "items": [],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "heading": "Thirsty Thursday",
+      "kind": "venue_site",
+      "quote": "Thirsty Thursday\nEvery Thursday 4-10pm with Video Bingo 7-9pm",
+      "url": "http://www.argillabrewing.com/"
+     },
+     "type": "daily_special",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 4,
+       "end": "22:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "argilla-brewing-co-pietro-s-pizza-newark",
+   "license_type": "",
+   "lid": "DE4895ccda75",
+   "name": "Argilla Brewing Co. @ Pietro's Pizza",
+   "plcb_name": "Argilla Brewing Co. @ Pietro's Pizza",
+   "website": "http://www.argillabrewing.com/",
+   "zone_id": "newark_de"
+  },
+  {
    "address": "316 Auto Park Dr, Middletown, DE 19709",
    "deals": [
     {
@@ -2927,26 +2959,8 @@
      "items": [
       {
        "category": "draft",
-       "evidence": "$5 Drink Specials",
+       "evidence": "$5 Drink Specials\n16 oz Beer, 6 oz Wine, Margaritas & Crushes",
        "label": "16 oz Beer",
-       "price_usd": 5.0
-      },
-      {
-       "category": "wine",
-       "evidence": "$5 Drink Specials",
-       "label": "6 oz Wine",
-       "price_usd": 5.0
-      },
-      {
-       "category": "cocktail",
-       "evidence": "$5 Drink Specials",
-       "label": "Margaritas",
-       "price_usd": 5.0
-      },
-      {
-       "category": "cocktail",
-       "evidence": "$5 Drink Specials",
-       "label": "Crushes",
        "price_usd": 5.0
       }
      ],
@@ -3129,7 +3143,7 @@
      "source": {
       "heading": "Happy Hour Food & Drink Specials",
       "kind": "venue_site",
-      "quote": "available exclusively at the bars from 3:00 PM to 6:00 PM on weekdays.",
+      "quote": "available exclusively at the bars from 3:00 PM to 6:00 PM on weekdays",
       "url": "https://www.stanleys-tavern.com/happy-hour"
      },
      "type": "happy_hour",
@@ -3180,13 +3194,13 @@
       {
        "amount_off_usd": 4.0,
        "category": "food",
-       "evidence": "$4 off Cheesesteaks from 11:30am to 3pm",
+       "evidence": "$4 off Cheesesteaks",
        "label": "Cheesesteaks"
       }
      ],
      "last_verified_at": "2026-09-02",
      "source": {
-      "heading": "Daily Specials",
+      "heading": "$4 off Cheesesteaks from 11:30am to 3pm (Dine In Only)",
       "kind": "venue_site",
       "quote": "$4 off Cheesesteaks from 11:30am to 3pm (Dine In Only)",
       "url": "https://www.cantwells-tavern.com/menus/daily-specials"
@@ -3237,13 +3251,13 @@
       {
        "amount_off_usd": 5.0,
        "category": "food",
-       "evidence": "$5 Off Salads (Dine In Only) from 11:30am to 3:30pm",
+       "evidence": "$5 Off Salads",
        "label": "Salads"
       }
      ],
      "last_verified_at": "2026-09-02",
      "source": {
-      "heading": "Daily Specials",
+      "heading": "$5 Off Salads (Dine In Only) from 11:30am to 3:30pm",
       "kind": "venue_site",
       "quote": "$5 Off Salads (Dine In Only) from 11:30am to 3:30pm",
       "url": "https://www.cantwells-tavern.com/menus/daily-specials"
@@ -3332,7 +3346,7 @@
      "source": {
       "heading": "Happy Hour",
       "kind": "venue_site",
-      "quote": "Happy Hour Monday through Friday 4pm-6pm",
+      "quote": "Monday through Friday 4pm-6pm",
       "url": "https://www.cantwells-tavern.com/menus/happy-hour"
      },
      "type": "happy_hour",

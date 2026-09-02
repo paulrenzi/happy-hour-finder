@@ -2494,6 +2494,14 @@ def main():
         pages, hits, images = crawl_one(session, dict(v, lid=lid), robots)
         stats["venues crawled"] += 1
         stats["WITH A DEAL QUOTE" if hits else "nothing published"] += 1
+        # A SHELL IS NOT A SUCCESS, and a per-page verdict scrolls past. The
+        # run has to end saying how many pages we could not see into, and how
+        # many of those handed their own JavaScript something to read. This is
+        # the number that has to fall for a capture change to have worked.
+        shells = [p for p in pages if p.get("shell")]
+        stats["SHELL PAGES (could not see into)"] += len(shells)
+        stats["shell pages carrying embedded data"] += sum(
+            1 for p in shells if p.get("embedded"))
         if reached_nothing(pages) and out.get(lid, {}).get("hits"):
             stats["KEPT (host unreachable this run)"] += 1
             print(f"[{n}/{len(todo)}] {(v['osm_name'] or v['name'])[:38]:<40} "

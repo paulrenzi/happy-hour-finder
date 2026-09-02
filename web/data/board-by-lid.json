@@ -4352,6 +4352,24 @@
    }
   ]
  },
+ "DE4895ccda75": {
+  "name": "Argilla Brewing Co. @ Pietro's Pizza",
+  "deals": [
+   {
+    "type": "daily_special",
+    "windows": [
+     {
+      "dow": 4,
+      "end": "22:00",
+      "start": "16:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "DE837a19ec46": {
   "name": "Blue Crab Grill",
   "deals": [
