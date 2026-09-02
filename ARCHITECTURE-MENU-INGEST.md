@@ -917,6 +917,78 @@ shows 32 cards because it draws neighbouring zones in. Until the ground-truth
 list exists, no one may say what fraction of "the ones that actually have a
 happy hour" those 8 are.
 
+## 🚨🔑🔑 THE MODEL DOES NOT READ MENUS — and "5/5" was measured against the finder's own finds (2026-09-02, night)
+
+Paul, closing the session: *"the model needs to read menus. how am i explaining this basic
+fact after this much work based on a goal that requires them to be read?"* He is right, and
+this section strikes the claim that the reach pass answered the 90% question. It did not.
+
+**What the three reach calls do, exactly, and what they do not:**
+
+| call | reads | decides |
+|---|---|---|
+| `links` | a link inventory | which URL to fetch |
+| `verdict` | a saved page's text | yes/no + verbatim lines, then **`windows_from()` (regex) decides the window** |
+| `town` | Google search results | which venues to list as candidates |
+| `extract_menu_images` | pixels → transcript | then **`picture_spans` + `windows_from()` (regex) decide** |
+| `read_pages_llm` / `extract_prices_llm` | regex-KEPT quotes only | items, from lines a regex chose |
+
+No model ever reads a menu page or picture and returns *the deals on it*. Every window and
+every item still comes out of a grammar that handles the phrasings we have met. A venue whose
+page says the thing in a form the grammar cannot parse ships nothing, and the pass calls that
+"correct". That is the whole "regardless of format" hole, and it is the build.
+
+**Why 5/5 is not a measurement.** The five confirmed Phoenixville rows are the five Paul found
+by hand. Each was fixed *for* the scraper before the number was taken. A run scored against
+the misses already patched for it reads 100% by construction. The 8 search candidates are
+unconfirmed, so the true Phoenixville number is anywhere in 5/13..13/13 and has not been taken.
+🛑 **The only coverage number that counts is a town Paul has NOT touched, run blind, then his
+one human minute, then the count of what he found that the run did not.** Five misses to date,
+five found by a human after the run, zero found by the pass before him.
+
+### The build, next session — in this order, both, nothing else first
+
+1. **A blind town.** Pick a small town nobody has looked at. Run the recipe as written. Paul
+   spends one minute on it. Count the misses. That is the baseline the model-reader is
+   measured against.
+2. **The model reads menus.** A fourth call, `reach_llm.py read` (name it what you like),
+   takes a page's visible text **or an image transcript** and returns the deals on it as
+   structured rows: `{kind, days, start, end, items:[{label, price}], quote}`. Grounding rule
+   is the verdict's: every `quote` must be a literal substring of the source, and the days,
+   clock and prices must appear inside that quote. The regex grammar becomes the **validator**
+   (PA-law checks, >4h = opening hours, a price is on the quote) and stops being the reader.
+   `windows_from()` stays for the validators and for anything the model did not return.
+   - `kind` is one of SPEC's three: `happy_hour`, `daily_special`, `food_combo`. **Daily
+     specials are happy-hour items and go on the card** (Paul, 2026-09-02: "they are happy
+     hour items"). Sly Fox's Wed $9 growlers / $12 cheesesteak+pint, Thu $12 burger+pint, Sat
+     $11 mystery pitcher, Sun $2 off Bloody Marys are the acceptance case. The deliberate
+     refusal of day-specials pages in `extract_prices_llm.vouched()` and
+     `read_pages_llm.worth_reading()` goes; the guard that replaces it is the `kind` field,
+     so a Margherita-Monday price never lands under a happy-hour heading.
+   - It runs over **every** saved page and every transcript of a scoped venue, not only
+     no-hit venues (the verdict's `not v["hits"]` gate is the same defect in miniature).
+   - Cost is calls, not model size. A town is ~30 venues × a few pages; batch like the verdict.
+3. **Photos for every venue in a town, deals or not.** Paul: "for restaurants with hours not
+   published, all of those photos should be present too, for all towns." `fetch_venue_photos.py`
+   at ~$0.04/venue; the no-deal population is ~2,570 (~$100). Run it town by town inside the
+   recipe, not as one corpus sweep.
+
+### Findings for future debugging, so they are not re-learned
+
+- The recipe's image pass ran with a bare `--match` for weeks; it selected nothing. A step
+  that selects nothing exits 0. 🛑 **A recipe step is verified by the count it changed.**
+- `build_bundles` merges sidecars with `setdefault`; a stale `deals_prices_llm.json` row hides
+  image items. Delete it by hand (Revival).
+- `reach_verdicts.json` / `reach_links.json` are keyed by lid with `asked_at`; `--force` re-asks.
+- `crawl_sites --lids` keeps every page (`_keep_all`); a zone run keeps only hh-named pages.
+  If a page is "missing" from `data/pages/`, that is why.
+- `data/ground_truth/<zone>.json`: `confirmed: true` + `url` counts; everything else is listed
+  and never counted. Flip `confirmed` only with a URL in hand.
+- Wix pages carry zero-width characters inside words; `grounded()` strips `​-‍﻿`.
+- `DEAL_RE` still matches "late night menu"; only the picture-wins rule kept Molly's honest.
+- Justop's photo: Google returns the apartment block; no fix.
+
+
 ---
 
 ## Standing rules
