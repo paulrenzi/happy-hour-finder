@@ -19,7 +19,9 @@ them, and at most a handful of pages per venue.
 
 import argparse
 import collections
+import hashlib
 import html as html_mod
+import io
 import json
 import os
 import re
@@ -36,6 +38,14 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITES = os.path.join(REPO, "data", "venue_sites.json")
 BASE = os.path.join(REPO, "data", "venue_base.json")
 OUT = os.path.join(REPO, "data", "crawl_hits.json")
+# The visible text of every page that turned out to be about a happy hour, kept
+# so something can READ it later without spending the venue's bandwidth again.
+# crawl_hits.json holds only the lines a regex already matched, which is exactly
+# the problem: a page the rules threw away is invisible to everything
+# downstream, including a model. Sullivan's whole food menu -- four price bands,
+# nineteen dishes -- sat on a page we had held for weeks. See
+# ingest/read_pages_llm.py, which is the reader this cache exists for.
+PAGES = os.path.join(REPO, "data", "pages")
 
 
 def frontier():
@@ -949,6 +959,54 @@ def urllib_get(url):
         return _Plain(fh.status, headers, fh.read(2_000_000))
 
 
+# A page whose HTML holds no page. The Cheesecake Factory publishes its King of
+# Prussia happy hour at menu.thecheesecakefactory.com/pa/king-of-prussia-46/
+# happy-hour/ -- 13KB of Laravel shell, ELEVEN visible lines, a Vite bundle and
+# no API behind it that answers without a browser. Every reader in this file
+# returns nothing from it, correctly, because there is nothing there to read.
+#
+# So the page is RENDERED, and only then read -- by the same readers, with the
+# same containment and the same validators. Nothing is trusted differently for
+# having come through a browser; it is the same fetch with the JavaScript run.
+#
+# Bounded on purpose, because it is ~40x the cost of a fetch: only a page whose
+# URL names an HOUR (page_is_hh) and which came back with almost no text. That
+# is the shape that cannot be anything BUT a shell -- a page we read in full and
+# which says nothing about a happy hour is a different answer, and rendering it
+# was already measured at zero yield for King of Prussia (2026-09-01).
+RENDER_LINE_FLOOR = 25
+RENDER_CAP = 40          # pages per run
+_render = {"on": False, "blocked": False, "used": 0, "pw": None,
+           "browser": None}
+
+
+def render_wanted(url, lines):
+    return (_render["on"] and _render["used"] < RENDER_CAP
+            and page_is_hh(url) and len(lines) < RENDER_LINE_FLOOR)
+
+
+def render(url):
+    """The page's HTML after its JavaScript has run."""
+    if _render["browser"] is None:
+        from playwright.sync_api import sync_playwright
+        _render["pw"] = sync_playwright().start()
+        _render["browser"] = _render["pw"].webkit.launch()
+    _render["used"] += 1
+    page = _render["browser"].new_page(user_agent=UA)
+    try:
+        page.goto(url, timeout=30000, wait_until="networkidle")
+        return page.content()
+    finally:
+        page.close()
+
+
+def render_close():
+    if _render["browser"] is not None:
+        _render["browser"].close()
+        _render["pw"].stop()
+        _render["browser"] = _render["pw"] = None
+
+
 def get(session, url):
     r = session.get(url, timeout=TIMEOUT, headers={"User-Agent": UA},
                     allow_redirects=True)
@@ -1776,8 +1834,26 @@ def stacked_prices(lines, hh_lines):
     return out
 
 
+def page_key(lid, url):
+    return "%s__%s.json" % (lid, hashlib.sha1(url.encode()).hexdigest()[:12])
+
+
+def save_page(lid, url, title, lines, rendered=False):
+    """Keep a happy-hour page's visible text for the model pass to read."""
+    if not lid:
+        return
+    os.makedirs(PAGES, exist_ok=True)
+    tmp = os.path.join(PAGES, page_key(lid, url) + ".new")
+    with io.open(tmp, "w", encoding="utf-8") as fh:
+        json.dump({"lid": lid, "url": url, "title": title, "rendered": rendered,
+                   "fetched_at": time.strftime("%Y-%m-%d"), "lines": lines},
+                  fh, ensure_ascii=False)
+    os.replace(tmp, os.path.join(PAGES, page_key(lid, url)))
+
+
 def crawl_one(session, venue, robots):
     pages, hits, images = [], [], []
+    lid = venue.get("lid") or venue.get("id") or ""
     # A Darden site has nothing to read in its HTML; its API has the hours. Asked
     # first, and the ordinary crawl still runs after -- it costs one request and
     # a venue that turns out not to be Darden is unaffected.
@@ -1846,8 +1922,28 @@ def crawl_one(session, venue, robots):
         elif fetched >= PAGE_CAP:
             continue
         if not allowed(url, robots):
-            pages.append({"url": url, "result": refusal(url, robots)})
-            continue
+            # PAUL'S CALL, 2026-09-01, asked and reaffirmed: a page the venue
+            # publishes for the public, which we can only reach with a browser,
+            # is read with a browser. The Cheesecake Factory serves its King of
+            # Prussia happy-hour menu at menu.thecheesecakefactory.com and that
+            # host's robots.txt is 'User-agent: * / Disallow: /'.
+            #
+            # Recorded plainly because it is a policy choice and not a bug fix:
+            # rendering does not make us less of an automated client, and this
+            # is us deciding to read a page the site asked crawlers not to. It
+            # is bounded to the narrowest case that motivated it -- a page whose
+            # URL NAMES AN HOUR, only under --render-blocked, only one page-slot
+            # each, at the same politeness delay as any other fetch. Nothing
+            # else about the crawl ignores robots.txt: it is still fetched, and
+            # still obeyed, for every other page of every other site.
+            if not (_render["blocked"] and page_is_hh(url)):
+                pages.append({"url": url, "result": refusal(url, robots)})
+                continue
+            pages.append({"url": url,
+                          "result": "robots disallows; rendered by decision"})
+            forced = True
+        else:
+            forced = False
         time.sleep(DELAY)
         if is_doc:
             docs += 1
@@ -1892,6 +1988,24 @@ def crawl_one(session, venue, robots):
                 pages.append({"url": url,
                               "result": "error: frc menu %s" % type(e).__name__})
         lines, stacks, emph = text_lines_emph(html)
+        rendered = False
+        if forced or render_wanted(url, lines):
+            try:
+                shown = render(url)
+            except Exception as e:  # noqa: BLE001 -- one dead render, not the run
+                pages.append({"url": url,
+                              "result": "render failed: %s" % type(e).__name__})
+                shown = None
+            if shown:
+                grown, gstacks, gemph = text_lines_emph(shown)
+                # Only if the browser actually found more page than the fetch
+                # did. A render returning the same shell is evidence of nothing
+                # and must not relabel the page as one we read in full.
+                if len(grown) > len(lines):
+                    pages.append({"url": url, "result": "rendered: %d lines -> %d"
+                                  % (len(lines), len(grown))})
+                    html, lines, stacks, emph = shown, grown, gstacks, gemph
+                    rendered = True
         text = "\n".join(lines)
         # The URL is no longer the only key. A page that does not name the happy
         # hour in its address very often names it in a heading, and that heading
@@ -1922,9 +2036,15 @@ def crawl_one(session, venue, robots):
         # mention a happy hour. Nothing downstream could tell those apart, so
         # every silent venue looked alike and none of them could be ranked.
         # ingest/report_holes.py --silent sorts on this.
+        says_hh = bool(HH_HEADING_RE.search(text))
         pages.append({"url": url, "result": f"ok, {len(found)} quote(s)",
                       "lines": len(lines),
-                      "hh": bool(HH_HEADING_RE.search(text))})
+                      "hh": says_hh})
+        # Every page that turns out to be about a happy hour is kept in full.
+        # The quotes below are what a regex could see; this is what was there.
+        if says_hh or page_is_hh(url):
+            save_page(lid, url, lines[0] if lines else "", lines,
+                      rendered=bool(rendered))
         for q in found:
             # `hh` records that this line was INSIDE the venue's own happy-hour
             # section, which is the fact the extractor needs and could not get.
@@ -2050,7 +2170,18 @@ def main():
     # and re-crawling all 849 to reach 130 spends other people's bandwidth on
     # pages whose answer we already hold.
     ap.add_argument("--lids", help="file of licence ids, one per line")
+    # Off by default: a render costs ~40x a fetch and only a JavaScript shell at
+    # a URL naming an hour is ever worth one. See render_wanted().
+    ap.add_argument("--render", action="store_true",
+                    help="render a happy-hour page that came back a shell (WebKit)")
+    # Deliberately a separate flag from --render, and deliberately not implied
+    # by it: this one overrides a site's robots.txt for happy-hour pages. See
+    # the note at the refusal in crawl_one().
+    ap.add_argument("--render-blocked", action="store_true",
+                    help="also read an hour-named page the site's robots.txt disallows")
     args = ap.parse_args()
+    _render["on"] = args.render or args.render_blocked
+    _render["blocked"] = args.render_blocked
 
     only = None
     if args.lids:
@@ -2073,7 +2204,7 @@ def main():
     print(f"{len(todo)} venues to crawl (of {len(sites)} discovered)\n")
 
     for n, (lid, v) in enumerate(todo, 1):
-        pages, hits, images = crawl_one(session, v, robots)
+        pages, hits, images = crawl_one(session, dict(v, lid=lid), robots)
         stats["venues crawled"] += 1
         stats["WITH A DEAL QUOTE" if hits else "nothing published"] += 1
         if reached_nothing(pages) and out.get(lid, {}).get("hits"):
@@ -2109,6 +2240,9 @@ def main():
             json.dump(out, fh, indent=1, sort_keys=True)
         os.replace(OUT + ".new", OUT)
 
+    render_close()
+    if _render["used"]:
+        print(chr(10) + "  %d page(s) rendered in WebKit" % _render["used"])
     print()
     for k, c in stats.most_common():
         print(f"  {c:>5}  {k}")

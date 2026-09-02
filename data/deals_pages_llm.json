@@ -1,0 +1,382 @@
+{
+ "fogo-de-ch-o-king-of-prussia": [
+  {
+   "category": "draft",
+   "label": "Beers",
+   "price_usd": 6.0
+  },
+  {
+   "category": "wine",
+   "label": "South American Wines",
+   "price_usd": 8.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Brazilian-Inspired Cocktails",
+   "price_usd": 10.0
+  },
+  {
+   "category": "wine",
+   "discount_pct": 50.0,
+   "label": "South American bottles of wine under $130"
+  }
+ ],
+ "paladar-latin-kitchen-rum-bar-king-of-prussia": [
+  {
+   "category": "draft",
+   "label": "Draft Beer",
+   "price_usd": 4.5
+  },
+  {
+   "category": "cocktail",
+   "label": "Sangrias (White or Red)",
+   "price_usd": 6.5
+  },
+  {
+   "category": "cocktail",
+   "label": "Mojitos & Margaritas (Traditional or Flavored+.50)",
+   "price_usd": 6.5
+  }
+ ],
+ "sullivan-s-steakhouse-king-of-prussia": [
+  {
+   "category": "food",
+   "label": "A5 Wagyu Nigiri*",
+   "price_usd": 25.0
+  },
+  {
+   "category": "food",
+   "label": "New England Lobster Roll",
+   "price_usd": 25.0
+  },
+  {
+   "category": "food",
+   "label": "Shrimp Three Ways",
+   "price_usd": 25.0
+  },
+  {
+   "category": "food",
+   "label": "Lobster Pot Pie",
+   "price_usd": 25.0
+  },
+  {
+   "category": "food",
+   "label": "Pork Belly Trio",
+   "price_usd": 25.0
+  },
+  {
+   "category": "food",
+   "label": "Angry Shrimp",
+   "price_usd": 20.0
+  },
+  {
+   "category": "food",
+   "label": "Crab Cake Sliders",
+   "price_usd": 20.0
+  },
+  {
+   "category": "food",
+   "label": "Jumbo Shrimp Cocktail",
+   "price_usd": 20.0
+  },
+  {
+   "category": "food",
+   "label": "Beef Carpaccio*",
+   "price_usd": 20.0
+  },
+  {
+   "category": "food",
+   "label": "Crab & Avocado Salad",
+   "price_usd": 20.0
+  },
+  {
+   "category": "food",
+   "label": "Sweet & Spicy Cauliflower",
+   "price_usd": 15.0
+  },
+  {
+   "category": "food",
+   "label": "Beef Wellington Bites",
+   "price_usd": 15.0
+  },
+  {
+   "category": "food",
+   "label": "Shaved Prime Steak Sliders*",
+   "price_usd": 15.0
+  },
+  {
+   "category": "food",
+   "label": "Sullivan's Signature Angus Burger*",
+   "price_usd": 15.0
+  },
+  {
+   "category": "food",
+   "label": "Cheesesteak Eggrolls",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Ahi Tuna Poke Stack*",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Sriracha Shrimp Lettuce Cups",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Sullivan's Signature Angus Sliders*",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "House Fries",
+   "price_usd": 10.0
+  },
+  {
+   "category": "wine",
+   "label": "Select Red, White & Sparkling Wines",
+   "price_usd": 8.0
+  }
+ ],
+ "the-cheesecake-factory-king-of-prussia": [
+  {
+   "category": "food",
+   "label": "Roadside Sliders*",
+   "price_usd": 10.95
+  },
+  {
+   "category": "food",
+   "label": "Avocado Eggrolls",
+   "price_usd": 10.95
+  },
+  {
+   "category": "food",
+   "label": "Tex Mex Eggrolls",
+   "price_usd": 10.95
+  },
+  {
+   "category": "food",
+   "label": "Chicken Pot Stickers",
+   "price_usd": 10.95
+  },
+  {
+   "category": "food",
+   "label": "Fried Calamari",
+   "price_usd": 10.95
+  },
+  {
+   "category": "food",
+   "label": "Thai Chili Shrimp",
+   "price_usd": 10.95
+  },
+  {
+   "category": "food",
+   "label": "Factory Nachos",
+   "price_usd": 10.95
+  },
+  {
+   "category": "food",
+   "label": "Buffalo Blasts\u00ae",
+   "price_usd": 10.95
+  },
+  {
+   "category": "food",
+   "label": "Pretzel Bites with Cheddar Cheese Fondue",
+   "price_usd": 10.95
+  },
+  {
+   "category": "food",
+   "label": "Hot Spinach and Cheese Dip",
+   "price_usd": 10.95
+  },
+  {
+   "category": "food",
+   "label": "Fried Macaroni and Cheese",
+   "price_usd": 10.95
+  },
+  {
+   "category": "food",
+   "label": "Sweet Corn Tamale Cakes**",
+   "price_usd": 10.95
+  },
+  {
+   "category": "food",
+   "label": "\"Happy Hour\" Burger* **",
+   "price_usd": 10.95
+  },
+  {
+   "category": "food",
+   "label": "Street Corn",
+   "price_usd": 9.95
+  },
+  {
+   "category": "food",
+   "label": "Chicken Taquitos",
+   "price_usd": 9.95
+  },
+  {
+   "category": "food",
+   "label": "Korean Fried Cauliflower",
+   "price_usd": 9.95
+  },
+  {
+   "category": "food",
+   "label": "Stuffed Mushrooms",
+   "price_usd": 9.95
+  },
+  {
+   "category": "food",
+   "label": "Fried Zucchini",
+   "price_usd": 9.95
+  },
+  {
+   "category": "food",
+   "label": "Crispy Brussels Sprouts",
+   "price_usd": 9.95
+  },
+  {
+   "category": "food",
+   "label": "Beet and Avocado Salad**",
+   "price_usd": 9.95
+  },
+  {
+   "category": "food",
+   "label": "Cheeseburger Spring Rolls",
+   "price_usd": 9.95
+  },
+  {
+   "category": "food",
+   "label": "Crispy Crab Bites",
+   "price_usd": 9.95
+  },
+  {
+   "category": "food",
+   "label": "Crispy Fried Cheese",
+   "price_usd": 9.95
+  },
+  {
+   "category": "food",
+   "label": "Crab Wontons",
+   "price_usd": 9.95
+  },
+  {
+   "category": "cocktail",
+   "label": "Mojito",
+   "price_usd": 8.5
+  },
+  {
+   "category": "cocktail",
+   "label": "Long Island Iced Tea",
+   "price_usd": 8.5
+  },
+  {
+   "category": "cocktail",
+   "label": "Margarita",
+   "price_usd": 8.5
+  },
+  {
+   "category": "cocktail",
+   "label": "J.W.'s Pink Lemonade\u2122",
+   "price_usd": 8.5
+  },
+  {
+   "category": "cocktail",
+   "label": "Whiskey Smash",
+   "price_usd": 8.5
+  },
+  {
+   "category": "well",
+   "label": "Selected Well Drinks",
+   "price_usd": 8.5
+  },
+  {
+   "category": "wine",
+   "label": "Selected Wines by the Glass",
+   "price_usd": 8.5
+  },
+  {
+   "category": "draft",
+   "label": "Selected Draft Beers",
+   "price_usd": 4.95
+  },
+  {
+   "category": "bottle_can",
+   "label": "Selected Bottled Beers",
+   "price_usd": 3.95
+  }
+ ],
+ "tommy-s-tavern-tap-king-of-prussia": [
+  {
+   "category": "food",
+   "label": "GARLIC FLATBREAD",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "SPICY TUNA ROLL",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "PERSONAL CLASSIC PIZZA",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "COAL FIRED JUMBO PRETZEL",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Tavern Taquitos",
+   "price_usd": 9.0
+  },
+  {
+   "category": "food",
+   "label": "HOLY GUACAMOLE!",
+   "price_usd": 9.0
+  },
+  {
+   "category": "food",
+   "label": "GENERAL TSO'S CAULIFLOWER",
+   "price_usd": 9.0
+  },
+  {
+   "category": "food",
+   "label": "LOADED NACHOS",
+   "price_usd": 9.0
+  },
+  {
+   "category": "food",
+   "label": "HUMMAS TRIO DIP",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "SPINACH & artichoke dip",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "classic 10 pc coal fired wings",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "meatballs with ricotta",
+   "price_usd": 10.0
+  },
+  {
+   "category": "wine",
+   "label": "house wines",
+   "price_usd": 5.0
+  },
+  {
+   "category": "cocktail",
+   "label": "sangria",
+   "price_usd": 6.0
+  }
+ ]
+}

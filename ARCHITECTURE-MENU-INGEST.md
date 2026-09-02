@@ -47,6 +47,87 @@ second click closes it).
 
 ---
 
+## 🔑 Three ways to read a menu — and only one of them can make a JUDGEMENT
+
+**Added 2026-09-01, after Paul: _"why would a scraper running sonnet miss that
+the whole page is a happy hour menu? there's no intelligence running over pages.
+that's a mistake."_ He was right, and the answer is worth stating plainly
+because it is the shape of every miss in this file.**
+
+**The scraper was not running a model. It was not running any model at all.**
+`crawl_sites.py` is ~2,000 lines of regex and DOM rules. `extract_prices_llm.py`
+— the only model in the pipeline before today — reads **the quotes those rules
+already produced**, prices only, never windows, never pages. So:
+
+> 🛑 **A page the rules threw away was invisible to every model we run.** The
+> model could not see the page. It could only see what a regex had already
+> decided was worth keeping.
+
+Three defects found in one hour of looking, all the same defect:
+
+| what the venue wrote | what the rule said | cost |
+|---|---|---|
+| bartaco `/kophightidehour/` | `depth>1 and /happy.?hour\|special/` | menu is a **PNG**, never collected |
+| Morton's `/event/power-hour/` | same regex | page read as ordinary |
+| Sullivan's `/menus/happyhour-food-drink/` | needs an hh *heading*; page has none | 4 price bands, 26 dishes unread |
+
+And the one no rule can fix: those dishes now reach `extract_deals.py`, which
+asks `category_of()` — a **hand-typed noun whitelist** — and keeps **two of
+nineteen**. "Beef Wellington Bites", because *bites* is a word somebody typed
+in, and **"Jumbo Shrimp Cocktail", filed as a COCKTAIL**. A shrimp cocktail, on
+the board, as a drink. "A5 Wagyu Nigiri" matches nothing and is dropped with no
+line in any log.
+
+**`ingest/read_pages_llm.py` is the answer.** `crawl_sites.py` now caches the
+visible text of every happy-hour page to `data/pages/`, and that pass reads the
+**whole page**. Same safety contract as the price pass, and it is what makes it
+shippable:
+
+- **Items only.** It never sees, proposes or alters a **window**. Days and times
+  stay with the deterministic extractor and its meridiem rules, so
+  *"no meridiem ⇒ refused, never guessed"* is untouched.
+- **Every item carries the span it came from**, checked against the page in code
+  by the same `verify()`. The model is a **reader, not a source**.
+
+> 💰 **Cost is the NUMBER OF CALLS, not the size of the model.** `claude -p`
+> bills a fixed harness on every invocation — 28,272 tokens, 9,407 with
+> `LEAN_ARGS`. At batch 40 opus beat haiku on raw tokens *and* recall at once.
+> **Batch size is the lever; the model is the smaller adjustment.** This is also
+> why a haiku-then-sonnet **cascade can cost more than sonnet alone** — it
+> doubles the calls. Sonnet, batched, is the setting (Paul, 2026-09-01).
+
+> 🛑 **Cache widely, read narrowly.** The crawler caches on "happy hour appears
+> anywhere", which is right — a page not kept cannot be reconsidered. The words
+> are in the NAV of every restaurant site alive, so the first run put **47 pages
+> up and 41 were a bottle shop's homepage**. `worth_reading()` gates the model
+> on the page making a claim about ITSELF: the URL names an hour, or ≥2 prices
+> under a happy-hour heading. A page that fails it is **not judged menu-less** —
+> it is just not worth a call, and it stays cached.
+
+### The headless tier — and the line we drew on robots.txt
+
+A page whose HTML holds no page is rendered in WebKit (`--render`), then read by
+the same readers with the same containment. Bounded hard, because it is ~40x a
+fetch: only a page whose URL **names an hour** that came back under 25 lines.
+
+The Cheesecake Factory is the case that motivated it — 13KB of Laravel shell,
+**11 visible lines**, no API. Rendered: **161 lines, 24 quotes.** And it shows
+why the model tier is needed right behind it, because what the regex made of
+those quotes was **`"800 cal $10.95"`** — a real price bound to a **calorie
+count** instead of a dish.
+
+> ⚖️ **`menu.thecheesecakefactory.com/robots.txt` is `User-agent: * / Disallow: /`.**
+> That is different from the 403-ing WAFs this crawler already works around: a
+> WAF is fingerprinting our connection shape, robots is an explicit request.
+> Rendering does not make us less of an automated client. **Asked and reaffirmed
+> — Paul's call, 2026-09-01: we read it.** Bounded to the narrowest case in
+> `crawl_one()`, behind its own flag `--render-blocked`, never implied by
+> `--render`, and only for a page whose URL names an hour. **Nothing else in the
+> crawl ignores robots.txt**; it is still fetched and still obeyed everywhere
+> else. Recorded here because it is a policy choice, not a bug fix.
+
+---
+
 ## Two ways to read a menu, and only one of them is honest
 
 ### Prose inference — the old way, still used for most venues

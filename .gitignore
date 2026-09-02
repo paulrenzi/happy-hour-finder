@@ -14,3 +14,8 @@ data/venues.csv
 logs/
 data/*.bak
 scratch/
+
+# The crawler's page-text cache (ingest/crawl_sites.py -> ingest/read_pages_llm.py).
+# Rebuildable from a --recrawl, one file per happy-hour page, thousands at
+# full-corpus scale. The ANSWERS it produces are committed: data/deals_pages_llm.json.
+data/pages/

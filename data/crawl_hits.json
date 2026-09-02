@@ -8878,18 +8878,22 @@
   "crawled_at": "2026-09-01",
   "hits": [
    {
+    "hh": true,
     "quote": "Happy Hour | Paladar Latin Kitchen & Rum Bar",
     "url": "https://paladarlatinkitchen.com/happy-hour/"
    },
    {
+    "hh": true,
     "quote": "Happy Hour",
     "url": "https://paladarlatinkitchen.com/happy-hour/"
    },
    {
+    "hh": true,
     "quote": "Join us for the best HAPPY HOUR in town / Monday-Friday",
     "url": "https://paladarlatinkitchen.com/happy-hour/"
    },
    {
+    "hh": true,
     "quote": "HAPPY HOUR DETAILS / Monday-Friday / from 4-6:30pm & Sunday- Thursday 8:30-10pm in the Bar",
     "url": "https://paladarlatinkitchen.com/happy-hour/"
    },
@@ -9453,10 +9457,12 @@
     "url": "https://www.tommystavernandtap.com/copy-of-happy-hour-specials"
    },
    {
+    "hh": true,
     "quote": "Tommy's Tavern + Tap | Happy Hour",
     "url": "https://www.tommystavernandtap.com/copy-of-happy-hour-specials"
    },
    {
+    "hh": true,
     "quote": "HAPPY HOUR / 3 PM TIL' 6 PM",
     "url": "https://www.tommystavernandtap.com/copy-of-happy-hour-specials"
    },
@@ -9496,18 +9502,22 @@
     "url": "https://www.tommystavernandtap.com/copy-of-happy-hour-specials"
    },
    {
+    "hh": true,
     "quote": "HALF PRICE SPECIALTY COCKTAILS / TUESDAYS",
     "url": "https://www.tommystavernandtap.com/copy-of-happy-hour-specials"
    },
    {
+    "hh": true,
     "quote": "HALF PRICE WINE LIST / WEDNESDAYS",
     "url": "https://www.tommystavernandtap.com/copy-of-happy-hour-specials"
    },
    {
+    "hh": true,
     "quote": "HALF PRICE SANGRIA / THURSDAYS / $2 OFF ALL DRAFT BEERS",
     "url": "https://www.tommystavernandtap.com/copy-of-happy-hour-specials"
    },
    {
+    "hh": true,
     "quote": "$2 OFF ALL DRAFT BEERS",
     "url": "https://www.tommystavernandtap.com/copy-of-happy-hour-specials"
    }
@@ -11006,6 +11016,24 @@
     "lines": 151,
     "result": "ok, 0 quote(s)",
     "url": "https://baldbirdsbrewing.com/"
+   },
+   {
+    "hh": false,
+    "lines": 150,
+    "result": "ok, 0 quote(s)",
+    "url": "https://baldbirdsbrewing.com/upcoming-events-audubon/2026/5/17/yappy-hour-t8xy7-y85d4"
+   },
+   {
+    "hh": false,
+    "lines": 149,
+    "result": "ok, 0 quote(s)",
+    "url": "https://baldbirdsbrewing.com/upcoming-events-audubon/2026/5/17/yappy-hour-t8xy7"
+   },
+   {
+    "hh": false,
+    "lines": 149,
+    "result": "ok, 0 quote(s)",
+    "url": "https://baldbirdsbrewing.com/upcoming-events-audubon/2026/5/17/yappy-hour"
    }
   ],
   "website": "https://baldbirdsbrewing.com/",
@@ -18477,7 +18505,7 @@
   "osm_name": "Home2 Suites by Hilton King of Prussia Valley Forge",
   "pages": [
    {
-    "result": "403 text/html",
+    "result": "error: ReadTimeout",
     "url": "https://www.hilton.com/en/hotels/kpdhtht-home2-suites-king-of-prussia-valley-forge"
    }
   ],
@@ -22931,15 +22959,77 @@
  "65599": {
   "address": "1160 1ST AVE, KING OF PRUSSIA PA 19406-1355",
   "crawled_at": "2026-09-01",
-  "hits": [],
+  "hits": [
+   {
+    "hh": true,
+    "quote": "Join us for happy hour Wednesdays and Thursdays for featured bar items at Revolution Chop House! Don' t forget to Check out the seasonal favorite bar snacks, on available at the Bar. 4:00pm - 6:00pm",
+    "url": "https://vfcasino.boydgaming.com/explore/offers/2026-revo-happy-hour-vf"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour at Revolution Chop House",
+    "url": "https://vfcasino.boydgaming.com/explore/offers/2026-revo-happy-hour-vf"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour at Revolution Chop House / Wednesday & Thursday / 4:00pm - 6:00pm",
+    "url": "https://vfcasino.boydgaming.com/explore/offers/2026-revo-happy-hour-vf"
+   },
+   {
+    "hh": true,
+    "quote": "Join us for happy hour Wednesdays and Thursdays for featured bar items at Revolution Chop House! Don' t forget to Check out the seasonal favorite bar snacks, on available at the Bar.",
+    "url": "https://vfcasino.boydgaming.com/explore/offers/2026-revo-happy-hour-vf"
+   },
+   {
+    "hh": true,
+    "quote": "$2 Off Domestic and Imported Beers",
+    "url": "https://vfcasino.boydgaming.com/explore/offers/2026-revo-happy-hour-vf"
+   },
+   {
+    "hh": true,
+    "quote": "$3 Off Cocktails",
+    "url": "https://vfcasino.boydgaming.com/explore/offers/2026-revo-happy-hour-vf"
+   },
+   {
+    "hh": true,
+    "quote": "$3 Off Wines by the Glass",
+    "url": "https://vfcasino.boydgaming.com/explore/offers/2026-revo-happy-hour-vf"
+   }
+  ],
+  "menu_images": [
+   {
+    "src": "https://mc-d7f7cc1f-1a7c-4fc5-b531-6087-cdn-endpoint.azureedge.net/-/media/project/boyd/property/pennsylvania/valley-forge/offers/21327350_vf_revo_happyhour_sitecore_web_1200x570.jpg?h=570&iar=0&w=1200&rev=9435c57976214db1969dcde4d5e756b0",
+    "url": "https://vfcasino.boydgaming.com/explore/offers/2026-revo-happy-hour-vf"
+   },
+   {
+    "src": "https://mc-d7f7cc1f-1a7c-4fc5-b531-6087-cdn-endpoint.azureedge.net/-/media/project/boyd/property/pennsylvania/valley-forge/offers/21327350_vf_revo_happyhour_sitecore_web_384x484.jpg?h=484&iar=0&w=384&rev=2dadea41e62b46c2b6c86a24ecaebdf9",
+    "url": "https://vfcasino.boydgaming.com/explore/offers/2026-revo-happy-hour-vf"
+   }
+  ],
   "name": "VALLEY FORGE CASINO RESORT",
   "osm_name": "Valley Forge Casino Resort",
   "pages": [
    {
     "hh": false,
-    "lines": 0,
+    "lines": 1,
     "result": "ok, 0 quote(s)",
     "url": "https://vfcasino.boydgaming.com/"
+   },
+   {
+    "result": "rendered: 0 lines -> 1",
+    "url": "https://vfcasino.boydgaming.com/explore/offers/2026-table-games-happy-hour-vf"
+   },
+   {
+    "hh": false,
+    "lines": 1,
+    "result": "ok, 0 quote(s)",
+    "url": "https://vfcasino.boydgaming.com/explore/offers/2026-table-games-happy-hour-vf"
+   },
+   {
+    "hh": true,
+    "lines": 108,
+    "result": "ok, 6 quote(s)",
+    "url": "https://vfcasino.boydgaming.com/explore/offers/2026-revo-happy-hour-vf"
    }
   ],
   "website": "https://vfcasino.boydgaming.com/",
@@ -26113,14 +26203,17 @@
   "crawled_at": "2026-09-01",
   "hits": [
    {
+    "hh": true,
     "quote": "Happy Hour / Available Monday \u2013 Friday from 3-6pm at participating locations.* See full terms and availability HERE .",
     "url": "https://www.redlobster.com/happy-hour/"
    },
    {
+    "hh": true,
     "quote": "Cheers to Happy Hour Menus! / Available Monday \u2013 Friday from 3-6pm at participating locations.* See full terms and availability HERE . / Introducing $5 Drink Specials & $2 Off Select Appetizers from 3-6pm at participating locations*",
     "url": "https://www.redlobster.com/happy-hour/"
    },
    {
+    "hh": true,
     "quote": "Food & Drinks Happy Hour* / Introducing $5 Drink Specials & $2 Off Select Appetizers from 3-6pm at participating locations*",
     "url": "https://www.redlobster.com/happy-hour/"
    },
@@ -26130,6 +26223,7 @@
     "url": "https://www.redlobster.com/happy-hour/"
    },
    {
+    "hh": true,
     "quote": "Food ONLY Happy Hour / Did someone say $2 off* select appetizers, like Lobster Flatbread, Seafood-Stuffed Mushrooms, Crab Queso, and more, from 3-6pm?!",
     "url": "https://www.redlobster.com/happy-hour/"
    },
@@ -26137,49 +26231,12 @@
     "hh": true,
     "quote": "*Food Happy Hour offers available Monday through Friday only between 3pm to 6pm, at participating US locations. Gainesville, GA hours are 4-6pm. Beverage offerings not available. Price indicated excludes applicable taxes and gratuities. Available for Dine-in only; To Go and Delivery excluded. Offer may not be combined with any other offer or coupon. Full terms & availability here .",
     "url": "https://www.redlobster.com/happy-hour/"
-   },
-   {
-    "quote": "Sip, Snack and Celebrate: Red Lobster Announces Launch of Happy Hour / New $5 drink specials and $2 off select starters make weeknights more special",
-    "url": "https://www.redlobster.com/news-press/press/2024/12/02/sip-snack-and-celebrate-red-lobster-announces-launch-of-happy-hour/"
-   },
-   {
-    "quote": "Sip, Snack and Celebrate: Red Lobster Announces Launch of Happy Hour / New $5 drink specials and $2 off select starters make weeknights more special / Orlando, Fla. (December 2, 2024) \u2013 Raise a glass because Red Lobster\u00ae just launched Happy Hour*! Starting today\u2014and available every Monday through Friday from 3pm to 6pm local time at participating restaurants nationwide\u2014guests can visit their neare",
-    "url": "https://www.redlobster.com/news-press/press/2024/12/02/sip-snack-and-celebrate-red-lobster-announces-launch-of-happy-hour/"
-   },
-   {
-    "hh": true,
-    "quote": "New $5 drink specials and $2 off select starters make weeknights more special",
-    "url": "https://www.redlobster.com/news-press/press/2024/12/02/sip-snack-and-celebrate-red-lobster-announces-launch-of-happy-hour/"
-   },
-   {
-    "hh": true,
-    "quote": "During Happy Hour, guests can choose from a variety of refreshing cocktails, beer and wine to sip on for just $5; selections include:",
-    "url": "https://www.redlobster.com/news-press/press/2024/12/02/sip-snack-and-celebrate-red-lobster-announces-launch-of-happy-hour/"
-   },
-   {
-    "hh": true,
-    "quote": "No happy hour is complete without a tasty appetizer or two. Perfect for sharing, guests can enjoy $2 off select starters, including:",
-    "url": "https://www.redlobster.com/news-press/press/2024/12/02/sip-snack-and-celebrate-red-lobster-announces-launch-of-happy-hour/"
-   },
-   {
-    "hh": true,
-    "quote": "Red Lobster announces launch of Happy Hour featuring $5 Drink Specials and $2 Off Select Starters!",
-    "url": "https://www.redlobster.com/news-press/press/2024/12/02/sip-snack-and-celebrate-red-lobster-announces-launch-of-happy-hour/"
-   },
-   {
-    "hh": true,
-    "quote": "\u201cWith the launch of Red Lobster\u2019s new happy hour, guests can enjoy great deals on our signature appetizers and refreshing drinks every weekday,\u201d said Nichole Robillard, Chief Marketing Officer at Red Lobster. \u201cIt's the perfect way to take a break from the hustle and bustle of the busy holiday season and spend time with friends and family, or just treat yourself to some well-deserved fun!\u201d",
-    "url": "https://www.redlobster.com/news-press/press/2024/12/02/sip-snack-and-celebrate-red-lobster-announces-launch-of-happy-hour/"
    }
   ],
   "menu_images": [
    {
     "src": "https://img-ecomm-rl-prod-fye5gqbxdtbghqer.a03.azurefd.net/brandsite/images/RL_HH_web_banner_US.original.jpg",
     "url": "https://www.redlobster.com/happy-hour/"
-   },
-   {
-    "src": "https://img-ecomm-rl-prod-fye5gqbxdtbghqer.a03.azurefd.net/brandsite/images/2024_11_18_RL_Happy_Hour_Food_Beverages_0675_C.width-500.jpg",
-    "url": "https://www.redlobster.com/news-press/press/2024/12/02/sip-snack-and-celebrate-red-lobster-announces-launch-of-happy-hour/"
    }
   ],
   "name": "RED LOBSTER #778",
@@ -26187,7 +26244,7 @@
   "pages": [
    {
     "hh": false,
-    "lines": 36,
+    "lines": 8,
     "result": "ok, 0 quote(s)",
     "url": "https://www.redlobster.com/seafood-restaurants/locations/pa/king-of-prussia/425-w-dekalb-pike"
    },
@@ -26204,9 +26261,9 @@
     "url": "https://www.redlobster.com/menu/specials/"
    },
    {
-    "hh": true,
-    "lines": 49,
-    "result": "ok, 7 quote(s)",
+    "hh": false,
+    "lines": 8,
+    "result": "ok, 0 quote(s)",
     "url": "https://www.redlobster.com/news-press/press/2024/12/02/sip-snack-and-celebrate-red-lobster-announces-launch-of-happy-hour/"
    }
   ],
@@ -28225,6 +28282,16 @@
     "hh": true,
     "quote": "[cat:cocktail] COCKTAILS / $7 CLASSIC MARGARITA",
     "url": "https://www.seasons52.com/locations/pa/king-of-prussia/king-of-prussia/4510?cmpid=br:s52_ag:ie_ch:loc_ca:S52GMB_sn:gmb_gt:king-of-prussia-pa-4510_pl:locurl_rd:1009"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour | Seasons 52 Skip to main content",
+    "url": "https://www.seasons52.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour",
+    "url": "https://www.seasons52.com/happy-hour"
    }
   ],
   "name": "SEASONS 52 #4510",
@@ -28245,9 +28312,13 @@
     "url": "https://www.seasons52.com/locations/pa/king-of-prussia/king-of-prussia/4510?cmpid=br:s52_ag:ie_ch:loc_ca:S52GMB_sn:gmb_gt:king-of-prussia-pa-4510_pl:locurl_rd:1009"
    },
    {
-    "hh": false,
-    "lines": 0,
-    "result": "ok, 0 quote(s)",
+    "result": "rendered: 0 lines -> 249",
+    "url": "https://www.seasons52.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "lines": 249,
+    "result": "ok, 2 quote(s)",
     "url": "https://www.seasons52.com/happy-hour"
    }
   ],
@@ -28688,6 +28759,11 @@
     "hh": true,
     "quote": "[cat:food] HH 1/2 OFF ALL PIZZAS / 50% Off BUFFALO CHICKEN",
     "url": "https://www.yardhouse.com/locations/pa/king-of-prussia/king-of-prussia-king-of-prussia-mall/8371?cmpid=br:yh_ag:ie_ch:loc_ca:YHGMB_sn:gmb_gt:king-of-prussia-pa-8371_pl:locurl_rd:1066"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour | Yard House Skip to main content",
+    "url": "https://www.yardhouse.com/happy-hour"
    }
   ],
   "name": "YARD HOUSE 8371",
@@ -28708,9 +28784,13 @@
     "url": "https://www.yardhouse.com/locations/pa/king-of-prussia/king-of-prussia-king-of-prussia-mall/8371?cmpid=br:yh_ag:ie_ch:loc_ca:YHGMB_sn:gmb_gt:king-of-prussia-pa-8371_pl:locurl_rd:1066"
    },
    {
-    "hh": false,
-    "lines": 0,
-    "result": "ok, 0 quote(s)",
+    "result": "rendered: 0 lines -> 56",
+    "url": "https://www.yardhouse.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "lines": 56,
+    "result": "ok, 1 quote(s)",
     "url": "https://www.yardhouse.com/happy-hour"
    },
    {
@@ -30102,6 +30182,16 @@
     "hh": true,
     "quote": "[cat:wine] WINES BY THE GLASS / $9 SCREEN PRESS, PINOT NOIR, CALIFORNIA",
     "url": "https://www.eddiev.com/locations/pa/king-of-prussia/king-of-prussia/8522?cmpid=br:ev_ag:ie_ch:loc_ca:EVGMB_sn:gmb_gt:king-of-prussia-pa-8522_pl:locurl_rd:1021"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour | Eddie V's",
+    "url": "https://www.eddiev.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "HAPPY HOUR",
+    "url": "https://www.eddiev.com/happy-hour"
    }
   ],
   "name": "EDDIE V'S #8522",
@@ -30122,9 +30212,13 @@
     "url": "https://www.eddiev.com/locations/pa/king-of-prussia/king-of-prussia/8522?cmpid=br:ev_ag:ie_ch:loc_ca:EVGMB_sn:gmb_gt:king-of-prussia-pa-8522_pl:locurl_rd:1021"
    },
    {
-    "hh": false,
-    "lines": 0,
-    "result": "ok, 0 quote(s)",
+    "result": "rendered: 0 lines -> 197",
+    "url": "https://www.eddiev.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "lines": 197,
+    "result": "ok, 2 quote(s)",
     "url": "https://www.eddiev.com/happy-hour"
    }
   ],
@@ -30177,7 +30271,7 @@
   "osm_name": "Regal UA King Of Prussia",
   "pages": [
    {
-    "result": "403 text/html",
+    "result": "robots.txt unreadable (403), treated as disallow",
     "url": "https://www.regmovies.com/theatres/regal-ua-king-of-prussia-1329?utm_source=google&utm_medium=organic&utm_campaign=gmb-listing"
    }
   ],
@@ -34379,7 +34473,7 @@
   "osm_name": "the Alloy King of Prussia - a DoubleTree by Hilton",
   "pages": [
    {
-    "result": "error: ReadTimeout",
+    "result": "403 text/html",
     "url": "https://www.hilton.com/en/hotels/phlvfdt-the-alloy-king-of-prussia/"
    }
   ],

@@ -29,6 +29,7 @@ PHOTO_DEALS_JSON = os.path.join(REPO, "data", "deals_photo.json")
 ZONES_JSON = os.path.join(REPO, "data", "zones.json")
 PRICES_JSON = os.path.join(REPO, "data", "deals_prices_llm.json")
 MENU_IMG_JSON = os.path.join(REPO, "data", "deals_menu_images.json")
+PAGES_JSON = os.path.join(REPO, "data", "deals_pages_llm.json")
 PHOTOS_JSON = os.path.join(REPO, "data", "venue_photos.json")
 COORDS_JSON = os.path.join(REPO, "data", "venue_coords.json")
 BASE_JSON = os.path.join(REPO, "data", "venue_base.json")
@@ -356,6 +357,26 @@ def main():
     if os.path.exists(MENU_IMG_JSON):
         for vid, items in json.load(open(MENU_IMG_JSON, encoding="utf-8")).items():
             prices.setdefault(vid, items)
+    # Written by ingest/read_pages_llm.py: the same kind of answer again, read
+    # off the WHOLE happy-hour page rather than off the quotes a regex had
+    # already matched out of it. It fills the same slot under the same rule --
+    # items only, never a window, every price checked against the venue's own
+    # text by the same verify() -- so it merges rather than ranks.
+    #
+    # It goes FIRST of the three, because it is the only one that read the page.
+    # The quote pass sees what the rule engine kept, and on a menu that is
+    # routinely the wrong half of the line: The Cheesecake Factory's happy-hour
+    # page yields '800 cal $10.95' to the regex, which is a real price attached
+    # to a CALORIE COUNT. Where both passes have an answer for a venue, the one
+    # that saw the dish name is the better answer.
+    page_read = set()
+    if os.path.exists(PAGES_JSON):
+        read = json.load(open(PAGES_JSON, encoding="utf-8"))
+        page_read = set(read)
+        for vid, items in read.items():
+            prices[vid] = items + [i for i in prices.get(vid, [])
+                                   if not any(x["label"].lower() == i["label"].lower()
+                                              for x in items)]
     photos = json.load(open(PHOTOS_JSON, encoding="utf-8")) if os.path.exists(PHOTOS_JSON) else {}
     # Written by ingest/geocode_venues.py. Without it the app still works, it
     # just cannot rank by distance or tell you whether you can make it in time.
@@ -424,10 +445,25 @@ def main():
         deals = []
         for deal in venue.get("deals", []):
             extra = prices.get(venue["id"])
-            if extra and deal.get("verified_by") == "auto_extract" and not deal.get("items"):
+            # A venue with NO items takes the sidecar outright. A venue that
+            # already has some takes it only from the pass that READ THE PAGE --
+            # and then the page wins, because the alternative is measurably
+            # worse. Sullivan's is the case: the rule engine reads its menu and
+            # `category_of()`, a hand-typed noun whitelist, keeps two of
+            # nineteen dishes -- one of them "Jumbo Shrimp Cocktail", filed as a
+            # COCKTAIL. Leaving the extractor's items in front meant shipping a
+            # shrimp cocktail as a drink while twenty correctly-read items sat
+            # in the sidecar unused. The extractor's own items are kept behind
+            # the page's, deduplicated on label, so nothing is lost either way.
+            read_page = venue["id"] in page_read
+            if extra and deal.get("verified_by") == "auto_extract" and (
+                    not deal.get("items") or read_page):
+                merged = extra + [i for i in (deal.get("items") or [])
+                                  if not any(x["label"].lower() == i["label"].lower()
+                                             for x in extra)]
                 # Applied before the validators, not after, so a price the model
                 # read still has to clear the same PA checks as any other item.
-                deal = dict(deal, items=extra, items_source="llm_extract")
+                deal = dict(deal, items=merged, items_source="llm_extract")
             errs = validate_deal(deal)
             if errs:
                 rejected += 1

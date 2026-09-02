@@ -178,9 +178,21 @@ def quotes_by_venue():
 
 def ask(batch):
     """One `claude -p` call over a list of (id, text). Returns parsed JSON."""
+    return ask_with(batch, PROMPT, MODEL,
+                    categories=", ".join(sorted(CATEGORIES)))
+
+
+def ask_with(batch, template, model, **fields):
+    """The same call, with the prompt and the model as arguments.
+
+    ingest/read_pages_llm.py reads whole PAGES rather than quotes and needs its
+    own prompt, but the transport is identical and has to stay identical: one
+    process, LEAN_ARGS, JSON out, a code fence tolerated and nothing else
+    salvaged. Two copies of this would drift, and what would drift is the flag
+    list whose loss silently costs 3x.
+    """
     venues = "\n\n".join(f"--- id: {vid}\n{text}" for vid, text in batch)
-    prompt = PROMPT.format(categories=", ".join(sorted(CATEGORIES)),
-                           venues=venues)
+    prompt = template.format(venues=venues, **fields)
     # `claude` is a .cmd shim on Windows, which subprocess will not find on its
     # own, and the prompt goes in on stdin rather than argv so a batch is never
     # bounded by the command-line length limit.
@@ -189,7 +201,7 @@ def ask(batch):
         raise RuntimeError("`claude` is not on PATH -- this pass runs on the CLI, "
                            "not on an API key")
     proc = subprocess.run(
-        [exe, "-p", "--model", MODEL, "--output-format", "json"] + LEAN_ARGS,
+        [exe, "-p", "--model", model, "--output-format", "json"] + LEAN_ARGS,
         input=prompt, capture_output=True, text=True,
         encoding="utf-8", errors="replace",
     )
@@ -213,7 +225,15 @@ def verify(item, text, menu=False):
     in the venue's own sentence, spelled the way the item claims.
     """
     ev = item.get("evidence") or ""
-    if not isinstance(ev, str) or len(ev) < 3:
+    # Three characters was right when every quote was a sentence, and wrong the
+    # moment a whole PAGE became readable: a price BAND states itself as '$8' on
+    # its own line and owns the four dishes under it. Tommy's Tavern lost all
+    # eight of its real happy-hour items to this -- refused as "no evidence"
+    # while the evidence was sitting in the page, spelled exactly as claimed.
+    # The floor still bites on anything that is not a price, so an empty or
+    # junk span is refused as before.
+    bare_price = isinstance(ev, str) and re.fullmatch(r"\$\s?\d{1,3}(\.\d\d)?", ev.strip())
+    if not isinstance(ev, str) or (len(ev) < 3 and not bare_price):
         return None, "no evidence"
     if norm(ev) not in norm(text):
         return None, "evidence not in the quote"

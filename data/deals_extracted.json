@@ -3806,6 +3806,21 @@
        "category": "wine",
        "label": "sangria",
        "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "label": "SPECIALTY COCKTAILS",
+       "discount_pct": 50
+      },
+      {
+       "category": "wine",
+       "label": "WINE LIST",
+       "discount_pct": 50
+      },
+      {
+       "category": "draft",
+       "label": "ALL DRAFT BEERS",
+       "amount_off_usd": 2.0
       }
      ],
      "confidence": "unconfirmed",
@@ -8379,6 +8394,58 @@
       "kind": "venue_site",
       "url": "https://jerrysbarphilly.com/",
       "quote": "Happy Hour / MONDAY - FRIDAY 4PM-7PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "valley-forge-casino-resort-king-of-prussia",
+   "lid": "65599",
+   "name": "Valley Forge Casino Resort",
+   "plcb_name": "VALLEY FORGE CASINO RESORT",
+   "address": "1160 1ST AVE, KING OF PRUSSIA PA 19406-1355",
+   "zone_id": "king_of_prussia",
+   "license_type": "",
+   "website": "https://vfcasino.boydgaming.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Domestic and Imported Beers",
+       "amount_off_usd": 2.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Cocktails",
+       "amount_off_usd": 3.0
+      },
+      {
+       "category": "wine",
+       "label": "Wines by the Glass",
+       "amount_off_usd": 3.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://vfcasino.boydgaming.com/explore/offers/2026-revo-happy-hour-vf",
+      "quote": "Join us for happy hour Wednesdays and Thursdays for featured bar items at Revolution Chop House! Don' t forget to Check out the seasonal favorite bar snacks, on available at the Bar. 4:00pm - 6:00pm"
      }
     }
    ]
