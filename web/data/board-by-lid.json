@@ -2418,6 +2418,39 @@
    }
   ]
  },
+ "69684": {
+  "name": "Avalon Restaurant",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "130939": {
   "name": "Barnaby's of West Chester",
   "deals": [
@@ -2452,6 +2485,44 @@
     ],
     "source": {
      "kind": "instagram"
+    }
+   }
+  ]
+ },
+ "112265": {
+  "name": "Lascala's Fire",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "15:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
     }
    }
   ]
@@ -2499,6 +2570,39 @@
    }
   ]
  },
+ "106742": {
+  "name": "Opa Taverna",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "17:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 2,
+      "end": "17:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 3,
+      "end": "17:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 4,
+      "end": "17:00",
+      "start": "15:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "66141": {
   "name": "P.J. Whelihan's",
   "deals": [
@@ -2530,28 +2634,28 @@
     "windows": [
      {
       "dow": 1,
-      "start": "17:00",
-      "end": "19:00"
+      "end": "19:00",
+      "start": "17:00"
      },
      {
       "dow": 2,
-      "start": "17:00",
-      "end": "19:00"
+      "end": "19:00",
+      "start": "17:00"
      },
      {
       "dow": 3,
-      "start": "17:00",
-      "end": "19:00"
+      "end": "19:00",
+      "start": "17:00"
      },
      {
       "dow": 4,
-      "start": "17:00",
-      "end": "19:00"
+      "end": "19:00",
+      "start": "17:00"
      },
      {
       "dow": 5,
-      "start": "17:00",
-      "end": "19:00"
+      "end": "19:00",
+      "start": "17:00"
      }
     ],
     "source": {
@@ -2560,46 +2664,21 @@
    }
   ]
  },
- "101577": {
-  "name": "Sedona Taphouse",
+ "47717": {
+  "name": "Ryan\u2019s Pub",
   "deals": [
    {
     "type": "happy_hour",
     "windows": [
      {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
       "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
+      "start": "19:00",
+      "end": "22:00"
      },
      {
       "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 6,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 7,
-      "start": "16:00",
-      "end": "18:00"
+      "start": "20:00",
+      "end": "22:00"
      }
     ],
     "source": {
@@ -2666,6 +2745,39 @@
       "dow": 6,
       "start": "17:00",
       "end": "19:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "52121": {
+  "name": "Teca-R",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
      }
     ],
     "source": {

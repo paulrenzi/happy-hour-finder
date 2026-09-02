@@ -2209,6 +2209,113 @@
    ]
   },
   {
+   "id": "lascala-s-fire-west-chester",
+   "lid": "112265",
+   "name": "Lascala's Fire",
+   "plcb_name": "Lascala's Fire",
+   "address": "44 W Gay St, West Chester PA 19380",
+   "zone_id": "west_chester",
+   "license_type": "",
+   "website": "https://lascalasfire.com/west-chester/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "MOSCOW OR KENTUCKY MULE",
+       "price_usd": 8.0
+      },
+      {
+       "category": "wine",
+       "label": "RED OR WHITE SANGRIA",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "label": "APEROL OR LIMONCELLO SPRITZ",
+       "price_usd": 9.0
+      },
+      {
+       "category": "cocktail",
+       "label": "ESPRESSO MARTINI",
+       "price_usd": 9.0
+      },
+      {
+       "category": "cocktail",
+       "label": "KETEL ONE MARTINI",
+       "price_usd": 9.0
+      },
+      {
+       "category": "wine",
+       "label": "HOUSE WINE",
+       "price_usd": 7.0
+      },
+      {
+       "category": "draft",
+       "label": "DRAFTS",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "BONELESS FIRE WINGS",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "TRUFFLE FRIES",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "WARM L ASCALA PRETZEL",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "CHEESE PIZZA",
+       "price_usd": 9.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://lascalasfire.com/west-chester/menus/happy-hour/",
+      "quote": "HAPPY HOUR / MON-FRI 3PM-6PM / RICOTTA BOARD $10"
+     }
+    }
+   ]
+  },
+  {
    "id": "bar-1010-philadelphia",
    "lid": "114847",
    "name": "Bar 1010",
@@ -6197,6 +6304,48 @@
    ]
   },
   {
+   "id": "ryan-s-pub-west-chester",
+   "lid": "47717",
+   "name": "Ryan\u2019s Pub",
+   "plcb_name": "P. J. RYAN'S, INC.",
+   "address": "124 W GAY ST, WEST CHESTER PA 19380-2915",
+   "zone_id": "west_chester",
+   "license_type": "",
+   "website": "https://ryans-pub.com",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 3,
+       "start": "19:00",
+       "end": "22:00"
+      },
+      {
+       "dow": 4,
+       "start": "20:00",
+       "end": "22:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "and Craft Drafts are",
+       "price_usd": 3.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://ryans-pub.com",
+      "quote": "Thursday nights is Quizzo night at Ryan\u2019s Pub, starting at 8 p.m. with a $50 Grand Prize! Well Drinks are $3 and Craft Drafts are $4 from 8 p.m. \u2013 10 p.m. / Wednesday nights, enjoy the best wings in West Chester! From 7pm-10pm, get 10 wings for ONLY $8 \u2013 ANY FLAVOR!!!"
+     }
+    }
+   ]
+  },
+  {
    "id": "the-cheesecake-factory-king-of-prussia",
    "lid": "48259",
    "name": "The Cheesecake Factory",
@@ -6816,6 +6965,52 @@
    ]
   },
   {
+   "id": "teca-r-west-chester",
+   "lid": "52121",
+   "name": "Teca-R",
+   "plcb_name": "Teca-R",
+   "address": "36-38 E Gay St, West Chester PA 19380",
+   "zone_id": "west_chester",
+   "license_type": "",
+   "website": "http://tecawestchester.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://tecawestchester.com/west-chester-west-chester-teca-restaurant-and-bar-food-menu",
+      "quote": "Happy Hour offered Tuesday-Friday, 4-6PM at the bar."
+     }
+    }
+   ]
+  },
+  {
    "id": "devil-s-alley-bar-grill-philadelphia",
    "lid": "53420",
    "name": "Devil's Alley Bar & Grill",
@@ -7312,7 +7507,7 @@
      ],
      "items": [],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-09-01",
+     "last_verified_at": "2026-09-02",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
@@ -10327,6 +10522,52 @@
       "kind": "venue_site",
       "url": "https://thegreatamericanpub.com/phoenixville/specials/weekly-specials/",
       "quote": "Happy Hour from 5pm - 7pm"
+     }
+    }
+   ]
+  },
+  {
+   "id": "avalon-restaurant-west-chester",
+   "lid": "69684",
+   "name": "Avalon Restaurant",
+   "plcb_name": "Avalon Restaurant",
+   "address": "114-120 E Gay St, West Chester PA 19380",
+   "zone_id": "west_chester",
+   "license_type": "",
+   "website": "https://www.avalonrestaurant.net/westchester",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.avalonrestaurant.net/westchester",
+      "quote": "Happy Hour @ the bar / Tuesday - Friday / 4:00 - 6:00pm"
      }
     }
    ]

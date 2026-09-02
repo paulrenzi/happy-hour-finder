@@ -409,7 +409,59 @@ def days_in(quote):
     return ed.days_in(quote)
 
 
-def vet(row, source, url):
+# A location prefix, the way a chain's events calendar writes one:
+#   "Pottstown - Trivia Every Wednesday!"
+#   "Drexel Hill - Quizzo Tuesday"
+# The town, then a dash or pipe or colon, at the start of a line.
+LOC_PREFIX_RE = re.compile(
+    r"(?:^|\n)\s*([A-Z][A-Za-z.']*(?:\s+[A-Z][A-Za-z.']*){0,2})\s*[-‐-―|:]\s*\S")
+
+_TOWNS = None
+
+
+def corpus_towns():
+    """Every town the licence base names, lower-cased. Read once."""
+    global _TOWNS
+    if _TOWNS is None:
+        base = json.load(open(BASE, encoding="utf-8"))
+        towns = set()
+        for v in base.values():
+            m = re.search(r",\s*([A-Za-z][A-Za-z .']*?)\s+PA\b", v.get("address") or "")
+            if m:
+                towns.add(m.group(1).strip().lower())
+        _TOWNS = towns
+    return _TOWNS
+
+
+def town_of(address):
+    m = re.search(r",\s*([A-Za-z][A-Za-z .']*?)\s+PA\b", address or "")
+    return m.group(1).strip().lower() if m else ""
+
+
+def another_towns_row(text, address):
+    """The OTHER town this text is headed with, or None.
+
+    A chain publishes one events calendar for every location it owns, and each
+    row is prefixed with the town it belongs to. Artillery Brewing's page gave
+    the WEST CHESTER card "Pottstown - Trivia Every Wednesday!" and "Drexel Hill
+    - Quizzo Tuesday". Both were correctly grounded -- those words really are on
+    that page -- and both were the wrong thing, which is the failure no
+    grounding check can see. The venue's own town is the discriminator.
+
+    Deliberately narrow: only a town the licence base actually knows, only in
+    the prefix position, and never the venue's own town. A section label like
+    "Wings - $5" names no town and is untouched.
+    """
+    mine = town_of(address)
+    towns = corpus_towns()
+    for m in LOC_PREFIX_RE.finditer(text or ""):
+        cand = m.group(1).strip().lower()
+        if cand in towns and cand != mine:
+            return m.group(1).strip()
+    return None
+
+
+def vet(row, source, url, address=None):
     """(deal, None) if the document really states this, else (None, why).
 
     Every refusal names what failed, because a pass whose misses are unnamed is
@@ -430,6 +482,11 @@ def vet(row, source, url):
     quote = in_source((row.get("quote") or "")[:QUOTE_CAP], source)
     if not quote:
         return None, "quote is not in the document"
+    if address:
+        elsewhere = (another_towns_row(row.get("heading") or "", address)
+                     or another_towns_row(quote, address))
+        if elsewhere:
+            return None, f"this row belongs to the {elsewhere} location, not ours"
     if ed.HEDGE_RE.search(quote):
         return None, "quote hedges ('check with us', 'see our socials')"
     if ed.ONE_OFF_RE.search(quote) and repeats(heading, source) < CALENDAR_MIN:
@@ -665,7 +722,8 @@ def ask_cmd(args):
             rows = (answered.get(vid) or {}).get("deals") or []
             deals, why = [], []
             for row in rows[:MAX_DEALS]:
-                deal, bad = vet(row, text, url)
+                deal, bad = vet(row, text, url,
+                                base[lid].get("address"))
                 if deal:
                     deals.append(deal)
                 else:
@@ -725,6 +783,14 @@ def build_cmd(args):
             continue
         for deal in rec["deals"]:
             if not in_source(deal["source"]["quote"], text):
+                stale += 1
+                continue
+            # Re-checked here too, so a row already on the sidecar from before
+            # this guard existed is dropped rather than shipped once more.
+            if (another_towns_row(deal["source"].get("heading") or "",
+                                  base[lid].get("address"))
+                    or another_towns_row(deal["source"]["quote"],
+                                         base[lid].get("address"))):
                 stale += 1
                 continue
             by_lid.setdefault(lid, []).append({k: v for k, v in deal.items()

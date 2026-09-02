@@ -95,6 +95,57 @@
    ]
   },
   {
+   "id": "69684",
+   "lid": "69684",
+   "slug": "avalon-restaurant-west-chester",
+   "name": "Avalon Restaurant",
+   "address": "114-120 E Gay St, West Chester PA 19380",
+   "zone_id": "west_chester",
+   "website": "https://www.avalonrestaurant.net/westchester",
+   "plcb_name": "Avalon Restaurant",
+   "license_type": "Restaurant (Liquor)",
+   "photo": {
+    "attribution": "Photo: Matt B / Google",
+    "file": "img/venues/69684.jpg"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.avalonrestaurant.net/westchester",
+      "quote": "Happy Hour @ the bar / Tuesday - Friday / 4:00 - 6:00pm"
+     }
+    }
+   ]
+  },
+  {
    "id": "130939",
    "lid": "130939",
    "slug": "barnabys-west-chester",
@@ -170,6 +221,160 @@
    ]
   },
   {
+   "id": "112265",
+   "lid": "112265",
+   "slug": "lascala-s-fire-west-chester",
+   "name": "Lascala's Fire",
+   "address": "44 W Gay St, West Chester PA 19380",
+   "zone_id": "west_chester",
+   "website": "https://lascalasfire.com/west-chester/",
+   "plcb_name": "LASCALA'S FIRE",
+   "license_type": "Restaurant (Liquor)",
+   "photo": {
+    "attribution": "Photo: eric tomorrow / Google",
+    "file": "img/venues/112265.jpg"
+   },
+   "deals": [
+    {
+     "confidence": "unconfirmed",
+     "items": [
+      {
+       "category": "cocktail",
+       "evidence": "MOSCOW OR KENTUCKY MULE $8",
+       "label": "MOSCOW OR KENTUCKY MULE",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "RED OR WHITE SANGRIA $8",
+       "label": "RED OR WHITE SANGRIA",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "APEROL OR LIMONCELLO SPRITZ $9",
+       "label": "APEROL OR LIMONCELLO SPRITZ",
+       "price_usd": 9.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "ESPRESSO MARTINI $9",
+       "label": "ESPRESSO MARTINI",
+       "price_usd": 9.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "KETEL ONE MARTINI $9",
+       "label": "KETEL ONE MARTINI",
+       "price_usd": 9.0
+      },
+      {
+       "category": "wine",
+       "evidence": "HOUSE WINE $7",
+       "label": "HOUSE WINE",
+       "price_usd": 7.0
+      },
+      {
+       "category": "draft",
+       "evidence": "DRAFTS $5",
+       "label": "DRAFTS",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "evidence": "RICOTTA BOARD $10",
+       "label": "RICOTTA BOARD",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "CHEESESTEAK EGG ROLLS $10",
+       "label": "CHEESESTEAK EGG ROLLS",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "MEATBALL TRIO $10",
+       "label": "MEATBALL TRIO",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "BONELESS FIRE WINGS $10",
+       "label": "BONELESS FIRE WINGS",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "CALABRIAN BRUSSELS SPROUTS $10",
+       "label": "CALABRIAN BRUSSELS SPROUTS",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "TRUFFLE FRIES $9",
+       "label": "TRUFFLE FRIES",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "evidence": "WARM L ASCALA PRETZEL $9",
+       "label": "WARM L ASCALA PRETZEL",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "evidence": "CHEESE PIZZA $9",
+       "label": "CHEESE PIZZA",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "evidence": "3-CHEESE PIATTA BREAD $9",
+       "label": "3-CHEESE PIATTA BREAD",
+       "price_usd": 9.0
+      }
+     ],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "heading": "HAPPY HOUR",
+      "kind": "venue_site",
+      "quote": "HAPPY HOUR\nMON-FRI 3PM-6PM",
+      "url": "https://lascalasfire.com/west-chester/menus/happy-hour"
+     },
+     "type": "happy_hour",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "15:00"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "id": "59213",
    "lid": "59213",
    "slug": "limoncello-west-chester",
@@ -236,6 +441,260 @@
       "url": "https://www.limoncellorestaurant.com/happy-hour-menu",
       "quote": "HAPPY HOUR MENU / Sunday-Friday 4:00-6:00PM"
      }
+    }
+   ]
+  },
+  {
+   "id": "106742",
+   "lid": "106742",
+   "slug": "opa-taverna-west-chester",
+   "name": "Opa Taverna",
+   "address": "40-44 E Gay St, West Chester PA 19380",
+   "zone_id": "west_chester",
+   "website": "https://opataverna.com/",
+   "plcb_name": "OPA TAVERNA INC",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 39.9609139,
+   "lng": -75.6040335,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Opa Taverna / Google",
+    "file": "img/venues/106742.jpg"
+   },
+   "deals": [
+    {
+     "confidence": "unconfirmed",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "Calamari\n$10.00",
+       "label": "Calamari",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "Lamb & Beef Flatbread\n$10.00",
+       "label": "Lamb & Beef Flatbread",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "Spinach & Artichoke Dip\n$10.00",
+       "label": "Spinach & Artichoke Dip",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "Opa Chips\n$10.00",
+       "label": "Opa Chips",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "Spanakopita\n$10.00",
+       "label": "Spanakopita",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "Greek Meatballs\n$10.00",
+       "label": "Greek Meatballs",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "Mediterranean Flatbread\n$10.00",
+       "label": "Mediterranean Flatbread",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "Kolokithokeftedes\n$10.00",
+       "label": "Kolokithokeftedes",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "Pikilia Spread\n$10.00",
+       "label": "Pikilia Spread",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "Loukaniko\n$10.00",
+       "label": "Loukaniko",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "Hummus\n$5.00",
+       "label": "Hummus",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "evidence": "Ceasar Salad\n$10.00",
+       "label": "Ceasar Salad",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "Mixed Green Salad\n$10.00",
+       "label": "Mixed Green Salad",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "Side Ceasar Salad\n$6.00",
+       "label": "Side Ceasar Salad",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "evidence": "Side Mixed Green Salad\n$10.00",
+       "label": "Side Mixed Green Salad",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "2 Pork Souvlakia\n$6.00",
+       "label": "2 Pork Souvlakia",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "evidence": "2 Chicken Souvlakia\n$6.00",
+       "label": "2 Chicken Souvlakia",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "Rose Sangria\n$8.00",
+       "label": "Rose Sangria",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "Red Sangria\n$8.00",
+       "label": "Red Sangria",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "White Sangria\n$8.00",
+       "label": "White Sangria",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "All Mixed Drinks\n$8.00",
+       "label": "All Mixed Drinks",
+       "price_usd": 8.0
+      },
+      {
+       "category": "wine",
+       "evidence": "All House Wines\n$8.00",
+       "label": "All House Wines",
+       "price_usd": 8.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "Stella Artois\n$5.00",
+       "label": "Stella Artois",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "Sly Fox Pilsner\n$5.00",
+       "label": "Sly Fox Pilsner",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "Yuengling\n$5.00",
+       "label": "Yuengling",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "Miller Lite\n$5.00",
+       "label": "Miller Lite",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "Heineken\n$5.00",
+       "label": "Heineken",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "Coors Lite\n$5.00",
+       "label": "Coors Lite",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "Michelob Ultra\n$5.00",
+       "label": "Michelob Ultra",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "Modelo Negra\n$5.00",
+       "label": "Modelo Negra",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "Modelo Especial\n$5.00",
+       "label": "Modelo Especial",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "Corona Extra\n$5.00",
+       "label": "Corona Extra",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "Jack's Hard Cider\n$5.00",
+       "label": "Jack's Hard Cider",
+       "price_usd": 5.0
+      }
+     ],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "heading": "Happy Hour Menu",
+      "kind": "venue_site",
+      "quote": "Monday - Thursday 3pm - 5pm",
+      "url": "https://opataverna.com/west-chester-opa-taverna-food-menu"
+     },
+     "type": "happy_hour",
+     "verified_by": "menu_read_llm",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "17:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 2,
+       "end": "17:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 3,
+       "end": "17:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 4,
+       "end": "17:00",
+       "start": "15:00"
+      }
+     ]
     }
    ]
   },
@@ -334,117 +793,93 @@
    },
    "deals": [
     {
+     "confidence": "unconfirmed",
+     "items": [],
+     "last_verified_at": "2026-09-02",
+     "source": {
+      "heading": "HAPPY HOUR",
+      "kind": "venue_site",
+      "quote": "Join us every Monday through Friday from 5-7 PM in the bar area!",
+      "url": "https://www.pietrosprime.com"
+     },
      "type": "happy_hour",
+     "verified_by": "menu_read_llm",
      "windows": [
       {
        "dow": 1,
-       "start": "17:00",
-       "end": "19:00"
+       "end": "19:00",
+       "start": "17:00"
       },
       {
        "dow": 2,
-       "start": "17:00",
-       "end": "19:00"
+       "end": "19:00",
+       "start": "17:00"
       },
       {
        "dow": 3,
-       "start": "17:00",
-       "end": "19:00"
+       "end": "19:00",
+       "start": "17:00"
       },
       {
        "dow": 4,
-       "start": "17:00",
-       "end": "19:00"
+       "end": "19:00",
+       "start": "17:00"
       },
       {
        "dow": 5,
-       "start": "17:00",
-       "end": "19:00"
+       "end": "19:00",
+       "start": "17:00"
       }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-09-01",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://www.pietrosprime.com",
-      "quote": "HAPPY HOUR / Join us every Monday through Friday from 5-7 PM in the bar area!"
-     }
+     ]
     }
    ]
   },
   {
-   "id": "101577",
-   "lid": "101577",
-   "slug": "sedona-taphouse-west-chester",
-   "name": "Sedona Taphouse",
-   "address": "44 W Gay St, West Chester PA 19380",
+   "id": "47717",
+   "lid": "47717",
+   "slug": "ryan-s-pub-west-chester",
+   "name": "Ryan\u2019s Pub",
+   "address": "124 W Gay St, West Chester PA 19380",
    "zone_id": "west_chester",
-   "website": "https://sedonataphouse.com/locations/west-chester-pa/",
-   "plcb_name": "SEDONA TAPHOUSE",
+   "website": "https://ryans-pub.com",
+   "plcb_name": "P. J. RYAN'S, INC.",
    "license_type": "Restaurant (Liquor)",
-   "lat": 39.9600335,
-   "lng": -75.6058116,
+   "lat": 39.9596316,
+   "lng": -75.6068986,
    "geo_precision": "place",
    "photo": {
-    "attribution": "Photo: Constantine Johns / Google",
-    "file": "img/venues/101577.jpg"
+    "attribution": "Photo: Ryan's Pub / Google",
+    "file": "img/venues/47717.jpg"
    },
    "deals": [
     {
      "type": "happy_hour",
      "windows": [
       {
-       "dow": 1,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
        "dow": 3,
-       "start": "16:00",
-       "end": "18:00"
+       "start": "19:00",
+       "end": "22:00"
       },
       {
        "dow": 4,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 6,
-       "start": "16:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 7,
-       "start": "16:00",
-       "end": "18:00"
+       "start": "20:00",
+       "end": "22:00"
       }
      ],
      "items": [
       {
-       "category": "wine",
-       "label": "house wine by the glass and",
-       "price_usd": 7.9
+       "category": "draft",
+       "label": "and Craft Drafts are",
+       "price_usd": 3.0
       }
      ],
      "confidence": "unconfirmed",
-     "last_verified_at": "2026-09-01",
+     "last_verified_at": "2026-09-02",
      "verified_by": "auto_extract",
      "source": {
       "kind": "venue_site",
-      "url": "https://sedonataphouse.com/locations/west-chester-pa/",
-      "quote": "Join us for Happy Hour from 4pm \u2013 6pm for $7.9 house wine by the glass and $9.9 select craft classics!"
+      "url": "https://ryans-pub.com",
+      "quote": "Thursday nights is Quizzo night at Ryan\u2019s Pub, starting at 8 p.m. with a $50 Grand Prize! Well Drinks are $3 and Craft Drafts are $4 from 8 p.m. \u2013 10 p.m. / Wednesday nights, enjoy the best wings in West Chester! From 7pm-10pm, get 10 wings for ONLY $8 \u2013 ANY FLAVOR!!!"
      }
     }
    ]
@@ -605,6 +1040,57 @@
       "kind": "venue_site",
       "url": "https://www.stoveandtap-wc.com/specials",
       "quote": "Food & Drink Specials / 5:00 PM - 7:00 PM / WEDNESDAY"
+     }
+    }
+   ]
+  },
+  {
+   "id": "52121",
+   "lid": "52121",
+   "slug": "teca-r-west-chester",
+   "name": "Teca-R",
+   "address": "36-38 E Gay St, West Chester PA 19380",
+   "zone_id": "west_chester",
+   "website": "http://tecawestchester.com/",
+   "plcb_name": "Teca-R",
+   "license_type": "Restaurant (Liquor)",
+   "photo": {
+    "attribution": "Photo: Teca Restaurant and Bar / Google",
+    "file": "img/venues/52121.jpg"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://tecawestchester.com/west-chester-west-chester-teca-restaurant-and-bar-food-menu",
+      "quote": "Happy Hour offered Tuesday-Friday, 4-6PM at the bar."
      }
     }
    ]

@@ -552,7 +552,7 @@
  },
  "101066": {
   "address": "1388 OLD WILMINGTON PK, WEST CHESTER PA 19382-8211",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "SPIRIT OF VILLAGE KITCHEN LLC",
   "osm_name": "Ground Provisions",
@@ -562,6 +562,24 @@
     "lines": 45,
     "result": "ok, 0 quote(s)",
     "url": "https://www.groundprovisionspa.com/"
+   },
+   {
+    "hh": false,
+    "lines": 67,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.groundprovisionspa.com/drinks"
+   },
+   {
+    "hh": false,
+    "lines": 67,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.groundprovisionspa.com/drinks"
+   },
+   {
+    "hh": false,
+    "lines": 63,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.groundprovisionspa.com/menus-1"
    }
   ],
   "website": "https://www.groundprovisionspa.com/",
@@ -701,6 +719,50 @@
   ],
   "website": "https://stores.giantfoodstores.com/pa/king-of-prussia/310-s-henderson-rd?y_source=1_NDE5NTU3OC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
   "zone_id": "king_of_prussia"
+ },
+ "101307": {
+  "address": "30 N Church St, West Chester PA 19380",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Cocktails Food Beer + Wine Happy Hour Zero Proof",
+    "url": "http://slowhand-wc.com/menu"
+   },
+   {
+    "quote": "Cocktails Food Beer + Wine Happy Hour Zero Proof",
+    "url": "http://slowhand-wc.com/menu"
+   }
+  ],
+  "name": "Slow Hand",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": false,
+    "lines": 52,
+    "result": "ok, 0 quote(s)",
+    "url": "http://slowhand-wc.com/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=16738112384347600575"
+   },
+   {
+    "hh": true,
+    "lines": 72,
+    "result": "ok, 1 quote(s)",
+    "url": "http://slowhand-wc.com/menu"
+   },
+   {
+    "hh": true,
+    "lines": 72,
+    "result": "ok, 1 quote(s)",
+    "url": "http://slowhand-wc.com/menu"
+   },
+   {
+    "hh": false,
+    "lines": 173,
+    "result": "ok, 0 quote(s)",
+    "url": "http://slowhand-wc.com/private-events"
+   }
+  ],
+  "website": "http://slowhand-wc.com/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=16738112384347600575",
+  "zone_id": "west_chester"
  },
  "101345": {
   "address": "2201 CHRISTIAN ST, PHILADELPHIA PA 19146-1718",
@@ -1772,26 +1834,36 @@
  },
  "103733": {
   "address": "342 HANNUM AVE, WEST CHESTER PA 19380-2859",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "WRONG CROWD BEER CO",
   "osm_name": "Wrong Crowd Beer Company",
   "pages": [
    {
+    "hh": false,
+    "lines": 81,
     "result": "ok, 0 quote(s)",
     "url": "https://wrongcrowdbeer.com/"
    },
    {
-    "result": "ok, 0 quote(s)",
-    "url": "https://wrongcrowdbeer.com/west-chester-wrong-crowd-beer-company-events"
+    "result": "rendered: 24 lines -> 197",
+    "url": "https://wrongcrowdbeer.com/west-chester-wrong-crowd-beer-company-drink-menu"
    },
    {
+    "hh": false,
+    "lines": 197,
     "result": "ok, 0 quote(s)",
     "url": "https://wrongcrowdbeer.com/west-chester-wrong-crowd-beer-company-drink-menu"
    },
    {
+    "hh": false,
+    "lines": 36,
     "result": "ok, 0 quote(s)",
-    "url": "https://wrongcrowdbeer.com/west-chester-wrong-crowd-beer-company-food-menu"
+    "url": "https://wrongcrowdbeer.com/west-chester-wrong-crowd-beer-company-about"
+   },
+   {
+    "result": "error: ConnectionError",
+    "url": "https://wrongcrowdbeer.com/west-chester-wrong-crowd-beer-company-drink-menu"
    }
   ],
   "website": "https://wrongcrowdbeer.com/",
@@ -2747,7 +2819,7 @@
  },
  "106742": {
   "address": "40-44 E GAY ST, WEST CHESTER PA 19380",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [
    {
     "quote": "Brunch Main Dessert Happy Hour Menu Catering / $15.00",
@@ -2758,20 +2830,28 @@
   "osm_name": "Opa Taverna",
   "pages": [
    {
+    "hh": false,
+    "lines": 117,
     "result": "ok, 0 quote(s)",
     "url": "https://opataverna.com/"
    },
    {
+    "hh": false,
+    "lines": 250,
     "result": "ok, 0 quote(s)",
     "url": "https://opataverna.com/west-chester-opa-taverna-drink-menu"
    },
    {
-    "result": "ok, 1 quote(s)",
-    "url": "https://opataverna.com/west-chester-opa-taverna-food-menu"
+    "hh": false,
+    "lines": 250,
+    "result": "ok, 0 quote(s)",
+    "url": "https://opataverna.com/west-chester-opa-taverna-drink-menu"
    },
    {
-    "result": "ok, 0 quote(s)",
-    "url": "https://order.opataverna.com/ordering/home?source=pop_up&spot_id=81404&destination=order&promotion=order_online"
+    "hh": true,
+    "lines": 458,
+    "result": "ok, 1 quote(s)",
+    "url": "https://opataverna.com/west-chester-opa-taverna-food-menu"
    }
   ],
   "website": "https://opataverna.com/",
@@ -4819,26 +4899,34 @@
  },
  "110649": {
   "address": "40 E MARKET ST, WEST CHESTER PA 19382-3151",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "THE RAMS HEAD BAR & GRILL",
   "osm_name": "Santino's Tap & Table",
   "pages": [
    {
+    "hh": false,
+    "lines": 66,
     "result": "ok, 0 quote(s)",
     "url": "https://www.santinostapandtable.com"
    },
    {
+    "hh": false,
+    "lines": 51,
     "result": "ok, 0 quote(s)",
     "url": "https://www.santinostapandtable.com/weekend-specials"
    },
    {
+    "hh": false,
+    "lines": 66,
     "result": "ok, 0 quote(s)",
-    "url": "https://www.santinostapandtable.com/banquet-menu"
+    "url": "https://www.santinostapandtable.com/drink-menu"
    },
    {
+    "hh": false,
+    "lines": 70,
     "result": "ok, 0 quote(s)",
-    "url": "https://www.santinostapandtable.com/brunch-menu"
+    "url": "https://www.santinostapandtable.com/west-chester"
    }
   ],
   "website": "https://www.santinostapandtable.com",
@@ -5434,18 +5522,240 @@
   "zone_id": "ridley_tinicum"
  },
  "112265": {
-  "address": "44 W GAY ST, WEST CHESTER PA 19380",
-  "crawled_at": "2026-08-06",
-  "hits": [],
-  "name": "LASCALA'S FIRE",
-  "osm_name": "Sedona Taphouse",
-  "pages": [
+  "address": "44 W Gay St, West Chester PA 19380",
+  "crawled_at": "2026-09-02",
+  "hits": [
    {
-    "result": "robots.txt disallows",
-    "url": "https://sedonataphouse.com/locations/west-chester-pa/"
+    "quote": "Happy Hour",
+    "url": "https://lascalasfire.com/west-chester/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour, Mon-Fri, 3pm-6pm",
+    "url": "https://lascalasfire.com/west-chester/"
+   },
+   {
+    "quote": "HAPPY HOUR / Monday-Friday / 3pm-6pm",
+    "url": "https://lascalasfire.com/west-chester/"
+   },
+   {
+    "hh": true,
+    "quote": "MOSCOW OR KENTUCKY MULE $8",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "RED OR WHITE SANGRIA $8",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "APEROL OR LIMONCELLO SPRITZ $9",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "ESPRESSO MARTINI $9",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "KETEL ONE MARTINI $9",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "HOUSE WINE $7",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "DRAFTS $5",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "HAPPY HOUR / MON-FRI 3PM-6PM / RICOTTA BOARD $10",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "RICOTTA BOARD $10",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "CHEESESTEAK EGG ROLLS $10",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "MEATBALL TRIO $10",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "BONELESS FIRE WINGS $10",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "CALABRIAN BRUSSELS SPROUTS $10",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "TRUFFLE FRIES $9",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "WARM L ASCALA PRETZEL $9",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "CHEESE PIZZA $9",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "3-CHEESE PIATTA BREAD $9",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "HAPPY HOUR / MON-FRI 3PM-6PM",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour/"
+   },
+   {
+    "hh": true,
+    "quote": "MOSCOW OR KENTUCKY MULE $8",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "RED OR WHITE SANGRIA $8",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "APEROL OR LIMONCELLO SPRITZ $9",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "ESPRESSO MARTINI $9",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "KETEL ONE MARTINI $9",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "HOUSE WINE $7",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "DRAFTS $5",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "HAPPY HOUR / MON-FRI 3PM-6PM / RICOTTA BOARD $10",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "RICOTTA BOARD $10",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "CHEESESTEAK EGG ROLLS $10",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "MEATBALL TRIO $10",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "BONELESS FIRE WINGS $10",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "CALABRIAN BRUSSELS SPROUTS $10",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "TRUFFLE FRIES $9",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "WARM L ASCALA PRETZEL $9",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "CHEESE PIZZA $9",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "3-CHEESE PIATTA BREAD $9",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "HAPPY HOUR / MON-FRI 3PM-6PM",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour"
    }
   ],
-  "website": "https://sedonataphouse.com/locations/west-chester-pa/",
+  "name": "Lascala's Fire",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": true,
+    "lines": 386,
+    "result": "ok, 3 quote(s)",
+    "url": "https://lascalasfire.com/west-chester/"
+   },
+   {
+    "result": "render failed: Error",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour/"
+   },
+   {
+    "hh": true,
+    "lines": 28,
+    "result": "ok, 18 quote(s)",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour/"
+   },
+   {
+    "result": "render failed: Error",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour"
+   },
+   {
+    "hh": true,
+    "lines": 28,
+    "result": "ok, 18 quote(s)",
+    "url": "https://lascalasfire.com/west-chester/menus/happy-hour"
+   },
+   {
+    "hh": false,
+    "lines": 115,
+    "result": "ok, 0 quote(s)",
+    "url": "https://lascalasfire.com/west-chester/menus/drinks/"
+   }
+  ],
+  "website": "https://lascalasfire.com/west-chester/",
   "zone_id": "west_chester"
  },
  "11233": {
@@ -5705,6 +6015,27 @@
   ],
   "website": "https://locations.dunkindonuts.com/en/pa/philadelphia/330-w.-oregon-ave/304173",
   "zone_id": "south_philly"
+ },
+ "113370": {
+  "address": "121 W Market St, West Chester PA 19382",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Hop Fidelity",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "rendered: 1 lines -> 66",
+    "url": "https://www.hopfidelity.com/"
+   },
+   {
+    "hh": false,
+    "lines": 66,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.hopfidelity.com/"
+   }
+  ],
+  "website": "https://www.hopfidelity.com/",
+  "zone_id": "west_chester"
  },
  "113632": {
   "address": "975 E LANCASTER AVE, DOWNINGTOWN PA 19335-3328",
@@ -7726,26 +8057,34 @@
  },
  "119583": {
   "address": "29-31 E GAY ST, WEST CHESTER PA 19380-3144",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "JOLENE'S",
   "osm_name": "Jolene's",
   "pages": [
    {
+    "hh": false,
+    "lines": 46,
     "result": "ok, 0 quote(s)",
     "url": "https://www.joleneswc.com/"
    },
    {
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.joleneswc.com/events"
-   },
-   {
+    "hh": false,
+    "lines": 65,
     "result": "ok, 0 quote(s)",
     "url": "https://www.joleneswc.com/menu"
    },
    {
+    "hh": false,
+    "lines": 32,
     "result": "ok, 0 quote(s)",
-    "url": "https://www.joleneswc.com/party-inquiry"
+    "url": "https://www.joleneswc.com/events"
+   },
+   {
+    "hh": false,
+    "lines": 65,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.joleneswc.com/menu"
    }
   ],
   "website": "https://www.joleneswc.com/",
@@ -11786,6 +12125,21 @@
   "website": "https://locations.jamba.com/pa/philadelphia/philadelphia-intl-airport-space-c-9a",
   "zone_id": "west_philly"
  },
+ "132809": {
+  "address": "210 Carter Dr Ste 5B, West Chester PA 19382",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Cutter and Cannon Tasting Room",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "error: ConnectTimeout",
+    "url": "https://cutterandcannon.com/"
+   }
+  ],
+  "website": "https://cutterandcannon.com/",
+  "zone_id": "west_chester"
+ },
  "132810": {
   "address": "34 E LANCASTER AVE, ARDMORE PA 19003-2205",
   "crawled_at": "2026-09-01",
@@ -12044,16 +12398,26 @@
  },
  "133261": {
   "address": "1115 WEST CHESTER PK, WEST CHESTER PA 19382-5004",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "SHOP RITE",
   "osm_name": "Panera Bread",
   "pages": [
    {
+    "hh": false,
+    "lines": 113,
     "result": "ok, 0 quote(s)",
     "url": "https://www.panerabread.com/en-us/cafe/locations/pa/west-chester/1115-west-chester-pike"
    },
    {
+    "hh": false,
+    "lines": 113,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.panerabread.com/en-us/cafe-locator.html"
+   },
+   {
+    "hh": false,
+    "lines": 113,
     "result": "ok, 0 quote(s)",
     "url": "https://www.panerabread.com/en-us/menu.html"
    }
@@ -14442,7 +14806,7 @@
  },
  "38879": {
   "address": "730 E GAY ST, WEST CHESTER PA 19380-4546",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [
    {
     "quote": "Happy Hour",
@@ -14453,6 +14817,8 @@
   "osm_name": "Fiorello Cafe",
   "pages": [
    {
+    "hh": true,
+    "lines": 63,
     "result": "ok, 1 quote(s)",
     "url": "https://www.orderfiorellocafe.com/"
    }
@@ -16640,31 +17006,45 @@
  },
  "47717": {
   "address": "124 W GAY ST, WEST CHESTER PA 19380-2915",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [
    {
-    "quote": "From office happy hours to birthdays, holiday parties to rehearsal dinners, baptisms & confirmation luncheons, Ryan\u2019s Pub offers a variety of options to make your party great.",
-    "url": "https://ryans-pub.com/events/"
+    "by": "reach_llm",
+    "hh": true,
+    "quote": "Thursday nights is Quizzo night at Ryan\u2019s Pub, starting at 8 p.m. with a $50 Grand Prize! Well Drinks are $3 and Craft Drafts are $4 from 8 p.m. \u2013 10 p.m. / Wednesday nights, enjoy the best wings in West Chester! From 7pm-10pm, get 10 wings for ONLY $8 \u2013 ANY FLAVOR!!!",
+    "url": "https://ryans-pub.com"
    }
   ],
   "name": "P. J. RYAN'S, INC.",
   "osm_name": "Ryan\u2019s Pub",
   "pages": [
    {
+    "hh": false,
+    "lines": 42,
     "result": "ok, 0 quote(s)",
     "url": "https://ryans-pub.com"
    },
    {
-    "result": "ok, 0 quote(s)",
-    "url": "https://ryans-pub.com"
+    "result": "rendered: 13 lines -> 22",
+    "url": "https://ryans-pub.com/beer-menu/"
    },
    {
+    "hh": false,
+    "lines": 22,
     "result": "ok, 0 quote(s)",
     "url": "https://ryans-pub.com/beer-menu/"
    },
    {
-    "result": "ok, 1 quote(s)",
-    "url": "https://ryans-pub.com/events/"
+    "hh": false,
+    "lines": 224,
+    "result": "ok, 0 quote(s)",
+    "url": "https://ryans-pub.com/food-menu/"
+   },
+   {
+    "hh": false,
+    "lines": 42,
+    "result": "ok, 0 quote(s)",
+    "url": "https://ryans-pub.com"
    }
   ],
   "website": "https://ryans-pub.com",
@@ -18327,6 +18707,50 @@
   "website": "https://elvezrestaurant.com",
   "zone_id": "center_city"
  },
+ "52121": {
+  "address": "36-38 E Gay St, West Chester PA 19380",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Happy Hour",
+    "url": "http://tecawestchester.com/west-chester-west-chester-teca-restaurant-and-bar-food-menu"
+   },
+   {
+    "quote": "Happy Hour offered Tuesday-Friday, 4-6PM at the bar.",
+    "url": "http://tecawestchester.com/west-chester-west-chester-teca-restaurant-and-bar-food-menu"
+   }
+  ],
+  "name": "Teca-R",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": false,
+    "lines": 119,
+    "result": "ok, 0 quote(s)",
+    "url": "http://tecawestchester.com/"
+   },
+   {
+    "hh": false,
+    "lines": 205,
+    "result": "ok, 0 quote(s)",
+    "url": "http://tecawestchester.com/west-chester-west-chester-teca-restaurant-and-bar-drink-menu"
+   },
+   {
+    "hh": true,
+    "lines": 473,
+    "result": "ok, 2 quote(s)",
+    "url": "http://tecawestchester.com/west-chester-west-chester-teca-restaurant-and-bar-food-menu"
+   },
+   {
+    "hh": false,
+    "lines": 50,
+    "result": "ok, 0 quote(s)",
+    "url": "http://tecawestchester.com/west-chester-west-chester-teca-restaurant-and-bar-about"
+   }
+  ],
+  "website": "http://tecawestchester.com/",
+  "zone_id": "west_chester"
+ },
  "52487": {
   "address": "243-245 S CAMAC ST, PHILADELPHIA PA 19107-5609",
   "crawled_at": "2026-08-06",
@@ -18995,35 +19419,37 @@
  },
  "54865": {
   "address": "TOWN AND COUNTRY SHOPPING CTR 1107 W CHESTER PK, WEST CHESTER PA 19382-5004",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [
    {
     "quote": "$2 Off App Orders** \u2013 May 17 \u2013 23",
     "url": "https://waybackburgers.com/news/wayback-burgers-offers-month-long-specials-for-national-hamburger-month/"
-   },
-   {
-    "quote": "The Usual: Soho-based restaurant from famed chef Alvin Cailan has launched Burger Happy Hour just in time for National Hamburger Day. After 10:00 p.m, guests can get burgers as well as 50 percent off bottles of wine to pair with them.",
-    "url": "https://waybackburgers.com/news/national-burger-day-2019-deals-and-specials-on-hamburgers-where-to-get-best-vegan-and-vegetarian-burgers/"
    }
   ],
   "name": "APPLEBEE'S NEIGHBORHOOD GRILL & BAR",
   "osm_name": "Jake\u2019s Wayback Burgers",
   "pages": [
    {
+    "hh": false,
+    "lines": 70,
     "result": "ok, 0 quote(s)",
     "url": "https://waybackburgers.com/locations/us/pennsylvania/west-chester-2"
    },
    {
+    "result": "robots.txt disallows",
+    "url": "https://order.waybackburgers.com/menu/west-chester?open-criteria=1"
+   },
+   {
+    "hh": false,
+    "lines": 61,
     "result": "ok, 1 quote(s)",
     "url": "https://waybackburgers.com/news/wayback-burgers-offers-month-long-specials-for-national-hamburger-month/"
    },
    {
+    "hh": false,
+    "lines": 55,
     "result": "ok, 0 quote(s)",
     "url": "https://waybackburgers.com/news/wayback-burgers-offering-special-deal-for-leap-year/"
-   },
-   {
-    "result": "ok, 1 quote(s)",
-    "url": "https://waybackburgers.com/news/national-burger-day-2019-deals-and-specials-on-hamburgers-where-to-get-best-vegan-and-vegetarian-burgers/"
    }
   ],
   "website": "https://waybackburgers.com/locations/us/pennsylvania/west-chester-2",
@@ -20079,7 +20505,7 @@
  },
  "58333": {
   "address": "125 W MARKET ST, WEST CHESTER PA 19382-2901",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [
    {
     "quote": "Happy Hour Menu",
@@ -20090,14 +20516,17 @@
     "url": "https://www.pietrosprime.com"
    },
    {
+    "hh": true,
     "quote": "Happy Hour Menu | Pietro's Prime, West Chester",
     "url": "https://www.pietrosprime.com/happy-hour-menu"
    },
    {
+    "hh": true,
     "quote": "Happy Hour Menu",
     "url": "https://www.pietrosprime.com/happy-hour-menu"
    },
    {
+    "hh": true,
     "quote": "HAPPY HOUR",
     "url": "https://www.pietrosprime.com/happy-hour-menu"
    },
@@ -20107,27 +20536,39 @@
    },
    {
     "quote": "Happy Hour Menu",
-    "url": "https://www.pietrosprime.com/dessert-menu"
+    "url": "https://www.pietrosprime.com/taps-menu"
    }
   ],
   "name": "PIETROS PRIME INC",
   "osm_name": "Pietro\u2019s Prime",
   "pages": [
    {
+    "hh": true,
+    "lines": 53,
     "result": "ok, 2 quote(s)",
     "url": "https://www.pietrosprime.com"
    },
    {
+    "result": "rendered: 36 lines -> 38",
+    "url": "https://www.pietrosprime.com/happy-hour-menu"
+   },
+   {
+    "hh": true,
+    "lines": 38,
     "result": "ok, 3 quote(s)",
     "url": "https://www.pietrosprime.com/happy-hour-menu"
    },
    {
+    "hh": true,
+    "lines": 36,
     "result": "ok, 1 quote(s)",
     "url": "https://www.pietrosprime.com/bar-menu"
    },
    {
+    "hh": true,
+    "lines": 36,
     "result": "ok, 1 quote(s)",
-    "url": "https://www.pietrosprime.com/dessert-menu"
+    "url": "https://www.pietrosprime.com/taps-menu"
    }
   ],
   "website": "https://www.pietrosprime.com",
@@ -22082,6 +22523,21 @@
   "website": "https://barbuzzo.com",
   "zone_id": "center_city"
  },
+ "61942": {
+  "address": "10-12-14 E Gay St, West Chester PA 19380",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "S Bar 10",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "error: ConnectTimeout",
+    "url": "https://sidebarandrestaurant.com/"
+   }
+  ],
+  "website": "https://sidebarandrestaurant.com/",
+  "zone_id": "west_chester"
+ },
  "62039": {
   "address": "114-124 S 13TH ST, PHILADELPHIA PA 19107-4528",
   "crawled_at": "2026-09-01",
@@ -22593,7 +23049,7 @@
  },
  "62944": {
   "address": "102 E MARKET ST, WEST CHESTER PA 19382-3153",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [
    {
     "quote": "News & Events Daily Specials",
@@ -22609,18 +23065,6 @@
    },
    {
     "quote": "Daily Specials - M\u00e1s Mexicali Cantina Call Now",
-    "url": "https://www.masmexicali.com/2023/04/daily-specials/"
-   },
-   {
-    "quote": "News & Events Daily Specials",
-    "url": "https://www.masmexicali.com/2023/04/daily-specials/"
-   },
-   {
-    "quote": "Daily Specials",
-    "url": "https://www.masmexicali.com/2023/04/daily-specials/"
-   },
-   {
-    "quote": "Daily Specials - M\u00e1s Mexicali Cantina Call Now",
     "url": "https://www.masmexicali.com/daily-specials/"
    },
    {
@@ -22632,32 +23076,65 @@
     "url": "https://www.masmexicali.com/daily-specials/"
    },
    {
-    "quote": "News & Events Daily Specials",
-    "url": "https://www.masmexicali.com/menu/"
+    "quote": "Best Happy Hours in West Chester - M\u00e1s Mexicali Cantina Call Now",
+    "url": "https://www.masmexicali.com/2020/01/best-happy-hours-in-west-chester/"
    },
    {
-    "quote": "Daily Specials / Tues/Wed: 3pm\u20139pm",
-    "url": "https://www.masmexicali.com/menu/"
+    "quote": "News & Events Daily Specials",
+    "url": "https://www.masmexicali.com/2020/01/best-happy-hours-in-west-chester/"
+   },
+   {
+    "quote": "Daily Specials / Our Friends Over at Kia of West Chester Recommend M\u00e1s!",
+    "url": "https://www.masmexicali.com/2020/01/best-happy-hours-in-west-chester/"
+   },
+   {
+    "quote": "Best Happy Hours in West Chester / Our Friends Over at Kia of West Chester Recommend M\u00e1s!",
+    "url": "https://www.masmexicali.com/2020/01/best-happy-hours-in-west-chester/"
+   },
+   {
+    "hh": true,
+    "quote": "\u201cWhen you\u2019re looking for a way to relax while scoring some great deals and enjoying some entertainment, these are some favorite spots to visit in the area. Unwind after a long workday at the top happy hour spots in West Chester.\u201d",
+    "url": "https://www.masmexicali.com/2020/01/best-happy-hours-in-west-chester/"
+   },
+   {
+    "quote": "Daily Specials! - M\u00e1s Mexicali Cantina Call Now",
+    "url": "https://www.masmexicali.com/2023/04/daily-specials/"
+   },
+   {
+    "quote": "News & Events Daily Specials",
+    "url": "https://www.masmexicali.com/2023/04/daily-specials/"
+   },
+   {
+    "quote": "Daily Specials",
+    "url": "https://www.masmexicali.com/2023/04/daily-specials/"
    }
   ],
   "name": "MAS WEST CHESTER LLC",
   "osm_name": "M\u00e1s Mexicali Cantina",
   "pages": [
    {
+    "hh": false,
+    "lines": 95,
     "result": "ok, 3 quote(s)",
     "url": "https://www.masmexicali.com/"
    },
    {
-    "result": "ok, 3 quote(s)",
-    "url": "https://www.masmexicali.com/2023/04/daily-specials/"
-   },
-   {
+    "hh": false,
+    "lines": 46,
     "result": "ok, 3 quote(s)",
     "url": "https://www.masmexicali.com/daily-specials/"
    },
    {
-    "result": "ok, 2 quote(s)",
-    "url": "https://www.masmexicali.com/menu/"
+    "hh": true,
+    "lines": 56,
+    "result": "ok, 5 quote(s)",
+    "url": "https://www.masmexicali.com/2020/01/best-happy-hours-in-west-chester/"
+   },
+   {
+    "hh": false,
+    "lines": 53,
+    "result": "ok, 3 quote(s)",
+    "url": "https://www.masmexicali.com/2023/04/daily-specials/"
    }
   ],
   "website": "https://www.masmexicali.com/",
@@ -25007,26 +25484,34 @@
  },
  "66132": {
   "address": "123 N CHURCH ST, WEST CHESTER PA 19380-3082",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "KOOMA II LLC",
   "osm_name": "Kooma West Chester",
   "pages": [
    {
+    "hh": false,
+    "lines": 114,
     "result": "ok, 0 quote(s)",
     "url": "https://www.koomafusion.com/"
    },
    {
+    "hh": false,
+    "lines": 58,
     "result": "ok, 0 quote(s)",
     "url": "https://www.koomafusion.com/west-chester-kooma-fusion-happy-hours-specials"
    },
    {
+    "hh": false,
+    "lines": 58,
     "result": "ok, 0 quote(s)",
-    "url": "https://www.koomafusion.com/west-chester-kooma-fusion-drink-menu"
+    "url": "https://koomafusion.com/west-chester-kooma-fusion-happy-hours-specials"
    },
    {
+    "hh": false,
+    "lines": 93,
     "result": "ok, 0 quote(s)",
-    "url": "https://www.koomafusion.com/west-chester-kooma-fusion-events"
+    "url": "https://www.koomafusion.com/west-chester-kooma-fusion-drink-menu"
    }
   ],
   "website": "https://www.koomafusion.com/",
@@ -25100,6 +25585,41 @@
    }
   ],
   "website": "https://locations.pjspub.com/pa/west-chester/1347-wilmington-pike",
+  "zone_id": "west_chester"
+ },
+ "66149": {
+  "address": "1393 Dillworthtown Crossing, West Chester PA 19382",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "The Giant Company",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": false,
+    "lines": 89,
+    "result": "ok, 0 quote(s)",
+    "url": "https://stores.giantfoodstores.com/pa/west-chester/1393-dilworthtown-xing?y_source=1_NDE5NTM2OS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D"
+   },
+   {
+    "hh": false,
+    "lines": 90,
+    "result": "ok, 0 quote(s)",
+    "url": "https://stores.giantfoodstores.com/pa/west-chester/1502-west-chester-pike"
+   },
+   {
+    "hh": false,
+    "lines": 69,
+    "result": "ok, 0 quote(s)",
+    "url": "https://stores.giantfoodstores.com/pa/west-chester/698-downingtown-pike"
+   },
+   {
+    "hh": false,
+    "lines": 125,
+    "result": "ok, 0 quote(s)",
+    "url": "https://stores.giantfoodstores.com/pa/west-chester/1393-dilworthtown-xing/delivery"
+   }
+  ],
+  "website": "https://stores.giantfoodstores.com/pa/west-chester/1393-dilworthtown-xing?y_source=1_NDE5NTM2OS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
   "zone_id": "west_chester"
  },
  "66224": {
@@ -26686,12 +27206,20 @@
  },
  "68552": {
   "address": "1215 W CHESTER PK, WEST CHESTER PA 19382-5646",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "JLPM-NRB INC",
   "osm_name": "Old Original Nick\u2019s Roast Beef",
   "pages": [
    {
+    "hh": false,
+    "lines": 115,
+    "result": "ok, 0 quote(s)",
+    "url": "https://nicksroastbeef.com/west-chester-pa/"
+   },
+   {
+    "hh": false,
+    "lines": 115,
     "result": "ok, 0 quote(s)",
     "url": "https://nicksroastbeef.com/west-chester-pa/"
    }
@@ -26753,13 +27281,15 @@
  },
  "68716": {
   "address": "20 HAGERTY BLVD STE 6, WEST CHESTER PA 19382-5910",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "THE ARTISAN'S CELLAR LLC",
   "osm_name": null,
   "pages": [
    {
-    "result": "error: ConnectionError",
+    "hh": false,
+    "lines": 58,
+    "result": "ok, 0 quote(s)",
     "url": "https://theartisanscellar.com/"
    }
   ],
@@ -26890,6 +27420,50 @@
   ],
   "website": "https://grancaffelaquila.com",
   "zone_id": "center_city"
+ },
+ "68978": {
+  "address": "9 N Church St, West Chester PA 19382",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Mercato Ristorante and Bar specializes in exceptional catering services for any occasion. Our dedicated team ensures every detail is perfect, providing delicious cuisine and seamless service to create memorable experiences for you and your guests.",
+    "url": "https://www.mercato-wc.com/"
+   },
+   {
+    "quote": "Mercato Ristorante and Bar specializes in exceptional catering services for any occasion. Our dedicated team ensures every detail is perfect, providing delicious cuisine and seamless service to create memorable experiences for you and your guests.",
+    "url": "https://mercato-wc.com/catering/"
+   }
+  ],
+  "name": "Mercato Ristorante and Bar",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": false,
+    "lines": 51,
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.mercato-wc.com/"
+   },
+   {
+    "hh": false,
+    "lines": 38,
+    "result": "ok, 0 quote(s)",
+    "url": "https://mercato-wc.com/menu/"
+   },
+   {
+    "hh": false,
+    "lines": 54,
+    "result": "ok, 1 quote(s)",
+    "url": "https://mercato-wc.com/catering/"
+   },
+   {
+    "hh": false,
+    "lines": 38,
+    "result": "ok, 0 quote(s)",
+    "url": "https://mercato-wc.com/menu/"
+   }
+  ],
+  "website": "https://www.mercato-wc.com/",
+  "zone_id": "west_chester"
  },
  "69118": {
   "address": "705 N 2ND ST, PHILADELPHIA PA 19123-3007",
@@ -27200,21 +27774,95 @@
  },
  "69681": {
   "address": "133 E GAY ST, WEST CHESTER PA 19380-3146",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [
    {
+    "hh": true,
     "quote": "Happy Hour - Roots Cafe",
     "url": "https://www.rootscafewc.com/happy-hour"
    },
    {
+    "hh": true,
     "quote": "happy-hour",
     "url": "https://www.rootscafewc.com/happy-hour"
    },
    {
+    "hh": true,
+    "quote": "Appetizers",
+    "url": "https://www.rootscafewc.com/menus/tarot-happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Whipped Ricotta $13.0",
+    "url": "https://www.rootscafewc.com/menus/tarot-happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Spicy Cucumbers $10.0",
+    "url": "https://www.rootscafewc.com/menus/tarot-happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Cinnamon French Toast Bites $15.0",
+    "url": "https://www.rootscafewc.com/menus/tarot-happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Salads",
+    "url": "https://www.rootscafewc.com/menus/tarot-happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Seasonal Salad $16.0",
+    "url": "https://www.rootscafewc.com/menus/tarot-happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Burger Wedge Salad $18.0",
+    "url": "https://www.rootscafewc.com/menus/tarot-happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Sandwiches",
+    "url": "https://www.rootscafewc.com/menus/tarot-happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Roasted Veggie Pita $16.0",
+    "url": "https://www.rootscafewc.com/menus/tarot-happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "ROOTS Hot Chicken $19.0",
+    "url": "https://www.rootscafewc.com/menus/tarot-happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Pork Belly BLT $22.0",
+    "url": "https://www.rootscafewc.com/menus/tarot-happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "HH Specials",
+    "url": "https://www.rootscafewc.com/menus/tarot-happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Elote $10.0",
+    "url": "https://www.rootscafewc.com/menus/tarot-happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Taco Duo $16.0",
+    "url": "https://www.rootscafewc.com/menus/tarot-happy-hour"
+   },
+   {
+    "hh": true,
     "quote": "Tarot Happy Hour menu - Roots Cafe",
     "url": "https://www.rootscafewc.com/menus/tarot-happy-hour"
    },
    {
+    "hh": true,
     "quote": "Tarot Happy Hour",
     "url": "https://www.rootscafewc.com/menus/tarot-happy-hour"
    }
@@ -27223,45 +27871,113 @@
   "osm_name": "Roots Cafe",
   "pages": [
    {
+    "hh": false,
+    "lines": 19,
     "result": "ok, 0 quote(s)",
     "url": "https://www.rootscafewc.com/"
    },
    {
+    "result": "rendered: 13 lines -> 20",
+    "url": "https://www.rootscafewc.com/happy-hour"
+   },
+   {
+    "hh": true,
+    "lines": 20,
     "result": "ok, 2 quote(s)",
     "url": "https://www.rootscafewc.com/happy-hour"
    },
    {
+    "hh": true,
+    "lines": 16,
     "result": "ok, 2 quote(s)",
     "url": "https://www.rootscafewc.com/menus/tarot-happy-hour"
    },
    {
+    "hh": false,
+    "lines": 18,
     "result": "ok, 0 quote(s)",
-    "url": "https://www.rootscafewc.com/popmenu-order"
+    "url": "https://www.rootscafewc.com/drinks-menu"
    }
   ],
   "website": "https://www.rootscafewc.com/",
   "zone_id": "west_chester"
  },
+ "69684": {
+  "address": "114-120 E Gay St, West Chester PA 19380",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Bar Avalon is a go-to Italian restaurant for dinner, drinks, happy hour and weekend brunch.",
+    "url": "https://www.avalonrestaurant.net/westchester"
+   },
+   {
+    "quote": "Happy Hour @ the bar / Tuesday - Friday / 4:00 - 6:00pm",
+    "url": "https://www.avalonrestaurant.net/westchester"
+   }
+  ],
+  "name": "Avalon Restaurant",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "rendered: 18 lines -> 54",
+    "url": "https://www.avalonrestaurant.net/westchester"
+   },
+   {
+    "hh": true,
+    "lines": 54,
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.avalonrestaurant.net/westchester"
+   },
+   {
+    "hh": false,
+    "lines": 19,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.avalonrestaurant.net/west-chester-events-specials"
+   },
+   {
+    "hh": false,
+    "lines": 19,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.avalonrestaurant.net/west-chester-events-specials"
+   },
+   {
+    "hh": false,
+    "lines": 18,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.avalonrestaurant.net/westchester"
+   }
+  ],
+  "website": "https://www.avalonrestaurant.net/westchester",
+  "zone_id": "west_chester"
+ },
  "69696": {
   "address": "15 N WALNUT ST, WEST CHESTER PA 19380-3154",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "SLOW LORIS LLC",
   "osm_name": "Bierhaul Lagerhaus & American Kitchen",
   "pages": [
    {
+    "hh": false,
+    "lines": 97,
     "result": "ok, 0 quote(s)",
     "url": "https://bierhaul.com/"
    },
    {
+    "hh": false,
+    "lines": 97,
     "result": "ok, 0 quote(s)",
     "url": "https://bierhaul.com/"
    },
    {
+    "hh": false,
+    "lines": 102,
     "result": "ok, 0 quote(s)",
     "url": "https://bierhaul.com/farmhousemenu/"
    },
    {
+    "hh": false,
+    "lines": 109,
     "result": "ok, 0 quote(s)",
     "url": "https://bierhaul.com/townhousemenu/"
    }
@@ -27451,26 +28167,34 @@
  },
  "70005": {
   "address": "208 CARTER DR UNIT 2A-B, WEST CHESTER PA 19382-4500",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "LEVANTE BREWING INC",
   "osm_name": "Levante Brewing Company",
   "pages": [
    {
+    "hh": false,
+    "lines": 225,
     "result": "ok, 0 quote(s)",
     "url": "https://www.levantebrewing.com/"
    },
    {
+    "hh": false,
+    "lines": 192,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.levantebrewing.com/pages/taproom"
+   },
+   {
+    "hh": false,
+    "lines": 192,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.levantebrewing.com/pages/taproom"
+   },
+   {
+    "hh": false,
+    "lines": 175,
     "result": "ok, 0 quote(s)",
     "url": "https://www.levantebrewing.com/collections/buy-cans-online/products/citra-drink-session-ipa"
-   },
-   {
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.levantebrewing.com/collections/event-tickets"
-   },
-   {
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.levantebrewing.com/pages/events"
    }
   ],
   "website": "https://www.levantebrewing.com/",
@@ -28472,6 +29196,41 @@
   "website": "https://boardroomspirits.com/",
   "zone_id": "lansdale_montgomeryville"
  },
+ "71245": {
+  "address": "149-155 W Gay St, West Chester PA 19380",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Saloon 151",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": false,
+    "lines": 74,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.saloon151.com/"
+   },
+   {
+    "hh": false,
+    "lines": 55,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.saloon151.com/weekly-specials"
+   },
+   {
+    "hh": false,
+    "lines": 55,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.saloon151.com/weekly-specials"
+   },
+   {
+    "hh": false,
+    "lines": 55,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.saloon151.com/cocktail-menus"
+   }
+  ],
+  "website": "http://www.saloon151.com/",
+  "zone_id": "west_chester"
+ },
  "71296": {
   "address": "2937-51 N MARSHALL ST, PHILADELPHIA PA 19133",
   "crawled_at": "2026-09-01",
@@ -28569,7 +29328,7 @@
  },
  "71516": {
   "address": "18-22 W GAY ST, WEST CHESTER PA 19380-3011",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [
    {
     "quote": "Daily Specials/Events",
@@ -28598,26 +29357,38 @@
    {
     "quote": "HAPPY HOUR SPECIALS",
     "url": "https://kildarespubwc.com/drink-menu/"
+   },
+   {
+    "quote": "HAPPY HOUR SPECIALS",
+    "url": "https://kildarespubwc.com/drink-menu/"
    }
   ],
   "name": "CHESTER COUNTY PUB COMPANY LLC",
   "osm_name": "Kildare's Irish Pub",
   "pages": [
    {
+    "hh": true,
+    "lines": 164,
     "result": "ok, 6 quote(s)",
     "url": "https://kildarespubwc.com"
    },
    {
+    "hh": true,
+    "lines": 456,
     "result": "ok, 1 quote(s)",
     "url": "https://kildarespubwc.com/drink-menu/"
    },
    {
-    "result": "ok, 0 quote(s)",
-    "url": "https://kildarespubwc.com/food-menu/"
+    "hh": true,
+    "lines": 456,
+    "result": "ok, 1 quote(s)",
+    "url": "https://kildarespubwc.com/drink-menu/"
    },
    {
+    "hh": false,
+    "lines": 117,
     "result": "ok, 0 quote(s)",
-    "url": "https://kildarespubwc.com/order-catering-or-schedule-your-event/"
+    "url": "https://kildarespubwc.com/food-menu/"
    }
   ],
   "website": "https://kildarespubwc.com",
@@ -29402,25 +30173,70 @@
  },
  "72618": {
   "address": "134-136 E GAY ST, WEST CHESTER PA 19380-3147",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "IPASTA",
   "osm_name": "dolce Zola",
   "pages": [
    {
+    "hh": false,
+    "lines": 56,
     "result": "ok, 0 quote(s)",
     "url": "https://www.dolcezola.com/location"
    },
    {
+    "hh": false,
+    "lines": 280,
     "result": "ok, 0 quote(s)",
     "url": "https://www.dolcezola.com/dinein-menu"
    },
    {
+    "hh": false,
+    "lines": 51,
     "result": "ok, 0 quote(s)",
     "url": "https://www.dolcezola.com/private-events"
+   },
+   {
+    "hh": false,
+    "lines": 105,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.dolcezola.com/s/dolce-Zola-Drink-Menu-7-29-26-c6g8.pdf"
    }
   ],
   "website": "https://www.dolcezola.com/location",
+  "zone_id": "west_chester"
+ },
+ "72639": {
+  "address": "115-119 E Gay St, West Chester PA 19380",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Barnyards Chicken Shack",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "rendered: 1 lines -> 150",
+    "url": "https://www.clover.com/online-ordering/west-chester-chicken-west-chester"
+   },
+   {
+    "hh": false,
+    "lines": 150,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.clover.com/online-ordering/west-chester-chicken-west-chester"
+   },
+   {
+    "hh": false,
+    "lines": 1,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.clover.com/online-ordering/west-chester-chicken-west-chester"
+   },
+   {
+    "hh": false,
+    "lines": 1,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.clover.com/menu/all"
+   }
+  ],
+  "website": "https://www.clover.com/online-ordering/west-chester-chicken-west-chester",
   "zone_id": "west_chester"
  },
  "72655": {
@@ -30030,6 +30846,41 @@
   "website": "http://goldenseabluebell.com/",
   "zone_id": "blue_bell_plymouth_meeting"
  },
+ "73238": {
+  "address": "226 N High St, West Chester PA 19380",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Uptown Knauer Performing Arts Center",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": false,
+    "lines": 214,
+    "result": "ok, 0 quote(s)",
+    "url": "http://uptownwestchester.org/"
+   },
+   {
+    "hh": false,
+    "lines": 214,
+    "result": "ok, 0 quote(s)",
+    "url": "http://uptownwestchester.org/"
+   },
+   {
+    "hh": false,
+    "lines": 94,
+    "result": "ok, 0 quote(s)",
+    "url": "https://uptownwestchester.org/on-stage/holiday-events/"
+   },
+   {
+    "hh": false,
+    "lines": 74,
+    "result": "ok, 0 quote(s)",
+    "url": "https://uptownwestchester.org/on-stage/theatre-event/"
+   }
+  ],
+  "website": "http://uptownwestchester.org/",
+  "zone_id": "west_chester"
+ },
  "73290": {
   "address": "160 N GULPH RD, KING OF PRUSSIA PA 19406-2941",
   "crawled_at": "2026-09-01",
@@ -30289,6 +31140,70 @@
   ],
   "website": "https://sushinamipaoli.com/",
   "zone_id": "ardmore_bryn_mawr"
+ },
+ "80422": {
+  "address": "1300 W Strasburg Rd Rte 162, West Chester PA 19380",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Marshalton Inn",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": false,
+    "lines": 191,
+    "result": "ok, 0 quote(s)",
+    "url": "http://marshaltoninn.com/"
+   },
+   {
+    "result": "404 ?",
+    "url": "http://marshaltoninn.com/west-chester-the-four-dogs-tavern-food-menu"
+   },
+   {
+    "result": "404 ?",
+    "url": "http://marshaltoninn.com/west-chester-the-four-dogs-tavern-about"
+   },
+   {
+    "result": "404 ?",
+    "url": "http://marshaltoninn.com/west-chester-the-four-dogs-tavern-airbnb-page"
+   }
+  ],
+  "website": "http://marshaltoninn.com/",
+  "zone_id": "west_chester"
+ },
+ "80423": {
+  "address": "1300 W Strasburg Rd Rte 162, West Chester PA 19380",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Cox",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": false,
+    "lines": 191,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.thefourdogstavern.com/"
+   },
+   {
+    "hh": false,
+    "lines": 277,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.thefourdogstavern.com/west-chester-the-four-dogs-tavern-food-menu"
+   },
+   {
+    "hh": false,
+    "lines": 59,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.thefourdogstavern.com/west-chester-the-four-dogs-tavern-about"
+   },
+   {
+    "hh": false,
+    "lines": 72,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.thefourdogstavern.com/west-chester-the-four-dogs-tavern-airbnb-page"
+   }
+  ],
+  "website": "https://www.thefourdogstavern.com/",
+  "zone_id": "west_chester"
  },
  "80458": {
   "address": "214 SUGARTOWN RD, WAYNE PA 19087",
@@ -31276,6 +32191,41 @@
   "website": "https://thecolonialtheatre.com/",
   "zone_id": "phoenixville"
  },
+ "84647": {
+  "address": "700 Lawrence Dr, West Chester PA 19380",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Goal Line Pub",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": false,
+    "lines": 77,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.goallinepub.com/"
+   },
+   {
+    "hh": false,
+    "lines": 534,
+    "result": "ok, 0 quote(s)",
+    "url": "https://goallinepub.com/menu/"
+   },
+   {
+    "hh": false,
+    "lines": 77,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.goallinepub.com/"
+   },
+   {
+    "hh": false,
+    "lines": 534,
+    "result": "ok, 0 quote(s)",
+    "url": "https://goallinepub.com/menu/"
+   }
+  ],
+  "website": "https://www.goallinepub.com/",
+  "zone_id": "west_chester"
+ },
  "84758": {
   "address": "1 N MAIN ST, PHOENIXVILLE PA 19460-3419",
   "crawled_at": "2026-09-02",
@@ -31461,6 +32411,41 @@
   ],
   "website": "https://www.worcestergolfclub.com/",
   "zone_id": "collegeville_trappe"
+ },
+ "85173": {
+  "address": "1231-1233 W Chester Pk, West Chester PA 19382",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Picas of West Chester",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": false,
+    "lines": 108,
+    "result": "ok, 0 quote(s)",
+    "url": "https://picas-restaurantwc.com/"
+   },
+   {
+    "hh": false,
+    "lines": 41,
+    "result": "ok, 0 quote(s)",
+    "url": "https://picas-restaurantwc.com/west-chester-pica-s-restaurant-west-chester-happy-hours-specials"
+   },
+   {
+    "hh": false,
+    "lines": 45,
+    "result": "ok, 0 quote(s)",
+    "url": "https://picas-restaurantwc.com/west-chester-pica-s-restaurant-west-chester-about"
+   },
+   {
+    "hh": false,
+    "lines": 84,
+    "result": "ok, 0 quote(s)",
+    "url": "https://picas-restaurantwc.com/west-chester-pica-s-restaurant-west-chester-drink-menu"
+   }
+  ],
+  "website": "https://picas-restaurantwc.com/",
+  "zone_id": "west_chester"
  },
  "85179": {
   "address": "219-225 S BROAD ST, PHILADELPHIA PA 19107",
@@ -31954,6 +32939,41 @@
   ],
   "website": "https://www.cornerstonewayne.com/",
   "zone_id": "wayne_radnor"
+ },
+ "86789": {
+  "address": "698 Downingtown Pike, West Chester PA 19380",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "The Giant Company",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": false,
+    "lines": 69,
+    "result": "ok, 0 quote(s)",
+    "url": "https://stores.giantfoodstores.com/pa/west-chester/698-downingtown-pike?y_source=1_NDE5NTc3Ni03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D"
+   },
+   {
+    "hh": false,
+    "lines": 125,
+    "result": "ok, 0 quote(s)",
+    "url": "https://stores.giantfoodstores.com/pa/west-chester/698-downingtown-pike/delivery"
+   },
+   {
+    "hh": false,
+    "lines": 101,
+    "result": "ok, 0 quote(s)",
+    "url": "https://pharmacy.giantfoodstores.com/pa/west-chester/698-downingtown-pike"
+   },
+   {
+    "hh": false,
+    "lines": 101,
+    "result": "ok, 0 quote(s)",
+    "url": "https://pharmacy.giantfoodstores.com/pa/west-chester/698-downingtown-pike"
+   }
+  ],
+  "website": "https://stores.giantfoodstores.com/pa/west-chester/698-downingtown-pike?y_source=1_NDE5NTc3Ni03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+  "zone_id": "west_chester"
  },
  "86837": {
   "address": "202 & 206 E LANCASTER AVE, DOWNINGTOWN PA 19335-2957",
@@ -32545,6 +33565,23 @@
   ],
   "website": "https://www.louielouie.restaurant",
   "zone_id": "university_city"
+ },
+ "89946": {
+  "address": "1629 E Street Rd, Glen Mills PA 19342",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Deer Creek Malthouse",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": false,
+    "lines": 60,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.deercreekmalt.com/"
+   }
+  ],
+  "website": "http://www.deercreekmalt.com/",
+  "zone_id": "west_chester"
  },
  "90023": {
   "address": "1500 INDUSTRY RD STE O, HATFIELD PA 19440-3271",
@@ -33151,12 +34188,18 @@
  },
  "92120": {
   "address": "106 W GAY ST, WEST CHESTER PA 19380",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "ANDIARIOS",
   "osm_name": "Andiaro",
   "pages": [
    {
+    "result": "rendered: 27 lines -> 32",
+    "url": "https://andiario.com"
+   },
+   {
+    "hh": false,
+    "lines": 32,
     "result": "ok, 0 quote(s)",
     "url": "https://andiario.com"
    }
@@ -34291,7 +35334,7 @@
  },
  "94045": {
   "address": "1502 WEST CHESTER PIKE, WEST CHESTER PA 19382",
-  "crawled_at": "2026-08-06",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "THE GIANT COMPANY LLC",
   "osm_name": "Fine Wine & Good Spirits",
@@ -35007,26 +36050,34 @@
  },
  "9509": {
   "address": "18 NORTH CHURCH ST, WEST CHESTER PA 19380-3007",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "NEW HAVEN PIZZA",
   "osm_name": "Love Again Local",
   "pages": [
    {
+    "hh": false,
+    "lines": 100,
     "result": "ok, 0 quote(s)",
     "url": "https://www.loveagainlocal.com/"
    },
    {
+    "hh": false,
+    "lines": 34,
     "result": "ok, 0 quote(s)",
     "url": "https://www.loveagainlocal.com/west-chester-love-again-local-happy-hours-specials"
    },
    {
+    "hh": false,
+    "lines": 34,
     "result": "ok, 0 quote(s)",
-    "url": "https://www.loveagainlocal.com/west-chester-love-again-local-drink-menu"
+    "url": "https://loveagainlocal.com/west-chester-love-again-local-happy-hours-specials"
    },
    {
+    "hh": false,
+    "lines": 32,
     "result": "ok, 0 quote(s)",
-    "url": "https://www.loveagainlocal.com/west-chester-love-again-local-food-menu"
+    "url": "https://www.loveagainlocal.com/west-chester-love-again-local-about"
    }
   ],
   "website": "https://www.loveagainlocal.com/",
@@ -35276,6 +36327,35 @@
   ],
   "website": "https://www.mariospizzachestnuthill.com/",
   "zone_id": "northwest_philly"
+ },
+ "95610": {
+  "address": "1375 Boot Rd, West Chester PA 19380",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "The Giant Company",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": false,
+    "lines": 74,
+    "result": "ok, 0 quote(s)",
+    "url": "https://stores.giantfoodstores.com/pa/west-chester/1375-boot-rd?y_source=1_NDE5NTM2Ny03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D"
+   },
+   {
+    "hh": false,
+    "lines": 100,
+    "result": "ok, 0 quote(s)",
+    "url": "https://pharmacy.giantfoodstores.com/pa/west-chester/1375-boot-road"
+   },
+   {
+    "hh": false,
+    "lines": 125,
+    "result": "ok, 0 quote(s)",
+    "url": "https://stores.giantfoodstores.com/pa/west-chester/1375-boot-rd/delivery"
+   }
+  ],
+  "website": "https://stores.giantfoodstores.com/pa/west-chester/1375-boot-rd?y_source=1_NDE5NTM2Ny03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+  "zone_id": "west_chester"
  },
  "95739": {
   "address": "223-227 E HIGH ST, POTTSTOWN PA 19464",
@@ -36157,24 +37237,38 @@
  },
  "97130": {
   "address": "333 GRANITE ALLEY, WEST CHESTER PA 19380-4179",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "THE ARTILLERY BREWING COMPANY",
   "osm_name": "Artillery Brewing Company",
   "pages": [
    {
+    "hh": false,
+    "lines": 62,
     "result": "ok, 0 quote(s)",
     "url": "https://artillerybrewing.com/west-chester/"
    },
    {
+    "hh": false,
+    "lines": 62,
+    "result": "ok, 0 quote(s)",
+    "url": "https://artillerybrewing.com/west-chester/"
+   },
+   {
+    "hh": false,
+    "lines": 144,
     "result": "ok, 0 quote(s)",
     "url": "https://artillerybrewing.com/events/"
    },
    {
+    "hh": false,
+    "lines": 26,
     "result": "ok, 0 quote(s)",
     "url": "https://artillerybrewing.com/wp-content/uploads/2026/02/FOODMENU2026WC.pdf"
    },
    {
+    "hh": false,
+    "lines": 0,
     "result": "ok, 0 quote(s)",
     "url": "https://artillerybrewing.com/wp-content/uploads/2026/04/WC-DRINK-MENU-4226.pdf"
    }

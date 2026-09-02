@@ -183,6 +183,61 @@ class Grounding(unittest.TestCase):
         self.assertIn("OPENING hours", why)
 
 
+class AChainsEventsCalendarIsEveryTownAtOnce(unittest.TestCase):
+    """The West Chester card shipped Pottstown's and Drexel Hill's trivia.
+
+    Artillery Brewing publishes one events page for all its locations, each row
+    prefixed with the town it belongs to. Both deals were CORRECTLY GROUNDED --
+    those words really are on that page -- and both were the wrong thing, which
+    is the failure no grounding check can see. The venue's own town is the only
+    discriminator, so the guard is narrow on purpose: a town the licence base
+    knows, in the prefix position, that is not ours.
+    """
+
+    OURS = "333 Granite Alley, West Chester PA 19380"
+
+    def test_another_locations_row_is_named_and_refused(self):
+        self.assertEqual(
+            rm.another_towns_row("Pottstown - Trivia Every Wednesday!\n"
+                                 "September 2 @ 7:00 pm - 10:00 pm", self.OURS),
+            "Pottstown")
+        self.assertEqual(
+            rm.another_towns_row("Drexel Hill - Quizzo Tuesday", self.OURS),
+            "Drexel Hill")
+
+    def test_our_own_towns_row_is_kept(self):
+        self.assertIsNone(
+            rm.another_towns_row("West Chester - Quizzo Tuesday", self.OURS))
+
+    def test_a_section_label_is_not_a_town(self):
+        # "Wings - $5" is the shape the prefix rule must not eat.
+        for line in ("Wings - $5 during happy hour",
+                     "HAPPY HOUR\nMonday - Friday 3-6pm",
+                     "Draft Beer | $5",
+                     "Bar Bites: half price"):
+            self.assertIsNone(rm.another_towns_row(line, self.OURS), line)
+
+    def test_vet_refuses_the_row_and_says_why(self):
+        doc = ("Pottstown - Trivia Every Wednesday!\n"
+               "September 2 @ 7:00 pm - 10:00 pm\n$5 pints for participants")
+        row = {"kind": "daily_special", "heading": "Pottstown - Trivia Every Wednesday!",
+               "quote": "Pottstown - Trivia Every Wednesday!", "days": ["wed"],
+               "start": "19:00", "end": "22:00", "items": []}
+        deal, why = rm.vet(row, doc, "https://artillerybrewing.com/events/", self.OURS)
+        self.assertIsNone(deal)
+        self.assertIn("Pottstown", why)
+
+    def test_with_no_address_the_guard_does_not_fire(self):
+        # vet() is called without an address by the offline cases above; the
+        # guard must be additive, never a new way for those to fail.
+        doc = "Pottstown - Trivia Every Wednesday!\n$5 pints 7-10pm Wednesday"
+        row = {"kind": "daily_special", "heading": "Pottstown - Trivia Every Wednesday!",
+               "quote": "Pottstown - Trivia Every Wednesday!", "days": ["wed"],
+               "start": "19:00", "end": "22:00", "items": []}
+        _, why = rm.vet(row, doc, "http://x/events")
+        self.assertNotIn("Pottstown", why or "")
+
+
 class NoStrayControlBytes(unittest.TestCase):
     """A literal backspace is what \\b becomes when an edit loses a backslash.
 
