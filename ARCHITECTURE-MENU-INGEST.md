@@ -619,12 +619,15 @@ bandwidth to re-learn what we hold.
 ```
 python ingest/needy.py phoenixville wayne_radnor --show --lids run.lids
 python ingest/crawl_sites.py --lids run.lids --recrawl --render
-python ingest/read_pages_llm.py --show --rejects
-python ingest/read_windows_llm.py --show --rejects   # the WINDOW half
-python ingest/extract_deals.py && python ingest/build_bundles.py
+python ingest/extract_menu_images.py --match          # menus posted as PICTURES (vision + transcript)
+python ingest/read_pages_llm.py --lids run.lids --show --rejects
+python ingest/read_windows_llm.py --lids run.lids --show --rejects   # the WINDOW half
+python ingest/extract_deals.py && python ingest/build_venue_base.py && python ingest/build_bundles.py
 bash tests/run.sh && git add -A && git commit && git push
 python scratch/card_diff.py          # WHICH cards moved — a total cannot see this
 python scratch/live_check.py         # the gate that counts, ~2-3 min after push
+# THEN the human minute: search "<town> happy hour", open the top hits, and ask
+# whether each has a card. A town is not "done" or "empty" until this is done.
 ```
 
 ### The run of 2026-09-02, in full — read this before scoping the next one
@@ -758,6 +761,111 @@ Center City for 134 of 574. **Website discovery, not extraction, is what decides
 what a newly-named town returns.** The first question about any town Paul names
 is whether it has had a discovery pass — `ingest/discover_sites.py` — and the
 funnel table above is how to answer it in one command.
+
+## 🔑🔑 REACH, PROVEN BY FOUR MISSES — and what "intelligence over a town" has to mean (2026-09-02)
+
+A scoped Phoenixville run had ended with "no card added, both refusals correct".
+Paul opened a browser and in one minute found four venues that publish a happy
+hour and had no real card: **Revival Pizza Pub, Rivertown Taps, Sly Fox, Sedona
+Taphouse.** Every one was a hole in *reach* — a page or a picture the crawl
+never put in front of any reader — and not one would have shown in the funnel
+table above, because the funnel counts what we fetched, and these were never
+fetched. Fixed in `9a1c861`; all four are on the live board.
+
+| venue | where the happy hour was | why we never saw it |
+|---|---|---|
+| Sly Fox | `/phoenixville` — "Appy Hour", Tue–Fri 3–6 | the link named the town, not an hour, so it matched no `LINK_WORD`; the page never says "happy hour"; the day line **below** the block was a Saturday from the next section |
+| Sedona Taphouse | `/locations/phoenixville-pa/` + `HappyHourMenu_PhxWC.pdf` | town link dropped, then displaced by three `nye-special` sitemap URLs; the PDF anchor was 220 chars of card markup and the link regex allowed 120; "$20 Oﬀ" (one ligature glyph) read as a $20 price |
+| Rivertown Taps | `Happy-Hour-Specials.png` on `/menu/` | images were only collected on hour-named URLs, and the venue has **no text at all** — hours and items are pixels |
+| Revival Pizza Pub | `Revival HH.png` on `/happy-hour-menu` | the image regex wanted `_hh_`/`-hh-` and the URL was `%20HH.png`; worse, the card carried **$6 margaritas** from Margherita Monday because a day-specials quote fed the price pass |
+
+### The architecture that changed
+
+- **A link naming the venue's own town is the venue's page.** `town_re(address)`
+  builds a regex from the town in the venue's PLCB address; `candidate_links()`
+  ranks a match first and the sitemap top-up (`ours + extra + rest`) can no
+  longer displace it. Sly Fox and Sedona are location-page chains; their
+  happy hour lives on the location page, never the homepage.
+- **An image that names itself the happy hour is the menu, on any page.**
+  `HH_IMG_RE` uses a standalone `hh` token after `urllib.parse.unquote`; the
+  crawl calls `menu_images(html, url, self_named=not on_hh)` on every page, not
+  only hour-named ones.
+- **A picture can state the hours.** `extract_menu_images.py` now keeps each
+  image's verbatim transcript in `data/menu_image_transcripts.json`;
+  `extract_deals.picture_spans()` takes the happy-hour heading line plus the two
+  lines under it and runs the **unchanged** `windows_from()` grammar over them.
+  Used only when a venue has no text hit at all. The model still writes no
+  window itself; it transcribes, the grammar decides.
+- **A day line directly above a heading owns it.** `DAY_LINE_RE` + the
+  day-above rule in `quotes()`; reading forward only had handed Sly Fox a
+  Saturday it does not have.
+- **"Appy Hour" is a happy hour** (`DEAL_RE`, `HH_HEADING_RE`).
+- **A day-specials page is a different menu.** `extract_prices_llm.vouched()`
+  refuses quotes whose URL matches `DAY_SPECIALS_URL_RE`, and
+  `read_pages_llm.worth_reading()` refuses the page outright. 🛑 **A wrong item
+  is worse than a missing one** — a $6 margarita that is not on at happy hour is
+  the kind of thing a reader stops trusting the board over.
+- **PDF text is NFKC-normalised** (`pdf_clean`) so ligatures spell out.
+- **A menu-card anchor can be 400 chars wide** (was 120).
+
+`build_bundles` merges sidecars in the order pages → `deals_prices_llm.json` →
+`deals_menu_images.json` with `setdefault`, so 🛑 **a stale prices entry must be
+deleted by hand before image items can show through** (Revival needed this).
+
+### 🛑 The process defect underneath all four
+
+The run's own verdict was *correct refusals*. The funnel table, `needy.py`, the
+hole report and the render gate all agreed, because every one of them measures
+**what we fetched**, and a page never fetched is invisible to all of them. The
+only instrument that caught it was a human with a search box.
+
+> 🔑🔑 **A run that calls a town empty is checked against one human minute before
+> it is called correct** — open the top hits for "<town> happy hour" and ask
+> whether each has a card. That check is now a stage of every scoped run, and
+> the next piece of work is to make the machine do it.
+
+### 🎯 The goal for the next sessions, in Paul's words (2026-09-02)
+
+*"When we run a scrape over a town, we need to be running intelligence over it
+as part of our process, and get to 90% coverage on restaurants that actually
+have happy hour menus."*
+
+Two things fall out of that sentence, and they are different projects:
+
+1. **The denominator must exist before the percentage can.** "Restaurants that
+   actually have happy hour menus" is not the PLCB list (Starbucks, Chipotle and
+   a catering firm are on it) and it is not the crawled list (Sedona was crawled
+   and missed). It is a **per-town ground-truth list**, built the way Paul built
+   it — web search + a human minute — and kept on disk
+   (`data/ground_truth/<zone>.json`: venue, the URL that states the happy hour,
+   date checked, who checked). Coverage = cards ÷ that list. Phoenixville has
+   4 named entries today; the list has to be built before the number means
+   anything.
+2. **"Intelligence over the town" is an LLM doing reach, not reading.** The
+   reading half is at 86%. What the four misses needed was judgement at three
+   places the crawler currently uses regexes:
+   - **which link to follow** — give a model the venue's link inventory
+     (homepage anchors + sitemap, text and URL, ~100 lines) and ask *"which of
+     these is the happy hour page or menu?"* One small call per venue replaces
+     `LINK_WORDS`/`town_re` ranking, which is a list of patterns we add one
+     miss at a time;
+   - **whether a page states a happy hour** — `DEAL_RE` is a regex over
+     "happy hour"/"appy hour"; a model reading the fetched text says yes/no
+     with the quoted line, so a venue's own vocabulary stops being a miss;
+   - **what is not on the site at all** — a per-town search
+     ("<town> happy hour", the venue name + "happy hour") whose results are
+     compared to the venues and URLs we hold, so a venue with no website on
+     file (10 of Phoenixville's 40) or a happy hour published only on a
+     third-party page is at least *named* as a hole.
+
+   Cost is the number of calls, not the model size. A town of 30 sites is
+   ~30 link-picker calls plus the page reads already being paid for.
+
+**Phoenixville today, off disk:** 40 licensees, 30 with a website, 28 fetched,
+13 quoted, **8 cards** by the funnel's count; 21 still `no deal`. The board zone
+shows 32 cards because it draws neighbouring zones in. Until the ground-truth
+list exists, no one may say what fraction of "the ones that actually have a
+happy hour" those 8 are.
 
 ---
 
