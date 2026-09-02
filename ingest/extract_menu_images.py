@@ -58,13 +58,13 @@ def targets():
     hits = json.load(open(HITS, encoding="utf-8"))
     sites = json.load(open(SITES, encoding="utf-8"))
     out, seen = [], set()
-    for _lid, v in one_per_osm(hits, sites):
+    for lid, v in one_per_osm(hits, sites):
         vid = slug(v["osm_name"] or v["name"], v["address"])
         for im in v.get("menu_images") or []:
             if im["src"] in seen:
                 continue
             seen.add(im["src"])
-            out.append((vid, v["osm_name"] or v["name"], im["src"]))
+            out.append((vid, v["osm_name"] or v["name"], im["src"], lid))
     return out
 
 
@@ -140,12 +140,21 @@ def main():
     ap.add_argument("--show", action="store_true")
     ap.add_argument("--rejects", action="store_true")
     ap.add_argument("--match", help="only venues whose name matches this regex")
+    # The scoped-run recipe named this pass with a bare --match, which selects
+    # nothing, and Valley Forge Pizza's two happy_hours_page PNGs sat in
+    # crawl_hits.json unread for a day. A run names its venues by licence id,
+    # the same file every other stage takes.
+    ap.add_argument("--lids", help="file of licence ids, one per line")
+    ap.add_argument("--force", action="store_true", help="re-read images already transcribed")
     args = ap.parse_args()
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
     todo = targets()
     if args.match:
         todo = [t for t in todo if re.search(args.match, t[1], re.I)]
+    if args.lids:
+        only = {ln.strip() for ln in open(args.lids, encoding="utf-8") if ln.strip()}
+        todo = [t for t in todo if t[3] in only]
     if args.limit:
         todo = todo[: args.limit]
     print(f"{len(todo)} menu image(s) to read\n")
@@ -153,7 +162,9 @@ def main():
     out = json.load(open(OUT, encoding="utf-8")) if os.path.exists(OUT) else {}
     scripts = (json.load(open(TRANSCRIPTS, encoding="utf-8"))
                if os.path.exists(TRANSCRIPTS) else {})
-    for n, (vid, name, url) in enumerate(todo, 1):
+    for n, (vid, name, url, _lid) in enumerate(todo, 1):
+        if not args.force and url in ((scripts.get(vid) or {}).get("images") or {}):
+            continue
         try:
             path = fetch(url)
             if not path:
@@ -169,9 +180,22 @@ def main():
             continue
         items, dropped = items_from(read)
         if items:
-            out[vid] = items
+            # Two sheets, one venue: Valley Forge Pizza posts its drinks on
+            # page_1 and its food on page_2. Add, never replace.
+            fresh = {x["label"].lower() for x in items}
+            held = [i for i in out.get(vid, []) if i.get("label", "").lower() not in fresh]
+            out[vid] = held + items
         if read.get("transcript"):
-            scripts[vid] = {"url": url, "transcript": read["transcript"]}
+            # Every picture's transcript is kept, keyed on its URL, because
+            # the hours are on ONE of a venue's sheets and the last one read
+            # used to overwrite it. `url`/`transcript` stay as the latest read
+            # for anything still reading the old shape.
+            rec = scripts.get(vid) or {}
+            imgs = dict(rec.get("images") or {})
+            if rec.get("url") and rec.get("transcript") and rec["url"] not in imgs:
+                imgs[rec["url"]] = rec["transcript"]
+            imgs[url] = read["transcript"]
+            scripts[vid] = {"url": url, "transcript": read["transcript"], "images": imgs}
         print(f"[{n}/{len(todo)}] {name[:34]:<36} {len(items)} item(s)"
               + (f", {len(dropped)} dropped" if dropped else ""))
         if args.show:

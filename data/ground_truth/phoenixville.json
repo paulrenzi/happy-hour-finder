@@ -1,0 +1,231 @@
+{
+ "zone_id": "phoenixville",
+ "_comment": "Venues that ACTUALLY publish a happy hour, with the URL that states it. confirmed=true only after a person opened the URL. Coverage = cards / confirmed rows (ingest/report_coverage.py). Candidates arrive from reach_llm.py town and stay unconfirmed until looked at.",
+ "rows": [
+  {
+   "lid": "106706",
+   "name": "Revival Pizza Pub",
+   "url": "https://revivalpizzapub.com/happy-hour-menu",
+   "states": "Revival HH.png, 4pm",
+   "confirmed": true,
+   "checked_at": "2026-09-02",
+   "checked_by": "paul",
+   "candidate_from": [
+    "google_places: happy hour in Chester Springs, PA"
+   ],
+   "website": "https://revivalpizzapub.com/"
+  },
+  {
+   "lid": "99114",
+   "name": "Rivertown Taps",
+   "url": "https://rivertowntaps.com/menu/",
+   "states": "Happy-Hour-Specials.png, Wed-Fri 3-6",
+   "confirmed": true,
+   "checked_at": "2026-09-02",
+   "checked_by": "paul",
+   "candidate_from": [
+    "google_places: happy hour in Kimberton, PA",
+    "google_places: happy hour in Phoenixville, PA"
+   ],
+   "website": "https://rivertowntaps.com/"
+  },
+  {
+   "lid": "91502",
+   "name": "Sedona Taphouse",
+   "url": "https://sedonataphouse.com/locations/phoenixville-pa/",
+   "states": "Happy hour PDF, 4pm",
+   "confirmed": true,
+   "checked_at": "2026-09-02",
+   "checked_by": "paul",
+   "candidate_from": [
+    "google_places: happy hour in Kimberton, PA",
+    "google_places: happy hour in Phoenixville, PA"
+   ],
+   "website": "https://sedonataphouse.com/locations/phoenixville-pa"
+  },
+  {
+   "lid": "36841",
+   "name": "Sly Fox",
+   "url": "https://www.slyfoxbeer.com/phoenixville",
+   "states": "Appy Hour Tue-Fri 3-6, $2 off select apps, $1 wings",
+   "confirmed": true,
+   "checked_at": "2026-09-02",
+   "checked_by": "paul",
+   "candidate_from": [
+    "google_places: happy hour in Kimberton, PA",
+    "google_places: happy hour in Phoenixville, PA"
+   ],
+   "website": "http://www.slyfoxbeer.com/"
+  },
+  {
+   "lid": "66224",
+   "name": "Valley Forge Trattoria & Lounge",
+   "url": "https://valleyforgepizza.com/happy-hours/",
+   "states": "happy_hours_page_1.png / page_2.png",
+   "confirmed": true,
+   "checked_at": "2026-09-02",
+   "checked_by": "paul",
+   "candidate_from": [
+    "google_places: happy hour in Phoenixville, PA"
+   ],
+   "website": "http://www.valleyforgepizza.com/"
+  },
+  {
+   "lid": "109775",
+   "name": "Bella Trattoria",
+   "confirmed": false,
+   "candidate_from": [
+    "google_places: happy hour in Spring City, PA"
+   ],
+   "website": "http://www.bellatrattoriasc.com/"
+  },
+  {
+   "lid": "58996",
+   "name": "Bistro on Bridge",
+   "confirmed": false,
+   "candidate_from": [
+    "google_places: happy hour in Phoenixville, PA"
+   ],
+   "website": "https://bistroonbridge.com/"
+  },
+  {
+   "lid": "64975",
+   "name": "Black Horse Tavern",
+   "confirmed": false,
+   "candidate_from": [
+    "google_places: happy hour in Phoenixville, PA"
+   ],
+   "website": "http://www.blackhorsetaverns.com/"
+  },
+  {
+   "lid": "109596",
+   "name": "Bloom Southern Kitchen",
+   "confirmed": false,
+   "candidate_from": [
+    "google_places: happy hour in Chester Springs, PA"
+   ],
+   "website": "https://bloomsouthernkitchen.com/?utm_source=google"
+  },
+  {
+   "lid": "107474",
+   "name": "Fitzwater Station",
+   "confirmed": false,
+   "candidate_from": [
+    "google_places: happy hour in Phoenixville, PA"
+   ],
+   "website": "http://fitzwaterstation.com/"
+  },
+  {
+   "lid": "90605",
+   "name": "il Granaio",
+   "confirmed": false,
+   "candidate_from": [
+    "google_places: happy hour in Phoenixville, PA"
+   ],
+   "website": "http://ilgranaiopa2.com/"
+  },
+  {
+   "lid": "84498",
+   "name": "Liberty Union Bar & Grill",
+   "confirmed": false,
+   "candidate_from": [
+    "google_places: happy hour in Phoenixville, PA"
+   ],
+   "website": "http://libertyunionbar.com/"
+  },
+  {
+   "lid": "65626",
+   "name": "Liberty Union Bar and Grill",
+   "confirmed": false,
+   "candidate_from": [
+    "google_places: happy hour in Chester Springs, PA"
+   ],
+   "website": "http://www.libertyunionbar.com/"
+  },
+  {
+   "lid": "67364",
+   "name": "Limoncello",
+   "confirmed": false,
+   "candidate_from": [
+    "google_places: happy hour in Chester Springs, PA"
+   ],
+   "website": "https://www.limoncellorestaurant.com/"
+  },
+  {
+   "lid": "57342",
+   "name": "Molly Maguires Restaurant & Pub",
+   "confirmed": false,
+   "candidate_from": [
+    "google_places: happy hour in Phoenixville, PA"
+   ],
+   "website": "http://www.thefenixbar.com/"
+  },
+  {
+   "lid": "65737",
+   "name": "Perky Cafe",
+   "confirmed": false,
+   "candidate_from": [
+    "google_places: happy hour in Phoenixville, PA"
+   ],
+   "website": "http://www.theperky.com/"
+  },
+  {
+   "lid": "18900",
+   "name": "The Country House at Kimberton",
+   "confirmed": false,
+   "candidate_from": [
+    "google_places: happy hour in Kimberton, PA"
+   ],
+   "website": "http://www.kimbertoninn.com/"
+  },
+  {
+   "lid": "69448",
+   "name": "The Great American Pub",
+   "confirmed": false,
+   "candidate_from": [
+    "google_places: happy hour in Phoenixville, PA"
+   ],
+   "website": "http://thegreatamericanpub.com/phoenixville/"
+  }
+ ],
+ "searched": [
+  {
+   "at": "2026-09-02",
+   "queries": [
+    "happy hour in Phoenixville, PA",
+    "happy hour in Spring City, PA",
+    "happy hour in Kimberton, PA",
+    "happy hour in Chester Springs, PA"
+   ],
+   "matched": 20,
+   "unmatched": 5
+  }
+ ],
+ "unmatched": [
+  {
+   "name": "The Boardroom Restaurant and Bottle Shop",
+   "address": "101 Bridge St #2, Phoenixville, PA 19460, USA",
+   "website": "https://www.theboardroompxv.com/"
+  },
+  {
+   "name": "Molly Maguire's Irish Restaurant & Pub",
+   "address": "197 Bridge St, Phoenixville, PA 19460, USA",
+   "website": "https://www.mollymaguiresphoenixville.com/"
+  },
+  {
+   "name": "Rec Room",
+   "address": "230 Bridge St, Phoenixville, PA 19460, USA",
+   "website": "https://www.conshohockenbrewing.com/recroom"
+  },
+  {
+   "name": "Vintner's Table",
+   "address": "135 Bridge St, Phoenixville, PA 19460, USA",
+   "website": "https://www.vintners-table.com/"
+  },
+  {
+   "name": "Grid Iron Sports Bar",
+   "address": "934 Township Line Rd, Phoenixville, PA 19460, USA",
+   "website": "https://www.facebook.com/profile.php?id=100060918415845&mibextid=LQQJ4d"
+  }
+ ]
+}

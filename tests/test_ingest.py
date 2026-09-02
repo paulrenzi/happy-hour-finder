@@ -1508,9 +1508,13 @@ class VenueBase(unittest.TestCase):
         # Every zone's deals are fetched on load. The venue base is a megabyte
         # and must never drift back into that path -- the whole point of the
         # split is that "what's on near me" does not cost a full corpus.
+        # 400k held until 2026-09-02, when every card gained a storefront photo
+        # (213 of 214, ~80 bytes each of path and attribution). That is the
+        # board getting richer, not the base leaking in; the base is a
+        # megabyte and would still trip this.
         boot = sum(os.path.getsize(os.path.join(REPO, "web", "data", f"zone-{z['id']}.json"))
                    for z in self.index["zones"])
-        self.assertLess(boot, 400_000, "the boot payload has grown a venue base again")
+        self.assertLess(boot, 500_000, "the boot payload has grown a venue base again")
 
     def test_every_shipped_venue_can_be_identified_in_a_submission(self):
         # The ask on a no-hours card quotes the LID back to us. A card that

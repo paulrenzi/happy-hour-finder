@@ -432,6 +432,84 @@
    ]
   },
   {
+   "id": "57342",
+   "lid": "57342",
+   "slug": "molly-maguires-restaurant-pub-inc-phoenixville",
+   "name": "MOLLY MAGUIRES RESTAURANT & PUB INC",
+   "address": "193-195-197 Bridge St, Phoenixville PA 19460",
+   "zone_id": "phoenixville",
+   "website": "https://www.mollymaguiresphoenixville.com/",
+   "plcb_name": "MOLLY MAGUIRES RESTAURANT & PUB INC",
+   "license_type": "Restaurant (Liquor)",
+   "photo": {
+    "attribution": "Photo: Molly Maguire's Irish Restaurant & Pub / Google",
+    "file": "img/venues/57342.jpg"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "wine",
+       "label": "Wines",
+       "price_usd": 5.0
+      },
+      {
+       "category": "well",
+       "label": "Well Mixers",
+       "price_usd": 5.0
+      },
+      {
+       "category": "draft",
+       "label": "Draft Beers (16 oz.)",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "Appetizers",
+       "price_usd": 7.5
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.mollymaguiresphoenixville.com/wp-content/uploads/Mollys-Happy-Hour-Website.jpg",
+      "quote": "HAPPY HOUR Monday -Friday 5\u20137 PM"
+     },
+     "items_source": "llm_extract"
+    }
+   ]
+  },
+  {
    "id": "106706",
    "lid": "106706",
    "slug": "revival-pizza-pub-chester-springs",
@@ -555,6 +633,10 @@
    "lat": 40.1337608,
    "lng": -75.5172339,
    "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Rich St0ry / Google",
+    "file": "img/venues/99114.jpg"
+   },
    "deals": [
     {
      "type": "happy_hour",
@@ -624,6 +706,10 @@
    "website": "https://sedonataphouse.com/",
    "plcb_name": "SEDONA TAPHOUSE",
    "license_type": "Restaurant (Liquor)",
+   "photo": {
+    "attribution": "Photo: Rich St0ry / Google",
+    "file": "img/venues/91502.jpg"
+   },
    "deals": [
     {
      "type": "happy_hour",
@@ -811,6 +897,10 @@
    "lat": 40.1309336,
    "lng": -75.5475666,
    "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Sly Fox Brewhouse & Eatery / Google",
+    "file": "img/venues/36841.jpg"
+   },
    "deals": [
     {
      "type": "happy_hour",
@@ -941,6 +1031,137 @@
       "url": "https://thegreatamericanpub.com/phoenixville/specials/weekly-specials/",
       "quote": "Happy Hour from 5pm - 7pm"
      }
+    }
+   ]
+  },
+  {
+   "id": "66224",
+   "lid": "66224",
+   "slug": "valley-forge-trattoria-lounge-phoenixville",
+   "name": "Valley Forge Trattoria & Lounge",
+   "address": "1130 Valley Forge Rd, Phoenixville PA 19460",
+   "zone_id": "phoenixville",
+   "website": "https://www.valleyforgepizza.com",
+   "plcb_name": "VALLEY FORGE PIZZA",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.1182979,
+   "lng": -75.4900177,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Chronis Sapalidis / Google",
+    "file": "img/venues/66224.jpg"
+   },
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "Pretzel bites",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "label": "Wings (8p)",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "10\" Cheese Pizza",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "Hummus Platter",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "Spaghetti w/ Meatball",
+       "price_usd": 12.0
+      },
+      {
+       "category": "food",
+       "label": "Fried Calamari",
+       "price_usd": 14.0
+      },
+      {
+       "category": "food",
+       "label": "Greek Salad w/ Chicken",
+       "price_usd": 15.0
+      },
+      {
+       "category": "food",
+       "label": "Chicken Caesar Salad",
+       "price_usd": 15.0
+      },
+      {
+       "category": "food",
+       "label": "Sliders",
+       "price_usd": 12.0
+      },
+      {
+       "category": "food",
+       "label": "Cheesesteak Eggrolls",
+       "price_usd": 13.0
+      },
+      {
+       "category": "draft",
+       "label": "Domestic Drafts and Bottles",
+       "price_usd": 4.0
+      },
+      {
+       "category": "cocktail",
+       "label": "House Martini",
+       "price_usd": 12.0
+      },
+      {
+       "category": "cocktail",
+       "label": "House Cosmo",
+       "price_usd": 12.0
+      },
+      {
+       "category": "cocktail",
+       "label": "House Margarita",
+       "price_usd": 12.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://valleyforgepizza.com/images/happy_hours_page_1.png",
+      "quote": "HAPPY HOUR Monday-Friday 4pm - 6pm DRINK MENU"
+     },
+     "items_source": "llm_extract"
     }
    ]
   }

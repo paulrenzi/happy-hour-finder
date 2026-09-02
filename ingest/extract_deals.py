@@ -106,12 +106,18 @@ def picture_spans(scripts):
     """
     out = {}
     for vid, rec in (scripts or {}).items():
-        lines = [ln.strip() for ln in (rec.get("transcript") or "").splitlines()
-                 if ln.strip()]
-        spans = [" ".join(lines[i:i + 3]) for i, ln in enumerate(lines)
-                 if len(ln) <= 40 and HH_RE.search(ln)]
-        if spans:
-            out[vid] = (rec.get("url", ""), spans)
+        # Every sheet the venue posted, not only the last one read: the hours
+        # sit on one of them and the food on another.
+        images = dict(rec.get("images") or {})
+        if rec.get("url") and rec.get("transcript"):
+            images.setdefault(rec["url"], rec["transcript"])
+        for url, transcript in images.items():
+            lines = [ln.strip() for ln in (transcript or "").splitlines() if ln.strip()]
+            spans = [" ".join(lines[i:i + 3]) for i, ln in enumerate(lines)
+                     if len(ln) <= 40 and HH_RE.search(ln)]
+            if spans:
+                out[vid] = (url, spans)
+                break
     return out
 
 
@@ -704,6 +710,13 @@ ONE_OFF_RE = re.compile(
     re.I)
 
 
+def _hours(w):
+    """How long a window runs, in hours; 24:00 is midnight."""
+    h1, m1 = map(int, w["start"].split(":"))
+    h2, m2 = map(int, w["end"].split(":"))
+    return (h2 * 60 + m2 - h1 * 60 - m1) / 60.0
+
+
 def windows_from(quote):
     """[{dow,start,end}] for one quote, or [] if it does not state a schedule.
 
@@ -888,28 +901,42 @@ def main():
     venues, stats, kept, rejects = [], collections.Counter(), [], []
     seen_ids = set()
     for lid, v in one_per_osm(hits, sites):
+        # The crawl found a menu picture and the vision pass transcribed it:
+        # the happy-hour lines of that transcript are candidates, and they
+        # enter through windows_from() like any other. The items come from
+        # the picture sidecar at bundle time.
+        url, spans = pictures.get(slug(v["osm_name"] or v["name"], v["address"]),
+                                  ("", []))
+        pic_cands = [({"url": url, "quote": span}, ws)
+                     for span in spans for ws in [windows_from(span)] if ws]
         cands = []
-        if not v["hits"]:
-            # No text at all, but the crawl found a menu picture and the vision
-            # pass transcribed it: the happy-hour lines of that transcript are
-            # the only candidates, and they enter through windows_from() like
-            # any other. The items come from the picture sidecar at bundle time.
-            url, spans = pictures.get(slug(v["osm_name"] or v["name"], v["address"]),
-                                      ("", []))
-            for span in spans:
-                ws = windows_from(span)
-                if ws:
-                    cands.append(({"url": url, "quote": span}, ws))
-            if not cands:
-                stats["no quote crawled"] += 1
-                continue
-            stats["  window read off a menu picture"] += 1
-        else:
-            stats["venue had quotes"] += 1
         for h in v["hits"]:
             ws = windows_from(h["quote"])
-            if ws:
-                cands.append((h, ws))
+            if not ws:
+                continue
+            # A clock that runs longer than any happy hour may is the venue's
+            # OPENING hours: Valley Forge Pizza's /happy-hours page says
+            # "Happy Hours / Mon - Sun: 11:00 AM - 10:00 PM" and the real
+            # window, Mon-Fri 4-6, is in the picture underneath. The PA
+            # validators would refuse the 11-hour span later anyway; refusing
+            # it here lets the picture be heard instead of the venue being
+            # rejected whole.
+            if all(_hours(w) > 4 for w in ws):
+                stats["  quote is opening hours, not a happy hour"] += 1
+                continue
+            cands.append((h, ws))
+        if not v["hits"]:
+            stats["no quote crawled" if not pic_cands else "  window read off a menu picture"] += 1
+            cands = pic_cands
+        elif pic_cands and not any(HH_RE.search(h["quote"]) for h, _ in cands):
+            # The picture names the happy hour and no text quote does: Molly
+            # Maguire's only text with a clock is its "Late Night Menu
+            # Thursdays 10pm to 11pm", and the picture says "HAPPY HOUR Monday
+            # -Friday 5-7 PM". The venue's own word for the thing wins.
+            stats["  window read off a menu picture"] += 1
+            cands = pic_cands
+        else:
+            stats["venue had quotes"] += 1
         if not cands:
             # The page reader may propose a WINDOW as a verbatim span (Paul's
             # call, 2026-09-02), and this is the whole of where it lands. The

@@ -458,7 +458,7 @@
  },
  "100909": {
   "address": "1300 HARES HILL RD, KIMBERTON PA 19442",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "menu_images": [
    {
@@ -480,6 +480,16 @@
     "url": "https://www.stonehousegrillepa.com/"
    },
    {
+    "result": "rendered: 35 lines -> 37",
+    "url": "https://www.stonehousegrillepa.com/weekend-menu-additions"
+   },
+   {
+    "hh": false,
+    "lines": 37,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.stonehousegrillepa.com/weekend-menu-additions"
+   },
+   {
     "hh": false,
     "lines": 626,
     "result": "ok, 0 quote(s)",
@@ -490,12 +500,6 @@
     "lines": 76,
     "result": "ok, 0 quote(s)",
     "url": "https://www.stonehousegrillepa.com/music-events-1"
-   },
-   {
-    "hh": false,
-    "lines": 35,
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.stonehousegrillepa.com/weekend-menu-additions"
    }
   ],
   "website": "https://www.stonehousegrillepa.com/",
@@ -4171,7 +4175,7 @@
  },
  "109629": {
   "address": "14 PRIZER RD, PHOENIXVILLE PA 19460",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "EXCURSION CIDERS",
   "osm_name": "Excursion Ciders",
@@ -4188,7 +4192,7 @@
  },
  "109775": {
   "address": "366 RIDGE RD, SPRING CITY PA 19475-2802",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [
    {
     "hh": true,
@@ -4229,33 +4233,12 @@
     "hh": true,
     "quote": "Friyay Happy Hour!!!",
     "url": "https://www.bellatrattoriasc.com/events/music-happy-hour-with-jasmine-foster"
-   },
-   {
-    "quote": "Music Happy Hour with Jasmine Foster / 2:00\u202fPM / 4:00\u202fPM",
-    "url": "https://www.bellatrattoriasc.com/events"
-   },
-   {
-    "quote": "Join us at Bella for a music Happy Hour with Jasmine Foster. Jasmine will be performing original music and we will be serving fabulous drink and food specials. Unwind on a wonderful Saturday afternoon.",
-    "url": "https://www.bellatrattoriasc.com/events"
-   },
-   {
-    "quote": "Friyay Happy Hour!!!",
-    "url": "https://www.bellatrattoriasc.com/events"
-   },
-   {
-    "hh": true,
-    "quote": "Friyay is here!!! Join us for fantastic Happy Hour Specials every Friyay. Unpack the week with us.",
-    "url": "https://www.bellatrattoriasc.com/events"
    }
   ],
   "menu_images": [
    {
     "src": "http://static1.squarespace.com/static/614a61700cb2111064e0e274/63e68db019a20621c2f591dc/68a88964c59eec45ec5861a5/1755875838168/Green+and+Cream+Retro+Style+Happy+Hour+Facebook+Post.png?format=1500w",
     "url": "https://www.bellatrattoriasc.com/events/friyay-happy-hour"
-   },
-   {
-    "src": "https://images.squarespace-cdn.com/content/v1/614a61700cb2111064e0e274/1755875821897-RDHW9U1Q7PV80ORV741P/Green+and+Cream+Retro+Style+Happy+Hour+Facebook+Post.png",
-    "url": "https://www.bellatrattoriasc.com/events"
    }
   ],
   "name": "BELLA TRATTORIA",
@@ -4280,10 +4263,10 @@
     "url": "https://www.bellatrattoriasc.com/events/music-happy-hour-with-jasmine-foster"
    },
    {
-    "hh": true,
-    "lines": 335,
-    "result": "ok, 4 quote(s)",
-    "url": "https://www.bellatrattoriasc.com/events"
+    "hh": false,
+    "lines": 829,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.bellatrattoriasc.com/ourmenu"
    }
   ],
   "website": "https://www.bellatrattoriasc.com/",
@@ -5735,7 +5718,7 @@
  },
  "114948": {
   "address": "95 NUTT RD, PHOENIXVILLE PA 19460-3952",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [
    {
     "quote": "Let me tell you why Soko Bar should be your go-to Philadelphia Union sports bar in Phoenixville and beyond. During Philadelphia Union matches, Soko Bag transforms into a hub of excitement and great fun, offering irresistible food and drink specials that take the viewing experience to new heights. / Whether you\u2019re craving a refreshing craft beer like our Basement Blonde (Blonde Ale) or Choco Jawn (",
@@ -5753,6 +5736,12 @@
    },
    {
     "hh": false,
+    "lines": 128,
+    "result": "ok, 0 quote(s)",
+    "url": "https://sokobag.com/beer/"
+   },
+   {
+    "hh": false,
     "lines": 112,
     "result": "ok, 0 quote(s)",
     "url": "https://sokobag.com/drone-mystery-in-phoenixville-fbi-links-soko-bag-to-fried-chicken-delivery-test/"
@@ -5762,12 +5751,6 @@
     "lines": 116,
     "result": "ok, 1 quote(s)",
     "url": "https://sokobag.com/philadelphia-union-sports-bar-in-phoenixville/"
-   },
-   {
-    "hh": false,
-    "lines": 113,
-    "result": "ok, 0 quote(s)",
-    "url": "https://sokobag.com/private-events-space-in-phoenixville/"
    }
   ],
   "website": "https://sokobag.com/",
@@ -7291,7 +7274,7 @@
  },
  "119459": {
   "address": "35 BRIDGE ST, PHOENIXVILLE PA 19460-3489",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "TWELVE78 BREWING COMPANY",
   "osm_name": "Twelve78",
@@ -7304,21 +7287,21 @@
    },
    {
     "hh": false,
+    "lines": 77,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.twelve78brewing.com/beer/"
+   },
+   {
+    "hh": false,
+    "lines": 99,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.twelve78brewing.com/hours-and-location/"
+   },
+   {
+    "hh": false,
     "lines": 163,
     "result": "ok, 0 quote(s)",
     "url": "https://www.twelve78brewing.com/event-calendar/"
-   },
-   {
-    "hh": false,
-    "lines": 88,
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.twelve78brewing.com/private-events"
-   },
-   {
-    "hh": false,
-    "lines": 88,
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.twelve78brewing.com/private-events/"
    }
   ],
   "website": "https://www.twelve78brewing.com/",
@@ -8528,8 +8511,12 @@
  },
  "126367": {
   "address": "3350 SCHUYLKILL RD, SPRING CITY PA 19475-1144",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [
+   {
+    "quote": "Monthly Brunches, Happy Hours, Karaoke,",
+    "url": "https://springhollowgolf.com/wp-content/uploads/2026/05/Spring-Hollow-Bar-Grille-Spring-5.26.pdf"
+   },
    {
     "quote": "\u2022 Happy Hour",
     "url": "https://springhollowgolf.com/special-events/"
@@ -8546,6 +8533,12 @@
    },
    {
     "hh": true,
+    "lines": 101,
+    "result": "ok, 1 quote(s)",
+    "url": "https://springhollowgolf.com/wp-content/uploads/2026/05/Spring-Hollow-Bar-Grille-Spring-5.26.pdf"
+   },
+   {
+    "hh": true,
     "lines": 89,
     "result": "ok, 1 quote(s)",
     "url": "https://springhollowgolf.com/special-events/"
@@ -8555,12 +8548,6 @@
     "lines": 71,
     "result": "ok, 0 quote(s)",
     "url": "https://springhollowgolf.com/bar-grille/"
-   },
-   {
-    "hh": false,
-    "lines": 55,
-    "result": "ok, 0 quote(s)",
-    "url": "https://springhollowgolf.com/eventcalendar/"
    }
   ],
   "website": "https://springhollowgolf.com/bar-grille/",
@@ -9315,7 +9302,7 @@
  },
  "129244": {
   "address": "1972 SAINT MATTHEWS RD, PHOENIXVILLE PA 19460-1604",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "BOWEN ARROW WINERY AND VINEYARDS",
   "osm_name": null,
@@ -11150,7 +11137,7 @@
  },
  "133283": {
   "address": "135 N MAIN ST, SPRING CITY PA 19475-1874",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "TUNED UP BREWERY LLC",
   "osm_name": null,
@@ -11537,7 +11524,7 @@
  },
  "134444": {
   "address": "131 BRIDGE ST STE 4, PHOENIXVILLE PA 19460",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "CHIKARA SUSHI & ASIAN FUSION",
   "osm_name": "Chikara Sushi",
@@ -11862,7 +11849,7 @@
  },
  "19857": {
   "address": "47 E BRIDGE ST, SPRING CITY PA 19475-1404",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "CENTER CITY",
   "osm_name": "Center City Steaks",
@@ -11872,6 +11859,16 @@
     "lines": 81,
     "result": "ok, 0 quote(s)",
     "url": "https://www.centercitysteaks.com/"
+   },
+   {
+    "result": "rendered: 1 lines -> 194",
+    "url": "https://www.centercitysteaks.com/menus"
+   },
+   {
+    "hh": false,
+    "lines": 194,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.centercitysteaks.com/menus"
    },
    {
     "hh": false,
@@ -18723,8 +18720,13 @@
  },
  "57342": {
   "address": "193-195-197 BRIDGE ST, PHOENIXVILLE PA 19460-3401",
-  "crawled_at": "2026-09-01",
-  "hits": [],
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Late Night Menu / Available Thursdays 10pm to 11 pm and Fridays & Saturdays 10pm to 12am",
+    "url": "https://www.mollymaguiresphoenixville.com/menu/"
+   }
+  ],
   "menu_images": [
    {
     "src": "https://www.mollymaguiresphoenixville.com/wp-content/uploads/Mollys-Happy-Hour-Website.jpg",
@@ -18745,22 +18747,22 @@
     "url": "https://www.mollymaguiresphoenixville.com/"
    },
    {
-    "hh": true,
-    "lines": 87,
+    "hh": false,
+    "lines": 54,
     "result": "ok, 0 quote(s)",
-    "url": "https://www.mollymaguiresphoenixville.com/"
+    "url": "https://www.mollymaguiresphoenixville.com/drink-menu/"
    },
    {
     "hh": false,
-    "lines": 144,
+    "lines": 59,
     "result": "ok, 0 quote(s)",
-    "url": "https://www.mollymaguiresphoenixville.com/banquet-menu/"
+    "url": "https://www.mollymaguiresphoenixville.com/the-fenix-bar-lounge/"
    },
    {
     "hh": false,
-    "lines": 110,
-    "result": "ok, 0 quote(s)",
-    "url": "https://www.mollymaguiresphoenixville.com/catering-menu/"
+    "lines": 352,
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.mollymaguiresphoenixville.com/menu/"
    }
   ],
   "website": "https://www.mollymaguiresphoenixville.com/",
@@ -21693,7 +21695,7 @@
  },
  "63002": {
   "address": "1021 MOREHALL RD, DEVAULT PA 19432",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "CHARLESTOWN RESTAURANT INC",
   "osm_name": "The Valley House Bar & Restaurant",
@@ -21703,6 +21705,10 @@
     "lines": 55,
     "result": "ok, 0 quote(s)",
     "url": "https://thevalleyhousemalvern.com/"
+   },
+   {
+    "result": "pdf, no extractable text",
+    "url": "https://thevalleyhousemalvern.com/wp-content/uploads/2026/07/VH-MENU-2026-DRINK.pdf"
    },
    {
     "result": "pdf, no extractable text",
@@ -24098,7 +24104,7 @@
  },
  "66224": {
   "address": "1130 VALLEY FORGE RD, PHOENIXVILLE PA 19460-2682",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [
    {
     "quote": "Happy Hours",
@@ -24111,6 +24117,14 @@
    {
     "quote": "Happy Hours / Mon - Sun: 11:00 AM - 10:00 PM",
     "url": "https://www.valleyforgepizza.com/happy-hours"
+   },
+   {
+    "quote": "Valley Forge Trattoria and Lounge - Happy Hours - Italian - food - Phoenixville, PA",
+    "url": "https://valleyforgepizza.com/happy-hours/"
+   },
+   {
+    "quote": "Happy Hours / Mon - Sun: 11:00 AM - 10:00 PM",
+    "url": "https://valleyforgepizza.com/happy-hours/"
    }
   ],
   "menu_images": [
@@ -24121,6 +24135,10 @@
    {
     "src": "https://www.valleyforgepizza.com/images/happy_hours_page_2.png",
     "url": "https://www.valleyforgepizza.com/happy-hours"
+   },
+   {
+    "src": "https://valleyforgepizza.com/images/happy_hours_page_1.png",
+    "url": "https://valleyforgepizza.com/happy-hours/"
    }
   ],
   "name": "VALLEY FORGE PIZZA",
@@ -24137,6 +24155,18 @@
     "lines": 20,
     "result": "ok, 2 quote(s)",
     "url": "https://www.valleyforgepizza.com/happy-hours"
+   },
+   {
+    "hh": true,
+    "lines": 20,
+    "result": "ok, 2 quote(s)",
+    "url": "https://valleyforgepizza.com/happy-hours/"
+   },
+   {
+    "hh": false,
+    "lines": 277,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.valleyforgepizza.com/images/dine_in_menu.pdf"
    },
    {
     "hh": false,
@@ -26708,7 +26738,7 @@
  },
  "70435": {
   "address": "100 BRIDGE ST, PHOENIXVILLE PA 19460-3492",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "BLUEBIRD DISTILLING",
   "osm_name": "Bluebird Distilling",
@@ -26718,6 +26748,12 @@
     "lines": 70,
     "result": "ok, 0 quote(s)",
     "url": "https://www.bluebirddistilling.com/"
+   },
+   {
+    "hh": false,
+    "lines": 343,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.bluebirddistilling.com/menu"
    },
    {
     "hh": false,
@@ -28006,7 +28042,7 @@
  },
  "72427": {
   "address": "162 RIDGE RD, Phoenixville PA 19460",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "KIMBERTON GOLF CLUB INC",
   "osm_name": null,
@@ -28016,6 +28052,12 @@
     "lines": 48,
     "result": "ok, 0 quote(s)",
     "url": "https://www.kimbertongolfclub.com/"
+   },
+   {
+    "hh": false,
+    "lines": 30,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.kimbertongolfclub.com/bar-grill/"
    },
    {
     "hh": false,
@@ -28397,7 +28439,7 @@
  },
  "72735": {
   "address": "325 BRIDGE ST, PHOENIXVILLE PA 19460-3355",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "THE FOODERY PHOENIXVILLE INC",
   "osm_name": "The Foodery",
@@ -28415,16 +28457,20 @@
     "url": "http://www.fooderybeer.com/events/foodery-yappy-hour"
    },
    {
+    "result": "rendered: 33 lines -> 36",
+    "url": "https://fooderybeer.squarespace.com/deli-phoenixville-menu"
+   },
+   {
     "hh": false,
-    "lines": 33,
+    "lines": 36,
     "result": "ok, 0 quote(s)",
     "url": "https://fooderybeer.squarespace.com/deli-phoenixville-menu"
    },
    {
     "hh": false,
-    "lines": 51,
+    "lines": 33,
     "result": "ok, 0 quote(s)",
-    "url": "https://fooderybeer.squarespace.com/phoenixville"
+    "url": "https://fooderybeer.squarespace.com/deli-phoenixville-menu"
    }
   ],
   "website": "https://fooderybeer.squarespace.com/phoenixville",
@@ -30077,7 +30123,7 @@
  },
  "84498": {
   "address": "519 KIMBERTON RD  SUITE 9  PIKELAND VILLAGE SQUARE, PHOENIXVILLE PA 19460",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "LIBERTY UNION 2 LLC",
   "osm_name": "Liberty Union Bar & Grill",
@@ -30106,7 +30152,7 @@
  },
  "84583": {
   "address": "225 & 227 BRIDGE ST, PHOENIXVILLE PA 19460-3449",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "COLONIAL THEATRE",
   "osm_name": null,
@@ -30141,7 +30187,7 @@
  },
  "84758": {
   "address": "1 N MAIN ST, PHOENIXVILLE PA 19460-3419",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [
    {
     "quote": "Full menu for dine in or take home. Vegan offerings. Daily specials.",
@@ -30156,6 +30202,18 @@
     "lines": 80,
     "result": "ok, 1 quote(s)",
     "url": "https://rootdownbrewing.com/"
+   },
+   {
+    "hh": false,
+    "lines": 164,
+    "result": "ok, 0 quote(s)",
+    "url": "https://rootdownbrewing.com/food/"
+   },
+   {
+    "hh": false,
+    "lines": 164,
+    "result": "ok, 0 quote(s)",
+    "url": "https://rootdownbrewing.com/food/"
    },
    {
     "hh": false,
@@ -31052,7 +31110,7 @@
  },
  "88072": {
   "address": "242 BRIDGE ST, PHOENIXVILLE PA 19460-3450",
-  "crawled_at": "2026-09-01",
+  "crawled_at": "2026-09-02",
   "hits": [],
   "name": "REBEL HILL BREWING COMPANY",
   "osm_name": "Rebel Hill Brewing",
@@ -31066,6 +31124,18 @@
     "lines": 23,
     "result": "ok, 0 quote(s)",
     "url": "https://www.rebelhillbrewing.com/"
+   },
+   {
+    "hh": false,
+    "lines": 86,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.rebelhillbrewing.com/drink-rebelhill"
+   },
+   {
+    "hh": false,
+    "lines": 100,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.rebelhillbrewing.com/eat-rebelhill"
    },
    {
     "hh": false,
@@ -32397,16 +32467,26 @@
     "url": "https://www.hogislandsteaks.com"
    },
    {
-    "hh": false,
-    "lines": 39,
-    "result": "ok, 9 quote(s)",
+    "result": "rendered: 39 lines -> 41",
     "url": "https://www.hogislandsteaks.com/lunch-specials"
    },
    {
     "hh": false,
-    "lines": 30,
+    "lines": 41,
     "result": "ok, 0 quote(s)",
-    "url": "https://www.hogislandsteaks.com/menu-photos"
+    "url": "https://www.hogislandsteaks.com/lunch-specials"
+   },
+   {
+    "hh": false,
+    "lines": 712,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.hogislandsteaks.com/s/HogIslandMenu7825.pdf"
+   },
+   {
+    "hh": false,
+    "lines": 39,
+    "result": "ok, 9 quote(s)",
+    "url": "https://www.hogislandsteaks.com/lunch-specials"
    },
    {
     "hh": false,

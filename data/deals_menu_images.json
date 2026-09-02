@@ -219,6 +219,28 @@
    "price_usd": 16.0
   }
  ],
+ "molly-maguires-restaurant-pub-inc-phoenixville": [
+  {
+   "category": "wine",
+   "label": "Wines",
+   "price_usd": 5.0
+  },
+  {
+   "category": "well",
+   "label": "Well Mixers",
+   "price_usd": 5.0
+  },
+  {
+   "category": "draft",
+   "label": "Draft Beers (16 oz.)",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "Appetizers",
+   "price_usd": 7.5
+  }
+ ],
  "north-third-philadelphia": [
   {
    "category": "cocktail",
@@ -663,6 +685,56 @@
   }
  ],
  "valley-forge-trattoria-lounge-phoenixville": [
+  {
+   "category": "food",
+   "label": "Pretzel bites",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Wings (8p)",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "10\" Cheese Pizza",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Hummus Platter",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Spaghetti w/ Meatball",
+   "price_usd": 12.0
+  },
+  {
+   "category": "food",
+   "label": "Fried Calamari",
+   "price_usd": 14.0
+  },
+  {
+   "category": "food",
+   "label": "Greek Salad w/ Chicken",
+   "price_usd": 15.0
+  },
+  {
+   "category": "food",
+   "label": "Chicken Caesar Salad",
+   "price_usd": 15.0
+  },
+  {
+   "category": "food",
+   "label": "Sliders",
+   "price_usd": 12.0
+  },
+  {
+   "category": "food",
+   "label": "Cheesesteak Eggrolls",
+   "price_usd": 13.0
+  },
   {
    "category": "draft",
    "label": "Domestic Drafts and Bottles",

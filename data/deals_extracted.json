@@ -6909,6 +6909,57 @@
    ]
   },
   {
+   "id": "molly-maguires-restaurant-pub-inc-phoenixville",
+   "lid": "57342",
+   "name": "MOLLY MAGUIRES RESTAURANT & PUB INC",
+   "plcb_name": "MOLLY MAGUIRES RESTAURANT & PUB INC",
+   "address": "193-195-197 BRIDGE ST, PHOENIXVILLE PA 19460-3401",
+   "zone_id": "phoenixville",
+   "license_type": "",
+   "website": "https://www.mollymaguiresphoenixville.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.mollymaguiresphoenixville.com/wp-content/uploads/Mollys-Happy-Hour-Website.jpg",
+      "quote": "HAPPY HOUR Monday -Friday 5\u20137 PM"
+     }
+    }
+   ]
+  },
+  {
    "id": "pietro-s-prime-west-chester",
    "lid": "58333",
    "name": "Pietro\u2019s Prime",
@@ -9088,6 +9139,57 @@
       "kind": "venue_site",
       "url": "https://locations.pjspub.com/pa/west-chester/1347-wilmington-pike",
       "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM"
+     }
+    }
+   ]
+  },
+  {
+   "id": "valley-forge-trattoria-lounge-phoenixville",
+   "lid": "66224",
+   "name": "Valley Forge Trattoria & Lounge",
+   "plcb_name": "VALLEY FORGE PIZZA",
+   "address": "1130 VALLEY FORGE RD, PHOENIXVILLE PA 19460-2682",
+   "zone_id": "phoenixville",
+   "license_type": "",
+   "website": "https://www.valleyforgepizza.com",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://valleyforgepizza.com/images/happy_hours_page_1.png",
+      "quote": "HAPPY HOUR Monday-Friday 4pm - 6pm DRINK MENU"
      }
     }
    ]

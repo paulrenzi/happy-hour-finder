@@ -617,18 +617,28 @@ items).** A venue with a window and items is left alone; re-fetching it spends
 bandwidth to re-learn what we hold.
 
 ```
-python ingest/needy.py phoenixville wayne_radnor --show --lids run.lids
-python ingest/crawl_sites.py --lids run.lids --recrawl --render
-python ingest/extract_menu_images.py --match          # menus posted as PICTURES (vision + transcript)
+python ingest/reach_llm.py town phoenixville --spend       # what the web says the town has ($0.13) -> ground truth candidates
+python ingest/needy.py phoenixville --show --lids run.lids
+python ingest/reach_llm.py links --lids run.lids --show     # a model picks the HH / town page off each site's link inventory
+python ingest/crawl_sites.py --lids run.lids --recrawl --render   # --lids keeps EVERY page for the verdict
+python ingest/extract_menu_images.py --lids run.lids --show # menus posted as PICTURES (vision + per-image transcript)
+python ingest/reach_llm.py verdict --lids run.lids --show   # a model: does a "no happy hour" page state one anyway?
 python ingest/read_pages_llm.py --lids run.lids --show --rejects
 python ingest/read_windows_llm.py --lids run.lids --show --rejects   # the WINDOW half
 python ingest/extract_deals.py && python ingest/build_venue_base.py && python ingest/build_bundles.py
+python ingest/fetch_venue_photos.py --from-board --spend    # a storefront photo for every new card (~$0.04 each)
+python ingest/build_venue_base.py && python ingest/build_bundles.py
 bash tests/run.sh && git add -A && git commit && git push
 python scratch/card_diff.py          # WHICH cards moved — a total cannot see this
+python ingest/report_coverage.py phoenixville --candidates   # cards / CONFIRMED ground truth; the 90% number
 python scratch/live_check.py         # the gate that counts, ~2-3 min after push
-# THEN the human minute: search "<town> happy hour", open the top hits, and ask
-# whether each has a card. A town is not "done" or "empty" until this is done.
+# THEN the human minute, now aimed: confirm each --candidates row (open its site, record the
+# URL that states the happy hour, set confirmed:true) and look at every NOT HELD name.
 ```
+
+🛑 **`extract_menu_images.py` took no `--lids` until 2026-09-02** — the recipe's bare `--match`
+selected nothing, and Valley Forge Pizza's two `happy_hours_page_*.png` sat in `crawl_hits.json`
+unread through a whole "correct" run. Every stage takes the same lids file now.
 
 ### The run of 2026-09-02, in full — read this before scoping the next one
 
@@ -823,6 +833,46 @@ only instrument that caught it was a human with a search box.
 > it is called correct** — open the top hits for "<town> happy hour" and ask
 > whether each has a card. That check is now a stage of every scoped run, and
 > the next piece of work is to make the machine do it.
+
+### ✅ Built the same day — `ingest/reach_llm.py`, `ingest/report_coverage.py`, `data/ground_truth/`
+
+Paul, later on 2026-09-02, after finding a fifth miss (Valley Forge Pizza, `/happy-hours/`,
+two PNGs): *"the problem is that you're hand reviewing these with fable level intelligence.
+we can't do that. we need this to scale, so that when we run through a town's websites, we
+get everything in one pass."* So the three model calls below exist now, and the scoped-run
+recipe above is the one pass.
+
+| call | what it sees | what it may return | checked in code |
+|---|---|---|---|
+| `links` | every same-domain anchor on the homepage + the sitemap, "TEXT -> URL", ≤120 lines, venue name + town | ≤3 happy-hour URLs, ≤3 location-page URLs | a URL not in the inventory is dropped (`pick()`); winners are depth-1 seeds in `crawl_sites` |
+| `verdict` | the visible text of a saved page the regex called `hh: false` | `states_happy_hour` + ≤8 verbatim lines | a line not literally on the page is dropped (`grounded()`, zero-width chars stripped); kept lines are filed as one ordinary hit, `by: reach_llm`, and `windows_from()` decides |
+| `town` | Google Places "happy hour in <town>, PA" for the zone's towns | names + addresses | matched to the base on house number + zip (a PLCB range `208-212` meets `212`), then name; matched rows are **candidates** in ground truth, unmatched in-zip rows are **NOT HELD** |
+
+**Phoenixville, first run through the pass:** 21 needy venues; links picked for 20 (Valley
+Forge's `/happy-hours` among them, unprompted); crawl kept 60 pages; verdict judged 29 pages
+of 13 venues and said *no happy hour* to all — correctly, those venues do not publish one;
+the picture pass read 8 images and produced Valley Forge (14 items, **Mon–Fri 4–6 off
+page_1**) and Molly Maguire's (4 items, Mon–Fri 5–7 off `Mollys-Happy-Hour-Website.jpg`).
+`report_coverage.py phoenixville` → **5 cards over 5 confirmed = 100%**, 8 candidates
+unconfirmed, 5 NOT HELD (Boardroom, Molly Maguire's second licence, Rec Room, Vintner's
+Table, Grid Iron — Google lists them, the PLCB base does not).
+
+Two wrong windows the run exposed, both fixed in `extract_deals.main`:
+- 🛑 **A clock longer than 4 h is opening hours.** Valley Forge's page says "Happy Hours /
+  Mon–Sun 11:00 AM – 10:00 PM"; the validators would have rejected the venue whole, and
+  the picture never got a hearing. Refused before the picture is consulted (18 corpus-wide,
+  no card lost — `card_diff` showed the two gains only).
+- 🛑 **A picture that names the happy hour beats text that does not.** Molly's only text with
+  a clock is "Late Night Menu Thursdays 10pm to 11pm"; for one build it shipped as the
+  happy hour with the picture's $5 wines under it.
+- 🛑 **Transcripts are per image now** (`images: {url: text}`); one-per-venue meant page_2
+  (food) overwrote page_1 (hours).
+
+**Left, named:** Sly Fox's **daily specials** (Wed $9 growlers, $12 cheesesteak+pint, Thu $12
+burger+pint, Sat $11 mystery pitcher, Sun $2 off Bloody Marys) are on its page and Paul wants
+them on the card. SPEC has `daily_special` / `food_combo`; `extract_deals` emits only
+`happy_hour`, and the day-specials refusal in the price pass is deliberate. That is a new deal
+type, end to end (grammar, validators, card), not a regex.
 
 ### 🎯 The goal for the next sessions, in Paul's words (2026-09-02)
 

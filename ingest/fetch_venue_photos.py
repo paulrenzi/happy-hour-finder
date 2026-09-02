@@ -117,7 +117,15 @@ def name_agrees(venue, place):
     """
     ours = _tokens(venue.get("name")) | _tokens(venue.get("plcb_name"))
     theirs = _tokens(place.get("displayName", {}).get("text"))
-    return not ours or not theirs or bool(ours & theirs)
+    if not ours or not theirs or ours & theirs:
+        return True
+    # "Sly Fox" is two three-letter words, so it has no token at all and the
+    # licensee name (Chester County Brewing Company) shares none with what
+    # Google calls the place, "Sly Fox Brewhouse & Eatery". The trade name
+    # sitting whole inside Google's name is the same evidence a shared word is.
+    mine = " ".join(re.split(r"[^a-z0-9]+", (venue.get("name") or "").lower())).strip()
+    got = " ".join(re.split(r"[^a-z0-9]+", (place.get("displayName", {}).get("text") or "").lower()))
+    return bool(mine) and len(mine) >= 5 and f" {mine} " in f" {got} "
 
 
 def photo_dest(vid):

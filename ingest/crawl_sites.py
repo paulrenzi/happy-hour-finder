@@ -46,6 +46,10 @@ OUT = os.path.join(REPO, "data", "crawl_hits.json")
 # nineteen dishes -- sat on a page we had held for weeks. See
 # ingest/read_pages_llm.py, which is the reader this cache exists for.
 PAGES = os.path.join(REPO, "data", "pages")
+# Written by ingest/reach_llm.py links: {lid: {"happy_hour": [url], "location": [url]}}.
+REACH = os.path.join(REPO, "data", "reach_links.json")
+# A --lids run keeps every page it reads, for the reach verdict.
+_keep_all = {"on": False}
 
 
 def frontier():
@@ -1988,8 +1992,13 @@ def crawl_one(session, venue, robots):
     # both are seeded: they are both this venue's site, and the second costs
     # one fetch out of a budget that was being spent on the chain's /locations/
     # index anyway.
+    # ...and the URLs the reach pass picked (ingest/reach_llm.py links): a
+    # model read the venue's whole link inventory and named the happy-hour
+    # page and this town's location page. They are depth-1 seeds, so the
+    # rebuild below keeps them ahead of anything guessed off the homepage.
     queue = [(u, 1) for u in
-             dict.fromkeys([venue["website"], *venue.get("also_urls", ())])]
+             dict.fromkeys([venue["website"], *venue.get("also_urls", ()),
+                            *venue.get("reach_urls", ())])]
     fetched = 0
     docs = 0
     while queue and (fetched < PAGE_CAP or docs < DOC_CAP):
@@ -2106,7 +2115,11 @@ def crawl_one(session, venue, robots):
                       "hh": says_hh})
         # Every page that turns out to be about a happy hour is kept in full.
         # The quotes below are what a regex could see; this is what was there.
-        if says_hh or page_is_hh(url):
+        # A scoped run keeps EVERY page it read: the reach verdict
+        # (reach_llm.py verdict) asks a model whether a page the regex called
+        # "no happy hour" states one anyway, and it cannot ask about a page
+        # that was thrown away. Sly Fox's /phoenixville never says "happy hour".
+        if says_hh or page_is_hh(url) or _keep_all["on"]:
             save_page(lid, url, lines[0] if lines else "", lines,
                       rendered=bool(rendered))
         for q in found:
@@ -2252,6 +2265,8 @@ def main():
     only = None
     if args.lids:
         only = {ln.strip() for ln in open(args.lids, encoding="utf-8") if ln.strip()}
+        _keep_all["on"] = True
+    reach = json.load(open(REACH, encoding="utf-8")) if os.path.exists(REACH) else {}
 
     import requests
 
@@ -2270,6 +2285,9 @@ def main():
     print(f"{len(todo)} venues to crawl (of {len(sites)} discovered)\n")
 
     for n, (lid, v) in enumerate(todo, 1):
+        picked = reach.get(lid) or {}
+        v = dict(v, reach_urls=[u for u in picked.get("happy_hour", []) + picked.get("location", [])
+                                if u != v["website"]])
         pages, hits, images = crawl_one(session, dict(v, lid=lid), robots)
         stats["venues crawled"] += 1
         stats["WITH A DEAL QUOTE" if hits else "nothing published"] += 1

@@ -6660,6 +6660,44 @@
    }
   ]
  },
+ "57342": {
+  "name": "MOLLY MAGUIRES RESTAURANT & PUB INC",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 2,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 3,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 4,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 5,
+      "start": "17:00",
+      "end": "19:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "106706": {
   "name": "Revival Pizza Pub",
   "deals": [
@@ -6847,6 +6885,44 @@
       "dow": 7,
       "start": "17:00",
       "end": "19:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "66224": {
+  "name": "Valley Forge Trattoria & Lounge",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
      }
     ],
     "source": {
