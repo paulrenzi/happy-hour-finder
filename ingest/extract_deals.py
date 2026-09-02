@@ -43,6 +43,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from validate_pa import (  # noqa: E402
     MAX_HOURS_PER_DAY,
+    state_of,
     minutes,
     MAX_HOURS_PER_WEEK,
     validate_deal,
@@ -1142,12 +1143,15 @@ def main():
                        "quote": lead["quote"],
                        "quotes": support},
         }
-        errs = validate_deal(deal)
+        # Whose law? The venue's, read off its own address -- PA's 4h cap
+        # would refuse a lawful five-hour Wilmington window.
+        law = state_of(v["address"])
+        errs = validate_deal(deal, law)
         if errs:
             # Windows pooled from several quotes can overrun the statutory cap
             # even when each quote alone is lawful; fall back to the lead quote.
             deal["windows"] = dedupe(cands[0][1])
-            errs = validate_deal(deal)
+            errs = validate_deal(deal, law)
         if errs:
             # Still unlawful: keep the days that are, drop the days that are
             # not. Then the lead quote has to be one that actually produced a
@@ -1168,7 +1172,7 @@ def main():
                     if q not in still:
                         still.append(q)
                 deal["source"]["quotes"] = still
-                errs = validate_deal(deal)
+                errs = validate_deal(deal, law)
                 if not errs:
                     stats["  kept after dropping an unlawful day"] += 1
         if errs:

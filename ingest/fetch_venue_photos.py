@@ -240,12 +240,21 @@ def shipped_with_a_photo():
     in fact drawing 125. Believing it would have billed 118 lookups for photos
     the site already has. The bundle is what the reader sees, so the bundle is
     what gets counted.
+
+    🛑 BOTH bundle families. zone-*.json is only the venues WITH a window;
+    the ones without live in venues-*.json and carry their photo there too.
+    Reading only the first said King of Prussia had 18 of 49 covered when the
+    shipped board draws 48 -- so --every-venue offered to re-buy 30 photos the
+    site already has, in one zone, and would have re-bought most of a 29-zone
+    sweep. The same miscount this function was written to prevent, one file
+    along.
     """
     out = set()
-    for path in glob.glob(os.path.join(REPO, "web", "data", "zone-*.json")):
-        for v in json.load(open(path, encoding="utf-8"))["venues"]:
-            if v.get("photo"):
-                out.add(str(v.get("lid") or v.get("id")))
+    for pattern in ("zone-*.json", "venues-*.json"):
+        for path in glob.glob(os.path.join(REPO, "web", "data", pattern)):
+            for v in json.load(open(path, encoding="utf-8"))["venues"]:
+                if v.get("photo"):
+                    out.add(str(v.get("lid") or v.get("id")))
     return out
 
 
@@ -416,6 +425,11 @@ def _save(manifest):
 
 
 def main():
+    # A venue name is not ASCII. Taquería Moroleón killed a 29-zone sweep
+    # 19 zones in, AFTER its photo was downloaded and the manifest saved:
+    # the only thing that failed was printing the success line, on a
+    # Windows console defaulting to cp1252.
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0, help="stop after N lookups")
     ap.add_argument("--force", action="store_true", help="refetch venues already in the manifest")

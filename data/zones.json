@@ -1,915 +1,969 @@
 {
-  "_comment": "Zone definitions for the King of Prussia seed market. A zone is a named walkable/drivable drinking district, not a radius (SPEC section 2). Membership is by PLCB municipality (keyed municipality+county, because e.g. Upper Providence Twp exists in BOTH Montgomery and Delaware county) or, inside Philadelphia, by ZIP.",
-  "origin": {
-    "name": "King of Prussia, PA",
-    "lat": 40.089,
-    "lng": -75.396
+ "_comment": "Zone definitions for the King of Prussia seed market. A zone is a named walkable/drivable drinking district, not a radius (SPEC section 2). Membership is by PLCB municipality (keyed municipality+county, because e.g. Upper Providence Twp exists in BOTH Montgomery and Delaware county) or, inside Philadelphia, by ZIP.",
+ "origin": {
+  "name": "King of Prussia, PA",
+  "lat": 40.089,
+  "lng": -75.396
+ },
+ "radius_miles": 20,
+ "counties_in_scope": [
+  "Philadelphia County",
+  "Montgomery County",
+  "Delaware County",
+  "Chester County",
+  "Bucks County"
+ ],
+ "zones": [
+  {
+   "id": "king_of_prussia",
+   "name": "King of Prussia",
+   "anchor": "Mall district, Henderson Rd, Gulph Mills",
+   "default_for_origin": true,
+   "municipalities": [
+    [
+     "Upper Merion Twp",
+     "Montgomery County"
+    ]
+   ]
   },
-  "radius_miles": 20,
-  "counties_in_scope": [
-    "Philadelphia County",
-    "Montgomery County",
-    "Delaware County",
-    "Chester County",
-    "Bucks County"
-  ],
-  "zones": [
-    {
-      "id": "king_of_prussia",
-      "name": "King of Prussia",
-      "anchor": "Mall district, Henderson Rd, Gulph Mills",
-      "default_for_origin": true,
-      "municipalities": [
-        [
-          "Upper Merion Twp",
-          "Montgomery County"
-        ]
-      ]
-    },
-    {
-      "id": "conshohocken",
-      "name": "Conshohocken",
-      "anchor": "Fayette St",
-      "municipalities": [
-        [
-          "Conshohocken",
-          "Montgomery County"
-        ],
-        [
-          "West Conshohocken",
-          "Montgomery County"
-        ]
-      ]
-    },
-    {
-      "id": "wayne_radnor",
-      "name": "Wayne / Radnor",
-      "anchor": "Lancaster Ave",
-      "municipalities": [
-        [
-          "Radnor Twp",
-          "Delaware County"
-        ],
-        [
-          "Tredyffrin Twp",
-          "Chester County"
-        ],
-        [
-          "Easttown Twp",
-          "Chester County"
-        ]
-      ]
-    },
-    {
-      "id": "ardmore_bryn_mawr",
-      "name": "Ardmore / Bryn Mawr",
-      "anchor": "Suburban Square, Lancaster Ave",
-      "municipalities": [
-        [
-          "Lower Merion Twp",
-          "Montgomery County"
-        ],
-        [
-          "Narberth",
-          "Montgomery County"
-        ]
-      ]
-    },
-    {
-      "id": "norristown_bridgeport",
-      "name": "Norristown / Bridgeport",
-      "anchor": "Main St, DeKalb St",
-      "municipalities": [
-        [
-          "Norristown",
-          "Montgomery County"
-        ],
-        [
-          "Bridgeport",
-          "Montgomery County"
-        ],
-        [
-          "East Norriton Twp",
-          "Montgomery County"
-        ],
-        [
-          "West Norriton Twp",
-          "Montgomery County"
-        ]
-      ]
-    },
-    {
-      "id": "phoenixville",
-      "name": "Phoenixville",
-      "anchor": "Bridge St",
-      "municipalities": [
-        [
-          "Phoenixville",
-          "Chester County"
-        ],
-        [
-          "Schuylkill Twp",
-          "Chester County"
-        ],
-        [
-          "East Pikeland Twp",
-          "Chester County"
-        ],
-        [
-          "East Vincent Twp",
-          "Chester County"
-        ],
-        [
-          "West Vincent Twp",
-          "Chester County"
-        ],
-        [
-          "Charlestown Twp",
-          "Chester County"
-        ],
-        [
-          "Spring City",
-          "Chester County"
-        ]
-      ]
-    },
-    {
-      "id": "west_chester",
-      "name": "West Chester",
-      "anchor": "Gay St",
-      "municipalities": [
-        [
-          "West Chester",
-          "Chester County"
-        ],
-        [
-          "West Goshen Twp",
-          "Chester County"
-        ],
-        [
-          "East Goshen Twp",
-          "Chester County"
-        ],
-        [
-          "East Bradford Twp",
-          "Chester County"
-        ],
-        [
-          "West Bradford Twp",
-          "Chester County"
-        ],
-        [
-          "Westtown Twp",
-          "Chester County"
-        ],
-        [
-          "Birmingham Twp",
-          "Chester County"
-        ],
-        [
-          "Thornbury Twp",
-          "Chester County"
-        ]
-      ]
-    },
-    {
-      "id": "media",
-      "name": "Media",
-      "anchor": "State St",
-      "municipalities": [
-        [
-          "Media",
-          "Delaware County"
-        ],
-        [
-          "Upper Providence Twp",
-          "Delaware County"
-        ],
-        [
-          "Nether Providence Twp",
-          "Delaware County"
-        ],
-        [
-          "Nether Providence Tp",
-          "Delaware County"
-        ],
-        [
-          "Swarthmore",
-          "Delaware County"
-        ],
-        [
-          "Middletown Twp",
-          "Delaware County"
-        ],
-        [
-          "Chester Heights",
-          "Delaware County"
-        ]
-      ]
-    },
-    {
-      "id": "manayunk",
-      "name": "Manayunk / Roxborough",
-      "anchor": "Main St",
-      "zips": [
-        "19127",
-        "19128"
-      ]
-    },
-    {
-      "id": "collegeville_trappe",
-      "name": "Collegeville / Trappe",
-      "anchor": "Ridge Pike",
-      "municipalities": [
-        [
-          "Collegeville",
-          "Montgomery County"
-        ],
-        [
-          "Trappe",
-          "Montgomery County"
-        ],
-        [
-          "Upper Providence Twp",
-          "Montgomery County"
-        ],
-        [
-          "Perkiomen Twp",
-          "Montgomery County"
-        ],
-        [
-          "Skippack Twp",
-          "Montgomery County"
-        ],
-        [
-          "Worcester Twp",
-          "Montgomery County"
-        ]
-      ]
-    },
-    {
-      "id": "blue_bell_plymouth_meeting",
-      "name": "Blue Bell / Plymouth Meeting",
-      "anchor": "Butler Pike",
-      "municipalities": [
-        [
-          "Whitpain Twp",
-          "Montgomery County"
-        ],
-        [
-          "Plymouth Twp",
-          "Montgomery County"
-        ],
-        [
-          "Whitemarsh Twp",
-          "Montgomery County"
-        ]
-      ]
-    },
-    {
-      "id": "center_city",
-      "name": "Philadelphia — Center City",
-      "anchor": "Center City / Old City / Rittenhouse / South St",
-      "opt_in": true,
-      "default_off": true,
-      "zips": [
-        "19102",
-        "19103",
-        "19106",
-        "19107",
-        "19123",
-        "19130",
-        "19146",
-        "19147",
-        "19101"
-      ]
-    },
-    {
-      "id": "audubon_eagleville",
-      "name": "Audubon / Eagleville",
-      "anchor": "Ridge Pike, Egypt Rd",
-      "municipalities": [
-        [
-          "Lower Providence Twp",
-          "Montgomery County"
-        ]
-      ]
-    },
-    {
-      "id": "malvern_great_valley",
-      "name": "Malvern / Great Valley",
-      "anchor": "King St, Rt 29",
-      "municipalities": [
-        [
-          "East Whiteland Twp",
-          "Chester County"
-        ],
-        [
-          "Malvern",
-          "Chester County"
-        ],
-        [
-          "Willistown Twp",
-          "Chester County"
-        ]
-      ]
-    },
-    {
-      "id": "exton_downingtown",
-      "name": "Exton / Downingtown",
-      "anchor": "Rt 30 corridor, Lancaster Ave",
-      "municipalities": [
-        [
-          "West Whiteland Twp",
-          "Chester County"
-        ],
-        [
-          "Uwchlan Twp",
-          "Chester County"
-        ],
-        [
-          "Upper Uwchlan Twp",
-          "Chester County"
-        ],
-        [
-          "Downingtown",
-          "Chester County"
-        ],
-        [
-          "East Caln Twp",
-          "Chester County"
-        ],
-        [
-          "Caln Twp",
-          "Chester County"
-        ],
-        [
-          "East Brandywine Twp",
-          "Chester County"
-        ]
-      ]
-    },
-    {
-      "id": "newtown_square_broomall",
-      "name": "Newtown Square / Broomall",
-      "anchor": "West Chester Pike",
-      "municipalities": [
-        [
-          "Newtown Twp",
-          "Delaware County"
-        ],
-        [
-          "Marple Twp",
-          "Delaware County"
-        ],
-        [
-          "Edgmont Twp",
-          "Delaware County"
-        ]
-      ]
-    },
-    {
-      "id": "havertown",
-      "name": "Havertown / Haverford",
-      "anchor": "Darby Rd, Brookline Blvd",
-      "municipalities": [
-        [
-          "Haverford Twp",
-          "Delaware County"
-        ]
-      ]
-    },
-    {
-      "id": "springfield_delco",
-      "name": "Springfield / Morton",
-      "anchor": "Baltimore Pike",
-      "municipalities": [
-        [
-          "Springfield Twp",
-          "Delaware County"
-        ],
-        [
-          "Morton",
-          "Delaware County"
-        ],
-        [
-          "Clifton Heights",
-          "Delaware County"
-        ],
-        [
-          "Aldan",
-          "Delaware County"
-        ]
-      ]
-    },
-    {
-      "id": "upper_darby_lansdowne",
-      "name": "Upper Darby / Lansdowne",
-      "anchor": "69th St, Lansdowne Ave",
-      "municipalities": [
-        [
-          "Upper Darby Twp",
-          "Delaware County"
-        ],
-        [
-          "Lansdowne",
-          "Delaware County"
-        ],
-        [
-          "East Lansdowne",
-          "Delaware County"
-        ],
-        [
-          "Yeadon",
-          "Delaware County"
-        ],
-        [
-          "Darby",
-          "Delaware County"
-        ],
-        [
-          "Darby Twp",
-          "Delaware County"
-        ],
-        [
-          "Collingdale",
-          "Delaware County"
-        ]
-      ]
-    },
-    {
-      "id": "ridley_tinicum",
-      "name": "Ridley / Tinicum",
-      "anchor": "MacDade Blvd, Rt 291",
-      "municipalities": [
-        [
-          "Ridley Twp",
-          "Delaware County"
-        ],
-        [
-          "Ridley Park",
-          "Delaware County"
-        ],
-        [
-          "Prospect Park",
-          "Delaware County"
-        ],
-        [
-          "Norwood",
-          "Delaware County"
-        ],
-        [
-          "Glenolden",
-          "Delaware County"
-        ],
-        [
-          "Folcroft",
-          "Delaware County"
-        ],
-        [
-          "Tinicum Twp",
-          "Delaware County"
-        ],
-        [
-          "Eddystone",
-          "Delaware County"
-        ]
-      ]
-    },
-    {
-      "id": "chester_chichester",
-      "name": "Chester / Aston",
-      "anchor": "Rt 291 riverfront, Concord Rd",
-      "municipalities": [
-        [
-          "Chester",
-          "Delaware County"
-        ],
-        [
-          "Chester Twp",
-          "Delaware County"
-        ],
-        [
-          "Aston Twp",
-          "Delaware County"
-        ],
-        [
-          "Brookhaven",
-          "Delaware County"
-        ],
-        [
-          "Upper Chichester Twp",
-          "Delaware County"
-        ],
-        [
-          "Lower Chichester Twp",
-          "Delaware County"
-        ],
-        [
-          "Marcus Hook",
-          "Delaware County"
-        ]
-      ]
-    },
-    {
-      "id": "glen_mills_chadds_ford",
-      "name": "Glen Mills / Chadds Ford",
-      "anchor": "Baltimore Pike, Rt 1",
-      "municipalities": [
-        [
-          "Concord Twp",
-          "Delaware County"
-        ],
-        [
-          "Chadds Ford Twp",
-          "Delaware County"
-        ],
-        [
-          "Thornbury Twp",
-          "Delaware County"
-        ],
-        [
-          "Kennett Twp",
-          "Chester County"
-        ],
-        [
-          "Pennsbury Twp",
-          "Chester County"
-        ]
-      ]
-    },
-    {
-      "id": "ambler_upper_dublin",
-      "name": "Ambler / Upper Dublin",
-      "anchor": "Butler Ave, Bethlehem Pike",
-      "municipalities": [
-        [
-          "Ambler",
-          "Montgomery County"
-        ],
-        [
-          "Upper Dublin Twp",
-          "Montgomery County"
-        ],
-        [
-          "Lower Gwynedd Twp",
-          "Montgomery County"
-        ],
-        [
-          "Springfield Twp",
-          "Montgomery County"
-        ]
-      ]
-    },
-    {
-      "id": "abington_jenkintown",
-      "name": "Abington / Jenkintown",
-      "anchor": "Old York Rd",
-      "municipalities": [
-        [
-          "Abington Twp",
-          "Montgomery County"
-        ],
-        [
-          "Jenkintown",
-          "Montgomery County"
-        ],
-        [
-          "Rockledge",
-          "Montgomery County"
-        ],
-        [
-          "Cheltenham Twp",
-          "Montgomery County"
-        ]
-      ]
-    },
-    {
-      "id": "willow_grove_horsham",
-      "name": "Willow Grove / Horsham",
-      "anchor": "Easton Rd, Rt 611",
-      "municipalities": [
-        [
-          "Horsham Twp",
-          "Montgomery County"
-        ],
-        [
-          "Upper Moreland Twp",
-          "Montgomery County"
-        ],
-        [
-          "Hatboro",
-          "Montgomery County"
-        ],
-        [
-          "Lower Moreland Twp",
-          "Montgomery County"
-        ]
-      ]
-    },
-    {
-      "id": "warminster_warrington",
-      "name": "Warminster / Warrington",
-      "anchor": "York Rd, Street Rd",
-      "municipalities": [
-        [
-          "Warminster Twp",
-          "Bucks County"
-        ],
-        [
-          "Warrington Twp",
-          "Bucks County"
-        ],
-        [
-          "Warwick Twp",
-          "Bucks County"
-        ],
-        [
-          "Northampton Twp",
-          "Bucks County"
-        ],
-        [
-          "L Southampton Twp",
-          "Bucks County"
-        ],
-        [
-          "Ivyland",
-          "Bucks County"
-        ]
-      ]
-    },
-    {
-      "id": "doylestown",
-      "name": "Doylestown",
-      "anchor": "State St, Main St",
-      "municipalities": [
-        [
-          "Doylestown",
-          "Bucks County"
-        ],
-        [
-          "Doylestown Twp",
-          "Bucks County"
-        ],
-        [
-          "New Britain",
-          "Bucks County"
-        ],
-        [
-          "New Britain Twp",
-          "Bucks County"
-        ],
-        [
-          "Plumstead Twp",
-          "Bucks County"
-        ],
-        [
-          "Chalfont",
-          "Bucks County"
-        ]
-      ]
-    },
-    {
-      "id": "lansdale_montgomeryville",
-      "name": "Lansdale / Montgomeryville",
-      "anchor": "Main St, Rt 309",
-      "municipalities": [
-        [
-          "Lansdale",
-          "Montgomery County"
-        ],
-        [
-          "Montgomery Twp",
-          "Montgomery County"
-        ],
-        [
-          "Upper Gwynedd Twp",
-          "Montgomery County"
-        ],
-        [
-          "North Wales",
-          "Montgomery County"
-        ],
-        [
-          "Towamencin Twp",
-          "Montgomery County"
-        ]
-      ]
-    },
-    {
-      "id": "souderton_harleysville",
-      "name": "Souderton / Harleysville",
-      "anchor": "Main St, Rt 113",
-      "municipalities": [
-        [
-          "Souderton",
-          "Montgomery County"
-        ],
-        [
-          "Telford",
-          "Montgomery County"
-        ],
-        [
-          "Hatfield",
-          "Montgomery County"
-        ],
-        [
-          "Hatfield Twp",
-          "Montgomery County"
-        ],
-        [
-          "Franconia Twp",
-          "Montgomery County"
-        ],
-        [
-          "Lower Salford Twp",
-          "Montgomery County"
-        ],
-        [
-          "Upper Salford Twp",
-          "Montgomery County"
-        ],
-        [
-          "Marlborough Twp",
-          "Montgomery County"
-        ],
-        [
-          "Green Lane",
-          "Montgomery County"
-        ],
-        [
-          "Hilltown Twp",
-          "Bucks County"
-        ],
-        [
-          "Sellersville",
-          "Bucks County"
-        ],
-        [
-          "West Rockhill Twp",
-          "Bucks County"
-        ]
-      ]
-    },
-    {
-      "id": "pottstown",
-      "name": "Pottstown",
-      "anchor": "High St",
-      "municipalities": [
-        [
-          "Pottstown",
-          "Montgomery County"
-        ],
-        [
-          "Lower Pottsgrove Twp",
-          "Montgomery County"
-        ],
-        [
-          "Upper Pottsgrove Twp",
-          "Montgomery County"
-        ],
-        [
-          "West Pottsgrove Twp",
-          "Montgomery County"
-        ],
-        [
-          "New Hanover Twp",
-          "Montgomery County"
-        ],
-        [
-          "Douglass Twp",
-          "Montgomery County"
-        ],
-        [
-          "North Coventry Twp",
-          "Chester County"
-        ],
-        [
-          "East Coventry Twp",
-          "Chester County"
-        ],
-        [
-          "South Coventry Twp",
-          "Chester County"
-        ]
-      ]
-    },
-    {
-      "id": "limerick_royersford",
-      "name": "Limerick / Royersford",
-      "anchor": "Ridge Pike, Rt 422",
-      "municipalities": [
-        [
-          "Limerick Twp",
-          "Montgomery County"
-        ],
-        [
-          "Royersford",
-          "Montgomery County"
-        ],
-        [
-          "Lower Frederick Twp",
-          "Montgomery County"
-        ]
-      ]
-    },
-    {
-      "id": "fishtown_kensington",
-      "name": "Philadelphia — Fishtown / Kensington",
-      "anchor": "Frankford Ave, Girard Ave",
-      "opt_in": true,
-      "default_off": true,
-      "zips": [
-        "19122",
-        "19125",
-        "19134",
-        "19137"
-      ]
-    },
-    {
-      "id": "south_philly",
-      "name": "Philadelphia — South Philly",
-      "anchor": "East Passyunk, Broad St",
-      "opt_in": true,
-      "default_off": true,
-      "zips": [
-        "19112",
-        "19145",
-        "19148"
-      ]
-    },
-    {
-      "id": "university_city",
-      "name": "Philadelphia — University City / West",
-      "anchor": "Baltimore Ave, Chestnut St",
-      "opt_in": true,
-      "default_off": true,
-      "zips": [
-        "19104",
-        "19139",
-        "19143"
-      ]
-    },
-    {
-      "id": "west_philly",
-      "name": "Philadelphia — Overbrook / Southwest",
-      "anchor": "City Ave, Woodland Ave",
-      "opt_in": true,
-      "default_off": true,
-      "zips": [
-        "19131",
-        "19142",
-        "19151",
-        "19153"
-      ]
-    },
-    {
-      "id": "northwest_philly",
-      "name": "Philadelphia — Chestnut Hill / Mt Airy / Germantown",
-      "anchor": "Germantown Ave",
-      "opt_in": true,
-      "default_off": true,
-      "zips": [
-        "19118",
-        "19119",
-        "19126",
-        "19129",
-        "19138",
-        "19144",
-        "19150"
-      ]
-    },
-    {
-      "id": "north_philly",
-      "name": "Philadelphia — North Philly",
-      "anchor": "Broad St, Frankford Ave",
-      "opt_in": true,
-      "default_off": true,
-      "zips": [
-        "19120",
-        "19121",
-        "19124",
-        "19132",
-        "19133",
-        "19140",
-        "19141"
-      ]
-    },
-    {
-      "id": "northeast_philly",
-      "name": "Philadelphia — Northeast",
-      "anchor": "Roosevelt Blvd, Frankford Ave",
-      "opt_in": true,
-      "default_off": true,
-      "zips": [
-        "19111",
-        "19115",
-        "19116",
-        "19135",
-        "19136",
-        "19149",
-        "19152"
-      ]
-    }
-  ]
+  {
+   "id": "conshohocken",
+   "name": "Conshohocken",
+   "anchor": "Fayette St",
+   "municipalities": [
+    [
+     "Conshohocken",
+     "Montgomery County"
+    ],
+    [
+     "West Conshohocken",
+     "Montgomery County"
+    ]
+   ]
+  },
+  {
+   "id": "wayne_radnor",
+   "name": "Wayne / Radnor",
+   "anchor": "Lancaster Ave",
+   "municipalities": [
+    [
+     "Radnor Twp",
+     "Delaware County"
+    ],
+    [
+     "Tredyffrin Twp",
+     "Chester County"
+    ],
+    [
+     "Easttown Twp",
+     "Chester County"
+    ]
+   ]
+  },
+  {
+   "id": "ardmore_bryn_mawr",
+   "name": "Ardmore / Bryn Mawr",
+   "anchor": "Suburban Square, Lancaster Ave",
+   "municipalities": [
+    [
+     "Lower Merion Twp",
+     "Montgomery County"
+    ],
+    [
+     "Narberth",
+     "Montgomery County"
+    ]
+   ]
+  },
+  {
+   "id": "norristown_bridgeport",
+   "name": "Norristown / Bridgeport",
+   "anchor": "Main St, DeKalb St",
+   "municipalities": [
+    [
+     "Norristown",
+     "Montgomery County"
+    ],
+    [
+     "Bridgeport",
+     "Montgomery County"
+    ],
+    [
+     "East Norriton Twp",
+     "Montgomery County"
+    ],
+    [
+     "West Norriton Twp",
+     "Montgomery County"
+    ]
+   ]
+  },
+  {
+   "id": "phoenixville",
+   "name": "Phoenixville",
+   "anchor": "Bridge St",
+   "municipalities": [
+    [
+     "Phoenixville",
+     "Chester County"
+    ],
+    [
+     "Schuylkill Twp",
+     "Chester County"
+    ],
+    [
+     "East Pikeland Twp",
+     "Chester County"
+    ],
+    [
+     "East Vincent Twp",
+     "Chester County"
+    ],
+    [
+     "West Vincent Twp",
+     "Chester County"
+    ],
+    [
+     "Charlestown Twp",
+     "Chester County"
+    ],
+    [
+     "Spring City",
+     "Chester County"
+    ]
+   ]
+  },
+  {
+   "id": "west_chester",
+   "name": "West Chester",
+   "anchor": "Gay St",
+   "municipalities": [
+    [
+     "West Chester",
+     "Chester County"
+    ],
+    [
+     "West Goshen Twp",
+     "Chester County"
+    ],
+    [
+     "East Goshen Twp",
+     "Chester County"
+    ],
+    [
+     "East Bradford Twp",
+     "Chester County"
+    ],
+    [
+     "West Bradford Twp",
+     "Chester County"
+    ],
+    [
+     "Westtown Twp",
+     "Chester County"
+    ],
+    [
+     "Birmingham Twp",
+     "Chester County"
+    ],
+    [
+     "Thornbury Twp",
+     "Chester County"
+    ]
+   ]
+  },
+  {
+   "id": "media",
+   "name": "Media",
+   "anchor": "State St",
+   "municipalities": [
+    [
+     "Media",
+     "Delaware County"
+    ],
+    [
+     "Upper Providence Twp",
+     "Delaware County"
+    ],
+    [
+     "Nether Providence Twp",
+     "Delaware County"
+    ],
+    [
+     "Nether Providence Tp",
+     "Delaware County"
+    ],
+    [
+     "Swarthmore",
+     "Delaware County"
+    ],
+    [
+     "Middletown Twp",
+     "Delaware County"
+    ],
+    [
+     "Chester Heights",
+     "Delaware County"
+    ]
+   ]
+  },
+  {
+   "id": "manayunk",
+   "name": "Manayunk / Roxborough",
+   "anchor": "Main St",
+   "zips": [
+    "19127",
+    "19128"
+   ]
+  },
+  {
+   "id": "collegeville_trappe",
+   "name": "Collegeville / Trappe",
+   "anchor": "Ridge Pike",
+   "municipalities": [
+    [
+     "Collegeville",
+     "Montgomery County"
+    ],
+    [
+     "Trappe",
+     "Montgomery County"
+    ],
+    [
+     "Upper Providence Twp",
+     "Montgomery County"
+    ],
+    [
+     "Perkiomen Twp",
+     "Montgomery County"
+    ],
+    [
+     "Skippack Twp",
+     "Montgomery County"
+    ],
+    [
+     "Worcester Twp",
+     "Montgomery County"
+    ]
+   ]
+  },
+  {
+   "id": "blue_bell_plymouth_meeting",
+   "name": "Blue Bell / Plymouth Meeting",
+   "anchor": "Butler Pike",
+   "municipalities": [
+    [
+     "Whitpain Twp",
+     "Montgomery County"
+    ],
+    [
+     "Plymouth Twp",
+     "Montgomery County"
+    ],
+    [
+     "Whitemarsh Twp",
+     "Montgomery County"
+    ]
+   ]
+  },
+  {
+   "id": "center_city",
+   "name": "Philadelphia — Center City",
+   "anchor": "Center City / Old City / Rittenhouse / South St",
+   "opt_in": true,
+   "default_off": true,
+   "zips": [
+    "19102",
+    "19103",
+    "19106",
+    "19107",
+    "19123",
+    "19130",
+    "19146",
+    "19147",
+    "19101"
+   ]
+  },
+  {
+   "id": "audubon_eagleville",
+   "name": "Audubon / Eagleville",
+   "anchor": "Ridge Pike, Egypt Rd",
+   "municipalities": [
+    [
+     "Lower Providence Twp",
+     "Montgomery County"
+    ]
+   ]
+  },
+  {
+   "id": "malvern_great_valley",
+   "name": "Malvern / Great Valley",
+   "anchor": "King St, Rt 29",
+   "municipalities": [
+    [
+     "East Whiteland Twp",
+     "Chester County"
+    ],
+    [
+     "Malvern",
+     "Chester County"
+    ],
+    [
+     "Willistown Twp",
+     "Chester County"
+    ]
+   ]
+  },
+  {
+   "id": "exton_downingtown",
+   "name": "Exton / Downingtown",
+   "anchor": "Rt 30 corridor, Lancaster Ave",
+   "municipalities": [
+    [
+     "West Whiteland Twp",
+     "Chester County"
+    ],
+    [
+     "Uwchlan Twp",
+     "Chester County"
+    ],
+    [
+     "Upper Uwchlan Twp",
+     "Chester County"
+    ],
+    [
+     "Downingtown",
+     "Chester County"
+    ],
+    [
+     "East Caln Twp",
+     "Chester County"
+    ],
+    [
+     "Caln Twp",
+     "Chester County"
+    ],
+    [
+     "East Brandywine Twp",
+     "Chester County"
+    ]
+   ]
+  },
+  {
+   "id": "newtown_square_broomall",
+   "name": "Newtown Square / Broomall",
+   "anchor": "West Chester Pike",
+   "municipalities": [
+    [
+     "Newtown Twp",
+     "Delaware County"
+    ],
+    [
+     "Marple Twp",
+     "Delaware County"
+    ],
+    [
+     "Edgmont Twp",
+     "Delaware County"
+    ]
+   ]
+  },
+  {
+   "id": "havertown",
+   "name": "Havertown / Haverford",
+   "anchor": "Darby Rd, Brookline Blvd",
+   "municipalities": [
+    [
+     "Haverford Twp",
+     "Delaware County"
+    ]
+   ]
+  },
+  {
+   "id": "springfield_delco",
+   "name": "Springfield / Morton",
+   "anchor": "Baltimore Pike",
+   "municipalities": [
+    [
+     "Springfield Twp",
+     "Delaware County"
+    ],
+    [
+     "Morton",
+     "Delaware County"
+    ],
+    [
+     "Clifton Heights",
+     "Delaware County"
+    ],
+    [
+     "Aldan",
+     "Delaware County"
+    ]
+   ]
+  },
+  {
+   "id": "upper_darby_lansdowne",
+   "name": "Upper Darby / Lansdowne",
+   "anchor": "69th St, Lansdowne Ave",
+   "municipalities": [
+    [
+     "Upper Darby Twp",
+     "Delaware County"
+    ],
+    [
+     "Lansdowne",
+     "Delaware County"
+    ],
+    [
+     "East Lansdowne",
+     "Delaware County"
+    ],
+    [
+     "Yeadon",
+     "Delaware County"
+    ],
+    [
+     "Darby",
+     "Delaware County"
+    ],
+    [
+     "Darby Twp",
+     "Delaware County"
+    ],
+    [
+     "Collingdale",
+     "Delaware County"
+    ]
+   ]
+  },
+  {
+   "id": "ridley_tinicum",
+   "name": "Ridley / Tinicum",
+   "anchor": "MacDade Blvd, Rt 291",
+   "municipalities": [
+    [
+     "Ridley Twp",
+     "Delaware County"
+    ],
+    [
+     "Ridley Park",
+     "Delaware County"
+    ],
+    [
+     "Prospect Park",
+     "Delaware County"
+    ],
+    [
+     "Norwood",
+     "Delaware County"
+    ],
+    [
+     "Glenolden",
+     "Delaware County"
+    ],
+    [
+     "Folcroft",
+     "Delaware County"
+    ],
+    [
+     "Tinicum Twp",
+     "Delaware County"
+    ],
+    [
+     "Eddystone",
+     "Delaware County"
+    ]
+   ]
+  },
+  {
+   "id": "chester_chichester",
+   "name": "Chester / Aston",
+   "anchor": "Rt 291 riverfront, Concord Rd",
+   "municipalities": [
+    [
+     "Chester",
+     "Delaware County"
+    ],
+    [
+     "Chester Twp",
+     "Delaware County"
+    ],
+    [
+     "Aston Twp",
+     "Delaware County"
+    ],
+    [
+     "Brookhaven",
+     "Delaware County"
+    ],
+    [
+     "Upper Chichester Twp",
+     "Delaware County"
+    ],
+    [
+     "Lower Chichester Twp",
+     "Delaware County"
+    ],
+    [
+     "Marcus Hook",
+     "Delaware County"
+    ]
+   ]
+  },
+  {
+   "id": "glen_mills_chadds_ford",
+   "name": "Glen Mills / Chadds Ford",
+   "anchor": "Baltimore Pike, Rt 1",
+   "municipalities": [
+    [
+     "Concord Twp",
+     "Delaware County"
+    ],
+    [
+     "Chadds Ford Twp",
+     "Delaware County"
+    ],
+    [
+     "Thornbury Twp",
+     "Delaware County"
+    ],
+    [
+     "Pennsbury Twp",
+     "Chester County"
+    ]
+   ]
+  },
+  {
+   "id": "ambler_upper_dublin",
+   "name": "Ambler / Upper Dublin",
+   "anchor": "Butler Ave, Bethlehem Pike",
+   "municipalities": [
+    [
+     "Ambler",
+     "Montgomery County"
+    ],
+    [
+     "Upper Dublin Twp",
+     "Montgomery County"
+    ],
+    [
+     "Lower Gwynedd Twp",
+     "Montgomery County"
+    ],
+    [
+     "Springfield Twp",
+     "Montgomery County"
+    ]
+   ]
+  },
+  {
+   "id": "abington_jenkintown",
+   "name": "Abington / Jenkintown",
+   "anchor": "Old York Rd",
+   "municipalities": [
+    [
+     "Abington Twp",
+     "Montgomery County"
+    ],
+    [
+     "Jenkintown",
+     "Montgomery County"
+    ],
+    [
+     "Rockledge",
+     "Montgomery County"
+    ],
+    [
+     "Cheltenham Twp",
+     "Montgomery County"
+    ]
+   ]
+  },
+  {
+   "id": "willow_grove_horsham",
+   "name": "Willow Grove / Horsham",
+   "anchor": "Easton Rd, Rt 611",
+   "municipalities": [
+    [
+     "Horsham Twp",
+     "Montgomery County"
+    ],
+    [
+     "Upper Moreland Twp",
+     "Montgomery County"
+    ],
+    [
+     "Hatboro",
+     "Montgomery County"
+    ],
+    [
+     "Lower Moreland Twp",
+     "Montgomery County"
+    ]
+   ]
+  },
+  {
+   "id": "warminster_warrington",
+   "name": "Warminster / Warrington",
+   "anchor": "York Rd, Street Rd",
+   "municipalities": [
+    [
+     "Warminster Twp",
+     "Bucks County"
+    ],
+    [
+     "Warrington Twp",
+     "Bucks County"
+    ],
+    [
+     "Warwick Twp",
+     "Bucks County"
+    ],
+    [
+     "Northampton Twp",
+     "Bucks County"
+    ],
+    [
+     "L Southampton Twp",
+     "Bucks County"
+    ],
+    [
+     "Ivyland",
+     "Bucks County"
+    ]
+   ]
+  },
+  {
+   "id": "doylestown",
+   "name": "Doylestown",
+   "anchor": "State St, Main St",
+   "municipalities": [
+    [
+     "Doylestown",
+     "Bucks County"
+    ],
+    [
+     "Doylestown Twp",
+     "Bucks County"
+    ],
+    [
+     "New Britain",
+     "Bucks County"
+    ],
+    [
+     "New Britain Twp",
+     "Bucks County"
+    ],
+    [
+     "Plumstead Twp",
+     "Bucks County"
+    ],
+    [
+     "Chalfont",
+     "Bucks County"
+    ]
+   ]
+  },
+  {
+   "id": "lansdale_montgomeryville",
+   "name": "Lansdale / Montgomeryville",
+   "anchor": "Main St, Rt 309",
+   "municipalities": [
+    [
+     "Lansdale",
+     "Montgomery County"
+    ],
+    [
+     "Montgomery Twp",
+     "Montgomery County"
+    ],
+    [
+     "Upper Gwynedd Twp",
+     "Montgomery County"
+    ],
+    [
+     "North Wales",
+     "Montgomery County"
+    ],
+    [
+     "Towamencin Twp",
+     "Montgomery County"
+    ]
+   ]
+  },
+  {
+   "id": "souderton_harleysville",
+   "name": "Souderton / Harleysville",
+   "anchor": "Main St, Rt 113",
+   "municipalities": [
+    [
+     "Souderton",
+     "Montgomery County"
+    ],
+    [
+     "Telford",
+     "Montgomery County"
+    ],
+    [
+     "Hatfield",
+     "Montgomery County"
+    ],
+    [
+     "Hatfield Twp",
+     "Montgomery County"
+    ],
+    [
+     "Franconia Twp",
+     "Montgomery County"
+    ],
+    [
+     "Lower Salford Twp",
+     "Montgomery County"
+    ],
+    [
+     "Upper Salford Twp",
+     "Montgomery County"
+    ],
+    [
+     "Marlborough Twp",
+     "Montgomery County"
+    ],
+    [
+     "Green Lane",
+     "Montgomery County"
+    ],
+    [
+     "Hilltown Twp",
+     "Bucks County"
+    ],
+    [
+     "Sellersville",
+     "Bucks County"
+    ],
+    [
+     "West Rockhill Twp",
+     "Bucks County"
+    ]
+   ]
+  },
+  {
+   "id": "pottstown",
+   "name": "Pottstown",
+   "anchor": "High St",
+   "municipalities": [
+    [
+     "Pottstown",
+     "Montgomery County"
+    ],
+    [
+     "Lower Pottsgrove Twp",
+     "Montgomery County"
+    ],
+    [
+     "Upper Pottsgrove Twp",
+     "Montgomery County"
+    ],
+    [
+     "West Pottsgrove Twp",
+     "Montgomery County"
+    ],
+    [
+     "New Hanover Twp",
+     "Montgomery County"
+    ],
+    [
+     "Douglass Twp",
+     "Montgomery County"
+    ],
+    [
+     "North Coventry Twp",
+     "Chester County"
+    ],
+    [
+     "East Coventry Twp",
+     "Chester County"
+    ],
+    [
+     "South Coventry Twp",
+     "Chester County"
+    ]
+   ]
+  },
+  {
+   "id": "limerick_royersford",
+   "name": "Limerick / Royersford",
+   "anchor": "Ridge Pike, Rt 422",
+   "municipalities": [
+    [
+     "Limerick Twp",
+     "Montgomery County"
+    ],
+    [
+     "Royersford",
+     "Montgomery County"
+    ],
+    [
+     "Lower Frederick Twp",
+     "Montgomery County"
+    ]
+   ]
+  },
+  {
+   "id": "fishtown_kensington",
+   "name": "Philadelphia — Fishtown / Kensington",
+   "anchor": "Frankford Ave, Girard Ave",
+   "opt_in": true,
+   "default_off": true,
+   "zips": [
+    "19122",
+    "19125",
+    "19134",
+    "19137"
+   ]
+  },
+  {
+   "id": "south_philly",
+   "name": "Philadelphia — South Philly",
+   "anchor": "East Passyunk, Broad St",
+   "opt_in": true,
+   "default_off": true,
+   "zips": [
+    "19112",
+    "19145",
+    "19148"
+   ]
+  },
+  {
+   "id": "university_city",
+   "name": "Philadelphia — University City / West",
+   "anchor": "Baltimore Ave, Chestnut St",
+   "opt_in": true,
+   "default_off": true,
+   "zips": [
+    "19104",
+    "19139",
+    "19143"
+   ]
+  },
+  {
+   "id": "west_philly",
+   "name": "Philadelphia — Overbrook / Southwest",
+   "anchor": "City Ave, Woodland Ave",
+   "opt_in": true,
+   "default_off": true,
+   "zips": [
+    "19131",
+    "19142",
+    "19151",
+    "19153"
+   ]
+  },
+  {
+   "id": "northwest_philly",
+   "name": "Philadelphia — Chestnut Hill / Mt Airy / Germantown",
+   "anchor": "Germantown Ave",
+   "opt_in": true,
+   "default_off": true,
+   "zips": [
+    "19118",
+    "19119",
+    "19126",
+    "19129",
+    "19138",
+    "19144",
+    "19150"
+   ]
+  },
+  {
+   "id": "north_philly",
+   "name": "Philadelphia — North Philly",
+   "anchor": "Broad St, Frankford Ave",
+   "opt_in": true,
+   "default_off": true,
+   "zips": [
+    "19120",
+    "19121",
+    "19124",
+    "19132",
+    "19133",
+    "19140",
+    "19141"
+   ]
+  },
+  {
+   "id": "northeast_philly",
+   "name": "Philadelphia — Northeast",
+   "anchor": "Roosevelt Blvd, Frankford Ave",
+   "opt_in": true,
+   "default_off": true,
+   "zips": [
+    "19111",
+    "19115",
+    "19116",
+    "19135",
+    "19136",
+    "19149",
+    "19152"
+   ]
+  },
+  {
+   "id": "kennett_square",
+   "name": "Kennett Square",
+   "anchor": "State St, Broad St",
+   "municipalities": [
+    [
+     "Kennett Square",
+     "Chester County"
+    ],
+    [
+     "Kennett Twp",
+     "Chester County"
+    ],
+    [
+     "East Marlborough Twp",
+     "Chester County"
+    ],
+    [
+     "New Garden Twp",
+     "Chester County"
+    ]
+   ]
+  },
+  {
+   "id": "wilmington",
+   "name": "Wilmington",
+   "anchor": "Trolley Square, Riverfront, Market St",
+   "state": "DE",
+   "municipalities": []
+  },
+  {
+   "id": "newark_de",
+   "name": "Newark, DE",
+   "anchor": "Main St",
+   "state": "DE",
+   "municipalities": []
+  },
+  {
+   "id": "hockessin_greenville",
+   "name": "Hockessin & Greenville",
+   "anchor": "Lancaster Pike, Kennett Pike",
+   "state": "DE",
+   "municipalities": []
+  },
+  {
+   "id": "new_castle_de",
+   "name": "New Castle & Claymont",
+   "anchor": "Delaware St, Philadelphia Pike",
+   "state": "DE",
+   "municipalities": []
+  },
+  {
+   "id": "middletown_de",
+   "name": "Middletown",
+   "anchor": "Main St",
+   "state": "DE",
+   "municipalities": []
+  }
+ ]
 }

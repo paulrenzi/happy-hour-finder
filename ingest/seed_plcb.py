@@ -33,6 +33,9 @@ PLCB_CSV = os.path.join(RAW, "plcb_licenses_2026-07-31.csv")
 ZIP_TXT = os.path.join(RAW, "geonames_us_zips.txt")
 ZONES_JSON = os.path.join(REPO, "data", "zones.json")
 OUT_CSV = os.path.join(REPO, "data", "venues.csv")
+# Written by ingest/seed_places_de.py and TRACKED in git: unlike venues.csv,
+# it costs money to rebuild.
+DE_CSV = os.path.join(REPO, "data", "venues_de.csv")
 
 PLCB_EXPORT_URL = "https://plcbplus.pa.gov/pub/LicenseExport.aspx"
 GEONAMES_URL = "http://download.geonames.org/export/zip/US.zip"
@@ -178,16 +181,23 @@ def load_licensees():
             if not c:
                 dropped["zip not in gazetteer"] += 1
                 continue
-            dist = miles(origin, c)
-            if dist > radius:
-                dropped["outside radius"] += 1
-                continue
             # Municipality wins over ZIP: ZIPs only name zones inside
             # Philadelphia, and a Philadelphia ZIP can spill across the city
             # line (19153 covers both Eastwick and Tinicum Twp).
             zone = by_mun.get(
                 (row["Municipality"].lower(), row["County"].lower())
             ) or by_zip.get(zp)
+            # 🔑 A NAMED ZONE IS THE SCOPE; the radius only bounds what is NOT
+            # named. Kennett Square sits 24 miles from the King of Prussia
+            # origin, so adding the zone seeded ONE of its 97 active licences
+            # and the other 96 were dropped as "outside radius" -- a town added
+            # on purpose, silently emptied by a number set for a different
+            # question. Adding a zone is the decision; the radius is not
+            # entitled to overrule it.
+            dist = miles(origin, c)
+            if dist > radius and not zone:
+                dropped["outside radius"] += 1
+                continue
             kept.append(
                 {
                     "lid": row["LID"],
@@ -271,11 +281,27 @@ def main():
     print_counts(zones, venues, dropped)
 
     if not args.counts:
+        fields = list(venues[0].keys())
+        # Delaware rides along, in the same file and the same schema, because
+        # everything downstream of here reads one venues.csv. It is NOT the same
+        # kind of row and the difference is load-bearing: PA comes from the
+        # state's own licence export and is a coverage DENOMINATOR, DE comes
+        # from Google and is only a working list. See ingest/seed_places_de.py.
+        # Its own columns (place_id, website, lat/lng) are dropped here so the
+        # schema stays one thing; they live on in data/venues_de.csv.
+        extra = []
+        if os.path.exists(DE_CSV):
+            with open(DE_CSV, encoding="utf-8", newline="") as fh:
+                extra = [{k: r.get(k, "") for k in fields}
+                         for r in csv.DictReader(fh)]
         with open(OUT_CSV, "w", newline="", encoding="utf-8") as fh:
-            w = csv.DictWriter(fh, fieldnames=list(venues[0].keys()))
+            w = csv.DictWriter(fh, fieldnames=fields)
             w.writeheader()
             w.writerows(venues)
-        print(f"\nwrote {OUT_CSV} ({len(venues)} venues)")
+            w.writerows(extra)
+        print(f"\nwrote {OUT_CSV} ({len(venues)} PA venues"
+              + (f" + {len(extra)} DE venues from {os.path.relpath(DE_CSV, REPO)}"
+                 if extra else "") + ")")
 
 
 if __name__ == "__main__":

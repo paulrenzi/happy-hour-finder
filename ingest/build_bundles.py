@@ -560,7 +560,7 @@ def main():
                                     if not any(x["label"].lower() == i["label"].lower()
                                                for x in own)]
                 deal = dict(deal, items=merged, items_source="llm_extract")
-            errs = validate_deal(deal)
+            errs = validate_deal(deal, state)
             if errs:
                 rejected += 1
                 print(f"  rejected: {venue['name']} -- {errs[0]}")

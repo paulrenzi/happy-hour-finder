@@ -34,9 +34,25 @@ MAX_HOURS_PER_WEEK = 24.0
 # Failing closed is the only safe direction here: an unpublished lawful deal
 # costs us a card, a published unlawful one costs the venue.
 #
-# 🛑 DELAWARE IS DELIBERATELY ABSENT. Filling it in is a research task with a
-# named source and Paul's sign-off, not a guess -- do not copy PA's numbers
-# across and do not infer them. Until DE is here, no DE venue can publish.
+# 🔑 DELAWARE, researched and signed off 2026-09-02 (Paul). It was deliberately
+# absent until then, and the note it replaces said filling it in needed a named
+# authority and a sign-off rather than a guess. Both are recorded below.
+#
+# The finding that matters, and the reason PA's numbers could not have been
+# copied across: DELAWARE SETS NO HOUR CAP AND NO CUTOFF. There is no 4h/day,
+# no 24h/week, no midnight rule. Its rule is about the SHAPE of the offer, not
+# its length -- 4 Del. Admin. Code § 908 Rule 3.0 "Prohibited Practices"
+# (eff. 02/01/16) forbids two-or-more-drinks-for-the-price-of-one (3.1.1.5),
+# unlimited consumption for a set price (3.1.1.7), giving alcohol away
+# (3.1.1.1) and selling below cost (3.1.1.3). Food-and-drink combinations are
+# not restricted.
+#
+# So a lawful Wilmington happy hour can run five hours, and PA's cap would have
+# suppressed it; and PA's `banned` list happens to cover DE's prohibitions
+# almost exactly, which is precisely the coincidence that would have made
+# copying look like it worked.
+#
+# 🛑 The rule for the NEXT state is unchanged: no entry means no publishing.
 RULES = {
     "PA": {
         "max_hours_per_day": MAX_HOURS_PER_DAY,
@@ -44,6 +60,17 @@ RULES = {
         "max_food_combos_per_day": 2,
         "banned": None,          # filled in below, once BANNED exists
         "authority": "PA Acts 57 & 86 of 2024",
+    },
+    "DE": {
+        # None is not "unknown" here -- it is the researched finding that the
+        # statute sets no limit. An unknown state has no entry at all.
+        "max_hours_per_day": None,
+        "max_hours_per_week": None,
+        "max_food_combos_per_day": None,
+        "banned": None,          # filled in below, once DE_BANNED exists
+        "authority": "4 Del. Admin. Code § 908 Rule 3.0 (Prohibited Practices), "
+                     "eff. 02/01/16; Delaware OABCC",
+        "signed_off_by": "Paul, 2026-09-02",
     },
 }
 
@@ -76,6 +103,19 @@ BANNED = [
 
 RULES["PA"]["banned"] = BANNED
 
+# Delaware's own list, from Rule 3.1.1. Written out rather than aliased to
+# BANNED: they agree today by coincidence, not by derivation, and aliasing them
+# would make one state's amendment silently amend the other's.
+DE_BANNED = [
+    r"all[- ]you[- ]can[- ]drink",   # 3.1.1.7 unlimited consumption, set price
+    r"bottomless",                   # 3.1.1.7
+    r"unlimited",                    # 3.1.1.7
+    r"free drink",                   # 3.1.1.1 giving alcoholic beverages
+    r"two for one|2 for 1|2-for-1",  # 3.1.1.5 two or more for the price of one
+    r"open bar",                     # 3.1.1.7, per the OABCC FAQ
+]
+RULES["DE"]["banned"] = DE_BANNED
+
 TYPES = {"happy_hour", "daily_special", "food_combo"}
 CATEGORIES = {"draft", "bottle_can", "wine", "well", "call", "cocktail", "shot", "food"}
 CONFIDENCE = {"verified", "likely", "unconfirmed", "disputed"}
@@ -100,9 +140,29 @@ def window_hours(w):
     return (minutes(w["end"]) - minutes(w["start"])) / 60.0
 
 
-def validate_deal(deal):
-    """Return a list of failure strings. Empty list means publishable."""
+def validate_deal(deal, state="PA"):
+    """Return a list of failure strings. Empty list means publishable.
+
+    🛑 The hour caps and the banned list come from RULES[state], not from this
+    module's PA constants. Those constants were read directly here for as long
+    as every venue was in Pennsylvania, which meant the RULES table existed and
+    was consulted by exactly one caller -- so adding Delaware to it would have
+    changed nothing, and a lawful five-hour Wilmington happy hour would still
+    have been refused for breaking a Pennsylvania cap.
+
+    A state with no entry fails here as well as at the door in
+    build_bundles.py. Two closed doors on the same question is the intent: this
+    one is reached by the extractors, and an unpublishable deal is better
+    refused where its quote is still attached.
+    """
     errs = []
+    rules = rules_for(state)
+    if rules is None:
+        return [f"no ruleset for state {state!r}; its law has not been encoded "
+                f"(see validate_pa.RULES)"]
+    max_day = rules.get("max_hours_per_day")
+    max_week = rules.get("max_hours_per_week")
+    banned = rules.get("banned") or []
 
     if deal.get("type") not in TYPES:
         errs.append(f"unknown deal type {deal.get('type')!r}")
@@ -136,17 +196,20 @@ def validate_deal(deal):
     # daily_special may run open-to-close on one beverage type; the 4h/24h caps
     # are a happy_hour constraint only.
     if deal.get("type") == "happy_hour":
-        for dow, hrs in per_day.items():
-            if hrs > MAX_HOURS_PER_DAY:
-                errs.append(f"day {dow}: {hrs:g}h exceeds the 4h/day cap")
-        total = sum(per_day.values())
-        if total > MAX_HOURS_PER_WEEK:
-            errs.append(f"{total:g}h/week exceeds the 24h/week cap")
+        if max_day is not None:
+            for dow, hrs in per_day.items():
+                if hrs > max_day:
+                    errs.append(f"day {dow}: {hrs:g}h exceeds the "
+                                f"{max_day:g}h/day cap")
+        if max_week is not None:
+            total = sum(per_day.values())
+            if total > max_week:
+                errs.append(f"{total:g}h/week exceeds the {max_week:g}h/week cap")
 
     text = " ".join(
         [deal.get("fine_print") or ""] + [i.get("label", "") for i in deal.get("items") or []]
     ).lower()
-    for pat in BANNED:
+    for pat in banned:
         if re.search(pat, text):
             errs.append(f"unlawful claim matched /{pat}/")
 

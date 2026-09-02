@@ -85,7 +85,7 @@ class BareClocksArePm(unittest.TestCase):
 
     def test_a_deal_is_labelled_with_the_outlet_and_month(self):
         art = {"url": "https://x/y", "outlet": "County Lines Magazine", "published": "2024-05-30"}
-        deals = deals_for({"quotes": ["Happy Hour runs Monday through Friday, 5 to 7, with $6 wine."]},
+        deals = deals_for({"address": "40 E MARKET ST, WEST CHESTER PA 19382", "quotes": ["Happy Hour runs Monday through Friday, 5 to 7, with $6 wine."]},
                           art, "2026-09-02")
         self.assertEqual(len(deals), 1)
         d = deals[0]
@@ -95,9 +95,18 @@ class BareClocksArePm(unittest.TestCase):
         self.assertEqual(d["last_verified_at"], "2026-09-02")
         self.assertEqual([i["label"] for i in d["items"]], ["wine"])
 
+    def test_a_hit_with_no_address_cannot_be_judged_and_is_refused(self):
+        # 🛑 Fails CLOSED. The deal is judged under the law of the state its
+        # ADDRESS names, and a hit with no address names no state, so there is
+        # no ruleset to judge it by. Publishing it would mean picking one.
+        art = {"url": "https://x/y", "outlet": "O", "published": "2024-05-30"}
+        self.assertEqual(deals_for(
+            {"quotes": ["Happy Hour runs Monday through Friday, 5 to 7."]},
+            art, "2026-09-02"), [])
+
     def test_a_paragraph_with_no_clock_is_refused(self):
         art = {"url": "https://x/y", "outlet": "O", "published": "2024-05-30"}
-        self.assertEqual(deals_for({"quotes": ["Happy Hour runs Tuesday to Thursday, 20% off."]},
+        self.assertEqual(deals_for({"address": "40 E MARKET ST, WEST CHESTER PA 19382", "quotes": ["Happy Hour runs Tuesday to Thursday, 20% off."]},
                                    art, "2026-09-02"), [])
 
 

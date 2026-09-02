@@ -34,7 +34,7 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from extract_deals import HH_RE, dedupe, items_in, slug, windows_from  # noqa: E402
-from validate_pa import validate_deal  # noqa: E402
+from validate_pa import state_of, validate_deal  # noqa: E402
 
 HITS = os.path.join(REPO, "data", "roundup_hits.json")
 SITES = os.path.join(REPO, "data", "venue_sites.json")
@@ -153,7 +153,7 @@ def deals_for(venue_hit, article, crawled_at):
                 "note": f"{article['outlet']}, {month_label(article['published'])}",
             },
         }
-        if validate_deal(deal):
+        if validate_deal(deal, state_of(venue_hit.get("address"))):
             continue
         return [deal]
     return []

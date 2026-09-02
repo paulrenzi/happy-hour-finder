@@ -8,6 +8,8 @@ been published (the PA validators) and a deal that is quietly too old to trust
 (the decay ladder).
 """
 
+import collections
+import csv
 import datetime
 import json
 import os
@@ -564,9 +566,26 @@ class Zones(unittest.TestCase):
         cls.zones = json.load(open(os.path.join(REPO, "data", "zones.json"), encoding="utf-8"))
 
     def test_every_zone_is_reachable(self):
+        # A Delaware zone claims no municipality and no ZIP, on purpose: there
+        # is no PLCB export to match against, so its rows arrive from
+        # data/venues_de.csv already carrying their zone_id. The requirement is
+        # the same one -- something can land in it -- asked of the file that
+        # actually feeds it.
+        de_zones = collections.Counter()
+        de_csv = os.path.join(REPO, "data", "venues_de.csv")
+        if os.path.exists(de_csv):
+            with open(de_csv, encoding="utf-8", newline="") as fh:
+                for row in csv.DictReader(fh):
+                    de_zones[row["zone_id"]] += 1
         for z in self.zones["zones"]:
-            self.assertTrue(z.get("municipalities") or z.get("zips"),
-                            f"{z['id']} claims no municipality and no ZIP -- nothing can land in it")
+            if z.get("state") == "DE":
+                self.assertTrue(de_zones[z["id"]],
+                                f"{z['id']} is a DE zone with no rows in venues_de.csv "
+                                f"-- run ingest/seed_places_de.py")
+            else:
+                self.assertTrue(z.get("municipalities") or z.get("zips"),
+                                f"{z['id']} claims no municipality and no ZIP "
+                                f"-- nothing can land in it")
             for key in ("id", "name", "anchor"):
                 self.assertTrue(z.get(key), f"{z.get('id')} is missing {key}")
 
@@ -2753,8 +2772,14 @@ class WhoseLawIsThisDealBeingJudgedBy(unittest.TestCase):
     directions, which is why a default of 'assume PA' is the wrong shape.
 
     So the rules are a table keyed by state and a state with no entry has no
-    ruleset. Delaware is deliberately absent: filling it in is a research task
-    with a named authority and Paul's sign-off, not a guess.
+    ruleset. Delaware was deliberately absent until 2026-09-02, when it was
+    researched to a named authority (4 Del. Admin. Code s 908 Rule 3.0) and
+    signed off by Paul.
+
+    The finding is the point: DELAWARE SETS NO HOUR CAP AND NO CUTOFF. Copying
+    PA's numbers across -- the thing the comment forbade -- would have refused
+    a lawful five-hour Wilmington happy hour, and would have looked right,
+    because the two states' BANNED lists happen to agree.
     """
 
     def test_the_state_is_read_off_the_address(self):
@@ -2768,10 +2793,39 @@ class WhoseLawIsThisDealBeingJudgedBy(unittest.TestCase):
         self.assertIsNone(state_of(""))
         self.assertIsNone(state_of(None))
 
-    def test_pennsylvania_has_a_ruleset_and_delaware_does_not_yet(self):
+    def test_a_state_we_have_not_researched_has_no_ruleset(self):
         self.assertIsNotNone(rules_for("PA"))
-        self.assertIsNone(rules_for("DE"))
-        self.assertIsNone(rules_for(None))
+        self.assertIsNotNone(rules_for("DE"))
+        for unknown in ("NJ", "MD", "NY", None):
+            self.assertIsNone(rules_for(unknown))
+
+    def test_delaware_carries_its_own_authority_and_a_sign_off(self):
+        de = rules_for("DE")
+        self.assertIn("908", de["authority"])
+        self.assertTrue(de.get("signed_off_by"))
+
+    def test_delaware_sets_no_hour_cap_and_pa_still_does(self):
+        self.assertIsNone(rules_for("DE")["max_hours_per_day"])
+        self.assertIsNone(rules_for("DE")["max_hours_per_week"])
+        self.assertEqual(rules_for("PA")["max_hours_per_day"], 4.0)
+
+    def test_a_five_hour_window_is_lawful_in_delaware_and_not_in_pennsylvania(self):
+        long_deal = deal(windows=[{"dow": 3, "start": "16:00", "end": "21:00"}])
+        self.assertEqual(validate_deal(long_deal, "DE"), [])
+        self.assertTrue(any("4h/day" in e for e in validate_deal(long_deal, "PA")))
+
+    def test_a_state_with_no_ruleset_refuses_the_deal_here_too(self):
+        errs = validate_deal(deal(), "NJ")
+        self.assertTrue(any("no ruleset" in e for e in errs))
+        self.assertTrue(any("no ruleset" in e for e in validate_deal(deal(), None)))
+
+    def test_delaware_still_refuses_what_delaware_law_bans(self):
+        for claim in ("all-you-can-drink wings", "bottomless mimosas",
+                      "2 for 1 drafts", "open bar"):
+            errs = validate_deal(
+                deal(items=[{"category": "draft", "label": claim, "price_usd": 5.0}]),
+                "DE")
+            self.assertTrue(errs, f"{claim!r} is lawful in DE?")
 
     def test_the_pa_ruleset_still_carries_pas_own_numbers(self):
         pa = rules_for("PA")

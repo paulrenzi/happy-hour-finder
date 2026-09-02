@@ -67,14 +67,14 @@
   {
    "id": "doylestown",
    "name": "Doylestown",
-   "venues": 41,
+   "venues": 53,
    "with_deals": 6,
    "deals": 6
   },
   {
    "id": "exton_downingtown",
    "name": "Exton / Downingtown",
-   "venues": 59,
+   "venues": 63,
    "with_deals": 13,
    "deals": 13
   },
@@ -88,7 +88,7 @@
   {
    "id": "glen_mills_chadds_ford",
    "name": "Glen Mills / Chadds Ford",
-   "venues": 38,
+   "venues": 37,
    "with_deals": 5,
    "deals": 5
   },
@@ -98,6 +98,20 @@
    "venues": 26,
    "with_deals": 1,
    "deals": 1
+  },
+  {
+   "id": "hockessin_greenville",
+   "name": "Hockessin & Greenville",
+   "venues": 96,
+   "with_deals": 0,
+   "deals": 0
+  },
+  {
+   "id": "kennett_square",
+   "name": "Kennett Square",
+   "venues": 26,
+   "with_deals": 0,
+   "deals": 0
   },
   {
    "id": "king_of_prussia",
@@ -140,6 +154,27 @@
    "venues": 41,
    "with_deals": 11,
    "deals": 11
+  },
+  {
+   "id": "middletown_de",
+   "name": "Middletown",
+   "venues": 66,
+   "with_deals": 0,
+   "deals": 0
+  },
+  {
+   "id": "new_castle_de",
+   "name": "New Castle & Claymont",
+   "venues": 86,
+   "with_deals": 0,
+   "deals": 0
+  },
+  {
+   "id": "newark_de",
+   "name": "Newark, DE",
+   "venues": 197,
+   "with_deals": 0,
+   "deals": 0
   },
   {
    "id": "newtown_square_broomall",
@@ -186,7 +221,7 @@
   {
    "id": "pottstown",
    "name": "Pottstown",
-   "venues": 46,
+   "venues": 47,
    "with_deals": 2,
    "deals": 2
   },
@@ -200,7 +235,7 @@
   {
    "id": "souderton_harleysville",
    "name": "Souderton / Harleysville",
-   "venues": 48,
+   "venues": 51,
    "with_deals": 2,
    "deals": 2
   },
@@ -235,7 +270,7 @@
   {
    "id": "warminster_warrington",
    "name": "Warminster / Warrington",
-   "venues": 48,
+   "venues": 71,
    "with_deals": 3,
    "deals": 3
   },
@@ -266,6 +301,13 @@
    "venues": 43,
    "with_deals": 10,
    "deals": 14
+  },
+  {
+   "id": "wilmington",
+   "name": "Wilmington",
+   "venues": 133,
+   "with_deals": 0,
+   "deals": 0
   }
  ]
 }

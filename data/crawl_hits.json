@@ -1646,6 +1646,21 @@
   "website": "http://www.buffalowildwings.com/locations/us/pa/king-of-prussia/690-west-dekalb-pike/store-1629?utm_source=google-my-business&utm_medium=organic&utm_campaign=website-link&y_source=1_MjAxNjYxMTc5MS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
   "zone_id": "king_of_prussia"
  },
+ "103263": {
+  "address": "719 E BALTIMORE PIKE, KENNETT SQUARE PA 19348",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "FAIRFIELD INN & SUITES KENNETT SQUARE",
+  "osm_name": "Fairfield by Marriott Inn & Suites Kennett Square Brandywine Valley",
+  "pages": [
+   {
+    "result": "robots.txt unreadable (403), treated as disallow",
+    "url": "https://www.marriott.com/en-us/hotels/phlks-fairfield-inn-and-suites-kennett-square-brandywine-valley/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0"
+   }
+  ],
+  "website": "https://www.marriott.com/en-us/hotels/phlks-fairfield-inn-and-suites-kennett-square-brandywine-valley/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0",
+  "zone_id": "kennett_square"
+ },
  "103297": {
   "address": "789 EAST LANCASTER AVE, VILLANOVA PA 19085",
   "crawled_at": "2026-09-01",
@@ -7279,6 +7294,71 @@
   "website": "https://www.crackerbarrel.com/Locations/States/pa/plymouth-meeting/449/",
   "zone_id": "blue_bell_plymouth_meeting"
  },
+ "115247": {
+  "address": "633 E CYPRESS ST, KENNETT SQUARE PA 19348-2446",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Happy Hour / Monday\u2013Friday 4\u20136 PM / Domestic Drafts \u2014 $1 off",
+    "url": "https://www.giordanoksq.com/?y_source=1_MTAwNzE4MTM3NC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D"
+   },
+   {
+    "quote": "Whether you're meeting friends, grabbing a quick drink, or easing into the evening, our Happy Hour has something for everyone.",
+    "url": "https://www.giordanoksq.com/?y_source=1_MTAwNzE4MTM3NC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://www.giordanoksq.com/?y_source=1_MTAwNzE4MTM3NC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour: Happy HourMonday&ndash;Friday 4&ndash;6 PMJoin us for the best way to unwind after a long day. Enjoy great deals, good company, and the perfect atmosphere to relax.Domestic Drafts &mdash; $1 off&nbsp;Craft Drafts &mdash; $2 off&nbsp;House Wines &mdash; $2 off 9 oz. poursWhether you&#39;re meeting friends, grabbing a quick drink, or easing into the evening, our Happy Hour has something for everyone.",
+    "url": "https://www.giordanoksq.com/menus/"
+   },
+   {
+    "quote": "Happy Hour",
+    "url": "https://www.giordanoksq.com/menus/"
+   },
+   {
+    "quote": "Happy Hour / Monday\u2013Friday 4\u20136 PM / Domestic Drafts \u2014 $1 off",
+    "url": "https://www.giordanoksq.com/menus/"
+   },
+   {
+    "quote": "Whether you're meeting friends, grabbing a quick drink, or easing into the evening, our Happy Hour has something for everyone.",
+    "url": "https://www.giordanoksq.com/menus/"
+   }
+  ],
+  "name": "JAMESTOWN HOSPITALITY KENNETT",
+  "osm_name": "Giordano's",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 91,
+    "result": "ok, 3 quote(s)",
+    "url": "https://www.giordanoksq.com/?y_source=1_MTAwNzE4MTM3NC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D"
+   },
+   {
+    "hh": false,
+    "lines": 62,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.giordanoksq.com/events/"
+   },
+   {
+    "hh": true,
+    "lines": 613,
+    "result": "ok, 3 quote(s)",
+    "url": "https://www.giordanoksq.com/menus/"
+   },
+   {
+    "hh": false,
+    "lines": 106,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.giordanoksq.com/private-events/"
+   }
+  ],
+  "website": "https://www.giordanoksq.com/?y_source=1_MTAwNzE4MTM3NC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+  "zone_id": "kennett_square"
+ },
  "115327": {
   "address": "5021-23-25 BALTIMORE AVE, PHILADELPHIA PA 19143-1626",
   "crawled_at": "2026-09-01",
@@ -7360,6 +7440,35 @@
   ],
   "website": "https://bolophl.com/",
   "zone_id": "center_city"
+ },
+ "115516": {
+  "address": "830 E BALTIMORE PK, KENNETT SQUARE PA 19348-1842",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "THE GIANT COMPANY LLC",
+  "osm_name": "GIANT",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 86,
+    "result": "ok, 0 quote(s)",
+    "url": "https://stores.giantfoodstores.com/pa/kennett-square/830-e-baltimore-pike?y_source=1_NDE5NTgyMy03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D"
+   },
+   {
+    "hh": false,
+    "lines": 69,
+    "result": "ok, 0 quote(s)",
+    "url": "https://stores.giantfoodstores.com/pa/kennett-square/350-scarlet-rd"
+   },
+   {
+    "hh": false,
+    "lines": 125,
+    "result": "ok, 0 quote(s)",
+    "url": "https://stores.giantfoodstores.com/pa/kennett-square/830-e-baltimore-pike/delivery"
+   }
+  ],
+  "website": "https://stores.giantfoodstores.com/pa/kennett-square/830-e-baltimore-pike?y_source=1_NDE5NTgyMy03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+  "zone_id": "kennett_square"
  },
  "115785": {
   "address": "1109 WALNUT ST, PHILADELPHIA PA 19107-4908",
@@ -9104,6 +9213,21 @@
   "website": "https://www.veladoylestown.com/",
   "zone_id": "doylestown"
  },
+ "120263": {
+  "address": "305 W STATE ST, KENNETT SQUARE PA 19348",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "EL RANCHERO RESTAURANT",
+  "osm_name": "El Ranchero Mexican Restaurant",
+  "pages": [
+   {
+    "result": "robots.txt disallows",
+    "url": "https://www.facebook.com/elranchero305"
+   }
+  ],
+  "website": "https://www.facebook.com/elranchero305",
+  "zone_id": "kennett_square"
+ },
  "120279": {
   "address": "3675 MARKET ST STE 100, PHILADELPHIA PA 19104-2897",
   "crawled_at": "2026-08-06",
@@ -9398,6 +9522,27 @@
   ],
   "website": "https://www.picnicphilly.com",
   "zone_id": "fishtown_kensington"
+ },
+ "121565": {
+  "address": "514 MCCUE RD, AVONDALE PA 19311-9518",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "THE GREATHOUSE AT LNF",
+  "osm_name": "Loch Nairn Farm",
+  "pages": [
+   {
+    "result": "rendered: 11 lines -> 50",
+    "url": "https://lochnairnfarm.net/"
+   },
+   {
+    "hh": false,
+    "lines": 50,
+    "result": "ok, 0 quote(s)",
+    "url": "https://lochnairnfarm.net/"
+   }
+  ],
+  "website": "https://lochnairnfarm.net/",
+  "zone_id": "kennett_square"
  },
  "121628": {
   "address": "160 N GULPH RD SPACE 1034A, KING OF PRUSSIA PA 19406",
@@ -18745,6 +18890,21 @@
   "website": "https://ryans-pub.com",
   "zone_id": "west_chester"
  },
+ "47784": {
+  "address": "815 E BALTIMORE PK, KENNETT SQUARE PA 19348-1801",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "LONGWOOD HILTON GARDEN INN",
+  "osm_name": "Hilton Garden Inn Kennett Square",
+  "pages": [
+   {
+    "result": "403 text/html",
+    "url": "https://www.hilton.com/en/hotels/phlksgi-hilton-garden-inn-kennett-square/?SEO_id=GMB-AMER-GI-PHLKSGI"
+   }
+  ],
+  "website": "https://www.hilton.com/en/hotels/phlksgi-hilton-garden-inn-kennett-square/?SEO_id=GMB-AMER-GI-PHLKSGI",
+  "zone_id": "kennett_square"
+ },
  "47795": {
   "address": "4 WEST AVE, WAYNE PA 19087-3316",
   "crawled_at": "2026-09-01",
@@ -18907,6 +19067,41 @@
   "website": "https://thegreatamericanpub.com/wayne/",
   "zone_id": "wayne_radnor"
  },
+ "48026": {
+  "address": "815 BALTIMORE PK BLDG 3, KENNETT SQUARE PA 19348-2275",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "APPLEBEE'S",
+  "osm_name": "Applebee's Grill + Bar",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 141,
+    "result": "ok, 0 quote(s)",
+    "url": "https://restaurants.applebees.com/en-us/pa/kennett-square/815-e.-baltimore-pike-96058?utm_source=google&utm_medium=organic&utm_campaign=google_my_business&utm_term=96058&utm_content=website"
+   },
+   {
+    "hh": false,
+    "lines": 77,
+    "result": "ok, 0 quote(s)",
+    "url": "https://restaurants.applebees.com/en-us/pa/kennett-square/"
+   },
+   {
+    "hh": false,
+    "lines": 89,
+    "result": "ok, 0 quote(s)",
+    "url": "https://restaurants.applebees.com/en-us/pa/kennett-square/815-e.-baltimore-pike-96058/burgers"
+   },
+   {
+    "hh": false,
+    "lines": 74,
+    "result": "ok, 0 quote(s)",
+    "url": "https://restaurants.applebees.com/en-us/pa/kennett-square/815-e.-baltimore-pike-96058/careers"
+   }
+  ],
+  "website": "https://restaurants.applebees.com/en-us/pa/kennett-square/815-e.-baltimore-pike-96058?utm_source=google&utm_medium=organic&utm_campaign=google_my_business&utm_term=96058&utm_content=website",
+  "zone_id": "kennett_square"
+ },
  "48062": {
   "address": "451 WILMINGTON-WEST CHESTER PK, GLEN MILLS PA 19342-9802",
   "crawled_at": "2026-09-01",
@@ -19026,6 +19221,40 @@
   ],
   "website": "https://locations.thecheesecakefactory.com/pa/king-of-prussia-46.html?utm_source=Google&utm_medium=Maps&utm_campaign=Google+Places",
   "zone_id": "king_of_prussia"
+ },
+ "48272": {
+  "address": "8820 Gap Newport Pk, Avondale PA 19311",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Get a 4th at half price!",
+    "url": "http://www.valavineyards.com/"
+   }
+  ],
+  "name": "Va La Vineyards",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": false,
+    "lines": 77,
+    "result": "ok, 1 quote(s)",
+    "url": "http://www.valavineyards.com/"
+   },
+   {
+    "hh": false,
+    "lines": 116,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.valavineyards.com/events"
+   },
+   {
+    "hh": false,
+    "lines": 92,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.valavineyards.com/food-menu"
+   }
+  ],
+  "website": "http://www.valavineyards.com/",
+  "zone_id": "kennett_square"
  },
  "48382": {
   "address": "101 N NARBERTH AVE, NARBERTH PA 19072-1923",
@@ -24026,6 +24255,41 @@
   "website": "https://mixbarandgrillphilly.com/location/mix-bar-grill",
   "zone_id": "center_city"
  },
+ "60001": {
+  "address": "696 UNIONVILLE RD, KENNETT SQUARE PA 19348-1763",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "SOVANA BISTRO",
+  "osm_name": "Sovana Bistro",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 141,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.sovanabistro.com/"
+   },
+   {
+    "hh": false,
+    "lines": 917,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.sovanabistro.com/menus"
+   },
+   {
+    "hh": false,
+    "lines": 917,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.sovanabistro.com/menus/"
+   },
+   {
+    "hh": false,
+    "lines": 141,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.sovanabistro.com/ticketed-events/"
+   }
+  ],
+  "website": "http://www.sovanabistro.com/",
+  "zone_id": "kennett_square"
+ },
  "60153": {
   "address": "14 PAOLI SHOPPING CENTER, PAOLI PA 19301-1438",
   "crawled_at": "2026-09-01",
@@ -25091,6 +25355,41 @@
   "website": "https://www.zamaphilly.com/",
   "zone_id": "center_city"
  },
+ "61805": {
+  "address": "409 Conservatory Rd, Kennett Square PA 19348",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "1906 at Longwood Gardens",
+  "osm_name": null,
+  "pages": [
+   {
+    "hh": false,
+    "lines": 266,
+    "result": "ok, 0 quote(s)",
+    "url": "http://longwoodgardens.org/dine/1906"
+   },
+   {
+    "hh": true,
+    "lines": 182,
+    "result": "ok, 0 quote(s)",
+    "url": "http://longwoodgardens.org/events-performances/events/flower-hour"
+   },
+   {
+    "hh": false,
+    "lines": 278,
+    "result": "ok, 0 quote(s)",
+    "url": "http://longwoodgardens.org/dine/1906/beverage-menu"
+   },
+   {
+    "hh": false,
+    "lines": 200,
+    "result": "ok, 0 quote(s)",
+    "url": "http://longwoodgardens.org/dine/1906/childrens-menu"
+   }
+  ],
+  "website": "http://longwoodgardens.org/dine/1906",
+  "zone_id": "kennett_square"
+ },
  "61826": {
   "address": "117 S 17TH ST, PHILADELPHIA PA 19103-5025",
   "crawled_at": "2026-08-06",
@@ -25796,6 +26095,33 @@
   ],
   "website": "https://locations.outback.com/pennsylvania/north-wales/450-montgomery-mall",
   "zone_id": "lansdale_montgomeryville"
+ },
+ "62287": {
+  "address": "9173 NEWPORT GAP PK, AVONDALE PA 19311",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "TAQUERIA MOROLEON INC",
+  "osm_name": "Taquer\u00eda Morole\u00f3n",
+  "pages": [
+   {
+    "result": "rendered: 24 lines -> 27",
+    "url": "http://www.taqueriamoroleon.com/"
+   },
+   {
+    "hh": false,
+    "lines": 27,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.taqueriamoroleon.com/"
+   },
+   {
+    "hh": false,
+    "lines": 498,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.taqueriamoroleon.com/menu"
+   }
+  ],
+  "website": "http://www.taqueriamoroleon.com/",
+  "zone_id": "kennett_square"
  },
  "62290": {
   "address": "1311-13 SANSOM ST, PHILADELPHIA PA 19107-4523",
@@ -27066,6 +27392,35 @@
   ],
   "website": "https://laportarestaurant.com",
   "zone_id": "newtown_square_broomall"
+ },
+ "64827": {
+  "address": "186 ONIX DR, KENNETT SQUARE PA 19348-1885",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "hh": true,
+    "quote": "$1.75 UPCHARGE FOR JUICE OR MILK REFILLS.",
+    "url": "https://plazaazteca.com/wp-content/uploads/2025/03/PA-Locations-Food-Menu-Sheet-11x17-022525.pdf"
+   }
+  ],
+  "name": "PLAZA AZTECA MEXICAN RESTAURANT",
+  "osm_name": "Plaza Azteca Mexican Restaurant \u00b7 Kennett Square",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 66,
+    "result": "ok, 0 quote(s)",
+    "url": "https://plazaazteca.com/kennett-square/"
+   },
+   {
+    "hh": false,
+    "lines": 524,
+    "result": "ok, 1 quote(s)",
+    "url": "https://plazaazteca.com/wp-content/uploads/2025/03/PA-Locations-Food-Menu-Sheet-11x17-022525.pdf"
+   }
+  ],
+  "website": "https://plazaazteca.com/kennett-square/",
+  "zone_id": "kennett_square"
  },
  "64900": {
   "address": "324 W SWEDESFORD RD, BERWYN PA 19312-1165",
@@ -28565,6 +28920,41 @@
   "website": "https://emeiphilly.com",
   "zone_id": "center_city"
  },
+ "65841": {
+  "address": "114 E STATE ST, KENNETT SQUARE PA 19348-3110",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "LA VERONA",
+  "osm_name": "La Verona Restaurant",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 127,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.laveronapa.com/"
+   },
+   {
+    "hh": false,
+    "lines": 41,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.laveronapa.com/kennett-square-kennett-square-la-verona-about"
+   },
+   {
+    "hh": false,
+    "lines": 32,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.laveronapa.com/kennett-square-kennett-square-la-verona-catering-custom"
+   },
+   {
+    "hh": false,
+    "lines": 127,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.laveronapa.com/"
+   }
+  ],
+  "website": "http://www.laveronapa.com/",
+  "zone_id": "kennett_square"
+ },
  "65850": {
   "address": "2300 EASTON RD, WILLOW GROVE PA 19090-1105",
   "crawled_at": "2026-09-02",
@@ -29079,6 +29469,41 @@
   ],
   "website": "https://www.garagephilly.com/copy-of-passyunk-1",
   "zone_id": "center_city"
+ },
+ "66586": {
+  "address": "1 HARTEFELD DR, AVONDALE PA 19311-9794",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "CLUBCORP HARTEFELD LLC",
+  "osm_name": "Hartefeld National",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 118,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.invitedclubs.com/clubs/hartefeld-national"
+   },
+   {
+    "hh": false,
+    "lines": 308,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.invitedclubs.com/clubs/hartefeld-national/contact-us?contactType=private-events"
+   },
+   {
+    "hh": false,
+    "lines": 130,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.invitedclubs.com/clubs/hartefeld-national/host-an-event"
+   },
+   {
+    "hh": false,
+    "lines": 147,
+    "result": "ok, 0 quote(s)",
+    "url": "https://www.invitedclubs.com/clubs/hartefeld-national/host-an-event/event-rooms"
+   }
+  ],
+  "website": "https://www.invitedclubs.com/clubs/hartefeld-national",
+  "zone_id": "kennett_square"
  },
  "66646": {
   "address": "1308 FRANKFORD AVE, PHILADELPHIA PA 19125",
@@ -30655,6 +31080,198 @@
   ],
   "website": "https://www.thebutcherandbarkeep.com/",
   "zone_id": "souderton_harleysville"
+ },
+ "68585": {
+  "address": "843 E BALTIMORE PK, KENNETT SQUARE PA 19348-1801",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Happy Hour / Sunday Brunch",
+    "url": "http://www.twostonespub.com/"
+   },
+   {
+    "quote": "Monday-Friday 3-6pm Food & Drink Specials",
+    "url": "http://www.twostonespub.com/"
+   },
+   {
+    "quote": "Let\u2019s party! Whether it\u2019s a happy hour, a birthday party, or a holiday luncheon, we\u2019ve got you covered!",
+    "url": "http://www.twostonespub.com/"
+   },
+   {
+    "quote": "Happy Hour Monday-Friday",
+    "url": "http://www.twostonespub.com/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour \u2014 Two Stones Pub | Pub in Delaware & Pennsylvania",
+    "url": "http://www.twostonespub.com/happyhour"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour / Sunday Brunch",
+    "url": "http://www.twostonespub.com/happyhour"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour / Monday\u2013Friday | 3\u20136pm",
+    "url": "http://www.twostonespub.com/happyhour"
+   },
+   {
+    "hh": true,
+    "quote": "$2 OFF",
+    "url": "http://www.twostonespub.com/happyhour"
+   },
+   {
+    "hh": true,
+    "quote": "$2 OFF / $2.00 2SP All-Weather Drafts",
+    "url": "http://www.twostonespub.com/happyhour"
+   },
+   {
+    "hh": true,
+    "quote": "$2 OFF / $2.00 Up & Out",
+    "url": "http://www.twostonespub.com/happyhour"
+   },
+   {
+    "hh": true,
+    "quote": "$2 OFF / $2.00 Delco Lager",
+    "url": "http://www.twostonespub.com/happyhour"
+   },
+   {
+    "hh": true,
+    "quote": "$2 OFF / $2.00 Pony Boi",
+    "url": "http://www.twostonespub.com/happyhour"
+   },
+   {
+    "hh": true,
+    "quote": "$2 OFF / $2.00 2SPils",
+    "url": "http://www.twostonespub.com/happyhour"
+   },
+   {
+    "hh": true,
+    "quote": "$2 OFF / $2.00 Baby Bob",
+    "url": "http://www.twostonespub.com/happyhour"
+   },
+   {
+    "hh": true,
+    "quote": "$2 OFF / $2.00 6 oz pours of wine*",
+    "url": "http://www.twostonespub.com/happyhour"
+   },
+   {
+    "hh": true,
+    "quote": "$3 OFF",
+    "url": "http://www.twostonespub.com/happyhour"
+   },
+   {
+    "hh": true,
+    "quote": "$3 OFF / $3.00 Craft Cocktails",
+    "url": "http://www.twostonespub.com/happyhour"
+   },
+   {
+    "hh": true,
+    "quote": "$3 OFF / $3.00 The Mule",
+    "url": "http://www.twostonespub.com/happyhour"
+   },
+   {
+    "hh": true,
+    "quote": "$3 OFF / $3.00 The Spritz",
+    "url": "http://www.twostonespub.com/happyhour"
+   },
+   {
+    "hh": true,
+    "quote": "$3 OFF / $3.00 The Manhattan",
+    "url": "http://www.twostonespub.com/happyhour"
+   },
+   {
+    "hh": true,
+    "quote": "$3 OFF / $3.00 Grow A Pear",
+    "url": "http://www.twostonespub.com/happyhour"
+   },
+   {
+    "hh": true,
+    "quote": "$3 OFF / $3.00 Seasonal Sangria",
+    "url": "http://www.twostonespub.com/happyhour"
+   },
+   {
+    "hh": true,
+    "quote": "$3 OFF / $3.00 Endless Summer",
+    "url": "http://www.twostonespub.com/happyhour"
+   },
+   {
+    "hh": true,
+    "quote": "$3 OFF / $3.00 9 oz pours of wine*",
+    "url": "http://www.twostonespub.com/happyhour"
+   },
+   {
+    "hh": true,
+    "quote": "$3 OFF / $3.00 *select wine, see full menu",
+    "url": "http://www.twostonespub.com/happyhour"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour Monday-Friday",
+    "url": "http://www.twostonespub.com/happyhour"
+   },
+   {
+    "quote": "Happy Hour / Sunday Brunch",
+    "url": "http://www.twostonespub.com/drinks"
+   },
+   {
+    "quote": "Happy Hour Monday-Friday",
+    "url": "http://www.twostonespub.com/drinks"
+   },
+   {
+    "quote": "Happy Hour / Sunday Brunch",
+    "url": "http://www.twostonespub.com/main-menu"
+   },
+   {
+    "quote": "Happy Hour Monday-Friday",
+    "url": "http://www.twostonespub.com/main-menu"
+   }
+  ],
+  "menu_images": [
+   {
+    "src": "https://images.squarespace-cdn.com/content/v1/672b9c5daefe2f6512b3c8e5/281541f9-357c-4762-b203-fb1328ac3074/Happy+Hour+-+Homepage+Banner.jpg",
+    "url": "http://www.twostonespub.com/"
+   },
+   {
+    "src": "https://images.squarespace-cdn.com/content/v1/672b9c5daefe2f6512b3c8e5/5cafd137-336e-49d6-88a9-443be8203c98/HH+Spread+2+Chorizo+Taco+Brussels+Gorgonzola+BLT+Salad.jpg",
+    "url": "http://www.twostonespub.com/happyhour"
+   },
+   {
+    "src": "https://images.squarespace-cdn.com/content/v1/672b9c5daefe2f6512b3c8e5/45b16855-7364-40b4-bf78-e5c36e7e663b/HH+Fish+&+Chips.jpg",
+    "url": "http://www.twostonespub.com/happyhour"
+   }
+  ],
+  "name": "KENNETT 2SP LICENSE LLC",
+  "osm_name": "Two Stones Pub Kennett Square",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 127,
+    "result": "ok, 4 quote(s)",
+    "url": "http://www.twostonespub.com/"
+   },
+   {
+    "hh": true,
+    "lines": 147,
+    "result": "ok, 22 quote(s)",
+    "url": "http://www.twostonespub.com/happyhour"
+   },
+   {
+    "hh": true,
+    "lines": 133,
+    "result": "ok, 2 quote(s)",
+    "url": "http://www.twostonespub.com/drinks"
+   },
+   {
+    "hh": true,
+    "lines": 188,
+    "result": "ok, 2 quote(s)",
+    "url": "http://www.twostonespub.com/main-menu"
+   }
+  ],
+  "website": "http://www.twostonespub.com/",
+  "zone_id": "kennett_square"
  },
  "68604": {
   "address": "1301 OLD YORK RD, ABINGTON PA 19001-3403",
@@ -32598,6 +33215,129 @@
   ],
   "website": "https://locations.bonefishgrill.com/pennsylvania/king-of-prussia/160-n-gulph-rd?y_source=1_MTU1MDI4MzYtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
   "zone_id": "king_of_prussia"
+ },
+ "70490": {
+  "address": "650 W CYPRESS ST, KENNETT SQUARE PA 19348-3049",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "$4 Tacos & $7 Margaritas",
+    "url": "https://kennettsquare.victorybeer.com/"
+   },
+   {
+    "quote": "Weekday Happy Hour / $2 off drafts, liquor pours, wine + shareables / Monday - Friday, 4pm to 6pm",
+    "url": "https://kennettsquare.victorybeer.com/"
+   },
+   {
+    "hh": true,
+    "quote": "$2 off drafts, liquor pours, wine + shareables",
+    "url": "https://kennettsquare.victorybeer.com/"
+   },
+   {
+    "hh": true,
+    "quote": "option is perfect for happy hours, social gatherings, and",
+    "url": "https://kennettsquare.victorybeer.com/s/Victory-Kennett-Square-Spring-2026-Private-Event-Guide-v2-41526.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "Perfect for a casual Happy Hour or intimate gathering, the",
+    "url": "https://kennettsquare.victorybeer.com/s/Victory-Kennett-Square-Spring-2026-Private-Event-Guide-v2-41526.pdf"
+   },
+   {
+    "hh": true,
+    "quote": "option is perfect for Happy Hour and Networking",
+    "url": "https://kennettsquare.victorybeer.com/s/Victory-Kennett-Square-Spring-2026-Private-Event-Guide-v2-41526.pdf"
+   },
+   {
+    "quote": "Back to School Happy Hour for Teachers / 4:00\u202fPM / 10:00\u202fPM",
+    "url": "https://kennettsquare.victorybeer.com/events"
+   },
+   {
+    "hh": true,
+    "quote": "School\u2019s back in session, and teachers & staff deserve a happy hour. \ud83c\udf4e\ud83c\udf7b / Join us at Victory Kennett Square on Friday, September 4 from 4PM\u2013close for our Back to School Happy Hour!",
+    "url": "https://kennettsquare.victorybeer.com/events"
+   },
+   {
+    "hh": true,
+    "quote": "Join us at Victory Kennett Square on Friday, September 4 from 4PM\u2013close for our Back to School Happy Hour!",
+    "url": "https://kennettsquare.victorybeer.com/events"
+   },
+   {
+    "hh": true,
+    "quote": "\ud83d\udcda Happy Hour pricing for teachers & school staff with proof of school ID",
+    "url": "https://kennettsquare.victorybeer.com/events"
+   },
+   {
+    "quote": "Dog Days of Summer: Yappy Hour / 4:00\u202fPM / 6:00\u202fPM",
+    "url": "https://kennettsquare.victorybeer.com/events"
+   },
+   {
+    "hh": true,
+    "quote": "Grab your pup and join us for the ulti-mutt summer hangout at our Dog Days of Summer Yappy Hour!",
+    "url": "https://kennettsquare.victorybeer.com/events"
+   },
+   {
+    "hh": true,
+    "quote": "- Drink specials / Come sip for a cause while meeting adorable rescue dogs looking for their forever homes. Whether you\u2019re hoping to adopt, support local rescue efforts, or just enjoy a fun afternoon with fellow dog lovers, this is the perfect summer event for you and your four-legged friends.",
+    "url": "https://kennettsquare.victorybeer.com/events"
+   },
+   {
+    "quote": "Teacher's Last Day of School Happy Hour / 3:00\u202fPM / 6:00\u202fPM",
+    "url": "https://kennettsquare.victorybeer.com/events"
+   },
+   {
+    "quote": "School\u2019s out and it\u2019s time to celebrate! Join us for a well-deserved happy hour honoring all the hardworking teachers wrapping up another school year. / $5 KSQ Brew'd Pours",
+    "url": "https://kennettsquare.victorybeer.com/events"
+   },
+   {
+    "quote": "Dog Days of Summer Yappy Hour / 4:00\u202fPM / 6:00\u202fPM",
+    "url": "https://kennettsquare.victorybeer.com/events"
+   },
+   {
+    "quote": "We\u2019re pouring $5 drafts of Victory Royale and KSQ Brew\u2019d, and keeping the energy high with live music from The Proper Hustlers Duo (1PM - 3PM)!",
+    "url": "https://kennettsquare.victorybeer.com/events"
+   }
+  ],
+  "menu_images": [
+   {
+    "src": "https://images.squarespace-cdn.com/content/v1/668bfa170e080146ae8713a6/1787677501273-SV9BJDM6NG43W9RDFYZS/school+happy+hour+fb+cover.png",
+    "url": "https://kennettsquare.victorybeer.com/events"
+   },
+   {
+    "src": "https://images.squarespace-cdn.com/content/v1/668bfa170e080146ae8713a6/1780501780641-YAVMD75FPMUB558KD1H4/school+happy+hour+fb+cover+(1).png",
+    "url": "https://kennettsquare.victorybeer.com/events"
+   }
+  ],
+  "name": "VICTORY BREWING COMPANY LLC",
+  "osm_name": "Victory Brewing Company Kennett Square",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 91,
+    "result": "ok, 3 quote(s)",
+    "url": "https://kennettsquare.victorybeer.com/"
+   },
+   {
+    "hh": true,
+    "lines": 109,
+    "result": "ok, 3 quote(s)",
+    "url": "https://kennettsquare.victorybeer.com/s/Victory-Kennett-Square-Spring-2026-Private-Event-Guide-v2-41526.pdf"
+   },
+   {
+    "hh": true,
+    "lines": 465,
+    "result": "ok, 11 quote(s)",
+    "url": "https://kennettsquare.victorybeer.com/events"
+   },
+   {
+    "hh": false,
+    "lines": 172,
+    "result": "ok, 0 quote(s)",
+    "url": "https://kennettsquare.victorybeer.com/food"
+   }
+  ],
+  "website": "https://kennettsquare.victorybeer.com/",
+  "zone_id": "kennett_square"
  },
  "70505": {
   "address": "4301 BALTIMORE AVE, PHILADELPHIA PA 19104-4413",
@@ -36480,6 +37220,27 @@
   "website": "https://www.ihg.com/holidayinnexpress/hotels/us/en/fort-washington/ftspa/hoteldetail",
   "zone_id": "blue_bell_plymouth_meeting"
  },
+ "84477": {
+  "address": "229 Birch St, Kennett Square PA 19348",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "West Branch Distilling Company",
+  "osm_name": null,
+  "pages": [
+   {
+    "result": "rendered: 7 lines -> 11",
+    "url": "http://www.westbranchdistilling.com/"
+   },
+   {
+    "hh": false,
+    "lines": 11,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.westbranchdistilling.com/"
+   }
+  ],
+  "website": "http://www.westbranchdistilling.com/",
+  "zone_id": "kennett_square"
+ },
  "84498": {
   "address": "519 KIMBERTON RD  SUITE 9  PIKELAND VILLAGE SQUARE, PHOENIXVILLE PA 19460",
   "crawled_at": "2026-09-02",
@@ -37624,6 +38385,82 @@
   "website": "https://www.wellcraftedbeer.com/home2",
   "zone_id": "lansdale_montgomeryville"
  },
+ "88001": {
+  "address": "225  BIRCH ST, KENNETT SQUARE PA 19348",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Fri, Sep 4 Happy Hour 2pm\u20136pm",
+    "url": "https://braelochbrewing.beer/"
+   },
+   {
+    "quote": "Birthdays, rehearsal dinners, corporate happy hours, showers \u2014 three spaces for parties from 10 to 100+ guests, starting at no rental fee.",
+    "url": "https://braelochbrewing.beer/"
+   },
+   {
+    "quote": "Happy Hour / Sat, Sep 5 / 6pm\u20139pm",
+    "url": "https://braelochbrewing.beer/events"
+   },
+   {
+    "quote": "Happy Hour / Fri, Sep 11 / 5pm\u20138pm",
+    "url": "https://braelochbrewing.beer/events"
+   },
+   {
+    "quote": "Happy Hour / Sat, Sep 19 / 6pm\u20139pm",
+    "url": "https://braelochbrewing.beer/events"
+   },
+   {
+    "quote": "Happy Hour / Fri, Sep 25 / 5pm\u20138pm",
+    "url": "https://braelochbrewing.beer/events"
+   },
+   {
+    "quote": "Happy Hour / Fri, Oct 2 / 5pm\u20138pm",
+    "url": "https://braelochbrewing.beer/events"
+   },
+   {
+    "quote": "Happy Hour / Fri, Oct 9 / 5pm\u20138pm",
+    "url": "https://braelochbrewing.beer/events"
+   },
+   {
+    "quote": "Corporate Happy Hours / Pre/Post Wedding Socials",
+    "url": "https://braelochbrewing.beer/private-events"
+   },
+   {
+    "quote": "Event Type * Choose one\u2026 Anniversary Engagement Celebration Rehearsal Dinner Reunion Retirement Baby Shower Wedding Shower Team Building Birthday Graduation Corporate Happy Hour Sales Meeting Pre/Post Wedding Social Post-Reception Party Other",
+    "url": "https://braelochbrewing.beer/private-events"
+   }
+  ],
+  "name": "BRAELOCH BREWING",
+  "osm_name": "Braeloch Brewing",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 52,
+    "result": "ok, 2 quote(s)",
+    "url": "https://braelochbrewing.beer/"
+   },
+   {
+    "hh": false,
+    "lines": 164,
+    "result": "ok, 0 quote(s)",
+    "url": "https://braelochbrewing.beer/beer"
+   },
+   {
+    "hh": true,
+    "lines": 163,
+    "result": "ok, 6 quote(s)",
+    "url": "https://braelochbrewing.beer/events"
+   },
+   {
+    "hh": true,
+    "lines": 72,
+    "result": "ok, 2 quote(s)",
+    "url": "https://braelochbrewing.beer/private-events"
+   }
+  ],
+  "website": "https://braelochbrewing.beer/",
+  "zone_id": "kennett_square"
+ },
  "88072": {
   "address": "242 BRIDGE ST, PHOENIXVILLE PA 19460-3450",
   "crawled_at": "2026-09-02",
@@ -38316,6 +39153,72 @@
   "website": "https://punchbuggybrewing.com/",
   "zone_id": "fishtown_kensington"
  },
+ "90673": {
+  "address": "401 BIRCH ST, KENNETT SQUARE PA 19348",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "hh": true,
+    "quote": "Yappy Hour W/ Lucky Dawg Rescue \u2014 The Creamery of Kennett Square",
+    "url": "https://www.kennettcreamery.com/calendar-management/yappy-hour-w-lucky-dawg-rescue"
+   },
+   {
+    "hh": true,
+    "quote": "Yappy Hour W/ Lucky Dawg Rescue / 5:00\u202fPM / 10:00\u202fPM",
+    "url": "https://www.kennettcreamery.com/calendar-management/yappy-hour-w-lucky-dawg-rescue"
+   },
+   {
+    "hh": true,
+    "quote": "Father's Day Happy Hour \u2014 The Creamery of Kennett Square",
+    "url": "https://www.kennettcreamery.com/calendar-management/fathers-day-happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Father's Day Happy Hour / 3:00\u202fPM / 6:00\u202fPM",
+    "url": "https://www.kennettcreamery.com/calendar-management/fathers-day-happy-hour"
+   },
+   {
+    "hh": true,
+    "quote": "Yappy Hour with Lucky Dawg Animal Rescue \u2014 The Creamery of Kennett Square",
+    "url": "https://www.kennettcreamery.com/calendar-management/yappy-hour-with-lucky-dawg-animal-rescue"
+   },
+   {
+    "hh": true,
+    "quote": "Yappy Hour with Lucky Dawg Animal Rescue / 5:00\u202fPM / 7:30\u202fPM",
+    "url": "https://www.kennettcreamery.com/calendar-management/yappy-hour-with-lucky-dawg-animal-rescue"
+   }
+  ],
+  "name": "CREAMERY ON BIRCH LLC",
+  "osm_name": "The Creamery of Kennett Square Restaurant & Beer Garden",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 116,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.kennettcreamery.com/"
+   },
+   {
+    "hh": true,
+    "lines": 114,
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.kennettcreamery.com/calendar-management/yappy-hour-w-lucky-dawg-rescue"
+   },
+   {
+    "hh": true,
+    "lines": 114,
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.kennettcreamery.com/calendar-management/fathers-day-happy-hour"
+   },
+   {
+    "hh": true,
+    "lines": 114,
+    "result": "ok, 2 quote(s)",
+    "url": "https://www.kennettcreamery.com/calendar-management/yappy-hour-with-lucky-dawg-animal-rescue"
+   }
+  ],
+  "website": "http://www.kennettcreamery.com/",
+  "zone_id": "kennett_square"
+ },
  "90709": {
   "address": "901 MARKET ST, PHILADELPHIA PA 19107",
   "crawled_at": "2026-08-06",
@@ -38517,6 +39420,35 @@
   ],
   "website": "https://sedonataphouse.com/",
   "zone_id": "phoenixville"
+ },
+ "91702": {
+  "address": "350 SCARLET RD, KENNETT SQUARE PA 19348",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "THE GIANT COMPANY LLC",
+  "osm_name": "GIANT",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 69,
+    "result": "ok, 0 quote(s)",
+    "url": "https://stores.giantfoodstores.com/pa/kennett-square/350-scarlet-rd?y_source=1_NDE5NTE5Ni03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D"
+   },
+   {
+    "hh": false,
+    "lines": 100,
+    "result": "ok, 0 quote(s)",
+    "url": "https://pharmacy.giantfoodstores.com/pa/kennett-square/350-scarlet-road"
+   },
+   {
+    "hh": false,
+    "lines": 125,
+    "result": "ok, 0 quote(s)",
+    "url": "https://stores.giantfoodstores.com/pa/kennett-square/350-scarlet-rd/delivery"
+   }
+  ],
+  "website": "https://stores.giantfoodstores.com/pa/kennett-square/350-scarlet-rd?y_source=1_NDE5NTE5Ni03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+  "zone_id": "kennett_square"
  },
  "91715": {
   "address": "1817-53 N HOWARD ST, PHILADELPHIA PA 19122",
@@ -39560,6 +40492,39 @@
   ],
   "website": "https://north-wales.firebirdsrestaurants.com/",
   "zone_id": "lansdale_montgomeryville"
+ },
+ "93366": {
+  "address": "108 E STATE ST, KENNETT SQUARE PA 19348-3110",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "PORTABELLOS",
+  "osm_name": "Portabellos of Kennett Square",
+  "pages": [
+   {
+    "result": "rendered: 37 lines -> 39",
+    "url": "http://www.portabellosofkennettsquare.com/"
+   },
+   {
+    "hh": false,
+    "lines": 39,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.portabellosofkennettsquare.com/"
+   },
+   {
+    "hh": false,
+    "lines": 40,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.portabellosofkennettsquare.com/dine-main-page"
+   },
+   {
+    "hh": false,
+    "lines": 39,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.portabellosofkennettsquare.com/drink"
+   }
+  ],
+  "website": "http://www.portabellosofkennettsquare.com/",
+  "zone_id": "kennett_square"
  },
  "93367": {
   "address": "400 E KING ST, MALVERN PA 19355",
@@ -41878,6 +42843,58 @@
   "website": "https://www.hilton.com/en/hotels/phlvfdt-the-alloy-king-of-prussia/",
   "zone_id": "king_of_prussia"
  },
+ "96976": {
+  "address": "8980 GAP NEWPORT PK, TOUGHKENAMON PA 19374-1041",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Happy Hour / Daily 4 \u2013 6 PM",
+    "url": "https://www.hilltopcrab.com/"
+   },
+   {
+    "quote": "Happy Hour / Daily 4 \u2013 6 PM",
+    "url": "https://www.hilltopcrab.com/"
+   },
+   {
+    "quote": "Drink specials available during Phillies games all season long! / Wed, Sep 2 \u00b7 6:30 PM",
+    "url": "https://www.hilltopcrab.com/events"
+   },
+   {
+    "quote": "Daily Specials / Thursday Prime Rib Queen / $39.95",
+    "url": "https://www.hilltopcrab.com/menu"
+   }
+  ],
+  "name": "SDH HILLTOP LLC",
+  "osm_name": "Hilltop Crab House Restaurant & Bar",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 63,
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.hilltopcrab.com/"
+   },
+   {
+    "hh": true,
+    "lines": 63,
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.hilltopcrab.com/"
+   },
+   {
+    "hh": false,
+    "lines": 84,
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.hilltopcrab.com/events"
+   },
+   {
+    "hh": false,
+    "lines": 310,
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.hilltopcrab.com/menu"
+   }
+  ],
+  "website": "https://www.hilltopcrab.com/",
+  "zone_id": "kennett_square"
+ },
  "97130": {
   "address": "333 GRANITE ALLEY, WEST CHESTER PA 19380-4179",
   "crawled_at": "2026-09-02",
@@ -42384,6 +43401,21 @@
   "website": "https://philly700.com/",
   "zone_id": "center_city"
  },
+ "98674": {
+  "address": "148 W STATE ST SUITE 102-B, KENNETT SQUARE PA 19348",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "THE PUB AT LIBERTY PLACE",
+  "osm_name": "Liberty Place Pub",
+  "pages": [
+   {
+    "result": "error: SSLError",
+    "url": "https://www.libertymarketplacepub.com/"
+   }
+  ],
+  "website": "https://www.libertymarketplacepub.com/",
+  "zone_id": "kennett_square"
+ },
  "98894": {
   "address": "825 FORGE AVE, AUDUBON PA 19403",
   "crawled_at": "2026-08-07",
@@ -42742,5 +43774,192 @@
   ],
   "website": "https://www.pekingmedia.com/",
   "zone_id": "media"
+ },
+ "DE01470ee0d8": {
+  "address": "1706 Philadelphia Pike, Wilmington, DE 19809",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "HAPPY HOUR: 6pm-8pm",
+    "url": "http://www.barxiii.com/"
+   },
+   {
+    "quote": "HAPPY HOUR: 6pm-8pm",
+    "url": "http://www.barxiii.com/"
+   },
+   {
+    "quote": "Magic: The Gathering Happy Hour / September 15 @ 6:30 pm - 8:00 pm",
+    "url": "http://www.barxiii.com/events/month/"
+   },
+   {
+    "quote": "Magic: The Gathering Happy Hour / 8:00 pm",
+    "url": "http://www.barxiii.com/events/month/"
+   },
+   {
+    "quote": "Magic: The Gathering Happy Hour / September 15 @ 8:00 pm",
+    "url": "http://www.barxiii.com/events/month/"
+   },
+   {
+    "quote": "HAPPY HOUR: 6pm-8pm",
+    "url": "http://www.barxiii.com/events/month/"
+   },
+   {
+    "quote": "HAPPY HOUR: 6pm-8pm",
+    "url": "https://barxiii.com/beer/"
+   }
+  ],
+  "menu_images": [
+   {
+    "src": "https://barxiii.com/wp-content/uploads/2025/05/Sober-Happy-Hour-IG.png",
+    "url": "http://www.barxiii.com/events/month/"
+   }
+  ],
+  "name": "Bar XIII Delaware",
+  "osm_name": "Bar XIII Delaware",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 173,
+    "result": "ok, 1 quote(s)",
+    "url": "http://www.barxiii.com/"
+   },
+   {
+    "hh": true,
+    "lines": 173,
+    "result": "ok, 1 quote(s)",
+    "url": "http://www.barxiii.com/"
+   },
+   {
+    "hh": true,
+    "lines": 559,
+    "result": "ok, 4 quote(s)",
+    "url": "http://www.barxiii.com/events/month/"
+   },
+   {
+    "hh": true,
+    "lines": 147,
+    "result": "ok, 1 quote(s)",
+    "url": "https://barxiii.com/beer/"
+   }
+  ],
+  "website": "http://www.barxiii.com/",
+  "zone_id": "wilmington"
+ },
+ "DE017d00facb": {
+  "address": "500 N Market St, Wilmington, DE 19801",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "The Knight's Bar",
+  "osm_name": "The Knight's Bar",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 248,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.thequeenwilmington.com/"
+   },
+   {
+    "hh": false,
+    "lines": 193,
+    "result": "ok, 0 quote(s)",
+    "url": "https://thequeenwilmington.com/special-events/"
+   },
+   {
+    "hh": false,
+    "lines": 203,
+    "result": "ok, 0 quote(s)",
+    "url": "http://thequeenwilmington.com/shows/"
+   },
+   {
+    "hh": false,
+    "lines": 285,
+    "result": "ok, 0 quote(s)",
+    "url": "https://thequeenwilmington.com/private-events/"
+   }
+  ],
+  "website": "http://www.thequeenwilmington.com/",
+  "zone_id": "wilmington"
+ },
+ "DE03fd0ecb4b": {
+  "address": "720 Justison St, Wilmington, DE 19801",
+  "crawled_at": "2026-09-02",
+  "hits": [
+   {
+    "quote": "Happy Hour! / 04:00 PM - 06:00 PM",
+    "url": "http://www.bigfishriverfront.com/"
+   },
+   {
+    "quote": "Great Happy Hour Daily / Family Friendly",
+    "url": "http://www.bigfishriverfront.com/"
+   },
+   {
+    "hh": true,
+    "quote": "Happy Hour at the Bar & High Tops! 04:00 PM - 06:00 PM",
+    "url": "http://www.bigfishriverfront.com/wilmington-wilmington-big-fish-grill-on-the-riverfront-happy-hours-specials"
+   },
+   {
+    "quote": "Happy Hour! / 04:00 PM - 06:00 PM / 04:00 PM - 09:00 PM",
+    "url": "http://www.bigfishriverfront.com/wilmington-wilmington-big-fish-grill-on-the-riverfront-happy-hours-specials"
+   },
+   {
+    "quote": "Happy Hour at the Bar & High Tops! / 04:00 PM - 06:00 PM / Monday September 7th",
+    "url": "http://www.bigfishriverfront.com/wilmington-wilmington-big-fish-grill-on-the-riverfront-happy-hours-specials"
+   },
+   {
+    "quote": "Happy Hour at the Bar & High Tops! / 04:00 PM - 06:00 PM / Tuesday September 8th",
+    "url": "http://www.bigfishriverfront.com/wilmington-wilmington-big-fish-grill-on-the-riverfront-happy-hours-specials"
+   },
+   {
+    "quote": "Happy Hour at the Bar & High Tops! / 04:00 PM - 06:00 PM / 04:00 PM - 09:00 PM",
+    "url": "http://www.bigfishriverfront.com/wilmington-wilmington-big-fish-grill-on-the-riverfront-happy-hours-specials"
+   }
+  ],
+  "name": "Big Fish Grill on the Riverfront",
+  "osm_name": "Big Fish Grill on the Riverfront",
+  "pages": [
+   {
+    "hh": true,
+    "lines": 125,
+    "result": "ok, 2 quote(s)",
+    "url": "http://www.bigfishriverfront.com/"
+   },
+   {
+    "hh": false,
+    "lines": 1504,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.bigfishriverfront.com/wilmington-wilmington-big-fish-grill-on-the-riverfront-events"
+   },
+   {
+    "hh": true,
+    "lines": 78,
+    "result": "ok, 4 quote(s)",
+    "url": "http://www.bigfishriverfront.com/wilmington-wilmington-big-fish-grill-on-the-riverfront-happy-hours-specials"
+   },
+   {
+    "hh": false,
+    "lines": 64,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.bigfishriverfront.com/wilmington-wilmington-big-fish-grill-on-the-riverfront-events-and-catering"
+   }
+  ],
+  "website": "http://www.bigfishriverfront.com/",
+  "zone_id": "wilmington"
+ },
+ "DE04866932fb": {
+  "address": "5914 Kirkwood Hwy, Wilmington, DE 19808",
+  "crawled_at": "2026-09-02",
+  "hits": [],
+  "name": "Vincente's Restaurant",
+  "osm_name": "Vincente's Restaurant",
+  "pages": [
+   {
+    "hh": false,
+    "lines": 19,
+    "result": "ok, 0 quote(s)",
+    "url": "http://www.vincentesrestaurant.com/"
+   }
+  ],
+  "website": "http://www.vincentesrestaurant.com/",
+  "zone_id": "wilmington"
  }
 }
