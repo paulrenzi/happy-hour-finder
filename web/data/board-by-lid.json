@@ -852,6 +852,44 @@
    }
   ]
  },
+ "131343": {
+  "name": "Anthony's Coal Fired Pizza",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "15:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "17574": {
   "name": "Black Powder Tavern",
   "deals": [
@@ -1023,6 +1061,34 @@
      {
       "dow": 5,
       "start": "17:00",
+      "end": "19:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "101476": {
+  "name": "GARRETT HILL ALE HOUSE LLC",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
       "end": "19:00"
      }
     ],
@@ -2245,6 +2311,44 @@
       "dow": 5,
       "start": "16:00",
       "end": "18:30"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "61728": {
+  "name": "The StoneRose",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
      }
     ],
     "source": {
@@ -6437,6 +6541,44 @@
    }
   ]
  },
+ "58996": {
+  "name": "Bistro on Bridge",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "64975": {
   "name": "Black Horse Tavern",
   "deals": [
@@ -6467,6 +6609,49 @@
       "dow": 5,
       "start": "16:00",
       "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "90605": {
+  "name": "il Granaio",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:30"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:30"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:30"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:30"
+     },
+     {
+      "dow": 6,
+      "start": "14:00",
+      "end": "16:30"
+     },
+     {
+      "dow": 7,
+      "start": "14:00",
+      "end": "16:30"
      }
     ],
     "source": {

@@ -52,6 +52,46 @@ HITS = os.path.join(REPO, "data", "crawl_hits.json")
 SITES = os.path.join(REPO, "data", "venue_sites.json")
 OUT = os.path.join(REPO, "data", "deals_extracted.json")
 COORDS = os.path.join(REPO, "data", "venue_coords.json")
+PAGES = os.path.join(REPO, "data", "pages")
+WINDOWS_LLM = os.path.join(REPO, "data", "windows_pages_llm.json")
+
+
+def norm(text):
+    """Whitespace-insensitive form, so an evidence check is not defeated by the
+    line breaks the crawler joined with ' / '."""
+    return re.sub(r"\s+", " ", text).strip().lower()
+
+
+def page_spans():
+    """{lid: (url, [span])} written by ingest/read_windows_llm.py, RE-CHECKED here.
+
+    A span only survives if it is still a literal substring of a page we hold
+    for that venue. The sidecar is not evidence of itself: it was verified when
+    it was written, the page may have changed since, and a file on disk is the
+    easiest thing in this pipeline to be wrong about. No model runs here.
+    """
+    if not os.path.exists(WINDOWS_LLM):
+        return {}
+    side = json.load(open(WINDOWS_LLM, encoding="utf-8"))
+    if not side or not os.path.isdir(PAGES):
+        return {}
+    text_by_lid = {}
+    for fn in os.listdir(PAGES):
+        if not fn.endswith(".json"):
+            continue
+        page = json.load(open(os.path.join(PAGES, fn), encoding="utf-8"))
+        lid = str(page.get("lid"))
+        if lid in side:
+            text_by_lid.setdefault(lid, []).append(
+                norm("\n".join(page.get("lines") or [])))
+    out = {}
+    for lid, rec in side.items():
+        live = [sp for sp in rec.get("spans") or []
+                if any(norm(sp) in t for t in text_by_lid.get(lid, []))]
+        if live:
+            out[lid] = (rec.get("url", ""), live)
+    return out
+
 
 DOW = {"mon": 1, "monday": 1, "tue": 2, "tues": 2, "tuesday": 2, "wed": 3,
        "weds": 3, "wednesday": 3, "thu": 4, "thur": 4, "thurs": 4,
@@ -820,6 +860,7 @@ def main():
     sites = json.load(open(SITES, encoding="utf-8"))
     coords = json.load(open(COORDS, encoding="utf-8")) if os.path.exists(COORDS) else {}
 
+    pages = page_spans()
     venues, stats, kept, rejects = [], collections.Counter(), [], []
     seen_ids = set()
     for lid, v in one_per_osm(hits, sites):
@@ -832,6 +873,22 @@ def main():
             ws = windows_from(h["quote"])
             if ws:
                 cands.append((h, ws))
+        if not cands:
+            # The page reader may propose a WINDOW as a verbatim span (Paul's
+            # call, 2026-09-02), and this is the whole of where it lands. The
+            # span was checked against the page when it was written and again
+            # by page_spans() above; here it is converted by windows_from() --
+            # the same parser, unmodified -- so a span with no meridiem is
+            # refused exactly as a crawled quote would be. It enters as an
+            # ordinary candidate, which means dedupe(), the PA validators and
+            # lawful_days() all still run over it below.
+            url, spans = pages.get(str(lid), ("", []))
+            for span in spans:
+                ws = windows_from(span)
+                if ws:
+                    cands.append(({"url": url, "quote": span}, ws))
+            if cands:
+                stats["  window read off the page"] += 1
         if not cands:
             stats["  quote states no schedule"] += 1
             if len(rejects) < args.rejects:

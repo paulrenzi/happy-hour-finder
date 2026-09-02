@@ -71,6 +71,193 @@
    ]
   },
   {
+   "id": "131343",
+   "lid": "131343",
+   "slug": "anthony-s-coal-fired-pizza-wayne",
+   "name": "Anthony's Coal Fired Pizza",
+   "address": "321 E Lancaster Ave, Wayne PA 19087",
+   "zone_id": "wayne_radnor",
+   "website": "https://acfp.com/",
+   "plcb_name": "FLORIDA COAL FIRED PIZZA LLC",
+   "license_type": "Restaurant (Liquor)",
+   "lat": 40.0444166,
+   "lng": -75.3794298,
+   "geo_precision": "place",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "The Slider Stack",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "Kickin' Chicken Flatbread",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "Spinach & Artichoke al Forno",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "Hot & Stuffed",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "Coal Heat Cauli",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "michelob ultra",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "Bud Light",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "Heineken",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "budweiser",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "Coors Light",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "Modelo Especial",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "Miller Lite",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "Corona",
+       "price_usd": 5.0
+      },
+      {
+       "category": "call",
+       "label": "Tito's Handmade",
+       "price_usd": 5.0
+      },
+      {
+       "category": "call",
+       "label": "Aviation American",
+       "price_usd": 5.0
+      },
+      {
+       "category": "call",
+       "label": "Jack Daniel's",
+       "price_usd": 5.0
+      },
+      {
+       "category": "call",
+       "label": "Bacardi",
+       "price_usd": 5.0
+      },
+      {
+       "category": "call",
+       "label": "Hornitos\u00ae",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "Pinot Grigio",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "Cabernet Sauvignon",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "Red Sangria",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "Sauvignon Blanc",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "Pinot Noir",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "White Sangria",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "bites and sips",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "label": "Bites",
+       "price_usd": 5.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://acfp.com/happy-hour/",
+      "quote": "MON - FRI \u2022 3-6 PM \u2022 Dine-In Only"
+     },
+     "items_source": "llm_extract"
+    }
+   ]
+  },
+  {
    "id": "17574",
    "lid": "17574",
    "slug": "black-powder-tavern-wayne",
@@ -420,6 +607,48 @@
       "kind": "venue_site",
       "url": "https://www.flipandbaileys.com/hold-happ",
       "quote": "Happy Hour / Monday - Friday / 5pm-7pm / $2 off all Drinks & Appetizers"
+     }
+    }
+   ]
+  },
+  {
+   "id": "101476",
+   "lid": "101476",
+   "slug": "garrett-hill-ale-house-llc-bryn-mawr",
+   "name": "GARRETT HILL ALE HOUSE LLC",
+   "address": "157 Garrett Ave, Bryn Mawr PA 19010",
+   "zone_id": "wayne_radnor",
+   "website": "https://www.garretthillalehouse.com/",
+   "plcb_name": "GARRETT HILL ALE HOUSE LLC",
+   "license_type": "Restaurant (Liquor)",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.garretthillalehouse.com/events-specials",
+      "quote": "Happy Hour Wednesday-Friday\n4pm-7pm"
      }
     }
    ]

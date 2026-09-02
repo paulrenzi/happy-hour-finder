@@ -357,6 +357,115 @@
      }
     }
    ]
+  },
+  {
+   "id": "61728",
+   "lid": "61728",
+   "slug": "the-stonerose-conshohocken",
+   "name": "The StoneRose",
+   "address": "822 Fayette St, Conshohocken PA 19428",
+   "zone_id": "conshohocken",
+   "website": "https://thestoneroserestaurant.com/",
+   "plcb_name": "COLD RIVER LLC",
+   "license_type": "Restaurant (Liquor)",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Draft Beers",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "Glass Wine",
+       "price_usd": 7.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Cucumber Martini",
+       "price_usd": 10.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Sour Cherry Old Fashioned",
+       "price_usd": 10.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Rose Sangria",
+       "price_usd": 10.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Espresso Martini",
+       "price_usd": 10.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Seasonal Farm to Glass Creation",
+       "price_usd": 10.0
+      },
+      {
+       "category": "wine",
+       "label": "Cellar Selection",
+       "price_usd": 35.0
+      },
+      {
+       "category": "food",
+       "label": "Smash Burger Sliders",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "Tuna Tostadas",
+       "price_usd": 12.0
+      },
+      {
+       "category": "food",
+       "label": "Mini Cheese Board",
+       "price_usd": 9.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-01",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://thestoneroserestaurant.com/food-menu",
+      "quote": "Monday - Friday 4 - 6pm | Bar Area Only"
+     },
+     "items_source": "llm_extract"
+    }
+   ]
   }
  ]
 }

@@ -549,15 +549,51 @@ are inside PDFs. **This is the same defect as "no intelligence over pages",
 one field to the left** — a rule engine decided what a schedule looks like, and
 these venues did not spell it that way.
 
-> ⏳ **PAUL'S CALL, and it is the single highest-value decision open on this
-> project.** Letting the reader propose a **window** changes the contract that
-> today says *items only, never a window*. The shape that preserves the
-> discipline: the model returns the **verbatim span**, `verify()` checks the
-> span is really in the page, and the **existing deterministic parser** converts
-> it — so *"no meridiem ⇒ refused, never guessed"* survives untouched and the
-> model still never invents a time. That is a reader proposing evidence, not a
-> source stating a fact. **Nothing has been built. Do not build it without the
-> call.**
+> ✅ **DECIDED 2026-09-02, by Paul: YES, the reader may propose a window.**
+> The shape approved is the shape built: the model returns a **verbatim span**,
+> `check()` asserts the span is literally in the page (and `extract_deals.py`
+> asserts it AGAIN before a card is built, so the sidecar is never evidence of
+> itself), and **`windows_from()` — the existing parser, unmodified — converts
+> it.** *"No meridiem ⇒ refused, never guessed"* is untouched, and the model
+> never states a time. `ingest/read_windows_llm.py`, sidecar
+> `data/windows_pages_llm.json`, tests in `tests/test_window_reader.py`.
+
+### What it did on the first run — and the two inherited claims it corrected
+
+31 eligible pages (the only pages sent are those of a venue whose quotes state
+NO schedule — a venue we already hold a window for is never sent), 6 calls,
+**6 verified spans across 5 venues, 3 refused.** `extract_deals.py` went
+**208 → 213 kept**, no existing card changed, and the five new cards arrived
+carrying the items that were already read and stranded:
+
+| venue | span the venue wrote | card |
+|---|---|---|
+| il Granaio | `TUESDAY - FRIDAY 4PM - 6:30PM` + `SATURDAY & SUNDAY 2PM - 4:30PM` (**PDF**) | 23 items, 2 windows |
+| Bistro on Bridge | `Monday-Friday 4:00-6:00PM` | 26 items |
+| Anthony's Coal Fired Pizza | `MON - FRI • 3-6 PM • Dine-In Only` | 26 items |
+| The StoneRose | `Monday - Friday 4 - 6pm \| Bar Area Only` | 11 items |
+| Garrett Hill Ale House | `Happy Hour Wednesday-Friday / 4pm-7pm` | window only |
+
+🔑 **The three refusals are the pass working, not failing.** Bonefish
+(`Happy Hour starts at 3:30pm daily.`) is a start with no end; Cornerstone
+(`tues-fri from 3:30-5:30`) has no meridiem; Miller's Ale House states two
+clauses across a line break that `clauses()` will not split. In all three the
+model pointed at the right sentence and **the deterministic parser declined it**
+— which is exactly the division of labour the decision bought.
+
+🛑 **Two claims in the 2026-09-02 handoff were wrong, and reading the pages
+corrected them:**
+
+- **Autograph Brasserie is NOT 7–9:30 PM.** That PDF's `6:30-9:30 PM` belongs to
+  **GIRLS NIGHT OUT**, and the `5 - 7 PM` to a prix fixe dinner. Its HAPPY HOUR
+  section states dishes, prices and **no hours at all**. The model returned
+  nothing, and nothing is the correct answer.
+- **Blue Bell Inn's 4:30–6:30 is not in any page we hold.** Both cached pages
+  contain no time but a phone number. It needs a re-crawl, not a reader.
+
+> 🔑 A window quoted in a handoff is a claim about a page. Check it against
+> the cached bytes before building anything on it — two of the five named
+> venues did not survive that check.
 
 ---
 
@@ -579,6 +615,7 @@ bandwidth to re-learn what we hold.
 python ingest/needy.py phoenixville wayne_radnor --show --lids run.lids
 python ingest/crawl_sites.py --lids run.lids --recrawl --render
 python ingest/read_pages_llm.py --show --rejects
+python ingest/read_windows_llm.py --show --rejects   # the WINDOW half
 python ingest/extract_deals.py && python ingest/build_bundles.py
 bash tests/run.sh && git add -A && git commit && git push
 python scratch/card_diff.py          # WHICH cards moved — a total cannot see this

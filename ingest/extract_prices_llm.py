@@ -40,7 +40,11 @@ import sys
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from extract_deals import HITS, SITES, one_per_osm, slug  # noqa: E402
+# norm() lives in extract_deals because extract_deals needs it too (it re-checks
+# a window span against the page), and it cannot import THIS module -- this one
+# already imports it. Re-exported here so the two reader passes keep importing
+# it from where they always have.
+from extract_deals import HITS, SITES, norm, one_per_osm, slug  # noqa: E402
 from validate_pa import BANNED, CATEGORIES  # noqa: E402
 
 BUNDLES = os.path.join(REPO, "web", "data")
@@ -126,12 +130,6 @@ Return ONLY a JSON array, no prose and no code fence:
 VENUES:
 {venues}
 """
-
-
-def norm(text):
-    """Whitespace-insensitive form, so an evidence check is not defeated by the
-    line breaks the crawler joined with ' / '."""
-    return re.sub(r"\s+", " ", text).strip().lower()
 
 
 def published():
