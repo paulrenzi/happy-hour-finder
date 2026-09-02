@@ -179,7 +179,14 @@ def main():
             # Keyed on name AND town: three Chickie's & Pete's are three
             # bars, and keying on the name alone made one of them answer
             # for another one's menu.
-            key = f"{venue['name'].strip()} @ {zone['name']}"
+            # The zone line also carries .branch when a real second branch of
+            # the same name ships in this zone (two Red Robins in Newark, DE).
+            # It has to be built the way the CARD builds it, or the two halves
+            # of this check stop describing the same string and the gate goes
+            # quietly blind.
+            where = " · ".join(x for x in (zone["name"], venue.get("branch"))
+                                    if x)
+            key = f"{venue['name'].strip()} @ {where}"
             # EVERY label the venue ships, across every deal -- not the last
             # deal's. A venue holds several deals since 2026-09-02 (a happy hour,
             # its daily specials, its food combos) and the board paints ONE of

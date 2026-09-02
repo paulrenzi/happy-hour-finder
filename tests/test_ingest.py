@@ -1887,6 +1887,46 @@ class OneBarOneCard(unittest.TestCase):
         self.assertNotEqual(norm_name("Amada"), norm_name("Armada"))
 
 
+class ARealBranchMustSayWhichOneItIs(unittest.TestCase):
+    """The half the merge deliberately left undone.
+
+    collapse_name_collisions() refuses to merge two genuine bars, which is
+    right. But Newark, DE ships a Red Robin on Pulaski Hwy and another on
+    W Main St, three miles apart, and the two cards were identical down to
+    the window -- so a reader could not tell which one they were tapping.
+    Whatever collision SURVIVES the merge is a branch, and gets its street.
+    """
+
+    def venue(self, lid, name, address):
+        return {"id": lid, "lid": lid, "name": name, "zone_id": "z",
+                "plcb_name": name, "address": address, "deals": []}
+
+    def test_two_real_branches_each_get_their_street(self):
+        a = self.venue("1", "Red Robin", "2496 Pulaski Hwy, Newark, DE 19702")
+        b = self.venue("2", "Red Robin", "101 W Main St, Newark, DE 19702")
+        self.assertEqual(build_bundles.name_the_surviving_branches({"z": [a, b]}), 2)
+        self.assertEqual(a["branch"], "Pulaski Hwy")
+        self.assertEqual(b["branch"], "W Main St")
+
+    def test_a_bar_with_no_namesake_is_left_alone(self):
+        a = self.venue("1", "Black Powder Tavern", "1164 Valley Forge Rd, Wayne PA")
+        self.assertEqual(build_bundles.name_the_surviving_branches({"z": [a]}), 0)
+        self.assertNotIn("branch", a)
+
+    def test_a_label_that_would_repeat_is_not_applied(self):
+        # Two rows we cannot separate stay unlabelled: a street printed twice
+        # tells a reader less than no street at all.
+        a = self.venue("1", "Dandan", "100 Sugartown Rd, Devon PA")
+        b = self.venue("2", "Dandan", "Ste 4, 100 Sugartown Rd, Devon PA")
+        self.assertEqual(build_bundles.name_the_surviving_branches({"z": [a, b]}), 0)
+
+    def test_the_house_number_is_not_the_label(self):
+        self.assertEqual(build_bundles.street_of("2496 Pulaski Hwy, Newark, DE"),
+                         "Pulaski Hwy")
+        self.assertEqual(build_bundles.street_of("101-A W Main St, Newark"),
+                         "W Main St")
+
+
 class MenuPricesOnAHappyHourPage(unittest.TestCase):
     """A price and the thing it is for, printed in separate blocks.
 

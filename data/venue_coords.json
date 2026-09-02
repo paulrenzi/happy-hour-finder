@@ -134,6 +134,15 @@
   "queried": "114 S OLIVE ST, MEDIA PA 19063-3202",
   "resolved": "Ariano"
  },
+ "augustine-tavern-middletown": {
+  "lat": 39.5077511,
+  "lng": -75.5794538,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "1919 St Augustine Rd, Middletown, DE 19709",
+  "resolved": "Augustine Tavern"
+ },
  "avenue-kitchen-glen-mills": {
   "lat": 39.8644358,
   "lng": -75.5424654,
@@ -280,6 +289,15 @@
   "queried": "414 S 2ND ST, PHILADELPHIA PA 19147-1608",
   "resolved": "Bloomsday Cafe"
  },
+ "blue-crab-grill-newark": {
+  "lat": 39.6682741,
+  "lng": -75.77783079999999,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "322 Suburban Dr, Newark, DE 19711",
+  "resolved": "Blue Crab Grill"
+ },
  "bolo-philadelphia": {
   "lat": 39.951507,
   "lng": -75.174575,
@@ -343,6 +361,15 @@
   "queried": "230 W 11th St, Wilmington, DE 19801",
   "resolved": "Cafe Mezzanotte"
  },
+ "caff-gelato-restaurant-newark": {
+  "lat": 39.6834086,
+  "lng": -75.7499079,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "90 E Main St near, Newark, DE 19711",
+  "resolved": "Caff\u00e8 Gelato Restaurant"
+ },
  "cantina-feliz-fort-washington": {
   "lat": 40.1363009,
   "lng": -75.2136073,
@@ -351,6 +378,15 @@
   "precision": "place",
   "queried": "424 S BETHLEHEM PIKE, FORT WASHINGTON PA 19034-2304",
   "resolved": "Cantina Feliz"
+ },
+ "cantwell-s-tavern-odessa": {
+  "lat": 39.4541682,
+  "lng": -75.6563797,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "109 Main St, Odessa, DE 19730",
+  "resolved": "Cantwell's Tavern"
  },
  "casa-mia-media": {
   "lat": 39.9131341,
@@ -369,6 +405,15 @@
   "precision": "place",
   "queried": "111 W 10th St, Wilmington, DE 19801",
   "resolved": "Casa Nonna"
+ },
+ "casey-s-drexel-hill": {
+  "lat": 39.9600125,
+  "lng": -75.2886439,
+  "matched_by": "osm_site",
+  "osm": "node/5064556125",
+  "precision": "place",
+  "queried": "812 LANSDOWNE AVE, DREXEL HILL PA 19026-1526",
+  "resolved": "Casey's"
  },
  "catherine-rooney-s-wilmington": {
   "lat": 39.7576105,
@@ -433,6 +478,15 @@
   "queried": "821 N Market St, Wilmington, DE 19801",
   "resolved": "Chelsea Tavern"
  },
+ "chili-s-grill-bar-newark": {
+  "lat": 39.67170000000001,
+  "lng": -75.64961,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "3220 Fashion Center Blvd, Newark, DE 19702",
+  "resolved": "Chili's Grill & Bar"
+ },
  "chili-s-philadelphia": {
   "lat": 39.9532308,
   "lng": -75.1610942,
@@ -496,6 +550,15 @@
   "precision": "amenity",
   "queried": "800 Spring Mill Ave, Conshohocken PA 19428",
   "resolved": "Coyote Crossing, 800, Spring Mill Avenue, Spring Mill, Conshohocken, Montgomery County, Pennsylvania, 19428, United States"
+ },
+ "crooked-hammock-brewery-middletown": {
+  "lat": 39.443765899999995,
+  "lng": -75.7327651,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "316 Auto Park Dr, Middletown, DE 19709",
+  "resolved": "Crooked Hammock Brewery"
  },
  "cuba-libre-philadelphia": {
   "lat": 39.9495924,
@@ -596,6 +659,15 @@
   "queried": "2118 WASHINGTON AVE, PHILADELPHIA PA 19146",
   "resolved": "Dock Street Brewery South"
  },
+ "dolly-spanker-s-delaware-city": {
+  "lat": 39.579558,
+  "lng": -75.58794,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "30 Clinton St, Delaware City, DE 19706",
+  "resolved": "Dolly Spanker's"
+ },
  "dorcea-wilmington": {
   "lat": 39.7502097,
   "lng": -75.54941749999999,
@@ -658,6 +730,15 @@
   "precision": "place",
   "queried": "200 Pencader Plaza, Newark, DE 19711",
   "resolved": "Fiesta Maya | Mexican Grill"
+ },
+ "firebirds-wood-fired-grill-newark": {
+  "lat": 39.6905212,
+  "lng": -75.6596592,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "1225 Churchmans Rd, Newark, DE 19713",
+  "resolved": "Firebirds Wood Fired Grill"
  },
  "firebirds-wood-fired-grill-north-wales": {
   "lat": 40.2077081,
@@ -759,6 +840,24 @@
   "queried": "224 S 15TH ST, PHILADELPHIA PA 19102-3806",
   "resolved": "Good Dog Bar"
  },
+ "grain-craft-bar-kitchen-newark": {
+  "lat": 39.684055,
+  "lng": -75.742228,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "270 E Main St, Newark, DE 19711",
+  "resolved": "Grain Craft Bar + Kitchen"
+ },
+ "grain-h2o-bear": {
+  "lat": 39.5481714,
+  "lng": -75.70577999999999,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "3006 Summit Harbour Pl, Bear, DE 19701",
+  "resolved": "Grain H2O"
+ },
  "great-american-pub-narberth": {
   "lat": 40.0060034,
   "lng": -75.2600251,
@@ -822,6 +921,15 @@
   "queried": "8980 GAP NEWPORT PK, TOUGHKENAMON PA 19374-1041",
   "resolved": "Hilltop Crab House Restaurant & Bar"
  },
+ "home-grown-cafe-newark": {
+  "lat": 39.683577899999996,
+  "lng": -75.74798,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "126 E Main St, Newark, DE 19711",
+  "resolved": "Home Grown Cafe"
+ },
  "interstate-drafthouse-philadelphia": {
   "lat": 39.9718422,
   "lng": -75.1286774,
@@ -840,6 +948,15 @@
   "precision": "building",
   "queried": "30-32 E State St, Media PA 19063",
   "resolved": "30, East State Street, Media, Delaware County, Pennsylvania, 19063, United States"
+ },
+ "jackson-house-middletown": {
+  "lat": 39.4506307,
+  "lng": -75.7207489,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "17 Wood St, Middletown, DE 19709",
+  "resolved": "Jackson House"
  },
  "james-street-tavern-newport": {
   "lat": 39.713644599999995,
@@ -912,6 +1029,24 @@
   "precision": "place",
   "queried": "1812 Marsh Rd Ste 15, Wilmington, DE 19810",
   "resolved": "Kid Shelleen's - Branmar Plaza"
+ },
+ "kirkwood-country-club-newark": {
+  "lat": 39.705916099999996,
+  "lng": -75.6848301,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "2612 Kirkwood Hwy, Newark, DE 19711",
+  "resolved": "Kirkwood Country Club"
+ },
+ "klondike-kate-s-restaurant-saloon-newark": {
+  "lat": 39.683732299999996,
+  "lng": -75.7469155,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "158 E Main St, Newark, DE 19711",
+  "resolved": "Klondike Kate's Restaurant & Saloon"
  },
  "la-porta-ristorante-media": {
   "lat": 39.9389816,
@@ -1092,6 +1227,15 @@
   "precision": "place",
   "queried": "376 W BUTLER AVE, NEW BRITAIN PA 18901-5112",
   "resolved": "New Britain Inn"
+ },
+ "nora-lees-french-quarter-bistro-new-castle": {
+  "lat": 39.6591133,
+  "lng": -75.5635076,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "124 Delaware St, New Castle, DE 19720",
+  "resolved": "Nora Lees French Quarter Bistro"
  },
  "north-italia-king-of-prussia": {
   "lat": 40.0884465,
@@ -1291,6 +1435,15 @@
   "queried": "50 E WYNNEWOOD RD, WYNNEWOOD PA 19096-2030",
   "resolved": "PJ Whelihan's"
  },
+ "potstickers-asian-grill-newark": {
+  "lat": 39.6910538,
+  "lng": -75.6606857,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "1247 Churchmans Rd, Newark, DE 19713",
+  "resolved": "Potstickers Asian Grill"
+ },
  "prohibition-taproom-philadelphia": {
   "lat": 39.9607305,
   "lng": -75.1594566,
@@ -1317,6 +1470,33 @@
   "precision": "place",
   "queried": "202 & 206 E LANCASTER AVE, DOWNINGTOWN PA 19335-2957",
   "resolved": "R5 Wines"
+ },
+ "red-robin-gourmet-burgers-and-brews-middletown": {
+  "lat": 39.445851499999996,
+  "lng": -75.74063869999999,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "140 Commerce Dr, Middletown, DE 19709",
+  "resolved": "Red Robin Gourmet Burgers and Brews"
+ },
+ "red-robin-gourmet-burgers-and-brews-newark": {
+  "lat": 39.6040472,
+  "lng": -75.74911259999999,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "2496 Pulaski Hwy, Newark, DE 19702",
+  "resolved": "Red Robin Gourmet Burgers and Brews"
+ },
+ "red-robin-gourmet-burgers-and-brews-newark-DE832e5754e7": {
+  "lat": 39.6680108,
+  "lng": -75.666417,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "101 W Main St, Newark, DE 19702",
+  "resolved": "Red Robin Gourmet Burgers and Brews"
  },
  "redfire-grill-steakhouse-hockessin": {
   "lat": 39.776199999999996,
@@ -1461,6 +1641,24 @@
   "precision": "place",
   "queried": "44 W GAY ST, WEST CHESTER PA 19380",
   "resolved": "Sedona Taphouse"
+ },
+ "shellhammer-s-bar-and-grill-newark": {
+  "lat": 39.6666838,
+  "lng": -75.6706738,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "9 University Dr, Newark, DE 19702",
+  "resolved": "Shellhammer's Bar and Grill"
+ },
+ "skipjack-dining-newark": {
+  "lat": 39.7115693,
+  "lng": -75.742846,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "401 Louviers Dr, Newark, DE 19711",
+  "resolved": "Skipjack Dining"
  },
  "sligo-irish-pub-media": {
   "lat": 39.918438599999995,
@@ -1678,6 +1876,15 @@
   "queried": "1700 FAIRMOUNT AVE, PHILADELPHIA PA 19130-2812",
   "resolved": "The Fairmount Tavern"
  },
+ "the-farmhouse-middletown-middletown": {
+  "lat": 39.448639899999996,
+  "lng": -75.7323274,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "416 S Ridge Ave, Middletown, DE 19709",
+  "resolved": "The Farmhouse Middletown"
+ },
  "the-great-american-pub-phoenixville": {
   "lat": 40.134039,
   "lng": -75.5143516,
@@ -1695,6 +1902,15 @@
   "precision": "place",
   "queried": "128 FORD ST, WEST CONSHOHOCKEN PA 19428",
   "resolved": "The Gypsy Saloon"
+ },
+ "the-marshallton-steakhouse-wilmington": {
+  "lat": 39.7308269,
+  "lng": -75.63205719999999,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "3517 Old Capitol Trl, Wilmington, DE 19808",
+  "resolved": "The Marshallton Steakhouse"
  },
  "the-nomad-bar-wilmington": {
   "lat": 39.7454981,
@@ -1804,6 +2020,24 @@
   "queried": "2009-11 SANSOM ST, PHILADELPHIA PA 19103",
   "resolved": "the Wilder"
  },
+ "timothy-s-of-newark-newark": {
+  "lat": 39.689344399999996,
+  "lng": -75.7479743,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "100 Creek View Rd, Newark, DE 19711",
+  "resolved": "Timothy's of Newark"
+ },
+ "tio-taco-tequila-newark": {
+  "lat": 39.679027999999995,
+  "lng": -75.65330999999999,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "325 Christiana Mall Spc 1325, Newark, DE 19702",
+  "resolved": "Tio Taco + Tequila"
+ },
  "tired-hands-ardmore": {
   "lat": 40.006933,
   "lng": -75.290392,
@@ -1813,6 +2047,15 @@
   "precision": "amenity",
   "queried": "35 Cricket Terrace, Ardmore PA 19003",
   "resolved": "Tired Hands Fermentaria, 35, Cricket Terrace, Hamilton Court, Wynnewood, Ardmore, Lower Merion Township, Montgomery County, Pennsylvania, 19003, United States"
+ },
+ "tommy-s-tavern-tap-newark": {
+  "lat": 39.679400699999995,
+  "lng": -75.65351299999999,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "315 Christiana Mall, Newark, DE 19702",
+  "resolved": "Tommy's Tavern + Tap"
  },
  "tonic-seafood-steak-wilmington": {
   "lat": 39.7473935,
@@ -1887,6 +2130,15 @@
   "queried": "36 W 3RD AVE, COLLEGEVILLE PA 19426-3605",
   "resolved": "Troubles End Brewing"
  },
+ "two-stones-pub-hockessin-hockessin": {
+  "lat": 39.7748989,
+  "lng": -75.7096687,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "300 Lantana Dr, Hockessin, DE 19707",
+  "resolved": "Two Stones Pub Hockessin"
+ },
  "two-stones-pub-kennett-square-kennett-square": {
   "lat": 39.863525599999996,
   "lng": -75.6836794,
@@ -1895,6 +2147,15 @@
   "precision": "place",
   "queried": "843 E BALTIMORE PK, KENNETT SQUARE PA 19348-1801",
   "resolved": "Two Stones Pub Kennett Square"
+ },
+ "two-stones-pub-newark": {
+  "lat": 39.6746281,
+  "lng": -75.680019,
+  "matched_by": "osm_site",
+  "osm": null,
+  "precision": "place",
+  "queried": "1203 Christiana Rd, Newark, DE 19713",
+  "resolved": "Two Stones Pub"
  },
  "two-stones-pub-wilmington-wilmington": {
   "lat": 39.825306999999995,

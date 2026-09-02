@@ -160,6 +160,59 @@ def collapse_name_collisions(by_zone):
     return collapsed
 
 
+def name_the_surviving_branches(by_zone):
+    """Two real branches in one town must not paint two cards a reader cannot
+    tell apart.
+
+    collapse_name_collisions() deliberately leaves same-name rows alone when
+    they are two genuine bars -- merging two real bars is far worse than
+    listing one twice. But it left the READER with the harder half: Newark, DE
+    ships a Red Robin on Pulaski Hwy and another on W Main St, three miles
+    apart, and the two cards were identical down to the window. Whichever one
+    you tapped, you could not know which one you had.
+
+    So whatever name collision SURVIVES the merge is a branch by definition,
+    and it gets the one thing that separates it: its street. Returns how many
+    rows were labelled.
+    """
+    labelled = 0
+    for venues in by_zone.values():
+        groups = {}
+        for v in venues:
+            groups.setdefault(norm_name(v["name"]), []).append(v)
+        for rows in groups.values():
+            if len(rows) < 2:
+                continue
+            streets = {v["id"]: street_of(v.get("address")) for v in rows}
+            # A street only disambiguates if the streets DIFFER. Two rows we
+            # could not separate stay unlabelled rather than both claiming the
+            # same address -- a label that repeats is worse than none.
+            if len({s for s in streets.values() if s}) < len(rows):
+                continue
+            for v in rows:
+                v["branch"] = streets[v["id"]]
+                labelled += 1
+    return labelled
+
+
+def street_of(address):
+    """'2496 Pulaski Hwy, Newark, DE 19702' -> 'Pulaski Hwy'. The house number
+    is dropped: it is noise on a card, and the street is what tells a local
+    which side of town they are being sent to.
+
+    Unit clauses go too, leading or inline. 'Ste 4, 100 Sugartown Rd' otherwise
+    labels one Dandan 'Ste 4' and the other 'Sugartown Rd' -- two labels for one
+    door, which reads as two bars that are not there."""
+    unit = r"(?:ste|suite|unit|apt|bldg|fl|floor|rm|room|store|#)"
+    segs = [s.strip() for s in str(address or "").split(",")]
+    segs = [s for s in segs if s and not re.match(unit + r"\b", s, re.I)]
+    head = re.sub(r"\s+" + unit + r"\b.*$", "", segs[0] if segs else "", flags=re.I)
+    parts = head.split()
+    while parts and re.match(r"^[\d-]+[A-Za-z]?$", parts[0]):
+        parts.pop(0)
+    return " ".join(parts)
+
+
 def merge_rows(rows, reason="same name, same source page"):
     """One winner keeps the card; the losers give back the trade name and the
     deals, and ride along in also_lids. Returns how many were collapsed."""
@@ -690,6 +743,7 @@ def main():
     menu_ratchet(by_zone, verdicts, HOLE_BUDGET)
 
     merged = collapse_name_collisions(by_zone)
+    branded = name_the_surviving_branches(by_zone)
 
     for venues in by_zone.values():
         # Deal-bearing first, then alphabetical: the bundle order is what the app
@@ -811,6 +865,9 @@ def main():
     if merged:
         print(f"  {merged} second licence(s) at a bar already on the board were "
               f"collapsed into its card (one bar, one card)")
+    if branded:
+        print(f"  {branded} venue(s) share a name with a real second branch in "
+              f"their zone and now carry the street that tells them apart")
     if outside:
         print(f"  {outside} licensed venue(s) sit outside every zone and cannot be "
               f"reached in the UI -- add a zone in data/zones.json to surface them")

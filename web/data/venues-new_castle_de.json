@@ -58,24 +58,6 @@
    "deals": []
   },
   {
-   "lid": "DE67e9d8cbb9",
-   "name": "Augustine Tavern",
-   "address": "1919 St Augustine Rd, Middletown, DE 19709",
-   "zone_id": "new_castle_de",
-   "license_type": "",
-   "id": "DE67e9d8cbb9",
-   "plcb_name": "Augustine Tavern",
-   "website": "http://www.augustinetavern.com/",
-   "lat": 39.5077511,
-   "lng": -75.5794538,
-   "geo_precision": "place",
-   "photo": {
-    "attribution": "Photo: April O / Google",
-    "file": "img/venues/DE67e9d8cbb9.jpg"
-   },
-   "deals": []
-  },
-  {
    "lid": "DE2f237dd17d",
    "name": "AUNT BERTA'S KITCHEN",
    "address": "198 N Dupont Hwy, New Castle, DE 19720",
@@ -212,24 +194,6 @@
    "deals": []
   },
   {
-   "lid": "DEd3e9422996",
-   "name": "Cantwell's Tavern",
-   "address": "109 Main St, Odessa, DE 19730",
-   "zone_id": "new_castle_de",
-   "license_type": "",
-   "id": "DEd3e9422996",
-   "plcb_name": "Cantwell's Tavern",
-   "website": "https://www.cantwells-tavern.com/",
-   "lat": 39.4541682,
-   "lng": -75.6563797,
-   "geo_precision": "place",
-   "photo": {
-    "attribution": "Photo: Cantwell's Tavern / Google",
-    "file": "img/venues/DEd3e9422996.jpg"
-   },
-   "deals": []
-  },
-  {
    "lid": "DE7a60f24194",
    "name": "Capt Zeak's Crab House and Seafood",
    "address": "192 N Dupont Hwy, New Castle, DE 19720",
@@ -337,7 +301,8 @@
     "attribution": "Photo: Claymont Steak Shop / Google",
     "file": "img/venues/DEb4816b0585.jpg"
    },
-   "deals": []
+   "deals": [],
+   "branch": "Philadelphia Pike"
   },
   {
    "lid": "DEe148aeb50d",
@@ -355,7 +320,8 @@
     "attribution": "Photo: Peggy S / Google",
     "file": "img/venues/DEe148aeb50d.jpg"
    },
-   "deals": []
+   "deals": [],
+   "branch": "Concord Pike"
   },
   {
    "lid": "DE1464337baa",
@@ -426,24 +392,6 @@
    "photo": {
     "attribution": "Photo: The Dove Diner Restaurant / Google",
     "file": "img/venues/DEb2f0d7b9c1.jpg"
-   },
-   "deals": []
-  },
-  {
-   "lid": "DE653f2bc1d1",
-   "name": "Dolly Spanker's",
-   "address": "30 Clinton St, Delaware City, DE 19706",
-   "zone_id": "new_castle_de",
-   "license_type": "",
-   "id": "DE653f2bc1d1",
-   "plcb_name": "Dolly Spanker's",
-   "website": "http://www.dollyspankers.com/",
-   "lat": 39.579558,
-   "lng": -75.58794,
-   "geo_precision": "place",
-   "photo": {
-    "attribution": "Photo: Dolly Spanker's / Google",
-    "file": "img/venues/DE653f2bc1d1.jpg"
    },
    "deals": []
   },
@@ -966,24 +914,6 @@
    "deals": []
   },
   {
-   "lid": "DEa4046b009e",
-   "name": "Nora Lees French Quarter Bistro",
-   "address": "124 Delaware St, New Castle, DE 19720",
-   "zone_id": "new_castle_de",
-   "license_type": "",
-   "id": "DEa4046b009e",
-   "plcb_name": "Nora Lees French Quarter Bistro",
-   "website": "http://noralees.com/",
-   "lat": 39.6591133,
-   "lng": -75.5635076,
-   "geo_precision": "place",
-   "photo": {
-    "attribution": "Photo: Nora Lees / Google",
-    "file": "img/venues/DEa4046b009e.jpg"
-   },
-   "deals": []
-  },
-  {
    "lid": "DE098cf14df7",
    "name": "NY Gyro & Grill",
    "address": "3541 Philadelphia Pike, Claymont, DE 19703",
@@ -1286,24 +1216,6 @@
    "photo": {
     "attribution": "Photo: The Dog House / Google",
     "file": "img/venues/DE3270355de7.jpg"
-   },
-   "deals": []
-  },
-  {
-   "lid": "DE52b4feabfb",
-   "name": "The Marshallton Steakhouse",
-   "address": "3517 Old Capitol Trl, Wilmington, DE 19808",
-   "zone_id": "new_castle_de",
-   "license_type": "",
-   "id": "DE52b4feabfb",
-   "plcb_name": "The Marshallton Steakhouse",
-   "website": "https://themarshallton.com/",
-   "lat": 39.7308269,
-   "lng": -75.63205719999999,
-   "geo_precision": "place",
-   "photo": {
-    "attribution": "Photo: The Marshallton Steakhouse / Google",
-    "file": "img/venues/DE52b4feabfb.jpg"
    },
    "deals": []
   },

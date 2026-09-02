@@ -3624,6 +3624,88 @@
    ]
   },
   {
+   "id": "casey-s-drexel-hill",
+   "lid": "125992",
+   "name": "Casey's",
+   "plcb_name": "CASEY'S DREXEL HILL",
+   "address": "812 LANSDOWNE AVE, DREXEL HILL PA 19026-1526",
+   "zone_id": "upper_darby_lansdowne",
+   "license_type": "",
+   "website": "https://www.caseysdh.com",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "margaritas",
+       "price_usd": 8.0
+      },
+      {
+       "category": "well",
+       "label": "well drinks",
+       "price_usd": 5.0
+      },
+      {
+       "category": "draft",
+       "label": "domestic drafts",
+       "price_usd": 3.0
+      },
+      {
+       "category": "food",
+       "label": "bites and make every visit a",
+       "price_usd": 8.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://caseysdh.com/page/happy-hour",
+      "quote": "Early & Late Night Happy Hour Specials / Kick off your evening with happy hour Monday through Friday from 3 PM to 6 PM, then keep the fun going late Thursday to Saturday from 9 PM to midnight. Enjoy $8 margaritas, mules, and martinis, $7 Statesides and Surfsides, $5 well drinks, and $3 domestic drafts. Pair your favorites with $8 bites and make every visit a good time.",
+      "quotes": [
+       "Early & Late Night Happy Hour Specials / Kick off your evening with happy hour Monday through Friday from 3 PM to 6 PM, then keep the fun going late Thursday to Saturday from 9 PM to midnight. Enjoy $8 margaritas, mules, and martinis, $7 Statesides and Surfsides, $5 well drinks, and $3 domestic drafts. Pair your favorites with $8 bites and make every visit a good time.",
+       "Happy Hour | Casey's Drexel Hill / Kick off your evening with happy hour Monday through Friday from 3 PM to 6 PM, then keep the fun going late Thursday to Saturday from 9 PM to midnight. Enjoy $8 margaritas, mules, and martinis, $7 Statesides and Surfsides, $5 well drinks, and $3 domestic drafts. Pair your favorites with $8 bites and make every visit a good time.",
+       "Kick off your evening with happy hour Monday through Friday from 3 PM to 6 PM, then keep the fun going late Thursday to Saturday from 9 PM to midnight. Enjoy $8 margaritas, mules, and martinis, $7 Statesides and Surfsides, $5 well drinks, and $3 domestic drafts. Pair your favorites with $8 bites and make every visit a good time."
+      ]
+     }
+    }
+   ]
+  },
+  {
    "id": "the-stone-tavern-west-chester",
    "lid": "126237",
    "name": "The Stone Tavern",
@@ -15665,6 +15747,125 @@
    ]
   },
   {
+   "id": "klondike-kate-s-restaurant-saloon-newark",
+   "lid": "DE238b6605af",
+   "name": "Klondike Kate's Restaurant & Saloon",
+   "plcb_name": "Klondike Kate's Restaurant & Saloon",
+   "address": "158 E Main St, Newark, DE 19711",
+   "zone_id": "newark_de",
+   "license_type": "",
+   "website": "https://www.klondikekates.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.klondikekates.com/",
+      "quote": "Happy Hour: / Monday to Friday 3 pm to 6 pm",
+      "quotes": [
+       "Happy Hour: / Monday to Friday 3 pm to 6 pm",
+       "Happy Hour / Monday to Friday 3 pm to 6 pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "kirkwood-country-club-newark",
+   "lid": "DE24d26181e2",
+   "name": "Kirkwood Country Club",
+   "plcb_name": "Kirkwood Country Club",
+   "address": "2612 Kirkwood Hwy, Newark, DE 19711",
+   "zone_id": "newark_de",
+   "license_type": "",
+   "website": "https://kirkwoodcountry.club/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "12:00",
+       "end": "16:00"
+      },
+      {
+       "dow": 2,
+       "start": "12:00",
+       "end": "16:00"
+      },
+      {
+       "dow": 3,
+       "start": "12:00",
+       "end": "16:00"
+      },
+      {
+       "dow": 4,
+       "start": "12:00",
+       "end": "16:00"
+      },
+      {
+       "dow": 5,
+       "start": "12:00",
+       "end": "16:00"
+      },
+      {
+       "dow": 6,
+       "start": "12:00",
+       "end": "16:00"
+      },
+      {
+       "dow": 7,
+       "start": "12:00",
+       "end": "16:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://kirkwoodcountry.club/events-%26-entertainment",
+      "quote": "HAPPY HOUR / 12pm-4pm",
+      "quotes": [
+       "HAPPY HOUR / 12pm-4pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
    "id": "del-pez-riverfront-wilmington",
    "lid": "DE26f3edb53d",
    "name": "Del Pez Riverfront",
@@ -15937,6 +16138,60 @@
    ]
   },
   {
+   "id": "grain-h2o-bear",
+   "lid": "DE34ebec1190",
+   "name": "Grain H2O",
+   "plcb_name": "Grain H2O",
+   "address": "3006 Summit Harbour Pl, Bear, DE 19701",
+   "zone_id": "newark_de",
+   "license_type": "",
+   "website": "https://meetatgrain.com/grain-h2o-pan",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://meetatgrain.com/locationsmenus",
+      "quote": "Happy Hours / Mon-Fri: 3pm-6pm / Mondays 6p",
+      "quotes": [
+       "Happy Hours / Mon-Fri: 3pm-6pm / Mondays 6p"
+      ]
+     }
+    }
+   ]
+  },
+  {
    "id": "dead-presidents-pub-restaurant-wilmington",
    "lid": "DE35c46628ec",
    "name": "Dead Presidents Pub & Restaurant",
@@ -16092,6 +16347,112 @@
    ]
   },
   {
+   "id": "red-robin-gourmet-burgers-and-brews-newark",
+   "lid": "DE3d7ad5e0df",
+   "name": "Red Robin Gourmet Burgers and Brews",
+   "plcb_name": "Red Robin Gourmet Burgers and Brews",
+   "address": "2496 Pulaski Hwy, Newark, DE 19702",
+   "zone_id": "newark_de",
+   "license_type": "",
+   "website": "https://www.redrobin.com/locations/de/newark/glasgow-656",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "House Margarita",
+       "price_usd": 7.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Choose",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "label": "Veggie Burger",
+       "price_usd": 17.0
+      },
+      {
+       "category": "food",
+       "label": "Veggie",
+       "price_usd": 17.0
+      },
+      {
+       "category": "food",
+       "label": "Bar Wings",
+       "price_usd": 15.0
+      },
+      {
+       "category": "food",
+       "label": "Pretzel Bites",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "label": "Queso Fundido",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Small Margarita",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Small Spiked Freckled Lemonade",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Small Long Island Iced Tea",
+       "price_usd": 6.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.redrobin.com/locations/de/newark/glasgow-656",
+      "quote": "Join us for Happy Hour / Join us every weekday for Happy Hour from 3-6pm. Dial up the happy on your entire crew with specials on select milkshakes and appetizers - including our famous Towering Onion Rings - or, enjoy domestic and craft beer, wine and drinks starting at only $4. See you 'bout 3-ish? / 50% Off Kids' Meals on Wednesdays",
+      "quotes": [
+       "Join us for Happy Hour / Join us every weekday for Happy Hour from 3-6pm. Dial up the happy on your entire crew with specials on select milkshakes and appetizers - including our famous Towering Onion Rings - or, enjoy domestic and craft beer, wine and drinks starting at only $4. See you 'bout 3-ish? / 50% Off Kids' Meals on Wednesdays",
+       "Join us every weekday for Happy Hour from 3-6pm. Dial up the happy on your entire crew with specials on select milkshakes and appetizers - including our famous Towering Onion Rings - or, enjoy domestic and craft beer, wine and drinks starting at only $4. See you 'bout 3-ish?"
+      ]
+     }
+    }
+   ]
+  },
+  {
    "id": "goobers-diner-wilmington",
    "lid": "DE4264e33ba0",
    "name": "Goobers Diner",
@@ -16211,6 +16572,326 @@
       "quotes": [
        "Happy Hour / 3-6PM weekDAYS / martini mondays",
        "\u2014 happy hour \u2014 / Offered Weekdays from 3-6pm."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "skipjack-dining-newark",
+   "lid": "DE4b33244ae6",
+   "name": "Skipjack Dining",
+   "plcb_name": "Skipjack Dining",
+   "address": "401 Louviers Dr, Newark, DE 19711",
+   "zone_id": "newark_de",
+   "license_type": "",
+   "website": "http://skipjacknewark.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "all drinks except bottled beers",
+       "amount_off_usd": 1.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://skipjacknewark.com/newark-skipjack-dining-happy-hours-specials",
+      "quote": "Join us for Happy Hour! Small plates and $1 off all drinks except bottled beers! 03:00 PM - 06:00 PM",
+      "quotes": [
+       "Join us for Happy Hour! Small plates and $1 off all drinks except bottled beers! 03:00 PM - 06:00 PM",
+       "Happy Hour 3-6 with drink specials and small plates! / 03:00 PM - 06:00 PM",
+       "Happy Hour 3-6 with drink specials and small plates! 03:00 PM - 06:00 PM",
+       "Happy Hour 3-6 with drink specials and small plates! / 03:00 PM - 06:00 PM / Friday September 4th / Happy Hour 3-6 with drink specials and small plates! / 03:00 PM - 06:00 PM / Saturday September 5th / Happy Hour 3-6 with drink specials and small plates! / 03:00 PM - 06:00 PM / Sunday September 6th"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "crooked-hammock-brewery-middletown",
+   "lid": "DE520bfab56d",
+   "name": "Crooked Hammock Brewery",
+   "plcb_name": "Crooked Hammock Brewery",
+   "address": "316 Auto Park Dr, Middletown, DE 19709",
+   "zone_id": "newark_de",
+   "license_type": "",
+   "website": "https://www.crookedhammockbrewery.com/locations/middletown",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.crookedhammockbrewery.com/menus/happy-hour-lws",
+      "quote": "Happy Hour / $6 Drink Specials / Available Monday- Friday at 4-6pm",
+      "quotes": [
+       "Happy Hour / $6 Drink Specials / Available Monday- Friday at 4-6pm",
+       "Happy Hour / $5 Drink Specials / Available Monday- Friday at 4-6pm",
+       "Happy Hour / Monday- Friday 4-6pm available at the bar"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "the-marshallton-steakhouse-wilmington",
+   "lid": "DE52b4feabfb",
+   "name": "The Marshallton Steakhouse",
+   "plcb_name": "The Marshallton Steakhouse",
+   "address": "3517 Old Capitol Trl, Wilmington, DE 19808",
+   "zone_id": "new_castle_de",
+   "license_type": "",
+   "website": "https://themarshallton.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "Served w/Warm Pretzel Bites & Crackers",
+       "price_usd": 14.0
+      },
+      {
+       "category": "food",
+       "label": "Nashville Hot Grilled Oysters",
+       "price_usd": 14.0
+      },
+      {
+       "category": "food",
+       "label": "Oysters Rockefeller",
+       "price_usd": 16.0
+      },
+      {
+       "category": "food",
+       "label": "Spinach & Hollandaise Sauce",
+       "price_usd": 16.0
+      },
+      {
+       "category": "food",
+       "label": "Traditional Wings",
+       "price_usd": 13.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Limoncello Shrimp Cocktail",
+       "price_usd": 12.0
+      },
+      {
+       "category": "food",
+       "label": "Nashville Hot Sauce",
+       "price_usd": 18.0
+      },
+      {
+       "category": "food",
+       "label": "Herbed Butter",
+       "price_usd": 18.0
+      },
+      {
+       "category": "food",
+       "label": "Toasted Sourdough",
+       "price_usd": 18.0
+      },
+      {
+       "category": "draft",
+       "label": "Beer Battered Onion Rings",
+       "price_usd": 7.0
+      },
+      {
+       "category": "draft",
+       "label": "Sriracha Ranch Dip",
+       "price_usd": 7.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://themarshallton.com/HappyHour.aspx",
+      "quote": "The Marshallton Steakhouse Happy Hour Menu Wednesday, Thursday & Friday 3-7pm",
+      "quotes": [
+       "The Marshallton Steakhouse Happy Hour Menu Wednesday, Thursday & Friday 3-7pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "shellhammer-s-bar-and-grill-newark",
+   "lid": "DE52c61670ed",
+   "name": "Shellhammer's Bar and Grill",
+   "plcb_name": "Shellhammer's Bar and Grill",
+   "address": "9 University Dr, Newark, DE 19702",
+   "zone_id": "newark_de",
+   "license_type": "",
+   "website": "http://www.shellhammers.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "Happy Hour Appetizers",
+       "price_usd": 10.0
+      },
+      {
+       "category": "draft",
+       "label": "all drafts",
+       "amount_off_usd": 1.0
+      },
+      {
+       "category": "food",
+       "label": "Nachos 5pm-Close &",
+       "price_usd": 12.5
+      },
+      {
+       "category": "draft",
+       "label": "Select Drafts 5pm- Close",
+       "price_usd": 3.0
+      },
+      {
+       "category": "food",
+       "label": "Burgers",
+       "price_usd": 10.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Margaritas 4pm-Close",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "Bottles of Wine 4pm-Close",
+       "discount_pct": 50
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://www.shellhammers.com/",
+      "quote": "Happy Hour / Join us for Happy Hour Monday thru Friday / 4-7pm for appetizer and drink specials .",
+      "quotes": [
+       "Happy Hour / Join us for Happy Hour Monday thru Friday / 4-7pm for appetizer and drink specials .",
+       "Happy Hour and Specials / Happy Hour Appetizers $10.00 / Served Monday thru Friday from 4-7pm"
       ]
      }
     }
@@ -16371,6 +17052,60 @@
    ]
   },
   {
+   "id": "dolly-spanker-s-delaware-city",
+   "lid": "DE653f2bc1d1",
+   "name": "Dolly Spanker's",
+   "plcb_name": "Dolly Spanker's",
+   "address": "30 Clinton St, Delaware City, DE 19706",
+   "zone_id": "new_castle_de",
+   "license_type": "",
+   "website": "http://www.dollyspankers.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://www.dollyspankers.com/",
+      "quote": "happy Hour! / Join us from 3pm-6pm every weekday for our",
+      "quotes": [
+       "happy Hour! / Join us from 3pm-6pm every weekday for our"
+      ]
+     }
+    }
+   ]
+  },
+  {
    "id": "trolley-square-oyster-house-wilmington",
    "lid": "DE66e62e19e0",
    "name": "Trolley Square Oyster House",
@@ -16419,6 +17154,177 @@
       "quote": "Happy Hour / Monday \u2013 Friday 4pm \u2013 6pm",
       "quotes": [
        "Happy Hour / Monday \u2013 Friday 4pm \u2013 6pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "augustine-tavern-middletown",
+   "lid": "DE67e9d8cbb9",
+   "name": "Augustine Tavern",
+   "plcb_name": "Augustine Tavern",
+   "address": "1919 St Augustine Rd, Middletown, DE 19709",
+   "zone_id": "new_castle_de",
+   "license_type": "",
+   "website": "http://www.augustinetavern.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://www.augustinetavern.com/menus",
+      "quote": "Happy Hour: Happy Hour1/2 Price Beer, Wine and Cocktails*Buck a Shuck Clams and Oysters!!7 days a week 4-6 pm*Discounts and Coupons cannot be combined with Happy Hour pricing*",
+      "quotes": [
+       "Happy Hour: Happy Hour1/2 Price Beer, Wine and Cocktails*Buck a Shuck Clams and Oysters!!7 days a week 4-6 pm*Discounts and Coupons cannot be combined with Happy Hour pricing*",
+       "Happy Hour / 7 days a week 4-6 pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "red-robin-gourmet-burgers-and-brews-middletown",
+   "lid": "DE6ccacbde47",
+   "name": "Red Robin Gourmet Burgers and Brews",
+   "plcb_name": "Red Robin Gourmet Burgers and Brews",
+   "address": "140 Commerce Dr, Middletown, DE 19709",
+   "zone_id": "middletown_de",
+   "license_type": "",
+   "website": "https://www.redrobin.com/locations/de/middletown/middletown-751",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "House Margarita",
+       "price_usd": 7.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Choose",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "label": "Veggie Burger",
+       "price_usd": 17.0
+      },
+      {
+       "category": "food",
+       "label": "Veggie",
+       "price_usd": 17.0
+      },
+      {
+       "category": "food",
+       "label": "Bar Wings",
+       "price_usd": 15.0
+      },
+      {
+       "category": "food",
+       "label": "Pretzel Bites",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "label": "Queso Fundido",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Small Margarita",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Small Spiked Freckled Lemonade",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Small Long Island Iced Tea",
+       "price_usd": 6.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.redrobin.com/locations/de/middletown/middletown-751",
+      "quote": "Join us for Happy Hour / Join us every weekday for Happy Hour from 3-6pm. Dial up the happy on your entire crew with specials on select milkshakes and appetizers - including our famous Towering Onion Rings - or, enjoy domestic and craft beer, wine and drinks starting at only $4. See you 'bout 3-ish? / 50% Off Kids' Meals on Wednesdays",
+      "quotes": [
+       "Join us for Happy Hour / Join us every weekday for Happy Hour from 3-6pm. Dial up the happy on your entire crew with specials on select milkshakes and appetizers - including our famous Towering Onion Rings - or, enjoy domestic and craft beer, wine and drinks starting at only $4. See you 'bout 3-ish? / 50% Off Kids' Meals on Wednesdays",
+       "Join us every weekday for Happy Hour from 3-6pm. Dial up the happy on your entire crew with specials on select milkshakes and appetizers - including our famous Towering Onion Rings - or, enjoy domestic and craft beer, wine and drinks starting at only $4. See you 'bout 3-ish?"
       ]
      }
     }
@@ -16489,6 +17395,60 @@
       "quote": "HAPPY HOUR / Monday through Saturday, 3-6PM / $1 off Draught Beers & Wines by the Glass, $4 Rail Mixed Drinks",
       "quotes": [
        "HAPPY HOUR / Monday through Saturday, 3-6PM / $1 off Draught Beers & Wines by the Glass, $4 Rail Mixed Drinks"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "firebirds-wood-fired-grill-newark",
+   "lid": "DE7c3e84d920",
+   "name": "Firebirds Wood Fired Grill",
+   "plcb_name": "Firebirds Wood Fired Grill",
+   "address": "1225 Churchmans Rd, Newark, DE 19713",
+   "zone_id": "newark_de",
+   "license_type": "",
+   "website": "https://firebirdsrestaurants.com/wilmington",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "14:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "14:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "14:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "14:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "14:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://firebirdsrestaurants.com/wilmington",
+      "quote": "Happy Hour / Monday-Friday from 2PM-6PM in the FIREBAR \u00ae and on the Patio.",
+      "quotes": [
+       "Happy Hour / Monday-Friday from 2PM-6PM in the FIREBAR \u00ae and on the Patio."
       ]
      }
     }
@@ -16625,6 +17585,217 @@
    ]
   },
   {
+   "id": "red-robin-gourmet-burgers-and-brews-newark-DE832e5754e7",
+   "lid": "DE832e5754e7",
+   "name": "Red Robin Gourmet Burgers and Brews",
+   "plcb_name": "Red Robin Gourmet Burgers and Brews",
+   "address": "101 W Main St, Newark, DE 19702",
+   "zone_id": "newark_de",
+   "license_type": "",
+   "website": "https://www.redrobin.com/locations/de/newark/christiana-657",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "House Margarita",
+       "price_usd": 7.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Choose",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "label": "Veggie Burger",
+       "price_usd": 17.0
+      },
+      {
+       "category": "food",
+       "label": "Veggie",
+       "price_usd": 17.0
+      },
+      {
+       "category": "food",
+       "label": "Bar Wings",
+       "price_usd": 15.0
+      },
+      {
+       "category": "food",
+       "label": "Pretzel Bites",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "label": "Queso Fundido",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Small Margarita",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Small Spiked Freckled Lemonade",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Small Long Island Iced Tea",
+       "price_usd": 6.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.redrobin.com/locations/de/newark/christiana-657",
+      "quote": "Join us for Happy Hour / Join us every weekday for Happy Hour from 3-6pm. Dial up the happy on your entire crew with specials on select milkshakes and appetizers - including our famous Towering Onion Rings - or, enjoy domestic and craft beer, wine and drinks starting at only $4. See you 'bout 3-ish? / 50% Off Kids' Meals on Wednesdays",
+      "quotes": [
+       "Join us for Happy Hour / Join us every weekday for Happy Hour from 3-6pm. Dial up the happy on your entire crew with specials on select milkshakes and appetizers - including our famous Towering Onion Rings - or, enjoy domestic and craft beer, wine and drinks starting at only $4. See you 'bout 3-ish? / 50% Off Kids' Meals on Wednesdays",
+       "Join us every weekday for Happy Hour from 3-6pm. Dial up the happy on your entire crew with specials on select milkshakes and appetizers - including our famous Towering Onion Rings - or, enjoy domestic and craft beer, wine and drinks starting at only $4. See you 'bout 3-ish?"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "blue-crab-grill-newark",
+   "lid": "DE837a19ec46",
+   "name": "Blue Crab Grill",
+   "plcb_name": "Blue Crab Grill",
+   "address": "322 Suburban Dr, Newark, DE 19711",
+   "zone_id": "newark_de",
+   "license_type": "",
+   "website": "http://www.bluecrabgrillde.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "Crispy Chicken Bites",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "label": "Fish Taco",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "label": "Smoked Chicken Taco w",
+       "price_usd": 4.0
+      },
+      {
+       "category": "draft",
+       "label": "ALL DRAFT BEER",
+       "price_usd": 6.0
+      },
+      {
+       "category": "wine",
+       "label": "HOUSE WINES",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "label": "SELECT COCKTAILS",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Margarita",
+       "price_usd": 8.0
+      },
+      {
+       "category": "wine",
+       "label": "Sangria",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Espresso Martini",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Lemon Lavender Cocktail",
+       "price_usd": 8.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://www.bluecrabgrillde.com/happy-hour",
+      "quote": "Happy Hour / MONDAY - FRIDAY, 3-6 PM",
+      "quotes": [
+       "Happy Hour / MONDAY - FRIDAY, 3-6 PM"
+      ]
+     }
+    }
+   ]
+  },
+  {
    "id": "washington-street-ale-house-wilmington",
    "lid": "DE98501eeb65",
    "name": "Washington Street Ale House",
@@ -16686,6 +17857,87 @@
        "Happy Hour: 4PM-6PM",
        "Happy Hour 4PM-6PM",
        "HAPPY HOUR 4-6pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "two-stones-pub-newark",
+   "lid": "DE985450b059",
+   "name": "Two Stones Pub",
+   "plcb_name": "Two Stones Pub",
+   "address": "1203 Christiana Rd, Newark, DE 19713",
+   "zone_id": "newark_de",
+   "license_type": "",
+   "website": "https://twostonespub.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Delco Lager",
+       "price_usd": 2.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Craft Cocktails",
+       "price_usd": 3.0
+      },
+      {
+       "category": "cocktail",
+       "label": "The Mule",
+       "price_usd": 3.0
+      },
+      {
+       "category": "cocktail",
+       "label": "The Spritz",
+       "price_usd": 3.0
+      },
+      {
+       "category": "wine",
+       "label": "Seasonal Sangria",
+       "price_usd": 3.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://twostonespub.com/",
+      "quote": "Monday-Friday 3-6pm Food & Drink Specials",
+      "quotes": [
+       "Monday-Friday 3-6pm Food & Drink Specials",
+       "Happy Hour / Monday\u2013Friday | 3\u20136pm"
       ]
      }
     }
@@ -16761,6 +18013,71 @@
       "quote": "Happy Hour! $5 , $7 and $9 Plates | $3 Select Domestic Drafts | $5 Glasses of Select Wine l $6 Seltzers and Teas l $7 Mules 03:00 PM - 06:00 PM",
       "quotes": [
        "Happy Hour! $5 , $7 and $9 Plates | $3 Select Domestic Drafts | $5 Glasses of Select Wine l $6 Seltzers and Teas l $7 Mules 03:00 PM - 06:00 PM"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "tio-taco-tequila-newark",
+   "lid": "DEa14dc48d3d",
+   "name": "Tio Taco + Tequila",
+   "plcb_name": "Tio Taco + Tequila",
+   "address": "325 Christiana Mall Spc 1325, Newark, DE 19702",
+   "zone_id": "newark_de",
+   "license_type": "",
+   "website": "https://www.tiotacotequila.com/newark-delaware",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "MARGARITAS",
+       "discount_pct": 50
+      },
+      {
+       "category": "food",
+       "label": "TACOS",
+       "discount_pct": 50
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.tiotacotequila.com/newark-delaware",
+      "quote": "MONDAY - FRIDAY / HAPPY HOUR / 3 PM - 6 PM | AT THE BAR",
+      "quotes": [
+       "MONDAY - FRIDAY / HAPPY HOUR / 3 PM - 6 PM | AT THE BAR"
       ]
      }
     }
@@ -16902,6 +18219,212 @@
    ]
   },
   {
+   "id": "nora-lees-french-quarter-bistro-new-castle",
+   "lid": "DEa4046b009e",
+   "name": "Nora Lees French Quarter Bistro",
+   "plcb_name": "Nora Lees French Quarter Bistro",
+   "address": "124 Delaware St, New Castle, DE 19720",
+   "zone_id": "new_castle_de",
+   "license_type": "",
+   "website": "http://noralees.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://noralees.com/menu",
+      "quote": "Happy Hour / Tuesday-Friday 3pm-6pm",
+      "quotes": [
+       "Happy Hour / Tuesday-Friday 3pm-6pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "the-farmhouse-middletown-middletown",
+   "lid": "DEa4fada708b",
+   "name": "The Farmhouse Middletown",
+   "plcb_name": "The Farmhouse Middletown",
+   "address": "416 S Ridge Ave, Middletown, DE 19709",
+   "zone_id": "middletown_de",
+   "license_type": "",
+   "website": "https://www.farmhousemiddletown.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "ARTISAN PIZZAS",
+       "discount_pct": 50
+      },
+      {
+       "category": "food",
+       "label": "FEATURED COCKTAILS",
+       "price_usd": 9.0
+      },
+      {
+       "category": "wine",
+       "label": "WINE BY THE GLASS",
+       "price_usd": 5.0
+      },
+      {
+       "category": "draft",
+       "label": "BOTTLED BEER",
+       "price_usd": 5.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.farmhousemiddletown.com/daily-specials/",
+      "quote": "HARVEST HAPPY HOUR / 3PM \u2013 6PM, MONDAY \u2013 FRIDAY",
+      "quotes": [
+       "HARVEST HAPPY HOUR / 3PM \u2013 6PM, MONDAY \u2013 FRIDAY",
+       "DAILY SPECIALS / Monday - Thursday | 2-5pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "two-stones-pub-hockessin-hockessin",
+   "lid": "DEa5c329773b",
+   "name": "Two Stones Pub Hockessin",
+   "plcb_name": "Two Stones Pub Hockessin",
+   "address": "300 Lantana Dr, Hockessin, DE 19707",
+   "zone_id": "newark_de",
+   "license_type": "",
+   "website": "https://www.twostonespub.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Delco Lager",
+       "price_usd": 2.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Craft Cocktails",
+       "price_usd": 3.0
+      },
+      {
+       "category": "cocktail",
+       "label": "The Mule",
+       "price_usd": 3.0
+      },
+      {
+       "category": "cocktail",
+       "label": "The Spritz",
+       "price_usd": 3.0
+      },
+      {
+       "category": "wine",
+       "label": "Seasonal Sangria",
+       "price_usd": 3.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.twostonespub.com/",
+      "quote": "Monday-Friday 3-6pm Food & Drink Specials",
+      "quotes": [
+       "Monday-Friday 3-6pm Food & Drink Specials",
+       "Happy Hour / Monday\u2013Friday | 3\u20136pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
    "id": "casa-nonna-wilmington",
    "lid": "DEab3d90e8aa",
    "name": "Casa Nonna",
@@ -17001,6 +18524,87 @@
       "quote": "Happy Hour Available Monday through Friday from 4pm\u20137pm in bar area.",
       "quotes": [
        "Happy Hour Available Monday through Friday from 4pm\u20137pm in bar area."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "timothy-s-of-newark-newark",
+   "lid": "DEab709cbc4b",
+   "name": "Timothy's of Newark",
+   "plcb_name": "Timothy's of Newark",
+   "address": "100 Creek View Rd, Newark, DE 19711",
+   "zone_id": "newark_de",
+   "license_type": "",
+   "website": "http://www.timothysofnewark.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "Boneless Chicken Bites",
+       "price_usd": 10.0
+      },
+      {
+       "category": "bottle_can",
+       "label": "Domestic Bottles",
+       "price_usd": 3.0
+      },
+      {
+       "category": "draft",
+       "label": "Corona Light Pints",
+       "price_usd": 4.0
+      },
+      {
+       "category": "well",
+       "label": "Well Drinks",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "label": "House Wine",
+       "price_usd": 5.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://www.timothysofnewark.com/menus",
+      "quote": "Happy Hour / Monday - Friday, 4 - 7 PM",
+      "quotes": [
+       "Happy Hour / Monday - Friday, 4 - 7 PM",
+       "Happy Hour: Happy HourMonday - Friday, 4 - 7 PMBar Area Only"
       ]
      }
     }
@@ -17168,6 +18772,133 @@
    ]
   },
   {
+   "id": "chili-s-grill-bar-newark",
+   "lid": "DEc68619870c",
+   "name": "Chili's Grill & Bar",
+   "plcb_name": "Chili's Grill & Bar",
+   "address": "3220 Fashion Center Blvd, Newark, DE 19702",
+   "zone_id": "newark_de",
+   "license_type": "",
+   "website": "https://www.chilis.com/locations/us/delaware/newark/christiana?utm_source=google&utm_medium=local&utm_campaign=Chilis",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "Margarita of the Month",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "label": "MARGARITAS MAKE EVERY HOUR HA",
+       "price_usd": 6.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.chilis.com/locations/us/delaware/newark/christiana?utm_source=google&utm_medium=local&utm_campaign=Chilis",
+      "quote": "Happy Hour / MONDAY - FRIDAY / 3PM - 6PM",
+      "quotes": [
+       "Happy Hour / MONDAY - FRIDAY / 3PM - 6PM"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "home-grown-cafe-newark",
+   "lid": "DEc6c348ab69",
+   "name": "Home Grown Cafe",
+   "plcb_name": "Home Grown Cafe",
+   "address": "126 E Main St, Newark, DE 19711",
+   "zone_id": "newark_de",
+   "license_type": "",
+   "website": "http://www.homegrowncafe.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "ALL DRAFTS",
+       "amount_off_usd": 1.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://www.homegrowncafe.com/menus/",
+      "quote": "Happy Hour (4-6 M-F): Happy HourMonday - Friday 4-6pmHAPPY HOUR&nbsp;M-F 4-6pmDRINKMARGARITA&nbsp;4 add fruit pur&eacute;e +1 |&nbsp;PROSECCO&nbsp;4 |&nbsp;WHEATLEY&rsquo;S&nbsp;MULE&nbsp;5FEATURED&nbsp;COCKTAIL&nbsp;6$1 OFF ALL DRAFTSDOUBLE&nbsp;5 |&nbsp;SINGLE&nbsp;3 Vodka, Rum, Gin, Tequila, WhiskeyEATHUMMUS&nbsp;Roasted garlic hummus, tortilla chips 6PRETZEL&nbsp;BITES&nbsp;Everything-seasoned pretzel bites, cheddar cheese sauce 8CAULIFLOWER&nbsp;BITES&nbsp;Fried cauliflower, sauce sampler 8BRUSSELS&nbsp;SPROUTS&nbsp;Crispy sprouts tossed in garlic parmesan, sun-dried tomato aioli 8NASHVILLE HOT CHICKEN TENDERS&nbsp;House-breaded chicken tenders, full-sour pickle chips 7CRABCHOS&nbsp;Crab fondue, cheddar jack, scallion, Old Bay, tortilla chips 9POTATO CHIP NACHOS Blue cheese, cheddar jack, bacon, pickled jalape&ntilde;os, spicy everything ranch 8",
+      "quotes": [
+       "Happy Hour (4-6 M-F): Happy HourMonday - Friday 4-6pmHAPPY HOUR&nbsp;M-F 4-6pmDRINKMARGARITA&nbsp;4 add fruit pur&eacute;e +1 |&nbsp;PROSECCO&nbsp;4 |&nbsp;WHEATLEY&rsquo;S&nbsp;MULE&nbsp;5FEATURED&nbsp;COCKTAIL&nbsp;6$1 OFF ALL DRAFTSDOUBLE&nbsp;5 |&nbsp;SINGLE&nbsp;3 Vodka, Rum, Gin, Tequila, WhiskeyEATHUMMUS&nbsp;Roasted garlic hummus, tortilla chips 6PRETZEL&nbsp;BITES&nbsp;Everything-seasoned pretzel bites, cheddar cheese sauce 8CAULIFLOWER&nbsp;BITES&nbsp;Fried cauliflower, sauce sampler 8BRUSSELS&nbsp;SPROUTS&nbsp;Crispy sprouts tossed in garlic parmesan, sun-dried tomato aioli 8NASHVILLE HOT CHICKEN TENDERS&nbsp;House-breaded chicken tenders, full-sour pickle chips 7CRABCHOS&nbsp;Crab fondue, cheddar jack, scallion, Old Bay, tortilla chips 9POTATO CHIP NACHOS Blue cheese, cheddar jack, bacon, pickled jalape&ntilde;os, spicy everything ranch 8",
+       "Happy Hour / Monday - Friday 4-6pm / HAPPY HOUR M-F 4-6pm",
+       "HAPPY HOUR M-F 4-6pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
    "id": "taco-grande-wilmington",
    "lid": "DEcfc7c9decb",
    "name": "Taco Grande",
@@ -17247,6 +18978,86 @@
       "quote": "Happy Hour / Monday All Day / Tuesday \u2013 Friday 4P-6P",
       "quotes": [
        "Happy Hour / Monday All Day / Tuesday \u2013 Friday 4P-6P"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "cantwell-s-tavern-odessa",
+   "lid": "DEd3e9422996",
+   "name": "Cantwell's Tavern",
+   "plcb_name": "Cantwell's Tavern",
+   "address": "109 Main St, Odessa, DE 19730",
+   "zone_id": "new_castle_de",
+   "license_type": "",
+   "website": "https://www.cantwells-tavern.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "cocktail",
+       "label": "All Cocktails",
+       "amount_off_usd": 1.0
+      },
+      {
+       "category": "food",
+       "label": "All Small Plates",
+       "amount_off_usd": 5.0
+      },
+      {
+       "category": "draft",
+       "label": "Coor's Light Draft",
+       "price_usd": 3.0
+      },
+      {
+       "category": "wine",
+       "label": "Select Wine's",
+       "amount_off_usd": 3.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Cantwell's Cocktails",
+       "amount_off_usd": 2.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.cantwells-tavern.com/menus/happy-hour",
+      "quote": "Happy Hour / Monday through Friday 4pm-6pm / $1 off All Cocktails (restaurant wide)",
+      "quotes": [
+       "Happy Hour / Monday through Friday 4pm-6pm / $1 off All Cocktails (restaurant wide)"
       ]
      }
     }
@@ -17361,6 +19172,156 @@
    ]
   },
   {
+   "id": "tommy-s-tavern-tap-newark",
+   "lid": "DEdc2befac1e",
+   "name": "Tommy's Tavern + Tap",
+   "plcb_name": "Tommy's Tavern + Tap",
+   "address": "315 Christiana Mall, Newark, DE 19702",
+   "zone_id": "newark_de",
+   "license_type": "",
+   "website": "https://www.tommystavernandtap.com/tommystaverntap-delaware",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "GARLIC FLATBREAD",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "label": "SPICY TUNA ROLL",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "label": "PERSONAL CLASSIC PIZZA",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "label": "COAL FIRED JUMBO PRETZEL",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "label": "Tavern Taquitos",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "HOLY GUACAMOLE!",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "GENERAL TSO'S CAULIFLOWER",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "LOADED NACHOS",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "label": "HUMMAS TRIO DIP",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "label": "SPINACH & artichoke dip",
+       "price_usd": 10.0
+      },
+      {
+       "category": "draft",
+       "label": "al draft beers",
+       "amount_off_usd": 2.0
+      },
+      {
+       "category": "wine",
+       "label": "house wines",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "label": "all cocktails",
+       "amount_off_usd": 2.0
+      },
+      {
+       "category": "wine",
+       "label": "sangria",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "label": "SPECIALTY COCKTAILS",
+       "discount_pct": 50
+      },
+      {
+       "category": "wine",
+       "label": "WINE LIST",
+       "discount_pct": 50
+      },
+      {
+       "category": "draft",
+       "label": "ALL DRAFT BEERS",
+       "amount_off_usd": 2.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.tommystavernandtap.com/copy-of-happy-hour-specials",
+      "quote": "HAPPY HOUR / 3 PM TIL' 6 PM",
+      "quotes": [
+       "HAPPY HOUR / 3 PM TIL' 6 PM"
+      ]
+     }
+    }
+   ]
+  },
+  {
    "id": "sullivan-s-steakhouse-wilmington",
    "lid": "DEe016563850",
    "name": "Sullivan's Steakhouse",
@@ -17416,6 +19377,130 @@
       "quotes": [
        "Wilmington Happy Hour Menu / Available in the bar, Monday-Thursday 3pm-6pm / $25",
        "HAPPY HOUR / Monday \u2013 Thursday 3:00 pm \u2013 6:00 pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "caff-gelato-restaurant-newark",
+   "lid": "DEe32289cf11",
+   "name": "Caff\u00e8 Gelato Restaurant",
+   "plcb_name": "Caff\u00e8 Gelato Restaurant",
+   "address": "90 E Main St near, Newark, DE 19711",
+   "zone_id": "newark_de",
+   "license_type": "",
+   "website": "http://www.caffegelato.net/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "wine",
+       "label": "Featured Wine",
+       "price_usd": 6.0
+      },
+      {
+       "category": "draft",
+       "label": "Craft Drafts",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Martinis",
+       "price_usd": 8.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://www.caffegelato.net/menus",
+      "quote": "Happy Hour Bar & Patio / Monday-Friday 4:00pm-6:00pm / Monday - Friday",
+      "quotes": [
+       "Happy Hour Bar & Patio / Monday-Friday 4:00pm-6:00pm / Monday - Friday"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "grain-craft-bar-kitchen-newark",
+   "lid": "DEeb9471c6b5",
+   "name": "Grain Craft Bar + Kitchen",
+   "plcb_name": "Grain Craft Bar + Kitchen",
+   "address": "270 E Main St, Newark, DE 19711",
+   "zone_id": "newark_de",
+   "license_type": "",
+   "website": "http://www.meetatgrain.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://www.meetatgrain.com/locationsmenus",
+      "quote": "Happy Hours / Mon-Fri: 3pm-6pm / Mondays 6p",
+      "quotes": [
+       "Happy Hours / Mon-Fri: 3pm-6pm / Mondays 6p"
       ]
      }
     }
@@ -17497,6 +19582,110 @@
       "quotes": [
        "HAPPY HOUR EVERY DAY! / 4PM - 7PM / $5 SELECT DRAFT BEER",
        "HAPPY HOUR FROM 4PM - 7PM"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "potstickers-asian-grill-newark",
+   "lid": "DEf53c6ca067",
+   "name": "Potstickers Asian Grill",
+   "plcb_name": "Potstickers Asian Grill",
+   "address": "1247 Churchmans Rd, Newark, DE 19713",
+   "zone_id": "newark_de",
+   "license_type": "",
+   "website": "https://www.potstickersasiangrill.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.potstickersasiangrill.com/",
+      "quote": "Happy Hour Daily / Monday - Friday / 3pm \u2013 6pm Special Food and Drink ( Bar Area only)",
+      "quotes": [
+       "Happy Hour Daily / Monday - Friday / 3pm \u2013 6pm Special Food and Drink ( Bar Area only)"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "jackson-house-middletown",
+   "lid": "DEf67224a909",
+   "name": "Jackson House",
+   "plcb_name": "Jackson House",
+   "address": "17 Wood St, Middletown, DE 19709",
+   "zone_id": "middletown_de",
+   "license_type": "",
+   "website": "https://jacksonhousede.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 2,
+       "start": "14:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "14:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "14:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "11:00",
+       "end": "14:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://jacksonhousede.com/",
+      "quote": "Social Hour (Bar & Patio Only) / Monday CLOSED / Tuesday-Thursday 2 PM-6 PM",
+      "quotes": [
+       "Social Hour (Bar & Patio Only) / Monday CLOSED / Tuesday-Thursday 2 PM-6 PM",
+       "Social Hour (Bar & Patio Only) / Friday 11 AM-2 PM"
       ]
      }
     }

@@ -348,7 +348,12 @@ function unknownCard(row) {
   shot.addEventListener("click", () => openVenue(v.id));
 
   $(".name", node).textContent = v.name;
-  const zoneName = state.zones.find((z) => z.id === v.zone_id)?.name ?? "";
+  // A venue carries .branch only when a REAL second branch of the same name
+  // ships in the same zone (Newark, DE has two Red Robins three miles apart).
+  // Without the street the two cards are identical to a reader, who then
+  // cannot tell which one they are being sent to.
+  const zoneName = [state.zones.find((z) => z.id === v.zone_id)?.name ?? "",
+                    v.branch].filter(Boolean).join(" · ");
   const dist = distanceText(v, row.miles, row.driveMin);
   $(".zone", node).textContent = dist ? `${zoneName} · ${dist}` : zoneName;
   $(".kind", node).textContent = licenseLabel(v.license_type);
@@ -866,7 +871,12 @@ function card(row, at) {
   shot.addEventListener("click", () => openVenue(v.id));
 
   $(".name", node).textContent = v.name;
-  const zoneName = state.zones.find((z) => z.id === v.zone_id)?.name ?? "";
+  // A venue carries .branch only when a REAL second branch of the same name
+  // ships in the same zone (Newark, DE has two Red Robins three miles apart).
+  // Without the street the two cards are identical to a reader, who then
+  // cannot tell which one they are being sent to.
+  const zoneName = [state.zones.find((z) => z.id === v.zone_id)?.name ?? "",
+                    v.branch].filter(Boolean).join(" · ");
   const dist = distanceText(v, row.miles, row.driveMin);
   $(".zone", node).textContent = dist ? `${zoneName} · ${dist}` : zoneName;
 
