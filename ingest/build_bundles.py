@@ -70,7 +70,10 @@ def norm_addr(address):
     writes '324 W Swedesford Rd, Berwyn PA 19312' where the PLCB row the crawler
     carried says '324 WEST SWEDESFORD ROAD'; the number and the ZIP agree."""
     m = re.search(r"\b(\d{5})\b", address or "")
-    n = re.match(r"\s*(\d+)", address or "")
+    # Licence exports sometimes prefix the street with the complex name
+    # ("Radnor Financial Center 555 E Lancaster Ave"), so the house number
+    # is not necessarily the first token.
+    n = re.search(r"\b(\d+)\b", address or "")
     return (n.group(1) if n else "?", m.group(1) if m else "?")
 
 
@@ -138,10 +141,26 @@ def collapse_name_collisions(by_zone):
                     # listing one twice.
                     continue
                 collapsed += merge_rows(same)
+            # A current name at the same street number and ZIP is a second,
+            # independent identity signal.  The two crawl entries can reach
+            # that one bar through different pages (for example its location
+            # page and its corporate specials page), so requiring the URL to
+            # agree alone lets a duplicate card through.  Names still have to
+            # agree because two genuine bars can occupy one building.
+            by_address = {}
+            for v in rows:
+                if not v.get("deals"):
+                    continue
+                address = norm_addr(v.get("address", ""))
+                if address != ("?", "?"):
+                    by_address.setdefault(address, []).append(v)
+            for same in by_address.values():
+                if len(same) > 1:
+                    collapsed += merge_rows(same, "same name, same address")
     return collapsed
 
 
-def merge_rows(rows):
+def merge_rows(rows, reason="same name, same source page"):
     """One winner keeps the card; the losers give back the trade name and the
     deals, and ride along in also_lids. Returns how many were collapsed."""
     rows = [v for v in rows if v.get("deals")]
@@ -153,7 +172,7 @@ def merge_rows(rows):
     also = list(winner.get("also_lids") or [])
     for v in losers:
         print(f"  merged: {v['name']} ({v['id']}) into {winner['id']} "
-              f"-- same name, same source page")
+              f"-- {reason}")
         also += [str(v.get("lid") or v["id"])] + list(v.get("also_lids") or [])
         v["deals"] = []
         v.pop("also_lids", None)
@@ -691,7 +710,11 @@ def main():
                 "built_at": today.isoformat()}
         path = os.path.join(OUT_DIR, f"zone-{zid}.json")
         with open(path, "w", encoding="utf-8") as fh:
-            json.dump(dict(meta, venues=dealful), fh, indent=1)
+            # Every zone's deal bundle is fetched at boot.  Keep it compact so
+            # adding a correctly sourced card cannot inflate the initial
+            # download for every visitor; the separate no-deal venue list is
+            # fetched only for the selected zone and stays readable on disk.
+            json.dump(dict(meta, venues=dealful), fh, separators=(",", ":"))
         rest_path = os.path.join(OUT_DIR, f"venues-{zid}.json")
         with open(rest_path, "w", encoding="utf-8") as fh:
             json.dump(dict(meta, venues=rest), fh, indent=1)

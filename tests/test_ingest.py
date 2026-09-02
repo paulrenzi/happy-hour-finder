@@ -48,6 +48,7 @@ from extract_deals import (  # noqa: E402
     items_in,
     lawful_days,
     one_sided,
+    refused_source_urls,
     window_in,
     windows_from,
 )
@@ -1122,6 +1123,19 @@ class DealExtraction(unittest.TestCase):
         self.assertEqual(
             windows_from("Happy Hour times vary by location, Monday-Friday 3-6pm"), [])
 
+    def test_another_countrys_chain_offer_is_not_a_pa_happy_hour(self):
+        self.assertEqual(
+            windows_from("Happy Hour pricing available for Canada locations only. 2 - 5 pm"), [])
+
+    def test_a_locationless_disclaimer_refuses_its_entire_page(self):
+        hits = [
+            {"url": "https://brand.example/happy-hour", "quote": "Enjoy Happy Hour 3-6pm"},
+            {"url": "https://brand.example/happy-hour", "quote": "Only available at participating locations"},
+            {"url": "https://brand.example/happy-hour-ca", "quote": "Happy Hour Monday-Friday 2-5pm"},
+        ]
+        self.assertEqual(refused_source_urls(hits),
+                         {"https://brand.example/happy-hour", "https://brand.example/happy-hour-ca"})
+
     def test_a_customer_review_is_not_the_venue_speaking(self):
         self.assertEqual(
             windows_from("I have found my new happy hour spot, Mon-Fri 4-6pm"), [])
@@ -1647,9 +1661,11 @@ class OneBarOneCard(unittest.TestCase):
     SAME page.
     """
 
-    def venue(self, lid, name, url, plcb=None, deals=True):
+    def venue(self, lid, name, url, plcb=None, deals=True, address=None):
         v = {"id": lid, "lid": lid, "name": name, "zone_id": "z",
              "plcb_name": plcb or name, "deals": []}
+        if address:
+            v["address"] = address
         if deals:
             v["deals"] = [{"type": "happy_hour", "source": {"url": url}}]
         return v
@@ -1675,6 +1691,15 @@ class OneBarOneCard(unittest.TestCase):
         b = self.venue("2", "P.J. Whelihan's", "https://pjspub.com/blue-bell")
         self.assertEqual(collapse_name_collisions({"z": [a, b]}), 0)
         self.assertTrue(a["deals"] and b["deals"])
+
+    def test_same_door_merges_when_the_source_urls_differ(self):
+        a = self.venue("1", "Amada", "https://amada.example/specials",
+                       address="555 E Lancaster Ave, Radnor PA 19087")
+        b = self.venue("2", "Amada", "https://amada.example/radnor",
+                       plcb="FLEMINGS PRIME STEAKHOUSE",
+                       address="Radnor Center 555 E Lancaster Ave, Radnor PA 19087")
+        self.assertEqual(collapse_name_collisions({"z": [a, b]}), 1)
+        self.assertEqual(b["deals"], [])
 
     def test_two_licences_merge_while_a_third_branch_is_left_alone(self):
         # The case that made the first version of this merge nobody: asking
