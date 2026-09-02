@@ -112,7 +112,11 @@ BASE = os.path.join(REPO, "data", "venue_base.json")
 # A page that fetched fine and gave us almost no text is a JavaScript shell. 40
 # lines is a nav, a footer and a cookie banner; the Cheesecake Factory's own
 # /happy-hour page is 13KB of HTML and ELEVEN lines of text.
-SHELL_LINES = 40
+#
+# Imported, not restated: this file names the class and crawl_sites.py owns the
+# fix for it, and while the two carried their own numbers (40 here, 25 there)
+# there was a band of pages reported as shells that the render gate refused.
+from crawl_sites import RENDER_LINE_FLOOR as SHELL_LINES  # noqa: E402
 
 # The venue answering the question itself. Founding Farmers: "While we don't
 # have a traditional happy hour or offer discounted pricing on our cocktails".

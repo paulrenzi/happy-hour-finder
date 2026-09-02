@@ -2,6 +2,7 @@
 """Read a happy-hour PAGE the way a person would, instead of matching it.
 
     python ingest/read_pages_llm.py --limit 4 --show   # one batch, to eyeball
+    python ingest/read_pages_llm.py --lids run.lids    # one scoped town run
     python ingest/read_pages_llm.py                    # every cached page
     python ingest/read_pages_llm.py --model haiku      # measure a cheaper model
     python ingest/read_pages_llm.py --reverify         # re-check, no model calls
@@ -117,8 +118,12 @@ PAGES:
 """
 
 
-def cached_pages():
+def cached_pages(only=None):
     """[(page_id, venue_slug, url, text)] for every happy-hour page on disk.
+
+    `only` is a set of licence ids: a scoped run, the same shape
+    read_windows_llm.py takes. Without it this pass reads EVERY cached page
+    corpus-wide on every run, which is the one thing a run here may not do.
 
     Keyed by the venue SLUG, not by the licence id, because the slug is what the
     sidecar contract uses: build_bundles.py looks a sidecar up by the slug
@@ -136,7 +141,10 @@ def cached_pages():
         if not fn.endswith(".json"):
             continue
         page = json.load(open(os.path.join(PAGES, fn), encoding="utf-8"))
-        vid = by_lid.get(str(page.get("lid")))
+        lid = str(page.get("lid"))
+        if only and lid not in only:
+            continue
+        vid = by_lid.get(lid)
         if not vid:
             continue
         text = "\n".join(page.get("lines") or [])[:MAX_PAGE]
@@ -210,6 +218,7 @@ def write(out):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0, help="stop after N pages")
+    ap.add_argument("--lids", help="file of licence ids, one per line (a scoped run)")
     ap.add_argument("--show", action="store_true")
     ap.add_argument("--rejects", action="store_true")
     ap.add_argument("--model", default=MODEL, help="sonnet (default), haiku, opus")
@@ -219,7 +228,10 @@ def main():
     args = ap.parse_args()
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-    todo = cached_pages()
+    only = None
+    if args.lids:
+        only = {l.strip() for l in open(args.lids, encoding="utf-8") if l.strip()}
+    todo = cached_pages(only)
     if args.limit:
         todo = todo[: args.limit]
     print(f"{len(todo)} cached happy-hour page(s) to read "

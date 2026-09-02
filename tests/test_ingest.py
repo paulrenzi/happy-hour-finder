@@ -2112,6 +2112,20 @@ class AShellHomepageIsWorthOneRender(unittest.TestCase):
         self.assertTrue(hits)
 
 
+class OneNumberSaysWhatAShellIs(unittest.TestCase):
+    """report_holes names the shell class; crawl_sites owns the fix for it.
+
+    While each carried its own constant (40 in the report, 25 in the gate) there
+    was a band of pages reported to a human as "the headless tier, and it is the
+    same fix for all of them" that the render gate then refused. Chikara Sushi's
+    36-line homepage sat in it.
+    """
+
+    def test_the_report_and_the_gate_agree(self):
+        import report_holes
+        self.assertIs(report_holes.SHELL_LINES, crawl_sites.RENDER_LINE_FLOOR)
+
+
 class TheHeadingIsTheContainment(unittest.TestCase):
     """What replaces the URL as the key to the looser price rules.
 

@@ -984,7 +984,13 @@ def urllib_get(url):
 # A page we read in full and which says nothing about a happy hour is a
 # different answer, and rendering it was already measured at zero yield for
 # King of Prussia (2026-09-01). The line floor keeps that rule.
-RENDER_LINE_FLOOR = 25
+#
+# 40, not 25: report_holes.py calls a page under 40 lines a shell and names it
+# to a human as "the headless tier, and it is the same fix for all of them",
+# while this gate refused anything over 25. Chikara Sushi's 36-line homepage
+# sat in that band -- reported as needing exactly the fix the crawler would not
+# apply to it. One concept, one number: report_holes imports this one.
+RENDER_LINE_FLOOR = 40
 RENDER_CAP = 40          # pages per run
 _render = {"on": False, "used": 0, "pw": None,
            "browser": None}
