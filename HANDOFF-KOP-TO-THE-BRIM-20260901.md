@@ -42,9 +42,10 @@ the unbounded probe on a sample and count what NEW thing it finds first.
 
 ---
 
-## What shipped today (3 commits, all pushed)
+## What shipped today (4 commits, all pushed)
 
-`4864e6a` — three readers, 313 tests, all five gates green.
+`4864e6a` three readers · `963b120` handoff · `96913e7` the two defects those
+readers caused in the neighbour towns. **322 tests, all five gates green.**
 
 ### 1. `jsonld_quotes()` — the venue published it as DATA and we didn't look
 
@@ -96,6 +97,48 @@ of Prussia bar** — sourced, quoted and wrong.
 rather than a miss.** A hole is reported by `report_holes.py`; a wrong window is
 invisible until a customer drives there. Refused at the crawler now, by
 believing the site's own `rel=canonical` over the URL we asked for.
+
+---
+
+## 🚨 What the neighbour-town recrawl caught — read this before touching the readers
+
+Phoenixville, Ardmore/Bryn Mawr and Wayne/Radnor were recrawled with the new
+readers. **They produced no new venues in any of the three.** What they *did*
+produce was two defects, and **neither was visible in any count or any gate.**
+
+### 1. `boxed_windows()` paired a NAV LABEL with the clock beside it
+
+Black Powder Tavern's home page carries a bare "Happy Hour" link in a row of
+opening hours. The reader manufactured three windows — lunch 11:30–4, brunch
+11–3, and the real 4–6 — and one **outranked the venue's own sentence**,
+*"Happy Hour on Monday through Friday from 4:00 p.m. until 6:00 p.m."*
+
+> A correct **Mon–Fri 4–6pm became every day of the week**, cited to a quote
+> that says 11:30 to 4. Amada and The Pullman went the same way.
+
+Fixed by `states_a_deal()`: the box joins a **deal** to its clock, and "Happy
+Hour" alone is a tab, a title, a link — not a deal. The test is what survives
+removing the words: a price, or enough other words to be a sentence.
+
+🛑 **The deal count never moved. 203 before, 203 after**, three windows quietly
+wrong inside it. Every gate stayed green.
+
+### 2. A recrawl deleted quotes a FAILED FETCH could not re-read
+
+`reached_nothing()` protects a venue whose whole host is down. It did not
+protect three pages read and one `ConnectionError` — Gullifty's lost all five
+items that way, and **the window survived, so nothing looked wrong.** Fixed by
+`keep_failed_pages()`: only a page we actually READ may say a page is empty.
+
+### 🔑 The check that caught both — run it after ANY reader change
+
+```
+python scratch/card_diff.py HEAD     # before you commit the rebuild
+```
+
+Per venue, per zone: item count, the distinct windows, and how many days they
+cover — this build against the last commit. **A total cannot see a value
+change.** A day count that GREW without a new quote saying so is the signature.
 
 ---
 
@@ -156,19 +199,19 @@ options, in rough order of yield:
    3pm" only as a phase of a window that still HAS an end, and
    `` `Live until ${hit.w.end}` `` needs one. Publishing start-only requires
    deciding what the card says once it is open.
-3. **The three neighbour towns are mid-recrawl** (Phoenixville, Ardmore/Bryn
-   Mawr, Wayne/Radnor) to see whether the JSON-LD and boxed-window readers
-   generalize. **It had not finished when this handoff was written — re-run it
-   and rebuild:**
+3. ~~Recrawl the neighbour towns.~~ **DONE — and they produced zero new
+   venues.** The JSON-LD and boxed-window readers did not generalize to
+   Phoenixville, Ardmore or Wayne; what they produced was the two defects above.
+   The recipe, for the next zone:
    ```
    for z in phoenixville ardmore_bryn_mawr wayne_radnor; do
      python ingest/crawl_sites.py --zone $z --recrawl
    done
    python ingest/extract_deals.py && python ingest/build_bundles.py
+   python scratch/card_diff.py HEAD   # <-- BEFORE committing. Non-negotiable.
    bash tests/run.sh && git add -A && git commit && git push
    python scratch/live_check.py       # the gate that counts
    ```
-   **This is the cheapest remaining win and it is already half-paid-for.**
 4. **A full-corpus `--recrawl`** would apply all three readers to the other 34
    zones. ~900 venues at 2s/page ≈ several hours. Worth it, but run it
    overnight, and land the neighbour towns first so the yield is known.
@@ -185,6 +228,9 @@ options, in rough order of yield:
   ever raising a cap.**
 - `probe_jsonld.py [zone]` — count how many silent venues publish schema.org
   data, and whether any of it names a happy hour.
+- `card_diff.py [ref]` — every zone's cards against a previous commit: items,
+  windows, day count. **The check that caught both defects above.** Run it
+  after any change to the readers, before committing the rebuild.
 - `live_check.py` — open the LIVE site in WebKit, pick King of Prussia, and
   print every painted card with its window and item count. This is the gate that
   counts; an intermediate file and a green aggregate are both blind.

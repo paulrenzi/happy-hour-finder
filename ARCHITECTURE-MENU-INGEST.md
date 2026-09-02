@@ -324,6 +324,35 @@ with no subject. This is the same fact as `item_beside()`, one field over:
 > corpus has hit before. Joining records that merely *follow* each other invents
 > adjacencies.
 
+**🚨 A bare LABEL is not a claim, and the deal count will not tell you.**
+`boxed_windows()` shipped and immediately paired a **nav link** with the clock
+beside it. Black Powder Tavern's home page carries a bare "Happy Hour" link in a
+row of opening hours, so the reader manufactured three windows — lunch 11:30–4,
+brunch 11–3 and the real 4–6 — and one of them **outranked the venue's own
+sentence**, *"Happy Hour on Monday through Friday from 4:00 p.m. until 6:00
+p.m."* A correct Mon–Fri window became **every day of the week, cited to a quote
+that says 11:30 to 4.** Amada and The Pullman went the same way.
+
+The box joins a **deal** to its clock, and "Happy Hour" alone is not a deal — it
+is a tab, a title, a link. `states_a_deal()` asks what SURVIVES removing the
+words: a price, or enough other words to be a sentence rather than a label.
+
+> 🛑 **The deal count never moved.** 203 before, 203 after, with three windows
+> quietly wrong inside it. It was found by **diffing every zone's cards against
+> the previous commit** — name, window and item count per venue — not by
+> watching a total. **A total cannot see a value change.** Do this diff after
+> any change to the readers; the loop is in the handoff.
+
+**One failed fetch is not the venue going quiet.** `reached_nothing()` protects
+the venue whose whole host is down. It does not protect the commoner shape:
+three pages read, one `ConnectionError`, and the quotes that page held silently
+gone from the board. Gullifty's lost all five of its items exactly that way —
+its `/drink-menu` fetch failed on a recrawl and the rebuild shipped a card with
+nothing on it. **The window survived, so no count moved and nothing looked
+wrong.** `keep_failed_pages()` now applies the per-venue rule per PAGE: a URL
+that errored keeps what we held, and **only a page we actually READ may say a
+page has nothing on it.**
+
 **🚨 A chain will serve another town's page at our town's URL, 200 OK.**
 `cityworksrestaurant.com/locations/king-of-prussia/happy-hour/` returns a
 complete, well-formed happy-hour page that says *"City Works has the best Happy

@@ -16123,26 +16123,27 @@
     "url": "https://www.mortons.com/location/mortons-the-steakhouse-king-of-prussia-pa/"
    },
    {
-    "quote": "Power Hour",
-    "url": "https://www.mortons.com/specials/"
-   },
-   {
+    "hh": true,
     "quote": "Happy Hour | Morton's The Steakhouse",
     "url": "https://www.mortons.com/event/power-hour/"
    },
    {
+    "hh": true,
     "quote": "Power Hour",
     "url": "https://www.mortons.com/event/power-hour/"
    },
    {
+    "hh": true,
     "quote": "JOIN US FOR OUR VERSION OF HAPPY HOUR!",
     "url": "https://www.mortons.com/event/power-hour/"
    },
    {
+    "hh": true,
     "quote": "At Morton's, we keep the buzz alive. Join us for Power Hour and savor signature cocktails paired with crave-worthy bar bites, all at a special price.",
     "url": "https://www.mortons.com/event/power-hour/"
    },
    {
+    "hh": true,
     "quote": "Power Hour cocktails not available in Anaheim, Biloxi, Boston Seaport, Washington D.C, and New York - 5th Avenue.",
     "url": "https://www.mortons.com/event/power-hour/"
    },
@@ -16152,12 +16153,18 @@
     "url": "https://www.mortons.com/event/power-hour/"
    },
    {
+    "hh": true,
     "quote": "*Power Hour cocktails not available in Biloxi, Boston Seaport, Washington D.C, and New York - 5th Avenue.",
     "url": "https://www.mortons.com/event/power-hour/"
    },
    {
+    "hh": true,
     "quote": "**Power Hour Bar Bites not available in Palm Desert.",
     "url": "https://www.mortons.com/event/power-hour/"
+   },
+   {
+    "quote": "Power Hour",
+    "url": "https://www.mortons.com/specials/"
    },
    {
     "quote": "Power Hour",
@@ -16175,15 +16182,15 @@
    },
    {
     "hh": true,
-    "lines": 221,
-    "result": "ok, 1 quote(s)",
-    "url": "https://www.mortons.com/specials/"
-   },
-   {
-    "hh": true,
     "lines": 347,
     "result": "ok, 8 quote(s)",
     "url": "https://www.mortons.com/event/power-hour/"
+   },
+   {
+    "hh": true,
+    "lines": 221,
+    "result": "ok, 1 quote(s)",
+    "url": "https://www.mortons.com/specials/"
    },
    {
     "hh": true,
@@ -31579,6 +31586,7 @@
   "crawled_at": "2026-09-01",
   "hits": [
    {
+    "hh": true,
     "quote": "kop high tide happy hour (at our bar)",
     "url": "https://bartaco.com/kophightidehour/"
    },
@@ -31587,8 +31595,19 @@
     "url": "https://bartaco.com/location/kop/"
    },
    {
+    "hh": true,
     "quote": "this 4th of July bartaco is the place to be. we\u2019re celebrating with happy hour all day long, plus check out your local location for music, face painting, and more! / boulder: dj 3-6pm / lohi: face painter 3:30-6:30pm + dj 6-11pm",
     "url": "https://bartaco.com/4th-of-july-lineup-and-happy-hour/"
+   }
+  ],
+  "menu_images": [
+   {
+    "src": "https://bartaco.com/media/05_2026_jacksonville_happy_hour_selects-6-1-700x600.jpg ",
+    "url": "https://bartaco.com/kophightidehour/"
+   },
+   {
+    "src": "https://bartaco.com/media/BTHappyHour_7026_HI_2026-07-24-scaled.png",
+    "url": "https://bartaco.com/kophightidehour/"
    }
   ],
   "name": "BARTACO",
@@ -31607,16 +31626,16 @@
     "url": "https://bartaco.com/location/kop/"
    },
    {
+    "hh": false,
+    "lines": 64,
+    "result": "ok, 0 quote(s)",
+    "url": "https://bartaco.com/goldenhour/"
+   },
+   {
     "hh": true,
     "lines": 88,
     "result": "ok, 1 quote(s)",
     "url": "https://bartaco.com/4th-of-july-lineup-and-happy-hour/"
-   },
-   {
-    "hh": false,
-    "lines": 35,
-    "result": "ok, 0 quote(s)",
-    "url": "https://bartaco.com/food/"
    }
   ],
   "website": "https://bartaco.com/kophightidehour/",
