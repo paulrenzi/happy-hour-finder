@@ -14,7 +14,7 @@ credentials with anything else on this machine.
 
 ---
 
-## Where it stands (2026-09-02)
+## Where it stands (2026-09-03)
 
 | | |
 |---|---|
@@ -22,10 +22,10 @@ credentials with anything else on this machine.
 | licensed venues known — the denominator | 3,415 |
 | …with a website we know of | 1,778 |
 | …crawled | 1,585 |
-| **on the board with a published happy-hour window** | **314** |
-| …carrying items you can actually order | 202 venues, 1,224 items |
-| …with an hour but **no items** — the open gap | **112** |
-| published windows that contradict their own evidence | **0 of 333** |
+| **on the board with a published happy-hour window** | **315** |
+| …carrying items you can actually order | 204 venues, 1,271 items |
+| …with an hour but **no items** — the open gap | **111** |
+| published windows that contradict their own evidence | **0 of 334** |
 
 **Read that table in two halves.** What we publish is checked: every window and
 every price has to appear in a sentence on the venue's own page, and the test
@@ -35,20 +35,21 @@ nobody has ever measured how many real happy hours the pipeline walks past.
 Every miss found so far was found by a person, not by a run.
 **Trust the cards. Do not trust the silence.**
 
-### The one open problem: reach, not reading
+### The open problem, and how it is now worked: the agent reads each venue
 
-Of the **112** venues that publish an hour and no items, **80 gave us no priced
-sentence at all** — nothing to read, and no menu image on file. Their prices are
-one hop further in (a PDF, a linked menu page, an ordering platform) or they are
-pixels. 26 more handed us a price the reader then published none of; 3 have an
-image awaiting the vision pass; 3 have nothing on file.
+**111** venues publish an hour and no items. For 33 days a regex crawler plus
+fourteen hand-run commands tried to close that gap and moved it by single
+digits. On 2026-09-03 the approach changed: **an AI agent hand-reads each
+venue**, the way a person does. One model session per venue, with only the
+tools a person uses (fetch a page, follow the Happy Hour link, download the
+PDF or picture, look at it). The code keeps the jobs code is good at: every
+price must be found character-for-character in the agent's own transcript, the
+PA and Delaware validators run, and a person reviews before anything ships.
 
-**71% of the gap is pages we never reach.** A smarter reader cannot move that
-number, and several fixes shaped like a smarter reader have each been worth
-single digits — the schema.org-anywhere rule and the linked-image rule together
-recovered **2 of the 80**. The next real move is reach: follow the hop, or
-render what needs rendering. Size any candidate fix by **probing the 80**
-before building it.
+Proven on one venue so far: The Greene Turtle, Christiana, went from no card
+to 26 live items in six turns and 34 cents. The next step is one whole town
+(`newark_de`), then the human minute on the result. See
+[`HANDOFF-START-HERE-20260903-THE-AGENT-IS-THE-SCRAPER.md`](HANDOFF-START-HERE-20260903-THE-AGENT-IS-THE-SCRAPER.md).
 
 ---
 
@@ -60,29 +61,41 @@ data/zones.json         44 named districts, hand-maintained — the source of tr
 data/venue_base.json    3,415 licensees, the denominator (regenerate, don't edit)
    ↓ ingest/discover_places.py  find each venue's website        ← the paid step
    ↓ ingest/build_venue_base.py carry those websites onto the board
-   ↓ ingest/crawl_sites.py      robots-honouring crawl → data/crawl_hits.json
-   ↓ ingest/read_menus_llm.py   a model reads the saved pages → deals with items
+   ↓ ingest/crawl_sites.py      robots-honouring crawl → data/crawl_hits.json  (the WINDOW)
+   ↓ ingest/agent_read_venue.py an agent hand-reads each venue's menu → data/deals_agent.json  (the ITEMS)
    ↓ ingest/validate_pa.py      PA Acts 57 & 86 of 2024 — a failing deal never ships
    ↓ ingest/build_bundles.py    → web/data/zone-*.json  (and restamps web/sw.js)
    ↓ git push → GitHub Actions → live site
 ```
+
+Two lanes feed the board. The deterministic crawl still finds the **window**
+(the hours) and the "asking to be filled in" list. The agent finds the
+**items** (what you can order and at what price). Every read is recorded in
+`data/agent_reads.json`: the URL it read, every fetch it made, the transcript,
+and what it cost.
 
 In the browser the split is strict: [`web/lib.js`](web/lib.js) holds **all** pure
 logic — feed assembly, grouping, ranking, freshness decay, time math — and is the
 part under test. [`web/app.js`](web/app.js) only paints the DOM. Keep that split;
 it is why the logic is testable without a browser.
 
-### The five gates — a code change moves no data on its own
+### The process for one town — four commands, in order
 
 ```
-edit ingest/*.py
-  → python ingest/crawl_sites.py --lids run.lids --recrawl
-  → python ingest/read_menus_llm.py ask --lids run.lids   then   build
-  → python ingest/build_bundles.py
-  → git push  (then check the site)
+python ingest/agent_read_venue.py --zone <zone> --show --rejects   # the agent reads each venue
+python ingest/build_bundles.py                                     # items onto cards
+git commit && git push                                             # deploy
+python tests/live_front_door.py <zone>                             # "it is live"
 ```
 
-All of them, in order, or the fix exists only in the source.
+All of them, in order, or the fix exists only in the source. Two agent
+sessions at a time (the default); about a minute and 35 cents of metered model
+time per venue with a menu picture. One town at a time, never the corpus.
+Anything the agent found but the gates refused prints under `--rejects`.
+
+The older window lane (`crawl_sites.py` → `extract_deals.py`) still runs when
+a town needs its hours found; its full recipe is in
+[ARCHITECTURE-MENU-INGEST.md](ARCHITECTURE-MENU-INGEST.md).
 
 ### Discovery is its own chain, and it is two commands
 
@@ -182,6 +195,9 @@ complains, look for a silent drop first.
   above parsed no Delaware address at all on its first run, so it had an empty
   vocabulary and returned a confident "fine". A guard that cannot see the thing
   is not green — it is blind.
+- **A step done by hand to diagnose the pipeline is an autopsy, not a test.**
+  The proof of a lane is a run of the lane; `data/agent_reads.json` records every
+  fetch the agent made so a reader can tell the two apart afterwards.
 - **Never run two crawls at once**, and no `git merge`/`pull` during a crawl.
 - **Never write a backslash escape through a bash heredoc** — the patch reports
   success and the file is unchanged. Use an editor tool.
@@ -204,4 +220,4 @@ deliberately no map.
   session each. The one to read before changing ingest.
 - **[SPEC.md](SPEC.md)** — what a deal is, and the eight categories.
 - **`HANDOFF-START-HERE-*.md`** — session notes, newest wins. The current one is
-  [`HANDOFF-START-HERE-20260902-THE-SCRAPER-IS-THE-JOB.md`](HANDOFF-START-HERE-20260902-THE-SCRAPER-IS-THE-JOB.md).
+  [`HANDOFF-START-HERE-20260903-THE-AGENT-IS-THE-SCRAPER.md`](HANDOFF-START-HERE-20260903-THE-AGENT-IS-THE-SCRAPER.md).

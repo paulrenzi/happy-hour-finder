@@ -104,7 +104,53 @@ Rules:
   true again, the fix is not to read the image — it is to find which step of
   the four above was skipped and make it fail loudly.
 
-## 4. What is NOT yet proven
+## 3a. Paul's check the next morning — was the proof the script, or a hand?
+
+> "did you use the scripted process to actually test how the bulk scrape would
+> go … or did you fake the test by doing that step yourself?"
+
+The script. The record shows it, and that is the point of the record:
+`data/agent_reads.json["DE6779bbc094"].path_taken` reads *WebFetch the
+Christiana page → found the Happy Hour Menu link → curl the JPG → Read it*;
+`data/agent_reads/DE6779bbc094/happyhour.jpg` (530 KB, 09-03 00:38) is what it
+downloaded. Six turns, $0.34, 26 items, from one run of
+`agent_read_venue.py --lids <file naming that lid>`. The prompt gave it name,
+address and website — nothing else, and nothing about where the menu was.
+
+The one hand step in the session was running the OLD image reader on the
+crawl's JPG to show where the old lane broke (price bands, 0 → 21 items). That
+was the autopsy of the old process and fed nothing to the card.
+
+🛑 **A step done by hand to diagnose a pipeline is an autopsy, not a test.**
+The proof of a lane is a run of the lane, and its record must let a reader
+tell the two apart afterwards.
+
+## 3b. Where everything is written (2026-09-03, end of session)
+
+- Architecture + debugging: `ARCHITECTURE-MENU-INGEST.md`, last section
+  *"THE AGENT IS THE SCRAPER — the item lane, and how to debug it"* (files,
+  fields, the four silent steps, `norm_addr`, concurrency, what the agent does
+  not decide).
+- `README.md` — the two-lane diagram and the four-command process.
+- `umbrella-arcades/Knowledge-Graph.md` — the 2026-09-03 entries.
+- Memory: `project_hhf_the_agent_is_the_scraper.md`.
+
+## 4. NEXT SESSION — start here
+
+1. `python ingest/agent_read_venue.py --zone newark_de --show --rejects`
+   — the first whole town. Nine other captured images sit unread there. Watch
+   for `!!` rows (errors; re-run picks them up), `none --` rows (read
+   `why_not`), and `x` lines under `--rejects` (gate refusals — a pattern there
+   is the next defect).
+2. `python ingest/build_bundles.py` → `bash tests/run.sh` → commit → push →
+   `python tests/live_front_door.py newark_de`.
+3. The human minute: Paul opens two or three of the new cards against the
+   venue's site. A wrong item is worse than a miss.
+4. Then decide, with Paul: the agent's WINDOW readings (kept in
+   `agent_reads.json`, unpublished) — may a venue with no deterministic window
+   take the agent's?
+
+## 5. What is NOT yet proven
 
 - One venue. The lane has read The Greene Turtle Christiana and nothing else.
   The next session's first job is **one town** (`--zone newark_de`, 9 other
@@ -115,7 +161,7 @@ Rules:
   it does on a JS shell (McGlynn's class) is untested.
 - `data/agent_reads/<lid>/` holds downloaded menus; gitignored.
 
-## 5. Standing rules — still in force
+## 6. Standing rules — still in force
 
 - Scoped runs only. "It is live" is one command. Prove it on one town for a
   dollar before a sweep. Never write a backslash escape through a bash heredoc.

@@ -2474,3 +2474,117 @@ inside it second.
 🚨 **The gate for it PASSED on the broken code** until it seeded a location —
 the defect only shows to a reader who granted one. **A gate must reproduce the
 reader's conditions**, or it watches the defect go past.
+
+## 🤖🔑🔑 THE AGENT IS THE SCRAPER — the item lane, and how to debug it (2026-09-03)
+
+Paul, 2026-09-03: *"you are trying to build a scraper, and we need an ai agent
+… it requires an actual AI agent hand scraping each happy hour menu."* He was
+right. This section is the architecture that replaced the regex lane for
+items, the four defects it exposed, and the one rule about testing it.
+
+### What runs
+
+`ingest/agent_read_venue.py` — **one `claude -p` session per venue**, with the
+tools a person uses and nothing that writes: `WebFetch`, `Read`, `Bash(curl:*)`.
+The prompt gives it only the venue's name, address and website. It finds the
+happy hour the way a person does (home page, menu page, this location's page,
+the button that says Happy Hour), downloads a PDF or picture with curl, looks
+at it with Read, transcribes it, and returns one JSON object.
+
+The deterministic code keeps only the jobs it is good at:
+
+| job | where |
+|---|---|
+| grounding: every item's `quote` AND `price_quote` must be character-for-character in the model's own `transcript` | `extract_menu_images.items_from` → `ground()` |
+| re-read the digits out of that span | `extract_prices_llm.verify(..., menu=True)` |
+| PA / DE validators, `happy_hour` deals only | `validate_pa.py` |
+| items only, never a window | same rule as every sidecar |
+| human review before ship | as before |
+
+Files:
+
+- `data/agent_reads.json` — **evidence**, keyed by licence id: `read_at`,
+  `model`, `cost_usd`, `turns`, `found`, `kind` (page/pdf/image/none),
+  `source_url`, `why_not`, `path_taken` (one line per fetch), `transcript`,
+  raw `deals` **including the windows the agent read**, `items_kept`, `dropped`
+  (each with the reason the gate refused it).
+- `data/deals_agent.json` — verified items, **keyed by licence id**, attached
+  by `build_bundles.py` through `agent_items.get(lid)`.
+- `data/agent_reads/<lid>/` — what it downloaded. Gitignored.
+
+Runs: `--zone Z` or `--lids file` (required, exclusive), `--limit N`,
+`--workers 2` (default), `--force` to re-read, `--show`, `--rejects`.
+A row with `error` is re-read on the next run automatically.
+
+### Cost — measured, not estimated
+
+Every read records `cost_usd` and `turns` from the CLI's own JSON. The Greene
+Turtle Christiana: **6 turns, $0.34, ~1 minute**, 26 items. Budget a town of
+100 websites at roughly **an hour and $20** of subscription-metered time.
+
+### The four silent steps behind "we have the image, nothing looked at it"
+
+Each one was a real defect and each one produced no error:
+
+1. **The image reader was a hand-run step**, fifth of fourteen. The crawl on
+   09-02 21:10 captured the JPG; the reader had last run at 20:45. **141 of
+   152 captured menu images were never read.** Fix: the agent reads what it
+   finds in the same session that finds it. There is no separate reader to
+   forget.
+2. **Price bands.** The menu prints `$3` once over a column of shots, so no
+   item's own line carries a digit and `verify()` refused all 23 items:
+   *"price 3 not written in the evidence"*. Fix: the menu prompt asks for
+   `price_quote` — the span where THIS item's price is printed, its own line or
+   the badge over its group — and `items_from` appends it to the evidence when
+   it is in the transcript. `extract_menu_images.py` gets the same rule
+   (`MENU_PROMPT`); Greene Turtle Main St went 0 → 21 items under it.
+3. **A chain's page is not one bar.** Both Newark branches read the chain's one
+   corporate menu page, and `collapse_name_collisions` merged them under
+   "same name, same source page". The venue Paul pointed at had **no card**.
+   Fix: a shared page only merges rows that also share `norm_addr` (street
+   number + ZIP); unknown addresses join the largest door.
+4. **Sidecars keyed by slug collide for two branches in one town** —
+   `extract_deals.slug()` is name + city, so both Greene Turtles are
+   `the-greene-turtle-sports-bar-grille-newark`. Fix: the agent sidecar is keyed
+   by **licence id** and attached by licence id. The bundle already suffixes the
+   colliding id (`…-DE6779bbc094`); the lookup had to match.
+
+And one the fix itself caused: `norm_addr()` returned the ZIP as the house
+number for `180B Mill Rd`, so P.J. Whelihan's un-merged from Oaks Cinema. The
+house regex is now `\b(\d+)[A-Za-z]?\b`. **Check the merge set before and
+after any change to `norm_addr` or the collapse** — the number to watch was 7.
+
+### 🛑 The test of a process is the process
+
+Paul asked, the morning after: *"did you use the scripted process to actually
+test how the bulk scrape would go … or did you fake the test by doing that step
+yourself?"* The answer had to come from the record, and it can:
+`data/agent_reads.json[lid].path_taken` lists every fetch and download the
+agent made, and `data/agent_reads/<lid>/` holds the file it downloaded, with a
+timestamp. The card's 26 items came from one run of the script with the lid
+on a `--lids` file, and nothing else.
+
+> 🛑🔑 **A step done by hand to diagnose a pipeline is an autopsy, not a test.**
+> Reading the image by hand with the old reader proved where the old lane
+> broke; it proved nothing about the new one. The proof of a lane is a run of
+> the lane, and its record must let a reader tell the two apart afterwards.
+> That is why `path_taken` and the download directory exist.
+
+### Concurrency
+
+Three parallel `claude -p` sessions lost 62 of 260 reads to exit 1 in the
+Google-listing probe and **hid a real hit**. Two is the default. An errored
+read is not a zero: it is retried, and it must never be counted as "no menu".
+
+### What the agent does NOT decide
+
+- **The window.** The agent's window reading is kept in `agent_reads.json`
+  and not published. Whether a venue with no deterministic window may take the
+  agent's is Paul's call.
+- **What ships.** The reviewer does.
+
+### Not yet proven
+
+One venue. Next: `--zone newark_de` (nine other captured images sit unread
+there), then the one human minute on the result. Untested: what the agent does
+on a JS shell (McGlynn's class) where WebFetch returns chrome; it has curl.
