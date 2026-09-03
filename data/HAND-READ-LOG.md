@@ -117,3 +117,22 @@ re-attempt these unless the venue's own site changes.)
 - (correction) blue_bell_plymouth_meeting | Scoogi's Italian Kitchen & Bar (27076) | ALREADY_LIVE | was already published pre-session; hand-read only upgraded evidence, no net add | 2026-09-04
 - (correction) ardmore_bryn_mawr | The Pub of Penn Valley (43721) | ALREADY_LIVE | was already published pre-session; hand-read only upgraded evidence, no net add | 2026-09-04
 - IMPORTANT LESSON: check web/data/zone-<z>.json for the venue name BEFORE hand-reading -- a lid missing from agent_handread.json can still already be live via auto-extraction. Only 3 of 13 attempts this round were genuinely net-new.
+
+## 2026-09-04 continued — third round (thin non-Philly PA sweep, then Job 2 new towns)
+- souderton_harleysville | P J Whelihan's Hatfield (110926) | SHIPPED | same chain HH menu/window as 5 other locations already live | 2026-09-04
+- pottstown | Sly Fox Tastin' Room | NO_CLOCK_TIME | Sunday-only relative discounts ($5 off wings, half price), no absolute price tied to window | 2026-09-04
+- norristown_bridgeport | Bridgeport Rib House (theribby.com) | NO_CLOCK_TIME | re-confirmed: multiple clear HH windows, zero item prices anywhere on site | 2026-09-04
+- pottstown | Big Phil's Bar & Grill | NO_CLOCK_TIME | re-confirmed: Mon-Fri 4-6pm window, only BOGO apps (relative), no absolute price | 2026-09-04
+- audubon_eagleville | Eagleville Taphouse | UNREACHABLE | HTTP 406 | 2026-09-04
+- ridley_tinicum | Hunt's Annex Lounge / Tom N Jerry's Sports Pub | UNREACHABLE | 403/406 | 2026-09-04
+- ridley_tinicum | Erin Pub | NO_CLOCK_TIME | no HH text on 63KB page | 2026-09-04
+- springfield_delco | Springfield Ale House / Crafty's Springfield | NO_CLOCK_TIME | empty/thin sweeps, no HH text | 2026-09-04
+- upper_darby_lansdowne | 40 Garrett Rd Cafe | NO_CLOCK_TIME | empty sweep | 2026-09-04
+- ambler_upper_dublin/limerick_royersford/collegeville_trappe | Well Crafted Beer Co, Spring House Tavern(403), Giuseppes, William Penn Inn, Lost Planet Brewing, Limerick Diner, Magerks, Tom's Bar & Grille, Moccia's Train Stop | UNREACHABLE/NO_CLOCK_TIME | empty sweeps or blocked | 2026-09-04
+- norristown_bridgeport | Vonc Brewing, Mama Venezia | UNREACHABLE/NO_CLOCK_TIME | empty sweep / 404 | 2026-09-04
+- pottstown | Sunset Hill Brewing, Flowing Springs Inn, Peppe's Pizza, Gatsby's Pub, Sanatoga Pizza Grill, Twisted Cork | NO_CLOCK_TIME | all empty sweeps | 2026-09-04
+- souderton_harleysville | Harleysville Hotel, Sumneytown Hotel, Branch Creek Brewing, 3 Sisters Rum, Collegeville Diner, Spirochete Brewing | NO_CLOCK_TIME | all empty sweeps | 2026-09-04
+- ambler_upper_dublin | Gypsy Blu, Bacio's Italian Cucina | NO_CLOCK_TIME | empty sweeps | 2026-09-04
+- abington_jenkintown | Morgan Stillhouse | NO_CLOCK_TIME | empty sweep | 2026-09-04
+- manayunk | Daiva's Grille, kitchenbar.net | UNREACHABLE/NO_CLOCK_TIME | 410 gone / empty sweep | 2026-09-04
+- NOTE: remaining unread candidates in these thin non-Philly zones are heavily chains/groceries/non-bar businesses (Wawa, ShopRite, Giant, Chipotle, Chili's, Starbucks, Sheetz, Royal Farms, Little Caesars) or independents already dead-ended above -- this territory is close to tapped out for the hand-read ladder without new seeding (discover_places.py) or fresh sites appearing.
