@@ -3,6 +3,385 @@
  "as_of": "2026-09-03",
  "venues": [
   {
+   "address": "44 W Gay St, West Chester PA 19380",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "DRAFTS $5",
+       "label": "Draft",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "evidence": "HOUSE WINE $7",
+       "label": "House Wine",
+       "price_usd": 7.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "MOSCOW OR KENTUCKY MULE $8",
+       "label": "Moscow or Kentucky Mule",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "RED OR WHITE SANGRIA $8",
+       "label": "Red or White Sangria",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "APEROL OR LIMONCELLO SPRITZ $9",
+       "label": "Aperol or Limoncello Spritz",
+       "price_usd": 9.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "ESPRESSO MARTINI $9",
+       "label": "Espresso Martini",
+       "price_usd": 9.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "KETEL ONE MARTINI $9",
+       "label": "Ketel One Martini",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "evidence": "RICOTTA BOARD $10",
+       "label": "Ricotta Board",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "CHEESESTEAK EGG ROLLS $10",
+       "label": "Cheesesteak Egg Rolls",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "MEATBALL TRIO $10",
+       "label": "Meatball Trio",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "BONELESS FIRE WINGS $10",
+       "label": "Boneless Fire Wings",
+       "price_usd": 10.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "HAPPY HOUR / Monday-Friday / 3pm-6pm",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "HAPPY HOUR / Monday-Friday / 3pm-6pm / DRAFTS $5",
+      "url": "https://lascalasfire.com/west-chester/menus/happy-hour/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "15:00"
+      }
+     ]
+    }
+   ],
+   "id": "112265",
+   "lid": "112265",
+   "name": "Lascala's Fire",
+   "plcb_name": "LASCALA'S FIRE",
+   "website": "https://lascalasfire.com/west-chester/",
+   "zone_id": "west_chester"
+  },
+  {
+   "address": "9 N High St, West Chester PA 19382",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "$5 Select Beer",
+       "label": "Select Beer",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "evidence": "$9 Red Wine Selection",
+       "label": "Red Wine Selection",
+       "price_usd": 9.0
+      },
+      {
+       "category": "wine",
+       "evidence": "$9 White Wine Selection",
+       "label": "White Wine Selection",
+       "price_usd": 9.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$12 Select Cocktails",
+       "label": "Select Cocktail",
+       "price_usd": 12.0
+      },
+      {
+       "category": "food",
+       "evidence": "$9 Prime Steak Skewers",
+       "label": "Prime Steak Skewers",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "evidence": "$9 Rockefeller Oysters",
+       "label": "Rockefeller Oysters",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "evidence": "$9 Spicy Pork Bao Buns",
+       "label": "Spicy Pork Bao Buns",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "evidence": "$9 Crispy Calamari",
+       "label": "Crispy Calamari",
+       "price_usd": 9.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Happy Hour / Tuesday-Friday 4PM-6:30PM / Sunday 4PM-6:30PM",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Happy Hour / Tuesday-Friday 4PM-6:30PM / Sunday 4PM-6:30PM / $5 Select Beer",
+      "url": "https://9primewestchester.com/happy-hour-menu"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 2,
+       "end": "18:30",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:30",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:30",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:30",
+       "start": "16:00"
+      },
+      {
+       "dow": 7,
+       "end": "18:30",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "119098",
+   "lid": "119098",
+   "name": "9 Prime",
+   "plcb_name": "WCTHG LL LLC",
+   "website": "https://9primewestchester.com",
+   "zone_id": "west_chester"
+  },
+  {
+   "address": "1227 W Chester Pk, West Chester PA 19380",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "bottle_can",
+       "evidence": "$3 Coors Lite",
+       "label": "Coors Lite",
+       "price_usd": 3.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "$3 Yuengling",
+       "label": "Yuengling",
+       "price_usd": 3.0
+      },
+      {
+       "category": "draft",
+       "evidence": "$5 Rotating Draft",
+       "label": "Rotating Draft",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "evidence": "$5 House Wines",
+       "label": "House Wine",
+       "price_usd": 5.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "HAPPY HOUR: / Monday-Friday / 4-6PM @ The Bar Only",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "HAPPY HOUR: / Monday-Friday / 4-6PM @ The Bar Only / $3 Coors Lite",
+      "url": "https://www.thestonetavern1867.com/specials"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "126237",
+   "lid": "126237",
+   "name": "The Stone Tavern",
+   "plcb_name": "THE STONE TAVERN",
+   "website": "https://www.thestonetavern1867.com",
+   "zone_id": "west_chester"
+  },
+  {
+   "address": "142 E Market St, West Chester PA 19382",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "$4 Domestic Drafts & Bottles",
+       "label": "Domestic Draft or Bottle",
+       "price_usd": 4.0
+      },
+      {
+       "category": "draft",
+       "evidence": "$5 Craft Drafts, Surfsides & Statesides",
+       "label": "Craft Draft, Surfside or Stateside",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "evidence": "$6 Glasses of Wine",
+       "label": "Glass of Wine",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$7 Crushes",
+       "label": "Crush",
+       "price_usd": 7.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Happy Hour / Tuesday-Friday: 4-7pm | Saturday & Sunday: 3-6pm",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Happy Hour / Tuesday-Friday: 4-7pm | Saturday & Sunday: 3-6pm / $4 Domestic Drafts & Bottles",
+      "url": "https://station142.com/food-drink-menu/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 2,
+       "end": "19:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "19:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "19:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "19:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 6,
+       "end": "19:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 7,
+       "end": "19:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "129847",
+   "lid": "129847",
+   "name": "Station 142 Stage + Bar + Kitchen",
+   "plcb_name": "FTROOP142 LLC",
+   "website": "https://station142.com/",
+   "zone_id": "west_chester"
+  },
+  {
    "address": "36-38 E Gay St, West Chester PA 19380",
    "deals": [
     {
@@ -232,6 +611,70 @@
    "zone_id": "west_chester"
   },
   {
+   "address": "5-7-9 N Walnut St, West Chester PA 19380",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "pizza or flatbread $20",
+       "label": "Pizza or Flatbread",
+       "price_usd": 20.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "HAPPY HOUR MENU / Sunday-Friday 4:00-6:00PM",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "HAPPY HOUR MENU / Sunday-Friday 4:00-6:00PM / pizza or flatbread $20",
+      "url": "https://www.limoncellorestaurant.com/happy-hour-menu"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 7,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "59213",
+   "lid": "59213",
+   "name": "Limoncello",
+   "plcb_name": "LIMONCELLO",
+   "website": "https://www.limoncellorestaurant.com/",
+   "zone_id": "west_chester"
+  },
+  {
    "address": "10-12-14 E Gay St, West Chester PA 19380",
    "deals": [
     {
@@ -367,6 +810,74 @@
    "name": "Más Mexicali Cantina",
    "plcb_name": "MAS WEST CHESTER LLC",
    "website": "https://www.masmexicali.com/",
+   "zone_id": "west_chester"
+  },
+  {
+   "address": "1347 Wilmington Pk, West Chester PA 19382",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "$3 Domestic Drafts",
+       "label": "Domestic Draft",
+       "price_usd": 3.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "$4 Corona & Corona Light",
+       "label": "Corona & Corona Light",
+       "price_usd": 4.0
+      },
+      {
+       "category": "wine",
+       "evidence": "$6 House Wine",
+       "label": "House Wine",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$6 Krushes",
+       "label": "Krush",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "evidence": "$5 Boneless Wings (Snack Size)",
+       "label": "Boneless Wings (Snack Size)",
+       "price_usd": 5.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM / $3 Domestic Drafts",
+      "url": "https://pjspub.com/specials"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "66141",
+   "lid": "66141",
+   "name": "P.J. Whelihan's",
+   "plcb_name": "PJ WHELIHANS",
+   "website": "https://locations.pjspub.com/pa/west-chester/1347-wilmington-pike",
    "zone_id": "west_chester"
   },
   {
@@ -2657,6 +3168,89 @@
    "zone_id": "wilmington"
   },
   {
+   "address": "322 Suburban Dr, Newark, DE 19711",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "$4 Crab Stuffed Deviled Eggs",
+       "label": "Crab Stuffed Deviled Eggs",
+       "price_usd": 4.0
+      },
+      {
+       "category": "food",
+       "evidence": "$6 Crispy Chicken Bites",
+       "label": "Crispy Chicken Bites",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "evidence": "$7 Fish Taco",
+       "label": "Fish Taco",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "evidence": "$5 Loaded Potato Wedges",
+       "label": "Loaded Potato Wedges",
+       "price_usd": 5.0
+      },
+      {
+       "category": "draft",
+       "evidence": "$4 / Drink Specials / ALL DRAFT BEER",
+       "label": "Draft Beer",
+       "price_usd": 4.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Happy Hour / MONDAY - FRIDAY, 3-6 PM",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Happy Hour / MONDAY - FRIDAY, 3-6 PM / $4 Crab Stuffed Deviled Eggs",
+      "url": "http://www.bluecrabgrillde.com/happy-hour"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "15:00"
+      }
+     ]
+    }
+   ],
+   "id": "DE837a19ec46",
+   "lid": "DE837a19ec46",
+   "name": "Blue Crab Grill",
+   "plcb_name": "Blue Crab Grill",
+   "website": "http://www.bluecrabgrillde.com/",
+   "zone_id": "newark_de"
+  },
+  {
    "address": "1206 Washington St, Wilmington, DE 19801",
    "deals": [
     {
@@ -3441,6 +4035,107 @@
    "zone_id": "wilmington"
   },
   {
+   "address": "126 E Main St, Newark, DE 19711",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "cocktail",
+       "evidence": "MARGARITA 4",
+       "label": "Margarita",
+       "price_usd": 4.0
+      },
+      {
+       "category": "wine",
+       "evidence": "PROSECCO 4",
+       "label": "Prosecco",
+       "price_usd": 4.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "WHEATLEY'S MULE 5",
+       "label": "Wheatley's Mule",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "FEATURED COCKTAIL 6",
+       "label": "Featured Cocktail",
+       "price_usd": 6.0
+      },
+      {
+       "amount_off_usd": 1.0,
+       "category": "draft",
+       "evidence": "$1 OFF ALL DRAFTS",
+       "label": "Draft"
+      },
+      {
+       "category": "well",
+       "evidence": "SINGLE 3 Vodka, Rum, Gin, Tequila, Whiskey",
+       "label": "Single well spirit (Vodka, Rum, Gin, Tequila, Whiskey)",
+       "price_usd": 3.0
+      },
+      {
+       "category": "food",
+       "evidence": "HUMMUS Roasted garlic hummus, tortilla chips 6",
+       "label": "Hummus",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "evidence": "PRETZEL BITES Everything-seasoned pretzel bites, cheddar cheese sauce 8",
+       "label": "Pretzel Bites",
+       "price_usd": 8.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Happy Hour Monday - Friday 4-6pm / HAPPY HOUR M-F 4-6pm",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "HAPPY HOUR M-F 4-6pm / MARGARITA 4 add fruit purée +1 | PROSECCO 4 | WHEATLEY'S MULE 5 FEATURED COCKTAIL 6 $1 OFF ALL DRAFTS DOUBLE 5 | SINGLE 3 Vodka, Rum, Gin, Tequila, Whiskey",
+      "url": "http://www.homegrowncafe.com/menus/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "DEc6c348ab69",
+   "lid": "DEc6c348ab69",
+   "name": "Home Grown Cafe",
+   "plcb_name": "Home Grown Cafe",
+   "website": "http://www.homegrowncafe.com/",
+   "zone_id": "newark_de"
+  },
+  {
    "address": "600 Justison St, Wilmington, DE 19801",
    "deals": [
     {
@@ -3956,6 +4651,77 @@
    "name": "P.F. Chang's",
    "plcb_name": "P.F. Chang's",
    "website": "https://locations.pfchangs.com/de/newark/331-christiana-mall.html?utm_source=google_gbp&utm_medium=organic",
+   "zone_id": "newark_de"
+  },
+  {
+   "address": "90 E Main St near, Newark, DE 19711",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "wine",
+       "evidence": "$6 Featured Wine",
+       "label": "Featured Wine",
+       "price_usd": 6.0
+      },
+      {
+       "category": "draft",
+       "evidence": "$6 Craft Drafts",
+       "label": "Craft Draft",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$8 Martinis",
+       "label": "Martini",
+       "price_usd": 8.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Happy Hour Bar & Patio / Monday-Friday 4:00pm-6:00pm",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Happy Hour Bar & Patio / Monday-Friday 4:00pm-6:00pm / $6 Featured Wine",
+      "url": "http://www.caffegelato.net/menus/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "DEe32289cf11",
+   "lid": "DEe32289cf11",
+   "name": "Caffè Gelato Restaurant",
+   "plcb_name": "Caffè Gelato Restaurant",
+   "website": "http://www.caffegelato.net/",
    "zone_id": "newark_de"
   },
   {

@@ -2682,5 +2682,469 @@
     "evidence": "$5, $7 and $9 Plates"
    }
   ]
+ },
+ {
+  "lid": "DE837a19ec46",
+  "url": "http://www.bluecrabgrillde.com/happy-hour",
+  "read_on": "2026-09-03",
+  "heading": "Happy Hour",
+  "clock_quote": "Happy Hour / MONDAY - FRIDAY, 3-6 PM",
+  "quote": "Happy Hour / MONDAY - FRIDAY, 3-6 PM / $4 Crab Stuffed Deviled Eggs",
+  "days": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "start": "15:00",
+  "end": "18:00",
+  "items": [
+   {
+    "category": "food",
+    "label": "Crab Stuffed Deviled Eggs",
+    "price_usd": 4.0,
+    "evidence": "$4 Crab Stuffed Deviled Eggs"
+   },
+   {
+    "category": "food",
+    "label": "Crispy Chicken Bites",
+    "price_usd": 6.0,
+    "evidence": "$6 Crispy Chicken Bites"
+   },
+   {
+    "category": "food",
+    "label": "Fish Taco",
+    "price_usd": 7.0,
+    "evidence": "$7 Fish Taco"
+   },
+   {
+    "category": "food",
+    "label": "Loaded Potato Wedges",
+    "price_usd": 5.0,
+    "evidence": "$5 Loaded Potato Wedges"
+   },
+   {
+    "category": "draft",
+    "label": "Draft Beer",
+    "price_usd": 4.0,
+    "evidence": "$4 / Drink Specials / ALL DRAFT BEER"
+   }
+  ]
+ },
+ {
+  "lid": "DEc6c348ab69",
+  "url": "http://www.homegrowncafe.com/menus/",
+  "read_on": "2026-09-03",
+  "heading": "Happy Hour",
+  "clock_quote": "Happy Hour Monday - Friday 4-6pm / HAPPY HOUR M-F 4-6pm",
+  "quote": "HAPPY HOUR M-F 4-6pm / MARGARITA 4 add fruit purée +1 | PROSECCO 4 | WHEATLEY'S MULE 5 FEATURED COCKTAIL 6 $1 OFF ALL DRAFTS DOUBLE 5 | SINGLE 3 Vodka, Rum, Gin, Tequila, Whiskey",
+  "days": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "start": "16:00",
+  "end": "18:00",
+  "items": [
+   {
+    "category": "cocktail",
+    "label": "Margarita",
+    "price_usd": 4.0,
+    "evidence": "MARGARITA 4"
+   },
+   {
+    "category": "wine",
+    "label": "Prosecco",
+    "price_usd": 4.0,
+    "evidence": "PROSECCO 4"
+   },
+   {
+    "category": "cocktail",
+    "label": "Wheatley's Mule",
+    "price_usd": 5.0,
+    "evidence": "WHEATLEY'S MULE 5"
+   },
+   {
+    "category": "cocktail",
+    "label": "Featured Cocktail",
+    "price_usd": 6.0,
+    "evidence": "FEATURED COCKTAIL 6"
+   },
+   {
+    "category": "draft",
+    "label": "Draft",
+    "amount_off_usd": 1.0,
+    "evidence": "$1 OFF ALL DRAFTS"
+   },
+   {
+    "category": "well",
+    "label": "Single well spirit (Vodka, Rum, Gin, Tequila, Whiskey)",
+    "price_usd": 3.0,
+    "evidence": "SINGLE 3 Vodka, Rum, Gin, Tequila, Whiskey"
+   },
+   {
+    "category": "food",
+    "label": "Hummus",
+    "price_usd": 6.0,
+    "evidence": "HUMMUS Roasted garlic hummus, tortilla chips 6"
+   },
+   {
+    "category": "food",
+    "label": "Pretzel Bites",
+    "price_usd": 8.0,
+    "evidence": "PRETZEL BITES Everything-seasoned pretzel bites, cheddar cheese sauce 8"
+   }
+  ]
+ },
+ {
+  "lid": "DEe32289cf11",
+  "url": "http://www.caffegelato.net/menus/",
+  "read_on": "2026-09-03",
+  "heading": "Happy Hour",
+  "clock_quote": "Happy Hour Bar & Patio / Monday-Friday 4:00pm-6:00pm",
+  "quote": "Happy Hour Bar & Patio / Monday-Friday 4:00pm-6:00pm / $6 Featured Wine",
+  "days": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "start": "16:00",
+  "end": "18:00",
+  "items": [
+   {
+    "category": "wine",
+    "label": "Featured Wine",
+    "price_usd": 6.0,
+    "evidence": "$6 Featured Wine"
+   },
+   {
+    "category": "draft",
+    "label": "Craft Draft",
+    "price_usd": 6.0,
+    "evidence": "$6 Craft Drafts"
+   },
+   {
+    "category": "cocktail",
+    "label": "Martini",
+    "price_usd": 8.0,
+    "evidence": "$8 Martinis"
+   }
+  ]
+ },
+ {
+  "lid": "112265",
+  "url": "https://lascalasfire.com/west-chester/menus/happy-hour/",
+  "read_on": "2026-09-03",
+  "heading": "Happy Hour",
+  "clock_quote": "HAPPY HOUR / Monday-Friday / 3pm-6pm",
+  "quote": "HAPPY HOUR / Monday-Friday / 3pm-6pm / DRAFTS $5",
+  "days": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "start": "15:00",
+  "end": "18:00",
+  "items": [
+   {
+    "category": "draft",
+    "label": "Draft",
+    "price_usd": 5.0,
+    "evidence": "DRAFTS $5"
+   },
+   {
+    "category": "wine",
+    "label": "House Wine",
+    "price_usd": 7.0,
+    "evidence": "HOUSE WINE $7"
+   },
+   {
+    "category": "cocktail",
+    "label": "Moscow or Kentucky Mule",
+    "price_usd": 8.0,
+    "evidence": "MOSCOW OR KENTUCKY MULE $8"
+   },
+   {
+    "category": "cocktail",
+    "label": "Red or White Sangria",
+    "price_usd": 8.0,
+    "evidence": "RED OR WHITE SANGRIA $8"
+   },
+   {
+    "category": "cocktail",
+    "label": "Aperol or Limoncello Spritz",
+    "price_usd": 9.0,
+    "evidence": "APEROL OR LIMONCELLO SPRITZ $9"
+   },
+   {
+    "category": "cocktail",
+    "label": "Espresso Martini",
+    "price_usd": 9.0,
+    "evidence": "ESPRESSO MARTINI $9"
+   },
+   {
+    "category": "cocktail",
+    "label": "Ketel One Martini",
+    "price_usd": 9.0,
+    "evidence": "KETEL ONE MARTINI $9"
+   },
+   {
+    "category": "food",
+    "label": "Ricotta Board",
+    "price_usd": 10.0,
+    "evidence": "RICOTTA BOARD $10"
+   },
+   {
+    "category": "food",
+    "label": "Cheesesteak Egg Rolls",
+    "price_usd": 10.0,
+    "evidence": "CHEESESTEAK EGG ROLLS $10"
+   },
+   {
+    "category": "food",
+    "label": "Meatball Trio",
+    "price_usd": 10.0,
+    "evidence": "MEATBALL TRIO $10"
+   },
+   {
+    "category": "food",
+    "label": "Boneless Fire Wings",
+    "price_usd": 10.0,
+    "evidence": "BONELESS FIRE WINGS $10"
+   }
+  ]
+ },
+ {
+  "lid": "119098",
+  "url": "https://9primewestchester.com/happy-hour-menu",
+  "read_on": "2026-09-03",
+  "heading": "Happy Hour",
+  "clock_quote": "Happy Hour / Tuesday-Friday 4PM-6:30PM / Sunday 4PM-6:30PM",
+  "quote": "Happy Hour / Tuesday-Friday 4PM-6:30PM / Sunday 4PM-6:30PM / $5 Select Beer",
+  "days": [
+   2,
+   3,
+   4,
+   5,
+   7
+  ],
+  "start": "16:00",
+  "end": "18:30",
+  "items": [
+   {
+    "category": "draft",
+    "label": "Select Beer",
+    "price_usd": 5.0,
+    "evidence": "$5 Select Beer"
+   },
+   {
+    "category": "wine",
+    "label": "Red Wine Selection",
+    "price_usd": 9.0,
+    "evidence": "$9 Red Wine Selection"
+   },
+   {
+    "category": "wine",
+    "label": "White Wine Selection",
+    "price_usd": 9.0,
+    "evidence": "$9 White Wine Selection"
+   },
+   {
+    "category": "cocktail",
+    "label": "Select Cocktail",
+    "price_usd": 12.0,
+    "evidence": "$12 Select Cocktails"
+   },
+   {
+    "category": "food",
+    "label": "Prime Steak Skewers",
+    "price_usd": 9.0,
+    "evidence": "$9 Prime Steak Skewers"
+   },
+   {
+    "category": "food",
+    "label": "Rockefeller Oysters",
+    "price_usd": 9.0,
+    "evidence": "$9 Rockefeller Oysters"
+   },
+   {
+    "category": "food",
+    "label": "Spicy Pork Bao Buns",
+    "price_usd": 9.0,
+    "evidence": "$9 Spicy Pork Bao Buns"
+   },
+   {
+    "category": "food",
+    "label": "Crispy Calamari",
+    "price_usd": 9.0,
+    "evidence": "$9 Crispy Calamari"
+   }
+  ]
+ },
+ {
+  "lid": "126237",
+  "url": "https://www.thestonetavern1867.com/specials",
+  "read_on": "2026-09-03",
+  "heading": "Happy Hour",
+  "clock_quote": "HAPPY HOUR: / Monday-Friday / 4-6PM @ The Bar Only",
+  "quote": "HAPPY HOUR: / Monday-Friday / 4-6PM @ The Bar Only / $3 Coors Lite",
+  "days": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "start": "16:00",
+  "end": "18:00",
+  "items": [
+   {
+    "category": "bottle_can",
+    "label": "Coors Lite",
+    "price_usd": 3.0,
+    "evidence": "$3 Coors Lite"
+   },
+   {
+    "category": "bottle_can",
+    "label": "Yuengling",
+    "price_usd": 3.0,
+    "evidence": "$3 Yuengling"
+   },
+   {
+    "category": "draft",
+    "label": "Rotating Draft",
+    "price_usd": 5.0,
+    "evidence": "$5 Rotating Draft"
+   },
+   {
+    "category": "wine",
+    "label": "House Wine",
+    "price_usd": 5.0,
+    "evidence": "$5 House Wines"
+   }
+  ]
+ },
+ {
+  "lid": "129847",
+  "url": "https://station142.com/food-drink-menu/",
+  "read_on": "2026-09-03",
+  "heading": "Happy Hour",
+  "clock_quote": "Happy Hour / Tuesday-Friday: 4-7pm | Saturday & Sunday: 3-6pm",
+  "quote": "Happy Hour / Tuesday-Friday: 4-7pm | Saturday & Sunday: 3-6pm / $4 Domestic Drafts & Bottles",
+  "days": [
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "start": "16:00",
+  "end": "19:00",
+  "items": [
+   {
+    "category": "draft",
+    "label": "Domestic Draft or Bottle",
+    "price_usd": 4.0,
+    "evidence": "$4 Domestic Drafts & Bottles"
+   },
+   {
+    "category": "draft",
+    "label": "Craft Draft, Surfside or Stateside",
+    "price_usd": 5.0,
+    "evidence": "$5 Craft Drafts, Surfsides & Statesides"
+   },
+   {
+    "category": "wine",
+    "label": "Glass of Wine",
+    "price_usd": 6.0,
+    "evidence": "$6 Glasses of Wine"
+   },
+   {
+    "category": "cocktail",
+    "label": "Crush",
+    "price_usd": 7.0,
+    "evidence": "$7 Crushes"
+   }
+  ]
+ },
+ {
+  "lid": "59213",
+  "url": "https://www.limoncellorestaurant.com/happy-hour-menu",
+  "read_on": "2026-09-03",
+  "heading": "Happy Hour",
+  "clock_quote": "HAPPY HOUR MENU / Sunday-Friday 4:00-6:00PM",
+  "quote": "HAPPY HOUR MENU / Sunday-Friday 4:00-6:00PM / pizza or flatbread $20",
+  "days": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   7
+  ],
+  "start": "16:00",
+  "end": "18:00",
+  "items": [
+   {
+    "category": "food",
+    "label": "Pizza or Flatbread",
+    "price_usd": 20.0,
+    "evidence": "pizza or flatbread $20"
+   }
+  ]
+ },
+ {
+  "lid": "66141",
+  "url": "https://pjspub.com/specials",
+  "read_on": "2026-09-03",
+  "heading": "Happy Hour",
+  "clock_quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM",
+  "quote": "Happy Hour / Monday 4:00 PM - 6:00 PM / Tuesday 4:00 PM - 6:00 PM / $3 Domestic Drafts",
+  "days": [
+   1,
+   2
+  ],
+  "start": "16:00",
+  "end": "18:00",
+  "items": [
+   {
+    "category": "draft",
+    "label": "Domestic Draft",
+    "price_usd": 3.0,
+    "evidence": "$3 Domestic Drafts"
+   },
+   {
+    "category": "bottle_can",
+    "label": "Corona & Corona Light",
+    "price_usd": 4.0,
+    "evidence": "$4 Corona & Corona Light"
+   },
+   {
+    "category": "wine",
+    "label": "House Wine",
+    "price_usd": 6.0,
+    "evidence": "$6 House Wine"
+   },
+   {
+    "category": "cocktail",
+    "label": "Krush",
+    "price_usd": 6.0,
+    "evidence": "$6 Krushes"
+   },
+   {
+    "category": "food",
+    "label": "Boneless Wings (Snack Size)",
+    "price_usd": 5.0,
+    "evidence": "$5 Boneless Wings (Snack Size)"
+   }
+  ]
  }
 ]
