@@ -3625,6 +3625,76 @@ class TheMenuAPagePublishesAsData(unittest.TestCase):
                             "description": "M-F 4-6"}))
         self.assertIn("Happy Hour: M-F 4-6", crawl_sites.jsonld_quotes(html))
 
+    # ---- the same standard, shipped somewhere else ----------------------
+    #
+    # A page can publish its whole happy hour as schema.org and still read as
+    # silent to us, because we only ever looked inside a script tag. McGlynn's
+    # Pub ships six priced sections -- one of them 'Happy Hour', with its
+    # window and four items -- as an ESCAPED JSON string inside the state its
+    # React front end boots from. Its four real ld+json tags carry Restaurant
+    # records only, and the visible page is a 25-line shell, two lines of which
+    # read 'Load More Content'. Every menu we could not see was blamed on
+    # rendering; this one was in our hands, in the standard, unread.
+
+    def _state(self, doc):
+        """The doc as a page's own JavaScript state carries it: a JSON
+        document serialised as a STRING inside another JSON document."""
+        return ('<html><body><script>window.__STATE__='
+                + json.dumps({"page": {"menu": json.dumps(doc)}})
+                + "</script>Load More Content</body></html>")
+
+    def test_a_menu_shipped_to_javascript_is_read_like_one_in_a_script_tag(self):
+        html = self._state({
+            "@context": "https://schema.org/", "@type": "Menu",
+            "name": "Food & Drink Specials",
+            "hasMenuSection": [{
+                "@type": "MenuSection", "name": "Happy Hour",
+                "description": "Happy Hour Bites - Monday through Friday 4 pm - 6 pm",
+                "hasMenuItem": [
+                    {"@type": "MenuItem", "name": "Loaded Tater Tots",
+                     "offers": {"@type": "Offer", "price": "5.0"}},
+                    {"@type": "MenuItem", "name": "Pretzels & Mustards",
+                     "offers": {"@type": "Offer", "price": "5.0"}}]}]})
+        out = crawl_sites.jsonld_quotes(html)
+        self.assertIn(
+            "Happy Hour: Happy Hour Bites - Monday through Friday 4 pm - 6 pm",
+            out)
+        self.assertIn("Loaded Tater Tots $5.0", out)
+        self.assertIn("Pretzels & Mustards $5.0", out)
+
+    def test_a_happy_hour_section_is_read_inside_a_menu_named_something_else(self):
+        # The common shape. Requiring the MENU to carry the name passed over a
+        # section that had said its own name, in the standard, with prices.
+        html = self._ld({
+            "@type": "Menu", "name": "Food & Drink Specials",
+            "hasMenuSection": [{"@type": "MenuSection", "name": "Happy Hour",
+                                "description": "Mon-Fri 4 pm - 6 pm",
+                                "hasMenuItem": [
+                                    {"@type": "MenuItem", "name": "Wings",
+                                     "offers": {"price": "9"}}]}]})
+        out = crawl_sites.jsonld_quotes(html)
+        self.assertIn("Happy Hour: Mon-Fri 4 pm - 6 pm", out)
+        self.assertIn("Wings $9", out)
+
+    def test_a_section_that_does_not_name_itself_is_still_somebody_dinner(self):
+        # The guard does not weaken by moving down a level.
+        html = self._ld({
+            "@type": "Menu", "name": "Dinner",
+            "hasMenuSection": [{"@type": "MenuSection", "name": "Entrees",
+                                "description": "Nightly from 5",
+                                "hasMenuItem": [
+                                    {"@type": "MenuItem", "name": "Steak",
+                                     "offers": {"price": "38"}}]}]})
+        self.assertEqual(crawl_sites.jsonld_quotes(html), [])
+
+    def test_an_unparseable_embedded_blob_does_not_take_the_page_with_it(self):
+        html = ('<script>window.x="{' + chr(92) + '"@context' + chr(92)
+                + '":not json";</script>'
+                + self._state({"@context": "https://schema.org/",
+                               "@type": "Menu", "name": "Happy Hour",
+                               "description": "M-F 4-6"}))
+        self.assertIn("Happy Hour: M-F 4-6", crawl_sites.jsonld_quotes(html))
+
 
 class TheClockInTheBoxNextDoor(unittest.TestCase):
     """A window that lives in a sibling cell, not on the deal's own line."""

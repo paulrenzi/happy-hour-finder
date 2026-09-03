@@ -19745,6 +19745,168 @@
      }
     }
    ]
+  },
+  {
+   "id": "mcglynns-pub-glasgow-newark",
+   "lid": "DE1205860cb5",
+   "name": "McGlynns Pub - Glasgow",
+   "plcb_name": "McGlynns Pub - Glasgow",
+   "address": "108 Peoples Plaza, Newark, DE 19702",
+   "zone_id": "newark_de",
+   "license_type": "",
+   "website": "https://www.mcglynnspub.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.mcglynnspub.com/food-and-drink-specials",
+      "quote": "Happy Hour: Happy Hour Bites - Monday through Friday 4 pm - 6 pm",
+      "quotes": [
+       "Happy Hour: Happy Hour Bites - Monday through Friday 4 pm - 6 pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "mcglynns-pub-greenville-wilmington",
+   "lid": "DE606f3bb4d8",
+   "name": "McGlynns Pub - Greenville",
+   "plcb_name": "McGlynns Pub - Greenville",
+   "address": "320 Buckley Ml Rd, Wilmington, DE 19807",
+   "zone_id": "wilmington",
+   "license_type": "",
+   "website": "https://www.mcglynnspub.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.mcglynnspub.com/food-and-drink-specials",
+      "quote": "Happy Hour: Happy Hour Bites - Monday through Friday 4 pm - 6 pm",
+      "quotes": [
+       "Happy Hour: Happy Hour Bites - Monday through Friday 4 pm - 6 pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "mcglynns-pub-pike-creek-newark",
+   "lid": "DE7629273777",
+   "name": "McGlynns Pub - Pike Creek",
+   "plcb_name": "McGlynns Pub - Pike Creek",
+   "address": "8 Polly Drummond Shopping Center, Newark, DE 19711",
+   "zone_id": "newark_de",
+   "license_type": "",
+   "website": "https://www.mcglynnspub.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-02",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.mcglynnspub.com/food-and-drink-specials",
+      "quote": "Happy Hour: Happy Hour Bites - Monday through Friday 4 pm - 6 pm",
+      "quotes": [
+       "Happy Hour: Happy Hour Bites - Monday through Friday 4 pm - 6 pm"
+      ]
+     }
+    }
+   ]
   }
  ]
 }

@@ -1845,6 +1845,74 @@ def embedded_json_lines(html):
     return out
 
 
+BACKSLASH = chr(92)
+# A schema.org document handed to JavaScript is a JSON document serialised as a
+# STRING inside another JSON document, so its quotes arrive escaped. Every one
+# of them opens by declaring the vocabulary.
+ESCAPED_CONTEXT_RE = re.compile(re.escape(BACKSLASH + '"@context' + BACKSLASH + '"'))
+EMBEDDED_LD_CAP = 20     # documents parsed per page
+
+
+def _enclosing_json_string(html, i):
+    """The JSON string literal containing position `i`, quotes included.
+
+    Scans out to the nearest quote that is not itself escaped. A literal that
+    runs to the end of the file was never a literal.
+    """
+    j = i
+    while j > 0:
+        if html[j] == '"' and html[j - 1] != BACKSLASH:
+            break
+        j -= 1
+    else:
+        return None
+    k = i
+    while k < len(html):
+        if html[k] == '"' and html[k - 1] != BACKSLASH:
+            return html[j:k + 1]
+        k += 1
+    return None
+
+
+def embedded_ld_docs(html):
+    """schema.org documents the page ships ANYWHERE, not only in a script tag.
+
+    THE GAP THIS CLOSES, IN ONE SENTENCE: a site can publish its whole happy
+    hour as machine-readable data and we will still read the page as prose,
+    because we only ever looked in <script type="application/ld+json">.
+
+    McGlynn's Pub publishes six priced menu sections -- including 'Happy Hour',
+    its window, and four items with prices -- as a schema.org Menu. Not in a
+    script tag: as an escaped JSON string inside the state its front end boots
+    from. The page's four real ld+json tags carry the Restaurant records only.
+    So the visible page is a 25-line shell, two lines of which read 'Load More
+    Content', and the menu we needed sat in our hands unread. Popmenu is not a
+    quirk -- it, BentoBox, Toast and every React front end that server-renders
+    its own state ship structured data this way.
+
+    Deliberately not a platform reader. It looks for the one thing a schema.org
+    document cannot omit, its @context, decodes the literal it sits in, and
+    parses. What the document MEANS is decided downstream, by the same rules
+    that read a script tag -- see jsonld_quotes().
+    """
+    out = []
+    seen = set()
+    for m in ESCAPED_CONTEXT_RE.finditer(html):
+        if len(out) >= EMBEDDED_LD_CAP:
+            break
+        lit = _enclosing_json_string(html, m.start())
+        if not lit or lit in seen:
+            continue
+        seen.add(lit)
+        try:
+            doc = json.loads(json.loads(lit))
+        except Exception:  # noqa: BLE001 -- one bad blob is not the page
+            continue
+        if isinstance(doc, (dict, list)):
+            out.append(doc)
+    return out
+
+
 def ld_nodes(html):
     """Every object in the page's schema.org graph, however deeply nested.
 
@@ -1869,12 +1937,37 @@ def ld_nodes(html):
             walk(json.loads(m.group(1).strip()))
         except Exception:  # noqa: BLE001 -- one malformed block is not the page
             continue
+    for doc in embedded_ld_docs(html):
+        walk(doc)
     return out
 
 
 def _ld_type(node):
     t = node.get("@type")
     return {x for x in (t if isinstance(t, list) else [t]) if x}
+
+
+def _ld_menu_items(section):
+    """'Boneless Wings $15.0' for every priced item in a schema.org section.
+
+    A price is only ever taken from the item's own offers block. An item with
+    no price is still named -- 'what is on the happy hour menu' is worth having
+    without it -- but a price is never borrowed from a neighbour.
+    """
+    out = []
+    for item in section.get("hasMenuItem") or []:
+        if not isinstance(item, dict):
+            continue
+        iname = " ".join(str(item.get("name") or "").split())
+        offer = item.get("offers") or {}
+        if isinstance(offer, list):
+            offer = offer[0] if offer else {}
+        price = offer.get("price") if isinstance(offer, dict) else None
+        if iname and price is not None:
+            out.append(f"{iname} ${price}")
+        elif iname:
+            out.append(iname)
+    return out
 
 
 def jsonld_quotes(html):
@@ -1891,14 +1984,31 @@ def jsonld_quotes(html):
     look. Read the Menu whose name or description names a happy hour, take its
     description as the hours line, and take its sections and items as the menu.
 
-    Only a Menu that NAMES itself the happy hour is read. A restaurant's main
+    Only a block that NAMES itself the happy hour is read. A restaurant's main
     Menu block is its dinner menu, and publishing that as happy hour items is
     the failure this corpus fears most -- the regular price, presented as a
     deal. So an unnamed or differently-named menu is passed over in silence.
+
+    A SECTION may name itself too, and that is the common shape. McGlynn's ships
+    one Menu called 'Food & Drink Specials' holding six sections, of which one
+    is 'Happy Hour' with the window in its description and four priced items.
+    Requiring the MENU to carry the name passed over a happy hour that had said
+    its own name, in the standard, with prices -- so the rule is the name, not
+    the depth it appears at. The guard is unchanged in strength: a section that
+    does not name itself is still read as somebody's dinner.
     """
     out = []
     for node in ld_nodes(html):
-        if "Menu" not in _ld_type(node):
+        types = _ld_type(node)
+        if "MenuSection" in types and "Menu" not in types:
+            sname = str(node.get("name") or "").strip()
+            sdesc = " ".join(str(node.get("description") or "").split())
+            if not HH_HEADING_RE.search(f"{sname} {sdesc}"):
+                continue
+            out.append(f"{sname}: {sdesc}" if sdesc else sname)
+            out.extend(_ld_menu_items(node))
+            continue
+        if "Menu" not in types:
             continue
         name = str(node.get("name") or "").strip()
         desc = str(node.get("description") or "").strip()
@@ -1915,18 +2025,7 @@ def jsonld_quotes(html):
             sname = str(sec.get("name") or "").strip()
             if sname:
                 out.append(sname)
-            for item in sec.get("hasMenuItem") or []:
-                if not isinstance(item, dict):
-                    continue
-                iname = str(item.get("name") or "").strip()
-                offer = item.get("offers") or {}
-                if isinstance(offer, list):
-                    offer = offer[0] if offer else {}
-                price = (offer or {}).get("price") if isinstance(offer, dict) else None
-                if iname and price:
-                    out.append(f"{iname} ${price}")
-                elif iname:
-                    out.append(iname)
+            out.extend(_ld_menu_items(sec))
     return list(dict.fromkeys(out))
 
 
@@ -2079,7 +2178,7 @@ def page_key(lid, url):
     return "%s__%s.json" % (lid, hashlib.sha1(url.encode()).hexdigest()[:12])
 
 
-def save_page(lid, url, title, lines, rendered=False, embedded=()):
+def save_page(lid, url, title, lines, rendered=False, embedded=(), structured=()):
     """Keep a happy-hour page's visible text for the model pass to read.
 
     `embedded` is what the page shipped to its own JavaScript -- see
@@ -2090,7 +2189,23 @@ def save_page(lid, url, title, lines, rendered=False, embedded=()):
     """
     if not lid:
         return
-    body = list(lines)
+    # `structured` is the venue's own schema.org menu -- see jsonld_quotes().
+    # It gets its own marker because it is not the same KIND of evidence as the
+    # visible prose or the loose embedded strings: it is typed, the venue
+    # published it for machines to read, and a price in it belongs to the item
+    # it is attached to.
+    #
+    # IT GOES FIRST, and that is the whole point. Appended last it was true,
+    # saved, and USELESS: the reader caps a document at DOC_CAP characters, and
+    # McGlynn's 157 recovered strings pushed its four priced happy-hour items
+    # off the end. The model read the prose heading instead and returned a
+    # window with no items -- the same empty card, now with the answer sitting
+    # in the file underneath it. Evidence ordering is not cosmetic when
+    # something downstream truncates.
+    body = []
+    if structured:
+        body += ["[the venue's own machine-readable menu (schema.org)]"] + list(structured)
+    body += list(lines)
     if embedded:
         body += ["[the page's embedded data, not visible text]"] + list(embedded)
     os.makedirs(PAGES, exist_ok=True)
@@ -2098,7 +2213,8 @@ def save_page(lid, url, title, lines, rendered=False, embedded=()):
     with io.open(tmp, "w", encoding="utf-8") as fh:
         json.dump({"lid": lid, "url": url, "title": title, "rendered": rendered,
                    "fetched_at": time.strftime("%Y-%m-%d"), "lines": body,
-                   "visible_lines": len(lines), "embedded": len(embedded)},
+                   "visible_lines": len(lines), "embedded": len(embedded),
+                   "structured": len(structured)},
                   fh, ensure_ascii=False)
     os.replace(tmp, os.path.join(PAGES, page_key(lid, url)))
 
@@ -2279,7 +2395,8 @@ def crawl_one(session, venue, robots):
             hits.append({"url": url, "quote": q, "hh": True})
         # The two things the prose pass cannot see: what the page said to
         # machines, and what it said in the box next door.
-        for q in jsonld_quotes(html):
+        structured = jsonld_quotes(html)
+        for q in structured:
             hits.append({"url": url, "quote": q, "hh": True})
         for q in boxed_windows(lines, stacks):
             hits.append({"url": url, "quote": q, "hh": True})
@@ -2320,9 +2437,10 @@ def crawl_one(session, venue, robots):
         # A shell is kept even when its eleven visible lines never say the
         # words: what it said to its own JavaScript is the page, and that is
         # exactly the venue the old gate threw away.
-        if says_hh or page_is_hh(url) or embedded or _keep_all["on"]:
+        if says_hh or page_is_hh(url) or embedded or structured or _keep_all["on"]:
             save_page(lid, url, lines[0] if lines else "", lines,
-                      rendered=bool(rendered), embedded=embedded)
+                      rendered=bool(rendered), embedded=embedded,
+                      structured=structured)
         for q in found:
             # `hh` records that this line was INSIDE the venue's own happy-hour
             # section, which is the fact the extractor needs and could not get.

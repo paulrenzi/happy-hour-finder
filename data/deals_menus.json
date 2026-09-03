@@ -2872,12 +2872,37 @@
    "deals": [
     {
      "confidence": "unconfirmed",
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "evidence": "Boneless Wings $15.0",
+       "label": "Boneless Wings",
+       "price_usd": 15.0
+      },
+      {
+       "category": "food",
+       "evidence": "Loaded Tater Tots $5.0",
+       "label": "Loaded Tater Tots",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "evidence": "Fried Brussels Sprouts $15.5",
+       "label": "Fried Brussels Sprouts",
+       "price_usd": 15.5
+      },
+      {
+       "category": "food",
+       "evidence": "Pretzels & Mustards $5.0",
+       "label": "Pretzels & Mustards",
+       "price_usd": 5.0
+      }
+     ],
      "last_verified_at": "2026-09-02",
      "source": {
-      "heading": "Happy Hour Food Specials (Monday–Friday, 4–6PM)",
+      "heading": "Happy Hour",
       "kind": "venue_site",
-      "quote": "Happy Hour Food Specials (Monday–Friday, 4–6PM)",
+      "quote": "Happy Hour: Happy Hour Bites - Monday through Friday 4 pm - 6 pm",
       "url": "https://www.mcglynnspub.com/food-and-drink-specials"
      },
      "type": "happy_hour",
@@ -3015,12 +3040,37 @@
    "deals": [
     {
      "confidence": "unconfirmed",
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "evidence": "Boneless Wings $15.0",
+       "label": "Boneless Wings",
+       "price_usd": 15.0
+      },
+      {
+       "category": "food",
+       "evidence": "Loaded Tater Tots $5.0",
+       "label": "Loaded Tater Tots",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "evidence": "Fried Brussels Sprouts $15.5",
+       "label": "Fried Brussels Sprouts",
+       "price_usd": 15.5
+      },
+      {
+       "category": "food",
+       "evidence": "Pretzels & Mustards $5.0",
+       "label": "Pretzels & Mustards",
+       "price_usd": 5.0
+      }
+     ],
      "last_verified_at": "2026-09-02",
      "source": {
-      "heading": "Happy Hour Food Specials (Monday–Friday, 4–6PM)",
+      "heading": "Happy Hour",
       "kind": "venue_site",
-      "quote": "Happy Hour Food Specials (Monday–Friday, 4–6PM)",
+      "quote": "Happy Hour Bites - Monday through Friday 4 pm - 6 pm",
       "url": "https://www.mcglynnspub.com/food-and-drink-specials"
      },
      "type": "happy_hour",
@@ -3067,12 +3117,37 @@
    "deals": [
     {
      "confidence": "unconfirmed",
-     "items": [],
+     "items": [
+      {
+       "category": "food",
+       "evidence": "Boneless Wings $15.0",
+       "label": "Boneless Wings",
+       "price_usd": 15.0
+      },
+      {
+       "category": "food",
+       "evidence": "Loaded Tater Tots $5.0",
+       "label": "Loaded Tater Tots",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "evidence": "Fried Brussels Sprouts $15.5",
+       "label": "Fried Brussels Sprouts",
+       "price_usd": 15.5
+      },
+      {
+       "category": "food",
+       "evidence": "Pretzels & Mustards $5.0",
+       "label": "Pretzels & Mustards",
+       "price_usd": 5.0
+      }
+     ],
      "last_verified_at": "2026-09-02",
      "source": {
-      "heading": "Happy Hour Food Specials (Monday–Friday, 4–6PM)",
+      "heading": "Happy Hour",
       "kind": "venue_site",
-      "quote": "Happy Hour Food Specials (Monday–Friday, 4–6PM)",
+      "quote": "Happy Hour Bites - Monday through Friday 4 pm - 6 pm",
       "url": "https://www.mcglynnspub.com/food-and-drink-specials"
      },
      "type": "happy_hour",
