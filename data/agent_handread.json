@@ -4337,5 +4337,182 @@
         "evidence": "Buck a Shuck Clams and Oysters!!"
       }
     ]
+  },
+  {
+    "lid": "100210",
+    "url": "https://lansdaletavern.com/",
+    "read_on": "2026-09-04",
+    "heading": "Happy Hour",
+    "clock_quote": "Happy Hour Every Day 4pm \u2013 6pm ... Happy Hour 7 days a week, from 4-6pm",
+    "quote": "Food $7 Cauliflower Bites $3 Chips & Salsa $6 Garlic Parmesan Waffle Fries",
+    "days": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "start": "16:00",
+    "end": "18:00",
+    "items": [
+      {
+        "category": "food",
+        "label": "Cauliflower Bites",
+        "price_usd": 7,
+        "evidence": "$7 Cauliflower Bites"
+      },
+      {
+        "category": "food",
+        "label": "Chips & Salsa",
+        "price_usd": 3,
+        "evidence": "$3 Chips & Salsa"
+      },
+      {
+        "category": "food",
+        "label": "Garlic Parmesan Waffle Fries",
+        "price_usd": 6,
+        "evidence": "$6 Garlic Parmesan Waffle Fries"
+      }
+    ]
+  },
+  {
+    "lid": "126965",
+    "url": "https://www.thebulltavern.com/specials.html",
+    "read_on": "2026-09-04",
+    "heading": "Happy Hour",
+    "clock_quote": "Happy Hour 5pm-7pm Daily Beer Specials After 5pm - BUD & BUD LIGHT $2.50",
+    "quote": "Monday Specials DRINK Happy Hour 5pm-7pm Daily Beer Specials After 5pm - BUD & BUD LIGHT $2.50",
+    "days": [
+      1
+    ],
+    "start": "17:00",
+    "end": "19:00",
+    "items": [
+      {
+        "category": "bottle_can",
+        "label": "Bud & Bud Light",
+        "price_usd": 2.5,
+        "evidence": "BUD & BUD LIGHT $2.50"
+      }
+    ]
+  },
+  {
+    "lid": "118439",
+    "url": "https://sedonataphouse.com/locations/newtown-square-pa/",
+    "read_on": "2026-09-04",
+    "heading": "Happier Hours",
+    "clock_quote": "Happier Hours Monday - Friday 4pm - 6pm ... Join us for Happy Hour from 4pm \u2013 6pm",
+    "quote": "$7.9 house wine by the glass and $9.9 craft classics",
+    "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "start": "16:00",
+    "end": "18:00",
+    "items": [
+      {
+        "category": "wine",
+        "label": "House Wine (glass)",
+        "price_usd": 7.9,
+        "evidence": "$7.9 house wine by the glass"
+      },
+      {
+        "category": "cocktail",
+        "label": "Craft Classics",
+        "price_usd": 9.9,
+        "evidence": "$9.9 craft classics"
+      }
+    ]
+  },
+  {
+    "lid": "107050",
+    "url": "https://www.gypsysaloon.com/menus/",
+    "read_on": "2026-09-04",
+    "heading": "Happy Hour",
+    "clock_quote": "happy hour monday through friday 4pm to 6:30pm at the bar",
+    "quote": "bites $ 10 Mini French Fry Board Jumbo Bavarian Soft Pretzel served warm w/ dijon mustard Mini Pierogies Chicken Wings ... sips $ 6 House Red House White House Sparkling House Mixed Drinks Draft Beers",
+    "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "start": "16:00",
+    "end": "18:30",
+    "items": [
+      {
+        "category": "food",
+        "label": "Bar Bites",
+        "price_usd": 10,
+        "evidence": "bites $ 10"
+      },
+      {
+        "category": "wine",
+        "label": "House Wine",
+        "price_usd": 6,
+        "evidence": "sips $ 6 House Red House White House Sparkling"
+      },
+      {
+        "category": "well",
+        "label": "House Mixed Drinks",
+        "price_usd": 6,
+        "evidence": "sips $ 6 ... House Mixed Drinks"
+      },
+      {
+        "category": "draft",
+        "label": "Draft Beers",
+        "price_usd": 6,
+        "evidence": "sips $ 6 ... Draft Beers"
+      }
+    ]
+  },
+  {
+    "lid": "53783",
+    "url": "https://pepperoncinirestaurant.com/conshohocken-pepperoncini-restaurant-happy-hours-specials",
+    "read_on": "2026-09-04",
+    "heading": "Happy Hour",
+    "clock_quote": "Happy Hour in the bar area mon - fri 4p - 6p",
+    "quote": "$7 Wine Pinot Grigio, Chardonnay, Sauvignon Blanc Cabernet, Chianti, Pinot Noir, Merlot $7 Apps Fried Calamari, Wings (6), arancini, World Famous Meatballs $10 Pizzas Traditional or Fresh White Herb $9 Aperol Spritzers",
+    "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "start": "16:00",
+    "end": "18:00",
+    "items": [
+      {
+        "category": "wine",
+        "label": "Wine (Pinot Grigio, Chardonnay, etc.)",
+        "price_usd": 7,
+        "evidence": "$7 Wine Pinot Grigio, Chardonnay, Sauvignon Blanc Cabernet, Chianti, Pinot Noir, Merlot"
+      },
+      {
+        "category": "food",
+        "label": "Apps (Calamari, Wings, Arancini, Meatballs)",
+        "price_usd": 7,
+        "evidence": "$7 Apps Fried Calamari, Wings (6), arancini, World Famous Meatballs"
+      },
+      {
+        "category": "food",
+        "label": "Pizzas",
+        "price_usd": 10,
+        "evidence": "$10 Pizzas Traditional or Fresh White Herb"
+      },
+      {
+        "category": "cocktail",
+        "label": "Aperol Spritzers",
+        "price_usd": 9,
+        "evidence": "$9 Aperol Spritzers"
+      }
+    ]
   }
 ]

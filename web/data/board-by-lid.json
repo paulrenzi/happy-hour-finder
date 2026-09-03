@@ -2428,35 +2428,35 @@
   ]
  },
  "53783": {
-  "name": "PEPPERONCINI RESTAURANT & BAR",
+  "name": "Pepperoncini Restaurant & Bar",
   "deals": [
    {
     "type": "happy_hour",
     "windows": [
      {
       "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
+      "end": "18:00",
+      "start": "16:00"
      },
      {
       "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
+      "end": "18:00",
+      "start": "16:00"
      },
      {
       "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
+      "end": "18:00",
+      "start": "16:00"
      },
      {
       "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
+      "end": "18:00",
+      "start": "16:00"
      },
      {
       "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
+      "end": "18:00",
+      "start": "16:00"
      }
     ],
     "source": {
@@ -2511,28 +2511,28 @@
     "windows": [
      {
       "dow": 1,
-      "start": "16:00",
-      "end": "18:30"
+      "end": "18:30",
+      "start": "16:00"
      },
      {
       "dow": 2,
-      "start": "16:00",
-      "end": "18:30"
+      "end": "18:30",
+      "start": "16:00"
      },
      {
       "dow": 3,
-      "start": "16:00",
-      "end": "18:30"
+      "end": "18:30",
+      "start": "16:00"
      },
      {
       "dow": 4,
-      "start": "16:00",
-      "end": "18:30"
+      "end": "18:30",
+      "start": "16:00"
      },
      {
       "dow": 5,
-      "start": "16:00",
-      "end": "18:30"
+      "end": "18:30",
+      "start": "16:00"
      }
     ],
     "source": {
@@ -3462,6 +3462,196 @@
    }
   ]
  },
+ "93322": {
+  "name": "Firebirds Wood Fired Grill",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "14:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "14:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "14:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "14:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "14:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "44242": {
+  "name": "Joseph Ambler Inn",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "15:30",
+      "end": "17:30"
+     },
+     {
+      "dow": 2,
+      "start": "15:30",
+      "end": "17:30"
+     },
+     {
+      "dow": 3,
+      "start": "15:30",
+      "end": "17:30"
+     },
+     {
+      "dow": 4,
+      "start": "15:30",
+      "end": "17:30"
+     },
+     {
+      "dow": 5,
+      "start": "15:30",
+      "end": "17:30"
+     },
+     {
+      "dow": 6,
+      "start": "15:30",
+      "end": "17:30"
+     },
+     {
+      "dow": 7,
+      "start": "15:30",
+      "end": "17:30"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "100210": {
+  "name": "Lansdale Tavern",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 6,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 7,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "126965": {
+  "name": "The Bull Restaurant & Tavern",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "19:00",
+      "start": "17:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "87757": {
+  "name": "Well Crafted Beer Co.",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "104355": {
   "name": "Chickie's & Pete's",
   "deals": [
@@ -4120,6 +4310,221 @@
      },
      {
       "dow": 7,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "60905": {
+  "name": "Ale House",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 6,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 7,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "20468": {
+  "name": "Charlotte's Restaurant",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:30"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:30"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:30"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:30"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:30"
+     },
+     {
+      "dow": 6,
+      "start": "16:00",
+      "end": "18:30"
+     },
+     {
+      "dow": 7,
+      "start": "16:00",
+      "end": "18:30"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "64766": {
+  "name": "La Porta Ristorante",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 6,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "119970": {
+  "name": "LaScala\u2019s Fire",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "15:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "118439": {
+  "name": "Sedona Taphouse",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
       "end": "18:00",
       "start": "16:00"
      }
@@ -8913,226 +9318,6 @@
    }
   ]
  },
- "93322": {
-  "name": "Firebirds Wood Fired Grill",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "14:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "14:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "14:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "14:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "14:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "44242": {
-  "name": "Joseph Ambler Inn",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "15:30",
-      "end": "17:30"
-     },
-     {
-      "dow": 2,
-      "start": "15:30",
-      "end": "17:30"
-     },
-     {
-      "dow": 3,
-      "start": "15:30",
-      "end": "17:30"
-     },
-     {
-      "dow": 4,
-      "start": "15:30",
-      "end": "17:30"
-     },
-     {
-      "dow": 5,
-      "start": "15:30",
-      "end": "17:30"
-     },
-     {
-      "dow": 6,
-      "start": "15:30",
-      "end": "17:30"
-     },
-     {
-      "dow": 7,
-      "start": "15:30",
-      "end": "17:30"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "100210": {
-  "name": "Lansdale Tavern",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 6,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 7,
-      "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "126965": {
-  "name": "The Bull Restaurant & Tavern",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "17:00",
-      "end": "19:00"
-     },
-     {
-      "dow": 2,
-      "start": "17:00",
-      "end": "19:00"
-     },
-     {
-      "dow": 3,
-      "start": "17:00",
-      "end": "19:00"
-     },
-     {
-      "dow": 4,
-      "start": "17:00",
-      "end": "19:00"
-     },
-     {
-      "dow": 5,
-      "start": "17:00",
-      "end": "19:00"
-     },
-     {
-      "dow": 6,
-      "start": "17:00",
-      "end": "19:00"
-     },
-     {
-      "dow": 7,
-      "start": "17:00",
-      "end": "19:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "87757": {
-  "name": "Well Crafted Beer Co.",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
  "51932": {
   "name": "12 Steps Down",
   "deals": [
@@ -12961,231 +13146,6 @@
      },
      {
       "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "60905": {
-  "name": "Ale House",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 6,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 7,
-      "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "20468": {
-  "name": "Charlotte's Restaurant",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:30"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:30"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:30"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:30"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:30"
-     },
-     {
-      "dow": 6,
-      "start": "16:00",
-      "end": "18:30"
-     },
-     {
-      "dow": 7,
-      "start": "16:00",
-      "end": "18:30"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "64766": {
-  "name": "La Porta Ristorante",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 6,
-      "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "119970": {
-  "name": "LaScala\u2019s Fire",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "15:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "118439": {
-  "name": "Sedona Taphouse",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 6,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 7,
       "start": "16:00",
       "end": "18:00"
      }

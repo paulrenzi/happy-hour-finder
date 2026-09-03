@@ -3,6 +3,87 @@
  "as_of": "2026-09-04",
  "venues": [
   {
+   "address": "839 W Main St, Lansdale PA 19446",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "$7 Cauliflower Bites",
+       "label": "Cauliflower Bites",
+       "price_usd": 7
+      },
+      {
+       "category": "food",
+       "evidence": "$3 Chips & Salsa",
+       "label": "Chips & Salsa",
+       "price_usd": 3
+      },
+      {
+       "category": "food",
+       "evidence": "$6 Garlic Parmesan Waffle Fries",
+       "label": "Garlic Parmesan Waffle Fries",
+       "price_usd": 6
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "Happy Hour Every Day 4pm – 6pm ... Happy Hour 7 days a week, from 4-6pm",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Food $7 Cauliflower Bites $3 Chips & Salsa $6 Garlic Parmesan Waffle Fries",
+      "url": "https://lansdaletavern.com/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 6,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 7,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "100210",
+   "lid": "100210",
+   "name": "Lansdale Tavern",
+   "plcb_name": "CALIMONT LLC",
+   "website": "https://lansdaletavern.com/",
+   "zone_id": "lansdale_montgomeryville"
+  },
+  {
    "address": "44 W Gay St, West Chester PA 19380",
    "deals": [
     {
@@ -167,6 +248,83 @@
    "plcb_name": "MALVERN CPC LLC",
    "website": "https://chickiesandpetes.com/location/malvern",
    "zone_id": "malvern_great_valley"
+  },
+  {
+   "address": "128 Ford St, West Conshohocken PA 19428",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "bites $ 10",
+       "label": "Bar Bites",
+       "price_usd": 10
+      },
+      {
+       "category": "wine",
+       "evidence": "sips $ 6 House Red House White House Sparkling",
+       "label": "House Wine",
+       "price_usd": 6
+      },
+      {
+       "category": "well",
+       "evidence": "sips $ 6 ... House Mixed Drinks",
+       "label": "House Mixed Drinks",
+       "price_usd": 6
+      },
+      {
+       "category": "draft",
+       "evidence": "sips $ 6 ... Draft Beers",
+       "label": "Draft Beers",
+       "price_usd": 6
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "happy hour monday through friday 4pm to 6:30pm at the bar",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "bites $ 10 Mini French Fry Board Jumbo Bavarian Soft Pretzel served warm w/ dijon mustard Mini Pierogies Chicken Wings ... sips $ 6 House Red House White House Sparkling House Mixed Drinks Draft Beers",
+      "url": "https://www.gypsysaloon.com/menus/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:30",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:30",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:30",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:30",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:30",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "107050",
+   "lid": "107050",
+   "name": "The Gypsy Saloon",
+   "plcb_name": "GYPSY SALOON",
+   "website": "https://www.gypsysaloon.com/",
+   "zone_id": "conshohocken"
   },
   {
    "address": "4417 -4419 Main St, Philadelphia PA 19127",
@@ -984,6 +1142,71 @@
    "zone_id": "manayunk"
   },
   {
+   "address": "106 Squire Dr, Newtown Square PA 19073",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "wine",
+       "evidence": "$7.9 house wine by the glass",
+       "label": "House Wine (glass)",
+       "price_usd": 7.9
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$9.9 craft classics",
+       "label": "Craft Classics",
+       "price_usd": 9.9
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "Happier Hours Monday - Friday 4pm - 6pm ... Join us for Happy Hour from 4pm – 6pm",
+      "heading": "Happier Hours",
+      "kind": "venue_site",
+      "quote": "$7.9 house wine by the glass and $9.9 craft classics",
+      "url": "https://sedonataphouse.com/locations/newtown-square-pa/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "118439",
+   "lid": "118439",
+   "name": "Sedona Taphouse",
+   "plcb_name": "SEDONA TAP HOUSE",
+   "website": "https://sedonataphouse.com/locations/newtown-square-pa/",
+   "zone_id": "newtown_square_broomall"
+  },
+  {
    "address": "9 N High St, West Chester PA 19382",
    "deals": [
     {
@@ -1249,6 +1472,45 @@
    "plcb_name": "THE STONE TAVERN",
    "website": "https://www.thestonetavern1867.com",
    "zone_id": "west_chester"
+  },
+  {
+   "address": "770 Horsham Rd, Montgomeryville PA 18936",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "bottle_can",
+       "evidence": "BUD & BUD LIGHT $2.50",
+       "label": "Bud & Bud Light",
+       "price_usd": 2.5
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "Happy Hour 5pm-7pm Daily Beer Specials After 5pm - BUD & BUD LIGHT $2.50",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Monday Specials DRINK Happy Hour 5pm-7pm Daily Beer Specials After 5pm - BUD & BUD LIGHT $2.50",
+      "url": "https://www.thebulltavern.com/specials.html"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "19:00",
+       "start": "17:00"
+      }
+     ]
+    }
+   ],
+   "id": "126965",
+   "lid": "126965",
+   "name": "The Bull Restaurant & Tavern",
+   "plcb_name": "BULL & BARREL BAR & RESTAURANT",
+   "website": "https://www.thebulltavern.com/",
+   "zone_id": "lansdale_montgomeryville"
   },
   {
    "address": "142 E Market St, West Chester PA 19382",
@@ -1816,6 +2078,83 @@
    "plcb_name": "BARNABY'S",
    "website": "https://www.barnabysaston.com",
    "zone_id": "chester_chichester"
+  },
+  {
+   "address": "72-74 Poplar St, Conshohocken PA 19428",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "wine",
+       "evidence": "$7 Wine Pinot Grigio, Chardonnay, Sauvignon Blanc Cabernet, Chianti, Pinot Noir, Merlot",
+       "label": "Wine (Pinot Grigio, Chardonnay, etc.)",
+       "price_usd": 7
+      },
+      {
+       "category": "food",
+       "evidence": "$7 Apps Fried Calamari, Wings (6), arancini, World Famous Meatballs",
+       "label": "Apps (Calamari, Wings, Arancini, Meatballs)",
+       "price_usd": 7
+      },
+      {
+       "category": "food",
+       "evidence": "$10 Pizzas Traditional or Fresh White Herb",
+       "label": "Pizzas",
+       "price_usd": 10
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$9 Aperol Spritzers",
+       "label": "Aperol Spritzers",
+       "price_usd": 9
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "Happy Hour in the bar area mon - fri 4p - 6p",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "$7 Wine Pinot Grigio, Chardonnay, Sauvignon Blanc Cabernet, Chianti, Pinot Noir, Merlot $7 Apps Fried Calamari, Wings (6), arancini, World Famous Meatballs $10 Pizzas Traditional or Fresh White Herb $9 Aperol Spritzers",
+      "url": "https://pepperoncinirestaurant.com/conshohocken-pepperoncini-restaurant-happy-hours-specials"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "53783",
+   "lid": "53783",
+   "name": "Pepperoncini Restaurant & Bar",
+   "plcb_name": "PEPPERONCINI RESTAURANT & BAR",
+   "website": "https://pepperoncinirestaurant.com/",
+   "zone_id": "conshohocken"
   },
   {
    "address": "1211 S Bethlehem Pk, Ambler PA 19002",

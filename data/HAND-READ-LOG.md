@@ -76,3 +76,21 @@ re-attempt these unless the venue's own site changes.)
 - collegeville_trappe | Trappe Tavern | NO_CLOCK_TIME | window Mon-Fri 4-6pm found ("drink, food, and draft features") but no specific prices reachable | 2026-09-04
 - glen_mills_chadds_ford | 2 Sp Brewing/Bierhaul/Heroes Bar & Grill/Gran Rodeo | UNREACHABLE/NO_CLOCK_TIME | connection errors or empty sweeps | 2026-09-04
 - glen_mills_chadds_ford | Del Pez Mexican Gastropub | UNREACHABLE | HTTP 429 | 2026-09-04
+- lansdale_montgomeryville | Lansdale Tavern (100210) | SHIPPED | | 2026-09-04
+- lansdale_montgomeryville | The Bull Restaurant & Tavern (126965) | SHIPPED | | 2026-09-04
+- newtown_square_broomall | Sedona Taphouse (118439) | SHIPPED | | 2026-09-04
+- conshohocken | The Gypsy Saloon (107050) | SHIPPED | | 2026-09-04
+- conshohocken | Pepperoncini Restaurant & Bar (53783) | SHIPPED | | 2026-09-04
+- lansdale_montgomeryville | Local Tap/Main Street Pizza & Brewery/Blue Dog Pub(429)/Ten7 Brewing | UNREACHABLE/NO_CLOCK_TIME | empty sweeps or rate-limited | 2026-09-04
+- lansdale_montgomeryville | Metropolitan American Diner & Bar | NO_CLOCK_TIME | "All Day" specials not a clock window | 2026-09-04
+- lansdale_montgomeryville | Tex Mex Connection | NO_CLOCK_TIME | window found Mon-Fri 4-6pm/weekend, but drinks menu has no HH-specific pricing | 2026-09-04
+- lansdale_montgomeryville | Pour House | NO_CLOCK_TIME | HH mentioned only in marketing copy, no window/price | 2026-09-04
+- lansdale_montgomeryville | Stove & Tap | UNREACHABLE | HTTP 429 | 2026-09-04
+- newtown_square_broomall | Vino Bambino/Rey Azteca/Sproul Lanes/Hiramasa/Charlotte's/Ristorante la Locanda/Uno Pizzeria | NO_CLOCK_TIME | not attempted individually, low-yield chain/empty | 2026-09-04
+- newtown_square_broomall | Ale House Newtown Square | NO_CLOCK_TIME | window found (daily 4-6pm via events calendar) but no pricing text found | 2026-09-04
+- newtown_square_broomall | La Porta Ristorante | NO_CLOCK_TIME | HH page exists but link-only, no window/price text captured | 2026-09-04
+- newtown_square_broomall | Anthony's at Paxon Hollow | UNREACHABLE | empty sweep | 2026-09-04
+- conshohocken | Guppy's Good Times/Great American Pub/Conshohocken Brewing Co | NO_CLOCK_TIME | empty sweeps | 2026-09-04
+- conshohocken | Coyote Crossing | NO_CLOCK_TIME | window Mon-Fri 4-6pm found, no absolute item price in reachable pages | 2026-09-04
+- conshohocken | The StoneRose | NO_CLOCK_TIME | HH mentioned in menu nav only, no window/price | 2026-09-04
+- conshohocken | Jasper's Backyard | NO_CLOCK_TIME | Weekend HH window Sat/Sun 3-5pm found, but no price explicitly tied to HH (regular menu prices only) | 2026-09-04
