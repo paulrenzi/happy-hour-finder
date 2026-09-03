@@ -65,41 +65,6 @@
       ]
     },
     {
-      "id": "iron-hill-media",
-      "name": "Iron Hill Brewery & Restaurant — Media",
-      "plcb_name": "IRON HILL BREWERY & RESTAURANT",
-      "address": "30-32 E State St, Media PA 19063",
-      "zone_id": "media",
-      "license_type": "Restaurant (Liquor)",
-      "website": "https://www.ironhillbrewery.com/food-menus/media-pa-happy-hour-menu/",
-      "deals": [
-        {
-          "type": "happy_hour",
-          "windows": [
-            { "dow": 1, "start": "16:00", "end": "18:00" },
-            { "dow": 2, "start": "16:00", "end": "18:00" },
-            { "dow": 3, "start": "16:00", "end": "18:00" },
-            { "dow": 4, "start": "16:00", "end": "18:00" },
-            { "dow": 5, "start": "16:00", "end": "18:00" }
-          ],
-          "items": [
-            { "category": "draft", "label": "Iron Hill pours", "price_usd": null, "discount_pct": null, "amount_off_usd": 2.0 },
-            { "category": "cocktail", "label": "cocktails", "price_usd": 7.5 },
-            { "category": "food", "label": "fried chicken sandwich", "price_usd": 5.0 },
-            { "category": "food", "label": "crispy brussels", "price_usd": 5.0 },
-            { "category": "food", "label": "nachos", "price_usd": 7.0 }
-          ],
-          "confidence": "likely",
-          "last_verified_at": "2026-07-31",
-          "verified_by": "staff",
-          "source": {
-            "kind": "venue_site",
-            "url": "https://www.ironhillbrewery.com/food-menus/media-pa-happy-hour-menu/"
-          }
-        }
-      ]
-    },
-    {
       "id": "black-horse-plymouth-meeting",
       "name": "The Black Horse Tavern",
       "plcb_name": "THE OLDE BLACK HORSE TAVERN AND MOTEL",
@@ -250,6 +215,10 @@
     }
   ],
   "_excluded": [
+    {
+      "venue": "Iron Hill Brewery & Restaurant — Media",
+      "why": "2026-09-03 PLCB refresh: this licence (30-32 E State St, Media PA) no longer appears in the active-licensee export -- the location has closed or its licence lapsed. Removed so the orphan does not ship with a null lid."
+    },
     {
       "venue": "Pietro's Pizzeria Radnor",
       "why": "A current happy hour PDF exists (dated 2026-07-06) but was not transcribed. Nothing to publish until it is read."

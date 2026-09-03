@@ -2512,6 +2512,82 @@ thirds of what it reads.** Making it emit an `agent_handread`-shaped record
 (window + items, not items alone) remains the highest-leverage change left in
 that lane — not done this session, still open.
 
+## 🚨🔑🔑 A "SHIPPED" HAND-READ CAN STILL BE A THIN READ — the item, not just the window, was the miss (2026-09-03, night)
+
+Paul, verbatim, pointed at a live venue: `https://www.limoncellorestaurant.com/happy-hour-menu`.
+Limoncello (lid `59213`, `west_chester`) is on the board — a window, one item
+("Pizza or Flatbread $20"). The page almost certainly carries a fuller
+happy-hour menu (drinks, more food) that the hand-read never captured; the
+agent read far enough to find one price and stopped instead of reading the
+whole menu section.
+
+An audit of every live deal's item count by `verified_by` found this is not a
+one-off:
+
+```
+{'auto_extract': 117, 'agent_read': 11, 'menu_read_llm': 17, 'staff': 3, 'roundup_extract': 8}
+```
+(counts are deals with ≤1 item; `auto_extract` is a different, window-only
+lane that never claims items by design — those 117 are not this defect.
+`agent_read` and `menu_read_llm` are the two lanes that DO claim to have read
+a menu, so their thin entries are the real defect surface: **28 known thin
+reads** across the two lanes as of tonight.)
+
+The 11 known thin `agent_read` venues (there may be more once `menu_read_llm`
+is audited the same way):
+
+```
+ambler_upper_dublin    Fireside Bar and Grill      55311           firesidebarandgrille.com
+glen_mills_chadds_ford Chadds Ford Tavern          91807           thecftavern.com/menus/
+glen_mills_chadds_ford The Crown Tavern            48062           crowninconcord.com
+lansdale_montgomeryville The Bull Restaurant & Tavern 126965       thebulltavern.com/specials.html
+new_castle_de          Augustine Tavern            DE67e9d8cbb9    augustinetavern.com/special-events
+perkasie               Free Will Brewing           65716           freewillbrewing.com
+pottstown              Doc's Irish Pub             68830           godocspub.com/specials/
+west_chester           Limoncello                  59213           limoncellorestaurant.com/happy-hour-menu
+west_chester           Mercato Ristorante and Bar  68978           instagram.com/mercatowc/
+wilmington             Cafe Mezzanotte             DE6192c1db22    cafemezzanotte.net/specials/
+wilmington             James Street Tavern         DEb511151c02    jstavern.com/new-events/2014/2/1/happy-hour-3-6pm
+```
+
+🛑 **This breaks the log's own dedup assumption.** `data/HAND-READ-LOG.md`
+marks a venue `SHIPPED` once it publishes, and every session (correctly) treats
+`SHIPPED` as "don't re-research this venue." But `SHIPPED` only ever meant
+"a window and at least one item are live" — it never meant "the full menu was
+read." A venue can be `SHIPPED` in the log and still be missing most of its
+real happy-hour menu, and nothing before tonight would ever revisit it.
+
+**The fix going forward:** a `SHIPPED` entry with ≤1 or ≤2 items is not a
+closed venue, it's a suspect one. Re-reading it means going back to the
+venue's own URL and re-running the ladder with instructions to capture *every*
+item on the happy-hour menu, not stop at the first price found — then
+`--force`-style overwrite the existing `agent_handread.json` record for that
+lid with the fuller one (`build_agent_venues.py`/`build_bundles.py` already
+take the latest record per lid, no special flag needed). Log the re-read as
+its own `HAND-READ-LOG.md` line (`RESULT=SHIPPED`, note `"re-read: full menu,
+was N=1"`) so the distinction between "first read" and "completeness re-read"
+survives.
+
+**Audit snippet** (item-count by verified_by, and the list of thin venues) —
+run this at the start of any session that touches the hand-read lane, before
+trusting the log's `SHIPPED` count as "done":
+
+```python
+import json, glob
+for f in sorted(glob.glob('web/data/zone-*.json')):
+    z = f.split('zone-')[1].split('.json')[0]
+    d = json.load(open(f, encoding='utf-8'))
+    for v in d['venues']:
+        for deal in v.get('deals', []):
+            if deal.get('verified_by') in ('agent_read', 'menu_read_llm') and len(deal.get('items', [])) <= 1:
+                print(z, v['name'], v.get('lid'), deal.get('source', {}).get('url'))
+```
+
+Not yet run against `menu_read_llm`'s 17 for a per-venue list — that lane is
+the LLM item-reader, not the hand-read lane, so it needs its own judgment call
+about whether a 1-item read there is a real miss or a genuinely 1-item menu.
+Flagged, not resolved, this session.
+
 ## 🤖🔑🔑 THE AGENT IS THE SCRAPER — the item lane, and how to debug it (2026-09-03)
 
 Paul, 2026-09-03: *"you are trying to build a scraper, and we need an ai agent

@@ -18,20 +18,22 @@ credentials with anything else on this machine.
 
 | | |
 |---|---|
-| zones (named drinking districts) | 44 |
-| licensed venues known — the denominator | 3,412 |
-| **on the board with a published happy-hour window** | **333** |
-| deals across those venues | 352 |
-| published windows that fail their own quote check | **0 of 352** |
-| verified items read but stranded (no window, no card) | 20, across 3 venues |
+| zones (named drinking districts) | 48 |
+| **on the board with a published happy-hour window** | **352 venues, 369 deals** |
+| known **thin** hand-reads — window + item(s) live, but the menu wasn't read in full | **28** (11 `agent_read`, 17 `menu_read_llm`) |
 
 **Read that table in two halves.** What we publish is checked: every window and
 every price has to appear in a sentence on the venue's own page, and the test
 suite re-checks every published deal against the quote it came from on every
 run (`tests/window_quote_check.py`). What we *don't* publish is not checked at
-all — nobody has measured how many real happy hours the pipeline walks past.
-Every miss found so far was found by a person, not by a run.
-**Trust the cards. Do not trust the silence.**
+all — nobody has measured how many real happy hours the pipeline walks past,
+**and a venue that IS published is not automatically fully read either** — see
+the thin-read row above and
+[`ARCHITECTURE-MENU-INGEST.md`](ARCHITECTURE-MENU-INGEST.md)'s "A SHIPPED
+HAND-READ CAN STILL BE A THIN READ" section. Every miss found so far was found
+by a person, not by a run.
+**Trust the cards. Do not trust the silence — and don't trust a card's
+completeness just because it's live.**
 
 ### DE/wilmington-area push, 2026-09-03 — done
 
