@@ -725,77 +725,34 @@
     "type": "happy_hour",
     "windows": [
      {
+      "dow": 7,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
       "dow": 1,
-      "start": "16:30",
-      "end": "18:30"
+      "end": "18:30",
+      "start": "16:30"
      },
      {
       "dow": 2,
-      "start": "16:30",
-      "end": "18:30"
+      "end": "18:30",
+      "start": "16:30"
      },
      {
       "dow": 3,
-      "start": "16:30",
-      "end": "18:30"
+      "end": "18:30",
+      "start": "16:30"
      },
      {
       "dow": 4,
-      "start": "16:30",
-      "end": "18:30"
+      "end": "18:30",
+      "start": "16:30"
      },
      {
       "dow": 5,
-      "start": "16:30",
-      "end": "18:30"
-     },
-     {
-      "dow": 7,
-      "start": "16:30",
-      "end": "18:30"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "61077": {
-  "name": "Amada",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:30",
-      "end": "18:30"
-     },
-     {
-      "dow": 2,
-      "start": "16:30",
-      "end": "18:30"
-     },
-     {
-      "dow": 3,
-      "start": "16:30",
-      "end": "18:30"
-     },
-     {
-      "dow": 4,
-      "start": "16:30",
-      "end": "18:30"
-     },
-     {
-      "dow": 5,
-      "start": "16:30",
-      "end": "18:30"
-     },
-     {
-      "dow": 7,
-      "start": "16:30",
-      "end": "18:30"
+      "end": "18:30",
+      "start": "16:30"
      }
     ],
     "source": {
@@ -5139,6 +5096,239 @@
    }
   ]
  },
+ "51101": {
+  "name": "Basta Pasta",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "81482": {
+  "name": "P. J. Whelihan's Pub + Restaurant",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "65737": {
+  "name": "PERKY CAFE",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "109142": {
+  "name": "The Stray Dog Tavern",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 6,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 7,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "19496": {
+  "name": "Trappe Tavern",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "100226": {
+  "name": "Troubles End Brewing",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "53729": {
   "name": "Barnaby's",
   "deals": [
@@ -6032,201 +6222,6 @@
      },
      {
       "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "81482": {
-  "name": "P. J. Whelihan's Pub + Restaurant",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "end": "18:00",
-      "start": "16:00"
-     },
-     {
-      "dow": 2,
-      "end": "18:00",
-      "start": "16:00"
-     },
-     {
-      "dow": 3,
-      "end": "18:00",
-      "start": "16:00"
-     },
-     {
-      "dow": 4,
-      "end": "18:00",
-      "start": "16:00"
-     },
-     {
-      "dow": 5,
-      "end": "18:00",
-      "start": "16:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "65737": {
-  "name": "PERKY CAFE",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "109142": {
-  "name": "The Stray Dog Tavern",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 6,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 7,
-      "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "19496": {
-  "name": "Trappe Tavern",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "100226": {
-  "name": "Troubles End Brewing",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
       "start": "16:00",
       "end": "18:00"
      }

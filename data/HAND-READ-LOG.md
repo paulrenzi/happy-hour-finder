@@ -204,3 +204,9 @@ ingest/discover_places.py --execute (66 Places lookups, within free Enterprise t
 - glen_mills_chadds_ford | The Crown Tavern (48062) | NO_CLOCK_TIME | genuinely thin -- half-price drinks, $1 oysters, "$7 and up" food, no itemized list | 2026-09-04
 - norristown_bridgeport | Chap's Taproom (114168) | NO_CLOCK_TIME | genuinely thin -- 3 category-level discounts only ($4 draft/well, $5 wine, $6 apps), no itemized menu | 2026-09-04
 - pottstown | Doc's Irish Pub (68830) | NO_CLOCK_TIME | genuinely thin -- Busch $2.50 + "$1 off beers/wells/wines", no food items | 2026-09-04
+
+## 2026-09-03 continued -- fourth round (Paul-named URLs, non-Philly follow-through)
+- collegeville_trappe | Basta Pasta (51101) | SHIPPED | menu was in 2 linked JPGs (bastapastapa.com/happy-hour-menu), rendered w/ Read: 10 items (small plates, drafts, cocktails, wine), Mon-Fri 4-6/Sun 2-4 | 2026-09-03
+- wayne_radnor | Amada Radnor (115054) | SHIPPED | menu was in a linked PDF (uploads/114704AMAHappyHourMenu0726-nocrop.pdf), rendered to PNG w/ fitz + Read: 10 items (sangria, cocktails, vino, draft, tapas), Sun-Fri 4:30-6:30pm | 2026-09-03
+- wayne_radnor | Garrett Hill Ale House (101476) | NO_CLOCK_TIME | genuinely thin -- only "$2 off craft beers" Wed-Fri 4-7pm, no other items on page | 2026-09-03
+- wayne_radnor | Exit 13 Gastrobar (109849) | NO_CLOCK_TIME | genuinely thin -- only "$1 Merasheen Bay Oysters" Tue, no other prices anywhere on site incl. /drinks | 2026-09-03

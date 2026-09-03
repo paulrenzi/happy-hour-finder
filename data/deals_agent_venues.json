@@ -1451,6 +1451,124 @@
    "zone_id": "audubon_eagleville"
   },
   {
+   "address": "555 E Lancaster Ave, St Davids PA 19087",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "cocktail",
+       "evidence": "Sangria 9 each - White Sangria",
+       "label": "White Sangria",
+       "price_usd": 9.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "Cocktails 10 each - Atame!",
+       "label": "¡Atame!",
+       "price_usd": 10.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "Cocktails 10 each - Filadelfia",
+       "label": "Filadelfia",
+       "price_usd": 10.0
+      },
+      {
+       "category": "wine",
+       "evidence": "Vino 8 each - Cava",
+       "label": "Cava",
+       "price_usd": 8.0
+      },
+      {
+       "category": "wine",
+       "evidence": "Vino 8 each - Tempranillo",
+       "label": "Tempranillo",
+       "price_usd": 8.0
+      },
+      {
+       "category": "draft",
+       "evidence": "Draft Beer 6 each - Mahou Pale Lager",
+       "label": "Mahou",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "evidence": "Tapas - Croquetas de Jamon 9, Serrano Ham Croquettes",
+       "label": "Croquetas de Jamon",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "evidence": "Tapas - Patatas Bravas 7",
+       "label": "Patatas Bravas",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "evidence": "Tapas - Gambas al Ajillo 12, Garlic Shrimp",
+       "label": "Gambas al Ajillo",
+       "price_usd": 12.0
+      },
+      {
+       "category": "food",
+       "evidence": "Mixtos - Picada 6, Marinated Olives and Fried Marcona Almonds",
+       "label": "Picada",
+       "price_usd": 6.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Sunday-Friday 4:30-6:30 PM",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "HAPPY HOUR Sunday-Friday 4:30-6:30 PM. Sangria 9 each: White Sangria. Cocktails 10 each: Atame, Filadelfia. Vino 8 each: Cava, Tempranillo. Draft Beer 6 each: Mahou. Tapas: Croquetas de Jamon 9, Patatas Bravas 7, Gambas al Ajillo 12, Picada 6.",
+      "url": "https://www.amadarestaurant.com/uploads/114704AMAHappyHourMenu0726-nocrop.pdf"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 7,
+       "end": "18:30",
+       "start": "16:30"
+      },
+      {
+       "dow": 1,
+       "end": "18:30",
+       "start": "16:30"
+      },
+      {
+       "dow": 2,
+       "end": "18:30",
+       "start": "16:30"
+      },
+      {
+       "dow": 3,
+       "end": "18:30",
+       "start": "16:30"
+      },
+      {
+       "dow": 4,
+       "end": "18:30",
+       "start": "16:30"
+      },
+      {
+       "dow": 5,
+       "end": "18:30",
+       "start": "16:30"
+      }
+     ]
+    }
+   ],
+   "id": "115054",
+   "lid": "115054",
+   "name": "Amada",
+   "plcb_name": "AMADA",
+   "website": "https://www.amadarestaurant.com/amada-radnor/",
+   "zone_id": "wayne_radnor"
+  },
+  {
    "address": "200 W Ridge Pike Ste 117, Conshohocken PA 19428",
    "deals": [
     {
@@ -2846,6 +2964,119 @@
    "plcb_name": "PJ ENTERPRISES GROUP LLC",
    "website": "https://locations.pjspub.com/pa/blue-bell/799-dekalb-pike",
    "zone_id": "blue_bell_plymouth_meeting"
+  },
+  {
+   "address": "4052 Skippack Pk, Skippack PA 19474",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "Small Plates $8 - Arancini Balls",
+       "label": "Arancini Balls",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "evidence": "Small Plates $8 - Homemade Meatballs",
+       "label": "Homemade Meatballs",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "evidence": "Small Plates $8 - Chicken Parm Sliders",
+       "label": "Chicken Parm Sliders",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "evidence": "Small Plates $8 - Cheesesteak Egg Rolls",
+       "label": "Cheesesteak Egg Rolls",
+       "price_usd": 8.0
+      },
+      {
+       "category": "draft",
+       "evidence": "Domestic Drafts $4",
+       "label": "Domestic Drafts",
+       "price_usd": 4.0
+      },
+      {
+       "category": "draft",
+       "evidence": "Craft Draft $5",
+       "label": "Craft Draft",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "Margaritas $7",
+       "label": "Margaritas",
+       "price_usd": 7.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "Old Fashion $8 - Jim Beam Bourbon",
+       "label": "Old Fashion",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "Citrus Cosmopolitan $10",
+       "label": "Citrus Cosmopolitan",
+       "price_usd": 10.0
+      },
+      {
+       "category": "wine",
+       "evidence": "Wines $8 - California Roots Pinot Grigio",
+       "label": "Pinot Grigio (California Roots)",
+       "price_usd": 8.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Monday to Friday 4-6, Sunday 2-4",
+      "heading": "Happy Hour Menu",
+      "kind": "venue_site",
+      "quote": "HAPPY HOUR MENU. Small Plates $8: Arancini Balls, Homemade Meatballs, Chicken Parm Sliders, Cheesesteak Egg Rolls. Domestic Drafts $4. Craft Draft $5. Margaritas $7. Old Fashion $8. Citrus Cosmopolitan $10. Wines $8: California Roots Pinot Grigio. Monday to Friday 4-6, Sunday 2-4.",
+      "url": "https://www.bastapastapa.com/happy-hour-menu/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "51101",
+   "lid": "51101",
+   "name": "Basta Pasta",
+   "plcb_name": "BASTA PASTA",
+   "website": "http://www.bastapastapa.com/",
+   "zone_id": "collegeville_trappe"
   },
   {
    "address": "36-38 E Gay St, West Chester PA 19380",
