@@ -1,4 +1,855 @@
 {
+ "101577": {
+  "cost_usd": 0.4175,
+  "deals": [
+   {
+    "fine_print": "some exclusions apply",
+    "items": [
+     {
+      "category": "bottle_can",
+      "discount_pct": 50,
+      "label": "Craft Beer, 1/2 off Bottles + Cans",
+      "price_quote": "1/2 off Bottles + Cans",
+      "price_usd": null,
+      "quote": "Craft Beer\n1/2 off Bottles + Cans\nsome exclusions apply"
+     },
+     {
+      "category": "wine",
+      "discount_pct": null,
+      "label": "House Wine by the glass",
+      "price_quote": "House Wine by the glass $7.9",
+      "price_usd": 7.9,
+      "quote": "House Wine by the glass $7.9"
+     },
+     {
+      "category": "wine",
+      "discount_pct": null,
+      "label": "Red or White Sangria",
+      "price_quote": "Red or White Sangria $8.9",
+      "price_usd": 8.9,
+      "quote": "Red or White Sangria $8.9"
+     },
+     {
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "STH Mule",
+      "price_quote": "$9.9 Cocktails",
+      "price_usd": 9.9,
+      "quote": "STH Mule"
+     },
+     {
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "Prickly Pear Margarita",
+      "price_quote": "$9.9 Cocktails",
+      "price_usd": 9.9,
+      "quote": "Prickly Pear Margarita"
+     },
+     {
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "Classic Old Fashioned",
+      "price_quote": "$9.9 Cocktails",
+      "price_usd": 9.9,
+      "quote": "Classic Old Fashioned"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Truffle Fries",
+      "price_quote": "$9.9",
+      "price_usd": 9.9,
+      "quote": "Truffle Fries** GF"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Guacamole",
+      "price_quote": "$9.9",
+      "price_usd": 9.9,
+      "quote": "Guacamole** GF VO+"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Goat Cheese + Tomato Bruschetta",
+      "price_quote": "$9.9",
+      "price_usd": 9.9,
+      "quote": "Goat Cheese + Tomato Bruschetta V"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Margherita Flatbread",
+      "price_quote": "$10.9",
+      "price_usd": 10.9,
+      "quote": "Margherita Flatbread GFO"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "BBQ Chicken Flatbread",
+      "price_quote": "$10.9",
+      "price_usd": 10.9,
+      "quote": "BBQ Chicken Flatbread GFO"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "South Rim Shrimp Flatbread",
+      "price_quote": "$10.9",
+      "price_usd": 10.9,
+      "quote": "South Rim Shrimp Flatbread GFO"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Goat Cheese + Basil Flatbread",
+      "price_quote": "$10.9",
+      "price_usd": 10.9,
+      "quote": "Goat Cheese + Basil Flatbread GFO V"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Meat Lovers Flatbread",
+      "price_quote": "$11.9",
+      "price_usd": 11.9,
+      "quote": "Meat Lovers Flatbread GFO"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Buffalo Chicken Flatbread",
+      "price_quote": "$11.9",
+      "price_usd": 11.9,
+      "quote": "Buffalo Chicken Flatbread GFO"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Salmon Sliders (2) with greens",
+      "price_quote": "$12.9",
+      "price_usd": 12.9,
+      "quote": "Salmon* Sliders (2) with greens"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Pork BBQ Sliders (2) with greens",
+      "price_quote": "$12.9",
+      "price_usd": 12.9,
+      "quote": "Pork BBQ Sliders (2) with greens"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "‘Kobe Beef’ Sliders (2) with greens",
+      "price_quote": "$12.9",
+      "price_usd": 12.9,
+      "quote": "‘Kobe Beef’* Sliders (2) with greens"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Prince Edward Island Mussels",
+      "price_quote": "$12.9",
+      "price_usd": 12.9,
+      "quote": "Prince Edward Island Mussels GFO"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ]
+   },
+   {
+    "fine_print": "Dine In Only. Drink purchase required. Limit one per person. Not valid with any other offer, including Loyalty rewards.",
+    "items": [
+     {
+      "category": "food",
+      "discount_pct": 50,
+      "label": "Monday Dine Out for Charity — 50% off regular menu price (8 oz. Black Angus Flat Iron Steak or 7 oz. Salmon)",
+      "price_quote": "50% off regular menu price",
+      "price_usd": null,
+      "quote": "MONDAY\nDine Out for Charity\n50% off regular menu price\n8 oz. Black Angus Flat Iron Steak* served with garlic whipped potatoes or 7 oz. Salmon*, certified sustainable."
+     }
+    ],
+    "type": "daily_special",
+    "windows": []
+   },
+   {
+    "fine_print": "Dine In Only. Exclusions may apply.",
+    "items": [
+     {
+      "category": "wine",
+      "discount_pct": 50,
+      "label": "Wednesday 1/2 Off Bottles of Wine [except Reserves]",
+      "price_quote": "1/2 Off Bottles of Wine",
+      "price_usd": null,
+      "quote": "WEDNESDAY\n1/2 Off Bottles of Wine\n[except Reserves]"
+     },
+     {
+      "category": "wine",
+      "discount_pct": null,
+      "label": "$20 Off Reserve Wines",
+      "price_quote": "$20 Off Reserve Wines",
+      "price_usd": null,
+      "quote": "$20 Off Reserve Wines"
+     }
+    ],
+    "type": "daily_special",
+    "windows": []
+   }
+  ],
+  "dropped": [
+   "'Craft Beer, 1/2 off Bottles + Cans': discount 50 not written in the evidence",
+   "'daily_special' deal: not the happy hour",
+   "'daily_special' deal: not the happy hour"
+  ],
+  "found": true,
+  "items_kept": 18,
+  "kind": "pdf",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://sedonataphouse.com/locations/west-chester-pa/ — location page states Happy Hour Monday-Friday 4pm-6pm and links a Happy Hour menu PDF",
+   "curl -sL -o data/agent_reads/101577/hh.pdf https://sedonataphouse.com/wp-content/uploads/2019/01/HappyHourMenu_PhxWC_05.12.26.pdf",
+   "Read hh.pdf — one-page happy hour + weekly specials menu"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "https://sedonataphouse.com/wp-content/uploads/2019/01/HappyHourMenu_PhxWC_05.12.26.pdf",
+  "transcript": "BEST HAPPY HOUR in town\nMONDAY - FRIDAY 4 - 6PM\n\nCraft Beer\n1/2 off Bottles + Cans\nsome exclusions apply\n\nWine\nHouse Wine by the glass $7.9\nRed or White Sangria $8.9\n\n$9.9 Cocktails\nSTH Mule\nPrickly Pear Margarita\nClassic Old Fashioned\n\nBites\n$9.9\nTruffle Fries** GF\nGuacamole** GF VO+\nGoat Cheese + Tomato Bruschetta V\n\n$10.9\nMargherita Flatbread GFO\nBBQ Chicken Flatbread GFO\nSouth Rim Shrimp Flatbread GFO\nGoat Cheese + Basil Flatbread GFO V\n\n$11.9\nMeat Lovers Flatbread GFO\nBuffalo Chicken Flatbread GFO\n\n$12.9\nSalmon* Sliders (2) with greens\nPork BBQ Sliders (2) with greens\n‘Kobe Beef’* Sliders (2) with greens\nPrince Edward Island Mussels GFO\n\nGF = Gluten Free   GFO = Gluten Free Option   HH = Heart Healthier   V = Vegetarian   VO+ = Vegan Option\n*Foods are cooked to order. Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness, especially if you have certain medical conditions. Please inform your server of any allergies or intolerances.\n**All items fried in fryers assume cross-contamination with some or all of the following: shellfish, fish, poultry, and sesame.\n\nWEEKLY SPECIALS\n\nMONDAY\nDine Out for Charity\n50% off regular menu price\n8 oz. Black Angus Flat Iron Steak* served with garlic whipped potatoes or 7 oz. Salmon*, certified sustainable. Grilled and served with choice of side and choice of topping.\n$1 from every plate benefits a local charity selected by STH.\nDine In Only. Drink purchase required. Limit one per person. Not valid with any other offer, including Loyalty rewards.\n\nWEDNESDAY\n1/2 Off Bottles of Wine\n[except Reserves]\n$20 Off Reserve Wines\nDine In Only. Exclusions may apply.\n\nSUNDAY\nBRUNCH\n10:30am - 2pm",
+  "turns": 6,
+  "venue_name_on_menu": "",
+  "why_not": ""
+ },
+ "118439": {
+  "cost_usd": 0.3463,
+  "deals": [
+   {
+    "fine_print": "some exclusions apply",
+    "items": [
+     {
+      "category": "bottle_can",
+      "discount_pct": 50,
+      "label": "1/2 off Bottles + Cans (Craft Beer)",
+      "price_quote": "1/2 off Bottles + Cans",
+      "price_usd": null,
+      "quote": "1/2 off Bottles + Cans"
+     },
+     {
+      "category": "draft",
+      "discount_pct": null,
+      "label": "House Brewed Drafts",
+      "price_quote": "$6 House Brewed Drafts",
+      "price_usd": 6,
+      "quote": "$6 House Brewed Drafts"
+     },
+     {
+      "category": "wine",
+      "discount_pct": null,
+      "label": "House Wine by the glass",
+      "price_quote": "$7.9 Wine + Sangria",
+      "price_usd": 7.9,
+      "quote": "House Wine by the glass"
+     },
+     {
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "Red Sangria",
+      "price_quote": "$7.9 Wine + Sangria",
+      "price_usd": 7.9,
+      "quote": "Red Sangria"
+     },
+     {
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "White Sangria",
+      "price_quote": "$7.9 Wine + Sangria",
+      "price_usd": 7.9,
+      "quote": "White Sangria"
+     },
+     {
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "Classic Old Fashioned",
+      "price_quote": "$9.9 Cocktails",
+      "price_usd": 9.9,
+      "quote": "Classic Old Fashioned"
+     },
+     {
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "Prickly Pear Margarita",
+      "price_quote": "$9.9 Cocktails",
+      "price_usd": 9.9,
+      "quote": "Prickly Pear Margarita"
+     },
+     {
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "STH Mule",
+      "price_quote": "$9.9 Cocktails",
+      "price_usd": 9.9,
+      "quote": "STH Mule"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Truffle Fries",
+      "price_quote": "$9.9\nTruffle Fries** GF",
+      "price_usd": 9.9,
+      "quote": "Truffle Fries** GF"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Guacamole",
+      "price_quote": "$9.9\nTruffle Fries** GF\nGuacamole** GF HH VO+",
+      "price_usd": 9.9,
+      "quote": "Guacamole** GF HH VO+"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Goat Cheese + Tomato Bruschetta",
+      "price_quote": "$9.9\nTruffle Fries** GF\nGuacamole** GF HH VO+\nGoat Cheese + Tomato Bruschetta V",
+      "price_usd": 9.9,
+      "quote": "Goat Cheese + Tomato Bruschetta V"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Margherita Flatbread",
+      "price_quote": "$10.9\nMargherita Flatbread GFO V",
+      "price_usd": 10.9,
+      "quote": "Margherita Flatbread GFO V"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Meat Lovers Flatbread",
+      "price_quote": "$10.9\nMargherita Flatbread GFO V\nMeat Lovers Flatbread GFO",
+      "price_usd": 10.9,
+      "quote": "Meat Lovers Flatbread GFO"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "BBQ Chicken Flatbread",
+      "price_quote": "$10.9\nMargherita Flatbread GFO V\nMeat Lovers Flatbread GFO\nBBQ Chicken Flatbread GFO",
+      "price_usd": 10.9,
+      "quote": "BBQ Chicken Flatbread GFO"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Buffalo Chicken Flatbread",
+      "price_quote": "$10.9\nMargherita Flatbread GFO V\nMeat Lovers Flatbread GFO\nBBQ Chicken Flatbread GFO\nBuffalo Chicken Flatbread GFO",
+      "price_usd": 10.9,
+      "quote": "Buffalo Chicken Flatbread GFO"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Salmon Sliders (2) with greens",
+      "price_quote": "$10.9\nMargherita Flatbread GFO V\nMeat Lovers Flatbread GFO\nBBQ Chicken Flatbread GFO\nBuffalo Chicken Flatbread GFO\nSalmon* Sliders (2) with greens",
+      "price_usd": 10.9,
+      "quote": "Salmon* Sliders (2) with greens"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Crab Cake Sliders (2) with greens",
+      "price_quote": "$10.9\nMargherita Flatbread GFO V\nMeat Lovers Flatbread GFO\nBBQ Chicken Flatbread GFO\nBuffalo Chicken Flatbread GFO\nSalmon* Sliders (2) with greens\nCrab Cake Sliders (2) with greens",
+      "price_usd": 10.9,
+      "quote": "Crab Cake Sliders (2) with greens"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "'Kobe Beef' Sliders (2) with greens",
+      "price_quote": "$10.9\nMargherita Flatbread GFO V\nMeat Lovers Flatbread GFO\nBBQ Chicken Flatbread GFO\nBuffalo Chicken Flatbread GFO\nSalmon* Sliders (2) with greens\nCrab Cake Sliders (2) with greens\n'Kobe Beef'* Sliders (2) with greens",
+      "price_usd": 10.9,
+      "quote": "'Kobe Beef'* Sliders (2) with greens"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Prince Edward Island Mussels",
+      "price_quote": "$12.9\nPrince Edward Island Mussels GFO",
+      "price_usd": 12.9,
+      "quote": "Prince Edward Island Mussels GFO"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ]
+   }
+  ],
+  "dropped": [
+   "'1/2 off Bottles + Cans (Craft Beer)': discount 50 not written in the evidence"
+  ],
+  "found": true,
+  "items_kept": 18,
+  "kind": "pdf",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://sedonataphouse.com/locations/newtown-square-pa/ — found Happy Hour blurb (4pm-6pm) and link to HappyHourMenu_NewtownSquare PDF",
+   "curl download HappyHourMenu_NewtownSquare_12.08.25-1.pdf to scratch dir, Read the PDF"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "https://sedonataphouse.com/wp-content/uploads/2024/10/HappyHourMenu_NewtownSquare_12.08.25-1.pdf",
+  "transcript": "STH Steals\nMONDAY - FRIDAY 4-6PM\n\nCraft Beer\n1/2 off Bottles + Cans\nsome exclusions apply\n$6 House Brewed Drafts\n\n$7.9 Wine + Sangria\nHouse Wine by the glass\nRed Sangria\nWhite Sangria\n\n$9.9 Cocktails\nClassic Old Fashioned\nPrickly Pear Margarita\nSTH Mule\n\nBites\n$9.9\nTruffle Fries** GF\nGuacamole** GF HH VO+\nGoat Cheese + Tomato Bruschetta V\n\n$10.9\nMargherita Flatbread GFO V\nMeat Lovers Flatbread GFO\nBBQ Chicken Flatbread GFO\nBuffalo Chicken Flatbread GFO\nSalmon* Sliders (2) with greens\nCrab Cake Sliders (2) with greens\n'Kobe Beef'* Sliders (2) with greens\n\n$12.9\nPrince Edward Island Mussels GFO\n\nGF = Gluten Free   GFO = Gluten Free Option   HH = Heart Healthier   V = Vegetarian   VO+ = Vegan Option\n*Foods are cooked to order. Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness, especially if you have certain medical conditions. Please inform your server of any allergies or intolerances.\n**All items fried in fryers assume cross-contamination with some or all of the following: shellfish, fish, poultry, and sesame.",
+  "turns": 6,
+  "venue_name_on_menu": "STH Steals",
+  "why_not": ""
+ },
+ "64766": {
+  "cost_usd": 0.4978,
+  "deals": [
+   {
+    "fine_print": "• AVAILABLE IN OUR BAR AREA ONLY • / ITEMS WITH * ARE OR CAN BE MADE GLUTEN FREE",
+    "items": [
+     {
+      "category": "draft",
+      "discount_pct": null,
+      "label": "Stella Artois",
+      "price_quote": "Stella Artois - 3.50",
+      "price_usd": 3.5,
+      "quote": "Stella Artois - 3.50"
+     },
+     {
+      "category": "well",
+      "discount_pct": null,
+      "label": "Well single liquor drinks",
+      "price_quote": "Well single liquor drinks - 4.00",
+      "price_usd": 4,
+      "quote": "Well single liquor drinks - 4.00"
+     },
+     {
+      "category": "wine",
+      "discount_pct": null,
+      "label": "House Wines by the glass (Whites: Pinot Grigio, Chardonnay; Reds: Cabernet, Montepulciano)",
+      "price_quote": "House Wines by the glass - 5.50",
+      "price_usd": 5.5,
+      "quote": "House Wines by the glass - 5.50"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Whipped Riccotta",
+      "price_quote": "-6-",
+      "price_usd": 6,
+      "quote": "WHIPPED RICCOTTA*     -6-"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Wood-Fired Wings",
+      "price_quote": "-9-",
+      "price_usd": 9,
+      "quote": "WOOD-FIRED WINGS*     -9-"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Pizza - Americano",
+      "price_quote": "-10-",
+      "price_usd": 10,
+      "quote": "PIZZA- AMERICANO*     -10-"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Pizza - Pepperoni",
+      "price_quote": "-12-",
+      "price_usd": 12,
+      "quote": "PIZZA- PEPPERONI*     -12-"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Tuscan Fries",
+      "price_quote": "-7-",
+      "price_usd": 7,
+      "quote": "TUSCAN FRIES     -7-"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Ceasar Salad",
+      "price_quote": "-7-",
+      "price_usd": 7,
+      "quote": "CEASAR SALAD*     -7-"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Local Mixed Greens Salad",
+      "price_quote": "-6-",
+      "price_usd": 6,
+      "quote": "LOCAL MIXED GREENS SALAD*   -6-"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Garlic Bread",
+      "price_quote": "-6-",
+      "price_usd": 6,
+      "quote": "GARLIC BREAD     -6-"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 6,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ]
+   }
+  ],
+  "dropped": [
+   "'Stella Artois': price 3.5 not written in the evidence",
+   "'Well single liquor drinks': price 4 not written in the evidence",
+   "'House Wines by the glass (Whites: Pinot Grigio, Chardonnay; Reds: Cabernet, Montepulciano)': label length"
+  ],
+  "found": true,
+  "items_kept": 8,
+  "kind": "page",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://laportarestaurant.com — home page, found nav link 'HAPPY HOUR & COCKTAILS MENU'",
+   "WebFetch https://www.laportarestaurant.com/happy-hour-menu — schedule text printed on page, menu itself in two images",
+   "curl -sL -o data/agent_reads/64766/hh.png https://static.wixstatic.com/media/e4bbb5_c84d1fd8f6314d42a968166b06041e38~mv2.png — Read: the happy hour menu",
+   "curl -sL -o data/agent_reads/64766/cocktails.png https://static.wixstatic.com/media/e4bbb5_bef943bb2eda4c7da31b260bafb1f84a~mv2.png — Read: regular cocktail list, full price, no happy hour pricing; excluded"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "https://www.laportarestaurant.com/happy-hour-menu",
+  "transcript": "HAPPY HOUR: MON / WED-SAT FROM 4PM TO 6PM\n\nLa Porta Ristorante\n\nHAPPY HOUR\n\n• AVAILABLE IN OUR BAR AREA ONLY •\n\nStella Artois - 3.50\nWell single liquor drinks - 4.00\nHouse Wines by the glass - 5.50\nWHITES:\nPinot Grigio\nChardonnay\nREDS:\nCabernet\nMontepulciano\n\nWHIPPED RICCOTTA*     -6-\nWhite bean salad, Roasted Red Bell Peppers, Red Onion, Basil, Crostini\nWOOD-FIRED WINGS*     -9-\nBlue cheese, spicy orange marmalade sauce\nPIZZA- AMERICANO*     -10-\nPIZZA- PEPPERONI*     -12-\nTUSCAN FRIES     -7-\nEggplant, zucchini, red bell pepper, garlic aioli, balsamic vinaigrette\nCEASAR SALAD*     -7-\nShaved parmesan, Meyer lemon, croutons\nLOCAL MIXED GREENS SALAD*   -6-\nRed onion, tomato, goat cheese, sherry vinaigrette\nGARLIC BREAD     -6-\nButter, garlic, fresh herbs\n\nITEMS WITH * ARE OR CAN BE MADE GLUTEN FREE",
+  "turns": 8,
+  "venue_name_on_menu": "La Porta Ristorante",
+  "why_not": ""
+ },
+ "91502": {
+  "cost_usd": 0.4735,
+  "deals": [
+   {
+    "fine_print": "some exclusions apply (Craft Beer)",
+    "items": [
+     {
+      "category": "bottle_can",
+      "discount_pct": 50,
+      "label": "Craft Beer — 1/2 off Bottles + Cans",
+      "price_quote": "1/2 off Bottles + Cans",
+      "price_usd": null,
+      "quote": "Craft Beer\n1/2 off Bottles + Cans\nsome exclusions apply"
+     },
+     {
+      "category": "wine",
+      "discount_pct": null,
+      "label": "House Wine by the glass",
+      "price_quote": "House Wine by the glass $7.9",
+      "price_usd": 7.9,
+      "quote": "House Wine by the glass $7.9"
+     },
+     {
+      "category": "wine",
+      "discount_pct": null,
+      "label": "Red or White Sangria",
+      "price_quote": "Red or White Sangria $8.9",
+      "price_usd": 8.9,
+      "quote": "Red or White Sangria $8.9"
+     },
+     {
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "STH Mule",
+      "price_quote": "$9.9 Cocktails",
+      "price_usd": 9.9,
+      "quote": "STH Mule"
+     },
+     {
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "Prickly Pear Margarita",
+      "price_quote": "$9.9 Cocktails",
+      "price_usd": 9.9,
+      "quote": "Prickly Pear Margarita"
+     },
+     {
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "Classic Old Fashioned",
+      "price_quote": "$9.9 Cocktails",
+      "price_usd": 9.9,
+      "quote": "Classic Old Fashioned"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Truffle Fries",
+      "price_quote": "$9.9",
+      "price_usd": 9.9,
+      "quote": "Truffle Fries** GF"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Guacamole",
+      "price_quote": "$9.9",
+      "price_usd": 9.9,
+      "quote": "Guacamole** GF VO+"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Goat Cheese + Tomato Bruschetta",
+      "price_quote": "$9.9",
+      "price_usd": 9.9,
+      "quote": "Goat Cheese + Tomato Bruschetta V"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Margherita Flatbread",
+      "price_quote": "$10.9",
+      "price_usd": 10.9,
+      "quote": "Margherita Flatbread GFO"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "BBQ Chicken Flatbread",
+      "price_quote": "$10.9",
+      "price_usd": 10.9,
+      "quote": "BBQ Chicken Flatbread GFO"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "South Rim Shrimp Flatbread",
+      "price_quote": "$10.9",
+      "price_usd": 10.9,
+      "quote": "South Rim Shrimp Flatbread GFO"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Goat Cheese + Basil Flatbread",
+      "price_quote": "$10.9",
+      "price_usd": 10.9,
+      "quote": "Goat Cheese + Basil Flatbread GFO V"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Meat Lovers Flatbread",
+      "price_quote": "$11.9",
+      "price_usd": 11.9,
+      "quote": "Meat Lovers Flatbread GFO"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Buffalo Chicken Flatbread",
+      "price_quote": "$11.9",
+      "price_usd": 11.9,
+      "quote": "Buffalo Chicken Flatbread GFO"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Salmon Sliders (2) with greens",
+      "price_quote": "$12.9",
+      "price_usd": 12.9,
+      "quote": "Salmon* Sliders (2) with greens"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Pork BBQ Sliders (2) with greens",
+      "price_quote": "$12.9",
+      "price_usd": 12.9,
+      "quote": "Pork BBQ Sliders (2) with greens"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "‘Kobe Beef’ Sliders (2) with greens",
+      "price_quote": "$12.9",
+      "price_usd": 12.9,
+      "quote": "‘Kobe Beef’* Sliders (2) with greens"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Prince Edward Island Mussels",
+      "price_quote": "$12.9",
+      "price_usd": 12.9,
+      "quote": "Prince Edward Island Mussels GFO"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ]
+   },
+   {
+    "fine_print": "Dine In Only. Drink purchase required. Limit one per person.\nNot valid with any other offer, including Loyalty rewards.",
+    "items": [
+     {
+      "category": "food",
+      "discount_pct": 50,
+      "label": "Dine Out for Charity — 8 oz. Black Angus Flat Iron Steak or 7 oz. Salmon, 50% off regular menu price (Monday)",
+      "price_quote": "50% off regular menu price",
+      "price_usd": null,
+      "quote": "MONDAY\nDine Out for Charity\n50% off regular menu price\n8 oz. Black Angus Flat Iron Steak* served with garlic whipped potatoes or\n7 oz. Salmon*, certified sustainable. Grilled and served with choice of side and choice of topping."
+     }
+    ],
+    "type": "daily_special",
+    "windows": []
+   },
+   {
+    "fine_print": "Dine In Only. Exclusions may apply.",
+    "items": [
+     {
+      "category": "wine",
+      "discount_pct": 50,
+      "label": "1/2 Off Bottles of Wine [except Reserves] (Wednesday)",
+      "price_quote": "1/2 Off Bottles of Wine",
+      "price_usd": null,
+      "quote": "WEDNESDAY\n1/2 Off Bottles of Wine\n[except Reserves]"
+     },
+     {
+      "category": "wine",
+      "discount_pct": null,
+      "label": "$20 Off Reserve Wines (Wednesday)",
+      "price_quote": "$20 Off Reserve Wines",
+      "price_usd": null,
+      "quote": "$20 Off Reserve Wines"
+     }
+    ],
+    "type": "daily_special",
+    "windows": []
+   }
+  ],
+  "dropped": [
+   "'Craft Beer — 1/2 off Bottles + Cans': discount 50 not written in the evidence",
+   "'daily_special' deal: not the happy hour",
+   "'daily_special' deal: not the happy hour"
+  ],
+  "found": true,
+  "items_kept": 18,
+  "kind": "pdf",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://sedonataphouse.com/ — multi-location site, found Locations nav",
+   "WebFetch https://sedonataphouse.com/locations/phoenixville-pa/ — this location's page, lists a Happy Hour Menu PDF",
+   "curl -sL -o hh.pdf https://sedonataphouse.com/wp-content/uploads/2019/01/HappyHourMenu_PhxWC_05.12.26.pdf",
+   "Read hh.pdf — happy hour menu, left column; weekly specials right column"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "https://sedonataphouse.com/wp-content/uploads/2019/01/HappyHourMenu_PhxWC_05.12.26.pdf",
+  "transcript": "BEST HAPPY HOUR in town\nMONDAY - FRIDAY 4 - 6PM\n\nCraft Beer\n1/2 off Bottles + Cans\nsome exclusions apply\n\nWine\nHouse Wine by the glass $7.9\nRed or White Sangria $8.9\n\n$9.9 Cocktails\nSTH Mule\nPrickly Pear Margarita\nClassic Old Fashioned\n\nBites\n$9.9\nTruffle Fries** GF\nGuacamole** GF VO+\nGoat Cheese + Tomato Bruschetta V\n\n$10.9\nMargherita Flatbread GFO\nBBQ Chicken Flatbread GFO\nSouth Rim Shrimp Flatbread GFO\nGoat Cheese + Basil Flatbread GFO V\n\n$11.9\nMeat Lovers Flatbread GFO\nBuffalo Chicken Flatbread GFO\n\n$12.9\nSalmon* Sliders (2) with greens\nPork BBQ Sliders (2) with greens\n‘Kobe Beef’* Sliders (2) with greens\nPrince Edward Island Mussels GFO\n\nGF = Gluten Free   GFO = Gluten Free Option   HH = Heart Healthier   V = Vegetarian   VO+ = Vegan Option\n*Foods are cooked to order. Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness, especially if you have certain medical conditions. Please inform your server of any allergies or intolerances.\n**All items fried in fryers assume cross-contamination with some or all of the following: shellfish, fish, poultry, and sesame.\n\nWEEKLY SPECIALS\n\nMONDAY\nDine Out for Charity\n50% off regular menu price\n8 oz. Black Angus Flat Iron Steak* served with garlic whipped potatoes or\n7 oz. Salmon*, certified sustainable. Grilled and served with choice of side and choice of topping.\n$1 from every plate benefits a local charity selected by STH.\nDine In Only. Drink purchase required. Limit one per person.\nNot valid with any other offer, including Loyalty rewards.\n\nWEDNESDAY\n1/2 Off Bottles of Wine\n[except Reserves]\n$20 Off Reserve Wines\nDine In Only. Exclusions may apply.\n\nSUNDAY\nBRUNCH\n10:30am - 2pm",
+  "turns": 7,
+  "venue_name_on_menu": "",
+  "why_not": ""
+ },
  "DE004a8c7d86": {
   "cost_usd": 0.5879,
   "deals": [
