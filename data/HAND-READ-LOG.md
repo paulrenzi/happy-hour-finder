@@ -38,3 +38,13 @@ re-attempt these unless the venue's own site changes.)
 
 ## 2026-09-04 — second round in progress (norristown_bridgeport, upper_darby_lansdowne, ambler_upper_dublin, limerick_royersford, pottstown, souderton_harleysville, abington_jenkintown, collegeville_trappe, glen_mills_chadds_ford, lansdale_montgomeryville, newtown_square_broomall, conshohocken, blue_bell_plymouth_meeting, ardmore_bryn_mawr, + revisit thinner zones)
 (agent running — appends its own attempts below as it goes)
+- norristown_bridgeport | Chap's Taproom (114168) | SHIPPED | | 2026-09-04
+- norristown_bridgeport | Vonc Brewing | UNREACHABLE | connection timeout | 2026-09-04
+- norristown_bridgeport | Nippers | UNREACHABLE | connection timeout | 2026-09-04
+- norristown_bridgeport | Five Saints Distilling | NO_CLOCK_TIME | reviews only, no HH window on page | 2026-09-04
+- norristown_bridgeport | Conshohocken Brewing Company | NO_CLOCK_TIME | empty sweep, no HH text | 2026-09-04
+- norristown_bridgeport | Justenuff | UNREACHABLE | connection timeout | 2026-09-04
+- norristown_bridgeport | Capone's | NO_CLOCK_TIME | empty sweep | 2026-09-04
+- norristown_bridgeport | Bridgeport Rib House | NO_CLOCK_TIME | windows found but no item prices in venue's own words | 2026-09-04
+- manayunk | Cresson Inn | NO_CLOCK_TIME | mentions "daily happy hour specials" generically, no clock time/prices | 2026-09-04
+- manayunk | Henry Ave Associates | UNREACHABLE | empty sweep | 2026-09-04

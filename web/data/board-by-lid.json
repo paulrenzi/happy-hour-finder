@@ -2579,6 +2579,54 @@
    }
   ]
  },
+ "114168": {
+  "name": "Chap's Taproom",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "19:00",
+      "start": "17:00"
+     },
+     {
+      "dow": 2,
+      "end": "19:00",
+      "start": "17:00"
+     },
+     {
+      "dow": 3,
+      "end": "19:00",
+      "start": "17:00"
+     },
+     {
+      "dow": 4,
+      "end": "19:00",
+      "start": "17:00"
+     },
+     {
+      "dow": 5,
+      "end": "19:00",
+      "start": "17:00"
+     },
+     {
+      "dow": 6,
+      "end": "16:00",
+      "start": "14:00"
+     },
+     {
+      "dow": 7,
+      "end": "16:00",
+      "start": "14:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "13697": {
   "name": "Tony G's Pub and Eatery",
   "deals": [
@@ -4224,6 +4272,118 @@
    }
   ]
  },
+ "55311": {
+  "name": "Fireside Bar and Grill",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 2,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 3,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 4,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 5,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 6,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "109577": {
+  "name": "Well Crafted Beer Company",
+  "deals": [
+   {
+    "type": "daily_special",
+    "windows": [
+     {
+      "dow": 7,
+      "end": "16:00",
+      "start": "13:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   },
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "15:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   },
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 5,
+      "end": "22:00",
+      "start": "20:00"
+     },
+     {
+      "dow": 6,
+      "end": "22:00",
+      "start": "20:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "65398": {
   "name": "Chickie's & Pete's",
   "deals": [
@@ -4396,6 +4556,87 @@
       "dow": 5,
       "end": "18:00",
       "start": "16:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "68830": {
+  "name": "Doc's Irish Pub",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 6,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 7,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "95739": {
+  "name": "JJ RATIGAN BREWING LLC",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
      }
     ],
     "source": {
@@ -8426,118 +8667,6 @@
       "dow": 5,
       "end": "18:00",
       "start": "16:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "55311": {
-  "name": "Fireside Bar and Grill",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "end": "18:30",
-      "start": "16:30"
-     },
-     {
-      "dow": 2,
-      "end": "18:30",
-      "start": "16:30"
-     },
-     {
-      "dow": 3,
-      "end": "18:30",
-      "start": "16:30"
-     },
-     {
-      "dow": 4,
-      "end": "18:30",
-      "start": "16:30"
-     },
-     {
-      "dow": 5,
-      "end": "18:30",
-      "start": "16:30"
-     },
-     {
-      "dow": 6,
-      "end": "18:00",
-      "start": "16:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "109577": {
-  "name": "Well Crafted Beer Company",
-  "deals": [
-   {
-    "type": "daily_special",
-    "windows": [
-     {
-      "dow": 7,
-      "end": "16:00",
-      "start": "13:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   },
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "end": "18:00",
-      "start": "15:00"
-     },
-     {
-      "dow": 2,
-      "end": "18:00",
-      "start": "15:00"
-     },
-     {
-      "dow": 3,
-      "end": "18:00",
-      "start": "15:00"
-     },
-     {
-      "dow": 4,
-      "end": "18:00",
-      "start": "15:00"
-     },
-     {
-      "dow": 5,
-      "end": "18:00",
-      "start": "15:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   },
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 5,
-      "end": "22:00",
-      "start": "20:00"
-     },
-     {
-      "dow": 6,
-      "end": "22:00",
-      "start": "20:00"
      }
     ],
     "source": {
@@ -12895,87 +13024,6 @@
      },
      {
       "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "68830": {
-  "name": "Doc's Irish Pub",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 6,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 7,
-      "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "95739": {
-  "name": "JJ RATIGAN BREWING LLC",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
       "start": "16:00",
       "end": "18:00"
      }
