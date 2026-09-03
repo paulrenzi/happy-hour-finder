@@ -122,9 +122,10 @@ Rules:
 - `evidence` must be an EXACT substring copied from that venue's text, short,
   and must contain the price. It is checked programmatically; if it is not a
   literal substring the item is discarded.
-- `price_usd` is a dollar amount off the text ("$5", "5 dollars", "five
-  dollars" -> 5.0). Use `discount_pct` instead when the text states a
-  percentage or says half price/half off (-> 50). Exactly one of the two.
+- `price_usd` is the price the customer pays ("$5", "5 dollars", "five
+  dollars" -> 5.0). Use `discount_pct` when the text states a percentage or
+  says half price/half off (-> 50), and `amount_off_usd` when it states a
+  fixed-dollar discount ("$2 off drafts" -> 2.0). Exactly one of these three.
 - `label` is the thing being sold, 1-3 words, as the venue names it
   ("drafts", "house wine", "wings"). Not a sentence.
 - `category` is exactly one of: {categories}
@@ -263,9 +264,10 @@ def verify(item, text, menu=False):
         if re.search(pat, label, re.I):
             return None, f"unlawful claim /{pat}/"
 
-    price, pct = item.get("price_usd"), item.get("discount_pct")
-    if (price is None) == (pct is None):
-        return None, "needs exactly one of price_usd / discount_pct"
+    price, pct, off = (item.get("price_usd"), item.get("discount_pct"),
+                       item.get("amount_off_usd"))
+    if sum(value is not None for value in (price, pct, off)) != 1:
+        return None, "needs exactly one of price_usd / discount_pct / amount_off_usd"
 
     # '$ 8' and '$8' are the same claim. A themed menu that puts the price in
     # its own block routinely emits the spaced form, and the digits-in-the-text
@@ -297,22 +299,34 @@ def verify(item, text, menu=False):
         # The digits being present does not make them a PRICE. Sullivan's says
         # '$5 Off Select Martinis' and the model returned a $5 martini; every
         # check above passes, because both the '$5' and the 'martinis' really
-        # are in the venue's own text. '$N off' is a DISCOUNT, and this pipeline
-        # has no field for a dollars-off one (see OFF_RE in extract_deals.py),
-        # so an amount that the evidence only ever writes as 'off' is refused
-        # rather than published as the thing's price. If some occurrence of the
-        # number is a plain price, that one still counts.
+        # are in the venue's own text. '$N off' is a DISCOUNT, not a price. If
+        # some occurrence of the number is a plain price, that one still counts.
         hits = [m for f in forms for m in re.finditer(re.escape(f), low)]
         if hits and all(re.match(r"\s*off\b", low[m.end():]) for m in hits):
             return None, f"{price:g} is written only as an amount OFF, not a price"
         clean = {"category": item["category"], "label": label, "price_usd": price}
-    else:
+    elif pct is not None:
         pct = float(pct)
         if not 0 < pct < 100:
             return None, f"implausible discount {pct}"
         if not (f"{pct:g}%" in low or "half" in low):
             return None, f"discount {pct:g} not written in the evidence"
         clean = {"category": item["category"], "label": label, "discount_pct": pct}
+    else:
+        off = float(off)
+        if not 0 < off <= 99:
+            return None, f"implausible amount off {off}"
+        # A dollar sign by itself is a price, never proof of a discount. The
+        # model's number must be in the exact evidence span as '$N off' (or the
+        # equally explicit 'off $N'), so a bare '$2 Craft' cannot become a
+        # discount and a price-less 'Craft & Select' cannot reach a card.
+        amount = re.escape(f"{off:g}")
+        amount_re = re.compile(
+            rf"(?:\$\s*{amount}(?:\.0{{1,2}})?\s*off\b|"
+            rf"off\s*\$\s*{amount}(?:\.0{{1,2}})?\b)", re.I)
+        if not amount_re.search(low):
+            return None, f"amount off {off:g} not written as an OFF discount in the evidence"
+        clean = {"category": item["category"], "label": label, "amount_off_usd": off}
     return clean, None
 
 
@@ -329,8 +343,10 @@ def evidence_candidates(item, text):
     label = (item.get("label") or "").strip()
     if not label:
         return []
-    price, pct = item.get("price_usd"), item.get("discount_pct")
-    num = f"{float(price):g}" if price is not None else f"{float(pct):g}"
+    price, pct, off = (item.get("price_usd"), item.get("discount_pct"),
+                       item.get("amount_off_usd"))
+    value = price if price is not None else pct if pct is not None else off
+    num = f"{float(value):g}"
     out = []
     for line in text.splitlines():
         low = norm(line)
@@ -465,7 +481,9 @@ def main():
         for vid, items in sorted(out.items()):
             shown = ", ".join(
                 f"{i['label']} "
-                + (f"${i['price_usd']:g}" if "price_usd" in i else f"{i['discount_pct']:g}% off")
+                + (f"${i['price_usd']:g}" if "price_usd" in i
+                   else f"{i['discount_pct']:g}% off" if "discount_pct" in i
+                   else f"${i['amount_off_usd']:g} off")
                 for i in items
             )
             print(f"  {vid[:40]:<42} {shown[:80]}")

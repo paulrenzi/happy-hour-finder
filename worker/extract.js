@@ -24,7 +24,7 @@ const CATEGORIES = [
 const PROMPT = `You are transcribing a happy hour menu for a listings site that publishes only
 what the venue itself put in writing.
 
-You are a reader, not an author. Every price, time and item you report must be
+You are a reader, not an author. Every price, discount, time and item you report must be
 printed on the menu in the photo. If the menu says "select drafts", say select
 drafts, not "all drafts". If a price is smudged or cut off, leave it out. If the
 days are not printed, return no windows rather than guessing the usual ones. An
@@ -69,6 +69,9 @@ Reply with ONE JSON object and nothing else. No prose, no code fence.
           "label": "short description as printed",
           "price_usd": number or null,
           "discount_pct": number or null,
+          "amount_off_usd": number or null -- use this only for a fixed-dollar
+             discount explicitly printed as "$2 off"; exactly one of the three
+             amount fields may be non-null,
           "quote": "the exact substring of transcript this came from"
         }
       ],
@@ -103,12 +106,24 @@ export function ground(read) {
     const items = [];
     for (const item of deal.items || []) {
       const quote = norm(item.quote);
-      if (quote && transcript.includes(quote)) {
+      const values = [item.price_usd, item.discount_pct, item.amount_off_usd]
+        .filter((value) => value !== undefined && value !== null);
+      const off = Number(item.amount_off_usd);
+      const amount = Number.isFinite(off) && off > 0 && off <= 99
+        ? String(off).replace(".", "\\\\.") : "";
+      const offWritten = amount && new RegExp(
+        `(?:\\$\\s*${amount}(?:\\.0{1,2})?\\s*off\\b|off\\s*\\$\\s*${amount}(?:\\.0{1,2})?\\b)`, "i"
+      ).test(quote);
+      if (quote && transcript.includes(quote) && values.length === 1 &&
+          (item.amount_off_usd === undefined || item.amount_off_usd === null || offWritten)) {
         const clean = {};
         for (const [k, v] of Object.entries(item)) if (v !== null) clean[k] = v;
         items.push(clean);
       } else {
-        dropped.push(`${JSON.stringify(item.label)}: quote not in the transcript`);
+        const why = !quote || !transcript.includes(quote) ? "quote not in the transcript"
+          : values.length !== 1 ? "needs exactly one price or discount"
+          : "amount off not written as an OFF discount in the quote";
+        dropped.push(`${JSON.stringify(item.label)}: ${why}`);
       }
     }
     const next = { ...deal, items };

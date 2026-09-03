@@ -216,12 +216,10 @@ def validate_deal(deal, state="PA"):
     for item in deal.get("items") or []:
         if item.get("category") not in CATEGORIES:
             errs.append(f"unknown item category {item.get('category')!r}")
-        if (
-            item.get("price_usd") is None
-            and item.get("discount_pct") is None
-            and item.get("amount_off_usd") is None
-        ):
-            errs.append(f"item {item.get('label')!r} has neither a price nor a discount")
+        amounts = (item.get("price_usd"), item.get("discount_pct"),
+                   item.get("amount_off_usd"))
+        if sum(value is not None for value in amounts) != 1:
+            errs.append(f"item {item.get('label')!r} must have exactly one price or discount")
         # A venue that prices a whole block at once states a RANGE -- Paladar's
         # happy-hour snacks are '$7.50-7.75 each'. The range is published as a
         # range because neither end is the price of any particular dish, so

@@ -133,12 +133,10 @@ export function validateDeal(deal) {
     if (!CATEGORIES.has(item.category)) {
       errs.push(`unknown item category ${repr(item.category)}`);
     }
-    if (
-      (item.price_usd === undefined || item.price_usd === null) &&
-      (item.discount_pct === undefined || item.discount_pct === null) &&
-      (item.amount_off_usd === undefined || item.amount_off_usd === null)
-    ) {
-      errs.push(`item ${repr(item.label)} has neither a price nor a discount`);
+    const amountCount = [item.price_usd, item.discount_pct, item.amount_off_usd]
+      .filter((value) => value !== undefined && value !== null).length;
+    if (amountCount !== 1) {
+      errs.push(`item ${repr(item.label)} must have exactly one price or discount`);
     }
     // A block priced as a RANGE -- 'SNACKS $7.50-7.75 each'. Mirrors the check
     // in ingest/validate_pa.py; the two validators have to agree, or a deal the

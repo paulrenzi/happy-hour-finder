@@ -62,6 +62,21 @@ MENU_PROMPT = PROMPT.replace(
     '             the price, otherwise the group header or badge that governs\n'
     '             it, e.g. \\"$3\\". Must be character-for-character in transcript."',
 )
+# The shared photo prompt predates fixed-dollar discounts. Keep its common
+# transcript contract, but let this vision path name the third, already-rendered
+# item amount without treating '$2 off' as a two-dollar price.
+MENU_PROMPT = MENU_PROMPT.replace(
+    '          "discount_pct": number or null,\n',
+    '          "discount_pct": number or null,\n'
+    '          "amount_off_usd": number or null,\n',
+)
+MENU_PROMPT = MENU_PROMPT.replace(
+    'Reply with ONE JSON object and nothing else. No prose, no code fence.',
+    'For each item, choose exactly one amount field. Use `amount_off_usd` only\n'
+    'when the transcript explicitly says a fixed dollar amount is "off"; a bare\n'
+    'price is `price_usd`, never a discount.\n\n'
+    'Reply with ONE JSON object and nothing else. No prose, no code fence.',
+)
 assert MENU_PROMPT != PROMPT, "photo prompt changed shape; the price-band rule did not land"
 
 CACHE = os.path.join(REPO, "data", "menu_images")
@@ -207,7 +222,8 @@ def items_from(read):
             if not clean:
                 dropped.append(f"{item.get('label')!r}: {why}")
                 continue
-            key = (clean["label"].lower(), clean.get("price_usd"), clean.get("discount_pct"))
+            key = (clean["label"].lower(), clean.get("price_usd"),
+                   clean.get("discount_pct"), clean.get("amount_off_usd"))
             if key in seen:
                 continue
             seen.add(key)
@@ -282,7 +298,8 @@ def main():
         if args.show:
             for it in items:
                 amt = (f"${it['price_usd']:g}" if "price_usd" in it
-                       else f"{it['discount_pct']:g}% off")
+                       else f"{it['discount_pct']:g}% off" if "discount_pct" in it
+                       else f"${it['amount_off_usd']:g} off")
                 print(f"      {amt:>8}  {it['label']}")
         if args.rejects:
             for d in dropped:

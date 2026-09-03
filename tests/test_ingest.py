@@ -168,7 +168,17 @@ class PaValidators(unittest.TestCase):
 
     def test_an_item_with_neither_price_nor_discount_is_rejected(self):
         errs = validate_deal(deal(items=[{"category": "draft", "label": "drafts"}]))
-        self.assertTrue(any("neither a price nor a discount" in e for e in errs))
+        self.assertTrue(any("exactly one price or discount" in e for e in errs))
+
+    def test_a_fixed_dollar_discount_is_the_third_valid_item_amount(self):
+        self.assertEqual(validate_deal(deal(items=[
+            {"category": "wine", "label": "Wine by the Glass", "amount_off_usd": 3.0}
+        ])), [])
+        errs = validate_deal(deal(items=[
+            {"category": "wine", "label": "Wine by the Glass",
+             "price_usd": 8.0, "amount_off_usd": 3.0}
+        ]))
+        self.assertTrue(any("exactly one price or discount" in e for e in errs))
 
     def test_at_most_two_food_combos_a_day(self):
         combo = deal(type="food_combo", windows=[{"dow": 3, "start": "16:00", "end": "18:00"}])
@@ -1461,6 +1471,43 @@ class PriceExtraction(unittest.TestCase):
         self.assertIn("exactly one", why)
         _, why = verify(self.item(price_usd=None), self.QUOTE)
         self.assertIn("exactly one", why)
+
+    def test_a_fixed_dollar_discount_is_kept_only_when_its_evidence_says_off(self):
+        clean, why = verify(
+            {"category": "cocktail", "label": "Craft & Select",
+             "amount_off_usd": 2, "evidence": "Craft & Select — $2 off"},
+            "Happy Hour / Craft & Select — $2 off")
+        self.assertIsNone(why)
+        self.assertEqual(clean, {"category": "cocktail", "label": "Craft & Select",
+                                 "amount_off_usd": 2.0})
+
+        clean, why = verify(
+            {"category": "cocktail", "label": "Craft & Select",
+             "amount_off_usd": 2, "evidence": "Craft & Select — $2"},
+            "Happy Hour / Craft & Select — $2")
+        self.assertIsNone(clean)
+        self.assertIn("OFF discount", why)
+
+    def test_a_price_less_special_stays_refused(self):
+        for label in ("Coronarita", "beer specials", "Featured Cocktail"):
+            clean, why = verify(
+                {"category": "cocktail", "label": label, "evidence": label}, label)
+            self.assertIsNone(clean)
+            self.assertIn("exactly one", why)
+
+    def test_menu_image_items_use_the_same_fixed_dollar_evidence_gate(self):
+        from extract_menu_images import items_from
+
+        items, dropped = items_from({
+            "transcript": "Happy Hour / Craft & Select — $2 off",
+            "deals": [{"type": "happy_hour", "items": [{
+                "category": "cocktail", "label": "Craft & Select",
+                "amount_off_usd": 2, "quote": "Craft & Select — $2 off",
+            }]}],
+        })
+        self.assertEqual(dropped, [])
+        self.assertEqual(items, [{"category": "cocktail", "label": "Craft & Select",
+                                  "amount_off_usd": 2.0}])
 
     def test_an_unknown_category_is_refused(self):
         # Categories drive the food/drink filters, so an invented one would file
