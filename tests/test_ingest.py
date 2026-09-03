@@ -1587,14 +1587,14 @@ class ForbiddenToOneClient(unittest.TestCase):
             b"<html>from urllib</html>")
         with unittest.mock.patch.object(crawl_sites, "urllib_get",
                                         return_value=plain) as ug:
-            body, err = crawl_sites.get(self._session(403), "https://x.test/")
+            body, err, _landed = crawl_sites.get(self._session(403), "https://x.test/")
         ug.assert_called_once()
         self.assertIsNone(err)
         self.assertIn("from urllib", body)
 
     def test_a_200_is_never_refetched(self):
         with unittest.mock.patch.object(crawl_sites, "urllib_get") as ug:
-            body, err = crawl_sites.get(self._session(200), "https://x.test/")
+            body, err, _landed = crawl_sites.get(self._session(200), "https://x.test/")
         ug.assert_not_called()
         self.assertIn("from requests", body)
 
@@ -1603,13 +1603,13 @@ class ForbiddenToOneClient(unittest.TestCase):
         plain = crawl_sites._Plain(200, {"content-type": "text/html"}, b"<p>hi</p>")
         with unittest.mock.patch.object(crawl_sites, "urllib_get",
                                         return_value=plain):
-            body, err = crawl_sites.get(self._session(403), "https://x.test/")
+            body, err, _landed = crawl_sites.get(self._session(403), "https://x.test/")
         self.assertIsNone(err, "content-type lookup must not miss on case")
 
     def test_a_failing_fallback_keeps_the_original_refusal(self):
         with unittest.mock.patch.object(crawl_sites, "urllib_get",
                                         side_effect=OSError("nope")):
-            body, err = crawl_sites.get(self._session(403), "https://x.test/")
+            body, err, _landed = crawl_sites.get(self._session(403), "https://x.test/")
         self.assertIsNone(body)
         self.assertTrue(err.startswith("403"))
 
@@ -2441,6 +2441,84 @@ class AnImageThatNamesItselfTheHappyHour(unittest.TestCase):
         html = ('<img src="/2026/07/Happy-Hour-Specials.png">'
                 '<img src="/2026/07/weekly-specials.png">')
         self.assertEqual(len(menu_images(html, "https://x.example/happy-hour/")), 2)
+
+
+class ARedirectAcrossLocationsIsRefused(unittest.TestCase):
+    """meetatgrain.com/locationsmenus 302s to /newark.
+
+    Grain H2O is in Bear, DE. It was seeded at its own page, followed the
+    index link, landed on NEWARK's page and published Newark's Mon-Fri 3-6pm
+    on its own card -- live on the board. Every downstream gate passed,
+    because the quote really is on the page really fetched. A wrong card is
+    worse than a miss, and this class produces only wrong cards.
+    """
+
+    def setUp(self):
+        self._held = crawl_sites._towns["slugs"]
+        crawl_sites._towns["slugs"] = {"newark", "bear", "king-of-prussia", "media"}
+
+    def tearDown(self):
+        crawl_sites._towns["slugs"] = self._held
+
+    BEAR = "1000 Pulaski Hwy, Bear DE 19701"
+
+    def test_the_redirect_that_made_the_wrong_card(self):
+        self.assertEqual(
+            crawl_sites.landed_in_another_town("https://meetatgrain.com/locationsmenus",
+                                      "https://meetatgrain.com/newark", self.BEAR),
+            "newark")
+
+    def test_the_venues_own_town_is_not_another_town(self):
+        self.assertIsNone(
+            crawl_sites.landed_in_another_town("https://meetatgrain.com/locationsmenus",
+                                      "https://meetatgrain.com/bear", self.BEAR))
+
+    def test_an_honest_redirect_is_not_refused(self):
+        # Most redirects are normalisation, and refusing those would cost the
+        # board far more than the class this guard exists for.
+        for landed in ("https://meetatgrain.com/newark-menu/",
+                       "http://meetatgrain.com/newark/index.html"):
+            self.assertIsNone(
+                crawl_sites.landed_in_another_town("https://meetatgrain.com/newark", landed,
+                                          "1 Main St, Newark DE 19711"), landed)
+        self.assertIsNone(
+            crawl_sites.landed_in_another_town("http://x.com/happy-hour",
+                                      "https://www.x.com/happy-hour/", self.BEAR))
+
+    def test_a_word_that_is_not_a_town_is_left_alone(self):
+        self.assertIsNone(
+            crawl_sites.landed_in_another_town("https://x.com/locations",
+                                      "https://x.com/specials", self.BEAR))
+
+    def test_the_town_still_names_the_page_one_level_up(self):
+        self.assertEqual(
+            crawl_sites.landed_in_another_town(
+                "https://x.com/locations",
+                "https://x.com/locations/newark/happy-hour", self.BEAR),
+            "newark")
+
+    def test_an_asset_path_is_not_a_town_even_when_it_spells_one(self):
+        # 'Media' is a town in this corpus and also half the asset paths on the
+        # web. A wrong refusal costs a real venue its hours, so the town has to
+        # name the PAGE -- the end of the path, not any segment in it.
+        self.assertIsNone(
+            crawl_sites.landed_in_another_town("https://x.com/hh",
+                                      "https://x.com/media/logo-2x.png", self.BEAR))
+
+    def test_a_town_is_read_out_of_any_state_not_only_pennsylvania(self):
+        # The PA-only reader went silent in Delaware -- which is where the bar
+        # this guard protects is.
+        self.assertEqual(crawl_sites.town_slug("520 Kimberton Rd, Phoenixville PA 19460"),
+                         "phoenixville")
+        # The comma before the state is optional and BOTH forms are in the
+        # corpus. Requiring it absent read every Delaware address as townless,
+        # so the guard's vocabulary was empty exactly where it was needed.
+        self.assertEqual(crawl_sites.town_slug(self.BEAR), "bear")
+        self.assertEqual(
+            crawl_sites.town_slug("3006 Summit Harbour Pl, Bear, DE 19701"), "bear")
+        self.assertEqual(crawl_sites.town_slug("1 Rt 1, King of Prussia PA 19406"),
+                         "king-of-prussia")
+        self.assertIsNone(crawl_sites.town_slug(""))
 
 
 class AnImageTheVenueLinkedUnderTheWords(unittest.TestCase):

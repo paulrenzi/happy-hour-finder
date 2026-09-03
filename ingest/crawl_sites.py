@@ -1023,9 +1023,10 @@ def pdf_text(blob):
 class _Plain:
     """The subset of a requests response get() reads, filled in by urllib."""
 
-    def __init__(self, status_code, headers, content):
+    def __init__(self, status_code, headers, content, landed=None):
         self.status_code, self.headers, self.content = status_code, headers, content
         self.encoding = self.apparent_encoding = None
+        self.landed = landed
 
     @property
     def text(self):
@@ -1051,7 +1052,7 @@ def urllib_get(url):
         # to that and the page is discarded as '200 ?' -- a fetch that worked,
         # recorded as a failure.
         headers = {k.lower(): v for k, v in fh.headers.items()}
-        return _Plain(fh.status, headers, fh.read(2_000_000))
+        return _Plain(fh.status, headers, fh.read(2_000_000), fh.geturl())
 
 
 # A page whose HTML holds no page. The Cheesecake Factory publishes its King of
@@ -1128,11 +1129,32 @@ def render_close():
 
 
 def get(session, url):
+    """Fetch a page and say WHERE IT LANDED, not only what came back.
+
+    We recorded the URL requested and never the one served. meetatgrain.com
+    /locationsmenus 302s to /newark, so Grain H2O -- a different bar, in a
+    different town, seeded at its own page -- was credited with Newark's
+    Mon-Fri 3-6pm and published it on the board. Every guard downstream passed,
+    because the quote really is on the page really fetched: the defect is
+    upstream of all of them, in the fact that the page is not the page we asked
+    for and the venue it describes is not the venue we asked about.
+
+    A wrong card is worse than a miss, and this class produces only wrong cards.
+    """
+    def where(resp, attr):
+        # A client that does not say where it landed has told us nothing, and
+        # nothing is the requested URL -- never a guess.
+        got = getattr(resp, attr, None)
+        return got if isinstance(got, str) and got else url
+
     r = session.get(url, timeout=TIMEOUT, headers={"User-Agent": UA},
                     allow_redirects=True)
+    landed = where(r, "url")
     if r.status_code == 403:
         try:
             r = urllib_get(url)
+            # urllib follows redirects too; ask it where it ended up.
+            landed = where(r, "landed")
         except Exception:  # noqa: BLE001 -- keep the original 403 as the answer
             pass
     ctype = r.headers.get("content-type", "")
@@ -1141,15 +1163,15 @@ def get(session, url):
     # same way -- the extractor never learns which one a quote came from.
     if r.status_code == 200 and "pdf" in ctype.lower():
         text = pdf_text(r.content)
-        return ("<pre>" + html_mod.escape(text) + "</pre>", None) if text \
-            else (None, "pdf, no extractable text")
+        return ("<pre>" + html_mod.escape(text) + "</pre>", None, landed) if text \
+            else (None, "pdf, no extractable text", landed)
     if r.status_code != 200 or "html" not in ctype:
-        return None, f"{r.status_code} {ctype.split(';')[0] or '?'}"
+        return None, f"{r.status_code} {ctype.split(';')[0] or '?'}", landed
     # requests falls back to latin-1 when a page declares no charset, which
     # turns every en-dash in '5-7PM' into a replacement character.
     if "charset" not in ctype.lower():
         r.encoding = r.apparent_encoding or "utf-8"
-    return r.text[:600_000], None
+    return r.text[:600_000], None, landed
 
 
 def registrable(netloc):
@@ -2131,6 +2153,77 @@ CANON_RE = re.compile(
     r'<link[^>]+rel=["\']canonical["\'][^>]*href=["\']([^"\']+)["\']', re.I)
 
 
+# Every town the corpus knows, as URL slugs, filled in by main() off the
+# licence addresses. It is what makes "newark" in a path a TOWN rather than a
+# word -- see landed_in_another_town().
+_towns = {"slugs": set()}
+
+# '..., Phoenixville PA 19460' AND '..., Bear, DE 19701'. The comma before the
+# state is optional and both forms are in the corpus -- requiring it absent read
+# every Delaware address as townless, which is where the bar this guard exists
+# for lives. A guard whose vocabulary is empty is not a guard.
+TOWN_IN_ADDRESS_RE = re.compile(r",\s*([A-Za-z][A-Za-z .']*?),?\s+[A-Z]{2}\s+\d{5}")
+
+# What a location page is called after the town: /locations/newark/happy-hour.
+# Only these are stepped over when looking for the town in a landing path --
+# every other segment is ignored, because 'media' is both a town in this corpus
+# and half the asset paths on the web, and a refusal has to be about a page.
+PAGE_WORD_RE = re.compile(
+    r"^(happy-?hours?|hours?|menus?|specials?|drinks?|food|home|index|"
+    r"locations?|about|contact)$", re.I)
+
+
+def town_slug(address):
+    """'520 Kimberton Rd, Phoenixville PA 19460' -> 'phoenixville'.
+
+    Any state, not just PA: the corpus crossed into Delaware and the PA-only
+    reader in town_re() went silent there rather than wrong, which is why the
+    venue whose card this guard protects was in Bear, DE.
+    """
+    m = TOWN_IN_ADDRESS_RE.search(address or "")
+    if not m:
+        return None
+    return re.sub(r"[^a-z0-9]+", "-", m.group(1).strip().lower()).strip("-") or None
+
+
+def landed_in_another_town(requested, landed, address):
+    """The redirect that fetched a different bar's page, in a different town.
+
+    meetatgrain.com/locationsmenus 302s to /newark. Grain H2O is in Bear, DE,
+    was seeded at its own page, and got credited with NEWARK's Mon-Fri 3-6pm --
+    live on the board, and invisible to every gate we have, because the quote
+    really is on the page really fetched. We recorded the URL REQUESTED and
+    never the one SERVED, so nothing downstream could know the page had moved.
+
+    Three things have to be true before a page is refused, because most
+    redirects are honest (http->https, a trailing slash, a renamed page):
+
+      1. the server sent us to a DIFFERENT PATH, not a normalised one;
+      2. a path segment of where we landed is a town this corpus knows -- which
+         is what tells "newark" from an ordinary word;
+      3. that town is not this venue's own.
+
+    Returns the town we were sent to, or None.
+    """
+    def path(u):
+        p = urllib.parse.urlsplit(u).path.lower().rstrip("/")
+        return re.sub(r"/(index|default)\.(html?|php)$", "", p)
+
+    if not isinstance(landed, str) or path(landed) == path(requested):
+        return None
+    ours = town_slug(address)
+    # The town names the PAGE, so it is read off the end of the path -- not any
+    # segment anywhere in it. 'media' is a town in this corpus and also half the
+    # asset paths on the web, and a wrong refusal costs a real venue its hours.
+    segs = [s for s in re.split(r"[/_]+", path(landed)) if s]
+    while segs and PAGE_WORD_RE.match(segs[-1]):
+        segs.pop()
+    if not segs:
+        return None
+    seg = segs[-1].strip("-")
+    return seg if seg and seg != ours and seg in _towns["slugs"] else None
+
+
 def wrong_location(html, url):
     """The other town's page, served at ours.
 
@@ -2335,7 +2428,7 @@ def crawl_one(session, venue, robots):
             fetched += 1
         recovered_by_render = False
         try:
-            html, err = get(session, url)
+            html, err, landed = get(session, url)
         except Exception as e:  # noqa: BLE001 -- one dead site must not end the run
             pages.append({"url": url, "result": f"error: {type(e).__name__}"})
             continue
@@ -2366,6 +2459,14 @@ def crawl_one(session, venue, robots):
         if elsewhere:
             pages.append({"url": url,
                           "result": f"refused: canonical says {elsewhere}, not us"})
+            continue
+        # ...and the same question asked of the REDIRECT rather than the
+        # canonical tag. A chain's /locations index is not a page, it is a
+        # 302 to ONE branch, and the branch it picks is not ours.
+        sent_to = landed_in_another_town(url, landed, venue.get("address"))
+        if sent_to:
+            pages.append({"url": url, "landed": landed,
+                          "result": f"refused: redirected to {sent_to}, not us"})
             continue
         # The venue's own title for the page is what unlocks the looser price
         # rules -- the same test used a few lines below to decide a menu PDF is
@@ -2457,6 +2558,11 @@ def crawl_one(session, venue, robots):
             result = f"ok, {len(found)} quote(s)"
         pages.append({"url": url, "result": result,
                       "lines": len(lines),
+                      # Where we actually READ, whenever it is not where we
+                      # asked. Recording only the URL requested is what let a
+                      # redirect publish another branch's hour with a source
+                      # line naming a page that never answered.
+                      **({"landed": landed} if landed and landed != url else {}),
                       **({"shell": True, "embedded": len(embedded)} if shell else {}),
                       "hh": says_hh})
         # Every page that turns out to be about a happy hour is kept in full.
@@ -2623,6 +2729,11 @@ def main():
     import requests
 
     sites = frontier()
+    # The town vocabulary, off the licence addresses -- what tells a "newark"
+    # in a redirect's path from an ordinary word. Built from the WHOLE corpus,
+    # never the scoped subset, or a --lids run would know fewer towns than a
+    # --zone one and refuse fewer wrong pages.
+    _towns["slugs"] = {t for t in (town_slug(v.get("address")) for v in sites.values()) if t}
     out = json.load(open(OUT, encoding="utf-8")) if os.path.exists(OUT) else {}
     session = requests.Session()
     robots, stats = {}, collections.Counter()
