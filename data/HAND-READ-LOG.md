@@ -210,3 +210,4 @@ ingest/discover_places.py --execute (66 Places lookups, within free Enterprise t
 - wayne_radnor | Amada Radnor (115054) | SHIPPED | menu was in a linked PDF (uploads/114704AMAHappyHourMenu0726-nocrop.pdf), rendered to PNG w/ fitz + Read: 10 items (sangria, cocktails, vino, draft, tapas), Sun-Fri 4:30-6:30pm | 2026-09-03
 - wayne_radnor | Garrett Hill Ale House (101476) | NO_CLOCK_TIME | genuinely thin -- only "$2 off craft beers" Wed-Fri 4-7pm, no other items on page | 2026-09-03
 - wayne_radnor | Exit 13 Gastrobar (109849) | NO_CLOCK_TIME | genuinely thin -- only "$1 Merasheen Bay Oysters" Tue, no other prices anywhere on site incl. /drinks | 2026-09-03
+- wayne_radnor | 118 North (105248) | RENAME + SHIPPED | venue_base.json had it as "110 North Wayne" (stale PLCB LLC name); Paul confirmed it's now 118 North, site confirms -- renamed, added website, 10-item happy hour menu (Wed-Thu 5-6pm, Fri-Sun 4-6pm) | 2026-09-03

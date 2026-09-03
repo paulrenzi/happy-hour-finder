@@ -5936,5 +5936,111 @@
         "evidence": "Mixtos - Picada 6, Marinated Olives and Fried Marcona Almonds"
       }
     ]
+  },
+  {
+    "lid": "105248",
+    "url": "https://118northwayne.com/menus#happyhour",
+    "read_on": "2026-09-03",
+    "heading": "Happy Hour",
+    "clock_quote": "Wednesday-Thursday 5PM-6PM, Friday-Sunday 4PM-6PM",
+    "quote": "SPROUTS // 10. ROASTED NUTS // 10. Coconut Shrimp // 10. BBQ Fries // 10. Burger Sliders // 10. OLD FASHIONED // 8. COSMO // 8. DRAFTS // 6. RED WINE // 8. WHITE WINE // 8. Wednesday-Thursday 5PM-6PM, Friday-Sunday 4PM-6PM.",
+    "days": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "start": "16:00",
+    "end": "18:00",
+    "windows": [
+      {
+        "dow": 3,
+        "start": "17:00",
+        "end": "18:00"
+      },
+      {
+        "dow": 4,
+        "start": "17:00",
+        "end": "18:00"
+      },
+      {
+        "dow": 5,
+        "start": "16:00",
+        "end": "18:00"
+      },
+      {
+        "dow": 6,
+        "start": "16:00",
+        "end": "18:00"
+      },
+      {
+        "dow": 7,
+        "start": "16:00",
+        "end": "18:00"
+      }
+    ],
+    "items": [
+      {
+        "category": "food",
+        "label": "Sprouts",
+        "price_usd": 10.0,
+        "evidence": "SPROUTS // 10, Honey chili crisp, peanuts, cilantro"
+      },
+      {
+        "category": "food",
+        "label": "Roasted Nuts",
+        "price_usd": 10.0,
+        "evidence": "ROASTED NUTS // 10, almond, walnut, peanuts, rosemary"
+      },
+      {
+        "category": "food",
+        "label": "Coconut Shrimp",
+        "price_usd": 10.0,
+        "evidence": "Coconut Shrimp // 10, ranch, lime"
+      },
+      {
+        "category": "food",
+        "label": "BBQ Fries",
+        "price_usd": 10.0,
+        "evidence": "BBQ Fries // 10, smoked cheddar cheese sauce, smoked pork, root beer bbq sauce"
+      },
+      {
+        "category": "food",
+        "label": "Burger Sliders",
+        "price_usd": 10.0,
+        "evidence": "Burger Sliders // 10, 2 sliders, pickle, american"
+      },
+      {
+        "category": "cocktail",
+        "label": "Old Fashioned",
+        "price_usd": 8.0,
+        "evidence": "OLD FASHIONED // 8"
+      },
+      {
+        "category": "cocktail",
+        "label": "Cosmo",
+        "price_usd": 8.0,
+        "evidence": "COSMO // 8"
+      },
+      {
+        "category": "draft",
+        "label": "Drafts",
+        "price_usd": 6.0,
+        "evidence": "DRAFTS // 6"
+      },
+      {
+        "category": "wine",
+        "label": "Red Wine",
+        "price_usd": 8.0,
+        "evidence": "RED WINE // 8"
+      },
+      {
+        "category": "wine",
+        "label": "White Wine",
+        "price_usd": 8.0,
+        "evidence": "WHITE WINE // 8"
+      }
+    ]
   }
 ]
