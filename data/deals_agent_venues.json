@@ -1595,6 +1595,79 @@
    "zone_id": "west_chester"
   },
   {
+   "address": "738 Bethlehem Pk, Flourtown PA 19031",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "$10 Food Menu",
+       "label": "Happy Hour Food Menu",
+       "price_usd": 10
+      },
+      {
+       "category": "draft",
+       "evidence": "$6 Premium Drafts",
+       "label": "Premium Drafts",
+       "price_usd": 6
+      },
+      {
+       "category": "wine",
+       "evidence": "$7 House Wines",
+       "label": "House Wines",
+       "price_usd": 7
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "$7 Stateside Cans",
+       "label": "Stateside Cans",
+       "price_usd": 7
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$9 Aperol Spritz",
+       "label": "Aperol Spritz",
+       "price_usd": 9
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "Happy Hour at the Bar-Top! 03:30 PM - 05:30 PM (Wed/Thu/Fri)",
+      "heading": "Happy Hour at the Bar-Top",
+      "kind": "venue_site",
+      "quote": "$10 Food Menu | $6 Premium Drafts | $7 House Wines | $7 Stateside Cans | $9 Aperol Spritz",
+      "url": "https://www.scoogis.com/flourtown-scoogis-italian-kitchen-and-bar-happy-hours-specials"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 3,
+       "end": "17:30",
+       "start": "15:30"
+      },
+      {
+       "dow": 4,
+       "end": "17:30",
+       "start": "15:30"
+      },
+      {
+       "dow": 5,
+       "end": "17:30",
+       "start": "15:30"
+      }
+     ]
+    }
+   ],
+   "id": "27076",
+   "lid": "27076",
+   "name": "Scoogi's Italian Kitchen & Bar",
+   "plcb_name": "SCOOGI'S",
+   "website": "https://www.scoogis.com/",
+   "zone_id": "blue_bell_plymouth_meeting"
+  },
+  {
    "address": "1901 Old West Chester Pk, Havertown PA 19083",
    "deals": [
     {
@@ -1682,6 +1755,93 @@
    "plcb_name": "BARNABY'S OF AMERICA",
    "website": "https://www.barnabysrestaurantandpub.com/havertown",
    "zone_id": "havertown"
+  },
+  {
+   "address": "863 Montgomery Ave, Narberth PA 19072",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "$6 Daily Appetizer Specials",
+       "label": "Daily Appetizer Specials",
+       "price_usd": 6
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$6 House Martinis/Manhattans/Cosmos",
+       "label": "House Martinis/Manhattans/Cosmos",
+       "price_usd": 6
+      },
+      {
+       "category": "wine",
+       "evidence": "$6 House Wine",
+       "label": "House Wine",
+       "price_usd": 6
+      },
+      {
+       "category": "draft",
+       "evidence": "$4 Lager Drafts",
+       "label": "Lager Drafts",
+       "price_usd": 4
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "Happy Hour Every Day 3:30 pm - 5:30 pm",
+      "heading": "Happy Hours - Two Times the Happy Every Day!",
+      "kind": "venue_site",
+      "quote": "$6 Daily Appetizer Specials (available 3:30pm-5:30pm only) $6 House Martinis/Manhattans/Cosmos $6 House Wine $6 House Mixed Drinks $4 Lager Drafts",
+      "url": "https://pubofpennvalley.com/menu/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "17:30",
+       "start": "15:30"
+      },
+      {
+       "dow": 2,
+       "end": "17:30",
+       "start": "15:30"
+      },
+      {
+       "dow": 3,
+       "end": "17:30",
+       "start": "15:30"
+      },
+      {
+       "dow": 4,
+       "end": "17:30",
+       "start": "15:30"
+      },
+      {
+       "dow": 5,
+       "end": "17:30",
+       "start": "15:30"
+      },
+      {
+       "dow": 6,
+       "end": "17:30",
+       "start": "15:30"
+      },
+      {
+       "dow": 7,
+       "end": "17:30",
+       "start": "15:30"
+      }
+     ]
+    }
+   ],
+   "id": "43721",
+   "lid": "43721",
+   "name": "The Pub of Penn Valley",
+   "plcb_name": "THE PUB OF PENN VALLEY",
+   "website": "https://pubofpennvalley.com/",
+   "zone_id": "ardmore_bryn_mawr"
   },
   {
    "address": "124 W Gay St, West Chester PA 19380",
@@ -2805,6 +2965,81 @@
    "plcb_name": "PJ WHELIHANS",
    "website": "https://locations.pjspub.com/pa/west-chester/1347-wilmington-pike",
    "zone_id": "west_chester"
+  },
+  {
+   "address": "601 Skippack Pk, Blue Bell PA 19422",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "$5 - Miller Lite & Stella Drafts",
+       "label": "Miller Lite & Stella Drafts",
+       "price_usd": 5
+      },
+      {
+       "category": "wine",
+       "evidence": "$5 ... Glasses of House Red or White Wine",
+       "label": "House Red or White Wine",
+       "price_usd": 5
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "Happy Hour - Drink and Food Specials Available at the Bar Only! 04:30 PM - 06:30 PM",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "$5 - Miller Lite & Stella Drafts. Glasses of House Red or White Wine. Stateside Seltzers/Teas. Kiki Vodka & Mixer*",
+      "url": "https://bluebellinn.com/blue-bell-blue-bell-blue-bell-inn-happy-hours-specials"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:30",
+       "start": "16:30"
+      },
+      {
+       "dow": 2,
+       "end": "18:30",
+       "start": "16:30"
+      },
+      {
+       "dow": 3,
+       "end": "18:30",
+       "start": "16:30"
+      },
+      {
+       "dow": 4,
+       "end": "18:30",
+       "start": "16:30"
+      },
+      {
+       "dow": 5,
+       "end": "18:30",
+       "start": "16:30"
+      },
+      {
+       "dow": 6,
+       "end": "18:30",
+       "start": "16:30"
+      },
+      {
+       "dow": 7,
+       "end": "18:30",
+       "start": "16:30"
+      }
+     ]
+    }
+   ],
+   "id": "67233",
+   "lid": "67233",
+   "name": "Blue Bell Inn",
+   "plcb_name": "1743 ASSOCIATES LLC",
+   "website": "https://bluebellinn.com/",
+   "zone_id": "blue_bell_plymouth_meeting"
   },
   {
    "address": "4410B Main St, Philadelphia PA 19127",

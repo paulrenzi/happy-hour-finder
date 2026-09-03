@@ -94,3 +94,12 @@ re-attempt these unless the venue's own site changes.)
 - conshohocken | Coyote Crossing | NO_CLOCK_TIME | window Mon-Fri 4-6pm found, no absolute item price in reachable pages | 2026-09-04
 - conshohocken | The StoneRose | NO_CLOCK_TIME | HH mentioned in menu nav only, no window/price | 2026-09-04
 - conshohocken | Jasper's Backyard | NO_CLOCK_TIME | Weekend HH window Sat/Sun 3-5pm found, but no price explicitly tied to HH (regular menu prices only) | 2026-09-04
+- blue_bell_plymouth_meeting | Blue Bell Inn (67233) | SHIPPED | | 2026-09-04
+- blue_bell_plymouth_meeting | Scoogi's Italian Kitchen & Bar (27076) | SHIPPED | | 2026-09-04
+- ardmore_bryn_mawr | The Pub of Penn Valley (43721) | SHIPPED | | 2026-09-04
+- blue_bell_plymouth_meeting | Andy's Diner & Pub/Brittingham's/McCloskey's Tavern | NO_CLOCK_TIME | empty sweeps | 2026-09-04
+- blue_bell_plymouth_meeting | Whitpain Tavern | NO_CLOCK_TIME | daily specials found but no explicit HH clock window tied to prices | 2026-09-04
+- blue_bell_plymouth_meeting | The Phil's Tavern | NO_CLOCK_TIME | HH prices found but no clock window anywhere on site | 2026-09-04
+- blue_bell_plymouth_meeting | El Sarape | NO_CLOCK_TIME | HH menu page exists but no window/price text reachable | 2026-09-04
+- ardmore_bryn_mawr | McShea's/The Grog/Great American Pub/Tired Hands | UNREACHABLE/NO_CLOCK_TIME | connection errors, empty sweeps, or rate-limited | 2026-09-04
+- ardmore_bryn_mawr | Gullifty's | NO_CLOCK_TIME | window Mon-Fri 3:30-6:00 found but pricing is "20% off" relative, not absolute post-discount price | 2026-09-04

@@ -1489,45 +1489,45 @@
   ]
  },
  "43721": {
-  "name": "THE PUB OF PENN VALLEY",
+  "name": "The Pub of Penn Valley",
   "deals": [
    {
     "type": "happy_hour",
     "windows": [
      {
       "dow": 1,
-      "start": "15:30",
-      "end": "17:30"
+      "end": "17:30",
+      "start": "15:30"
      },
      {
       "dow": 2,
-      "start": "15:30",
-      "end": "17:30"
+      "end": "17:30",
+      "start": "15:30"
      },
      {
       "dow": 3,
-      "start": "15:30",
-      "end": "17:30"
+      "end": "17:30",
+      "start": "15:30"
      },
      {
       "dow": 4,
-      "start": "15:30",
-      "end": "17:30"
+      "end": "17:30",
+      "start": "15:30"
      },
      {
       "dow": 5,
-      "start": "15:30",
-      "end": "17:30"
+      "end": "17:30",
+      "start": "15:30"
      },
      {
       "dow": 6,
-      "start": "15:30",
-      "end": "17:30"
+      "end": "17:30",
+      "start": "15:30"
      },
      {
       "dow": 7,
-      "start": "15:30",
-      "end": "17:30"
+      "end": "17:30",
+      "start": "15:30"
      }
     ],
     "source": {
@@ -2055,6 +2055,54 @@
    }
   ]
  },
+ "67233": {
+  "name": "Blue Bell Inn",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 2,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 3,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 4,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 5,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 6,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 7,
+      "end": "18:30",
+      "start": "16:30"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "133440": {
   "name": "Cantina Feliz",
   "deals": [
@@ -2252,39 +2300,19 @@
     "type": "happy_hour",
     "windows": [
      {
-      "dow": 1,
-      "start": "15:30",
-      "end": "17:30"
-     },
-     {
-      "dow": 2,
-      "start": "15:30",
-      "end": "17:30"
-     },
-     {
       "dow": 3,
-      "start": "15:30",
-      "end": "17:30"
+      "end": "17:30",
+      "start": "15:30"
      },
      {
       "dow": 4,
-      "start": "15:30",
-      "end": "17:30"
+      "end": "17:30",
+      "start": "15:30"
      },
      {
       "dow": 5,
-      "start": "15:30",
-      "end": "17:30"
-     },
-     {
-      "dow": 6,
-      "start": "15:30",
-      "end": "17:30"
-     },
-     {
-      "dow": 7,
-      "start": "15:30",
-      "end": "17:30"
+      "end": "17:30",
+      "start": "15:30"
      }
     ],
     "source": {

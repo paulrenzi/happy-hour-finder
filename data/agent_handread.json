@@ -4514,5 +4514,156 @@
         "evidence": "$9 Aperol Spritzers"
       }
     ]
+  },
+  {
+    "lid": "67233",
+    "url": "https://bluebellinn.com/blue-bell-blue-bell-blue-bell-inn-happy-hours-specials",
+    "read_on": "2026-09-04",
+    "heading": "Happy Hour",
+    "clock_quote": "Happy Hour - Drink and Food Specials Available at the Bar Only! 04:30 PM - 06:30 PM",
+    "quote": "$5 - Miller Lite & Stella Drafts. Glasses of House Red or White Wine. Stateside Seltzers/Teas. Kiki Vodka & Mixer*",
+    "days": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "start": "16:30",
+    "end": "18:30",
+    "items": [
+      {
+        "category": "draft",
+        "label": "Miller Lite & Stella Drafts",
+        "price_usd": 5,
+        "evidence": "$5 - Miller Lite & Stella Drafts"
+      },
+      {
+        "category": "wine",
+        "label": "House Red or White Wine",
+        "price_usd": 5,
+        "evidence": "$5 ... Glasses of House Red or White Wine"
+      }
+    ]
+  },
+  {
+    "lid": "27076",
+    "url": "https://www.scoogis.com/flourtown-scoogis-italian-kitchen-and-bar-happy-hours-specials",
+    "read_on": "2026-09-04",
+    "heading": "Happy Hour at the Bar-Top",
+    "clock_quote": "Happy Hour at the Bar-Top! 03:30 PM - 05:30 PM (Wed/Thu/Fri)",
+    "quote": "$10 Food Menu | $6 Premium Drafts | $7 House Wines | $7 Stateside Cans | $9 Aperol Spritz",
+    "days": [
+      3,
+      4,
+      5
+    ],
+    "start": "15:30",
+    "end": "17:30",
+    "items": [
+      {
+        "category": "food",
+        "label": "Happy Hour Food Menu",
+        "price_usd": 10,
+        "evidence": "$10 Food Menu"
+      },
+      {
+        "category": "draft",
+        "label": "Premium Drafts",
+        "price_usd": 6,
+        "evidence": "$6 Premium Drafts"
+      },
+      {
+        "category": "wine",
+        "label": "House Wines",
+        "price_usd": 7,
+        "evidence": "$7 House Wines"
+      },
+      {
+        "category": "bottle_can",
+        "label": "Stateside Cans",
+        "price_usd": 7,
+        "evidence": "$7 Stateside Cans"
+      },
+      {
+        "category": "cocktail",
+        "label": "Aperol Spritz",
+        "price_usd": 9,
+        "evidence": "$9 Aperol Spritz"
+      }
+    ]
+  },
+  {
+    "lid": "43721",
+    "url": "https://pubofpennvalley.com/menu/",
+    "read_on": "2026-09-04",
+    "heading": "Happy Hours - Two Times the Happy Every Day!",
+    "clock_quote": "Happy Hour Every Day 3:30 pm - 5:30 pm",
+    "quote": "$6 Daily Appetizer Specials (available 3:30pm-5:30pm only) $6 House Martinis/Manhattans/Cosmos $6 House Wine $6 House Mixed Drinks $4 Lager Drafts",
+    "windows": [
+      {
+        "dow": 1,
+        "start": "15:30",
+        "end": "17:30"
+      },
+      {
+        "dow": 2,
+        "start": "15:30",
+        "end": "17:30"
+      },
+      {
+        "dow": 3,
+        "start": "15:30",
+        "end": "17:30"
+      },
+      {
+        "dow": 4,
+        "start": "15:30",
+        "end": "17:30"
+      },
+      {
+        "dow": 5,
+        "start": "15:30",
+        "end": "17:30"
+      },
+      {
+        "dow": 6,
+        "start": "15:30",
+        "end": "17:30"
+      },
+      {
+        "dow": 7,
+        "start": "15:30",
+        "end": "17:30"
+      }
+    ],
+    "items": [
+      {
+        "category": "food",
+        "label": "Daily Appetizer Specials",
+        "price_usd": 6,
+        "evidence": "$6 Daily Appetizer Specials"
+      },
+      {
+        "category": "cocktail",
+        "label": "House Martinis/Manhattans/Cosmos",
+        "price_usd": 6,
+        "evidence": "$6 House Martinis/Manhattans/Cosmos"
+      },
+      {
+        "category": "wine",
+        "label": "House Wine",
+        "price_usd": 6,
+        "evidence": "$6 House Wine"
+      },
+      {
+        "category": "draft",
+        "label": "Lager Drafts",
+        "price_usd": 4,
+        "evidence": "$4 Lager Drafts"
+      }
+    ]
   }
 ]
