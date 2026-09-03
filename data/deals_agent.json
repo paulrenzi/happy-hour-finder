@@ -1,4 +1,83 @@
 {
+ "DE23baa43531": [
+  {
+   "category": "cocktail",
+   "label": "COCKTAILS",
+   "price_usd": 5.0
+  },
+  {
+   "category": "draft",
+   "label": "BEER",
+   "price_usd": 5.0
+  },
+  {
+   "category": "wine",
+   "label": "WINE",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "BITES",
+   "price_usd": 5.0
+  }
+ ],
+ "DE3b23cb5840": [
+  {
+   "category": "food",
+   "label": "Nashville Salsa",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Peachy Boneless Chicken Tortilla Salad \"appetizer portion\"",
+   "price_usd": 12.0
+  },
+  {
+   "category": "food",
+   "label": "Buffalo Chicken Dip Stuffed Pretzels",
+   "price_usd": 12.0
+  },
+  {
+   "category": "food",
+   "label": "Nashville Hot Fired Chicken Caprese Skewers",
+   "price_usd": 12.0
+  },
+  {
+   "category": "food",
+   "label": "Bacon Jammer Sliders (2)",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "K.P. Meatloaf Sliders (2)",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Loaded Totts",
+   "price_usd": 11.0
+  },
+  {
+   "category": "food",
+   "label": "Southern Mac & Cheese Balls (2)",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Beer Battered Fish Tacos (3)",
+   "price_usd": 11.0
+  },
+  {
+   "category": "food",
+   "label": "Fried Pizza Dough Balls",
+   "price_usd": 11.0
+  },
+  {
+   "category": "well",
+   "label": "House rail drinks",
+   "price_usd": 5.0
+  }
+ ],
  "DE4798b4126a": [
   {
    "category": "food",
@@ -49,6 +128,13 @@
    "category": "cocktail",
    "label": "Lefty's Famous Crushes and Signature Cocktails",
    "price_usd": 9.0
+  }
+ ],
+ "DE4bfeada154": [
+  {
+   "category": "cocktail",
+   "label": "premium cocktails",
+   "price_usd": 5.0
   }
  ],
  "DE6779bbc094": [
@@ -181,6 +267,319 @@
    "category": "bottle_can",
    "label": "Bucket — Sun Cruiser Pink Lemonade",
    "price_usd": 25.0
+  }
+ ],
+ "DE7c3e84d920": [
+  {
+   "category": "cocktail",
+   "label": "Double Black Diamond® Martini",
+   "price_usd": 7.95
+  },
+  {
+   "category": "cocktail",
+   "label": "Classic Cocktails",
+   "price_usd": 7.95
+  },
+  {
+   "category": "wine",
+   "label": "Select Glasses of Wine",
+   "price_usd": 6.0
+  },
+  {
+   "category": "well",
+   "label": "Well Drinks",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "Prime Rib Sliders",
+   "price_usd": 11.95
+  },
+  {
+   "category": "food",
+   "label": "Crispy Cauliflower",
+   "price_usd": 5.5
+  },
+  {
+   "category": "food",
+   "label": "Roasted Garlic Parmesan Fries",
+   "price_usd": 6.75
+  },
+  {
+   "category": "food",
+   "label": "Chicken Chile Nachos",
+   "price_usd": 6.8
+  },
+  {
+   "category": "food",
+   "label": "Fired Up Shrimp",
+   "price_usd": 9.95
+  },
+  {
+   "category": "food",
+   "label": "Beef Sliders",
+   "price_usd": 6.95
+  },
+  {
+   "category": "food",
+   "label": "Steak Tacos*",
+   "price_usd": 10.5
+  }
+ ],
+ "DEe2a8eafc2f": [
+  {
+   "category": "cocktail",
+   "label": "Pink Lotus Cosmo",
+   "price_usd": 8.99
+  },
+  {
+   "category": "cocktail",
+   "label": "Zen Margarita",
+   "price_usd": 8.99
+  },
+  {
+   "category": "well",
+   "label": "Select well drinks",
+   "price_usd": 8.99
+  },
+  {
+   "category": "bottle_can",
+   "label": "Ha-Chi 5251 Pilsner",
+   "price_usd": 5.99
+  },
+  {
+   "category": "draft",
+   "label": "Domestics on draft, ask about our selections",
+   "price_usd": 5.99
+  },
+  {
+   "category": "wine",
+   "label": "14 Hands Merlot",
+   "price_usd": 6.99
+  },
+  {
+   "category": "wine",
+   "label": "14 Hands Chardonnay",
+   "price_usd": 6.99
+  },
+  {
+   "category": "food",
+   "discount_pct": 50.0,
+   "label": "Chang's Lettuce Wraps, half order chicken or veggie"
+  },
+  {
+   "category": "food",
+   "discount_pct": 50.0,
+   "label": "Ribs, slow-braised pork ribs, 3 ct, BBQ or Northern Style"
+  },
+  {
+   "category": "food",
+   "discount_pct": 50.0,
+   "label": "Crab Wontons, 3 ct"
+  },
+  {
+   "category": "food",
+   "discount_pct": 50.0,
+   "label": "Dumplings, pan-fried or steamed, 3 ct, pork or shrimp"
+  }
+ ],
+ "DEf5399c0828": [
+  {
+   "category": "wine",
+   "label": "All wines",
+   "price_usd": 6.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Lavender Marg-Tini",
+   "price_usd": 8.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Tequila Sunrise",
+   "price_usd": 7.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Bahama Mama",
+   "price_usd": 7.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Mojitos",
+   "price_usd": 8.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Daquiris",
+   "price_usd": 7.0
+  },
+  {
+   "category": "shot",
+   "label": "Lemon Drop Shot",
+   "price_usd": 7.0
+  },
+  {
+   "category": "shot",
+   "label": "Mexican Green Tea Shot",
+   "price_usd": 6.0
+  },
+  {
+   "category": "shot",
+   "label": "Mexican Candy Shot",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "Empanadas -- two empanadas, chicken or beef",
+   "price_usd": 6.99
+  },
+  {
+   "category": "food",
+   "label": "Mini Nachos Supreme",
+   "price_usd": 7.99
+  },
+  {
+   "category": "food",
+   "label": "Wings (4), BBQ or Buffalo",
+   "price_usd": 6.99
+  },
+  {
+   "category": "food",
+   "label": "Quesadilla, grilled chicken or steak",
+   "price_usd": 5.99
+  },
+  {
+   "category": "food",
+   "label": "Birria Tacos",
+   "price_usd": 10.25
+  },
+  {
+   "category": "food",
+   "label": "Taquitos Mex",
+   "price_usd": 11.0
+  }
+ ],
+ "DEf53c6ca067": [
+  {
+   "category": "cocktail",
+   "label": "CLASSIC MARTINI",
+   "price_usd": 7.0
+  },
+  {
+   "category": "cocktail",
+   "label": "POTSTICKERS RUMTINI",
+   "price_usd": 7.0
+  },
+  {
+   "category": "cocktail",
+   "label": "MANGOTINI",
+   "price_usd": 7.0
+  },
+  {
+   "category": "cocktail",
+   "label": "RASPBERRY LEMONADE",
+   "price_usd": 7.0
+  },
+  {
+   "category": "cocktail",
+   "label": "ALTOS PERFECT MARGARITA",
+   "price_usd": 7.0
+  },
+  {
+   "category": "cocktail",
+   "label": "PINKTINI",
+   "price_usd": 7.0
+  },
+  {
+   "category": "cocktail",
+   "label": "HAVANA PIÑA COLADA",
+   "price_usd": 7.0
+  },
+  {
+   "category": "wine",
+   "label": "SAKE CARAFE - Large 11oz. Gekkeikan Sake carafe served warm",
+   "price_usd": 7.25
+  },
+  {
+   "category": "well",
+   "label": "House Cocktails - Tequila, Vodka, Rum, or Gin. Add mixer",
+   "price_usd": 5.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Cosmopolitans - CLASSIC, Absolut or Pinnacle",
+   "price_usd": 7.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Mojitos - CLASSIC",
+   "price_usd": 5.0
+  },
+  {
+   "category": "cocktail",
+   "label": "FLAVORED MOJITOS",
+   "price_usd": 5.0
+  },
+  {
+   "category": "draft",
+   "label": "YUENGLING",
+   "price_usd": 4.25
+  },
+  {
+   "category": "draft",
+   "label": "BLUE MOON",
+   "price_usd": 4.25
+  },
+  {
+   "category": "draft",
+   "label": "MILLER LITE",
+   "price_usd": 4.25
+  },
+  {
+   "category": "draft",
+   "label": "SAPPORO",
+   "price_usd": 5.25
+  },
+  {
+   "category": "draft",
+   "label": "DOGFISH HEAD (60 MINUTE IPA)",
+   "price_usd": 5.5
+  },
+  {
+   "category": "draft",
+   "label": "CRAFT BEER",
+   "price_usd": 5.5
+  },
+  {
+   "category": "wine",
+   "label": "BLACKSTONE PINOT GRIGIO",
+   "price_usd": 6.0
+  },
+  {
+   "category": "wine",
+   "label": "BLACKSTONE CHARDONNAY",
+   "price_usd": 6.0
+  },
+  {
+   "category": "wine",
+   "label": "HOB NOB PINOT NOIR",
+   "price_usd": 6.0
+  },
+  {
+   "category": "wine",
+   "label": "BLACKSTONE CABERNET SAUVIGNON",
+   "price_usd": 6.0
+  },
+  {
+   "category": "wine",
+   "label": "NATURA MALBEC",
+   "price_usd": 6.0
+  },
+  {
+   "category": "wine",
+   "label": "7 MOONS RED BLEND",
+   "price_usd": 6.0
   }
  ]
 }
