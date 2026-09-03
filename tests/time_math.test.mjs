@@ -12,7 +12,7 @@ import {
   dowOf, mins, fmtClock, fmtMins, itemParts, haversineMiles, driveMinutes, fmtMiles,
   dealValue, cheapestPrice, FILTERS, windowFor, nextOccurrence, groupFor, GROUP,
   buildFeed, summarizeWindows, usableMinutes, ageDays, effectiveConfidence,
-  GROUP_LABEL, score, dealKey, applyConfirmations,
+  GROUP_LABEL, score, dealKey, applyConfirmations, DAY_BAND,
 } from "../web/lib.js";
 
 const FRI_5PM = new Date(2026, 6, 31, 17, 0);
@@ -289,6 +289,95 @@ test("a venue we cannot place does not outrank one we can", () => {
     origin: { lat: 40.089, lng: -75.396 },
   });
   assert.equal(rows[0].v.id, "placed");
+});
+
+/* THE "TOMORROW" HEADER, PRINTED TWENTY TIMES.
+
+   The board starts a new section whenever the label changes, and the label is
+   the row's day. So the ORDER has to put a day's rows together -- otherwise one
+   Monday row landing between two Saturday ones prints "Tomorrow" on both sides
+   of it, and a week of rows shredded the headers into twenty of them.
+
+   The day band existed in exactly one of four paths through score(): "soonest"
+   WITH a location. Every reader who had not granted location, and every reader
+   who picked Nearest or Best value, got a globally ranked feed. The fixture
+   below is built so the furthest day holds the nearest, cheapest and earliest
+   bar there is -- if any sort ranks on its own criterion first, Monday jumps to
+   the top and Saturday's header is printed twice. */
+const ACROSS_DAYS = (() => {
+  const here = { lat: 40.0, lng: -75.3 };
+  const make = (id, dow, start, price, lat, lng) => ({
+    id, name: id, zone_id: "z", lat, lng,
+    deals: [{
+      confidence: "likely",
+      items: [{ category: "draft", price_usd: price }],
+      windows: [{ dow, start, end: "23:00" }],
+    }],
+  });
+  return {
+    here,
+    // Saturday is TOMORROW from FRI_5PM; Monday is three days out.
+    venues: [
+      make("satLate", 6, "20:00", 12, 40.30, -75.60),
+      make("satMid", 6, "17:00", 9, 40.05, -75.35),
+      make("sunMid", 7, "18:00", 8, 40.06, -75.36),
+      // Nearest, cheapest and earliest on the board -- and the furthest away in
+      // days. Every non-day criterion wants this row first.
+      make("monBest", 1, "11:00", 2, 40.0, -75.3),
+      make("monMid", 1, "19:00", 7, 40.07, -75.37),
+    ],
+  };
+})();
+
+test("a day's rows stay together, in every sort, with or without a location", () => {
+  for (const sort of ["soonest", "nearest", "value"]) {
+    for (const origin of [ACROSS_DAYS.here, null]) {
+      const where = `${sort}/${origin ? "located" : "blind"}`;
+      const rows = buildFeed(ACROSS_DAYS.venues, FRI_5PM, { sort, origin, now: FRI_5PM });
+      assert.equal(rows.length, 5, where);
+      assert.ok(rows.every((r) => r.group === GROUP.UPCOMING), where);
+
+      // The days come out in calendar order and never come back.
+      const seq = rows.map((r) => r.dayIndex);
+      for (let i = 1; i < seq.length; i++) {
+        assert.ok(seq[i] >= seq[i - 1], `${where}: day ${seq[i]} after ${seq[i - 1]} in ${seq}`);
+      }
+      // Which is the same thing as: a day is printed once.
+      const printed = [...new Set(seq)];
+      assert.deepEqual(printed, [1, 2, 3], where);
+      assert.notEqual(rows[0].v.id, "monBest", `${where}: a Monday row led the feed`);
+    }
+  }
+});
+
+test("inside one day, the sort the reader chose still decides", () => {
+  // Banding by day must not flatten the ranking -- it only scopes it.
+  const monday = (rows) => rows.filter((r) => r.dayIndex === 3).map((r) => r.v.id);
+  const near = buildFeed(ACROSS_DAYS.venues, FRI_5PM, {
+    sort: "nearest", origin: ACROSS_DAYS.here, now: FRI_5PM,
+  });
+  assert.deepEqual(monday(near), ["monBest", "monMid"]);
+
+  const value = buildFeed(ACROSS_DAYS.venues, FRI_5PM, { sort: "value", now: FRI_5PM });
+  assert.deepEqual(monday(value), ["monBest", "monMid"]);
+
+  // With no location, the clock WITHIN the day -- not minutes from now, which
+  // carries the day inside it and would re-rank the calendar we just fixed.
+  const blind = buildFeed(ACROSS_DAYS.venues, FRI_5PM, { sort: "soonest", now: FRI_5PM });
+  assert.deepEqual(monday(blind), ["monBest", "monMid"]);
+});
+
+test("no future row can score into the next day's band or the next group's", () => {
+  for (const sort of ["soonest", "nearest", "value"]) {
+    for (const origin of [ACROSS_DAYS.here, null]) {
+      for (const row of buildFeed(ACROSS_DAYS.venues, FRI_5PM, { sort, origin, now: FRI_5PM })) {
+        const s = score(row, { sort });
+        const band = Math.floor((s - GROUP.UPCOMING * 100000) / DAY_BAND);
+        assert.equal(band, row.dayIndex, `${sort}: ${row.v.id} scored outside its day`);
+        assert.ok(s < (GROUP.UPCOMING + 1) * 100000, `${sort}: ${row.v.id} leaked a group`);
+      }
+    }
+  }
 });
 
 test("a row seven days out never scores into the next group's band", () => {

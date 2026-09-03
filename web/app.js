@@ -9,7 +9,7 @@ import {
   FILTERS, GROUP, GROUP_LABEL, buildFeed, summarizeWindows, usableMinutes,
   matchesQuery,
   haversineMiles, driveMinutes, ageDays, effectiveConfidence, applyOverlay,
-  dealKey, applyConfirmations, dateKeyOf,
+  dealKey, applyConfirmations, dateKeyOf, dayOffset,
 } from "./lib.js";
 
 const state = {
@@ -299,10 +299,9 @@ async function loadZoneVenues(zoneId) {
    to today and the label cannot drift. */
 function sectionFor(row) {
   if (row.group !== GROUP.UPCOMING) return GROUP_LABEL[row.group];
-  const today = new Date();
-  const days = Math.round(
-    (new Date(row.hit.dateKey + "T00:00:00") -
-      new Date(dateKeyOf(today) + "T00:00:00")) / 86400000);
+  /* The same function the ORDER is built from, so the header and the sort can
+     never name different days. */
+  const days = dayOffset(row.hit, dateKeyOf(new Date()));
   if (days === 0) return "Today";
   if (days === 1) return "Tomorrow";
   const d = new Date(row.hit.dateKey + "T00:00:00");

@@ -137,9 +137,37 @@ def main():
                      ])),
                })"""
         )
+        # ONE HEADER PER DAY. The board starts a section whenever the label
+        # changes, so an order that interleaves days prints "Tomorrow" over and
+        # over -- fourteen times on the real corpus, which is how a reader found
+        # it. Nothing gated on it, so it shipped.
+        #
+        # It only shows itself to a reader who has granted a LOCATION: that is
+        # the path where distance decided the order and the calendar came second.
+        # A gate run without one watched the defect go past, so the location is
+        # part of the test, not a detail of it.
+        page.evaluate(
+            """() => localStorage.setItem("origin", JSON.stringify(
+                 { lat: 40.0093, lng: -75.2907, at: Date.now() }))"""
+        )
+        page.reload(wait_until="load")
+        page.wait_for_timeout(3000)
+        headers = {}
+        for day, name in ((0, "today"), (1, "tomorrow"), (3, "three days out")):
+            page.click(f"#days button.chip >> nth={day}")
+            page.wait_for_timeout(700)
+            headers[name] = page.evaluate(
+                """() => [...document.querySelectorAll("#feed p.sec")]
+                          .map((e) => e.textContent)"""
+            )
         browser.close()
 
     bad = []
+    for name, seen in headers.items():
+        dupes = [h for h in set(seen) if seen.count(h) > 1]
+        if dupes:
+            bad.append(f"with {name} picked, the board printed "
+                       + ", ".join(f'"{h}" {seen.count(h)}x' for h in sorted(dupes)))
     if errors:
         bad.append(f"uncaught page error: {errors[0]}")
     if checks["days"] < 1:
@@ -223,7 +251,8 @@ def main():
         print(f"  ok   {len(shipped)} venues ship items and all painted them; "
               f"board: {checks['zones'] - 1} zones, "
               f"{checks['feed']} feed rows, {painted} deal cards and no bar twice, "
-              f"kicker {checks['kicker']!r}")
+              f"kicker {checks['kicker']!r}; "
+              f"headers printed once each ({len(headers['tomorrow'])} on Tomorrow)")
     return 1 if bad else 0
 
 

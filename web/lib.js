@@ -204,6 +204,20 @@ export function dateKeyOf(d) {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
 }
 
+/* How many calendar days ahead of the REAL today a hit falls.
+
+   The feed prints a section header whenever the label changes, and the label is
+   this number -- so the ORDER has to be built from the same number, or the two
+   disagree and a day's header repeats every time another day's row lands in the
+   middle of it. One function, both readers: the header in app.js and the score
+   below. They cannot drift apart. */
+export function dayOffset(hit, today) {
+  if (!hit || !hit.dateKey || !today) return 0;
+  return Math.round(
+    (new Date(hit.dateKey + "T00:00:00") - new Date(today + "T00:00:00")) / 86400000
+  );
+}
+
 /* ---- freshness -------------------------------------------------------- */
 
 /* Age is computed HERE, at read time, from the absolute date in the bundle --
@@ -295,6 +309,16 @@ const DRIVE_WEIGHT = 12; // a minute in the car costs more than a minute of deal
 const TIME_WEIGHT = 10;
 /* Start times inside the same half-hour are the same decision -- see score(). */
 const START_BUCKET = 30;
+/* A group is worth 100,000, and a future row's day gets a slice of it.
+
+   The furthest day a row can name is the last day the picker offers (6) plus
+   the lookahead from there (7) -- fourteen slices counting today. They have to
+   fit inside one group AND every distinct day needs its own slice: clamping the
+   far ones into a shared band is what left Wednesday, Thursday and Friday
+   interleaved when the reader picked three days out, because the ORDER merged
+   days the HEADER still tells apart. */
+export const MAX_DAY = 13;
+export const DAY_BAND = Math.floor(100000 / (MAX_DAY + 1)); // 7142
 
 /* Lower is better. Deliberately readable rather than tuned: group dominates,
    then how much deal you actually get, then how far, then how good, then how
@@ -319,21 +343,58 @@ export function score(row, { sort = "soonest" } = {}) {
      is, distance is the fact that actually separates these, so it leads and the
      clock breaks the tie. With no location we have nothing better than the
      clock, and we keep it. */
-  if (sort === "soonest" && row.group === GROUP.UPCOMING && row.hasOrigin) {
-    /* The DAY still leads, because the feed prints a header per day and sorting
-       across days would interleave them and repeat the headers. Inside one day,
-       distance decides. */
-    return (
-      row.group * 100000 +
-      row.hit.dayAhead * 12000 +
-      /* A venue we have no coordinates for sorts last inside its day, at the
-         cap. We cannot say it is near, and 2,100 of 2,900 venues have no
-         coordinates yet -- floating all of them above the ones we CAN place
-         would undo the whole point of asking for a location. */
-      Math.min(row.miles ?? 199, 199) * 60 +
-      (100 - Math.min(value, 100)) / 10 +
-      conf / 10
-    );
+  /* ---- another day: the DATE leads, in every sort ----------------------
+     The board prints one header per day, so a row's day has to outrank
+     everything else about it. This used to be true in exactly ONE of the four
+     paths through this function -- "soonest" with a location -- and the other
+     three ranked future rows globally. That is what printed "Tomorrow" twenty
+     times: a single Thursday row scoring between two Wednesday ones splits
+     Wednesday's block, and the renderer, which starts a section whenever the
+     label changes, prints the header again on the far side of it. Sorting
+     across days was never a preference the reader expressed; picking a sort
+     asks how to order the bars, not how to shuffle the calendar.
+
+     One day gets one band of DAY_BAND, so nothing inside a day can score into
+     the next one and nothing can leak past the group. Inside the day, the sort
+     the reader chose decides -- each term below is sized to fit its band. */
+  if (row.group === GROUP.UPCOMING) {
+    const day = Math.max(0, Math.min(MAX_DAY, row.dayIndex ?? row.hit.dayAhead ?? 0));
+
+    /* Every term is a FRACTION of its own range, and the weights fall away by a
+       factor of ten, so the leading term decides, the next one breaks its ties,
+       and the whole sum is provably under 1 -- which is what keeps a row inside
+       its day whatever the numbers do. Ranking on raw minutes and miles is what
+       needed a clamp, and a clamp is what merged the far days. */
+    const part = (x, of) => Math.min(1, Math.max(0, x) / of);
+    /* A venue we have no coordinates for sorts last inside its day. We cannot
+       say it is near, and 2,100 of 2,900 venues have no coordinates yet --
+       floating all of them above the ones we CAN place would undo the whole
+       point of asking for a location. */
+    const near = part(Math.min(row.miles ?? 199, 199), 200);
+    const dear = part(100 - Math.min(value, 100), 100);
+    /* The clock WITHIN the day. `startsIn` carries the day inside it, so
+       ranking on it would re-rank the calendar we just fixed. */
+    const clock = part(Math.floor((row.hit.w ? mins(row.hit.w.start) : 0) / START_BUCKET), 48);
+    const unsure = part(conf, 10);
+
+    let within;
+    if (sort === "nearest") {
+      within = near * 0.9 + unsure * 0.09;
+    } else if (sort === "value") {
+      within = dear * 0.9 + part(drive, 120) * 0.09;
+    } else if (row.hasOrigin) {
+      /* Another DAY is not an urgency. Inside "Tomorrow" or "Thursday",
+         ordering by who opens earliest answers a question nobody asked -- 11am
+         and 4pm are both "not now", and it put a seventeen-mile brewery above
+         one down the road for the sole reason that it opens at eleven. Once we
+         know where the reader is, distance separates these and the clock breaks
+         the tie. */
+      within = near * 0.9 + clock * 0.09;
+    } else {
+      // With no location we have nothing better than the clock, and we keep it.
+      within = clock * 0.9 + dear * 0.09;
+    }
+    return row.group * 100000 + day * DAY_BAND + (within + unsure * 0.009) * DAY_BAND;
   }
 
   if (sort === "nearest") {
@@ -444,6 +505,11 @@ export function buildFeed(venues, at, { zone = null, filter = "all", sort = "soo
         confidence,
         ageDays: ageDays(deal, at),
         group: groupFor(hit, driveMin, { planning, today }),
+        /* Measured against the real today, exactly as the header is. `dayAhead`
+           is measured from the anchor, and the anchor moves when the reader
+           picks a day -- so ordering on it would band rows under a heading they
+           are not filed under. */
+        dayIndex: dayOffset(hit, today),
       });
     }
   }
