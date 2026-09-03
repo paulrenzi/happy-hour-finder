@@ -2657,3 +2657,90 @@ read is not a zero: it is retried, and it must never be counted as "no menu".
 One venue. Next: `--zone newark_de` (nine other captured images sit unread
 there), then the one human minute on the result. Untested: what the agent does
 on a JS shell (McGlynn's class) where WebFetch returns chrome; it has curl.
+
+---
+
+## 🖐️🔑🔑 A SIDECAR CANNOT PUBLISH A VENUE — the hand read carries the WINDOW (2026-09-03, evening)
+
+**30 menus were asked for. 28 landed: Wilmington 15, Newark 5, West Chester 8.**
+All 28 arrived by hand, not through `agent_read_venue.py`. What follows is what
+that cost bought, so nobody pays for it twice.
+
+### The defect it exposed, and the fix
+
+Every enrichment source in `build_bundles.py` before today was a **sidecar**:
+`deals_prices_llm`, `deals_menu_images`, `deals_agent`, `deals_pages_llm`. A
+sidecar carries items and nothing else, and the merge can only *fill items into
+a deal that already exists*. A deal only exists if some deterministic pass
+parsed a **window** off the venue's pages.
+
+So a venue whose hours no crawler ever read has nowhere to put its items, and
+they vanish with **no error and no log line**. That is how 52 paid-for items sat
+unpublished in `data/deals_agent.json` — and two thirds of every read the agent
+lane bought went the same way.
+
+> 🔑 **The unit that publishes is a VENUE, not an item.** Any lane that returns
+> items alone is betting on a window somebody else found. If you build another
+> reader, have it return the window in the same record or expect it to strand.
+
+The fix is `ingest/build_agent_venues.py` + `data/agent_handread.json`, merged
+at **rank 2** (above every machine pass, below a person's seed and an approved
+photo). It emits a full venue row in the same shape as `deals_menus.json`, runs
+the same `validate_deal()`, and needs nothing to already exist. Omitting `items`
+in a record makes it adopt whatever the agent lane already banked for that lid —
+which is how stranded items get rescued rather than re-bought.
+
+### What actually found menus, in descending yield
+
+Ordered by venues landed per hour of trying. This is the ladder to walk, and
+walking it out of order is how time gets spent.
+
+1. **Crawl the site's own subpages for the words** — `scratch/hhsweep.py`: fetch
+   the URL, follow one level of its own links matching
+   `happy|special|menu|drink|bar|taproom|events`, strip tags, print ±180/320
+   chars around every `happy hour` hit. **This found ten venues `WebFetch` had
+   already been pointed at and missed**, because WebFetch summarises and a
+   summariser drops a price table. Grounded text beats a summary every time.
+2. **Guess the Popmenu URL** — `/<town>-<venue>-happy-hours-specials`. A whole
+   platform's worth of venues, addressable without a search.
+3. **Render the menu PDF and look at it** — `fitz` to PNG, then the Read tool.
+   🛑 `pdftoppm`/poppler is **not installed** on this machine, so Read cannot
+   open a PDF directly; render first (`scratch/pdfrender.py`).
+4. **Read the posted image.** Half of these menus are a JPEG.
+5. **A targeted search for the venue's own deep page** — not for the answer. The
+   win is finding that Santa Fe publishes `/newark-happy-hour-menu` at all.
+6. **The venue's own Instagram** (Mercato). Still the venue speaking; set
+   `"kind": "instagram"` so the card cites it honestly.
+
+### Blockers that are structural, not bugs — do not re-work these
+
+- **A price with no clock.** TGI Fridays advertises "$5 Happy Hour" and publishes
+  the hours nowhere. Lefty's Alley & Eats and Plaza Azteca the same. 15 paid-for
+  items are banked and correctly refuse to publish, because
+  `validate_deal()` will not take a windowless deal and every renderer in
+  `web/lib.js` hangs items off a window. **This is the right behaviour.**
+- **A clock with no prices.** Snuff Mill, Bar XIII, Rockwell's on Main, Goal Line
+  Pub. They already publish a window; there is nothing to add.
+- **A venue that contradicts itself.** Makers Alley's food tab and drink tab give
+  different prices for the same happy hour. Skipped, under *a wrong item is
+  worse than a miss*.
+- **An old roundup is not a source.** County Lines names ~25 West Chester venues
+  with times and prices, and it is dated 2021 and 2024 — `decay()` hides anything
+  over 120 days, and a roundup is the outlet speaking, not the bar.
+
+### West Chester is exhausted at 8, and that is a REACH finding
+
+The `west_chester` zone base holds **62** rows. 15 already had items. Every one
+of the rest was opened by hand — site, deep menu pages, PDFs, posted images,
+Toast pages, Instagram — and none publishes a clock and a price anywhere it
+owns. The venues that would have filled the gap (Greystone Oyster Bar, The
+Social, Sterling Pig, Split Rail, Slow Hand) **are not in the zone's base under
+those names.** More reading cannot fix that; only discovery can. It is the same
+finding as *the item gap is reach, not reading*, arrived at from the other end.
+
+### The boot ceiling moved, and why that is fine
+
+`tests/test_the_boot_payload_stays_small` went 500,000 → 600,000. 202 items
+arriving at once is genuine growth in the deal-bearing half. The check that
+matters is that the 1.3MB **base** (`venues-*.json`) still cannot hide under the
+number — it is fetched only for the selected zone and must never enter boot.

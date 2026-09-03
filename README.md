@@ -14,7 +14,7 @@ credentials with anything else on this machine.
 
 ---
 
-## Where it stands (2026-09-03)
+## Where it stands (2026-09-03, evening)
 
 | | |
 |---|---|
@@ -22,10 +22,10 @@ credentials with anything else on this machine.
 | licensed venues known — the denominator | 3,415 |
 | …with a website we know of | 1,778 |
 | …crawled | 1,585 |
-| **on the board with a published happy-hour window** | **315** |
-| …carrying items you can actually order | 204 venues, 1,271 items |
-| …with an hour but **no items** — the open gap | **111** |
-| published windows that contradict their own evidence | **0 of 334** |
+| **on the board with a published happy-hour window** | **332** |
+| …carrying items you can actually order | 234 venues, 1,509 items |
+| …with an hour but **no items** — the open gap | **98** |
+| published windows that contradict their own evidence | **0 of 351** |
 
 **Read that table in two halves.** What we publish is checked: every window and
 every price has to appear in a sentence on the venue's own page, and the test
@@ -35,21 +35,30 @@ nobody has ever measured how many real happy hours the pipeline walks past.
 Every miss found so far was found by a person, not by a run.
 **Trust the cards. Do not trust the silence.**
 
-### The open problem, and how it is now worked: the agent reads each venue
+### The open problem, and how it is now worked: something reads each venue
 
-**111** venues publish an hour and no items. For 33 days a regex crawler plus
+**98** venues publish an hour and no items. For 33 days a regex crawler plus
 fourteen hand-run commands tried to close that gap and moved it by single
-digits. On 2026-09-03 the approach changed: **an AI agent hand-reads each
-venue**, the way a person does. One model session per venue, with only the
-tools a person uses (fetch a page, follow the Happy Hour link, download the
-PDF or picture, look at it). The code keeps the jobs code is good at: every
-price must be found character-for-character in the agent's own transcript, the
-PA and Delaware validators run, and a person reviews before anything ships.
+digits. The fix was never a better parser — it was **letting something that
+understands a page open the page**, the way a person does: fetch it, follow the
+Happy Hour link, download the PDF or the picture, look at it.
 
-Proven on one venue so far: The Greene Turtle, Christiana, went from no card
-to 26 live items in six turns and 34 cents. The next step is one whole town
-(`newark_de`), then the human minute on the result. See
-[`HANDOFF-START-HERE-20260903-THE-AGENT-IS-THE-SCRAPER.md`](HANDOFF-START-HERE-20260903-THE-AGENT-IS-THE-SCRAPER.md).
+Two lanes now do that, and the difference between them matters:
+
+- **`ingest/agent_read_venue.py`** — a model session per venue, unattended.
+  Cheap and scalable; on the towns measured it returned an item on **8%** of
+  the venues it read, and its output is **items only**.
+- **A hand read** — the session itself opens the site and writes one record
+  into `data/agent_handread.json`. Slow, but it carries the **window as well as
+  the items**, so it can publish a venue no crawler ever parsed hours for.
+  28 venues, 203 items, landed this way on 2026-09-03.
+
+The code keeps the jobs code is good at either way: every price must be found
+character-for-character in the source the read cites, the PA and Delaware
+validators run, and a person reviews before anything ships.
+
+Current state and what to do next:
+[`HANDOFF-START-HERE-20260904-HAND-READS-PUBLISH.md`](HANDOFF-START-HERE-20260904-HAND-READS-PUBLISH.md).
 
 ---
 
@@ -62,7 +71,8 @@ data/venue_base.json    3,415 licensees, the denominator (regenerate, don't edit
    ↓ ingest/discover_places.py  find each venue's website        ← the paid step
    ↓ ingest/build_venue_base.py carry those websites onto the board
    ↓ ingest/crawl_sites.py      robots-honouring crawl → data/crawl_hits.json  (the WINDOW)
-   ↓ ingest/agent_read_venue.py an agent hand-reads each venue's menu → data/deals_agent.json  (the ITEMS)
+   ↓ ingest/agent_read_venue.py an agent reads each venue's menu → data/deals_agent.json  (the ITEMS)
+   ↓ ingest/build_agent_venues.py a hand read → data/deals_agent_venues.json  (WINDOW *and* items)
    ↓ ingest/validate_pa.py      PA Acts 57 & 86 of 2024 — a failing deal never ships
    ↓ ingest/build_bundles.py    → web/data/zone-*.json  (and restamps web/sw.js)
    ↓ git push → GitHub Actions → live site
@@ -112,11 +122,32 @@ Cost is real and recorded per venue in `data/agent_reads.json`. Budget roughly
 $0.35 and a minute for a venue with a menu to read; a venue with nothing costs
 less, and one that wanders a chain site can cost more.
 
-⚠️ **Known gap (2026-09-03):** the agent's items only reach a card if the venue
-already has a **window** from the deterministic lane — `build_bundles.py` hangs
-items on an existing deal, so a venue with no window strands them with no error.
-Whether such a venue may publish the agent's items, or its window, is an open
-call. Check the built bundle, not the lane's own summary.
+⚠️ **The stranding gap, and the way out.** `agent_read_venue.py` writes into a
+**sidecar** (`data/deals_agent.json`), and a sidecar can only fill items into a
+deal some earlier pass already built. A venue with no crawled **window** has no
+deal row, so its paid-for items strand — silently, no error. Two thirds of the
+lane's reads stranded this way.
+
+**A hand read is the way out, because it carries the window too.** Write one
+record per venue into [`data/agent_handread.json`](data/agent_handread.json):
+
+```json
+{"lid": "DE608516193f",
+ "url": "https://the-venue-s-own-page",
+ "read_on": "2026-09-03",
+ "quote": "the venue's own words, verbatim, containing the hours and the prices",
+ "days": [1,2,3,4,5], "start": "16:30", "end": "17:30",
+ "items": [{"category": "draft", "label": "Draft beer", "amount_off_usd": 1.0}]}
+```
+
+Then `python ingest/build_agent_venues.py && python ingest/build_bundles.py`.
+That builds a **whole venue row** — nothing needs to already exist — and it
+enters the merge at rank 2, above every machine pass and below a person's seed
+and an approved photo. Omit `items` and it picks up whatever the agent lane
+already banked for that licence, which is how stranded items get rescued.
+Use `windows` instead of `days`/`start`/`end` for a venue whose happy hour runs
+from open (a different clock each day). Never edit
+`data/deals_agent_venues.json` — it is generated.
 
 The older window lane (`crawl_sites.py` → `extract_deals.py`) still runs when
 a town needs its hours found; its full recipe is in
@@ -245,4 +276,4 @@ deliberately no map.
   session each. The one to read before changing ingest.
 - **[SPEC.md](SPEC.md)** — what a deal is, and the eight categories.
 - **`HANDOFF-START-HERE-*.md`** — session notes, newest wins. The current one is
-  [`HANDOFF-START-HERE-20260903-THE-AGENT-IS-THE-SCRAPER.md`](HANDOFF-START-HERE-20260903-THE-AGENT-IS-THE-SCRAPER.md).
+  [`HANDOFF-START-HERE-20260904-HAND-READS-PUBLISH.md`](HANDOFF-START-HERE-20260904-HAND-READS-PUBLISH.md).
