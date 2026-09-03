@@ -1,7 +1,7 @@
 {
  "rule": "Paul, 2026-09-03: any live deal with under 5 happy-hour items needs a re-scrape.",
  "generated": "2026-09-03",
- "count": 155,
+ "count": 147,
  "venues": [
   {
    "zone": "abington_jenkintown",
@@ -446,15 +446,6 @@
   },
   {
    "zone": "exton_downingtown",
-   "name": "Liberty Union Bar and Grill",
-   "lid": "65626",
-   "verified_by": "auto_extract",
-   "item_count": 1,
-   "url": "http://libertyunionbar.com/chester-springs/specials/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "exton_downingtown",
    "name": "Limoncello",
    "lid": "67364",
    "verified_by": "auto_extract",
@@ -532,15 +523,6 @@
    "verified_by": "auto_extract",
    "item_count": 3,
    "url": "https://percyphl.com/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "glen_mills_chadds_ford",
-   "name": "Chadds Ford Tavern",
-   "lid": "91807",
-   "verified_by": "agent_read",
-   "item_count": 1,
-   "url": "https://www.thecftavern.com/menus/",
    "status": "NEEDS_RESCRAPE"
   },
   {
@@ -643,15 +625,6 @@
    "status": "NEEDS_RESCRAPE"
   },
   {
-   "zone": "malvern_great_valley",
-   "name": "Main Line Tavern",
-   "lid": "118403",
-   "verified_by": "auto_extract",
-   "item_count": 1,
-   "url": "https://www.mainlinetavern.com/menus",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
    "zone": "manayunk",
    "name": "Taqueria Amor",
    "lid": "67822",
@@ -694,15 +667,6 @@
    "verified_by": "auto_extract",
    "item_count": 4,
    "url": "https://www.statestreetpubmedia.com/s/Happy-Hour.pdf",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "middletown_de",
-   "name": "The Farmhouse Middletown",
-   "lid": "DEa4fada708b",
-   "verified_by": "agent_read",
-   "item_count": 4,
-   "url": "https://www.farmhousemiddletown.com/daily-specials/",
    "status": "NEEDS_RESCRAPE"
   },
   {
@@ -1012,24 +976,6 @@
    "status": "NEEDS_RESCRAPE"
   },
   {
-   "zone": "upper_darby_lansdowne",
-   "name": "Casey's",
-   "lid": "125992",
-   "verified_by": "auto_extract",
-   "item_count": 4,
-   "url": "https://caseysdh.com/page/happy-hour",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "warminster_warrington",
-   "name": "Tony's Place Bar & Grill",
-   "lid": "55339",
-   "verified_by": "auto_extract",
-   "item_count": 4,
-   "url": "https://tonysplaceivyland.com/happy-hour/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
    "zone": "wayne_radnor",
    "name": "ESTIA TAVERNA INC",
    "lid": "67838",
@@ -1099,15 +1045,6 @@
    "verified_by": "agent_read",
    "item_count": 4,
    "url": "https://kildarespubwc.com/drink-menu/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "west_chester",
-   "name": "Limoncello",
-   "lid": "59213",
-   "verified_by": "agent_read",
-   "item_count": 1,
-   "url": "https://www.limoncellorestaurant.com/happy-hour-menu",
    "status": "NEEDS_RESCRAPE"
   },
   {
@@ -1207,15 +1144,6 @@
    "verified_by": "auto_extract",
    "item_count": 1,
    "url": "https://oysterhousephilly.com",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "willow_grove_horsham",
-   "name": "Copper Crow",
-   "lid": "101437",
-   "verified_by": "menu_read_llm",
-   "item_count": 1,
-   "url": "http://coppercrowhorsham.com/horsham-the-copper-crow-happy-hours-specials",
    "status": "NEEDS_RESCRAPE"
   },
   {

@@ -559,6 +559,17 @@ matched. It shipped, and only a unit test asserting the *match* caught it.
 `assert old in s` on a raw-string source will also fail for the same reason.
 **Use the editor tool, or a script file on disk. Not a heredoc.**
 
+**An apostrophe in the payload breaks a quoted heredoc too — not just
+backslashes.** 2026-09-04: a `python3 << 'PYEOF' ... PYEOF` block whose Python
+strings contained plain English apostrophes (`"Tony's Boneless Wings"`) failed
+with `unexpected EOF while looking for matching '` before Python ever ran —
+the shell tool's own outer quoting collides with a single quote anywhere in
+the heredoc body, even though the heredoc delimiter itself was quoted. The
+fix that worked: write the script to a `.py` file with the Write/Edit tool,
+then `python that_file.py`. **Any hand-read item label likely to contain an
+apostrophe (a menu item's own name, a possessive venue name) means: don't
+build the updater as a bash heredoc at all — write it to disk.**
+
 ---
 
 ## 🔑 The binding constraint moved to the WINDOW (2026-09-02)

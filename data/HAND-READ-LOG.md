@@ -187,3 +187,20 @@ ingest/discover_places.py --execute (66 Places lookups, within free Enterprise t
   was fixed. Moved to data/deals_seed.json's `_excluded` list with the reason; also
   removed its now-orphaned rows from data/venue_coords.json and data/venue_photos.json
   and its stale image. All 552 local tests pass after the fix; CI green; confirmed live.
+- west_chester | Limoncello (59213) | RESHIPPED | was 1 item, now 10 (martinis/cocktails/spritzes/wine/draft/bottle/pizza/small-medium plates/pasta) | 2026-09-04
+- exton_downingtown | Liberty Union Bar and Grill (65626) | RESHIPPED | was 0 hand-read items (auto_extract lane), now 9 (drafts/IPA/well/wine/tots/margarita/chicken/eggrolls/old fashioned) | 2026-09-04
+- glen_mills_chadds_ford | Chadds Ford Tavern (91807) | RESHIPPED | was 1 item, now 10 (half-price bar + wedge/caesar/soup/frites/pretzel/eggrolls/shrimp/wings/flatbread/short-rib-fries) | 2026-09-04
+- malvern_great_valley | Main Line Tavern (118403) | RESHIPPED | was 1 item, now 11 (same chain menu as Chadds Ford Tavern) | 2026-09-04
+- middletown_de | The Farmhouse Middletown (DEa4fada708b) | RESHIPPED | was 4 items, now 5 (cocktails/well/wine/bottled beer/half-price pizza) | 2026-09-04
+- warminster_warrington | Tony's Place Bar & Grill (55339) | RESHIPPED | was 4 items, now 10 (bites, sliders, clams, house wine, cans) | 2026-09-04
+- upper_darby_lansdowne | Casey's (125992) | RESHIPPED | was 4 items, now 8 (margaritas/mules/martinis/statesides/surfsides/well/draft/bites) | 2026-09-04
+- willow_grove_horsham | Copper Crow (101437) | RESHIPPED | was 1 item, now 5 (draft/wine glass/cocktail/wine bottle discount/rotating daily food special) | 2026-09-04
+- new_castle_de | Stanley's Tavern (DEc5d692f92b) | UNREACHABLE | HTTP 403 on happy-hour page, not retried | 2026-09-04
+- new_castle_de | Augustine Tavern (DE67e9d8cbb9) | NO_CLOCK_TIME | happy-hour event page says "More Information Coming Soon" | 2026-09-04
+- newtown_square_broomall | La Porta Ristorante (64766) | NO_CLOCK_TIME | window found (Mon/Wed-Sat 4-6pm) but items are in menu images, not text -- needs an image-read pass | 2026-09-04
+- newtown_square_broomall | Sedona Taphouse (118439) | NO_CLOCK_TIME | window found (Mon-Fri 4-6pm) but full items are in a linked PDF, not fetched | 2026-09-04
+- willow_grove_horsham | Crooked Eye Brewery (69140) | NO_CLOCK_TIME | genuinely thin -- only "$1 off pints Fri 4-6pm" on the page | 2026-09-04
+- kennett_square | Victory Brewing Company Kennett Square (70490) | NO_CLOCK_TIME | genuinely thin -- only "$2 off drafts/liquor/wine/shareables", no itemized menu | 2026-09-04
+- glen_mills_chadds_ford | The Crown Tavern (48062) | NO_CLOCK_TIME | genuinely thin -- half-price drinks, $1 oysters, "$7 and up" food, no itemized list | 2026-09-04
+- norristown_bridgeport | Chap's Taproom (114168) | NO_CLOCK_TIME | genuinely thin -- 3 category-level discounts only ($4 draft/well, $5 wine, $6 apps), no itemized menu | 2026-09-04
+- pottstown | Doc's Irish Pub (68830) | NO_CLOCK_TIME | genuinely thin -- Busch $2.50 + "$1 off beers/wells/wines", no food items | 2026-09-04

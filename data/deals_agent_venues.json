@@ -84,6 +84,91 @@
    "zone_id": "lansdale_montgomeryville"
   },
   {
+   "address": "116 Welsh Rd Ste 116, Horsham PA 19044",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "$5 select draft beers",
+       "label": "Select draft beers",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "evidence": "$7 glass of house red or white",
+       "label": "House red or white wine",
+       "price_usd": 7.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$5 Kiki mixed drinks",
+       "label": "Kiki mixed drinks",
+       "price_usd": 5.0
+      },
+      {
+       "amount_off_usd": 5.0,
+       "category": "wine",
+       "evidence": "$5 off bottles of wine",
+       "label": "Bottles of wine",
+       "price_usd": null
+      },
+      {
+       "amount_off_usd": 5.0,
+       "category": "food",
+       "evidence": "$5 off small plates/burgers/pizzas; $5 per birria taco",
+       "label": "Daily food special (rotating)",
+       "price_usd": null
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "Monday-Friday, 4:30 PM - 6:30 PM (Bars and High Tops only)",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "$5 select draft beers, $7 glass of house red or white, $5 Kiki mixed drinks (Martinis $2 additional), $5 off bottles of wine, daily food special (Thu $5 off small plates, Fri $5 off burgers, Mon $5 off Margherita pizzas, Tue $5 per birria taco, Wed $5 off all pizzas)",
+      "url": "http://coppercrowhorsham.com/horsham-the-copper-crow-happy-hours-specials"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:30",
+       "start": "16:30"
+      },
+      {
+       "dow": 2,
+       "end": "18:30",
+       "start": "16:30"
+      },
+      {
+       "dow": 3,
+       "end": "18:30",
+       "start": "16:30"
+      },
+      {
+       "dow": 4,
+       "end": "18:30",
+       "start": "16:30"
+      },
+      {
+       "dow": 5,
+       "end": "18:30",
+       "start": "16:30"
+      }
+     ]
+    }
+   ],
+   "id": "101437",
+   "lid": "101437",
+   "name": "Copper Crow",
+   "plcb_name": "COPPER CROW",
+   "website": "http://coppercrowhorsham.com/",
+   "zone_id": "willow_grove_horsham"
+  },
+  {
    "address": "44 W Gay St, West Chester PA 19380",
    "deals": [
     {
@@ -536,7 +621,7 @@
    "lid": "108651",
    "name": "Blondie on Main",
    "plcb_name": "BLONDIE ON MAIN LLC",
-   "website": "https://www.blondiephilly.com/menu/happy-hour/",
+   "website": "http://blondiephilly.com/",
    "zone_id": "manayunk"
   },
   {
@@ -1544,6 +1629,135 @@
    "zone_id": "manayunk"
   },
   {
+   "address": "516 King St, Paoli PA 19301",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "Tavern Wedge $10",
+       "label": "Tavern Wedge",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "Classic Caesar $10",
+       "label": "Classic Caesar",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "French Onion Soup $10",
+       "label": "French Onion Soup",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "Pommes Frites $10",
+       "label": "Pommes Frites",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "Giant Bavarian Pretzel $10",
+       "label": "Giant Bavarian Pretzel",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "Prime Rib Egg Rolls $14",
+       "label": "Prime Rib Egg Rolls",
+       "price_usd": 14.0
+      },
+      {
+       "category": "food",
+       "evidence": "Jumbo Bacon Shrimp $14",
+       "label": "Jumbo Bacon Shrimp",
+       "price_usd": 14.0
+      },
+      {
+       "category": "food",
+       "evidence": "Tavern Wings $14",
+       "label": "Tavern Wings",
+       "price_usd": 14.0
+      },
+      {
+       "category": "food",
+       "evidence": "Caprese Flatbread $14",
+       "label": "Caprese Flatbread",
+       "price_usd": 14.0
+      },
+      {
+       "category": "food",
+       "evidence": "Mushroom Bisque $14",
+       "label": "Mushroom Bisque",
+       "price_usd": 14.0
+      },
+      {
+       "category": "food",
+       "evidence": "Short Rib Fries $14",
+       "label": "Short Rib Fries",
+       "price_usd": 14.0
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "7 days a week 4-6 pm",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "1/2 Price Beer, Wine and Cocktails; Tavern Wedge $10, Classic Caesar $10, French Onion Soup $10, Pommes Frites $10, Giant Bavarian Pretzel $10, Prime Rib Egg Rolls $14, Jumbo Bacon Shrimp $14, Tavern Wings $14, Caprese Flatbread $14, Mushroom Bisque $14, Short Rib Fries $14",
+      "url": "https://www.mainlinetavern.com/menus"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 6,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 7,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "118403",
+   "lid": "118403",
+   "name": "Main Line Tavern",
+   "plcb_name": "MLT OPCO LLC",
+   "website": "https://www.mainlinetavern.com/",
+   "zone_id": "malvern_great_valley"
+  },
+  {
    "address": "106 Squire Dr, Newtown Square PA 19073",
    "deals": [
     {
@@ -1797,6 +2011,107 @@
    "plcb_name": "PJ WHELIHAN'S",
    "website": "https://www.pjspub.com/about.php?loc=Wynnewood",
    "zone_id": "ardmore_bryn_mawr"
+  },
+  {
+   "address": "812 Lansdowne Ave, Drexel Hill PA 19026",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "cocktail",
+       "evidence": "Margaritas $8",
+       "label": "Margaritas",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "Mules $8",
+       "label": "Mules",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "Martinis $8",
+       "label": "Martinis",
+       "price_usd": 8.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "Statesides $7",
+       "label": "Statesides",
+       "price_usd": 7.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "Surfsides $7",
+       "label": "Surfsides",
+       "price_usd": 7.0
+      },
+      {
+       "category": "well",
+       "evidence": "Well drinks $5",
+       "label": "Well drinks",
+       "price_usd": 5.0
+      },
+      {
+       "category": "draft",
+       "evidence": "Domestic drafts $3",
+       "label": "Domestic drafts",
+       "price_usd": 3.0
+      },
+      {
+       "category": "food",
+       "evidence": "Bites $8",
+       "label": "Bites",
+       "price_usd": 8.0
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "Monday-Friday, 3 PM-6 PM",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Margaritas $8, Mules $8, Martinis $8, Statesides $7, Surfsides $7, Well drinks $5, Domestic drafts $3, Bites $8",
+      "url": "https://caseysdh.com/page/happy-hour"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "15:00"
+      }
+     ]
+    }
+   ],
+   "id": "125992",
+   "lid": "125992",
+   "name": "Casey's",
+   "plcb_name": "CASEY'S DREXEL HILL",
+   "website": "https://www.caseysdh.com",
+   "zone_id": "upper_darby_lansdowne"
   },
   {
    "address": "1227 W Chester Pk, West Chester PA 19380",
@@ -2872,6 +3187,119 @@
    "zone_id": "ambler_upper_dublin"
   },
   {
+   "address": "1297 Greeley Ave Ivyland, Warminster PA 18974",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "Crispy Pickles $6",
+       "label": "Crispy Pickles",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "evidence": "Fried Mozzarella $6",
+       "label": "Fried Mozzarella",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "evidence": "Pretzel Bites $6",
+       "label": "Pretzel Bites",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "evidence": "Buratta & Prosciutto $8",
+       "label": "Buratta and Prosciutto",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "evidence": "Baked Quesadilla $8",
+       "label": "Baked Quesadilla",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "evidence": "Tony's Boneless Wings $8",
+       "label": "Boneless Wings",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "evidence": "Wagyu Sliders $9",
+       "label": "Wagyu Sliders",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "evidence": "Steamed Clams $10",
+       "label": "Steamed Clams",
+       "price_usd": 10.0
+      },
+      {
+       "category": "wine",
+       "evidence": "House Wines $6/Glass",
+       "label": "House Wines",
+       "price_usd": 6.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "Stateside / Surfside Cans $6",
+       "label": "Stateside/Surfside Cans",
+       "price_usd": 6.0
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "Monday - Friday 3-5PM",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Crispy Pickles $6, Fried Mozzarella $6, Pretzel Bites $6, Buratta and Prosciutto $8, Baked Quesadilla $8, Buffalo Chicken Dip $8, Peaches and Goat Cheese Toast $8, Tonys Boneless Wings $8, Small Classic Cheese Pizza or Tomato Pie $8, Wagyu Sliders $9, Steamed Clams $10, House Wines $6/Glass, ALL DRAFT BEER $1 OFF, Stateside/Surfside Cans $6, Seasonal Cocktails $1 OFF",
+      "url": "https://tonysplaceivyland.com/happy-hour/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "17:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 2,
+       "end": "17:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 3,
+       "end": "17:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 4,
+       "end": "17:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 5,
+       "end": "17:00",
+       "start": "15:00"
+      }
+     ]
+    }
+   ],
+   "id": "55339",
+   "lid": "55339",
+   "name": "Tony's Place Bar & Grill",
+   "plcb_name": "JMAL, INC.",
+   "website": "https://tonysplaceivyland.com/",
+   "zone_id": "warminster_warrington"
+  },
+  {
    "address": "125 W Market St, West Chester PA 19382",
    "deals": [
     {
@@ -2992,18 +3420,72 @@
      "confidence": "likely",
      "items": [
       {
+       "category": "cocktail",
+       "evidence": "MARTINIS $10",
+       "label": "Martinis",
+       "price_usd": 10.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "CRAFT COCKTAILS $8",
+       "label": "Craft Cocktails",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "SPRITZES $10",
+       "label": "Spritzes",
+       "price_usd": 10.0
+      },
+      {
+       "category": "wine",
+       "evidence": "WINES $8",
+       "label": "Wines (by glass)",
+       "price_usd": 8.0
+      },
+      {
+       "category": "draft",
+       "evidence": "DRAFTS $6",
+       "label": "Draft beer",
+       "price_usd": 6.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "BOTTLES $5",
+       "label": "Bottled beer",
+       "price_usd": 5.0
+      },
+      {
        "category": "food",
-       "evidence": "pizza or flatbread $20",
-       "label": "Pizza or Flatbread",
-       "price_usd": 20.0
+       "evidence": "SPECIALTY PIZZA $13",
+       "label": "Specialty pizza",
+       "price_usd": 13.0
+      },
+      {
+       "category": "food",
+       "evidence": "PIATTI PICCOLO $8",
+       "label": "Piatti Piccolo (small plates)",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "evidence": "PIATTI MEDIO $10",
+       "label": "Piatti Medio (medium plates)",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "PIATTI DI PASTA $15",
+       "label": "Piatti di Pasta",
+       "price_usd": 15.0
       }
      ],
-     "last_verified_at": "2026-09-03",
+     "last_verified_at": "2026-09-04",
      "source": {
       "clock_quote": "HAPPY HOUR MENU / Sunday-Friday 4:00-6:00PM",
       "heading": "Happy Hour",
       "kind": "venue_site",
-      "quote": "HAPPY HOUR MENU / Sunday-Friday 4:00-6:00PM / pizza or flatbread $20",
+      "quote": "HAPPY HOUR MENU / Sunday-Friday 4:00-6:00PM / MARTINIS $10, CRAFT COCKTAILS $8, SPRITZES $10, WINES $8, DRAFTS $6, BOTTLES $5, SPECIALTY PIZZA $13, PIATTI PICCOLO $8, PIATTI MEDIO $10, PIATTI DI PASTA $15",
       "url": "https://www.limoncellorestaurant.com/happy-hour-menu"
      },
      "type": "happy_hour",
@@ -3493,6 +3975,113 @@
    "plcb_name": "CHICKIES & PETES",
    "website": "https://chickiesandpetes.com/location/audubon-2/?utm_source=gmb&utm_medium=organic&utm_campaign=audubon",
    "zone_id": "audubon_eagleville"
+  },
+  {
+   "address": "325 Simpson Dr, Chester Springs PA 19425",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "Miller Lite Draft $4",
+       "label": "Miller Lite Draft",
+       "price_usd": 4.0
+      },
+      {
+       "category": "draft",
+       "evidence": "Craft IPA's $5",
+       "label": "Craft IPA's",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "Single Shot Tito's $6",
+       "label": "Single Shot Tito's",
+       "price_usd": 6.0
+      },
+      {
+       "category": "wine",
+       "evidence": "House Wine Glass $7",
+       "label": "House Wine Glass",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "evidence": "Loaded Tots $8",
+       "label": "Loaded Tots",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "Teremana Margaritas $9",
+       "label": "Teremana Margaritas",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "evidence": "Firecracker Chicken $10",
+       "label": "Firecracker Chicken",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "Philly Pork Eggrolls $11",
+       "label": "Philly Pork Eggrolls",
+       "price_usd": 11.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "Maker's Mark Old Fashioned $12",
+       "label": "Maker's Mark Old Fashioned",
+       "price_usd": 12.0
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "Monday, Tuesday, Wednesday, Thursday, Friday 4:00 PM to 6:00 PM",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Miller Lite Draft $4, Craft IPA's $5, Single Shot Tito's $6, House Wine Glass $7, Loaded Tots $8, Teremana Margaritas $9, Firecracker Chicken $10, Philly Pork Eggrolls $11, Maker's Mark Old Fashioned $12",
+      "url": "https://libertyunionbar.com/chester-springs/specials/happy-hour/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "65626",
+   "lid": "65626",
+   "name": "Liberty Union Bar and Grill",
+   "plcb_name": "LIBERTY UNION BAR AND GRILL",
+   "website": "http://libertyunionbar.com/chester-springs",
+   "zone_id": "exton_downingtown"
   },
   {
    "address": "410 E Walnut St Ste 2, Perkasie PA 18944",
@@ -4234,17 +4823,71 @@
      "items": [
       {
        "category": "food",
-       "evidence": "Buck a Shuck Clams and Oysters!!",
-       "label": "Buck-a-Shuck Clams and Oysters",
-       "price_usd": 1
+       "evidence": "Tavern Wedge $10",
+       "label": "Tavern Wedge",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "Classic Caesar $10",
+       "label": "Classic Caesar",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "French Onion Soup $10",
+       "label": "French Onion Soup",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "Pomme Frites $10",
+       "label": "Pomme Frites",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "Giant Bavarian Pretzel $10",
+       "label": "Giant Bavarian Pretzel",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "Prime Rib Egg Rolls $14",
+       "label": "Prime Rib Egg Rolls",
+       "price_usd": 14.0
+      },
+      {
+       "category": "food",
+       "evidence": "Jumbo Bacon Shrimp $14",
+       "label": "Jumbo Bacon Shrimp",
+       "price_usd": 14.0
+      },
+      {
+       "category": "food",
+       "evidence": "Tavern Wings $14",
+       "label": "Tavern Wings",
+       "price_usd": 14.0
+      },
+      {
+       "category": "food",
+       "evidence": "Caprese Flatbread $14",
+       "label": "Caprese Flatbread",
+       "price_usd": 14.0
+      },
+      {
+       "category": "food",
+       "evidence": "Short Rib Fries $14",
+       "label": "Short Rib Fries",
+       "price_usd": 14.0
       }
      ],
      "last_verified_at": "2026-09-04",
      "source": {
-      "clock_quote": "Happy Hour 1/2 Price Beer, Wine and Cocktails Buck a Shuck Clams and Oysters!! 7 days a week 4-6 pm",
+      "clock_quote": "7 days a week 4-6 pm",
       "heading": "Happy Hour",
       "kind": "venue_site",
-      "quote": "Buck a Shuck Clams and Oysters!! 7 days a week 4-6 pm",
+      "quote": "1/2 Price Beer, Wine and Cocktails; Tavern Wedge $10, Classic Caesar $10, French Onion Soup $10, Pomme Frites $10, Giant Bavarian Pretzel $10, Prime Rib Egg Rolls $14, Jumbo Bacon Shrimp $14, Tavern Wings $14, Caprese Flatbread $14, Short Rib Fries $14, Tavern Mushroom Bisque $14",
       "url": "https://www.thecftavern.com/menus/"
      },
      "type": "happy_hour",
@@ -6746,36 +7389,43 @@
      "confidence": "likely",
      "items": [
       {
-       "category": "food",
-       "evidence": "HALF PRICED ARTISAN PIZZAS $9",
-       "label": "Half Priced Artisan Pizza",
-       "price_usd": 9
-      },
-      {
        "category": "cocktail",
-       "evidence": "FEATURED COCKTAILS ... $5",
-       "label": "Featured Cocktails (Amador Bourbon Old Fashioned, Tres Agaves Blanco Margarita, Hanson Of Sonoma Dirty Martini)",
-       "price_usd": 5
+       "evidence": "Featured Cocktails $9",
+       "label": "Featured Cocktails",
+       "price_usd": 9.0
       },
       {
        "category": "well",
-       "evidence": "WELL SPIRITS ... $5",
+       "evidence": "Well Spirits $5",
        "label": "Well Spirits",
-       "price_usd": 5
+       "price_usd": 5.0
       },
       {
        "category": "wine",
-       "evidence": "WINE BY THE GLASS ... $5",
+       "evidence": "Wine by the Glass $5",
        "label": "Wine by the Glass",
-       "price_usd": 5
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "Bottled Beer $5",
+       "label": "Bottled Beer",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "discount_pct": 50,
+       "evidence": "HALF PRICED ARTISAN PIZZAS",
+       "label": "Half Priced Artisan Pizzas",
+       "price_usd": null
       }
      ],
-     "last_verified_at": "2026-09-03",
+     "last_verified_at": "2026-09-04",
      "source": {
-      "clock_quote": "HARVEST HAPPY HOUR 3PM – 6PM, MONDAY – FRIDAY BAR AREA ONLY",
+      "clock_quote": "3PM - 6PM, MONDAY - FRIDAY, Bar Area Only",
       "heading": "Harvest Happy Hour",
       "kind": "venue_site",
-      "quote": "Half priced artisan pizzas $9; Featured cocktails, well spirits, wine by the glass $5",
+      "quote": "Featured Cocktails $9 (Amador Bourbon Old Fashioned, Tres Agaves Blanco Margarita, Hanson Of Sonoma Dirty Martini); Well Spirits $5; Wine by the Glass $5; Bottled Beer $5; Half Priced Artisan Pizzas",
       "url": "https://www.farmhousemiddletown.com/daily-specials/"
      },
      "type": "happy_hour",
