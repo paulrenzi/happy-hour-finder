@@ -2443,6 +2443,36 @@ class AnImageThatNamesItselfTheHappyHour(unittest.TestCase):
         self.assertEqual(len(menu_images(html, "https://x.example/happy-hour/")), 2)
 
 
+class AnImageTheVenueLinkedUnderTheWords(unittest.TestCase):
+    """Grain names its happy-hour poster after the TOWN -- /s/Newark.png -- so no
+    filename rule can see it. The venue says what the file is by wrapping the
+    words around the link: <a href="/s/Newark.png">Happy Hours</a>. Eleven priced
+    items sat behind that link while the card published a window and nothing else.
+    """
+
+    def test_the_link_label_names_the_file(self):
+        html = '<a href="/s/Newark.png" target="_blank"><em>Happy Hours</em></a>'
+        got = menu_images(html, "https://meetatgrain.com/newark", self_named=True)
+        self.assertEqual(got, ["https://meetatgrain.com/s/Newark.png"])
+
+    def test_a_caption_near_a_photo_is_still_not_a_menu(self):
+        html = '<div><img src="/img/hero-4433.jpg"><p>Happy Hour every day</p></div>'
+        self.assertEqual(menu_images(html, "https://x.example/happy-hour/"), [])
+
+    def test_prose_that_happens_to_link_a_photo_is_not_a_menu(self):
+        html = ('<a href="/x/party.jpg">Come join us for happy hour on the '
+                'patio every Friday night</a>')
+        self.assertEqual(menu_images(html, "https://x.example/happy-hour/"), [])
+
+    def test_another_menu_linked_the_same_way_is_not_the_happy_hour(self):
+        html = '<a href="/s/Dinner.png">Dinner Menu</a><a href="/s/G.png">View fullsize</a>'
+        self.assertEqual(menu_images(html, "https://x.example/happy-hour/"), [])
+
+    def test_the_href_must_be_an_image(self):
+        html = '<a href="/happy-hour">Happy Hours</a>'
+        self.assertEqual(menu_images(html, "https://x.example/"), [])
+
+
 class APunOnTheThingIsTheThing(unittest.TestCase):
     """Sly Fox calls it "Appy Hour" and never says happy hour."""
 

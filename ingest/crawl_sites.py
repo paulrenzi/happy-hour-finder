@@ -164,6 +164,23 @@ MENU_IMG_RE = re.compile(
 # a page whose URL names no hour, and the old rule never looked there.
 HH_IMG_RE = re.compile(
     r"(?:happy.?hour|" + _HH_TOKEN + r")[^\"'\s]*\.(?:jpe?g|png|webp)", re.I)
+# A link whose href IS an image file and whose own visible text names the happy
+# hour. Grain publishes its entire happy-hour menu -- eleven priced items -- as
+# /s/Newark.png. The file is named for the TOWN, so no filename rule can ever
+# see it; the only thing on that page which says what the file holds is the word
+# the venue wrapped around it: <a href="/s/Newark.png">Happy Hours</a>.
+# This is NOT the 'alt text and surrounding copy' the filename rule rejected
+# below. That rule was rejecting a hero photograph that happened to sit near the
+# words -- an <img> with a caption. This is the venue pointing AT a file and
+# saying what is inside it, which is the same act as naming the file. The label
+# must be short and must be essentially the whole anchor, so a paragraph that
+# mentions happy hour and happens to contain a picture link still does not count.
+HH_LINK_TEXT_RE = re.compile(r"^(?:our\s+|the\s+|view\s+|see\s+)*"
+                             r"(?:happy\s?hours?|" + _HH_TOKEN + r")"
+                             r"(?:\s+(?:menu|specials?))?$", re.I)
+HH_LINKED_IMG_RE = re.compile(
+    r"<a\b[^>]*?\bhref=(['\"])(?P<href>[^'\"]+?\.(?:jpe?g|png|webp))\1[^>]*>"
+    r"(?P<text>.{0,200}?)</a>", re.I | re.S)
 IMG_CAP = 3
 
 MARKUP_RE = re.compile(r"<[^>]+>")
@@ -887,6 +904,20 @@ def menu_images(html, page_url, self_named=False):
         full = urllib.parse.urljoin(page_url, href).split("#")[0]
         # A theme emits the same upload at six widths ('-300x150', '-1024x512');
         # they are one menu, and the largest is the only readable one.
+        key = re.sub(r"-\d{2,4}x\d{2,4}(?=\.\w+$)", "", full)
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(key)
+    # ...and an image the venue LINKED under the words 'happy hour'. Trusted on
+    # any page, like HH_IMG_RE, because the label is the venue's own claim about
+    # the file's contents -- it does not borrow the page's URL for authority.
+    for m in HH_LINKED_IMG_RE.finditer(html):
+        label = WS_RE.sub(" ", MARKUP_RE.sub(" ", html_mod.unescape(m.group("text")))).strip()
+        if not HH_LINK_TEXT_RE.match(label):
+            continue
+        href = urllib.parse.unquote(html_mod.unescape(m.group("href")))
+        full = urllib.parse.urljoin(page_url, href).split("#")[0]
         key = re.sub(r"-\d{2,4}x\d{2,4}(?=\.\w+$)", "", full)
         if key in seen:
             continue
