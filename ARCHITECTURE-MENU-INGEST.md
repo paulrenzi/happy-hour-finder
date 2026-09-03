@@ -2523,6 +2523,26 @@ thirds of what it reads.** Making it emit an `agent_handread`-shaped record
 (window + items, not items alone) remains the highest-leverage change left in
 that lane — not done this session, still open.
 
+**2026-09-03, night 2 — the sidecar-merge fix from earlier the same night
+(`c4bf6f0`, `ba54e20`) confirmed live at scale, not just on the 4 proof
+venues.** A `--force --lids <file>` re-read pass against 56 thin
+(`RESCRAPE-QUEUE.json`, <5 items) venues across wilmington, phoenixville,
+west_chester, newark_de, exton_downingtown (26/56 returned items) shipped
++197 net items with zero further merge-logic surprises — the fixed
+`richer = len(extra) > len(existing)` override and the "pick whichever
+sidecar has more items" fix both held up across a real multi-zone batch. The
+stranding gap named above is still real and separate: this same
+`build_bundles.py` run reported 3 venues / 20 items read-and-never-published
+(no crawled window to attach to) — small next to 197 shipped, but the fix is
+still "make `agent_read_venue.py` write an `agent_handread`-shaped record,"
+not yet done.
+
+**Practical note for the next thin-venue round:** `--tier`/`--needy` selects
+venues with *zero* items, so it does not see `RESCRAPE-QUEUE.json`'s <5-item
+population at all. Re-reading a queue entry needs `--lids <file-of-lids>
+--force`, not `--tier`/`--needy` — build the lids file straight from
+`RESCRAPE-QUEUE.json`'s `venues[].lid`, filtered to the target zone(s).
+
 ## 🚨🔑🔑 A "SHIPPED" HAND-READ CAN STILL BE A THIN READ — RULE: UNDER 5 ITEMS ⇒ RE-SCRAPE (2026-09-03, night)
 
 Paul, verbatim, pointed at two live venues:
