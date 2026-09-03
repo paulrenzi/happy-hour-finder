@@ -2420,6 +2420,89 @@
    "zone_id": "new_castle_de"
   },
   {
+   "address": "1616 Delaware Ave, Wilmington, DE 19806",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "amount_off_usd": 1.0,
+       "category": "draft",
+       "evidence": "$1 OFF ALL DRAFTS",
+       "label": "Draft"
+      },
+      {
+       "amount_off_usd": 2.0,
+       "category": "cocktail",
+       "evidence": "$2 OFF SEASONAL COCKTAILS",
+       "label": "Seasonal Cocktail"
+      },
+      {
+       "category": "well",
+       "evidence": "$4 RAIL MIXED DRINKS",
+       "label": "Rail Mixed Drink",
+       "price_usd": 4.0
+      },
+      {
+       "category": "wine",
+       "evidence": "$5 GLASSES OF HOUSE WINE",
+       "label": "House Wine",
+       "price_usd": 5.0
+      },
+      {
+       "category": "call",
+       "evidence": "$6 JAMESON, TITO'S, CAPTAIN",
+       "label": "Jameson, Tito's, or Captain",
+       "price_usd": 6.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "HAPPY HOUR / Monday-Friday / 3pm-6pm",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "HAPPY HOUR / Monday-Friday / 3pm-6pm / $1 OFF ALL DRAFTS",
+      "url": "http://catherinerooneys.com/wp-content/uploads/2025/09/catherine-rooneys-Happy-Hour-25.pdf"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "15:00"
+      }
+     ]
+    }
+   ],
+   "id": "DE7eb20bf7a8",
+   "lid": "DE7eb20bf7a8",
+   "name": "Catherine Rooney's",
+   "plcb_name": "Catherine Rooney's",
+   "website": "https://catherinerooneys.com/",
+   "zone_id": "wilmington"
+  },
+  {
    "address": "620 Justison St, Wilmington, DE 19801",
    "deals": [
     {
@@ -2646,6 +2729,172 @@
    "zone_id": "wilmington"
   },
   {
+   "address": "1203 Christiana Rd, Newark, DE 19713",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "amount_off_usd": 2.0,
+       "category": "draft",
+       "evidence": "$2 OFF / $2.00 2SP All-Weather Drafts",
+       "label": "2SP All-Weather Draft"
+      },
+      {
+       "amount_off_usd": 2.0,
+       "category": "draft",
+       "evidence": "$2 OFF / $2.00 Delco Lager",
+       "label": "Delco Lager"
+      },
+      {
+       "amount_off_usd": 2.0,
+       "category": "wine",
+       "evidence": "$2 OFF / $2.00 6 oz pours of wine*",
+       "label": "6 oz pour of wine"
+      },
+      {
+       "amount_off_usd": 3.0,
+       "category": "cocktail",
+       "evidence": "$3 OFF / $3.00 Craft Cocktails",
+       "label": "Craft Cocktail"
+      },
+      {
+       "amount_off_usd": 3.0,
+       "category": "wine",
+       "evidence": "$3 OFF / $3.00 9 oz pours of wine*",
+       "label": "9 oz pour of wine"
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Happy Hour / Monday–Friday | 3–6pm",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Happy Hour / Monday–Friday | 3–6pm",
+      "url": "https://twostonespub.com/happyhour"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "15:00"
+      }
+     ]
+    }
+   ],
+   "id": "DE985450b059",
+   "lid": "DE985450b059",
+   "name": "Two Stones Pub",
+   "plcb_name": "Two Stones Pub",
+   "website": "https://twostonespub.com/",
+   "zone_id": "newark_de"
+  },
+  {
+   "address": "701 N Union St, Wilmington, DE 19805",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "$3 Select Domestic Drafts",
+       "label": "Select Domestic Draft",
+       "price_usd": 3.0
+      },
+      {
+       "category": "wine",
+       "evidence": "$5 Glasses of Select Wine",
+       "label": "Select Wine Glass",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$6 Seltzers and Teas",
+       "label": "Seltzer or Tea",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$7 Mules",
+       "label": "Mule",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "evidence": "$5, $7 and $9 Plates",
+       "label": "Happy Hour Plate",
+       "price_usd": 5.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Happy Hour! 03:00 PM - 06:00 PM",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Happy Hour! $5 , $7 and $9 Plates | $3 Select Domestic Drafts | $5 Glasses of Select Wine l $6 Seltzers and Teas l $7 Mules 03:00 PM - 06:00 PM",
+      "url": "http://roccoitaliangrill.com/wilmington-rocco-italian-grill-and-sports-bar-happy-hours-specials"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "15:00"
+      }
+     ]
+    }
+   ],
+   "id": "DE9b9a033447",
+   "lid": "DE9b9a033447",
+   "name": "Rocco Italian Grill & Sports Bar",
+   "plcb_name": "Rocco Italian Grill & Sports Bar",
+   "website": "http://roccoitaliangrill.com/",
+   "zone_id": "wilmington"
+  },
+  {
    "address": "1851 Marsh Rd, Wilmington, DE 19810",
    "deals": [
     {
@@ -2715,6 +2964,636 @@
    "plcb_name": "Brew Works North",
    "website": "https://wilmingtonbrewworks.com/brew-works-north/",
    "zone_id": "wilmington"
+  },
+  {
+   "address": "608 N Market St, Wilmington, DE 19801",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "Oysters $12.00",
+       "label": "Oysters",
+       "price_usd": 12.0
+      },
+      {
+       "category": "food",
+       "evidence": "Fried Calamari $21.00",
+       "label": "Fried Calamari",
+       "price_usd": 21.0
+      },
+      {
+       "category": "food",
+       "evidence": "Wagyu Glizzy $18.00",
+       "label": "Wagyu Glizzy",
+       "price_usd": 18.0
+      },
+      {
+       "category": "food",
+       "evidence": "Beef n' Cheddar $16.00",
+       "label": "Beef n' Cheddar",
+       "price_usd": 16.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Happy Hour: Available in the bar area Tuesday - Friday from 5 pm to 7 pm",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Happy Hour: Available in the bar area Tuesday - Friday from 5 pm to 7 pm",
+      "url": "https://www.bardeasteak.com/menus/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 2,
+       "end": "19:00",
+       "start": "17:00"
+      },
+      {
+       "dow": 3,
+       "end": "19:00",
+       "start": "17:00"
+      },
+      {
+       "dow": 4,
+       "end": "19:00",
+       "start": "17:00"
+      },
+      {
+       "dow": 5,
+       "end": "19:00",
+       "start": "17:00"
+      }
+     ]
+    }
+   ],
+   "id": "DEa2a51b1b18",
+   "lid": "DEa2a51b1b18",
+   "name": "Bardea Steak",
+   "plcb_name": "Bardea Steak",
+   "website": "https://www.bardeasteak.com/",
+   "zone_id": "wilmington"
+  },
+  {
+   "address": "300 Lantana Dr, Hockessin, DE 19707",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "amount_off_usd": 2.0,
+       "category": "draft",
+       "evidence": "$2 OFF / $2.00 2SP All-Weather Drafts",
+       "label": "2SP All-Weather Draft"
+      },
+      {
+       "amount_off_usd": 2.0,
+       "category": "draft",
+       "evidence": "$2 OFF / $2.00 Delco Lager",
+       "label": "Delco Lager"
+      },
+      {
+       "amount_off_usd": 2.0,
+       "category": "wine",
+       "evidence": "$2 OFF / $2.00 6 oz pours of wine*",
+       "label": "6 oz pour of wine"
+      },
+      {
+       "amount_off_usd": 3.0,
+       "category": "cocktail",
+       "evidence": "$3 OFF / $3.00 Craft Cocktails",
+       "label": "Craft Cocktail"
+      },
+      {
+       "amount_off_usd": 3.0,
+       "category": "wine",
+       "evidence": "$3 OFF / $3.00 9 oz pours of wine*",
+       "label": "9 oz pour of wine"
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Happy Hour / Monday–Friday | 3–6pm",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Happy Hour / Monday–Friday | 3–6pm",
+      "url": "https://www.twostonespub.com/happyhour"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "15:00"
+      }
+     ]
+    }
+   ],
+   "id": "DEa5c329773b",
+   "lid": "DEa5c329773b",
+   "name": "Two Stones Pub Hockessin",
+   "plcb_name": "Two Stones Pub Hockessin",
+   "website": "https://www.twostonespub.com/",
+   "zone_id": "newark_de"
+  },
+  {
+   "address": "111 W 10th St, Wilmington, DE 19801",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "cocktail",
+       "evidence": "House Mixed Drinks $8.00",
+       "label": "House Mixed Drink",
+       "price_usd": 8.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "House Espresso Martini & Old Fashioned $12.00",
+       "label": "House Espresso Martini / Old Fashioned",
+       "price_usd": 12.0
+      },
+      {
+       "category": "food",
+       "evidence": "Mozzarella Stick $8.00",
+       "label": "Mozzarella Stick",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "evidence": "Chicken Wings $10.00",
+       "label": "Chicken Wings",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "Fritto Misto $13.00",
+       "label": "Fritto Misto",
+       "price_usd": 13.0
+      },
+      {
+       "category": "food",
+       "evidence": "Nonna's Meatballs $12.00",
+       "label": "Nonna's Meatballs",
+       "price_usd": 12.0
+      },
+      {
+       "category": "food",
+       "evidence": "Margherita Pizza $13.00",
+       "label": "Margherita Pizza",
+       "price_usd": 13.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Happy Hour Available Monday through Friday from 4pm–7pm in bar area.",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Happy Hour Available Monday through Friday from 4pm–7pm in bar area.",
+      "url": "https://www.casanonnade.com/menus/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "19:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "19:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "19:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "19:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "19:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "DEab3d90e8aa",
+   "lid": "DEab3d90e8aa",
+   "name": "Casa Nonna",
+   "plcb_name": "Casa Nonna",
+   "website": "https://www.casanonnade.com/",
+   "zone_id": "wilmington"
+  },
+  {
+   "address": "100 Creek View Rd, Newark, DE 19711",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "Mini Corn Dogs $6.00",
+       "label": "Mini Corn Dogs",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "evidence": "Fried Pickle Chips $7.00",
+       "label": "Fried Pickle Chips",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "evidence": "Spinach & Artichoke Dip $8.00",
+       "label": "Spinach & Artichoke Dip",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "evidence": "Loaded Tots $10.00",
+       "label": "Loaded Tots",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "Boneless Chicken Bites $10.00",
+       "label": "Boneless Chicken Bites",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "Peel and Eat Shrimp $12.00",
+       "label": "Peel and Eat Shrimp",
+       "price_usd": 12.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "Domestic Bottles $3.00",
+       "label": "Domestic Bottle",
+       "price_usd": 3.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Happy Hour Monday - Friday, 4 - 7 PM Bar Area Only",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Happy Hour Monday - Friday, 4 - 7 PM Bar Area Only",
+      "url": "http://www.timothysofnewark.com/menus/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "19:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "19:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "19:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "19:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "19:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "DEab709cbc4b",
+   "lid": "DEab709cbc4b",
+   "name": "Timothy's of Newark",
+   "plcb_name": "Timothy's of Newark",
+   "website": "http://www.timothysofnewark.com/",
+   "zone_id": "newark_de"
+  },
+  {
+   "address": "2 W Market St, Newport, DE 19804",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "$3 Appetizer Menu",
+       "label": "Appetizer",
+       "price_usd": 3.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Happy Hour 3-6pm, 9-close Wed-Sat & All Day SUNDAY",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Happy Hour 3-6pm, 9-close Wed-Sat & All Day SUNDAY / 3 Hours of $3 / $3 Appetizer Menu",
+      "url": "http://www.jstavern.com/new-events/2014/2/1/happy-hour-3-6pm"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 6,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 7,
+       "end": "18:00",
+       "start": "15:00"
+      }
+     ]
+    }
+   ],
+   "id": "DEb511151c02",
+   "lid": "DEb511151c02",
+   "name": "James Street Tavern",
+   "plcb_name": "James Street Tavern",
+   "website": "http://www.jstavern.com/",
+   "zone_id": "wilmington"
+  },
+  {
+   "address": "777 Delaware Park Blvd, Wilmington, DE 19804",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "$3 Legal Light & Delaware Park Lagers",
+       "label": "Legal Light / Delaware Park Lager",
+       "price_usd": 3.0
+      },
+      {
+       "category": "draft",
+       "evidence": "$5 All Other High Steaks Beers",
+       "label": "High Steaks Beer",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "evidence": "$8 Personal Pizzas",
+       "label": "Personal Pizza",
+       "price_usd": 8.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "HAPPY HOUR / Wednesday – Friday | 2pm to 6pm",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "HAPPY HOUR / Wednesday – Friday | 2pm to 6pm / $3 Legal Light & Delaware Park Lagers | $5 All Other High Steaks Beers | $8 Personal Pizzas",
+      "url": "https://delawarepark.com/dining/brewing/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "14:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "14:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "14:00"
+      }
+     ]
+    }
+   ],
+   "id": "DEc46bc95585",
+   "lid": "DEc46bc95585",
+   "name": "1937 Brewing Co",
+   "plcb_name": "1937 Brewing Co",
+   "website": "https://delawarepark.com/dining/brewing/",
+   "zone_id": "wilmington"
+  },
+  {
+   "address": "600 Justison St, Wilmington, DE 19801",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "$5 Tacos* (Chicken, Shrimp or Ground Beef)",
+       "label": "Taco (Chicken, Shrimp or Ground Beef)",
+       "price_usd": 5.0
+      },
+      {
+       "category": "shot",
+       "evidence": "$5 TG House Tequila Shots",
+       "label": "TG House Tequila Shot",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$5 House Margaritas",
+       "label": "House Margarita",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$7 Flavored Margaritas",
+       "label": "Flavored Margarita",
+       "price_usd": 7.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Happy Hour is Tuesday-Friday. / Happy Hour / Monday All Day / Tuesday – Friday 4P-6P",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Happy Hour ALL DAY at the bar/bar booths / Taco Tuesday / $5 Tacos* (Chicken, Shrimp or Ground Beef)",
+      "url": "https://tacogrande.com/weekly-specials/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "DEcfc7c9decb",
+   "lid": "DEcfc7c9decb",
+   "name": "Taco Grande",
+   "plcb_name": "Taco Grande",
+   "website": "http://www.tacogrande.com/",
+   "zone_id": "wilmington"
+  },
+  {
+   "address": "109 Main St, Odessa, DE 19730",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "amount_off_usd": 1.0,
+       "category": "cocktail",
+       "evidence": "$1 off All Cocktails (restaurant wide)",
+       "label": "Cocktail"
+      },
+      {
+       "amount_off_usd": 2.0,
+       "category": "cocktail",
+       "evidence": "$2 off Cantwell's Cocktails",
+       "label": "Cantwell's Cocktail"
+      },
+      {
+       "amount_off_usd": 3.0,
+       "category": "wine",
+       "evidence": "$3 off Select Wine's",
+       "label": "Wine"
+      },
+      {
+       "category": "draft",
+       "evidence": "$3 Coor's Light Draft",
+       "label": "Coor's Light Draft",
+       "price_usd": 3.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$4 Taylor's Grog",
+       "label": "Taylor's Grog",
+       "price_usd": 4.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Happy Hour / Monday through Friday 4pm-6pm",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Happy Hour / Monday through Friday 4pm-6pm / $1 off All Cocktails (restaurant wide)",
+      "url": "https://www.cantwells-tavern.com/menus/happy-hour"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "DEd3e9422996",
+   "lid": "DEd3e9422996",
+   "name": "Cantwell's Tavern",
+   "plcb_name": "Cantwell's Tavern",
+   "website": "https://www.cantwells-tavern.com/",
+   "zone_id": "new_castle_de"
   },
   {
    "address": "1706 Faulkland Rd, Wilmington, DE 19805",
@@ -2875,6 +3754,101 @@
    "plcb_name": "Bardea Food & Drink",
    "website": "https://www.bardeafoodanddrink.com/",
    "zone_id": "wilmington"
+  },
+  {
+   "address": "315 Christiana Mall, Newark, DE 19702",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "amount_off_usd": 2.0,
+       "category": "draft",
+       "evidence": "$2 off al draft beers",
+       "label": "Draft beer"
+      },
+      {
+       "category": "wine",
+       "evidence": "$5 house wines",
+       "label": "House wine",
+       "price_usd": 5.0
+      },
+      {
+       "amount_off_usd": 2.0,
+       "category": "cocktail",
+       "evidence": "$2 off all cocktails",
+       "label": "Cocktail"
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$6 sangria",
+       "label": "Sangria",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "evidence": "EAT / $8 / GARLIC FLATBREAD",
+       "label": "Garlic Flatbread / Spicy Tuna Roll / Personal Classic Pizza / Coal Fired Jumbo Pretzel",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "evidence": "$9 / Tavern Taquitos",
+       "label": "Tavern Taquitos",
+       "price_usd": 9.0
+      },
+      {
+       "category": "food",
+       "evidence": "$10 / HUMMAS TRIO DIP",
+       "label": "Hummus Trio Dip",
+       "price_usd": 10.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "HAPPY HOUR / 3 PM TIL' 6 PM",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "HAPPY HOUR / 3 PM TIL' 6 PM / $2 off al draft beers, $5 house wines, $2 off all cocktails, $6 sangria",
+      "url": "https://www.tommystavernandtap.com/copy-of-happy-hour-specials"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "15:00"
+      }
+     ]
+    }
+   ],
+   "id": "DEdc2befac1e",
+   "lid": "DEdc2befac1e",
+   "name": "Tommy's Tavern + Tap",
+   "plcb_name": "Tommy's Tavern + Tap",
+   "website": "https://www.tommystavernandtap.com/tommystaverntap-delaware",
+   "zone_id": "newark_de"
   },
   {
    "address": "331 Christiana Mall, Newark, DE 19702",
@@ -3285,6 +4259,93 @@
    "plcb_name": "Santa Fe Mexican Grill - Newark",
    "website": "https://www.santafemexicangrill.com/",
    "zone_id": "newark_de"
+  },
+  {
+   "address": "1313 N Market St, Wilmington, DE 19801",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "$5 SELECT DRAFT BEER",
+       "label": "Select Draft Beer",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "evidence": "$6 HOUSE WINE",
+       "label": "House Wine",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$7 HOUSE CRUSHES",
+       "label": "House Crush",
+       "price_usd": 7.0
+      },
+      {
+       "category": "well",
+       "evidence": "$7 RAIL DRINKS WITH ONE MIXER",
+       "label": "Rail Drink with one mixer",
+       "price_usd": 7.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "HAPPY HOUR EVERY DAY! / 4PM - 7PM",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "HAPPY HOUR EVERY DAY! / 4PM - 7PM / $5 SELECT DRAFT BEER",
+      "url": "https://www.thechancerymarket.com/eat-drink"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "19:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "19:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "19:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "19:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "19:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 6,
+       "end": "19:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 7,
+       "end": "19:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "DEf31d98e1ae",
+   "lid": "DEf31d98e1ae",
+   "name": "The Chancery Market",
+   "plcb_name": "The Chancery Market",
+   "website": "https://www.thechancerymarket.com/",
+   "zone_id": "wilmington"
   },
   {
    "address": "501 Grove Ln, Newark, DE 19711",
