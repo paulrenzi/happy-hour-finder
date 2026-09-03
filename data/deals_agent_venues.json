@@ -9,6 +9,71 @@
      "confidence": "likely",
      "items": [
       {
+       "category": "wine",
+       "evidence": "$7.9 house wine by the glass",
+       "label": "House Wine by the Glass",
+       "price_usd": 7.9
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$9.9 select craft classics",
+       "label": "Select Craft Classic",
+       "price_usd": 9.9
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Monday - Friday 4pm - 6pm",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Join us for Happy Hour from 4pm – 6pm for $7.9 house wine by the glass and $9.9 select craft classics! Monday - Friday 4pm - 6pm",
+      "url": "https://sedonataphouse.com/locations/west-chester-pa/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "101577",
+   "lid": "101577",
+   "name": "Sedona Taphouse",
+   "plcb_name": "SEDONA TAPHOUSE",
+   "website": "https://sedonataphouse.com/locations/west-chester-pa/",
+   "zone_id": "west_chester"
+  },
+  {
+   "address": "44 W Gay St, West Chester PA 19380",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
        "category": "draft",
        "evidence": "DRAFTS $5",
        "label": "Draft",
@@ -379,6 +444,51 @@
    "name": "Station 142 Stage + Bar + Kitchen",
    "plcb_name": "FTROOP142 LLC",
    "website": "https://station142.com/",
+   "zone_id": "west_chester"
+  },
+  {
+   "address": "124 W Gay St, West Chester PA 19380",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "well",
+       "evidence": "Well Drinks are $3",
+       "label": "Well Drink",
+       "price_usd": 3.0
+      },
+      {
+       "category": "draft",
+       "evidence": "Craft Drafts are $4",
+       "label": "Craft Draft",
+       "price_usd": 4.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Well Drinks are $3 and Craft Drafts are $4 from 8 p.m. – 10 p.m.",
+      "heading": "Quizzo Night Drink Specials",
+      "kind": "venue_site",
+      "quote": "Thursday nights is Quizzo night at Ryan's Pub, starting at 8 p.m. with a $50 Grand Prize! Well Drinks are $3 and Craft Drafts are $4 from 8 p.m. – 10 p.m.",
+      "url": "https://ryans-pub.com/beer-menu/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 4,
+       "end": "22:00",
+       "start": "20:00"
+      }
+     ]
+    }
+   ],
+   "id": "47717",
+   "lid": "47717",
+   "name": "Ryan’s Pub",
+   "plcb_name": "P. J. RYAN'S, INC.",
+   "website": "https://ryans-pub.com",
    "zone_id": "west_chester"
   },
   {

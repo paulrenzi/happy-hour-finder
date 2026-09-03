@@ -3146,5 +3146,63 @@
     "evidence": "$5 Boneless Wings (Snack Size)"
    }
   ]
+ },
+ {
+  "lid": "101577",
+  "url": "https://sedonataphouse.com/locations/west-chester-pa/",
+  "read_on": "2026-09-03",
+  "heading": "Happy Hour",
+  "clock_quote": "Monday - Friday 4pm - 6pm",
+  "quote": "Join us for Happy Hour from 4pm – 6pm for $7.9 house wine by the glass and $9.9 select craft classics! Monday - Friday 4pm - 6pm",
+  "days": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "start": "16:00",
+  "end": "18:00",
+  "items": [
+   {
+    "category": "wine",
+    "label": "House Wine by the Glass",
+    "price_usd": 7.9,
+    "evidence": "$7.9 house wine by the glass"
+   },
+   {
+    "category": "cocktail",
+    "label": "Select Craft Classic",
+    "price_usd": 9.9,
+    "evidence": "$9.9 select craft classics"
+   }
+  ]
+ },
+ {
+  "lid": "47717",
+  "url": "https://ryans-pub.com/beer-menu/",
+  "read_on": "2026-09-03",
+  "heading": "Quizzo Night Drink Specials",
+  "clock_quote": "Well Drinks are $3 and Craft Drafts are $4 from 8 p.m. – 10 p.m.",
+  "quote": "Thursday nights is Quizzo night at Ryan's Pub, starting at 8 p.m. with a $50 Grand Prize! Well Drinks are $3 and Craft Drafts are $4 from 8 p.m. – 10 p.m.",
+  "days": [
+   4
+  ],
+  "start": "20:00",
+  "end": "22:00",
+  "items": [
+   {
+    "category": "well",
+    "label": "Well Drink",
+    "price_usd": 3.0,
+    "evidence": "Well Drinks are $3"
+   },
+   {
+    "category": "draft",
+    "label": "Craft Draft",
+    "price_usd": 4.0,
+    "evidence": "Craft Drafts are $4"
+   }
+  ]
  }
 ]
