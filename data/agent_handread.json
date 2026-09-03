@@ -5075,5 +5075,235 @@
         "evidence": "Tuna Poke Tartare* ... $13.00"
       }
     ]
+  },
+  {
+    "lid": "60193",
+    "url": "http://greenparrotrestaurant.com/specials",
+    "read_on": "2026-09-04",
+    "heading": "Happy Hour",
+    "clock_quote": "Happy Hour Is Back! Monday - Thursday: 4PM-6PM / Friday 3PM-6PM Saturday: 2PM-4PM / Sunday (Industry Night): 7PM-8PM",
+    "quote": "domestic drafts: $3.25 local on tap: $5.25 20 oz. irish on tap: $6.50 6 oz. house wine: $6.50 well cocktails: $4.50 signature cocktails: $10.50 domestic bottle buckets (5): $23.00",
+    "windows": [
+      {
+        "dow": 1,
+        "start": "16:00",
+        "end": "18:00"
+      },
+      {
+        "dow": 2,
+        "start": "16:00",
+        "end": "18:00"
+      },
+      {
+        "dow": 3,
+        "start": "16:00",
+        "end": "18:00"
+      },
+      {
+        "dow": 4,
+        "start": "16:00",
+        "end": "18:00"
+      },
+      {
+        "dow": 5,
+        "start": "15:00",
+        "end": "18:00"
+      },
+      {
+        "dow": 6,
+        "start": "14:00",
+        "end": "16:00"
+      },
+      {
+        "dow": 7,
+        "start": "19:00",
+        "end": "20:00"
+      }
+    ],
+    "items": [
+      {
+        "category": "draft",
+        "label": "Domestic Drafts",
+        "price_usd": 3.25,
+        "evidence": "domestic drafts: $3.25"
+      },
+      {
+        "category": "draft",
+        "label": "Local on Tap",
+        "price_usd": 5.25,
+        "evidence": "local on tap: $5.25"
+      },
+      {
+        "category": "draft",
+        "label": "20oz Irish on Tap",
+        "price_usd": 6.5,
+        "evidence": "20 oz. irish on tap: $6.50"
+      },
+      {
+        "category": "wine",
+        "label": "6oz House Wine",
+        "price_usd": 6.5,
+        "evidence": "6 oz. house wine: $6.50"
+      },
+      {
+        "category": "cocktail",
+        "label": "Well Cocktails",
+        "price_usd": 4.5,
+        "evidence": "well cocktails: $4.50"
+      },
+      {
+        "category": "cocktail",
+        "label": "Signature Cocktails",
+        "price_usd": 10.5,
+        "evidence": "signature cocktails: $10.50"
+      },
+      {
+        "category": "bottle_can",
+        "label": "Domestic Bottle Bucket (5)",
+        "price_usd": 23.0,
+        "evidence": "domestic bottle buckets (5): $23.00"
+      }
+    ]
+  },
+  {
+    "lid": "65716",
+    "url": "http://www.freewillbrewing.com/",
+    "read_on": "2026-09-04",
+    "heading": "Happy Hour",
+    "clock_quote": "Join us for happy hour, monday-friday 4-6PM and enjoy $5 beers across the board (excluding barrel aged offerings).",
+    "quote": "happy hour, monday-friday 4-6PM and enjoy $5 beers across the board (excluding barrel aged offerings)",
+    "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "start": "16:00",
+    "end": "18:00",
+    "items": [
+      {
+        "category": "draft",
+        "label": "Beer (all, excl. barrel aged)",
+        "price_usd": 5.0,
+        "evidence": "$5 beers across the board (excluding barrel aged offerings)"
+      }
+    ]
+  },
+  {
+    "lid": "133468",
+    "url": "https://locations.pjspub.com/locations/PA/newtown/2920-s-eagle-rd-43",
+    "read_on": "2026-09-04",
+    "heading": "Happy Hour",
+    "clock_quote": "Happy Hour Monday 4:00 PM - 6:00 PM Tuesday 4:00 PM - 6:00 PM Wednesday 4:00 PM - 6:00 PM Thursday 4:00 PM - 6:00 PM Friday 4:00 PM - 6:00 PM",
+    "quote": "MON - FRI 4PM - 6PM $3 Domestic Drafts $4 Corona & Corona Light $6 House Wine $6 Krushes $5 Boneless Wings (Snack Size) $10 Boneless Wings (Share Size)",
+    "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "start": "16:00",
+    "end": "18:00",
+    "items": [
+      {
+        "category": "draft",
+        "label": "Domestic Drafts",
+        "price_usd": 3,
+        "evidence": "$3 Domestic Drafts"
+      },
+      {
+        "category": "bottle_can",
+        "label": "Corona & Corona Light",
+        "price_usd": 4,
+        "evidence": "$4 Corona & Corona Light"
+      },
+      {
+        "category": "wine",
+        "label": "House Wine",
+        "price_usd": 6,
+        "evidence": "$6 House Wine"
+      },
+      {
+        "category": "cocktail",
+        "label": "Krushes",
+        "price_usd": 6,
+        "evidence": "$6 Krushes"
+      },
+      {
+        "category": "food",
+        "label": "Boneless Wings (Snack Size)",
+        "price_usd": 5,
+        "evidence": "$5 Boneless Wings (Snack Size)"
+      },
+      {
+        "category": "food",
+        "label": "Boneless Wings (Share Size)",
+        "price_usd": 10,
+        "evidence": "$10 Boneless Wings (Share Size)"
+      }
+    ]
+  },
+  {
+    "lid": "106434",
+    "url": "https://www.oldestonenewhope.com/happy-hour",
+    "read_on": "2026-09-04",
+    "heading": "Happy Hour",
+    "clock_quote": "Monday to Friday · 4:30 to 6:30 pm Happy Hour",
+    "quote": "Oysters $2 Surfside Iced Tea $5 Wings $6 Tacos (2) $6 Petite Charcuterie $6 Red & White Wine $10 Signature Cocktails $10",
+    "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "start": "16:30",
+    "end": "18:30",
+    "items": [
+      {
+        "category": "food",
+        "label": "Oysters",
+        "price_usd": 2,
+        "evidence": "Oysters $2"
+      },
+      {
+        "category": "cocktail",
+        "label": "Surfside Iced Tea",
+        "price_usd": 5,
+        "evidence": "Surfside Iced Tea $5"
+      },
+      {
+        "category": "food",
+        "label": "Wings",
+        "price_usd": 6,
+        "evidence": "Wings $6"
+      },
+      {
+        "category": "food",
+        "label": "Tacos (2)",
+        "price_usd": 6,
+        "evidence": "Tacos (2) $6"
+      },
+      {
+        "category": "food",
+        "label": "Petite Charcuterie",
+        "price_usd": 6,
+        "evidence": "Petite Charcuterie $6"
+      },
+      {
+        "category": "wine",
+        "label": "Red & White Wine",
+        "price_usd": 10,
+        "evidence": "Red & White Wine $10"
+      },
+      {
+        "category": "cocktail",
+        "label": "Signature Cocktails",
+        "price_usd": 10,
+        "evidence": "Signature Cocktails $10"
+      }
+    ]
   }
 ]

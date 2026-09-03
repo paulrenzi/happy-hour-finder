@@ -250,6 +250,101 @@
    "zone_id": "malvern_great_valley"
   },
   {
+   "address": "15 S Main St, New Hope PA 18938",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "Oysters $2",
+       "label": "Oysters",
+       "price_usd": 2
+      },
+      {
+       "category": "cocktail",
+       "evidence": "Surfside Iced Tea $5",
+       "label": "Surfside Iced Tea",
+       "price_usd": 5
+      },
+      {
+       "category": "food",
+       "evidence": "Wings $6",
+       "label": "Wings",
+       "price_usd": 6
+      },
+      {
+       "category": "food",
+       "evidence": "Tacos (2) $6",
+       "label": "Tacos (2)",
+       "price_usd": 6
+      },
+      {
+       "category": "food",
+       "evidence": "Petite Charcuterie $6",
+       "label": "Petite Charcuterie",
+       "price_usd": 6
+      },
+      {
+       "category": "wine",
+       "evidence": "Red & White Wine $10",
+       "label": "Red & White Wine",
+       "price_usd": 10
+      },
+      {
+       "category": "cocktail",
+       "evidence": "Signature Cocktails $10",
+       "label": "Signature Cocktails",
+       "price_usd": 10
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "Monday to Friday · 4:30 to 6:30 pm Happy Hour",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Oysters $2 Surfside Iced Tea $5 Wings $6 Tacos (2) $6 Petite Charcuterie $6 Red & White Wine $10 Signature Cocktails $10",
+      "url": "https://www.oldestonenewhope.com/happy-hour"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:30",
+       "start": "16:30"
+      },
+      {
+       "dow": 2,
+       "end": "18:30",
+       "start": "16:30"
+      },
+      {
+       "dow": 3,
+       "end": "18:30",
+       "start": "16:30"
+      },
+      {
+       "dow": 4,
+       "end": "18:30",
+       "start": "16:30"
+      },
+      {
+       "dow": 5,
+       "end": "18:30",
+       "start": "16:30"
+      }
+     ]
+    }
+   ],
+   "id": "106434",
+   "lid": "106434",
+   "name": "Oldestone Steakhouse",
+   "plcb_name": "THE OLD STONE CHURCH OF NEW HOPE LLC",
+   "website": "https://www.oldestonenewhope.com/",
+   "zone_id": "new_hope"
+  },
+  {
    "address": "128 Ford St, West Conshohocken PA 19428",
    "deals": [
     {
@@ -1902,6 +1997,95 @@
    "zone_id": "west_chester"
   },
   {
+   "address": "2920 S Eagle Rd, Newtown PA 18940",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "$3 Domestic Drafts",
+       "label": "Domestic Drafts",
+       "price_usd": 3
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "$4 Corona & Corona Light",
+       "label": "Corona & Corona Light",
+       "price_usd": 4
+      },
+      {
+       "category": "wine",
+       "evidence": "$6 House Wine",
+       "label": "House Wine",
+       "price_usd": 6
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$6 Krushes",
+       "label": "Krushes",
+       "price_usd": 6
+      },
+      {
+       "category": "food",
+       "evidence": "$5 Boneless Wings (Snack Size)",
+       "label": "Boneless Wings (Snack Size)",
+       "price_usd": 5
+      },
+      {
+       "category": "food",
+       "evidence": "$10 Boneless Wings (Share Size)",
+       "label": "Boneless Wings (Share Size)",
+       "price_usd": 10
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "Happy Hour Monday 4:00 PM - 6:00 PM Tuesday 4:00 PM - 6:00 PM Wednesday 4:00 PM - 6:00 PM Thursday 4:00 PM - 6:00 PM Friday 4:00 PM - 6:00 PM",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "MON - FRI 4PM - 6PM $3 Domestic Drafts $4 Corona & Corona Light $6 House Wine $6 Krushes $5 Boneless Wings (Snack Size) $10 Boneless Wings (Share Size)",
+      "url": "https://locations.pjspub.com/locations/PA/newtown/2920-s-eagle-rd-43"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "133468",
+   "lid": "133468",
+   "name": "PJ Whelihan’s Pub + Restaurant - Newtown",
+   "plcb_name": "PJ WHELIHAN'S",
+   "website": "https://locations.pjspub.com/locations/PA/newtown/2920-s-eagle-rd-43",
+   "zone_id": "newtown_bucks"
+  },
+  {
    "address": "738 Bethlehem Pk, Flourtown PA 19031",
    "deals": [
     {
@@ -2866,6 +3050,111 @@
    "zone_id": "west_chester"
   },
   {
+   "address": "240 N Sycamore St, Newtown PA 18940",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "domestic drafts: $3.25",
+       "label": "Domestic Drafts",
+       "price_usd": 3.25
+      },
+      {
+       "category": "draft",
+       "evidence": "local on tap: $5.25",
+       "label": "Local on Tap",
+       "price_usd": 5.25
+      },
+      {
+       "category": "draft",
+       "evidence": "20 oz. irish on tap: $6.50",
+       "label": "20oz Irish on Tap",
+       "price_usd": 6.5
+      },
+      {
+       "category": "wine",
+       "evidence": "6 oz. house wine: $6.50",
+       "label": "6oz House Wine",
+       "price_usd": 6.5
+      },
+      {
+       "category": "cocktail",
+       "evidence": "well cocktails: $4.50",
+       "label": "Well Cocktails",
+       "price_usd": 4.5
+      },
+      {
+       "category": "cocktail",
+       "evidence": "signature cocktails: $10.50",
+       "label": "Signature Cocktails",
+       "price_usd": 10.5
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "domestic bottle buckets (5): $23.00",
+       "label": "Domestic Bottle Bucket (5)",
+       "price_usd": 23.0
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "Happy Hour Is Back! Monday - Thursday: 4PM-6PM / Friday 3PM-6PM Saturday: 2PM-4PM / Sunday (Industry Night): 7PM-8PM",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "domestic drafts: $3.25 local on tap: $5.25 20 oz. irish on tap: $6.50 6 oz. house wine: $6.50 well cocktails: $4.50 signature cocktails: $10.50 domestic bottle buckets (5): $23.00",
+      "url": "http://greenparrotrestaurant.com/specials"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 6,
+       "end": "16:00",
+       "start": "14:00"
+      },
+      {
+       "dow": 7,
+       "end": "20:00",
+       "start": "19:00"
+      }
+     ]
+    }
+   ],
+   "id": "60193",
+   "lid": "60193",
+   "name": "Green Parrot",
+   "plcb_name": "GREEN PARROT IRISH PUB & GRILL",
+   "website": "http://greenparrotrestaurant.com/",
+   "zone_id": "newtown_bucks"
+  },
+  {
    "address": "10-12-14 E Gay St, West Chester PA 19380",
    "deals": [
     {
@@ -3204,6 +3493,65 @@
    "plcb_name": "CHICKIES & PETES",
    "website": "https://chickiesandpetes.com/location/audubon-2/?utm_source=gmb&utm_medium=organic&utm_campaign=audubon",
    "zone_id": "audubon_eagleville"
+  },
+  {
+   "address": "410 E Walnut St Ste 2, Perkasie PA 18944",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "$5 beers across the board (excluding barrel aged offerings)",
+       "label": "Beer (all, excl. barrel aged)",
+       "price_usd": 5.0
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "Join us for happy hour, monday-friday 4-6PM and enjoy $5 beers across the board (excluding barrel aged offerings).",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "happy hour, monday-friday 4-6PM and enjoy $5 beers across the board (excluding barrel aged offerings)",
+      "url": "http://www.freewillbrewing.com/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "65716",
+   "lid": "65716",
+   "name": "Free Will Brewing",
+   "plcb_name": "FREE WILL BREWING COMPANY LLC",
+   "website": "http://www.freewillbrewing.com/",
+   "zone_id": "perkasie"
   },
   {
    "address": "1347 Wilmington Pk, West Chester PA 19382",

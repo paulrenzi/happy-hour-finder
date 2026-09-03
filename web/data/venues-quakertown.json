@@ -5,12 +5,16 @@
  "venues": [
   {
    "lid": "45183",
-   "name": "Applebee's Neighborhood Grill & Bar",
+   "name": "Applebee's Grill + Bar",
    "address": "145 N West End Blvd, Quakertown PA 18951",
    "zone_id": "quakertown",
    "license_type": "Restaurant (Liquor)",
    "id": "45183",
    "plcb_name": "APPLEBEE'S NEIGHBORHOOD GRILL & BAR",
+   "website": "https://restaurants.applebees.com/en-us/pa/quakertown/145-n.-west-end-blvd.-94095?utm_source=google&utm_medium=organic&utm_campaign=google_my_business&utm_term=94095&utm_content=website",
+   "lat": 40.4477602,
+   "lng": -75.36030029999999,
+   "geo_precision": "place",
    "deals": []
   },
   {
@@ -21,26 +25,41 @@
    "license_type": "Restaurant (Liquor)",
    "id": "83325",
    "plcb_name": "BUFFALO WILD WINGS",
+   "website": "https://www.buffalowildwings.com/locations/us/pa/quakertown/1465-west-broad-street,-suite-29/sports-bar-1535?utm_source=google-my-business&utm_medium=organic&utm_campaign=website-link&y_source=1_MjAxNjYxMTkyOC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "lat": 40.446597,
+   "lng": -75.357882,
+   "geo_precision": "place",
    "deals": []
   },
   {
    "lid": "103231",
-   "name": "Doan Gang Distillery",
+   "name": "Doan Distillery",
    "address": "116 E Broad St, Quakertown PA 18951",
    "zone_id": "quakertown",
    "license_type": "Limited Distillery",
    "id": "103231",
    "plcb_name": "DOAN GANG DISTILLERY",
+   "website": "http://doandistillery.com/",
+   "lat": 40.441025599999996,
+   "lng": -75.3338388,
+   "geo_precision": "place",
+   "also_lids": [
+    "133134"
+   ],
    "deals": []
   },
   {
-   "lid": "133134",
-   "name": "Doan Gang Distillery",
-   "address": "116 E Broad St, Quakertown PA 18951",
+   "lid": "92738",
+   "name": "GIANT",
+   "address": "1465-7 W Broad St, Quakertown PA 18951",
    "zone_id": "quakertown",
-   "license_type": "Brewery",
-   "id": "133134",
-   "plcb_name": "DOAN GANG DISTILLERY LLC",
+   "license_type": "Restaurant (Liquor)",
+   "id": "92738",
+   "plcb_name": "THE GIANT COMPANY LLC",
+   "website": "https://stores.giantfoodstores.com/pa/quakertown/1465-w-broad-st?y_source=1_NDE5NTM3OS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "lat": 40.4449058,
+   "lng": -75.3565443,
+   "geo_precision": "place",
    "deals": []
   },
   {
@@ -55,12 +74,16 @@
   },
   {
    "lid": "55236",
-   "name": "Mccooles",
+   "name": "McCoole's at the Historic Red Lion Inn",
    "address": "4 S Main St, Quakertown PA 18951",
    "zone_id": "quakertown",
    "license_type": "Hotel (Liquor)",
    "id": "55236",
    "plcb_name": "MCCOOLES",
+   "website": "http://www.mccoolesredlioninn.com/",
+   "lat": 40.4424464,
+   "lng": -75.35254669999999,
+   "geo_precision": "place",
    "deals": []
   },
   {
@@ -75,12 +98,16 @@
   },
   {
    "lid": "36283",
-   "name": "T G I Friday's",
+   "name": "TGI Fridays",
    "address": "10 N West End Blvd, Quakertown PA 18951",
    "zone_id": "quakertown",
    "license_type": "Restaurant (Liquor)",
    "id": "36283",
    "plcb_name": "T G I FRIDAY'S",
+   "website": "https://locations.tgifridays.com/pa/quakertown/10-n-west-end-blvd.html",
+   "lat": 40.444490099999996,
+   "lng": -75.3594921,
+   "geo_precision": "place",
    "deals": []
   },
   {
@@ -94,23 +121,17 @@
    "deals": []
   },
   {
-   "lid": "92738",
-   "name": "The Giant Company",
-   "address": "1465-7 W Broad St, Quakertown PA 18951",
-   "zone_id": "quakertown",
-   "license_type": "Restaurant (Liquor)",
-   "id": "92738",
-   "plcb_name": "THE GIANT COMPANY LLC",
-   "deals": []
-  },
-  {
    "lid": "133405",
-   "name": "The Proper Brewing",
+   "name": "The Proper Brewing Company",
    "address": "117 W Broad St, Quakertown PA 18951",
    "zone_id": "quakertown",
    "license_type": "Brewery",
    "id": "133405",
    "plcb_name": "THE PROPER BREWING COMPANY",
+   "website": "http://www.theproperbrewing.com/",
+   "lat": 40.4414717,
+   "lng": -75.33556920000001,
+   "geo_precision": "place",
    "deals": []
   }
  ]

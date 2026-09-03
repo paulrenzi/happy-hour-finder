@@ -4,36 +4,6 @@
  "built_at": "2026-09-03",
  "venues": [
   {
-   "lid": "72933",
-   "name": "606 W Chestnut Street",
-   "address": "606 W Chestnut St, Perkasie PA 18944",
-   "zone_id": "perkasie",
-   "license_type": "Restaurant (Liquor)",
-   "id": "72933",
-   "plcb_name": "606 W CHESTNUT STREET LLC",
-   "deals": []
-  },
-  {
-   "lid": "65716",
-   "name": "Free Will Brewing Company",
-   "address": "410 E Walnut St Ste 2, Perkasie PA 18944",
-   "zone_id": "perkasie",
-   "license_type": "Brewery",
-   "id": "65716",
-   "plcb_name": "FREE WILL BREWING COMPANY LLC",
-   "deals": []
-  },
-  {
-   "lid": "99584",
-   "name": "Free Will Winery",
-   "address": "410 E Walnut St Ste 2, Perkasie PA 18944",
-   "zone_id": "perkasie",
-   "license_type": "Limited Winery",
-   "id": "99584",
-   "plcb_name": "FREE WILL WINERY",
-   "deals": []
-  },
-  {
    "lid": "107753",
    "name": "Mystic Ways Brewing",
    "address": "510-1/2 W Walnut St, Perkasie PA 18944",
@@ -41,6 +11,10 @@
    "license_type": "Brewery",
    "id": "107753",
    "plcb_name": "MYSTIC WAYS BREWING COMPANY",
+   "website": "https://www.facebook.com/Mystic-Ways-Brewing-102345721454144/",
+   "lat": 40.371955199999995,
+   "lng": -75.2969865,
+   "geo_precision": "place",
    "deals": []
   },
   {
@@ -51,36 +25,65 @@
    "license_type": "Restaurant (Liquor)",
    "id": "38446",
    "plcb_name": "OLDE TOWNE RESTAURANT & TAVERN",
-   "deals": []
-  },
-  {
-   "lid": "104931",
-   "name": "Original Dpir",
-   "address": "230 Rte 313, Perkasie PA 18944",
-   "zone_id": "perkasie",
-   "license_type": "Brewery",
-   "id": "104931",
-   "plcb_name": "ORIGINAL DPIR INC",
+   "lat": 40.3723252,
+   "lng": -75.29725719999999,
+   "geo_precision": "place",
    "deals": []
   },
   {
    "lid": "108099",
-   "name": "Perkasie Pizza and Pasta",
+   "name": "Perkasie Pizza & Pasta - Catering",
    "address": "615 W Market St, Perkasie PA 18944",
    "zone_id": "perkasie",
    "license_type": "Brewery",
    "id": "108099",
    "plcb_name": "PERKASIE PIZZA AND PASTA",
+   "website": "http://perkasiepizzapasta.com/",
+   "lat": 40.374485,
+   "lng": -75.294874,
+   "geo_precision": "place",
+   "deals": []
+  },
+  {
+   "lid": "104931",
+   "name": "PT Solutions of Dublin",
+   "address": "230 Rte 313, Perkasie PA 18944",
+   "zone_id": "perkasie",
+   "license_type": "Brewery",
+   "id": "104931",
+   "plcb_name": "ORIGINAL DPIR INC",
+   "website": "https://ptsolutions.com/find-a-clinic/pa/perkasie/dublin/?utm_source=google&utm_medium=organic&utm_campaign=GMB-PT-Solutions-Dublin&utm_content=listing",
+   "lat": 40.380420699999995,
+   "lng": -75.2175093,
+   "geo_precision": "place",
+   "deals": []
+  },
+  {
+   "lid": "72933",
+   "name": "Rams Pint House & Rooftop Lounge",
+   "address": "606 W Chestnut St, Perkasie PA 18944",
+   "zone_id": "perkasie",
+   "license_type": "Restaurant (Liquor)",
+   "id": "72933",
+   "plcb_name": "606 W CHESTNUT STREET LLC",
+   "website": "https://www.ramperkasie.com/",
+   "lat": 40.3736301,
+   "lng": -75.2966421,
+   "geo_precision": "place",
    "deals": []
   },
   {
    "lid": "18488",
-   "name": "South Perkasie Hotel",
+   "name": "The Perk",
    "address": "501 E Walnut St, Perkasie PA 18944",
    "zone_id": "perkasie",
    "license_type": "Restaurant (Liquor)",
    "id": "18488",
    "plcb_name": "SOUTH PERKASIE HOTEL INC",
+   "website": "http://www.attheperk.com/",
+   "lat": 40.364481,
+   "lng": -75.285811,
+   "geo_precision": "place",
    "deals": []
   },
   {
@@ -91,6 +94,10 @@
    "license_type": "Brewery",
    "id": "109580",
    "plcb_name": "VAN LIEUS BREWING CORPORATION",
+   "website": "https://www.vanlieusbrewing.com/",
+   "lat": 40.3696592,
+   "lng": -75.2953436,
+   "geo_precision": "place",
    "deals": []
   }
  ]

@@ -522,12 +522,19 @@
  },
  "101327": {
   "address": "300 W Bridge St, New Hope PA 18938",
+  "also_lids": [
+   "126410"
+  ],
+  "geo_precision": "place",
+  "lat": 40.363526,
   "license_type": "Restaurant (Liquor)",
   "lid": "101327",
-  "name": "New Hope Market",
-  "named_by": "plcb",
+  "lng": -74.951058,
+  "name": "New Hope Ferry Market",
+  "named_by": "places",
   "plcb_name": "NEW HOPE MARKET LLC",
   "tier": "core",
+  "website": "http://www.theferrymarket.com/",
   "zone_id": "new_hope"
  },
  "101345": {
@@ -1247,12 +1254,19 @@
  },
  "103231": {
   "address": "116 E Broad St, Quakertown PA 18951",
+  "also_lids": [
+   "133134"
+  ],
+  "geo_precision": "place",
+  "lat": 40.441025599999996,
   "license_type": "Limited Distillery",
   "lid": "103231",
-  "name": "Doan Gang Distillery",
-  "named_by": "plcb",
+  "lng": -75.3338388,
+  "name": "Doan Distillery",
+  "named_by": "places",
   "plcb_name": "DOAN GANG DISTILLERY",
   "tier": "taproom",
+  "website": "http://doandistillery.com/",
   "zone_id": "quakertown"
  },
  "103233": {
@@ -2119,12 +2133,16 @@
  },
  "104931": {
   "address": "230 Rte 313, Perkasie PA 18944",
+  "geo_precision": "place",
+  "lat": 40.380420699999995,
   "license_type": "Brewery",
   "lid": "104931",
-  "name": "Original Dpir",
-  "named_by": "plcb",
+  "lng": -75.2175093,
+  "name": "PT Solutions of Dublin",
+  "named_by": "places",
   "plcb_name": "ORIGINAL DPIR INC",
   "tier": "taproom",
+  "website": "https://ptsolutions.com/find-a-clinic/pa/perkasie/dublin/?utm_source=google&utm_medium=organic&utm_campaign=GMB-PT-Solutions-Dublin&utm_content=listing",
   "zone_id": "perkasie"
  },
  "104946": {
@@ -2267,12 +2285,16 @@
  },
  "105190": {
   "address": "274 S River Rd, New Hope PA 18938",
+  "geo_precision": "place",
+  "lat": 40.3557242,
   "license_type": "Hotel (Liquor)",
   "lid": "105190",
-  "name": "Gateway to New Hope Operating",
-  "named_by": "plcb",
+  "lng": -74.9483659,
+  "name": "Odette\u2019s Steakhouse",
+  "named_by": "places",
   "plcb_name": "GATEWAY TO NEW HOPE OPERATING LLC",
   "tier": "core",
+  "website": "https://www.riverhousenewhope.com/dine-drink/odettes-menu/",
   "zone_id": "new_hope"
  },
  "105216": {
@@ -2748,12 +2770,16 @@
  },
  "106434": {
   "address": "15 S Main St, New Hope PA 18938",
+  "geo_precision": "place",
+  "lat": 40.3638483,
   "license_type": "Restaurant (Liquor)",
   "lid": "106434",
-  "name": "The Old Stone Church of New Hope",
-  "named_by": "plcb",
+  "lng": -74.9516787,
+  "name": "Oldestone Steakhouse",
+  "named_by": "places",
   "plcb_name": "THE OLD STONE CHURCH OF NEW HOPE LLC",
   "tier": "core",
+  "website": "https://www.oldestonenewhope.com/",
   "zone_id": "new_hope"
  },
  "106544": {
@@ -3113,12 +3139,16 @@
  },
  "107753": {
   "address": "510-1/2 W Walnut St, Perkasie PA 18944",
+  "geo_precision": "place",
+  "lat": 40.371955199999995,
   "license_type": "Brewery",
   "lid": "107753",
+  "lng": -75.2969865,
   "name": "Mystic Ways Brewing",
-  "named_by": "plcb",
+  "named_by": "places",
   "plcb_name": "MYSTIC WAYS BREWING COMPANY",
   "tier": "taproom",
+  "website": "https://www.facebook.com/Mystic-Ways-Brewing-102345721454144/",
   "zone_id": "perkasie"
  },
  "107855": {
@@ -3209,22 +3239,30 @@
  },
  "108099": {
   "address": "615 W Market St, Perkasie PA 18944",
+  "geo_precision": "place",
+  "lat": 40.374485,
   "license_type": "Brewery",
   "lid": "108099",
-  "name": "Perkasie Pizza and Pasta",
-  "named_by": "plcb",
+  "lng": -75.294874,
+  "name": "Perkasie Pizza & Pasta - Catering",
+  "named_by": "places",
   "plcb_name": "PERKASIE PIZZA AND PASTA",
   "tier": "taproom",
+  "website": "http://perkasiepizzapasta.com/",
   "zone_id": "perkasie"
  },
  "108101": {
   "address": "275 Swamp Rd, Newtown PA 18940",
+  "geo_precision": "place",
+  "lat": 40.239430999999996,
   "license_type": "Performing Arts Facility",
   "lid": "108101",
+  "lng": -74.9671299,
   "name": "Zlock Performing Arts Center",
-  "named_by": "plcb",
+  "named_by": "places",
   "plcb_name": "ZLOCK PERFORMING ARTS CENTER",
   "tier": "core",
+  "website": "https://www.bucks.edu/tickets/",
   "zone_id": "newtown_bucks"
  },
  "108104": {
@@ -3898,12 +3936,16 @@
  },
  "109580": {
   "address": "211 W Walnut St, Perkasie PA 18944",
+  "geo_precision": "place",
+  "lat": 40.3696592,
   "license_type": "Brewery",
   "lid": "109580",
+  "lng": -75.2953436,
   "name": "Van Lieus Brewing",
-  "named_by": "plcb",
+  "named_by": "places",
   "plcb_name": "VAN LIEUS BREWING CORPORATION",
   "tier": "taproom",
+  "website": "https://www.vanlieusbrewing.com/",
   "zone_id": "perkasie"
  },
  "109595": {
@@ -5199,12 +5241,16 @@
  },
  "113219": {
   "address": "3 West Rd, Newtown PA 18940",
+  "geo_precision": "place",
+  "lat": 40.23589,
   "license_type": "Restaurant (Liquor)",
   "lid": "113219",
+  "lng": -74.9441216,
   "name": "Blue Point Grill",
-  "named_by": "plcb",
+  "named_by": "places",
   "plcb_name": "BLUE POINT GRILL",
   "tier": "core",
+  "website": "http://www.bluepointgrillnewtown.com/",
   "zone_id": "newtown_bucks"
  },
  "113225": {
@@ -5617,12 +5663,16 @@
  },
  "114905": {
   "address": "2948 S Eagle Rd, Newtown PA 18940",
+  "geo_precision": "place",
+  "lat": 40.235949999999995,
   "license_type": "Restaurant (Liquor)",
   "lid": "114905",
-  "name": "Ardana Newtown Food & Drink",
-  "named_by": "plcb",
+  "lng": -74.94214,
+  "name": "\u00c1rdana Food & Drink",
+  "named_by": "places",
   "plcb_name": "ARDANA NEWTOWN FOOD & DRINK",
   "tier": "core",
+  "website": "https://www.ardanafoodanddrink.com/",
   "zone_id": "newtown_bucks"
  },
  "114948": {
@@ -6805,12 +6855,16 @@
  },
  "118340": {
   "address": "2807 S Eagle Rd, Newtown PA 18940",
+  "geo_precision": "place",
+  "lat": 40.234765700000004,
   "license_type": "Restaurant (Liquor)",
   "lid": "118340",
-  "name": "The Capital Grille #8080",
-  "named_by": "plcb",
+  "lng": -74.9406034,
+  "name": "The Capital Grille",
+  "named_by": "places",
   "plcb_name": "THE CAPITAL GRILLE #8080",
   "tier": "core",
+  "website": "https://www.thecapitalgrille.com/locations/pa/newtown/newtown/8080?cmpid=br:tcg_ag:ie_ch:loc_ca:TCGGMB_sn:gmb_gt:newtown-pa-8080_pl:locurl_rd:1069",
   "zone_id": "newtown_bucks"
  },
  "118364": {
@@ -7321,12 +7375,16 @@
  },
  "119691": {
   "address": "255 N Sycamore St, Newtown PA 18940",
+  "geo_precision": "place",
+  "lat": 40.235020399999996,
   "license_type": "Restaurant (Liquor)",
   "lid": "119691",
+  "lng": -74.9372712,
   "name": "Melange on Sycamore",
-  "named_by": "plcb",
+  "named_by": "places",
   "plcb_name": "MELANGE ON SYCAMORE",
   "tier": "core",
+  "website": "http://melangeonsycamore.com/",
   "zone_id": "newtown_bucks"
  },
  "11973": {
@@ -7400,12 +7458,16 @@
  },
  "119867": {
   "address": "2808 S Eagle Rd, Newtown PA 18940",
+  "geo_precision": "place",
+  "lat": 40.2338649,
   "license_type": "Restaurant (Liquor)",
   "lid": "119867",
+  "lng": -74.94181669999999,
   "name": "Oishi",
-  "named_by": "plcb",
+  "named_by": "places",
   "plcb_name": "OISHI",
   "tier": "core",
+  "website": "http://eatoishi.com/",
   "zone_id": "newtown_bucks"
  },
  "119970": {
@@ -8000,12 +8062,16 @@
  },
  "121327": {
   "address": "258 Durham Rd, Newtown PA 18940",
+  "geo_precision": "place",
+  "lat": 40.2496795,
   "license_type": "Limited Winery",
   "lid": "121327",
+  "lng": -74.9527061,
   "name": "Rose Bank Winery",
-  "named_by": "plcb",
+  "named_by": "places",
   "plcb_name": "ROSE BANK WINERY",
   "tier": "taproom",
+  "website": "http://rosebankwinery.com/",
   "zone_id": "newtown_bucks"
  },
  "121350": {
@@ -8564,12 +8630,16 @@
  },
  "125387": {
   "address": "50 S Main St, New Hope PA 18938",
+  "geo_precision": "place",
+  "lat": 40.3629666,
   "license_type": "Hotel (Liquor)",
   "lid": "125387",
-  "name": "50 S Main St",
-  "named_by": "plcb",
+  "lng": -74.9503984,
+  "name": "Stella of New Hope",
+  "named_by": "places",
   "plcb_name": "50 S MAIN ST LLC",
   "tier": "core",
+  "website": "http://www.stellanewhope.com/",
   "zone_id": "new_hope"
  },
  "125402": {
@@ -8744,12 +8814,16 @@
  },
  "125950": {
   "address": "32 West Rd, Newtown PA 18940",
+  "geo_precision": "place",
+  "lat": 40.2342267,
   "license_type": "Restaurant (Liquor)",
   "lid": "125950",
+  "lng": -74.9461427,
   "name": "Piccolo Trattoria",
-  "named_by": "plcb",
+  "named_by": "places",
   "plcb_name": "PICCOLO TRATTORIA",
   "tier": "core",
+  "website": "http://www.piccolotrattoria.com/",
   "zone_id": "newtown_bucks"
  },
  "125979": {
@@ -8909,16 +8983,6 @@
   "website": "https://www.facendaspirits.com/",
   "zone_id": "doylestown"
  },
- "126410": {
-  "address": "32 S Main St, New Hope PA 18938",
-  "license_type": "Restaurant (Liquor)",
-  "lid": "126410",
-  "name": "32 S Main",
-  "named_by": "plcb",
-  "plcb_name": "32 S MAIN LLC",
-  "tier": "core",
-  "zone_id": "new_hope"
- },
  "126422": {
   "address": "1915-17 Cheltenham Ave, Elkins Park PA 19027",
   "license_type": "Restaurant (Liquor)",
@@ -9070,12 +9134,16 @@
  },
  "127010": {
   "address": "22 N Main St, New Hope PA 18938",
+  "geo_precision": "place",
+  "lat": 40.3652298,
   "license_type": "Restaurant (Liquor)",
   "lid": "127010",
-  "name": "Landing Operations",
-  "named_by": "plcb",
+  "lng": -74.95124,
+  "name": "The Landing Restaurant",
+  "named_by": "places",
   "plcb_name": "LANDING OPERATIONS LLC",
   "tier": "core",
+  "website": "https://landingrestaurant.com/",
   "zone_id": "new_hope"
  },
  "127053": {
@@ -9670,12 +9738,16 @@
  },
  "128899": {
   "address": "2930 S Eagle Rd, Newtown PA 18940",
+  "geo_precision": "place",
+  "lat": 40.2360007,
   "license_type": "Restaurant (Liquor)",
   "lid": "128899",
-  "name": "Bomba Taco + Bar",
-  "named_by": "plcb",
+  "lng": -74.94312699999999,
+  "name": "Bomba \u00a1Tacos + Tequila!",
+  "named_by": "places",
   "plcb_name": "BOMBA TACO + BAR",
   "tier": "core",
+  "website": "https://bombatacos.com/",
   "zone_id": "newtown_bucks"
  },
  "128914": {
@@ -11570,16 +11642,6 @@
   "website": "https://pocos.com/",
   "zone_id": "doylestown"
  },
- "133134": {
-  "address": "116 E Broad St, Quakertown PA 18951",
-  "license_type": "Brewery",
-  "lid": "133134",
-  "name": "Doan Gang Distillery",
-  "named_by": "plcb",
-  "plcb_name": "DOAN GANG DISTILLERY LLC",
-  "tier": "taproom",
-  "zone_id": "quakertown"
- },
  "133155": {
   "address": "295 Buck Rd Unit 17-18, Holland PA 18966",
   "license_type": "Restaurant (Liquor)",
@@ -11841,12 +11903,16 @@
  },
  "133405": {
   "address": "117 W Broad St, Quakertown PA 18951",
+  "geo_precision": "place",
+  "lat": 40.4414717,
   "license_type": "Brewery",
   "lid": "133405",
-  "name": "The Proper Brewing",
-  "named_by": "plcb",
+  "lng": -75.33556920000001,
+  "name": "The Proper Brewing Company",
+  "named_by": "places",
   "plcb_name": "THE PROPER BREWING COMPANY",
   "tier": "taproom",
+  "website": "http://www.theproperbrewing.com/",
   "zone_id": "quakertown"
  },
  "133410": {
@@ -11909,12 +11975,16 @@
  },
  "133468": {
   "address": "2920 S Eagle Rd, Newtown PA 18940",
+  "geo_precision": "place",
+  "lat": 40.2360981,
   "license_type": "Restaurant (Liquor)",
   "lid": "133468",
-  "name": "Pj Whelihan's",
-  "named_by": "plcb",
+  "lng": -74.9434428,
+  "name": "PJ Whelihan\u2019s Pub + Restaurant - Newtown",
+  "named_by": "places",
   "plcb_name": "PJ WHELIHAN'S",
   "tier": "core",
+  "website": "https://locations.pjspub.com/locations/PA/newtown/2920-s-eagle-rd-43",
   "zone_id": "newtown_bucks"
  },
  "133480": {
@@ -12702,12 +12772,16 @@
  },
  "18488": {
   "address": "501 E Walnut St, Perkasie PA 18944",
+  "geo_precision": "place",
+  "lat": 40.364481,
   "license_type": "Restaurant (Liquor)",
   "lid": "18488",
-  "name": "South Perkasie Hotel",
-  "named_by": "plcb",
+  "lng": -75.285811,
+  "name": "The Perk",
+  "named_by": "places",
   "plcb_name": "SOUTH PERKASIE HOTEL INC",
   "tier": "core",
+  "website": "http://www.attheperk.com/",
   "zone_id": "perkasie"
  },
  "18582": {
@@ -13095,12 +13169,16 @@
  },
  "20469": {
   "address": "116-118-120 S Main St, New Hope PA 18938",
+  "geo_precision": "place",
+  "lat": 40.3606962,
   "license_type": "Restaurant (Liquor)",
   "lid": "20469",
+  "lng": -74.9499217,
   "name": "Fran's Pub",
-  "named_by": "plcb",
+  "named_by": "places",
   "plcb_name": "FRAN'S PUB",
   "tier": "core",
+  "website": "http://www.franspub.net/",
   "zone_id": "new_hope"
  },
  "20559": {
@@ -13137,42 +13215,57 @@
  },
  "20804": {
   "address": "14 E Ferry St, New Hope PA 18938",
+  "geo_precision": "place",
+  "lat": 40.3634285,
   "license_type": "Restaurant (Liquor)",
   "lid": "20804",
-  "name": "Martine's",
-  "named_by": "plcb",
+  "lng": -74.9504231,
+  "name": "Martine's RiverHouse Restaurant",
+  "named_by": "places",
   "plcb_name": "MARTINE'S",
   "tier": "core",
+  "website": "http://www.martinesriverhouse.com/",
   "zone_id": "new_hope"
  },
  "20847": {
   "address": "26 W Bridge St & 28 W Bridge St, Rear, New Hope PA 18938",
+  "geo_precision": "place",
+  "lat": 40.3643697,
   "license_type": "Restaurant (Liquor)",
   "lid": "20847",
-  "name": "Theresa Favoroso Kelly",
-  "named_by": "plcb",
+  "lng": -74.9524363,
+  "name": "Villa Vito",
+  "named_by": "places",
   "plcb_name": "THERESA FAVOROSO KELLY",
   "tier": "core",
   "zone_id": "new_hope"
  },
  "20868": {
   "address": "5-7 W Mechanic St, New Hope PA 18938",
+  "geo_precision": "place",
+  "lat": 40.361831599999995,
   "license_type": "Restaurant (Liquor)",
   "lid": "20868",
-  "name": "Karla's",
-  "named_by": "plcb",
+  "lng": -74.9507675,
+  "name": "Karla's Restaurant & Bar",
+  "named_by": "places",
   "plcb_name": "KARLA'S",
   "tier": "core",
+  "website": "https://www.karlasnewhope.com/",
   "zone_id": "new_hope"
  },
  "20894": {
   "address": "105-111 S Main St, New Hope PA 18938",
+  "geo_precision": "place",
+  "lat": 40.3609614,
   "license_type": "Restaurant (Liquor)",
   "lid": "20894",
+  "lng": -74.95043509999999,
   "name": "Havana",
-  "named_by": "plcb",
+  "named_by": "places",
   "plcb_name": "HAVANA",
   "tier": "core",
+  "website": "http://www.havananewhope.com/",
   "zone_id": "new_hope"
  },
  "20917": {
@@ -14365,12 +14458,16 @@
  },
  "36283": {
   "address": "10 N West End Blvd, Quakertown PA 18951",
+  "geo_precision": "place",
+  "lat": 40.444490099999996,
   "license_type": "Restaurant (Liquor)",
   "lid": "36283",
-  "name": "T G I Friday's",
-  "named_by": "plcb",
+  "lng": -75.3594921,
+  "name": "TGI Fridays",
+  "named_by": "places",
   "plcb_name": "T G I FRIDAY'S",
   "tier": "core",
+  "website": "https://locations.tgifridays.com/pa/quakertown/10-n-west-end-blvd.html",
   "zone_id": "quakertown"
  },
  "36336": {
@@ -14796,10 +14893,13 @@
  },
  "38446": {
   "address": "516-518 Walnut St, Perkasie PA 18944",
+  "geo_precision": "place",
+  "lat": 40.3723252,
   "license_type": "Restaurant (Liquor)",
   "lid": "38446",
+  "lng": -75.29725719999999,
   "name": "Olde Towne Restaurant & Tavern",
-  "named_by": "plcb",
+  "named_by": "places",
   "plcb_name": "OLDE TOWNE RESTAURANT & TAVERN",
   "tier": "core",
   "zone_id": "perkasie"
@@ -16116,12 +16216,16 @@
  },
  "45183": {
   "address": "145 N West End Blvd, Quakertown PA 18951",
+  "geo_precision": "place",
+  "lat": 40.4477602,
   "license_type": "Restaurant (Liquor)",
   "lid": "45183",
-  "name": "Applebee's Neighborhood Grill & Bar",
-  "named_by": "plcb",
+  "lng": -75.36030029999999,
+  "name": "Applebee's Grill + Bar",
+  "named_by": "places",
   "plcb_name": "APPLEBEE'S NEIGHBORHOOD GRILL & BAR",
   "tier": "core",
+  "website": "https://restaurants.applebees.com/en-us/pa/quakertown/145-n.-west-end-blvd.-94095?utm_source=google&utm_medium=organic&utm_campaign=google_my_business&utm_term=94095&utm_content=website",
   "zone_id": "quakertown"
  },
  "45258": {
@@ -16446,12 +16550,16 @@
  },
  "46246": {
   "address": "2 West Rd, Newtown PA 18940",
+  "geo_precision": "place",
+  "lat": 40.235885499999995,
   "license_type": "Restaurant (Liquor)",
   "lid": "46246",
-  "name": "Rose Casual Dining",
-  "named_by": "plcb",
+  "lng": -74.9463419,
+  "name": "Applebee's Grill + Bar",
+  "named_by": "places",
   "plcb_name": "ROSE CASUAL DINING, L.P.",
   "tier": "core",
+  "website": "https://restaurants.applebees.com/en-us/pa/newtown/2-west-road-96032?utm_source=google&utm_medium=organic&utm_campaign=google_my_business&utm_term=96032&utm_content=website",
   "zone_id": "newtown_bucks"
  },
  "46311": {
@@ -18538,12 +18646,16 @@
  },
  "52696": {
   "address": "18 Swamp Rd Village At Newtown South, Newtown PA 18940",
+  "geo_precision": "place",
+  "lat": 40.2298622,
   "license_type": "Restaurant (Liquor)",
   "lid": "52696",
-  "name": "The Barn",
-  "named_by": "plcb",
+  "lng": -74.9398868,
+  "name": "La Stalla",
+  "named_by": "places",
   "plcb_name": "THE BARN, INC.",
   "tier": "core",
+  "website": "http://www.lastallarestaurant.com/",
   "zone_id": "newtown_bucks"
  },
  "52731": {
@@ -19438,12 +19550,16 @@
  },
  "55236": {
   "address": "4 S Main St, Quakertown PA 18951",
+  "geo_precision": "place",
+  "lat": 40.4424464,
   "license_type": "Hotel (Liquor)",
   "lid": "55236",
-  "name": "Mccooles",
-  "named_by": "plcb",
+  "lng": -75.35254669999999,
+  "name": "McCoole's at the Historic Red Lion Inn",
+  "named_by": "places",
   "plcb_name": "MCCOOLES",
   "tier": "core",
+  "website": "http://www.mccoolesredlioninn.com/",
   "zone_id": "quakertown"
  },
  "55243": {
@@ -20151,16 +20267,6 @@
   "plcb_name": "HARBISON INN INC",
   "tier": "core",
   "zone_id": "northeast_philly"
- },
- "57089": {
-  "address": "1 E Washington Ave, Newtown PA 18940",
-  "license_type": "Hotel (Liquor)",
-  "lid": "57089",
-  "name": "The Brick Hotel & Garden Grille",
-  "named_by": "plcb",
-  "plcb_name": "THE BRICK HOTEL & GARDEN GRILLE",
-  "tier": "core",
-  "zone_id": "newtown_bucks"
  },
  "57106": {
   "address": "339 E Lancaster Ave, Wynnewood PA 19096",
@@ -21519,12 +21625,16 @@
  },
  "60193": {
   "address": "240 N Sycamore St, Newtown PA 18940",
+  "geo_precision": "place",
+  "lat": 40.234967399999995,
   "license_type": "Restaurant (Liquor)",
   "lid": "60193",
-  "name": "Green Parrot Irish Pub & Grill",
-  "named_by": "plcb",
+  "lng": -74.9378133,
+  "name": "Green Parrot",
+  "named_by": "places",
   "plcb_name": "GREEN PARROT IRISH PUB & GRILL",
   "tier": "core",
+  "website": "http://greenparrotrestaurant.com/",
   "zone_id": "newtown_bucks"
  },
  "60211": {
@@ -24502,12 +24612,19 @@
  },
  "65716": {
   "address": "410 E Walnut St Ste 2, Perkasie PA 18944",
+  "also_lids": [
+   "99584"
+  ],
+  "geo_precision": "place",
+  "lat": 40.365277899999995,
   "license_type": "Brewery",
   "lid": "65716",
-  "name": "Free Will Brewing Company",
-  "named_by": "plcb",
+  "lng": -75.2881402,
+  "name": "Free Will Brewing",
+  "named_by": "places",
   "plcb_name": "FREE WILL BREWING COMPANY LLC",
   "tier": "taproom",
+  "website": "http://www.freewillbrewing.com/",
   "zone_id": "perkasie"
  },
  "65718": {
@@ -25339,12 +25456,16 @@
  },
  "66694": {
   "address": "70 S Main St, New Hope PA 18938",
+  "geo_precision": "place",
+  "lat": 40.3623964,
   "license_type": "Performing Arts Facility",
   "lid": "66694",
-  "name": "Bucks County Playhouse Theatre",
-  "named_by": "plcb",
+  "lng": -74.95021059999999,
+  "name": "Bucks County Playhouse",
+  "named_by": "places",
   "plcb_name": "BUCKS COUNTY PLAYHOUSE THEATRE INC",
   "tier": "core",
+  "website": "https://bcptheater.org/",
   "zone_id": "new_hope"
  },
  "66722": {
@@ -25777,12 +25898,16 @@
  },
  "67443": {
   "address": "120 Pheasant Run, Newtown PA 18940",
+  "geo_precision": "place",
+  "lat": 40.2226601,
   "license_type": "Restaurant (Liquor)",
   "lid": "67443",
-  "name": "Newtown Racquetball",
-  "named_by": "plcb",
+  "lng": -74.91131899999999,
+  "name": "Newtown Athletic Club",
+  "named_by": "places",
   "plcb_name": "NEWTOWN RACQUETBALL INC",
   "tier": "core",
+  "website": "https://newtownathletic.com/",
   "zone_id": "newtown_bucks"
  },
  "67451": {
@@ -27199,12 +27324,16 @@
  },
  "69494": {
   "address": "8 West Mechanic St, New Hope PA 18938",
+  "geo_precision": "place",
+  "lat": 40.3620898,
   "license_type": "Restaurant (Liquor)",
   "lid": "69494",
-  "name": "Alpha Hospitality",
-  "named_by": "plcb",
+  "lng": -74.9509574,
+  "name": "Nektar Wine Bar",
+  "named_by": "places",
   "plcb_name": "ALPHA HOSPITALITY LLC",
   "tier": "core",
+  "website": "http://www.nektarnewhope.com/",
   "zone_id": "new_hope"
  },
  "69507": {
@@ -28299,12 +28428,16 @@
  },
  "70831": {
   "address": "10 W Ferry St, New Hope PA 18938",
+  "geo_precision": "place",
+  "lat": 40.3633355,
   "license_type": "Hotel (Liquor)",
   "lid": "70831",
-  "name": "The Logan Inn",
-  "named_by": "plcb",
+  "lng": -74.95159919999999,
+  "name": "Logan Inn in New Hope PA",
+  "named_by": "places",
   "plcb_name": "THE LOGAN INN",
   "tier": "core",
+  "website": "https://www.loganinn.com/?utm_source=google&utm_medium=organic&utm_campaign=business_listing",
   "zone_id": "new_hope"
  },
  "70835": {
@@ -29029,12 +29162,16 @@
  },
  "71675": {
   "address": "5-11 S State St, Newtown PA 18940",
+  "geo_precision": "place",
+  "lat": 40.2290139,
   "license_type": "Hotel (Liquor)",
   "lid": "71675",
+  "lng": -74.9365806,
   "name": "The Temperance House",
-  "named_by": "plcb",
+  "named_by": "places",
   "plcb_name": "THE TEMPERANCE HOUSE",
   "tier": "core",
+  "website": "http://www.temperancehouse.com/",
   "zone_id": "newtown_bucks"
  },
  "71719": {
@@ -30218,12 +30355,16 @@
  },
  "72933": {
   "address": "606 W Chestnut St, Perkasie PA 18944",
+  "geo_precision": "place",
+  "lat": 40.3736301,
   "license_type": "Restaurant (Liquor)",
   "lid": "72933",
-  "name": "606 W Chestnut Street",
-  "named_by": "plcb",
+  "lng": -75.2966421,
+  "name": "Rams Pint House & Rooftop Lounge",
+  "named_by": "places",
   "plcb_name": "606 W CHESTNUT STREET LLC",
   "tier": "core",
+  "website": "https://www.ramperkasie.com/",
   "zone_id": "perkasie"
  },
  "72942": {
@@ -31006,12 +31147,16 @@
  },
  "81163": {
   "address": "7 E Ferry St, New Hope PA 18938",
+  "geo_precision": "place",
+  "lat": 40.3631223,
   "license_type": "Restaurant (Liquor)",
   "lid": "81163",
-  "name": "Ferry Street Hospitality",
-  "named_by": "plcb",
+  "lng": -74.9508338,
+  "name": "The Salt House",
+  "named_by": "places",
   "plcb_name": "FERRY STREET HOSPITALITY LLC",
   "tier": "core",
+  "website": "https://thesalthouse.com/",
   "zone_id": "new_hope"
  },
  "81228": {
@@ -31086,12 +31231,16 @@
  },
  "81444": {
   "address": "2865 S Eagle Rd, Newtown PA 18940",
+  "geo_precision": "place",
+  "lat": 40.2357309,
   "license_type": "Restaurant (Liquor)",
   "lid": "81444",
-  "name": "Harvest Newtown Bucks County",
-  "named_by": "plcb",
+  "lng": -74.9394701,
+  "name": "Harvest Seasonal Grill - Newtown",
+  "named_by": "places",
   "plcb_name": "HARVEST NEWTOWN BUCKS COUNTY LLC",
   "tier": "core",
+  "website": "https://harvestseasonal.com/",
   "zone_id": "newtown_bucks"
  },
  "81446": {
@@ -31181,12 +31330,16 @@
  },
  "81629": {
   "address": "48 West Rd, Newtown PA 18940",
+  "geo_precision": "place",
+  "lat": 40.234662,
   "license_type": "Restaurant (Liquor)",
   "lid": "81629",
-  "name": "Acme Markets",
-  "named_by": "plcb",
+  "lng": -74.9451806,
+  "name": "ACME Markets",
+  "named_by": "places",
   "plcb_name": "ACME MARKETS INC",
   "tier": "core",
+  "website": "https://local.acmemarkets.com/pa/newtown/48-west-rd.html",
   "zone_id": "newtown_bucks"
  },
  "81742": {
@@ -31475,12 +31628,16 @@
  },
  "83325": {
   "address": "1465 W Broad St Unit 29, Quakertown PA 18951",
+  "geo_precision": "place",
+  "lat": 40.446597,
   "license_type": "Restaurant (Liquor)",
   "lid": "83325",
+  "lng": -75.357882,
   "name": "Buffalo Wild Wings",
-  "named_by": "plcb",
+  "named_by": "places",
   "plcb_name": "BUFFALO WILD WINGS",
   "tier": "core",
+  "website": "https://www.buffalowildwings.com/locations/us/pa/quakertown/1465-west-broad-street,-suite-29/sports-bar-1535?utm_source=google-my-business&utm_medium=organic&utm_campaign=website-link&y_source=1_MjAxNjYxMTkyOC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
   "zone_id": "quakertown"
  },
  "83411": {
@@ -32432,12 +32589,16 @@
  },
  "86206": {
   "address": "552 Washington Crossing Rd, Newtown PA 18940",
+  "geo_precision": "place",
+  "lat": 40.2556896,
   "license_type": "Restaurant (Liquor)",
   "lid": "86206",
-  "name": "Lavender Hall",
-  "named_by": "plcb",
+  "lng": -74.9166824,
+  "name": "The Grey Stone Fine Food and Spirits",
+  "named_by": "places",
   "plcb_name": "LAVENDER HALL",
   "tier": "core",
+  "website": "http://www.greystonefinefood.com/",
   "zone_id": "newtown_bucks"
  },
  "86234": {
@@ -33110,12 +33271,16 @@
  },
  "89572": {
   "address": "96 S Main St, New Hope PA 18938",
+  "geo_precision": "place",
+  "lat": 40.3612776,
   "license_type": "Restaurant (Liquor)",
   "lid": "89572",
-  "name": "Mk&C",
-  "named_by": "plcb",
+  "lng": -74.9501198,
+  "name": "John & Peter's Place",
+  "named_by": "places",
   "plcb_name": "MK&C LLC",
   "tier": "core",
+  "website": "http://www.johnandpeters.com/",
   "zone_id": "new_hope"
  },
  "89606": {
@@ -33363,12 +33528,16 @@
  },
  "90195": {
   "address": "2890 S Eagle Rd, Newtown PA 18940",
+  "geo_precision": "place",
+  "lat": 40.234825799999996,
   "license_type": "Restaurant (Liquor)",
   "lid": "90195",
-  "name": "Newtown Market",
-  "named_by": "plcb",
+  "lng": -74.9430725,
+  "name": "McCaffrey's Food Market - Newtown",
+  "named_by": "places",
   "plcb_name": "NEWTOWN MARKET LLC",
   "tier": "core",
+  "website": "http://www.mccaffreys.com/",
   "zone_id": "newtown_bucks"
  },
  "90212": {
@@ -33802,12 +33971,16 @@
  },
  "91425": {
   "address": "90 S Main St, New Hope PA 18938",
+  "geo_precision": "place",
+  "lat": 40.3614949,
   "license_type": "Restaurant (Liquor)",
   "lid": "91425",
-  "name": "Greenhouse Restaurant and Lounge",
-  "named_by": "plcb",
+  "lng": -74.9501232,
+  "name": "GreenHouse New Hope",
+  "named_by": "places",
   "plcb_name": "GREENHOUSE RESTAURANT AND LOUNGE",
   "tier": "core",
+  "website": "http://www.ghnewhope.com/",
   "zone_id": "new_hope"
  },
  "91459": {
@@ -34377,12 +34550,16 @@
  },
  "92738": {
   "address": "1465-7 W Broad St, Quakertown PA 18951",
+  "geo_precision": "place",
+  "lat": 40.4449058,
   "license_type": "Restaurant (Liquor)",
   "lid": "92738",
-  "name": "The Giant Company",
-  "named_by": "plcb",
+  "lng": -75.3565443,
+  "name": "GIANT",
+  "named_by": "places",
   "plcb_name": "THE GIANT COMPANY LLC",
   "tier": "core",
+  "website": "https://stores.giantfoodstores.com/pa/quakertown/1465-w-broad-st?y_source=1_NDE5NTM3OS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
   "zone_id": "quakertown"
  },
  "9274": {
@@ -34854,12 +35031,16 @@
  },
  "93997": {
   "address": "120 N State St, Newtown PA 18940",
+  "geo_precision": "place",
+  "lat": 40.2312186,
   "license_type": "Performing Arts Facility",
   "lid": "93997",
-  "name": "Newtown Hall Theatre",
-  "named_by": "plcb",
+  "lng": -74.9367194,
+  "name": "Newtown Theatre",
+  "named_by": "places",
   "plcb_name": "NEWTOWN HALL THEATRE INC",
   "tier": "core",
+  "website": "http://thenewtowntheatre.com/",
   "zone_id": "newtown_bucks"
  },
  "94023": {
@@ -35237,12 +35418,16 @@
  },
  "95091": {
   "address": "103 Penns Trail, Newtown PA 18940",
+  "geo_precision": "place",
+  "lat": 40.2275242,
   "license_type": "Brewery",
   "lid": "95091",
-  "name": "Newtown Brewing",
-  "named_by": "plcb",
+  "lng": -74.9097726,
+  "name": "Newtown Brewing Company",
+  "named_by": "places",
   "plcb_name": "NEWTOWN BREWING COMPANY",
   "tier": "taproom",
+  "website": "http://www.newtownbrewingco.com/",
   "zone_id": "newtown_bucks"
  },
  "95107": {
@@ -36925,16 +37110,6 @@
   "plcb_name": "THE GIANT COMPANY LLC",
   "tier": "core",
   "zone_id": "center_city"
- },
- "99584": {
-  "address": "410 E Walnut St Ste 2, Perkasie PA 18944",
-  "license_type": "Limited Winery",
-  "lid": "99584",
-  "name": "Free Will Winery",
-  "named_by": "plcb",
-  "plcb_name": "FREE WILL WINERY",
-  "tier": "taproom",
-  "zone_id": "perkasie"
  },
  "99631": {
   "address": "567 N Sproul Rd, Broomall PA 19008",
