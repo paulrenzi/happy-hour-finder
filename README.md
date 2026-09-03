@@ -22,17 +22,33 @@ credentials with anything else on this machine.
 | licensed venues known — the denominator | 3,415 |
 | …with a website we know of | 1,778 |
 | …crawled | 1,585 |
-| **on the board with a published happy-hour window** | **315** |
-| …carrying items you can actually order | 201 venues, 1,214 items |
-| published windows that contradict their own evidence | **0 of 334** |
+| **on the board with a published happy-hour window** | **314** |
+| …carrying items you can actually order | 202 venues, 1,224 items |
+| …with an hour but **no items** — the open gap | **112** |
+| published windows that contradict their own evidence | **0 of 333** |
 
 **Read that table in two halves.** What we publish is checked: every window and
 every price has to appear in a sentence on the venue's own page, and the test
-suite re-checks all 334 against the quote they came from on every run
-(`tests/window_quote_check.py`). What we *don't* publish
-is not checked at all — nobody has ever measured how many real happy hours the
-pipeline walks past. Every miss found so far was found by a person, not by a run.
+suite re-checks all 333 against the quote they came from on every run
+(`tests/window_quote_check.py`). What we *don't* publish is not checked at all —
+nobody has ever measured how many real happy hours the pipeline walks past.
+Every miss found so far was found by a person, not by a run.
 **Trust the cards. Do not trust the silence.**
+
+### The one open problem: reach, not reading
+
+Of the **112** venues that publish an hour and no items, **80 gave us no priced
+sentence at all** — nothing to read, and no menu image on file. Their prices are
+one hop further in (a PDF, a linked menu page, an ordering platform) or they are
+pixels. 26 more handed us a price the reader then published none of; 3 have an
+image awaiting the vision pass; 3 have nothing on file.
+
+**71% of the gap is pages we never reach.** A smarter reader cannot move that
+number, and several fixes shaped like a smarter reader have each been worth
+single digits — the schema.org-anywhere rule and the linked-image rule together
+recovered **2 of the 80**. The next real move is reach: follow the hop, or
+render what needs rendering. Size any candidate fix by **probing the 80**
+before building it.
 
 ---
 
@@ -158,6 +174,14 @@ complains, look for a silent drop first.
 
 - **A `web/` edit ships nothing until `build_bundles.py` restamps `web/sw.js`.**
   The cache name *is* the shell hash and the only eviction trigger. Never hand-edit `sw.js`.
+- **A chain's `/locations` URL is not a page — it is a redirect to one branch.**
+  The crawl records where it **landed**, not only what it asked for, and refuses a
+  landing whose path names another town. Before that guard, a bar in Bear, DE
+  published Newark's happy hour and every downstream check passed.
+- **Run a new guard against the real data before believing it.** The town reader
+  above parsed no Delaware address at all on its first run, so it had an empty
+  vocabulary and returned a confident "fine". A guard that cannot see the thing
+  is not green — it is blind.
 - **Never run two crawls at once**, and no `git merge`/`pull` during a crawl.
 - **Never write a backslash escape through a bash heredoc** — the patch reports
   success and the file is unchanged. Use an editor tool.
@@ -180,4 +204,4 @@ deliberately no map.
   session each. The one to read before changing ingest.
 - **[SPEC.md](SPEC.md)** — what a deal is, and the eight categories.
 - **`HANDOFF-START-HERE-*.md`** — session notes, newest wins. The current one is
-  [`HANDOFF-START-HERE-20260902-TRUST-AND-THE-BOARD.md`](HANDOFF-START-HERE-20260902-TRUST-AND-THE-BOARD.md).
+  [`HANDOFF-START-HERE-20260902-THE-SCRAPER-IS-THE-JOB.md`](HANDOFF-START-HERE-20260902-THE-SCRAPER-IS-THE-JOB.md).

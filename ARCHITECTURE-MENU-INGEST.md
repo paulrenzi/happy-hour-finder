@@ -2261,3 +2261,122 @@ with `LEAN_ARGS`. Haiku was rejected for unstable recall (55/45/46 items on
 identical runs), Opus found the same items at 2.8x. Backlog of 100 shells: a few
 dollars, once. A new town: about ten shells, under a dollar.
 
+
+---
+
+## 🎯🔑🔑 THE ITEM GAP IS REACH, NOT READING — the number to beat is 80 (2026-09-02, late)
+
+Measured, not estimated. Of the **112** venues that ship an hour and no items:
+
+| why the card is empty | venues |
+|---|---:|
+| **no price text captured anywhere, and no menu image on file** | **80** |
+| a price WAS captured; the reader/verifier published none of it | 26 |
+| a menu image on file, vision pass owes it | 3 |
+| nothing in `crawl_hits.json` | 3 |
+
+Hand-checked four of the 80 (Dandan, Amada, American Sardine Bar, DePaul's
+Table): every one states an hour on the page we read and publishes **no price on
+that page**. The menu is one hop further in — a PDF, a linked menu page, an
+ordering platform — or it is pixels.
+
+**71% of the item gap is pages we never reach.** That is the constraint. The
+reading half is in good shape: 0 of 333 published windows contradict their own
+quote.
+
+🛑 **Two fixes shaped like "read better" have each been worth single digits.**
+The schema.org-anywhere rule (`embedded_ld_docs`) and the linked-image rule
+(below) together recover **2 of the 80**, and 6 of the 80 answer 403. Before
+building any candidate fix, **probe the 80 and report what it would recover** —
+the population, never the one case that motivated it.
+
+### How the classification was got wrong twice first
+
+Both wrong answers came from measuring on a field that does not cover the
+population, and both looked like findings:
+
+1. Classified on `data/pages/*.json` → "67 = no page saved at all". But
+   `data/pages/` holds 947 files for only **410 of 1,585** crawled lids; 65 of
+   the 67 were crawled fine.
+2. Classified on `crawl_hits` `pages[].lines` → "58 = shell/blocked", including
+   Franzone's at `0l`. The **`lines` and `hh` keys exist only on rows written by
+   a NEWER crawl**; an old row has no `lines` and reads as zero.
+
+🔑 **Classify on the one field present for every row** — here, the captured
+quotes. And check the field's coverage before trusting a bucket count.
+
+## 🔑 AN IMAGE THE VENUE LINKED UNDER THE WORDS (`menu_images`, 2026-09-02)
+
+`menu_images()` matched **filenames** only, and its docstring records that alt
+text and surrounding copy were tried and rejected. Grain's entire happy-hour
+menu is a PNG at **`/s/Newark.png`** — named for the town, so no filename rule
+could ever see it. What names it is the anchor the venue wrapped round it:
+
+```html
+<a href="/s/Newark.png"><em>Happy Hours</em></a>
+```
+
+The rule added (`HH_LINK_TEXT_RE` + `HH_LINKED_IMG_RE`) accepts an image **only**
+when the whole anchor text names the happy hour. That is not the rejected
+"surrounding copy" rule — that one refused an `<img>` with a nearby caption;
+this is the venue pointing **at** a file and saying what is inside it, the same
+act as naming the file. Guarded by five tests: a hero photo captioned "Happy
+Hour", prose that links a picture, a "Dinner Menu" link and "View fullsize" are
+all still refused.
+
+**Worth 2 venues of the 80.** Recorded here so nobody re-derives it as a big win.
+
+## 🛑🔑🔑 A CRAWL MUST RECORD WHERE IT *LANDED* (2026-09-02, late)
+
+`meetatgrain.com/locationsmenus` **302s to `/newark`**. Grain H2O is in Bear, DE,
+was seeded at its own page, followed the index link, landed on **Newark's** page
+and published Newark's `Mon–Fri 3–6pm` on its own card. It was live on the board
+and **nothing could see it**: every downstream guard passed, because the quote
+really is on the page really fetched. We recorded the URL **requested** and never
+the one **served**, so the defect sat upstream of all of them.
+
+- `get()` now returns `(html, err, landed)`; `_Plain` carries `fh.geturl()`.
+- Every page record carries `"landed"` when it differs from `"url"`.
+- `landed_in_another_town()` refuses a landing whose path names another town in
+  this corpus, before a word of it is read — the question `wrong_location()`
+  asks of a canonical tag, asked of the **redirect** instead.
+
+**Sized: 297 published source URLs, 112 of them redirect, exactly 1 landed in
+another town.** One wrong card, not a class — but a wrong card is worse than a
+miss, and this shape produces *only* wrong cards.
+
+🛑 **Two defects the guard had that only running it on REAL DATA exposed:**
+
+1. The town reader required no comma before the state, and DE addresses here are
+   written `Bear, DE 19701`. So it read **every Delaware address as townless**:
+   the vocabulary was empty exactly where the guard was needed, and it returned a
+   confident `None`. **A guard with an empty vocabulary is not a guard, and its
+   zero is not an answer.**
+2. The town must name the **end** of the path (stepping over
+   happy-hour/menu/locations), not any segment in it. `media` is a town in this
+   corpus *and* half the asset paths on the web, and a wrong refusal costs a real
+   venue its hours.
+
+## 🖥️ THE BOARD: ONE SECTION HEADER PER DAY (`web/lib.js`, 2026-09-02)
+
+Not ingest, but it is the defect a reader actually reported. With a day picked
+and a location granted the board printed **"Tomorrow" 21 times** (and "Monday"
+71 times three days out): the feed was score-ordered, and `app.js` starts a
+section whenever the label changes, so one Monday row between two Tomorrow rows
+split the block.
+
+The day band already existed — in **one of the four paths** through `score()`
+("soonest" *with* a location). Blind readers, Nearest and Best value ranked
+future rows globally. Now every `UPCOMING` row bands on its day first and ranks
+inside it second.
+
+- The day comes from `dayOffset()`, **the same function the header is named
+  from**. `dayAhead` is measured from the anchor, which moves when the reader
+  picks a day.
+- The band is exact (`100000/14`), **never a clamp**: clamping the far days into
+  a shared band left Wednesday/Thursday/Friday interleaved, because the order
+  merged days the header still tells apart.
+
+🚨 **The gate for it PASSED on the broken code** until it seeded a location —
+the defect only shows to a reader who granted one. **A gate must reproduce the
+reader's conditions**, or it watches the defect go past.
