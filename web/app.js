@@ -689,10 +689,10 @@ function zoneLabel(index, zoneId) {
   return names[zoneId] || zoneId.replace(/_/g, " ");
 }
 
-function photoLane(file) {
+function photoLane(files) {
   const body = $("#sheetBody");
   body.textContent = "";
-  body.append(el("h3", null, "Send a menu photo"));
+  body.append(el("h3", null, files.length > 1 ? "Send menu photos" : "Send a menu photo"));
 
   let venue = state.photoVenue || null;
   state.photoVenue = null;
@@ -705,23 +705,33 @@ function photoLane(file) {
         "filled in.")
   );
 
-  const kb = Math.round(file.size / 1024);
-  body.append(el("p", "pick", `${file.name} — ${file.type || "unknown type"}, ${kb} KB`));
-
-  const url = URL.createObjectURL(file);
-  const img = el("img", "pick-preview");
-  img.alt = "The menu photo you just picked";
-  img.src = url;
-  img.addEventListener("error", () => {
-    img.replaceWith(
-      el("p", "pick-warn",
-        "The browser can't preview this format. You can still send it, but if it " +
-          "comes back rejected, retake the photo with your camera app.")
+  if (files.length > 1) {
+    body.append(
+      el("p", "pick", `${files.length} photos picked — front and back of a menu card ` +
+        "both work. Each is sent and read separately, so it's fine if one is the " +
+        "drink side and another is the food side.")
     );
-    URL.revokeObjectURL(url);
-  });
-  img.addEventListener("load", () => URL.revokeObjectURL(url));
-  body.append(img);
+  }
+
+  for (const file of files) {
+    const kb = Math.round(file.size / 1024);
+    body.append(el("p", "pick", `${file.name} — ${file.type || "unknown type"}, ${kb} KB`));
+
+    const url = URL.createObjectURL(file);
+    const img = el("img", "pick-preview");
+    img.alt = "A menu photo you just picked";
+    img.src = url;
+    img.addEventListener("error", () => {
+      img.replaceWith(
+        el("p", "pick-warn",
+          "The browser can't preview this format. You can still send it, but if it " +
+            "comes back rejected, retake the photo with your camera app.")
+      );
+      URL.revokeObjectURL(url);
+    });
+    img.addEventListener("load", () => URL.revokeObjectURL(url));
+    body.append(img);
+  }
 
   if (!venue) body.append(venuePicker((v) => { venue = v; }));
 
@@ -752,44 +762,62 @@ function photoLane(file) {
       return;
     }
     send.disabled = true;
-    status.textContent = "Sending…";
 
-    const shrunk = await shrink(file);
-    const form = new FormData();
-    form.append("photo", shrunk || file, shrunk ? "menu.jpg" : file.name);
-    form.append("lid", venue.lid || venue.id);
-    form.append("venue_name", venue.name);
-    form.append("note", note.value.trim());
+    // Each photo goes as its own /submit call -- the Worker has no notion of
+    // "one submission, several photos" yet. They land as separate rows for the
+    // same lid seconds apart, which the approval gate and the sync into
+    // data/deals_photo.json both already treat as pages of the same menu
+    // (ingest/review_photos.py's PAGE_SET_HOURS window), so nothing here is
+    // lost or overwritten -- it just takes one request per photo.
+    let ok = 0;
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+      if (files.length > 1) status.textContent = `Sending photo ${i + 1} of ${files.length}…`;
+      else status.textContent = "Sending…";
 
-    try {
-      const res = await fetch(`${SUBMIT_API}/submit`, { method: "POST", body: form });
-      const out = await res.json().catch(() => ({}));
-      if (!res.ok) {
-        status.textContent = out.error || "That didn't go through. Try again in a minute.";
+      const shrunk = await shrink(file);
+      const form = new FormData();
+      form.append("photo", shrunk || file, shrunk ? "menu.jpg" : file.name);
+      form.append("lid", venue.lid || venue.id);
+      form.append("venue_name", venue.name);
+      form.append("note", note.value.trim());
+
+      try {
+        const res = await fetch(`${SUBMIT_API}/submit`, { method: "POST", body: form });
+        const out = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          status.textContent = files.length > 1
+            ? `Photo ${i + 1} of ${files.length}: ${out.error || "didn't go through"}. ` +
+              (ok ? `${ok} already sent. ` : "") + "Try the rest again in a minute."
+            : out.error || "That didn't go through. Try again in a minute.";
+          send.disabled = false;
+          return;
+        }
+        ok++;
+      } catch {
+        // Offline in a basement bar is the normal case -- but it is not the only
+        // way this throws, and blaming the signal when the endpoint itself is
+        // down sends the submitter to go stand by a window for nothing. The
+        // browser knows which one it is, so say which one it is.
+        status.textContent = navigator.onLine
+          ? "We can't reach the server right now — that's on us, not your signal. " +
+            "The photo is still in your camera roll; please try again later."
+          : "You're offline — the photo is still in your camera roll; try again " +
+            "when you have a bar or two.";
         send.disabled = false;
         return;
       }
-      body.textContent = "";
-      body.append(el("h3", null, "Got it — thank you"));
-      body.append(
-        el("p", null,
-          `That's in the queue for ${venue.name}. Someone reads it, checks the ` +
-            "hours against Pennsylvania's happy hour rules, and puts it on the " +
-            "board — usually within a day or two. It'll say it came from a photo, " +
-            "and it'll show the date, same as every other window on this site.")
-      );
-    } catch {
-      // Offline in a basement bar is the normal case -- but it is not the only
-      // way this throws, and blaming the signal when the endpoint itself is
-      // down sends the submitter to go stand by a window for nothing. The
-      // browser knows which one it is, so say which one it is.
-      status.textContent = navigator.onLine
-        ? "We can't reach the server right now — that's on us, not your signal. " +
-          "The photo is still in your camera roll; please try again later."
-        : "You're offline — the photo is still in your camera roll; try again " +
-          "when you have a bar or two.";
-      send.disabled = false;
     }
+
+    body.textContent = "";
+    body.append(el("h3", null, "Got it — thank you"));
+    body.append(
+      el("p", null,
+        `That's in the queue for ${venue.name}. Someone reads it, checks the ` +
+          "hours against Pennsylvania's happy hour rules, and puts it on the " +
+          "board — usually within a day or two. It'll say it came from a photo, " +
+          "and it'll show the date, same as every other window on this site.")
+    );
   });
 
   openSheet();
@@ -1530,11 +1558,11 @@ async function boot() {
   if (state.query) { toggleMenu(true); $("#search").blur(); }
   searchNote();
   $("#photo").addEventListener("change", (e) => {
-    const file = e.target.files && e.target.files[0];
+    const files = e.target.files ? Array.from(e.target.files) : [];
     // Let the same file be picked twice in a row, and clear it before the sheet
     // opens so a cancelled pick doesn't leave the input holding the last one.
     e.target.value = "";
-    if (file) photoLane(file);
+    if (files.length) photoLane(files);
   });
   $("#sheetClose").addEventListener("click", () => $("#sheet").close());
   $("#sheet").addEventListener("close", () => {
