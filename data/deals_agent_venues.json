@@ -186,6 +186,89 @@
    "zone_id": "manayunk"
   },
   {
+   "address": "145-149 Saxer Ave, Springfield PA 19064",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "WINGS/ 9",
+       "label": "Wings (Buffalo, Garlic Parm)",
+       "price_usd": 9
+      },
+      {
+       "category": "food",
+       "evidence": "CHEESESTEAK EGGROLLS / 8",
+       "label": "Cheesesteak Eggrolls",
+       "price_usd": 8
+      },
+      {
+       "category": "food",
+       "evidence": "TRUFFLE FRIES / 6",
+       "label": "Truffle Fries",
+       "price_usd": 6
+      },
+      {
+       "category": "draft",
+       "evidence": "Draft Beer / 5 (Changes Daily)",
+       "label": "Draft Beer (Changes Daily)",
+       "price_usd": 5
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "DOMESTIC BOTTLES/ 3",
+       "label": "Domestic Bottles (Miller Lite, Yuengling, Michelob Ultra, Bud, Bud Light, Coors Light)",
+       "price_usd": 3
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "HAPPY HOUR TUESDAY-THURSDAY 4PM-6PM, FRIDAY 3PM-6PM, SATURDAY 3PM-5PM",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "WINGS/9 (BUFFALO, GARLIC PARM); Draft Beer/5 (Changes Daily); Domestic Bottles/3 (Miller Lite, Yuengling, Michelob Ultra, Bud, Bud Light, Coors Light)",
+      "url": "https://www.domandmias.com/menus/happy-hour"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 6,
+       "end": "17:00",
+       "start": "15:00"
+      }
+     ]
+    }
+   ],
+   "id": "108727",
+   "lid": "108727",
+   "name": "Dom & Mia's",
+   "plcb_name": "DOM & MIA'S",
+   "website": "https://www.domandmias.com/",
+   "zone_id": "springfield_delco"
+  },
+  {
    "address": "44 W Gay St, West Chester PA 19380",
    "deals": [
     {
@@ -1128,6 +1211,107 @@
    "plcb_name": "MAS WEST CHESTER LLC",
    "website": "https://www.masmexicali.com/",
    "zone_id": "west_chester"
+  },
+  {
+   "address": "675 Shannondell Blvd Audubon Sq, Norristown PA 19403",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "bottle_can",
+       "evidence": "$3 Domestic Bottles",
+       "label": "Domestic Bottles",
+       "price_usd": 3
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$5 White Claw",
+       "label": "White Claw",
+       "price_usd": 5
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$6 Tito's Handmade Vodka",
+       "label": "Tito's Handmade Vodka",
+       "price_usd": 6
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$6 Seltzers (Stateside Vodka Soda & Surfside included)",
+       "label": "Seltzers (Stateside Vodka Soda & Surfside included)",
+       "price_usd": 6
+      },
+      {
+       "category": "food",
+       "discount_pct": 50,
+       "evidence": "HALF OFF Wings | Classic & Boneless",
+       "label": "Wings | Classic & Boneless"
+      },
+      {
+       "category": "food",
+       "discount_pct": 50,
+       "evidence": "HALF OFF Jumbo Soft Pretzel",
+       "label": "Jumbo Soft Pretzel"
+      },
+      {
+       "category": "food",
+       "discount_pct": 50,
+       "evidence": "HALF OFF Pete-zza | Traditional, Cheese, White, Pepperoni",
+       "label": "Pete-zza | Traditional, Cheese, White, Pepperoni"
+      },
+      {
+       "category": "food",
+       "discount_pct": 50,
+       "evidence": "HALF OFF Shrimp | Hot, Cold, Fried",
+       "label": "Shrimp | Hot, Cold, Fried"
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "Happy Hour at The Bar Monday - Friday 4-6 PM",
+      "heading": "Happy Hour at The Bar",
+      "kind": "venue_site",
+      "quote": "Happy Hour at The Bar Monday - Friday 4-6 PM Beverages $3 Domestic Bottles $5 White Claw $6 Tito's Handmade Vodka $6 Seltzers (Stateside Vodka Soda & Surfside included) HALF OFF Wings | Classic & Boneless Jumbo Soft Pretzel Pete-zza | Traditional, Cheese, White, Pepperoni Shrimp | Hot, Cold, Fried",
+      "url": "https://chickiesandpetes.com/menu"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "65410",
+   "lid": "65410",
+   "name": "Chickies & Petes",
+   "plcb_name": "CHICKIES & PETES",
+   "website": "https://chickiesandpetes.com/location/audubon-2/?utm_source=gmb&utm_medium=organic&utm_campaign=audubon",
+   "zone_id": "audubon_eagleville"
   },
   {
    "address": "1347 Wilmington Pk, West Chester PA 19382",
