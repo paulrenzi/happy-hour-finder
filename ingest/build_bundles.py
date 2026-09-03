@@ -642,9 +642,17 @@ def main():
             # `happy_hour` -- a daily special must never inherit happy-hour
             # prices it did not state.
             model_read = deal is sidecar_target
+            # A re-run of ingest/agent_read_venue.py against a thin PDF/image
+            # menu can find far more than the venue's existing deal has --
+            # La Porta went 1 -> 8, Sedona Taphouse 1-2 -> 18 each, 2026-09-03
+            # -- and the existing deal was itself `agent_read` or
+            # `auto_extract` with a nonzero item count, so neither branch
+            # below fired and the richer read sat in the sidecar unused. A
+            # strictly bigger read from the same kind of pass wins.
+            richer = extra and len(extra) > len(deal.get("items") or [])
             if extra and (model_read or (
-                    deal.get("verified_by") == "auto_extract" and (
-                        not deal.get("items") or read_page))):
+                    deal.get("verified_by") in ("auto_extract", "agent_read") and (
+                        not deal.get("items") or read_page or richer))):
                 merged = extra + [i for i in (deal.get("items") or [])
                                   if not any(x["label"].lower() == i["label"].lower()
                                              for x in extra)]
