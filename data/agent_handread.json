@@ -4795,5 +4795,126 @@
         "evidence": "$10 Boneless Wings (Share Size)"
       }
     ]
+  },
+  {
+    "lid": "DEa4fada708b",
+    "url": "https://www.farmhousemiddletown.com/daily-specials/",
+    "read_on": "2026-09-03",
+    "heading": "Harvest Happy Hour",
+    "clock_quote": "HARVEST HAPPY HOUR 3PM – 6PM, MONDAY – FRIDAY BAR AREA ONLY",
+    "quote": "Half priced artisan pizzas $9; Featured cocktails, well spirits, wine by the glass $5",
+    "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "start": "15:00",
+    "end": "18:00",
+    "items": [
+      {
+        "category": "food",
+        "label": "Half Priced Artisan Pizza",
+        "price_usd": 9,
+        "evidence": "HALF PRICED ARTISAN PIZZAS $9"
+      },
+      {
+        "category": "cocktail",
+        "label": "Featured Cocktails (Amador Bourbon Old Fashioned, Tres Agaves Blanco Margarita, Hanson Of Sonoma Dirty Martini)",
+        "price_usd": 5,
+        "evidence": "FEATURED COCKTAILS ... $5"
+      },
+      {
+        "category": "well",
+        "label": "Well Spirits",
+        "price_usd": 5,
+        "evidence": "WELL SPIRITS ... $5"
+      },
+      {
+        "category": "wine",
+        "label": "Wine by the Glass",
+        "price_usd": 5,
+        "evidence": "WINE BY THE GLASS ... $5"
+      }
+    ]
+  },
+  {
+    "lid": "DEe5a79c1b86",
+    "url": "http://www.mulligansde.com/",
+    "read_on": "2026-09-03",
+    "heading": "Happy Hour",
+    "clock_quote": "Tuesday - Friday 3PM - 6PM",
+    "quote": "Drink Specials and Food Specials, Tuesday-Friday 3PM-6PM",
+    "days": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "start": "15:00",
+    "end": "18:00",
+    "items": [
+      {
+        "category": "cocktail",
+        "label": "Crushes",
+        "price_usd": 5,
+        "evidence": "$5 - Crushes"
+      },
+      {
+        "category": "cocktail",
+        "label": "Espresso Martinis",
+        "price_usd": 6,
+        "evidence": "$6 - Espresso Martinis"
+      },
+      {
+        "category": "cocktail",
+        "label": "French Martinis",
+        "price_usd": 6,
+        "evidence": "$6 - French Martinis"
+      },
+      {
+        "category": "cocktail",
+        "label": "Old Fashion",
+        "price_usd": 6,
+        "evidence": "$6 - Old Fashion"
+      },
+      {
+        "category": "draft",
+        "label": "Miller Lite",
+        "price_usd": 4,
+        "evidence": "$4 - Miller Light"
+      },
+      {
+        "category": "draft",
+        "label": "Yuengling",
+        "price_usd": 4,
+        "evidence": "$4 - Yuengling"
+      },
+      {
+        "category": "wine",
+        "label": "House Wine",
+        "price_usd": 6,
+        "evidence": "$6 - Wine"
+      },
+      {
+        "category": "food",
+        "label": "Cheese Quesadilla",
+        "price_usd": 8,
+        "evidence": "$8 - Cheese Quesadilla"
+      },
+      {
+        "category": "food",
+        "label": "Wings",
+        "price_usd": 10,
+        "evidence": "$10 - Wings"
+      },
+      {
+        "category": "food",
+        "label": "Cheese Steak Eggrolls",
+        "price_usd": 10,
+        "evidence": "$10 - Cheese Steak Eggrolls"
+      }
+    ]
   }
 ]

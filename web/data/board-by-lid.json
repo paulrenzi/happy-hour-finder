@@ -8442,6 +8442,148 @@
    }
   ]
  },
+ "DEf67224a909": {
+  "name": "Jackson House",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 2,
+      "start": "14:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "14:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "14:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "11:00",
+      "end": "14:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "DEe5a79c1b86": {
+  "name": "Mulligans",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "15:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "DE6ccacbde47": {
+  "name": "Red Robin Gourmet Burgers and Brews",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "15:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "DEa4fada708b": {
+  "name": "The Farmhouse Middletown",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "15:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "131341": {
   "name": "Anthony's Coal Fired Pizza",
   "deals": [
@@ -13513,115 +13655,6 @@
      },
      {
       "dow": 4,
-      "start": "15:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "DEf67224a909": {
-  "name": "Jackson House",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 2,
-      "start": "14:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "14:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "14:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "11:00",
-      "end": "14:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "DE6ccacbde47": {
-  "name": "Red Robin Gourmet Burgers and Brews",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
-      "start": "15:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "DEa4fada708b": {
-  "name": "The Farmhouse Middletown",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 3,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 4,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 5,
       "start": "15:00",
       "end": "18:00"
      }

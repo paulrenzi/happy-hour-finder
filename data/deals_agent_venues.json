@@ -6291,6 +6291,83 @@
    "zone_id": "wilmington"
   },
   {
+   "address": "416 S Ridge Ave, Middletown, DE 19709",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "HALF PRICED ARTISAN PIZZAS $9",
+       "label": "Half Priced Artisan Pizza",
+       "price_usd": 9
+      },
+      {
+       "category": "cocktail",
+       "evidence": "FEATURED COCKTAILS ... $5",
+       "label": "Featured Cocktails (Amador Bourbon Old Fashioned, Tres Agaves Blanco Margarita, Hanson Of Sonoma Dirty Martini)",
+       "price_usd": 5
+      },
+      {
+       "category": "well",
+       "evidence": "WELL SPIRITS ... $5",
+       "label": "Well Spirits",
+       "price_usd": 5
+      },
+      {
+       "category": "wine",
+       "evidence": "WINE BY THE GLASS ... $5",
+       "label": "Wine by the Glass",
+       "price_usd": 5
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "HARVEST HAPPY HOUR 3PM – 6PM, MONDAY – FRIDAY BAR AREA ONLY",
+      "heading": "Harvest Happy Hour",
+      "kind": "venue_site",
+      "quote": "Half priced artisan pizzas $9; Featured cocktails, well spirits, wine by the glass $5",
+      "url": "https://www.farmhousemiddletown.com/daily-specials/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "15:00"
+      }
+     ]
+    }
+   ],
+   "id": "DEa4fada708b",
+   "lid": "DEa4fada708b",
+   "name": "The Farmhouse Middletown",
+   "plcb_name": "The Farmhouse Middletown",
+   "website": "https://www.farmhousemiddletown.com/",
+   "zone_id": "middletown_de"
+  },
+  {
    "address": "300 Lantana Dr, Hockessin, DE 19707",
    "deals": [
     {
@@ -7382,6 +7459,114 @@
    "plcb_name": "Caffè Gelato Restaurant",
    "website": "http://www.caffegelato.net/",
    "zone_id": "newark_de"
+  },
+  {
+   "address": "631 Bayview Rd, Middletown, DE 19709",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "cocktail",
+       "evidence": "$5 - Crushes",
+       "label": "Crushes",
+       "price_usd": 5
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$6 - Espresso Martinis",
+       "label": "Espresso Martinis",
+       "price_usd": 6
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$6 - French Martinis",
+       "label": "French Martinis",
+       "price_usd": 6
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$6 - Old Fashion",
+       "label": "Old Fashion",
+       "price_usd": 6
+      },
+      {
+       "category": "draft",
+       "evidence": "$4 - Miller Light",
+       "label": "Miller Lite",
+       "price_usd": 4
+      },
+      {
+       "category": "draft",
+       "evidence": "$4 - Yuengling",
+       "label": "Yuengling",
+       "price_usd": 4
+      },
+      {
+       "category": "wine",
+       "evidence": "$6 - Wine",
+       "label": "House Wine",
+       "price_usd": 6
+      },
+      {
+       "category": "food",
+       "evidence": "$8 - Cheese Quesadilla",
+       "label": "Cheese Quesadilla",
+       "price_usd": 8
+      },
+      {
+       "category": "food",
+       "evidence": "$10 - Wings",
+       "label": "Wings",
+       "price_usd": 10
+      },
+      {
+       "category": "food",
+       "evidence": "$10 - Cheese Steak Eggrolls",
+       "label": "Cheese Steak Eggrolls",
+       "price_usd": 10
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Tuesday - Friday 3PM - 6PM",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Drink Specials and Food Specials, Tuesday-Friday 3PM-6PM",
+      "url": "http://www.mulligansde.com/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "15:00"
+      }
+     ]
+    }
+   ],
+   "id": "DEe5a79c1b86",
+   "lid": "DEe5a79c1b86",
+   "name": "Mulligans",
+   "plcb_name": "Mulligans",
+   "website": "http://www.mulligansde.com/",
+   "zone_id": "middletown_de"
   },
   {
    "address": "829 N Market St, Wilmington, DE 19801",
