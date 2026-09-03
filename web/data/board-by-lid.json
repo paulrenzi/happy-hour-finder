@@ -2902,6 +2902,24 @@
    }
   ]
  },
+ "68978": {
+  "name": "Mercato Ristorante and Bar",
+  "deals": [
+   {
+    "type": "daily_special",
+    "windows": [
+     {
+      "dow": 3,
+      "end": "21:00",
+      "start": "17:00"
+     }
+    ],
+    "source": {
+     "kind": "instagram"
+    }
+   }
+  ]
+ },
  "62944": {
   "name": "M\u00e1s Mexicali Cantina",
   "deals": [

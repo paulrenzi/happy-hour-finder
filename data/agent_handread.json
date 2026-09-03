@@ -1616,5 +1616,28 @@
     "evidence": "$1 OFF ... Glasses of Wine"
    }
   ]
+ },
+ {
+  "lid": "68978",
+  "url": "https://www.instagram.com/mercatowc/",
+  "read_on": "2026-09-03",
+  "type": "daily_special",
+  "kind": "instagram",
+  "heading": "Wine Hour",
+  "clock_quote": "WEDNESDAYS 5PM-9PM",
+  "quote": "HALF OFF SELECT BOTTLES OF WINE WEDNESDAYS 5PM-9PM",
+  "days": [
+   3
+  ],
+  "start": "17:00",
+  "end": "21:00",
+  "items": [
+   {
+    "category": "wine",
+    "label": "Select bottles of wine",
+    "discount_pct": 50,
+    "evidence": "HALF OFF SELECT BOTTLES OF WINE WEDNESDAYS 5PM-9PM"
+   }
+  ]
  }
 ]

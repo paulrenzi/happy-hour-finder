@@ -370,6 +370,45 @@
    "zone_id": "west_chester"
   },
   {
+   "address": "9 N Church St, West Chester PA 19382",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "wine",
+       "discount_pct": 50,
+       "evidence": "HALF OFF SELECT BOTTLES OF WINE WEDNESDAYS 5PM-9PM",
+       "label": "Select bottles of wine"
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "WEDNESDAYS 5PM-9PM",
+      "heading": "Wine Hour",
+      "kind": "instagram",
+      "quote": "HALF OFF SELECT BOTTLES OF WINE WEDNESDAYS 5PM-9PM",
+      "url": "https://www.instagram.com/mercatowc/"
+     },
+     "type": "daily_special",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 3,
+       "end": "21:00",
+       "start": "17:00"
+      }
+     ]
+    }
+   ],
+   "id": "68978",
+   "lid": "68978",
+   "name": "Mercato Ristorante and Bar",
+   "plcb_name": "MERCATO RISTORANTE AND BAR",
+   "website": "https://www.mercato-wc.com/",
+   "zone_id": "west_chester"
+  },
+  {
    "address": "114-120 E Gay St, West Chester PA 19380",
    "deals": [
     {

@@ -85,7 +85,10 @@ def main():
             "items": items,
             "verified_by": "agent_read",
             "source": {
-                "kind": "venue_site",
+                # The venue's own site unless the record says otherwise. A
+                # venue that posts its specials only to its own Instagram is
+                # still the venue speaking, and `kind` is what the card cites.
+                "kind": rec.get("kind", "venue_site"),
                 "url": rec["url"],
                 "quote": rec["quote"],
             },
