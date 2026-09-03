@@ -14,14 +14,38 @@ credentials with anything else on this machine.
 
 ---
 
-## Where it stands (2026-09-03, night)
+## Where it stands (2026-09-03, night — confirmed live)
 
 | | |
 |---|---|
 | zones (named drinking districts) | 48 |
-| **on the board with a published happy-hour window** | **351 venues, 368 deals** |
+| **on the board with a published happy-hour window** | **353 venues, 368 deals** |
 | known **thin reads** — live deal with under 5 items, needs a re-scrape (Paul's rule, 2026-09-03) | **~146 venues, `data/RESCRAPE-QUEUE.json`** |
 | board photo coverage | **351 of 351 (100%)** |
+
+## Publishing a branch's work — the step that was silently skipped once
+
+Only `master` deploys (the `pages` GitHub Action triggers on push to `master`
+only). Work done on any other branch — `menus30` included — **is not live no
+matter how many commits it has**, and nothing in CI will tell you that. Before
+calling a round of hand-reads done:
+
+```sh
+git worktree add /tmp/wt-deploy master   # never touch a shared checkout
+cd /tmp/wt-deploy
+git merge --ff-only origin/master        # catch up first
+git merge --ff-only <your-branch>        # should be a clean fast-forward
+bash tests/run.sh                        # must be 0 fail
+python ingest/build_bundles.py           # then diff web/data, ignoring "built_at" —
+                                          # any other diff means it's stale, don't push
+git push origin master
+gh run list --branch master --limit 1    # watch it reach "completed success"
+curl https://paulrenzi.github.io/happy-hour-finder/data/zone-<zone>.json
+   # and read the actual bytes — a green Action is not proof the JSON changed
+```
+Then remove the worktree (`git worktree remove /tmp/wt-deploy --force`).
+**A round isn't finished at the commit. It's finished when you've read the
+live JSON yourself.**
 
 **Read that table in two halves.** What we publish is checked: every window and
 every price has to appear in a sentence on the venue's own page, and the test
@@ -299,4 +323,4 @@ deliberately no map.
   session each. The one to read before changing ingest.
 - **[SPEC.md](SPEC.md)** — what a deal is, and the eight categories.
 - **`HANDOFF-START-HERE-*.md`** — session notes, newest wins. The current one is
-  [`HANDOFF-START-HERE-20260904-HAND-READS-PUBLISH.md`](HANDOFF-START-HERE-20260904-HAND-READS-PUBLISH.md).
+  [`HANDOFF-START-HERE-20260903-NIGHT-NON-PHILLY-VENUES-CONFIRMED-LIVE.md`](HANDOFF-START-HERE-20260903-NIGHT-NON-PHILLY-VENUES-CONFIRMED-LIVE.md).

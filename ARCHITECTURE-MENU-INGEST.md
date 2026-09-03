@@ -2863,3 +2863,67 @@ finding as *the item gap is reach, not reading*, arrived at from the other end.
 arriving at once is genuine growth in the deal-bearing half. The check that
 matters is that the 1.3MB **base** (`venues-*.json`) still cannot hide under the
 number — it is fetched only for the selected zone and must never enter boot.
+
+## 🖼️📄🔑🔑 IMAGE- AND PDF-EMBEDDED MENUS — proven on two real venues, and what is still NOT proven (2026-09-03, night)
+
+Paul asked for a specific check: after last session's fix (never pipe an
+apostrophe-bearing script through a bash heredoc — use `Write` to author a
+`.py` file, run it, delete it), would a **future run** actually catch venues of
+this shape? The honest answer is **partial**, and it matters which part.
+
+**What is now proven, on two live venues, both confirmed in `web/data/zone-*.json`
+after a real deploy:**
+- **Image-embedded menu** — Basta Pasta (`bastapastapa.com`) is a Wix/JS site
+  whose happy hour menu lives inside two linked JPGs, not in any crawled text.
+  `curl -s -A "Mozilla/5.0" -o file.jpg "<url>"` into the scratchpad, then
+  `Read` the JPG directly (Read is multimodal) — 10 items extracted correctly.
+- **PDF-embedded menu** — Amada Radnor's menu is a linked PDF. **WebFetch cannot
+  read PDF binary** — it says so, returns raw structure, and saves the file
+  under `tool-results/webfetch-*.pdf`. Copy that PDF into the scratchpad, render
+  each page with `fitz` (`page.get_pixmap(dpi=150).save(...)`), then `Read` the
+  PNGs. This confirms the pre-existing "no poppler ⇒ Read cannot open a PDF,
+  render w/ fitz" rule generalizes to a PDF **sourced through WebFetch**, not
+  only a locally-supplied one.
+
+**What is NOT proven, and Paul's skepticism was correct:** neither of the above
+is **gated**. Nothing in `tests/` or `ingest/` flags "this venue's site has a
+happy-hour link but the crawler/WebFetch returned no items — check for an
+image or PDF." Catching these two venues took a human (me) noticing WebFetch
+came back empty on a page that visibly advertised a happy hour, then digging by
+hand. **A future session with the same instructions would hit the same wall
+and would have to notice the same way — there is no test or script that would
+surface "this venue's menu is probably an image" on its own.** If Paul wants
+this actually gated, the smallest honest fix is a crawler check: when a page's
+crawled text contains no price-shaped tokens but links an `<img>` or `<a href
+=*.pdf>` near the words "happy hour" / "specials", flag it into a
+`possibly-image-or-pdf-menu` bucket in the rescrape queue instead of silently
+recording zero items. **That does not exist yet.**
+
+**What IS actually gated, and this one future runs will catch:** `dow` (day of
+week) is validated in `ingest/validate_pa.py` — must be `1..7` (Mon=1..Sun=7),
+**0 is rejected**. I hit this for real (wrote `[0,1,2,3,4,5]` meaning
+Sun-first for Amada, `build_agent_venues.py` refused with `dow out of range:
+0`) and the validator caught it immediately, before it could reach
+`web/data/`. This is a real, provable, machine-enforced guardrail — unlike the
+image/PDF case above.
+
+**What was actually the bigger miss this session, and is now closed:** all
+three new venues (Basta Pasta, Amada Radnor, 118 North) were committed on
+branch `menus30` and were **never merged into `master`, never pushed to
+`origin`, and therefore never deployed** — nothing was live for two full
+rounds of work until this was caught explicitly by Paul asking. Nothing in the
+repo enforces "a branch's changes must reach master" — that is a workflow
+step, not a code invariant, and there is no CI or test that can fail on a
+branch nobody pushed. **The fix applied this session:** fast-forward `menus30`
+onto `master` (both were clean fast-forwards, no rebase/conflict), ran the
+full `tests/run.sh` and the CI drift check (`build_bundles.py` then diff
+`web/data`, ignoring `built_at`) locally before pushing, pushed to `origin
+master`, watched the `pages` GitHub Action to `completed success`, then pulled
+the live URL's JSON directly (`https://paulrenzi.github.io/happy-hour-finder/
+data/zone-<zone>.json`) and confirmed all three venues' items are present in
+the actual served bytes — not just a green build. **A session's work is not
+"done" until this exact verify has run**, and going forward the last step of
+any hand-read round should be: merge to master via a throwaway worktree (never
+touch a shared checkout — see the pkill/checkout hooks), push, watch the
+Action, curl the live zone JSON. See `README.md` "Publishing a branch's work"
+for the short version of this sequence.
