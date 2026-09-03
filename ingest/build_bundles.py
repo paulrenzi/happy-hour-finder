@@ -619,7 +619,16 @@ def main():
         sidecar_target = max(model_deals, key=lambda d: len(d.get("items") or []),
                              default=None)
         for deal in venue.get("deals", []):
-            extra = prices.get(venue["id"]) or agent_items.get(str(venue.get("lid") or ""))
+            # Two sidecars can both have an answer for the same venue (a
+            # quote-price re-read keyed by slug, an agent re-read keyed by
+            # lid) and picking whichever is merely non-empty first meant a
+            # thin 1-item quote-price entry permanently hid a fuller agent
+            # re-read for the same venue -- La Porta stuck at 1 item with an
+            # 8-item agent read sitting unused right behind it, 2026-09-03.
+            # Take whichever sidecar actually has more.
+            extra = max(prices.get(venue["id"]) or [],
+                       agent_items.get(str(venue.get("lid") or "")) or [],
+                       key=len) or None
             # A venue with NO items takes the sidecar outright. A venue that
             # already has some takes it only from the pass that READ THE PAGE --
             # and then the page wins, because the alternative is measurably
