@@ -3504,5 +3504,518 @@
         "discount_pct": 50
       }
     ]
+  },
+  {
+    "lid": "40238",
+    "url": "https://www.barnabysrestaurantandpub.com/events/happy-hour-at-barnabys-havertown",
+    "read_on": "2026-09-04",
+    "heading": "Happy Hour",
+    "clock_quote": "JOIN US FOR HAPPY HOUR MONDAY THROUGH FRIDAY 4-6PM",
+    "quote": "$3 LIGHT DRAFTS (MILLER LITE, COORS LIGHT & MICHELOB ULTRA) $4 RETRO BOTTLES $5 HOUSE WINES $6 STATESIDES & SURFSIDES $6 TITOS (EXCLUDES MARTINIS - NO DOUBLES) $2 OFF ALL STARTERS *BAR AREA ONLY - NO TAKE OUT",
+    "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "start": "16:00",
+    "end": "18:00",
+    "items": [
+      {
+        "category": "draft",
+        "label": "Light Drafts (Miller Lite, Coors Light & Michelob Ultra)",
+        "price_usd": 3,
+        "evidence": "$3 LIGHT DRAFTS (MILLER LITE, COORS LIGHT & MICHELOB ULTRA)"
+      },
+      {
+        "category": "bottle_can",
+        "label": "Retro Bottles",
+        "price_usd": 4,
+        "evidence": "$4 RETRO BOTTLES"
+      },
+      {
+        "category": "wine",
+        "label": "House Wines",
+        "price_usd": 5,
+        "evidence": "$5 HOUSE WINES"
+      },
+      {
+        "category": "cocktail",
+        "label": "Statesides & Surfsides",
+        "price_usd": 6,
+        "evidence": "$6 STATESIDES & SURFSIDES"
+      },
+      {
+        "category": "cocktail",
+        "label": "Titos (excludes martinis - no doubles)",
+        "price_usd": 6,
+        "evidence": "$6 TITOS (EXCLUDES MARTINIS - NO DOUBLES)"
+      },
+      {
+        "category": "food",
+        "label": "All Starters",
+        "amount_off_usd": 2,
+        "evidence": "$2 OFF ALL STARTERS"
+      }
+    ]
+  },
+  {
+    "lid": "53729",
+    "url": "https://www.barnabysrestaurantandpub.com/events/happy-hour-at-barnabys-aston",
+    "read_on": "2026-09-04",
+    "heading": "Happy Hour",
+    "clock_quote": "JOIN US MONDAY THROUGH FRIDAY FOR HAPPY HOUR FROM 5-7PM",
+    "quote": "$4 DRAFT BEERS $5 HOUSE WINE $6 SPECIALITY DRINKS $6 SURFSIDES & STATESIDES $2 OFF OF ALL STARTERS",
+    "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "start": "17:00",
+    "end": "19:00",
+    "items": [
+      {
+        "category": "draft",
+        "label": "Draft Beers",
+        "price_usd": 4,
+        "evidence": "$4 DRAFT BEERS"
+      },
+      {
+        "category": "wine",
+        "label": "House Wine",
+        "price_usd": 5,
+        "evidence": "$5 HOUSE WINE"
+      },
+      {
+        "category": "cocktail",
+        "label": "Speciality Drinks",
+        "price_usd": 6,
+        "evidence": "$6 SPECIALITY DRINKS"
+      },
+      {
+        "category": "cocktail",
+        "label": "Surfsides & Statesides",
+        "price_usd": 6,
+        "evidence": "$6 SURFSIDES & STATESIDES"
+      },
+      {
+        "category": "food",
+        "label": "All Starters",
+        "amount_off_usd": 2,
+        "evidence": "$2 OFF OF ALL STARTERS"
+      }
+    ]
+  },
+  {
+    "lid": "104355",
+    "url": "https://chickiesandpetes.com/location/malvern",
+    "read_on": "2026-09-04",
+    "heading": "Happy Hour at The Bar",
+    "clock_quote": "Happy Hour at The Bar Monday - Friday 4-6 PM",
+    "quote": "Happy Hour at The Bar Monday - Friday 4-6 PM Beverages $3 Domestic Bottles $5 White Claw $6 Tito's Handmade Vodka $6 Seltzers (Stateside Vodka Soda & Surfside included) HALF OFF Wings | Classic & Boneless Jumbo Soft Pretzel Pete-zza | Traditional, Cheese, White, Pepperoni Shrimp | Hot, Cold, Fried",
+    "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "start": "16:00",
+    "end": "18:00",
+    "items": [
+      {
+        "category": "bottle_can",
+        "label": "Domestic Bottles",
+        "price_usd": 3,
+        "evidence": "$3 Domestic Bottles"
+      },
+      {
+        "category": "cocktail",
+        "label": "White Claw",
+        "price_usd": 5,
+        "evidence": "$5 White Claw"
+      },
+      {
+        "category": "cocktail",
+        "label": "Tito's Handmade Vodka",
+        "price_usd": 6,
+        "evidence": "$6 Tito's Handmade Vodka"
+      },
+      {
+        "category": "cocktail",
+        "label": "Seltzers (Stateside Vodka Soda & Surfside included)",
+        "price_usd": 6,
+        "evidence": "$6 Seltzers (Stateside Vodka Soda & Surfside included)"
+      },
+      {
+        "category": "food",
+        "label": "Wings | Classic & Boneless",
+        "discount_pct": 50,
+        "evidence": "HALF OFF Wings | Classic & Boneless"
+      },
+      {
+        "category": "food",
+        "label": "Jumbo Soft Pretzel",
+        "discount_pct": 50,
+        "evidence": "HALF OFF Jumbo Soft Pretzel"
+      },
+      {
+        "category": "food",
+        "label": "Pete-zza | Traditional, Cheese, White, Pepperoni",
+        "discount_pct": 50,
+        "evidence": "HALF OFF Pete-zza | Traditional, Cheese, White, Pepperoni"
+      },
+      {
+        "category": "food",
+        "label": "Shrimp | Hot, Cold, Fried",
+        "discount_pct": 50,
+        "evidence": "HALF OFF Shrimp | Hot, Cold, Fried"
+      }
+    ]
+  },
+  {
+    "lid": "65398",
+    "url": "https://chickiesandpetes.com/location/warrington/",
+    "read_on": "2026-09-04",
+    "heading": "Happy Hour at The Bar",
+    "clock_quote": "Happy Hour at The Bar Monday - Friday 4-6 PM",
+    "quote": "Happy Hour at The Bar Monday - Friday 4-6 PM Beverages $3 Domestic Bottles $5 White Claw $6 Tito's Handmade Vodka $6 Seltzers (Stateside Vodka Soda & Surfside included) HALF OFF Wings | Classic & Boneless Jumbo Soft Pretzel Pete-zza | Traditional, Cheese, White, Pepperoni Shrimp | Hot, Cold, Fried",
+    "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "start": "16:00",
+    "end": "18:00",
+    "items": [
+      {
+        "category": "bottle_can",
+        "label": "Domestic Bottles",
+        "price_usd": 3,
+        "evidence": "$3 Domestic Bottles"
+      },
+      {
+        "category": "cocktail",
+        "label": "White Claw",
+        "price_usd": 5,
+        "evidence": "$5 White Claw"
+      },
+      {
+        "category": "cocktail",
+        "label": "Tito's Handmade Vodka",
+        "price_usd": 6,
+        "evidence": "$6 Tito's Handmade Vodka"
+      },
+      {
+        "category": "cocktail",
+        "label": "Seltzers (Stateside Vodka Soda & Surfside included)",
+        "price_usd": 6,
+        "evidence": "$6 Seltzers (Stateside Vodka Soda & Surfside included)"
+      },
+      {
+        "category": "food",
+        "label": "Wings | Classic & Boneless",
+        "discount_pct": 50,
+        "evidence": "HALF OFF Wings | Classic & Boneless"
+      },
+      {
+        "category": "food",
+        "label": "Jumbo Soft Pretzel",
+        "discount_pct": 50,
+        "evidence": "HALF OFF Jumbo Soft Pretzel"
+      },
+      {
+        "category": "food",
+        "label": "Pete-zza | Traditional, Cheese, White, Pepperoni",
+        "discount_pct": 50,
+        "evidence": "HALF OFF Pete-zza | Traditional, Cheese, White, Pepperoni"
+      },
+      {
+        "category": "food",
+        "label": "Shrimp | Hot, Cold, Fried",
+        "discount_pct": 50,
+        "evidence": "HALF OFF Shrimp | Hot, Cold, Fried"
+      }
+    ]
+  },
+  {
+    "lid": "110086",
+    "url": "https://locations.pjspub.com/pa/doylestown/4379-w-swamp-road",
+    "read_on": "2026-09-04",
+    "heading": "Happy Hour",
+    "clock_quote": "Happy Hour Monday 4:00 PM - 6:00 PM Tuesday 4:00 PM - 6:00 PM Wednesday 4:00 PM - 6:00 PM Thursday 4:00 PM - 6:00 PM Friday 4:00 PM - 6:00 PM",
+    "quote": "MON - FRI 4PM - 6PM $3 Domestic Drafts $4 Corona & Corona Light $6 House Wine $6 Krushes $5 Boneless Wings (Snack Size) $10 Boneless Wings (Share Size)",
+    "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "start": "16:00",
+    "end": "18:00",
+    "items": [
+      {
+        "category": "draft",
+        "label": "Domestic Drafts",
+        "price_usd": 3,
+        "evidence": "$3 Domestic Drafts"
+      },
+      {
+        "category": "bottle_can",
+        "label": "Corona & Corona Light",
+        "price_usd": 4,
+        "evidence": "$4 Corona & Corona Light"
+      },
+      {
+        "category": "wine",
+        "label": "House Wine",
+        "price_usd": 6,
+        "evidence": "$6 House Wine"
+      },
+      {
+        "category": "cocktail",
+        "label": "Krushes",
+        "price_usd": 6,
+        "evidence": "$6 Krushes"
+      },
+      {
+        "category": "food",
+        "label": "Boneless Wings (Snack Size)",
+        "price_usd": 5,
+        "evidence": "$5 Boneless Wings (Snack Size)"
+      },
+      {
+        "category": "food",
+        "label": "Boneless Wings (Share Size)",
+        "price_usd": 10,
+        "evidence": "$10 Boneless Wings (Share Size)"
+      }
+    ]
+  },
+  {
+    "lid": "117317",
+    "url": "https://locations.pjspub.com/pa/conshohocken/200-ridge-pike",
+    "read_on": "2026-09-04",
+    "heading": "Happy Hour",
+    "clock_quote": "Happy Hour Monday 4:00 PM - 6:00 PM Tuesday 4:00 PM - 6:00 PM Wednesday 4:00 PM - 6:00 PM Thursday 4:00 PM - 6:00 PM Friday 4:00 PM - 6:00 PM",
+    "quote": "MON - FRI 4PM - 6PM $3 Domestic Drafts $4 Corona & Corona Light $6 House Wine $6 Krushes $5 Boneless Wings (Snack Size) $10 Boneless Wings (Share Size)",
+    "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "start": "16:00",
+    "end": "18:00",
+    "items": [
+      {
+        "category": "draft",
+        "label": "Domestic Drafts",
+        "price_usd": 3,
+        "evidence": "$3 Domestic Drafts"
+      },
+      {
+        "category": "bottle_can",
+        "label": "Corona & Corona Light",
+        "price_usd": 4,
+        "evidence": "$4 Corona & Corona Light"
+      },
+      {
+        "category": "wine",
+        "label": "House Wine",
+        "price_usd": 6,
+        "evidence": "$6 House Wine"
+      },
+      {
+        "category": "cocktail",
+        "label": "Krushes",
+        "price_usd": 6,
+        "evidence": "$6 Krushes"
+      },
+      {
+        "category": "food",
+        "label": "Boneless Wings (Snack Size)",
+        "price_usd": 5,
+        "evidence": "$5 Boneless Wings (Snack Size)"
+      },
+      {
+        "category": "food",
+        "label": "Boneless Wings (Share Size)",
+        "price_usd": 10,
+        "evidence": "$10 Boneless Wings (Share Size)"
+      }
+    ]
+  },
+  {
+    "lid": "50385",
+    "url": "https://locations.pjspub.com/pa/blue-bell/799-dekalb-pike",
+    "read_on": "2026-09-04",
+    "heading": "Happy Hour",
+    "clock_quote": "Happy Hour Monday 4:00 PM - 6:00 PM Tuesday 4:00 PM - 6:00 PM Wednesday 4:00 PM - 6:00 PM Thursday 4:00 PM - 6:00 PM Friday 4:00 PM - 6:00 PM",
+    "quote": "MON - FRI 4PM - 6PM $3 Domestic Drafts $4 Corona & Corona Light $6 House Wine $6 Krushes $5 Boneless Wings (Snack Size) $10 Boneless Wings (Share Size)",
+    "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "start": "16:00",
+    "end": "18:00",
+    "items": [
+      {
+        "category": "draft",
+        "label": "Domestic Drafts",
+        "price_usd": 3,
+        "evidence": "$3 Domestic Drafts"
+      },
+      {
+        "category": "bottle_can",
+        "label": "Corona & Corona Light",
+        "price_usd": 4,
+        "evidence": "$4 Corona & Corona Light"
+      },
+      {
+        "category": "wine",
+        "label": "House Wine",
+        "price_usd": 6,
+        "evidence": "$6 House Wine"
+      },
+      {
+        "category": "cocktail",
+        "label": "Krushes",
+        "price_usd": 6,
+        "evidence": "$6 Krushes"
+      },
+      {
+        "category": "food",
+        "label": "Boneless Wings (Snack Size)",
+        "price_usd": 5,
+        "evidence": "$5 Boneless Wings (Snack Size)"
+      },
+      {
+        "category": "food",
+        "label": "Boneless Wings (Share Size)",
+        "price_usd": 10,
+        "evidence": "$10 Boneless Wings (Share Size)"
+      }
+    ]
+  },
+  {
+    "lid": "119303",
+    "url": "https://www.pjspub.com/about.php?loc=Wynnewood",
+    "read_on": "2026-09-04",
+    "heading": "Happy Hour",
+    "clock_quote": "Happy Hour Monday 4:00 PM - 6:00 PM Tuesday 4:00 PM - 6:00 PM Wednesday 4:00 PM - 6:00 PM Thursday 4:00 PM - 6:00 PM Friday 4:00 PM - 6:00 PM",
+    "quote": "MON - FRI 4PM - 6PM $3 Domestic Drafts $4 Corona & Corona Light $6 House Wine $6 Krushes $5 Boneless Wings (Snack Size) $10 Boneless Wings (Share Size)",
+    "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "start": "16:00",
+    "end": "18:00",
+    "items": [
+      {
+        "category": "draft",
+        "label": "Domestic Drafts",
+        "price_usd": 3,
+        "evidence": "$3 Domestic Drafts"
+      },
+      {
+        "category": "bottle_can",
+        "label": "Corona & Corona Light",
+        "price_usd": 4,
+        "evidence": "$4 Corona & Corona Light"
+      },
+      {
+        "category": "wine",
+        "label": "House Wine",
+        "price_usd": 6,
+        "evidence": "$6 House Wine"
+      },
+      {
+        "category": "cocktail",
+        "label": "Krushes",
+        "price_usd": 6,
+        "evidence": "$6 Krushes"
+      },
+      {
+        "category": "food",
+        "label": "Boneless Wings (Snack Size)",
+        "price_usd": 5,
+        "evidence": "$5 Boneless Wings (Snack Size)"
+      },
+      {
+        "category": "food",
+        "label": "Boneless Wings (Share Size)",
+        "price_usd": 10,
+        "evidence": "$10 Boneless Wings (Share Size)"
+      }
+    ]
+  },
+  {
+    "lid": "81482",
+    "url": "https://www.pjspub.com/about.php?loc=Oaks",
+    "read_on": "2026-09-04",
+    "heading": "Happy Hour",
+    "clock_quote": "Happy Hour Monday 4:00 PM - 6:00 PM Tuesday 4:00 PM - 6:00 PM Wednesday 4:00 PM - 6:00 PM Thursday 4:00 PM - 6:00 PM Friday 4:00 PM - 6:00 PM",
+    "quote": "MON - FRI 4PM - 6PM $3 Domestic Drafts $4 Corona & Corona Light $6 House Wine $6 Krushes $5 Boneless Wings (Snack Size) $10 Boneless Wings (Share Size)",
+    "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "start": "16:00",
+    "end": "18:00",
+    "items": [
+      {
+        "category": "draft",
+        "label": "Domestic Drafts",
+        "price_usd": 3,
+        "evidence": "$3 Domestic Drafts"
+      },
+      {
+        "category": "bottle_can",
+        "label": "Corona & Corona Light",
+        "price_usd": 4,
+        "evidence": "$4 Corona & Corona Light"
+      },
+      {
+        "category": "wine",
+        "label": "House Wine",
+        "price_usd": 6,
+        "evidence": "$6 House Wine"
+      },
+      {
+        "category": "cocktail",
+        "label": "Krushes",
+        "price_usd": 6,
+        "evidence": "$6 Krushes"
+      },
+      {
+        "category": "food",
+        "label": "Boneless Wings (Snack Size)",
+        "price_usd": 5,
+        "evidence": "$5 Boneless Wings (Snack Size)"
+      },
+      {
+        "category": "food",
+        "label": "Boneless Wings (Share Size)",
+        "price_usd": 10,
+        "evidence": "$10 Boneless Wings (Share Size)"
+      }
+    ]
   }
 ]

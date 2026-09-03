@@ -68,6 +68,107 @@
    "zone_id": "west_chester"
   },
   {
+   "address": "The Grove 10 Liberty Blvd, Malvern PA 19355",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "bottle_can",
+       "evidence": "$3 Domestic Bottles",
+       "label": "Domestic Bottles",
+       "price_usd": 3
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$5 White Claw",
+       "label": "White Claw",
+       "price_usd": 5
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$6 Tito's Handmade Vodka",
+       "label": "Tito's Handmade Vodka",
+       "price_usd": 6
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$6 Seltzers (Stateside Vodka Soda & Surfside included)",
+       "label": "Seltzers (Stateside Vodka Soda & Surfside included)",
+       "price_usd": 6
+      },
+      {
+       "category": "food",
+       "discount_pct": 50,
+       "evidence": "HALF OFF Wings | Classic & Boneless",
+       "label": "Wings | Classic & Boneless"
+      },
+      {
+       "category": "food",
+       "discount_pct": 50,
+       "evidence": "HALF OFF Jumbo Soft Pretzel",
+       "label": "Jumbo Soft Pretzel"
+      },
+      {
+       "category": "food",
+       "discount_pct": 50,
+       "evidence": "HALF OFF Pete-zza | Traditional, Cheese, White, Pepperoni",
+       "label": "Pete-zza | Traditional, Cheese, White, Pepperoni"
+      },
+      {
+       "category": "food",
+       "discount_pct": 50,
+       "evidence": "HALF OFF Shrimp | Hot, Cold, Fried",
+       "label": "Shrimp | Hot, Cold, Fried"
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "Happy Hour at The Bar Monday - Friday 4-6 PM",
+      "heading": "Happy Hour at The Bar",
+      "kind": "venue_site",
+      "quote": "Happy Hour at The Bar Monday - Friday 4-6 PM Beverages $3 Domestic Bottles $5 White Claw $6 Tito's Handmade Vodka $6 Seltzers (Stateside Vodka Soda & Surfside included) HALF OFF Wings | Classic & Boneless Jumbo Soft Pretzel Pete-zza | Traditional, Cheese, White, Pepperoni Shrimp | Hot, Cold, Fried",
+      "url": "https://chickiesandpetes.com/location/malvern"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "104355",
+   "lid": "104355",
+   "name": "Chickie's & Pete's",
+   "plcb_name": "MALVERN CPC LLC",
+   "website": "https://chickiesandpetes.com/location/malvern",
+   "zone_id": "malvern_great_valley"
+  },
+  {
    "address": "4417 -4419 Main St, Philadelphia PA 19127",
    "deals": [
     {
@@ -269,6 +370,95 @@
    "zone_id": "springfield_delco"
   },
   {
+   "address": "4403 W Swamp Rd, Doylestown PA 18902",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "$3 Domestic Drafts",
+       "label": "Domestic Drafts",
+       "price_usd": 3
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "$4 Corona & Corona Light",
+       "label": "Corona & Corona Light",
+       "price_usd": 4
+      },
+      {
+       "category": "wine",
+       "evidence": "$6 House Wine",
+       "label": "House Wine",
+       "price_usd": 6
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$6 Krushes",
+       "label": "Krushes",
+       "price_usd": 6
+      },
+      {
+       "category": "food",
+       "evidence": "$5 Boneless Wings (Snack Size)",
+       "label": "Boneless Wings (Snack Size)",
+       "price_usd": 5
+      },
+      {
+       "category": "food",
+       "evidence": "$10 Boneless Wings (Share Size)",
+       "label": "Boneless Wings (Share Size)",
+       "price_usd": 10
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "Happy Hour Monday 4:00 PM - 6:00 PM Tuesday 4:00 PM - 6:00 PM Wednesday 4:00 PM - 6:00 PM Thursday 4:00 PM - 6:00 PM Friday 4:00 PM - 6:00 PM",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "MON - FRI 4PM - 6PM $3 Domestic Drafts $4 Corona & Corona Light $6 House Wine $6 Krushes $5 Boneless Wings (Snack Size) $10 Boneless Wings (Share Size)",
+      "url": "https://locations.pjspub.com/pa/doylestown/4379-w-swamp-road"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "110086",
+   "lid": "110086",
+   "name": "P J Whelihan's",
+   "plcb_name": "P J WHELIHAN'S",
+   "website": "https://locations.pjspub.com/pa/doylestown/4379-w-swamp-road",
+   "zone_id": "doylestown"
+  },
+  {
    "address": "44 W Gay St, West Chester PA 19380",
    "deals": [
     {
@@ -386,6 +576,95 @@
    "plcb_name": "LASCALA'S FIRE",
    "website": "https://lascalasfire.com/west-chester/",
    "zone_id": "west_chester"
+  },
+  {
+   "address": "200 W Ridge Pike Ste 117, Conshohocken PA 19428",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "$3 Domestic Drafts",
+       "label": "Domestic Drafts",
+       "price_usd": 3
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "$4 Corona & Corona Light",
+       "label": "Corona & Corona Light",
+       "price_usd": 4
+      },
+      {
+       "category": "wine",
+       "evidence": "$6 House Wine",
+       "label": "House Wine",
+       "price_usd": 6
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$6 Krushes",
+       "label": "Krushes",
+       "price_usd": 6
+      },
+      {
+       "category": "food",
+       "evidence": "$5 Boneless Wings (Snack Size)",
+       "label": "Boneless Wings (Snack Size)",
+       "price_usd": 5
+      },
+      {
+       "category": "food",
+       "evidence": "$10 Boneless Wings (Share Size)",
+       "label": "Boneless Wings (Share Size)",
+       "price_usd": 10
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "Happy Hour Monday 4:00 PM - 6:00 PM Tuesday 4:00 PM - 6:00 PM Wednesday 4:00 PM - 6:00 PM Thursday 4:00 PM - 6:00 PM Friday 4:00 PM - 6:00 PM",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "MON - FRI 4PM - 6PM $3 Domestic Drafts $4 Corona & Corona Light $6 House Wine $6 Krushes $5 Boneless Wings (Snack Size) $10 Boneless Wings (Share Size)",
+      "url": "https://locations.pjspub.com/pa/conshohocken/200-ridge-pike"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "117317",
+   "lid": "117317",
+   "name": "P.J. Whelihan's",
+   "plcb_name": "P.J. WHELIHAN'S",
+   "website": "https://locations.pjspub.com/pa/conshohocken/200-ridge-pike",
+   "zone_id": "blue_bell_plymouth_meeting"
   },
   {
    "address": "4411-4413 Main St, Philadelphia PA 19127",
@@ -578,6 +857,95 @@
    "zone_id": "west_chester"
   },
   {
+   "address": "50 E Wynnewood Rd, Wynnewood PA 19096",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "$3 Domestic Drafts",
+       "label": "Domestic Drafts",
+       "price_usd": 3
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "$4 Corona & Corona Light",
+       "label": "Corona & Corona Light",
+       "price_usd": 4
+      },
+      {
+       "category": "wine",
+       "evidence": "$6 House Wine",
+       "label": "House Wine",
+       "price_usd": 6
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$6 Krushes",
+       "label": "Krushes",
+       "price_usd": 6
+      },
+      {
+       "category": "food",
+       "evidence": "$5 Boneless Wings (Snack Size)",
+       "label": "Boneless Wings (Snack Size)",
+       "price_usd": 5
+      },
+      {
+       "category": "food",
+       "evidence": "$10 Boneless Wings (Share Size)",
+       "label": "Boneless Wings (Share Size)",
+       "price_usd": 10
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "Happy Hour Monday 4:00 PM - 6:00 PM Tuesday 4:00 PM - 6:00 PM Wednesday 4:00 PM - 6:00 PM Thursday 4:00 PM - 6:00 PM Friday 4:00 PM - 6:00 PM",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "MON - FRI 4PM - 6PM $3 Domestic Drafts $4 Corona & Corona Light $6 House Wine $6 Krushes $5 Boneless Wings (Snack Size) $10 Boneless Wings (Share Size)",
+      "url": "https://www.pjspub.com/about.php?loc=Wynnewood"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "119303",
+   "lid": "119303",
+   "name": "PJ Whelihan's",
+   "plcb_name": "PJ WHELIHAN'S",
+   "website": "https://www.pjspub.com/about.php?loc=Wynnewood",
+   "zone_id": "ardmore_bryn_mawr"
+  },
+  {
    "address": "1227 W Chester Pk, West Chester PA 19380",
    "deals": [
     {
@@ -737,6 +1105,95 @@
    "zone_id": "west_chester"
   },
   {
+   "address": "1901 Old West Chester Pk, Havertown PA 19083",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "$3 LIGHT DRAFTS (MILLER LITE, COORS LIGHT & MICHELOB ULTRA)",
+       "label": "Light Drafts (Miller Lite, Coors Light & Michelob Ultra)",
+       "price_usd": 3
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "$4 RETRO BOTTLES",
+       "label": "Retro Bottles",
+       "price_usd": 4
+      },
+      {
+       "category": "wine",
+       "evidence": "$5 HOUSE WINES",
+       "label": "House Wines",
+       "price_usd": 5
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$6 STATESIDES & SURFSIDES",
+       "label": "Statesides & Surfsides",
+       "price_usd": 6
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$6 TITOS (EXCLUDES MARTINIS - NO DOUBLES)",
+       "label": "Titos (excludes martinis - no doubles)",
+       "price_usd": 6
+      },
+      {
+       "amount_off_usd": 2,
+       "category": "food",
+       "evidence": "$2 OFF ALL STARTERS",
+       "label": "All Starters"
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "JOIN US FOR HAPPY HOUR MONDAY THROUGH FRIDAY 4-6PM",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "$3 LIGHT DRAFTS (MILLER LITE, COORS LIGHT & MICHELOB ULTRA) $4 RETRO BOTTLES $5 HOUSE WINES $6 STATESIDES & SURFSIDES $6 TITOS (EXCLUDES MARTINIS - NO DOUBLES) $2 OFF ALL STARTERS *BAR AREA ONLY - NO TAKE OUT",
+      "url": "https://www.barnabysrestaurantandpub.com/events/happy-hour-at-barnabys-havertown"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "40238",
+   "lid": "40238",
+   "name": "Barnaby's - Havertown",
+   "plcb_name": "BARNABY'S OF AMERICA",
+   "website": "https://www.barnabysrestaurantandpub.com/havertown",
+   "zone_id": "havertown"
+  },
+  {
    "address": "124 W Gay St, West Chester PA 19380",
    "deals": [
     {
@@ -780,6 +1237,95 @@
    "plcb_name": "P. J. RYAN'S, INC.",
    "website": "https://ryans-pub.com",
    "zone_id": "west_chester"
+  },
+  {
+   "address": "799 Dekalb Pk, Blue Bell PA 19422",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "$3 Domestic Drafts",
+       "label": "Domestic Drafts",
+       "price_usd": 3
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "$4 Corona & Corona Light",
+       "label": "Corona & Corona Light",
+       "price_usd": 4
+      },
+      {
+       "category": "wine",
+       "evidence": "$6 House Wine",
+       "label": "House Wine",
+       "price_usd": 6
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$6 Krushes",
+       "label": "Krushes",
+       "price_usd": 6
+      },
+      {
+       "category": "food",
+       "evidence": "$5 Boneless Wings (Snack Size)",
+       "label": "Boneless Wings (Snack Size)",
+       "price_usd": 5
+      },
+      {
+       "category": "food",
+       "evidence": "$10 Boneless Wings (Share Size)",
+       "label": "Boneless Wings (Share Size)",
+       "price_usd": 10
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "Happy Hour Monday 4:00 PM - 6:00 PM Tuesday 4:00 PM - 6:00 PM Wednesday 4:00 PM - 6:00 PM Thursday 4:00 PM - 6:00 PM Friday 4:00 PM - 6:00 PM",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "MON - FRI 4PM - 6PM $3 Domestic Drafts $4 Corona & Corona Light $6 House Wine $6 Krushes $5 Boneless Wings (Snack Size) $10 Boneless Wings (Share Size)",
+      "url": "https://locations.pjspub.com/pa/blue-bell/799-dekalb-pike"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "50385",
+   "lid": "50385",
+   "name": "P.J. Whelihan's Pub and Restaurant",
+   "plcb_name": "PJ ENTERPRISES GROUP LLC",
+   "website": "https://locations.pjspub.com/pa/blue-bell/799-dekalb-pike",
+   "zone_id": "blue_bell_plymouth_meeting"
   },
   {
    "address": "36-38 E Gay St, West Chester PA 19380",
@@ -895,6 +1441,89 @@
    "plcb_name": "TECA-R",
    "website": "http://tecawestchester.com/",
    "zone_id": "west_chester"
+  },
+  {
+   "address": "3333 Pennell Rd, Media PA 19063",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "$4 DRAFT BEERS",
+       "label": "Draft Beers",
+       "price_usd": 4
+      },
+      {
+       "category": "wine",
+       "evidence": "$5 HOUSE WINE",
+       "label": "House Wine",
+       "price_usd": 5
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$6 SPECIALITY DRINKS",
+       "label": "Speciality Drinks",
+       "price_usd": 6
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$6 SURFSIDES & STATESIDES",
+       "label": "Surfsides & Statesides",
+       "price_usd": 6
+      },
+      {
+       "amount_off_usd": 2,
+       "category": "food",
+       "evidence": "$2 OFF OF ALL STARTERS",
+       "label": "All Starters"
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "JOIN US MONDAY THROUGH FRIDAY FOR HAPPY HOUR FROM 5-7PM",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "$4 DRAFT BEERS $5 HOUSE WINE $6 SPECIALITY DRINKS $6 SURFSIDES & STATESIDES $2 OFF OF ALL STARTERS",
+      "url": "https://www.barnabysrestaurantandpub.com/events/happy-hour-at-barnabys-aston"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "19:00",
+       "start": "17:00"
+      },
+      {
+       "dow": 2,
+       "end": "19:00",
+       "start": "17:00"
+      },
+      {
+       "dow": 3,
+       "end": "19:00",
+       "start": "17:00"
+      },
+      {
+       "dow": 4,
+       "end": "19:00",
+       "start": "17:00"
+      },
+      {
+       "dow": 5,
+       "end": "19:00",
+       "start": "17:00"
+      }
+     ]
+    }
+   ],
+   "id": "53729",
+   "lid": "53729",
+   "name": "Barnaby's",
+   "plcb_name": "BARNABY'S",
+   "website": "https://www.barnabysaston.com",
+   "zone_id": "chester_chichester"
   },
   {
    "address": "125 W Market St, West Chester PA 19382",
@@ -1211,6 +1840,107 @@
    "plcb_name": "MAS WEST CHESTER LLC",
    "website": "https://www.masmexicali.com/",
    "zone_id": "west_chester"
+  },
+  {
+   "address": "500 Easton Rd, Warrington PA 18976",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "bottle_can",
+       "evidence": "$3 Domestic Bottles",
+       "label": "Domestic Bottles",
+       "price_usd": 3
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$5 White Claw",
+       "label": "White Claw",
+       "price_usd": 5
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$6 Tito's Handmade Vodka",
+       "label": "Tito's Handmade Vodka",
+       "price_usd": 6
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$6 Seltzers (Stateside Vodka Soda & Surfside included)",
+       "label": "Seltzers (Stateside Vodka Soda & Surfside included)",
+       "price_usd": 6
+      },
+      {
+       "category": "food",
+       "discount_pct": 50,
+       "evidence": "HALF OFF Wings | Classic & Boneless",
+       "label": "Wings | Classic & Boneless"
+      },
+      {
+       "category": "food",
+       "discount_pct": 50,
+       "evidence": "HALF OFF Jumbo Soft Pretzel",
+       "label": "Jumbo Soft Pretzel"
+      },
+      {
+       "category": "food",
+       "discount_pct": 50,
+       "evidence": "HALF OFF Pete-zza | Traditional, Cheese, White, Pepperoni",
+       "label": "Pete-zza | Traditional, Cheese, White, Pepperoni"
+      },
+      {
+       "category": "food",
+       "discount_pct": 50,
+       "evidence": "HALF OFF Shrimp | Hot, Cold, Fried",
+       "label": "Shrimp | Hot, Cold, Fried"
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "Happy Hour at The Bar Monday - Friday 4-6 PM",
+      "heading": "Happy Hour at The Bar",
+      "kind": "venue_site",
+      "quote": "Happy Hour at The Bar Monday - Friday 4-6 PM Beverages $3 Domestic Bottles $5 White Claw $6 Tito's Handmade Vodka $6 Seltzers (Stateside Vodka Soda & Surfside included) HALF OFF Wings | Classic & Boneless Jumbo Soft Pretzel Pete-zza | Traditional, Cheese, White, Pepperoni Shrimp | Hot, Cold, Fried",
+      "url": "https://chickiesandpetes.com/location/warrington/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "65398",
+   "lid": "65398",
+   "name": "Chickie's & Pete's",
+   "plcb_name": "CHICKIES & PETES",
+   "website": "https://chickiesandpetes.com/location/warrington/?utm_source=gmb&utm_medium=organic&utm_campaign=warrington",
+   "zone_id": "warminster_warrington"
   },
   {
    "address": "675 Shannondell Blvd Audubon Sq, Norristown PA 19403",
@@ -1752,6 +2482,95 @@
    "plcb_name": "CHESTER COUNTY PUB COMPANY LLC",
    "website": "https://kildarespubwc.com",
    "zone_id": "west_chester"
+  },
+  {
+   "address": "180B Mill Rd, Oaks PA 19456",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "$3 Domestic Drafts",
+       "label": "Domestic Drafts",
+       "price_usd": 3
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "$4 Corona & Corona Light",
+       "label": "Corona & Corona Light",
+       "price_usd": 4
+      },
+      {
+       "category": "wine",
+       "evidence": "$6 House Wine",
+       "label": "House Wine",
+       "price_usd": 6
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$6 Krushes",
+       "label": "Krushes",
+       "price_usd": 6
+      },
+      {
+       "category": "food",
+       "evidence": "$5 Boneless Wings (Snack Size)",
+       "label": "Boneless Wings (Snack Size)",
+       "price_usd": 5
+      },
+      {
+       "category": "food",
+       "evidence": "$10 Boneless Wings (Share Size)",
+       "label": "Boneless Wings (Share Size)",
+       "price_usd": 10
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "Happy Hour Monday 4:00 PM - 6:00 PM Tuesday 4:00 PM - 6:00 PM Wednesday 4:00 PM - 6:00 PM Thursday 4:00 PM - 6:00 PM Friday 4:00 PM - 6:00 PM",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "MON - FRI 4PM - 6PM $3 Domestic Drafts $4 Corona & Corona Light $6 House Wine $6 Krushes $5 Boneless Wings (Snack Size) $10 Boneless Wings (Share Size)",
+      "url": "https://www.pjspub.com/about.php?loc=Oaks"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "81482",
+   "lid": "81482",
+   "name": "P. J. Whelihan's Pub + Restaurant",
+   "plcb_name": "PJ'S OAKS LLC",
+   "website": "https://www.pjspub.com/about.php?loc=Oaks",
+   "zone_id": "collegeville_trappe"
   },
   {
    "address": "720 Justison St, Wilmington, DE 19801",
