@@ -964,6 +964,54 @@
    "anchor": "Main St",
    "state": "DE",
    "municipalities": []
+  },
+  {
+   "id": "new_hope",
+   "name": "New Hope",
+   "anchor": "Main St / Bridge St",
+   "municipalities": [
+    [
+     "New Hope",
+     "Bucks County"
+    ]
+   ]
+  },
+  {
+   "id": "newtown_bucks",
+   "name": "Newtown (Bucks Co.)",
+   "anchor": "State St",
+   "municipalities": [
+    [
+     "Newtown",
+     "Bucks County"
+    ],
+    [
+     "Newtown Twp",
+     "Bucks County"
+    ]
+   ]
+  },
+  {
+   "id": "perkasie",
+   "name": "Perkasie",
+   "anchor": "Market Sq",
+   "municipalities": [
+    [
+     "Perkasie",
+     "Bucks County"
+    ]
+   ]
+  },
+  {
+   "id": "quakertown",
+   "name": "Quakertown",
+   "anchor": "Broad St / Rt 313",
+   "municipalities": [
+    [
+     "Quakertown",
+     "Bucks County"
+    ]
+   ]
   }
  ]
 }

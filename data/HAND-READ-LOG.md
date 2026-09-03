@@ -150,3 +150,4 @@ re-attempt these unless the venue's own site changes.)
 - middletown_de | Casa 19/Back Creek Seven Tap/Mas Tacos/Jackson House/Derby's/Caruso's Bistro/Randazzo's | NO_CLOCK_TIME | empty sweeps | 2026-09-03
 - chester_chichester | Monaghan's Pub/Hunt's Annex/Tom N Jerry's/E Cooke Winery/Gachi Sushi/Phoenix Bar & Grill/Duffer's Mill/Lefty's Irish Pub/Maggie May's | NO_CLOCK_TIME | empty sweeps or unreachable Facebook page | 2026-09-03
 - middletown_de | Pithari (DEc2e120b082) | SHIPPED | HH PDF menu, Tue-Sun 3-7pm, full food/cocktail/wine/beer pricing | 2026-09-03
+- audubon_eagleville | The Cage / Select Pizza Grill of Audubon (115024) | SHIPPED | JSON-LD structured HH menu, Mon-Fri 4-6pm | 2026-09-03

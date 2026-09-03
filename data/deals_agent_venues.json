@@ -1170,6 +1170,107 @@
    "zone_id": "norristown_bridgeport"
   },
   {
+   "address": "711 S Trooper Rd, Audubon PA 19403",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "Draft Beer $5.00",
+       "label": "Draft Beer",
+       "price_usd": 5
+      },
+      {
+       "category": "cocktail",
+       "evidence": "ALL Signature Cocktails ... $11.00",
+       "label": "ALL Signature Cocktails",
+       "price_usd": 11
+      },
+      {
+       "category": "food",
+       "evidence": "Whipped Feta Dip ... $12.00",
+       "label": "Whipped Feta Dip",
+       "price_usd": 12
+      },
+      {
+       "category": "food",
+       "evidence": "Crispy Tuna Rice* ... $13.00",
+       "label": "Crispy Tuna Rice",
+       "price_usd": 13
+      },
+      {
+       "category": "food",
+       "evidence": "Ahi Tuna Wonton Chips* ... $13.00",
+       "label": "Ahi Tuna Wonton Chips",
+       "price_usd": 13
+      },
+      {
+       "category": "food",
+       "evidence": "Seasonal Guacamole ... $10.00",
+       "label": "Seasonal Guacamole",
+       "price_usd": 10
+      },
+      {
+       "category": "food",
+       "evidence": "ALL Flatbreads ... $13.00",
+       "label": "All Flatbreads",
+       "price_usd": 13
+      },
+      {
+       "category": "food",
+       "evidence": "Tuna Poke Tartare* ... $13.00",
+       "label": "Tuna Poke Tartare",
+       "price_usd": 13
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Monday - Friday 4pm-6pm!",
+      "heading": "Happy Hour Audubon & Huntingdon Valley",
+      "kind": "venue_site",
+      "quote": "Half price house wine, $5 draft beer, $11 signature cocktails, HH food menu, Monday-Friday 4-6pm",
+      "url": "https://www.thecagecocktailbar.com/menus/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "115024",
+   "lid": "115024",
+   "name": "Select Pizza Grill of Audubon",
+   "plcb_name": "SELECT PIZZA GRILL OF AUDUBON LLC",
+   "website": "https://www.thecagecocktailbar.com/",
+   "zone_id": "audubon_eagleville"
+  },
+  {
    "address": "200 W Ridge Pike Ste 117, Conshohocken PA 19428",
    "deals": [
     {

@@ -520,6 +520,16 @@
   "website": "http://slowhand-wc.com/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=16738112384347600575",
   "zone_id": "west_chester"
  },
+ "101327": {
+  "address": "300 W Bridge St, New Hope PA 18938",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "101327",
+  "name": "New Hope Market",
+  "named_by": "plcb",
+  "plcb_name": "NEW HOPE MARKET LLC",
+  "tier": "core",
+  "zone_id": "new_hope"
+ },
  "101345": {
   "address": "2201 Christian St, Philadelphia PA 19146",
   "geo_precision": "place",
@@ -1234,6 +1244,16 @@
   "tier": "core",
   "website": "https://www.wawa.com/locations/0148?utm_source=gmblisting&utm_medium=organic&utm_campaign=locallisting",
   "zone_id": "willow_grove_horsham"
+ },
+ "103231": {
+  "address": "116 E Broad St, Quakertown PA 18951",
+  "license_type": "Limited Distillery",
+  "lid": "103231",
+  "name": "Doan Gang Distillery",
+  "named_by": "plcb",
+  "plcb_name": "DOAN GANG DISTILLERY",
+  "tier": "taproom",
+  "zone_id": "quakertown"
  },
  "103233": {
   "address": "1140 Shackmaxon St, Philadelphia PA 19125",
@@ -1986,21 +2006,6 @@
   "website": "http://cartesianbrewing.com/",
   "zone_id": "center_city"
  },
- "104788": {
-  "address": "Garnet Valley Plaza Center 95 Wilmington W Chester Pk, Chadds Ford PA 19317",
-  "license_type": "Restaurant (Liquor)",
-  "lid": "104788",
-  "name": "2 Sp Brewing Taphouse & Grill",
-  "named_by": "plcb",
-  "photo": {
-   "attribution": "Photo: Matthew Davis / Google",
-   "file": "img/venues/104788.jpg"
-  },
-  "plcb_name": "2 SP BREWING TAPHOUSE & GRILL",
-  "tier": "core",
-  "website": "https://2sptaphouse.com/",
-  "zone_id": "glen_mills_chadds_ford"
- },
  "104798": {
   "address": "2880 Bergey Rd Unit Aa, Hatfield PA 19440",
   "license_type": "Brewery",
@@ -2111,6 +2116,16 @@
   "tier": "core",
   "website": "https://www.thecigarrepublic.com/conshohocken",
   "zone_id": "conshohocken"
+ },
+ "104931": {
+  "address": "230 Rte 313, Perkasie PA 18944",
+  "license_type": "Brewery",
+  "lid": "104931",
+  "name": "Original Dpir",
+  "named_by": "plcb",
+  "plcb_name": "ORIGINAL DPIR INC",
+  "tier": "taproom",
+  "zone_id": "perkasie"
  },
  "104946": {
   "address": "531 Germantown Pk, Lafayette Hill PA 19444",
@@ -2249,6 +2264,16 @@
   "tier": "core",
   "website": "https://www.doublevisionsgogo.com/",
   "zone_id": "willow_grove_horsham"
+ },
+ "105190": {
+  "address": "274 S River Rd, New Hope PA 18938",
+  "license_type": "Hotel (Liquor)",
+  "lid": "105190",
+  "name": "Gateway to New Hope Operating",
+  "named_by": "plcb",
+  "plcb_name": "GATEWAY TO NEW HOPE OPERATING LLC",
+  "tier": "core",
+  "zone_id": "new_hope"
  },
  "105216": {
   "address": "800 Ridge Pk, Lafayette Hill PA 19444",
@@ -2721,6 +2746,16 @@
   "tier": "taproom",
   "zone_id": "fishtown_kensington"
  },
+ "106434": {
+  "address": "15 S Main St, New Hope PA 18938",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "106434",
+  "name": "The Old Stone Church of New Hope",
+  "named_by": "plcb",
+  "plcb_name": "THE OLD STONE CHURCH OF NEW HOPE LLC",
+  "tier": "core",
+  "zone_id": "new_hope"
+ },
  "106544": {
   "address": "5437 N Lawrence St, Philadelphia PA 19120",
   "license_type": "Restaurant (Liquor)",
@@ -3076,6 +3111,16 @@
   "website": "https://www.josephspizzaparlor.com/",
   "zone_id": "northeast_philly"
  },
+ "107753": {
+  "address": "510-1/2 W Walnut St, Perkasie PA 18944",
+  "license_type": "Brewery",
+  "lid": "107753",
+  "name": "Mystic Ways Brewing",
+  "named_by": "plcb",
+  "plcb_name": "MYSTIC WAYS BREWING COMPANY",
+  "tier": "taproom",
+  "zone_id": "perkasie"
+ },
  "107855": {
   "address": "Coventry Mall Space A-2 Route 724 & 100 Bypass, Pottstown PA 19465",
   "geo_precision": "place",
@@ -3161,6 +3206,26 @@
   "tier": "core",
   "website": "https://otherhalfbrewing.com/location/philadelphia/",
   "zone_id": "center_city"
+ },
+ "108099": {
+  "address": "615 W Market St, Perkasie PA 18944",
+  "license_type": "Brewery",
+  "lid": "108099",
+  "name": "Perkasie Pizza and Pasta",
+  "named_by": "plcb",
+  "plcb_name": "PERKASIE PIZZA AND PASTA",
+  "tier": "taproom",
+  "zone_id": "perkasie"
+ },
+ "108101": {
+  "address": "275 Swamp Rd, Newtown PA 18940",
+  "license_type": "Performing Arts Facility",
+  "lid": "108101",
+  "name": "Zlock Performing Arts Center",
+  "named_by": "plcb",
+  "plcb_name": "ZLOCK PERFORMING ARTS CENTER",
+  "tier": "core",
+  "zone_id": "newtown_bucks"
  },
  "108104": {
   "address": "773 W Sproul Rd, Springfield PA 19064",
@@ -3392,16 +3457,6 @@
   "tier": "core",
   "website": "https://sbarro.com/locations/pa/springfield/springfield-mall/",
   "zone_id": "springfield_delco"
- },
- "108756": {
-  "address": "3205-51 Lancaster Ave, Philadelphia PA 19104",
-  "license_type": "Public Venue Restaurant",
-  "lid": "108756",
-  "name": "Arlen Specter Us Squash Center",
-  "named_by": "plcb",
-  "plcb_name": "ARLEN SPECTER US SQUASH CENTER",
-  "tier": "core",
-  "zone_id": "university_city"
  },
  "108811": {
   "address": "237 W Butler Ave, Chalfont PA 18914",
@@ -3840,6 +3895,16 @@
   "tier": "taproom",
   "website": "https://www.wellcraftedbeer.com/",
   "zone_id": "ambler_upper_dublin"
+ },
+ "109580": {
+  "address": "211 W Walnut St, Perkasie PA 18944",
+  "license_type": "Brewery",
+  "lid": "109580",
+  "name": "Van Lieus Brewing",
+  "named_by": "plcb",
+  "plcb_name": "VAN LIEUS BREWING CORPORATION",
+  "tier": "taproom",
+  "zone_id": "perkasie"
  },
  "109595": {
   "address": "401 E 4Th St Building 8 Ste B, Bridgeport PA 19405",
@@ -5026,6 +5091,16 @@
   "website": "https://www.vernickcoffeebar.com",
   "zone_id": "center_city"
  },
+ "113062": {
+  "address": "1017 W Cumberland St, Philadelphia PA 19133",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "113062",
+  "name": "1017 Cumberland",
+  "named_by": "plcb",
+  "plcb_name": "1017 CUMBERLAND INC",
+  "tier": "core",
+  "zone_id": "north_philly"
+ },
  "113076": {
   "address": "406-408 S 2Nd St, Philadelphia PA 19147",
   "license_type": "Restaurant (Liquor)",
@@ -5121,6 +5196,16 @@
   "tier": "core",
   "website": "http://www.chambers19.com/",
   "zone_id": "doylestown"
+ },
+ "113219": {
+  "address": "3 West Rd, Newtown PA 18940",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "113219",
+  "name": "Blue Point Grill",
+  "named_by": "plcb",
+  "plcb_name": "BLUE POINT GRILL",
+  "tier": "core",
+  "zone_id": "newtown_bucks"
  },
  "113225": {
   "address": "150 E Park Ave, Schwenksville PA 19473",
@@ -5529,6 +5614,16 @@
   "tier": "core",
   "website": "https://topgolf.com/us/king-of-prussia/",
   "zone_id": "king_of_prussia"
+ },
+ "114905": {
+  "address": "2948 S Eagle Rd, Newtown PA 18940",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "114905",
+  "name": "Ardana Newtown Food & Drink",
+  "named_by": "plcb",
+  "plcb_name": "ARDANA NEWTOWN FOOD & DRINK",
+  "tier": "core",
+  "zone_id": "newtown_bucks"
  },
  "114948": {
   "address": "95 Nutt Rd, Phoenixville PA 19460",
@@ -6708,6 +6803,16 @@
   "website": "https://thelibrarycollegeville.com/",
   "zone_id": "collegeville_trappe"
  },
+ "118340": {
+  "address": "2807 S Eagle Rd, Newtown PA 18940",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "118340",
+  "name": "The Capital Grille #8080",
+  "named_by": "plcb",
+  "plcb_name": "THE CAPITAL GRILLE #8080",
+  "tier": "core",
+  "zone_id": "newtown_bucks"
+ },
  "118364": {
   "address": "133 N Wayne Ave, Wayne PA 19087",
   "geo_precision": "place",
@@ -6838,6 +6943,16 @@
   "tier": "core",
   "zone_id": "fishtown_kensington"
  },
+ "11880": {
+  "address": "2865 N 2Nd St, Philadelphia PA 19133",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "11880",
+  "name": "Second and Cambria",
+  "named_by": "plcb",
+  "plcb_name": "SECOND AND CAMBRIA, INC.",
+  "tier": "core",
+  "zone_id": "north_philly"
+ },
  "118805": {
   "address": "1810 Wilminton Pk Suite 1, Glen Mills PA 19342",
   "license_type": "Restaurant (Liquor)",
@@ -6862,6 +6977,16 @@
   "plcb_name": "EL PARAISO BAR & RESTAURANTE, LLC",
   "tier": "core",
   "zone_id": "north_philly"
+ },
+ "118857": {
+  "address": "400 Bridge St, Phoenixville PA 19460",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "118857",
+  "name": "Phoenixville 400 Bridge",
+  "named_by": "plcb",
+  "plcb_name": "PHOENIXVILLE 400 BRIDGE, LLC",
+  "tier": "core",
+  "zone_id": "phoenixville"
  },
  "118876": {
   "address": "1100 Hector St, Spring Mill Creative Campus, Bldg B, Conshohocken PA 19428",
@@ -7194,6 +7319,16 @@
   "website": "https://www.joleneswc.com/",
   "zone_id": "west_chester"
  },
+ "119691": {
+  "address": "255 N Sycamore St, Newtown PA 18940",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "119691",
+  "name": "Melange on Sycamore",
+  "named_by": "plcb",
+  "plcb_name": "MELANGE ON SYCAMORE",
+  "tier": "core",
+  "zone_id": "newtown_bucks"
+ },
  "11973": {
   "address": "3408-12 Sansom St, Philadelphia PA 19104",
   "geo_precision": "place",
@@ -7262,6 +7397,16 @@
   "tier": "core",
   "website": "http://sanatogapizzagrill.com/",
   "zone_id": "pottstown"
+ },
+ "119867": {
+  "address": "2808 S Eagle Rd, Newtown PA 18940",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "119867",
+  "name": "Oishi",
+  "named_by": "plcb",
+  "plcb_name": "OISHI",
+  "tier": "core",
+  "zone_id": "newtown_bucks"
  },
  "119970": {
   "address": "3739 West Chester Pk, Newtown Square PA 19073",
@@ -7853,6 +7998,16 @@
   "tier": "core",
   "zone_id": "center_city"
  },
+ "121327": {
+  "address": "258 Durham Rd, Newtown PA 18940",
+  "license_type": "Limited Winery",
+  "lid": "121327",
+  "name": "Rose Bank Winery",
+  "named_by": "plcb",
+  "plcb_name": "ROSE BANK WINERY",
+  "tier": "taproom",
+  "zone_id": "newtown_bucks"
+ },
  "121350": {
   "address": "3554 West Chester Pike Unit 14, Newtown Square PA 19073",
   "geo_precision": "place",
@@ -8327,21 +8482,6 @@
   "tier": "core",
   "zone_id": "center_city"
  },
- "123955": {
-  "address": "949 Baltimore Pike, Glen Mills PA 19342",
-  "license_type": "Restaurant (Liquor)",
-  "lid": "123955",
-  "name": "Testa Rosa",
-  "named_by": "plcb",
-  "photo": {
-   "attribution": "Photo: Testa Rossa - Glen Mills / Google",
-   "file": "img/venues/123955.jpg"
-  },
-  "plcb_name": "TESTA ROSA",
-  "tier": "core",
-  "website": "https://www.testarossa.restaurant/",
-  "zone_id": "glen_mills_chadds_ford"
- },
  "123962": {
   "address": "333 Easton Rd, Glenside PA 19038",
   "license_type": "Restaurant (Liquor)",
@@ -8421,6 +8561,16 @@
   "plcb_name": "MILLER THEATER",
   "tier": "core",
   "zone_id": "center_city"
+ },
+ "125387": {
+  "address": "50 S Main St, New Hope PA 18938",
+  "license_type": "Hotel (Liquor)",
+  "lid": "125387",
+  "name": "50 S Main St",
+  "named_by": "plcb",
+  "plcb_name": "50 S MAIN ST LLC",
+  "tier": "core",
+  "zone_id": "new_hope"
  },
  "125402": {
   "address": "412 S York Rd, Hatboro PA 19040",
@@ -8592,6 +8742,16 @@
   "website": "https://cressoninn.com/",
   "zone_id": "manayunk"
  },
+ "125950": {
+  "address": "32 West Rd, Newtown PA 18940",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "125950",
+  "name": "Piccolo Trattoria",
+  "named_by": "plcb",
+  "plcb_name": "PICCOLO TRATTORIA",
+  "tier": "core",
+  "zone_id": "newtown_bucks"
+ },
  "125979": {
   "address": "171 Jacksonville Rd, Ivyland PA 18974",
   "geo_precision": "place",
@@ -8749,15 +8909,15 @@
   "website": "https://www.facendaspirits.com/",
   "zone_id": "doylestown"
  },
- "126409": {
-  "address": "1626 N American St, Philadelphia PA 19122",
+ "126410": {
+  "address": "32 S Main St, New Hope PA 18938",
   "license_type": "Restaurant (Liquor)",
-  "lid": "126409",
-  "name": "Feast Cafe",
+  "lid": "126410",
+  "name": "32 S Main",
   "named_by": "plcb",
-  "plcb_name": "FEAST CAFE",
+  "plcb_name": "32 S MAIN LLC",
   "tier": "core",
-  "zone_id": "fishtown_kensington"
+  "zone_id": "new_hope"
  },
  "126422": {
   "address": "1915-17 Cheltenham Ave, Elkins Park PA 19027",
@@ -8908,6 +9068,16 @@
   "tier": "core",
   "zone_id": "center_city"
  },
+ "127010": {
+  "address": "22 N Main St, New Hope PA 18938",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "127010",
+  "name": "Landing Operations",
+  "named_by": "plcb",
+  "plcb_name": "LANDING OPERATIONS LLC",
+  "tier": "core",
+  "zone_id": "new_hope"
+ },
  "127053": {
   "address": "36 Greenfield Ave, Ardmore PA 19003",
   "license_type": "Restaurant (Liquor)",
@@ -8932,16 +9102,6 @@
   "plcb_name": "PENNS LANDING CATERING SERVICES, INC.",
   "tier": "core",
   "zone_id": "center_city"
- },
- "127065": {
-  "address": "5007 Frankford Ave, Philadelphia PA 19124",
-  "license_type": "Restaurant (Liquor)",
-  "lid": "127065",
-  "name": "By Brian",
-  "named_by": "plcb",
-  "plcb_name": "BY BRIAN LLC",
-  "tier": "core",
-  "zone_id": "north_philly"
  },
  "127082": {
   "address": "1900 S 19Th St, Philadelphia PA 19145",
@@ -9507,6 +9667,16 @@
   "tier": "core",
   "website": "https://bombatacos.com/",
   "zone_id": "malvern_great_valley"
+ },
+ "128899": {
+  "address": "2930 S Eagle Rd, Newtown PA 18940",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "128899",
+  "name": "Bomba Taco + Bar",
+  "named_by": "plcb",
+  "plcb_name": "BOMBA TACO + BAR",
+  "tier": "core",
+  "zone_id": "newtown_bucks"
  },
  "128914": {
   "address": "847 E Baltimore Pk, Kennett Square PA 19348",
@@ -10225,6 +10395,16 @@
   "website": "http://www.daveandbusters.com/us/en/about/locations/king-of-prussia",
   "zone_id": "king_of_prussia"
  },
+ "130504": {
+  "address": "121 Park Ave Ste 402, Quakertown PA 18951",
+  "license_type": "Limited Distillery",
+  "lid": "130504",
+  "name": "The Farm Distillery",
+  "named_by": "plcb",
+  "plcb_name": "THE FARM DISTILLERY LLC",
+  "tier": "taproom",
+  "zone_id": "quakertown"
+ },
  "130529": {
   "address": "2229 Grays Ferry Ave, Philadelphia PA 19146",
   "license_type": "Restaurant (Liquor)",
@@ -10535,6 +10715,16 @@
   "tier": "taproom",
   "zone_id": "north_philly"
  },
+ "131267": {
+  "address": "2113-15 E York St, Philadelphia PA 19125",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "131267",
+  "name": "Pig & Khao",
+  "named_by": "plcb",
+  "plcb_name": "PIG & KHAO",
+  "tier": "core",
+  "zone_id": "fishtown_kensington"
+ },
  "131290": {
   "address": "160 Park Rd, Dowingtown PA 19335",
   "geo_precision": "place",
@@ -10788,6 +10978,16 @@
   "tier": "core",
   "website": "http://www.philadelphiaunion.com/stadium",
   "zone_id": "chester_chichester"
+ },
+ "131493": {
+  "address": "7522-24 Ogontz Ave, Philadelphia PA 19150",
+  "license_type": "Eating Place Retail Dispenser (Malt)",
+  "lid": "131493",
+  "name": "K Famous Deli",
+  "named_by": "plcb",
+  "plcb_name": "K FAMOUS DELI LLC",
+  "tier": "core",
+  "zone_id": "northwest_philly"
  },
  "131512": {
   "address": "1620 Sansom St Ste C1, Philadelphia PA 19103",
@@ -11114,6 +11314,16 @@
   "website": "http://mcsheasardmore.com/",
   "zone_id": "ardmore_bryn_mawr"
  },
+ "132817": {
+  "address": "231-233 Bridge St, Phoenixville PA 19460",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "132817",
+  "name": "The Drift",
+  "named_by": "plcb",
+  "plcb_name": "THE DRIFT",
+  "tier": "core",
+  "zone_id": "phoenixville"
+ },
  "132818": {
   "address": "1 S 15Th St, Philadelphia PA 19102",
   "geo_precision": "place",
@@ -11255,6 +11465,16 @@
   "tier": "core",
   "zone_id": "south_philly"
  },
+ "132998": {
+  "address": "Winery Space #1, 121 Park Ave, Quakertown PA 18951",
+  "license_type": "Limited Winery",
+  "lid": "132998",
+  "name": "Labonge Estates Winery",
+  "named_by": "plcb",
+  "plcb_name": "LABONGE ESTATES WINERY",
+  "tier": "taproom",
+  "zone_id": "quakertown"
+ },
  "133012": {
   "address": "1920 Chestnut St, Philadelphia PA 19103",
   "geo_precision": "place",
@@ -11307,6 +11527,16 @@
   "tier": "core",
   "zone_id": "northeast_philly"
  },
+ "133091": {
+  "address": "2014 S Broad St, Philadelphia PA 19145",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "133091",
+  "name": "2014 Foods",
+  "named_by": "plcb",
+  "plcb_name": "2014 FOODS LLC",
+  "tier": "core",
+  "zone_id": "south_philly"
+ },
  "133101": {
   "address": "35 Baltimore Pk, Springfield PA 19064",
   "license_type": "Restaurant (Liquor)",
@@ -11339,6 +11569,16 @@
   "tier": "core",
   "website": "https://pocos.com/",
   "zone_id": "doylestown"
+ },
+ "133134": {
+  "address": "116 E Broad St, Quakertown PA 18951",
+  "license_type": "Brewery",
+  "lid": "133134",
+  "name": "Doan Gang Distillery",
+  "named_by": "plcb",
+  "plcb_name": "DOAN GANG DISTILLERY LLC",
+  "tier": "taproom",
+  "zone_id": "quakertown"
  },
  "133155": {
   "address": "295 Buck Rd Unit 17-18, Holland PA 18966",
@@ -11434,6 +11674,16 @@
   "website": "http://civerasdeli.com/",
   "zone_id": "upper_darby_lansdowne"
  },
+ "133231": {
+  "address": "4301 N 5Th St, Philadelphia PA 19140",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "133231",
+  "name": "La Santa Bar Restaurant Management",
+  "named_by": "plcb",
+  "plcb_name": "LA SANTA BAR RESTAURANT MANAGEMENT CORPORATION",
+  "tier": "core",
+  "zone_id": "north_philly"
+ },
  "133261": {
   "address": "1115 West Chester Pk, West Chester PA 19382",
   "geo_precision": "place",
@@ -11505,6 +11755,26 @@
   "tier": "taproom",
   "zone_id": "northwest_philly"
  },
+ "133309": {
+  "address": "1714 Washington Ave Unit A, Philadelphia PA 19146",
+  "license_type": "Limited Winery",
+  "lid": "133309",
+  "name": "Vons Chicken Philly",
+  "named_by": "plcb",
+  "plcb_name": "VONS CHICKEN PHILLY",
+  "tier": "taproom",
+  "zone_id": "center_city"
+ },
+ "133356": {
+  "address": "201 Birch St, Kennett Square PA 19348",
+  "license_type": "Hotel (Liquor)",
+  "lid": "133356",
+  "name": "Opus on Birch",
+  "named_by": "plcb",
+  "plcb_name": "OPUS ON BIRCH",
+  "tier": "core",
+  "zone_id": "kennett_square"
+ },
  "133360": {
   "address": "50 Bustleton Pk, Feasterville PA 19053",
   "license_type": "Restaurant (Liquor)",
@@ -11549,6 +11819,16 @@
   "website": "https://orders.sheetz.com/findASheetz/store/921",
   "zone_id": "limerick_royersford"
  },
+ "133374": {
+  "address": "2481 N 54Th St, Philadelphia PA 19131",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "133374",
+  "name": "Hawk & Barrel",
+  "named_by": "plcb",
+  "plcb_name": "HAWK & BARREL",
+  "tier": "core",
+  "zone_id": "west_philly"
+ },
  "133375": {
   "address": "1642 South St, Philadelphia PA 19146",
   "license_type": "Eating Place Retail Dispenser (Malt)",
@@ -11558,6 +11838,16 @@
   "plcb_name": "CHOICE DELI",
   "tier": "core",
   "zone_id": "center_city"
+ },
+ "133405": {
+  "address": "117 W Broad St, Quakertown PA 18951",
+  "license_type": "Brewery",
+  "lid": "133405",
+  "name": "The Proper Brewing",
+  "named_by": "plcb",
+  "plcb_name": "THE PROPER BREWING COMPANY",
+  "tier": "taproom",
+  "zone_id": "quakertown"
  },
  "133410": {
   "address": "5606 N Broad St, Philadelphia PA 19141",
@@ -11616,6 +11906,16 @@
   "tier": "core",
   "website": "https://www.cantinafeliz.com/",
   "zone_id": "blue_bell_plymouth_meeting"
+ },
+ "133468": {
+  "address": "2920 S Eagle Rd, Newtown PA 18940",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "133468",
+  "name": "Pj Whelihan's",
+  "named_by": "plcb",
+  "plcb_name": "PJ WHELIHAN'S",
+  "tier": "core",
+  "zone_id": "newtown_bucks"
  },
  "133480": {
   "address": "7401 State Rd, Philadelphia PA 19136",
@@ -11749,6 +12049,36 @@
   "tier": "core",
   "zone_id": "center_city"
  },
+ "133787": {
+  "address": "307 Derstine Ave Ste (Warehouse) 110, Lansdale PA 19446",
+  "license_type": "Brewery",
+  "lid": "133787",
+  "name": "Gamer Brewing",
+  "named_by": "plcb",
+  "plcb_name": "GAMER BREWING LLC",
+  "tier": "taproom",
+  "zone_id": "lansdale_montgomeryville"
+ },
+ "133827": {
+  "address": "1401 Arch St, Philadelphia PA 19102",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "133827",
+  "name": "Recipe Philly",
+  "named_by": "plcb",
+  "plcb_name": "RECIPE PHILLY",
+  "tier": "core",
+  "zone_id": "center_city"
+ },
+ "133987": {
+  "address": "1105 Frankford Ave, Philadelphia PA 19125",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "133987",
+  "name": "Cannonball Club",
+  "named_by": "plcb",
+  "plcb_name": "CANNONBALL CLUB",
+  "tier": "core",
+  "zone_id": "fishtown_kensington"
+ },
  "134037": {
   "address": "1141-1143 Pine St, Philadelphia PA 19107",
   "license_type": "Restaurant (Liquor)",
@@ -11772,6 +12102,26 @@
   "tier": "core",
   "website": "https://seikopa.com/",
   "zone_id": "center_city"
+ },
+ "134113": {
+  "address": "Garnet Valley Plaza Center 95 Wilmington W Chester Pk, Chadds Ford PA 19317",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "134113",
+  "name": "Curry Pizza House X Hidden Tap Barrel",
+  "named_by": "plcb",
+  "plcb_name": "CURRY PIZZA HOUSE X HIDDEN TAP BARREL",
+  "tier": "core",
+  "zone_id": "glen_mills_chadds_ford"
+ },
+ "134148": {
+  "address": "12 Reaney St, Chester PA 19013",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "134148",
+  "name": "Union Yards",
+  "named_by": "plcb",
+  "plcb_name": "UNION YARDS",
+  "tier": "core",
+  "zone_id": "chester_chichester"
  },
  "134274": {
   "address": "3300 Henry Ave Unit 2, Philadelphia PA 19129",
@@ -11804,6 +12154,16 @@
   "tier": "taproom",
   "website": "https://www.chikarapa.com/",
   "zone_id": "phoenixville"
+ },
+ "134463": {
+  "address": "1620 Sansom St, Philadelphia PA 19103",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "134463",
+  "name": "Bar Cicci",
+  "named_by": "plcb",
+  "plcb_name": "BAR CICCI",
+  "tier": "core",
+  "zone_id": "center_city"
  },
  "13546": {
   "address": "205 Bainbridge St, Philadelphia PA 19027",
@@ -12330,16 +12690,6 @@
   "website": "http://www.thephilstavern.com/",
   "zone_id": "blue_bell_plymouth_meeting"
  },
- "17993": {
-  "address": "6058 Castor Ave, Philadelphia PA 19149",
-  "license_type": "Restaurant (Liquor)",
-  "lid": "17993",
-  "name": "R. L. Curbie",
-  "named_by": "plcb",
-  "plcb_name": "R. L. CURBIE, INC.",
-  "tier": "core",
-  "zone_id": "northeast_philly"
- },
  "18076": {
   "address": "1201 S 28Th St, Philadelphia PA 19146",
   "license_type": "Restaurant (Liquor)",
@@ -12349,6 +12699,16 @@
   "plcb_name": "1201 L N & D INC",
   "tier": "core",
   "zone_id": "center_city"
+ },
+ "18488": {
+  "address": "501 E Walnut St, Perkasie PA 18944",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "18488",
+  "name": "South Perkasie Hotel",
+  "named_by": "plcb",
+  "plcb_name": "SOUTH PERKASIE HOTEL INC",
+  "tier": "core",
+  "zone_id": "perkasie"
  },
  "18582": {
   "address": "2742-44 E County Line Rd, Ardmore PA 19003",
@@ -12733,6 +13093,16 @@
   "website": "https://charlottesrestaurant.com/",
   "zone_id": "newtown_square_broomall"
  },
+ "20469": {
+  "address": "116-118-120 S Main St, New Hope PA 18938",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "20469",
+  "name": "Fran's Pub",
+  "named_by": "plcb",
+  "plcb_name": "FRAN'S PUB",
+  "tier": "core",
+  "zone_id": "new_hope"
+ },
  "20559": {
   "address": "499 N Gulph Rd, King Of Prussia PA 19406",
   "geo_precision": "place",
@@ -12764,6 +13134,46 @@
   "plcb_name": "OLDE INDIAN VALLEY INN",
   "tier": "core",
   "zone_id": "souderton_harleysville"
+ },
+ "20804": {
+  "address": "14 E Ferry St, New Hope PA 18938",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "20804",
+  "name": "Martine's",
+  "named_by": "plcb",
+  "plcb_name": "MARTINE'S",
+  "tier": "core",
+  "zone_id": "new_hope"
+ },
+ "20847": {
+  "address": "26 W Bridge St & 28 W Bridge St, Rear, New Hope PA 18938",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "20847",
+  "name": "Theresa Favoroso Kelly",
+  "named_by": "plcb",
+  "plcb_name": "THERESA FAVOROSO KELLY",
+  "tier": "core",
+  "zone_id": "new_hope"
+ },
+ "20868": {
+  "address": "5-7 W Mechanic St, New Hope PA 18938",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "20868",
+  "name": "Karla's",
+  "named_by": "plcb",
+  "plcb_name": "KARLA'S",
+  "tier": "core",
+  "zone_id": "new_hope"
+ },
+ "20894": {
+  "address": "105-111 S Main St, New Hope PA 18938",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "20894",
+  "name": "Havana",
+  "named_by": "plcb",
+  "plcb_name": "HAVANA",
+  "tier": "core",
+  "zone_id": "new_hope"
  },
  "20917": {
   "address": "1100 S 2Nd St, Philadelphia PA 19147",
@@ -13187,6 +13597,16 @@
   "tier": "taproom",
   "website": "http://www.rushlandridge.com/",
   "zone_id": "warminster_warrington"
+ },
+ "27851": {
+  "address": "18 S State St R, Newtown PA 18940",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "27851",
+  "name": "Wyntrip",
+  "named_by": "plcb",
+  "plcb_name": "WYNTRIP, INC.",
+  "tier": "core",
+  "zone_id": "newtown_bucks"
  },
  "27907": {
   "address": "100 Spring Garden St, Philadelphia PA 19123",
@@ -13943,6 +14363,16 @@
   "tier": "core",
   "zone_id": "center_city"
  },
+ "36283": {
+  "address": "10 N West End Blvd, Quakertown PA 18951",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "36283",
+  "name": "T G I Friday's",
+  "named_by": "plcb",
+  "plcb_name": "T G I FRIDAY'S",
+  "tier": "core",
+  "zone_id": "quakertown"
+ },
  "36336": {
   "address": "315 E Main St, Collegeville PA 19426",
   "license_type": "Restaurant (Liquor)",
@@ -14051,6 +14481,16 @@
   "tier": "core",
   "website": "http://www.roman-delight.com/",
   "zone_id": "doylestown"
+ },
+ "36748": {
+  "address": "4228-4230 Lancaster Ave, Philadelphia PA 19104",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "36748",
+  "name": "Half Moon Lounge",
+  "named_by": "plcb",
+  "plcb_name": "HALF MOON LOUNGE",
+  "tier": "core",
+  "zone_id": "university_city"
  },
  "36829": {
   "address": "Downingtown Tech Ctr 420 Acorn Ln, Downingtown PA 19335",
@@ -14353,6 +14793,16 @@
   "tier": "core",
   "website": "https://www.chinagardeninnwillowgrove.com/",
   "zone_id": "willow_grove_horsham"
+ },
+ "38446": {
+  "address": "516-518 Walnut St, Perkasie PA 18944",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "38446",
+  "name": "Olde Towne Restaurant & Tavern",
+  "named_by": "plcb",
+  "plcb_name": "OLDE TOWNE RESTAURANT & TAVERN",
+  "tier": "core",
+  "zone_id": "perkasie"
  },
  "38625": {
   "address": "12 E Lancaster Ave, Ardmore PA 19003",
@@ -15664,6 +16114,16 @@
   "website": "https://www.finewineandgoodspirits.com/store-4658",
   "zone_id": "souderton_harleysville"
  },
+ "45183": {
+  "address": "145 N West End Blvd, Quakertown PA 18951",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "45183",
+  "name": "Applebee's Neighborhood Grill & Bar",
+  "named_by": "plcb",
+  "plcb_name": "APPLEBEE'S NEIGHBORHOOD GRILL & BAR",
+  "tier": "core",
+  "zone_id": "quakertown"
+ },
  "45258": {
   "address": "41 East State Street, Doylestown PA 18901",
   "geo_precision": "place",
@@ -15701,16 +16161,6 @@
   "plcb_name": "431 TRAN INC",
   "tier": "core",
   "zone_id": "north_philly"
- },
- "45303": {
-  "address": "30-32 E State St, Media PA 19063",
-  "license_type": "Restaurant (Liquor)",
-  "lid": "45303",
-  "name": "Iron Hill Brewery & Restaurant",
-  "named_by": "plcb",
-  "plcb_name": "IRON HILL BREWERY & RESTAURANT",
-  "tier": "core",
-  "zone_id": "media"
  },
  "45366": {
   "address": "226 W Main St, Norristown PA 19401",
@@ -15994,6 +16444,16 @@
   "tier": "core",
   "zone_id": "north_philly"
  },
+ "46246": {
+  "address": "2 West Rd, Newtown PA 18940",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "46246",
+  "name": "Rose Casual Dining",
+  "named_by": "plcb",
+  "plcb_name": "ROSE CASUAL DINING, L.P.",
+  "tier": "core",
+  "zone_id": "newtown_bucks"
+ },
  "46311": {
   "address": "2912 Swede Rd, Norristown PA 19401",
   "geo_precision": "place",
@@ -16244,16 +16704,6 @@
   "tier": "core",
   "website": "https://pizzatimesaloon.com/",
   "zone_id": "lansdale_montgomeryville"
- },
- "47297": {
-  "address": "567 N 63Rd St, Philadelphia PA 19151",
-  "license_type": "Eating Place Retail Dispenser (Malt)",
-  "lid": "47297",
-  "name": "Meng' Master Deli",
-  "named_by": "plcb",
-  "plcb_name": "MENG' MASTER DELI, INC.",
-  "tier": "core",
-  "zone_id": "west_philly"
  },
  "47315": {
   "address": "1625 S 2Nd St, Philadelphia PA 19148",
@@ -17487,6 +17937,16 @@
   "website": "http://www.bastapastapa.com/",
   "zone_id": "collegeville_trappe"
  },
+ "51109": {
+  "address": "State & Chancellor Sts, Newtown PA 18940",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "51109",
+  "name": "Fsj",
+  "named_by": "plcb",
+  "plcb_name": "FSJ CORPORATION",
+  "tier": "core",
+  "zone_id": "newtown_bucks"
+ },
  "51127": {
   "address": "4204 Chester Ave, Philadelphia PA 19104",
   "license_type": "Eating Place Retail Dispenser (Malt)",
@@ -18075,6 +18535,16 @@
   "tier": "core",
   "website": "http://www.jakeseatery.com/",
   "zone_id": "warminster_warrington"
+ },
+ "52696": {
+  "address": "18 Swamp Rd Village At Newtown South, Newtown PA 18940",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "52696",
+  "name": "The Barn",
+  "named_by": "plcb",
+  "plcb_name": "THE BARN, INC.",
+  "tier": "core",
+  "zone_id": "newtown_bucks"
  },
  "52731": {
   "address": "343-345 W Marshall St, Norristown PA 19401",
@@ -18966,6 +19436,16 @@
   "tier": "core",
   "zone_id": "north_philly"
  },
+ "55236": {
+  "address": "4 S Main St, Quakertown PA 18951",
+  "license_type": "Hotel (Liquor)",
+  "lid": "55236",
+  "name": "Mccooles",
+  "named_by": "plcb",
+  "plcb_name": "MCCOOLES",
+  "tier": "core",
+  "zone_id": "quakertown"
+ },
  "55243": {
   "address": "Audubon Village Shppg Ctr 2812 Egypt Rd, Audubon PA 19403",
   "license_type": "Restaurant (Liquor)",
@@ -19587,6 +20067,16 @@
   "tier": "core",
   "zone_id": "northeast_philly"
  },
+ "56912": {
+  "address": "1119 Walnut St, Philadelphia PA 19107",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "56912",
+  "name": "New Heaven Chinese Restaurant",
+  "named_by": "plcb",
+  "plcb_name": "NEW HEAVEN CHINESE RESTAURANT INC",
+  "tier": "core",
+  "zone_id": "center_city"
+ },
  "56931": {
   "address": "777 Harrahs Blvd, Chester PA 19013",
   "license_type": "Restaurant (Liquor)",
@@ -19661,6 +20151,16 @@
   "plcb_name": "HARBISON INN INC",
   "tier": "core",
   "zone_id": "northeast_philly"
+ },
+ "57089": {
+  "address": "1 E Washington Ave, Newtown PA 18940",
+  "license_type": "Hotel (Liquor)",
+  "lid": "57089",
+  "name": "The Brick Hotel & Garden Grille",
+  "named_by": "plcb",
+  "plcb_name": "THE BRICK HOTEL & GARDEN GRILLE",
+  "tier": "core",
+  "zone_id": "newtown_bucks"
  },
  "57106": {
   "address": "339 E Lancaster Ave, Wynnewood PA 19096",
@@ -20449,21 +20949,6 @@
   "tier": "core",
   "zone_id": "fishtown_kensington"
  },
- "58964": {
-  "address": "1339 Sandy Hill Rd First Floor Level, Norristown PA 19401",
-  "license_type": "Restaurant (Liquor)",
-  "lid": "58964",
-  "name": "Roccos Brick Oven Pizza",
-  "named_by": "plcb",
-  "photo": {
-   "attribution": "Photo: Chicku M Rengith / Google",
-   "file": "img/venues/58964.jpg"
-  },
-  "plcb_name": "ROCCOS BRICK OVEN PIZZA",
-  "tier": "core",
-  "website": "http://www.roccosbrickoven.net/",
-  "zone_id": "norristown_bridgeport"
- },
  "58996": {
   "address": "208-212 Bridge St, Phoenixville PA 19460",
   "license_type": "Restaurant (Liquor)",
@@ -21032,6 +21517,16 @@
   "website": "https://www.baxtersinpaoli.com",
   "zone_id": "wayne_radnor"
  },
+ "60193": {
+  "address": "240 N Sycamore St, Newtown PA 18940",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "60193",
+  "name": "Green Parrot Irish Pub & Grill",
+  "named_by": "plcb",
+  "plcb_name": "GREEN PARROT IRISH PUB & GRILL",
+  "tier": "core",
+  "zone_id": "newtown_bucks"
+ },
  "60211": {
   "address": "4365-67 Main St, Philadelphia PA 19127",
   "license_type": "Restaurant (Liquor)",
@@ -21587,6 +22082,16 @@
   "tier": "core",
   "website": "https://justenuffgentlemensclub.com/",
   "zone_id": "norristown_bridgeport"
+ },
+ "61319": {
+  "address": "1107 Lancaster Ave, Bryn Mawr PA 19010",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "61319",
+  "name": "Kellys Restaurant Taproom",
+  "named_by": "plcb",
+  "plcb_name": "KELLYS RESTAURANT TAPROOM",
+  "tier": "core",
+  "zone_id": "ardmore_bryn_mawr"
  },
  "61419": {
   "address": "Town Center At Wayne 200 W Lancaster Ave, Wayne PA 19087",
@@ -23995,6 +24500,16 @@
   "website": "https://www.vedgerestaurant.com/",
   "zone_id": "center_city"
  },
+ "65716": {
+  "address": "410 E Walnut St Ste 2, Perkasie PA 18944",
+  "license_type": "Brewery",
+  "lid": "65716",
+  "name": "Free Will Brewing Company",
+  "named_by": "plcb",
+  "plcb_name": "FREE WILL BREWING COMPANY LLC",
+  "tier": "taproom",
+  "zone_id": "perkasie"
+ },
  "65718": {
   "address": "28 Bonsall Ave, Fernwood PA 19050",
   "license_type": "Restaurant (Liquor)",
@@ -24136,16 +24651,6 @@
   "tier": "core",
   "website": "https://www.wholefoodsmarket.com/stores/glenmills?utm_source=google&utm_medium=organic&utm_campaign=listings&ref_=US_TRF_ALL_UFG_WFM_FRSOC_1001276",
   "zone_id": "glen_mills_chadds_ford"
- },
- "65835": {
-  "address": "307 Derstine Ave Ste 110, Lansdale PA 19446",
-  "license_type": "Brewery",
-  "lid": "65835",
-  "name": "Round Guys Brewing",
-  "named_by": "plcb",
-  "plcb_name": "ROUND GUYS BREWING CO",
-  "tier": "taproom",
-  "zone_id": "lansdale_montgomeryville"
  },
  "65838": {
   "address": "1100 Pattison Ave, Philadelphia PA 19148",
@@ -24832,6 +25337,16 @@
   "tier": "core",
   "zone_id": "center_city"
  },
+ "66694": {
+  "address": "70 S Main St, New Hope PA 18938",
+  "license_type": "Performing Arts Facility",
+  "lid": "66694",
+  "name": "Bucks County Playhouse Theatre",
+  "named_by": "plcb",
+  "plcb_name": "BUCKS COUNTY PLAYHOUSE THEATRE INC",
+  "tier": "core",
+  "zone_id": "new_hope"
+ },
  "66722": {
   "address": "22-24 W Main St, Norristown PA 19401",
   "license_type": "Economic Development Restaurant (Liquor)",
@@ -25143,6 +25658,16 @@
   "website": "https://www.trattoriacarina.com/",
   "zone_id": "center_city"
  },
+ "67293": {
+  "address": "1229 W Broad St, Quakertown PA 18951",
+  "license_type": "Brewery",
+  "lid": "67293",
+  "name": "Red Lion Brewery",
+  "named_by": "plcb",
+  "plcb_name": "RED LION BREWERY",
+  "tier": "taproom",
+  "zone_id": "quakertown"
+ },
  "67295": {
   "address": "219 E Main St, Norristown PA 19401",
   "license_type": "Restaurant (Liquor)",
@@ -25249,6 +25774,16 @@
   "tier": "core",
   "website": "https://www.wegmans.com/stores/montgomeryville-pa/?cid=GMB_Wegmans_2024:aw:ow:gb:gb:ao::",
   "zone_id": "lansdale_montgomeryville"
+ },
+ "67443": {
+  "address": "120 Pheasant Run, Newtown PA 18940",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "67443",
+  "name": "Newtown Racquetball",
+  "named_by": "plcb",
+  "plcb_name": "NEWTOWN RACQUETBALL INC",
+  "tier": "core",
+  "zone_id": "newtown_bucks"
  },
  "67451": {
   "address": "4201 Main St, Philadelphia PA 19127",
@@ -26662,6 +27197,16 @@
   "tier": "core",
   "zone_id": "center_city"
  },
+ "69494": {
+  "address": "8 West Mechanic St, New Hope PA 18938",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "69494",
+  "name": "Alpha Hospitality",
+  "named_by": "plcb",
+  "plcb_name": "ALPHA HOSPITALITY LLC",
+  "tier": "core",
+  "zone_id": "new_hope"
+ },
  "69507": {
   "address": "39 Conestoga Rd Rte 401, Malvern PA 19355",
   "license_type": "Performing Arts Facility",
@@ -27752,6 +28297,16 @@
   "website": "https://fivesaintsdistilling.com",
   "zone_id": "norristown_bridgeport"
  },
+ "70831": {
+  "address": "10 W Ferry St, New Hope PA 18938",
+  "license_type": "Hotel (Liquor)",
+  "lid": "70831",
+  "name": "The Logan Inn",
+  "named_by": "plcb",
+  "plcb_name": "THE LOGAN INN",
+  "tier": "core",
+  "zone_id": "new_hope"
+ },
  "70835": {
   "address": "503 W Lancaster Ave Suite 700, Wayne PA 19087",
   "geo_precision": "place",
@@ -28472,6 +29027,16 @@
   "website": "https://www.ohbrotherphilly.com",
   "zone_id": "university_city"
  },
+ "71675": {
+  "address": "5-11 S State St, Newtown PA 18940",
+  "license_type": "Hotel (Liquor)",
+  "lid": "71675",
+  "name": "The Temperance House",
+  "named_by": "plcb",
+  "plcb_name": "THE TEMPERANCE HOUSE",
+  "tier": "core",
+  "zone_id": "newtown_bucks"
+ },
  "71719": {
   "address": "1000 Frankford Ave, Philadelphia PA 19125",
   "license_type": "Restaurant (Liquor)",
@@ -29076,6 +29641,16 @@
   "tier": "core",
   "zone_id": "north_philly"
  },
+ "72476": {
+  "address": "4101 Paul St, Philadelphia PA 19124",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "72476",
+  "name": "4101 New Addition",
+  "named_by": "plcb",
+  "plcb_name": "4101 NEW ADDITION INC",
+  "tier": "core",
+  "zone_id": "north_philly"
+ },
  "72477": {
   "address": "5818 Castor Ave, Philadelphia PA 19149",
   "license_type": "Restaurant (Liquor)",
@@ -29640,6 +30215,26 @@
   "plcb_name": "PENNSYLVANIA ACADEMY OF THE FINE ARTS",
   "tier": "core",
   "zone_id": "center_city"
+ },
+ "72933": {
+  "address": "606 W Chestnut St, Perkasie PA 18944",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "72933",
+  "name": "606 W Chestnut Street",
+  "named_by": "plcb",
+  "plcb_name": "606 W CHESTNUT STREET LLC",
+  "tier": "core",
+  "zone_id": "perkasie"
+ },
+ "72942": {
+  "address": "3467 Richmond St, Philadelphia PA 19134",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "72942",
+  "name": "Bonks Bcb",
+  "named_by": "plcb",
+  "plcb_name": "BONKS BCB INC",
+  "tier": "core",
+  "zone_id": "fishtown_kensington"
  },
  "72952": {
   "address": "929-931 Macdade Blvd, Collingdale PA 19023",
@@ -30409,6 +31004,16 @@
   "tier": "core",
   "zone_id": "south_philly"
  },
+ "81163": {
+  "address": "7 E Ferry St, New Hope PA 18938",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "81163",
+  "name": "Ferry Street Hospitality",
+  "named_by": "plcb",
+  "plcb_name": "FERRY STREET HOSPITALITY LLC",
+  "tier": "core",
+  "zone_id": "new_hope"
+ },
  "81228": {
   "address": "2619 E Indiana Avenue, Philadelphia PA 19134",
   "license_type": "Restaurant (Liquor)",
@@ -30478,6 +31083,16 @@
   "plcb_name": "SURAYA'S GARDEN",
   "tier": "core",
   "zone_id": "fishtown_kensington"
+ },
+ "81444": {
+  "address": "2865 S Eagle Rd, Newtown PA 18940",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "81444",
+  "name": "Harvest Newtown Bucks County",
+  "named_by": "plcb",
+  "plcb_name": "HARVEST NEWTOWN BUCKS COUNTY LLC",
+  "tier": "core",
+  "zone_id": "newtown_bucks"
  },
  "81446": {
   "address": "1824 Ridge Pike, Royersford PA 19468",
@@ -30563,6 +31178,16 @@
   "plcb_name": "EVIL GENIUS ON FRONT",
   "tier": "taproom",
   "zone_id": "fishtown_kensington"
+ },
+ "81629": {
+  "address": "48 West Rd, Newtown PA 18940",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "81629",
+  "name": "Acme Markets",
+  "named_by": "plcb",
+  "plcb_name": "ACME MARKETS INC",
+  "tier": "core",
+  "zone_id": "newtown_bucks"
  },
  "81742": {
   "address": "400 Simpson Dr, Chester Springs PA 19425",
@@ -30847,6 +31472,16 @@
   "plcb_name": "CIBO BISTRO AND WINE BAR",
   "tier": "core",
   "zone_id": "west_philly"
+ },
+ "83325": {
+  "address": "1465 W Broad St Unit 29, Quakertown PA 18951",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "83325",
+  "name": "Buffalo Wild Wings",
+  "named_by": "plcb",
+  "plcb_name": "BUFFALO WILD WINGS",
+  "tier": "core",
+  "zone_id": "quakertown"
  },
  "83411": {
   "address": "20-40 South 33Rd St, Philadelphia PA 19104",
@@ -31550,16 +32185,6 @@
   "website": "https://www.lovecitybrewing.com/",
   "zone_id": "center_city"
  },
- "85539": {
-  "address": "7360 Frankford Ave, Philadelphia PA 19136",
-  "license_type": "Eating Place Retail Dispenser (Malt)",
-  "lid": "85539",
-  "name": "VI Frankford",
-  "named_by": "plcb",
-  "plcb_name": "VI FRANKFORD INC",
-  "tier": "core",
-  "zone_id": "northeast_philly"
- },
  "85548": {
   "address": "300 Goddard Blvd, King Of Prussia PA 19403",
   "geo_precision": "place",
@@ -31659,16 +32284,6 @@
   "tier": "core",
   "website": "https://www.truefoodkitchen.com/locations/kingofprussia/",
   "zone_id": "king_of_prussia"
- },
- "85743": {
-  "address": "835 E Allegheny Ave, Philadelphia PA 19134",
-  "license_type": "Restaurant (Liquor)",
-  "lid": "85743",
-  "name": "Jaa",
-  "named_by": "plcb",
-  "plcb_name": "JAA INC",
-  "tier": "core",
-  "zone_id": "fishtown_kensington"
  },
  "85770": {
   "address": "Philadelphia International Airport 8000 Essington Ave Terminal A West Concourse Space Aw-22, Philadelphia PA 19153",
@@ -31814,6 +32429,16 @@
   "plcb_name": "PJP MARKETPLACE #2 LLC",
   "tier": "core",
   "zone_id": "north_philly"
+ },
+ "86206": {
+  "address": "552 Washington Crossing Rd, Newtown PA 18940",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "86206",
+  "name": "Lavender Hall",
+  "named_by": "plcb",
+  "plcb_name": "LAVENDER HALL",
+  "tier": "core",
+  "zone_id": "newtown_bucks"
  },
  "86234": {
   "address": "401 Powhattan Ave, Lester PA 19113",
@@ -32483,6 +33108,16 @@
   "tier": "core",
   "zone_id": "center_city"
  },
+ "89572": {
+  "address": "96 S Main St, New Hope PA 18938",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "89572",
+  "name": "Mk&C",
+  "named_by": "plcb",
+  "plcb_name": "MK&C LLC",
+  "tier": "core",
+  "zone_id": "new_hope"
+ },
  "89606": {
   "address": "301 N Pottstown Pk, Exton PA 19341",
   "geo_precision": "place",
@@ -32672,21 +33307,6 @@
   "website": "https://imprintbeer.com/",
   "zone_id": "souderton_harleysville"
  },
- "90084": {
-  "address": "128-A Glen Mills Rd, Glen Mills PA 19342",
-  "license_type": "Limited Winery",
-  "lid": "90084",
-  "name": "Magon Winery",
-  "named_by": "plcb",
-  "photo": {
-   "attribution": "Photo: Red Brick Winery (Glen Mills, PA) / Google",
-   "file": "img/venues/90084.jpg"
-  },
-  "plcb_name": "MAGON WINERY",
-  "tier": "taproom",
-  "website": "https://redbrickwinery.com/",
-  "zone_id": "glen_mills_chadds_ford"
- },
  "90109": {
   "address": "3314 Market St, Aston PA 19014",
   "license_type": "Restaurant (Liquor)",
@@ -32741,6 +33361,16 @@
   "website": "https://ten7brewing.com/",
   "zone_id": "lansdale_montgomeryville"
  },
+ "90195": {
+  "address": "2890 S Eagle Rd, Newtown PA 18940",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "90195",
+  "name": "Newtown Market",
+  "named_by": "plcb",
+  "plcb_name": "NEWTOWN MARKET LLC",
+  "tier": "core",
+  "zone_id": "newtown_bucks"
+ },
  "90212": {
   "address": "342 N Pottstown Pike Ste A-B, Exton PA 19341",
   "geo_precision": "place",
@@ -32768,20 +33398,6 @@
   "plcb_name": "PULP PHILLY LLC",
   "tier": "core",
   "zone_id": "center_city"
- },
- "90286": {
-  "address": "121 E Lancaster Ave, Downingtown PA 19335",
-  "license_type": "Restaurant (Liquor)",
-  "lid": "90286",
-  "name": "Chelsy's",
-  "named_by": "plcb",
-  "photo": {
-   "attribution": "Photo: Chelsy's / Google",
-   "file": "img/venues/90286.jpg"
-  },
-  "plcb_name": "CHELSY'S",
-  "tier": "core",
-  "zone_id": "exton_downingtown"
  },
  "90346": {
   "address": "6168 Ridge Ave, Philadelphia PA 19128",
@@ -32992,16 +33608,6 @@
   "website": "https://www.starbucks.com/store-locator/store/1028617/10th-market-philadelphia-901-market-street-1165-philadelphia-pa-191073111-u",
   "zone_id": "center_city"
  },
- "90714": {
-  "address": "4301 N 5Th St, Philadelphia PA 19140",
-  "license_type": "Restaurant (Liquor)",
-  "lid": "90714",
-  "name": "4301 Luna",
-  "named_by": "plcb",
-  "plcb_name": "4301 LUNA INC",
-  "tier": "core",
-  "zone_id": "north_philly"
- },
  "90725": {
   "address": "1900 W Olney Ave, Philadelphia PA 19141",
   "license_type": "Public Venue Restaurant",
@@ -33193,6 +33799,16 @@
   "plcb_name": "GACHI SUSHI & NOODLES",
   "tier": "core",
   "zone_id": "west_philly"
+ },
+ "91425": {
+  "address": "90 S Main St, New Hope PA 18938",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "91425",
+  "name": "Greenhouse Restaurant and Lounge",
+  "named_by": "plcb",
+  "plcb_name": "GREENHOUSE RESTAURANT AND LOUNGE",
+  "tier": "core",
+  "zone_id": "new_hope"
  },
  "91459": {
   "address": "630 Woodland Ave, Cheltenham PA 19012",
@@ -33759,6 +34375,16 @@
   "tier": "core",
   "zone_id": "center_city"
  },
+ "92738": {
+  "address": "1465-7 W Broad St, Quakertown PA 18951",
+  "license_type": "Restaurant (Liquor)",
+  "lid": "92738",
+  "name": "The Giant Company",
+  "named_by": "plcb",
+  "plcb_name": "THE GIANT COMPANY LLC",
+  "tier": "core",
+  "zone_id": "quakertown"
+ },
  "9274": {
   "address": "750-754 S 7Th St, Philadelphia PA 19147",
   "license_type": "Restaurant (Liquor)",
@@ -34063,9 +34689,9 @@
   "address": "299 Newtown-Richboro Rd, Richboro PA 18954",
   "license_type": "Municipal Golf Course (Liquor)",
   "lid": "93475",
-  "name": "Northampton Township",
+  "name": "Township of Northampton",
   "named_by": "plcb",
-  "plcb_name": "NORTHAMPTON TOWNSHIP",
+  "plcb_name": "TOWNSHIP OF NORTHAMPTON",
   "tier": "core",
   "zone_id": "warminster_warrington"
  },
@@ -34225,6 +34851,16 @@
   "tier": "taproom",
   "website": "https://perkiomenvalleybrewery.com/",
   "zone_id": "souderton_harleysville"
+ },
+ "93997": {
+  "address": "120 N State St, Newtown PA 18940",
+  "license_type": "Performing Arts Facility",
+  "lid": "93997",
+  "name": "Newtown Hall Theatre",
+  "named_by": "plcb",
+  "plcb_name": "NEWTOWN HALL THEATRE INC",
+  "tier": "core",
+  "zone_id": "newtown_bucks"
  },
  "94023": {
   "address": "800 E Lancaster Ave, Villanova PA 19085",
@@ -34598,6 +35234,16 @@
   "tier": "core",
   "website": "https://www.loveagainlocal.com/",
   "zone_id": "west_chester"
+ },
+ "95091": {
+  "address": "103 Penns Trail, Newtown PA 18940",
+  "license_type": "Brewery",
+  "lid": "95091",
+  "name": "Newtown Brewing",
+  "named_by": "plcb",
+  "plcb_name": "NEWTOWN BREWING COMPANY",
+  "tier": "taproom",
+  "zone_id": "newtown_bucks"
  },
  "95107": {
   "address": "3951 Lincoln Hwy, Downingtown PA 19335",
@@ -36279,6 +36925,16 @@
   "plcb_name": "THE GIANT COMPANY LLC",
   "tier": "core",
   "zone_id": "center_city"
+ },
+ "99584": {
+  "address": "410 E Walnut St Ste 2, Perkasie PA 18944",
+  "license_type": "Limited Winery",
+  "lid": "99584",
+  "name": "Free Will Winery",
+  "named_by": "plcb",
+  "plcb_name": "FREE WILL WINERY",
+  "tier": "taproom",
+  "zone_id": "perkasie"
  },
  "99631": {
   "address": "567 N Sproul Rd, Broomall PA 19008",

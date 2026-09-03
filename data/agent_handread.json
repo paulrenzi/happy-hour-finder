@@ -5008,5 +5008,72 @@
         "evidence": "HOUSE WINE PER GLASS 7"
       }
     ]
+  },
+  {
+    "lid": "115024",
+    "url": "https://www.thecagecocktailbar.com/menus/",
+    "read_on": "2026-09-03",
+    "heading": "Happy Hour Audubon & Huntingdon Valley",
+    "clock_quote": "Monday - Friday 4pm-6pm!",
+    "quote": "Half price house wine, $5 draft beer, $11 signature cocktails, HH food menu, Monday-Friday 4-6pm",
+    "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "start": "16:00",
+    "end": "18:00",
+    "items": [
+      {
+        "category": "draft",
+        "label": "Draft Beer",
+        "price_usd": 5,
+        "evidence": "Draft Beer $5.00"
+      },
+      {
+        "category": "cocktail",
+        "label": "ALL Signature Cocktails",
+        "price_usd": 11,
+        "evidence": "ALL Signature Cocktails ... $11.00"
+      },
+      {
+        "category": "food",
+        "label": "Whipped Feta Dip",
+        "price_usd": 12,
+        "evidence": "Whipped Feta Dip ... $12.00"
+      },
+      {
+        "category": "food",
+        "label": "Crispy Tuna Rice",
+        "price_usd": 13,
+        "evidence": "Crispy Tuna Rice* ... $13.00"
+      },
+      {
+        "category": "food",
+        "label": "Ahi Tuna Wonton Chips",
+        "price_usd": 13,
+        "evidence": "Ahi Tuna Wonton Chips* ... $13.00"
+      },
+      {
+        "category": "food",
+        "label": "Seasonal Guacamole",
+        "price_usd": 10,
+        "evidence": "Seasonal Guacamole ... $10.00"
+      },
+      {
+        "category": "food",
+        "label": "All Flatbreads",
+        "price_usd": 13,
+        "evidence": "ALL Flatbreads ... $13.00"
+      },
+      {
+        "category": "food",
+        "label": "Tuna Poke Tartare",
+        "price_usd": 13,
+        "evidence": "Tuna Poke Tartare* ... $13.00"
+      }
+    ]
   }
 ]
