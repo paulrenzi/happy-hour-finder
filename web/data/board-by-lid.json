@@ -2783,6 +2783,79 @@
    }
   ]
  },
+ "71516": {
+  "name": "Kildare's Irish Pub",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 1,
+      "start": "21:00",
+      "end": "23:00"
+     },
+     {
+      "dow": 2,
+      "start": "21:00",
+      "end": "23:00"
+     },
+     {
+      "dow": 3,
+      "start": "21:00",
+      "end": "23:00"
+     },
+     {
+      "dow": 4,
+      "start": "21:00",
+      "end": "23:00"
+     },
+     {
+      "dow": 5,
+      "start": "21:00",
+      "end": "23:00"
+     },
+     {
+      "dow": 6,
+      "start": "21:00",
+      "end": "23:00"
+     },
+     {
+      "dow": 7,
+      "start": "21:00",
+      "end": "23:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "112265": {
   "name": "Lascala's Fire",
   "deals": [
@@ -2864,6 +2937,39 @@
    }
   ]
  },
+ "62944": {
+  "name": "M\u00e1s Mexicali Cantina",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 2,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 3,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 4,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 5,
+      "start": "17:00",
+      "end": "19:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "106742": {
   "name": "Opa Taverna",
   "deals": [
@@ -2921,35 +3027,35 @@
   ]
  },
  "58333": {
-  "name": "Pietro\u2019s Prime",
+  "name": "Pietro's Prime",
   "deals": [
    {
     "type": "happy_hour",
     "windows": [
      {
       "dow": 1,
-      "end": "19:00",
-      "start": "17:00"
+      "start": "17:00",
+      "end": "19:00"
      },
      {
       "dow": 2,
-      "end": "19:00",
-      "start": "17:00"
+      "start": "17:00",
+      "end": "19:00"
      },
      {
       "dow": 3,
-      "end": "19:00",
-      "start": "17:00"
+      "start": "17:00",
+      "end": "19:00"
      },
      {
       "dow": 4,
-      "end": "19:00",
-      "start": "17:00"
+      "start": "17:00",
+      "end": "19:00"
      },
      {
       "dow": 5,
-      "end": "19:00",
-      "start": "17:00"
+      "start": "17:00",
+      "end": "19:00"
      }
     ],
     "source": {

@@ -952,6 +952,274 @@
           }
         }
       ]
+    },
+    {
+      "id": "mas-mexicali-cantina-west_chester",
+      "name": "Más Mexicali Cantina",
+      "plcb_name": "",
+      "address": "102 E Market St, West Chester PA 19382",
+      "zone_id": "west_chester",
+      "license_type": "",
+      "website": "https://www.masmexicali.com/",
+      "lid": "62944",
+      "deals": [
+        {
+          "type": "happy_hour",
+          "windows": [
+            {
+              "dow": 2,
+              "start": "17:00",
+              "end": "19:00"
+            },
+            {
+              "dow": 3,
+              "start": "17:00",
+              "end": "19:00"
+            },
+            {
+              "dow": 4,
+              "start": "17:00",
+              "end": "19:00"
+            },
+            {
+              "dow": 5,
+              "start": "17:00",
+              "end": "19:00"
+            }
+          ],
+          "items": [
+            {
+              "category": "draft",
+              "discount_pct": 50.0,
+              "label": "Half Off Drafts"
+            },
+            {
+              "category": "food",
+              "discount_pct": 50.0,
+              "label": "Half Off Appetizers"
+            }
+          ],
+          "confidence": "likely",
+          "last_verified_at": "2026-09-03",
+          "verified_by": "agent_read",
+          "source": {
+            "kind": "venue_site",
+            "url": "https://www.masmexicali.com/wp-content/uploads/2026/08/09-2026-Mas-Calendar.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "kildares-irish-pub-west_chester",
+      "name": "Kildare's Irish Pub",
+      "plcb_name": "",
+      "address": "18-22 W Gay St, West Chester PA 19380",
+      "zone_id": "west_chester",
+      "license_type": "",
+      "website": "https://kildarespubwc.com",
+      "lid": "71516",
+      "deals": [
+        {
+          "type": "happy_hour",
+          "windows": [
+            {
+              "dow": 1,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 2,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 3,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 4,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 5,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 1,
+              "start": "21:00",
+              "end": "23:00"
+            },
+            {
+              "dow": 2,
+              "start": "21:00",
+              "end": "23:00"
+            },
+            {
+              "dow": 3,
+              "start": "21:00",
+              "end": "23:00"
+            },
+            {
+              "dow": 4,
+              "start": "21:00",
+              "end": "23:00"
+            },
+            {
+              "dow": 5,
+              "start": "21:00",
+              "end": "23:00"
+            },
+            {
+              "dow": 6,
+              "start": "21:00",
+              "end": "23:00"
+            },
+            {
+              "dow": 7,
+              "start": "21:00",
+              "end": "23:00"
+            }
+          ],
+          "items": [
+            {
+              "category": "food",
+              "discount_pct": 25.0,
+              "label": "25% off all appetizers"
+            },
+            {
+              "category": "well",
+              "label": "Well drinks",
+              "price_usd": 3.0
+            },
+            {
+              "category": "draft",
+              "label": "Michelob Ultra draft",
+              "price_usd": 4.0
+            },
+            {
+              "category": "cocktail",
+              "label": "Hornitos ranch waters",
+              "price_usd": 5.0
+            },
+            {
+              "category": "cocktail",
+              "label": "Suncruisers",
+              "price_usd": 6.0
+            }
+          ],
+          "confidence": "likely",
+          "last_verified_at": "2026-09-03",
+          "verified_by": "agent_read",
+          "source": {
+            "kind": "venue_site",
+            "url": "https://kildarespubwc.com/wp-content/uploads/2026/04/Menu-SpringSummer-2026.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pietros-prime-west_chester",
+      "name": "Pietro's Prime",
+      "plcb_name": "",
+      "address": "125 W Market St, West Chester PA 19382",
+      "zone_id": "west_chester",
+      "license_type": "",
+      "website": "https://www.pietrosprime.com",
+      "lid": "58333",
+      "deals": [
+        {
+          "type": "happy_hour",
+          "windows": [
+            {
+              "dow": 1,
+              "start": "17:00",
+              "end": "19:00"
+            },
+            {
+              "dow": 2,
+              "start": "17:00",
+              "end": "19:00"
+            },
+            {
+              "dow": 3,
+              "start": "17:00",
+              "end": "19:00"
+            },
+            {
+              "dow": 4,
+              "start": "17:00",
+              "end": "19:00"
+            },
+            {
+              "dow": 5,
+              "start": "17:00",
+              "end": "19:00"
+            }
+          ],
+          "items": [
+            {
+              "category": "food",
+              "discount_pct": 50.0,
+              "label": "Black & White Tuna"
+            },
+            {
+              "category": "food",
+              "discount_pct": 50.0,
+              "label": "Pietro's Crab Cake"
+            },
+            {
+              "category": "food",
+              "discount_pct": 50.0,
+              "label": "Calamari"
+            },
+            {
+              "category": "food",
+              "discount_pct": 50.0,
+              "label": "Caprese"
+            },
+            {
+              "category": "food",
+              "discount_pct": 50.0,
+              "label": "Tuna Skins"
+            },
+            {
+              "category": "food",
+              "discount_pct": 50.0,
+              "label": "Quesadilla (Chicken or Steak)"
+            },
+            {
+              "category": "food",
+              "discount_pct": 50.0,
+              "label": "Pietro's Blue Chips"
+            },
+            {
+              "category": "food",
+              "discount_pct": 50.0,
+              "label": "Rosemary Parmesan Fries"
+            },
+            {
+              "category": "food",
+              "discount_pct": 50.0,
+              "label": "Buffalo Chicken Tenders"
+            },
+            {
+              "category": "food",
+              "discount_pct": 50.0,
+              "label": "Shanghai Calamari"
+            }
+          ],
+          "confidence": "likely",
+          "last_verified_at": "2026-09-03",
+          "verified_by": "agent_read",
+          "source": {
+            "kind": "venue_site",
+            "url": "https://static.wixstatic.com/media/4a2f4a_cc736a416bd642ddaee88f0fcada9c40~mv2.png"
+          }
+        }
+      ]
     }
   ],
   "_excluded": [

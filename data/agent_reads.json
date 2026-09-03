@@ -1,4 +1,187 @@
 {
+ "38879": {
+  "cost_usd": 0.5178,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "exhausted",
+  "model": "opus",
+  "path_taken": [],
+  "read_at": "2026-09-03",
+  "transcript": "",
+  "turns": 15,
+  "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.52 spent"
+ },
+ "52121": {
+  "cost_usd": 0.5508,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "exhausted",
+  "model": "opus",
+  "path_taken": [],
+  "read_at": "2026-09-03",
+  "transcript": "",
+  "turns": 15,
+  "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.55 spent"
+ },
+ "54865": {
+  "cost_usd": 0.1868,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://waybackburgers.com/locations/us/pennsylvania/west-chester-2 - location page: hours, address, order/catering links, no specials",
+   "WebFetch https://waybackburgers.com/menu/ - chain menu with limited time offers, no happy hour section"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "",
+  "transcript": "",
+  "turns": 4,
+  "venue_name_on_menu": "",
+  "why_not": "The West Chester location page lists only store hours, contact info and order/catering links, and the chain menu page shows only limited-time food promotions, with no happy hour or specials section anywhere."
+ },
+ "58333": {
+  "cost_usd": 0.3264,
+  "deals": [
+   {
+    "fine_print": "",
+    "items": [
+     {
+      "category": "food",
+      "discount_pct": 50,
+      "label": "Black & White Tuna",
+      "price_quote": "Half-Priced Appetizers",
+      "price_usd": null,
+      "quote": "Black & White Tuna",
+      "type": "food"
+     },
+     {
+      "category": "food",
+      "discount_pct": 50,
+      "label": "Pietro's Crab Cake",
+      "price_quote": "Half-Priced Appetizers",
+      "price_usd": null,
+      "quote": "Pietro's Crab Cake"
+     },
+     {
+      "category": "food",
+      "discount_pct": 50,
+      "label": "Calamari",
+      "price_quote": "Half-Priced Appetizers",
+      "price_usd": null,
+      "quote": "Calamari"
+     },
+     {
+      "category": "food",
+      "discount_pct": 50,
+      "label": "Caprese",
+      "price_quote": "Half-Priced Appetizers",
+      "price_usd": null,
+      "quote": "Caprese"
+     },
+     {
+      "category": "food",
+      "discount_pct": 50,
+      "label": "Tuna Skins",
+      "price_quote": "Half-Priced Appetizers",
+      "price_usd": null,
+      "quote": "Tuna Skins"
+     },
+     {
+      "category": "food",
+      "discount_pct": 50,
+      "label": "Quesadilla (Chicken or Steak)",
+      "price_quote": "Half-Priced Appetizers",
+      "price_usd": null,
+      "quote": "Quesadilla\n(Chicken or Steak)"
+     },
+     {
+      "category": "food",
+      "discount_pct": 50,
+      "label": "Pietro's Blue Chips",
+      "price_quote": "Half-Priced Appetizers",
+      "price_usd": null,
+      "quote": "Pietro's Blue Chips"
+     },
+     {
+      "category": "food",
+      "discount_pct": 50,
+      "label": "Rosemary Parmesan Fries",
+      "price_quote": "Half-Priced Appetizers",
+      "price_usd": null,
+      "quote": "Rosemary Parmesan Fries"
+     },
+     {
+      "category": "food",
+      "discount_pct": 50,
+      "label": "Buffalo Chicken Tenders",
+      "price_quote": "Half-Priced Appetizers",
+      "price_usd": null,
+      "quote": "Buffalo Chicken Tenders"
+     },
+     {
+      "category": "food",
+      "discount_pct": 50,
+      "label": "Shanghai Calamari",
+      "price_quote": "Half-Priced Appetizers",
+      "price_usd": null,
+      "quote": "Shanghai Calamari"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "19:00",
+      "start": "17:00"
+     },
+     {
+      "dow": 2,
+      "end": "19:00",
+      "start": "17:00"
+     },
+     {
+      "dow": 3,
+      "end": "19:00",
+      "start": "17:00"
+     },
+     {
+      "dow": 4,
+      "end": "19:00",
+      "start": "17:00"
+     },
+     {
+      "dow": 5,
+      "end": "19:00",
+      "start": "17:00"
+     }
+    ]
+   }
+  ],
+  "dropped": [],
+  "found": true,
+  "items_kept": 10,
+  "kind": "image",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://www.pietrosprime.com — home page listed a Happy Hour Menu link and said Mon-Fri 5-7 PM in the bar area",
+   "WebFetch https://www.pietrosprime.com/happy-hour-menu — page holds the menu only as an image (Happy Hour 2026-1.png)",
+   "curl -sL -o data/agent_reads/58333/hh.png https://static.wixstatic.com/media/4a2f4a_cc736a416bd642ddaee88f0fcada9c40~mv2.png",
+   "Read hh.png — full happy hour menu legible"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "https://static.wixstatic.com/media/4a2f4a_cc736a416bd642ddaee88f0fcada9c40~mv2.png",
+  "transcript": "PIETRO'S PRIME\nSTEAKHOUSE · SEAFOOD\n\nHAPPY HOUR\n\nMonday – Friday\n5:00pm – 7:00pm\n\nHalf-Priced Appetizers\n\nBlack & White Tuna\nPietro's Crab Cake\nCalamari\nCaprese\nTuna Skins\nQuesadilla\n(Chicken or Steak)\nPietro's Blue Chips\nRosemary Parmesan Fries\nBuffalo Chicken Tenders\nShanghai Calamari",
+  "turns": 7,
+  "venue_name_on_menu": "PIETRO'S PRIME",
+  "why_not": ""
+ },
  "DE004a8c7d86": {
   "cost_usd": 0.5879,
   "deals": [
@@ -147,6 +330,62 @@
   "venue_name_on_menu": "",
   "why_not": "Nordstrom's site gives only a store page with no dining section and a generic Nordstrom Grill concept page describing \"full bar service\" with no days, times, items or prices, and no menu, specials or happy hour link for the Christiana Mall location."
  },
+ "DE01470ee0d8": {
+  "cost_usd": 0.312,
+  "deals": [
+   {
+    "fine_print": "",
+    "items": [],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "20:00",
+      "start": "18:00"
+     },
+     {
+      "dow": 2,
+      "end": "20:00",
+      "start": "18:00"
+     },
+     {
+      "dow": 3,
+      "end": "20:00",
+      "start": "18:00"
+     },
+     {
+      "dow": 4,
+      "end": "20:00",
+      "start": "18:00"
+     },
+     {
+      "dow": 5,
+      "end": "20:00",
+      "start": "18:00"
+     }
+    ]
+   }
+  ],
+  "dropped": [],
+  "found": true,
+  "items_kept": 0,
+  "kind": "image",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch http://www.barxiii.com/ -- home page says HAPPY HOUR 6pm-8pm, links to drinks menu",
+   "WebFetch https://barxiii.com/beer/ -- repeats HAPPY HOUR: 6pm-8pm, links drink menu image",
+   "WebFetch https://barxiii.com/food-drink/ -- repeats HAPPY HOUR: 6pm-8pm, no items",
+   "WebFetch https://barxiii.com/venue/ -- hours block with HAPPY HOUR: 6pm-8pm",
+   "curl -sL drink-menu.png from barxiii.com/wp-content/uploads/2025/01/12.02-Bar-Drink-Menu.png",
+   "Read drink-menu.png -- Happy Hour Monday - Friday 6:00 pm - 8:00 pm, no happy hour prices printed"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "https://barxiii.com/wp-content/uploads/2025/01/12.02-Bar-Drink-Menu.png",
+  "transcript": "Bar Hours\nMonday - Saturday\n6:00 pm - 1:00 am\n\nHappy Hour\nMonday - Friday\n6:00 pm - 8:00 pm",
+  "turns": 8,
+  "venue_name_on_menu": "BAR XIII",
+  "why_not": ""
+ },
  "DE01de14e9e2": {
   "cost_usd": 0.3384,
   "deals": [],
@@ -187,6 +426,20 @@
   "venue_name_on_menu": "",
   "why_not": "The site offers only a full food menu (with a separate Newark section marked 100% Certified Halal) plus hours and Toast/order.online ordering links, and states no happy hour on the home page, the Newark location page, or the menus page."
  },
+ "DE03fd0ecb4b": {
+  "cost_usd": 0.6451,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "exhausted",
+  "model": "opus",
+  "path_taken": [],
+  "read_at": "2026-09-03",
+  "transcript": "",
+  "turns": 15,
+  "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.65 spent"
+ },
  "DE057d4ef457": {
   "cost_usd": 0.1887,
   "deals": [],
@@ -220,6 +473,513 @@
   "turns": 15,
   "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.51 spent"
  },
+ "DE0ab0e8da46": {
+  "cost_usd": 0.4956,
+  "deals": [
+   {
+    "fine_print": "Specials are Dine in Only",
+    "items": [
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Wings (4)",
+      "price_quote": "$5 Apps",
+      "price_usd": 5,
+      "quote": "Wings (4)"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Pub Fries",
+      "price_quote": "$5 Apps",
+      "price_usd": 5,
+      "quote": "Pub Fries"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Onion Rings",
+      "price_quote": "$5 Apps",
+      "price_usd": 5,
+      "quote": "Onion Rings"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Mozz Sticks",
+      "price_quote": "$5 Apps",
+      "price_usd": 5,
+      "quote": "Mozz Sticks"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Boneless Bites (8)",
+      "price_quote": "$5 Apps",
+      "price_usd": 5,
+      "quote": "Boneless Bites (8)"
+     },
+     {
+      "category": "draft",
+      "discount_pct": null,
+      "label": "Domestic Draft",
+      "price_quote": "$3 Domestic Draft",
+      "price_usd": 3,
+      "quote": "$3 Domestic Draft"
+     },
+     {
+      "category": "draft",
+      "discount_pct": null,
+      "label": "Imported Drafts",
+      "price_quote": "$5 Imported Drafts",
+      "price_usd": 5,
+      "quote": "$5 Imported Drafts"
+     },
+     {
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "Statesides",
+      "price_quote": "$5 Statesides",
+      "price_usd": 5,
+      "quote": "$5 Statesides"
+     },
+     {
+      "category": "call",
+      "discount_pct": null,
+      "label": "Captains",
+      "price_quote": "$5 Captains",
+      "price_usd": 5,
+      "quote": "$5 Captains"
+     },
+     {
+      "category": "call",
+      "discount_pct": null,
+      "label": "Jameson",
+      "price_quote": "$5 Jameson",
+      "price_usd": 5,
+      "quote": "$5 Jameson"
+     },
+     {
+      "category": "call",
+      "discount_pct": null,
+      "label": "Mi Campos",
+      "price_quote": "$4 Mi Campos",
+      "price_usd": 4,
+      "quote": "$4 Mi Campos"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:30",
+      "start": "15:30"
+     },
+     {
+      "dow": 3,
+      "end": "18:30",
+      "start": "15:30"
+     },
+     {
+      "dow": 4,
+      "end": "18:30",
+      "start": "15:30"
+     },
+     {
+      "dow": 5,
+      "end": "18:30",
+      "start": "15:30"
+     }
+    ]
+   },
+   {
+    "fine_print": "Specials are Dine in Only",
+    "items": [
+     {
+      "category": "call",
+      "discount_pct": null,
+      "label": "Cuervo Tradicional",
+      "price_quote": "$4 Cuervo Tradicional",
+      "price_usd": 4,
+      "quote": "$4 Cuervo Tradicional"
+     },
+     {
+      "category": "shot",
+      "discount_pct": null,
+      "label": "Green Tea's",
+      "price_quote": "$4 Green Tea's",
+      "price_usd": 4,
+      "quote": "$4 Green Tea's"
+     },
+     {
+      "category": "call",
+      "discount_pct": null,
+      "label": "Four Walls",
+      "price_quote": "$4 Green Tea's or Four Walls",
+      "price_usd": 4,
+      "quote": "$4 Green Tea's or Four Walls"
+     }
+    ],
+    "type": "daily_special",
+    "windows": [
+     {
+      "dow": 2,
+      "end": "23:00",
+      "start": "11:00"
+     },
+     {
+      "dow": 3,
+      "end": "23:00",
+      "start": "11:00"
+     },
+     {
+      "dow": 4,
+      "end": "24:00",
+      "start": "11:00"
+     },
+     {
+      "dow": 5,
+      "end": "24:00",
+      "start": "11:00"
+     },
+     {
+      "dow": 6,
+      "end": "24:00",
+      "start": "14:00"
+     }
+    ]
+   },
+   {
+    "fine_print": "Specials are Dine in Only",
+    "items": [
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Cheesesteaks",
+      "price_quote": "$10 Cheesesteaks",
+      "price_usd": 10,
+      "quote": "$10 Cheesesteaks"
+     },
+     {
+      "category": "call",
+      "discount_pct": null,
+      "label": "Captain",
+      "price_quote": "$5 Captain",
+      "price_usd": 5,
+      "quote": "$5 Captain"
+     }
+    ],
+    "type": "daily_special",
+    "windows": [
+     {
+      "dow": 4,
+      "end": "24:00",
+      "start": "11:00"
+     }
+    ]
+   },
+   {
+    "fine_print": "Specials are Dine in Only",
+    "items": [
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Quesadilla Fridays!! Cheese (add $2 for Chix or Beef)",
+      "price_quote": "$8 Cheese",
+      "price_usd": 8,
+      "quote": "$8 Cheese (add $2 for Chix or Beef)"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Nachos ( Add $2 Chix, Chili, Beef or $4 Steak)",
+      "price_quote": "$8 Nachos",
+      "price_usd": 8,
+      "quote": "$8 Nachos ( Add $2 Chix, Chili, Beef or $4 Steak)"
+     },
+     {
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "Surfsides",
+      "price_quote": "$6 Surfsides",
+      "price_usd": 6,
+      "quote": "$6 Surfsides"
+     },
+     {
+      "category": "shot",
+      "discount_pct": null,
+      "label": "Fireballs",
+      "price_quote": "$4 Fireballs",
+      "price_usd": 4,
+      "quote": "$4 Fireballs"
+     }
+    ],
+    "type": "daily_special",
+    "windows": [
+     {
+      "dow": 5,
+      "end": "24:00",
+      "start": "11:00"
+     }
+    ]
+   },
+   {
+    "fine_print": "Saturday Brunch 10:30-2; all served with breakfast potatoes! Specials are Dine in Only",
+    "items": [
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Breakfast Taco's",
+      "price_quote": "$12 Breakfast Taco's",
+      "price_usd": 12,
+      "quote": "$12 Breakfast Taco's"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Breakfast Burrito",
+      "price_quote": "$12 Breakfast Burrito",
+      "price_usd": 12,
+      "quote": "$12 Breakfast Burrito"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Breakfast Burger",
+      "price_quote": "$15 Breakfast Burger",
+      "price_usd": 15,
+      "quote": "$15 Breakfast Burger"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Egg and Pepper Sandwich",
+      "price_quote": "$12 Egg and Pepper Sandwich",
+      "price_usd": 12,
+      "quote": "$12 Egg and Pepper Sandwich"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Bacon Egg and Cheese Stromboli",
+      "price_quote": "$12 Bacon Egg and Cheese Stromboli",
+      "price_usd": 12,
+      "quote": "$12 Bacon Egg and Cheese Stromboli"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Pancake Platter",
+      "price_quote": "$10 Pancake Platter",
+      "price_usd": 10,
+      "quote": "$10 Pancake Platter"
+     },
+     {
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "Bloody Marys",
+      "price_quote": "$6 Bloody Marys",
+      "price_usd": 6,
+      "quote": "$6 Bloody Marys"
+     },
+     {
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "007's",
+      "price_quote": "$6 007's",
+      "price_usd": 6,
+      "quote": "$6 007's"
+     },
+     {
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "Mimosas",
+      "price_quote": "$6 Mimosas",
+      "price_usd": 6,
+      "quote": "$6 Mimosas"
+     }
+    ],
+    "type": "daily_special",
+    "windows": [
+     {
+      "dow": 6,
+      "end": "14:00",
+      "start": "10:00"
+     }
+    ]
+   },
+   {
+    "fine_print": "Specials are Dine in Only",
+    "items": [
+     {
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "Surfside (Starts at 2)",
+      "price_quote": "$6 Surfside",
+      "price_usd": 6,
+      "quote": "$6 Surfside (Starts at 2)"
+     }
+    ],
+    "type": "daily_special",
+    "windows": [
+     {
+      "dow": 6,
+      "end": "24:00",
+      "start": "14:00"
+     }
+    ]
+   },
+   {
+    "fine_print": "Specials are Dine in Only",
+    "items": [
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Taco Tuesday!! tacos (Chix or Beef)",
+      "price_quote": "$2.50 tacos",
+      "price_usd": 2.5,
+      "quote": "$2.50 tacos (Chix or Beef)"
+     },
+     {
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "Coronas",
+      "price_quote": "$4 Coronas",
+      "price_usd": 4,
+      "quote": "$4 Coronas"
+     },
+     {
+      "category": "call",
+      "discount_pct": null,
+      "label": "Epsolon Drinks",
+      "price_quote": "$5 Epsolon Drinks",
+      "price_usd": 5,
+      "quote": "$5 Epsolon Drinks"
+     },
+     {
+      "category": "call",
+      "discount_pct": null,
+      "label": "Mi Campos",
+      "price_quote": "$4 Mi Campos",
+      "price_usd": 4,
+      "quote": "$4 Mi Campos"
+     }
+    ],
+    "type": "daily_special",
+    "windows": [
+     {
+      "dow": 2,
+      "end": "23:00",
+      "start": "11:00"
+     }
+    ]
+   },
+   {
+    "fine_print": "Specials are Dine in Only",
+    "items": [
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Wing it Wednesday!! Wings (Min 4)",
+      "price_quote": "$1.25 Wings",
+      "price_usd": 1.25,
+      "quote": "$1.25 Wings (Min 4)"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Cheese Pizza",
+      "price_quote": "$10 Cheese Pizza",
+      "price_usd": 10,
+      "quote": "$10 Cheese Pizza"
+     },
+     {
+      "category": "call",
+      "discount_pct": null,
+      "label": "Crown Royal",
+      "price_quote": "$6 Crown Royal",
+      "price_usd": 6,
+      "quote": "$6 Crown Royal"
+     },
+     {
+      "category": "call",
+      "discount_pct": null,
+      "label": "Four Walls",
+      "price_quote": "$4 Four Walls",
+      "price_usd": 4,
+      "quote": "$4 Four Walls"
+     },
+     {
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "High Noons",
+      "price_quote": "$6 High Noons",
+      "price_usd": 6,
+      "quote": "$6 High Noons"
+     }
+    ],
+    "type": "daily_special",
+    "windows": [
+     {
+      "dow": 3,
+      "end": "23:00",
+      "start": "11:00"
+     }
+    ]
+   }
+  ],
+  "dropped": [
+   "'daily_special' deal: not the happy hour",
+   "'daily_special' deal: not the happy hour",
+   "'daily_special' deal: not the happy hour",
+   "'daily_special' deal: not the happy hour",
+   "'daily_special' deal: not the happy hour",
+   "'daily_special' deal: not the happy hour",
+   "'daily_special' deal: not the happy hour"
+  ],
+  "found": true,
+  "items_kept": 11,
+  "kind": "page",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch http://unionstreetpub.com/ - home page, found 'Specials' nav link to /wilmington-union-street-union-street-pub-happy-hours-specials",
+   "WebFetch http://unionstreetpub.com/wilmington-union-street-union-street-pub-happy-hours-specials - weekly specials calendar with 'Happy Hour Specials' blocks; re-read verbatim to expand repeated day blocks"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "http://unionstreetpub.com/wilmington-union-street-union-street-pub-happy-hours-specials",
+  "transcript": "Specials are Dine in Only\n\nThursday September 3rd\n\nThursday $10 Cheesesteaks Drink Specials $5 Captain Extended Happy Hour (See Menu) All Day Everyday Drink Specials- $4 Cuervo Tradicional, $4 Green Tea's or Four Walls\n\n11:00 AM - 01:00 AM\n\nHappy Hour Specials: 🥃 Food Specials $5 Apps - Wings (4), Pub Fries, Onion Rings, Mozz Sticks, Boneless Bites (8) Drink Specials $3 Domestic Draft3 $5 Imported Drafts. $5 Statesides, $5 Captains, $5 Jameson, $4 Mi Campos\n\n03:30 PM - 06:30 PM\n\nFriday September 4th\n\nQuesadilla Fridays!! $8 Cheese (add $2 for Chix or Beef) $8 Nachos ( Add $2 Chix, Chili, Beef or $4 Steak) Drink Specials $6 Surfsides $4 Fireballs All Day Everyday Drink Specials- $4 Cuervo Tradicional, $4 Green Tea's or Four Walls\n\n11:00 AM - 01:00 AM\n\nHappy Hour Specials: 🥃 Food Specials $5 Apps - Wings (4), Pub Fries, Onion Rings, Mozz Sticks, Boneless Bites (8) Drink Specials $3 Domestic Draft3 $5 Imported Drafts. $5 Statesides, $5 Captains, $5 Jameson, $4 Mi Campos\n\n03:30 PM - 06:30 PM\n\nSaturday September 5th\n\nSaturday Brunch 10:30-2 $12 Breakfast Taco's , $12 Breakfast Burrito, $15 Breakfast Burger, $12 Egg and Pepper Sandwich all served with breakfast potatoes! $12 Bacon Egg and Cheese Stromboli and a $10 Pancake Platter Brunch Drink Specials $6 Bloody Marys $6 007's $6 Mimosas\n\n10:00 AM - 02:00 PM\n\nSaturday $6 Surfside (Starts at 2) All Day Everyday Drink Specials- $4 Cuervo Tradicional, $4 Green Tea's or Four Walls\n\n02:00 PM - 01:00 AM\n\nMonday September 7th\n\nHappy Hour Specials: 🥃 Food Specials $5 Apps - Wings (4), Pub Fries, Onion Rings, Mozz Sticks, Boneless Bites (8) Drink Specials $3 Domestic Draft3 $5 Imported Drafts. $5 Statesides, $5 Captains, $5 Jameson, $4 Mi Campos\n\n03:30 PM - 06:30 PM\n\nTuesday September 8th\n\nTaco Tuesday!! 🌮 $2.50 tacos (Chix or Beef) Drink Specials $4 Coronas $5 Epsolon Drinks $4 Mi Campos All Day Everyday Drink Specials- $4 Cuervo Tradicional, $4 Green Tea's or Four Walls\n\n11:00 AM - 11:00 PM\n\nWednesday September 9th\n\nWing it Wednesday!! $1.25 Wings (Min 4) & $10 Cheese Pizza 🍕 🍗 Drink Specials $6 Crown Royal $4 Four Walls $6 High Noons All Day Everyday Drink Specials- $4 Cuervo Tradicional, $4 Green Tea's or Four Walls\n\n11:00 AM - 11:00 PM\n\nHappy Hour Specials:🥃 Food Specials $5 Apps - Wings (4), Pub Fries, Onion Rings, Mozz Sticks, Boneless Bites (8) Drink Specials $3 Domestic Draft3 $5 Imported Drafts. $5 Statesides, $5 Captains, $5 Jameson, $4 Mi Campos\n\n03:30 PM - 06:30 PM",
+  "turns": 5,
+  "venue_name_on_menu": "Union Street Pub",
+  "why_not": ""
+ },
+ "DE0b0f0283f8": {
+  "cost_usd": 0.5219,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "exhausted",
+  "model": "opus",
+  "path_taken": [],
+  "read_at": "2026-09-03",
+  "transcript": "",
+  "turns": 15,
+  "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.52 spent"
+ },
+ "DE0d2e7bf4ac": {
+  "cost_usd": 0.5735,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "exhausted",
+  "model": "opus",
+  "path_taken": [],
+  "read_at": "2026-09-03",
+  "transcript": "",
+  "turns": 15,
+  "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.57 spent"
+ },
  "DE0d904a49e5": {
   "cost_usd": 0.5307,
   "deals": [],
@@ -233,6 +993,49 @@
   "transcript": "",
   "turns": 15,
   "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.53 spent"
+ },
+ "DE0fcc6ae5bb": {
+  "cost_usd": 0.2638,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch http://www.dripcafede.com/ — home page; nav links to Menus, Dine In & Take Out, Newark location, Events; no happy hour",
+   "WebFetch http://www.dripcafede.com/pages/newark — this address's location page; hours and contact only, no specials",
+   "WebFetch http://www.dripcafede.com/pages/menus — menu landing page; 'OPEN DAILY 7 AM - 4 PM', no happy hour",
+   "WebFetch http://www.dripcafede.com/pages/take-out-menu — dine in & take out menu page; no specials, no menu PDF or image links",
+   "WebFetch http://www.dripcafede.com/pages/events — ticketed events with fixed prices, no happy hour"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "",
+  "transcript": "",
+  "turns": 7,
+  "venue_name_on_menu": "",
+  "why_not": "The site is a daytime café open 7 AM - 4 PM and offers only regular all-day brunch/take-out menus and separately ticketed events, with no happy hour or discounted-pricing statement on the home page, the Newark location page, the menus pages, or the events page."
+ },
+ "DE122a63d619": {
+  "cost_usd": 0.2253,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch http://www.dewpointbrewing.com/ — home page, nav only, no happy hour",
+   "WebFetch http://www.dewpointbrewing.com/tasting-room — taproom hours, no happy hour",
+   "WebFetch http://www.dewpointbrewing.com/ontap — beer list, no prices",
+   "WebFetch http://www.dewpointbrewing.com/ourevents — defers to social feeds, no specials"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "",
+  "transcript": "",
+  "turns": 6,
+  "venue_name_on_menu": "",
+  "why_not": "The site gives taproom hours (Wed-Thu 4-9pm, Fri 3-10pm, Sat 1-10pm, Sun 1-7pm), a rotating tap list without prices, and an events page that points to social media, but never states a happy hour."
  },
  "DE1a62273d75": {
   "cost_usd": 0.4494,
@@ -270,6 +1073,188 @@
   "transcript": "",
   "turns": 15,
   "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.49 spent"
+ },
+ "DE1f4b3881c8": {
+  "cost_usd": 0.4215,
+  "deals": [
+   {
+    "fine_print": "BAR ONLY. Add-ons to the 1/2 nacho are extra: (ADD CHICKEN $8 SHORT RIB $8 CRAB $8)",
+    "items": [
+     {
+      "category": "well",
+      "discount_pct": null,
+      "label": "House mixed drinks (vodka, tequila, gin, rum, whiskey)",
+      "price_quote": "$6 HOUSE MIXED DRINKS",
+      "price_usd": 6,
+      "quote": "$6 HOUSE MIXED DRINKS\n(VODKA, TEQUILA, GIN, RUM, WHISKEY)"
+     },
+     {
+      "category": "draft",
+      "discount_pct": null,
+      "label": "$1 off all draft beers",
+      "price_quote": "$1 OFF ALL DRAFT BEERS",
+      "price_usd": null,
+      "quote": "$1 OFF ALL DRAFT BEERS"
+     },
+     {
+      "category": "wine",
+      "discount_pct": null,
+      "label": "$1 off all wines by the glass",
+      "price_quote": "$1 OFF ALL WINES BY THE GLASS",
+      "price_usd": null,
+      "quote": "$1 OFF ALL WINES BY THE GLASS"
+     },
+     {
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "Brooklyn Bel-Air Sour can",
+      "price_quote": "$5 BROOKLYN BEL - AIR SOUR CAN",
+      "price_usd": 5,
+      "quote": "$5 BROOKLYN BEL - AIR SOUR CAN"
+     },
+     {
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "Long Drink cans, original or peach",
+      "price_quote": "$5 LONG DRINK CANS ORIGINAL OR PEACH",
+      "price_usd": 5,
+      "quote": "$5 LONG DRINK CANS ORIGINAL OR PEACH"
+     },
+     {
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "High Noons -- pineapple, peach, or raspberry tea",
+      "price_quote": "$6 HIGH NOONS",
+      "price_usd": 6,
+      "quote": "$6 HIGH NOONS\nPINEAPPLE, PEACH, OR RASPBERRY TEA"
+     },
+     {
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "Corona Sunbrew",
+      "price_quote": "$4 CORONA SUNBREW",
+      "price_usd": 4,
+      "quote": "$4 CORONA SUNBREW"
+     },
+     {
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "Classic margarita",
+      "price_quote": "$8 CLASSIC MARGARITA",
+      "price_usd": 8,
+      "quote": "$8 CLASSIC MARGARITA"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Wings (buffalo, BBQ, Korean BBQ, Thai chili, sriracha honey, lemon pepper)",
+      "price_quote": "$14 APPS",
+      "price_usd": 14,
+      "quote": "WINGS (BUFFALO, BBQ, KOREAN BBQ, THAI CHILI, SRIRACHA HONEY, LEMON PEPPER)"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Roasted brussel sprouts, grated parmesan, balsamic glaze",
+      "price_quote": "$14 APPS",
+      "price_usd": 14,
+      "quote": "ROASTED BRUSSEL SPROUTS TOSSED IN GRATED PARMESAN, BALSAMIC GLAZE"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Cheese steak rolls, sriracha ketchup",
+      "price_quote": "$12 APPS",
+      "price_usd": 12,
+      "quote": "CHEESE STEAK ROLLS SRIRACHA KETCHUP"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Cheese curds, marinara sauce",
+      "price_quote": "$12 APPS",
+      "price_usd": 12,
+      "quote": "CHEESE CURDS MARINARA SAUCE"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Fried pickles, chipotle ranch",
+      "price_quote": "$10 APPS",
+      "price_usd": 10,
+      "quote": "FRIED PICKLES CHIPOTLE RANCH"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "1/2 nacho -- queso, lettuce, pico, sour cream",
+      "price_quote": "$10 APPS",
+      "price_usd": 10,
+      "quote": "1/2 NACHO QUESO, LETTUCE, PICO, SOUR CREAM"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Fried mac & cheese bites, marinara sauce",
+      "price_quote": "$10 APPS",
+      "price_usd": 10,
+      "quote": "FRIED MAC & CHEESE BITES MARINARA SAUCE"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Veggie flatbread -- basil pesto, mozzarella, ricotta, spinach, sun dried tomato",
+      "price_quote": "$10 APPS",
+      "price_usd": 10,
+      "quote": "VEGGIE FLATBREAD BASIL PESTO, MOZZARELLA, RICOTTA, SPINACH, SUN DRIED TOMATO"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 2,
+      "end": "19:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "19:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "19:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "19:00",
+      "start": "16:00"
+     }
+    ]
+   }
+  ],
+  "dropped": [
+   "'$1 off all draft beers': needs exactly one of price_usd / discount_pct / amount_off_usd",
+   "'$1 off all wines by the glass': needs exactly one of price_usd / discount_pct / amount_off_usd",
+   "'Wings (buffalo, BBQ, Korean BBQ, Thai chili, sriracha honey, lemon pepper)': label length",
+   "'Veggie flatbread -- basil pesto, mozzarella, ricotta, spinach, sun dried tomato': label length"
+  ],
+  "found": true,
+  "items_kept": 12,
+  "kind": "pdf",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://docklandsriverfront.com/ -- nav lists a Happy Hour menu page",
+   "WebFetch https://docklandsriverfront.com/menus/happy-hour/ -- menu is a linked PDF",
+   "curl https://docklandsriverfront.com/wp-content/uploads/2025/02/INSIDE-BAR-MENU-SLEEVES.pdf -> happy-hour.pdf, Read it (page 1 is the happy hour sleeve)"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "https://docklandsriverfront.com/wp-content/uploads/2025/02/INSIDE-BAR-MENU-SLEEVES.pdf",
+  "transcript": "DOCKLANDS\nHAPPY HOUR\nWEEKDAYS TUES-FRI\n4PM-7PM  BAR ONLY\n\n$6 HOUSE MIXED DRINKS\n(VODKA, TEQUILA, GIN, RUM, WHISKEY)\n$1 OFF ALL DRAFT BEERS\n$1 OFF ALL WINES BY THE GLASS\n$5 BROOKLYN BEL - AIR SOUR CAN\n$5 LONG DRINK CANS ORIGINAL OR PEACH\n$6 HIGH NOONS\nPINEAPPLE, PEACH, OR RASPBERRY TEA\n$4 CORONA SUNBREW\n$8 CLASSIC MARGARITA\n\n$14 APPS\nWINGS (BUFFALO, BBQ, KOREAN BBQ, THAI CHILI, SRIRACHA HONEY, LEMON PEPPER)\nROASTED BRUSSEL SPROUTS TOSSED IN GRATED PARMESAN, BALSAMIC GLAZE\n\n$12 APPS\nCHEESE STEAK ROLLS SRIRACHA KETCHUP\nCHEESE CURDS MARINARA SAUCE\n\n$10 APPS\nFRIED PICKLES CHIPOTLE RANCH\n1/2 NACHO QUESO, LETTUCE, PICO, SOUR CREAM\n(ADD CHICKEN $8 SHORT RIB $8 CRAB $8)\nFRIED MAC & CHEESE BITES MARINARA SAUCE\nVEGGIE FLATBREAD BASIL PESTO, MOZZARELLA, RICOTTA, SPINACH, SUN DRIED TOMATO",
+  "turns": 7,
+  "venue_name_on_menu": "DOCKLANDS",
+  "why_not": ""
  },
  "DE238b6605af": {
   "cost_usd": 0.5403,
@@ -445,6 +1430,44 @@
   "turns": 6,
   "venue_name_on_menu": "",
   "why_not": "The site markets all-day, every-day drink specials and day-of-week food deals but never states a happy hour with days or times for this location."
+ },
+ "DE33f2fdc5bf": {
+  "cost_usd": 0.2894,
+  "deals": [
+   {
+    "fine_print": "",
+    "items": [],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 4,
+      "end": "21:00",
+      "start": "17:00"
+     },
+     {
+      "dow": 5,
+      "end": "21:00",
+      "start": "17:00"
+     }
+    ]
+   }
+  ],
+  "dropped": [],
+  "found": true,
+  "items_kept": 0,
+  "kind": "page",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch http://suite4eleven.com/ - home page, no happy hour text; links to /menu, /events",
+   "WebFetch http://suite4eleven.com/menu - food, bottle service, hookah prices; no happy hour section",
+   "WebFetch http://suite4eleven.com/events - weekly events list states Happy Hour hours for Thursdays and Fridays"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "http://suite4eleven.com/events",
+  "transcript": "WEEKLY EVENTS\n\nVersus Thursdays\nHappy Hour 5-9 PM\n$25 Hookah All Day\nFree Admission All Day\n\nSo Suite Fridays\nHappy Hour 5-9 PM\nFree admission for ladies until midnight\nFree Birthday Sections (DM to reserve)\nFree Sections available",
+  "turns": 7,
+  "venue_name_on_menu": "Suite 4 Eleven",
+  "why_not": ""
  },
  "DE3b23cb5840": {
   "cost_usd": 0.4498,
@@ -675,6 +1698,68 @@
   "transcript": "",
   "turns": 15,
   "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.57 spent"
+ },
+ "DE41f82a3cee": {
+  "cost_usd": 0.499,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "exhausted",
+  "model": "opus",
+  "path_taken": [],
+  "read_at": "2026-09-03",
+  "transcript": "",
+  "turns": 15,
+  "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.50 spent"
+ },
+ "DE4264e33ba0": {
+  "cost_usd": 0.3491,
+  "deals": [
+   {
+    "fine_print": "",
+    "items": [],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 3,
+      "end": "17:00",
+      "start": "15:00"
+     }
+    ]
+   }
+  ],
+  "dropped": [],
+  "found": true,
+  "items_kept": 0,
+  "kind": "page",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch home page http://goobersdiner-de.com/ -- nav links to Specials (labeled happy-hours-specials), Menu, Drinks",
+   "WebFetch /wilmington-trolley-square-goober-s-diner-happy-hours-specials -- one dated happy hour entry with a time window, no items or prices",
+   "curl specials page raw HTML into scratch dir to read the specials block verbatim -- only one special block present",
+   "WebFetch /wilmington-trolley-square-goober-s-diner-drink-menu -- no happy hour section"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "http://goobersdiner-de.com/wilmington-trolley-square-goober-s-diner-happy-hours-specials",
+  "transcript": "Specials\nWednesday September 9th\nHappy hour\n03:00 PM - 05:00 PM",
+  "turns": 9,
+  "venue_name_on_menu": "Goober's Diner",
+  "why_not": ""
+ },
+ "DE431d353a79": {
+  "cost_usd": 0.5415,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "exhausted",
+  "model": "opus",
+  "path_taken": [],
+  "read_at": "2026-09-03",
+  "transcript": "",
+  "turns": 15,
+  "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.54 spent"
  },
  "DE4798b4126a": {
   "cost_usd": 0.3427,
@@ -960,6 +2045,381 @@
   "transcript": "",
   "turns": 15,
   "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.53 spent"
+ },
+ "DE608516193f": {
+  "cost_usd": 0.3161,
+  "deals": [
+   {
+    "fine_print": "* Available in the bar/ tavern & patio ONLY * DINE INN ONLY. NO MODIFICATIONS. All sandwiches come with chips. Fries or side salads are available for an upcharge. *NOT AVAILABLE FOR MAIN DINING ROOMS/EVENTS*",
+    "items": [
+     {
+      "category": "draft",
+      "discount_pct": null,
+      "label": "$1 off draft beer",
+      "price_quote": "$1 off draft beer",
+      "price_usd": null,
+      "quote": "$1 off draft beer"
+     },
+     {
+      "category": "wine",
+      "discount_pct": null,
+      "label": "$2 off glasses of wine",
+      "price_quote": "$2 off glasses of wine",
+      "price_usd": null,
+      "quote": "$2 off glasses of wine"
+     },
+     {
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "$3 off signature cocktails",
+      "price_quote": "$3 off signature cocktails",
+      "price_usd": null,
+      "quote": "$3 off signature cocktails"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Edamame",
+      "price_quote": "Edamame $6",
+      "price_usd": 6,
+      "quote": "Edamame $6"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Deviled Eggs",
+      "price_quote": "Deviled Eggs  $6",
+      "price_usd": 6,
+      "quote": "Deviled Eggs  $6"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Cheesesteak Spring Rolls",
+      "price_quote": "Cheesesteak Spring Rolls $11",
+      "price_usd": 11,
+      "quote": "Cheesesteak Spring Rolls $11"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Shrimp Tacos",
+      "price_quote": "Shrimp Tacos $11",
+      "price_usd": 11,
+      "quote": "Shrimp Tacos $11"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Arrogant Cauliflower",
+      "price_quote": "Arrogant Cauliflower $11",
+      "price_usd": 11,
+      "quote": "Arrogant Cauliflower $11"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Maple-Sesame Chicken",
+      "price_quote": "Maple-Sesame Chicken $8",
+      "price_usd": 8,
+      "quote": "Maple-Sesame Chicken $8"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Brisket Fries",
+      "price_quote": "Brisket Fries $11",
+      "price_usd": 11,
+      "quote": "Brisket Fries $11"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Traditional Pizza",
+      "price_quote": "Traditional Pizza  $12",
+      "price_usd": 12,
+      "quote": "Traditional Pizza  $12"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "EZ Peel & Eat Shrimp",
+      "price_quote": "EZ Peel & Eat Shrimp $12",
+      "price_usd": 12,
+      "quote": "EZ Peel & Eat Shrimp $12"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "6 for $12 Oysters",
+      "price_quote": "6 for $12 Oysters",
+      "price_usd": 12,
+      "quote": "6 for $12 Oysters"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Hummus",
+      "price_quote": "Hummus  $9",
+      "price_usd": 9,
+      "quote": "Hummus  $9"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Grandma’s Pierogies",
+      "price_quote": "Grandma’s Pierogies  $10",
+      "price_usd": 10,
+      "quote": "Grandma’s Pierogies  $10"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "NOT so Classic Shrimp Caesar Salad",
+      "price_quote": "NOT so Classic Shrimp Caesar Salad  $14",
+      "price_usd": 14,
+      "quote": "NOT so Classic Shrimp Caesar Salad  $14"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Crispy Asian Brussels Sprouts",
+      "price_quote": "Crispy Asian Brussels Sprouts $10",
+      "price_usd": 10,
+      "quote": "Crispy Asian Brussels Sprouts $10"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Filet Mignon Sandwich",
+      "price_quote": "$13 SANDWICHES",
+      "price_usd": 13,
+      "quote": "Filet Mignon Sandwich"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Crab Cake Sandwich",
+      "price_quote": "$13 SANDWICHES",
+      "price_usd": 13,
+      "quote": "Crab Cake Sandwich"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Loaded Smash Burger",
+      "price_quote": "$13 SANDWICHES",
+      "price_usd": 13,
+      "quote": "Loaded Smash Burger**"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "17:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 2,
+      "end": "17:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 3,
+      "end": "17:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 4,
+      "end": "17:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 5,
+      "end": "17:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 6,
+      "end": "17:30",
+      "start": "16:30"
+     }
+    ]
+   }
+  ],
+  "dropped": [
+   "'$1 off draft beer': needs exactly one of price_usd / discount_pct / amount_off_usd",
+   "'$2 off glasses of wine': needs exactly one of price_usd / discount_pct / amount_off_usd",
+   "'$3 off signature cocktails': needs exactly one of price_usd / discount_pct / amount_off_usd"
+  ],
+  "found": true,
+  "items_kept": 17,
+  "kind": "pdf",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch http://www.columbusinn.net/ -- home page lists a Happy Hour Menu link",
+   "curl -sL -o data/agent_reads/DE608516193f/hh.pdf http://www.columbusinn.net/wp-content/uploads/2026/03/NEW-HH-Menu-updated-3326-2.pdf",
+   "Read hh.pdf -- one-page happy hour menu"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "http://www.columbusinn.net/wp-content/uploads/2026/03/NEW-HH-Menu-updated-3326-2.pdf",
+  "transcript": "COLUMBUS INN\nHAPPY HOUR MENU\nMONDAY THROUGH SATURDAY 4:30PM-5:30PM\n* Available in the bar/ tavern & patio ONLY *\nDINE INN ONLY. NO MODIFICATIONS\n\nDRINK SPECIALS\n$1 off draft beer     $2 off glasses of wine     $3 off signature cocktails\n\nNIBBLES\nEdamame $6\ncracked black pepper & sea salt\nDeviled Eggs  $6\nbacon crumbles, roasted tomatoes,  iceberg aioli\nCheesesteak Spring Rolls $11\nspicy smoked ketchup\nShrimp Tacos $11\navocado mousse, creamy chipotle slaw, pico\n\nBIG BITES\nArrogant Cauliflower $11\ntomato, cucumber & celery, blue cheese dressing\nMaple-Sesame Chicken $8\ncrispy leg confit, spicy cucumber salad\nBrisket Fries $11\nsweet potato fries, cheese sauce, bbq short rib ragout\nTraditional Pizza  $12\nred sauce, mozzarella cheese\nEZ Peel & Eat Shrimp $12\ncocktail shrimp with old bay & cocktail sauce\n6 for $12 Oysters\nhalf a dozen oysters, cocktail, mignonette & lemon\nHummus  $9\ntomato, cucumber, and parsley salad,\nolives, roasted peppers, pita\nGrandma’s Pierogies  $10\npork belly, caramelized onions, loaded sour cream,\ncave aged cheddar\nNOT so Classic Shrimp Caesar Salad  $14\nbaby kale, romaine, ruby endive,\ncaesar dressing, parmesan, garlic bread crumbs\nchoice of grilled or cocktail shrimp\nCrispy Asian Brussels Sprouts $10\nsweet soy-chili glaze, sesame seed, crispy\nshallots, peanuts & scallions\n\n$13 SANDWICHES\nAll sandwiches come with chips. Fries or side salads are available for an upcharge.\nFilet Mignon Sandwich\nprovolone, caramelized onions,\nhot peppers served on the side\nCrab Cake Sandwich\nbroiled crab cake, lettuce, tomato, pickle,\nclassic tartar served on side\nLoaded Smash Burger**\ntwo four ounce patties, cooper sharp american cheese, bacon jam, fried onions, lettuce, tomato & pickle\n**no temp -- cooked thru\n\n*NOT AVAILABLE FOR MAIN DINING ROOMS/EVENTS*",
+  "turns": 5,
+  "venue_name_on_menu": "COLUMBUS INN",
+  "why_not": ""
+ },
+ "DE6192c1db22": {
+  "cost_usd": 0.5095,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "exhausted",
+  "model": "opus",
+  "path_taken": [],
+  "read_at": "2026-09-03",
+  "transcript": "",
+  "turns": 15,
+  "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.51 spent"
+ },
+ "DE632e1e3095": {
+  "cost_usd": 0.5143,
+  "deals": [
+   {
+    "fine_print": "UNTIL 7PM",
+    "items": [
+     {
+      "category": "wine",
+      "discount_pct": null,
+      "label": "Cabernet Sauvignon | Avia",
+      "price_quote": "$5",
+      "price_usd": 5,
+      "quote": "CABERNET SAUVIGNON | AVIA   $5"
+     },
+     {
+      "category": "wine",
+      "discount_pct": null,
+      "label": "Chardonnay | Avia",
+      "price_quote": "$5",
+      "price_usd": 5,
+      "quote": "CHARDONNAY | AVIA   $5"
+     },
+     {
+      "category": "wine",
+      "discount_pct": null,
+      "label": "$2 off all other wine",
+      "price_quote": "$2 OFF ALL OTHER WINE",
+      "price_usd": null,
+      "quote": "$2 OFF ALL OTHER WINE"
+     },
+     {
+      "category": "draft",
+      "discount_pct": null,
+      "label": "All draft beers",
+      "price_quote": "$5",
+      "price_usd": 5,
+      "quote": "ALL DRAFT BEERS   $5"
+     },
+     {
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "High Beam | Miller High Life & shot of Jim Beam",
+      "price_quote": "$5",
+      "price_usd": 5,
+      "quote": "HIGH BEAM | MILLER HIGH LIFE & SHOT OF JIM BEAM   $5"
+     },
+     {
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "Nomad Appletini",
+      "price_quote": "$5",
+      "price_usd": 5,
+      "quote": "NOMAD APPLETINI   $5"
+     },
+     {
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "Nomad Margarita",
+      "price_quote": "$5",
+      "price_usd": 5,
+      "quote": "NOMAD MARGARITA   $5"
+     },
+     {
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "Tito's mixed drinks",
+      "price_quote": "$5",
+      "price_usd": 5,
+      "quote": "TITO'S MIXED DRINKS   $5"
+     },
+     {
+      "category": "well",
+      "discount_pct": null,
+      "label": "House mixed | vodka, gin, rum, tequila, whiskey",
+      "price_quote": "$4",
+      "price_usd": 4,
+      "quote": "HOUSE MIXED | VODKA, GIN, RUM, TEQUILA, WHISKEY   $4"
+     },
+     {
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "All canned cocktails",
+      "price_quote": "$5",
+      "price_usd": 5,
+      "quote": "ALL CANNED COCKTAILS   $5"
+     },
+     {
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "Sam Adams Just The Haze IPA (non alcoholic)",
+      "price_quote": "$5",
+      "price_usd": 5,
+      "quote": "SAM ADAMS JUST THE HAZE IPA   $5"
+     },
+     {
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "Sierra Nevada Trail Pass IPA (non alcoholic)",
+      "price_quote": "$5",
+      "price_usd": 5,
+      "quote": "SIERRA NEVADA TRAIL PASS IPA   $5"
+     },
+     {
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "N/A mixed | vodka, gin, rum, tequila, whiskey",
+      "price_quote": "$5",
+      "price_usd": 5,
+      "quote": "N/A MIXED | VODKA, GIN, RUM, TEQUILA, WHISKEY   $5"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": []
+   }
+  ],
+  "dropped": [
+   "'$2 off all other wine': needs exactly one of price_usd / discount_pct / amount_off_usd"
+  ],
+  "found": true,
+  "items_kept": 12,
+  "kind": "image",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch http://www.nomadwilmington.com/ -- nav lists Drink Menu",
+   "WebFetch http://www.nomadwilmington.com/drink-menu -- six menu images, no text",
+   "curl drink-menu HTML to extract img1.wsimg.com image URLs",
+   "curl -o menu22..menu27.png the six Nomad Menus images",
+   "Read menu22.png -- happy hour menu",
+   "Read menu23.png -- bottles & cans regular menu",
+   "WebFetch http://www.nomadwilmington.com/visit -- no happy hour days/times"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "https://img1.wsimg.com/isteam/ip/640b4f0e-3590-4198-84da-f5f3d1efb405/Nomad%20Menus%20(22).png/:/",
+  "transcript": "happy hour\nUNTIL 7PM\n\nwine.\nCABERNET SAUVIGNON | AVIA   $5\nCHARDONNAY | AVIA   $5\n$2 OFF ALL OTHER WINE\n\nbeer.\nALL DRAFT BEERS   $5\nHIGH BEAM | MILLER HIGH LIFE & SHOT OF JIM BEAM   $5\n\ncocktails.\nNOMAD APPLETINI   $5\nNOMAD MARGARITA   $5\nTITO'S MIXED DRINKS   $5\nHOUSE MIXED | VODKA, GIN, RUM, TEQUILA, WHISKEY   $4\nALL CANNED COCKTAILS   $5\n\nnon alcoholic.\nSAM ADAMS JUST THE HAZE IPA   $5\nSIERRA NEVADA TRAIL PASS IPA   $5\nN/A MIXED | VODKA, GIN, RUM, TEQUILA, WHISKEY   $5",
+  "turns": 11,
+  "venue_name_on_menu": "NOMAD",
+  "why_not": ""
  },
  "DE6779bbc094": {
   "cost_usd": 0.3402,
