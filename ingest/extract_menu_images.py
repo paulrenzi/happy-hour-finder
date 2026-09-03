@@ -38,8 +38,31 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from extract_deals import HITS, SITES, one_per_osm, slug  # noqa: E402
-from extract_photo_deals import ask, ground, norm  # noqa: E402
+from extract_photo_deals import PROMPT, ask, ground, norm  # noqa: E402
 from extract_prices_llm import verify  # noqa: E402
+
+# A designed menu prints a price ONCE for a group: The Greene Turtle's sheet
+# has '$3', '$5', '$7' in circles over the SHOTS, COCKTAILS and BITES columns,
+# and not one item line carries a digit. Read with the photo prompt alone the
+# model returned all 23 items correctly and verify() refused every one --
+# "price 3 not written in the evidence" -- because the evidence was the item's
+# own line. So each item also names WHERE its price is printed, and that
+# span is checked against the transcript exactly as the quote is.
+MENU_PROMPT = PROMPT.replace(
+    'Transcribe the whole menu into `transcript` first, verbatim.',
+    'Transcribe the whole menu into `transcript` first, verbatim. Where a price\n'
+    'is printed once as a header or badge over a GROUP of items ("$3" above a\n'
+    'column of shots), transcribe that price where it stands, then the items\n'
+    'under it; every one of those items has that price.',
+).replace(
+    '          "quote": "the exact substring of transcript this came from"',
+    '          "quote": "the exact substring of transcript this came from",\n'
+    '          "price_quote": "the exact substring of transcript where THIS\n'
+    '             item\'s price is printed: the item\'s own line if it carries\n'
+    '             the price, otherwise the group header or badge that governs\n'
+    '             it, e.g. \\"$3\\". Must be character-for-character in transcript."',
+)
+assert MENU_PROMPT != PROMPT, "photo prompt changed shape; the price-band rule did not land"
 
 CACHE = os.path.join(REPO, "data", "menu_images")
 OUT = os.path.join(REPO, "data", "deals_menu_images.json")
@@ -160,7 +183,7 @@ def items_from(read):
     are not there.
     """
     kept, dropped = ground(read)
-    transcript = read.get("transcript") or ""
+    transcript_norm = norm(read.get("transcript") or "")
     items, seen = [], set()
     for deal in kept:
         # HAPPY-HOUR DEALS ONLY. These items are attached to a happy-hour window
@@ -173,8 +196,14 @@ def items_from(read):
             dropped.append(f"{deal.get('type')!r} deal: not the happy hour")
             continue
         for item in deal.get("items") or []:
-            clean, why = verify(dict(item, evidence=item.get("quote")), transcript,
-                               menu=True)
+            # The item's own line first. If the price is not on it, the span the
+            # model says the price is printed in counts too -- but only if that
+            # span is really in the transcript, the same grounding the quote got.
+            evidence = item.get("quote") or ""
+            band = norm(item.get("price_quote"))
+            if band and band != norm(evidence) and band in transcript_norm:
+                evidence = f"{evidence} {item.get('price_quote')}"
+            clean, why = verify(dict(item, evidence=evidence), evidence, menu=True)
             if not clean:
                 dropped.append(f"{item.get('label')!r}: {why}")
                 continue
@@ -222,7 +251,7 @@ def main():
             if not path:
                 print(f"[{n}/{len(todo)}] {name[:34]:<36} -- empty download")
                 continue
-            read = ask(path)
+            read = ask(path, MENU_PROMPT)
         except Exception as e:  # noqa: BLE001 -- one bad image is not a failed run
             print(f"[{n}/{len(todo)}] {name[:34]:<36} !! {type(e).__name__}: {e}"[:160])
             continue

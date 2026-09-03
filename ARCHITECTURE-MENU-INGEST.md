@@ -664,6 +664,24 @@ well, we can do a stand-alone job for west chester because it's large."*
 items).** A venue with a window and items is left alone; re-fetching it spends
 bandwidth to re-learn what we hold.
 
+🔑 **2026-09-03 — THE AGENT LANE REPLACES THE FOURTEEN-COMMAND RECIPE BELOW
+FOR ITEMS.** `HANDOFF-START-HERE-20260903-THE-AGENT-IS-THE-SCRAPER.md`. The
+recipe under this line was fourteen hand-typed commands with regex gates
+between them; the image reader was step five, skipping it was silent, and 141
+of 152 captured menu images were never read. One model call per venue with
+WebFetch/curl/Read does what a person does; the code keeps grounding, the
+validators and the reviewer:
+
+```
+python ingest/agent_read_venue.py --zone <zone> --show --rejects
+python ingest/build_bundles.py
+git commit && git push
+python tests/live_front_door.py <zone>
+```
+
+The recipe below is kept for the deterministic half (discovery, windows,
+"asking to be filled in") and for reading how the sidecars merge.
+
 ```
 python ingest/reach_llm.py town phoenixville --spend       # what the web says the town has ($0.13) -> ground truth candidates
 python ingest/needy.py phoenixville --show --lids run.lids   # reads BOTH bundle files

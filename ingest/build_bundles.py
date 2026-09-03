@@ -33,6 +33,7 @@ PHOTO_DEALS_JSON = os.path.join(REPO, "data", "deals_photo.json")
 ZONES_JSON = os.path.join(REPO, "data", "zones.json")
 PRICES_JSON = os.path.join(REPO, "data", "deals_prices_llm.json")
 MENU_IMG_JSON = os.path.join(REPO, "data", "deals_menu_images.json")
+AGENT_JSON = os.path.join(REPO, "data", "deals_agent.json")
 PAGES_JSON = os.path.join(REPO, "data", "deals_pages_llm.json")
 MENUS_JSON = os.path.join(REPO, "data", "deals_menus.json")
 PHOTOS_JSON = os.path.join(REPO, "data", "venue_photos.json")
@@ -73,7 +74,10 @@ def norm_addr(address):
     # Licence exports sometimes prefix the street with the complex name
     # ("Radnor Financial Center 555 E Lancaster Ave"), so the house number
     # is not necessarily the first token.
-    n = re.search(r"\b(\d+)\b", address or "")
+    # '180B Mill Rd' is house 180: without the optional letter the search
+    # skipped it and returned the ZIP as the house number, so P.J. Whelihan's
+    # (180B) and the cinema licence in the same plaza (180) read as two doors.
+    n = re.search(r"\b(\d+)[A-Za-z]?\b", address or "")
     return (n.group(1) if n else "?", m.group(1) if m else "?")
 
 
@@ -140,7 +144,26 @@ def collapse_name_collisions(by_zone):
                     # branches, and merging two real bars is far worse than
                     # listing one twice.
                     continue
-                collapsed += merge_rows(same)
+                # One page is one bar's hours -- unless it is a CHAIN's page.
+                # The Greene Turtle's two Newark branches, six miles apart,
+                # both read their hours off thegreeneturtle.com/menu/ and the
+                # Christiana one was folded into Main Street; the venue Paul
+                # pointed at had no card. A shared page only merges rows that
+                # also share a street number and ZIP, or whose address is
+                # unknown. The Giant-next-door case still merges: it IS the
+                # same building.
+                by_door = {}
+                for v in same:
+                    by_door.setdefault(norm_addr(v.get("address", "")), []).append(v)
+                unknown = by_door.pop(("?", "?"), [])
+                doors = sorted(by_door.values(), key=len, reverse=True)
+                if doors:
+                    doors[0] = doors[0] + unknown
+                elif unknown:
+                    doors = [unknown]
+                for door in doors:
+                    if len(door) > 1:
+                        collapsed += merge_rows(door)
             # A current name at the same street number and ZIP is a second,
             # independent identity signal.  The two crawl entries can reach
             # that one bar through different pages (for example its location
@@ -467,6 +490,14 @@ def main():
     if os.path.exists(MENU_IMG_JSON):
         for vid, items in json.load(open(MENU_IMG_JSON, encoding="utf-8")).items():
             prices.setdefault(vid, items)
+    # Written by ingest/agent_read_venue.py: an agent hand-read the venue's
+    # site the way a person does and the items passed the same grounding and
+    # validators. Same slot, same rule -- items only, never a window.
+    # Keyed by LICENCE ID, not by slug: two branches of one chain in one town
+    # share a slug (the-greene-turtle-...-newark) and only the first ever got
+    # the slug-keyed sidecars' items. The licence is the key that cannot collide.
+    agent_items = (json.load(open(AGENT_JSON, encoding="utf-8"))
+                   if os.path.exists(AGENT_JSON) else {})
     # Written by ingest/read_pages_llm.py: the same kind of answer again, read
     # off the WHOLE happy-hour page rather than off the quotes a regex had
     # already matched out of it. It fills the same slot under the same rule --
@@ -575,7 +606,7 @@ def main():
         sidecar_target = max(model_deals, key=lambda d: len(d.get("items") or []),
                              default=None)
         for deal in venue.get("deals", []):
-            extra = prices.get(venue["id"])
+            extra = prices.get(venue["id"]) or agent_items.get(str(venue.get("lid") or ""))
             # A venue with NO items takes the sidecar outright. A venue that
             # already has some takes it only from the pass that READ THE PAGE --
             # and then the page wins, because the alternative is measurably

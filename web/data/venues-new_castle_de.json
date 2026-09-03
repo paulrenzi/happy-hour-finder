@@ -1,7 +1,7 @@
 {
  "zone_id": "new_castle_de",
  "name": "New Castle & Claymont",
- "built_at": "2026-09-02",
+ "built_at": "2026-09-03",
  "venues": [
   {
    "lid": "DE442c7a50ce",
@@ -392,6 +392,24 @@
    "photo": {
     "attribution": "Photo: The Dove Diner Restaurant / Google",
     "file": "img/venues/DEb2f0d7b9c1.jpg"
+   },
+   "deals": []
+  },
+  {
+   "lid": "DE653f2bc1d1",
+   "name": "Dolly Spanker's",
+   "address": "30 Clinton St, Delaware City, DE 19706",
+   "zone_id": "new_castle_de",
+   "license_type": "",
+   "id": "DE653f2bc1d1",
+   "plcb_name": "Dolly Spanker's",
+   "website": "http://www.dollyspankers.com/",
+   "lat": 39.579558,
+   "lng": -75.58794,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Dolly Spanker's / Google",
+    "file": "img/venues/DE653f2bc1d1.jpg"
    },
    "deals": []
   },

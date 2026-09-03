@@ -155,8 +155,12 @@ def fetch_photo(env, sub):
     return path
 
 
-def ask(path):
-    """One `claude -p` call over one photo. Returns the parsed JSON object."""
+def ask(path, prompt=None):
+    """One `claude -p` call over one photo. Returns the parsed JSON object.
+
+    `prompt` lets a caller hand in a variant of PROMPT (extract_menu_images
+    adds the price-band rule); it must still carry the {path} and
+    {categories} slots."""
     # `claude` is a .cmd shim on Windows, which subprocess will not find on its
     # own. The prompt goes in on stdin: the shim is a batch file and mangles a
     # multi-line argument, which fails by returning exit 0 and a wrong answer.
@@ -177,7 +181,7 @@ def ask(path):
          # per submitted photo adds up. Read is still granted above.
          "--setting-sources", "",
          "--exclude-dynamic-system-prompt-sections"],
-        input=PROMPT.format(path=path, categories=", ".join(sorted(CATEGORIES))),
+        input=(prompt or PROMPT).format(path=path, categories=", ".join(sorted(CATEGORIES))),
         capture_output=True, text=True, encoding="utf-8", errors="replace",
         timeout=300,
     )

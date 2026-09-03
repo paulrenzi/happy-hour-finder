@@ -20,3 +20,6 @@ scratch/
 # full-corpus scale. The ANSWERS it produces are committed: data/deals_pages_llm.json.
 data/pages/
 scratchpad/google_eyes/
+data/agent_reads/
+scratchpad/turtle/
+scratchpad/*_raw.html
