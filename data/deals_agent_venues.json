@@ -1467,6 +1467,70 @@
    "zone_id": "west_chester"
   },
   {
+   "address": "451 Wilmington-West Chester Pk, Glen Mills PA 19342",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "$1 buck-a-shuck Oysters",
+       "label": "Buck-a-Shuck Oysters",
+       "price_usd": 1
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "Tuesday–Friday · 4–6PM Saturday & Sunday · 3–6PM",
+      "heading": "The House of Happy Hour",
+      "kind": "venue_site",
+      "quote": "$1 buck-a-shuck Oysters Fresh on the half shell",
+      "url": "https://crowninconcord.com"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 6,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 7,
+       "end": "18:00",
+       "start": "15:00"
+      }
+     ]
+    }
+   ],
+   "id": "48062",
+   "lid": "48062",
+   "name": "The Crown Tavern",
+   "plcb_name": "MCKENZIE'S BREWHOUSE, INC.",
+   "website": "https://crowninconcord.com",
+   "zone_id": "glen_mills_chadds_ford"
+  },
+  {
    "address": "799 Dekalb Pk, Blue Bell PA 19422",
    "deals": [
     {
@@ -2932,6 +2996,75 @@
    "plcb_name": "PJ'S OAKS LLC",
    "website": "https://www.pjspub.com/about.php?loc=Oaks",
    "zone_id": "collegeville_trappe"
+  },
+  {
+   "address": "1400 Baltimore Pk, Chadds Ford PA 19317",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "Buck a Shuck Clams and Oysters!!",
+       "label": "Buck-a-Shuck Clams and Oysters",
+       "price_usd": 1
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "Happy Hour 1/2 Price Beer, Wine and Cocktails Buck a Shuck Clams and Oysters!! 7 days a week 4-6 pm",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Buck a Shuck Clams and Oysters!! 7 days a week 4-6 pm",
+      "url": "https://www.thecftavern.com/menus/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 6,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 7,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "91807",
+   "lid": "91807",
+   "name": "Chadds Ford Tavern",
+   "plcb_name": "1400 OPCO LLC",
+   "website": "https://www.thecftavern.com/",
+   "zone_id": "glen_mills_chadds_ford"
   },
   {
    "address": "720 Justison St, Wilmington, DE 19801",

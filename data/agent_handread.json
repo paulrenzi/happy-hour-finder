@@ -4262,5 +4262,80 @@
         "evidence": "Busch $2.50"
       }
     ]
+  },
+  {
+    "lid": "48062",
+    "url": "https://crowninconcord.com",
+    "read_on": "2026-09-04",
+    "heading": "The House of Happy Hour",
+    "clock_quote": "Tuesday\u2013Friday \u00b7 4\u20136PM Saturday & Sunday \u00b7 3\u20136PM",
+    "quote": "$1 buck-a-shuck Oysters Fresh on the half shell",
+    "windows": [
+      {
+        "dow": 2,
+        "start": "16:00",
+        "end": "18:00"
+      },
+      {
+        "dow": 3,
+        "start": "16:00",
+        "end": "18:00"
+      },
+      {
+        "dow": 4,
+        "start": "16:00",
+        "end": "18:00"
+      },
+      {
+        "dow": 5,
+        "start": "16:00",
+        "end": "18:00"
+      },
+      {
+        "dow": 6,
+        "start": "15:00",
+        "end": "18:00"
+      },
+      {
+        "dow": 7,
+        "start": "15:00",
+        "end": "18:00"
+      }
+    ],
+    "items": [
+      {
+        "category": "food",
+        "label": "Buck-a-Shuck Oysters",
+        "price_usd": 1,
+        "evidence": "$1 buck-a-shuck Oysters"
+      }
+    ]
+  },
+  {
+    "lid": "91807",
+    "url": "https://www.thecftavern.com/menus/",
+    "read_on": "2026-09-04",
+    "heading": "Happy Hour",
+    "clock_quote": "Happy Hour 1/2 Price Beer, Wine and Cocktails Buck a Shuck Clams and Oysters!! 7 days a week 4-6 pm",
+    "quote": "Buck a Shuck Clams and Oysters!! 7 days a week 4-6 pm",
+    "days": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "start": "16:00",
+    "end": "18:00",
+    "items": [
+      {
+        "category": "food",
+        "label": "Buck-a-Shuck Clams and Oysters",
+        "price_usd": 1,
+        "evidence": "Buck a Shuck Clams and Oysters!!"
+      }
+    ]
   }
 ]

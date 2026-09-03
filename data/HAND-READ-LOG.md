@@ -48,3 +48,31 @@ re-attempt these unless the venue's own site changes.)
 - norristown_bridgeport | Bridgeport Rib House | NO_CLOCK_TIME | windows found but no item prices in venue's own words | 2026-09-04
 - manayunk | Cresson Inn | NO_CLOCK_TIME | mentions "daily happy hour specials" generically, no clock time/prices | 2026-09-04
 - manayunk | Henry Ave Associates | UNREACHABLE | empty sweep | 2026-09-04
+- ambler_upper_dublin | Fireside Bar and Grill (55311) | SHIPPED | | 2026-09-04
+- pottstown | Doc's Irish Pub (68830) | SHIPPED | | 2026-09-04
+- glen_mills_chadds_ford | The Crown Tavern (48062) | SHIPPED | | 2026-09-04
+- glen_mills_chadds_ford | Chadds Ford Tavern (91807) | SHIPPED | | 2026-09-04
+- upper_darby_lansdowne | Station Tap/Pete's Pizza and Beer/Fibbers/J T Brewski/Carlettes Hideaway | NO_CLOCK_TIME | no HH text found on any sweep | 2026-09-04
+- ambler_upper_dublin | Well Crafted Beer Co/Gypsy Blu/Forest & Main | NO_CLOCK_TIME | empty sweeps | 2026-09-04
+- ambler_upper_dublin | Spring House Tavern | UNREACHABLE | 403 forbidden | 2026-09-04
+- ambler_upper_dublin | Bar 31 | UNREACHABLE | SSL cert expired | 2026-09-04
+- limerick_royersford | Lost Planet Brewing/Magerks Pub/Tom's Bar & Grille/Craft Ale House/Salford Station Spirits | NO_CLOCK_TIME | empty sweeps, all dead-end | 2026-09-04
+- pottstown | Sunset Hill Brewing/Gatsby's Pub/Twisted Cork | NO_CLOCK_TIME | empty sweeps | 2026-09-04
+- pottstown | Big Phil's Bar & Grill | NO_CLOCK_TIME | window found (Mon-Fri 4-6) but only BOGO/relative pricing, no absolute price | 2026-09-04
+- pottstown | Sly Fox Brewing/Tastin' Room | NO_CLOCK_TIME | bundle pricing not clearly tied to a stated clock window | 2026-09-04
+- pottstown | Union Jacks | UNREACHABLE | connection timeout | 2026-09-04
+- pottstown | Ron's Crooked Hill Tavern | UNREACHABLE | HTTP 509 | 2026-09-04
+- pottstown | Jj Ratigan Brewing | NO_CLOCK_TIME | window found Mon-Thu 4-6 but no absolute item price | 2026-09-04
+- souderton_harleysville | Sumneytown Hotel/Piano Bar/Branch Creek Brewing/3 Sisters Rum/Harleysville Hotel/Macoby Run/Telford Tavern/Rising Sun Inn/Hattricks/Imprint Beer | UNREACHABLE/NO_CLOCK_TIME | empty sweeps or connection errors | 2026-09-04
+- souderton_harleysville | Northbound Restaurant | NO_CLOCK_TIME | window Tue-Fri 3:30-5:30 found, no prices reachable | 2026-09-04
+- souderton_harleysville | Crossroads Tavern | NO_CLOCK_TIME | window Mon-Fri 4-6pm found, no prices reachable (dedicated HH page has no pricing text) | 2026-09-04
+- souderton_harleysville | Red Cedar Grille | NO_CLOCK_TIME | HH mentioned only as SEO keyword list, no window/price | 2026-09-04
+- souderton_harleysville | Butcher and Barkeep | NO_CLOCK_TIME | window Mon-Fri 3:30-5:30 found, no prices reachable | 2026-09-04
+- souderton_harleysville | Perkiomen Valley Brewery | UNREACHABLE | HTTP 401 | 2026-09-04
+- abington_jenkintown | Morgan Stillhouse/Bernie's/Glenside Pub/Drake Tavern/Kings Corner/Rockledge Malthouse/Bill's Best Brewery | UNREACHABLE/NO_CLOCK_TIME | connection errors or empty sweeps | 2026-09-04
+- abington_jenkintown | W Tavern | NO_CLOCK_TIME | window Tue-Fri 4-6pm found but only "$1 off" relative pricing, no absolute price | 2026-09-04
+- abington_jenkintown | Jerzees | NO_CLOCK_TIME | HH mentioned only in event-space marketing copy | 2026-09-04
+- collegeville_trappe | Fitzwater Station/Stray Dog Tavern/Lock 29/Ember & Ale/Dutch Cottage Tavern | NO_CLOCK_TIME | empty sweeps | 2026-09-04
+- collegeville_trappe | Trappe Tavern | NO_CLOCK_TIME | window Mon-Fri 4-6pm found ("drink, food, and draft features") but no specific prices reachable | 2026-09-04
+- glen_mills_chadds_ford | 2 Sp Brewing/Bierhaul/Heroes Bar & Grill/Gran Rodeo | UNREACHABLE/NO_CLOCK_TIME | connection errors or empty sweeps | 2026-09-04
+- glen_mills_chadds_ford | Del Pez Mexican Gastropub | UNREACHABLE | HTTP 429 | 2026-09-04
