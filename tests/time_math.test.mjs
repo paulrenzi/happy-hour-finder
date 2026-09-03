@@ -482,3 +482,78 @@ test("a confirmation for hours nobody published matches nothing", () => {
   assert.equal(applyConfirmations(venues, { "79:happy_hour|9:00:00-01:00": { n: 9 } }), 0);
   assert.equal(deal.confidence, "likely");
 });
+
+/* ---- a day that is not today ------------------------------------------
+
+   Picking "Tomorrow" used to file 210 cards as "Live now" and 71 as "Ends
+   before you'd get there" -- both verdicts about the present, said of a day
+   that has not started. Two causes, both here: the picker anchored a future
+   day at a fixed hour and every window ENDING before that hour was read as
+   already over, and the grouper had no idea the clock it was handed was a
+   hypothetical. Nothing gated on either, so the board asserted it daily. */
+
+test("no future day can produce a verdict about the present", () => {
+  const deal = {
+    type: "happy_hour",
+    // Every day, straddling any hour a picker might anchor on.
+    windows: [1, 2, 3, 4, 5, 6, 7].map((dow) => ({ dow, start: "15:00", end: "19:00" })),
+    items: [{ category: "draft", label: "pint", price_usd: 4 }],
+    confidence: "verified",
+    last_verified_at: "2026-07-30",
+  };
+  const venues = [{ id: "1", lid: "1", name: "Anywhere", zone_id: "z",
+                    lat: 40.01, lng: -75.29, deals: [deal] }];
+  const origin = { lat: 40.0, lng: -75.3 }; // close enough that driveMin is small
+
+  for (let dayAhead = 1; dayAhead <= 6; dayAhead++) {
+    const at = new Date(FRI_5PM);
+    at.setDate(at.getDate() + dayAhead);
+    at.setHours(0, 0, 0, 0);
+    const rows = buildFeed(venues, at, { origin, planning: true, now: FRI_5PM });
+    assert.equal(rows.length, 1);
+    const g = rows[0].group;
+    assert.notEqual(g, GROUP.LIVE, `day +${dayAhead} claimed LIVE`);
+    assert.notEqual(g, GROUP.UNREACHABLE, `day +${dayAhead} claimed UNREACHABLE`);
+    assert.notEqual(g, GROUP.SOON, `day +${dayAhead} claimed SOON`);
+    assert.equal(g, GROUP.UPCOMING);
+  }
+});
+
+test("a day anchored at its first minute still shows its lunchtime windows", () => {
+  // Saturday 11:30-15:00 -- entirely before the 4pm/5pm anchors the picker
+  // used, which read it as over and rolled it forward a whole week.
+  const deal = {
+    type: "happy_hour",
+    windows: [{ dow: 6, start: "11:30", end: "15:00" }],
+    items: [],
+    confidence: "likely",
+    last_verified_at: "2026-07-30",
+  };
+  const sat = new Date(2026, 7, 1, 0, 0); // Sat 1 Aug 2026, first minute
+  assert.equal(dowOf(sat), 6); // Mon=1 .. Sun=7
+  const hit = nextOccurrence(deal, sat, 7);
+  assert.equal(hit.dayAhead, 0, "the day's own lunchtime window must be on the day");
+  assert.equal(hit.dateKey, "2026-08-01");
+
+  // The same day anchored at 5pm cannot see it at all -- it lands next week.
+  const at5 = new Date(2026, 7, 1, 17, 0);
+  assert.equal(nextOccurrence(deal, at5, 7).dayAhead, 7);
+});
+
+test("a hit names its own calendar date, so a label cannot drift with the anchor", () => {
+  const deal = {
+    type: "happy_hour",
+    windows: [{ dow: 1, start: "16:00", end: "18:00" }], // Monday
+    items: [],
+    confidence: "likely",
+    last_verified_at: "2026-07-30",
+  };
+  // dayAhead is measured from the ANCHOR, so it only means "tomorrow" when the
+  // anchor is today -- move the anchor and the same dayAhead names a different
+  // day. That is what printed "Tomorrow" over the day after tomorrow. The date
+  // is absolute and survives the move.
+  const sat = new Date(2026, 7, 1, 12, 0);
+  assert.equal(nextOccurrence(deal, sat, 7).dateKey, "2026-08-03");
+  const nextSat = new Date(2026, 7, 8, 12, 0);
+  assert.equal(nextOccurrence(deal, nextSat, 7).dateKey, "2026-08-10");
+});

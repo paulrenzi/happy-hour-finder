@@ -9,7 +9,7 @@ import {
   FILTERS, GROUP, GROUP_LABEL, buildFeed, summarizeWindows, usableMinutes,
   matchesQuery,
   haversineMiles, driveMinutes, ageDays, effectiveConfidence, applyOverlay,
-  dealKey, applyConfirmations,
+  dealKey, applyConfirmations, dateKeyOf,
 } from "./lib.js";
 
 const state = {
@@ -63,7 +63,12 @@ function arrivalTime() {
     d.setHours(0, 0, 0, 0);
     d.setMinutes(state.offset * 15);
   } else if (state.day > 0) {
-    d.setHours(16, 0, 0, 0); // a future day with no time set means "the evening"
+    /* A future day with no time set means THE WHOLE DAY, and the anchor has to
+       be its first minute. It used to be 4pm -- "the evening" -- and an anchor
+       is also a cutoff: every window that ENDS before it was read as already
+       over and rolled forward to next week. Picking Tomorrow silently hid
+       Cantwell's 11:30-3, Kirkwood's noon-4 and Copper Crow's 11:30-2:30. */
+    d.setHours(0, 0, 0, 0);
   }
   return d;
 }
@@ -147,7 +152,11 @@ function picker(sel, options, current, onPick) {
 function buildControls() {
   chipRow($("#days"), dayOptions(), (v) => state.day === v, (v) => {
     state.day = v;
-    if (v > 0 && state.offset < 0) state.offset = 68; // 5pm, a sane default for a future day
+    /* Picking a DAY is not picking a time. This forced 5pm, and an anchor is
+       also a cutoff -- so "Tomorrow" answered "what is on at 5pm tomorrow",
+       dropped every window that ends before then, and called the rest LIVE.
+       A day with no time set means the whole day; arrivalTime() anchors it. */
+    if (v > 0 && state.offset < 0) state.offset = -1;
     if (v === 0) state.offset = -1;
   });
 
@@ -282,11 +291,21 @@ async function loadZoneVenues(zoneId) {
 
 /* ---- rendering -------------------------------------------------------- */
 
-function sectionFor(row, at) {
+/* Which day a row belongs under, named against the REAL today.
+
+   This was computed from `at` plus the hit's dayAhead, and `at` moves when the
+   reader picks a day -- so with Tomorrow selected, "Tomorrow" was printed over
+   the day after tomorrow. The hit carries its own calendar date; compare that
+   to today and the label cannot drift. */
+function sectionFor(row) {
   if (row.group !== GROUP.UPCOMING) return GROUP_LABEL[row.group];
-  if (row.hit.dayAhead === 1) return "Tomorrow";
-  const d = new Date(at);
-  d.setDate(d.getDate() + row.hit.dayAhead);
+  const today = new Date();
+  const days = Math.round(
+    (new Date(row.hit.dateKey + "T00:00:00") -
+      new Date(dateKeyOf(today) + "T00:00:00")) / 86400000);
+  if (days === 0) return "Today";
+  if (days === 1) return "Tomorrow";
+  const d = new Date(row.hit.dateKey + "T00:00:00");
   return DOW_LONG[dowOf(d) - 1];
 }
 
@@ -299,9 +318,10 @@ function sectionFor(row, at) {
    to be a plan. */
 const COUNTDOWN_MINS = 180;
 
-function whenText(row) {
+function whenText(row, planning = false) {
   const { hit } = row;
-  if (hit.live) return { text: `Live until ${fmtClock(hit.w.end)}`, live: true };
+  if (hit.live && !planning) return { text: `Live until ${fmtClock(hit.w.end)}`, live: true };
+  if (planning) return { text: `${fmtClock(hit.w.start)} – ${fmtClock(hit.w.end)}` };
   if (hit.dayAhead === 0 && hit.startsIn <= COUNTDOWN_MINS) {
     return { text: `Starts in ${fmtMins(hit.startsIn)}` };
   }
@@ -880,7 +900,7 @@ function card(row, at) {
   const dist = distanceText(v, row.miles, row.driveMin);
   $(".zone", node).textContent = dist ? `${zoneName} · ${dist}` : zoneName;
 
-  const when = whenText(row);
+  const when = whenText(row, !isNow());
   const ends = $(".ends", node);
   ends.textContent = when.text;
   if (when.live) ends.classList.add("live");
@@ -889,7 +909,7 @@ function card(row, at) {
   if (row.group === GROUP.UNREACHABLE) {
     fine =
       `It ends in ${fmtMins(hit.until)} and you're about ${row.driveMin} minutes away. ` + fine;
-  } else if (hit.live && row.driveMin != null) {
+  } else if (hit.live && row.driveMin != null && isNow()) {
     const usable = usableMinutes(hit, row.driveMin);
     if (usable < 30) fine = `About ${fmtMins(usable)} of it left by the time you arrive. ` + fine;
   }
@@ -921,6 +941,9 @@ function render() {
     filter: state.filter,
     sort: state.sort,
     origin: state.origin,
+    // "Live now" and "ends before you'd get there" are claims about the
+    // present. The board only gets to make them while it IS the present.
+    planning: !isNow(),
   });
 
   const clock = at.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
@@ -978,7 +1001,7 @@ function render() {
 
   let section = null;
   for (const row of dealRows) {
-    const want = sectionFor(row, at);
+    const want = sectionFor(row);
     if (want !== section) feed.append(el("p", "sec", (section = want)));
     feed.append(card(row, at));
   }

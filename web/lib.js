@@ -177,20 +177,31 @@ export function nextOccurrence(deal, from, horizonDays = 7) {
     const day = new Date(from);
     day.setDate(day.getDate() + dayAhead);
     const dow = dowOf(day);
+    /* The CALENDAR DATE this occurrence falls on, carried on the hit itself.
+       `dayAhead` is measured from the anchor, and the anchor moves when the
+       reader picks a day -- so reading "tomorrow" off dayAhead labelled the day
+       AFTER the one they picked. A date cannot drift; every label is derived
+       from it against the real today. */
+    const dateKey = `${day.getFullYear()}-${String(day.getMonth() + 1).padStart(2, "0")}-${String(day.getDate()).padStart(2, "0")}`;
     let best = null;
     for (const w of deal.windows) {
       if (w.dow !== dow) continue;
       const s = mins(w.start), e = mins(w.end);
       if (dayAhead === 0) {
         if (startMinutes >= e) continue; // already over today
-        if (startMinutes >= s) return { w, live: true, until: e - startMinutes, startsIn: 0, dayAhead };
+        if (startMinutes >= s) return { w, live: true, until: e - startMinutes, startsIn: 0, dayAhead, dateKey };
       }
       const startsIn = dayAhead * 1440 + s - startMinutes;
-      if (!best || startsIn < best.startsIn) best = { w, live: false, until: startsIn, startsIn, dayAhead };
+      if (!best || startsIn < best.startsIn) best = { w, live: false, until: startsIn, startsIn, dayAhead, dateKey };
     }
     if (best) return best;
   }
   return null;
+}
+
+/* Today's date key, for comparing against a hit's. */
+export function dateKeyOf(d) {
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
 }
 
 /* ---- freshness -------------------------------------------------------- */
@@ -248,8 +259,20 @@ const CONFIDENCE_PENALTY = { verified: 0, likely: 3, unconfirmed: 9, disputed: 9
    -- which is what "urgency" naively means -- puts the deal you have the least
    chance of reaching at the very top of the screen. A deal ending in 8 minutes
    25 minutes away is not the best answer to "where can I go right now", it is
-   the worst one. Without a location we cannot know, so we never claim it. */
-export function groupFor(hit, driveMin) {
+   the worst one. Without a location we cannot know, so we never claim it.
+
+   `planning` is true whenever the reader is looking at anything other than the
+   present. "Live now" and "Ends before you'd get there" are claims ABOUT THE
+   PRESENT and are false of any other moment -- picking Tomorrow used to file
+   210 cards as live and 71 as unreachable, both of a day that has not started.
+   Nothing is live on a future day and nothing can be missed by driving to it,
+   so planning collapses those three groups into "when is it on". */
+export function groupFor(hit, driveMin, { planning = false, today = null } = {}) {
+  if (planning) {
+    return today && hit.dateKey && hit.dateKey !== today
+      ? GROUP.UPCOMING
+      : GROUP.LATER;
+  }
   if (hit.live) {
     if (driveMin != null && hit.until <= driveMin) return GROUP.UNREACHABLE;
     return GROUP.LIVE;
@@ -376,7 +399,8 @@ export function matchesQuery(venue, query) {
   return q.split(" ").every((word) => name.includes(tight(word)));
 }
 
-export function buildFeed(venues, at, { zone = null, filter = "all", sort = "soonest", origin = null, horizonDays = 7, query = "" } = {}) {
+export function buildFeed(venues, at, { zone = null, filter = "all", sort = "soonest", origin = null, horizonDays = 7, query = "", planning = false, now = null } = {}) {
+  const today = dateKeyOf(now || new Date());
   const test = (FILTERS[filter] || FILTERS.all).test;
   const q = normalizeName(query);
   const rows = [];
@@ -419,7 +443,7 @@ export function buildFeed(venues, at, { zone = null, filter = "all", sort = "soo
         v, deal, hit, miles, driveMin, hasOrigin: origin != null,
         confidence,
         ageDays: ageDays(deal, at),
-        group: groupFor(hit, driveMin),
+        group: groupFor(hit, driveMin, { planning, today }),
       });
     }
   }
