@@ -14,18 +14,63 @@ credentials with anything else on this machine.
 
 ---
 
-## Where it stands (2026-09-03, evening)
+## Where it stands (2026-09-03, night)
 
 | | |
 |---|---|
 | zones (named drinking districts) | 44 |
-| licensed venues known — the denominator | 3,415 |
-| …with a website we know of | 1,778 |
-| …crawled | 1,585 |
-| **on the board with a published happy-hour window** | **332** |
-| …carrying items you can actually order | 234 venues, 1,509 items |
-| …with an hour but **no items** — the open gap | **98** |
-| published windows that contradict their own evidence | **0 of 351** |
+| licensed venues known — the denominator | 3,412 |
+| **on the board with a published happy-hour window** | **333** |
+| deals across those venues | 352 |
+| published windows that fail their own quote check | **0 of 352** |
+| verified items read but stranded (no window, no card) | 20, across 3 venues |
+
+**Read that table in two halves.** What we publish is checked: every window and
+every price has to appear in a sentence on the venue's own page, and the test
+suite re-checks every published deal against the quote it came from on every
+run (`tests/window_quote_check.py`). What we *don't* publish is not checked at
+all — nobody has measured how many real happy hours the pipeline walks past.
+Every miss found so far was found by a person, not by a run.
+**Trust the cards. Do not trust the silence.**
+
+### DE/wilmington-area push, 2026-09-03 — done
+
+Wilmington, Newark DE, New Castle DE, and West Chester all got a hand-read pass:
+**+27 venues Wilmington** (15 then +12), **+18 Newark/New Castle DE** (11 then
++12 more, split across the two zones), **+16 West Chester** (8 then +8 more —
+7 short of the +15 stretch goal; the rest hit genuine "no clock time anywhere
+in the venue's own words" walls, not a tooling gap). All four zones confirmed
+live via `tests/live_front_door.py` after the push. Full ladder and the
+architecture behind it: see the handoff below.
+
+### The open problem, and how it is now worked: something reads each venue
+
+For 33 days a regex crawler plus fourteen hand-run commands tried to close the
+"has an hour, no items" gap and moved it by single digits. The fix was never a
+better parser — it was **letting something that understands a page open the
+page**, the way a person does: fetch it, follow the Happy Hour link, download
+the PDF or the picture, look at it.
+
+Two lanes now do that, and the difference between them matters:
+
+- **`ingest/agent_read_venue.py`** — a model session per venue, unattended.
+  Cheap and scalable; on the towns measured it returned an item on **8%** of
+  the venues it read, and its output is **items only**. A venue with no
+  deterministic window has no `deal` object for these items to attach to, so
+  they strand silently unless a hand read rescues them (see below).
+- **A hand read** — a session opens the site itself (or the PDF, or the
+  Instagram) and writes one record straight into `data/agent_handread.json`.
+  Slow, but it carries the **window as well as the items**, so it can publish
+  a venue no crawler ever parsed hours for. It can also carry **only** a
+  window (omit `items`) to adopt items already banked in `data/deals_agent.json`
+  for that venue — the rescue mechanism for agent-lane items stranded above.
+
+The code keeps the jobs it's good at either way: every price must be found
+character-for-character in the source the read cites, the PA and Delaware
+validators run, and a person reviews before anything ships.
+
+Current state and what to do next:
+[`HANDOFF-START-HERE-20260903-NIGHT-PA-NON-PHILLY-UNDER-10.md`](HANDOFF-START-HERE-20260903-NIGHT-PA-NON-PHILLY-UNDER-10.md).
 
 **Read that table in two halves.** What we publish is checked: every window and
 every price has to appear in a sentence on the venue's own page, and the test
@@ -34,33 +79,6 @@ suite re-checks all 333 against the quote they came from on every run
 nobody has ever measured how many real happy hours the pipeline walks past.
 Every miss found so far was found by a person, not by a run.
 **Trust the cards. Do not trust the silence.**
-
-### The open problem, and how it is now worked: something reads each venue
-
-**98** venues publish an hour and no items. For 33 days a regex crawler plus
-fourteen hand-run commands tried to close that gap and moved it by single
-digits. The fix was never a better parser — it was **letting something that
-understands a page open the page**, the way a person does: fetch it, follow the
-Happy Hour link, download the PDF or the picture, look at it.
-
-Two lanes now do that, and the difference between them matters:
-
-- **`ingest/agent_read_venue.py`** — a model session per venue, unattended.
-  Cheap and scalable; on the towns measured it returned an item on **8%** of
-  the venues it read, and its output is **items only**.
-- **A hand read** — the session itself opens the site and writes one record
-  into `data/agent_handread.json`. Slow, but it carries the **window as well as
-  the items**, so it can publish a venue no crawler ever parsed hours for.
-  28 venues, 203 items, landed this way on 2026-09-03.
-
-The code keeps the jobs code is good at either way: every price must be found
-character-for-character in the source the read cites, the PA and Delaware
-validators run, and a person reviews before anything ships.
-
-Current state and what to do next:
-[`HANDOFF-START-HERE-20260904-HAND-READS-PUBLISH.md`](HANDOFF-START-HERE-20260904-HAND-READS-PUBLISH.md).
-
----
 
 ## How it works
 

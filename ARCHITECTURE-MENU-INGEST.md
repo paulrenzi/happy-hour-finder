@@ -2475,6 +2475,43 @@ inside it second.
 the defect only shows to a reader who granted one. **A gate must reproduce the
 reader's conditions**, or it watches the defect go past.
 
+## ✅🔑🔑 THE HAND-READ LANE — a read that carries the window, not just the items (2026-09-03/04)
+
+The item lane below (`agent_read_venue.py`) is a **sidecar**: it returns items
+only, and a sidecar can only fill a `deal` some deterministic pass already
+built from a **window**. A venue no crawler ever parsed hours for gets nothing
+from it — proven on Lefty's Alley & Eats, which read 10 items off its own PDF
+and published zero of them.
+
+`data/agent_handread.json` is the fix: a **person**, not a model session,
+opens the venue's site/PDF/Instagram directly and writes one record with its
+own `days`/`start`/`end` (or `windows` for irregular days) **and** `items`.
+`ingest/build_agent_venues.py` turns that into `data/deals_agent_venues.json`
+— a whole venue row, not a sidecar — which `build_bundles.py` merges at
+**rank 2** (above every machine pass, below a person's seed and an approved
+photo). **Omit `items` from a record** and the venue adopts whatever's already
+banked in `data/deals_agent.json` for that lid — this is how a sidecar-lane
+read gets rescued instead of re-bought.
+
+Two nights, 61 venues live this way: Wilmington +27, Newark/New Castle DE +18,
+West Chester +16 (2026-09-03/04, worktree `hhf-menus30`). The discovery
+ladder used per venue (`sweep_site.py` → guessed Popmenu URL → PDF via
+`pdf_to_png.py` → posted menu image → targeted web search → Instagram) and
+the current per-zone entry counts for the next push are in
+`HANDOFF-START-HERE-20260903-NIGHT-PA-NON-PHILLY-UNDER-10.md`.
+
+🔑 **`sweep_site.py` can return a thin/truncated snippet on a JS-rendered site**
+(Next.js, React) even when the full menu is on the page — a raw
+`urllib.request` fetch of the same URL found Slow Hand's whole happy-hour
+menu embedded as JSON where `sweep_site.py` returned almost nothing. Prefer a
+raw fetch over `sweep_site.py` when a site is plainly JS-rendered and the
+snippet looks thin.
+
+🛑 **`agent_read_venue.py` (below) is still a sidecar and still strands two
+thirds of what it reads.** Making it emit an `agent_handread`-shaped record
+(window + items, not items alone) remains the highest-leverage change left in
+that lane — not done this session, still open.
+
 ## 🤖🔑🔑 THE AGENT IS THE SCRAPER — the item lane, and how to debug it (2026-09-03)
 
 Paul, 2026-09-03: *"you are trying to build a scraper, and we need an ai agent
