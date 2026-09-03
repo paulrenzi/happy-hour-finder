@@ -14,92 +14,18 @@ credentials with anything else on this machine.
 
 ---
 
-## Where it stands (2026-09-03, night — confirmed live)
+## Where it stands (2026-09-03)
 
 | | |
 |---|---|
-| zones (named drinking districts) | 48 |
-| **on the board with a published happy-hour window** | **353 venues, 368 deals** |
-| known **thin reads** — live deal with under 5 items, needs a re-scrape (Paul's rule, 2026-09-03) | **~146 venues, `data/RESCRAPE-QUEUE.json`** |
-| board photo coverage | **351 of 351 (100%)** |
-
-## Publishing a branch's work — the step that was silently skipped once
-
-Only `master` deploys (the `pages` GitHub Action triggers on push to `master`
-only). Work done on any other branch — `menus30` included — **is not live no
-matter how many commits it has**, and nothing in CI will tell you that. Before
-calling a round of hand-reads done:
-
-```sh
-git worktree add /tmp/wt-deploy master   # never touch a shared checkout
-cd /tmp/wt-deploy
-git merge --ff-only origin/master        # catch up first
-git merge --ff-only <your-branch>        # should be a clean fast-forward
-bash tests/run.sh                        # must be 0 fail
-python ingest/build_bundles.py           # then diff web/data, ignoring "built_at" —
-                                          # any other diff means it's stale, don't push
-git push origin master
-gh run list --branch master --limit 1    # watch it reach "completed success"
-curl https://paulrenzi.github.io/happy-hour-finder/data/zone-<zone>.json
-   # and read the actual bytes — a green Action is not proof the JSON changed
-```
-Then remove the worktree (`git worktree remove /tmp/wt-deploy --force`).
-**A round isn't finished at the commit. It's finished when you've read the
-live JSON yourself.**
-
-**Read that table in two halves.** What we publish is checked: every window and
-every price has to appear in a sentence on the venue's own page, and the test
-suite re-checks every published deal against the quote it came from on every
-run (`tests/window_quote_check.py`). What we *don't* publish is not checked at
-all — nobody has measured how many real happy hours the pipeline walks past,
-**and a venue that IS published is not automatically fully read either** — see
-the thin-read row above and
-[`ARCHITECTURE-MENU-INGEST.md`](ARCHITECTURE-MENU-INGEST.md)'s "A SHIPPED
-HAND-READ CAN STILL BE A THIN READ" section. Every miss found so far was found
-by a person, not by a run.
-**Trust the cards. Do not trust the silence — and don't trust a card's
-completeness just because it's live.**
-
-### DE/wilmington-area push, 2026-09-03 — done
-
-Wilmington, Newark DE, New Castle DE, and West Chester all got a hand-read pass:
-**+27 venues Wilmington** (15 then +12), **+18 Newark/New Castle DE** (11 then
-+12 more, split across the two zones), **+16 West Chester** (8 then +8 more —
-7 short of the +15 stretch goal; the rest hit genuine "no clock time anywhere
-in the venue's own words" walls, not a tooling gap). All four zones confirmed
-live via `tests/live_front_door.py` after the push. Full ladder and the
-architecture behind it: see the handoff below.
-
-### The open problem, and how it is now worked: something reads each venue
-
-For 33 days a regex crawler plus fourteen hand-run commands tried to close the
-"has an hour, no items" gap and moved it by single digits. The fix was never a
-better parser — it was **letting something that understands a page open the
-page**, the way a person does: fetch it, follow the Happy Hour link, download
-the PDF or the picture, look at it.
-
-Two lanes now do that, and the difference between them matters:
-
-- **`ingest/agent_read_venue.py`** — a model session per venue, unattended.
-  Cheap and scalable; on the towns measured it returned an item on **8%** of
-  the venues it read, and its output is **items only**. A venue with no
-  deterministic window has no `deal` object for these items to attach to, so
-  they strand silently unless a hand read rescues them (see below).
-- **A hand read** — a session opens the site itself (or the PDF, or the
-  Instagram) and writes one record straight into `data/agent_handread.json`.
-  Slow, but it carries the **window as well as the items**, so it can publish
-  a venue no crawler ever parsed hours for. It can also carry **only** a
-  window (omit `items`) to adopt items already banked in `data/deals_agent.json`
-  for that venue — the rescue mechanism for agent-lane items stranded above.
-
-The code keeps the jobs it's good at either way: every price must be found
-character-for-character in the source the read cites, the PA and Delaware
-validators run, and a person reviews before anything ships.
-
-Current state and what to do next:
-[`HANDOFF-START-HERE-20260903-NIGHT-THIN-READS-AND-NEW-TOWNS.md`](HANDOFF-START-HERE-20260903-NIGHT-THIN-READS-AND-NEW-TOWNS.md)
-(supersedes the PA-non-Philly handoff below it for "where to pick up" — that
-doc's ladder/schema still stand).
+| zones (named drinking districts) | 44 |
+| licensed venues known — the denominator | 3,415 |
+| …with a website we know of | 1,778 |
+| …crawled | 1,585 |
+| **on the board with a published happy-hour window** | **315** |
+| …carrying items you can actually order | 204 venues, 1,271 items |
+| …with an hour but **no items** — the open gap | **111** |
+| published windows that contradict their own evidence | **0 of 334** |
 
 **Read that table in two halves.** What we publish is checked: every window and
 every price has to appear in a sentence on the venue's own page, and the test
@@ -108,6 +34,24 @@ suite re-checks all 333 against the quote they came from on every run
 nobody has ever measured how many real happy hours the pipeline walks past.
 Every miss found so far was found by a person, not by a run.
 **Trust the cards. Do not trust the silence.**
+
+### The open problem, and how it is now worked: the agent reads each venue
+
+**111** venues publish an hour and no items. For 33 days a regex crawler plus
+fourteen hand-run commands tried to close that gap and moved it by single
+digits. On 2026-09-03 the approach changed: **an AI agent hand-reads each
+venue**, the way a person does. One model session per venue, with only the
+tools a person uses (fetch a page, follow the Happy Hour link, download the
+PDF or picture, look at it). The code keeps the jobs code is good at: every
+price must be found character-for-character in the agent's own transcript, the
+PA and Delaware validators run, and a person reviews before anything ships.
+
+Proven on one venue so far: The Greene Turtle, Christiana, went from no card
+to 26 live items in six turns and 34 cents. The next step is one whole town
+(`newark_de`), then the human minute on the result. See
+[`HANDOFF-START-HERE-20260903-THE-AGENT-IS-THE-SCRAPER.md`](HANDOFF-START-HERE-20260903-THE-AGENT-IS-THE-SCRAPER.md).
+
+---
 
 ## How it works
 
@@ -118,8 +62,7 @@ data/venue_base.json    3,415 licensees, the denominator (regenerate, don't edit
    ↓ ingest/discover_places.py  find each venue's website        ← the paid step
    ↓ ingest/build_venue_base.py carry those websites onto the board
    ↓ ingest/crawl_sites.py      robots-honouring crawl → data/crawl_hits.json  (the WINDOW)
-   ↓ ingest/agent_read_venue.py an agent reads each venue's menu → data/deals_agent.json  (the ITEMS)
-   ↓ ingest/build_agent_venues.py a hand read → data/deals_agent_venues.json  (WINDOW *and* items)
+   ↓ ingest/agent_read_venue.py an agent hand-reads each venue's menu → data/deals_agent.json  (the ITEMS)
    ↓ ingest/validate_pa.py      PA Acts 57 & 86 of 2024 — a failing deal never ships
    ↓ ingest/build_bundles.py    → web/data/zone-*.json  (and restamps web/sw.js)
    ↓ git push → GitHub Actions → live site
@@ -169,32 +112,11 @@ Cost is real and recorded per venue in `data/agent_reads.json`. Budget roughly
 $0.35 and a minute for a venue with a menu to read; a venue with nothing costs
 less, and one that wanders a chain site can cost more.
 
-⚠️ **The stranding gap, and the way out.** `agent_read_venue.py` writes into a
-**sidecar** (`data/deals_agent.json`), and a sidecar can only fill items into a
-deal some earlier pass already built. A venue with no crawled **window** has no
-deal row, so its paid-for items strand — silently, no error. Two thirds of the
-lane's reads stranded this way.
-
-**A hand read is the way out, because it carries the window too.** Write one
-record per venue into [`data/agent_handread.json`](data/agent_handread.json):
-
-```json
-{"lid": "DE608516193f",
- "url": "https://the-venue-s-own-page",
- "read_on": "2026-09-03",
- "quote": "the venue's own words, verbatim, containing the hours and the prices",
- "days": [1,2,3,4,5], "start": "16:30", "end": "17:30",
- "items": [{"category": "draft", "label": "Draft beer", "amount_off_usd": 1.0}]}
-```
-
-Then `python ingest/build_agent_venues.py && python ingest/build_bundles.py`.
-That builds a **whole venue row** — nothing needs to already exist — and it
-enters the merge at rank 2, above every machine pass and below a person's seed
-and an approved photo. Omit `items` and it picks up whatever the agent lane
-already banked for that licence, which is how stranded items get rescued.
-Use `windows` instead of `days`/`start`/`end` for a venue whose happy hour runs
-from open (a different clock each day). Never edit
-`data/deals_agent_venues.json` — it is generated.
+⚠️ **Known gap (2026-09-03):** the agent's items only reach a card if the venue
+already has a **window** from the deterministic lane — `build_bundles.py` hangs
+items on an existing deal, so a venue with no window strands them with no error.
+Whether such a venue may publish the agent's items, or its window, is an open
+call. Check the built bundle, not the lane's own summary.
 
 The older window lane (`crawl_sites.py` → `extract_deals.py`) still runs when
 a town needs its hours found; its full recipe is in
@@ -286,6 +208,24 @@ complains, look for a silent drop first.
 6. No paid placement in the "right now" feed, ever.
 7. No login to browse, no login to submit a photo.
 
+## Submitting a photo, and how it reaches the board
+
+The submission form takes **multiple photos in one go** (file input allows
+`multiple`) — each one is sent to the Worker as its own separate `/submit`
+call, one after another. There is no multi-photo grouping on the server; each
+photo is just its own row, reviewed and approved independently.
+
+An approved photo's deal shows up on the live site almost immediately through
+a fast overlay (`/live/deals.json`), but that is **not** the permanent copy.
+Baking it in for good — so it survives the next full rebuild — is a **manual
+step**: `python ingest/sync_approved.py` then `python ingest/build_bundles.py`,
+then publish. Nothing runs this on a schedule.
+
+The board shows **one row per venue per deal type**. Two deals at the same bar
+of the *same* kind (e.g. two food specials) merge into one row with all their
+items listed together. Two deals of *different* kinds still show as one row
+with the rest held back (not currently surfaced in the UI).
+
 ## Traps that have each cost a session
 
 - **A `web/` edit ships nothing until `build_bundles.py` restamps `web/sw.js`.**
@@ -323,4 +263,4 @@ deliberately no map.
   session each. The one to read before changing ingest.
 - **[SPEC.md](SPEC.md)** — what a deal is, and the eight categories.
 - **`HANDOFF-START-HERE-*.md`** — session notes, newest wins. The current one is
-  [`HANDOFF-START-HERE-20260903-NIGHT-NON-PHILLY-VENUES-CONFIRMED-LIVE.md`](HANDOFF-START-HERE-20260903-NIGHT-NON-PHILLY-VENUES-CONFIRMED-LIVE.md).
+  [`HANDOFF-START-HERE-20260903-THE-AGENT-IS-THE-SCRAPER.md`](HANDOFF-START-HERE-20260903-THE-AGENT-IS-THE-SCRAPER.md).

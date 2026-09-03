@@ -408,6 +408,30 @@ venues**. The only deal correctly lost was Desmond Hotel Malvern.
 
 ## Findings that cost a session each — do not re-learn these
 
+**🔑 A reported "second photo overwrote the first" — check in this order, not
+data-loss-first (2026-09-03).** When a submitter reports that a newer photo
+seems to have replaced or hidden an older one on the board:
+
+1. **Check for actual data loss first, and expect none.** Read `data/deals_photo.json`
+   (or `GET /live/deals.json` if it's fresh) for the venue's `lid` — both deals
+   are almost always still there, untouched by `merge`/`superseded()`.
+2. **Then check the board collapse/merge logic in `web/lib.js`.** Same-venue
+   deals of the same `kind` merge into one row (concatenated items) as of
+   2026-09-03; different-type deals still collapse into `held.others`, which
+   the UI does not surface. A venue with two visually distinct deals of the
+   same type used to show only one before the merge fix — that reads exactly
+   like "overwritten" from the board even though nothing was lost.
+3. **Only then suspect the sync step.** `data/deals_photo.json` is not updated
+   automatically — `ingest/sync_approved.py` + `ingest/build_bundles.py` must
+   be run by hand before an admin-approved photo's items reach the permanent
+   bundle. If sync hasn't run, the *board* legitimately doesn't have the new
+   data yet (it may still be visible on the fast `/live/deals.json` overlay);
+   that is a manual-step gap, not a data bug.
+
+Do not open by assuming corruption or a lossy merge — in the one incident this
+covers (Kooma, 2026-09-03), steps 1 and 3 both came back clean and the actual
+cause was step 2, a silent-collapse UI bug, not any data or merge defect.
+
 **The page budget was not the constraint, and we assumed it was for two
 sessions (2026-09-01).** The suspicion was that `PAGE_CAP = 4` was starving the
 crawl — the log looked damning, with Maggiano's spending its four fetches on
@@ -558,17 +582,6 @@ failed patch: `\b` was written into `DENIAL_RE` as a literal **backspace byte**
 matched. It shipped, and only a unit test asserting the *match* caught it.
 `assert old in s` on a raw-string source will also fail for the same reason.
 **Use the editor tool, or a script file on disk. Not a heredoc.**
-
-**An apostrophe in the payload breaks a quoted heredoc too — not just
-backslashes.** 2026-09-04: a `python3 << 'PYEOF' ... PYEOF` block whose Python
-strings contained plain English apostrophes (`"Tony's Boneless Wings"`) failed
-with `unexpected EOF while looking for matching '` before Python ever ran —
-the shell tool's own outer quoting collides with a single quote anywhere in
-the heredoc body, even though the heredoc delimiter itself was quoted. The
-fix that worked: write the script to a `.py` file with the Write/Edit tool,
-then `python that_file.py`. **Any hand-read item label likely to contain an
-apostrophe (a menu item's own name, a possessive venue name) means: don't
-build the updater as a bash heredoc at all — write it to disk.**
 
 ---
 
@@ -1147,6 +1160,12 @@ All three had been right for exactly as long as every card carried one deal.
    item gate moved with it: a card paints ONE of a venue's deals, so it can no
    longer name which, and instead asserts that every painted label is one the
    venue ships and that a venue whose deals ALL carry items never paints blank.
+   🔑 **Corrected 2026-09-03** — see "THE BOARD COLLAPSE HID A SECOND DEAL" below:
+   "one row per bar" turned out to mean *silently dropping* a second same-type
+   deal behind an unread counter, not just picking a display winner. Same-venue,
+   same-type deals now MERGE into one row (concatenated items) instead of one
+   being hidden. Only genuinely different-type deals at the same venue still
+   collapse behind `held.others`.
 
 🔑 And outranking the extractor **loses its sidecars**: Bistro on Bridge went
 26 items → 6 on the first build, the same prices verified against the same page,
@@ -2486,134 +2505,6 @@ inside it second.
 the defect only shows to a reader who granted one. **A gate must reproduce the
 reader's conditions**, or it watches the defect go past.
 
-## ✅🔑🔑 THE HAND-READ LANE — a read that carries the window, not just the items (2026-09-03/04)
-
-The item lane below (`agent_read_venue.py`) is a **sidecar**: it returns items
-only, and a sidecar can only fill a `deal` some deterministic pass already
-built from a **window**. A venue no crawler ever parsed hours for gets nothing
-from it — proven on Lefty's Alley & Eats, which read 10 items off its own PDF
-and published zero of them.
-
-`data/agent_handread.json` is the fix: a **person**, not a model session,
-opens the venue's site/PDF/Instagram directly and writes one record with its
-own `days`/`start`/`end` (or `windows` for irregular days) **and** `items`.
-`ingest/build_agent_venues.py` turns that into `data/deals_agent_venues.json`
-— a whole venue row, not a sidecar — which `build_bundles.py` merges at
-**rank 2** (above every machine pass, below a person's seed and an approved
-photo). **Omit `items` from a record** and the venue adopts whatever's already
-banked in `data/deals_agent.json` for that lid — this is how a sidecar-lane
-read gets rescued instead of re-bought.
-
-Two nights, 61 venues live this way: Wilmington +27, Newark/New Castle DE +18,
-West Chester +16 (2026-09-03/04, worktree `hhf-menus30`). The discovery
-ladder used per venue (`sweep_site.py` → guessed Popmenu URL → PDF via
-`pdf_to_png.py` → posted menu image → targeted web search → Instagram) and
-the current per-zone entry counts for the next push are in
-`HANDOFF-START-HERE-20260903-NIGHT-PA-NON-PHILLY-UNDER-10.md`.
-
-🔑 **`sweep_site.py` can return a thin/truncated snippet on a JS-rendered site**
-(Next.js, React) even when the full menu is on the page — a raw
-`urllib.request` fetch of the same URL found Slow Hand's whole happy-hour
-menu embedded as JSON where `sweep_site.py` returned almost nothing. Prefer a
-raw fetch over `sweep_site.py` when a site is plainly JS-rendered and the
-snippet looks thin.
-
-🛑 **`agent_read_venue.py` (below) is still a sidecar and still strands two
-thirds of what it reads.** Making it emit an `agent_handread`-shaped record
-(window + items, not items alone) remains the highest-leverage change left in
-that lane — not done this session, still open.
-
-**2026-09-03, night 2 — the sidecar-merge fix from earlier the same night
-(`c4bf6f0`, `ba54e20`) confirmed live at scale, not just on the 4 proof
-venues.** A `--force --lids <file>` re-read pass against 56 thin
-(`RESCRAPE-QUEUE.json`, <5 items) venues across wilmington, phoenixville,
-west_chester, newark_de, exton_downingtown (26/56 returned items) shipped
-+197 net items with zero further merge-logic surprises — the fixed
-`richer = len(extra) > len(existing)` override and the "pick whichever
-sidecar has more items" fix both held up across a real multi-zone batch. The
-stranding gap named above is still real and separate: this same
-`build_bundles.py` run reported 3 venues / 20 items read-and-never-published
-(no crawled window to attach to) — small next to 197 shipped, but the fix is
-still "make `agent_read_venue.py` write an `agent_handread`-shaped record,"
-not yet done.
-
-**Practical note for the next thin-venue round:** `--tier`/`--needy` selects
-venues with *zero* items, so it does not see `RESCRAPE-QUEUE.json`'s <5-item
-population at all. Re-reading a queue entry needs `--lids <file-of-lids>
---force`, not `--tier`/`--needy` — build the lids file straight from
-`RESCRAPE-QUEUE.json`'s `venues[].lid`, filtered to the target zone(s).
-
-## 🚨🔑🔑 A "SHIPPED" HAND-READ CAN STILL BE A THIN READ — RULE: UNDER 5 ITEMS ⇒ RE-SCRAPE (2026-09-03, night)
-
-Paul, verbatim, pointed at two live venues:
-`https://www.limoncellorestaurant.com/happy-hour-menu` (Limoncello, lid
-`59213`, `west_chester` — live with ONE item, "Pizza or Flatbread $20") and
-`https://libertyunionbar.com/chester-springs/specials/happy-hour/` (Liberty
-Union Bar and Grill, lid `65626`, `exton_downingtown` — live with ONE item).
-Both pages almost certainly carry a fuller happy-hour menu than what's
-published; the read that shipped each one stopped after finding one price
-instead of reading the whole menu.
-
-**🔑 THE RULE, Paul's words: if a listing has under 5 happy-hour items, treat
-it as needing a re-scrape.** This applies across every lane that claims
-items, not just the hand-read lane — `auto_extract`, `agent_read`,
-`menu_read_llm`, `staff`, `roundup_extract` alike. A venue whose deal has ZERO
-items (a window-only claim, mostly `auto_extract` by design) is a different,
-already-known gap — this rule is about a deal that DID claim items and
-stopped short of 5.
-
-Board-wide count under this rule, tonight:
-
-```
-{'auto_extract': 79, 'agent_read': 44, 'menu_read_llm': 21, 'staff': 5, 'roundup_extract': 6}
-```
-**146 distinct venues** carry at least one deal with 1-4 items. That is the
-real backlog — not the 11 first found by hand, not the 28 found on the second
-pass restricted to `agent_read`/`menu_read_llm`. Every session touching the
-hand-read lane should re-run the audit below and work this list, not assume
-it's closed because an earlier session's smaller count got cleared.
-
-🛑 **This breaks the log's own dedup assumption.** `data/HAND-READ-LOG.md`
-marks a venue `SHIPPED` once it publishes, and every session (correctly) treats
-`SHIPPED` as "don't re-research this venue." But `SHIPPED` only ever meant "a
-window and at least one item are live" — never "the full menu was read, or at
-least 5 items." A venue can be `SHIPPED` in the log and still fail this rule,
-and nothing before tonight would ever revisit it.
-
-**The fix going forward:** any live deal with 1-4 items is not a closed venue,
-it's a re-scrape candidate. Re-reading it means going back to the venue's own
-URL (or re-running the ladder if that URL is gone) with instructions to
-capture *every* item on the happy-hour menu, not stop once the count clears
-whatever threshold felt "enough" — then overwrite the existing
-`data/agent_handread.json` record for that lid with the fuller one
-(`build_agent_venues.py`/`build_bundles.py` already take the latest record per
-lid, no special flag needed; a venue sourced from a non-hand-read lane
-(`auto_extract`/`staff`/`roundup_extract`) that needs a re-scrape gets a new
-`agent_handread.json` record the same way, which will out-rank the thin one at
-build time). Log every re-read as its own `HAND-READ-LOG.md` line
-(`RESULT=RESHIPPED`, note the before/after item count).
-
-**Audit snippet** (item-count by verified_by, and the list of every venue under
-the 5-item bar) — run this at the start of any session that touches the
-hand-read lane, before trusting a prior session's smaller thin-read count as
-current:
-
-```python
-import json, glob
-counts, lids = {}, set()
-for f in sorted(glob.glob('web/data/zone-*.json')):
-    z = f.split('zone-')[1].split('.json')[0]
-    d = json.load(open(f, encoding='utf-8'))
-    for v in d['venues']:
-        for deal in v.get('deals', []):
-            n = len(deal.get('items', []))
-            if 0 < n < 5:
-                counts[deal.get('verified_by', '?')] = counts.get(deal.get('verified_by', '?'), 0) + 1
-                lids.add(v.get('lid'))
-                print(z, v['name'], v.get('lid'), deal.get('verified_by'), n, deal.get('source', {}).get('url'))
-print(counts, 'distinct venues:', len(lids))
-```
-
 ## 🤖🔑🔑 THE AGENT IS THE SCRAPER — the item lane, and how to debug it (2026-09-03)
 
 Paul, 2026-09-03: *"you are trying to build a scraper, and we need an ai agent
@@ -2797,153 +2688,72 @@ One venue. Next: `--zone newark_de` (nine other captured images sit unread
 there), then the one human minute on the result. Untested: what the agent does
 on a JS shell (McGlynn's class) where WebFetch returns chrome; it has curl.
 
----
+## 📸 MULTI-PHOTO SUBMISSION — client-only, one `/submit` call per photo (2026-09-03)
 
-## 🖐️🔑🔑 A SIDECAR CANNOT PUBLISH A VENUE — the hand read carries the WINDOW (2026-09-03, evening)
+The submission form's `<input type="file">` now takes `multiple`. Nothing on
+the server or in D1 changed — the schema is still **one photo per row**.
+`web/app.js`'s `photoLane(files)` loops the selected files and fires one
+sequential `POST ${SUBMIT_API}/submit` per photo (see `web/app.js` around
+`photoLane`, and its call site near `if (files.length) photoLane(files);`).
+The Worker (`worker/index.js`) has no notion of "these N photos are one
+submission" — each lands as an independent row with its own `id`, exactly as
+if it had been submitted in N separate visits. If a future defect looks like
+"the second photo overwrote the first," start here: it did not overwrite
+anything server-side, it created a second row.
 
-**30 menus were asked for. 28 landed: Wilmington 15, Newark 5, West Chester 8.**
-All 28 arrived by hand, not through `agent_read_venue.py`. What follows is what
-that cost bought, so nobody pays for it twice.
+## 🖥️🔑🔑 THE BOARD COLLAPSE HID A SECOND DEAL — merge, not collapse (2026-09-03)
 
-### The defect it exposed, and the fix
+A reader reported that Kooma's second menu photo "overwrote" the drinks menu
+on the board. It had not: both deals were in `data/deals_photo.json` and both
+survived the merge/`superseded()` logic untouched. The actual cause was the
+**"ONE ROW PER BAR" board collapse** shipped 2026-09-02 (see the entry above,
+now corrected) — `web/lib.js` was picking one deal per venue to paint and
+folding every other same-venue deal into a `held.others` count that nothing
+in `app.js` ever read or displayed. So Kooma's drinks deal was still fully
+present in the data and completely invisible on the board — a silent-drop
+shape, not data loss.
 
-Every enrichment source in `build_bundles.py` before today was a **sidecar**:
-`deals_prices_llm`, `deals_menu_images`, `deals_agent`, `deals_pages_llm`. A
-sidecar carries items and nothing else, and the merge can only *fill items into
-a deal that already exists*. A deal only exists if some deterministic pass
-parsed a **window** off the venue's pages.
+**The fix (`web/lib.js`):** deals at the same venue with the same `kind`/type
+now MERGE into a single board row — their `items` arrays are concatenated —
+instead of one being chosen and the rest discarded. Deals of a genuinely
+different type at the same venue still collapse behind `held.others` (that
+counter still isn't surfaced in the UI; a venue sheet still lists every deal).
+So: same-venue + same-type → one merged row with everything on it. Same-venue
++ different-type → still one visible row, others held (uncounted in the UI).
 
-So a venue whose hours no crawler ever read has nowhere to put its items, and
-they vanish with **no error and no log line**. That is how 52 paid-for items sat
-unpublished in `data/deals_agent.json` — and two thirds of every read the agent
-lane bought went the same way.
+🔑 **Baked in permanently by running the normal sync path**, not a one-off
+patch: `python ingest/sync_approved.py && python ingest/build_bundles.py`,
+then publish. See the durable-data-path note immediately below — this is the
+step that had not yet run when the report came in, which is part of why the
+first read of the bug looked scarier than it was.
 
-> 🔑 **The unit that publishes is a VENUE, not an item.** Any lane that returns
-> items alone is betting on a window somebody else found. If you build another
-> reader, have it return the window in the same record or expect it to strand.
+### 🔑 Two different freshness horizons — do not confuse them
 
-The fix is `ingest/build_agent_venues.py` + `data/agent_handread.json`, merged
-at **rank 2** (above every machine pass, below a person's seed and an approved
-photo). It emits a full venue row in the same shape as `deals_menus.json`, runs
-the same `validate_deal()`, and needs nothing to already exist. Omitting `items`
-in a record makes it adopt whatever the agent lane already banked for that lid —
-which is how stranded items get rescued rather than re-bought.
+- **`GET /live/deals.json`** (the Worker, reading D1 directly) reflects an
+  admin approval almost immediately — `app.js` polls it with a short
+  (~30s) cache and overlays it on top of the loaded bundle at page load. This
+  is fast but **not durable**: it is a patch applied client-side, not a file
+  in the repo.
+- **The built static bundle** (`data/deals_photo.json` on disk → folded into
+  `web/data/zone-*.json` by `ingest/build_bundles.py`) is what actually ships
+  to GitHub Pages and is what a fresh page load without an overlay sees. It
+  only updates when a person **manually** runs
+  `ingest/sync_approved.py` then `ingest/build_bundles.py` then publishes.
+  **There is no cron or webhook for this step.** An approval can be live on
+  `/live/deals.json` for hours or days before anyone bakes it into the
+  permanent bundle. Do not assume "it's on the live overlay" means "it's
+  permanent," and do not assume a stale-looking board means data loss —
+  check whether sync has been run.
 
-### What actually found menus, in descending yield
+### Publish process — always an isolated worktree, never the shared checkout
 
-Ordered by venues landed per hour of trying. This is the ladder to walk, and
-walking it out of order is how time gets spent.
-
-1. **Crawl the site's own subpages for the words** — `scratch/hhsweep.py`: fetch
-   the URL, follow one level of its own links matching
-   `happy|special|menu|drink|bar|taproom|events`, strip tags, print ±180/320
-   chars around every `happy hour` hit. **This found ten venues `WebFetch` had
-   already been pointed at and missed**, because WebFetch summarises and a
-   summariser drops a price table. Grounded text beats a summary every time.
-2. **Guess the Popmenu URL** — `/<town>-<venue>-happy-hours-specials`. A whole
-   platform's worth of venues, addressable without a search.
-3. **Render the menu PDF and look at it** — `fitz` to PNG, then the Read tool.
-   🛑 `pdftoppm`/poppler is **not installed** on this machine, so Read cannot
-   open a PDF directly; render first (`scratch/pdfrender.py`).
-4. **Read the posted image.** Half of these menus are a JPEG.
-5. **A targeted search for the venue's own deep page** — not for the answer. The
-   win is finding that Santa Fe publishes `/newark-happy-hour-menu` at all.
-6. **The venue's own Instagram** (Mercato). Still the venue speaking; set
-   `"kind": "instagram"` so the card cites it honestly.
-
-### Blockers that are structural, not bugs — do not re-work these
-
-- **A price with no clock.** TGI Fridays advertises "$5 Happy Hour" and publishes
-  the hours nowhere. Lefty's Alley & Eats and Plaza Azteca the same. 15 paid-for
-  items are banked and correctly refuse to publish, because
-  `validate_deal()` will not take a windowless deal and every renderer in
-  `web/lib.js` hangs items off a window. **This is the right behaviour.**
-- **A clock with no prices.** Snuff Mill, Bar XIII, Rockwell's on Main, Goal Line
-  Pub. They already publish a window; there is nothing to add.
-- **A venue that contradicts itself.** Makers Alley's food tab and drink tab give
-  different prices for the same happy hour. Skipped, under *a wrong item is
-  worse than a miss*.
-- **An old roundup is not a source.** County Lines names ~25 West Chester venues
-  with times and prices, and it is dated 2021 and 2024 — `decay()` hides anything
-  over 120 days, and a roundup is the outlet speaking, not the bar.
-
-### West Chester is exhausted at 8, and that is a REACH finding
-
-The `west_chester` zone base holds **62** rows. 15 already had items. Every one
-of the rest was opened by hand — site, deep menu pages, PDFs, posted images,
-Toast pages, Instagram — and none publishes a clock and a price anywhere it
-owns. The venues that would have filled the gap (Greystone Oyster Bar, The
-Social, Sterling Pig, Split Rail, Slow Hand) **are not in the zone's base under
-those names.** More reading cannot fix that; only discovery can. It is the same
-finding as *the item gap is reach, not reading*, arrived at from the other end.
-
-### The boot ceiling moved, and why that is fine
-
-`tests/test_the_boot_payload_stays_small` went 500,000 → 600,000. 202 items
-arriving at once is genuine growth in the deal-bearing half. The check that
-matters is that the 1.3MB **base** (`venues-*.json`) still cannot hide under the
-number — it is fetched only for the selected zone and must never enter boot.
-
-## 🖼️📄🔑🔑 IMAGE- AND PDF-EMBEDDED MENUS — proven on two real venues, and what is still NOT proven (2026-09-03, night)
-
-Paul asked for a specific check: after last session's fix (never pipe an
-apostrophe-bearing script through a bash heredoc — use `Write` to author a
-`.py` file, run it, delete it), would a **future run** actually catch venues of
-this shape? The honest answer is **partial**, and it matters which part.
-
-**What is now proven, on two live venues, both confirmed in `web/data/zone-*.json`
-after a real deploy:**
-- **Image-embedded menu** — Basta Pasta (`bastapastapa.com`) is a Wix/JS site
-  whose happy hour menu lives inside two linked JPGs, not in any crawled text.
-  `curl -s -A "Mozilla/5.0" -o file.jpg "<url>"` into the scratchpad, then
-  `Read` the JPG directly (Read is multimodal) — 10 items extracted correctly.
-- **PDF-embedded menu** — Amada Radnor's menu is a linked PDF. **WebFetch cannot
-  read PDF binary** — it says so, returns raw structure, and saves the file
-  under `tool-results/webfetch-*.pdf`. Copy that PDF into the scratchpad, render
-  each page with `fitz` (`page.get_pixmap(dpi=150).save(...)`), then `Read` the
-  PNGs. This confirms the pre-existing "no poppler ⇒ Read cannot open a PDF,
-  render w/ fitz" rule generalizes to a PDF **sourced through WebFetch**, not
-  only a locally-supplied one.
-
-**What is NOT proven, and Paul's skepticism was correct:** neither of the above
-is **gated**. Nothing in `tests/` or `ingest/` flags "this venue's site has a
-happy-hour link but the crawler/WebFetch returned no items — check for an
-image or PDF." Catching these two venues took a human (me) noticing WebFetch
-came back empty on a page that visibly advertised a happy hour, then digging by
-hand. **A future session with the same instructions would hit the same wall
-and would have to notice the same way — there is no test or script that would
-surface "this venue's menu is probably an image" on its own.** If Paul wants
-this actually gated, the smallest honest fix is a crawler check: when a page's
-crawled text contains no price-shaped tokens but links an `<img>` or `<a href
-=*.pdf>` near the words "happy hour" / "specials", flag it into a
-`possibly-image-or-pdf-menu` bucket in the rescrape queue instead of silently
-recording zero items. **That does not exist yet.**
-
-**What IS actually gated, and this one future runs will catch:** `dow` (day of
-week) is validated in `ingest/validate_pa.py` — must be `1..7` (Mon=1..Sun=7),
-**0 is rejected**. I hit this for real (wrote `[0,1,2,3,4,5]` meaning
-Sun-first for Amada, `build_agent_venues.py` refused with `dow out of range:
-0`) and the validator caught it immediately, before it could reach
-`web/data/`. This is a real, provable, machine-enforced guardrail — unlike the
-image/PDF case above.
-
-**What was actually the bigger miss this session, and is now closed:** all
-three new venues (Basta Pasta, Amada Radnor, 118 North) were committed on
-branch `menus30` and were **never merged into `master`, never pushed to
-`origin`, and therefore never deployed** — nothing was live for two full
-rounds of work until this was caught explicitly by Paul asking. Nothing in the
-repo enforces "a branch's changes must reach master" — that is a workflow
-step, not a code invariant, and there is no CI or test that can fail on a
-branch nobody pushed. **The fix applied this session:** fast-forward `menus30`
-onto `master` (both were clean fast-forwards, no rebase/conflict), ran the
-full `tests/run.sh` and the CI drift check (`build_bundles.py` then diff
-`web/data`, ignoring `built_at`) locally before pushing, pushed to `origin
-master`, watched the `pages` GitHub Action to `completed success`, then pulled
-the live URL's JSON directly (`https://paulrenzi.github.io/happy-hour-finder/
-data/zone-<zone>.json`) and confirmed all three venues' items are present in
-the actual served bytes — not just a green build. **A session's work is not
-"done" until this exact verify has run**, and going forward the last step of
-any hand-read round should be: merge to master via a throwaway worktree (never
-touch a shared checkout — see the pkill/checkout hooks), push, watch the
-Action, curl the live zone JSON. See `README.md` "Publishing a branch's work"
-for the short version of this sequence.
+`git push origin master` from the shared checkout has a known silent-no-op
+failure mode when another session has since moved `origin/master` out from
+under it (exit 0, nothing actually pushed — HEAD just wasn't where the
+pusher thought). Every publish in this session used an isolated
+`git worktree` checked out fresh off `origin/master`, committed and pushed
+from there, then watched the GitHub Pages Action to completion. "It shipped"
+was never taken on CI-green or an HTTP 200 alone — verification was always a
+cache-busted fetch of the actual served bytes (and, for logic changes,
+re-running the changed function in Node against the live served JSON) to
+confirm the live site, not just the repo, changed.
