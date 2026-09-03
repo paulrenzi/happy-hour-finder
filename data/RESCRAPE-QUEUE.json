@@ -1,7 +1,7 @@
 {
  "rule": "Paul, 2026-09-03: any live deal with under 5 happy-hour items needs a re-scrape.",
  "generated": "2026-09-03",
- "count": 147,
+ "count": 138,
  "venues": [
   {
    "zone": "abington_jenkintown",
@@ -131,24 +131,6 @@
   },
   {
    "zone": "center_city",
-   "name": "Barbuzzo",
-   "lid": "61894",
-   "verified_by": "auto_extract",
-   "item_count": 4,
-   "url": "https://barbuzzo.com",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "center_city",
-   "name": "Chili's",
-   "lid": "108997",
-   "verified_by": "auto_extract",
-   "item_count": 1,
-   "url": "https://www.chilis.com/locations/us/pennsylvania/philadelphia/center-city",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "center_city",
    "name": "Con Murphy's",
    "lid": "61260",
    "verified_by": "auto_extract",
@@ -197,7 +179,7 @@
    "name": "Good Dog Bar",
    "lid": "45865",
    "verified_by": "auto_extract",
-   "item_count": 1,
+   "item_count": 2,
    "url": "https://gooddogbar.com/menu/",
    "status": "NEEDS_RESCRAPE"
   },
@@ -257,15 +239,6 @@
   },
   {
    "zone": "center_city",
-   "name": "The Fairmount Tavern",
-   "lid": "109360",
-   "verified_by": "auto_extract",
-   "item_count": 3,
-   "url": "https://thefairmounttavern.com/happy-hour/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "center_city",
    "name": "Top Tomato Bar & Pizza",
    "lid": "105744",
    "verified_by": "auto_extract",
@@ -307,15 +280,6 @@
    "verified_by": "auto_extract",
    "item_count": 4,
    "url": "https://www.villagewhiskey.com/specials/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "center_city",
-   "name": "Yakitori Boy",
-   "lid": "51472",
-   "verified_by": "auto_extract",
-   "item_count": 3,
-   "url": "https://yakitoriboy.com/happy-hour/",
    "status": "NEEDS_RESCRAPE"
   },
   {
@@ -449,7 +413,7 @@
    "name": "Limoncello",
    "lid": "67364",
    "verified_by": "auto_extract",
-   "item_count": 1,
+   "item_count": 2,
    "url": "https://www.limoncellorestaurant.com/happy-hour-menu",
    "status": "NEEDS_RESCRAPE"
   },
@@ -487,15 +451,6 @@
    "verified_by": "auto_extract",
    "item_count": 3,
    "url": "https://downingtown.victorybeer.com/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "fishtown_kensington",
-   "name": "Cedar Point Bar & Kitchen",
-   "lid": "67138",
-   "verified_by": "auto_extract",
-   "item_count": 4,
-   "url": "https://cedarpointbarandkitchen.com/happy-hour-specials/",
    "status": "NEEDS_RESCRAPE"
   },
   {
@@ -769,24 +724,6 @@
    "status": "NEEDS_RESCRAPE"
   },
   {
-   "zone": "newtown_square_broomall",
-   "name": "La Porta Ristorante",
-   "lid": "64766",
-   "verified_by": "auto_extract",
-   "item_count": 1,
-   "url": "https://www.laportarestaurant.com/daily-specials",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "newtown_square_broomall",
-   "name": "Sedona Taphouse",
-   "lid": "118439",
-   "verified_by": "agent_read",
-   "item_count": 2,
-   "url": "https://sedonataphouse.com/locations/newtown-square-pa/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
    "zone": "norristown_bridgeport",
    "name": "Chap's Taproom",
    "lid": "114168",
@@ -977,15 +914,6 @@
   },
   {
    "zone": "wayne_radnor",
-   "name": "ESTIA TAVERNA INC",
-   "lid": "67838",
-   "verified_by": "auto_extract",
-   "item_count": 3,
-   "url": "http://estiarestaurant.com/radnor-pa/menus/happy-hour-radnor.pdf",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "wayne_radnor",
    "name": "Maison Lotus",
    "lid": "122420",
    "verified_by": "auto_extract",
@@ -1090,15 +1018,6 @@
    "verified_by": "agent_read",
    "item_count": 3,
    "url": "https://www.saloon151.com/weekly-specials",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "west_chester",
-   "name": "Sedona Taphouse",
-   "lid": "101577",
-   "verified_by": "agent_read",
-   "item_count": 2,
-   "url": "https://sedonataphouse.com/locations/west-chester-pa/",
    "status": "NEEDS_RESCRAPE"
   },
   {
