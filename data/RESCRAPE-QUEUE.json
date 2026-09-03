@@ -1,7 +1,7 @@
 {
  "rule": "Paul, 2026-09-03: any live deal with under 5 happy-hour items needs a re-scrape.",
  "generated": "2026-09-03",
- "count": 138,
+ "count": 122,
  "venues": [
   {
    "zone": "abington_jenkintown",
@@ -383,47 +383,11 @@
   },
   {
    "zone": "exton_downingtown",
-   "name": "Al Pastor",
-   "lid": "81364",
-   "verified_by": "auto_extract",
-   "item_count": 1,
-   "url": "https://eatalpastor.com",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "exton_downingtown",
-   "name": "Anthony's Cucina Fresca",
-   "lid": "73031",
-   "verified_by": "auto_extract",
-   "item_count": 2,
-   "url": "https://anthonyscucinafresca.com/menu/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "exton_downingtown",
    "name": "ChopHouse Grille",
    "lid": "89606",
    "verified_by": "auto_extract",
    "item_count": 1,
    "url": "https://www.chophousegrille.com/happy-hour",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "exton_downingtown",
-   "name": "Limoncello",
-   "lid": "67364",
-   "verified_by": "auto_extract",
-   "item_count": 2,
-   "url": "https://www.limoncellorestaurant.com/happy-hour-menu",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "exton_downingtown",
-   "name": "PJ Whelihan's",
-   "lid": "63902",
-   "verified_by": "auto_extract",
-   "item_count": 1,
-   "url": "https://www.pjspub.com/about.php?loc=Downingtown",
    "status": "NEEDS_RESCRAPE"
   },
   {
@@ -440,7 +404,7 @@
    "name": "Station Taproom",
    "lid": "62955",
    "verified_by": "auto_extract",
-   "item_count": 1,
+   "item_count": 2,
    "url": "https://stationtaproom.com/",
    "status": "NEEDS_RESCRAPE"
   },
@@ -653,15 +617,6 @@
   },
   {
    "zone": "newark_de",
-   "name": "Chili's Grill & Bar",
-   "lid": "DEc68619870c",
-   "verified_by": "auto_extract",
-   "item_count": 2,
-   "url": "https://www.chilis.com/locations/us/delaware/newark/christiana?utm_source=google&utm_medium=local&utm_campaign=Chilis",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "newark_de",
    "name": "Crooked Hammock Brewery",
    "lid": "DE520bfab56d",
    "verified_by": "menu_read_llm",
@@ -761,15 +716,6 @@
   },
   {
    "zone": "phoenixville",
-   "name": "MOLLY MAGUIRES RESTAURANT & PUB INC",
-   "lid": "57342",
-   "verified_by": "auto_extract",
-   "item_count": 4,
-   "url": "https://www.mollymaguiresphoenixville.com/wp-content/uploads/Mollys-Happy-Hour-Website.jpg",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "phoenixville",
    "name": "Revival Pizza Pub",
    "lid": "106706",
    "verified_by": "menu_read_llm",
@@ -865,15 +811,6 @@
    "verified_by": "menu_read_llm",
    "item_count": 2,
    "url": "https://www.slyfoxbeer.com/phoenixville",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "phoenixville",
-   "name": "The Great American Pub",
-   "lid": "69448",
-   "verified_by": "auto_extract",
-   "item_count": 3,
-   "url": "https://thegreatamericanpub.com/phoenixville/specials/weekly-specials/",
    "status": "NEEDS_RESCRAPE"
   },
   {
@@ -968,15 +905,6 @@
   },
   {
    "zone": "west_chester",
-   "name": "Kildare's Irish Pub",
-   "lid": "71516",
-   "verified_by": "agent_read",
-   "item_count": 4,
-   "url": "https://kildarespubwc.com/drink-menu/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "west_chester",
    "name": "Mercato Ristorante and Bar",
    "lid": "68978",
    "verified_by": "agent_read",
@@ -1004,19 +932,10 @@
   },
   {
    "zone": "west_chester",
-   "name": "S Bar 10",
-   "lid": "61942",
-   "verified_by": "agent_read",
-   "item_count": 4,
-   "url": "https://sidebarandrestaurant.com/weekly-specials",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "west_chester",
    "name": "Saloon 151",
    "lid": "71245",
    "verified_by": "agent_read",
-   "item_count": 3,
+   "item_count": 4,
    "url": "https://www.saloon151.com/weekly-specials",
    "status": "NEEDS_RESCRAPE"
   },
@@ -1036,24 +955,6 @@
    "verified_by": "agent_read",
    "item_count": 4,
    "url": "https://station142.com/food-drink-menu/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "west_chester",
-   "name": "Stove and Tap",
-   "lid": "96391",
-   "verified_by": "auto_extract",
-   "item_count": 3,
-   "url": "https://www.stoveandtap-wc.com/specials",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "west_chester",
-   "name": "The Stone Tavern",
-   "lid": "126237",
-   "verified_by": "agent_read",
-   "item_count": 4,
-   "url": "https://www.thestonetavern1867.com/specials",
    "status": "NEEDS_RESCRAPE"
   },
   {
@@ -1085,15 +986,6 @@
   },
   {
    "zone": "wilmington",
-   "name": "Bardea Steak",
-   "lid": "DEa2a51b1b18",
-   "verified_by": "agent_read",
-   "item_count": 4,
-   "url": "https://www.bardeasteak.com/menus/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "wilmington",
    "name": "Brew Works North",
    "lid": "DEa077f4e311",
    "verified_by": "agent_read",
@@ -1106,7 +998,7 @@
    "name": "Cafe Mezzanotte",
    "lid": "DE6192c1db22",
    "verified_by": "agent_read",
-   "item_count": 1,
+   "item_count": 2,
    "url": "https://www.cafemezzanotte.net/specials/",
    "status": "NEEDS_RESCRAPE"
   },
@@ -1117,15 +1009,6 @@
    "verified_by": "auto_extract",
    "item_count": 1,
    "url": "http://dorcea.com/wilmington-dorcea-drink-menu",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "wilmington",
-   "name": "Dead Presidents Pub & Restaurant",
-   "lid": "DE35c46628ec",
-   "verified_by": "agent_read",
-   "item_count": 3,
-   "url": "http://deadpresidentspub.com/events/our-specials/",
    "status": "NEEDS_RESCRAPE"
   },
   {
@@ -1157,15 +1040,6 @@
   },
   {
    "zone": "wilmington",
-   "name": "Le Cavalier",
-   "lid": "DE146a0b42fa",
-   "verified_by": "agent_read",
-   "item_count": 3,
-   "url": "https://www.lecavalierde.com/menus",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "wilmington",
    "name": "Little Vinnie's Pizza & Pasta",
    "lid": "DEd7a6e46b80",
    "verified_by": "agent_read",
@@ -1180,15 +1054,6 @@
    "verified_by": "menu_read_llm",
    "item_count": 4,
    "url": "https://www.mcglynnspub.com/food-and-drink-specials",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "wilmington",
-   "name": "Taco Grande",
-   "lid": "DEcfc7c9decb",
-   "verified_by": "agent_read",
-   "item_count": 4,
-   "url": "https://tacogrande.com/weekly-specials/",
    "status": "NEEDS_RESCRAPE"
   },
   {
@@ -1225,15 +1090,6 @@
    "verified_by": "agent_read",
    "item_count": 4,
    "url": "http://tonicsns.com/menu/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "wilmington",
-   "name": "Trolley Tap House",
-   "lid": "DE2223037f1a",
-   "verified_by": "agent_read",
-   "item_count": 4,
-   "url": "https://trolleytaphouse.com/wp-content/uploads/2025/09/Trolley-Tap-house-Happy-Hour.pdf",
    "status": "NEEDS_RESCRAPE"
   },
   {
