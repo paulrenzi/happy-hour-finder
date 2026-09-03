@@ -8508,6 +8508,49 @@
    }
   ]
  },
+ "DEc2e120b082": {
+  "name": "Pithari",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 2,
+      "end": "19:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 3,
+      "end": "19:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 4,
+      "end": "19:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 5,
+      "end": "19:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 6,
+      "end": "19:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 7,
+      "end": "19:00",
+      "start": "15:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "DE6ccacbde47": {
   "name": "Red Robin Gourmet Burgers and Brews",
   "deals": [

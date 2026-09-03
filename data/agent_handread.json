@@ -4916,5 +4916,97 @@
         "evidence": "$10 - Cheese Steak Eggrolls"
       }
     ]
+  },
+  {
+    "lid": "DEc2e120b082",
+    "url": "https://media-cdn.getbento.com/accounts/e238b03dcee82bfc5ed79da1cdf5bebf/media/htThsjVdTRO97vAwPhIc_tp7QjJuSn5FgsrhYEWwQ_Happy%2520Hour%2520Menu%25204-5x12-PRINT.pdf",
+    "read_on": "2026-09-03",
+    "heading": "Happy Hour",
+    "clock_quote": "HAPPY HOUR TUESDAY - SUNDAY / 3pm - 7pm BAR ONLY",
+    "quote": "Appetizers, mini flatbreads, signature cocktails, draft beer, house wine, Tuesday-Sunday 3-7pm",
+    "days": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "start": "15:00",
+    "end": "19:00",
+    "items": [
+      {
+        "category": "food",
+        "label": "Moroccan Shrimp",
+        "price_usd": 16,
+        "evidence": "MOROCCAN SHRIMP 16"
+      },
+      {
+        "category": "food",
+        "label": "Calamari Fritti",
+        "price_usd": 14,
+        "evidence": "CALAMARI FRITTI 14"
+      },
+      {
+        "category": "food",
+        "label": "White Wine Mussels",
+        "price_usd": 14,
+        "evidence": "WHITE WINE MUSSELS 14"
+      },
+      {
+        "category": "food",
+        "label": "Beef Shawarma Tapas",
+        "price_usd": 10,
+        "evidence": "BEEF SHAWARMA TAPAS 10"
+      },
+      {
+        "category": "food",
+        "label": "Chicken Gyro",
+        "price_usd": 12,
+        "evidence": "CHICKEN GYRO 12"
+      },
+      {
+        "category": "food",
+        "label": "Homemade Meatballs",
+        "price_usd": 12,
+        "evidence": "HOMEMADE MEATBALLS 12"
+      },
+      {
+        "category": "food",
+        "label": "Mini Flatbread",
+        "price_usd": 10,
+        "evidence": "BLUE FIG 10, MARGHERITA 10"
+      },
+      {
+        "category": "cocktail",
+        "label": "Wildberry Mojito",
+        "price_usd": 11,
+        "evidence": "WILDBERRY MOJITO 11"
+      },
+      {
+        "category": "cocktail",
+        "label": "Espresso Martini",
+        "price_usd": 11,
+        "evidence": "ESPRESSO MARTINI 11"
+      },
+      {
+        "category": "cocktail",
+        "label": "Black Manhattan",
+        "price_usd": 15,
+        "evidence": "BLACK MANHATTAN 15"
+      },
+      {
+        "category": "draft",
+        "label": "Draft Beer",
+        "price_usd": 6,
+        "evidence": "DRAFT BEER 6"
+      },
+      {
+        "category": "wine",
+        "label": "House Wine per Glass",
+        "price_usd": 7,
+        "evidence": "HOUSE WINE PER GLASS 7"
+      }
+    ]
   }
 ]

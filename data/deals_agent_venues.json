@@ -6710,6 +6710,136 @@
    "zone_id": "wilmington"
   },
   {
+   "address": "1 W Main St, Middletown, DE 19709",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "MOROCCAN SHRIMP 16",
+       "label": "Moroccan Shrimp",
+       "price_usd": 16
+      },
+      {
+       "category": "food",
+       "evidence": "CALAMARI FRITTI 14",
+       "label": "Calamari Fritti",
+       "price_usd": 14
+      },
+      {
+       "category": "food",
+       "evidence": "WHITE WINE MUSSELS 14",
+       "label": "White Wine Mussels",
+       "price_usd": 14
+      },
+      {
+       "category": "food",
+       "evidence": "BEEF SHAWARMA TAPAS 10",
+       "label": "Beef Shawarma Tapas",
+       "price_usd": 10
+      },
+      {
+       "category": "food",
+       "evidence": "CHICKEN GYRO 12",
+       "label": "Chicken Gyro",
+       "price_usd": 12
+      },
+      {
+       "category": "food",
+       "evidence": "HOMEMADE MEATBALLS 12",
+       "label": "Homemade Meatballs",
+       "price_usd": 12
+      },
+      {
+       "category": "food",
+       "evidence": "BLUE FIG 10, MARGHERITA 10",
+       "label": "Mini Flatbread",
+       "price_usd": 10
+      },
+      {
+       "category": "cocktail",
+       "evidence": "WILDBERRY MOJITO 11",
+       "label": "Wildberry Mojito",
+       "price_usd": 11
+      },
+      {
+       "category": "cocktail",
+       "evidence": "ESPRESSO MARTINI 11",
+       "label": "Espresso Martini",
+       "price_usd": 11
+      },
+      {
+       "category": "cocktail",
+       "evidence": "BLACK MANHATTAN 15",
+       "label": "Black Manhattan",
+       "price_usd": 15
+      },
+      {
+       "category": "draft",
+       "evidence": "DRAFT BEER 6",
+       "label": "Draft Beer",
+       "price_usd": 6
+      },
+      {
+       "category": "wine",
+       "evidence": "HOUSE WINE PER GLASS 7",
+       "label": "House Wine per Glass",
+       "price_usd": 7
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "HAPPY HOUR TUESDAY - SUNDAY / 3pm - 7pm BAR ONLY",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Appetizers, mini flatbreads, signature cocktails, draft beer, house wine, Tuesday-Sunday 3-7pm",
+      "url": "https://media-cdn.getbento.com/accounts/e238b03dcee82bfc5ed79da1cdf5bebf/media/htThsjVdTRO97vAwPhIc_tp7QjJuSn5FgsrhYEWwQ_Happy%2520Hour%2520Menu%25204-5x12-PRINT.pdf"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 2,
+       "end": "19:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 3,
+       "end": "19:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 4,
+       "end": "19:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 5,
+       "end": "19:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 6,
+       "end": "19:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 7,
+       "end": "19:00",
+       "start": "15:00"
+      }
+     ]
+    }
+   ],
+   "id": "DEc2e120b082",
+   "lid": "DEc2e120b082",
+   "name": "Pithari",
+   "plcb_name": "Pithari",
+   "website": "http://www.pitharimc.com/",
+   "zone_id": "middletown_de"
+  },
+  {
    "address": "777 Delaware Park Blvd, Wilmington, DE 19804",
    "deals": [
     {
