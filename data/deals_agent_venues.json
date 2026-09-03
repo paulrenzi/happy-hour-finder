@@ -911,6 +911,172 @@
    "zone_id": "wilmington"
   },
   {
+   "address": "42 W 11th St, Wilmington, DE 19801",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "$5 beers",
+       "label": "Beer",
+       "price_usd": 5.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$10 rotating cocktails",
+       "label": "Rotating Cocktail",
+       "price_usd": 10.0
+      },
+      {
+       "category": "wine",
+       "evidence": "$10 wines",
+       "label": "Wine",
+       "price_usd": 10.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Join us Monday through Friday from 4–6 PM for Happy Hour featuring:",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Join us Monday through Friday from 4–6 PM for Happy Hour featuring: Half-price bar snacks, $5 beers, $10 rotating cocktails, $10 wines",
+      "url": "https://www.lecavalierde.com/menus"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "DE146a0b42fa",
+   "lid": "DE146a0b42fa",
+   "name": "Le Cavalier",
+   "plcb_name": "Le Cavalier",
+   "website": "https://www.lecavalierde.com/",
+   "zone_id": "wilmington"
+  },
+  {
+   "address": "2502 Foulk Rd, Wilmington, DE 19810",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "amount_off_usd": 2.0,
+       "category": "draft",
+       "evidence": "$2 OFF / $2.00 2SP All-Weather Drafts",
+       "label": "2SP All-Weather Draft"
+      },
+      {
+       "amount_off_usd": 2.0,
+       "category": "draft",
+       "evidence": "$2 OFF / $2.00 2SPils",
+       "label": "2SPils"
+      },
+      {
+       "amount_off_usd": 2.0,
+       "category": "wine",
+       "evidence": "$2 OFF / $2.00 6 oz pours of wine*",
+       "label": "6 oz pour of wine"
+      },
+      {
+       "amount_off_usd": 3.0,
+       "category": "wine",
+       "evidence": "$3 OFF / $3.00 9 oz pours of wine*",
+       "label": "9 oz pour of wine"
+      },
+      {
+       "amount_off_usd": 3.0,
+       "category": "cocktail",
+       "evidence": "$3 OFF / $3.00 Craft Cocktails",
+       "label": "Craft Cocktail"
+      },
+      {
+       "amount_off_usd": 3.0,
+       "category": "cocktail",
+       "evidence": "$3 OFF / $3.00 The Mule",
+       "label": "The Mule"
+      },
+      {
+       "amount_off_usd": 3.0,
+       "category": "cocktail",
+       "evidence": "$3 OFF / $3.00 The Manhattan",
+       "label": "The Manhattan"
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Happy Hour / Monday–Friday | 3–6pm",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Happy Hour / Monday–Friday | 3–6pm",
+      "url": "http://www.twostonespub.com/happyhour"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "15:00"
+      }
+     ]
+    }
+   ],
+   "id": "DE18f838f641",
+   "lid": "DE18f838f641",
+   "name": "Two Stones Pub Wilmington",
+   "plcb_name": "Two Stones Pub Wilmington",
+   "website": "http://www.twostonespub.com/",
+   "zone_id": "wilmington"
+  },
+  {
    "address": "110 West St, Wilmington, DE 19801",
    "deals": [
     {
@@ -1056,6 +1222,83 @@
    "zone_id": "wilmington"
   },
   {
+   "address": "1616 Delaware Ave, Wilmington, DE 19806",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "$5 Select Drafts",
+       "label": "Select Draft",
+       "price_usd": 5.0
+      },
+      {
+       "amount_off_usd": 2.0,
+       "category": "draft",
+       "evidence": "$2 Off Beer Flights",
+       "label": "Beer Flight"
+      },
+      {
+       "category": "wine",
+       "evidence": "$5 Glasses of House Wine",
+       "label": "House Wine",
+       "price_usd": 5.0
+      },
+      {
+       "category": "call",
+       "evidence": "$6 Jameson, Tito's, Captain",
+       "label": "Jameson, Tito's, or Captain",
+       "price_usd": 6.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Happy Hour",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Happy Hour: $5 Select Drafts, $2 Off Beer Flights, $5 Glasses of House Wine, $6 Jameson, Tito's, Captain, $8 Mocktails",
+      "url": "https://trolleytaphouse.com/wp-content/uploads/2025/09/Trolley-Tap-house-Happy-Hour.pdf"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "15:00"
+      }
+     ]
+    }
+   ],
+   "id": "DE2223037f1a",
+   "lid": "DE2223037f1a",
+   "name": "Trolley Tap House",
+   "plcb_name": "Trolley Tap House",
+   "website": "http://www.trolleytaphouse.com/",
+   "zone_id": "wilmington"
+  },
+  {
    "address": "158 E Main St, Newark, DE 19711",
    "deals": [
     {
@@ -1137,6 +1380,77 @@
    "plcb_name": "Klondike Kate's Restaurant & Saloon",
    "website": "https://www.klondikekates.com/",
    "zone_id": "newark_de"
+  },
+  {
+   "address": "618 N Union St, Wilmington, DE 19805",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "$2.50 Miller Lite & Yuengling Drafts",
+       "label": "Miller Lite / Yuengling Draft",
+       "price_usd": 2.5
+      },
+      {
+       "category": "shot",
+       "evidence": "$4 Fireballs",
+       "label": "Fireball Shot",
+       "price_usd": 4.0
+      },
+      {
+       "category": "shot",
+       "evidence": "$5 Jameson shots",
+       "label": "Jameson Shot",
+       "price_usd": 5.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Happy Hour / Monday – Friday 4pm – 6pm",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Happy Hour / Monday – Friday 4pm – 6pm / $2.50 Miller Lite & Yuengling Drafts and $4 Fireballs and $5 Jameson shots",
+      "url": "http://deadpresidentspub.com/events/our-specials/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "DE35c46628ec",
+   "lid": "DE35c46628ec",
+   "name": "Dead Presidents Pub & Restaurant",
+   "plcb_name": "Dead Presidents Pub & Restaurant",
+   "website": "http://deadpresidentspub.com/",
+   "zone_id": "wilmington"
   },
   {
    "address": "168 E Main St, Newark, DE 19711",
@@ -1348,6 +1662,249 @@
    "name": "Lefty's Alley & Eats",
    "plcb_name": "Lefty's Alley & Eats",
    "website": "https://iloveleftys.com/newark/",
+   "zone_id": "newark_de"
+  },
+  {
+   "address": "401 Louviers Dr, Newark, DE 19711",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "amount_off_usd": 1.0,
+       "category": "draft",
+       "evidence": "$1 off of draft beers, wine, and mixed drinks",
+       "label": "Draft beer"
+      },
+      {
+       "amount_off_usd": 1.0,
+       "category": "wine",
+       "evidence": "$1 off of draft beers, wine, and mixed drinks",
+       "label": "Wine"
+      },
+      {
+       "amount_off_usd": 1.0,
+       "category": "cocktail",
+       "evidence": "$1 off of draft beers, wine, and mixed drinks",
+       "label": "Mixed drink"
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Happy hour 3-6 with drink specials and small plates! 03:00 PM - 06:00 PM",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Join us for Happy Hour! Small plates and $1 off all drinks except bottled beers! Happy hour 3-6 with drink specials and small plates! 03:00 PM - 06:00 PM",
+      "url": "http://skipjacknewark.com/newark-skipjack-dining-happy-hours-specials"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 6,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 7,
+       "end": "18:00",
+       "start": "15:00"
+      }
+     ]
+    }
+   ],
+   "id": "DE4b33244ae6",
+   "lid": "DE4b33244ae6",
+   "name": "Skipjack Dining",
+   "plcb_name": "Skipjack Dining",
+   "website": "http://skipjacknewark.com/",
+   "zone_id": "newark_de"
+  },
+  {
+   "address": "3517 Old Capitol Trl, Wilmington, DE 19808",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "$15 Steak Frites",
+       "label": "Steak Frites",
+       "price_usd": 15.0
+      },
+      {
+       "category": "food",
+       "evidence": "$15 BBQ Spare Ribs",
+       "label": "BBQ Spare Ribs",
+       "price_usd": 15.0
+      },
+      {
+       "category": "food",
+       "evidence": "$16 Fried Calamari",
+       "label": "Fried Calamari",
+       "price_usd": 16.0
+      },
+      {
+       "category": "food",
+       "evidence": "$13 Traditional Wings",
+       "label": "Traditional Wings",
+       "price_usd": 13.0
+      },
+      {
+       "category": "food",
+       "evidence": "$14 Nashville Hot Grilled Oysters",
+       "label": "Nashville Hot Grilled Oysters",
+       "price_usd": 14.0
+      },
+      {
+       "category": "food",
+       "evidence": "$12 Beer Battered Onion Rings",
+       "label": "Beer Battered Onion Rings",
+       "price_usd": 12.0
+      },
+      {
+       "category": "food",
+       "evidence": "$7 Steak Fries",
+       "label": "Steak Fries",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "evidence": "$6 Crispy Teriyaki Chicken Sandwich",
+       "label": "Crispy Teriyaki Chicken Sandwich",
+       "price_usd": 6.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "The Marshallton Steakhouse Happy Hour Menu Wednesday, Thursday & Friday 3-7pm",
+      "heading": "Happy Hour Menu",
+      "kind": "venue_site",
+      "quote": "The Marshallton Steakhouse Happy Hour Menu Wednesday, Thursday & Friday 3-7pm",
+      "url": "https://themarshallton.com/HappyHour.aspx"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 3,
+       "end": "19:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 4,
+       "end": "19:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 5,
+       "end": "19:00",
+       "start": "15:00"
+      }
+     ]
+    }
+   ],
+   "id": "DE52b4feabfb",
+   "lid": "DE52b4feabfb",
+   "name": "The Marshallton Steakhouse",
+   "plcb_name": "The Marshallton Steakhouse",
+   "website": "https://themarshallton.com/",
+   "zone_id": "new_castle_de"
+  },
+  {
+   "address": "9 University Dr, Newark, DE 19702",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "Happy Hour Appetizers $10.00",
+       "label": "Happy Hour Appetizer",
+       "price_usd": 10.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "$12 Miller Lite Buckets",
+       "label": "Miller Lite Bucket",
+       "price_usd": 12.0
+      },
+      {
+       "category": "call",
+       "evidence": "Captain White & Captain Morgan Drinks $6",
+       "label": "Captain White & Captain Morgan",
+       "price_usd": 6.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Join us for Happy Hour Monday thru Friday 4-7pm for appetizer and drink specials.",
+      "heading": "Happy Hour and Specials",
+      "kind": "venue_site",
+      "quote": "Happy Hour and Specials / Happy Hour Appetizers $10.00 / Served Monday thru Friday from 4-7pm",
+      "url": "http://www.shellhammers.com/happy-hour-and-specials"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "19:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "19:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "19:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "19:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "19:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "DE52c61670ed",
+   "lid": "DE52c61670ed",
+   "name": "Shellhammer's Bar and Grill",
+   "plcb_name": "Shellhammer's Bar and Grill",
+   "website": "http://www.shellhammers.com/",
    "zone_id": "newark_de"
   },
   {
@@ -1794,6 +2351,75 @@
    "zone_id": "wilmington"
   },
   {
+   "address": "1919 St Augustine Rd, Middletown, DE 19709",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "Buck a Shuck Clams and Oysters!!",
+       "label": "Clams or Oysters (buck a shuck)",
+       "price_usd": 1.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Buck a Shuck Clams and Oysters!! 7 days a week 4-6 pm",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Happy Hour: 1/2 Price Beer, Wine and Cocktails * Buck a Shuck Clams and Oysters!! 7 days a week 4-6 pm",
+      "url": "http://www.augustinetavern.com/special-events"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 6,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 7,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "DE67e9d8cbb9",
+   "lid": "DE67e9d8cbb9",
+   "name": "Augustine Tavern",
+   "plcb_name": "Augustine Tavern",
+   "website": "http://www.augustinetavern.com/",
+   "zone_id": "new_castle_de"
+  },
+  {
    "address": "620 Justison St, Wilmington, DE 19801",
    "deals": [
     {
@@ -2153,6 +2779,101 @@
    "name": "Little Vinnie's Pizza & Pasta",
    "plcb_name": "Little Vinnie's Pizza & Pasta",
    "website": "http://www.littlevinniespizza.com/",
+   "zone_id": "wilmington"
+  },
+  {
+   "address": "620 N Market St, Wilmington, DE 19801",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "Oysters $12.00",
+       "label": "Oysters",
+       "price_usd": 12.0
+      },
+      {
+       "category": "food",
+       "evidence": "Beef Tartare $12.00",
+       "label": "Beef Tartare",
+       "price_usd": 12.0
+      },
+      {
+       "category": "food",
+       "evidence": "Fried Calamari $14.00",
+       "label": "Fried Calamari",
+       "price_usd": 14.0
+      },
+      {
+       "category": "food",
+       "evidence": "Pork Rib $18.00",
+       "label": "Pork Rib",
+       "price_usd": 18.0
+      },
+      {
+       "category": "food",
+       "evidence": "Burrata Poptart $15.00",
+       "label": "Burrata Poptart",
+       "price_usd": 15.0
+      },
+      {
+       "category": "food",
+       "evidence": "Chicken Wings $10.00",
+       "label": "Chicken Wings",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "Margherita Pizza $13.00",
+       "label": "Margherita Pizza",
+       "price_usd": 13.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Available in the bar area Monday-Friday 5pm-7pm",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Available in the bar area Monday-Friday 5pm-7pm",
+      "url": "https://www.bardeafoodanddrink.com/menus/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "19:00",
+       "start": "17:00"
+      },
+      {
+       "dow": 2,
+       "end": "19:00",
+       "start": "17:00"
+      },
+      {
+       "dow": 3,
+       "end": "19:00",
+       "start": "17:00"
+      },
+      {
+       "dow": 4,
+       "end": "19:00",
+       "start": "17:00"
+      },
+      {
+       "dow": 5,
+       "end": "19:00",
+       "start": "17:00"
+      }
+     ]
+    }
+   ],
+   "id": "DEd8325476cf",
+   "lid": "DEd8325476cf",
+   "name": "Bardea Food & Drink",
+   "plcb_name": "Bardea Food & Drink",
+   "website": "https://www.bardeafoodanddrink.com/",
    "zone_id": "wilmington"
   },
   {
