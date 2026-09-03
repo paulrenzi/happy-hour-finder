@@ -148,6 +148,7 @@ The source itself says the dish, the price, and the section. Two exist:
 
 | adapter | platform | trigger today | what it reads |
 |---|---|---|---|
+| **schema.org** | **any — it is a W3C standard** | **the data itself: an `@context`** | `Menu` / `MenuSection` / `MenuItem` + `offers.price` |
 | **Darden** | Darden's menu API | `DARDEN_HOSTS` tuple (8 brands) | products, prices, and the *other* menus for the not-a-deal gate |
 | **FRC** | Fox Restaurant Concepts markup | `FRC_HOSTS` tuple (6 brands) | `menu-item-name` / `menu-item-price` / `data-section-slug` |
 
@@ -166,6 +167,53 @@ came for.
 > on seeing its markup, Darden on the menu API answering — so an unseen brand on
 > a known platform reads correctly the first time we ever meet it. This is the
 > cheapest single change available and it is not done.
+
+#### 🔑 ASK THE PAGE FOR ITS DATA BEFORE YOU READ ITS PROSE (2026-09-02, McGlynn's)
+
+**The first question about any page is not "what does it say", it is "what did it
+publish for machines".** A restaurant that wants to be in Google's results states
+its menu in schema.org — dish, price, section, and often the window. That is
+strictly better evidence than prose: typed, unambiguous, and a price in it
+*belongs* to the item it hangs off, instead of being paired to a neighbour by a
+regex. If the page carries it, nothing else on the page is worth reading first.
+
+McGlynn's Pub was the case that proved it, and it failed **three ways at once**,
+each of which is its own general rule:
+
+1. **A schema.org document does not have to be in a `<script type="ld+json">`
+   tag.** McGlynn's four real ld+json tags carry `Restaurant` records only. The
+   Menu is an **escaped JSON string inside the state its React front end boots
+   from** — a JSON document serialised as a string value inside another JSON
+   document. We only ever looked in the tag, so a page that published everything
+   read as a 25-line shell, two lines of which are "Load More Content".
+   → `embedded_ld_docs()` finds a schema.org document *anywhere in the page* by
+   the one thing it cannot omit, its `@context`. Popmenu, BentoBox, Toast and
+   every server-rendered React front end ship data this way.
+2. **The happy hour is usually a SECTION, not a whole menu.** `jsonld_quotes()`
+   demanded that the `Menu` name itself the happy hour, so a `MenuSection` that
+   had said its own name, in the standard, with prices, was passed over in
+   silence. The rule is the **name, not the depth it appears at**. The guard is
+   unchanged in strength — a section that does not name itself is still read as
+   somebody's dinner, because the regular price presented as a deal is the worst
+   failure available here.
+3. **🛑 Evidence ordering is not cosmetic when something downstream truncates.**
+   The structured menu was appended *last*, so it was correct, saved, and
+   useless: `read_menus_llm` caps a document at `DOC_CAP` (9,000 chars) and
+   McGlynn's 157 loosely-recovered strings pushed its four priced items off the
+   end. The model read the prose heading instead and returned — for the second
+   time — a window with no items, **with the answer sitting in the file
+   underneath it**. The structured block now goes **first**.
+   *General form: when you add a better source to a document something else
+   truncates, placing it is half the change. Check what survives the cap.*
+
+Note also that this pass runs on **every page, not only on a shell**. A page can
+render four hundred visible lines and still keep its happy hour behind a tab.
+
+> **The standing order this leaves behind:** when a venue reads as silent or
+> publishes a window with no items, look at what the page hands its own
+> JavaScript **before** blaming rendering. "We could not see the menu" was the
+> inherited explanation for this whole class, and for McGlynn's it was false —
+> the menu was in our hands, in a W3C standard, unread.
 
 ---
 
