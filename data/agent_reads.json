@@ -1,4 +1,397 @@
 {
+ "DE004a8c7d86": {
+  "cost_usd": 0.5879,
+  "deals": [
+   {
+    "fine_print": "",
+    "items": [
+     {
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "Coronarita",
+      "price_quote": "",
+      "price_usd": null,
+      "quote": "Coronarita",
+      "type": "cocktail"
+     },
+     {
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "beer specials",
+      "price_quote": "",
+      "price_usd": null,
+      "quote": "beer specials"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "15:00"
+     }
+    ]
+   },
+   {
+    "fine_print": "Margarita Wednesday",
+    "items": [
+     {
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "$4.99 lime margaritas (Margarita Wednesday)",
+      "price_quote": "$4.99 lime margaritas",
+      "price_usd": 4.99,
+      "quote": "$4.99 lime margaritas"
+     }
+    ],
+    "type": "daily_special",
+    "windows": []
+   },
+   {
+    "fine_print": "Taco Tuesday",
+    "items": [
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Taco Tuesday platters on special",
+      "price_quote": "",
+      "price_usd": null,
+      "quote": "Taco Tuesday platters on special"
+     }
+    ],
+    "type": "daily_special",
+    "windows": []
+   }
+  ],
+  "dropped": [
+   "'Coronarita': needs exactly one of price_usd / discount_pct",
+   "'beer specials': needs exactly one of price_usd / discount_pct",
+   "'daily_special' deal: not the happy hour",
+   "'daily_special' deal: not the happy hour"
+  ],
+  "found": true,
+  "items_kept": 0,
+  "kind": "page",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch home page https://www.fiestamayamexicangrill.com/ -- found 'Weekly Specials' nav link",
+   "WebFetch https://www.fiestamayamexicangrill.com/specials -- Happy Hour block with hours",
+   "curl the Happy Hour tile image d2e5f7_9bf79bbd67d04b729b94feb1a68d1cce~mv2.jpg and Read it -- photo of margaritas, no text",
+   "curl raw HTML of /specials to confirm the wording character-for-character"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "https://www.fiestamayamexicangrill.com/specials",
+  "transcript": "Happy Hour\n3 PM - 6 PM (M-F)\nCoronarita & beer specials\n\nTaco Tuesday\nTaco Tuesday platters on special\n\nMargarita Wednesday\n$4.99 lime margaritas\n\nAl Carbón Weekends\nTry our tacos al carbón, only available weekends",
+  "turns": 14,
+  "venue_name_on_menu": "Fiesta Maya Mexican Grill",
+  "why_not": ""
+ },
+ "DE005bb26461": {
+  "cost_usd": 0.2429,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch location page https://locations.friendlysrestaurants.com/ll/US/DE/Newark/1500-people's-plaza/ — hours and address only, no happy hour, one Menu link",
+   "WebFetch https://www.friendlysrestaurants.com/menu/ — full menu sections (Lunch & Dinner, Ice Cream, Kids, Breakfast, Drinks, Catering); no happy hour or specials section",
+   "WebFetch https://www.friendlysrestaurants.com/ — nav is Menu / Fan Club / Locate / Franchise / Order; no happy hour, specials or deals page linked"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "",
+  "transcript": "",
+  "turns": 5,
+  "venue_name_on_menu": "",
+  "why_not": "The location page and the chain site offer only the regular menu, a Fan Club rewards signup and online ordering — Friendly's publishes no happy hour, and its Drinks menu is entirely non-alcoholic."
+ },
+ "DE01442fb197": {
+  "error": "RuntimeError: claude -p exited 143: ",
+  "read_at": "2026-09-03"
+ },
+ "DE01de14e9e2": {
+  "error": "RuntimeError: claude -p exited 143: ",
+  "read_at": "2026-09-03"
+ },
+ "DE1a62273d75": {
+  "cost_usd": 0.4494,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch http://www.beardinerde.com/ - nav: Home, Our Menu, Specials, Contact Us; no happy hour mentioned",
+   "WebFetch https://beardinerde.com/our-menu/ - breakfast/dinner menu images only, no bar or drink menu, links to Specials",
+   "WebFetch https://beardinerde.com/specials/ - three specials images, no text",
+   "curl https://beardinerde.com/wp-content/uploads/2025/12/BearDiner_AllSpecials_OCT25-02.jpg + Read - Breakfast Special, 7am-11am Mon-Fri",
+   "curl https://beardinerde.com/wp-content/uploads/2025/12/BearDiner_LunchDinnerSpecials_OCT25-03.jpg + Read - Lunch Specials, Mon-Fri 11am-3pm",
+   "curl https://beardinerde.com/wp-content/uploads/2025/12/BearDiner_LunchDinnerSpecials_OCT25-032.jpg + Read - Dinner Specials, Mon-Fri 3pm-9pm"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "",
+  "transcript": "",
+  "turns": 12,
+  "venue_name_on_menu": "Bear Diner & Restaurant",
+  "why_not": "The site's Specials page carries only meal-time food specials (breakfast 7am-11am, lunch 11am-3pm, dinner 3pm-9pm, all Monday to Friday) and the menu pages show no bar or drink menu; the venue is a diner open 6am-9pm daily and never states a happy hour."
+ },
+ "DE2d548ed490": {
+  "cost_usd": 0.2833,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://millersalehouse.com/locations/christiana/?utm_source=gmb&utm_medium=organic — no happy hour; links to /specials/, /bar/, and a location drink-specials page",
+   "WebFetch https://millersalehouse.com/locations/christiana/drink-specials-in-christiana/ — 'All Day, Every Day Beer Specials', no days/times/prices",
+   "WebFetch https://millersalehouse.com/specials/ — daily food specials and drink prices, no happy hour window",
+   "WebFetch https://millersalehouse.com/bar/ — beer starting-at prices, no happy hour section"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "",
+  "transcript": "",
+  "turns": 6,
+  "venue_name_on_menu": "",
+  "why_not": "The site markets all-day, every-day drink specials and day-of-week food deals but never states a happy hour with days or times for this location."
+ },
+ "DE4014bbdc61": {
+  "cost_usd": 0.4384,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch location page 630-suburban-drive-96025 — links to /happy-hour and /specials",
+   "WebFetch /happy-hour for this location — no times, no prices printed",
+   "WebFetch /specials for this location — no times, no prices printed",
+   "WebFetch applebees.com/en/menu?storenumber=96025 — no happy hour section",
+   "WebFetch /happy-hour again for link hrefs — no text with a dollar sign or time of day",
+   "WebFetch applebees.com/en/specials/drinks (the page's own 'See Drink Specials' link) — HTTP 403",
+   "curl applebees.com/en/specials/drinks with browser UA — HTTP 403",
+   "WebFetch applebees.com/en/offers — HTTP 403"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "",
+  "transcript": "",
+  "turns": 10,
+  "venue_name_on_menu": "",
+  "why_not": "This location has a happy hour page, but it prints no days, times or prices — it states that Applebee's happy hour times vary by location and tells readers to contact the local restaurant, naming only generic categories (cocktails, draft beers, wine, Brew Pub Pretzels & Beer Cheese Dip, Boneless Wings) with no price on any of them."
+ },
+ "DE4798b4126a": {
+  "cost_usd": 0.3427,
+  "deals": [
+   {
+    "fine_print": "* At Bar and Restaurant Only. A gratuity of 18% will be added to parties of 8 or more",
+    "items": [
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Potstickers",
+      "price_quote": "Potstickers 10",
+      "price_usd": 10,
+      "quote": "Potstickers 10"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "½ lb Peel & Eat Shrimp",
+      "price_quote": "½ lb Peel & Eat Shrimp 10",
+      "price_usd": 10,
+      "quote": "½ lb Peel & Eat Shrimp 10"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Lefty's Signature Nachos",
+      "price_quote": "Lefty's Signature Nachos 10",
+      "price_usd": 10,
+      "quote": "Lefty's Signature Nachos 10"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Chicken & Waffles",
+      "price_quote": "Chicken & Waffles 11",
+      "price_usd": 11,
+      "quote": "Chicken & Waffles 11"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Lefty's Enchiladas",
+      "price_quote": "Lefty's Enchiladas 11",
+      "price_usd": 11,
+      "quote": "Lefty's Enchiladas 11"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Bavarian Pretzel",
+      "price_quote": "Bavarian Pretzel 12",
+      "price_usd": 12,
+      "quote": "Bavarian Pretzel 12"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Birria Tacos",
+      "price_quote": "Birria Tacos 12",
+      "price_usd": 12,
+      "quote": "Birria Tacos 12"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "Meat Lover's Stromboli",
+      "price_quote": "Meat Lover's Stromboli 14",
+      "price_usd": 14,
+      "quote": "Meat Lover's Stromboli 14"
+     },
+     {
+      "category": "draft",
+      "discount_pct": null,
+      "label": "Domestic Drafts",
+      "price_quote": "$3",
+      "price_usd": 3,
+      "quote": "$3   Domestic Drafts"
+     },
+     {
+      "category": "draft",
+      "discount_pct": null,
+      "label": "Craft & Select — $2 off",
+      "price_quote": "$2 OFF",
+      "price_usd": null,
+      "quote": "$2 OFF   Craft & Select"
+     },
+     {
+      "category": "wine",
+      "discount_pct": null,
+      "label": "Wine by the Glass — $3 off",
+      "price_quote": "$3 OFF",
+      "price_usd": null,
+      "quote": "$3 OFF   Wine by the Glass"
+     },
+     {
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "Lefty's Famous Crushes and Signature Cocktails",
+      "price_quote": "$9",
+      "price_usd": 9,
+      "quote": "$9   Lefty's Famous Crushes and Signature Cocktails"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "19:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 2,
+      "end": "19:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 3,
+      "end": "19:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 4,
+      "end": "19:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 5,
+      "end": "19:00",
+      "start": "15:00"
+     }
+    ]
+   }
+  ],
+  "dropped": [
+   "'Craft & Select — $2 off': needs exactly one of price_usd / discount_pct",
+   "'Wine by the Glass — $3 off': needs exactly one of price_usd / discount_pct"
+  ],
+  "found": true,
+  "items_kept": 10,
+  "kind": "pdf",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://iloveleftys.com/newark/ — location page, found Menus and Deals links",
+   "WebFetch https://iloveleftys.com/newark/deals/ — 'Happy Hour: Every weekday until 7PM', no items",
+   "WebFetch https://iloveleftys.com/newark/menu/ — found Happy Hour Menu PDF link",
+   "curl -sL -o .../happy-hour.pdf https://iloveleftys.com/wp-content/uploads/2026/06/Happy-Hour-menu-REV08-1-1.pdf",
+   "Read happy-hour.pdf — 2 pages, happy hour menu on page 1"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "https://iloveleftys.com/wp-content/uploads/2026/06/Happy-Hour-menu-REV08-1-1.pdf",
+  "transcript": "Happy HOUR\n\nPotstickers 10\nchicken and vegetable potstickers,\nsoy ginger vinaigrette (5)\n\n½ lb Peel & Eat Shrimp 10\nslow poached shrimp, traditional cocktail sauce (GF)\n\nLefty's Signature Nachos 10\nbrisket or shredded chicken tinga layered with\ncheese, pico de gallo, napa cabbage,\njalapeño ranch, fried jalapeños\n\nChicken & Waffles 11\ncaramelized pearl sugar waffle, topped with\ncrispy chicken tenders, candied bacon, drizzled\nwith maple honey syrup\n\nLefty's Enchiladas 11\nyour choice of chicken tinga or brisket, mixed\ncheese medley, enchilada sauce with a flour tortilla (2)\n\nBavarian Pretzel 12\nwarm house-baked pretzel, your choice\nof honey mustard or beer cheese\n\nBirria Tacos 12\nslow-braised beef in a rich chili broth, melted cheese,\ncilantro, onion, loaded onto crispy tortillas\nwith a savory consommé for dipping (2)\n\nMeat Lover's Stromboli 14\nstuffed & rolled with pepperoni, sausage, ham, bacon,\nmelted mozzarella, with a side of marinara sauce\n\nGF = can be made Gluten-Friendly upon request   V = Vegetarian\n\n* At Bar and Restaurant Only\nAvailable 3-7pm Monday to Friday\n\n$3   Domestic Drafts\n$2 OFF   Craft & Select\n$3 OFF   Wine by the Glass\n$9   Lefty's Famous Crushes and Signature Cocktails\n\nMENU ITEMS MAY HAVE COME IN CONTACT OR CONTAIN\nWHEAT, GLUTEN, PEANUTS, TREE NUTS, MILK, EGGS, FISH, SHELLFISH, AND/OR SOYBEAN.\nPLEASE IMMEDIATELY NOTIFY YOUR SERVER OF ANY ALLERGIES IN YOUR PARTY.\nA gratuity of 18% will be added to parties of 8 or more",
+  "turns": 7,
+  "venue_name_on_menu": "Lefty's ALLEY & EATS",
+  "why_not": ""
+ },
+ "DE4eecd7172c": {
+  "cost_usd": 0.23,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch location page 105-wilton-blvd.-96085 — mentions happy hour vibe, links /happy-hour and /specials",
+   "WebFetch /happy-hour — states times vary by location, call the restaurant; no days, times or prices",
+   "WebFetch /specials — seasonal drink copy only, no schedule or prices"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "",
+  "transcript": "",
+  "turns": 5,
+  "venue_name_on_menu": "",
+  "why_not": "The location's happy hour page states \"Applebee's Happy Hour times vary by location. For the most accurate information about Happy Hour availability and times, contact your local Applebee's location.\" and the specials page offers only seasonal drink marketing copy with no days, times, items or prices."
+ },
+ "DE57c304421b": {
+  "cost_usd": 0.5316,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "exhausted",
+  "model": "opus",
+  "path_taken": [],
+  "read_at": "2026-09-03",
+  "transcript": "",
+  "turns": 15,
+  "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.53 spent"
+ },
  "DE6779bbc094": {
   "cost_usd": 0.3402,
   "deals": [
@@ -280,5 +673,83 @@
   "turns": 6,
   "venue_name_on_menu": "",
   "why_not": ""
+ },
+ "DE67ffbd5190": {
+  "cost_usd": 0.2693,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch location page 2480-pulaski-hwy.-97071 — linked a happy-hour page and a specials page",
+   "WebFetch .../happy-hour — prose only, says times vary by location, no days/times/prices",
+   "WebFetch .../specials — general lunch/dinner marketing copy, no days/times/prices",
+   "WebFetch www.applebees.com/en/menu?storenumber=97071 — no happy hour section"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "",
+  "transcript": "",
+  "turns": 6,
+  "venue_name_on_menu": "",
+  "why_not": "This location's happy-hour page names item categories but prints no days, times or prices, telling readers instead that \"Applebee's Happy Hour times vary by location\" and to call the restaurant."
+ },
+ "DE84da41945d": {
+  "cost_usd": 0.5893,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "exhausted",
+  "model": "opus",
+  "path_taken": [],
+  "read_at": "2026-09-03",
+  "transcript": "",
+  "turns": 15,
+  "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.59 spent"
+ },
+ "DE86cd5b00ee": {
+  "cost_usd": 0.2523,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch cinemark.com theatre page for Christiana & XD — no happy hour, only a Food & Drink nav link",
+   "WebFetch cinemark.com/food-and-drink — generic concessions, links to Beer, Wine & Cocktails",
+   "WebFetch cinemark.com/food-drink/alcohol/ — describes beer/wine/frozen/cocktails at select locations, no hours or prices"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "",
+  "transcript": "",
+  "turns": 5,
+  "venue_name_on_menu": "",
+  "why_not": "Cinemark's site offers only a generic national Food & Drink and \"Beer, Wine & Cocktails\" description with no hours, prices, or location-specific bar menu for the Christiana theatre."
+ },
+ "DEc256cb185f": {
+  "cost_usd": 0.5502,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch location page 900-churchmans-road-94047 - links to /happy-hour and /specials",
+   "WebFetch /happy-hour for this location - prose only, no times or prices",
+   "WebFetch /specials for this location - generic promo language, no items or prices",
+   "WebFetch applebees.com/en/specials/drinks - HTTP 403",
+   "curl drinks.html - national $6 Spooky Sips seasonal cocktails, no happy hour days or times",
+   "curl hh.html - raw location happy hour page confirms no printed times, items or prices"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "",
+  "transcript": "",
+  "turns": 13,
+  "venue_name_on_menu": "",
+  "why_not": "The location's own happy hour page offers only prose (\"Call ahead to learn more about our current happy hour specials!\") and an FAQ stating \"Applebee's Happy Hour times vary by location\", with no printed days, times, items or prices; the only priced items on the linked brand page are the national $6 Spooky Sips seasonal cocktails, which are not stated as happy hour and carry no window."
  }
 }

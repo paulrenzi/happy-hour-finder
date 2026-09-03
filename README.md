@@ -82,7 +82,7 @@ it is why the logic is testable without a browser.
 ### The process for one town — four commands, in order
 
 ```
-python ingest/agent_read_venue.py --zone <zone> --show --rejects   # the agent reads each venue
+python ingest/agent_read_venue.py --zone <zone> --tier A --show --rejects   # the agent reads
 python ingest/build_bundles.py                                     # items onto cards
 git commit && git push                                             # deploy
 python tests/live_front_door.py <zone>                             # "it is live"
@@ -91,6 +91,14 @@ python tests/live_front_door.py <zone>                             # "it is live
 All of them, in order, or the fix exists only in the source. Two agent
 sessions at a time (the default); about a minute and 35 cents of metered model
 time per venue with a menu picture. One town at a time, never the corpus.
+
+`--tier` orders the town by the evidence already on disk -- **A** a captured
+menu image nobody has read, **B** a page the crawl quoted happy hour from,
+**C** a website and nothing else -- and implies `--needy` (skip venues whose
+card already carries items). Run A, measure what it returned, and let that
+decide whether B is worth buying. A blanket `--zone` run spends three quarters
+of its money on tier C, which the reach measurement already showed publishes
+no price anywhere.
 Anything the agent found but the gates refused prints under `--rejects`.
 
 The older window lane (`crawl_sites.py` → `extract_deals.py`) still runs when

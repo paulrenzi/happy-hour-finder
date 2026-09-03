@@ -2516,6 +2516,33 @@ Runs: `--zone Z` or `--lids file` (required, exclusive), `--limit N`,
 `--workers 2` (default), `--force` to re-read, `--show`, `--rejects`.
 A row with `error` is re-read on the next run automatically.
 
+### Selection: order a run by the evidence you already hold (2026-09-03)
+
+Paul, on watching a `--zone` run start: *"doing a blanket run without taking
+into account what's already there is wasteful."* He was right, and the numbers
+were already on disk.
+
+`population()` originally took **every website in the zone** at the same price.
+Measured on newark_de -- 173 websites, 153 of them needy (`ingest/needy.py`:
+a website and no items on the card):
+
+| tier | what we already hold on it | count | blind cost |
+|---|---|---|---|
+| **A** | the crawl **captured a menu image**, still unread | 10 | ~$3.50 |
+| **B** | the crawl **quoted happy hour** on a page, no image | 25 | ~$9 |
+| **C** | a website, and no hh-shaped evidence of any kind | 118 | ~$41 |
+
+Tier C is **77% of the spend** aimed at the population the reach measurement
+already showed publishes no price anywhere. Tier A is the other extreme: we
+already paid to fetch those images and nothing ever looked at them.
+
+`--needy` and `--tier A|B|AB|C` implement this; `--tier` implies `--needy`.
+
+> 🔑 **Run the tier, measure its hit rate, and let that decide whether the next
+> tier is worth buying.** "Prove it on one town for a dollar" applies to the
+> SELECTION as much as the town: a blanket zone selection spends most of its
+> money where the evidence already says there is nothing to read.
+
 ### Cost — measured, not estimated
 
 Every read records `cost_usd` and `turns` from the CLI's own JSON. The Greene

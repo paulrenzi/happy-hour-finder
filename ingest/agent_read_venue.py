@@ -148,6 +148,40 @@ def save(path, doc):
     os.replace(tmp, path)
 
 
+def tiers(zone, base):
+    """Split a zone's venues by the evidence we ALREADY hold on each one.
+
+    A blanket --zone run reads every website in the town at the same price,
+    including the ones the crawl has already shown have nothing to read.
+    Measured on newark_de 2026-09-03: of 153 needy venues, 10 had a menu
+    image captured and never read, 25 had a happy-hour quote on the page,
+    and 118 had a website and no hh-shaped evidence of any kind -- 77% of
+    the spend against the population that publishes no price anywhere.
+
+    🔑 Order a run by the evidence, cheapest and richest first, and measure
+    the hit rate of each tier before paying for the next.
+
+      A  a menu image is captured and unread   -- we already paid to fetch it
+      B  the crawl quoted happy hour on a page -- something is there to read
+      C  a website, and no evidence at all     -- a blind read
+    """
+    hits = load(os.path.join(REPO, "data", "crawl_hits.json"))
+    site2lid = {}
+    for lid, v in base.items():
+        w = (v.get("website") or "").rstrip("/").lower()
+        if w:
+            site2lid.setdefault(w, lid)
+    a, b = set(), set()
+    for v in hits.values():
+        if v.get("zone_id") != zone:
+            continue
+        lid = site2lid.get((v.get("website") or "").rstrip("/").lower())
+        if not lid:
+            continue
+        (a if v.get("menu_images") else b if v.get("hits") else set()).add(lid)
+    return a, b
+
+
 def population(args):
     base = load(BASE)
     if args.lids:
@@ -156,7 +190,42 @@ def population(args):
     else:
         rows = [(lid, v) for lid, v in base.items() if v.get("zone_id") == args.zone]
     rows = [(lid, v) for lid, v in rows if v.get("website")]
+
+    if args.needy or args.tier:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import needy as _needy
+        _needy.warn_if_base_is_stale()
+        zones = {v.get("zone_id") for _, v in rows}
+        keep = set()
+        for z in zones:
+            keep |= {lid for lid, _n, _w in _needy.needy(z)}
+        rows = [(lid, v) for lid, v in rows if lid in keep]
+
+    if args.tier:
+        want = set(args.tier.upper())
+        zone = args.zone or (rows[0][1].get("zone_id") if rows else None)
+        a, b = tiers(zone, base) if zone else (set(), set())
+        pick = set()
+        if "A" in want:
+            pick |= a
+        if "B" in want:
+            pick |= b
+        rows = ([(lid, v) for lid, v in rows if lid in pick] if want <= {"A", "B"}
+                else [(lid, v) for lid, v in rows if lid in pick or lid not in a | b])
     return rows[: args.limit] if args.limit else rows
+
+
+class TurnsExhausted(RuntimeError):
+    """The session ran out of turns. A real outcome, not a transient failure.
+
+    It carries what the attempt cost, because that money was spent whether or
+    not the read returned anything, and a retry at the same --max-turns spends
+    it again for the same ending.
+    """
+
+    def __init__(self, msg, cost, turns):
+        super().__init__(msg)
+        self.cost, self.turns = cost, turns
 
 
 def run_agent(lid, venue):
@@ -177,9 +246,30 @@ def run_agent(lid, venue):
          "--setting-sources", "", "--exclude-dynamic-system-prompt-sections"],
         input=prompt, capture_output=True, text=True, encoding="utf-8",
         errors="replace", timeout=900)
-    if proc.returncode != 0:
-        raise RuntimeError(f"claude -p exited {proc.returncode}: {proc.stderr[:300]}")
-    reply = json.loads(proc.stdout)
+    # 🛑 A NON-ZERO EXIT IS NOT AN EMPTY RESULT. The CLI exits 1 when a session
+    # runs out of turns -- and still prints its whole JSON envelope, including
+    # what it spent. LongHorn and Cheddar's (newark_de, 2026-09-03) failed this
+    # way: `exited 1: ` with an EMPTY stderr, $0.60 of real model time each,
+    # recorded as `error`, reported in the run total as $0.00, and re-read at
+    # full price on every subsequent run because the lane retries errors.
+    # Parse stdout first and let the envelope say what happened; only a run
+    # that printed nothing parseable is an error.
+    reply = None
+    if proc.stdout.strip():
+        try:
+            reply = json.loads(proc.stdout)
+        except json.JSONDecodeError:
+            reply = None
+    if reply is None:
+        raise RuntimeError(f"claude -p exited {proc.returncode}: "
+                           f"{(proc.stderr or proc.stdout)[:300]}")
+    if proc.returncode != 0 and not (reply.get("result") or ""):
+        raise TurnsExhausted(
+            f"exited {proc.returncode} after {reply.get('num_turns')} turns "
+            f"(stop_reason {reply.get('stop_reason')!r}), "
+            f"${float(reply.get('total_cost_usd') or 0):.2f} spent",
+            float(reply.get("total_cost_usd") or 0),
+            int(reply.get("num_turns") or 0))
     body = reply.get("result") or ""
     m = re.search(r"\{.*\}", body, re.S)
     if not m:
@@ -190,6 +280,13 @@ def run_agent(lid, venue):
 def one(lid, venue, today):
     try:
         read, cost, turns = run_agent(lid, venue)
+    except TurnsExhausted as err:
+        # Not an `error` key: this venue is DONE for this --max-turns, and a
+        # retry buys the same ending again. Its cost is recorded like any read.
+        return lid, {"read_at": today, "model": MODEL, "cost_usd": round(err.cost, 4),
+                     "turns": err.turns, "found": False, "kind": "exhausted",
+                     "why_not": str(err), "path_taken": [], "transcript": "",
+                     "deals": [], "items_kept": 0, "dropped": []}, [], []
     except (RuntimeError, ValueError, subprocess.TimeoutExpired, json.JSONDecodeError) as err:
         return lid, {"error": f"{type(err).__name__}: {str(err)[:300]}", "read_at": today}, [], []
     items, dropped = ([], []) if not read.get("found") else items_from(read)
@@ -211,6 +308,12 @@ def main():
     g = ap.add_mutually_exclusive_group(required=True)
     g.add_argument("--lids", help="file of licence ids, one per line")
     g.add_argument("--zone", help="every venue with a website in this zone")
+    ap.add_argument("--needy", action="store_true",
+                    help="only venues whose card has no items yet (ingest/needy.py)")
+    ap.add_argument("--tier", metavar="A|B|AB|C",
+                    help="select by the evidence already held: A a captured, unread "
+                         "menu image; B the crawl quoted happy hour; C neither. "
+                         "Implies --needy. Run A before paying for B, B before C.")
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--workers", type=int, default=2,
                     help="parallel CLI sessions; 3 lost a quarter of reads to exit 1")
@@ -229,7 +332,7 @@ def main():
             if args.force or lid not in reads or "error" in reads[lid]]
     print(f"{len(todo)} venue(s) to read, model {MODEL}, {args.workers} at a time\n")
     today = datetime.date.today().isoformat()
-    spent = 0.0
+    spent, hit = 0.0, 0
 
     with cf.ThreadPoolExecutor(max_workers=args.workers) as ex:
         futs = [ex.submit(one, lid, v, today) for lid, v in todo]
@@ -250,6 +353,7 @@ def main():
                 save(READS, reads)
                 save(OUT, out)
             spent += rec.get("cost_usd", 0)
+            hit += 1 if items else 0
             if "error" in rec:
                 print(f"[{n}/{len(todo)}] {name:<36} !! {rec['error'][:90]}")
                 continue
@@ -267,7 +371,10 @@ def main():
                 for d in dropped:
                     print(f"      x {d}")
 
-    print(f"\n{len(out)} venue(s) with items -> {OUT}; reads -> {READS}; "
+    # THIS RUN, not the whole file. `len(out)` counted every venue the sidecar
+    # had ever held, so a run that found one venue reported two.
+    print(f"\n{hit} of {len(todo)} venue(s) read returned items ({len(out)} on file) "
+          f"-> {OUT}; reads -> {READS}; "
           f"about ${spent:.2f} of subscription-metered model time")
     print("Nothing is on the board yet: python ingest/build_bundles.py, then "
           "python tests/live_front_door.py <zone> after deploy")
