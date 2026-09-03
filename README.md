@@ -19,8 +19,9 @@ credentials with anything else on this machine.
 | | |
 |---|---|
 | zones (named drinking districts) | 48 |
-| **on the board with a published happy-hour window** | **352 venues, 369 deals** |
-| known **thin reads** — live deal with under 5 items, needs a re-scrape (Paul's rule, 2026-09-03) | **146 venues** |
+| **on the board with a published happy-hour window** | **351 venues, 368 deals** |
+| known **thin reads** — live deal with under 5 items, needs a re-scrape (Paul's rule, 2026-09-03) | **~146 venues, `data/RESCRAPE-QUEUE.json`** |
+| board photo coverage | **351 of 351 (100%)** |
 
 **Read that table in two halves.** What we publish is checked: every window and
 every price has to appear in a sentence on the venue's own page, and the test
