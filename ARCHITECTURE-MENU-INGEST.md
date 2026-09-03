@@ -2581,6 +2581,48 @@ number for `180B Mill Rd`, so P.J. Whelihan's un-merged from Oaks Cinema. The
 house regex is now `\b(\d+)[A-Za-z]?\b`. **Check the merge set before and
 after any change to `norm_addr` or the collapse** — the number to watch was 7.
 
+### Debugging the lane: three failures that all looked like nothing (2026-09-03 night)
+
+**1. `!! RuntimeError: claude -p exited 1:` with an EMPTY stderr.** Not a crash --
+the session ran out of turns, and the CLI printed its whole JSON envelope on
+**stdout** anyway, cost and all. LongHorn and Cheddar's cost $0.53 and $0.59
+each, were filed as `error`, counted in the run total as **$0.00**, and re-read
+at full price on every run because the lane retries errors.
+
+> 🛑🔑 **A non-zero exit is not an empty result.** Parse stdout first and let the
+> payload say what happened; only a run that printed nothing parseable is an
+> error. An empty stderr next to a non-zero exit means GO READ STDOUT.
+
+A turn-exhausted read is now `kind: "exhausted"` -- a recorded outcome that
+carries its `cost_usd` and is **never retried**, because a retry at the same
+`--max-turns` buys the same ending. Both were chain sites (Darden) where the
+agent wanders location pages. If those should be read, raise `MAX_TURNS` for
+them deliberately; do not let the lane re-buy 15 turns forever.
+
+**2. A run summary that counts the file, not the run.** `len(out)` reported
+"2 venue(s) with items" on a run that found one. Now `N of M venue(s) read
+returned items (K on file)`.
+
+**3. Items with nowhere to land.** `build_bundles.py` attaches the agent sidecar
+inside `for deal in venue.get("deals", [])`. **A venue with no deterministic
+window has no deal, so the loop never runs and verified items are silently
+stranded.** Lefty's Alley & Eats: 10 items read off a PDF, 0 on the card, no
+error anywhere -- `deals_agent.json` says 10, `web/data/venues-newark_de.json`
+says `"deals": []`. The Greene Turtle proof did not expose this because it
+already carried a regex-lane window.
+
+> 🔑 **Check the sidecar against the BUILT bundle, not against the sidecar.**
+> The lane's own output said it succeeded. The board is the only witness that
+> matters, and the tell was a board diff of zero bytes after a run that found items.
+
+This is the open product question, not a bug to fix quietly: may a venue with
+no deterministic window carry the agent's items, and/or the agent's window?
+Until Paul answers, the agent lane can read a town and publish nothing from it.
+
+**Also open:** the gates refuse a fixed-dollar discount ("Craft & Select --
+$2 off"): the item schema has `price_usd` and `discount_pct` and no home for
+"$2 off". Two of Lefty's twelve reads died on it.
+
 ### 🛑 The test of a process is the process
 
 Paul asked, the morning after: *"did you use the scripted process to actually

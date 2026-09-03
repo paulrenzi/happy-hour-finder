@@ -83,23 +83,40 @@ it is why the logic is testable without a browser.
 
 ```
 python ingest/agent_read_venue.py --zone <zone> --tier A --show --rejects   # the agent reads
-python ingest/build_bundles.py                                     # items onto cards
-git commit && git push                                             # deploy
-python tests/live_front_door.py <zone>                             # "it is live"
+python ingest/build_bundles.py                                              # items onto cards
+git commit && git push                                                      # deploy
+python tests/live_front_door.py <zone>                                      # "it is live"
 ```
 
-All of them, in order, or the fix exists only in the source. Two agent
-sessions at a time (the default); about a minute and 35 cents of metered model
-time per venue with a menu picture. One town at a time, never the corpus.
+All four, in order, or the fix exists only in the source. One town at a time,
+never the corpus. Two agent sessions at a time (the default) — three lost a
+quarter of its reads. Anything the agent found but the gates refused prints
+under `--rejects`.
 
-`--tier` orders the town by the evidence already on disk -- **A** a captured
-menu image nobody has read, **B** a page the crawl quoted happy hour from,
-**C** a website and nothing else -- and implies `--needy` (skip venues whose
-card already carries items). Run A, measure what it returned, and let that
-decide whether B is worth buying. A blanket `--zone` run spends three quarters
-of its money on tier C, which the reach measurement already showed publishes
-no price anywhere.
-Anything the agent found but the gates refused prints under `--rejects`.
+**Pick who gets read: `--tier`.** Reading every website in a town costs the same
+per venue whether or not there is anything there to read, so a run is ordered by
+the evidence already on disk:
+
+| tier | what we already hold on the venue |
+|---|---|
+| **A** | the crawl captured a menu image and nobody ever read it |
+| **B** | the crawl quoted happy hour on one of its pages |
+| **C** | a website, and no sign of a happy hour anywhere |
+
+`--tier` implies `--needy` (skip venues whose card already carries items).
+**Run A, look at what it returned, then decide whether B is worth buying.**
+Measured on newark_de: tier C was 118 of 153 venues — three quarters of the
+money — against the population that publishes no price anywhere.
+
+Cost is real and recorded per venue in `data/agent_reads.json`. Budget roughly
+$0.35 and a minute for a venue with a menu to read; a venue with nothing costs
+less, and one that wanders a chain site can cost more.
+
+⚠️ **Known gap (2026-09-03):** the agent's items only reach a card if the venue
+already has a **window** from the deterministic lane — `build_bundles.py` hangs
+items on an existing deal, so a venue with no window strands them with no error.
+Whether such a venue may publish the agent's items, or its window, is an open
+call. Check the built bundle, not the lane's own summary.
 
 The older window lane (`crawl_sites.py` → `extract_deals.py`) still runs when
 a town needs its hours found; its full recipe is in
