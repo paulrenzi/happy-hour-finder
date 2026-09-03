@@ -93,7 +93,11 @@ def main():
                 "lid": LID,
                 "zone_id": "king_of_prussia",
                 "deals": [{
-                    "type": "happy_hour",
+                    # A type distinct from whatever LID's real deal already
+                    # carries, so this probe never merges with it -- the merge
+                    # in buildFeed() only folds same-type deals into one card,
+                    # and this probe needs its own 16-item card, undiluted.
+                    "type": "chrome_probe",
                     "windows": [{"dow": d, "start": "00:00", "end": "23:59"}
                                 for d in range(1, 8)],
                     # Sixteen items, because a menu that reads cleanly is a
@@ -111,7 +115,7 @@ def main():
             }],
             "confirms": {},
         }
-        overlay["confirms"][f"{LID}:happy_hour|" + ",".join(
+        overlay["confirms"][f"{LID}:chrome_probe|" + ",".join(
             sorted(f"{d}:00:00-23:59" for d in range(1, 8))
         )] = {"n": 2, "last": "2026-08-31"}
 

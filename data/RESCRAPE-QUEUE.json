@@ -1,7 +1,7 @@
 {
  "rule": "Paul, 2026-09-03: any live deal with under 5 happy-hour items needs a re-scrape.",
  "generated": "2026-09-03",
- "count": 122,
+ "count": 126,
  "venues": [
   {
    "zone": "abington_jenkintown",
@@ -383,11 +383,47 @@
   },
   {
    "zone": "exton_downingtown",
+   "name": "Al Pastor",
+   "lid": "81364",
+   "verified_by": "auto_extract",
+   "item_count": 1,
+   "url": "https://eatalpastor.com",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "exton_downingtown",
+   "name": "Anthony's Cucina Fresca",
+   "lid": "73031",
+   "verified_by": "auto_extract",
+   "item_count": 2,
+   "url": "https://anthonyscucinafresca.com/menu/",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "exton_downingtown",
    "name": "ChopHouse Grille",
    "lid": "89606",
    "verified_by": "auto_extract",
    "item_count": 1,
    "url": "https://www.chophousegrille.com/happy-hour",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "exton_downingtown",
+   "name": "Limoncello",
+   "lid": "67364",
+   "verified_by": "auto_extract",
+   "item_count": 2,
+   "url": "https://www.limoncellorestaurant.com/happy-hour-menu",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "exton_downingtown",
+   "name": "PJ Whelihan's",
+   "lid": "63902",
+   "verified_by": "auto_extract",
+   "item_count": 1,
+   "url": "https://www.pjspub.com/about.php?loc=Downingtown",
    "status": "NEEDS_RESCRAPE"
   },
   {
@@ -404,7 +440,7 @@
    "name": "Station Taproom",
    "lid": "62955",
    "verified_by": "auto_extract",
-   "item_count": 2,
+   "item_count": 1,
    "url": "https://stationtaproom.com/",
    "status": "NEEDS_RESCRAPE"
   },
@@ -617,6 +653,15 @@
   },
   {
    "zone": "newark_de",
+   "name": "Chili's Grill & Bar",
+   "lid": "DEc68619870c",
+   "verified_by": "auto_extract",
+   "item_count": 2,
+   "url": "https://www.chilis.com/locations/us/delaware/newark/christiana?utm_source=google&utm_medium=local&utm_campaign=Chilis",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "newark_de",
    "name": "Crooked Hammock Brewery",
    "lid": "DE520bfab56d",
    "verified_by": "menu_read_llm",
@@ -809,7 +854,7 @@
    "name": "Sly Fox",
    "lid": "36841",
    "verified_by": "menu_read_llm",
-   "item_count": 2,
+   "item_count": 3,
    "url": "https://www.slyfoxbeer.com/phoenixville",
    "status": "NEEDS_RESCRAPE"
   },
@@ -935,7 +980,7 @@
    "name": "Saloon 151",
    "lid": "71245",
    "verified_by": "agent_read",
-   "item_count": 4,
+   "item_count": 3,
    "url": "https://www.saloon151.com/weekly-specials",
    "status": "NEEDS_RESCRAPE"
   },
@@ -946,15 +991,6 @@
    "verified_by": "roundup_extract",
    "item_count": 4,
    "url": "https://countylinesmagazine.com/article/cheers-its-happy-hour-in-west-chester-pa/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "west_chester",
-   "name": "Station 142 Stage + Bar + Kitchen",
-   "lid": "129847",
-   "verified_by": "agent_read",
-   "item_count": 4,
-   "url": "https://station142.com/food-drink-menu/",
    "status": "NEEDS_RESCRAPE"
   },
   {

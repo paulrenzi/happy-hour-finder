@@ -524,13 +524,31 @@ export function buildFeed(venues, at, { zone = null, filter = "all", sort = "soo
      bug to anyone scrolling it. The rows are already sorted, so the first one a
      bar has is the deal that answers "can I go now?" best -- that is the one the
      board shows, and the venue sheet still lists every deal it has. `others` is
-     how many it is standing in for, so a card can say so. */
+     how many it is standing in for, so a card can say so.
+
+     Two deals of the SAME type (both "happy_hour", say) are not two different
+     answers -- they are two photos of the one thing a reader means by "the
+     happy hour", so they are merged into a single row instead of one hiding
+     the other: Kooma's drinks photo and food photo both read as `happy_hour`
+     and a person asking "what's the deal" wants both lists, not whichever
+     photo sorted first. A deal of a DIFFERENT type (a food_combo next to a
+     happy_hour) is a genuinely different offer, so it still collapses into
+     `others` rather than merging. */
   const seen = new Map();
   const one = [];
   for (const row of rows) {
     const key = row.v.id;
     const held = seen.get(key);
     if (held) {
+      if (held.deal && row.deal && (held.deal.type || "happy_hour") === (row.deal.type || "happy_hour")) {
+        if (!held.mergedFrom) {
+          held.deal = { ...held.deal, items: [...held.deal.items] };
+          held.mergedFrom = [held.deal];
+        }
+        held.deal.items.push(...row.deal.items);
+        held.mergedFrom.push(row.deal);
+        continue;
+      }
       held.others += 1;
       continue;
     }
