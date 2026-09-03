@@ -136,3 +136,16 @@ re-attempt these unless the venue's own site changes.)
 - abington_jenkintown | Morgan Stillhouse | NO_CLOCK_TIME | empty sweep | 2026-09-04
 - manayunk | Daiva's Grille, kitchenbar.net | UNREACHABLE/NO_CLOCK_TIME | 410 gone / empty sweep | 2026-09-04
 - NOTE: remaining unread candidates in these thin non-Philly zones are heavily chains/groceries/non-bar businesses (Wawa, ShopRite, Giant, Chipotle, Chili's, Starbucks, Sheetz, Royal Farms, Little Caesars) or independents already dead-ended above -- this territory is close to tapped out for the hand-read ladder without new seeding (discover_places.py) or fresh sites appearing.
+- ridley_tinicum | Rosemary (110744) | SHIPPED | full HH menu image, daily 4-6pm | 2026-09-03
+- middletown_de | The Farmhouse Middletown (DEa4fada708b) | SHIPPED | Mon-Fri 3-6pm bar area, full pricing | 2026-09-03
+- middletown_de | Mulligans (DEe5a79c1b86) | SHIPPED | Tue-Fri 3-6pm, full drink/food pricing | 2026-09-03
+- havertown | Ivy Inn/Barnaby's/JD McGillicuddy's | NO_CLOCK_TIME | empty sweeps or marketing copy only, no window/price | 2026-09-03
+- havertown | The Crossbar | UNREACHABLE | SSL cert self-signed | 2026-09-03
+- havertown | 1019 Westgate (Westgate Pub) | UNREACHABLE | HTTP 429 | 2026-09-03
+- ridley_tinicum | Fainting Goat | NO_CLOCK_TIME | window m-f 4-6 found repeatedly but no price text anywhere on site | 2026-09-03
+- ridley_tinicum | Casey's Ridley Park | NO_CLOCK_TIME | Popmenu JS-rendered specials page, no content in raw fetch | 2026-09-03
+- ridley_tinicum | Stinger's Waterfront/Gachi Sushi/Ridley House/Station Tap/Pete's Pizza/Carlette's Hideaway/JT Brewski/Fibbers | NO_CLOCK_TIME | empty sweeps | 2026-09-03
+- middletown_de | Curry & Cocktails | NO_CLOCK_TIME | window daily 4:30-6:30pm found but no HH item prices reachable | 2026-09-03
+- middletown_de | Ochinilis Steaks | UNREACHABLE | HTTP 403 | 2026-09-03
+- middletown_de | Casa 19/Back Creek Seven Tap/Mas Tacos/Jackson House/Derby's/Caruso's Bistro/Randazzo's | NO_CLOCK_TIME | empty sweeps | 2026-09-03
+- chester_chichester | Monaghan's Pub/Hunt's Annex/Tom N Jerry's/E Cooke Winery/Gachi Sushi/Phoenix Bar & Grill/Duffer's Mill/Lefty's Irish Pub/Maggie May's | NO_CLOCK_TIME | empty sweeps or unreachable Facebook page | 2026-09-03
