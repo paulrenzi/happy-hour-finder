@@ -125,3 +125,61 @@ count as its last line. `the80.json` is the population; regenerate it from
   world.** Ask the page. The "403 six" evaporated on contact; the "reach" story
   was 90% "there is nothing there".
 - **A page that names the hour and shows no price is usually telling the truth.**
+
+---
+
+## 7. Addendum 2026-09-03 — the source that exists when the venue writes nothing
+
+Paul: *"tracking is not the solution."* Agreed. §4 said where the prices are
+not; this says where they are. The one source untouched by every crawler
+change is the venue's **Google listing**: customers photograph the happy-hour
+board, and reviewers write the prices out. Proven on one town for $2.96.
+
+`scratchpad/size_google_eyes.py` — one Places Text Search per venue (photos
+and reviews ride the same call), up to 10 photo downloads, one vision read per
+photo on the `claude` CLI subscription (the reader `extract_photo_deals.py`
+already uses). Read-only; cache under `scratchpad/google_eyes/`.
+
+| Center City, 29 of the 78 | venues |
+|---|---:|
+| matched a Google listing | 26 (Bar Bombón lost to the accent in `name_agrees`; Justop is the apartment-block case; DBG unmatched) |
+| customer PHOTO of a board that names the happy hour AND carries prices | **3** (El Vez, The Trestle Inn, Bloomsday) |
+| REVIEW sentence naming happy hour AND a price | **1** (Pearl & Mary: `$2 oysters, $1 clams, $5 beers, $6 house wine, $7 cocktails`) |
+| either | **4 of 29** |
+
+Bloomsday is the containment case again: the board's HAPPY HOUR section lists
+three drinks with no price, and the `$16` lines sit under CHALKBOARD SPECIALS
+beneath it. A photo needs the same section rule a web page gets. Strict count
+is therefore **3 of 29, ~10%**, which extrapolates to **~8 of 78**.
+
+What it recovers is different in kind from every other route: El Vez and
+Trestle Inn are **whole priced happy-hour menus** (Trestle: six items, two
+windows) for venues whose websites carry nothing. The pipeline to publish them
+already exists end to end — download, vision read, grounding, PA validators,
+human review in `review_photos.py` — the only unbuilt piece is feeding it a
+Google photo instead of a submitted one, plus the section rule.
+
+Instrument note: **62 of 260 reads failed with `claude -p exited 1`** under
+three parallel CLI calls, and one of the three hits (Trestle Inn) was inside
+those failures. A read that errors is not a zero; the probe now re-reads them.
+
+Terms note: the card photo lane already displays Places photos with
+attribution. Publishing deals *derived* from a Places photo or review is a
+different use of the same data and should be checked against the Places
+terms before the lane ships.
+
+### The whole picture, all routes sized
+
+| route | of 78 |
+|---|---:|
+| Google listing photo / review (new, extrapolated from 29) | ~8 |
+| dollar-less price (dot leader) | 2 |
+| the hop, safe half | 2 |
+| pixels, non-QR | ~2 |
+| **all four built** | **~14 (18%)** |
+| **no published price found anywhere** | **~64** |
+
+For those ~64 the price is not on the web. The only source left is the venue's
+own hand: the intake worker already accepts a photo per licence id, so the ask
+is "text us a photo of your board", not "fill in a form". That is outreach, and
+outreach is a lane Paul already runs; it is not a scraper change.
