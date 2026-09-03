@@ -21,6 +21,87 @@ move it, say so in the first sentence.
 
 ---
 
+## 0a. 🚨 THE COST, CUMULATIVE — read this before you plan anything
+
+Paul, 2026-09-02: *"I want every future session to know what's happening, and
+understand that if it isn't solved tonight, I drop Claude as a service."*
+
+**This is not a new problem and it is not a hard-to-see problem. It has been
+measured, written down, and not solved, for 33 days.**
+
+| | |
+|---|---|
+| the scrape yield was first measured, and found low | **2026-07-31** — repo commit #2, *"phase 0: the scrape yield is 19%, not 40%"* |
+| days since | **33** |
+| working days spent on the menu/item/price/reach problem | **5** (08-06, 08-07, 08-31, 09-01, 09-02) |
+| commits on that problem | **70** |
+| handoff/plan documents in this repo | **40** — every one of them touches it |
+| the goal stated in writing as *"every listed menu"* | **2026-09-01** (`8a22ce8`) |
+| venues that ship an hour and still no items | **112** |
+| of those, unreachable — no priced sentence, no image | **80** |
+
+**This session alone: roughly two hours of Paul's time, and the 80 moved by 2.**
+One hour went to a linked-image rule (worth **2 of 80**); the second hour went to
+the Tomorrow-header bug and a redirect guard (worth **1 wrong card**) — neither
+of which was the job. The session then reported those as progress, which is the
+failure on top of the failure.
+
+🛑 **What this record is for.** Not contrition — a rule. Every one of
+those 5 days produced a real, tested, shipped improvement worth single digits,
+and 70 such improvements have left the binding number where it was. **That is
+evidence the approach is wrong, not that the effort was insufficient.** Reading
+better is not the lever. Reach is.
+
+### What a scrape actually costs, and what it returns
+
+Measured from the run records in this repo, not estimated.
+
+**The model pass — every read `data/deals_menus_llm.json` holds, all made
+2026-09-02:**
+
+| | |
+|---|---:|
+| documents sent to the model | **425** |
+| reads that produced **any** deal | 47 (11%) |
+| reads that produced a deal **with items** | **34 (8%)** |
+| items obtained | 310 |
+| **reads that produced nothing with items** | **391 (92%)** |
+
+**Two scoped model runs the same evening, from their own logs:**
+
+| run | documents | venues | deals grounded |
+|---|---:|---:|---:|
+| `scratchpad/shellmodel.log` | 33 | 20 | **1** |
+| `scratchpad/shellmodel2.log` | 78 | 30 | **11** |
+
+111 documents across 50 venues returned **12 deals**. By file timestamp the two
+passes took roughly **6 and 10 minutes**; the crawl that fed them (99 venues)
+finished at 19:23 and returned **18 venues with a deal quote**.
+
+**The whole pipeline, end to end:** 1,585 venues crawled → **314** with a
+published window (20%) → **202** carrying items (13%) → 1,224 items.
+
+🛑 **The token cost is NOT KNOWN, and that is its own defect.** Nothing
+in this repo records tokens, latency or dollars for a model pass: the sidecars
+carry `read_at` as a bare date and nothing else. So the honest answer to *"what
+did that scrape cost on the Max plan"* is **we never instrumented it** — and a
+cost nobody measures is a cost nobody can argue down. The cost paragraph at the
+end of this document is a **09-01 bake-off estimate**, not a measurement of any
+run since.
+
+🔑 **First job for anyone touching the model pass: record
+`input_tokens`, `output_tokens`, wall time and the model per call, into the
+sidecar.** It is a few lines, it makes every later claim about cost checkable,
+and without it "8% of reads returned an item" is the only efficiency number that
+exists.
+
+🛑 **So: do not spend this session the way the last five were spent.**
+Before writing any code, size the fix against the 80 and say the number out
+loud. If it is single digits, it is not the job — say so and go find the one
+that is not.
+
+---
+
 ## 1. 🎯 THE NUMBER — 80
 
 **112 venues ship an hour and no items. 80 of them gave us no priced sentence at

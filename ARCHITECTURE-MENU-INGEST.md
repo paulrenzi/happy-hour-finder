@@ -2264,6 +2264,82 @@ dollars, once. A new town: about ten shells, under a dollar.
 
 ---
 
+## 🚨🚨 THE STANDING COST OF THIS ONE PROBLEM (read before planning any fix)
+
+Paul, 2026-09-02: *"I want every future session to know what's happening, and
+understand that if it isn't solved tonight, I drop Claude as a service."*
+
+The item gap is not a new problem, not a subtle one, and not an under-worked
+one. It has been measured, documented and left unsolved for **33 days**:
+
+| | |
+|---|---|
+| scrape yield first measured and found low | **2026-07-31**, repo commit #2: *"phase 0: the scrape yield is 19%, not 40%"* |
+| days since | **33** |
+| working days spent on menus/items/prices/reach | **5** (08-06, 08-07, 08-31, 09-01, 09-02) |
+| commits on that problem | **70** |
+| handoff/plan docs in this repo, all touching it | **40** |
+| goal written down as *"every listed menu"* | **2026-09-01** (`8a22ce8`) |
+| venues with an hour and no items, still | **112** |
+| of those, with nothing to read at all | **80** |
+
+**09-02 alone cost about two hours of Paul's time and moved the 80 by 2** — one
+hour on a linked-image rule worth 2 venues, one hour on a board bug and a
+redirect guard worth 1 card, then reported as progress.
+
+🛑 **The lesson is about approach, not effort.** Five days of real,
+tested, shipped work, each increment worth single digits, have left the binding
+number where it started. **Single-digit fixes are how this problem has stayed
+alive** — each one is defensible on its own and none of them adds up. Reading
+better is not the lever; reach is.
+
+### What a scrape actually costs, and what it returns
+
+Measured from the run records in this repo, not estimated.
+
+**The model pass — every read `data/deals_menus_llm.json` holds, all made
+2026-09-02:**
+
+| | |
+|---|---:|
+| documents sent to the model | **425** |
+| reads that produced **any** deal | 47 (11%) |
+| reads that produced a deal **with items** | **34 (8%)** |
+| items obtained | 310 |
+| **reads that produced nothing with items** | **391 (92%)** |
+
+**Two scoped model runs the same evening, from their own logs:**
+
+| run | documents | venues | deals grounded |
+|---|---:|---:|---:|
+| `scratchpad/shellmodel.log` | 33 | 20 | **1** |
+| `scratchpad/shellmodel2.log` | 78 | 30 | **11** |
+
+111 documents across 50 venues returned **12 deals**. By file timestamp the two
+passes took roughly **6 and 10 minutes**; the crawl that fed them (99 venues)
+finished at 19:23 and returned **18 venues with a deal quote**.
+
+**The whole pipeline, end to end:** 1,585 venues crawled → **314** with a
+published window (20%) → **202** carrying items (13%) → 1,224 items.
+
+🛑 **The token cost is NOT KNOWN, and that is its own defect.** Nothing
+in this repo records tokens, latency or dollars for a model pass: the sidecars
+carry `read_at` as a bare date and nothing else. So the honest answer to *"what
+did that scrape cost on the Max plan"* is **we never instrumented it** — and a
+cost nobody measures is a cost nobody can argue down. The cost paragraph at the
+end of this document is a **09-01 bake-off estimate**, not a measurement of any
+run since.
+
+🔑 **First job for anyone touching the model pass: record
+`input_tokens`, `output_tokens`, wall time and the model per call, into the
+sidecar.** It is a few lines, it makes every later claim about cost checkable,
+and without it "8% of reads returned an item" is the only efficiency number that
+exists.
+
+🛑 **The rule that follows from it:** before writing code against the item
+gap, run a read-only probe over the **80** and state what the change would
+recover. If the answer is single digits, say so and do not build it.
+
 ## 🎯🔑🔑 THE ITEM GAP IS REACH, NOT READING — the number to beat is 80 (2026-09-02, late)
 
 Measured, not estimated. Of the **112** venues that ship an hour and no items:

@@ -1,0 +1,99 @@
+33 document(s) across 20 venue(s), 3 per call [model sonnet]
+
+  DE8ac215d941 Hibachi Grill & Supreme Buffet     page   --
+  DE8ac215d941 Hibachi Grill & Supreme Buffet     page   --
+  DE8ac215d941 Hibachi Grill & Supreme Buffet     page   --
+  DE8c0122f1b8 Chiles Locos Mexican Food          page   --
+  DE93e13a0a09 Opa! Opa!                          page   --
+  DE9bc5cf0ee1 Carusos Bistro                     page   --
+  DE9c9df4c529 Wilmington Diner                   page   --
+  DE9c9df4c529 Wilmington Diner                   page   --
+  DE9c9df4c529 Wilmington Diner                   page   --
+  DE9c9df4c529 Wilmington Diner                   page   --
+  DEa165b2c264 The Garden at Bardea               page   --
+  DEb64944d1a2 Kyushu Ramen and Dumplings House   page   --
+  DEb77d59d688 Crab Du Jour Cajun Seafood & Bar   page   --
+  DEb8badf8326 El Tapatio Mexican Restaurant      page   --
+  DEc0a730a4c6 Oath ‘84                           page   --
+  DEcb45c57969 The Highlands                      page   --
+  DEcb45c57969 The Highlands                      page   --
+  DEd487702e72 Sid's at C26 - BBQ & Jerky         page   --
+  DEd91a4ae8f9 Sakura Japanese Restaurant         page   --
+  DEd91a4ae8f9 Sakura Japanese Restaurant         page   --
+  DEe14e137418 Middletown Diner                   page   --
+  DEe14e137418 Middletown Diner                   page   --
+  DEe418c05bd4 Two Claws                          page   --
+  DEe418c05bd4 Two Claws                          page   --
+  DEecf8264ac3 Nasi Malay Thai Sushi              page   --
+  DEecf8264ac3 Nasi Malay Thai Sushi              page   --
+  DEf0241f9ff3 Kelly's Tavern                     page   --
+  DEf331648b2b Dani’s Pizza Italian Restaurant    page   --
+  DEf5d7b143db Java Bean Cafe                     page   --
+  DEf5d7b143db Java Bean Cafe                     page   --
+  DEf5d7b143db Java Bean Cafe                     page   --
+  DEf7b11d3586 Oishii Ocean - Japanese & Cajun    page   --
+  DEf7b11d3586 Oishii Ocean - Japanese & Cajun    page   --
+
+0 deal(s) grounded -> C:\Users\paulm\happy-hour-finder\data\deals_menus_llm.json
+Now run: python ingest/read_menus_llm.py build
+& Finch Café              page   --
+  DE22c7635fb4 Friendship BBQ, Newark友情客串         page   --
+  DE2d33dbf145 Pizza by Elizabeths                page   --
+  DE2d33dbf145 Pizza by Elizabeths                page   --
+  DE43d573a89a Route 40 Diner                     page   --
+  DE43d573a89a Route 40 Diner                     page   --
+  DE43d573a89a Route 40 Diner                     page   --
+  DE47735a65a3 Liquid Alchemy Beverages           page   --
+  DE47735a65a3 Liquid Alchemy Beverages           page   --
+  DE4895ccda75 Argilla Brewing Co. @ Pietro's P   page   --
+  DE4895ccda75 Argilla Brewing Co. @ Pietro's P   page   --
+  DE4895ccda75 Argilla Brewing Co. @ Pietro's P   page   --
+  DE4895ccda75 Argilla Brewing Co. @ Pietro's P   page   ** 1 deal(s)
+           daily_special  dow 4                16:00-22:00  0 item(s)
+             'Thirsty Thursday\nEvery Thursday 4-10pm with Video Bingo 7-9pm'
+  DE513c1b0071 The Well Coffeehouse and Marketp   page   --
+  DE530d9959bb Ramen Kumamoto                     page   --
+  DE5880d5e0ed Stewart's Brewing Company          page   --
+  DE5880d5e0ed Stewart's Brewing Company          page   --
+  DE5880d5e0ed Stewart's Brewing Company          page   --
+  DE5880d5e0ed Stewart's Brewing Company          page   --
+  DE595acb736f Vicky's Famous Fried Fish          page   --
+  DE5c56c865ff Oishii Sushi & Ramen               page   --
+  DE653f2bc1d1 Dolly Spanker's                    page   --
+  DE65dfca998f Wilma's                            page   --
+  DE8ac215d941 Hibachi Grill & Supreme Buffet     page   --
+  DE8ac215d941 Hibachi Grill & Supreme Buffet     page   --
+  DE8ac215d941 Hibachi Grill & Supreme Buffet     page   --
+  DE8c0122f1b8 Chiles Locos Mexican Food          page   --
+  DE93e13a0a09 Opa! Opa!                          page   --
+  DE9bc5cf0ee1 Carusos Bistro                     page   --
+  DE9c9df4c529 Wilmington Diner                   page   --
+  DE9c9df4c529 Wilmington Diner                   page   --
+  DE9c9df4c529 Wilmington Diner                   page   --
+  DE9c9df4c529 Wilmington Diner                   page   --
+  DEa165b2c264 The Garden at Bardea               page   --
+  DEb64944d1a2 Kyushu Ramen and Dumplings House   page   --
+  DEb77d59d688 Crab Du Jour Cajun Seafood & Bar   page   --
+  DEb8badf8326 El Tapatio Mexican Restaurant      page   --
+  DEc0a730a4c6 Oath ‘84                           page   --
+  DEcb45c57969 The Highlands                      page   --
+  DEcb45c57969 The Highlands                      page   --
+  DEd487702e72 Sid's at C26 - BBQ & Jerky         page   --
+  DEd91a4ae8f9 Sakura Japanese Restaurant         page   --
+  DEd91a4ae8f9 Sakura Japanese Restaurant         page   --
+  DEe14e137418 Middletown Diner                   page   --
+  DEe14e137418 Middletown Diner                   page   --
+  DEe418c05bd4 Two Claws                          page   --
+  DEe418c05bd4 Two Claws                          page   --
+  DEecf8264ac3 Nasi Malay Thai Sushi              page   --
+  DEecf8264ac3 Nasi Malay Thai Sushi              page   --
+  DEf0241f9ff3 Kelly's Tavern                     page   --
+  DEf331648b2b Dani’s Pizza Italian Restaurant    page   --
+  DEf5d7b143db Java Bean Cafe                     page   --
+  DEf5d7b143db Java Bean Cafe                     page   --
+  DEf5d7b143db Java Bean Cafe                     page   --
+  DEf7b11d3586 Oishii Ocean - Japanese & Cajun    page   --
+  DEf7b11d3586 Oishii Ocean - Japanese & Cajun    page   --
+
+1 deal(s) grounded -> C:\Users\paulm\happy-hour-finder\data\deals_menus_llm.json
+Now run: python ingest/read_menus_llm.py build
