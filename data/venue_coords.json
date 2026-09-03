@@ -368,7 +368,7 @@
   "osm": null,
   "precision": "place",
   "queried": "90 E Main St near, Newark, DE 19711",
-  "resolved": "Caff\u00e8 Gelato Restaurant"
+  "resolved": "Caffè Gelato Restaurant"
  },
  "cantina-feliz-fort-washington": {
   "lat": 40.1363009,
@@ -756,7 +756,7 @@
   "osm": "way/988637733",
   "precision": "place",
   "queried": "KING OF PRUSSIA TOWN CENTER  155 MAIN ST, KING OF PRUSSIA PA 19406",
-  "resolved": "Fogo de Ch\u00e3o"
+  "resolved": "Fogo de Chão"
  },
  "frankford-hall-philadelphia": {
   "lat": 39.969485,
@@ -801,7 +801,7 @@
   "osm": null,
   "precision": "place",
   "queried": "1380 WEST ST RD, WARMINSTER PA 18974",
-  "resolved": "Giuseppes\u2019s Pizza & Family Restaurant"
+  "resolved": "Giuseppes’s Pizza & Family Restaurant"
  },
  "goats-beard-wayne": {
   "lat": 40.044243,
@@ -1064,7 +1064,7 @@
   "osm": "way/686767365",
   "precision": "place",
   "queried": "3739 WEST CHESTER PK, NEWTOWN SQUARE PA 19073-2316",
-  "resolved": "LaScala\u2019s Fire"
+  "resolved": "LaScala’s Fire"
  },
  "lascala-s-fire-villanova": {
   "lat": 40.0376278,
@@ -1406,7 +1406,7 @@
   "osm": "node/6441475021",
   "precision": "place",
   "queried": "125 W MARKET ST, WEST CHESTER PA 19382-2901",
-  "resolved": "Pietro\u2019s Prime"
+  "resolved": "Pietro’s Prime"
  },
  "pinocchio-s-restaurant-beer-garden-to-go-media": {
   "lat": 39.9166777,
@@ -1577,7 +1577,7 @@
   "osm": "node/6441503156",
   "precision": "place",
   "queried": "124 W GAY ST, WEST CHESTER PA 19380-2915",
-  "resolved": "Ryan\u2019s Pub"
+  "resolved": "Ryan’s Pub"
  },
  "santa-fe-mexican-grill-wilmington-wilmington": {
   "lat": 39.756206399999996,
@@ -1613,7 +1613,7 @@
   "osm": "way/518149023",
   "precision": "place",
   "queried": "1301 OLD YORK RD, ABINGTON PA 19001-3403",
-  "resolved": "Se\u00f1or Salsa"
+  "resolved": "Señor Salsa"
  },
  "seasons-52-king-of-prussia": {
   "lat": 40.0857465,
@@ -2373,5 +2373,41 @@
   "precision": "place",
   "queried": "500 SPRING GARDEN ST, PHILADELPHIA PA 19123-2833",
   "resolved": "Yards Brewing Company"
+ },
+ "founding-brothers-restaurant-pub-newark_de": {
+  "lat": 39.683823,
+  "lng": -75.74631169999999,
+  "matched_by": "venue_base",
+  "osm": null,
+  "precision": "place",
+  "queried": "168 E Main St, Newark, DE 19711",
+  "resolved": "Founding Brothers Restaurant + Pub"
+ },
+ "lefty-s-alley-eats-newark_de": {
+  "lat": 39.6796929,
+  "lng": -75.7340375,
+  "matched_by": "venue_base",
+  "osm": null,
+  "precision": "place",
+  "queried": "281 Grove Ln, Newark, DE 19711",
+  "resolved": "Lefty's Alley & Eats"
+ },
+ "p-f-chang-s-newark_de": {
+  "lat": 39.6787314,
+  "lng": -75.6531201,
+  "matched_by": "venue_base",
+  "osm": null,
+  "precision": "place",
+  "queried": "331 Christiana Mall, Newark, DE 19702",
+  "resolved": "P.F. Chang's"
+ },
+ "plaza-azteca-bear-newark_de": {
+  "lat": 39.6311203,
+  "lng": -75.66058400000001,
+  "matched_by": "venue_base",
+  "osm": null,
+  "precision": "place",
+  "queried": "928 Bear Corbitt Rd, Bear, DE 19701",
+  "resolved": "Plaza Ázteca | Mexican Restaurant · Bear"
  }
 }

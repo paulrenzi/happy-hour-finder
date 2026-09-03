@@ -14,23 +14,66 @@
         {
           "type": "happy_hour",
           "windows": [
-            { "dow": 2, "start": "16:00", "end": "18:00" },
-            { "dow": 3, "start": "16:00", "end": "18:00" },
-            { "dow": 4, "start": "16:00", "end": "18:00" },
-            { "dow": 5, "start": "16:00", "end": "18:00" },
-            { "dow": 6, "start": "16:00", "end": "18:00" },
-            { "dow": 7, "start": "16:00", "end": "18:00" }
+            {
+              "dow": 2,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 3,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 4,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 5,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 6,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 7,
+              "start": "16:00",
+              "end": "18:00"
+            }
           ],
           "items": [
-            { "category": "draft", "label": "W+B craft pints", "price_usd": 5.0 },
-            { "category": "cocktail", "label": "house martinis, Manhattans, cosmos", "price_usd": 7.0 },
-            { "category": "food", "label": "buck-a-shuck oysters", "price_usd": 1.0 },
-            { "category": "wine", "label": "house wine", "price_usd": 7.0 }
+            {
+              "category": "draft",
+              "label": "W+B craft pints",
+              "price_usd": 5.0
+            },
+            {
+              "category": "cocktail",
+              "label": "house martinis, Manhattans, cosmos",
+              "price_usd": 7.0
+            },
+            {
+              "category": "food",
+              "label": "buck-a-shuck oysters",
+              "price_usd": 1.0
+            },
+            {
+              "category": "wine",
+              "label": "house wine",
+              "price_usd": 7.0
+            }
           ],
           "confidence": "likely",
           "last_verified_at": "2026-07-31",
           "verified_by": "staff",
-          "source": { "kind": "venue_site", "url": "https://wills-bills.com" }
+          "source": {
+            "kind": "venue_site",
+            "url": "https://wills-bills.com"
+          }
         }
       ]
     },
@@ -46,21 +89,56 @@
         {
           "type": "happy_hour",
           "windows": [
-            { "dow": 2, "start": "16:00", "end": "18:00" },
-            { "dow": 3, "start": "16:00", "end": "18:00" },
-            { "dow": 4, "start": "16:00", "end": "18:00" },
-            { "dow": 5, "start": "16:00", "end": "18:00" }
+            {
+              "dow": 2,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 3,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 4,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 5,
+              "start": "16:00",
+              "end": "18:00"
+            }
           ],
           "items": [
-            { "category": "draft", "label": "pints of Alien Church, HopHands, and the LUKR tap", "discount_pct": 50 },
-            { "category": "food", "label": "warm pretzel", "price_usd": 10.0 },
-            { "category": "food", "label": "wings", "price_usd": 16.0 },
-            { "category": "food", "label": "cheeseburger", "price_usd": 12.0 }
+            {
+              "category": "draft",
+              "label": "pints of Alien Church, HopHands, and the LUKR tap",
+              "discount_pct": 50
+            },
+            {
+              "category": "food",
+              "label": "warm pretzel",
+              "price_usd": 10.0
+            },
+            {
+              "category": "food",
+              "label": "wings",
+              "price_usd": 16.0
+            },
+            {
+              "category": "food",
+              "label": "cheeseburger",
+              "price_usd": 12.0
+            }
           ],
           "confidence": "likely",
           "last_verified_at": "2026-07-31",
           "verified_by": "staff",
-          "source": { "kind": "venue_site", "url": "https://tiredhands.com" }
+          "source": {
+            "kind": "venue_site",
+            "url": "https://tiredhands.com"
+          }
         }
       ]
     },
@@ -76,18 +154,60 @@
         {
           "type": "happy_hour",
           "windows": [
-            { "dow": 1, "start": "16:00", "end": "18:00" },
-            { "dow": 2, "start": "16:00", "end": "18:00" },
-            { "dow": 3, "start": "16:00", "end": "18:00" },
-            { "dow": 4, "start": "16:00", "end": "18:00" },
-            { "dow": 5, "start": "16:00", "end": "18:00" }
+            {
+              "dow": 1,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 2,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 3,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 4,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 5,
+              "start": "16:00",
+              "end": "18:00"
+            }
           ],
           "items": [
-            { "category": "draft", "label": "Iron Hill pours", "price_usd": null, "discount_pct": null, "amount_off_usd": 2.0 },
-            { "category": "cocktail", "label": "cocktails", "price_usd": 7.5 },
-            { "category": "food", "label": "fried chicken sandwich", "price_usd": 5.0 },
-            { "category": "food", "label": "crispy brussels", "price_usd": 5.0 },
-            { "category": "food", "label": "nachos", "price_usd": 7.0 }
+            {
+              "category": "draft",
+              "label": "Iron Hill pours",
+              "price_usd": null,
+              "discount_pct": null,
+              "amount_off_usd": 2.0
+            },
+            {
+              "category": "cocktail",
+              "label": "cocktails",
+              "price_usd": 7.5
+            },
+            {
+              "category": "food",
+              "label": "fried chicken sandwich",
+              "price_usd": 5.0
+            },
+            {
+              "category": "food",
+              "label": "crispy brussels",
+              "price_usd": 5.0
+            },
+            {
+              "category": "food",
+              "label": "nachos",
+              "price_usd": 7.0
+            }
           ],
           "confidence": "likely",
           "last_verified_at": "2026-07-31",
@@ -111,21 +231,56 @@
         {
           "type": "happy_hour",
           "windows": [
-            { "dow": 1, "start": "16:00", "end": "18:00" },
-            { "dow": 2, "start": "16:00", "end": "18:00" },
-            { "dow": 3, "start": "16:00", "end": "18:00" },
-            { "dow": 4, "start": "16:00", "end": "18:00" },
-            { "dow": 5, "start": "16:00", "end": "18:00" },
-            { "dow": 6, "start": "14:00", "end": "16:00" },
-            { "dow": 7, "start": "14:00", "end": "16:00" }
+            {
+              "dow": 1,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 2,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 3,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 4,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 5,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 6,
+              "start": "14:00",
+              "end": "16:00"
+            },
+            {
+              "dow": 7,
+              "start": "14:00",
+              "end": "16:00"
+            }
           ],
           "items": [
-            { "category": "draft", "label": "pints", "amount_off_usd": 1.0 }
+            {
+              "category": "draft",
+              "label": "pints",
+              "amount_off_usd": 1.0
+            }
           ],
           "confidence": "likely",
           "last_verified_at": "2026-07-31",
           "verified_by": "staff",
-          "source": { "kind": "venue_site", "url": "https://blackhorsetaverns.com" }
+          "source": {
+            "kind": "venue_site",
+            "url": "https://blackhorsetaverns.com"
+          }
         }
       ]
     },
@@ -141,18 +296,41 @@
         {
           "type": "happy_hour",
           "windows": [
-            { "dow": 1, "start": "16:00", "end": "18:00" },
-            { "dow": 2, "start": "16:00", "end": "18:00" },
-            { "dow": 3, "start": "16:00", "end": "18:00" },
-            { "dow": 4, "start": "16:00", "end": "18:00" },
-            { "dow": 5, "start": "16:00", "end": "18:00" }
+            {
+              "dow": 1,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 2,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 3,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 4,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 5,
+              "start": "16:00",
+              "end": "18:00"
+            }
           ],
           "items": [],
           "fine_print": "The venue publishes the window but no items or prices.",
           "confidence": "likely",
           "last_verified_at": "2026-07-31",
           "verified_by": "staff",
-          "source": { "kind": "venue_site", "url": "https://coyotecrossing.com/happy-hour" }
+          "source": {
+            "kind": "venue_site",
+            "url": "https://coyotecrossing.com/happy-hour"
+          }
         }
       ]
     },
@@ -168,15 +346,26 @@
         {
           "type": "happy_hour",
           "windows": [
-            { "dow": 5, "start": "22:00", "end": "24:00" },
-            { "dow": 6, "start": "22:00", "end": "24:00" }
+            {
+              "dow": 5,
+              "start": "22:00",
+              "end": "24:00"
+            },
+            {
+              "dow": 6,
+              "start": "22:00",
+              "end": "24:00"
+            }
           ],
           "items": [],
           "fine_print": "Late-night happy hour. The venue advertises a late-night menu and cheap drinks without naming prices.",
           "confidence": "likely",
           "last_verified_at": "2026-07-31",
           "verified_by": "staff",
-          "source": { "kind": "venue_site", "url": "https://tonygspub.com/specials" }
+          "source": {
+            "kind": "venue_site",
+            "url": "https://tonygspub.com/specials"
+          }
         }
       ]
     },
@@ -192,16 +381,48 @@
         {
           "type": "happy_hour",
           "windows": [
-            { "dow": 1, "start": "16:00", "end": "18:00" },
-            { "dow": 2, "start": "16:00", "end": "18:00" },
-            { "dow": 3, "start": "16:00", "end": "18:00" },
-            { "dow": 4, "start": "16:00", "end": "18:00" },
-            { "dow": 5, "start": "15:00", "end": "18:00" }
+            {
+              "dow": 1,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 2,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 3,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 4,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 5,
+              "start": "15:00",
+              "end": "18:00"
+            }
           ],
           "items": [
-            { "category": "draft", "label": "beers", "price_usd": 5.0 },
-            { "category": "well", "label": "mixed drinks", "price_usd": 6.0 },
-            { "category": "wine", "label": "wine", "price_usd": 7.0 }
+            {
+              "category": "draft",
+              "label": "beers",
+              "price_usd": 5.0
+            },
+            {
+              "category": "well",
+              "label": "mixed drinks",
+              "price_usd": 6.0
+            },
+            {
+              "category": "wine",
+              "label": "wine",
+              "price_usd": 7.0
+            }
           ],
           "confidence": "unconfirmed",
           "last_verified_at": "2026-07-31",
@@ -226,16 +447,48 @@
         {
           "type": "happy_hour",
           "windows": [
-            { "dow": 1, "start": "17:00", "end": "19:00" },
-            { "dow": 2, "start": "17:00", "end": "19:00" },
-            { "dow": 3, "start": "17:00", "end": "19:00" },
-            { "dow": 4, "start": "17:00", "end": "19:00" },
-            { "dow": 5, "start": "17:00", "end": "19:00" }
+            {
+              "dow": 1,
+              "start": "17:00",
+              "end": "19:00"
+            },
+            {
+              "dow": 2,
+              "start": "17:00",
+              "end": "19:00"
+            },
+            {
+              "dow": 3,
+              "start": "17:00",
+              "end": "19:00"
+            },
+            {
+              "dow": 4,
+              "start": "17:00",
+              "end": "19:00"
+            },
+            {
+              "dow": 5,
+              "start": "17:00",
+              "end": "19:00"
+            }
           ],
           "items": [
-            { "category": "draft", "label": "drafts", "price_usd": 4.0 },
-            { "category": "wine", "label": "wine", "price_usd": 5.0 },
-            { "category": "cocktail", "label": "cocktails", "price_usd": 6.0 }
+            {
+              "category": "draft",
+              "label": "drafts",
+              "price_usd": 4.0
+            },
+            {
+              "category": "wine",
+              "label": "wine",
+              "price_usd": 5.0
+            },
+            {
+              "category": "cocktail",
+              "label": "cocktails",
+              "price_usd": 6.0
+            }
           ],
           "confidence": "unconfirmed",
           "last_verified_at": "2026-07-31",
@@ -244,6 +497,458 @@
             "kind": "instagram",
             "url": "https://www.instagram.com/barnabyswc/",
             "note": "The venue's own site blocks automated fetch and carries no happy hour."
+          }
+        }
+      ]
+    },
+    {
+      "id": "founding-brothers-restaurant-pub-newark_de",
+      "name": "Founding Brothers Restaurant + Pub",
+      "plcb_name": "Founding Brothers Restaurant + Pub",
+      "address": "168 E Main St, Newark, DE 19711",
+      "zone_id": "newark_de",
+      "license_type": "",
+      "website": "https://www.foundingbrothersde.com/",
+      "lid": "DE3b23cb5840",
+      "deals": [
+        {
+          "type": "happy_hour",
+          "windows": [
+            {
+              "dow": 1,
+              "end": "18:00",
+              "start": "16:00"
+            },
+            {
+              "dow": 2,
+              "end": "18:00",
+              "start": "16:00"
+            },
+            {
+              "dow": 3,
+              "end": "18:00",
+              "start": "16:00"
+            },
+            {
+              "dow": 4,
+              "end": "18:00",
+              "start": "16:00"
+            },
+            {
+              "dow": 5,
+              "end": "18:00",
+              "start": "16:00"
+            },
+            {
+              "dow": 5,
+              "end": "24:00",
+              "start": "22:00"
+            },
+            {
+              "dow": 6,
+              "end": "24:00",
+              "start": "22:00"
+            }
+          ],
+          "items": [
+            {
+              "category": "food",
+              "label": "Nashville Salsa",
+              "price_usd": 10.0
+            },
+            {
+              "category": "food",
+              "label": "Peachy Boneless Chicken Tortilla Salad \"appetizer portion\"",
+              "price_usd": 12.0
+            },
+            {
+              "category": "food",
+              "label": "Buffalo Chicken Dip Stuffed Pretzels",
+              "price_usd": 12.0
+            },
+            {
+              "category": "food",
+              "label": "Nashville Hot Fired Chicken Caprese Skewers",
+              "price_usd": 12.0
+            },
+            {
+              "category": "food",
+              "label": "Bacon Jammer Sliders (2)",
+              "price_usd": 10.0
+            },
+            {
+              "category": "food",
+              "label": "K.P. Meatloaf Sliders (2)",
+              "price_usd": 10.0
+            },
+            {
+              "category": "food",
+              "label": "Loaded Totts",
+              "price_usd": 11.0
+            },
+            {
+              "category": "food",
+              "label": "Southern Mac & Cheese Balls (2)",
+              "price_usd": 7.0
+            },
+            {
+              "category": "food",
+              "label": "Beer Battered Fish Tacos (3)",
+              "price_usd": 11.0
+            },
+            {
+              "category": "food",
+              "label": "Fried Pizza Dough Balls",
+              "price_usd": 11.0
+            },
+            {
+              "category": "well",
+              "label": "House rail drinks",
+              "price_usd": 5.0
+            }
+          ],
+          "confidence": "likely",
+          "last_verified_at": "2026-09-03",
+          "verified_by": "agent_read",
+          "source": {
+            "kind": "venue_site",
+            "url": "https://www.foundingbrothersde.com/images/september-lineup.png"
+          },
+          "fine_print": "Barside only"
+        }
+      ]
+    },
+    {
+      "id": "lefty-s-alley-eats-newark_de",
+      "name": "Lefty's Alley & Eats",
+      "plcb_name": "Lefty's Alley & Eats",
+      "address": "281 Grove Ln, Newark, DE 19711",
+      "zone_id": "newark_de",
+      "license_type": "",
+      "website": "https://iloveleftys.com/newark/",
+      "lid": "DE4798b4126a",
+      "deals": [
+        {
+          "type": "happy_hour",
+          "windows": [
+            {
+              "dow": 1,
+              "end": "19:00",
+              "start": "15:00"
+            },
+            {
+              "dow": 2,
+              "end": "19:00",
+              "start": "15:00"
+            },
+            {
+              "dow": 3,
+              "end": "19:00",
+              "start": "15:00"
+            },
+            {
+              "dow": 4,
+              "end": "19:00",
+              "start": "15:00"
+            },
+            {
+              "dow": 5,
+              "end": "19:00",
+              "start": "15:00"
+            }
+          ],
+          "items": [
+            {
+              "category": "food",
+              "label": "Potstickers",
+              "price_usd": 10.0
+            },
+            {
+              "category": "food",
+              "label": "½ lb Peel & Eat Shrimp",
+              "price_usd": 10.0
+            },
+            {
+              "category": "food",
+              "label": "Lefty's Signature Nachos",
+              "price_usd": 10.0
+            },
+            {
+              "category": "food",
+              "label": "Chicken & Waffles",
+              "price_usd": 11.0
+            },
+            {
+              "category": "food",
+              "label": "Lefty's Enchiladas",
+              "price_usd": 11.0
+            },
+            {
+              "category": "food",
+              "label": "Bavarian Pretzel",
+              "price_usd": 12.0
+            },
+            {
+              "category": "food",
+              "label": "Birria Tacos",
+              "price_usd": 12.0
+            },
+            {
+              "category": "food",
+              "label": "Meat Lover's Stromboli",
+              "price_usd": 14.0
+            },
+            {
+              "category": "draft",
+              "label": "Domestic Drafts",
+              "price_usd": 3.0
+            },
+            {
+              "category": "cocktail",
+              "label": "Lefty's Famous Crushes and Signature Cocktails",
+              "price_usd": 9.0
+            }
+          ],
+          "confidence": "likely",
+          "last_verified_at": "2026-09-03",
+          "verified_by": "agent_read",
+          "source": {
+            "kind": "venue_site",
+            "url": "https://iloveleftys.com/wp-content/uploads/2026/06/Happy-Hour-menu-REV08-1-1.pdf"
+          },
+          "fine_print": "* At Bar and Restaurant Only. A gratuity of 18% will be added to parties of 8 or more"
+        }
+      ]
+    },
+    {
+      "id": "p-f-chang-s-newark_de",
+      "name": "P.F. Chang's",
+      "plcb_name": "P.F. Chang's",
+      "address": "331 Christiana Mall, Newark, DE 19702",
+      "zone_id": "newark_de",
+      "license_type": "",
+      "website": "https://locations.pfchangs.com/de/newark/331-christiana-mall.html?utm_source=google_gbp&utm_medium=organic",
+      "lid": "DEe2a8eafc2f",
+      "deals": [
+        {
+          "type": "happy_hour",
+          "windows": [
+            {
+              "dow": 1,
+              "end": "18:00",
+              "start": "15:00"
+            },
+            {
+              "dow": 2,
+              "end": "18:00",
+              "start": "15:00"
+            },
+            {
+              "dow": 3,
+              "end": "18:00",
+              "start": "15:00"
+            },
+            {
+              "dow": 4,
+              "end": "18:00",
+              "start": "15:00"
+            },
+            {
+              "dow": 5,
+              "end": "18:00",
+              "start": "15:00"
+            }
+          ],
+          "items": [
+            {
+              "category": "cocktail",
+              "label": "Pink Lotus Cosmo",
+              "price_usd": 8.99
+            },
+            {
+              "category": "cocktail",
+              "label": "Zen Margarita",
+              "price_usd": 8.99
+            },
+            {
+              "category": "well",
+              "label": "Select well drinks",
+              "price_usd": 8.99
+            },
+            {
+              "category": "bottle_can",
+              "label": "Ha-Chi 5251 Pilsner",
+              "price_usd": 5.99
+            },
+            {
+              "category": "draft",
+              "label": "Domestics on draft, ask about our selections",
+              "price_usd": 5.99
+            },
+            {
+              "category": "wine",
+              "label": "14 Hands Merlot",
+              "price_usd": 6.99
+            },
+            {
+              "category": "wine",
+              "label": "14 Hands Chardonnay",
+              "price_usd": 6.99
+            },
+            {
+              "category": "food",
+              "discount_pct": 50.0,
+              "label": "Chang's Lettuce Wraps, half order chicken or veggie"
+            },
+            {
+              "category": "food",
+              "discount_pct": 50.0,
+              "label": "Ribs, slow-braised pork ribs, 3 ct, BBQ or Northern Style"
+            },
+            {
+              "category": "food",
+              "discount_pct": 50.0,
+              "label": "Crab Wontons, 3 ct"
+            },
+            {
+              "category": "food",
+              "discount_pct": 50.0,
+              "label": "Dumplings, pan-fried or steamed, 3 ct, pork or shrimp"
+            }
+          ],
+          "confidence": "likely",
+          "last_verified_at": "2026-09-03",
+          "verified_by": "agent_read",
+          "source": {
+            "kind": "venue_site",
+            "url": "https://www.pfchangs.com/menu/happy-hour"
+          },
+          "fine_print": "*Only offered at participating locations, hours and offerings may vary by location, and where permitted by law."
+        }
+      ]
+    },
+    {
+      "id": "plaza-azteca-bear-newark_de",
+      "name": "Plaza Ázteca | Mexican Restaurant · Bear",
+      "plcb_name": "Plaza Ázteca | Mexican Restaurant · Bear",
+      "address": "928 Bear Corbitt Rd, Bear, DE 19701",
+      "zone_id": "newark_de",
+      "license_type": "",
+      "website": "https://plazaazteca.com/newark/",
+      "lid": "DEf5399c0828",
+      "deals": [
+        {
+          "type": "happy_hour",
+          "windows": [
+            {
+              "dow": 1,
+              "end": "18:00",
+              "start": "15:00"
+            },
+            {
+              "dow": 2,
+              "end": "18:00",
+              "start": "15:00"
+            },
+            {
+              "dow": 3,
+              "end": "18:00",
+              "start": "15:00"
+            },
+            {
+              "dow": 4,
+              "end": "18:00",
+              "start": "15:00"
+            },
+            {
+              "dow": 5,
+              "end": "18:00",
+              "start": "15:00"
+            }
+          ],
+          "items": [
+            {
+              "category": "wine",
+              "label": "All wines",
+              "price_usd": 6.0
+            },
+            {
+              "category": "cocktail",
+              "label": "Lavender Marg-Tini",
+              "price_usd": 8.0
+            },
+            {
+              "category": "cocktail",
+              "label": "Tequila Sunrise",
+              "price_usd": 7.0
+            },
+            {
+              "category": "cocktail",
+              "label": "Bahama Mama",
+              "price_usd": 7.0
+            },
+            {
+              "category": "cocktail",
+              "label": "Mojitos",
+              "price_usd": 8.0
+            },
+            {
+              "category": "cocktail",
+              "label": "Daquiris",
+              "price_usd": 7.0
+            },
+            {
+              "category": "shot",
+              "label": "Lemon Drop Shot",
+              "price_usd": 7.0
+            },
+            {
+              "category": "shot",
+              "label": "Mexican Green Tea Shot",
+              "price_usd": 6.0
+            },
+            {
+              "category": "shot",
+              "label": "Mexican Candy Shot",
+              "price_usd": 6.0
+            },
+            {
+              "category": "food",
+              "label": "Empanadas -- two empanadas, chicken or beef",
+              "price_usd": 6.99
+            },
+            {
+              "category": "food",
+              "label": "Mini Nachos Supreme",
+              "price_usd": 7.99
+            },
+            {
+              "category": "food",
+              "label": "Wings (4), BBQ or Buffalo",
+              "price_usd": 6.99
+            },
+            {
+              "category": "food",
+              "label": "Quesadilla, grilled chicken or steak",
+              "price_usd": 5.99
+            },
+            {
+              "category": "food",
+              "label": "Birria Tacos",
+              "price_usd": 10.25
+            },
+            {
+              "category": "food",
+              "label": "Taquitos Mex",
+              "price_usd": 11.0
+            }
+          ],
+          "confidence": "likely",
+          "last_verified_at": "2026-09-03",
+          "verified_by": "agent_read",
+          "source": {
+            "kind": "venue_site",
+            "url": "https://plazaazteca.com/wp-content/uploads/2025/02/PA-Newark-Drink-Menu-2025-Web.pdf"
           }
         }
       ]

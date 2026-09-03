@@ -127,12 +127,84 @@
   "why_not": "The location page and the chain site offer only the regular menu, a Fan Club rewards signup and online ordering — Friendly's publishes no happy hour, and its Drinks menu is entirely non-alcoholic."
  },
  "DE01442fb197": {
-  "error": "RuntimeError: claude -p exited 143: ",
-  "read_at": "2026-09-03"
+  "cost_usd": 0.4055,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch nordstrom.com store-details/nordstrom-christiana-mall -- only link was /browse/about/nordstrom-restaurants",
+   "WebFetch nordstrom.com/browse/about/nordstrom-restaurants -- concept list, linked /browse/about/nordstrom-restaurants/nordstrom-grill",
+   "WebFetch nordstrom.com/browse/about/nordstrom-restaurants/nordstrom-grill -- concept description, no hours or prices",
+   "WebFetch nordstrom.com/store-details/nordstrom-christiana-mall (clean URL) -- no dining section for this location"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "",
+  "transcript": "",
+  "turns": 7,
+  "venue_name_on_menu": "",
+  "why_not": "Nordstrom's site gives only a store page with no dining section and a generic Nordstrom Grill concept page describing \"full bar service\" with no days, times, items or prices, and no menu, specials or happy hour link for the Christiana Mall location."
  },
  "DE01de14e9e2": {
-  "error": "RuntimeError: claude -p exited 143: ",
-  "read_at": "2026-09-03"
+  "cost_usd": 0.3384,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch http://empirenewark.com/ — failed: HTTPS upgrade hit a certificate mismatch (cert covers *.m988.com only)",
+   "curl -sL http://empirenewark.com/ -> data/agent_reads/DE01de14e9e2/home.html, read it: Chinese restaurant home page, no happy hour",
+   "WebFetch https://empirenewark.m988.com/order/menu.aspx (the only menu link on the home page) — no happy hour"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "",
+  "transcript": "",
+  "turns": 6,
+  "venue_name_on_menu": "Empire Restaurant",
+  "why_not": "Empire is a Chinese takeout restaurant whose site offers only a welcome blurb, a gallery, business hours (Mon-Thurs 11:00am-09:00pm, Fri & Sat 11:00am-10:00pm, Sunday closed) and an online-order menu whose only specials category is \"LUNCH SPECIAL\" with no printed happy hour hours, drinks or prices."
+ },
+ "DE020ff6b2b2": {
+  "cost_usd": 0.2086,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch http://www.babshotchicken.com/ -- home page: nav to Menu, Newark and Audubon location pages; no happy hour",
+   "WebFetch http://www.babshotchicken.com/location/babshotchicken-newark/ -- Newark location page: hours and ordering links only, no happy hour",
+   "WebFetch http://www.babshotchicken.com/menus/ -- menus page: full food menu inline, no drink/specials menu, no happy hour"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "",
+  "transcript": "",
+  "turns": 5,
+  "venue_name_on_menu": "",
+  "why_not": "The site offers only a full food menu (with a separate Newark section marked 100% Certified Halal) plus hours and Toast/order.online ordering links, and states no happy hour on the home page, the Newark location page, or the menus page."
+ },
+ "DE057d4ef457": {
+  "cost_usd": 0.1887,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch http://bagelbobacafe.com/ -- home page: hours, phone, address, links to Home / Directions / Order Online; no happy hour or specials section",
+   "WebFetch https://order.bagelbobacafe.com/ -- online ordering app shell, unrendered template placeholders for coupons; no happy hour"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "",
+  "transcript": "",
+  "turns": 4,
+  "venue_name_on_menu": "",
+  "why_not": "The site is a three-link brochure (Home, Directions, Order Online) listing only cafe hours of Mon-Fri 7am-2:30pm, Sat 7am-2pm, closed Sunday, with no menu, specials or happy hour page, and the Order Online link leads to an ordering app shell with no stated happy hour."
  },
  "DE07aab40d0f": {
   "cost_usd": 0.5065,
