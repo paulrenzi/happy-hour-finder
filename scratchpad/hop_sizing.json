@@ -1,0 +1,2269 @@
+[
+ {
+  "lid": "102696",
+  "name": "Dandan",
+  "seed": "https://www.dandanrestaurant.com/location/ardmore/",
+  "seed_status": "ok",
+  "seed_lines": 91,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.dandanrestaurant.com/location/ardmore/",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 1,
+  "hopped": 0
+ },
+ {
+  "lid": "86412",
+  "name": "DePaul's Table",
+  "seed": "https://www.depaulstable.com/",
+  "seed_status": "ok",
+  "seed_lines": 88,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.depaulstable.com/menu",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.depaulstable.com/private-events",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 2,
+  "hopped": 0
+ },
+ {
+  "lid": "32489",
+  "name": "Franzone's Pizzeria",
+  "seed": "https://www.franzonesconshohocken.com/",
+  "seed_status": "ok",
+  "seed_lines": 130,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://franzonesconshohocken.com/pages/franzones-catering-menu",
+    "status": "ok",
+    "lines": 167,
+    "priced": 52,
+    "hh": false,
+    "sample": [
+     "$144",
+     "$12 each",
+     "$185",
+     "$17",
+     "+$4.50",
+     "$21.50"
+    ]
+   },
+   {
+    "url": "https://franzonesconshohocken.com/pages/menu",
+    "status": "ok",
+    "lines": 264,
+    "priced": 2,
+    "hh": false,
+    "sample": [
+     "Order of 5 - $10",
+     "Order of 10 - $20"
+    ]
+   }
+  ],
+  "best": 52,
+  "best_url": "https://franzonesconshohocken.com/pages/franzones-catering-menu",
+  "best_hh": false,
+  "images": [],
+  "n_links": 2,
+  "hopped": 2
+ },
+ {
+  "lid": "51932",
+  "name": "12 Steps Down",
+  "seed": "http://www.12stepsdown.com/beers/",
+  "seed_status": "ok",
+  "seed_lines": 119,
+  "shell": false,
+  "hops": [
+   {
+    "url": "http://www.12stepsdown.com/beers/",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 1,
+  "hopped": 0
+ },
+ {
+  "lid": "93945",
+  "name": "Amada",
+  "seed": "https://www.amadarestaurant.com/amada-philadelphia/",
+  "seed_status": "ok",
+  "seed_lines": 95,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.amadarestaurant.com/amada-philadelphia",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.amadarestaurant.com/amada-philadelphia/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.amadarestaurant.com/private-events-philadelphia",
+    "status": "ok",
+    "lines": 66,
+    "priced": 0,
+    "hh": true,
+    "sample": []
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 8,
+  "hopped": 1
+ },
+ {
+  "lid": "64274",
+  "name": "American Sardine Bar",
+  "seed": "https://americansardinebar.com/menus/",
+  "seed_status": "ok",
+  "seed_lines": 21,
+  "shell": true,
+  "hops": [
+   {
+    "url": "https://americansardinebar.com/events/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://americansardinebar.com/menus/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://americansardinebar.com/private-parties-events/",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 3,
+  "hopped": 0
+ },
+ {
+  "lid": "114847",
+  "name": "Bar 1010",
+  "seed": "https://www.bar1010.com/",
+  "seed_status": "ok",
+  "seed_lines": 48,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.bar1010.com/Menus",
+    "status": "ok",
+    "lines": 9,
+    "priced": 0,
+    "hh": false,
+    "sample": []
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 1,
+  "hopped": 1
+ },
+ {
+  "lid": "70669",
+  "name": "Bar Bombon",
+  "seed": "https://barbombon.com/",
+  "seed_status": "ok",
+  "seed_lines": 92,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://barbombon.com/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://barbombon.com/wp-content/uploads/2025/BBB%20Taco%20Menu.png?_t=1752008780",
+    "status": "200 image/png"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 2,
+  "hopped": 1
+ },
+ {
+  "lid": "71788",
+  "name": "Bar Hygge",
+  "seed": "https://www.barhygge.com/events",
+  "seed_status": "ok",
+  "seed_lines": 66,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.barhygge.com/contact-events",
+    "status": "ok",
+    "lines": 68,
+    "priced": 0,
+    "hh": true,
+    "sample": []
+   },
+   {
+    "url": "https://www.barhygge.com/events",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.barhygge.com/menus",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 3,
+  "hopped": 1
+ },
+ {
+  "lid": "86119",
+  "name": "Bloomsday Cafe",
+  "seed": "https://bloomsdaycafe.com/",
+  "seed_status": "ok",
+  "seed_lines": 92,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://bloomsdayphilly.com/events",
+    "status": "ok",
+    "lines": 72,
+    "priced": 0,
+    "hh": true,
+    "sample": []
+   },
+   {
+    "url": "https://bloomsdayphilly.com/menus",
+    "status": "ok",
+    "lines": 71,
+    "priced": 0,
+    "hh": true,
+    "sample": []
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 2,
+  "hopped": 2
+ },
+ {
+  "lid": "115475",
+  "name": "Bolo",
+  "seed": "https://bolophl.com/",
+  "seed_status": "ok",
+  "seed_lines": 41,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://bolophl.com/",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 1,
+  "hopped": 0
+ },
+ {
+  "lid": "129201",
+  "name": "Brasil's Nightclub",
+  "seed": "https://brasilsnightclub-philly.com/menu/",
+  "seed_status": "ok",
+  "seed_lines": 76,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://brasilsnightclub-philly.com/menu/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://brasilsnightclub-philly.com/book-your-event/",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 2,
+  "hopped": 0
+ },
+ {
+  "lid": "68001",
+  "name": "Charlie Was a Sinner",
+  "seed": "https://charliewasasinner.com/",
+  "seed_status": "ok",
+  "seed_lines": 249,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://charliewasasinner.com/",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 1,
+  "hopped": 0
+ },
+ {
+  "lid": "70872",
+  "name": "DanDan",
+  "seed": "https://www.dandanrestaurant.com/location/dan-dan-philadelphia",
+  "seed_status": "ok",
+  "seed_lines": 91,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.dandanrestaurant.com/location/dan-dan-philadelphia/",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 1,
+  "hopped": 0
+ },
+ {
+  "lid": "62290",
+  "name": "DBG",
+  "seed": "https://dbgphilly.com/s/DBG-SUMMER-MENU.pdf",
+  "seed_status": "ok",
+  "seed_lines": 282,
+  "shell": false,
+  "hops": [],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 0,
+  "hopped": 0
+ },
+ {
+  "lid": "52068",
+  "name": "El Vez",
+  "seed": "https://elvezrestaurant.com",
+  "seed_status": "ok",
+  "seed_lines": 386,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://elvezrestaurant.com/",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 1,
+  "hopped": 0
+ },
+ {
+  "lid": "41866",
+  "name": "Hard Rock Cafe",
+  "seed": "https://www.hardrockcafe.com/location/philadelphia/",
+  "seed_status": "ok",
+  "seed_lines": 116,
+  "shell": false,
+  "hops": [],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 0,
+  "hopped": 0
+ },
+ {
+  "lid": "72028",
+  "name": "Harp & Crown",
+  "seed": "https://harpcrown.com",
+  "seed_status": "ok",
+  "seed_lines": 84,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://harpcrown.com/events",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://harpcrown.com/menu",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 2,
+  "hopped": 0
+ },
+ {
+  "lid": "115785",
+  "name": "Hi-Lo Taco Co.",
+  "seed": "http://www.hilotaco.com",
+  "seed_status": "ok",
+  "seed_lines": 64,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.hilotacoco.com/happy-hour-menu",
+    "status": "ok",
+    "lines": 11,
+    "priced": 0,
+    "hh": true,
+    "sample": []
+   },
+   {
+    "url": "https://www.hilotacoco.com/catering-menu",
+    "status": "ok",
+    "lines": 58,
+    "priced": 0,
+    "hh": true,
+    "sample": []
+   },
+   {
+    "url": "https://www.hilotacoco.com/drink-menu",
+    "status": "ok",
+    "lines": 11,
+    "priced": 0,
+    "hh": true,
+    "sample": []
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 5,
+  "hopped": 3
+ },
+ {
+  "lid": "71924",
+  "name": "Los Camaradas",
+  "seed": "https://www.loscamaradas.com/philadelphia-graduate-hosptial-los-camaradas-happy-hours-specials",
+  "seed_status": "ok",
+  "seed_lines": 48,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.loscamaradas.com/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.loscamaradas.com/philadelphia-graduate-hosptial-los-camaradas-drink-menu",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.loscamaradas.com/philadelphia-graduate-hosptial-los-camaradas-food-menu",
+    "status": "ok",
+    "lines": 143,
+    "priced": 40,
+    "hh": false,
+    "sample": [
+     "$12.95",
+     "Add salsa trio for $3.00; Add Elote (Street-style Corn Salsa) - $3.00",
+     "$11.95",
+     "$14.00",
+     "Queso mixto, black bean, tomato, crema, pickled jalapeno, pickled red onion. ADD: Short Rib $6.00 | Chorizo: $5.00 | Chicken: $5.00",
+     "$11.00"
+    ]
+   }
+  ],
+  "best": 40,
+  "best_url": "https://www.loscamaradas.com/philadelphia-graduate-hosptial-los-camaradas-food-menu",
+  "best_hh": false,
+  "images": [],
+  "n_links": 5,
+  "hopped": 1
+ },
+ {
+  "lid": "72600",
+  "name": "Osteria",
+  "seed": "https://www.osteriaphilly.com/",
+  "seed_status": "ok",
+  "seed_lines": 494,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.osteriaphilly.com/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.osteriaphilly.com/events-inquiry",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.osteriaphilly.com/menu-2024",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 4,
+  "hopped": 0
+ },
+ {
+  "lid": "62039",
+  "name": "Pearl & Mary",
+  "seed": "https://www.pearlandmary.com",
+  "seed_status": "ok",
+  "seed_lines": 41,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.pearlandmary.com/event",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.pearlandmary.com/menu",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 2,
+  "hopped": 0
+ },
+ {
+  "lid": "60604",
+  "name": "Prohibition Taproom",
+  "seed": "http://theprohibitiontaproom.com/",
+  "seed_status": "ok",
+  "seed_lines": 633,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://prohibitiontaproom.com/",
+    "status": "ok",
+    "lines": 633,
+    "priced": 275,
+    "hh": true,
+    "sample": [
+     "$ 13",
+     "$ 13",
+     "$ 19",
+     "$ 19",
+     "$ 18",
+     "$ 18"
+    ]
+   },
+   {
+    "url": "https://prohibitiontaproom.com/news",
+    "status": "ok",
+    "lines": 21,
+    "priced": 0,
+    "hh": true,
+    "sample": []
+   }
+  ],
+  "best": 275,
+  "best_url": "https://prohibitiontaproom.com/",
+  "best_hh": true,
+  "images": [],
+  "n_links": 2,
+  "hopped": 2
+ },
+ {
+  "lid": "71150",
+  "name": "Royal Boucherie",
+  "seed": "https://www.royalboucherie.com/menus",
+  "seed_status": "ok",
+  "seed_lines": 592,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.royalboucherie.com/calendar-events/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.royalboucherie.com/menus/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.royalboucherie.com/private-events/",
+    "status": "ok",
+    "lines": 152,
+    "priced": 0,
+    "hh": false,
+    "sample": []
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 3,
+  "hopped": 1
+ },
+ {
+  "lid": "69790",
+  "name": "SouthGate",
+  "seed": "https://southgatephilly.com",
+  "seed_status": "ok",
+  "seed_lines": 56,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.southgatephilly.com/copy-of-beer-menu",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.southgatephilly.com/beer",
+    "status": "ok",
+    "lines": 16,
+    "priced": 0,
+    "hh": true,
+    "sample": []
+   },
+   {
+    "url": "https://www.southgatephilly.com/drink",
+    "status": "ok",
+    "lines": 16,
+    "priced": 0,
+    "hh": true,
+    "sample": []
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 4,
+  "hopped": 2
+ },
+ {
+  "lid": "70846",
+  "name": "The Cheesecake Factory",
+  "seed": "https://locations.thecheesecakefactory.com/pa/philadelphia-181.html",
+  "seed_status": "ok",
+  "seed_lines": 177,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://locations.thecheesecakefactory.com/pa/philadelphia/",
+    "status": "ok",
+    "lines": 105,
+    "priced": 0,
+    "hh": false,
+    "sample": []
+   },
+   {
+    "url": "https://menu.thecheesecakefactory.com/pa/philadelphia-181/?utm_source&",
+    "status": "robots"
+   },
+   {
+    "url": "https://menu.thecheesecakefactory.com/pa/philadelphia-181/happy-hour/?utm_source&",
+    "status": "robots"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 7,
+  "hopped": 3
+ },
+ {
+  "lid": "56370",
+  "name": "The Continental Mid-Town",
+  "seed": "https://continentalmidtown.com",
+  "seed_status": "ok",
+  "seed_lines": 376,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://continentalmidtown.com/",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 1,
+  "hopped": 0
+ },
+ {
+  "lid": "39717",
+  "name": "The Plough & the Stars",
+  "seed": "https://ploughstars.com/events",
+  "seed_status": "ok",
+  "seed_lines": 393,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://ploughstars.com/events",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://ploughstars.com/menu",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 2,
+  "hopped": 0
+ },
+ {
+  "lid": "63425",
+  "name": "The Trestle Inn",
+  "seed": "https://thetrestleinn.com/",
+  "seed_status": "ok",
+  "seed_lines": 46,
+  "shell": false,
+  "hops": [],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 0,
+  "hopped": 0
+ },
+ {
+  "lid": "95957",
+  "name": "the Wilder",
+  "seed": "https://www.wilderphilly.com/",
+  "seed_status": "ok",
+  "seed_lines": 108,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.wilderphilly.com/events",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.wilderphilly.com/menus",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 2,
+  "hopped": 0
+ },
+ {
+  "lid": "131553",
+  "name": "Tria",
+  "seed": "https://triaphilly.com/tria-happy-hour",
+  "seed_status": "ok",
+  "seed_lines": 64,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.triaphilly.com/tria-happy-hour",
+    "status": "ok",
+    "lines": 64,
+    "priced": 0,
+    "hh": true,
+    "sample": []
+   },
+   {
+    "url": "https://www.triaphilly.com/tria-events",
+    "status": "ok",
+    "lines": 112,
+    "priced": 1,
+    "hh": true,
+    "sample": [
+     "Food and beverage minimum: $1,500"
+    ]
+   },
+   {
+    "url": "https://www.triaphilly.com/tria-food-menu",
+    "status": "ok",
+    "lines": 87,
+    "priced": 0,
+    "hh": true,
+    "sample": []
+   }
+  ],
+  "best": 1,
+  "best_url": "https://www.triaphilly.com/tria-events",
+  "best_hh": true,
+  "images": [],
+  "n_links": 3,
+  "hopped": 3
+ },
+ {
+  "lid": "63368",
+  "name": "Yards Brewing Company",
+  "seed": "https://yardsbrewing.com/pages/taproom",
+  "seed_status": "ok",
+  "seed_lines": 118,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://yardsbrewing.com/pages/private-events",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://yardsbrewing.com/pages/taproom",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 2,
+  "hopped": 0
+ },
+ {
+  "lid": "42334",
+  "name": "Bowlero",
+  "seed": "https://www.bowlero.com/location/bowlero-boothwyn",
+  "seed_status": "ok",
+  "seed_lines": 264,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.bowlero.com/en/location/bowlero-boothwyn/booking/event-booking",
+    "status": "ok",
+    "lines": 41,
+    "priced": 0,
+    "hh": false,
+    "sample": []
+   },
+   {
+    "url": "https://www.bowlero.com/en/location/bowlero-boothwyn/booking/lane-reservation",
+    "status": "ok",
+    "lines": 31,
+    "priced": 0,
+    "hh": false,
+    "sample": []
+   },
+   {
+    "url": "https://www.bowlero.com/en/location/bowlero-boothwyn/holiday",
+    "status": "ok",
+    "lines": 41,
+    "priced": 0,
+    "hh": false,
+    "sample": []
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 12,
+  "hopped": 3
+ },
+ {
+  "lid": "36229",
+  "name": "Coyote Crossing",
+  "seed": "https://coyotecrossing.com/happy-hour",
+  "seed_status": "ok",
+  "seed_lines": 81,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://coyotecrossing.com/best-happy-hour-menu-conshohocken-near-bridgeport-west-conshohocken/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://coyotecrossing.com/catering-menu/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://coyotecrossing.com/drinks/",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 6,
+  "hopped": 0
+ },
+ {
+  "lid": "67489",
+  "name": "Southern Cross Kitchen",
+  "seed": "https://www.southerncrosskitchen.com/menus",
+  "seed_status": "ok",
+  "seed_lines": 1219,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.southerncrosskitchen.com/menus/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.southerncrosskitchen.com/private-events/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.southerncrosskitchen.com/upcoming-events/",
+    "status": "ok",
+    "lines": 149,
+    "priced": 0,
+    "hh": false,
+    "sample": []
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 3,
+  "hopped": 1
+ },
+ {
+  "lid": "103858",
+  "name": "Frost Doylestown",
+  "seed": "https://frostdoylestown.com/",
+  "seed_status": "ok",
+  "seed_lines": 31,
+  "shell": true,
+  "hops": [
+   {
+    "url": "https://www.frostdoylestown.com/events/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.frostdoylestown.com/menus/",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 2,
+  "hopped": 0
+ },
+ {
+  "lid": "44839",
+  "name": "Brickside Grille",
+  "seed": "https://www.bricksidegrille.com/menus/happy-hour",
+  "seed_status": "ok",
+  "seed_lines": 22,
+  "shell": true,
+  "hops": [
+   {
+    "url": "https://www.bricksidegrille.com/events",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.bricksidegrille.com/menu",
+    "status": "ok",
+    "lines": 22,
+    "priced": 0,
+    "hh": true,
+    "sample": []
+   },
+   {
+    "url": "https://www.bricksidegrille.com/menus/ ",
+    "status": "ok",
+    "lines": 21,
+    "priced": 0,
+    "hh": false,
+    "sample": []
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 4,
+  "hopped": 2
+ },
+ {
+  "lid": "104516",
+  "name": "Sor Ynez",
+  "seed": "https://sorynez.com/",
+  "seed_status": "ok",
+  "seed_lines": 79,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.sorynez.com/contact",
+    "status": "404 text/html"
+   },
+   {
+    "url": "https://www.sorynez.com/menus",
+    "status": "ok",
+    "lines": 46,
+    "priced": 0,
+    "hh": true,
+    "sample": []
+   },
+   {
+    "url": "https://www.sorynez.com/private-events",
+    "status": "ok",
+    "lines": 48,
+    "priced": 0,
+    "hh": true,
+    "sample": []
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 4,
+  "hopped": 3
+ },
+ {
+  "lid": "95912",
+  "name": "Agave Mexican Cuisine",
+  "seed": "http://agavechaddsford.com/",
+  "seed_status": "ok",
+  "seed_lines": 106,
+  "shell": false,
+  "hops": [
+   {
+    "url": "http://agavechaddsford.com/happy-hour/",
+    "status": "ok",
+    "lines": 72,
+    "priced": 0,
+    "hh": true,
+    "sample": []
+   },
+   {
+    "url": "http://agavechaddsford.com/dinner/",
+    "status": "already crawled"
+   },
+   {
+    "url": "http://agavechaddsford.com/lunch/",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 4,
+  "hopped": 1
+ },
+ {
+  "lid": "71430",
+  "name": "Avenue Kitchen",
+  "seed": "https://www.avekitchen.com/",
+  "seed_status": "ok",
+  "seed_lines": 168,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.avekitchen.com/happyhour",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.avekitchen.com/event",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.avekitchen.com/menu",
+    "status": "ok",
+    "lines": 91,
+    "priced": 0,
+    "hh": true,
+    "sample": []
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 3,
+  "hopped": 1
+ },
+ {
+  "lid": "63853",
+  "name": "JD McGillicuddy's",
+  "seed": "https://jdmcgillicuddys.com/toys-for-tots-happy-hour-jd-mcgilicuddys-kirklyn-dec-14th/",
+  "seed_status": "ok",
+  "seed_lines": 102,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://jdmcgillicuddys.com/havertown/",
+    "status": "ok",
+    "lines": 135,
+    "priced": 0,
+    "hh": true,
+    "sample": []
+   },
+   {
+    "url": "https://jdmcgillicuddys.com/toys-for-tots-happy-hour-jd-mcgilicuddys-kirklyn-dec-14th/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://jdmcgillicuddys.com/catering-options/",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 4,
+  "hopped": 1
+ },
+ {
+  "lid": "DE62a5b3c678",
+  "name": "El Maya Mexican Grill",
+  "seed": "https://www.elmayamexicangrillde.com/",
+  "seed_status": "ok",
+  "seed_lines": 154,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.elmayamexicangrillde.com/mexican-food-wilmington-de",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.elmayamexicangrillde.com/mexican-drinks-wilmington-de",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.elmayamexicangrillde.com/mexican-entrees-wilmington",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 5,
+  "hopped": 0
+ },
+ {
+  "lid": "DE3c67f8614a",
+  "name": "Redfire Grill & Steakhouse",
+  "seed": "https://www.redfiregrill.net/food-and-drink",
+  "seed_status": "ok",
+  "seed_lines": 366,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.redfiregrill.net/customized-events/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.redfiregrill.net/food-and-drink/",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 2,
+  "hopped": 0
+ },
+ {
+  "lid": "88001",
+  "name": "Braeloch Brewing",
+  "seed": "https://braelochbrewing.beer/events",
+  "seed_status": "ok",
+  "seed_lines": 163,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://braelochbrewing.beer/beer",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://braelochbrewing.beer/events",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://braelochbrewing.beer/private-events",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 3,
+  "hopped": 0
+ },
+ {
+  "lid": "109967",
+  "name": "BOTLD",
+  "seed": "https://botld.com/",
+  "seed_status": "ok",
+  "seed_lines": 142,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://botld.com/collections/ready-to-drink",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 1,
+  "hopped": 0
+ },
+ {
+  "lid": "93322",
+  "name": "Firebirds Wood Fired Grill",
+  "seed": "https://north-wales.firebirdsrestaurants.com/",
+  "seed_status": "ok",
+  "seed_lines": 83,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://firebirdsrestaurants.com/north-wales/menu",
+    "status": "ok",
+    "lines": 60,
+    "priced": 0,
+    "hh": false,
+    "sample": []
+   },
+   {
+    "url": "https://firebirdsrestaurants.com/north-wales/menu/firebar",
+    "status": "ok",
+    "lines": 181,
+    "priced": 37,
+    "hh": true,
+    "sample": [
+     "$7.95",
+     "$7.95",
+     "$6.00",
+     "$5.00",
+     "$2 off",
+     "$14.95"
+    ]
+   },
+   {
+    "url": "https://firebirdsrestaurants.com/order-online/menu/order",
+    "status": "ok",
+    "lines": 45,
+    "priced": 0,
+    "hh": false,
+    "sample": []
+   }
+  ],
+  "best": 37,
+  "best_url": "https://firebirdsrestaurants.com/north-wales/menu/firebar",
+  "best_hh": true,
+  "images": [],
+  "n_links": 7,
+  "hopped": 3
+ },
+ {
+  "lid": "87757",
+  "name": "Well Crafted Beer Co.",
+  "seed": "https://www.wellcraftedbeer.com/home/lansdale/happyhour",
+  "seed_status": "ok",
+  "seed_lines": 118,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.wellcraftedbeer.com/home/lansdale",
+    "status": "ok",
+    "lines": 106,
+    "priced": 0,
+    "hh": true,
+    "sample": []
+   },
+   {
+    "url": "https://www.wellcraftedbeer.com/party",
+    "status": "ok",
+    "lines": 51,
+    "priced": 0,
+    "hh": false,
+    "sample": []
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 2,
+  "hopped": 2
+ },
+ {
+  "lid": "63944",
+  "name": "Copperfield Inn at Lakeside",
+  "seed": "https://www.copperfieldinn.net/menu/happy-hour/",
+  "seed_status": "ok",
+  "seed_lines": 60,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.copperfieldinn.net/menu/happy-hour/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.copperfieldinn.net/upcoming-events/special-holiday-events/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.copperfieldinn.net/brunch/",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 12,
+  "hopped": 0
+ },
+ {
+  "lid": "107670",
+  "name": "Limerick Bowl",
+  "seed": "https://www.bowlero.com/location/limerick-bowl",
+  "seed_status": "ok",
+  "seed_lines": 279,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.luckystrikeent.com/en/location/lucky-strike-limerick/booking/event-booking",
+    "status": "ok",
+    "lines": 41,
+    "priced": 0,
+    "hh": false,
+    "sample": []
+   },
+   {
+    "url": "https://www.luckystrikeent.com/en/location/lucky-strike-limerick/booking/lane-reservation",
+    "status": "ok",
+    "lines": 31,
+    "priced": 0,
+    "hh": false,
+    "sample": []
+   },
+   {
+    "url": "https://www.luckystrikeent.com/en/location/lucky-strike-limerick/holiday",
+    "status": "ok",
+    "lines": 43,
+    "priced": 0,
+    "hh": false,
+    "sample": []
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 13,
+  "hopped": 3
+ },
+ {
+  "lid": "90129",
+  "name": "Joey Chops",
+  "seed": "https://www.joeychops.com/",
+  "seed_status": "ok",
+  "seed_lines": 62,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.joeychops.com/happy-hour-menu",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.joeychops.com/cocktail-menu",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.joeychops.com/dessert-menu",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 10,
+  "hopped": 0
+ },
+ {
+  "lid": "130324",
+  "name": "Casa Mia",
+  "seed": "https://casamiamedia.com",
+  "seed_status": "ok",
+  "seed_lines": 334,
+  "shell": false,
+  "hops": [],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 0,
+  "hopped": 0
+ },
+ {
+  "lid": "103506",
+  "name": "La Catrina",
+  "seed": "https://www.lacatrinamedia.com/",
+  "seed_status": "ok",
+  "seed_lines": 105,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.lacatrinamedia.com/happy-hour",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.lacatrinamedia.com/dinner",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.lacatrinamedia.com/drinks",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 6,
+  "hopped": 0
+ },
+ {
+  "lid": "101350",
+  "name": "Off the Rail - Media",
+  "seed": "https://delco.today/2025/04/rooftopbars-delaware-county/",
+  "seed_status": "ok",
+  "seed_lines": 152,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://delco.today/2021/07/azie-rooftop-deck-media-borough-on-best-list/",
+    "status": "ok",
+    "lines": 151,
+    "priced": 1,
+    "hh": false,
+    "sample": [
+     "Underperforming Springfield Mall Value Plummets 73 Percent to $30M in Delaware County"
+    ]
+   },
+   {
+    "url": "https://delco.today/2025/06/media-borough-restaurants-bars-third-place/",
+    "status": "ok",
+    "lines": 156,
+    "priced": 1,
+    "hh": false,
+    "sample": [
+     "Underperforming Springfield Mall Value Plummets 73 Percent to $30M in Delaware County"
+    ]
+   },
+   {
+    "url": "https://delco.today/category/commerce/media/",
+    "status": "ok",
+    "lines": 161,
+    "priced": 0,
+    "hh": false,
+    "sample": []
+   }
+  ],
+  "best": 1,
+  "best_url": "https://delco.today/2021/07/azie-rooftop-deck-media-borough-on-best-list/",
+  "best_hh": false,
+  "images": [],
+  "n_links": 6,
+  "hopped": 3
+ },
+ {
+  "lid": "DEf67224a909",
+  "name": "Jackson House",
+  "seed": "https://jacksonhousede.com/",
+  "seed_status": "ok",
+  "seed_lines": 109,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://jacksonhousede.com/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://jacksonhousede.com/events",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://jacksonhousede.com/menu",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 3,
+  "hopped": 0
+ },
+ {
+  "lid": "DE7c3e84d920",
+  "name": "Firebirds Wood Fired Grill",
+  "seed": "https://firebirdsrestaurants.com/wilmington",
+  "seed_status": "ok",
+  "seed_lines": 86,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://firebirdsrestaurants.com/order-online/menu/order",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://firebirdsrestaurants.com/order-online/menu/order/33933",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://firebirdsrestaurants.com/order-online/menu/order?type=curbside",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 7,
+  "hopped": 0
+ },
+ {
+  "lid": "DE24d26181e2",
+  "name": "Kirkwood Country Club",
+  "seed": "https://kirkwoodcountry.club/events-%26-entertainment",
+  "seed_status": "ok",
+  "seed_lines": 118,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://kirkwoodcountry.club/events-%26-entertainment",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 1,
+  "hopped": 0
+ },
+ {
+  "lid": "DE1c499fcbf0",
+  "name": "The Cheesecake Factory",
+  "seed": "https://locations.thecheesecakefactory.com/de/newark-151.html?utm_source=Google&utm_medium=Maps&utm_campaign=Google+Places",
+  "seed_status": "ok",
+  "seed_lines": 182,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://menu.thecheesecakefactory.com/de/newark-151/happy-hour/?utm_source&",
+    "status": "robots"
+   },
+   {
+    "url": "https://menu.thecheesecakefactory.com/de/newark-151/?utm_source&",
+    "status": "robots"
+   },
+   {
+    "url": "https://www.thecheesecakefactory.com/locations/newark-de/menu/",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 5,
+  "hopped": 2
+ },
+ {
+  "lid": "60905",
+  "name": "Ale House",
+  "seed": "https://alehousenewtownsquare.com/newtown-square-delaware-county-the-ale-house-happy-hours-specials",
+  "seed_status": "ok",
+  "seed_lines": 45,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://alehousenewtownsquare.com/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://alehousenewtownsquare.com/newtown-square-delaware-county-the-ale-house-catering-menus",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://alehousenewtownsquare.com/newtown-square-delaware-county-the-ale-house-drink-menu",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 6,
+  "hopped": 0
+ },
+ {
+  "lid": "20468",
+  "name": "Charlotte's Restaurant",
+  "seed": "https://charlottesrestaurant.com/newtown-square-charlotte-s-restaurant-happy-hours-specials",
+  "seed_status": "ok",
+  "seed_lines": 39,
+  "shell": true,
+  "hops": [
+   {
+    "url": "https://charlottesrestaurant.com/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://charlottesrestaurant.com/newtown-square-charlotte-s-restaurant-events",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://charlottesrestaurant.com/newtown-square-charlotte-s-restaurant-food-menu",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 7,
+  "hopped": 0
+ },
+ {
+  "lid": "DEa4046b009e",
+  "name": "Nora Lees French Quarter Bistro",
+  "seed": "http://noralees.com/menu",
+  "seed_status": "ok",
+  "seed_lines": 46,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://noralees.com/happy-hour",
+    "status": "ok",
+    "lines": 98,
+    "priced": 36,
+    "hh": true,
+    "sample": [
+     "$2.00",
+     "$2.00",
+     "$3.00",
+     "$3.00",
+     "$8.00",
+     "$8.00"
+    ]
+   },
+   {
+    "url": "https://noralees.com/dinner-menu",
+    "status": "ok",
+    "lines": 344,
+    "priced": 164,
+    "hh": false,
+    "sample": [
+     "$18.99",
+     "$18.99",
+     "$17.99",
+     "$17.99",
+     "$20.99",
+     "$20.99"
+    ]
+   },
+   {
+    "url": "https://noralees.com/lunch-menu-2",
+    "status": "ok",
+    "lines": 362,
+    "priced": 176,
+    "hh": false,
+    "sample": [
+     "$18.99",
+     "$18.99",
+     "$17.99",
+     "$17.99",
+     "$20.99",
+     "$20.99"
+    ]
+   }
+  ],
+  "best": 176,
+  "best_url": "https://noralees.com/lunch-menu-2",
+  "best_hh": false,
+  "images": [],
+  "n_links": 6,
+  "hopped": 3
+ },
+ {
+  "lid": "103758",
+  "name": "Benny the Bum's",
+  "seed": "https://www.bennythebums.com",
+  "seed_status": "ok",
+  "seed_lines": 40,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.bennythebums.com/drinks",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 1,
+  "hopped": 0
+ },
+ {
+  "lid": "68559",
+  "name": "Butcher and Barkeep",
+  "seed": "https://www.thebutcherandbarkeep.com/",
+  "seed_status": "ok",
+  "seed_lines": 31,
+  "shell": true,
+  "hops": [
+   {
+    "url": "https://thebutcherandbarkeep.com/events/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://thebutcherandbarkeep.com/menus/",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 2,
+  "hopped": 0
+ },
+ {
+  "lid": "83231",
+  "name": "Second District Brewing Company",
+  "seed": "https://seconddistrictbrewing.com/brewpub-menu/",
+  "seed_status": "ok",
+  "seed_lines": 166,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://seconddistrictbrewing.com/brewpub-menu/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://seconddistrictbrewing.com/events/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://seconddistrictbrewing.com/private-party-and-event-space/",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 3,
+  "hopped": 0
+ },
+ {
+  "lid": "95357",
+  "name": "The Post",
+  "seed": "https://thepostphl.com/",
+  "seed_status": "ok",
+  "seed_lines": 50,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.thepostphl.com",
+    "status": "ok",
+    "lines": 50,
+    "priced": 2,
+    "hh": true,
+    "sample": [
+     "Specials: $4 Kenwood Lager, $5 Yards Pale Ale,",
+     "$5 Michelob Draft, and $1 Hot Dogs"
+    ]
+   },
+   {
+    "url": "https://www.thepostphl.com/book-an-event",
+    "status": "ok",
+    "lines": 35,
+    "priced": 0,
+    "hh": false,
+    "sample": []
+   }
+  ],
+  "best": 2,
+  "best_url": "https://www.thepostphl.com",
+  "best_hh": true,
+  "images": [],
+  "n_links": 2,
+  "hopped": 2
+ },
+ {
+  "lid": "115054",
+  "name": "Amada",
+  "seed": "https://www.amadarestaurant.com/specials/",
+  "seed_status": "ok",
+  "seed_lines": 70,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.amadarestaurant.com/specials/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.amadarestaurant.com/menus/",
+    "status": "ok",
+    "lines": 59,
+    "priced": 0,
+    "hh": false,
+    "sample": []
+   },
+   {
+    "url": "https://www.amadarestaurant.com/private-events-philadelphia/",
+    "status": "ok",
+    "lines": 66,
+    "priced": 0,
+    "hh": true,
+    "sample": []
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 5,
+  "hopped": 2
+ },
+ {
+  "lid": "80458",
+  "name": "Dandan",
+  "seed": "https://www.dandanrestaurant.com/location/wayne-1/",
+  "seed_status": "ok",
+  "seed_lines": 91,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.dandanrestaurant.com/location/wayne-1/",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 1,
+  "hopped": 0
+ },
+ {
+  "lid": "109849",
+  "name": "EXIT 13 GASTROBAR",
+  "seed": "https://exit13gastrobar.com/",
+  "seed_status": "ok",
+  "seed_lines": 146,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://exit13gastrobar.com/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://exit13gastrobar.com/bryn-mawr-villanova-exit-13-gastrobar-drink-menu",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://exit13gastrobar.com/bryn-mawr-villanova-exit-13-gastrobar-events",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 5,
+  "hopped": 0
+ },
+ {
+  "lid": "101476",
+  "name": "GARRETT HILL ALE HOUSE LLC",
+  "seed": "https://www.garretthillalehouse.com/events-specials",
+  "seed_status": "ok",
+  "seed_lines": 45,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.garretthillalehouse.com/events-specials",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.garretthillalehouse.com/menus",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 2,
+  "hopped": 0
+ },
+ {
+  "lid": "69684",
+  "name": "Avalon Restaurant",
+  "seed": "https://www.avalonrestaurant.net/westchester",
+  "seed_status": "ok",
+  "seed_lines": 18,
+  "shell": true,
+  "hops": [
+   {
+    "url": "https://www.avalonrestaurant.net/west-chester-events-specials",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.avalonrestaurant.net/westchester",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.avalonrestaurant.net/privateevents",
+    "status": "ok",
+    "lines": 17,
+    "priced": 0,
+    "hh": false,
+    "sample": []
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 3,
+  "hopped": 1
+ },
+ {
+  "lid": "58333",
+  "name": "Pietro’s Prime",
+  "seed": "https://www.pietrosprime.com",
+  "seed_status": "ok",
+  "seed_lines": 53,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.pietrosprime.com/happy-hour-menu",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.pietrosprime.com/taps-menu",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.pietrosprime.com/bar-menu",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 11,
+  "hopped": 0
+ },
+ {
+  "lid": "52121",
+  "name": "Teca-R",
+  "seed": "http://tecawestchester.com/west-chester-west-chester-teca-restaurant-and-bar-food-menu",
+  "seed_status": "ok",
+  "seed_lines": 473,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://tecawestchester.com/1308560",
+    "status": "404 text/html"
+   },
+   {
+    "url": "https://tecawestchester.com/737693",
+    "status": "404 text/html"
+   },
+   {
+    "url": "https://tecawestchester.com/west-chester-west-chester-teca-restaurant-and-bar-about",
+    "status": "ok",
+    "lines": 50,
+    "priced": 0,
+    "hh": false,
+    "sample": []
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 7,
+  "hopped": 3
+ },
+ {
+  "lid": "10518",
+  "name": "Double Visions",
+  "seed": "https://www.doublevisionsgogo.com/",
+  "seed_status": "ok",
+  "seed_lines": 30,
+  "shell": true,
+  "hops": [
+   {
+    "url": "https://doublevisionsgogo.com/event-archives/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://doublevisionsgogo.com/events/",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 2,
+  "hopped": 0
+ },
+ {
+  "lid": "DEd8325476cf",
+  "name": "Bardea Food & Drink",
+  "seed": "https://www.bardeafoodanddrink.com/menus/",
+  "seed_status": "ok",
+  "seed_lines": 308,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.bardeafoodanddrink.com/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.bardeafoodanddrink.com/events/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.bardeafoodanddrink.com/menus/",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 3,
+  "hopped": 0
+ },
+ {
+  "lid": "DE03fd0ecb4b",
+  "name": "Big Fish Grill on the Riverfront",
+  "seed": "http://www.bigfishriverfront.com/wilmington-wilmington-big-fish-grill-on-the-riverfront-happy-hours-specials",
+  "seed_status": "ok",
+  "seed_lines": 78,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.bigfishriverfront.com/wilmington-wilmington-big-fish-grill-on-the-riverfront-events",
+    "status": "ok",
+    "lines": 1504,
+    "priced": 0,
+    "hh": false,
+    "sample": []
+   },
+   {
+    "url": "https://www.bigfishriverfront.com/wilmington-wilmington-big-fish-grill-on-the-riverfront-happy-hours-specials",
+    "status": "ok",
+    "lines": 78,
+    "priced": 0,
+    "hh": true,
+    "sample": []
+   },
+   {
+    "url": "https://www.bigfishriverfront.com/wilmington-wilmington-big-fish-grill-on-the-riverfront-events-and-catering",
+    "status": "ok",
+    "lines": 64,
+    "priced": 0,
+    "hh": false,
+    "sample": []
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 4,
+  "hopped": 3
+ },
+ {
+  "lid": "DE6192c1db22",
+  "name": "Cafe Mezzanotte",
+  "seed": "http://www.cafemezzanotte.net/",
+  "seed_status": "ok",
+  "seed_lines": 67,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://www.cafemezzanotte.net/menu-2/martini-happy-hour-menu/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.cafemezzanotte.net/specials/",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://www.cafemezzanotte.net/menu-2/",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 6,
+  "hopped": 0
+ },
+ {
+  "lid": "DE4264e33ba0",
+  "name": "Goobers Diner",
+  "seed": "http://goobersdiner-de.com/",
+  "seed_status": "ok",
+  "seed_lines": 125,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://goobersdiner-de.com/wilmington-trolley-square-goober-s-diner-happy-hours-specials",
+    "status": "ok",
+    "lines": 37,
+    "priced": 0,
+    "hh": true,
+    "sample": []
+   },
+   {
+    "url": "https://goobersdiner-de.com/wilmington-trolley-square-goober-s-diner-drink-menu",
+    "status": "ok",
+    "lines": 142,
+    "priced": 50,
+    "hh": false,
+    "sample": [
+     "$2.00",
+     "$2.00",
+     "$3.00/+",
+     "$4.00",
+     "$4.00",
+     "$3.00"
+    ]
+   },
+   {
+    "url": "https://goobersdiner-de.com/wilmington-trolley-square-goober-s-diner-food-menu",
+    "status": "ok",
+    "lines": 333,
+    "priced": 116,
+    "hh": false,
+    "sample": [
+     "$11.00",
+     "$11.00",
+     "$11.00",
+     "$18.00",
+     "$12.00",
+     "$13.00/+"
+    ]
+   }
+  ],
+  "best": 116,
+  "best_url": "https://goobersdiner-de.com/wilmington-trolley-square-goober-s-diner-food-menu",
+  "best_hh": false,
+  "images": [],
+  "n_links": 3,
+  "hopped": 3
+ },
+ {
+  "lid": "DE632e1e3095",
+  "name": "The Nomad Bar",
+  "seed": "http://www.nomadwilmington.com/events",
+  "seed_status": "ok",
+  "seed_lines": 46,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://nomadwilmington.com/drink-menu",
+    "status": "ok",
+    "lines": 28,
+    "priced": 0,
+    "hh": false,
+    "sample": []
+   },
+   {
+    "url": "https://nomadwilmington.com/events",
+    "status": "ok",
+    "lines": 46,
+    "priced": 0,
+    "hh": true,
+    "sample": []
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 2,
+  "hopped": 2
+ },
+ {
+  "lid": "DEc1097cdd42",
+  "name": "The Quoin Restaurant",
+  "seed": "https://thequoinhotel.com/restaurant/happyhour",
+  "seed_status": "ok",
+  "seed_lines": 93,
+  "shell": false,
+  "hops": [
+   {
+    "url": "https://thequoinhotel.com/restaurant/happyhour",
+    "status": "already crawled"
+   },
+   {
+    "url": "https://thequoinhotel.com/events",
+    "status": "already crawled"
+   }
+  ],
+  "best": 0,
+  "best_url": "",
+  "best_hh": false,
+  "images": [],
+  "n_links": 2,
+  "hopped": 0
+ }
+]
