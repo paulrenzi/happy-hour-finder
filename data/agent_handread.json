@@ -1,0 +1,315 @@
+[
+ {
+  "lid": "DE98501eeb65",
+  "url": "https://wsalehouse.com/",
+  "read_on": "2026-09-03",
+  "heading": "Happy Hour",
+  "clock_quote": "Happy Hour 4PM-6PM",
+  "quote": "Happy Hour 4PM-6PM Glass of Wine $1 OFF Select Drafts $1 OFF Cocktail Specials $8 - $10",
+  "days": [1, 2, 3, 4, 5],
+  "start": "16:00",
+  "end": "18:00",
+  "items": [
+   {"category": "wine", "label": "Glass of Wine", "amount_off_usd": 1.0, "evidence": "Glass of Wine $1 OFF"},
+   {"category": "draft", "label": "Select Drafts", "amount_off_usd": 1.0, "evidence": "Select Drafts $1 OFF"},
+   {"category": "cocktail", "label": "Cocktail Specials", "price_usd": 8.0, "price_max": 10.0, "evidence": "Cocktail Specials $8 - $10"}
+  ]
+ },
+ {
+  "lid": "DEff6bbca472",
+  "url": "http://www.chelseatavern.com/happy-hours-specials",
+  "read_on": "2026-09-03",
+  "heading": "Happy Hour",
+  "clock_quote": "Monday-Friday 3pm-6pm",
+  "quote": "Happy Hour Monday-Friday 3pm-6pm BAR AREA ONLY! $5 Mixed Drinks, $5 Select Craft Drafts, $8 Mini Beer Flight, $9 Tavern Special, $6 House Wines, $7 Canned Cocktails, $8 Happy Apps, $10 Pizzas",
+  "fine_print": "Bar area only. No talls or doubles.",
+  "days": [1, 2, 3, 4, 5],
+  "start": "15:00",
+  "end": "18:00",
+  "items": [
+   {"category": "well", "label": "Mixed Drinks", "price_usd": 5.0, "evidence": "$5 Mixed Drinks"},
+   {"category": "draft", "label": "Select Craft Drafts", "price_usd": 5.0, "evidence": "$5 Select Craft Drafts"},
+   {"category": "draft", "label": "Mini Beer Flight (three 6 oz. tasters)", "price_usd": 8.0, "evidence": "$8 Mini Beer Flight"},
+   {"category": "shot", "label": "Tavern Special (Jameson shot with 16 oz. Chelsea Lager or IPA)", "price_usd": 9.0, "evidence": "$9 Tavern Special"},
+   {"category": "wine", "label": "House Wines", "price_usd": 6.0, "evidence": "$6 House Wines"},
+   {"category": "cocktail", "label": "Canned Cocktails", "price_usd": 7.0, "evidence": "$7 Canned Cocktails"},
+   {"category": "food", "label": "Happy Apps (Fried Pickles & Loaded Potato Bombs)", "price_usd": 8.0, "evidence": "$8 Happy Apps"},
+   {"category": "food", "label": "Pizzas (Classic Cheese & Margherita)", "price_usd": 10.0, "evidence": "$10 Pizzas"}
+  ]
+ },
+ {
+  "lid": "DE0ab0e8da46",
+  "url": "https://unionstreetpub.com/wilmington-union-street-union-street-pub-happy-hours-specials",
+  "read_on": "2026-09-03",
+  "heading": "Happy Hour",
+  "clock_quote": "3:30 PM - 6:30 PM",
+  "quote": "Happy Hour Monday - Thursday 3:30 PM - 6:30 PM. Wings (4), Pub Fries, Onion Rings, Mozz Sticks, Boneless Bites (8) $5. Domestic Draft $3, Imported Drafts $5, Statesides $5, Captains $5, Jameson $5, Mi Campos $4",
+  "days": [1, 2, 3, 4],
+  "start": "15:30",
+  "end": "18:30",
+  "items": [
+   {"category": "food", "label": "Wings (4)", "price_usd": 5.0, "evidence": "Wings (4) $5"},
+   {"category": "food", "label": "Pub Fries", "price_usd": 5.0, "evidence": "Pub Fries $5"},
+   {"category": "food", "label": "Onion Rings", "price_usd": 5.0, "evidence": "Onion Rings $5"},
+   {"category": "food", "label": "Mozz Sticks", "price_usd": 5.0, "evidence": "Mozz Sticks $5"},
+   {"category": "food", "label": "Boneless Bites (8)", "price_usd": 5.0, "evidence": "Boneless Bites (8) $5"},
+   {"category": "draft", "label": "Domestic Draft", "price_usd": 3.0, "evidence": "Domestic Draft $3"},
+   {"category": "draft", "label": "Imported Drafts", "price_usd": 5.0, "evidence": "Imported Drafts $5"},
+   {"category": "bottle_can", "label": "Statesides", "price_usd": 5.0, "evidence": "Statesides $5"},
+   {"category": "call", "label": "Captains", "price_usd": 5.0, "evidence": "Captains $5"},
+   {"category": "call", "label": "Jameson", "price_usd": 5.0, "evidence": "Jameson $5"},
+   {"category": "call", "label": "Mi Campos", "price_usd": 4.0, "evidence": "Mi Campos $4"}
+  ]
+ },
+ {
+  "lid": "DE81960c2e6e",
+  "url": "http://tonicsns.com/menu/",
+  "read_on": "2026-09-03",
+  "heading": "Happy Hour",
+  "clock_quote": "3-6 PM Monday - Friday",
+  "quote": "Happy Hour 3-6 PM Monday - Friday. $2 off drafts, $2 off wines by glass, $3 off specialty cocktails, $3 off appetizers",
+  "days": [1, 2, 3, 4, 5],
+  "start": "15:00",
+  "end": "18:00",
+  "items": [
+   {"category": "draft", "label": "Drafts", "amount_off_usd": 2.0, "evidence": "$2 off drafts"},
+   {"category": "wine", "label": "Wines by the glass", "amount_off_usd": 2.0, "evidence": "$2 off wines by glass"},
+   {"category": "cocktail", "label": "Specialty cocktails", "amount_off_usd": 3.0, "evidence": "$3 off specialty cocktails"},
+   {"category": "food", "label": "Appetizers", "amount_off_usd": 3.0, "evidence": "$3 off appetizers"}
+  ]
+ },
+ {
+  "lid": "DEe9a929ee19",
+  "url": "https://www.roostwilmington.com/menus/",
+  "read_on": "2026-09-03",
+  "heading": "Happy Hour",
+  "clock_quote": "Monday through Friday, 4:30-6 p.m.",
+  "quote": "Happy hour Monday through Friday, 4:30-6 p.m. Snacks $10: Chicken (Wings/Boneless/Tenders), Mini Glizzy, Cheesesteak Bao Bun, OG Flatbread, Caesar Salad. $1 off draft beers, $2 off wines by the glass, $3 off rail mixed drinks",
+  "days": [1, 2, 3, 4, 5],
+  "start": "16:30",
+  "end": "18:00",
+  "items": [
+   {"category": "food", "label": "Chicken (Wings/Boneless/Tenders)", "price_usd": 10.0, "evidence": "Snacks $10 Chicken (Wings/Boneless/Tenders)"},
+   {"category": "food", "label": "Mini Glizzy", "price_usd": 10.0, "evidence": "Snacks $10 Mini Glizzy"},
+   {"category": "food", "label": "Cheesesteak Bao Bun", "price_usd": 10.0, "evidence": "Snacks $10 Cheesesteak Bao Bun"},
+   {"category": "food", "label": "OG Flatbread", "price_usd": 10.0, "evidence": "Snacks $10 OG Flatbread"},
+   {"category": "food", "label": "Caesar Salad", "price_usd": 10.0, "evidence": "Snacks $10 Caesar Salad"},
+   {"category": "draft", "label": "Draft beers", "amount_off_usd": 1.0, "evidence": "$1 off draft beers"},
+   {"category": "wine", "label": "Wines by the glass", "amount_off_usd": 2.0, "evidence": "$2 off wines by the glass"},
+   {"category": "well", "label": "Rail mixed drinks", "amount_off_usd": 3.0, "evidence": "$3 off rail mixed drinks"}
+  ]
+ },
+ {
+  "lid": "DEf02235c26c",
+  "url": "https://www.copperdram.com/events-specials",
+  "read_on": "2026-09-03",
+  "heading": "Happy Hour",
+  "clock_quote": "3:00 - 6:00 EVERY day",
+  "quote": "Happy Hour 3:00 - 6:00 EVERY day. $2 off all 'Classic' cocktails, $1 off all draft beers, $1 off glasses of wine",
+  "days": [1, 2, 3, 4, 5, 6, 7],
+  "start": "15:00",
+  "end": "18:00",
+  "items": [
+   {"category": "cocktail", "label": "\"Classic\" cocktails", "amount_off_usd": 2.0, "evidence": "$2 off all 'Classic' cocktails"},
+   {"category": "draft", "label": "Draft beers", "amount_off_usd": 1.0, "evidence": "$1 off all draft beers"},
+   {"category": "wine", "label": "Glasses of wine", "amount_off_usd": 1.0, "evidence": "$1 off glasses of wine"}
+  ]
+ },
+ {
+  "lid": "DE608516193f",
+  "url": "http://columbusinn.net/wp-content/uploads/2026/03/NEW-HH-Menu-updated-3326-2.pdf",
+  "read_on": "2026-09-03",
+  "heading": "HAPPY HOUR MENU",
+  "clock_quote": "MONDAY THROUGH SATURDAY 4:30PM - 5:30PM",
+  "quote": "COLUMBUS INN HAPPY HOUR MENU MONDAY THROUGH SATURDAY 4:30PM - 5:30PM. DRINK SPECIALS $1 off draft beer, $2 off glasses of wine, $3 off signature cocktails",
+  "fine_print": "Available in the bar/tavern & patio only. Dine in only.",
+  "days": [1, 2, 3, 4, 5, 6],
+  "start": "16:30",
+  "end": "17:30",
+  "items": [
+   {"category": "draft", "label": "Draft beer", "amount_off_usd": 1.0, "evidence": "$1 off draft beer"},
+   {"category": "wine", "label": "Glasses of wine", "amount_off_usd": 2.0, "evidence": "$2 off glasses of wine"},
+   {"category": "cocktail", "label": "Signature cocktails", "amount_off_usd": 3.0, "evidence": "$3 off signature cocktails"},
+   {"category": "food", "label": "Edamame, cracked black pepper & sea salt", "price_usd": 6.0, "evidence": "Edamame $6"},
+   {"category": "food", "label": "Deviled Eggs, bacon crumbles, roasted tomatoes, iceberg aioli", "price_usd": 6.0, "evidence": "Deviled Eggs $6"},
+   {"category": "food", "label": "Crispy Asian Brussels Sprouts", "price_usd": 10.0, "evidence": "Crispy Asian Brussels Sprouts $10"},
+   {"category": "food", "label": "Arrogant Cauliflower", "price_usd": 11.0, "evidence": "Arrogant Cauliflower $11"},
+   {"category": "food", "label": "Traditional Pizza, red sauce, mozzarella cheese", "price_usd": 12.0, "evidence": "Traditional Pizza $12"},
+   {"category": "food", "label": "Shrimp Tacos, avocado mousse, creamy chipotle slaw, pico", "price_usd": 11.0, "evidence": "Shrimp Tacos $11"},
+   {"category": "food", "label": "EZ Peel & Eat Shrimp", "price_usd": 12.0, "evidence": "EZ Peel & Eat Shrimp $12"},
+   {"category": "food", "label": "Grandma's Pierogies, pork belly, caramelized onions", "price_usd": 10.0, "evidence": "Grandma's Pierogies $10"},
+   {"category": "food", "label": "Cheesesteak Spring Rolls, spicy smoked ketchup", "price_usd": 11.0, "evidence": "Cheesesteak Spring Rolls $11"},
+   {"category": "food", "label": "Brisket Fries, sweet potato fries, cheese sauce, bbq short rib ragout", "price_usd": 11.0, "evidence": "Brisket Fries $11"},
+   {"category": "food", "label": "Maple-Sesame Chicken, crispy leg confit, spicy cucumber salad", "price_usd": 8.0, "evidence": "Maple-Sesame Chicken $8"},
+   {"category": "food", "label": "Hummus, tomato, cucumber, and parsley salad, olives, roasted peppers, pita", "price_usd": 9.0, "evidence": "Hummus $9"},
+   {"category": "food", "label": "NOT so Classic Shrimp Caesar Salad", "price_usd": 14.0, "evidence": "NOT so Classic Shrimp Caesar Salad $14"},
+   {"category": "food", "label": "Sandwiches (Loaded Smash Burger, Crab Cake, Filet Mignon)", "price_usd": 13.0, "evidence": "$13 SANDWICHES"}
+  ]
+ },
+ {
+  "lid": "DE66e62e19e0",
+  "url": "https://trolleysquareoysterhouse.com/wp-content/uploads/2026/04/TSOH_HappyHour_4.10.26.pdf",
+  "read_on": "2026-09-03",
+  "heading": "BaRBiteS",
+  "clock_quote": "MONDAY - FRIDAY | 4PM - 6PM",
+  "quote": "BaRBiteS MONDAY - FRIDAY | 4PM - 6PM AVAILABLE AT THE BAR. $1 OFF WINE BY THE GLASS, $1 OFF ALL DRAFT BEER, $1 OFF MIXED RAIL DRINKS",
+  "fine_print": "Available at the bar.",
+  "days": [1, 2, 3, 4, 5],
+  "start": "16:00",
+  "end": "18:00",
+  "items": [
+   {"category": "wine", "label": "Wine by the glass", "amount_off_usd": 1.0, "evidence": "$1 OFF WINE BY THE GLASS"},
+   {"category": "draft", "label": "All draft beer", "amount_off_usd": 1.0, "evidence": "$1 OFF ALL DRAFT BEER"},
+   {"category": "well", "label": "Mixed rail drinks", "amount_off_usd": 1.0, "evidence": "$1 OFF MIXED RAIL DRINKS"},
+   {"category": "food", "label": "White Wine Mussels, garlic, shallots, fresh herbs, lemon, sourdough toast", "price_usd": 8.0, "evidence": "WHITE WINE MUSSELS 8"},
+   {"category": "food", "label": "Firecracker Wings (6), celery, bleu cheese dressing", "price_usd": 10.0, "evidence": "FIRECRACKER WINGS (6) 10"},
+   {"category": "food", "label": "Burger Sliders, black angus burger, crispy onions, cheddar cheese", "price_usd": 11.0, "evidence": "BURGER SLIDERS 11"},
+   {"category": "food", "label": "Cheesesteak Egg Rolls, shaved ribeye, fried onions, fontina & american cheese", "price_usd": 12.0, "evidence": "CHEESESTEAK EGG ROLLS 12"},
+   {"category": "food", "label": "Flash Fried Calamari, roasted long hot aioli", "price_usd": 7.0, "evidence": "FLASH FRIED CALAMARI 7"},
+   {"category": "food", "label": "Buck-A-Shuck Oysters", "price_usd": 1.0, "evidence": "BUCK-A-SHUCK OYSTERS $1"}
+  ]
+ },
+ {
+  "lid": "DEf6c09b1022",
+  "url": "https://www.delpezmexicanpub.com/newark-happy-hour-menu",
+  "read_on": "2026-09-03",
+  "heading": "Happy Hour",
+  "clock_quote": "Monday-Friday from 3-6 pm",
+  "quote": "Happy Hour Monday-Friday from 3-6 pm. La Casa Margarita by the Glass on the rocks $6, frozen $7, Select craft on draft $5, House red, white, or rose $5, Two Bite Taco Trio $9, Cauliflower Popcorn $6, Pub Sliders $10, Quesadilla Bites $7",
+  "days": [1, 2, 3, 4, 5],
+  "start": "15:00",
+  "end": "18:00",
+  "items": [
+   {"category": "cocktail", "label": "La Casa Margarita by the Glass, on the rocks", "price_usd": 6.0, "evidence": "La Casa Margarita by the Glass on the rocks (Glass) $6"},
+   {"category": "cocktail", "label": "La Casa Margarita by the Glass, frozen", "price_usd": 7.0, "evidence": "La Casa Margarita by the Glass frozen (Glass) $7"},
+   {"category": "draft", "label": "Select craft on draft", "price_usd": 5.0, "evidence": "Select craft on draft $5"},
+   {"category": "wine", "label": "House red, white, or rose", "price_usd": 5.0, "evidence": "House red, white, or rose $5"},
+   {"category": "food", "label": "Two Bite Taco Trio: primo rib, Texas BBQ, and garden veggie", "price_usd": 9.0, "evidence": "Two Bite Taco Trio $9"},
+   {"category": "food", "label": "Cauliflower Popcorn, crispy teriyaki cauliflower bites, carrot-ginger aioli", "price_usd": 6.0, "evidence": "Cauliflower Popcorn $6"},
+   {"category": "food", "label": "Pub Sliders, three 2.5 oz beef sliders, cheddar, caramelized onions", "price_usd": 10.0, "evidence": "Pub Sliders $10"},
+   {"category": "food", "label": "Quesadilla Bites, cheddar, pico de gallo, chicken, crema", "price_usd": 7.0, "evidence": "Quesadilla Bites $7"}
+  ]
+ },
+ {
+  "lid": "DE3b23cb5840",
+  "url": "https://www.foundingbrothersde.com/",
+  "read_on": "2026-09-03",
+  "heading": "Yee Haw Happy Hour",
+  "clock_quote": "Monday-Friday 4-6 PM",
+  "quote": "Yee Haw Happy Hour Monday–Friday 4–6 PM and Friday–Saturday 10 PM–midnight. Barside only $2 off drafts. $5 rails. House crushes. Plus a food lineup made for sharing",
+  "fine_print": "Barside only.",
+  "days": [1, 2, 3, 4, 5],
+  "start": "16:00",
+  "end": "18:00"
+ },
+ {
+  "lid": "DEe2a8eafc2f",
+  "url": "https://www.pfchangs.com/happy-hour",
+  "read_on": "2026-09-03",
+  "heading": "Happy Hour",
+  "clock_quote": "Monday - Friday 3-6",
+  "quote": "Happy Hour $5.99 Select Beer, $6.99 Select Wine, $8.99 Select Cocktails and Half Priced Half Apps Monday - Friday 3-6*",
+  "days": [1, 2, 3, 4, 5],
+  "start": "15:00",
+  "end": "18:00"
+ },
+ {
+  "lid": "61942",
+  "url": "https://sidebarandrestaurant.com/weekly-specials",
+  "read_on": "2026-09-03",
+  "heading": "Happy Hour",
+  "clock_quote": "Monday through Friday: 4-6pm",
+  "quote": "Happy Hour Monday through Friday 4-6pm. $4 Select Drafts, $5 Titos Drinks, $5 House Wine, $7 Select Appetizers",
+  "days": [1, 2, 3, 4, 5],
+  "start": "16:00",
+  "end": "18:00",
+  "items": [
+   {"category": "draft", "label": "Select Drafts", "price_usd": 4.0, "evidence": "$4 Select Drafts"},
+   {"category": "call", "label": "Titos Drinks", "price_usd": 5.0, "evidence": "$5 Titos Drinks"},
+   {"category": "wine", "label": "House Wine", "price_usd": 5.0, "evidence": "$5 House Wine"},
+   {"category": "food", "label": "Select Appetizers", "price_usd": 7.0, "evidence": "$7 Select Appetizers"}
+  ]
+ },
+ {
+  "lid": "69684",
+  "url": "https://www.avalonrestaurant.net/menus-1",
+  "read_on": "2026-09-03",
+  "heading": "Happy Hour",
+  "clock_quote": "Tuesday - Friday 4:00 - 6:00pm",
+  "quote": "Bar Avalon Happy Hour West Chester 4pm - 6pm Tuesday Friday. Burrata Caprese 10, Roasted Stuff Long Hots 10, Marinara Mussels 11, Tempura Chicken Nuggets 10, Eggplant Chips 10, Baked Meatballs 10, Truffle Fries 7, Espresso Martini 10, Aperol Spritz 9, Avalon Margarita 9.50, Old Fashioned 9.50, Stella Artois Pilsner 5.50",
+  "days": [2, 3, 4, 5],
+  "start": "16:00",
+  "end": "18:00",
+  "items": [
+   {"category": "food", "label": "Burrata Caprese", "price_usd": 10.0, "evidence": "Burrata Caprese - $10"},
+   {"category": "food", "label": "Roasted Stuffed Long Hots", "price_usd": 10.0, "evidence": "Roasted Stuff Long Hots - $10"},
+   {"category": "food", "label": "Marinara Mussels", "price_usd": 11.0, "evidence": "Marinara Mussels - $11"},
+   {"category": "food", "label": "Tempura Chicken Nuggets", "price_usd": 10.0, "evidence": "Tempura Chicken Nuggets - $10"},
+   {"category": "food", "label": "Eggplant Chips", "price_usd": 10.0, "evidence": "Eggplant Chips - $10"},
+   {"category": "food", "label": "Baked Meatballs", "price_usd": 10.0, "evidence": "Baked Meatballs - $10"},
+   {"category": "food", "label": "Truffle Fries", "price_usd": 7.0, "evidence": "Truffle Fries - $7"},
+   {"category": "cocktail", "label": "Espresso Martini", "price_usd": 10.0, "evidence": "Espresso Martini - $10"},
+   {"category": "cocktail", "label": "Aperol Spritz", "price_usd": 9.0, "evidence": "Aperol Spritz - $9"},
+   {"category": "cocktail", "label": "Avalon Margarita", "price_usd": 9.5, "evidence": "Avalon Margarita - $9.50"},
+   {"category": "cocktail", "label": "Old Fashioned", "price_usd": 9.5, "evidence": "Old Fashioned - $9.50"},
+   {"category": "draft", "label": "Stella Artois Pilsner", "price_usd": 5.5, "evidence": "Stella Artois Pilsner - $5.50"}
+  ]
+ },
+ {
+  "lid": "71516",
+  "url": "https://kildarespubwc.com/drink-menu/",
+  "read_on": "2026-09-03",
+  "heading": "HAPPY HOUR",
+  "clock_quote": "WEEKDAYS 4:00-6:00PM",
+  "quote": "HAPPY HOUR WEEKDAYS 4:00-6:00PM 25% OFF APPETIZERS $3 OFF DRAFTS COCKTAILS WINES",
+  "days": [1, 2, 3, 4, 5],
+  "start": "16:00",
+  "end": "18:00",
+  "items": [
+   {"category": "food", "label": "Appetizers", "discount_pct": 25, "evidence": "25% OFF APPETIZERS"},
+   {"category": "draft", "label": "Drafts", "amount_off_usd": 3.0, "evidence": "$3 OFF DRAFTS"},
+   {"category": "cocktail", "label": "Cocktails", "amount_off_usd": 3.0, "evidence": "$3 OFF DRAFTS COCKTAILS WINES"},
+   {"category": "wine", "label": "Wines", "amount_off_usd": 3.0, "evidence": "$3 OFF DRAFTS COCKTAILS WINES"}
+  ]
+ },
+ {
+  "lid": "62944",
+  "url": "https://www.masmexicali.com/daily-specials/",
+  "read_on": "2026-09-03",
+  "heading": "Más Happy Hour",
+  "clock_quote": "Tues thru Fri 5:00-7:00pm",
+  "quote": "Más Happy Hour (Bar Only) Tues thru Fri 5:00-7:00pm Half Off Drafts & Appetizers",
+  "fine_print": "Bar only.",
+  "days": [2, 3, 4, 5],
+  "start": "17:00",
+  "end": "19:00",
+  "items": [
+   {"category": "draft", "label": "Drafts", "discount_pct": 50, "evidence": "Half Off Drafts & Appetizers"},
+   {"category": "food", "label": "Appetizers", "discount_pct": 50, "evidence": "Half Off Drafts & Appetizers"}
+  ]
+ },
+ {
+  "lid": "58333",
+  "url": "https://www.pietrosprime.com/happy-hour-menu",
+  "read_on": "2026-09-03",
+  "heading": "HAPPY HOUR",
+  "clock_quote": "Monday - Friday 5:00pm - 7:00pm",
+  "quote": "HAPPY HOUR Monday – Friday 5:00pm – 7:00pm. Half-Priced Appetizers: Black & White Tuna, Pietro's Crab Cake, Calamari, Caprese, Tuna Skins, Quesadilla (Chicken or Steak), Pietro's Blue Chips, Rosemary Parmesan Fries, Buffalo Chicken Tenders, Shanghai Calamari",
+  "fine_print": "In the bar area.",
+  "days": [1, 2, 3, 4, 5],
+  "start": "17:00",
+  "end": "19:00",
+  "items": [
+   {"category": "food", "label": "Black & White Tuna", "discount_pct": 50, "evidence": "Half-Priced Appetizers Black & White Tuna"},
+   {"category": "food", "label": "Pietro's Crab Cake", "discount_pct": 50, "evidence": "Half-Priced Appetizers Pietro's Crab Cake"},
+   {"category": "food", "label": "Calamari", "discount_pct": 50, "evidence": "Half-Priced Appetizers Calamari"},
+   {"category": "food", "label": "Caprese", "discount_pct": 50, "evidence": "Half-Priced Appetizers Caprese"},
+   {"category": "food", "label": "Tuna Skins", "discount_pct": 50, "evidence": "Half-Priced Appetizers Tuna Skins"},
+   {"category": "food", "label": "Quesadilla (Chicken or Steak)", "discount_pct": 50, "evidence": "Half-Priced Appetizers Quesadilla (Chicken or Steak)"},
+   {"category": "food", "label": "Pietro's Blue Chips", "discount_pct": 50, "evidence": "Half-Priced Appetizers Pietro's Blue Chips"},
+   {"category": "food", "label": "Rosemary Parmesan Fries", "discount_pct": 50, "evidence": "Half-Priced Appetizers Rosemary Parmesan Fries"},
+   {"category": "food", "label": "Buffalo Chicken Tenders", "discount_pct": 50, "evidence": "Half-Priced Appetizers Buffalo Chicken Tenders"},
+   {"category": "food", "label": "Shanghai Calamari", "discount_pct": 50, "evidence": "Half-Priced Appetizers Shanghai Calamari"}
+  ]
+ }
+]

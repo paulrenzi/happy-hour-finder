@@ -34,6 +34,14 @@ ZONES_JSON = os.path.join(REPO, "data", "zones.json")
 PRICES_JSON = os.path.join(REPO, "data", "deals_prices_llm.json")
 MENU_IMG_JSON = os.path.join(REPO, "data", "deals_menu_images.json")
 AGENT_JSON = os.path.join(REPO, "data", "deals_agent.json")
+# Written by hand, by an agent that opened the venue's own site and read the
+# happy-hour menu the way a person does -- and, unlike AGENT_JSON above, it
+# carries the WINDOW as well as the items. That is the whole difference. The
+# sidecars can only fill items into a deal some deterministic pass already
+# built, so a venue whose hours no crawler ever parsed had nothing to carry
+# them and 52 paid-for items sat unpublished. A full venue row needs nothing
+# to already exist. Same shape as deals_menus.json, same validators.
+AGENT_VENUES_JSON = os.path.join(REPO, "data", "deals_agent_venues.json")
 PAGES_JSON = os.path.join(REPO, "data", "deals_pages_llm.json")
 MENUS_JSON = os.path.join(REPO, "data", "deals_menus.json")
 PHOTOS_JSON = os.path.join(REPO, "data", "venue_photos.json")
@@ -467,13 +475,18 @@ def main():
     # outrank a person: a hand-read seed and an approved photo still win.
     #
     # This is also the only source that can put a `daily_special` on a card.
-    payload = merge(payload, MENUS_JSON, "model-read menus", 2)
-    payload = merge(payload, EXTRACTED_JSON, "machine-extracted", 3)
+    # An agent read the venue's own page by hand, hours and menu together. It
+    # outranks every machine pass for the same reason the seed does -- something
+    # looked at the page and understood it -- and loses to a person's seed and
+    # to an approved photo.
+    payload = merge(payload, AGENT_VENUES_JSON, "agent-read venues", 2)
+    payload = merge(payload, MENUS_JSON, "model-read menus", 3)
+    payload = merge(payload, EXTRACTED_JSON, "machine-extracted", 4)
     # Written by ingest/extract_roundups.py. A dated article about the town's
     # happy hours, read for the bars it names. It fills a card only where
     # nothing above it did -- and in West Chester that was most of the town,
     # because the bars do not put their happy hour on their own sites.
-    payload = merge(payload, ROUNDUP_JSON, "roundup-read", 4)
+    payload = merge(payload, ROUNDUP_JSON, "roundup-read", 5)
     zones = json.load(open(ZONES_JSON, encoding="utf-8"))
     zone_names = {z["id"]: z["name"] for z in zones["zones"]}
     # Optional: written by ingest/fetch_venue_photos.py. A venue with no entry
