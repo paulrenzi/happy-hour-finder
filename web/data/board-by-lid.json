@@ -5406,6 +5406,44 @@
    }
   ]
  },
+ "DE4798b4126a": {
+  "name": "Lefty's Alley & Eats",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "19:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 2,
+      "end": "19:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 3,
+      "end": "19:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 4,
+      "end": "19:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 5,
+      "end": "19:00",
+      "start": "15:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "DE1205860cb5": {
   "name": "McGlynns Pub - Glasgow",
   "deals": [
