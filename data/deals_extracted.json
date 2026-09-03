@@ -16138,60 +16138,6 @@
    ]
   },
   {
-   "id": "grain-h2o-bear",
-   "lid": "DE34ebec1190",
-   "name": "Grain H2O",
-   "plcb_name": "Grain H2O",
-   "address": "3006 Summit Harbour Pl, Bear, DE 19701",
-   "zone_id": "newark_de",
-   "license_type": "",
-   "website": "https://meetatgrain.com/grain-h2o-pan",
-   "deals": [
-    {
-     "type": "happy_hour",
-     "windows": [
-      {
-       "dow": 1,
-       "start": "15:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 2,
-       "start": "15:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 3,
-       "start": "15:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 4,
-       "start": "15:00",
-       "end": "18:00"
-      },
-      {
-       "dow": 5,
-       "start": "15:00",
-       "end": "18:00"
-      }
-     ],
-     "items": [],
-     "confidence": "unconfirmed",
-     "last_verified_at": "2026-09-02",
-     "verified_by": "auto_extract",
-     "source": {
-      "kind": "venue_site",
-      "url": "https://meetatgrain.com/locationsmenus",
-      "quote": "Happy Hours / Mon-Fri: 3pm-6pm / Mondays 6p",
-      "quotes": [
-       "Happy Hours / Mon-Fri: 3pm-6pm / Mondays 6p"
-      ]
-     }
-    }
-   ]
-  },
-  {
    "id": "dead-presidents-pub-restaurant-wilmington",
    "lid": "DE35c46628ec",
    "name": "Dead Presidents Pub & Restaurant",
