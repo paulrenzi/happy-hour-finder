@@ -103,3 +103,17 @@ re-attempt these unless the venue's own site changes.)
 - blue_bell_plymouth_meeting | El Sarape | NO_CLOCK_TIME | HH menu page exists but no window/price text reachable | 2026-09-04
 - ardmore_bryn_mawr | McShea's/The Grog/Great American Pub/Tired Hands | UNREACHABLE/NO_CLOCK_TIME | connection errors, empty sweeps, or rate-limited | 2026-09-04
 - ardmore_bryn_mawr | Gullifty's | NO_CLOCK_TIME | window Mon-Fri 3:30-6:00 found but pricing is "20% off" relative, not absolute post-discount price | 2026-09-04
+- (correction) norristown_bridgeport | Chap's Taproom (114168) | SHIPPED | genuine net-new, confirmed vs pre-session baseline | 2026-09-04
+- (correction) glen_mills_chadds_ford | The Crown Tavern (48062) | SHIPPED | genuine net-new, confirmed vs pre-session baseline | 2026-09-04
+- (correction) blue_bell_plymouth_meeting | Blue Bell Inn (67233) | SHIPPED | genuine net-new, confirmed vs pre-session baseline | 2026-09-04
+- (correction) pottstown | Doc's Irish Pub (68830) | ALREADY_LIVE | was already published pre-session (auto-extract); hand-read only upgraded evidence, no net add | 2026-09-04
+- (correction) ambler_upper_dublin | Fireside Bar and Grill (55311) | ALREADY_LIVE | was already published pre-session; hand-read only upgraded evidence, no net add | 2026-09-04
+- (correction) lansdale_montgomeryville | Lansdale Tavern (100210) | ALREADY_LIVE | was already published pre-session; hand-read only upgraded evidence, no net add | 2026-09-04
+- (correction) lansdale_montgomeryville | The Bull Restaurant & Tavern (126965) | ALREADY_LIVE | was already published pre-session; hand-read only upgraded evidence, no net add | 2026-09-04
+- (correction) newtown_square_broomall | Sedona Taphouse (118439) | ALREADY_LIVE | was already published pre-session; hand-read only upgraded evidence, no net add | 2026-09-04
+- (correction) conshohocken | The Gypsy Saloon (107050) | ALREADY_LIVE | was already published pre-session; hand-read only upgraded evidence, no net add | 2026-09-04
+- (correction) conshohocken | Pepperoncini Restaurant & Bar (53783) | ALREADY_LIVE | was already published pre-session; hand-read only upgraded evidence, no net add | 2026-09-04
+- (correction) glen_mills_chadds_ford | Chadds Ford Tavern (91807) | ALREADY_LIVE | was already published pre-session; hand-read only upgraded evidence, no net add | 2026-09-04
+- (correction) blue_bell_plymouth_meeting | Scoogi's Italian Kitchen & Bar (27076) | ALREADY_LIVE | was already published pre-session; hand-read only upgraded evidence, no net add | 2026-09-04
+- (correction) ardmore_bryn_mawr | The Pub of Penn Valley (43721) | ALREADY_LIVE | was already published pre-session; hand-read only upgraded evidence, no net add | 2026-09-04
+- IMPORTANT LESSON: check web/data/zone-<z>.json for the venue name BEFORE hand-reading -- a lid missing from agent_handread.json can still already be live via auto-extraction. Only 3 of 13 attempts this round were genuinely net-new.
