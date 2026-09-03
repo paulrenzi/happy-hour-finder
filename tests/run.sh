@@ -40,3 +40,7 @@ python tests/stale_clock_check.py
 echo
 echo "== a card still reads at phone width =="
 python tests/card_chrome_check.py
+
+echo
+echo "== thin-read backlog: live deals under 5 items (report, not a gate) =="
+python tests/thin_read_report.py

@@ -12,7 +12,17 @@ venue's own words), `UNREACHABLE` (site down/403/timeout), `NOT_SEEDED` (real
 venue, not in venue_base.json — seed gap, out of scope), `NO_SITE` (seeded,
 no resolved website even after discover_places.py), `WRONG_MATCH` (site
 resolved to wrong business), `CHAIN_NO_DEAL` (chain page, no times/prices
-listed), `ALREADY_LIVE` (already on board via another source, no net add).
+listed), `ALREADY_LIVE` (already on board via another source, no net add),
+`RESHIPPED` (re-read a venue already `SHIPPED` because its live item count was
+suspiciously thin — 1-2 items for a full-menu venue — and the re-read found a
+fuller menu; note the before/after item count).
+
+🛑 2026-09-03 night finding: `SHIPPED` only ever meant "a window and at least
+one item are live," never "the full menu was read." 28 live venues (11
+`agent_read`, 17 `menu_read_llm`) were found with ≤1 item despite being
+`SHIPPED` — see `ARCHITECTURE-MENU-INGEST.md`, "A SHIPPED HAND-READ CAN STILL
+BE A THIN READ". Before skipping a `SHIPPED` venue as done, check its live
+item count is plausible for the kind of place it is.
 
 ## 2026-09-03/04 — DE + West Chester push (wilmington, newark_de, new_castle_de, west_chester)
 (Not itemized retroactively — see HANDOFF-START-HERE-20260903-NIGHT-PA-NON-PHILLY-UNDER-10.md
@@ -151,3 +161,29 @@ re-attempt these unless the venue's own site changes.)
 - chester_chichester | Monaghan's Pub/Hunt's Annex/Tom N Jerry's/E Cooke Winery/Gachi Sushi/Phoenix Bar & Grill/Duffer's Mill/Lefty's Irish Pub/Maggie May's | NO_CLOCK_TIME | empty sweeps or unreachable Facebook page | 2026-09-03
 - middletown_de | Pithari (DEc2e120b082) | SHIPPED | HH PDF menu, Tue-Sun 3-7pm, full food/cocktail/wine/beer pricing | 2026-09-03
 - audubon_eagleville | The Cage / Select Pizza Grill of Audubon (115024) | SHIPPED | JSON-LD structured HH menu, Mon-Fri 4-6pm | 2026-09-03
+
+## 2026-09-04 — Job 2: four new Bucks County towns seeded + hand-read
+New zones added to data/zones.json (real, distinct, PLCB-verified municipalities not
+previously claimed by any existing zone): new_hope, newtown_bucks (Newtown/Newtown Twp,
+Bucks Co.), perkasie, quakertown. Seeded via ingest/seed_plcb.py (fresh PLCB export) +
+ingest/discover_places.py --execute (66 Places lookups, within free Enterprise tier).
+- new_hope | OldeStone Steakhouse (106434) | SHIPPED | Mon-Fri 4:30-6:30pm, full priced bar menu | 2026-09-04
+- newtown_bucks | Green Parrot (60193) | SHIPPED | irregular windows (Mon-Thu/Fri/Sat/Sun differ), full priced menu | 2026-09-04
+- newtown_bucks | PJ Whelihan's Pub + Restaurant - Newtown (133468) | SHIPPED | same chain HH menu/window as 6 other locations | 2026-09-04
+- perkasie | Free Will Brewing (65716) | SHIPPED | Mon-Fri 4-6pm, $5 beers | 2026-09-04
+- new_hope | Fran's Pub, Karla's, Havana, Nektar Wine Bar, Salt House, John & Peter's, The Landing, Bucks County Playhouse | NO_CLOCK_TIME | empty sweeps | 2026-09-04
+- newtown_bucks | Piccolo Trattoria, Newtown Brewing Co, La Stalla (JS-rendered, empty raw HTML) | NO_CLOCK_TIME | empty sweeps | 2026-09-04
+- perkasie | Rams Pint House | UNREACHABLE | HTTP 429 rate-limited, not retried | 2026-09-04
+- perkasie | The Perk (attheperk.com) | NO_CLOCK_TIME | Mon-Fri 4-6pm window found but only "$1 Off" relative pricing | 2026-09-04
+- quakertown | The Proper Brewing Co | NO_CLOCK_TIME | Wed-Thu 4-6pm window, only "$1 OFF drafts" relative pricing | 2026-09-04
+- quakertown | Doan Distillery | NO_CLOCK_TIME | empty sweep | 2026-09-04
+- quakertown | McCoole's at the Historic Red Lion Inn | NO_CLOCK_TIME | empty sweep | 2026-09-04
+- FIX: found + removed a stale seed-corpus entry "Iron Hill Brewery & Restaurant -- Media"
+  (30-32 E State St) that had silently dropped out of the 2026-09-03 PLCB active-licensee
+  refresh (closed/lapsed license). It was shipping with lid=null and failing CI
+  (test_it_holds_every_venue_the_bundles_ship + test_geocode_records_keep_the_address_...),
+  which had SILENTLY BLOCKED EVERY DEPLOY since it was introduced -- confirmed via
+  `gh run list`, two pushes (job2, job3) landed on GitHub but never went live until this
+  was fixed. Moved to data/deals_seed.json's `_excluded` list with the reason; also
+  removed its now-orphaned rows from data/venue_coords.json and data/venue_photos.json
+  and its stale image. All 552 local tests pass after the fix; CI green; confirmed live.

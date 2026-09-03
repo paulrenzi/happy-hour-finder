@@ -2512,81 +2512,76 @@ thirds of what it reads.** Making it emit an `agent_handread`-shaped record
 (window + items, not items alone) remains the highest-leverage change left in
 that lane — not done this session, still open.
 
-## 🚨🔑🔑 A "SHIPPED" HAND-READ CAN STILL BE A THIN READ — the item, not just the window, was the miss (2026-09-03, night)
+## 🚨🔑🔑 A "SHIPPED" HAND-READ CAN STILL BE A THIN READ — RULE: UNDER 5 ITEMS ⇒ RE-SCRAPE (2026-09-03, night)
 
-Paul, verbatim, pointed at a live venue: `https://www.limoncellorestaurant.com/happy-hour-menu`.
-Limoncello (lid `59213`, `west_chester`) is on the board — a window, one item
-("Pizza or Flatbread $20"). The page almost certainly carries a fuller
-happy-hour menu (drinks, more food) that the hand-read never captured; the
-agent read far enough to find one price and stopped instead of reading the
-whole menu section.
+Paul, verbatim, pointed at two live venues:
+`https://www.limoncellorestaurant.com/happy-hour-menu` (Limoncello, lid
+`59213`, `west_chester` — live with ONE item, "Pizza or Flatbread $20") and
+`https://libertyunionbar.com/chester-springs/specials/happy-hour/` (Liberty
+Union Bar and Grill, lid `65626`, `exton_downingtown` — live with ONE item).
+Both pages almost certainly carry a fuller happy-hour menu than what's
+published; the read that shipped each one stopped after finding one price
+instead of reading the whole menu.
 
-An audit of every live deal's item count by `verified_by` found this is not a
-one-off:
+**🔑 THE RULE, Paul's words: if a listing has under 5 happy-hour items, treat
+it as needing a re-scrape.** This applies across every lane that claims
+items, not just the hand-read lane — `auto_extract`, `agent_read`,
+`menu_read_llm`, `staff`, `roundup_extract` alike. A venue whose deal has ZERO
+items (a window-only claim, mostly `auto_extract` by design) is a different,
+already-known gap — this rule is about a deal that DID claim items and
+stopped short of 5.
 
-```
-{'auto_extract': 117, 'agent_read': 11, 'menu_read_llm': 17, 'staff': 3, 'roundup_extract': 8}
-```
-(counts are deals with ≤1 item; `auto_extract` is a different, window-only
-lane that never claims items by design — those 117 are not this defect.
-`agent_read` and `menu_read_llm` are the two lanes that DO claim to have read
-a menu, so their thin entries are the real defect surface: **28 known thin
-reads** across the two lanes as of tonight.)
-
-The 11 known thin `agent_read` venues (there may be more once `menu_read_llm`
-is audited the same way):
+Board-wide count under this rule, tonight:
 
 ```
-ambler_upper_dublin    Fireside Bar and Grill      55311           firesidebarandgrille.com
-glen_mills_chadds_ford Chadds Ford Tavern          91807           thecftavern.com/menus/
-glen_mills_chadds_ford The Crown Tavern            48062           crowninconcord.com
-lansdale_montgomeryville The Bull Restaurant & Tavern 126965       thebulltavern.com/specials.html
-new_castle_de          Augustine Tavern            DE67e9d8cbb9    augustinetavern.com/special-events
-perkasie               Free Will Brewing           65716           freewillbrewing.com
-pottstown              Doc's Irish Pub             68830           godocspub.com/specials/
-west_chester           Limoncello                  59213           limoncellorestaurant.com/happy-hour-menu
-west_chester           Mercato Ristorante and Bar  68978           instagram.com/mercatowc/
-wilmington             Cafe Mezzanotte             DE6192c1db22    cafemezzanotte.net/specials/
-wilmington             James Street Tavern         DEb511151c02    jstavern.com/new-events/2014/2/1/happy-hour-3-6pm
+{'auto_extract': 79, 'agent_read': 44, 'menu_read_llm': 21, 'staff': 5, 'roundup_extract': 6}
 ```
+**146 distinct venues** carry at least one deal with 1-4 items. That is the
+real backlog — not the 11 first found by hand, not the 28 found on the second
+pass restricted to `agent_read`/`menu_read_llm`. Every session touching the
+hand-read lane should re-run the audit below and work this list, not assume
+it's closed because an earlier session's smaller count got cleared.
 
 🛑 **This breaks the log's own dedup assumption.** `data/HAND-READ-LOG.md`
 marks a venue `SHIPPED` once it publishes, and every session (correctly) treats
-`SHIPPED` as "don't re-research this venue." But `SHIPPED` only ever meant
-"a window and at least one item are live" — it never meant "the full menu was
-read." A venue can be `SHIPPED` in the log and still be missing most of its
-real happy-hour menu, and nothing before tonight would ever revisit it.
+`SHIPPED` as "don't re-research this venue." But `SHIPPED` only ever meant "a
+window and at least one item are live" — never "the full menu was read, or at
+least 5 items." A venue can be `SHIPPED` in the log and still fail this rule,
+and nothing before tonight would ever revisit it.
 
-**The fix going forward:** a `SHIPPED` entry with ≤1 or ≤2 items is not a
-closed venue, it's a suspect one. Re-reading it means going back to the
-venue's own URL and re-running the ladder with instructions to capture *every*
-item on the happy-hour menu, not stop at the first price found — then
-`--force`-style overwrite the existing `agent_handread.json` record for that
-lid with the fuller one (`build_agent_venues.py`/`build_bundles.py` already
-take the latest record per lid, no special flag needed). Log the re-read as
-its own `HAND-READ-LOG.md` line (`RESULT=SHIPPED`, note `"re-read: full menu,
-was N=1"`) so the distinction between "first read" and "completeness re-read"
-survives.
+**The fix going forward:** any live deal with 1-4 items is not a closed venue,
+it's a re-scrape candidate. Re-reading it means going back to the venue's own
+URL (or re-running the ladder if that URL is gone) with instructions to
+capture *every* item on the happy-hour menu, not stop once the count clears
+whatever threshold felt "enough" — then overwrite the existing
+`data/agent_handread.json` record for that lid with the fuller one
+(`build_agent_venues.py`/`build_bundles.py` already take the latest record per
+lid, no special flag needed; a venue sourced from a non-hand-read lane
+(`auto_extract`/`staff`/`roundup_extract`) that needs a re-scrape gets a new
+`agent_handread.json` record the same way, which will out-rank the thin one at
+build time). Log every re-read as its own `HAND-READ-LOG.md` line
+(`RESULT=RESHIPPED`, note the before/after item count).
 
-**Audit snippet** (item-count by verified_by, and the list of thin venues) —
-run this at the start of any session that touches the hand-read lane, before
-trusting the log's `SHIPPED` count as "done":
+**Audit snippet** (item-count by verified_by, and the list of every venue under
+the 5-item bar) — run this at the start of any session that touches the
+hand-read lane, before trusting a prior session's smaller thin-read count as
+current:
 
 ```python
 import json, glob
+counts, lids = {}, set()
 for f in sorted(glob.glob('web/data/zone-*.json')):
     z = f.split('zone-')[1].split('.json')[0]
     d = json.load(open(f, encoding='utf-8'))
     for v in d['venues']:
         for deal in v.get('deals', []):
-            if deal.get('verified_by') in ('agent_read', 'menu_read_llm') and len(deal.get('items', [])) <= 1:
-                print(z, v['name'], v.get('lid'), deal.get('source', {}).get('url'))
+            n = len(deal.get('items', []))
+            if 0 < n < 5:
+                counts[deal.get('verified_by', '?')] = counts.get(deal.get('verified_by', '?'), 0) + 1
+                lids.add(v.get('lid'))
+                print(z, v['name'], v.get('lid'), deal.get('verified_by'), n, deal.get('source', {}).get('url'))
+print(counts, 'distinct venues:', len(lids))
 ```
-
-Not yet run against `menu_read_llm`'s 17 for a per-venue list — that lane is
-the LLM item-reader, not the hand-read lane, so it needs its own judgment call
-about whether a 1-item read there is a real miss or a genuinely 1-item menu.
-Flagged, not resolved, this session.
 
 ## 🤖🔑🔑 THE AGENT IS THE SCRAPER — the item lane, and how to debug it (2026-09-03)
 

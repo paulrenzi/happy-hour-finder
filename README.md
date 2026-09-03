@@ -20,7 +20,7 @@ credentials with anything else on this machine.
 |---|---|
 | zones (named drinking districts) | 48 |
 | **on the board with a published happy-hour window** | **352 venues, 369 deals** |
-| known **thin** hand-reads — window + item(s) live, but the menu wasn't read in full | **28** (11 `agent_read`, 17 `menu_read_llm`) |
+| known **thin reads** — live deal with under 5 items, needs a re-scrape (Paul's rule, 2026-09-03) | **146 venues** |
 
 **Read that table in two halves.** What we publish is checked: every window and
 every price has to appear in a sentence on the venue's own page, and the test
@@ -72,7 +72,9 @@ character-for-character in the source the read cites, the PA and Delaware
 validators run, and a person reviews before anything ships.
 
 Current state and what to do next:
-[`HANDOFF-START-HERE-20260903-NIGHT-PA-NON-PHILLY-UNDER-10.md`](HANDOFF-START-HERE-20260903-NIGHT-PA-NON-PHILLY-UNDER-10.md).
+[`HANDOFF-START-HERE-20260903-NIGHT-THIN-READS-AND-NEW-TOWNS.md`](HANDOFF-START-HERE-20260903-NIGHT-THIN-READS-AND-NEW-TOWNS.md)
+(supersedes the PA-non-Philly handoff below it for "where to pick up" — that
+doc's ladder/schema still stand).
 
 **Read that table in two halves.** What we publish is checked: every window and
 every price has to appear in a sentence on the venue's own page, and the test
