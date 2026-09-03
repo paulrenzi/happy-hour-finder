@@ -3,6 +3,121 @@
  "as_of": "2026-09-03",
  "venues": [
   {
+   "address": "36-38 E Gay St, West Chester PA 19380",
+   "deals": [
+    {
+     "confidence": "likely",
+     "fine_print": "At the bar.",
+     "items": [
+      {
+       "category": "cocktail",
+       "evidence": "Specialty Cocktails $10",
+       "label": "Specialty Cocktails (Espresso Martini, Lemon Drop Martini, Cosmopolitan, Margarita, Aperol Spritz)",
+       "price_usd": 10.0
+      },
+      {
+       "category": "wine",
+       "evidence": "Wine By the Glass Wine $7",
+       "label": "Wine by the glass (Montepulciano, Cabernet Sauvignon, Pinot Grigio, Chardonnay, Prosecco)",
+       "price_usd": 7.0
+      },
+      {
+       "category": "draft",
+       "evidence": "Draft Beers $5",
+       "label": "Draft Beers (Peroni, Stella Artois, Dogfish Head 60 Minute IPA, Cigar City Jai Alai, Cape May IPA)",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "evidence": "Pollo $8.00",
+       "label": "Pollo, grilled chicken & fregola sarda",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "evidence": "St. Peter's Fish $8.00",
+       "label": "St. Peter's Fish, pan fried, arugula salad, lemon estate olive oil, shaved parm",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "evidence": "Penne Vodka $8.00",
+       "label": "Penne Vodka, crispy prosciutto, spring peas, blush sauce",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "evidence": "Tri-Color Cheese Tortellini $8.00",
+       "label": "Tri-Color Cheese Tortellini, parmigiano crema",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "evidence": "Mussels $8.00",
+       "label": "Mussels, white wine garlic or marinara sauce",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "evidence": "Sausage & Peppers $8.00",
+       "label": "Sausage & Peppers, caramelized onions, San Marzano tomato & provolone",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "evidence": "Al Funghi Bruschetta $8.00",
+       "label": "Al Funghi Bruschetta, sauteed forest mushroom & gorgonzola dolce",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "evidence": "Flatbread $8.00",
+       "label": "Flatbread Del Giorno",
+       "price_usd": 8.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Tuesday-Friday, 4-6PM",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Happy Hour offered Tuesday-Friday, 4-6PM at the bar. Specialty Cocktails $10. Wine By the Glass $7, By the Bottle $29. Food 8 for $8. Draft Beers $5",
+      "url": "https://tecawestchester.com/west-chester-west-chester-teca-restaurant-and-bar-food-menu"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "52121",
+   "lid": "52121",
+   "name": "Teca-R",
+   "plcb_name": "TECA-R",
+   "website": "http://tecawestchester.com/",
+   "zone_id": "west_chester"
+  },
+  {
    "address": "125 W Market St, West Chester PA 19382",
    "deals": [
     {
@@ -375,6 +490,77 @@
    "zone_id": "west_chester"
   },
   {
+   "address": "149-155 W Gay St, West Chester PA 19380",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "$5 Select Drafts",
+       "label": "Select Drafts",
+       "price_usd": 5.0
+      },
+      {
+       "category": "wine",
+       "evidence": "$6 House Wines",
+       "label": "House Wines",
+       "price_usd": 6.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "$6 High Noons",
+       "label": "High Noons",
+       "price_usd": 6.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Monday-Friday | 5pm-7pm",
+      "heading": "HAPPY HOUR DRINKS",
+      "kind": "venue_site",
+      "quote": "HAPPY HOUR DRINKS Monday-Friday | 5pm-7pm $5 Select Drafts $6 House Wines $6 High Noons",
+      "url": "https://www.saloon151.com/weekly-specials"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "19:00",
+       "start": "17:00"
+      },
+      {
+       "dow": 2,
+       "end": "19:00",
+       "start": "17:00"
+      },
+      {
+       "dow": 3,
+       "end": "19:00",
+       "start": "17:00"
+      },
+      {
+       "dow": 4,
+       "end": "19:00",
+       "start": "17:00"
+      },
+      {
+       "dow": 5,
+       "end": "19:00",
+       "start": "17:00"
+      }
+     ]
+    }
+   ],
+   "id": "71245",
+   "lid": "71245",
+   "name": "Saloon 151",
+   "plcb_name": "SALOON 151 LLC",
+   "website": "http://www.saloon151.com/",
+   "zone_id": "west_chester"
+  },
+  {
    "address": "18-22 W Gay St, West Chester PA 19380",
    "deals": [
     {
@@ -450,6 +636,126 @@
    "plcb_name": "CHESTER COUNTY PUB COMPANY LLC",
    "website": "https://kildarespubwc.com",
    "zone_id": "west_chester"
+  },
+  {
+   "address": "720 Justison St, Wilmington, DE 19801",
+   "deals": [
+    {
+     "confidence": "likely",
+     "fine_print": "No take out. Bar area only. No modifications.",
+     "items": [
+      {
+       "category": "food",
+       "evidence": "Riverwalk Wings (6) $10.00",
+       "label": "Riverwalk Wings (6), buffalo, Thai-chili or teriyaki, celery & blue cheese or ranch",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "Buffalo Shrimp $10.00",
+       "label": "Buffalo Shrimp, crispy hand-breaded Gulf shrimp, blue cheese dressing",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "Blackened Filet Medallions $10.00",
+       "label": "Blackened Filet Medallions, house-made blue cheese dressing",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "Garlic-Wine Mussels $8.00",
+       "label": "Garlic-Wine Mussels, garlic-wine broth, garlic toast",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "evidence": "Maryland Crab Pretzels $12.00",
+       "label": "Maryland Crab Pretzels, cream cheese, Old Bay, cheddar, parmesan, lump crab",
+       "price_usd": 12.0
+      },
+      {
+       "category": "food",
+       "evidence": "Big Fish Bruschetta $8.00",
+       "label": "Big Fish Bruschetta, Roma tomatoes, basil, red onion, garlic, olive oil",
+       "price_usd": 8.0
+      },
+      {
+       "category": "well",
+       "evidence": "Mixed Drinks $6.00",
+       "label": "Mixed Drinks",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "Signature Margaritas $9.00",
+       "label": "Signature Margaritas",
+       "price_usd": 9.0
+      },
+      {
+       "amount_off_usd": 1.0,
+       "category": "draft",
+       "evidence": "Select Draft Beers $1.00 off",
+       "label": "Select Draft Beers"
+      },
+      {
+       "amount_off_usd": 1.0,
+       "category": "wine",
+       "evidence": "Wines by the Glass $1.00 off",
+       "label": "Wines by the Glass"
+      },
+      {
+       "amount_off_usd": 1.0,
+       "category": "cocktail",
+       "evidence": "Signature Cocktails $1.00 off",
+       "label": "Signature Cocktails"
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Monday - Friday 4pm - 6pm",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Monday - Friday 4pm - 6pm | No Take Out - Bar Area Only - No Modifications. Riverwalk Wings (6) $10.00, Buffalo Shrimp $10.00, Blackened Filet Medallions $10.00, Garlic-Wine Mussels $8.00, Maryland Crab Pretzels $12.00, Big Fish Bruschetta $8.00, Mixed Drinks $6.00, Signature Margaritas $9.00, Select Draft Beers $1.00 off, Wines by the Glass $1.00 off, Signature Cocktails $1.00 off",
+      "url": "http://www.bigfishriverfront.com/wilmington-wilmington-big-fish-grill-on-the-riverfront-food-menu"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "DE03fd0ecb4b",
+   "lid": "DE03fd0ecb4b",
+   "name": "Big Fish Grill on the Riverfront",
+   "plcb_name": "Big Fish Grill on the Riverfront",
+   "website": "http://www.bigfishriverfront.com/",
+   "zone_id": "wilmington"
   },
   {
    "address": "729 N Union St, Wilmington, DE 19805",
@@ -564,6 +870,234 @@
    "plcb_name": "Union Street Pub",
    "website": "http://unionstreetpub.com/",
    "zone_id": "wilmington"
+  },
+  {
+   "address": "110 West St, Wilmington, DE 19801",
+   "deals": [
+    {
+     "confidence": "likely",
+     "fine_print": "Bar only.",
+     "items": [
+      {
+       "category": "well",
+       "evidence": "$6 HOUSE MIXED DRINKS",
+       "label": "House Mixed Drinks (vodka, tequila, gin, rum, whiskey)",
+       "price_usd": 6.0
+      },
+      {
+       "amount_off_usd": 1.0,
+       "category": "draft",
+       "evidence": "$1 OFF ALL DRAFT BEERS",
+       "label": "All draft beers"
+      },
+      {
+       "amount_off_usd": 1.0,
+       "category": "wine",
+       "evidence": "$1 OFF ALL WINES BY THE GLASS",
+       "label": "All wines by the glass"
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "$5 BROOKLYN BEL - AIR SOUR CAN",
+       "label": "Brooklyn Bel-Air Sour can",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "$5 LONG DRINK CANS ORIGINAL OR PEACH",
+       "label": "Long Drink cans, original or peach",
+       "price_usd": 5.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "$6 HIGH NOONS PINEAPPLE, PEACH, OR RASPBERRY TEA",
+       "label": "High Noons: pineapple, peach or raspberry tea",
+       "price_usd": 6.0
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "$4 CORONA SUNBREW",
+       "label": "Corona Sunbrew",
+       "price_usd": 4.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$8 CLASSIC MARGARITA",
+       "label": "Classic Margarita",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "evidence": "$14 APPS WINGS",
+       "label": "Wings (buffalo, BBQ, Korean BBQ, Thai chili, sriracha honey, lemon pepper)",
+       "price_usd": 14.0
+      },
+      {
+       "category": "food",
+       "evidence": "$14 APPS ROASTED BRUSSEL SPROUTS",
+       "label": "Roasted brussel sprouts tossed in grated parmesan, balsamic glaze",
+       "price_usd": 14.0
+      },
+      {
+       "category": "food",
+       "evidence": "$12 APPS CHEESE STEAK ROLLS",
+       "label": "Cheese steak rolls, sriracha ketchup",
+       "price_usd": 12.0
+      },
+      {
+       "category": "food",
+       "evidence": "$12 APPS CHEESE CURDS",
+       "label": "Cheese curds, marinara sauce",
+       "price_usd": 12.0
+      },
+      {
+       "category": "food",
+       "evidence": "$10 APPS FRIED PICKLES",
+       "label": "Fried pickles, chipotle ranch",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "$10 APPS 1/2 NACHO",
+       "label": "1/2 Nacho, queso, lettuce, pico, sour cream",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "$10 APPS FRIED MAC & CHEESE BITES",
+       "label": "Fried mac & cheese bites, marinara sauce",
+       "price_usd": 10.0
+      },
+      {
+       "category": "food",
+       "evidence": "$10 APPS VEGGIE FLATBREAD",
+       "label": "Veggie flatbread, basil pesto, mozzarella, ricotta, spinach, sun dried tomato",
+       "price_usd": 10.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "WEEKDAYS TUES-FRI 4PM-7PM",
+      "heading": "HAPPY HOUR",
+      "kind": "venue_site",
+      "quote": "HAPPY HOUR WEEKDAYS TUES-FRI 4PM-7PM BAR ONLY. $6 HOUSE MIXED DRINKS, $1 OFF ALL DRAFT BEERS, $1 OFF ALL WINES BY THE GLASS, $5 BROOKLYN BEL-AIR SOUR CAN, $5 LONG DRINK CANS, $6 HIGH NOONS, $4 CORONA SUNBREW, $8 CLASSIC MARGARITA, $14 APPS, $12 APPS, $10 APPS",
+      "url": "https://docklandsriverfront.com/wp-content/uploads/2025/02/INSIDE-BAR-MENU-SLEEVES.pdf"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 2,
+       "end": "19:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "19:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "19:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "19:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "DE1f4b3881c8",
+   "lid": "DE1f4b3881c8",
+   "name": "Docklands Riverfront",
+   "plcb_name": "Docklands Riverfront",
+   "website": "https://docklandsriverfront.com/",
+   "zone_id": "wilmington"
+  },
+  {
+   "address": "158 E Main St, Newark, DE 19711",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "amount_off_usd": 1.0,
+       "category": "draft",
+       "evidence": "$1 off select drafts",
+       "label": "Select drafts"
+      },
+      {
+       "amount_off_usd": 5.0,
+       "category": "wine",
+       "evidence": "$5 off house wines",
+       "label": "House wines"
+      },
+      {
+       "amount_off_usd": 1.0,
+       "category": "call",
+       "evidence": "$1 off Tito's and Jack's family mixed drinks",
+       "label": "Tito's and Jack's family mixed drinks"
+      },
+      {
+       "amount_off_usd": 2.0,
+       "category": "call",
+       "evidence": "$2 off Western Son Mixed Drinks",
+       "label": "Western Son mixed drinks"
+      },
+      {
+       "amount_off_usd": 6.0,
+       "category": "shot",
+       "evidence": "$6 off Teremana Tequila Shots",
+       "label": "Teremana tequila shots"
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Monday to Friday from 3 pm to 6 pm",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "happy hour Monday to Friday from 3 pm to 6 pm. $1 off select drafts, $5 off house wines, $1 off Tito's and Jack's family mixed drinks, $2 off Western Son Mixed Drinks, $6 off Teremana Tequila Shots",
+      "url": "https://www.klondikekates.com/news-item/happy-hour-discover-the-best-deals-in-newark/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "15:00"
+      }
+     ]
+    }
+   ],
+   "id": "DE238b6605af",
+   "lid": "DE238b6605af",
+   "name": "Klondike Kate's Restaurant & Saloon",
+   "plcb_name": "Klondike Kate's Restaurant & Saloon",
+   "website": "https://www.klondikekates.com/",
+   "zone_id": "newark_de"
   },
   {
    "address": "168 E Main St, Newark, DE 19711",
@@ -836,6 +1370,66 @@
    "zone_id": "wilmington"
   },
   {
+   "address": "230 W 11th St, Wilmington, DE 19801",
+   "deals": [
+    {
+     "confidence": "likely",
+     "fine_print": "Bar area only.",
+     "items": [
+      {
+       "category": "food",
+       "discount_pct": 50,
+       "evidence": "Bar Food Menu only 50% off Happy Hour Only 3pm-6pm M-F",
+       "label": "Bar Food Menu"
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Monday - Friday 3pm to 6pm",
+      "heading": "HAPPY HOUR SPECIALS",
+      "kind": "venue_site",
+      "quote": "HAPPY HOUR SPECIALS: Monday - Friday 3pm to 6pm Bar Area Bar Food Menu only 50% off Happy Hour Only 3pm-6pm M-F",
+      "url": "https://www.cafemezzanotte.net/specials/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "15:00"
+      }
+     ]
+    }
+   ],
+   "id": "DE6192c1db22",
+   "lid": "DE6192c1db22",
+   "name": "Cafe Mezzanotte",
+   "plcb_name": "Cafe Mezzanotte",
+   "website": "http://www.cafemezzanotte.net/",
+   "zone_id": "wilmington"
+  },
+  {
    "address": "1707 Delaware Ave, Wilmington, DE 19806",
    "deals": [
     {
@@ -941,6 +1535,197 @@
    "name": "Trolley Square Oyster House",
    "plcb_name": "Trolley Square Oyster House",
    "website": "http://trolleysquareoysterhouse.com/",
+   "zone_id": "wilmington"
+  },
+  {
+   "address": "1412 N Dupont St, Wilmington, DE 19806",
+   "deals": [
+    {
+     "confidence": "likely",
+     "fine_print": "In the Toscana Lounge.",
+     "items": [
+      {
+       "amount_off_usd": 3.0,
+       "category": "food",
+       "evidence": "Lounge Favorites $3 off during happy hour ... Polenta Fries ... 10",
+       "label": "Polenta Fries, flash fried, balsamic reduction and truffle honey"
+      },
+      {
+       "amount_off_usd": 3.0,
+       "category": "food",
+       "evidence": "Lounge Favorites $3 off during happy hour ... Flash-Fried Calamari ... 13",
+       "label": "Flash-Fried Calamari, with zucchini and spicy aioli"
+      },
+      {
+       "amount_off_usd": 3.0,
+       "category": "food",
+       "evidence": "Lounge Favorites $3 off during happy hour ... Beef Meatballs ... 12",
+       "label": "Beef Meatballs, in pomodoro melted with provolone"
+      },
+      {
+       "amount_off_usd": 3.0,
+       "category": "food",
+       "evidence": "Lounge Favorites $3 off during happy hour ... Oven Roasted Wings ... 12",
+       "label": "Oven Roasted Wings, garlic, rosemary and orange glaze"
+      },
+      {
+       "amount_off_usd": 3.0,
+       "category": "food",
+       "evidence": "Lounge Favorites $3 off during happy hour ... Mozzarella Fritta ... 9",
+       "label": "Mozzarella Fritta, flash fried over spicy pomodoro topped with pesto"
+      },
+      {
+       "amount_off_usd": 3.0,
+       "category": "food",
+       "evidence": "Lounge Favorites $3 off during happy hour ... Margherita ... 14",
+       "label": "Pizzette Margherita, san marzano pomodoro, house-made mozzarella, fresh basil"
+      },
+      {
+       "amount_off_usd": 3.0,
+       "category": "food",
+       "evidence": "Lounge Favorites $3 off during happy hour ... Di Parma ... 15",
+       "label": "Pizzette Di Parma, mozzarella, goat cheese, prosciutto and arugula"
+      },
+      {
+       "amount_off_usd": 3.0,
+       "category": "food",
+       "evidence": "Lounge Favorites $3 off during happy hour ... Figaro ... 14",
+       "label": "Pizzette Figaro, mozzarella, gorgonzola, pancetta, fig compote, truffle honey"
+      },
+      {
+       "amount_off_usd": 3.0,
+       "category": "food",
+       "evidence": "Lounge Favorites $3 off during happy hour ... Short Rib ... 16",
+       "label": "Pizzette Short Rib, fontina, gorgonzola, braised short rib, caramelized onion"
+      },
+      {
+       "amount_off_usd": 3.0,
+       "category": "food",
+       "evidence": "Lounge Favorites $3 off during happy hour ... Cavolini ... 14",
+       "label": "Pizzette Cavolini, ricotta, parmesan, brussels sprouts, bacon, red onion"
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Monday-Friday 4-6pm",
+      "heading": "Lounge Favorites",
+      "kind": "venue_site",
+      "quote": "Join us for Happy Hour 4-6pm Monday- Friday. Lounge Favorites $3 off during happy hour, Monday-Friday 4-6pm",
+      "url": "https://www.piccolinatoscana.com/lounge"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "DE67606688b2",
+   "lid": "DE67606688b2",
+   "name": "Piccolina Toscana",
+   "plcb_name": "Piccolina Toscana",
+   "website": "https://www.piccolinatoscana.com/",
+   "zone_id": "wilmington"
+  },
+  {
+   "address": "620 Justison St, Wilmington, DE 19801",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "amount_off_usd": 2.0,
+       "category": "draft",
+       "evidence": "$2 OFF on all beer, wine and cocktails",
+       "label": "All beer"
+      },
+      {
+       "amount_off_usd": 2.0,
+       "category": "wine",
+       "evidence": "$2 OFF on all beer, wine and cocktails",
+       "label": "All wine"
+      },
+      {
+       "amount_off_usd": 2.0,
+       "category": "cocktail",
+       "evidence": "$2 OFF on all beer, wine and cocktails",
+       "label": "All cocktails"
+      },
+      {
+       "category": "food",
+       "evidence": "a curated bar bites menu at $7",
+       "label": "Curated bar bites menu",
+       "price_usd": 7.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Weekdays 4PM to 6PM and weekends 2PM to 4PM",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Happy Hour Weekdays 4PM to 6PM and weekends 2PM to 4PM. $2 OFF on all beer, wine and cocktails, along with a curated bar bites menu at $7.",
+      "url": "https://ironhillbrewery.com/locations/wilmington-de"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "DE80dea6d966",
+   "lid": "DE80dea6d966",
+   "name": "Iron Hill Brewery & Restaurant - Wilmington",
+   "plcb_name": "Iron Hill Brewery & Restaurant - Wilmington",
+   "website": "https://ironhillbrewery.com/",
    "zone_id": "wilmington"
   },
   {
@@ -1090,6 +1875,142 @@
    "name": "Washington Street Ale House",
    "plcb_name": "Washington Street Ale House",
    "website": "http://www.wsalehouse.com/",
+   "zone_id": "wilmington"
+  },
+  {
+   "address": "1851 Marsh Rd, Wilmington, DE 19810",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "amount_off_usd": 1.0,
+       "category": "draft",
+       "evidence": "$1 OFF Full Size Draught Beer and Cider",
+       "label": "Full size draught beer and cider"
+      },
+      {
+       "amount_off_usd": 1.0,
+       "category": "cocktail",
+       "evidence": "$1 OFF ... Steel Blu Vodka Cocktails",
+       "label": "Steel Blu vodka cocktails"
+      },
+      {
+       "amount_off_usd": 1.0,
+       "category": "wine",
+       "evidence": "$1 OFF ... Glasses of Wine",
+       "label": "Glasses of wine"
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "From Open until 6pm Monday through Thursday, and Open until 5pm on Fridays",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Brew Works North does Happy Hour! From Open until 6pm Monday through Thursday, and Open until 5pmn on Fridays, enjoy $1 OFF Full Size Draught Beer and Cider, Steel Blu Vodka Cocktails, and Glasses of Wine. Brew Works North: Hours of Operation: Mon: 5pm - 10pm Tues: 5pm - 10pm Wed: 4pm - 10pm Thur: 4pm - 10pm Fri: 2pm - 12am",
+      "url": "https://wilmingtonbrewworks.com/brew-works-north/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "17:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "17:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "17:00",
+       "start": "14:00"
+      }
+     ]
+    }
+   ],
+   "id": "DEa077f4e311",
+   "lid": "DEa077f4e311",
+   "name": "Brew Works North",
+   "plcb_name": "Brew Works North",
+   "website": "https://wilmingtonbrewworks.com/brew-works-north/",
+   "zone_id": "wilmington"
+  },
+  {
+   "address": "1706 Faulkland Rd, Wilmington, DE 19805",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "amount_off_usd": 1.0,
+       "category": "well",
+       "evidence": "$1 off mixed drinks + wine by the glass",
+       "label": "Mixed drinks"
+      },
+      {
+       "amount_off_usd": 1.0,
+       "category": "wine",
+       "evidence": "$1 off mixed drinks + wine by the glass",
+       "label": "Wine by the glass"
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "M-F 3-5pm",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Happy Hour - M-F 3-5pm* $1 off mixed drinks + wine by the glass",
+      "url": "http://www.littlevinniespizza.com/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "17:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 2,
+       "end": "17:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 3,
+       "end": "17:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 4,
+       "end": "17:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 5,
+       "end": "17:00",
+       "start": "15:00"
+      }
+     ]
+    }
+   ],
+   "id": "DEd7a6e46b80",
+   "lid": "DEd7a6e46b80",
+   "name": "Little Vinnie's Pizza & Pasta",
+   "plcb_name": "Little Vinnie's Pizza & Pasta",
+   "website": "http://www.littlevinniespizza.com/",
    "zone_id": "wilmington"
   },
   {
@@ -1381,6 +2302,126 @@
    "plcb_name": "The Copper Dram",
    "website": "http://www.copperdram.com/",
    "zone_id": "wilmington"
+  },
+  {
+   "address": "190 E Main St Suite A, Newark, DE 19711",
+   "deals": [
+    {
+     "confidence": "likely",
+     "fine_print": "Dine-in only, no substitutions or modifications.",
+     "items": [
+      {
+       "category": "cocktail",
+       "evidence": "18 oz Lucky Duck Marg $7",
+       "label": "18 oz Lucky Duck Margarita",
+       "price_usd": 7.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "Classic Fishbowl Margs $6",
+       "label": "Classic Fishbowl Margaritas, frozen or rocks",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "evidence": "12 oz Hand Shaken Skinnies $8",
+       "label": "12 oz Hand Shaken Skinnies",
+       "price_usd": 8.0
+      },
+      {
+       "category": "draft",
+       "evidence": "All Draft Beer $5",
+       "label": "All Draft Beer",
+       "price_usd": 5.0
+      },
+      {
+       "category": "well",
+       "evidence": "Rail Drinks $5",
+       "label": "Rail Drinks",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "evidence": "Quesadillas Cheese $6",
+       "label": "Cheese Quesadilla",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "evidence": "Quesadillas Chicken $7",
+       "label": "Chicken Quesadilla",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "evidence": "Quesadillas Steak $8",
+       "label": "Steak Quesadilla",
+       "price_usd": 8.0
+      },
+      {
+       "category": "food",
+       "evidence": "Queso and Chips $5",
+       "label": "Queso and Chips, blanco & flameado",
+       "price_usd": 5.0
+      },
+      {
+       "category": "food",
+       "evidence": "1/2 Nachos $7",
+       "label": "1/2 Nachos",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "evidence": "3 for $12 Street Tacos",
+       "label": "Street Tacos, 3 for $12 (chicken, veggie, steak or carnitas)",
+       "price_usd": 12.0
+      }
+     ],
+     "last_verified_at": "2026-09-03",
+     "source": {
+      "clock_quote": "Monday - Friday 3:00 pm - 6:00 pm",
+      "heading": "Newark Happy Hour Menu",
+      "kind": "venue_site",
+      "quote": "Monday - Friday 3:00 pm - 6:00 pm Dine-in only, no substitutions or modifications, no returns. 18 oz Lucky Duck Marg $7, Classic Fishbowl Margs $6, 12 oz Hand Shaken Skinnies $8, All Draft Beer $5, Rail Drinks $5, Quesadillas Cheese $6 Chicken $7 Steak $8, Queso and Chips $5, 1/2 Nachos $7, 3 for $12 Street Tacos",
+      "url": "https://www.santafemexicangrill.com/newark-happy-hour-menu"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "15:00"
+      }
+     ]
+    }
+   ],
+   "id": "DEf1a83bccfd",
+   "lid": "DEf1a83bccfd",
+   "name": "Santa Fe Mexican Grill - Newark",
+   "plcb_name": "Santa Fe Mexican Grill - Newark",
+   "website": "https://www.santafemexicangrill.com/",
+   "zone_id": "newark_de"
   },
   {
    "address": "501 Grove Ln, Newark, DE 19711",

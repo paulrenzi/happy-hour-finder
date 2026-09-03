@@ -3108,6 +3108,44 @@
    }
   ]
  },
+ "71245": {
+  "name": "Saloon 151",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "19:00",
+      "start": "17:00"
+     },
+     {
+      "dow": 2,
+      "end": "19:00",
+      "start": "17:00"
+     },
+     {
+      "dow": 3,
+      "end": "19:00",
+      "start": "17:00"
+     },
+     {
+      "dow": 4,
+      "end": "19:00",
+      "start": "17:00"
+     },
+     {
+      "dow": 5,
+      "end": "19:00",
+      "start": "17:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "110649": {
   "name": "Santino's Tap & Table",
   "deals": [
@@ -3306,23 +3344,23 @@
     "windows": [
      {
       "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
+      "end": "18:00",
+      "start": "16:00"
      },
      {
       "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
+      "end": "18:00",
+      "start": "16:00"
      },
      {
       "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
+      "end": "18:00",
+      "start": "16:00"
      },
      {
       "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
+      "end": "18:00",
+      "start": "16:00"
      }
     ],
     "source": {
@@ -3524,38 +3562,66 @@
     "windows": [
      {
       "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
+      "end": "18:00",
+      "start": "16:00"
      },
      {
       "dow": 2,
-      "start": "16:00",
-      "end": "18:00"
+      "end": "18:00",
+      "start": "16:00"
      },
      {
       "dow": 3,
-      "start": "16:00",
-      "end": "18:00"
+      "end": "18:00",
+      "start": "16:00"
      },
      {
       "dow": 4,
-      "start": "16:00",
-      "end": "18:00"
+      "end": "18:00",
+      "start": "16:00"
      },
      {
       "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "DEa077f4e311": {
+  "name": "Brew Works North",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "17:00"
      },
      {
-      "dow": 6,
-      "start": "16:00",
-      "end": "18:00"
+      "dow": 2,
+      "end": "18:00",
+      "start": "17:00"
      },
      {
-      "dow": 7,
-      "start": "16:00",
-      "end": "18:00"
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "17:00",
+      "start": "14:00"
      }
     ],
     "source": {
@@ -3572,38 +3638,28 @@
     "windows": [
      {
       "dow": 1,
-      "start": "15:00",
-      "end": "18:00"
+      "end": "18:00",
+      "start": "15:00"
      },
      {
       "dow": 2,
-      "start": "15:00",
-      "end": "18:00"
+      "end": "18:00",
+      "start": "15:00"
      },
      {
       "dow": 3,
-      "start": "15:00",
-      "end": "18:00"
+      "end": "18:00",
+      "start": "15:00"
      },
      {
       "dow": 4,
-      "start": "15:00",
-      "end": "18:00"
+      "end": "18:00",
+      "start": "15:00"
      },
      {
       "dow": 5,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 6,
-      "start": "15:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 7,
-      "start": "15:00",
-      "end": "18:00"
+      "end": "18:00",
+      "start": "15:00"
      }
     ],
     "source": {
@@ -3855,6 +3911,39 @@
    }
   ]
  },
+ "DE1f4b3881c8": {
+  "name": "Docklands Riverfront",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 2,
+      "end": "19:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "19:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "19:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "19:00",
+      "start": "16:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "DEa3dcf9e68f": {
   "name": "DORCEA",
   "deals": [
@@ -3928,6 +4017,44 @@
       "dow": 7,
       "start": "15:00",
       "end": "17:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "DE80dea6d966": {
+  "name": "Iron Hill Brewery & Restaurant - Wilmington",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
      }
     ],
     "source": {
@@ -4058,28 +4185,28 @@
     "windows": [
      {
       "dow": 1,
-      "start": "15:00",
-      "end": "17:00"
+      "end": "17:00",
+      "start": "15:00"
      },
      {
       "dow": 2,
-      "start": "15:00",
-      "end": "17:00"
+      "end": "17:00",
+      "start": "15:00"
      },
      {
       "dow": 3,
-      "start": "15:00",
-      "end": "17:00"
+      "end": "17:00",
+      "start": "15:00"
      },
      {
       "dow": 4,
-      "start": "15:00",
-      "end": "17:00"
+      "end": "17:00",
+      "start": "15:00"
      },
      {
       "dow": 5,
-      "start": "15:00",
-      "end": "17:00"
+      "end": "17:00",
+      "start": "15:00"
      }
     ],
     "source": {
@@ -4090,6 +4217,44 @@
  },
  "DE606f3bb4d8": {
   "name": "McGlynns Pub - Greenville",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "DE67606688b2": {
+  "name": "Piccolina Toscana",
   "deals": [
    {
     "type": "happy_hour",
@@ -5193,28 +5358,28 @@
     "windows": [
      {
       "dow": 1,
-      "start": "15:00",
-      "end": "18:00"
+      "end": "18:00",
+      "start": "15:00"
      },
      {
       "dow": 2,
-      "start": "15:00",
-      "end": "18:00"
+      "end": "18:00",
+      "start": "15:00"
      },
      {
       "dow": 3,
-      "start": "15:00",
-      "end": "18:00"
+      "end": "18:00",
+      "start": "15:00"
      },
      {
       "dow": 4,
-      "start": "15:00",
-      "end": "18:00"
+      "end": "18:00",
+      "start": "15:00"
      },
      {
       "dow": 5,
-      "start": "15:00",
-      "end": "18:00"
+      "end": "18:00",
+      "start": "15:00"
      }
     ],
     "source": {
@@ -5443,6 +5608,44 @@
       "dow": 5,
       "start": "15:00",
       "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "DEf1a83bccfd": {
+  "name": "Santa Fe Mexican Grill - Newark",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "15:00"
      }
     ],
     "source": {

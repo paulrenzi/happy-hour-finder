@@ -1696,9 +1696,13 @@ class VenueBase(unittest.TestCase):
         # (213 of 214, ~80 bytes each of path and attribution). That is the
         # board getting richer, not the base leaking in; the base is a
         # megabyte and would still trip this.
+        # 500k held until 2026-09-03, when 27 venues an agent hand-read
+        # arrived at once with their full menus (202 items across Wilmington,
+        # Newark and West Chester). Same reason again: the deals got richer.
+        # The base is 1.3MB, so it still cannot hide under this number.
         boot = sum(os.path.getsize(os.path.join(REPO, "web", "data", f"zone-{z['id']}.json"))
                    for z in self.index["zones"])
-        self.assertLess(boot, 500_000, "the boot payload has grown a venue base again")
+        self.assertLess(boot, 600_000, "the boot payload has grown a venue base again")
 
     def test_every_shipped_venue_can_be_identified_in_a_submission(self):
         # The ask on a no-hours card quotes the LID back to us. A card that

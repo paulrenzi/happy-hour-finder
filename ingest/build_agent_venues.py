@@ -71,8 +71,12 @@ def main():
         if not items:
             skipped.append(f"{b['name']}: no items, and none banked for {lid}")
             continue
-        windows = [{"dow": d, "start": rec["start"], "end": rec["end"]}
-                   for d in rec["days"]]
+        # `days` + one clock covers almost every venue. `windows` is for the
+        # ones whose happy hour starts when they open and so lands on a
+        # different clock each day (Brew Works North: "From Open until 6pm").
+        windows = rec.get("windows") or [
+            {"dow": d, "start": rec["start"], "end": rec["end"]}
+            for d in rec["days"]]
         deal = {
             "type": rec.get("type", "happy_hour"),
             "confidence": rec.get("confidence", "likely"),
