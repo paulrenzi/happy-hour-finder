@@ -902,6 +902,33 @@ def main():
     if outside:
         print(f"  {outside} licensed venue(s) sit outside every zone and cannot be "
               f"reached in the UI -- add a zone in data/zones.json to surface them")
+    # STRANDED: items that were read, passed the grounding gate and the
+    # validators, cost real money, and reached no card. The sidecars merge
+    # INSIDE `for deal in venue["deals"]`, so a venue with no deterministic
+    # window never enters the loop -- and a venue like Lefty's Alley & Eats,
+    # which exists only in venue_base.json and carries no deal row at all,
+    # never reaches surviving() in the first place. Neither case errors. The
+    # only symptom was a zero-byte board diff after a paid run.
+    #
+    # Asked HERE, against what actually shipped, because that is the only
+    # place the question is answerable for both cases at once. It reports; it
+    # does not fix. Publishing these needs the one thing we hold and have never
+    # published -- the agent's own reading of the venue's HOURS -- and that is
+    # Paul's call, not this file's.
+    shipped_items = {v.get("lid") for v in published
+                     for d in v.get("deals") or [] if d.get("items")}
+    shipped_items |= {v["id"] for v in published
+                      for d in v.get("deals") or [] if d.get("items")}
+    stranded = {lid: len(items) for lid, items in agent_items.items()
+                if lid not in shipped_items}
+    if stranded:
+        names = {str(b.get("lid")): b.get("name") for b in base.values()}
+        n = sum(stranded.values())
+        who = ", ".join(f"{names.get(k, k)} ({c})" for k, c in
+                        list(stranded.items())[:3])
+        print(f"  ! {n} verified item(s) across {len(stranded)} venue(s) were READ "
+              f"AND NEVER PUBLISHED -- no window means no deal to carry them: "
+              f"{who}")
     if orphans:
         print(f"  ! {len(orphans)} deal(s) matched no venue in the base "
               f"-- rebuild it: {', '.join(orphans[:3])}")
