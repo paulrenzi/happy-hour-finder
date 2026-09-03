@@ -4740,5 +4740,60 @@
         "evidence": "Beet Salad...$7.00"
       }
     ]
+  },
+  {
+    "lid": "110926",
+    "url": "https://locations.pjspub.com/pa/hatfield/190-forty-foot-road",
+    "read_on": "2026-09-04",
+    "heading": "Happy Hour",
+    "clock_quote": "Happy Hour Monday 4:00 PM - 6:00 PM Tuesday 4:00 PM - 6:00 PM Wednesday 4:00 PM - 6:00 PM Thursday 4:00 PM - 6:00 PM Friday 4:00 PM - 6:00 PM",
+    "quote": "MON - FRI 4PM - 6PM $3 Domestic Drafts $4 Corona & Corona Light $6 House Wine $6 Krushes $5 Boneless Wings (Snack Size) $10 Boneless Wings (Share Size)",
+    "days": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "start": "16:00",
+    "end": "18:00",
+    "items": [
+      {
+        "category": "draft",
+        "label": "Domestic Drafts",
+        "price_usd": 3,
+        "evidence": "$3 Domestic Drafts"
+      },
+      {
+        "category": "bottle_can",
+        "label": "Corona & Corona Light",
+        "price_usd": 4,
+        "evidence": "$4 Corona & Corona Light"
+      },
+      {
+        "category": "wine",
+        "label": "House Wine",
+        "price_usd": 6,
+        "evidence": "$6 House Wine"
+      },
+      {
+        "category": "cocktail",
+        "label": "Krushes",
+        "price_usd": 6,
+        "evidence": "$6 Krushes"
+      },
+      {
+        "category": "food",
+        "label": "Boneless Wings (Snack Size)",
+        "price_usd": 5,
+        "evidence": "$5 Boneless Wings (Snack Size)"
+      },
+      {
+        "category": "food",
+        "label": "Boneless Wings (Share Size)",
+        "price_usd": 10,
+        "evidence": "$10 Boneless Wings (Share Size)"
+      }
+    ]
   }
 ]

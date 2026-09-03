@@ -4348,6 +4348,82 @@
    }
   ]
  },
+ "68559": {
+  "name": "Butcher and Barkeep",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "15:30",
+      "end": "17:30"
+     },
+     {
+      "dow": 2,
+      "start": "15:30",
+      "end": "17:30"
+     },
+     {
+      "dow": 3,
+      "start": "15:30",
+      "end": "17:30"
+     },
+     {
+      "dow": 4,
+      "start": "15:30",
+      "end": "17:30"
+     },
+     {
+      "dow": 5,
+      "start": "15:30",
+      "end": "17:30"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "110926": {
+  "name": "P.J. Welihan's Pub & Restaurant",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "60905": {
   "name": "Ale House",
   "deals": [
@@ -12933,67 +13009,6 @@
      },
      {
       "dow": 5,
-      "start": "16:00",
-      "end": "18:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "68559": {
-  "name": "Butcher and Barkeep",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "15:30",
-      "end": "17:30"
-     },
-     {
-      "dow": 2,
-      "start": "15:30",
-      "end": "17:30"
-     },
-     {
-      "dow": 3,
-      "start": "15:30",
-      "end": "17:30"
-     },
-     {
-      "dow": 4,
-      "start": "15:30",
-      "end": "17:30"
-     },
-     {
-      "dow": 5,
-      "start": "15:30",
-      "end": "17:30"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "110926": {
-  "name": "P.J. Welihan's Pub & Restaurant",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "start": "16:00",
-      "end": "18:00"
-     },
-     {
-      "dow": 2,
       "start": "16:00",
       "end": "18:00"
      }

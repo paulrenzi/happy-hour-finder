@@ -875,6 +875,95 @@
    "zone_id": "ridley_tinicum"
   },
   {
+   "address": "190 Forty Foot Rd Suite 114-118, Hatfield PA 19440",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "category": "draft",
+       "evidence": "$3 Domestic Drafts",
+       "label": "Domestic Drafts",
+       "price_usd": 3
+      },
+      {
+       "category": "bottle_can",
+       "evidence": "$4 Corona & Corona Light",
+       "label": "Corona & Corona Light",
+       "price_usd": 4
+      },
+      {
+       "category": "wine",
+       "evidence": "$6 House Wine",
+       "label": "House Wine",
+       "price_usd": 6
+      },
+      {
+       "category": "cocktail",
+       "evidence": "$6 Krushes",
+       "label": "Krushes",
+       "price_usd": 6
+      },
+      {
+       "category": "food",
+       "evidence": "$5 Boneless Wings (Snack Size)",
+       "label": "Boneless Wings (Snack Size)",
+       "price_usd": 5
+      },
+      {
+       "category": "food",
+       "evidence": "$10 Boneless Wings (Share Size)",
+       "label": "Boneless Wings (Share Size)",
+       "price_usd": 10
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "Happy Hour Monday 4:00 PM - 6:00 PM Tuesday 4:00 PM - 6:00 PM Wednesday 4:00 PM - 6:00 PM Thursday 4:00 PM - 6:00 PM Friday 4:00 PM - 6:00 PM",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "MON - FRI 4PM - 6PM $3 Domestic Drafts $4 Corona & Corona Light $6 House Wine $6 Krushes $5 Boneless Wings (Snack Size) $10 Boneless Wings (Share Size)",
+      "url": "https://locations.pjspub.com/pa/hatfield/190-forty-foot-road"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "16:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "110926",
+   "lid": "110926",
+   "name": "P.J. Welihan's Pub & Restaurant",
+   "plcb_name": "PJ WHELIHAN'S PUB & RESTAURANT",
+   "website": "https://locations.pjspub.com/pa/hatfield/190-forty-foot-road",
+   "zone_id": "souderton_harleysville"
+  },
+  {
    "address": "44 W Gay St, West Chester PA 19380",
    "deals": [
     {
