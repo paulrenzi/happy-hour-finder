@@ -2547,6 +2547,63 @@
   "venue_name_on_menu": "",
   "why_not": "The site gives taproom hours (Wed-Thu 4-9pm, Fri 3-10pm, Sat 1-10pm, Sun 1-7pm), a rotating tap list without prices, and an events page that points to social media, but never states a happy hour."
  },
+ "DE130fbfeec4": {
+  "cost_usd": 0.5532,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://tikkamasalade.com/?utm_source=google — nav links only: /menu, /page/pdf-menus, /page/our-buffet, Toast ordering; no happy hour",
+   "WebFetch https://tikkamasalade.com/menu — food sections plus non-alcoholic drinks; no bar or happy hour section",
+   "WebFetch + curl https://tikkamasalade.com/page/pdf-menus — one embedded PDF link (Dosa Buffet)",
+   "curl https://static-content.owner.com/document/505d441a-4a09-4a76-a464-2885e74c57f3.pdf and Read it — Lunch Buffet flyer, no happy hour",
+   "curl grep for 'happy' on /, /menu, /page/our-buffet, /story, /page/private-events — no matches"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "",
+  "transcript": "",
+  "turns": 16,
+  "venue_name_on_menu": "",
+  "why_not": "The site's only promotions are a Sunday/Saturday lunch buffet flyer, a 5% military discount and a 10% cash discount; no happy hour or bar specials are stated anywhere on the home, menu, PDF-menus, buffet, story or private-events pages."
+ },
+ "DE155b2a9fb6": {
+  "cost_usd": 0.6751,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://istanbulgrillde.com/ — nav has only Home, Menu, Contact Us, Order Online (Seamless), Instagram; no happy hour or specials",
+   "WebFetch https://istanbulgrillde.com/menu/ — menu is posted as 6 images; pulled their URLs from the page source",
+   "curl + Read 6 menu images (1-6, 2025/11 uploads): cover/hours, entrees & kebabs, breakfast/salads/appetizers, cold appetizers & sandwiches, from the oven/kid's menu, catering/desserts/beverages",
+   "WebFetch https://istanbulgrillde.com/contact-us/ — only 'Everyday: 10am-11pm', no specials"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "",
+  "transcript": "",
+  "turns": 15,
+  "venue_name_on_menu": "ISTANBUL GRILL",
+  "why_not": "The site offers only a full six-page food menu (halal, no alcohol — beverages are soda, ayran, Turkish coffee/tea and water), catering pricing and everyday 10am-11pm hours, with no happy hour or specials section anywhere."
+ },
+ "DE1997551cce": {
+  "cost_usd": 0.5482,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "exhausted",
+  "model": "opus",
+  "path_taken": [],
+  "read_at": "2026-09-03",
+  "transcript": "",
+  "turns": 15,
+  "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.55 spent"
+ },
  "DE1a62273d75": {
   "cost_usd": 0.4494,
   "deals": [],
@@ -2583,6 +2640,179 @@
   "transcript": "",
   "turns": 15,
   "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.49 spent"
+ },
+ "DE1c7d76faa0": {
+  "cost_usd": 0.3843,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://www.hyatt.com/info/hyatt-place-newark-main-street-menu -> HTTP 403 Forbidden",
+   "curl https://www.hyatt.com/info/hyatt-place-newark-main-street-menu (Chrome UA) -> 403, bot-block shell page",
+   "curl same URL (Safari UA, Google referer) -> 403",
+   "curl same URL (compressed, cookie jar, sec-fetch headers) -> 403, no 'happy hour' text in body"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "",
+  "transcript": "",
+  "turns": 10,
+  "venue_name_on_menu": "",
+  "why_not": "The venue's hyatt.com menu page is bot-blocked and returned HTTP 403 on every attempt, serving only a JavaScript shell with no menu, links, or happy hour content to read."
+ },
+ "DE1d19b1ee4d": {
+  "cost_usd": 0.1992,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch http://www.m2oburgers.com/ — home page, no happy hour; nav links to /menu, /locations/newark",
+   "WebFetch https://www.m2oburgers.com/locations/newark — Newark DE location page, hours 10 AM–9 PM daily, no specials",
+   "WebFetch https://www.m2oburgers.com/menu — burgers/chicken/salads/wraps/sides/shakes, no drink or happy hour section"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "",
+  "transcript": "",
+  "turns": 5,
+  "venue_name_on_menu": "M2O Burgers & Salads",
+  "why_not": "The site is a fast-casual burger and salad chain whose home page, Newark location page and menu list only food categories and daily 10 AM–9 PM hours, with no happy hour, bar or specials section anywhere."
+ },
+ "DE1d6a06aabf": {
+  "cost_usd": 0.4458,
+  "deals": [
+   {
+    "fine_print": "",
+    "items": [],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "15:00"
+     }
+    ]
+   }
+  ],
+  "dropped": [],
+  "found": true,
+  "items_kept": 0,
+  "kind": "page",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch home page https://www.rockwellsonmain.com/ - menus/order online all 'Coming Soon' placeholders, no happy hour text",
+   "curl home page HTML to list real links - found /location/rockwellsonmain/ (this address)",
+   "WebFetch https://www.rockwellsonmain.com/location/rockwellsonmain/ - HAPPY HOUR hours printed",
+   "curl location page HTML and read the intro section verbatim"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "https://www.rockwellsonmain.com/location/rockwellsonmain/",
+  "transcript": "HAPPY HOUR\nMonday-  Friday 3-6pm",
+  "turns": 12,
+  "venue_name_on_menu": "Rockwell's on Main",
+  "why_not": ""
+ },
+ "DE1de136e0d7": {
+  "cost_usd": 0.5332,
+  "deals": [
+   {
+    "fine_print": "",
+    "items": [
+     {
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "DOMESTIC BOTTLES",
+      "price_quote": "$3",
+      "price_usd": 3,
+      "quote": "$3 DOMESTIC BOTTLES"
+     },
+     {
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "$1 OFF NON-ALCOHOLIC BEERS",
+      "price_quote": "$1 OFF NON-ALCOHOLIC BEERS",
+      "price_usd": null,
+      "quote": "$1 OFF NON-ALCOHOLIC BEERS"
+     },
+     {
+      "category": "food",
+      "discount_pct": null,
+      "label": "BASKET COMBOS",
+      "price_quote": "$12",
+      "price_usd": 12,
+      "quote": "$12 BASKET COMBOS"
+     },
+     {
+      "category": "shot",
+      "discount_pct": null,
+      "label": "GREEN TEA SHOTS",
+      "price_quote": "$4",
+      "price_usd": 4,
+      "quote": "$4 GREEN TEA SHOTS"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 4,
+      "end": "24:00",
+      "start": "22:00"
+     },
+     {
+      "dow": 6,
+      "end": "24:00",
+      "start": "22:00"
+     }
+    ]
+   }
+  ],
+  "dropped": [
+   "'$1 OFF NON-ALCOHOLIC BEERS': needs exactly one of price_usd / discount_pct / amount_off_usd"
+  ],
+  "found": true,
+  "items_kept": 3,
+  "kind": "image",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch http://www.christianapub.com/ — failed, TLS cert does not cover www host",
+   "WebFetch https://christianapub.com/ — home page, nav: menu.aspx, latenight.aspx, calendar.aspx; promo images captioned Daily Specials / Lunch Combos",
+   "WebFetch https://christianapub.com/menu.aspx — Food Menu heading only, no content",
+   "WebFetch https://christianapub.com/latenight.aspx — Late Night Menu heading only, no content",
+   "curl raw HTML of Default.aspx/menu.aspx/latenight.aspx to find image sources",
+   "curl -sL -o thursday_sat.jpeg https://christianapub.com/images/IMG_0186.JPEG — home-page flyer alt=\"Thursday & Sat\"",
+   "curl -sL -o daily_specials.jpeg https://christianapub.com/images/IMG_0219.JPEG — home-page flyer alt=\"Daily Specials\"",
+   "Read thursday_sat.jpeg — LATE NITE HAPPY HOUR flyer with hours and prices"
+  ],
+  "read_at": "2026-09-03",
+  "source_url": "https://christianapub.com/images/IMG_0186.JPEG",
+  "transcript": "CHRISTIANA PUB\n10 W. MAIN ST CHRISTIANA DE 19702\n\nCHRISTIANA PUB\nTHURSDAY & SATURDAY NIGHTS\nLATE NITE HAPPY HOUR\n10P–MIDNIGHT\n$3 DOMESTIC BOTTLES\n$1 OFF NON-ALCOHOLIC BEERS\n$12 BASKET COMBOS\n$4 GREEN TEA SHOTS\nTENDERS & FRIES\nWINGS & FRIES\nKARAOKE 9P\nALL Star Entertainment\n\nGOOD FRIENDS • GOOD FOOD • GOOD TIMES",
+  "turns": 14,
+  "venue_name_on_menu": "CHRISTIANA PUB",
+  "why_not": ""
  },
  "DE1f4b3881c8": {
   "cost_usd": 0.4215,
