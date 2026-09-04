@@ -1,7 +1,7 @@
 {
  "rule": "Paul, 2026-09-03: any live deal with under 5 happy-hour items needs a re-scrape.",
  "generated": "2026-09-04",
- "count": 124,
+ "count": 133,
  "venues": [
   {
    "zone": "abington_jenkintown",
@@ -580,6 +580,33 @@
    "status": "NEEDS_RESCRAPE"
   },
   {
+   "zone": "lewes",
+   "name": "Bramble & Brine at the Buttery",
+   "lid": "DEd972e6d264",
+   "verified_by": "auto_extract",
+   "item_count": 1,
+   "url": "https://www.megancollective.com/location/bramble-brine-and-pink-pony/",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "lewes",
+   "name": "Lewes Oyster House",
+   "lid": "DE8e9e339b4c",
+   "verified_by": "auto_extract",
+   "item_count": 4,
+   "url": "https://lewesoyster.com/menu/",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "lewes",
+   "name": "Raas",
+   "lid": "DEeb93b5cdfd",
+   "verified_by": "auto_extract",
+   "item_count": 1,
+   "url": "https://www.raaslewes.com/lewes-lewes-beach-raas-happy-hours-specials",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
    "zone": "manayunk",
    "name": "Taqueria Amor",
    "lid": "67822",
@@ -865,6 +892,60 @@
    "verified_by": "agent_read",
    "item_count": 1,
    "url": "https://www.godocspub.com/specials/",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "rehoboth_beach",
+   "name": "1776 Steakhouse",
+   "lid": "DE49d0a52dae",
+   "verified_by": "auto_extract",
+   "item_count": 3,
+   "url": "https://1776steakhouse.com/",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "rehoboth_beach",
+   "name": "Bodhi Kitchen",
+   "lid": "DE2c4cd90f28",
+   "verified_by": "auto_extract",
+   "item_count": 2,
+   "url": "https://www.bodhirb.com/images/fl_items/files/81/82_happy-hour-bodhi-102523-2up-4-25x11.pdf",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "rehoboth_beach",
+   "name": "Delaware Seashore - South Inlet Big Chill Beach Club",
+   "lid": "DE744cc205de",
+   "verified_by": "auto_extract",
+   "item_count": 2,
+   "url": "https://www.bigchillbeachclub.com/menus/happy-hour-2026",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "rehoboth_beach",
+   "name": "Dogfish Head Chesapeake & Maine",
+   "lid": "DE99a710355f",
+   "verified_by": "auto_extract",
+   "item_count": 3,
+   "url": "https://www.dogfish.com/visit/chesapeake-and-maine",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "rehoboth_beach",
+   "name": "Thompson Island Brewing",
+   "lid": "DE7aeedc693a",
+   "verified_by": "auto_extract",
+   "item_count": 1,
+   "url": "https://thompsonislandbrewing.com/happy-hour",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "rehoboth_beach",
+   "name": "Victoria's Restaurant",
+   "lid": "DEb0abd23fc8",
+   "verified_by": "auto_extract",
+   "item_count": 4,
+   "url": "https://boardwalkplaza.com/wp-content/uploads/2026/06/Plaza-Pub-Menu-2.pdf",
    "status": "NEEDS_RESCRAPE"
   },
   {

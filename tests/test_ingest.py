@@ -1708,9 +1708,14 @@ class VenueBase(unittest.TestCase):
         # arrived at once with their full menus (202 items across Wilmington,
         # Newark and West Chester). Same reason again: the deals got richer.
         # The base is 1.3MB, so it still cannot hide under this number.
+        # 600k held until 2026-09-04, when the Sussex coast arrived as three
+        # new zones -- Rehoboth, Lewes and Dewey, 180 venues, 43 of them
+        # carrying a window and nearly all a photo. Measured: the three zones
+        # are 54,220 bytes and the rest of the board is 575,207, still under
+        # the old bar. Deals again, not the base, which is now 1.47MB.
         boot = sum(os.path.getsize(os.path.join(REPO, "web", "data", f"zone-{z['id']}.json"))
                    for z in self.index["zones"])
-        self.assertLess(boot, 600_000, "the boot payload has grown a venue base again")
+        self.assertLess(boot, 700_000, "the boot payload has grown a venue base again")
 
     def test_every_shipped_venue_can_be_identified_in_a_submission(self):
         # The ask on a no-hours card quotes the LID back to us. A card that
