@@ -23,8 +23,8 @@ credentials with anything else on this machine.
 | …with a website we know of | 1,826 |
 | …crawled | 1,585 |
 | **on the board with a published happy-hour window** | **356** |
-| …carrying items you can actually order | 264 venues, 1,928 items |
-| …with an hour but **no items** — the open gap | **92** |
+| …carrying items you can actually order | 265 venues, 1,943 items |
+| …with an hour but **no items** — the open gap | **91** |
 | published windows that contradict their own evidence | **0** |
 
 **Read that table in two halves.** What we publish is checked: every window and
@@ -272,4 +272,4 @@ deliberately no map.
   session each. The one to read before changing ingest.
 - **[SPEC.md](SPEC.md)** — what a deal is, and the eight categories.
 - **`HANDOFF-START-HERE-*.md`** — session notes, newest wins. The current one is
-  [`HANDOFF-START-HERE-20260904-NIGHT-TURN-BUDGET-FIXED-23-LEFT.md`](HANDOFF-START-HERE-20260904-NIGHT-TURN-BUDGET-FIXED-23-LEFT.md).
+  [`HANDOFF-START-HERE-20260904-NIGHT2-CAPS-DRINKFOOD-RESCRAPE.md`](HANDOFF-START-HERE-20260904-NIGHT2-CAPS-DRINKFOOD-RESCRAPE.md).
