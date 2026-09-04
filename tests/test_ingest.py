@@ -591,9 +591,16 @@ class SeedCorpus(unittest.TestCase):
     # Rehoboth, Dover and Smyrna. Every one is genuinely in Delaware, which is
     # all the seeder's state test asked -- Places widens a query it cannot
     # satisfy locally, and a small state is a small enough haystack to succeed.
+    # 🛑 The third box is the Sussex coast (Lewes / Rehoboth / Dewey), added
+    # 2026-09-04. Read it against the paragraph above: those towns are the
+    # exact contamination this check was built to CATCH, and they are now a
+    # deliberate part of the market. They stay a separate box for that reason
+    # -- widening the northern box to reach them would re-admit Rehoboth to a
+    # Hockessin query and this test would never object again.
     MARKET_BOXES = [
         ((39.6, 40.6), (-76.0, -74.8)),      # King of Prussia, 20 miles
         ((39.35, 39.92), (-75.90, -75.35)),  # northern Delaware + MOT
+        ((38.60, 38.85), (-75.30, -75.02)),  # Sussex coast: Lewes/Rehoboth/Dewey
     ]
 
     def test_no_venue_resolved_outside_the_market(self):

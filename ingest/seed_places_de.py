@@ -39,6 +39,7 @@ import argparse
 import csv
 import json
 import os
+import re
 import sys
 import time
 
@@ -122,6 +123,53 @@ ZONES = {
             "Townsend, Delaware",
         ],
     },
+    # The Sussex County coast, added 2026-09-04 on Paul's ask. These are NOT
+    # northern Delaware and do not ride with the zones above commercially or
+    # geographically -- they are ninety miles south, they are seasonal, and
+    # they carry the densest happy-hour culture in the state. They get their
+    # own box (BOXES below), their own county, and their own market box in
+    # tests/test_ingest.py.
+    #
+    # 🛑 Note what this reverses: the DE_BOX comment below was written to
+    # EXCLUDE exactly these towns, because a Hockessin query kept returning
+    # Crooked Hammock in Lewes. The contamination and the target are the same
+    # rows. That is why the box is now per-zone rather than one constant --
+    # a single widened box would have quietly re-admitted Rehoboth to
+    # Hockessin's results and nothing would have errored.
+    "rehoboth_beach": {
+        "name": "Rehoboth Beach",
+        "anchor": "Rehoboth Ave, the Boardwalk",
+        "county": "Sussex County",
+        "box": "SUSSEX_COAST",
+        "queries": [
+            "Rehoboth Avenue, Rehoboth Beach, Delaware",
+            "Rehoboth Beach boardwalk, Delaware",
+            "Rehoboth Beach, Delaware",
+            "Midway, Rehoboth Beach, Delaware",
+        ],
+    },
+    "dewey_beach": {
+        "name": "Dewey Beach",
+        "anchor": "Coastal Highway",
+        "county": "Sussex County",
+        "box": "SUSSEX_COAST",
+        "queries": [
+            "Dewey Beach, Delaware",
+            "Coastal Highway, Dewey Beach, Delaware",
+        ],
+    },
+    "lewes": {
+        "name": "Lewes",
+        "anchor": "Second St, Savannah Rd",
+        "county": "Sussex County",
+        "box": "SUSSEX_COAST",
+        "queries": [
+            "Second Street, Lewes, Delaware",
+            "Lewes, Delaware",
+            "Savannah Road, Lewes, Delaware",
+            "Nassau, Delaware",
+        ],
+    },
 }
 
 
@@ -162,16 +210,56 @@ def search(key, query, kind, requests, token=None):
 # only check in the repo that ever looks at where a venue actually IS.
 DE_BOX = {"lat": (39.35, 39.92), "lng": (-75.90, -75.35)}
 
+# The Sussex coast, as its own box rather than a widening of the one above.
+# Lewes sits at 38.77, Rehoboth at 38.72, Dewey at 38.69; the northern box
+# starts at 39.35, so every beach row would have been dropped by in_delaware()
+# with no error and no log line -- a seeded zone that silently returns nothing.
+# East edge is ocean. West edge stops short of Georgetown (-75.385) so the
+# Route 1 corridor is in and the inland county is out.
+SUSSEX_COAST_BOX = {"lat": (38.60, 38.85), "lng": (-75.30, -75.02)}
 
-def in_delaware(place):
+BOXES = {"NORTHERN_DE": DE_BOX, "SUSSEX_COAST": SUSSEX_COAST_BOX}
+
+# 🛑 A row's zone comes from the QUERY that found it, and inside a small box
+# that is not good enough. The three beach towns are ten minutes apart, so
+# "restaurant in Lewes, Delaware" returns Rehoboth and Dewey freely: the first
+# seeded zone kept 30 Rehoboth bars and 4 Dewey ones under `lewes`, plus
+# Millsboro, Milton and Bethany Beach, and every one of them passed the box.
+# The box answers "is this the right REGION"; only the address answers "is this
+# the right TOWN". So for these zones the address decides, and a town nobody
+# asked for is refused rather than filed under its nearest neighbour.
+TOWN_ZONES = {
+    "lewes": "lewes",
+    "rehoboth beach": "rehoboth_beach",
+    "dewey beach": "dewey_beach",
+}
+
+
+def town_of(address):
+    """The town a Delaware address names, lowercased, or None."""
+    m = re.search(r",\s*([A-Za-z .'-]+),\s*DE\b", address or "")
+    return m.group(1).strip().lower() if m else None
+
+
+def zone_from_address(address, default):
+    """Re-file a beach row onto the town its own address names.
+
+    Returns None for a town outside the three, which drops the row: a Bethany
+    Beach bar published under 'Lewes' is a wrong claim, and absent beats wrong.
+    """
+    return TOWN_ZONES.get(town_of(address), None) if default in TOWN_ZONES.values() \
+        else default
+
+
+def in_delaware(place, box=DE_BOX):
     if ", DE " not in (place.get("formattedAddress") or ""):
         return False
     loc = place.get("location") or {}
     lat, lng = loc.get("latitude"), loc.get("longitude")
     if lat is None or lng is None:
         return False
-    return (DE_BOX["lat"][0] < lat < DE_BOX["lat"][1]
-            and DE_BOX["lng"][0] < lng < DE_BOX["lng"][1])
+    return (box["lat"][0] < lat < box["lat"][1]
+            and box["lng"][0] < lng < box["lng"][1])
 
 
 SITES_JSON = os.path.join(REPO, "data", "venue_sites.json")
@@ -249,6 +337,9 @@ def main():
     spent = 0
     for zid, z in zones.items():
         found = 0
+        box = BOXES[z.get("box", "NORTHERN_DE")]
+        dropped_outside = 0
+        dropped_town = 0
         for q in z["queries"]:
             for kind in TYPES:
                 token, page = None, 0
@@ -261,10 +352,16 @@ def main():
                     spent += 1
                     page += 1
                     for p in places:
-                        if not in_delaware(p):
+                        if not in_delaware(p, box):
+                            dropped_outside += 1
                             continue
                         lid = lid_for(p["id"])
                         if lid in rows:
+                            continue
+                        addr = p["formattedAddress"].replace(", USA", "")
+                        zone_id = zone_from_address(addr, zid)
+                        if zone_id is None:
+                            dropped_town += 1
                             continue
                         rows[lid] = {
                             "lid": lid,
@@ -276,12 +373,12 @@ def main():
                             "tier": "core",
                             "name": p["displayName"]["text"],
                             "licensee": "",
-                            "address": p["formattedAddress"].replace(", USA", ""),
+                            "address": addr,
                             "zip": (p["formattedAddress"].split()[-2]
                                     if p["formattedAddress"].split() else ""),
                             "municipality": q.split(",")[0].strip(),
-                            "county": "New Castle County",
-                            "zone_id": zid,
+                            "county": z.get("county", "New Castle County"),
+                            "zone_id": zone_id,
                             "miles_from_kop": "",
                             "expiration_date": "",
                             "place_id": p["id"],
@@ -294,7 +391,17 @@ def main():
                     if not token:
                         break
                     time.sleep(0.2)
-        print(f"  {zid:<22} +{found}")
+        print(f"  {zid:<22} +{found:<4} ({dropped_outside} outside the "
+              f"{z.get('box', 'NORTHERN_DE')} box"
+              + (f", {dropped_town} in a town outside the zone set" if dropped_town else "")
+              + ")")
+        # A zone that keeps nothing while its queries return plenty is a box
+        # that does not contain the town, not a town with no bars. That is the
+        # failure this seeder is most likely to have and the least likely to
+        # notice, so it says so instead of printing a tidy +0.
+        if found == 0 and dropped_outside:
+            print(f"  ! {zid}: kept NOTHING and dropped {dropped_outside} -- "
+                  f"check BOXES[{z.get('box', 'NORTHERN_DE')!r}] contains the town")
 
     fields = list(next(iter(rows.values())).keys()) if rows else []
     with open(OUT_CSV + ".new", "w", encoding="utf-8", newline="") as fh:
