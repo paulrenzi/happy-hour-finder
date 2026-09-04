@@ -1,7 +1,7 @@
 {
  "rule": "Paul, 2026-09-03: any live deal with under 5 happy-hour items needs a re-scrape.",
  "generated": "2026-09-04",
- "count": 125,
+ "count": 124,
  "venues": [
   {
    "zone": "abington_jenkintown",
@@ -982,15 +982,6 @@
    "verified_by": "agent_read",
    "item_count": 3,
    "url": "https://www.saloon151.com/weekly-specials",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "west_chester",
-   "name": "Serum Kitchen & Taphouse",
-   "lid": "101307",
-   "verified_by": "roundup_extract",
-   "item_count": 4,
-   "url": "https://countylinesmagazine.com/article/cheers-its-happy-hour-in-west-chester-pa/",
    "status": "NEEDS_RESCRAPE"
   },
   {

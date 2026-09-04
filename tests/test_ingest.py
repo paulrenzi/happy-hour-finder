@@ -32,7 +32,8 @@ import fetch_venue_photos  # noqa: E402
 import exclusions  # noqa: E402
 import report_holes  # noqa: E402
 import read_pages_llm  # noqa: E402
-from crawl_roundups import fresh_enough, mentions, published_date, venue_index  # noqa: E402
+from crawl_roundups import (address_keys, fresh_enough, mentions,  # noqa: E402
+                            published_date, quote_names_another_door, venue_index)
 from crawl_sites import (candidate_links, crawl_one, hh_sections,  # noqa: E402
                          reached_nothing,
                          item_beside, menu_images, quotes, registrable,
@@ -4233,6 +4234,68 @@ Visit Maxwell’s On Main’s Website ↗
         got = self.hits(self.ARTICLE, sites=sites)
         self.assertIn("9", got)
         self.assertNotIn("63321", got)
+
+
+class ARoundupParagraphNamingAnotherDoorIsRefused(unittest.TestCase):
+    """The name join owns the heading, so nobody checked the door it prints.
+
+    County Lines (May 2024) wrote 'Newcomer Serum Kitchen & Taphouse offers
+    Happy Hour all working week long, 4 to 6 ... 142 E. Market St.' That
+    paragraph joined by NAME to lid 101307, the licence at 30 N Church St,
+    which is SLOW HAND -- a different building three streets away (142 E
+    Market is Station 142, and is its own row in RoundupAddressJoin.BASE).
+    West Chester shipped Slow Hand's licence under Serum's name, with Serum's
+    Monday-to-Friday window, and Slow Hand is CLOSED Mondays.
+
+    Re-routing is still refused at crawl time (the test above). This refuses
+    at PUBLISH time instead, which is the only gate that can act on a deal
+    already baked into data/deals_roundup.json.
+    """
+
+    def test_a_paragraph_printing_another_door_is_refused(self):
+        self.assertTrue(quote_names_another_door(
+            "Newcomer Serum Kitchen & Taphouse offers Happy Hour all working "
+            "week long, 4 to 6. 142 E. Market St.",
+            "30 N Church St, West Chester PA 19380"))
+
+    def test_a_paragraph_printing_its_own_door_is_kept(self):
+        self.assertFalse(quote_names_another_door(
+            "Located at 80 W State Street right in the heart of downtown, "
+            "Penn Taproom seats roughly 70 guests outside.",
+            "80 W State St, Doylestown PA 18901"))
+
+    def test_a_paragraph_printing_no_door_is_kept(self):
+        # Silence is not disagreement. Most roundup paragraphs name no address
+        # at all, and refusing those would empty the board.
+        self.assertFalse(quote_names_another_door(
+            "Happy hour runs daily from 5 to 7 PM.",
+            "37-39 N Main St, Doylestown PA 18901"))
+
+    def test_an_unparsed_venue_address_never_refuses(self):
+        # Two doors are only evidence when BOTH parse. A venue whose own
+        # address we cannot read must not have its deals dropped on a
+        # comparison that never happened.
+        self.assertFalse(quote_names_another_door(
+            "Great spot. 142 E. Market St.", "Suite 3, no street here"))
+
+    def test_a_shouted_licence_address_is_still_read(self):
+        # ADDRESS_RE is built from a title-case suffix list and the BASE
+        # shouts: '40 E MARKET ST'. Without re.I the guard was blind to its
+        # own corpus -- it read no door at all, so it could never disagree.
+        self.assertEqual(address_keys("40 E MARKET ST, WEST CHESTER PA 19382"),
+                         {("40", "market")})
+        self.assertTrue(quote_names_another_door(
+            "Serum Kitchen & Taphouse, 142 E. Market St.",
+            "30 N CHURCH ST, WEST CHESTER PA 19380"))
+
+    def test_slow_hand_ships_under_its_own_name_and_no_roundup_deal(self):
+        board = json.load(open(os.path.join(
+            REPO, "web", "data", "venues-west_chester.json"), encoding="utf-8"))
+        venues = board["venues"] if isinstance(board, dict) else board
+        row = next(v for v in venues if str(v.get("lid")) == "101307")
+        self.assertEqual(row["name"], "Slow Hand")
+        self.assertEqual(row["deals"], [],
+                         "the Serum roundup deal is back on Slow Hand's licence")
 
 
 class ARoundupClockKeepsItsMinutes(unittest.TestCase):

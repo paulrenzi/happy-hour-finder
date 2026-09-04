@@ -22,6 +22,7 @@ from validate_pa import (rules_for, state_of, validate_deal,  # noqa: E402
 from exclusions import excluded  # noqa: E402
 from discover_sites import name_agrees  # noqa: E402
 from build_venue_base import pretty_name  # noqa: E402
+from crawl_roundups import quote_names_another_door  # noqa: E402
 
 # build_venue_base.pretty_name() already solves "AN ALL-CAPS LICENSEE NAME ->
 # something a person would read on a card" for PLCB names; a menu item label
@@ -254,6 +255,34 @@ def street_of(address):
     return " ".join(parts)
 
 
+def roundup_deal_kept(venue):
+    """The venue with every roundup deal whose paragraph names ANOTHER door
+    dropped, or None when that leaves it with nothing.
+
+    A roundup is a dated third party writing about a town, and it is the only
+    source on the board whose paragraph routinely prints the address of the
+    bar it is describing. That makes it self-checking, and nothing was
+    checking it: the heading 'Serum Kitchen & Taphouse ... 142 E. Market St.'
+    joined by NAME to the licence at 30 N Church St -- Slow Hand -- so the
+    card shipped a closed business's name over a live licensee, with a
+    Monday window on a bar that is closed Mondays.
+
+    This is the last gate before publication, which is where it belongs: the
+    deal is already baked into data/deals_roundup.json, so a guard that only
+    ran at crawl time would need a re-crawl to take effect.
+    """
+    kept = []
+    for deal in venue.get("deals", []):
+        quote = (deal.get("source") or {}).get("quote")
+        if quote_names_another_door(quote, venue.get("address")):
+            print(f"  roundup refused: {venue.get('name')} ({venue.get('lid')}) -- "
+                  f"the paragraph prints another venue's door, not "
+                  f"{venue.get('address')}")
+            continue
+        kept.append(deal)
+    return dict(venue, deals=kept) if kept else None
+
+
 def merge_rows(rows, reason="same name, same source page"):
     """One winner keeps the card; the losers give back the trade name and the
     deals, and ride along in also_lids. Returns how many were collapsed."""
@@ -452,11 +481,13 @@ def main():
         print(f"  +{len(fresh)} {label} venues ({len(dupes)} already covered)")
         return dict(payload, venues=payload["venues"] + fresh)
 
-    def merge(payload, path, label, rank):
+    def merge(payload, path, label, rank, keep=None):
         if not os.path.exists(path):
             return payload
-        return merge_venues(payload, json.load(open(path, encoding="utf-8"))["venues"],
-                            label, rank)
+        venues = json.load(open(path, encoding="utf-8"))["venues"]
+        if keep:
+            venues = [v for v in (keep(v) for v in venues) if v]
+        return merge_venues(payload, venues, label, rank)
 
     # Priority order, highest first:
     #   deals_photo.json      a person approved a photo of the venue's own menu
@@ -496,7 +527,8 @@ def main():
     # happy hours, read for the bars it names. It fills a card only where
     # nothing above it did -- and in West Chester that was most of the town,
     # because the bars do not put their happy hour on their own sites.
-    payload = merge(payload, ROUNDUP_JSON, "roundup-read", 5)
+    payload = merge(payload, ROUNDUP_JSON, "roundup-read", 5,
+                    keep=roundup_deal_kept)
     zones = json.load(open(ZONES_JSON, encoding="utf-8"))
     zone_names = {z["id"]: z["name"] for z in zones["zones"]}
     # Optional: written by ingest/fetch_venue_photos.py. A venue with no entry

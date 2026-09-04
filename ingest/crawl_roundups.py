@@ -186,9 +186,14 @@ def venue_index(sites, zone_id=None):
 STREET_SUFFIX = (r"St|Street|Ave|Avenue|Rd|Road|Blvd|Boulevard|Ln|Lane|Dr|Drive|"
                  r"Pike|Pk|Hwy|Highway|Way|Ct|Court|Pl|Place|Sq|Square|Pkwy|Parkway|"
                  r"Tpke|Turnpike|Cir|Circle|Ter|Terrace")
+# re.I because the BASE is where this index is built from, and a PLCB licence
+# address is often shouted -- '40 E MARKET ST'. Without it the suffix list,
+# written in title case, could not see its own corpus: 4 base venues parsed to
+# no door at all, and every all-caps address was invisible to the door check
+# below. A guard that cannot see the thing is not green, it is blind.
 ADDRESS_RE = re.compile(
     r"\b(\d+(?:-\d+)*)[A-Za-z]?\s+((?:[NSEW]\.?\s+)?[A-Za-z][A-Za-z.']*"
-    r"(?:\s+[A-Za-z][A-Za-z.']*){0,3}?\s+(?:" + STREET_SUFFIX + r")\b\.?)")
+    r"(?:\s+[A-Za-z][A-Za-z.']*){0,3}?\s+(?:" + STREET_SUFFIX + r")\b\.?)", re.I)
 
 
 def address_keys(address):
@@ -199,6 +204,35 @@ def address_keys(address):
         return set()
     core = street_core(m.group(2))
     return {(n, core) for n in m.group(1).split("-") if n} if core else set()
+
+
+def quote_names_another_door(quote, address):
+    """True when the paragraph a roundup deal was read from prints a street
+    address, and it is not this venue's.
+
+    The address join above is a FALLBACK -- a heading the name index resolved
+    is never re-routed by an address -- so nothing ever checked a name-joined
+    paragraph against the door it prints. County Lines (May 2024) wrote up
+    'Serum Kitchen & Taphouse ... 142 E. Market St.' and it joined by name to
+    the licence at 30 N Church St, which is Slow Hand. The card shipped Slow
+    Hand's licence under Serum's name, with Serum's Monday-to-Friday 4-to-6
+    window -- and Slow Hand is CLOSED Mondays. A customer standing outside on
+    a Monday is the failure this refuses.
+
+    Refusing, not re-routing: absent beats publishing under another business's
+    name, the same rule HAND_DROPPED keeps in discover_places. Two doors are
+    only evidence when BOTH parse -- an unparsed address is silence, not
+    disagreement.
+    """
+    own = address_keys(address)
+    if not own:
+        return False
+    printed = set()
+    for m in ADDRESS_RE.finditer(quote or ""):
+        core = street_core(m.group(2))
+        if core:
+            printed |= {(n, core) for n in m.group(1).split("-") if n}
+    return bool(printed) and not (printed & own)
 
 
 def address_index(base, zone_id=None):

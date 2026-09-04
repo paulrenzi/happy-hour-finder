@@ -22,8 +22,8 @@ credentials with anything else on this machine.
 | licensed venues known — the denominator | 3,479 |
 | …with a website we know of | 1,826 |
 | …crawled | 1,585 |
-| **on the board with a published happy-hour window** | **356** |
-| …carrying items you can actually order | 265 venues, 1,943 items |
+| **on the board with a published happy-hour window** | **355** |
+| …carrying items you can actually order | 264 venues, 1,939 items |
 | …with an hour but **no items** — the open gap | **91** |
 | published windows that contradict their own evidence | **0** |
 
@@ -245,6 +245,21 @@ with the rest held back (not currently surfaced in the UI).
   The crawl records where it **landed**, not only what it asked for, and refuses a
   landing whose path names another town. Before that guard, a bar in Bear, DE
   published Newark's happy hour and every downstream check passed.
+- **A roundup paragraph can print the door of a bar it is not joined to.** The
+  address join is a *fallback*, so a heading the name index resolves was never
+  checked against the address in its own prose. County Lines' 2024 write-up of
+  "Serum Kitchen & Taphouse … 142 E. Market St." joined by name to the licence
+  at **30 N Church St — Slow Hand** — and West Chester shipped Slow Hand's
+  licence under a closed business's name, with a Monday window on a bar that is
+  closed Mondays. `quote_names_another_door()` now refuses that at **build**
+  time (the deal is already baked into `deals_roundup.json`, so a crawl-time
+  guard alone would need a re-crawl). It refuses rather than re-routes: absent
+  beats publishing under another business's name.
+- **A guard built on a title-case regex is blind to a shouted corpus.**
+  `ADDRESS_RE` had no `re.I` while the PLCB base shouts (`40 E MARKET ST`), so
+  the door check above read *no address at all* on those rows and could never
+  disagree. Same shape as the town reader below: it did not fail, it returned a
+  confident nothing.
 - **Run a new guard against the real data before believing it.** The town reader
   above parsed no Delaware address at all on its first run, so it had an empty
   vocabulary and returned a confident "fine". A guard that cannot see the thing
