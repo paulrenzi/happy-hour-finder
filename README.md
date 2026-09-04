@@ -58,7 +58,7 @@ separately) — were fixed 2026-09-04. **15 venues** still sit
 `data/RESCRAPE-QUEUE.json` — every live deal under 5 items — currently lists
 **125** (was 219 blank+thin at the start of 09-04). See
 [ARCHITECTURE-MENU-INGEST.md](ARCHITECTURE-MENU-INGEST.md) and
-[`HANDOFF-START-HERE-20260904-NIGHT3-KG-UPDATE-AND-HANDOFF.md`](HANDOFF-START-HERE-20260904-NIGHT3-KG-UPDATE-AND-HANDOFF.md).
+[`HANDOFF-START-HERE-20260904-NIGHT4-WRONG-NAME-ON-THE-BOARD.md`](HANDOFF-START-HERE-20260904-NIGHT4-WRONG-NAME-ON-THE-BOARD.md).
 
 ---
 
@@ -289,4 +289,4 @@ deliberately no map.
   session each. The one to read before changing ingest.
 - **[SPEC.md](SPEC.md)** — what a deal is, and the eight categories.
 - **`HANDOFF-START-HERE-*.md`** — session notes, newest wins. The current one is
-  [`HANDOFF-START-HERE-20260904-NIGHT3-KG-UPDATE-AND-HANDOFF.md`](HANDOFF-START-HERE-20260904-NIGHT3-KG-UPDATE-AND-HANDOFF.md).
+  [`HANDOFF-START-HERE-20260904-NIGHT4-WRONG-NAME-ON-THE-BOARD.md`](HANDOFF-START-HERE-20260904-NIGHT4-WRONG-NAME-ON-THE-BOARD.md).
