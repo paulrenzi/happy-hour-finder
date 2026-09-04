@@ -2926,6 +2926,106 @@
   "venue_name_on_menu": "Kildare's",
   "why_not": ""
  },
+ "85694": {
+  "cost_usd": 1.2006,
+  "deals": [
+   {
+    "fine_print": "",
+    "items": [
+     {
+      "amount_off_usd": null,
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "beers",
+      "price_quote": "$5",
+      "price_usd": 5,
+      "quote": "$5 BEERS & GLASSES OF PROPRIETARY WINE"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "wine",
+      "discount_pct": null,
+      "label": "glasses of proprietary wine",
+      "price_quote": "$5",
+      "price_usd": 5,
+      "quote": "$5 BEERS & GLASSES OF PROPRIETARY WINE"
+     },
+     {
+      "amount_off_usd": 3,
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "all cocktails",
+      "price_quote": "$3 OFF",
+      "price_usd": null,
+      "quote": "$3 OFF ALL COCKTAILS & PIZZAS"
+     },
+     {
+      "amount_off_usd": 3,
+      "category": "food",
+      "discount_pct": null,
+      "label": "all pizzas",
+      "price_quote": "$3 OFF",
+      "price_usd": null,
+      "quote": "$3 OFF ALL COCKTAILS & PIZZAS"
+     },
+     {
+      "amount_off_usd": 2,
+      "category": "food",
+      "discount_pct": null,
+      "label": "edamame dumplings & hummus",
+      "price_quote": "$2 OFF",
+      "price_usd": null,
+      "quote": "$2 OFF EDAMAME DUMPLINGS & HUMMUS"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 5,
+      "end": "17:00",
+      "start": "15:00"
+     }
+    ]
+   }
+  ],
+  "dropped": [],
+  "found": true,
+  "items_kept": 5,
+  "kind": "pdf",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://www.truefoodkitchen.com/locations/kingofprussia/ - no happy hour text on page",
+   "curl location page HTML - found 'Download Menu (PDF)' link to Combo-4-Summer.pdf",
+   "curl -o Combo-4-Summer.pdf https://www.truefoodkitchen.com/wp-content/uploads/2026/07/Combo-4-Summer.pdf",
+   "Read Combo-4-Summer.pdf - happy hour banner across top of drinks page (page 2)"
+  ],
+  "read_at": "2026-09-04",
+  "source_url": "https://www.truefoodkitchen.com/wp-content/uploads/2026/07/Combo-4-Summer.pdf",
+  "transcript": "HAPPY HOUR | MON-THURS 3PM-6PM | FRI 3PM-5PM | $5 BEERS & GLASSES OF PROPRIETARY WINE | $3 OFF ALL COCKTAILS & PIZZAS | $2 OFF EDAMAME DUMPLINGS & HUMMUS",
+  "turns": 24,
+  "venue_name_on_menu": "TRUE FOOD KITCHEN",
+  "why_not": ""
+ },
  "91502": {
   "cost_usd": 0.3924,
   "deals": [

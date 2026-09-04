@@ -783,6 +783,83 @@
           }
         }
       ]
+    },
+    {
+      "id": "true-food-kitchen-king_of_prussia",
+      "name": "True Food Kitchen",
+      "plcb_name": "TRUE FOOD KITCHEN",
+      "address": "160 N Gulph Rd Outlot D, King Of Prussia PA 19406",
+      "zone_id": "king_of_prussia",
+      "license_type": "Restaurant (Liquor)",
+      "website": "https://www.truefoodkitchen.com/locations/kingofprussia/",
+      "lid": "85694",
+      "deals": [
+        {
+          "type": "happy_hour",
+          "windows": [
+            {
+              "dow": 1,
+              "start": "15:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 2,
+              "start": "15:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 3,
+              "start": "15:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 4,
+              "start": "15:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 5,
+              "start": "15:00",
+              "end": "17:00"
+            }
+          ],
+          "items": [
+            {
+              "category": "bottle_can",
+              "label": "Beers",
+              "price_usd": 5.0
+            },
+            {
+              "category": "wine",
+              "label": "Glasses of Proprietary Wine",
+              "price_usd": 5.0
+            },
+            {
+              "category": "cocktail",
+              "label": "All Cocktails",
+              "amount_off_usd": 3.0
+            },
+            {
+              "category": "food",
+              "label": "All Pizzas",
+              "amount_off_usd": 3.0
+            },
+            {
+              "category": "food",
+              "label": "Edamame Dumplings & Hummus",
+              "amount_off_usd": 2.0
+            }
+          ],
+          "confidence": "likely",
+          "last_verified_at": "2026-09-04",
+          "verified_by": "agent_read",
+          "source": {
+            "kind": "venue_site",
+            "url": "https://www.truefoodkitchen.com/wp-content/uploads/2026/07/Combo-4-Summer.pdf"
+          },
+          "fine_print": ""
+        }
+      ]
     }
   ],
   "_excluded": [

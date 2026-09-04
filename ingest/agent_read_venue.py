@@ -59,7 +59,7 @@ READS = os.path.join(REPO, "data", "agent_reads.json")
 OUT = os.path.join(REPO, "data", "deals_agent.json")
 WORK = os.path.join(REPO, "data", "agent_reads")
 MODEL = os.environ.get("HHF_AGENT_MODEL", "opus")
-MAX_TURNS = 14
+MAX_TURNS = int(os.environ.get("HHF_MAX_TURNS", "14"))
 
 PROMPT = """You are hand-reading one bar's happy hour for a listings site that
 publishes only what the venue itself put in writing. Work like a person would.
@@ -124,6 +124,8 @@ Reply with ONE JSON object and nothing else. No prose, no code fence.
           "label": "short description as printed",
           "price_usd": number or null,
           "discount_pct": number or null,
+          "amount_off_usd": number or null -- use only when the item states a
+                   flat dollar amount off (e.g. "$3 off"), not a set price,
           "quote": "exact substring of transcript",
           "price_quote": "exact substring of transcript where this price is printed"
         }}
@@ -364,8 +366,9 @@ def main():
                 print(f"      {rec['source_url'][:110]}")
             if args.show:
                 for it in items:
-                    amt = (f"${it['price_usd']:g}" if "price_usd" in it
-                           else f"{it['discount_pct']:g}% off")
+                    amt = (f"${it['price_usd']:g}" if it.get("price_usd") is not None
+                           else f"{it['discount_pct']:g}% off" if it.get("discount_pct") is not None
+                           else f"${it['amount_off_usd']:g} off")
                     print(f"      {amt:>8}  {it['label']}")
             if args.rejects:
                 for d in dropped:
