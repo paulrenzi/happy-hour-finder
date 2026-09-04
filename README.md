@@ -14,18 +14,18 @@ credentials with anything else on this machine.
 
 ---
 
-## Where it stands (2026-09-03)
+## Where it stands (2026-09-04)
 
 | | |
 |---|---|
-| zones (named drinking districts) | 44 |
-| licensed venues known — the denominator | 3,415 |
-| …with a website we know of | 1,778 |
+| zones (named drinking districts) | 48 |
+| licensed venues known — the denominator | 3,479 |
+| …with a website we know of | 1,826 |
 | …crawled | 1,585 |
-| **on the board with a published happy-hour window** | **315** |
-| …carrying items you can actually order | 204 venues, 1,271 items |
-| …with an hour but **no items** — the open gap | **111** |
-| published windows that contradict their own evidence | **0 of 334** |
+| **on the board with a published happy-hour window** | **356** |
+| …carrying items you can actually order | 264 venues, 1,928 items |
+| …with an hour but **no items** — the open gap | **92** |
+| published windows that contradict their own evidence | **0** |
 
 **Read that table in two halves.** What we publish is checked: every window and
 every price has to appear in a sentence on the venue's own page, and the test
@@ -35,21 +35,28 @@ nobody has ever measured how many real happy hours the pipeline walks past.
 Every miss found so far was found by a person, not by a run.
 **Trust the cards. Do not trust the silence.**
 
-### The open problem, and how it is now worked: the agent reads each venue
+### The open problem, and how it is now worked: two reading lanes, one wall between them
 
-**111** venues publish an hour and no items. For 33 days a regex crawler plus
-fourteen hand-run commands tried to close that gap and moved it by single
-digits. On 2026-09-03 the approach changed: **an AI agent hand-reads each
-venue**, the way a person does. One model session per venue, with only the
-tools a person uses (fetch a page, follow the Happy Hour link, download the
-PDF or picture, look at it). The code keeps the jobs code is good at: every
-price must be found character-for-character in the agent's own transcript, the
-PA and Delaware validators run, and a person reviews before anything ships.
+**92** venues publish an hour and no items — the reach problem is mostly
+solved (a website and a crawl); getting the *menu* off that website is what's
+left. Two ways to read one: **the agent lane** (`agent_read_venue.py`, one
+`claude -p` session per venue, unattended, ~$0.35/venue) and **a hand read**
+(a person opens the site/PDF/Instagram themselves and writes one record).
+Both feed the same items/window schema and the same grounding + PA/DE
+validators; a person reviews before anything ships either way.
 
-Proven on one venue so far: The Greene Turtle, Christiana, went from no card
-to 26 live items in six turns and 34 cents. The next step is one whole town
-(`newark_de`), then the human minute on the result. See
-[`HANDOFF-START-HERE-20260903-THE-AGENT-IS-THE-SCRAPER.md`](HANDOFF-START-HERE-20260903-THE-AGENT-IS-THE-SCRAPER.md).
+The wall both lanes used to hit: a venue with no **window** from the
+deterministic crawl has no deal to hang items on, so a fully-read, fully-paid
+menu could vanish with no error. **Settled 2026-09-03/04:** a hand read
+carries its own window (`data/agent_handread.json`), so it never depends on
+the crawler finding one — that's now the standard route-around for a
+windowless read, agent or hand. The agent lane's own two remaining gaps —
+a hard-coded turn budget and a missing `amount_off_usd` field — were fixed
+2026-09-04 (`HHF_MAX_TURNS` env override; see
+[ARCHITECTURE-MENU-INGEST.md](ARCHITECTURE-MENU-INGEST.md)). **23 venues**
+still sit `kind: "exhausted"` in `data/agent_reads.json`, mostly chain sites,
+~$12 already spent on them — the next thing to work down. See
+[`HANDOFF-START-HERE-20260904-NIGHT-TURN-BUDGET-FIXED-23-LEFT.md`](HANDOFF-START-HERE-20260904-NIGHT-TURN-BUDGET-FIXED-23-LEFT.md).
 
 ---
 
@@ -112,11 +119,13 @@ Cost is real and recorded per venue in `data/agent_reads.json`. Budget roughly
 $0.35 and a minute for a venue with a menu to read; a venue with nothing costs
 less, and one that wanders a chain site can cost more.
 
-⚠️ **Known gap (2026-09-03):** the agent's items only reach a card if the venue
-already has a **window** from the deterministic lane — `build_bundles.py` hangs
-items on an existing deal, so a venue with no window strands them with no error.
-Whether such a venue may publish the agent's items, or its window, is an open
-call. Check the built bundle, not the lane's own summary.
+⚠️ **The agent's items only reach a card if the venue already has a window**
+from the deterministic lane — `build_bundles.py` hangs items on an existing
+deal, so a venue with no window strands them with no error. **Settled
+2026-09-03/04: route it through `data/agent_handread.json` instead** — write
+one record with the window (and, to rescue an already-paid-for read, omit
+`items` and it adopts what's already banked in `data/deals_agent.json` for
+that lid). Always check the built bundle, not the lane's own summary.
 
 The older window lane (`crawl_sites.py` → `extract_deals.py`) still runs when
 a town needs its hours found; its full recipe is in
@@ -263,4 +272,4 @@ deliberately no map.
   session each. The one to read before changing ingest.
 - **[SPEC.md](SPEC.md)** — what a deal is, and the eight categories.
 - **`HANDOFF-START-HERE-*.md`** — session notes, newest wins. The current one is
-  [`HANDOFF-START-HERE-20260903-THE-AGENT-IS-THE-SCRAPER.md`](HANDOFF-START-HERE-20260903-THE-AGENT-IS-THE-SCRAPER.md).
+  [`HANDOFF-START-HERE-20260904-NIGHT-TURN-BUDGET-FIXED-23-LEFT.md`](HANDOFF-START-HERE-20260904-NIGHT-TURN-BUDGET-FIXED-23-LEFT.md).

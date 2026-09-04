@@ -2688,6 +2688,69 @@ One venue. Next: `--zone newark_de` (nine other captured images sit unread
 there), then the one human minute on the result. Untested: what the agent does
 on a JS shell (McGlynn's class) where WebFetch returns chrome; it has curl.
 
+## 🤖 THE AGENT LANE'S §2 IS SETTLED, AND ITS OWN TWO GAPS ARE FIXED (2026-09-04)
+
+The section above still describes the item lane (`agent_read_venue.py`) as of
+09-03 night, including "the open product question, not a bug to fix quietly."
+Both halves of that are stale now:
+
+**§2 (may a windowless read publish?) self-settled as "b".** A separate,
+newer lane — `data/agent_handread.json` → `ingest/build_agent_venues.py` →
+`data/deals_agent_venues.json` → merged at rank 2 by `build_bundles.py` — lets
+a person write one record carrying **both** the window and (optionally) the
+items, so it never depends on the crawler's window at all. Full shape and the
+61-venue proof are in the Knowledge-Graph entry
+*"A HAND READ CARRIES THE WINDOW, NOT JUST THE ITEMS"* (2026-09-03/04). **This
+is now the correct way to route a stranded read around the no-window wall —
+write a record in that file, not a hand-edit of `deals_seed.json`.** The
+two route-arounds below (True Food Kitchen, Big Fish Grill) predate this
+lane's discovery and used the older `deals_seed.json verified_by: agent_read`
+pattern instead; both work, but `agent_handread.json` is less code to hand-write
+correctly and is the one future sessions should reach for.
+
+**The lane's own two defects are fixed, both in `ingest/agent_read_venue.py`:**
+
+1. **`MAX_TURNS` was a hard-coded 14, no override.** A venue whose site needs a
+   multi-page PDF (chain-style menus) genuinely needs more turns than a single
+   flyer to read, and the lane had no way to grant that without editing source.
+   Now `MAX_TURNS = int(os.environ.get("HHF_MAX_TURNS", "14"))` — default
+   unchanged, override with `HHF_MAX_TURNS=28 python3 ingest/agent_read_venue.py …`.
+2. **`amount_off_usd` had no home in the lane's own prompt**, even though every
+   other extraction script (`extract_prices_llm.py`, `extract_menu_images.py`,
+   `read_menus_llm.py`) already validates and accepts it (added earlier,
+   commit `c6f581c`, for "$X off" style items). The agent's prompt schema
+   simply never listed the field, so a model transcribing "$3 OFF ALL
+   COCKTAILS" had nowhere to put it and the item was silently dropped by the
+   gate ("needs exactly one of price_usd / discount_pct / amount_off_usd").
+   Fixed by adding `"amount_off_usd": number or null` to the PROMPT schema
+   block. (A latent crash in the `--show` print path — it assumed every item
+   had `price_usd` or `discount_pct` — was fixed alongside it.)
+
+**Proof, on real venues, both via the real scraper (not hand-read):**
+
+- **True Food Kitchen** (King of Prussia, lid `85694`): first run at the old
+  14-turn default exhausted with 0 items on an 8-page chain PDF. Re-run with
+  `HHF_MAX_TURNS=28` returned 5 items, 2 of which needed `amount_off_usd`.
+  Published via the `deals_seed.json` route-around (commit `1d22a26`).
+- **Big Fish Grill on the Riverfront** (Wilmington, lid `DE03fd0ecb4b`): read
+  cleanly in 8 turns once both fixes landed (well under even the old
+  14-turn default — the turn count was never actually this venue's problem,
+  the missing schema field was), 16 items including 3 `amount_off_usd`
+  entries ("$1 off select draft beers", etc). Published the same way
+  (commit `f04bf12`).
+
+**Where the same limit has stopped other reads — surveyed 2026-09-04, current
+count after that night's hand-read pass took most of the population down:**
+23 venues remain filed `kind: "exhausted"` in `data/agent_reads.json`
+(~$12.42 already spent and discarded on them), by zone:
+`newark_de` 16, `wilmington` 4, `phoenixville` 2, `west_chester` 1. One of
+those 23, **Deer Park Tavern** (Newark, lid `DE07aab40d0f`), was re-tried
+2026-09-04 at `HHF_MAX_TURNS=28` and **still exhausted** at 29 turns — a
+genuine chain-site wandering case (Darden-class), not the schema gap; it
+needs either a still-higher budget or to stay excluded. **Not every
+exhausted read is the same fix** — check `dropped` reasons in
+`agent_reads.json[lid]` before assuming a turn bump alone will resolve one.
+
 ## 📸 MULTI-PHOTO SUBMISSION — client-only, one `/submit` call per photo (2026-09-03)
 
 The submission form's `<input type="file">` now takes `multiple`. Nothing on
