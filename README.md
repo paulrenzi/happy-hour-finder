@@ -18,18 +18,26 @@ credentials with anything else on this machine.
 
 | | |
 |---|---|
-| zones (named drinking districts) | 48 |
-| licensed venues known — the denominator | 3,479 |
-| …with a website we know of | 1,826 |
-| …crawled | 1,585 |
-| **on the board with a published happy-hour window** | **355** |
-| …carrying items you can actually order | 264 venues, 1,939 items |
-| …with an hour but **no items** — the open gap | **91** |
+| zones (named drinking districts) | 51 |
+| licensed venues known — the denominator | 3,652 |
+| …with a website we know of | 1,999 |
+| …crawled | 1,653 |
+| **on the board with a published happy-hour window** | **399** |
+| …carrying items you can actually order | 286 venues, 2,073 items |
+| …with an hour but **no items** — the open gap | **113** |
 | published windows that contradict their own evidence | **0** |
+
+🛑 **The Delaware rows are not a denominator.** Pennsylvania's count comes from
+the PLCB's own list of everyone licensed to pour, so "did we miss a bar?" has an
+answer. Delaware publishes no machine-readable equivalent, so its venues are
+Google's opinion of what exists — a good working list and a bad denominator. That
+now covers eight zones including the three beach towns, so a Delaware coverage
+fraction means something weaker than a Pennsylvania one. See
+`ingest/seed_places_de.py`'s module docstring.
 
 **Read that table in two halves.** What we publish is checked: every window and
 every price has to appear in a sentence on the venue's own page, and the test
-suite re-checks all 371 against the quote they came from on every run
+suite re-checks all 415 against the quote they came from on every run
 (`tests/window_quote_check.py`). What we *don't* publish is not checked at all —
 nobody has ever measured how many real happy hours the pipeline walks past.
 Every miss found so far was found by a person, not by a run.
@@ -37,7 +45,7 @@ Every miss found so far was found by a person, not by a run.
 
 ### The open problem, and how it is now worked: two reading lanes, one wall between them
 
-**91** venues publish an hour and no items — the reach problem is mostly
+**113** venues publish an hour and no items — the reach problem is mostly
 solved (a website and a crawl); getting the *menu* off that website is what's
 left. Two ways to read one: **the agent lane** (`agent_read_venue.py`, one
 `claude -p` session per venue, unattended, ~$0.35/venue) and **a hand read**
@@ -58,7 +66,7 @@ separately) — were fixed 2026-09-04. **15 venues** still sit
 `data/RESCRAPE-QUEUE.json` — every live deal under 5 items — currently lists
 **125** (was 219 blank+thin at the start of 09-04). See
 [ARCHITECTURE-MENU-INGEST.md](ARCHITECTURE-MENU-INGEST.md) and
-[`HANDOFF-START-HERE-20260904-NIGHT6-THE-HALF-WINDOW.md`](HANDOFF-START-HERE-20260904-NIGHT6-THE-HALF-WINDOW.md).
+[`HANDOFF-START-HERE-20260904-NIGHT7-THE-BEACH-TOWNS.md`](HANDOFF-START-HERE-20260904-NIGHT7-THE-BEACH-TOWNS.md).
 
 ---
 
@@ -306,4 +314,4 @@ deliberately no map.
   session each. The one to read before changing ingest.
 - **[SPEC.md](SPEC.md)** — what a deal is, and the eight categories.
 - **`HANDOFF-START-HERE-*.md`** — session notes, newest wins. The current one is
-  [`HANDOFF-START-HERE-20260904-NIGHT6-THE-HALF-WINDOW.md`](HANDOFF-START-HERE-20260904-NIGHT6-THE-HALF-WINDOW.md).
+  [`HANDOFF-START-HERE-20260904-NIGHT7-THE-BEACH-TOWNS.md`](HANDOFF-START-HERE-20260904-NIGHT7-THE-BEACH-TOWNS.md).
