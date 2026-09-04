@@ -670,7 +670,7 @@ def main():
         return lid or by_addr.get(norm_addr(venue["address"]))
 
     by_zone, rejected, hidden = {}, 0, 0
-    deals_by_lid, orphans = {}, []
+    deals_by_lid, orphans, permanent_orphans = {}, [], []
 
     def surviving(venue):
         """The deals of one venue that are fit to publish: past the PA
@@ -780,10 +780,22 @@ def main():
     def place(venue, deals):
         lid = base_lid_for(venue)
         if lid is None:
-            # A deal for a premises the base has never heard of. It still ships
-            # -- a proven happy hour is not something to drop over a join -- but
-            # it is counted, because a rising number here means the base is stale.
-            orphans.append(venue["name"])
+            # An address the base has never heard of is TWO different
+            # situations, and printing one line for both hid which one this
+            # was. Usually it means the base is stale -- a real PLCB row that
+            # rebuilding venue_base.json would pick up. The Boardroom found
+            # the other kind (2026-09-04): a hand-written data/deals_seed.json
+            # row for a venue that holds NO premises licence of its own by
+            # design (see the file for why), so no rebuild will ever match
+            # it -- "rebuild it" was actively wrong advice for that row.
+            # Every seed row a PLCB licence backs carries a real
+            # `license_type`; only a deliberately licence-less one leaves it
+            # blank, which is the same signal deals_seed.json's own schema
+            # already uses to mean "no licence" -- checked here rather than
+            # invented, so a future ordinary seed row that simply forgets to
+            # fill the field fails the same way it always would have.
+            (permanent_orphans if not venue.get("license_type") else orphans
+             ).append(venue["name"])
         key = lid or f"orphan:{venue['id']}"
         held = deals_by_lid.get(key)
         # Two licences at one building: the higher-priority source first, and
@@ -1070,6 +1082,10 @@ def main():
     if orphans:
         print(f"  ! {len(orphans)} deal(s) matched no venue in the base "
               f"-- rebuild it: {', '.join(orphans[:3])}")
+    if permanent_orphans:
+        print(f"  {len(permanent_orphans)} hand-seeded venue(s) with no "
+              f"premises licence of their own, ships without a base row on "
+              f"purpose: {', '.join(permanent_orphans[:3])}")
     print(f"{located}/{len(published)} venues have coordinates"
           + ("" if located == len(published) else "  -- run ingest/geocode_venues.py"))
 

@@ -4,14 +4,55 @@
  "built_at": "2026-09-04",
  "venues": [
   {
+   "lid": "85899",
+   "name": "ACME Markets",
+   "address": "121 E City Line Ave, Bala Cynwyd PA 19004",
+   "zone_id": "ardmore_bryn_mawr",
+   "license_type": "Restaurant (Liquor)",
+   "id": "85899",
+   "plcb_name": "THE FROSTED MUG",
+   "website": "https://local.acmemarkets.com/pa/bala-cynwyd/121-e-city-ave.html",
+   "lat": 40.0039219,
+   "lng": -75.22373569999999,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: ACME Markets / Google",
+    "file": "img/venues/85899.jpg"
+   },
+   "deals": [],
+   "branch": "E City Line Ave"
+  },
+  {
+   "lid": "98507",
+   "name": "ACME Markets",
+   "address": "829 Montgomery Ave, Penn Valley PA 19072",
+   "zone_id": "ardmore_bryn_mawr",
+   "license_type": "Restaurant (Liquor)",
+   "id": "98507",
+   "plcb_name": "THE FROSTED MUG",
+   "website": "https://local.acmemarkets.com/pa/narberth/829-montgomery-ave.html",
+   "lat": 40.0109158,
+   "lng": -75.2580748,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: ACME Markets / Google",
+    "file": "img/venues/98507.jpg"
+   },
+   "deals": [],
+   "branch": "Montgomery Ave"
+  },
+  {
    "lid": "14597",
-   "name": "Al Dar",
+   "name": "Al Dar Bistro",
    "address": "281-283 Montgomery Ave, Bala Cynwyd PA 19004",
    "zone_id": "ardmore_bryn_mawr",
    "license_type": "Restaurant (Liquor)",
    "id": "14597",
    "plcb_name": "AL DAR",
    "website": "http://www.aldarbistro.com/",
+   "lat": 40.005583,
+   "lng": -75.242002,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: BabsB / Google",
     "file": "img/venues/14597.jpg"
@@ -19,17 +60,38 @@
    "deals": []
   },
   {
-   "lid": "36248",
-   "name": "Arcadia Chios- 'the Greeks'",
-   "address": "237-239 Haverford Ave, Narberth PA 19072",
+   "lid": "95965",
+   "name": "Ardmore Music Hall",
+   "address": "23 E Lancaster Ave, Ardmore PA 19003",
    "zone_id": "ardmore_bryn_mawr",
    "license_type": "Restaurant (Liquor)",
-   "id": "36248",
-   "plcb_name": "ARCADIA CHIOS- 'THE GREEKS'",
-   "website": "http://www.narberthpa.com/TheGreeks/menu.html",
+   "id": "95965",
+   "plcb_name": "CBP ARDMORE LLC",
+   "website": "https://www.ardmoremusichall.com/",
+   "lat": 40.007598,
+   "lng": -75.289963,
+   "geo_precision": "place",
    "photo": {
-    "attribution": "Photo: The Greeks / Google",
-    "file": "img/venues/36248.jpg"
+    "attribution": "Photo: Ardmore Music Hall / Google",
+    "file": "img/venues/95965.jpg"
+   },
+   "deals": []
+  },
+  {
+   "lid": "87810",
+   "name": "Bar Avalon Bryn Mawr",
+   "address": "818 Lancaster Ave, Bryn Mawr PA 19010",
+   "zone_id": "ardmore_bryn_mawr",
+   "license_type": "Restaurant (Liquor)",
+   "id": "87810",
+   "plcb_name": "MARBLES",
+   "website": "https://www.avalonrestaurant.net/",
+   "lat": 40.0215009,
+   "lng": -75.3187835,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Bar Avalon Bryn Mawr / Google",
+    "file": "img/venues/87810.jpg"
    },
    "deals": []
   },
@@ -41,9 +103,9 @@
    "license_type": "Restaurant (Liquor)",
    "id": "38625",
    "plcb_name": "BELLA ITALIA",
-   "website": "https://www.bellaitaliapizza.com/",
-   "lat": 40.0075013,
-   "lng": -75.290568,
+   "website": "http://bellaitaliapizza.com/",
+   "lat": 40.0074282,
+   "lng": -75.2905768,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Bella Italia Pizza / Google",
@@ -52,49 +114,89 @@
    "deals": []
   },
   {
-   "lid": "95965",
-   "name": "Cbp Ardmore",
-   "address": "23 E Lancaster Ave, Ardmore PA 19003",
+   "lid": "101203",
+   "name": "Buena Vista Mexican Restaurant & Cantina in Ardmore",
+   "address": "5 W Lancaster Ave, Ardmore PA 19005",
    "zone_id": "ardmore_bryn_mawr",
    "license_type": "Restaurant (Liquor)",
-   "id": "95965",
-   "plcb_name": "CBP ARDMORE LLC",
-   "website": "https://www.ardmoremusichall.com/",
+   "id": "101203",
+   "plcb_name": "BUENA VISTA RESTAURANT LLC",
+   "website": "https://buenavistamex.com/",
+   "lat": 40.008248699999996,
+   "lng": -75.2913931,
+   "geo_precision": "place",
    "photo": {
-    "attribution": "Photo: Ardmore Music Hall / Google",
-    "file": "img/venues/95965.jpg"
+    "attribution": "Photo: Buena Vista Mexican Restaurant & Cantina in Ardmore / Google",
+    "file": "img/venues/101203.jpg"
    },
    "deals": []
   },
   {
-   "lid": "114544",
-   "name": "Drc Bryn Mawr",
-   "address": "862-864 Lancaster Ave , Bryn Mawr PA 19010",
+   "lid": "36563",
+   "name": "Cafe San Pietro",
+   "address": "39-41 W Lancaster Ave, Ardmore PA 19003",
    "zone_id": "ardmore_bryn_mawr",
    "license_type": "Restaurant (Liquor)",
-   "id": "114544",
-   "plcb_name": "DRC BRYN MAWR",
+   "id": "36563",
+   "plcb_name": "CAFE SAN PIETRO",
+   "website": "https://www.localwineandkitchen.com/home",
+   "lat": 40.008769,
+   "lng": -75.2922918,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Local Wine & Kitchen / Google",
+    "file": "img/venues/36563.jpg"
+   },
    "deals": []
   },
   {
-   "lid": "109275",
-   "name": "G-Town Beer",
-   "address": "71 Rittenhouse Pl, Ardmore PA 19003",
+   "lid": "15280",
+   "name": "Evviva Restaurant",
+   "address": "1236 Montgomery Ave, Narberth PA 19072",
    "zone_id": "ardmore_bryn_mawr",
    "license_type": "Restaurant (Liquor)",
-   "id": "109275",
-   "plcb_name": "G-TOWN BEER LLC",
+   "id": "15280",
+   "plcb_name": "RISTORANTE EVVIVA",
+   "website": "http://evvivarestaurant.com/",
+   "lat": 40.013109,
+   "lng": -75.26904250000001,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Thi Lam / Google",
+    "file": "img/venues/15280.jpg"
+   },
+   "deals": []
+  },
+  {
+   "lid": "73040",
+   "name": "Giant",
+   "address": "50 E Wynnewood Rd Unit #2, Wynnewood PA 19096",
+   "zone_id": "ardmore_bryn_mawr",
+   "license_type": "Restaurant (Liquor)",
+   "id": "73040",
+   "plcb_name": "THE GIANT COMPANY LLC",
+   "website": "https://stores.giantfoodstores.com/pa/wynnewood/50-e-wynnewood-rd?y_source=1_NDE5NTcwMy03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "lat": 40.0013629,
+   "lng": -75.27213549999999,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Chris Reece / Google",
+    "file": "img/venues/73040.jpg"
+   },
    "deals": []
   },
   {
    "lid": "82862",
-   "name": "Ginger Haverford",
+   "name": "Haverford Square",
    "address": "Haverford Sq 379-385 W Lancaster Ave Str 9 & 13, Haverford PA 19041",
    "zone_id": "ardmore_bryn_mawr",
    "license_type": "Restaurant (Liquor)",
    "id": "82862",
    "plcb_name": "GINGER HAVERFORD LLC",
    "website": "http://haverfordsquare.com/",
+   "lat": 40.013016799999995,
+   "lng": -75.3000921,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Michael Pollack / Google",
     "file": "img/venues/82862.jpg"
@@ -103,15 +205,15 @@
   },
   {
    "lid": "132810",
-   "name": "Jack McShea's Restaurant & Bar",
+   "name": "Jack McShea's Pub",
    "address": "34 E Lancaster Ave, Ardmore PA 19003",
    "zone_id": "ardmore_bryn_mawr",
    "license_type": "Restaurant (Liquor)",
    "id": "132810",
    "plcb_name": "JACK MCSHEA'S RESTAURANT & BAR",
-   "website": "http://mcsheasardmore.com/",
-   "lat": 40.0071631,
-   "lng": -75.2898914,
+   "website": "https://www.jackmcsheas-ardmore.com/",
+   "lat": 40.0071515,
+   "lng": -75.28993299999999,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Amanda Wuest / Google",
@@ -121,12 +223,20 @@
   },
   {
    "lid": "61319",
-   "name": "Kellys Restaurant Taproom",
+   "name": "Kelly's Taproom",
    "address": "1107 Lancaster Ave, Bryn Mawr PA 19010",
    "zone_id": "ardmore_bryn_mawr",
    "license_type": "Restaurant (Liquor)",
    "id": "61319",
    "plcb_name": "KELLYS RESTAURANT TAPROOM",
+   "website": "http://www.kellystaproom.com/",
+   "lat": 40.024567399999995,
+   "lng": -75.32429739999999,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: R Houseman / Google",
+    "file": "img/venues/61319.jpg"
+   },
    "deals": []
   },
   {
@@ -137,31 +247,13 @@
    "license_type": "Restaurant (Liquor)",
    "id": "110489",
    "plcb_name": "LA COLLINA",
-   "website": "https://www.lacollina.us/",
-   "lat": 40.0264653,
-   "lng": -75.2321179,
+   "website": "http://www.lacollina.us/",
+   "lat": 40.0264409,
+   "lng": -75.23213779999999,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: La Collina / Google",
     "file": "img/venues/110489.jpg"
-   },
-   "deals": []
-  },
-  {
-   "lid": "36563",
-   "name": "Local Wine & Kitchen",
-   "address": "39-41 W Lancaster Ave, Ardmore PA 19003",
-   "zone_id": "ardmore_bryn_mawr",
-   "license_type": "Restaurant (Liquor)",
-   "id": "36563",
-   "plcb_name": "CAFE SAN PIETRO",
-   "website": "https://www.localwineandkitchen.com/home",
-   "lat": 40.0087043,
-   "lng": -75.2923301,
-   "geo_precision": "place",
-   "photo": {
-    "attribution": "Photo: Local Wine & Kitchen / Google",
-    "file": "img/venues/36563.jpg"
    },
    "deals": []
   },
@@ -177,13 +269,16 @@
   },
   {
    "lid": "88737",
-   "name": "Longhorn Steakhouse #5586",
+   "name": "LongHorn Steakhouse",
    "address": "555 City Line Ave, Bala Cynwyd PA 19004",
    "zone_id": "ardmore_bryn_mawr",
    "license_type": "Restaurant (Liquor)",
    "id": "88737",
    "plcb_name": "LONGHORN STEAKHOUSE #5586",
    "website": "https://www.longhornsteakhouse.com/locations/pa/bala-cynwyd/bala-cynwyd/5586?cmpid=br:lh_ag:ie_ch:loc_ca:LHGMB_sn:gmb_gt:bala-cynwyd-pa-5586_pl:locurl_rd:1509",
+   "lat": 40.0093818,
+   "lng": -75.21184989999999,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Chris Reece / Google",
     "file": "img/venues/88737.jpg"
@@ -191,24 +286,17 @@
    "deals": []
   },
   {
-   "lid": "87810",
-   "name": "Marbles",
-   "address": "818 Lancaster Ave, Bryn Mawr PA 19010",
-   "zone_id": "ardmore_bryn_mawr",
-   "license_type": "Restaurant (Liquor)",
-   "id": "87810",
-   "plcb_name": "MARBLES",
-   "deals": []
-  },
-  {
    "lid": "114615",
-   "name": "Mccaffrey's Food Markets",
+   "name": "McCaffrey's Food Market - Gladwyne",
    "address": "1025 Youngsford Rd, Gladwyne PA 19035",
    "zone_id": "ardmore_bryn_mawr",
    "license_type": "Restaurant (Liquor)",
    "id": "114615",
    "plcb_name": "MCCAFFREY'S FOOD MARKETS",
    "website": "http://mccaffreys.com/",
+   "lat": 40.0380039,
+   "lng": -75.279597,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: McCaffrey's Food Market - Gladwyne / Google",
     "file": "img/venues/114615.jpg"
@@ -223,9 +311,9 @@
    "license_type": "Restaurant (Liquor)",
    "id": "63292",
    "plcb_name": "MILL ROAD ENTERTAINMENT, INC.",
-   "website": "https://www.mccloskeystavern.com/",
-   "lat": 40.0074602,
-   "lng": -75.2912171,
+   "website": "http://www.mccloskeystavern.com/",
+   "lat": 40.0074754,
+   "lng": -75.29127009999999,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Michael Pollack / Google",
@@ -235,15 +323,15 @@
   },
   {
    "lid": "130825",
-   "name": "Ogyu",
+   "name": "Ogyu Japanese BBQ & Bar",
    "address": "44 Greenfield Ave Store #60, Ardmore PA 19003",
    "zone_id": "ardmore_bryn_mawr",
    "license_type": "Restaurant (Liquor)",
    "id": "130825",
    "plcb_name": "OGYU",
-   "website": "https://ogyubbq.com",
-   "lat": 40.0086369,
-   "lng": -75.2976947,
+   "website": "http://www.ogyubbq.com/",
+   "lat": 40.0086596,
+   "lng": -75.2975912,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Ogyu Japanese BBQ & Bar / Google",
@@ -252,14 +340,35 @@
    "deals": []
   },
   {
+   "lid": "31616",
+   "name": "Olive Garden Italian Restaurant",
+   "address": "83 E City Line Ave, Bala Cynwyd PA 19004",
+   "zone_id": "ardmore_bryn_mawr",
+   "license_type": "Restaurant (Liquor)",
+   "id": "31616",
+   "plcb_name": "THE OLIVE GARDEN ITALIAN REST. #370",
+   "website": "https://www.olivegarden.com/locations/pa/bala-cynwyd/bala-cynwyd/1370?cmpid=br:og_ag:ie_ch:loc_ca:OGGMB_sn:gmb_gt:bala-cynwyd-pa-1370_pl:locurl_rd:1279",
+   "lat": 40.003467,
+   "lng": -75.22429199999999,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Dan Perez / Google",
+    "file": "img/venues/31616.jpg"
+   },
+   "deals": []
+  },
+  {
    "lid": "127053",
-   "name": "Osushi Asian Cuisine",
+   "name": "Osushi - Ardmore",
    "address": "36 Greenfield Ave, Ardmore PA 19003",
    "zone_id": "ardmore_bryn_mawr",
    "license_type": "Restaurant (Liquor)",
    "id": "127053",
    "plcb_name": "OSUSHI ASIAN CUISINE",
    "website": "http://www.osushipa.com/",
+   "lat": 40.0092889,
+   "lng": -75.2963468,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Osushi - Ardmore / Google",
     "file": "img/venues/127053.jpg"
@@ -275,8 +384,8 @@
    "id": "28812",
    "plcb_name": "POSITANO RISTORANTE",
    "website": "https://www.positanoristorante.com/",
-   "lat": 40.0084925,
-   "lng": -75.2919408,
+   "lat": 40.0084418,
+   "lng": -75.29187859999999,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Positano Ristorante / Google",
@@ -285,39 +394,48 @@
    "deals": []
   },
   {
-   "lid": "15280",
-   "name": "Ristorante Evviva",
-   "address": "1236 Montgomery Ave, Narberth PA 19072",
+   "lid": "80379",
+   "name": "Ripplewood Whiskey & Craft",
+   "address": "29 & 35 E Lancaster Ave, Ardmore PA 19003",
    "zone_id": "ardmore_bryn_mawr",
    "license_type": "Restaurant (Liquor)",
-   "id": "15280",
-   "plcb_name": "RISTORANTE EVVIVA",
-   "website": "http://evvivarestaurant.com/",
+   "id": "80379",
+   "plcb_name": "RIPPLEWOOD",
+   "website": "http://www.ripplewoodbar.com/",
+   "lat": 40.0075035,
+   "lng": -75.28991049999999,
+   "geo_precision": "place",
    "photo": {
-    "attribution": "Photo: Thi Lam / Google",
-    "file": "img/venues/15280.jpg"
+    "attribution": "Photo: Michael Pollack / Google",
+    "file": "img/venues/80379.jpg"
    },
    "deals": []
   },
   {
    "lid": "58727",
-   "name": "Rittenhouse Beer & Deli",
+   "name": "Rittenhouse Deli",
    "address": "66-68 Rittenhouse Pl, Ardmore PA 19003",
    "zone_id": "ardmore_bryn_mawr",
    "license_type": "Eating Place Retail Dispenser (Malt)",
    "id": "58727",
    "plcb_name": "RITTENHOUSE BEER & DELI INC",
+   "lat": 40.006599699999995,
+   "lng": -75.2929985,
+   "geo_precision": "place",
    "deals": []
   },
   {
    "lid": "120855",
-   "name": "Roache & O'brien",
+   "name": "Roache & O'Brien",
    "address": "560 W Lancaster Ave, Haverford PA 19041",
    "zone_id": "ardmore_bryn_mawr",
    "license_type": "Restaurant (Liquor)",
    "id": "120855",
    "plcb_name": "ROACHE & O'BRIEN",
-   "website": "https://www.roacheandobrien.com/",
+   "website": "http://www.roacheandobrien.com/",
+   "lat": 40.016703799999995,
+   "lng": -75.30907690000001,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Roache & O'Brien / Google",
     "file": "img/venues/120855.jpg"
@@ -332,9 +450,9 @@
    "license_type": "Restaurant (Liquor)",
    "id": "108204",
    "plcb_name": "ROSA MEXICANO ARDMORE LLC",
-   "website": "https://rosamexicano.com/location/ardmore/",
-   "lat": 40.0080639,
-   "lng": -75.2880269,
+   "website": "http://rosamexicano.com/?utm_source=extnet&utm_medium=Yext",
+   "lat": 40.007995199999996,
+   "lng": -75.2880306,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Rosa Mexicano / Google",
@@ -351,6 +469,9 @@
    "id": "103420",
    "plcb_name": "ROYAL CAFE NARBERTH LLC",
    "website": "http://royalcafenarberth.com/",
+   "lat": 40.0099842,
+   "lng": -75.2568653,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Royal Cafe Narberth / Google",
     "file": "img/venues/103420.jpg"
@@ -358,16 +479,33 @@
    "deals": []
   },
   {
+   "lid": "109275",
+   "name": "S&F Cafe",
+   "address": "71 Rittenhouse Pl, Ardmore PA 19003",
+   "zone_id": "ardmore_bryn_mawr",
+   "license_type": "Restaurant (Liquor)",
+   "id": "109275",
+   "plcb_name": "G-TOWN BEER LLC",
+   "lat": 40.005707699999995,
+   "lng": -75.2911534,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Chris Hsu / Google",
+    "file": "img/venues/109275.jpg"
+   },
+   "deals": []
+  },
+  {
    "lid": "57106",
-   "name": "SangKee Asian Bistro",
+   "name": "Sang Kee Asian Bistro",
    "address": "339 E Lancaster Ave, Wynnewood PA 19096",
    "zone_id": "ardmore_bryn_mawr",
    "license_type": "Restaurant (Liquor)",
    "id": "57106",
    "plcb_name": "SANG KEE ASIAN BISTRO INC",
-   "website": "http://www.sangkeeasianbistro.com/",
-   "lat": 40.0023889,
-   "lng": -75.2768046,
+   "website": "http://www.sangkeewynnewood.com/",
+   "lat": 40.0024472,
+   "lng": -75.2768598,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: MFlores / Google",
@@ -376,66 +514,34 @@
    "deals": []
   },
   {
-   "lid": "80379",
-   "name": "Sushi Nami",
-   "address": "29 & 35 E Lancaster Ave, Ardmore PA 19003",
+   "lid": "36248",
+   "name": "The Greeks",
+   "address": "237-239 Haverford Ave, Narberth PA 19072",
    "zone_id": "ardmore_bryn_mawr",
    "license_type": "Restaurant (Liquor)",
-   "id": "80379",
-   "plcb_name": "RIPPLEWOOD",
-   "website": "https://sushinamipaoli.com/",
-   "lat": 40.0420826,
-   "lng": -75.4858591,
+   "id": "36248",
+   "plcb_name": "ARCADIA CHIOS- 'THE GREEKS'",
+   "website": "http://www.narberthpa.com/TheGreeks/menu.html",
+   "lat": 40.0057663,
+   "lng": -75.2604913,
    "geo_precision": "place",
    "photo": {
-    "attribution": "Photo: Michael Pollack / Google",
-    "file": "img/venues/80379.jpg"
+    "attribution": "Photo: The Greeks / Google",
+    "file": "img/venues/36248.jpg"
    },
    "deals": []
   },
   {
-   "lid": "85899",
-   "name": "The Frosted Mug",
-   "address": "121 E City Line Ave, Bala Cynwyd PA 19004",
-   "zone_id": "ardmore_bryn_mawr",
-   "license_type": "Restaurant (Liquor)",
-   "id": "85899",
-   "plcb_name": "THE FROSTED MUG",
-   "deals": [],
-   "branch": "E City Line Ave"
-  },
-  {
-   "lid": "98507",
-   "name": "The Frosted Mug",
-   "address": "829 Montgomery Ave, Penn Valley PA 19072",
-   "zone_id": "ardmore_bryn_mawr",
-   "license_type": "Restaurant (Liquor)",
-   "id": "98507",
-   "plcb_name": "THE FROSTED MUG",
-   "deals": [],
-   "branch": "Montgomery Ave"
-  },
-  {
-   "lid": "73040",
-   "name": "The Giant",
-   "address": "50 E Wynnewood Rd Unit #2, Wynnewood PA 19096",
-   "zone_id": "ardmore_bryn_mawr",
-   "license_type": "Restaurant (Liquor)",
-   "id": "73040",
-   "plcb_name": "THE GIANT COMPANY LLC",
-   "deals": []
-  },
-  {
    "lid": "64347",
-   "name": "The Grog",
+   "name": "The Grog Grill",
    "address": "863 W Lancaster Ave, Bryn Mawr PA 19010",
    "zone_id": "ardmore_bryn_mawr",
    "license_type": "Restaurant (Liquor)",
    "id": "64347",
    "plcb_name": "863 GROG, INC.",
    "website": "https://thegroggrill.com/",
-   "lat": 40.0226029,
-   "lng": -75.3202944,
+   "lat": 40.0226043,
+   "lng": -75.3202824,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Dustin Prince / Google",
@@ -445,31 +551,19 @@
   },
   {
    "lid": "11729",
-   "name": "The Old Guard House Inn",
+   "name": "The Union League Guard House",
    "address": "953 Youngsford Rd, Gladwyne PA 19035",
    "zone_id": "ardmore_bryn_mawr",
    "license_type": "Restaurant (Liquor)",
    "id": "11729",
    "plcb_name": "THE OLD GUARD HOUSE INN",
    "website": "https://www.unionleague.org/guard-house.php",
+   "lat": 40.0375236,
+   "lng": -75.2802916,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Union League Guard House / Google",
     "file": "img/venues/11729.jpg"
-   },
-   "deals": []
-  },
-  {
-   "lid": "31616",
-   "name": "The Olive Garden Italian Rest. #370",
-   "address": "83 E City Line Ave, Bala Cynwyd PA 19004",
-   "zone_id": "ardmore_bryn_mawr",
-   "license_type": "Restaurant (Liquor)",
-   "id": "31616",
-   "plcb_name": "THE OLIVE GARDEN ITALIAN REST. #370",
-   "website": "https://www.olivegarden.com/locations/pa/bala-cynwyd/bala-cynwyd/1370?cmpid=br:og_ag:ie_ch:loc_ca:OGGMB_sn:gmb_gt:bala-cynwyd-pa-1370_pl:locurl_rd:1279",
-   "photo": {
-    "attribution": "Photo: Dan Perez / Google",
-    "file": "img/venues/31616.jpg"
    },
    "deals": []
   },
@@ -489,33 +583,17 @@
    "deals": []
   },
   {
-   "lid": "70057",
-   "name": "Tired Hands Fermentaria",
-   "address": "35 Cricket Terrace, Ardmore PA 19003",
-   "zone_id": "ardmore_bryn_mawr",
-   "license_type": "Brewery Pub",
-   "id": "70057",
-   "plcb_name": "TIRED HANDS BREWING COMPANY",
-   "website": "https://www.tiredhands.com/",
-   "lat": 40.0069328,
-   "lng": -75.2903923,
-   "geo_precision": "place",
-   "photo": {
-    "attribution": "Photo: Tired Hands Fermentaria Tap Room / Google",
-    "file": "img/venues/70057.jpg"
-   },
-   "deals": [],
-   "branch": "Cricket Terrace"
-  },
-  {
    "lid": "68985",
-   "name": "Whole Foods Market",
+   "name": "Whole Foods at Wynnewood",
    "address": "15 Wynnewood Rd, Wynnewood PA 19096",
    "zone_id": "ardmore_bryn_mawr",
    "license_type": "Restaurant (Liquor)",
    "id": "68985",
    "plcb_name": "WHOLE FOODS MARKET GROUP LLC",
-   "website": "https://www.wholefoodsmarket.com/stores/wynnewood?utm_source=google&utm_medium=organic&utm_campaign=listings&ref_=US_TRF_ALL_UFG_WFM_FRSOC_1001774",
+   "website": "https://properties.kimcorealty.com/properties/whole-foods-at-wynnewood/117010/view",
+   "lat": 40.0017381,
+   "lng": -75.276216,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Chris Reece / Google",
     "file": "img/venues/68985.jpg"
@@ -524,13 +602,16 @@
   },
   {
    "lid": "71064",
-   "name": "Xolo Tacos 2",
+   "name": "Xolo Tacos",
    "address": "14 N Merion Ave, Bryn Mawr PA 19010",
    "zone_id": "ardmore_bryn_mawr",
    "license_type": "Restaurant (Liquor)",
    "id": "71064",
    "plcb_name": "XOLO TACOS 2 INC",
    "website": "http://www.xolotacos.com/",
+   "lat": 40.0232528,
+   "lng": -75.320675,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Xolo Tacos / Google",
     "file": "img/venues/71064.jpg"

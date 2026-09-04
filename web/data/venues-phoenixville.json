@@ -4,6 +4,24 @@
  "built_at": "2026-09-04",
  "venues": [
   {
+   "lid": "92374",
+   "name": "ACME Markets",
+   "address": "785 Starr St, Phoenixville PA 19460",
+   "zone_id": "phoenixville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "92374",
+   "plcb_name": "THE FROSTED MUG",
+   "website": "https://local.acmemarkets.com/pa/phoenixville/785-starr-st.html",
+   "lat": 40.1238685,
+   "lng": -75.5070248,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: R Houseman / Google",
+    "file": "img/venues/92374.jpg"
+   },
+   "deals": []
+  },
+  {
    "lid": "109775",
    "name": "Bella Trattoria",
    "address": "366 Ridge Rd, Spring City PA 19475",
@@ -11,9 +29,9 @@
    "license_type": "Restaurant (Liquor)",
    "id": "109775",
    "plcb_name": "BELLA TRATTORIA",
-   "website": "https://www.bellatrattoriasc.com/",
-   "lat": 40.1687729,
-   "lng": -75.6050872,
+   "website": "http://www.bellatrattoriasc.com/",
+   "lat": 40.16880280000001,
+   "lng": -75.6050655,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Bella Trattoria / Google",
@@ -23,15 +41,15 @@
   },
   {
    "lid": "70435",
-   "name": "Bluebird Distilling",
+   "name": "Bluebird Distilling and Dough House",
    "address": "100 Bridge St, Phoenixville PA 19460",
    "zone_id": "phoenixville",
    "license_type": "Limited Distillery",
    "id": "70435",
    "plcb_name": "BLUEBIRD DISTILLING",
-   "website": "https://www.bluebirddistilling.com/",
-   "lat": 40.1341362,
-   "lng": -75.5125037,
+   "website": "http://www.bluebirddistilling.com/",
+   "lat": 40.1341168,
+   "lng": -75.51253179999999,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Justin Cox / Google",
@@ -47,7 +65,10 @@
    "license_type": "Limited Winery",
    "id": "129244",
    "plcb_name": "BOWEN ARROW WINERY AND VINEYARDS",
-   "website": "https://bowenarrowwinery.com/",
+   "website": "https://www.bowenarrowwinery.com/",
+   "lat": 40.131851,
+   "lng": -75.590915,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Bowen Arrow Winery and Vineyards / Google",
     "file": "img/venues/129244.jpg"
@@ -56,13 +77,16 @@
   },
   {
    "lid": "19857",
-   "name": "Center City Steaks",
+   "name": "Center City Steaks & Pizza",
    "address": "47 E Bridge St, Spring City PA 19475",
    "zone_id": "phoenixville",
    "license_type": "Restaurant (Liquor)",
    "id": "19857",
    "plcb_name": "CENTER CITY",
-   "website": "https://www.centercitysteaks.com/",
+   "website": "http://centercitysteaks.com/",
+   "lat": 40.1822691,
+   "lng": -75.5485246,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Linda Wade / Google",
     "file": "img/venues/19857.jpg"
@@ -71,15 +95,15 @@
   },
   {
    "lid": "134444",
-   "name": "Chikara Sushi",
+   "name": "Chikara Sushi & Asian Fusion",
    "address": "131 Bridge St Ste 4, Phoenixville PA 19460",
    "zone_id": "phoenixville",
    "license_type": "Brewery",
    "id": "134444",
    "plcb_name": "CHIKARA SUSHI & ASIAN FUSION",
-   "website": "https://www.chikarapa.com/",
-   "lat": 40.1342951,
-   "lng": -75.5141974,
+   "website": "http://www.chikarapa.com/",
+   "lat": 40.1342673,
+   "lng": -75.51427439999999,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Chikara Sushi & Asian Fusion / Google",
@@ -88,18 +112,31 @@
    "deals": []
   },
   {
-   "lid": "84583",
-   "name": "Colonial Theatre",
-   "address": "225 & 227 Bridge St, Phoenixville PA 19460",
+   "lid": "103414",
+   "name": "Columbia Grand",
+   "address": "4 Bridge St, Phoenixville PA 19460",
    "zone_id": "phoenixville",
-   "license_type": "Performing Arts Facility",
-   "id": "84583",
-   "plcb_name": "COLONIAL THEATRE",
-   "website": "https://thecolonialtheatre.com/",
+   "license_type": "Restaurant (Liquor)",
+   "id": "103414",
+   "plcb_name": "FIFER COLUMBIA STATION LLC",
+   "website": "https://thecolumbiagrand.com/",
+   "lat": 40.1344425,
+   "lng": -75.5099724,
+   "geo_precision": "place",
    "photo": {
-    "attribution": "Photo: The Colonial Theatre / Google",
-    "file": "img/venues/84583.jpg"
+    "attribution": "Photo: Columbia Grand / Google",
+    "file": "img/venues/103414.jpg"
    },
+   "deals": []
+  },
+  {
+   "lid": "86275",
+   "name": "Conshohocken Brewing",
+   "address": "228-230 Bridge St, Phoenixville PA 19460",
+   "zone_id": "phoenixville",
+   "license_type": "Brewery Storage",
+   "id": "86275",
+   "plcb_name": "CONSHOHOCKEN BREWING COMPANY LLC",
    "deals": []
   },
   {
@@ -110,28 +147,13 @@
    "license_type": "Limited Winery",
    "id": "109629",
    "plcb_name": "EXCURSION CIDERS",
-   "website": "https://excursionciders.com/",
-   "lat": 40.1312661,
-   "lng": -75.5726837,
+   "website": "http://www.excursionciders.com/",
+   "lat": 40.1312688,
+   "lng": -75.57248450000002,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: SLR / Google",
     "file": "img/venues/109629.jpg"
-   },
-   "deals": []
-  },
-  {
-   "lid": "103414",
-   "name": "Fifer Columbia Station",
-   "address": "4 Bridge St, Phoenixville PA 19460",
-   "zone_id": "phoenixville",
-   "license_type": "Restaurant (Liquor)",
-   "id": "103414",
-   "plcb_name": "FIFER COLUMBIA STATION LLC",
-   "website": "https://thecolumbiagrand.com/",
-   "photo": {
-    "attribution": "Photo: Columbia Grand / Google",
-    "file": "img/venues/103414.jpg"
    },
    "deals": []
   },
@@ -143,6 +165,9 @@
    "license_type": "Restaurant (Liquor)",
    "id": "19805",
    "plcb_name": "GALLAGHER'S COUNTRY TAVERN",
+   "lat": 40.177292699999995,
+   "lng": -75.56043749999999,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Gary Beard / Google",
     "file": "img/venues/19805.jpg"
@@ -150,45 +175,56 @@
    "deals": []
   },
   {
-   "lid": "28837",
-   "name": "Gramland Properties",
-   "address": "2904 Conestoga Rd, Glenmoore PA 19343",
-   "zone_id": "phoenixville",
-   "license_type": "Restaurant (Liquor)",
-   "id": "28837",
-   "plcb_name": "GRAMLAND PROPERTIES, INC.",
-   "deals": []
-  },
-  {
-   "lid": "92374",
-   "name": "Hog Island Steaks",
-   "address": "785 Starr St, Phoenixville PA 19460",
-   "zone_id": "phoenixville",
-   "license_type": "Restaurant (Liquor)",
-   "id": "92374",
-   "plcb_name": "THE FROSTED MUG",
-   "website": "https://www.hogislandsteaks.com",
-   "lat": 40.1228359,
-   "lng": -75.5073153,
-   "geo_precision": "place",
-   "photo": {
-    "attribution": "Photo: R Houseman / Google",
-    "file": "img/venues/92374.jpg"
-   },
-   "deals": []
-  },
-  {
    "lid": "72427",
-   "name": "Kimberton Golf Club",
+   "name": "Kimberton Golf Course",
    "address": "162 RIDGE RD, Phoenixville PA 19460",
    "zone_id": "phoenixville",
    "license_type": "Privately-Owned Public Golf Course Rest (Liquor)",
    "id": "72427",
    "plcb_name": "KIMBERTON GOLF CLUB INC",
    "website": "https://www.kimbertongolfclub.com/",
+   "lat": 40.153669699999995,
+   "lng": -75.5727914,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Kimberton Golf Club / Google",
     "file": "img/venues/72427.jpg"
+   },
+   "deals": []
+  },
+  {
+   "lid": "18900",
+   "name": "Kimberton Inn",
+   "address": "2105 Kimberton Rd Box 640, Kimberton PA 19442",
+   "zone_id": "phoenixville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "18900",
+   "plcb_name": "THE COUNTRY HOUSE AT KIMBERTON",
+   "website": "http://www.kimbertoninn.com/",
+   "lat": 40.130337999999995,
+   "lng": -75.575647,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Kimberton Inn / Google",
+    "file": "img/venues/18900.jpg"
+   },
+   "deals": []
+  },
+  {
+   "lid": "118857",
+   "name": "La Patrona Mexican Restaurant and Tequila Bar",
+   "address": "400 Bridge St, Phoenixville PA 19460",
+   "zone_id": "phoenixville",
+   "license_type": "Restaurant (Liquor)",
+   "id": "118857",
+   "plcb_name": "PHOENIXVILLE 400 BRIDGE, LLC",
+   "website": "http://www.lapatronamexicanrestaurantpa.com/",
+   "lat": 40.1318577,
+   "lng": -75.5216048,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Don McCormick / Google",
+    "file": "img/venues/118857.jpg"
    },
    "deals": []
   },
@@ -201,6 +237,9 @@
    "id": "84498",
    "plcb_name": "LIBERTY UNION 2 LLC",
    "website": "http://libertyunionbar.com/",
+   "lat": 40.1288858,
+   "lng": -75.54986199999999,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Liberty Union Bar & Grill / Google",
     "file": "img/venues/84498.jpg"
@@ -208,13 +247,21 @@
    "deals": []
   },
   {
-   "lid": "118857",
-   "name": "Phoenixville 400 Bridge",
-   "address": "400 Bridge St, Phoenixville PA 19460",
+   "lid": "28837",
+   "name": "Ludwig's Grill & Oyster Bar",
+   "address": "2904 Conestoga Rd, Glenmoore PA 19343",
    "zone_id": "phoenixville",
    "license_type": "Restaurant (Liquor)",
-   "id": "118857",
-   "plcb_name": "PHOENIXVILLE 400 BRIDGE, LLC",
+   "id": "28837",
+   "plcb_name": "GRAMLAND PROPERTIES, INC.",
+   "website": "http://www.ludwigsoysterbar.com/",
+   "lat": 40.115612399999996,
+   "lng": -75.6947823,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Rich & Christine Cluelow / Google",
+    "file": "img/venues/28837.jpg"
+   },
    "deals": []
   },
   {
@@ -226,6 +273,9 @@
    "id": "27153",
    "plcb_name": "PICKERING VALLEY GOLF CLUB, INC.",
    "website": "http://golfpickeringvalley.com/",
+   "lat": 40.101493999999995,
+   "lng": -75.517853,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Pickering Valley Golf Club / Google",
     "file": "img/venues/27153.jpg"
@@ -234,15 +284,15 @@
   },
   {
    "lid": "88072",
-   "name": "Rebel Hill Brewing",
+   "name": "Rebel Hill Brewing Company - Brewery on Bridge",
    "address": "242 Bridge St, Phoenixville PA 19460",
    "zone_id": "phoenixville",
    "license_type": "Brewery",
    "id": "88072",
    "plcb_name": "REBEL HILL BREWING COMPANY",
    "website": "https://www.rebelhillbrewing.com/",
-   "lat": 40.133652,
-   "lng": -75.5177982,
+   "lat": 40.1336764,
+   "lng": -75.5177889,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Rebel Hill Brewing Company - Brewery on Bridge / Google",
@@ -252,15 +302,15 @@
   },
   {
    "lid": "84758",
-   "name": "Root Down",
+   "name": "Root Down Brewing",
    "address": "1 N Main St, Phoenixville PA 19460",
    "zone_id": "phoenixville",
    "license_type": "Brewery",
    "id": "84758",
    "plcb_name": "ROOT DOWN BREWING COMPANY",
-   "website": "https://rootdownbrewing.com/",
-   "lat": 40.1344548,
-   "lng": -75.5157331,
+   "website": "http://www.rootdownbrewing.com/",
+   "lat": 40.134451,
+   "lng": -75.516042,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Root Down Brewing Company / Google",
@@ -277,6 +327,9 @@
    "id": "95247",
    "plcb_name": "SEVEN STARS INN",
    "website": "https://www.7-stars-inn.com/",
+   "lat": 40.1638552,
+   "lng": -75.59638000000001,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Brian Fielding / Google",
     "file": "img/venues/95247.jpg"
@@ -292,8 +345,8 @@
    "id": "114948",
    "plcb_name": "SOKO BAG",
    "website": "https://sokobag.com/",
-   "lat": 40.1237258,
-   "lng": -75.5125871,
+   "lat": 40.1237166,
+   "lng": -75.5125214,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Soko Bag Korean Fried Chicken / Google",
@@ -303,16 +356,37 @@
   },
   {
    "lid": "126367",
-   "name": "Spring Hollow Bar & Grille",
+   "name": "Spring Hollow Golf Club",
    "address": "3350 Schuylkill Rd, Spring City PA 19475",
    "zone_id": "phoenixville",
    "license_type": "Privately-Owned Public Golf Course Rest (Liquor)",
    "id": "126367",
    "plcb_name": "SPRING HOLLOW SERVICES INC",
-   "website": "https://springhollowgolf.com/bar-grille/",
+   "website": "https://springhollowgolf.com/",
+   "lat": 40.185502899999996,
+   "lng": -75.57488339999999,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Spring Hollow Bar & Grille / Google",
     "file": "img/venues/126367.jpg"
+   },
+   "deals": []
+  },
+  {
+   "lid": "90383",
+   "name": "St. Oner's",
+   "address": "2218 Frankford Ave, Philadelphia PA 19125",
+   "zone_id": "phoenixville",
+   "license_type": "Brewery Storage",
+   "id": "90383",
+   "plcb_name": "ST ONERS",
+   "website": "https://www.stonersfishtown.com/",
+   "lat": 39.980132999999995,
+   "lng": -75.1291919,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: St. Oner's / Google",
+    "file": "img/venues/90383.jpg"
    },
    "deals": []
   },
@@ -325,6 +399,9 @@
    "id": "71157",
    "plcb_name": "STABLE 12 BREWING COMPANY LLC",
    "website": "http://www.stable12.com/",
+   "lat": 40.132955700000004,
+   "lng": -75.52073639999999,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Kellie Rellis / Google",
     "file": "img/venues/71157.jpg"
@@ -335,6 +412,24 @@
    "deals": []
   },
   {
+   "lid": "125784",
+   "name": "Steel City Coffeehouse & Brewery",
+   "address": "203 Bridge St, Phoenixville PA 19460",
+   "zone_id": "phoenixville",
+   "license_type": "Brewery Storage",
+   "id": "125784",
+   "plcb_name": "STEEL CITY COFFEEHOUSE & BREWERY",
+   "website": "http://www.steelcityphx.com/",
+   "lat": 40.134024,
+   "lng": -75.516447,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Steel City Coffeehouse & Brewery / Google",
+    "file": "img/venues/125784.jpg"
+   },
+   "deals": []
+  },
+  {
    "lid": "100909",
    "name": "Stone House Grille",
    "address": "1300 Hares Hill Rd, Kimberton PA 19442",
@@ -342,7 +437,10 @@
    "license_type": "Brewery",
    "id": "100909",
    "plcb_name": "STONE HOUSE GRILLE LLC",
-   "website": "https://www.stonehousegrillepa.com/",
+   "website": "http://www.stonehousegrillepa.com/",
+   "lat": 40.1298141,
+   "lng": -75.5764069,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Stone House Grille / Google",
     "file": "img/venues/100909.jpg"
@@ -360,28 +458,39 @@
    "deals": []
   },
   {
-   "lid": "18900",
-   "name": "The Country House at Kimberton",
-   "address": "2105 Kimberton Rd Box 640, Kimberton PA 19442",
+   "lid": "84583",
+   "name": "The Colonial Theatre",
+   "address": "225 & 227 Bridge St, Phoenixville PA 19460",
    "zone_id": "phoenixville",
-   "license_type": "Restaurant (Liquor)",
-   "id": "18900",
-   "plcb_name": "THE COUNTRY HOUSE AT KIMBERTON",
-   "website": "http://www.kimbertoninn.com/",
+   "license_type": "Performing Arts Facility",
+   "id": "84583",
+   "plcb_name": "COLONIAL THEATRE",
+   "website": "http://www.thecolonialtheatre.com/",
+   "lat": 40.134072499999995,
+   "lng": -75.517511,
+   "geo_precision": "place",
    "photo": {
-    "attribution": "Photo: Kimberton Inn / Google",
-    "file": "img/venues/18900.jpg"
+    "attribution": "Photo: The Colonial Theatre / Google",
+    "file": "img/venues/84583.jpg"
    },
    "deals": []
   },
   {
    "lid": "132817",
-   "name": "The Drift",
+   "name": "The Drift Seafood Kitchen & Raw Bar",
    "address": "231-233 Bridge St, Phoenixville PA 19460",
    "zone_id": "phoenixville",
    "license_type": "Restaurant (Liquor)",
    "id": "132817",
    "plcb_name": "THE DRIFT",
+   "website": "https://thedriftseafood.com/",
+   "lat": 40.134065899999996,
+   "lng": -75.51765019999999,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: The Drift Seafood Kitchen & Raw Bar / Google",
+    "file": "img/venues/132817.jpg"
+   },
    "deals": []
   },
   {
@@ -392,10 +501,31 @@
    "license_type": "Restaurant (Liquor)",
    "id": "72735",
    "plcb_name": "THE FOODERY PHOENIXVILLE INC",
-   "website": "https://fooderybeer.squarespace.com/phoenixville",
+   "website": "https://fooderybeer.squarespace.com/",
+   "lat": 40.133867699999996,
+   "lng": -75.51953089999999,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Andrij Harasewych / Google",
     "file": "img/venues/72735.jpg"
+   },
+   "deals": []
+  },
+  {
+   "lid": "112263",
+   "name": "The Gem - Spring City Speakeasy",
+   "address": "66 N Main St, Spring City PA 19475",
+   "zone_id": "phoenixville",
+   "license_type": "Brewery Storage",
+   "id": "112263",
+   "plcb_name": "SLY FOX BREWING COMPANY INC",
+   "website": "http://www.thegemspringcity.com/",
+   "lat": 40.1790373,
+   "lng": -75.5470023,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Travis Niles / Google",
+    "file": "img/venues/112263.jpg"
    },
    "deals": []
   },
@@ -407,7 +537,6 @@
    "license_type": "Restaurant (Liquor)",
    "id": "86292",
    "plcb_name": "THE GIANT COMPANY LLC",
-   "website": "https://stores.giantfoodstores.com/pa/phoenixville/700-nutt-rd?y_source=1_NDE5NTc4Mi03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
    "photo": {
     "attribution": "Photo: Victoria Morrison / Google",
     "file": "img/venues/86292.jpg"
@@ -422,9 +551,9 @@
    "license_type": "Restaurant (Liquor)",
    "id": "63002",
    "plcb_name": "CHARLESTOWN RESTAURANT INC",
-   "website": "https://thevalleyhousemalvern.com/",
-   "lat": 40.0752246,
-   "lng": -75.536862,
+   "website": "http://www.thevalleyhousemalvern.com/",
+   "lat": 40.0752002,
+   "lng": -75.5368818,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Manhattan Soto / Google",
@@ -440,7 +569,10 @@
    "license_type": "Brewery",
    "id": "133283",
    "plcb_name": "TUNED UP BREWERY LLC",
-   "website": "https://tunedupbrewery.com/",
+   "website": "http://www.tunedupbrewery.com/",
+   "lat": 40.1804829,
+   "lng": -75.54803129999999,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Tuned Up Brewery / Google",
     "file": "img/venues/133283.jpg"
@@ -449,19 +581,37 @@
   },
   {
    "lid": "119459",
-   "name": "Twelve78",
+   "name": "Twelve78 Brewing",
    "address": "35 Bridge St, Phoenixville PA 19460",
    "zone_id": "phoenixville",
    "license_type": "Brewery",
    "id": "119459",
    "plcb_name": "TWELVE78 BREWING COMPANY",
    "website": "https://www.twelve78brewing.com/",
-   "lat": 40.1349354,
-   "lng": -75.511217,
+   "lat": 40.1349712,
+   "lng": -75.51121619999999,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: DR Stehr / Google",
     "file": "img/venues/119459.jpg"
+   },
+   "deals": []
+  },
+  {
+   "lid": "130981",
+   "name": "Vecchia Nuova",
+   "address": "249 Bridge St, Phoenixville PA 19460-",
+   "zone_id": "phoenixville",
+   "license_type": "Brewery",
+   "id": "130981",
+   "plcb_name": "VECCHIA PIZZERIA OF PHOENIXVILLE LLC",
+   "website": "https://www.vecchiarestaurant.com/",
+   "lat": 40.133908399999996,
+   "lng": -75.5183503,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Nathaniel Legg / Google",
+    "file": "img/venues/130981.jpg"
    },
    "deals": []
   },

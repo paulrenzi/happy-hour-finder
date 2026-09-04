@@ -412,6 +412,16 @@
    "deals": []
   },
   {
+   "lid": "106109",
+   "name": "Brewery Ars",
+   "address": "2223 Frankford Ave, Philadelphia PA 19125",
+   "zone_id": "fishtown_kensington",
+   "license_type": "Brewery Storage",
+   "id": "106109",
+   "plcb_name": "BREWERY ARS",
+   "deals": []
+  },
+  {
    "lid": "118750",
    "name": "Bridesburg Pub",
    "address": "4254-56 Richmond St, Philadelphia PA 19137",
@@ -449,6 +459,16 @@
    "license_type": "Restaurant (Liquor)",
    "id": "133987",
    "plcb_name": "CANNONBALL CLUB",
+   "deals": []
+  },
+  {
+   "lid": "122180",
+   "name": "Carbon Copy",
+   "address": "3124 Richmond St, Philadelphia PA 19134",
+   "zone_id": "fishtown_kensington",
+   "license_type": "Brewery Storage",
+   "id": "122180",
+   "plcb_name": "CARBON COPY",
    "deals": []
   },
   {
@@ -563,6 +583,16 @@
    "license_type": "Restaurant (Liquor)",
    "id": "120133",
    "plcb_name": "DICE ON DAUPHIN LLC",
+   "deals": []
+  },
+  {
+   "lid": "112384",
+   "name": "Dock Street Fishtown",
+   "address": "1229 N Front St, Philadelphia PA 19122",
+   "zone_id": "fishtown_kensington",
+   "license_type": "Brewery Storage",
+   "id": "112384",
+   "plcb_name": "DOCK STREET FISHTOWN",
    "deals": []
   },
   {
@@ -707,6 +737,16 @@
    "deals": []
   },
   {
+   "lid": "131518",
+   "name": "Forest and Main Brewing",
+   "address": "1416 Frankford Ave, Philadelphia PA 19125",
+   "zone_id": "fishtown_kensington",
+   "license_type": "Brewery Storage",
+   "id": "131518",
+   "plcb_name": "FOREST AND MAIN BREWING COMPANY",
+   "deals": []
+  },
+  {
    "lid": "111062",
    "name": "Forin",
    "address": "2525 Frankford Ave, Philadelphia PA 19125",
@@ -781,6 +821,16 @@
    "deals": []
   },
   {
+   "lid": "114993",
+   "name": "Human Robot the Warehouse",
+   "address": "1817 N 5Th St, Philadelphia PA 19122",
+   "zone_id": "fishtown_kensington",
+   "license_type": "Brewery Storage",
+   "id": "114993",
+   "plcb_name": "HUMAN ROBOT THE WAREHOUSE",
+   "deals": []
+  },
+  {
    "lid": "106419",
    "name": "Humble Parlor Brewing",
    "address": "3245 Amber St Unit 2-1-NW, Philadelphia PA 19134",
@@ -788,7 +838,19 @@
    "license_type": "Brewery",
    "id": "106419",
    "plcb_name": "HUMBLE PARLOR BREWING COMPANY",
-   "deals": []
+   "deals": [],
+   "branch": "Amber St"
+  },
+  {
+   "lid": "112079",
+   "name": "Humble Parlor Brewing",
+   "address": "530 E Girard Ave, Philadelphia PA 19125",
+   "zone_id": "fishtown_kensington",
+   "license_type": "Brewery Storage",
+   "id": "112079",
+   "plcb_name": "HUMBLE PARLOR BREWING",
+   "deals": [],
+   "branch": "E Girard Ave"
   },
   {
    "lid": "117787",
@@ -1010,6 +1072,16 @@
    "license_type": "Brewery",
    "id": "115555",
    "plcb_name": "LOST TIME BREWERY",
+   "deals": []
+  },
+  {
+   "lid": "128600",
+   "name": "Lost Time Brewing",
+   "address": "2145 N Front St, Philadelphia PA 19122",
+   "zone_id": "fishtown_kensington",
+   "license_type": "Brewery Storage",
+   "id": "128600",
+   "plcb_name": "LOST TIME BREWING COMPANY",
    "deals": []
   },
   {
@@ -1399,6 +1471,17 @@
    "deals": []
   },
   {
+   "lid": "110764",
+   "name": "Sacred Vice Brewing",
+   "address": "3237 Amber St Unit 4-1-B, Philadelphia PA 19134",
+   "zone_id": "fishtown_kensington",
+   "license_type": "Brewery Storage",
+   "id": "110764",
+   "plcb_name": "SACRED VICE BREWING COMPANY",
+   "deals": [],
+   "branch": "Amber St"
+  },
+  {
    "lid": "91715",
    "name": "Sacred Vice Brewing",
    "address": "1817-53 N Howard St, Philadelphia PA 19122",
@@ -1407,7 +1490,8 @@
    "id": "91715",
    "plcb_name": "SACRED VICE BREWING COMPANY",
    "website": "https://sacredvice.com/",
-   "deals": []
+   "deals": [],
+   "branch": "N Howard St"
   },
   {
    "lid": "131066",

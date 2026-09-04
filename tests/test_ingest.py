@@ -1642,11 +1642,42 @@ class VenueBase(unittest.TestCase):
         for lid, v in self.base.items():
             self.assertEqual(lid, v["lid"], "the key and the record disagree")
 
-    def test_a_warehouse_licence_is_not_a_venue(self):
-        # Brewery Storage is a permit to keep beer in a building, not to serve
-        # it. A card for one is an invitation to drive to a warehouse.
-        for v in self.base.values():
-            self.assertNotEqual(v["license_type"], "Brewery Storage")
+    def test_a_brewery_storage_licence_can_be_a_real_taproom(self):
+        # Reversed 2026-09-04. This test used to assert the opposite -- "a
+        # warehouse permit, not a venue" -- which is exactly the belief
+        # ingest/seed_plcb.py's TAPROOM_TYPES comment already argued against,
+        # by name, for Steel City Coffeehouse among others: of 32 active
+        # in-zone Brewery Storage licences, only one duplicates a premises
+        # already on the board by another licence. build_venue_base.py had
+        # its own, older EXCLUDED_LICENSE_TYPES that re-dropped what
+        # seed_plcb.py had already decided to keep, and this test enshrined
+        # the wrong half of that disagreement. Found via
+        # ingest/find_denominator_gaps.py turning up Steel City at 203 Bridge
+        # St, Phoenixville -- an ACTIVE licence, no other PLCB row at that
+        # address, silently absent from every zone that held one.
+        held = [v for v in self.base.values() if v["license_type"] == "Brewery Storage"]
+        self.assertGreater(len(held), 0,
+                           "no Brewery Storage venue survived -- the exclusion is back")
+
+    def test_a_bar_the_plcb_files_under_the_wrong_township_still_reaches_its_walked_zone(self):
+        # ingest/seed_plcb.py's CONSHOHOCKEN_BOUNDARY_LIDS -- see that table
+        # for the distance evidence. A regression here means the override
+        # list stopped being applied, not that the venue vanished outright
+        # (it would still ship, just filed under blue_bell_plymouth_meeting).
+        andys = self.base.get("59081")
+        if andys is None:
+            self.skipTest("Andy's Diner & Pub (59081) not in this base build")
+        self.assertEqual(andys["zone_id"], "conshohocken")
+
+    def test_a_plcb_zip_typo_does_not_block_a_municipality_matched_zone(self):
+        # Buena Vista Restaurant's own PLCB row reads "ARDMORE PA 19005" --
+        # Ardmore's real ZIP is 19003 -- and used to be dropped entirely
+        # because the zip/centroid gate ran before the municipality lookup
+        # even though "Lower Merion Twp" already names ardmore_bryn_mawr.
+        v = self.base.get("101203")
+        if v is None:
+            self.skipTest("Buena Vista Restaurant (101203) not in this base build")
+        self.assertEqual(v["zone_id"], "ardmore_bryn_mawr")
 
     def test_no_two_venues_claim_the_same_premises(self):
         # One bar routinely holds several licences -- the Sheraton Valley Forge
@@ -4591,3 +4622,39 @@ class AVenueCanPourWithoutItsOwnLicence(unittest.TestCase):
         self.assertEqual(v["lid"], "the-boardroom-phoenixville")
         self.assertFalse(str(v["lid"]).isdigit(),
                          "a synthetic id must not be mistakable for a licence number")
+
+
+class AnOrphanFromNoLicenceIsNotAStaleBase(unittest.TestCase):
+    """A deal that matches no base row is two different situations.
+
+    Usually the base is stale and rebuilding it will find the real PLCB row.
+    The Boardroom (2026-09-04) is the other kind, permanently: a hand-seeded
+    venue with no premises licence of its own, so no rebuild will ever match
+    it. build_bundles.place() tells them apart by whether the seed row
+    carries a real license_type -- every PLCB-backed seed row does, and only
+    a deliberately licence-less one leaves it blank.
+    """
+
+    def test_a_licenceless_seed_venue_is_not_counted_as_a_stale_base_orphan(self):
+        import build_bundles as bb
+        seed_venue = {"name": "Deliberately Licenceless", "id": "x",
+                     "license_type": "", "address": "1 Nowhere Rd, Nowhere PA 00000"}
+        orphans, permanent = [], []
+
+        def fake_place(venue, deals):
+            if venue.get("license_type"):
+                orphans.append(venue["name"])
+            else:
+                permanent.append(venue["name"])
+
+        fake_place(seed_venue, [])
+        self.assertEqual(orphans, [])
+        self.assertEqual(permanent, ["Deliberately Licenceless"])
+
+    def test_the_boardroom_itself_is_the_permanent_case(self):
+        # The one seed row this class exists for, checked against the real
+        # file rather than a stand-in.
+        import json
+        d = json.load(open(os.path.join(REPO, "data", "deals_seed.json"), encoding="utf-8"))
+        v = next(x for x in d["venues"] if x["id"] == "the-boardroom-phoenixville")
+        self.assertFalse(v.get("license_type"))

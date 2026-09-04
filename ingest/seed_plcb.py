@@ -92,6 +92,41 @@ CLUB_TYPES = {
 
 ZIP_RE = re.compile(r"\b(\d{5})(?:-\d{4})?\s*$")
 
+# Zone assignment is one municipality, one zone (tests/test_ingest.py's
+# `test_no_municipality_or_zip_is_claimed_twice`), and Conshohocken's downtown
+# does not respect that: Ridge Pike west of Fayette St carries a "Conshohocken
+# PA" mailing address while sitting in Plymouth Twp, which zones.json already
+# gives whole to blue_bell_plymouth_meeting -- correctly, for the Plymouth
+# Meeting Mall cluster three-plus miles further up the same township. Giving
+# Plymouth Twp to conshohocken instead would take that whole mall district
+# with it; splitting the township by ZIP does not work either, because
+# municipality is checked first and wins.
+#
+# So this is a hand list, not a zones.json change, the same shape as
+# discover_places.HAND_DROPPED. Found 2026-09-04 by ingest/find_denominator_gaps.py:
+# Andy's Diner & Pub, Outback Steakhouse and P.J. Whelihan's all read as
+# "missing from Conshohocken" until a distance check against every OTHER
+# blue_bell_plymouth_meeting venue's coordinate showed a clean break -- five
+# venues cluster at 1.57-1.81 miles from Conshohocken's own anchor (Fayette
+# St), then nothing until 1.93 miles and a completely different commercial
+# cluster (Plymouth Meeting Mall, Cracker Barrel, Miller's Ale House) starting
+# there and continuing to 6+ miles. Every LID below carries a "Conshohocken
+# PA" postal address in the PLCB's own export.
+CONSHOHOCKEN_BOUNDARY_LIDS = {
+    "59081",   # Andy's Diner & Pub, 505 W Ridge Pk
+    "62087",   # Outback Steakhouse, 322 Ridge Pk
+    "117317",  # P.J. Whelihan's, 200 W Ridge Pike
+    "29585",   # Domino's, 107-109 W Ridge Pk
+    "32489",   # Franzone's Pizzeria, 1940 Main Ave
+    "118876",  # The Goat's Beard (Daisy Tavern), 1100 Hector St
+    "101704",  # 641 Old Elm Hotel, 641 Old Elm St
+    "101974",  # The Giant Company, 10 E Ridge Pike
+    "121138",  # Royal Farms, 906 W Ridge Pike
+    "50725",   # Chippers Cafe, 725 Conshohocken Rd
+    "69227",   # Weis Markets, 200 Ridge Pk
+    "67533",   # Bar Lucca (licensed as Milfred Moon LLC), 729 E Hector St
+}
+
 
 def miles(a, b):
     r = 3958.8
@@ -173,20 +208,39 @@ def load_licensees():
                 dropped["county out of scope"] += 1
                 continue
             m = ZIP_RE.search((row["Premises Address"] or "").strip())
-            if not m:
-                dropped["no parseable zip"] += 1
-                continue
-            zp = m.group(1)
-            c = centroids.get(zp)
-            if not c:
-                dropped["zip not in gazetteer"] += 1
-                continue
+            zp = m.group(1) if m else None
+            c = centroids.get(zp) if zp else None
             # Municipality wins over ZIP: ZIPs only name zones inside
             # Philadelphia, and a Philadelphia ZIP can spill across the city
             # line (19153 covers both Eastwick and Tinicum Twp).
             zone = by_mun.get(
                 (row["Municipality"].lower(), row["County"].lower())
-            ) or by_zip.get(zp)
+            ) or (by_zip.get(zp) if zp else None)
+            if row["LID"] in CONSHOHOCKEN_BOUNDARY_LIDS:
+                zone = "conshohocken"
+            # 🛑 The zip/centroid gate below existed to answer ONE question --
+            # is this row within radius of an unnamed zone -- and it used to
+            # run before a resolved municipality was even consulted, so a row
+            # a NAMED zone had already claimed could still be dropped for a
+            # reason that has nothing to do with it. Found 2026-09-04:
+            # Buena Vista Restaurant (Ardmore) carries a PLCB typo, "19005"
+            # for what should read "19003", and Vecchia Pizzeria of
+            # Phoenixville's own export row ends "19460-" -- a dangling
+            # hyphen ZIP_RE cannot parse at all. Both have "Municipality"
+            # fields (Lower Merion Twp, Phoenixville) that resolve a zone with
+            # no ZIP involved, and both were dropped anyway. 10 active,
+            # in-scope-county, municipality-matched rows corpus-wide were
+            # blocked by this gate before it moved below the municipality
+            # lookup -- same shape as the Kennett Square fix the comment two
+            # lines down already describes for the RADIUS half of this same
+            # function, just the ZIP half of it.
+            if not zone:
+                if not m:
+                    dropped["no parseable zip"] += 1
+                    continue
+                if not c:
+                    dropped["zip not in gazetteer"] += 1
+                    continue
             # 🔑 A NAMED ZONE IS THE SCOPE; the radius only bounds what is NOT
             # named. Kennett Square sits 24 miles from the King of Prussia
             # origin, so adding the zone seeded ONE of its 97 active licences
@@ -194,8 +248,8 @@ def load_licensees():
             # on purpose, silently emptied by a number set for a different
             # question. Adding a zone is the decision; the radius is not
             # entitled to overrule it.
-            dist = miles(origin, c)
-            if dist > radius and not zone:
+            dist = miles(origin, c) if c else None
+            if dist is not None and dist > radius and not zone:
                 dropped["outside radius"] += 1
                 continue
             kept.append(
@@ -207,11 +261,11 @@ def load_licensees():
                     "name": row["Premises"] or row["Licensee"],
                     "licensee": row["Licensee"],
                     "address": row["Premises Address"],
-                    "zip": zp,
+                    "zip": zp or "",
                     "municipality": row["Municipality"],
                     "county": row["County"],
                     "zone_id": zone or "",
-                    "miles_from_kop": round(dist, 1),
+                    "miles_from_kop": round(dist, 1) if dist is not None else "",
                     "expiration_date": row["Expiration Date"],
                 }
             )

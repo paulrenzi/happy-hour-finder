@@ -22858,6 +22858,146 @@
      }
     }
    ]
+  },
+  {
+   "id": "the-refectory-bryn-mawr",
+   "lid": "114544",
+   "name": "The Refectory",
+   "plcb_name": "DRC BRYN MAWR",
+   "address": "862-864 LANCASTER AVE , BRYN MAWR PA 19010",
+   "zone_id": "ardmore_bryn_mawr",
+   "license_type": "",
+   "website": "http://refectorynova.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "draft",
+       "label": "Garage Beer",
+       "price_usd": 6.0
+      },
+      {
+       "category": "draft",
+       "label": "Lavante Hazy IPA",
+       "price_usd": 6.0
+      },
+      {
+       "category": "food",
+       "label": "HH Daily Oysters",
+       "price_usd": 7.0
+      },
+      {
+       "category": "food",
+       "label": "HH Mahi Taco",
+       "price_usd": 7.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-04",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://refectorynova.com/happy-hour/",
+      "quote": "Happy Hour at The Refectory in Villanova Daily Specials / 4 PM \u2013 Close Wednesday & Sunday. / 4 PM-6 PM Mon, Tue, Thu, Fri, Sat Bar & Patio Only",
+      "quotes": [
+       "Happy Hour at The Refectory in Villanova Daily Specials / 4 PM \u2013 Close Wednesday & Sunday. / 4 PM-6 PM Mon, Tue, Thu, Fri, Sat Bar & Patio Only",
+       "HAPPY HOUR / 4 PM \u2013 Close Wednesday & Sunday. / 4 PM-6 PM Mon, Tue, Thu, Fri, Sat Bar & Patio Only"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "rick-s-tavern-conshohocken",
+   "lid": "120650",
+   "name": "Rick\u2019s Tavern",
+   "plcb_name": "RGRESTAURANT GROUP",
+   "address": "201-203 W 7TH AVE, CONSHOHOCKEN PA 19428-1639",
+   "zone_id": "conshohocken",
+   "license_type": "",
+   "website": "https://ricks-tavern.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "16:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "16:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "16:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "16:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "16:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "16:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "16:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-04",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://ricks-tavern.com/menus",
+      "quote": "Pizza Happy Hour / 3PM TO 4PM",
+      "quotes": [
+       "Pizza Happy Hour / 3PM TO 4PM"
+      ]
+     }
+    }
+   ]
   }
  ]
 }

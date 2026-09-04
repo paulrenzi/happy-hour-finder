@@ -181,6 +181,20 @@
   "website": "https://hilltownfairmount.com/",
   "zone_id": "center_city"
  },
+ "101203": {
+  "address": "5 W LANCASTER AVE, ARDMORE PA 19005",
+  "kind": null,
+  "lat": 40.008248699999996,
+  "lng": -75.2913931,
+  "matched_by": "places text search -> 5 W Lancaster Ave, Ardmore, PA 19003, USA",
+  "name": "BUENA VISTA RESTAURANT LLC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Buena Vista Mexican Restaurant & Cantina in Ardmore",
+  "phone": null,
+  "website": "https://buenavistamex.com/",
+  "zone_id": "ardmore_bryn_mawr"
+ },
  "101208": {
   "address": "68 BALTIMORE PIKE, CHESTER HEIGHTS PA 19063",
   "kind": "bar",
@@ -320,6 +334,20 @@
   "phone": "+1 484-469-3222",
   "website": "https://stationtap.com",
   "zone_id": "upper_darby_lansdowne"
+ },
+ "101974": {
+  "address": "10 E RIDGE PIKE, CONSHOHOCKEN PA 19428",
+  "kind": null,
+  "lat": 40.093384,
+  "lng": -75.285867,
+  "matched_by": "places text search -> 10 E Ridge Pike, Conshohocken, PA 19428, USA",
+  "name": "THE GIANT COMPANY LLC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "GIANT",
+  "phone": null,
+  "website": "https://giantfoodstores.com/location-details/#/store/detail/6481",
+  "zone_id": "conshohocken"
  },
  "102052": {
   "address": "480 N GULPH RD, KING OF PRUSSIA PA 19406-2807",
@@ -545,6 +573,20 @@
   "website": "http://reyaztecawarminster.com/",
   "zone_id": "warminster_warrington"
  },
+ "103414": {
+  "address": "4 BRIDGE ST, PHOENIXVILLE PA 19460-0782",
+  "kind": null,
+  "lat": 40.1344425,
+  "lng": -75.5099724,
+  "matched_by": "places text search -> 4 Bridge St, Phoenixville, PA 19460, USA",
+  "name": "FIFER COLUMBIA STATION LLC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Columbia Grand",
+  "phone": null,
+  "website": "https://thecolumbiagrand.com/",
+  "zone_id": "phoenixville"
+ },
  "103419": {
   "address": "1750 ASHBOURNE RD BUILDING 4, ELKINS PARK PA 19027",
   "kind": null,
@@ -558,6 +600,20 @@
   "phone": null,
   "website": "https://morganstillhouse.com/",
   "zone_id": "abington_jenkintown"
+ },
+ "103420": {
+  "address": "724 MONTGOMERY AVE, NARBERTH PA 19072",
+  "kind": null,
+  "lat": 40.0099842,
+  "lng": -75.2568653,
+  "matched_by": "places text search -> 724 Montgomery Ave, Narberth, PA 19072, USA",
+  "name": "ROYAL CAFE NARBERTH LLC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Royal Cafe Narberth",
+  "phone": null,
+  "website": "http://royalcafenarberth.com/",
+  "zone_id": "ardmore_bryn_mawr"
  },
  "103534": {
   "address": "15 S 3RD ST, PHILADELPHIA PA 19106-2801",
@@ -614,6 +670,20 @@
   "phone": "+1 484-983-3003",
   "website": "https://wrongcrowdbeer.com/",
   "zone_id": "west_chester"
+ },
+ "103747": {
+  "address": "214 W RIDGE PIKE, CONSHOHOCKEN PA 19428",
+  "kind": null,
+  "lat": 40.095074,
+  "lng": -75.29039999999999,
+  "matched_by": "places nearby search at the licence address -> 214 Ridge Pike, Conshohocken, PA 19428, USA",
+  "name": "D'ALICANDRO'S INC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Little Brew House",
+  "phone": null,
+  "website": "https://littlebrewhouse.com/",
+  "zone_id": "conshohocken"
  },
  "103758": {
   "address": "9991-93 BUSTLETON AVE, PHILADELPHIA PA 19115",
@@ -810,6 +880,20 @@
   "phone": null,
   "website": "http://www.hatterydoylestown.com/",
   "zone_id": "doylestown"
+ },
+ "104882": {
+  "address": "126 FAYETTE ST, CONSHOHOCKEN PA 19428-1818",
+  "kind": null,
+  "lat": 40.0745833,
+  "lng": -75.305874,
+  "matched_by": "places text search -> 126 Fayette St, Conshohocken, PA 19428, USA",
+  "name": "CE CLUB LLC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "The Cigar Republic",
+  "phone": null,
+  "website": "https://www.thecigarrepublic.com/conshohocken",
+  "zone_id": "conshohocken"
  },
  "105005": {
   "address": "1356 N 2ND ST, PHILADELPHIA PA 19122",
@@ -1861,6 +1945,20 @@
   "website": "https://mypizzazpizza.com/",
   "zone_id": "ridley_tinicum"
  },
+ "112263": {
+  "address": "66 N MAIN ST, SPRING CITY PA 19475-1815",
+  "kind": null,
+  "lat": 40.1790373,
+  "lng": -75.5470023,
+  "matched_by": "places nearby search at the licence address -> 66 N Main St, Spring City, PA 19475, USA",
+  "name": "SLY FOX BREWING COMPANY INC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "The Gem - Spring City Speakeasy",
+  "phone": null,
+  "website": "http://www.thegemspringcity.com/",
+  "zone_id": "phoenixville"
+ },
  "11233": {
   "address": "1116 WALNUT ST, PHILADELPHIA PA 19107-5513",
   "kind": "restaurant",
@@ -1870,7 +1968,7 @@
   "name": "MORIARTY'S RESTAURANT",
   "opening_hours": "Mo,Su 11:00-24:00 \"Kitchen open until 10pm\", Tu-Th 11:00-26:00 \"Kitchen open until 10pm\", Fr-Sa 11:00-26:00 \"Kitchen open until 12am\"",
   "osm": "node/7976943939",
-  "osm_name": "Moriarty’s Restaurant",
+  "osm_name": "Moriarty\u2019s Restaurant",
   "phone": "+1 215-627-7676",
   "website": "https://moriartyspub.com",
   "zone_id": "center_city"
@@ -2070,6 +2168,34 @@
   "phone": null,
   "website": "https://www.shopterrain.com/doylestown",
   "zone_id": "doylestown"
+ },
+ "114544": {
+  "address": "862-864 LANCASTER AVE , BRYN MAWR PA 19010",
+  "kind": null,
+  "lat": 40.033827699999996,
+  "lng": -75.3403325,
+  "matched_by": "places nearby search at the licence address -> 862 Lancaster Ave, Villanova, PA 19085, USA",
+  "name": "DRC BRYN MAWR",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "The Refectory",
+  "phone": null,
+  "website": "http://refectorynova.com/",
+  "zone_id": "ardmore_bryn_mawr"
+ },
+ "114615": {
+  "address": "1025 YOUNGSFORD RD, GLADWYNE PA 19035",
+  "kind": null,
+  "lat": 40.0380039,
+  "lng": -75.279597,
+  "matched_by": "places text search -> 1025 Youngs Ford Rd, Gladwyne, PA 19035, USA",
+  "name": "MCCAFFREY'S FOOD MARKETS",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "McCaffrey's Food Market - Gladwyne",
+  "phone": null,
+  "website": "http://mccaffreys.com/",
+  "zone_id": "ardmore_bryn_mawr"
  },
  "114847": {
   "address": "701 N 2ND ST, PHILADELPHIA PA 19123",
@@ -2421,6 +2547,20 @@
   "website": "https://www.hyatt.com/en-us/hotel/pennsylvania/the-bellevue-hotel/phlph",
   "zone_id": "center_city"
  },
+ "11729": {
+  "address": "953 YOUNGSFORD RD, GLADWYNE PA 19035-1621",
+  "kind": null,
+  "lat": 40.0375236,
+  "lng": -75.2802916,
+  "matched_by": "places text search -> 953 Youngs Ford Rd, Gladwyne, PA 19035, USA",
+  "name": "THE OLD GUARD HOUSE INN",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "The Union League Guard House",
+  "phone": null,
+  "website": "https://www.unionleague.org/guard-house.php",
+  "zone_id": "ardmore_bryn_mawr"
+ },
  "117317": {
   "address": "200 W RIDGE PIKE STE 117, CONSHOHOCKEN  PA 19428",
   "kind": "restaurant",
@@ -2528,7 +2668,7 @@
   "name": "MIKES 544 YORK ROAD LLC",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "Mike’s York Road Tavern",
+  "osm_name": "Mike\u2019s York Road Tavern",
   "phone": null,
   "website": "http://mikesyorkroad.com/",
   "zone_id": "warminster_warrington"
@@ -2546,6 +2686,20 @@
   "phone": "+1 267 239-2228",
   "website": "https://littlewaltersphilly.com/",
   "zone_id": "fishtown_kensington"
+ },
+ "118857": {
+  "address": "400 BRIDGE ST, PHOENIXVILLE PA 19460-3550",
+  "kind": null,
+  "lat": 40.1318577,
+  "lng": -75.5216048,
+  "matched_by": "places nearby search at the licence address -> 400 Bridge St, Phoenixville, PA 19460, USA",
+  "name": "PHOENIXVILLE 400 BRIDGE, LLC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "La Patrona Mexican Restaurant and Tequila Bar",
+  "phone": null,
+  "website": "http://www.lapatronamexicanrestaurantpa.com/",
+  "zone_id": "phoenixville"
  },
  "119038": {
   "address": "18 HORSHAM RD, HATBORO PA 19040-3920",
@@ -2710,7 +2864,7 @@
   "name": "LASCALA'S FIRE",
   "opening_hours": "Su-Th 11:00-21:00; Fr-Sa 11:00-22:00",
   "osm": "way/686767365",
-  "osm_name": "LaScala’s Fire",
+  "osm_name": "LaScala\u2019s Fire",
   "phone": "+1-484-900-2828",
   "website": "https://lascalasfire.com/newtown-square/",
   "zone_id": "newtown_square_broomall"
@@ -2813,6 +2967,20 @@
   "website": "https://www.hilton.com/en/hotels/phlfwgi-hilton-garden-inn-philadelphia-ft-washington/",
   "zone_id": "blue_bell_plymouth_meeting"
  },
+ "120650": {
+  "address": "201-203 W 7TH AVE, CONSHOHOCKEN PA 19428-1639",
+  "kind": null,
+  "lat": 40.0801693,
+  "lng": -75.3041164,
+  "matched_by": "places text search -> 201 W 7th Ave, Conshohocken, PA 19428, USA",
+  "name": "RGRESTAURANT GROUP",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Rick\u2019s Tavern",
+  "phone": null,
+  "website": "https://ricks-tavern.com/",
+  "zone_id": "conshohocken"
+ },
  "120846": {
   "address": "1421 ARCH ST, PHILADELPHIA PA 19102-1507",
   "kind": "hotel",
@@ -2840,6 +3008,20 @@
   "phone": null,
   "website": "https://www.roacheandobrien.com/",
   "zone_id": "ardmore_bryn_mawr"
+ },
+ "120949": {
+  "address": "201-203 W 6TH AVE, CONSHOHOCKEN PA 19428-1617",
+  "kind": null,
+  "lat": 40.0793829,
+  "lng": -75.3048914,
+  "matched_by": "places nearby search at the licence address -> 201 W 6th Ave, Conshohocken, PA 19428, USA",
+  "name": "CONSHOHOCKEN AVILA LIQUOR LICENSE LLC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "The Rabbit Hole",
+  "phone": null,
+  "website": "https://therabbitholeconshy.com/",
+  "zone_id": "conshohocken"
  },
  "120981": {
   "address": "1526 N AMERICAN ST, PHILADELPHIA PA 19122-3811",
@@ -3074,7 +3256,7 @@
   "name": "KIM'S RESTAURANT, INC.",
   "opening_hours": "Mo-Su 10:00-23:00",
   "osm": "node/12710705801",
-  "osm_name": "Kim's Restaurant",
+  "osm_name": "Kim's\u00a0Restaurant",
   "phone": null,
   "website": "http://kimsbbqrestaurant.com/",
   "zone_id": "north_philly"
@@ -3092,6 +3274,20 @@
   "phone": "+1-484-438-6533",
   "website": "https://www.finewineandgoodspirits.com/store-5116",
   "zone_id": "north_philly"
+ },
+ "125784": {
+  "address": "203 BRIDGE ST, PHOENIXVILLE PA 19460",
+  "kind": null,
+  "lat": 40.134024,
+  "lng": -75.516447,
+  "matched_by": "places text search -> 203 Bridge St, Phoenixville, PA 19460, USA",
+  "name": "STEEL CITY COFFEEHOUSE & BREWERY",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Steel City Coffeehouse & Brewery",
+  "phone": null,
+  "website": "http://www.steelcityphx.com/",
+  "zone_id": "phoenixville"
  },
  "125827": {
   "address": "PROVIDENCE TOWN CENTER 350 WATER LOOP DR, COLLEGEVILLE PA 19426-4913",
@@ -3277,6 +3473,20 @@
   "phone": "+1 215-855-4540",
   "website": "https://www.thebulltavern.com/",
   "zone_id": "lansdale_montgomeryville"
+ },
+ "127053": {
+  "address": "36 GREENFIELD AVE, ARDMORE PA 19003",
+  "kind": null,
+  "lat": 40.0092889,
+  "lng": -75.2963468,
+  "matched_by": "places text search -> 36 Greenfield Ave, Ardmore, PA 19003, USA",
+  "name": "OSUSHI ASIAN CUISINE",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Osushi - Ardmore",
+  "phone": null,
+  "website": "http://www.osushipa.com/",
+  "zone_id": "ardmore_bryn_mawr"
  },
  "127579": {
   "address": "4100 PRESIDENTIAL BLVD, PHILADELPHIA PA 19131-1702",
@@ -3796,6 +4006,20 @@
   "website": "https://www.warwickfarmbrewing.com/",
   "zone_id": "warminster_warrington"
  },
+ "130981": {
+  "address": "249 BRIDGE ST, PHOENIXVILLE PA 19460-",
+  "kind": null,
+  "lat": 40.133908399999996,
+  "lng": -75.5183503,
+  "matched_by": "places text search -> 249 Bridge St, Phoenixville, PA 19460, USA",
+  "name": "VECCHIA PIZZERIA OF PHOENIXVILLE LLC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Vecchia Nuova",
+  "phone": null,
+  "website": "https://www.vecchiarestaurant.com/",
+  "zone_id": "phoenixville"
+ },
  "130987": {
   "address": "625 W LANCASTER AVE, BERWYN PA 19312-1665",
   "kind": "pub",
@@ -4076,6 +4300,20 @@
   "website": "http://mcsheasardmore.com/",
   "zone_id": "ardmore_bryn_mawr"
  },
+ "132817": {
+  "address": "231-233 BRIDGE ST, PHOENIXVILLE PA 19460-3449",
+  "kind": null,
+  "lat": 40.134065899999996,
+  "lng": -75.51765019999999,
+  "matched_by": "places text search -> 231 Bridge St, Phoenixville, PA 19460, USA",
+  "name": "THE DRIFT",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "The Drift Seafood Kitchen & Raw Bar",
+  "phone": null,
+  "website": "https://thedriftseafood.com/",
+  "zone_id": "phoenixville"
+ },
  "132818": {
   "address": "1 S 15TH ST, PHILADELPHIA PA 19102",
   "kind": "cafe",
@@ -4113,7 +4351,7 @@
   "name": "KOY RESTAURANT",
   "opening_hours": "09:00-20:00",
   "osm": "node/6439962336",
-  "osm_name": "LaSpada’s Original Steaks & Hoagies",
+  "osm_name": "LaSpada\u2019s Original Steaks & Hoagies",
   "phone": "+1 610-459-1500",
   "website": "https://laspadasgm.com",
   "zone_id": "glen_mills_chadds_ford"
@@ -4384,6 +4622,34 @@
   "website": "https://www.valleygreeninn.com/",
   "zone_id": "manayunk"
  },
+ "14597": {
+  "address": "281-283 MONTGOMERY AVE, BALA CYNWYD PA 19004-2814",
+  "kind": null,
+  "lat": 40.005583,
+  "lng": -75.242002,
+  "matched_by": "places text search -> 281 Montgomery Ave, Bala Cynwyd, PA 19004, USA",
+  "name": "AL DAR",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Al Dar Bistro",
+  "phone": null,
+  "website": "http://www.aldarbistro.com/",
+  "zone_id": "ardmore_bryn_mawr"
+ },
+ "15280": {
+  "address": "1236 MONTGOMERY AVE, NARBERTH PA 19072-1750",
+  "kind": null,
+  "lat": 40.013109,
+  "lng": -75.26904250000001,
+  "matched_by": "places text search -> 1236 Montgomery Ave, Narberth, PA 19072, USA",
+  "name": "RISTORANTE EVVIVA",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Evviva Restaurant",
+  "phone": null,
+  "website": "http://evvivarestaurant.com/",
+  "zone_id": "ardmore_bryn_mawr"
+ },
  "17574": {
   "address": "1164 VALLEY FORGE RD, WAYNE PA 19087-1202",
   "kind": "restaurant",
@@ -4397,6 +4663,20 @@
   "phone": "+1 610-293-9333",
   "website": "https://blackpowdertavern.com/",
   "zone_id": "wayne_radnor"
+ },
+ "18900": {
+  "address": "2105 KIMBERTON RD BOX 640, KIMBERTON PA 19442",
+  "kind": null,
+  "lat": 40.130337999999995,
+  "lng": -75.575647,
+  "matched_by": "places text search -> 2105 Kimberton Rd, Kimberton, PA 19442, USA",
+  "name": "THE COUNTRY HOUSE AT KIMBERTON",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Kimberton Inn",
+  "phone": null,
+  "website": "http://www.kimbertoninn.com/",
+  "zone_id": "phoenixville"
  },
  "18987": {
   "address": "120-122 S EASTON RD, GLENSIDE PA 19038-4001",
@@ -4421,7 +4701,7 @@
   "name": "GIUSEPPE'S PIZZA REST OF WARMINSTER",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "Giuseppes’s Pizza & Family Restaurant",
+  "osm_name": "Giuseppes\u2019s Pizza & Family Restaurant",
   "phone": null,
   "website": "http://giuseppesthebestpizza.com/",
   "zone_id": "warminster_warrington"
@@ -4678,6 +4958,20 @@
   "website": "https://www.positanoristorante.com/",
   "zone_id": "ardmore_bryn_mawr"
  },
+ "28837": {
+  "address": "2904 CONESTOGA RD, GLENMOORE PA 19343-9801",
+  "kind": null,
+  "lat": 40.115612399999996,
+  "lng": -75.6947823,
+  "matched_by": "places text search -> 2904 Conestoga Rd, Glenmoore, PA 19343, USA",
+  "name": "GRAMLAND PROPERTIES, INC.",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Ludwig's Grill & Oyster Bar",
+  "phone": null,
+  "website": "http://www.ludwigsoysterbar.com/",
+  "zone_id": "phoenixville"
+ },
  "29585": {
   "address": "107-109 W RIDGE PK, CONSHOHOCKEN PA 19428-1216",
   "kind": "fast_food",
@@ -4747,6 +5041,20 @@
   "phone": "+1 215-928-8118",
   "website": "http://www.fergies.com",
   "zone_id": "center_city"
+ },
+ "31616": {
+  "address": "83 E CITY LINE AVE, BALA CYNWYD PA 19004",
+  "kind": null,
+  "lat": 40.003467,
+  "lng": -75.22429199999999,
+  "matched_by": "places text search -> 83 City Ave, Bala Cynwyd, PA 19004, USA",
+  "name": "THE OLIVE GARDEN ITALIAN REST. #370",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Olive Garden Italian Restaurant",
+  "phone": null,
+  "website": "https://www.olivegarden.com/locations/pa/bala-cynwyd/bala-cynwyd/1370?cmpid=br:og_ag:ie_ch:loc_ca:OGGMB_sn:gmb_gt:bala-cynwyd-pa-1370_pl:locurl_rd:1279",
+  "zone_id": "ardmore_bryn_mawr"
  },
  "32028": {
   "address": "131 E BALTIMORE PK, MEDIA PA 19063",
@@ -4859,6 +5167,20 @@
   "phone": null,
   "website": "https://coyotecrossing.com/",
   "zone_id": "conshohocken"
+ },
+ "36248": {
+  "address": "237-239 HAVERFORD AVE, NARBERTH PA 19072-2216",
+  "kind": null,
+  "lat": 40.0057663,
+  "lng": -75.2604913,
+  "matched_by": "places text search -> 239 Haverford Ave, Narberth, PA 19072, USA",
+  "name": "ARCADIA CHIOS- 'THE GREEKS'",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "The Greeks",
+  "phone": null,
+  "website": "http://www.narberthpa.com/TheGreeks/menu.html",
+  "zone_id": "ardmore_bryn_mawr"
  },
  "36491": {
   "address": "229 S 45TH ST, PHILADELPHIA PA 19104-2918",
@@ -5205,7 +5527,7 @@
   "name": "10 WOODLAND, INC.",
   "opening_hours": "Mo-Sa 10:30-24:30",
   "osm": "way/686477326",
-  "osm_name": "Old Original Nick’s Roast Beef",
+  "osm_name": "Old Original Nick\u2019s Roast Beef",
   "phone": "+1 610-690-1112",
   "website": "https://nicksroastbeef.com/springfield-pa/",
   "zone_id": "springfield_delco"
@@ -5317,7 +5639,7 @@
   "name": "BREAD & RACE",
   "opening_hours": null,
   "osm": "node/12069137869",
-  "osm_name": "Paddy’s",
+  "osm_name": "Paddy\u2019s",
   "phone": null,
   "website": "http://paddyspuboldcity.com",
   "zone_id": "center_city"
@@ -5835,7 +6157,7 @@
   "name": "P. J. RYAN'S, INC.",
   "opening_hours": "Mo-Th 16:00-24:00; Fr-Su 12:00-24:00",
   "osm": "node/6441503156",
-  "osm_name": "Ryan’s Pub",
+  "osm_name": "Ryan\u2019s Pub",
   "phone": "+1 610-344-3934",
   "website": "https://ryans-pub.com",
   "zone_id": "west_chester"
@@ -6591,7 +6913,7 @@
   "name": "APPLEBEE'S NEIGHBORHOOD GRILL & BAR",
   "opening_hours": "10:30-21:00",
   "osm": "node/6431942365",
-  "osm_name": "Jake’s Wayback Burgers",
+  "osm_name": "Jake\u2019s Wayback Burgers",
   "phone": "+1 610-226-8888",
   "website": "https://waybackburgers.com/locations/us/pennsylvania/west-chester-2",
   "zone_id": "west_chester"
@@ -7109,7 +7431,7 @@
   "name": "PIETROS PRIME INC",
   "opening_hours": "Mo-Sa 11:00-21:00; Su 16:00-21:00",
   "osm": "node/6441475021",
-  "osm_name": "Pietro’s Prime",
+  "osm_name": "Pietro\u2019s Prime",
   "phone": "+1 484-760-6100",
   "website": "https://www.pietrosprime.com",
   "zone_id": "west_chester"
@@ -7702,6 +8024,20 @@
   "website": "https://www.magerkspub.com/fort-washington/",
   "zone_id": "blue_bell_plymouth_meeting"
  },
+ "61319": {
+  "address": "1107 LANCASTER AVE, BRYN MAWR PA 19010-2707",
+  "kind": null,
+  "lat": 40.024567399999995,
+  "lng": -75.32429739999999,
+  "matched_by": "places text search -> 1107 E Lancaster Ave, Bryn Mawr, PA 19010, USA",
+  "name": "KELLYS RESTAURANT TAPROOM",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Kelly's Taproom",
+  "phone": null,
+  "website": "http://www.kellystaproom.com/",
+  "zone_id": "ardmore_bryn_mawr"
+ },
  "61419": {
   "address": "TOWN CENTER AT WAYNE 200 W LANCASTER AVE, WAYNE PA 19087-4046",
   "kind": "restaurant",
@@ -8005,7 +8341,7 @@
   "name": "TAQUERIA MOROLEON INC",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "Taquería Moroleón",
+  "osm_name": "Taquer\u00eda Morole\u00f3n",
   "phone": null,
   "website": "http://www.taqueriamoroleon.com/",
   "zone_id": "kennett_square"
@@ -8047,7 +8383,7 @@
   "name": "MAS WEST CHESTER LLC",
   "opening_hours": "Mo off; Tu-We 15:00-23:00; Th-Fr 15:00-24:00; Sa 12:00-24:00; Su 12:00-23:00",
   "osm": "way/321893238",
-  "osm_name": "Más Mexicali Cantina",
+  "osm_name": "M\u00e1s Mexicali Cantina",
   "phone": "+1 610-918-6280",
   "website": "https://www.masmexicali.com/",
   "zone_id": "west_chester"
@@ -8439,7 +8775,7 @@
   "name": "PLAZA AZTECA MEXICAN RESTAURANT",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "Plaza Azteca Mexican Restaurant · Kennett Square",
+  "osm_name": "Plaza Azteca Mexican Restaurant \u00b7 Kennett Square",
   "phone": null,
   "website": "https://plazaazteca.com/kennett-square/",
   "zone_id": "kennett_square"
@@ -9144,6 +9480,20 @@
   "website": "https://www.southerncrosskitchen.com",
   "zone_id": "conshohocken"
  },
+ "67533": {
+  "address": "729 E HECTOR ST, CONSHOHOCKEN PA 19428-2354",
+  "kind": null,
+  "lat": 40.0744419,
+  "lng": -75.2929611,
+  "matched_by": "places text search -> 729 E Hector St, Conshohocken, PA 19428, USA",
+  "name": "MILFRED MOON LLC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Bar Lucca",
+  "phone": null,
+  "website": "http://www.barluccarestaurant.com/",
+  "zone_id": "conshohocken"
+ },
  "67585": {
   "address": "240 MALL BLVD, KING OF PRUSSIA PA 19406-2902",
   "kind": "hotel",
@@ -9461,7 +9811,7 @@
   "name": "JLPM-NRB INC",
   "opening_hours": "Mo-Sa 11:00-22:30",
   "osm": "way/686694182",
-  "osm_name": "Old Original Nick’s Roast Beef",
+  "osm_name": "Old Original Nick\u2019s Roast Beef",
   "phone": "+1 484-999-8721",
   "website": "https://nicksroastbeef.com/west-chester-pa/",
   "zone_id": "west_chester"
@@ -9503,7 +9853,7 @@
   "name": "SENOR SALSA",
   "opening_hours": "Su-Th 11:00-22:00, Fr-Sa 11:00-23:00",
   "osm": "way/518149023",
-  "osm_name": "Señor Salsa",
+  "osm_name": "Se\u00f1or Salsa",
   "phone": "+1-215-887-9600",
   "website": "https://www.senorsalsapa.com/",
   "zone_id": "abington_jenkintown"
@@ -9578,6 +9928,20 @@
   "website": "https://grancaffelaquila.com",
   "zone_id": "center_city"
  },
+ "68985": {
+  "address": "15 WYNNEWOOD RD, WYNNEWOOD  PA 19096",
+  "kind": null,
+  "lat": 40.0017381,
+  "lng": -75.276216,
+  "matched_by": "places text search -> 15 E Wynnewood Rd, Wynnewood, PA 19096, USA",
+  "name": "WHOLE FOODS MARKET GROUP LLC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Whole Foods at Wynnewood",
+  "phone": null,
+  "website": "https://properties.kimcorealty.com/properties/whole-foods-at-wynnewood/117010/view",
+  "zone_id": "ardmore_bryn_mawr"
+ },
  "69037": {
   "address": "281 EASTON RD, WARRINGTON PA 18976-2517",
   "kind": null,
@@ -9619,6 +9983,20 @@
   "phone": null,
   "website": "https://crookedeyebrewery.com/",
   "zone_id": "willow_grove_horsham"
+ },
+ "69227": {
+  "address": "200 RIDGE PK STE 110, CONSHOHOCKEN PA 19428-3702",
+  "kind": null,
+  "lat": 40.0954197,
+  "lng": -75.2881336,
+  "matched_by": "places text search -> 200 Ridge Pike, Conshohocken, PA 19428, USA",
+  "name": "WEIS MARKETS INC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Weis Markets",
+  "phone": null,
+  "website": "https://www.weismarkets.com/stores#/4339",
+  "zone_id": "conshohocken"
  },
  "69238": {
   "address": "19-21 W GIRARD AVE STE 100, PHILADELPHIA PA 19123-1718",
@@ -10278,6 +10656,20 @@
   "website": "https://hgpalermospizza.com",
   "zone_id": "pottstown"
  },
+ "71064": {
+  "address": "14 N MERION AVE, BRYN MAWR PA 19010-3013",
+  "kind": null,
+  "lat": 40.0232528,
+  "lng": -75.320675,
+  "matched_by": "places text search -> 14 N Merion Ave, Bryn Mawr, PA 19010, USA",
+  "name": "XOLO TACOS 2 INC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Xolo Tacos",
+  "phone": null,
+  "website": "http://www.xolotacos.com/",
+  "zone_id": "ardmore_bryn_mawr"
+ },
  "71070": {
   "address": "1745 S EASTON RD, DOYLESTOWN PA 18901-2812",
   "kind": null,
@@ -10305,6 +10697,34 @@
   "phone": "+1-267-606-6313",
   "website": "https://www.royalboucherie.com",
   "zone_id": "center_city"
+ },
+ "71157": {
+  "address": "350 & 366-368 BRIDGE ST , PHOENIXVILLE PA 19460",
+  "kind": null,
+  "lat": 40.132955700000004,
+  "lng": -75.52073639999999,
+  "matched_by": "places text search -> 368 Bridge St, Phoenixville, PA 19460, USA",
+  "name": "STABLE 12 BREWING COMPANY LLC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Stable 12 Brewing Company",
+  "phone": null,
+  "website": "http://www.stable12.com/",
+  "zone_id": "phoenixville"
+ },
+ "71159": {
+  "address": "350 & 366-368 BRIDGE ST, PHOENIXVILLE PA 19460",
+  "kind": null,
+  "lat": 40.132955700000004,
+  "lng": -75.52073639999999,
+  "matched_by": "places text search -> 368 Bridge St, Phoenixville, PA 19460, USA",
+  "name": "STABLE 12 BREWING COMPANY LLC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Stable 12 Brewing Company",
+  "phone": null,
+  "website": "http://www.stable12.com/",
+  "zone_id": "phoenixville"
  },
  "71182": {
   "address": "5301 CHEW AVE, PHILADELPHIA PA 19138-2803",
@@ -10609,7 +11029,7 @@
   "name": "FOGO DE CHAO CHURRASCARIA (KING OF PRUSSIA) LLC",
   "opening_hours": "Mo-Th 11:30-21:30; Fr-Sa 11:30-22:30; Su 11:30-21:00",
   "osm": "way/988637733",
-  "osm_name": "Fogo de Chão",
+  "osm_name": "Fogo de Ch\u00e3o",
   "phone": "+1 484-965-9655",
   "website": "https://fogodechao.com/location/king-of-prussia/",
   "zone_id": "king_of_prussia"
@@ -10837,6 +11257,20 @@
   "phone": "+1 610-873-5544",
   "website": "https://anthonyscucinafresca.com/",
   "zone_id": "exton_downingtown"
+ },
+ "73040": {
+  "address": "50 E WYNNEWOOD RD UNIT #2, WYNNEWOOD PA 19096-2013",
+  "kind": null,
+  "lat": 40.0013629,
+  "lng": -75.27213549999999,
+  "matched_by": "places text search -> 50 E Wynnewood Rd, Wynnewood, PA 19096, USA",
+  "name": "THE GIANT COMPANY LLC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "GIANT",
+  "phone": null,
+  "website": "https://stores.giantfoodstores.com/pa/wynnewood/50-e-wynnewood-rd?y_source=1_NDE5NTcwMy03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+  "zone_id": "ardmore_bryn_mawr"
  },
  "73101": {
   "address": "1927-1929 W PASSYUNK AVE, PHILADELPHIA PA 19145-3620",
@@ -11104,6 +11538,20 @@
   "website": "https://www.fermenteryform.com/",
   "zone_id": "fishtown_kensington"
  },
+ "81892": {
+  "address": "382-384 E ELM ST, CONSHOHOCKEN PA 19428-1909",
+  "kind": null,
+  "lat": 40.073022099999996,
+  "lng": -75.2992847,
+  "matched_by": "places nearby search at the geocode -> 382 E Elm St, Conshohocken, PA 19428, USA",
+  "name": "CERDO",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Bar Sera",
+  "phone": null,
+  "website": "http://barsera.com/",
+  "zone_id": "conshohocken"
+ },
  "82015": {
   "address": "1600 N BROAD ST, PHILADELPHIA PA 19121-3489",
   "kind": "fast_food",
@@ -11131,6 +11579,20 @@
   "phone": "+1 267-422-4201",
   "website": "https://www.pizzeriavetri.com/location/king-of-prussia/",
   "zone_id": "king_of_prussia"
+ },
+ "82862": {
+  "address": "HAVERFORD SQ 379-385 W LANCASTER AVE STR 9 & 13, HAVERFORD PA 19041",
+  "kind": null,
+  "lat": 40.013016799999995,
+  "lng": -75.3000921,
+  "matched_by": "places text search -> 379-385 Lancaster Ave, Haverford, PA 19041, USA",
+  "name": "GINGER HAVERFORD LLC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Haverford Square",
+  "phone": null,
+  "website": "http://haverfordsquare.com/",
+  "zone_id": "ardmore_bryn_mawr"
  },
  "82870": {
   "address": "2640-2714 DEKALB PIKE  STE 111, EAST NORRITON PA 19401",
@@ -11482,6 +11944,20 @@
   "website": "http://www.hopsscotch22.com/",
   "zone_id": "doylestown"
  },
+ "85899": {
+  "address": "121 E CITY LINE AVE, BALA CYNWYD PA 19004-2448",
+  "kind": null,
+  "lat": 40.0039219,
+  "lng": -75.22373569999999,
+  "matched_by": "places nearby search at the licence address -> 121 E City Ave, Bala Cynwyd, PA 19004, USA",
+  "name": "THE FROSTED MUG",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "ACME Markets",
+  "phone": null,
+  "website": "https://local.acmemarkets.com/pa/bala-cynwyd/121-e-city-ave.html",
+  "zone_id": "ardmore_bryn_mawr"
+ },
  "86089": {
   "address": "2929 WALNUT ST, PHILADELPHIA PA 19104-5054",
   "kind": "restaurant",
@@ -11664,6 +12140,20 @@
   "website": "https://www.wellcraftedbeer.com/home2",
   "zone_id": "lansdale_montgomeryville"
  },
+ "87810": {
+  "address": "818 LANCASTER AVE, BRYN MAWR PA 19010-3209",
+  "kind": null,
+  "lat": 40.0215009,
+  "lng": -75.3187835,
+  "matched_by": "places text search -> 818 Lancaster Ave, Bryn Mawr, PA 19010, USA",
+  "name": "MARBLES",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Bar Avalon Bryn Mawr",
+  "phone": null,
+  "website": "https://www.avalonrestaurant.net/",
+  "zone_id": "ardmore_bryn_mawr"
+ },
  "88001": {
   "address": "225  BIRCH ST, KENNETT SQUARE PA 19348",
   "kind": null,
@@ -11719,6 +12209,20 @@
   "phone": "+1 610-388-6221",
   "website": "https://www.chaddsford.com",
   "zone_id": "glen_mills_chadds_ford"
+ },
+ "88737": {
+  "address": "555 CITY LINE AVE, BALA CYNWYD PA 19004-1115",
+  "kind": null,
+  "lat": 40.0093818,
+  "lng": -75.21184989999999,
+  "matched_by": "places text search -> 555 City Ave, Bala Cynwyd, PA 19004, USA",
+  "name": "LONGHORN STEAKHOUSE #5586",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "LongHorn Steakhouse",
+  "phone": null,
+  "website": "https://www.longhornsteakhouse.com/locations/pa/bala-cynwyd/bala-cynwyd/5586?cmpid=br:lh_ag:ie_ch:loc_ca:LHGMB_sn:gmb_gt:bala-cynwyd-pa-5586_pl:locurl_rd:1509",
+  "zone_id": "ardmore_bryn_mawr"
  },
  "88846": {
   "address": "1619 GRANT AVE, PHILADELPHIA PA 19115",
@@ -11887,6 +12391,20 @@
   "phone": null,
   "website": "https://www.newridgebrewing.com/",
   "zone_id": "manayunk"
+ },
+ "90383": {
+  "address": "2218 FRANKFORD AVE, PHILADELPHIA PA 19125",
+  "kind": null,
+  "lat": 39.980132999999995,
+  "lng": -75.1291919,
+  "matched_by": "places text search -> 2218 Frankford Ave, Philadelphia, PA 19125, USA",
+  "name": "ST ONERS",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "St. Oner's",
+  "phone": null,
+  "website": "https://www.stonersfishtown.com/",
+  "zone_id": "phoenixville"
  },
  "90491": {
   "address": "625 MOREHALL RD STE 500, MALVERN PA 19355",
@@ -12737,7 +13255,7 @@
   "name": "THE FROSTED MUG",
   "opening_hours": null,
   "osm": "node/11339377765",
-  "osm_name": "Mario’s Pizza",
+  "osm_name": "Mario\u2019s Pizza",
   "phone": "+1-215-248-3232",
   "website": "https://www.mariospizzachestnuthill.com/",
   "zone_id": "northwest_philly"
@@ -12811,6 +13329,20 @@
   "phone": "+1-215-309-2149",
   "website": "https://www.wilderphilly.com/",
   "zone_id": "center_city"
+ },
+ "95965": {
+  "address": "23 E LANCASTER AVE, ARDMORE PA 19003-2319",
+  "kind": null,
+  "lat": 40.007598,
+  "lng": -75.289963,
+  "matched_by": "places text search -> 23 E Lancaster Ave, Ardmore, PA 19003, USA",
+  "name": "CBP ARDMORE LLC",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Ardmore Music Hall",
+  "phone": null,
+  "website": "https://www.ardmoremusichall.com/",
+  "zone_id": "ardmore_bryn_mawr"
  },
  "95994": {
   "address": "120 EAGLEVIEW BLVD, EXTON PA 19341",
@@ -13064,6 +13596,20 @@
   "website": "http://www.conshohockenbrewing.com/kop",
   "zone_id": "king_of_prussia"
  },
+ "97258": {
+  "address": "101 FORD ST, WEST CONSHOHOCKEN PA 19428-2915",
+  "kind": null,
+  "lat": 40.06894140000001,
+  "lng": -75.3116198,
+  "matched_by": "places text search -> 101 Ford St, Conshohocken, PA 19428, USA",
+  "name": "CATCH 101",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "Catch 101",
+  "phone": null,
+  "website": "http://www.catch101.com/",
+  "zone_id": "conshohocken"
+ },
  "97771": {
   "address": "1650 LIMEKILN PIKE, DRESHER PA 19025-1114",
   "kind": "fast_food",
@@ -13203,6 +13749,20 @@
   "phone": "+1 267-514-1700",
   "website": "https://tirnanogphilly.com/",
   "zone_id": "center_city"
+ },
+ "98507": {
+  "address": "829 MONTGOMERY AVE, PENN VALLEY PA 19072",
+  "kind": null,
+  "lat": 40.0109158,
+  "lng": -75.2580748,
+  "matched_by": "places text search -> 829 Montgomery Ave, Narberth, PA 19072, USA",
+  "name": "THE FROSTED MUG",
+  "opening_hours": null,
+  "osm": null,
+  "osm_name": "ACME Markets",
+  "phone": null,
+  "website": "https://local.acmemarkets.com/pa/narberth/829-montgomery-ave.html",
+  "zone_id": "ardmore_bryn_mawr"
  },
  "98596": {
   "address": "100 LAWRENCE  RD, BROOMALL PA 19008",
@@ -13560,10 +14120,10 @@
   "lat": 39.6837184,
   "lng": -75.7459185,
   "matched_by": "places text search (DE seed)",
-  "name": "BAB’s Nashville Hot Chicken",
+  "name": "BAB\u2019s Nashville Hot Chicken",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "BAB’s Nashville Hot Chicken",
+  "osm_name": "BAB\u2019s Nashville Hot Chicken",
   "phone": null,
   "website": "http://www.babshotchicken.com/",
   "zone_id": "newark_de"
@@ -13588,10 +14148,10 @@
   "lat": 39.5781784,
   "lng": -75.5894888,
   "matched_by": "places text search (DE seed)",
-  "name": "Sabatina’s Sandwiches",
+  "name": "Sabatina\u2019s Sandwiches",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "Sabatina’s Sandwiches",
+  "osm_name": "Sabatina\u2019s Sandwiches",
   "phone": null,
   "website": "https://sabatinas.com/",
   "zone_id": "new_castle_de"
@@ -14204,10 +14764,10 @@
   "lat": 39.7401428,
   "lng": -75.6910331,
   "matched_by": "places text search (DE seed)",
-  "name": "P.J. Whelihan’s Pub + Restaurant – Pike Creek",
+  "name": "P.J. Whelihan\u2019s Pub + Restaurant \u2013 Pike Creek",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "P.J. Whelihan’s Pub + Restaurant – Pike Creek",
+  "osm_name": "P.J. Whelihan\u2019s Pub + Restaurant \u2013 Pike Creek",
   "phone": null,
   "website": "https://pjspub.com/",
   "zone_id": "hockessin_greenville"
@@ -14274,10 +14834,10 @@
   "lat": 38.7397408,
   "lng": -75.1473711,
   "matched_by": "places text search (DE seed)",
-  "name": "Cabañas Restaurant",
+  "name": "Caba\u00f1as Restaurant",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "Cabañas Restaurant",
+  "osm_name": "Caba\u00f1as Restaurant",
   "phone": null,
   "website": "http://ordercabanasrestaurant.com/",
   "zone_id": "lewes"
@@ -14498,10 +15058,10 @@
   "lat": 39.7577315,
   "lng": -75.56164609999999,
   "matched_by": "places text search (DE seed)",
-  "name": "Hayworth & Finch Café",
+  "name": "Hayworth & Finch Caf\u00e9",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "Hayworth & Finch Café",
+  "osm_name": "Hayworth & Finch Caf\u00e9",
   "phone": null,
   "website": "https://www.hayworthandfinch.com/",
   "zone_id": "wilmington"
@@ -14624,10 +15184,10 @@
   "lat": 39.685123499999996,
   "lng": -75.7433385,
   "matched_by": "places text search (DE seed)",
-  "name": "Café 67",
+  "name": "Caf\u00e9 67",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "Café 67",
+  "osm_name": "Caf\u00e9 67",
   "phone": null,
   "website": "https://www.newark.coop/cafe-67",
   "zone_id": "newark_de"
@@ -14666,10 +15226,10 @@
   "lat": 39.701909799999996,
   "lng": -75.5509374,
   "matched_by": "places text search (DE seed)",
-  "name": "The Reader's Café",
+  "name": "The Reader's Caf\u00e9",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "The Reader's Café",
+  "osm_name": "The Reader's Caf\u00e9",
   "phone": null,
   "website": "http://newcastlede.gov/readerscafe",
   "zone_id": "new_castle_de"
@@ -14680,10 +15240,10 @@
   "lat": 39.6847402,
   "lng": -75.7434035,
   "matched_by": "places text search (DE seed)",
-  "name": "Friendship BBQ, Newark友情客串",
+  "name": "Friendship BBQ, Newark\u53cb\u60c5\u5ba2\u4e32",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "Friendship BBQ, Newark友情客串",
+  "osm_name": "Friendship BBQ, Newark\u53cb\u60c5\u5ba2\u4e32",
   "phone": null,
   "website": "http://bbqnewark.com/",
   "zone_id": "newark_de"
@@ -15002,10 +15562,10 @@
   "lat": 39.6318164,
   "lng": -75.6545991,
   "matched_by": "places text search (DE seed)",
-  "name": "El Tapatío Mexican Restaurant",
+  "name": "El Tapat\u00edo Mexican Restaurant",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "El Tapatío Mexican Restaurant",
+  "osm_name": "El Tapat\u00edo Mexican Restaurant",
   "phone": null,
   "website": "http://www.eltapatiodelaware.com/",
   "zone_id": "newark_de"
@@ -15282,10 +15842,10 @@
   "lat": 38.718062599999996,
   "lng": -75.0766299,
   "matched_by": "places text search (DE seed)",
-  "name": "Kiwi’s Kove",
+  "name": "Kiwi\u2019s Kove",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "Kiwi’s Kove",
+  "osm_name": "Kiwi\u2019s Kove",
   "phone": null,
   "website": "http://kiwisrb.com/",
   "zone_id": "rehoboth_beach"
@@ -15926,10 +16486,10 @@
   "lat": 39.441471,
   "lng": -75.7413177,
   "matched_by": "places text search (DE seed)",
-  "name": "Luna’s Pizzeria & Italian Grill",
+  "name": "Luna\u2019s Pizzeria & Italian Grill",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "Luna’s Pizzeria & Italian Grill",
+  "osm_name": "Luna\u2019s Pizzeria & Italian Grill",
   "phone": null,
   "website": "https://lunaspizzeriaanditaliangrill.com/",
   "zone_id": "middletown_de"
@@ -16486,10 +17046,10 @@
   "lat": 38.705619999999996,
   "lng": -75.08805559999999,
   "matched_by": "places text search (DE seed)",
-  "name": "El Ázteca",
+  "name": "El \u00c1zteca",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "El Ázteca",
+  "osm_name": "El \u00c1zteca",
   "phone": null,
   "website": "https://bluemezcalgroup.com/",
   "zone_id": "rehoboth_beach"
@@ -16808,10 +17368,10 @@
   "lat": 39.4511342,
   "lng": -75.7006893,
   "matched_by": "places text search (DE seed)",
-  "name": "Fiesta Tapatía",
+  "name": "Fiesta Tapat\u00eda",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "Fiesta Tapatía",
+  "osm_name": "Fiesta Tapat\u00eda",
   "phone": null,
   "website": "http://fiestatapatiadelaware.com/",
   "zone_id": "middletown_de"
@@ -17326,10 +17886,10 @@
   "lat": 39.822412899999996,
   "lng": -75.4881511,
   "matched_by": "places text search (DE seed)",
-  "name": "Café Sitaly",
+  "name": "Caf\u00e9 Sitaly",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "Café Sitaly",
+  "osm_name": "Caf\u00e9 Sitaly",
   "phone": null,
   "website": "http://www.cafesitaly.com/",
   "zone_id": "wilmington"
@@ -17998,10 +18558,10 @@
   "lat": 39.713150399999996,
   "lng": -75.6129996,
   "matched_by": "places text search (DE seed)",
-  "name": "El Amigo Taquería",
+  "name": "El Amigo Taquer\u00eda",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "El Amigo Taquería",
+  "osm_name": "El Amigo Taquer\u00eda",
   "phone": null,
   "website": "http://www.elamigomexicanfood.com/",
   "zone_id": "new_castle_de"
@@ -18012,10 +18572,10 @@
   "lat": 38.7625636,
   "lng": -75.15235729999999,
   "matched_by": "places text search (DE seed)",
-  "name": "ROLL’N EGG",
+  "name": "ROLL\u2019N EGG",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "ROLL’N EGG",
+  "osm_name": "ROLL\u2019N EGG",
   "phone": null,
   "website": "https://www.facebook.com/share/16MMRDHNgD/?mibextid=wwXIfr",
   "zone_id": "lewes"
@@ -18110,10 +18670,10 @@
   "lat": 39.4591868,
   "lng": -75.71736410000001,
   "matched_by": "places text search (DE seed)",
-  "name": "America’s Best Wings",
+  "name": "America\u2019s Best Wings",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "America’s Best Wings",
+  "osm_name": "America\u2019s Best Wings",
   "phone": null,
   "website": "http://www.abwmiddletown.com/",
   "zone_id": "middletown_de"
@@ -18138,10 +18698,10 @@
   "lat": 39.5007322,
   "lng": -75.648844,
   "matched_by": "places text search (DE seed)",
-  "name": "Fratelli’s Italian Specialties",
+  "name": "Fratelli\u2019s Italian Specialties",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "Fratelli’s Italian Specialties",
+  "osm_name": "Fratelli\u2019s Italian Specialties",
   "phone": null,
   "website": "https://m.facebook.com/people/Fratellis/100088491725284/",
   "zone_id": "middletown_de"
@@ -18432,10 +18992,10 @@
   "lat": 39.6275707,
   "lng": -75.74631219999999,
   "matched_by": "places text search (DE seed)",
-  "name": "Katanas • Sushi & Mex Grill",
+  "name": "Katanas \u2022 Sushi & Mex Grill",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "Katanas • Sushi & Mex Grill",
+  "osm_name": "Katanas \u2022 Sushi & Mex Grill",
   "phone": null,
   "website": "https://katanasde.com/",
   "zone_id": "newark_de"
@@ -18600,10 +19160,10 @@
   "lat": 39.646222699999996,
   "lng": -75.63753299999999,
   "matched_by": "places text search (DE seed)",
-  "name": "El Trébol Tex Mex Restaurant",
+  "name": "El Tr\u00e9bol Tex Mex Restaurant",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "El Trébol Tex Mex Restaurant",
+  "osm_name": "El Tr\u00e9bol Tex Mex Restaurant",
   "phone": null,
   "website": "https://eltreboltexmexrestaurant.com/",
   "zone_id": "newark_de"
@@ -18614,10 +19174,10 @@
   "lat": 39.4413759,
   "lng": -75.7419623,
   "matched_by": "places text search (DE seed)",
-  "name": "Derby’s Bar & Restaurant",
+  "name": "Derby\u2019s Bar & Restaurant",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "Derby’s Bar & Restaurant",
+  "osm_name": "Derby\u2019s Bar & Restaurant",
   "phone": null,
   "website": "https://www.derbysrestaurantbar.com/",
   "zone_id": "middletown_de"
@@ -19034,10 +19594,10 @@
   "lat": 39.8036816,
   "lng": -75.50883499999999,
   "matched_by": "places text search (DE seed)",
-  "name": "Angel’s Family Restaurant",
+  "name": "Angel\u2019s Family Restaurant",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "Angel’s Family Restaurant",
+  "osm_name": "Angel\u2019s Family Restaurant",
   "phone": null,
   "website": "https://angelsrestaurantde.com/",
   "zone_id": "new_castle_de"
@@ -19314,10 +19874,10 @@
   "lat": 38.715944,
   "lng": -75.077407,
   "matched_by": "places text search (DE seed)",
-  "name": "Café Papillon",
+  "name": "Caf\u00e9 Papillon",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "Café Papillon",
+  "osm_name": "Caf\u00e9 Papillon",
   "phone": null,
   "website": "https://www.facebook.com/papilloncrepesandcroissants/",
   "zone_id": "rehoboth_beach"
@@ -19888,10 +20448,10 @@
   "lat": 39.6468231,
   "lng": -75.6574618,
   "matched_by": "places text search (DE seed)",
-  "name": "FRY’N PIE",
+  "name": "FRY\u2019N PIE",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "FRY’N PIE",
+  "osm_name": "FRY\u2019N PIE",
   "phone": null,
   "website": "https://www.frynpie.com/",
   "zone_id": "newark_de"
@@ -20154,10 +20714,10 @@
   "lat": 39.4392169,
   "lng": -75.7466008,
   "matched_by": "places text search (DE seed)",
-  "name": "Randazzo’s Trattoria",
+  "name": "Randazzo\u2019s Trattoria",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "Randazzo’s Trattoria",
+  "osm_name": "Randazzo\u2019s Trattoria",
   "phone": null,
   "website": "https://randazzosmot.com/",
   "zone_id": "middletown_de"
@@ -20294,10 +20854,10 @@
   "lat": 39.7959196,
   "lng": -75.54776520000001,
   "matched_by": "places text search (DE seed)",
-  "name": "La Fête",
+  "name": "La F\u00eate",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "La Fête",
+  "osm_name": "La F\u00eate",
   "phone": null,
   "website": "https://lafetedelaware.com/",
   "zone_id": "hockessin_greenville"
@@ -20574,10 +21134,10 @@
   "lat": 39.7449531,
   "lng": -75.5479812,
   "matched_by": "places text search (DE seed)",
-  "name": "Oath ‘84",
+  "name": "Oath \u201884",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "Oath ‘84",
+  "osm_name": "Oath \u201884",
   "phone": null,
   "website": "https://www.oath84.com/",
   "zone_id": "wilmington"
@@ -20672,10 +21232,10 @@
   "lat": 38.7167044,
   "lng": -75.0783697,
   "matched_by": "places text search (DE seed)",
-  "name": "Back Porch Café",
+  "name": "Back Porch Caf\u00e9",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "Back Porch Café",
+  "osm_name": "Back Porch Caf\u00e9",
   "phone": null,
   "website": "http://www.backporchcafe.com/",
   "zone_id": "rehoboth_beach"
@@ -21064,10 +21624,10 @@
   "lat": 38.747414,
   "lng": -75.159994,
   "matched_by": "places text search (DE seed)",
-  "name": "Tokyo Steakhouse | Japanese • Sushi",
+  "name": "Tokyo Steakhouse | Japanese \u2022 Sushi",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "Tokyo Steakhouse | Japanese • Sushi",
+  "osm_name": "Tokyo Steakhouse | Japanese \u2022 Sushi",
   "phone": null,
   "website": "http://tokyosteakhouse.info/",
   "zone_id": "lewes"
@@ -21134,10 +21694,10 @@
   "lat": 38.717097200000005,
   "lng": -75.0789382,
   "matched_by": "places text search (DE seed)",
-  "name": "DiFebo’s Restaurant Rehoboth",
+  "name": "DiFebo\u2019s Restaurant Rehoboth",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "DiFebo’s Restaurant Rehoboth",
+  "osm_name": "DiFebo\u2019s Restaurant Rehoboth",
   "phone": null,
   "website": "http://difebos.com/",
   "zone_id": "rehoboth_beach"
@@ -21568,10 +22128,10 @@
   "lat": 39.758688,
   "lng": -75.56292289999999,
   "matched_by": "places text search (DE seed)",
-  "name": "Añejo Mexican Grill & Tequila Bar",
+  "name": "A\u00f1ejo Mexican Grill & Tequila Bar",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "Añejo Mexican Grill & Tequila Bar",
+  "osm_name": "A\u00f1ejo Mexican Grill & Tequila Bar",
   "phone": null,
   "website": "http://www.anejode.com/",
   "zone_id": "wilmington"
@@ -21750,10 +22310,10 @@
   "lat": 39.6834086,
   "lng": -75.7499079,
   "matched_by": "places text search (DE seed)",
-  "name": "Caffè Gelato Restaurant",
+  "name": "Caff\u00e8 Gelato Restaurant",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "Caffè Gelato Restaurant",
+  "osm_name": "Caff\u00e8 Gelato Restaurant",
   "phone": null,
   "website": "http://www.caffegelato.net/",
   "zone_id": "newark_de"
@@ -22352,10 +22912,10 @@
   "lat": 39.74384,
   "lng": -75.567655,
   "matched_by": "places text search (DE seed)",
-  "name": "Dani’s Pizza Italian Restaurant",
+  "name": "Dani\u2019s Pizza Italian Restaurant",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "Dani’s Pizza Italian Restaurant",
+  "osm_name": "Dani\u2019s Pizza Italian Restaurant",
   "phone": null,
   "website": "https://friedchikentacoloco.toast.site/order?diningOption=takeout&rwg_token=AFd1xnHOX9z5aYlFEjF1BrQM9sUSGlmdko8tTIp-vv1rcHTagWGFGOqFFq7eaEZiPy5g4W8wEzDTY8_QY0mC_DjqxmxX6A3JOOakM7iO802nkjVRUArGkCQ%3D",
   "zone_id": "wilmington"
@@ -22450,10 +23010,10 @@
   "lat": 39.6311203,
   "lng": -75.66058400000001,
   "matched_by": "places text search (DE seed)",
-  "name": "Plaza Ázteca | Mexican Restaurant · Bear",
+  "name": "Plaza \u00c1zteca | Mexican Restaurant \u00b7 Bear",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "Plaza Ázteca | Mexican Restaurant · Bear",
+  "osm_name": "Plaza \u00c1zteca | Mexican Restaurant \u00b7 Bear",
   "phone": null,
   "website": "https://plazaazteca.com/newark/",
   "zone_id": "newark_de"
@@ -22702,10 +23262,10 @@
   "lat": 39.7150405,
   "lng": -75.6415159,
   "matched_by": "places text search (DE seed)",
-  "name": "El Ródeo Loco",
+  "name": "El R\u00f3deo Loco",
   "opening_hours": null,
   "osm": null,
-  "osm_name": "El Ródeo Loco",
+  "osm_name": "El R\u00f3deo Loco",
   "phone": null,
   "website": "https://order.spoton.com/so-el-rodeo-loco-19659/wilmington-de/666059afde2ff0003f982631",
   "zone_id": "new_castle_de"

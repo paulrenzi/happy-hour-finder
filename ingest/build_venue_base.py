@@ -31,11 +31,27 @@ SITES_JSON = os.path.join(REPO, "data", "venue_sites.json")
 PHOTOS_LID_JSON = os.path.join(REPO, "data", "venue_photos_by_lid.json")
 OUT_JSON = os.path.join(REPO, "data", "venue_base.json")
 
-# A licence you cannot walk into. Brewery Storage is a warehouse permit -- the
-# beer is there, nobody is drinking it. Everything else on the PLCB list serves
-# the public, including the hotel bars and the golf course restaurants, so they
-# stay: "is it worth going to" is the user's call, not ours.
-EXCLUDED_LICENSE_TYPES = {"Brewery Storage"}
+# Nothing is excluded by licence type at this door any more. "Brewery Storage"
+# used to be here on the reading "a warehouse permit -- the beer is there,
+# nobody is drinking it," which is right for a warehouse and wrong for this
+# market: ingest/seed_plcb.py's TAPROOM_TYPES already reversed that exact
+# call, by name, after finding Steel City Coffeehouse, Forest and Main Pub,
+# The Citadel Taproom, Sterling Pig and Backstage Tap and Grille all reach the
+# corpus by no other row. That comment said the type should stay IN venues.csv
+# -- it did not say this file should then drop it again at the second door.
+#
+# Found 2026-09-04 while chasing why The Boardroom (a *different* kind of gap,
+# see data/deals_seed.json) had no listing: a `find_denominator_gaps.py` sweep
+# of Phoenixville turned up Steel City Coffeehouse & Brewery, a real public
+# taproom holding an ACTIVE Brewery Storage licence and no other PLCB row at
+# 203 Bridge St. It was seeded correctly and then silently dropped here.
+# Measured across the whole corpus before fixing: 50 active Brewery Storage
+# rows survive seed_plcb.py, and EVERY one of them is the ONLY PLCB row at its
+# premises -- none is a duplicate of a Brewery/Restaurant licence already on
+# the board. Excluding the type here was not deduplication; it was 50 taprooms
+# with no other way onto the board being removed by a rule its own sibling
+# file had already argued against.
+EXCLUDED_LICENSE_TYPES = set()
 
 # Venues that are off the board by NAME, not by licence: the permanent bans and
 # the hotel chains. Kept in ingest/exclusions.py with the reasoning, because
@@ -242,7 +258,20 @@ def main():
         # Third source, lowest rank: the website Google returned alongside the
         # photo, for a place whose name already agreed with ours. Before this the
         # photo run recovered a website for ~3 in 5 site-less venues and dropped it.
-        website = place.get("website") or site.get("website")             or (photos.get(lid) or {}).get("website")
+        #
+        # 🛑 Not gated by name agreement in code, only in the comment above --
+        # and unlike `place` two lines up, ingest/fetch_venue_photos.py never
+        # consults HAND_DROPPED at all, because it runs off the board (what
+        # the site shows), not off a join it could reject. So a `--every-venue`
+        # photo sweep re-fetches a hand-dropped LID same as any other and this
+        # third source alone carried the drop right back in: PrimoHoagies
+        # (86292, hand-dropped as "not the Giant at 700 Nutt Rd") shipped the
+        # Giant's website again after 2026-09-04's Phoenixville photo sweep,
+        # though its NAME correctly stayed PLCB's own -- only the website leaked,
+        # through the one source `place_for()`'s HAND_DROPPED check never
+        # reaches. `AHandDropIsHonouredByEveryReader` already existed to catch
+        # exactly this and did.
+        website = place.get("website") or site.get("website")             or ((photos.get(lid) or {}).get("website") if lid not in HAND_DROPPED else None)
         if website:
             v["website"] = website
 
@@ -289,8 +318,8 @@ def main():
     n = len(out)
     kept = len(rows) - skipped
     named = sum(1 for v in out.values() if v["named_by"] != "plcb")
-    print(f"{len(rows)} PLCB rows, {skipped} excluded "
-          f"({'/'.join(sorted(EXCLUDED_LICENSE_TYPES))})")
+    excl_note = f" ({'/'.join(sorted(EXCLUDED_LICENSE_TYPES))})" if EXCLUDED_LICENSE_TYPES else ""
+    print(f"{len(rows)} PLCB rows, {skipped} excluded by licence type{excl_note}")
     for why in sorted(off_board):
         print(f"  {len(off_board[why]):>5}  off the board: {why}")
     print(f"{kept} licences collapsed to {n} venues "

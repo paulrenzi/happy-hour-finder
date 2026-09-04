@@ -1678,7 +1678,45 @@
    }
   ]
  },
- "70056": {
+ "114544": {
+  "name": "The Refectory",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 6,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "70057": {
   "name": "Tired Hands Fermentaria",
   "deals": [
    {
@@ -2141,6 +2179,54 @@
       "dow": 5,
       "end": "18:00",
       "start": "16:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "120650": {
+  "name": "Rick\u2019s Tavern",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "15:00",
+      "end": "16:00"
+     },
+     {
+      "dow": 2,
+      "start": "15:00",
+      "end": "16:00"
+     },
+     {
+      "dow": 3,
+      "start": "15:00",
+      "end": "16:00"
+     },
+     {
+      "dow": 4,
+      "start": "15:00",
+      "end": "16:00"
+     },
+     {
+      "dow": 5,
+      "start": "15:00",
+      "end": "16:00"
+     },
+     {
+      "dow": 6,
+      "start": "15:00",
+      "end": "16:00"
+     },
+     {
+      "dow": 7,
+      "start": "15:00",
+      "end": "16:00"
      }
     ],
     "source": {

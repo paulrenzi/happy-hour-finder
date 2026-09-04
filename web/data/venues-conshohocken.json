@@ -4,20 +4,71 @@
  "built_at": "2026-09-04",
  "venues": [
   {
-   "lid": "25087",
-   "name": "Below Deck Bottle Shop",
-   "address": "113-115 Fayette St, Conshohocken PA 19428",
+   "lid": "101704",
+   "name": "641 Old Elm Hotel",
+   "address": "641 Old Elm St, Conshohocken PA 19428",
    "zone_id": "conshohocken",
    "license_type": "Restaurant (Liquor)",
-   "id": "25087",
-   "plcb_name": "THE BOAT HOUSE, INC.",
-   "website": "https://boathousepa.com",
-   "lat": 40.0741176,
-   "lng": -75.3056165,
+   "id": "101704",
+   "plcb_name": "641 OLD ELM HOTEL LLC",
+   "website": "https://www.hilton.com/en/hotels/phlcoup-hotel-west-and-main-conshohocken-philadelphia/?SEO_id=GMB-AMER-UP-PHLCOUP",
+   "photo": {
+    "attribution": "Photo: Hotel West & Main Conshohocken Philadelphia, Tapestry by Hilton / Google",
+    "file": "img/venues/101704.jpg"
+   },
+   "deals": []
+  },
+  {
+   "lid": "59081",
+   "name": "Andy\u2019s Diner & Pub",
+   "address": "505 W Ridge Pk, Conshohocken PA 19428",
+   "zone_id": "conshohocken",
+   "license_type": "Restaurant (Liquor)",
+   "id": "59081",
+   "plcb_name": "ANDY'S DINER",
+   "website": "http://www.andysdinerandpub.com/",
+   "lat": 40.0948048,
+   "lng": -75.2937621,
    "geo_precision": "place",
    "photo": {
-    "attribution": "Photo: Below Deck Bottle Shop / Google",
-    "file": "img/venues/25087.jpg"
+    "attribution": "Photo: Andy\u2019s Diner & Pub / Google",
+    "file": "img/venues/59081.jpg"
+   },
+   "deals": []
+  },
+  {
+   "lid": "67533",
+   "name": "Bar Lucca",
+   "address": "729 E Hector St, Conshohocken PA 19428",
+   "zone_id": "conshohocken",
+   "license_type": "Restaurant (Liquor)",
+   "id": "67533",
+   "plcb_name": "MILFRED MOON LLC",
+   "website": "http://www.barluccarestaurant.com/",
+   "lat": 40.0744419,
+   "lng": -75.2929611,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Bar Lucca / Google",
+    "file": "img/venues/67533.jpg"
+   },
+   "deals": []
+  },
+  {
+   "lid": "81892",
+   "name": "Bar Sera",
+   "address": "382-384 E Elm St, Conshohocken PA 19428",
+   "zone_id": "conshohocken",
+   "license_type": "Restaurant (Liquor)",
+   "id": "81892",
+   "plcb_name": "CERDO",
+   "website": "http://barsera.com/",
+   "lat": 40.073022099999996,
+   "lng": -75.2992847,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Bar Sera / Google",
+    "file": "img/venues/81892.jpg"
    },
    "deals": []
   },
@@ -30,6 +81,9 @@
    "id": "97258",
    "plcb_name": "CATCH 101",
    "website": "http://www.catch101.com/",
+   "lat": 40.06894140000001,
+   "lng": -75.3116198,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Catch 101 / Google",
     "file": "img/venues/97258.jpg"
@@ -37,49 +91,27 @@
    "deals": []
   },
   {
-   "lid": "104882",
-   "name": "Ce Club",
-   "address": "126 Fayette St, Conshohocken PA 19428",
+   "lid": "50725",
+   "name": "Chippers Cafe",
+   "address": "725 Conshohocken Rd Unit E, Conshohocken PA 19428",
    "zone_id": "conshohocken",
    "license_type": "Restaurant (Liquor)",
-   "id": "104882",
-   "plcb_name": "CE CLUB LLC",
-   "website": "https://www.thecigarrepublic.com/conshohocken",
-   "photo": {
-    "attribution": "Photo: The Cigar Republic / Google",
-    "file": "img/venues/104882.jpg"
-   },
-   "deals": []
-  },
-  {
-   "lid": "81892",
-   "name": "Cerdo",
-   "address": "382-384 E Elm St, Conshohocken PA 19428",
-   "zone_id": "conshohocken",
-   "license_type": "Restaurant (Liquor)",
-   "id": "81892",
-   "plcb_name": "CERDO",
-   "deals": []
-  },
-  {
-   "lid": "120949",
-   "name": "Conshohocken Avila Liquor License",
-   "address": "201-203 W 6Th Ave, Conshohocken PA 19428",
-   "zone_id": "conshohocken",
-   "license_type": "Restaurant (Liquor)",
-   "id": "120949",
-   "plcb_name": "CONSHOHOCKEN AVILA LIQUOR LICENSE LLC",
+   "id": "50725",
+   "plcb_name": "CHIPPERS CAFE",
    "deals": []
   },
   {
    "lid": "68904",
-   "name": "Conshohocken Brewing",
+   "name": "Conshohocken Brewing Co - Conshy",
    "address": "739 East Elm St Ste B, Conshohocken PA 19428",
    "zone_id": "conshohocken",
    "license_type": "Brewery",
    "id": "68904",
    "plcb_name": "CONSHOHOCKEN BREWING COMPANY LLC",
-   "website": "https://www.conshohockenbrewing.com/",
+   "website": "https://www.conshohockenbrewing.com/conshy",
+   "lat": 40.0736983,
+   "lng": -75.2925011,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Jeremy Alfano / Google",
     "file": "img/venues/68904.jpg"
@@ -94,6 +126,9 @@
    "license_type": "Restaurant (Liquor)",
    "id": "49407",
    "plcb_name": "CONSHY CORNER TAVERN",
+   "lat": 40.074289199999996,
+   "lng": -75.29556099999999,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Justin Staudenmayer / Google",
     "file": "img/venues/49407.jpg"
@@ -101,20 +136,56 @@
    "deals": []
   },
   {
-   "lid": "28480",
-   "name": "Great American Pub",
-   "address": "123-125-127 Fayette St, Conshohocken PA 19428",
+   "lid": "29585",
+   "name": "Fingers Wings & Other Things",
+   "address": "107-109 W Ridge Pk, Conshohocken PA 19428",
    "zone_id": "conshohocken",
    "license_type": "Restaurant (Liquor)",
-   "id": "28480",
-   "plcb_name": "THE GREAT AMERICAN PUB",
-   "website": "https://thegreatamericanpub.com",
-   "lat": 40.0743464,
-   "lng": -75.305288,
+   "id": "29585",
+   "plcb_name": "FINGERS & WINGS, INC.",
+   "website": "https://fingerswingsandotherthings.com/?utm_source=google",
+   "lat": 40.0942527,
+   "lng": -75.2878635,
    "geo_precision": "place",
    "photo": {
-    "attribution": "Photo: Stephanie L / Google",
-    "file": "img/venues/28480.jpg"
+    "attribution": "Photo: david neufer / Google",
+    "file": "img/venues/29585.jpg"
+   },
+   "deals": []
+  },
+  {
+   "lid": "25087",
+   "name": "Flanigan's Boathouse",
+   "address": "113-115 Fayette St, Conshohocken PA 19428",
+   "zone_id": "conshohocken",
+   "license_type": "Restaurant (Liquor)",
+   "id": "25087",
+   "plcb_name": "THE BOAT HOUSE, INC.",
+   "website": "https://boathousepa.com/?utm_source=google",
+   "lat": 40.074187099999996,
+   "lng": -75.3055928,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Below Deck Bottle Shop / Google",
+    "file": "img/venues/25087.jpg"
+   },
+   "deals": []
+  },
+  {
+   "lid": "101974",
+   "name": "Giant",
+   "address": "10 E Ridge Pike, Conshohocken PA 19428",
+   "zone_id": "conshohocken",
+   "license_type": "Restaurant (Liquor)",
+   "id": "101974",
+   "plcb_name": "THE GIANT COMPANY LLC",
+   "website": "https://giantfoodstores.com/location-details/#/store/detail/6481",
+   "lat": 40.093384,
+   "lng": -75.285867,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Ileane Smith / Google",
+    "file": "img/venues/101974.jpg"
    },
    "deals": []
   },
@@ -126,9 +197,9 @@
    "license_type": "Restaurant (Liquor)",
    "id": "129859",
    "plcb_name": "RG GUPPYS RESTAURANT LLC",
-   "website": "https://guppysgoodtimes.com/",
-   "lat": 40.0744475,
-   "lng": -75.3096988,
+   "website": "http://www.guppysgoodtimes.com/",
+   "lat": 40.074462499999996,
+   "lng": -75.30973209999999,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Ted Voltolina / Google",
@@ -137,16 +208,34 @@
    "deals": []
   },
   {
+   "lid": "103747",
+   "name": "Little Brew House",
+   "address": "214 W Ridge Pike, Conshohocken PA 19428",
+   "zone_id": "conshohocken",
+   "license_type": "Brewery Storage",
+   "id": "103747",
+   "plcb_name": "D'ALICANDRO'S INC",
+   "website": "https://littlebrewhouse.com/",
+   "lat": 40.095074,
+   "lng": -75.29039999999999,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Kelly Klein / Google",
+    "file": "img/venues/103747.jpg"
+   },
+   "deals": []
+  },
+  {
    "lid": "109903",
-   "name": "Masala Symphony",
+   "name": "Neos Americana & Cafe Neos",
    "address": "16 E 1St Ave, Conshohocken PA 19428",
    "zone_id": "conshohocken",
    "license_type": "Restaurant (Liquor)",
    "id": "109903",
    "plcb_name": "THE BROVER GROUP LLC",
-   "website": "https://masalasymphony.com/",
-   "lat": 40.0737048,
-   "lng": -75.3055933,
+   "website": "https://www.neosamericana.com/",
+   "lat": 40.073709,
+   "lng": -75.3055826,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Masala Symphony / Google",
@@ -155,13 +244,126 @@
    "deals": []
   },
   {
-   "lid": "120650",
-   "name": "Rgrestaurant",
-   "address": "201-203 W 7Th Ave, Conshohocken PA 19428",
+   "lid": "62087",
+   "name": "Outback Steakhouse",
+   "address": "322 Ridge Pk, Conshohocken PA 19428",
    "zone_id": "conshohocken",
    "license_type": "Restaurant (Liquor)",
-   "id": "120650",
-   "plcb_name": "RGRESTAURANT GROUP",
+   "id": "62087",
+   "plcb_name": "OUTBACK STEAKHOUSE",
+   "website": "https://locations.outback.com/pennsylvania/conshohocken/322-ridge-pike?utm_source=gmb&utm_medium=local_search&utm_campaign=website_cta&y_source=1_MTU1MDI1MTMtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "lat": 40.09523,
+   "lng": -75.2913332,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: James Travis III / Google",
+    "file": "img/venues/62087.jpg"
+   },
+   "deals": []
+  },
+  {
+   "lid": "121138",
+   "name": "Royal Farms",
+   "address": "906 W Ridge Pike, Conshohocken PA 19428",
+   "zone_id": "conshohocken",
+   "license_type": "Restaurant (Liquor)",
+   "id": "121138",
+   "plcb_name": "ROYAL FARMS",
+   "website": "https://royalfarms.com/",
+   "lat": 40.0999524,
+   "lng": -75.30131209999999,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Wayne_Neighbor / Google",
+    "file": "img/venues/121138.jpg"
+   },
+   "deals": []
+  },
+  {
+   "lid": "104882",
+   "name": "The Cigar Republic",
+   "address": "126 Fayette St, Conshohocken PA 19428",
+   "zone_id": "conshohocken",
+   "license_type": "Restaurant (Liquor)",
+   "id": "104882",
+   "plcb_name": "CE CLUB LLC",
+   "website": "https://www.thecigarrepublic.com/conshohocken",
+   "lat": 40.0745833,
+   "lng": -75.305874,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: The Cigar Republic / Google",
+    "file": "img/venues/104882.jpg"
+   },
+   "deals": []
+  },
+  {
+   "lid": "118876",
+   "name": "The Goats Beard",
+   "address": "1100 Hector St, Spring Mill Creative Campus, Bldg B, Conshohocken PA 19428",
+   "zone_id": "conshohocken",
+   "license_type": "Restaurant (Liquor)",
+   "id": "118876",
+   "plcb_name": "THE GOATS BEARD",
+   "website": "http://www.thegoatsbeardphilly.com/",
+   "photo": {
+    "attribution": "Photo: Brent Moore / Google",
+    "file": "img/venues/118876.jpg"
+   },
+   "deals": []
+  },
+  {
+   "lid": "28480",
+   "name": "The Great American Pub",
+   "address": "123-125-127 Fayette St, Conshohocken PA 19428",
+   "zone_id": "conshohocken",
+   "license_type": "Restaurant (Liquor)",
+   "id": "28480",
+   "plcb_name": "THE GREAT AMERICAN PUB",
+   "website": "http://www.thegreatamericanpub.com/",
+   "lat": 40.07447,
+   "lng": -75.3053328,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Stephanie L / Google",
+    "file": "img/venues/28480.jpg"
+   },
+   "deals": []
+  },
+  {
+   "lid": "120949",
+   "name": "The Rabbit Hole",
+   "address": "201-203 W 6Th Ave, Conshohocken PA 19428",
+   "zone_id": "conshohocken",
+   "license_type": "Restaurant (Liquor)",
+   "id": "120949",
+   "plcb_name": "CONSHOHOCKEN AVILA LIQUOR LICENSE LLC",
+   "website": "https://therabbitholeconshy.com/",
+   "lat": 40.0793829,
+   "lng": -75.3048914,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: The Rabbit Hole / Google",
+    "file": "img/venues/120949.jpg"
+   },
+   "deals": []
+  },
+  {
+   "lid": "69227",
+   "name": "Weis Markets",
+   "address": "200 Ridge Pk Ste 110, Conshohocken PA 19428",
+   "zone_id": "conshohocken",
+   "license_type": "Restaurant (Liquor)",
+   "id": "69227",
+   "plcb_name": "WEIS MARKETS INC",
+   "website": "https://www.weismarkets.com/stores#/4339",
+   "lat": 40.0954197,
+   "lng": -75.2881336,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Katie Conners / Google",
+    "file": "img/venues/69227.jpg"
+   },
    "deals": []
   }
  ]

@@ -1,7 +1,7 @@
 {
  "rule": "Paul, 2026-09-03: any live deal with under 5 happy-hour items needs a re-scrape.",
  "generated": "2026-09-04",
- "count": 133,
+ "count": 134,
  "venues": [
   {
    "zone": "abington_jenkintown",
@@ -86,8 +86,17 @@
   },
   {
    "zone": "ardmore_bryn_mawr",
+   "name": "The Refectory",
+   "lid": "114544",
+   "verified_by": "auto_extract",
+   "item_count": 4,
+   "url": "https://refectorynova.com/happy-hour/",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "ardmore_bryn_mawr",
    "name": "Tired Hands Fermentaria",
-   "lid": "70056",
+   "lid": "70057",
    "verified_by": "staff",
    "item_count": 4,
    "url": "https://tiredhands.com",
