@@ -5,7 +5,7 @@
    on a bad signal in a parking lot. */
 
 import {
-  DOW_SHORT, DOW_LONG, dowOf, fmtClock, fmtMins, fmtMiles, itemParts,
+  DOW_SHORT, DOW_LONG, dowOf, fmtClock, fmtMins, fmtMiles, itemParts, sortForDisplay,
   FILTERS, GROUP, GROUP_LABEL, buildFeed, summarizeWindows, usableMinutes,
   matchesQuery,
   haversineMiles, driveMinutes, ageDays, effectiveConfidence, applyOverlay,
@@ -946,7 +946,7 @@ function card(row, at) {
   // board rather than a fact about one deal -- it spent our credibility to say
   // nothing the reader could act on. The decay ladder still demotes and then
   // hides a deal that gets too old; that is the part of freshness doing work.
-  fillItems($(".items", node), deal.items, $(".fine", node), fine.trim());
+  fillItems($(".items", node), sortForDisplay(deal.items), $(".fine", node), fine.trim());
 
   $(".map", node).href = directionsUrl(v);
   const src = $(".src", node);
@@ -1132,7 +1132,7 @@ function openVenue(id) {
 
     if (deal.items.length) {
       const ul = el("ul", "items");
-      for (const item of deal.items) {
+      for (const item of sortForDisplay(deal.items)) {
         const { amount, label } = itemParts(item);
         const li = el("li");
         if (amount) li.append(el("b", null, amount));

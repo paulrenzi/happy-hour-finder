@@ -21,6 +21,16 @@ from validate_pa import (rules_for, state_of, validate_deal,  # noqa: E402
                          validate_food_combo_count)
 from exclusions import excluded  # noqa: E402
 from discover_sites import name_agrees  # noqa: E402
+from build_venue_base import pretty_name  # noqa: E402
+
+# build_venue_base.pretty_name() already solves "AN ALL-CAPS LICENSEE NAME ->
+# something a person would read on a card" for PLCB names; a menu item label
+# is the same shape of problem (ALL CAPS PDF/menu text), so it reuses it
+# rather than growing a second re-casing rule that could disagree with the
+# first. It only acts on a string that IS all caps -- anything with real
+# mixed case (a person's own reading of the sign or menu) is left alone.
+de_shout = pretty_name
+
 
 DEALS_JSON = os.path.join(REPO, "data", "deals_seed.json")
 EXTRACTED_JSON = os.path.join(REPO, "data", "deals_extracted.json")
@@ -684,7 +694,11 @@ def main():
                 hidden += 1
                 continue
             # Ship the facts (confidence as sourced, plus the absolute date) and
-            # let the app derive age and any demotion when it renders.
+            # let the app derive age and any demotion when it renders. The
+            # label is display text, not evidence, so it's the one field here
+            # safe to reshape -- de_shout() leaves evidence/quote untouched.
+            deal = dict(deal, items=[dict(i, label=de_shout(i.get("label", "")))
+                                      for i in deal.get("items") or []])
             deals.append(dict(deal))
         for e in validate_food_combo_count(deals):
             print(f"  rejected: {venue['name']} -- {e}")
@@ -733,8 +747,8 @@ def main():
             "slug": venue["id"],
             # A hand-checked seed name is a person's reading of the sign; below
             # it, the trade name Places resolved beats the crawler's.
-            "name": venue["name"] if venue.get("verified_by") != "auto_extract"
-            else (b.get("name") or venue["name"]),
+            "name": de_shout(venue["name"] if venue.get("verified_by") != "auto_extract"
+                              else (b.get("name") or venue["name"])),
             "address": b.get("address") or venue["address"],
             "zone_id": venue["zone_id"],
             "website": venue.get("website") or b.get("website"),
@@ -777,6 +791,8 @@ def main():
             continue
         v = {k: b[k] for k in ("lid", "name", "address", "zone_id", "license_type")
              if k in b}
+        if v.get("name"):
+            v["name"] = de_shout(v["name"])
         v["id"] = lid
         v["plcb_name"] = b["plcb_name"]
         for k in ("website", "lat", "lng", "geo_precision", "photo", "also_lids"):

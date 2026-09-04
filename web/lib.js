@@ -124,6 +124,19 @@ export function cheapestPrice(deal, categories = null) {
 
 export const DRINK_CATEGORIES = ["draft", "bottle_can", "wine", "well", "call", "cocktail", "shot"];
 
+/* Drinks first, food last, everything else (fine print items with no
+   category, daily specials) in between -- a long list now reads as one
+   section a reader can stop skimming once they hit food. A stable sort: two
+   items of the same section keep the order the source read them in. */
+export function sortForDisplay(items) {
+  const rank = (i) => (DRINK_CATEGORIES.includes(i.category) ? 0
+    : i.category === "food" ? 2
+    : 1);
+  return items.map((item, i) => ({ item, i }))
+    .sort((a, b) => rank(a.item) - rank(b.item) || a.i - b.i)
+    .map((x) => x.item);
+}
+
 /* ---- filters ---------------------------------------------------------- */
 
 export const FILTERS = {

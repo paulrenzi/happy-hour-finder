@@ -9,7 +9,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {
-  dowOf, mins, fmtClock, fmtMins, itemParts, haversineMiles, driveMinutes, fmtMiles,
+  dowOf, mins, fmtClock, fmtMins, itemParts, sortForDisplay, haversineMiles, driveMinutes, fmtMiles,
   dealValue, cheapestPrice, FILTERS, windowFor, nextOccurrence, groupFor, GROUP,
   buildFeed, summarizeWindows, usableMinutes, ageDays, effectiveConfidence,
   GROUP_LABEL, score, dealKey, applyConfirmations, DAY_BAND,
@@ -54,6 +54,18 @@ test("itemParts separates the number from the words", () => {
   assert.deepEqual(itemParts({ discount_pct: 50, label: "pints" }), { amount: "50% off", label: "pints" });
   assert.deepEqual(itemParts({ amount_off_usd: 2, label: "pours" }), { amount: "$2 off", label: "pours" });
   assert.deepEqual(itemParts({ label: "no price" }), { amount: "", label: "no price" });
+});
+
+test("sortForDisplay puts drinks first, food last, order otherwise stable", () => {
+  const items = [
+    { category: "food", label: "wings" },
+    { category: "draft", label: "lager" },
+    { category: "cocktail", label: "martini" },
+    { category: "food", label: "nachos" },
+    { category: "daily_special", label: "trivia" },
+  ];
+  assert.deepEqual(sortForDisplay(items).map((i) => i.label),
+    ["lager", "martini", "trivia", "wings", "nachos"]);
 });
 
 /* ---- geography -------------------------------------------------------- */
