@@ -1002,7 +1002,7 @@
   "why_not": ""
  },
  "36841": {
-  "cost_usd": 0.7415,
+  "cost_usd": 0.2818,
   "deals": [
    {
     "fine_print": "(dine-in only)",
@@ -1011,7 +1011,7 @@
       "amount_off_usd": 2,
       "category": "food",
       "discount_pct": null,
-      "label": "select appetizers",
+      "label": "$2 off select appetizers",
       "price_quote": "$2 off select appetizers",
       "price_usd": null,
       "quote": "$2 off select appetizers"
@@ -1020,7 +1020,7 @@
       "amount_off_usd": null,
       "category": "food",
       "discount_pct": null,
-      "label": "wings",
+      "label": "$1 wings",
       "price_quote": "$1 wings",
       "price_usd": 1,
       "quote": "$1 wings"
@@ -1060,15 +1060,15 @@
       "label": "Select Growlers",
       "price_quote": "$9 Select Growlers",
       "price_usd": 9,
-      "quote": "$9 Select Growlers"
+      "quote": "Wednesday: $9 Select Growlers"
      }
     ],
     "type": "daily_special",
     "windows": [
      {
       "dow": 3,
-      "end": "24:00",
-      "start": "00:00"
+      "end": "21:00",
+      "start": "11:30"
      }
     ]
    },
@@ -1089,8 +1089,8 @@
     "windows": [
      {
       "dow": 3,
-      "end": "24:00",
-      "start": "00:00"
+      "end": "21:00",
+      "start": "11:30"
      }
     ]
    },
@@ -1104,20 +1104,20 @@
       "label": "Burger Special & a pint",
       "price_quote": "$12 Burger Special & a pint",
       "price_usd": 12,
-      "quote": "$12 Burger Special & a pint"
+      "quote": "Thursday: $12 Burger Special & a pint"
      }
     ],
     "type": "food_combo",
     "windows": [
      {
       "dow": 4,
-      "end": "24:00",
-      "start": "00:00"
+      "end": "21:00",
+      "start": "11:30"
      }
     ]
    },
    {
-    "fine_print": "every saturday we choose a\nbeer to be discounted in pitchers",
+    "fine_print": "",
     "items": [
      {
       "amount_off_usd": null,
@@ -1126,15 +1126,15 @@
       "label": "Mystery Pitcher",
       "price_quote": "$11 Mystery Pitcher",
       "price_usd": 11,
-      "quote": "$11 Mystery Pitcher"
+      "quote": "Saturday: $11 Mystery Pitcher"
      }
     ],
     "type": "daily_special",
     "windows": [
      {
       "dow": 6,
-      "end": "24:00",
-      "start": "00:00"
+      "end": "21:00",
+      "start": "11:30"
      }
     ]
    },
@@ -1145,33 +1145,32 @@
       "amount_off_usd": 2,
       "category": "cocktail",
       "discount_pct": null,
-      "label": "Bloody Marys",
-      "price_quote": "$2 off Bloody Marys",
+      "label": "$2 off Bloody Marys",
+      "price_quote": "$2 off Bloody Marys & BLT Highball",
       "price_usd": null,
-      "quote": "$2 off Bloody Marys"
+      "quote": "Sunday: $2 off Bloody Marys & BLT Highball"
      },
      {
       "amount_off_usd": 2,
       "category": "cocktail",
       "discount_pct": null,
-      "label": "BLT Highball",
-      "price_quote": "$2 off",
+      "label": "$2 off BLT Highball",
+      "price_quote": "$2 off Bloody Marys & BLT Highball",
       "price_usd": null,
-      "quote": "BLT Highball"
+      "quote": "Sunday: $2 off Bloody Marys & BLT Highball"
      }
     ],
     "type": "daily_special",
     "windows": [
      {
       "dow": 7,
-      "end": "24:00",
-      "start": "00:00"
+      "end": "20:00",
+      "start": "11:30"
      }
     ]
    }
   ],
   "dropped": [
-   "'select appetizers': needs exactly one of price_usd / discount_pct",
    "'daily_special' deal: not the happy hour",
    "'food_combo' deal: not the happy hour",
    "'food_combo' deal: not the happy hour",
@@ -1179,18 +1178,17 @@
    "'daily_special' deal: not the happy hour"
   ],
   "found": true,
-  "items_kept": 1,
+  "items_kept": 2,
   "kind": "page",
   "model": "opus",
   "path_taken": [
-   "WebFetch https://www.slyfoxbeer.com/ - home page nav listed pub location pages",
-   "WebFetch https://www.slyfoxbeer.com/phoenixville - location page for 520 Kimberton Rd",
-   "curl -sL phoenixville.html into scratch dir; read the DAILY SPECIALS / day-by-day markup verbatim"
+   "WebFetch https://www.slyfoxbeer.com/ — home page, no happy hour; links to four pub location pages",
+   "WebFetch https://www.slyfoxbeer.com/phoenixville — location page for 520 Kimberton Rd, has DAILY SPECIALS with Appy Hour"
   ],
   "read_at": "2026-09-04",
   "source_url": "https://www.slyfoxbeer.com/phoenixville",
-  "transcript": "DAILY SPECIALS\n\nTuesday-Friday: Appy Hour\n$2 off select appetizers and $1 wings from 3PM-6PM (dine-in only)\n\nWednesday: $9 Select Growlers\n$12 Large Cheesesteak, fries, & a pint\n\nThursday: $12 Burger Special & a pint\n\nFriday: New weekly food specials\n\nSaturday: $11 Mystery Pitcher\n\nSunday: $2 off Bloody Marys & BLT Highball\n\nmonday\n\ntuesday\nmusic trivia\n6:30 - 8:30 PM\n\nwednesday\n$12 a large cheesesteak,\nfries, & a pint\n\n$9 select\ngrowlers\n\nthursday\n$12 burger & a pint\n\ntuesday-friday\nappy hour\non wings & select apps\n3:00pm-6:00pm\n\nsaturday\nmystery pitcher\n\nevery saturday we choose a\nbeer to be discounted in pitchers\n\nsunday\n$2 off bloody marys & b.l.t highballs",
-  "turns": 9,
+  "transcript": "DAILY SPECIALS\n\nTuesday-Friday: Appy Hour\n$2 off select appetizers and $1 wings from 3PM-6PM (dine-in only)\n\nWednesday: $9 Select Growlers\n$12 Large Cheesesteak, fries, & a pint\n\nThursday: $12 Burger Special & a pint\n\nFriday: New weekly food specials\n\nSaturday: $11 Mystery Pitcher\n\nSunday: $2 off Bloody Marys & BLT Highball",
+  "turns": 5,
   "venue_name_on_menu": "Sly Fox Phoenixville Brewhouse & Eatery",
   "why_not": ""
  },
@@ -5893,7 +5891,7 @@
   "why_not": ""
  },
  "DE80dea6d966": {
-  "cost_usd": 0.4186,
+  "cost_usd": 0.6015,
   "deals": [
    {
     "fine_print": "",
@@ -5902,8 +5900,8 @@
       "amount_off_usd": 2,
       "category": "draft",
       "discount_pct": null,
-      "label": "$2 OFF all beer",
-      "price_quote": "$2 OFF",
+      "label": "all beer",
+      "price_quote": "$2 OFF on all beer, wine and cocktails",
       "price_usd": null,
       "quote": "$2 OFF on all beer, wine and cocktails"
      },
@@ -5911,8 +5909,8 @@
       "amount_off_usd": 2,
       "category": "wine",
       "discount_pct": null,
-      "label": "$2 OFF all wine",
-      "price_quote": "$2 OFF",
+      "label": "all wine",
+      "price_quote": "$2 OFF on all beer, wine and cocktails",
       "price_usd": null,
       "quote": "$2 OFF on all beer, wine and cocktails"
      },
@@ -5920,8 +5918,8 @@
       "amount_off_usd": 2,
       "category": "cocktail",
       "discount_pct": null,
-      "label": "$2 OFF all cocktails",
-      "price_quote": "$2 OFF",
+      "label": "all cocktails",
+      "price_quote": "$2 OFF on all beer, wine and cocktails",
       "price_usd": null,
       "quote": "$2 OFF on all beer, wine and cocktails"
      },
@@ -5930,9 +5928,9 @@
       "category": "food",
       "discount_pct": null,
       "label": "curated bar bites menu",
-      "price_quote": "$7",
+      "price_quote": "curated bar bites menu at $7.",
       "price_usd": 7,
-      "quote": "curated bar bites menu at $7"
+      "quote": "curated bar bites menu at $7."
      }
     ],
     "type": "happy_hour",
@@ -5975,26 +5973,21 @@
     ]
    }
   ],
-  "dropped": [
-   "'$2 OFF all beer': needs exactly one of price_usd / discount_pct",
-   "'$2 OFF all wine': needs exactly one of price_usd / discount_pct",
-   "'$2 OFF all cocktails': needs exactly one of price_usd / discount_pct"
-  ],
+  "dropped": [],
   "found": true,
-  "items_kept": 1,
+  "items_kept": 4,
   "kind": "page",
   "model": "opus",
   "path_taken": [
-   "WebFetch https://ironhillbrewery.com/ — footer listed 'Wilmington · DE' at /locations/wilmington-de and 'Hoppy Hour' at /menu/best-food-menu",
-   "WebFetch https://ironhillbrewery.com/locations/wilmington-de — has a Happy Hour section",
-   "WebFetch https://ironhillbrewery.com/menu/best-food-menu — same happy hour copy, no separate menu file",
-   "curl https://ironhillbrewery.com/locations/wilmington-de -> wilm.html — read the Happy Hour section verbatim from the HTML",
-   "curl /assets/photos/locationshappyhourimage.webp -> hh.webp — Read it; a photo of guests, no text"
+   "WebFetch https://ironhillbrewery.com/ - home page, found link to /locations/wilmington-de and /menu/best-food-menu (\"Hoppy Hour\")",
+   "WebFetch https://ironhillbrewery.com/locations/wilmington-de - found a Happy Hour section for this location",
+   "WebFetch https://ironhillbrewery.com/menu/best-food-menu - repeats the same happy hour copy, no separate happy hour menu, PDF or image",
+   "curl -sL https://ironhillbrewery.com/locations/wilmington-de -> wilmington.html, read the happy-hour section markup verbatim"
   ],
   "read_at": "2026-09-04",
   "source_url": "https://ironhillbrewery.com/locations/wilmington-de",
   "transcript": "Happy Hour\nUnwind with our happy hour.\nEnjoy $2 OFF on all beer, wine and cocktails, along with a curated bar bites menu at $7.\nWeekdays 4PM to 6PM and weekends 2PM to 4PM.",
-  "turns": 11,
+  "turns": 17,
   "venue_name_on_menu": "Iron Hill Brewery Wilmington",
   "why_not": ""
  },
