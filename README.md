@@ -37,7 +37,7 @@ Every miss found so far was found by a person, not by a run.
 
 ### The open problem, and how it is now worked: two reading lanes, one wall between them
 
-**92** venues publish an hour and no items — the reach problem is mostly
+**91** venues publish an hour and no items — the reach problem is mostly
 solved (a website and a crawl); getting the *menu* off that website is what's
 left. Two ways to read one: **the agent lane** (`agent_read_venue.py`, one
 `claude -p` session per venue, unattended, ~$0.35/venue) and **a hand read**
@@ -50,13 +50,15 @@ deterministic crawl has no deal to hang items on, so a fully-read, fully-paid
 menu could vanish with no error. **Settled 2026-09-03/04:** a hand read
 carries its own window (`data/agent_handread.json`), so it never depends on
 the crawler finding one — that's now the standard route-around for a
-windowless read, agent or hand. The agent lane's own two remaining gaps —
-a hard-coded turn budget and a missing `amount_off_usd` field — were fixed
-2026-09-04 (`HHF_MAX_TURNS` env override; see
-[ARCHITECTURE-MENU-INGEST.md](ARCHITECTURE-MENU-INGEST.md)). **23 venues**
-still sit `kind: "exhausted"` in `data/agent_reads.json`, mostly chain sites,
-~$12 already spent on them — the next thing to work down. See
-[`HANDOFF-START-HERE-20260904-NIGHT-TURN-BUDGET-FIXED-23-LEFT.md`](HANDOFF-START-HERE-20260904-NIGHT-TURN-BUDGET-FIXED-23-LEFT.md).
+windowless read, agent or hand. The agent lane's own gaps — a hard-coded
+turn budget and a missing `amount_off_usd` field (found in **two**
+independent readers, agent and menu-image, same schema field, fixed
+separately) — were fixed 2026-09-04. **15 venues** still sit
+`kind: "exhausted"` in `data/agent_reads.json` (was 23), mostly chain sites.
+`data/RESCRAPE-QUEUE.json` — every live deal under 5 items — currently lists
+**125** (was 219 blank+thin at the start of 09-04). See
+[ARCHITECTURE-MENU-INGEST.md](ARCHITECTURE-MENU-INGEST.md) and
+[`HANDOFF-START-HERE-20260904-NIGHT3-KG-UPDATE-AND-HANDOFF.md`](HANDOFF-START-HERE-20260904-NIGHT3-KG-UPDATE-AND-HANDOFF.md).
 
 ---
 
@@ -272,4 +274,4 @@ deliberately no map.
   session each. The one to read before changing ingest.
 - **[SPEC.md](SPEC.md)** — what a deal is, and the eight categories.
 - **`HANDOFF-START-HERE-*.md`** — session notes, newest wins. The current one is
-  [`HANDOFF-START-HERE-20260904-NIGHT2-CAPS-DRINKFOOD-RESCRAPE.md`](HANDOFF-START-HERE-20260904-NIGHT2-CAPS-DRINKFOOD-RESCRAPE.md).
+  [`HANDOFF-START-HERE-20260904-NIGHT3-KG-UPDATE-AND-HANDOFF.md`](HANDOFF-START-HERE-20260904-NIGHT3-KG-UPDATE-AND-HANDOFF.md).
