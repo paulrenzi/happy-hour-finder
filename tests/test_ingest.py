@@ -4552,3 +4552,42 @@ class WindowHalfHeldTest(unittest.TestCase):
         self.assertEqual(
             build_bundles.window_half_held(reads["101307"]),
             "days, no clock", "Slow Hand")
+
+
+class AVenueCanPourWithoutItsOwnLicence(unittest.TestCase):
+    """A shipped venue must be nameable, licence or no licence.
+
+    The Boardroom in Phoenixville (101 Bridge St) publishes a real happy hour
+    and appears NOWHERE in a 60,701-row PLCB export -- most likely serving
+    under Boardroom Spirits' Lansdale distillery licence, which records only
+    the parent premises. So the base has no row for it and there is no LID.
+
+    Shipping `lid: None` did not drop the venue, which is what made it nasty:
+    the card appeared, and board-by-lid, lid-zone and the submit name index
+    all skip a falsy key, so nothing could name it. No correction, no photo
+    submission, no picker entry -- a card a reader can see and cannot report.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        data = os.path.join(REPO, "web", "data")
+        cls.shipped = []
+        for name in os.listdir(data):
+            if name.startswith(("venues-", "zone-")):
+                with open(os.path.join(data, name), encoding="utf-8") as fh:
+                    cls.shipped.extend(json.load(fh)["venues"])
+
+    def test_no_shipped_venue_has_a_null_identity(self):
+        nameless = [v["name"] for v in self.shipped if not v.get("lid")]
+        self.assertEqual(nameless, [],
+                         "shipped with no lid, so nothing can name them")
+
+    def test_a_licenceless_venue_keeps_its_slug_as_its_identity(self):
+        # And that identity must never look like a PLCB LID, which is numeric.
+        by_slug = {v.get("slug"): v for v in self.shipped}
+        v = by_slug.get("the-boardroom-phoenixville")
+        if v is None:
+            self.skipTest("The Boardroom is not on the board")
+        self.assertEqual(v["lid"], "the-boardroom-phoenixville")
+        self.assertFalse(str(v["lid"]).isdigit(),
+                         "a synthetic id must not be mistakable for a licence number")

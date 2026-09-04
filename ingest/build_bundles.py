@@ -813,7 +813,21 @@ def main():
         b = base.get(key) or {}
         v = {
             "id": b.get("lid") or venue["id"],
-            "lid": b.get("lid"),
+            # Falls back to the slug for the same reason `id` above does: a
+            # venue can pour without holding a premises licence of its own, so
+            # the base has no row and there is no LID to carry. The Boardroom
+            # in Phoenixville (101 Bridge St) is the case that found this --
+            # it appears nowhere in a 60,701-row PLCB export, most likely
+            # serving under Boardroom Spirits' Lansdale distillery licence,
+            # which records only the parent premises.
+            #
+            # Shipping `None` here did not drop the venue, it stranded it:
+            # board-by-lid, lid-zone and the submit name index all skip a
+            # falsy key, so the card appeared and nothing could name it -- no
+            # correction, no photo submission, no picker entry. A slug is
+            # never mistakable for a LID (a LID is always numeric), which is
+            # the same rule seed_places_de.py's lid_for() follows.
+            "lid": b.get("lid") or venue["id"],
             # The id every shared link minted before the board was keyed on LIDs.
             # #v=iron-hill-media must keep opening Iron Hill.
             "slug": venue["id"],

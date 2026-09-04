@@ -992,6 +992,92 @@
           "fine_print": "no take-out • bar area only • no modifications; margaritas: ADD FLAVOR +$2.00 • MAKE IT SPICY +$1.00, *Salt or sugar rim available by request"
         }
       ]
+    },
+    {
+      "id": "the-boardroom-phoenixville",
+      "name": "The Boardroom Restaurant & Bottle Shop",
+      "plcb_name": "",
+      "address": "101 Bridge St, Phoenixville PA 19460",
+      "zone_id": "phoenixville",
+      "license_type": "",
+      "website": "https://www.theboardroompxv.com",
+      "deals": [
+        {
+          "type": "happy_hour",
+          "windows": [
+            {
+              "dow": 2,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 3,
+              "start": "16:00",
+              "end": "18:00"
+            },
+            {
+              "dow": 4,
+              "start": "16:00",
+              "end": "18:00"
+            }
+          ],
+          "items": [
+            {
+              "category": "food",
+              "label": "Single Smash Burger",
+              "price_usd": 8.0
+            },
+            {
+              "category": "food",
+              "label": "Beef Tallow Fries",
+              "price_usd": 8.0
+            },
+            {
+              "category": "food",
+              "label": "Salt & Pepper Whole Wings",
+              "price_usd": 10.0
+            },
+            {
+              "category": "food",
+              "label": "Tuna Tartare Bites",
+              "price_usd": 12.0
+            },
+            {
+              "category": "food",
+              "label": "Heirloom Tomato Toast",
+              "price_usd": 10.0
+            },
+            {
+              "category": "cocktail",
+              "label": "Boardroom Spirits Canned Cocktails",
+              "price_usd": 5.0
+            },
+            {
+              "category": "cocktail",
+              "label": "Boardroom Spirits Highballs",
+              "price_usd": 6.0
+            },
+            {
+              "category": "shot",
+              "label": "Citywide - Kenwood Light Lager & shot of Northbound Bourbon",
+              "price_usd": 7.0
+            },
+            {
+              "category": "cocktail",
+              "label": "Boardroom Specialty Cocktails",
+              "price_usd": 8.0
+            }
+          ],
+          "fine_print": "Tuesday, Wednesday & Thursday, 4 PM to 6 PM.",
+          "confidence": "likely",
+          "last_verified_at": "2026-09-04",
+          "verified_by": "staff",
+          "source": {
+            "kind": "venue_site",
+            "url": "https://www.theboardroompxv.com/_files/ugd/1043b0_fcd3df74b7324e43ba86025f4424703a.pdf"
+          }
+        }
+      ]
     }
   ],
   "_excluded": [
