@@ -58,7 +58,7 @@ separately) — were fixed 2026-09-04. **15 venues** still sit
 `data/RESCRAPE-QUEUE.json` — every live deal under 5 items — currently lists
 **125** (was 219 blank+thin at the start of 09-04). See
 [ARCHITECTURE-MENU-INGEST.md](ARCHITECTURE-MENU-INGEST.md) and
-[`HANDOFF-START-HERE-20260904-NIGHT5-STRATEGY-AND-DOCS.md`](HANDOFF-START-HERE-20260904-NIGHT5-STRATEGY-AND-DOCS.md).
+[`HANDOFF-START-HERE-20260904-NIGHT6-THE-HALF-WINDOW.md`](HANDOFF-START-HERE-20260904-NIGHT6-THE-HALF-WINDOW.md).
 
 ---
 
@@ -255,6 +255,17 @@ with the rest held back (not currently surfaced in the UI).
   time (the deal is already baked into `deals_roundup.json`, so a crawl-time
   guard alone would need a re-crawl). It refuses rather than re-routes: absent
   beats publishing under another business's name.
+- **"No window" is three different situations, and saying it flatly cost a
+  session.** `build_bundles.py` warns when a paid-for read never reached a card.
+  It used to say only *"no window means no deal to carry them"* — so the venue
+  that prints a clock and no day, the one that prints days and no clock, and the
+  one that prints neither all read identically, and a handoff duly recorded that
+  none of them "states a day or a clock anywhere". Two of the four do. MadMacs
+  publishes `3:30 to 6:30` with no day; Slow Hand publishes `Tuesday through
+  Friday` with no clock. Different questions to go and answer — one is a phone
+  call, the other is a hunt — so the warning now names the half already held
+  (`window_half_held()`). The half hides in the read's `fine_print`, which
+  nothing else reads.
 - **A provenance field is not a confidence field.** An earlier, narrower guard
   let an article heading override a venue's name whenever `venue_base` marked
   it `named_by: "plcb"`, on the theory that a licence-only name is always a
@@ -295,4 +306,4 @@ deliberately no map.
   session each. The one to read before changing ingest.
 - **[SPEC.md](SPEC.md)** — what a deal is, and the eight categories.
 - **`HANDOFF-START-HERE-*.md`** — session notes, newest wins. The current one is
-  [`HANDOFF-START-HERE-20260904-NIGHT5-STRATEGY-AND-DOCS.md`](HANDOFF-START-HERE-20260904-NIGHT5-STRATEGY-AND-DOCS.md).
+  [`HANDOFF-START-HERE-20260904-NIGHT6-THE-HALF-WINDOW.md`](HANDOFF-START-HERE-20260904-NIGHT6-THE-HALF-WINDOW.md).

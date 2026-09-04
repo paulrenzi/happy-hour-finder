@@ -4493,3 +4493,50 @@ class ATrailingPriceLabelIsCutOnAWordBoundary(unittest.TestCase):
                         if i > 0 and q[i - 1].isalpha():
                             bad.append((v["name"], label))
         self.assertEqual(bad, [], "item labels cut mid-word")
+
+
+class WindowHalfHeldTest(unittest.TestCase):
+    """A stranded read is not one situation, and 'no window' hid that.
+
+    MadMacs prints a clock and no day; Slow Hand prints days and no clock.
+    Those are different things to go and find out, and the strand warning
+    said the same sentence about both for two sessions running.
+    """
+
+    def half(self, *prose):
+        read = {"deals": [{"fine_print": p} for p in prose]}
+        return build_bundles.window_half_held(read)
+
+    def test_clock_without_days(self):
+        self.assertEqual(
+            self.half("3:30 to 6:30 Bar Side & Bar Side High Tops"),
+            "clock, no days")
+
+    def test_days_without_clock(self):
+        self.assertEqual(
+            self.half("Tuesday through Friday. Bar prices, short list."),
+            "days, no clock")
+
+    def test_nothing_held(self):
+        self.assertEqual(self.half("Void where prohibited by law."), "neither")
+        self.assertEqual(self.half(""), "neither")
+        self.assertEqual(build_bundles.window_half_held({}), "neither")
+
+    def test_a_shouted_corpus_is_still_read(self):
+        # ADDRESS_RE shipped without re.I and read no address at all on a
+        # SHOUTING base. Same trap, same file, so pin it here.
+        self.assertEqual(self.half("MON-FRI 4-6PM"), "both -- unparsed")
+        self.assertEqual(self.half("MAD HAPPY HOURS 3:30 TO 6:30"),
+                         "clock, no days")
+
+    def test_the_two_live_strands_classify_as_measured(self):
+        # Read by hand off data/agent_reads/<lid>/ raw HTML and PDF, 2026-09-04.
+        path = os.path.join(REPO, "data", "agent_reads.json")
+        with open(path, encoding="utf-8") as fh:
+            reads = json.load(fh)
+        self.assertEqual(
+            build_bundles.window_half_held(reads["DE40aae10689"]),
+            "clock, no days", "MadMacs")
+        self.assertEqual(
+            build_bundles.window_half_held(reads["101307"]),
+            "days, no clock", "Slow Hand")

@@ -53,6 +53,10 @@ AGENT_JSON = os.path.join(REPO, "data", "deals_agent.json")
 # them and 52 paid-for items sat unpublished. A full venue row needs nothing
 # to already exist. Same shape as deals_menus.json, same validators.
 AGENT_VENUES_JSON = os.path.join(REPO, "data", "deals_agent_venues.json")
+# Every agent read, including the ones that never reached a card. Read here for
+# one purpose only: to say WHICH HALF of a stranded venue's window we already
+# hold. Never feeds a bundle.
+AGENT_READS_JSON = os.path.join(REPO, "data", "agent_reads.json")
 PAGES_JSON = os.path.join(REPO, "data", "deals_pages_llm.json")
 MENUS_JSON = os.path.join(REPO, "data", "deals_menus.json")
 PHOTOS_JSON = os.path.join(REPO, "data", "venue_photos.json")
@@ -390,6 +394,42 @@ def stamp_service_worker(built_at, n_published):
         with open(path, "w", encoding="utf-8", newline="\n") as fh:
             fh.write(new)
         print(f"sw.js cache -> {sw_cache_name(built_at, n_published)}")
+
+
+# A venue whose items were read but never published is NOT one situation, and
+# calling it "no window" hid that. MadMacs prints "3:30 to 6:30" and no day;
+# Slow Hand prints "Tuesday through Friday" and no clock. Those are different
+# questions to go and answer -- one is a phone call, the other is a hunt -- and
+# the strand warning used to ask neither. Case-insensitive on purpose: the
+# corpus shouts (MAD HAPPY HOURS), and a title-case regex over a shouted corpus
+# returns a confident nothing.
+DAY_WORDS_RE = re.compile(
+    r"(?i)\b(mon|tue|wed|thur|thu|fri|sat|sun|daily|every ?day|weekday|weeknight)")
+CLOCK_RE = re.compile(
+    r"(?i)\b\d{1,2}(?::\d{2})?\s*(?:am|pm)?\s*(?:-|–|—|to|til|till|until)\s*"
+    r"\d{1,2}(?::\d{2})?\s*(?:am|pm)?")
+
+
+def window_half_held(read):
+    """Which half of a window the venue's own evidence already states.
+
+    Returns one of 'days, no clock' / 'clock, no days' / 'both -- unparsed' /
+    'neither'. Reads only the prose the agent captured alongside the items
+    (fine_print, heading, clock_quote), which is where a half-window hides.
+    """
+    prose = " ".join(
+        str(d.get(k) or "")
+        for d in (read.get("deals") or [])
+        for k in ("fine_print", "heading", "clock_quote"))
+    days = bool(DAY_WORDS_RE.search(prose))
+    clock = bool(CLOCK_RE.search(prose))
+    if days and clock:
+        return "both -- unparsed"
+    if days:
+        return "days, no clock"
+    if clock:
+        return "clock, no days"
+    return "neither"
 
 
 def unaccounted_holes(by_zone, verdicts):
@@ -1001,12 +1041,18 @@ def main():
                 if lid not in shipped_items}
     if stranded:
         names = {str(b.get("lid")): b.get("name") for b in base.values()}
+        reads = (json.load(open(AGENT_READS_JSON, encoding="utf-8"))
+                 if os.path.exists(AGENT_READS_JSON) else {})
         n = sum(stranded.values())
-        who = ", ".join(f"{names.get(k, k)} ({c})" for k, c in
-                        list(stranded.items())[:3])
         print(f"  ! {n} verified item(s) across {len(stranded)} venue(s) were READ "
-              f"AND NEVER PUBLISHED -- no window means no deal to carry them: "
-              f"{who}")
+              f"AND NEVER PUBLISHED -- no window means no deal to carry them.")
+        for lid, count in sorted(stranded.items(),
+                                 key=lambda kv: -kv[1]):
+            half = window_half_held(reads.get(lid) or {})
+            print(f"      {names.get(lid, lid)} ({count} items) -- "
+                  f"window evidence held: {half}")
+        print("      Route a venue through data/agent_handread.json once its "
+              "window is known; 'neither' needs a source, not a re-read.")
     if orphans:
         print(f"  ! {len(orphans)} deal(s) matched no venue in the base "
               f"-- rebuild it: {', '.join(orphans[:3])}")
