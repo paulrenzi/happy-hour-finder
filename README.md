@@ -29,7 +29,7 @@ credentials with anything else on this machine.
 
 **Read that table in two halves.** What we publish is checked: every window and
 every price has to appear in a sentence on the venue's own page, and the test
-suite re-checks all 333 against the quote they came from on every run
+suite re-checks all 371 against the quote they came from on every run
 (`tests/window_quote_check.py`). What we *don't* publish is not checked at all —
 nobody has ever measured how many real happy hours the pipeline walks past.
 Every miss found so far was found by a person, not by a run.
@@ -58,16 +58,16 @@ separately) — were fixed 2026-09-04. **15 venues** still sit
 `data/RESCRAPE-QUEUE.json` — every live deal under 5 items — currently lists
 **125** (was 219 blank+thin at the start of 09-04). See
 [ARCHITECTURE-MENU-INGEST.md](ARCHITECTURE-MENU-INGEST.md) and
-[`HANDOFF-START-HERE-20260904-NIGHT4-WRONG-NAME-ON-THE-BOARD.md`](HANDOFF-START-HERE-20260904-NIGHT4-WRONG-NAME-ON-THE-BOARD.md).
+[`HANDOFF-START-HERE-20260904-NIGHT5-STRATEGY-AND-DOCS.md`](HANDOFF-START-HERE-20260904-NIGHT5-STRATEGY-AND-DOCS.md).
 
 ---
 
 ## How it works
 
 ```
-data/zones.json         44 named districts, hand-maintained — the source of truth
+data/zones.json         48 named districts, hand-maintained — the source of truth
    ↓ ingest/seed_plcb.py        + seed_places_de.py
-data/venue_base.json    3,415 licensees, the denominator (regenerate, don't edit)
+data/venue_base.json    3,479 licensees, the denominator (regenerate, don't edit)
    ↓ ingest/discover_places.py  find each venue's website        ← the paid step
    ↓ ingest/build_venue_base.py carry those websites onto the board
    ↓ ingest/crawl_sites.py      robots-honouring crawl → data/crawl_hits.json  (the WINDOW)
@@ -255,6 +255,12 @@ with the rest held back (not currently surfaced in the UI).
   time (the deal is already baked into `deals_roundup.json`, so a crawl-time
   guard alone would need a re-crawl). It refuses rather than re-routes: absent
   beats publishing under another business's name.
+- **A provenance field is not a confidence field.** An earlier, narrower guard
+  let an article heading override a venue's name whenever `venue_base` marked
+  it `named_by: "plcb"`, on the theory that a licence-only name is always a
+  shell. Slow Hand's name IS real — it was `named_by: "plcb"` only because
+  nobody had run the OSM/Places pass on it yet. `named_by` records **which
+  pass supplied the name**, never whether the name is true.
 - **A guard built on a title-case regex is blind to a shouted corpus.**
   `ADDRESS_RE` had no `re.I` while the PLCB base shouts (`40 E MARKET ST`), so
   the door check above read *no address at all* on those rows and could never
@@ -289,4 +295,4 @@ deliberately no map.
   session each. The one to read before changing ingest.
 - **[SPEC.md](SPEC.md)** — what a deal is, and the eight categories.
 - **`HANDOFF-START-HERE-*.md`** — session notes, newest wins. The current one is
-  [`HANDOFF-START-HERE-20260904-NIGHT4-WRONG-NAME-ON-THE-BOARD.md`](HANDOFF-START-HERE-20260904-NIGHT4-WRONG-NAME-ON-THE-BOARD.md).
+  [`HANDOFF-START-HERE-20260904-NIGHT5-STRATEGY-AND-DOCS.md`](HANDOFF-START-HERE-20260904-NIGHT5-STRATEGY-AND-DOCS.md).

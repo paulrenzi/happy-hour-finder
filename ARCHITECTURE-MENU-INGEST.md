@@ -2820,3 +2820,43 @@ was never taken on CI-green or an HTTP 200 alone — verification was always a
 cache-busted fetch of the actual served bytes (and, for logic changes,
 re-running the changed function in Node against the live served JSON) to
 confirm the live site, not just the repo, changed.
+
+---
+
+## 🛑🔑🔑 `named_by == "plcb"` MEANS "UNCONFIRMED PROVENANCE", NOT "THIS IS A SHELL NAME" (2026-09-04)
+
+The 2026-09-02 "a door outlives its tenants" guard (`address_venue()`'s second
+pass, `ingest/crawl_roundups.py:280`) refuses to let an article heading
+override a venue's name **unless** `named_by == "plcb"` — the theory being
+that a licence-only name is exactly the anonymous shell the join exists to
+see through, so it is "never held against the heading."
+
+That theory is false in general, and it shipped a real defect: lid `101307`'s
+`venue_base` entry is `{"name": "Slow Hand", "named_by": "plcb"}`. Slow Hand
+is not a shell — it is the bar's real, current, live trade name. `named_by`
+only records **which pass supplied the name** (PLCB licence text vs. an OSM/
+Places lookup), not whether the name is fake. A venue can be `named_by: plcb`
+simply because nobody has run the OSM/Places enrichment pass on it yet, or
+because that pass didn't return a match. So the guard let a 2024 magazine
+paragraph naming a different building overwrite a perfectly good real name,
+because the *provenance field*, not the *name itself*, looked shell-shaped.
+
+**The fix that shipped (`quote_names_another_door()`, see the
+`feedback-a-fallback-key-leaves-the-primary-join-unchecked` KG memory) does
+not use `named_by` at all.** It reads the article's OWN quoted text for a
+different street address than the venue it's about to be joined to, and
+refuses on that — a self-refuting signal from the source, not an inference
+from a metadata field about how the base got its name. That makes it strictly
+more general than the `named_by` guard: it would have caught Slow Hand, and
+it does not depend on `venue_base`'s enrichment pass having run.
+
+> 🔑 **A field that records where a fact came from is not a field that records
+> whether the fact is true.** `named_by` answers "which pass wrote this
+> name," never "is this name real." Do not reuse a provenance flag as a
+> confidence flag without checking what it actually asserts.
+
+The two guards now both run (they trigger on different rows — `named_by` gates
+the *second-pass address-widening join*, `quote_names_another_door` gates
+*every* roundup deal regardless of which pass produced it). Neither was
+removed; `quote_names_another_door` is additive and catches what the older,
+narrower guard structurally cannot.
