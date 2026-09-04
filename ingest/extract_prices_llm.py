@@ -263,9 +263,9 @@ def verify(item, text, menu=False):
         if re.search(pat, label, re.I):
             return None, f"unlawful claim /{pat}/"
 
-    price, pct = item.get("price_usd"), item.get("discount_pct")
-    if (price is None) == (pct is None):
-        return None, "needs exactly one of price_usd / discount_pct"
+    price, pct, off = item.get("price_usd"), item.get("discount_pct"), item.get("amount_off_usd")
+    if sum(x is not None for x in (price, pct, off)) != 1:
+        return None, "needs exactly one of price_usd / discount_pct / amount_off_usd"
 
     # '$ 8' and '$8' are the same claim. A themed menu that puts the price in
     # its own block routinely emits the spaced form, and the digits-in-the-text
@@ -306,13 +306,25 @@ def verify(item, text, menu=False):
         if hits and all(re.match(r"\s*off\b", low[m.end():]) for m in hits):
             return None, f"{price:g} is written only as an amount OFF, not a price"
         clean = {"category": item["category"], "label": label, "price_usd": price}
-    else:
+    elif pct is not None:
         pct = float(pct)
         if not 0 < pct < 100:
             return None, f"implausible discount {pct}"
         if not (f"{pct:g}%" in low or "half" in low):
             return None, f"discount {pct:g} not written in the evidence"
         clean = {"category": item["category"], "label": label, "discount_pct": pct}
+    else:
+        off = float(off)
+        if not 0 < off <= 99:
+            return None, f"implausible amount off {off}"
+        # The mirror image of the price check above: '$5 Off' is exactly the
+        # evidence this field exists for, so require the digits AND the word
+        # 'off' rather than accepting any bare '$5' as a discount amount.
+        forms = {f"${off:g}", f"${off:.2f}", f"{off:g} dollar"}
+        hits = [m for f in forms for m in re.finditer(re.escape(f), low)]
+        if not hits or not any(re.match(r"\s*off\b", low[m.end():]) for m in hits):
+            return None, f"{off:g} off not written in the evidence"
+        clean = {"category": item["category"], "label": label, "amount_off_usd": off}
     return clean, None
 
 
@@ -329,8 +341,8 @@ def evidence_candidates(item, text):
     label = (item.get("label") or "").strip()
     if not label:
         return []
-    price, pct = item.get("price_usd"), item.get("discount_pct")
-    num = f"{float(price):g}" if price is not None else f"{float(pct):g}"
+    price, pct, off = item.get("price_usd"), item.get("discount_pct"), item.get("amount_off_usd")
+    num = f"{float(price if price is not None else pct if pct is not None else off):g}"
     out = []
     for line in text.splitlines():
         low = norm(line)
