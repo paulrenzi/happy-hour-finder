@@ -6271,6 +6271,54 @@
    "zone_id": "newark_de"
   },
   {
+   "address": "2667 Kirkwood Hwy, Newark, DE 19711",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "amount_off_usd": 1.0,
+       "category": "draft",
+       "label": "Beer"
+      },
+      {
+       "amount_off_usd": 1.0,
+       "category": "wine",
+       "label": "Wine"
+      },
+      {
+       "amount_off_usd": 1.0,
+       "category": "cocktail",
+       "label": "Cocktails"
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "Every Thursday 4-10pm",
+      "heading": "Thirsty Thursday",
+      "kind": "venue_site",
+      "quote": "Thirsty Thursday $1 off Beer, Wine & Cocktails / Every Thursday 4-10pm with Video Bingo 7-9pm",
+      "url": "https://www.argillabrewing.com/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 4,
+       "end": "22:00",
+       "start": "16:00"
+      }
+     ]
+    }
+   ],
+   "id": "DE4895ccda75",
+   "lid": "DE4895ccda75",
+   "name": "Argilla Brewing Co. @ Pietro's Pizza",
+   "plcb_name": "Argilla Brewing Co. @ Pietro's Pizza",
+   "website": "http://www.argillabrewing.com/",
+   "zone_id": "newark_de"
+  },
+  {
    "address": "401 Louviers Dr, Newark, DE 19711",
    "deals": [
     {

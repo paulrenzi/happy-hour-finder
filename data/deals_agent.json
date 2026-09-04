@@ -1,4 +1,56 @@
 {
+ "101307": [
+  {
+   "category": "food",
+   "label": "Deviled Eggs",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "Hush Puppies",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Pimento Cheese Dip - Nacho crackers, hot honey",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Pork Cracklins - Cool ranch spice",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "Chicken Handheld - Mustard sauce, pickled veg",
+   "price_usd": 10.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Paper Plane",
+   "price_usd": 9.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Old Fashioned",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "House Red and White Wines",
+   "price_usd": 7.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Trinity's Margarita",
+   "price_usd": 9.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "High Life",
+   "price_usd": 3.0
+  }
+ ],
  "101577": [
   {
    "category": "wine",
@@ -1048,6 +1100,88 @@
    "price_usd": 5.0
   }
  ],
+ "DE40aae10689": [
+  {
+   "category": "food",
+   "label": "JOMBO CHILI DOG",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "SMASH BURGER",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "POT-STICKERS",
+   "price_usd": 9.0
+  },
+  {
+   "category": "food",
+   "label": "BONELESS CHICKEN WINGS",
+   "price_usd": 9.0
+  },
+  {
+   "category": "food",
+   "label": "SESAME CRUSTED TUNA",
+   "price_usd": 11.0
+  },
+  {
+   "category": "food",
+   "label": "MAD-MAC BITES",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "JALAPENO BITES",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "LOADED POTATO POCKETS",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "CHICKEN ROLLS",
+   "price_usd": 9.0
+  },
+  {
+   "category": "draft",
+   "label": "domestic drafts",
+   "price_usd": 3.75
+  },
+  {
+   "category": "bottle_can",
+   "label": "domestic bottles",
+   "price_usd": 3.75
+  },
+  {
+   "category": "call",
+   "label": "Fireball",
+   "price_usd": 4.75
+  },
+  {
+   "category": "call",
+   "label": "Bacardi",
+   "price_usd": 4.75
+  },
+  {
+   "category": "call",
+   "label": "Smirnoff Vodka",
+   "price_usd": 4.75
+  },
+  {
+   "category": "call",
+   "label": "Tito’s",
+   "price_usd": 5.0
+  },
+  {
+   "category": "cocktail",
+   "label": "fresh squeezed RITA’s & LIT’s",
+   "price_usd": 7.5
+  }
+ ],
  "DE4798b4126a": [
   {
    "category": "food",
@@ -1100,11 +1234,65 @@
    "price_usd": 9.0
   }
  ],
+ "DE4895ccda75": [
+  {
+   "amount_off_usd": 1.0,
+   "category": "draft",
+   "label": "Beer"
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "wine",
+   "label": "Wine"
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "cocktail",
+   "label": "Cocktails"
+  }
+ ],
  "DE4bfeada154": [
   {
    "category": "cocktail",
    "label": "premium cocktails",
    "price_usd": 5.0
+  }
+ ],
+ "DE52c61670ed": [
+  {
+   "category": "food",
+   "label": "Baja Quesadilla",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Sliders",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Loaded Tots",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "7 Layer Dip",
+   "price_usd": 12.95
+  },
+  {
+   "category": "food",
+   "label": "Steamed Shrimp, ½ Pound Peel & Eat",
+   "price_usd": 10.0
+  },
+  {
+   "category": "call",
+   "label": "Call Drinks",
+   "price_usd": 4.75
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "draft",
+   "label": "all drafts"
   }
  ],
  "DE6192c1db22": [

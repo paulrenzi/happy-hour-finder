@@ -644,6 +644,15 @@
   },
   {
    "zone": "newark_de",
+   "name": "Argilla Brewing Co. @ Pietro's Pizza",
+   "lid": "DE4895ccda75",
+   "verified_by": "agent_read",
+   "item_count": 3,
+   "url": "https://www.argillabrewing.com/",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "newark_de",
    "name": "Caff\u00e8 Gelato Restaurant",
    "lid": "DEe32289cf11",
    "verified_by": "agent_read",
@@ -694,15 +703,6 @@
    "verified_by": "menu_read_llm",
    "item_count": 4,
    "url": "https://www.mcglynnspub.com/food-and-drink-specials",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "newark_de",
-   "name": "Shellhammer's Bar and Grill",
-   "lid": "DE52c61670ed",
-   "verified_by": "agent_read",
-   "item_count": 3,
-   "url": "http://www.shellhammers.com/happy-hour-and-specials",
    "status": "NEEDS_RESCRAPE"
   },
   {
