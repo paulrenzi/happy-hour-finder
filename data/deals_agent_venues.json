@@ -7703,6 +7703,84 @@
    "zone_id": "wilmington"
   },
   {
+   "address": "1801 W 14th St, Wilmington, DE 19806",
+   "deals": [
+    {
+     "confidence": "likely",
+     "items": [
+      {
+       "amount_off_usd": 1.0,
+       "category": "draft",
+       "label": "Draft Beers"
+      },
+      {
+       "amount_off_usd": 1.0,
+       "category": "wine",
+       "label": "Wines by the Glass"
+      },
+      {
+       "category": "well",
+       "label": "Rail Mixed Drinks",
+       "price_usd": 4.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Spritzes",
+       "price_usd": 6.0
+      },
+      {
+       "category": "cocktail",
+       "label": "Crushes",
+       "price_usd": 8.0
+      }
+     ],
+     "last_verified_at": "2026-09-04",
+     "source": {
+      "clock_quote": "3pm-6pm",
+      "heading": "Happy Hour",
+      "kind": "venue_site",
+      "quote": "Restaurant-Wide: $1 off Draft Beers & Wines by the Glass, $4 Rail Mixed Drinks, $6 Spritzes, $8 Crushes.",
+      "url": "https://www.harryshospitalitygroup.com/kid-shelleens/kid-shelleens-menus/"
+     },
+     "type": "happy_hour",
+     "verified_by": "agent_read",
+     "windows": [
+      {
+       "dow": 1,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 2,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 3,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 4,
+       "end": "18:00",
+       "start": "15:00"
+      },
+      {
+       "dow": 5,
+       "end": "18:00",
+       "start": "15:00"
+      }
+     ]
+    }
+   ],
+   "id": "DEa1932d1c0d",
+   "lid": "DEa1932d1c0d",
+   "name": "Kid Shelleen's - Trolley Square",
+   "plcb_name": "Kid Shelleen's - Trolley Square",
+   "website": "https://www.harryshospitalitygroup.com/kid-shelleens/",
+   "zone_id": "wilmington"
+  },
+  {
    "address": "608 N Market St, Wilmington, DE 19801",
    "deals": [
     {

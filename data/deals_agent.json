@@ -1299,12 +1299,12 @@
   {
    "category": "food",
    "discount_pct": 50.0,
-   "label": "Bar Food Menu"
+   "label": "Bar Food Menu only 50% off"
   },
   {
    "category": "food",
    "discount_pct": 50.0,
-   "label": "Bar Food Menu only 50% off"
+   "label": "Bar Food Menu"
   }
  ],
  "DE6779bbc094": [
@@ -1518,7 +1518,56 @@
    "price_usd": 7.0
   }
  ],
+ "DE81960c2e6e": [
+  {
+   "amount_off_usd": 2.0,
+   "category": "draft",
+   "label": "$2 off drafts"
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "wine",
+   "label": "$2 off wines by glass"
+  },
+  {
+   "amount_off_usd": 3.0,
+   "category": "cocktail",
+   "label": "$3 off specialty cocktails"
+  },
+  {
+   "amount_off_usd": 3.0,
+   "category": "food",
+   "label": "$3 off appetizers"
+  }
+ ],
+ "DEa077f4e311": [
+  {
+   "amount_off_usd": 1.0,
+   "category": "draft",
+   "label": "$1 OFF Full Size Draught Beer and Cider"
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "cocktail",
+   "label": "$1 OFF Steel Blu Vodka Cocktails"
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "wine",
+   "label": "$1 OFF Glasses of Wine"
+  }
+ ],
  "DEa1932d1c0d": [
+  {
+   "amount_off_usd": 1.0,
+   "category": "draft",
+   "label": "Draft Beers"
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "wine",
+   "label": "Wines by the Glass"
+  },
   {
    "category": "well",
    "label": "Rail Mixed Drinks",
@@ -1560,6 +1609,13 @@
    "category": "food",
    "label": "Chicken Wings -- buffalo or cherry bbq",
    "price_usd": 10.0
+  }
+ ],
+ "DEa3dcf9e68f": [
+  {
+   "amount_off_usd": 2.0,
+   "category": "draft",
+   "label": "all drafts"
   }
  ],
  "DEc46bc95585": [
@@ -1629,6 +1685,18 @@
    "category": "bottle_can",
    "label": "Seltzer buckets (5) — Lagoon Bar only",
    "price_usd": 25.0
+  }
+ ],
+ "DEd7a6e46b80": [
+  {
+   "amount_off_usd": 1.0,
+   "category": "cocktail",
+   "label": "mixed drinks"
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "wine",
+   "label": "wine by the glass"
   }
  ],
  "DEe2a8eafc2f": [
@@ -1703,6 +1771,45 @@
    "category": "cocktail",
    "label": "Martinis",
    "price_usd": 8.0
+  }
+ ],
+ "DEf02235c26c": [
+  {
+   "amount_off_usd": 2.0,
+   "category": "cocktail",
+   "label": "all \"Classic\" cocktails"
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "draft",
+   "label": "all draft beers"
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "wine",
+   "label": "glasses of wine"
+  }
+ ],
+ "DEf31d98e1ae": [
+  {
+   "category": "draft",
+   "label": "SELECT DRAFT BEER",
+   "price_usd": 5.0
+  },
+  {
+   "category": "wine",
+   "label": "HOUSE WINE",
+   "price_usd": 6.0
+  },
+  {
+   "category": "cocktail",
+   "label": "HOUSE CRUSHES",
+   "price_usd": 7.0
+  },
+  {
+   "category": "well",
+   "label": "RAIL DRINKS WITH ONE MIXER",
+   "price_usd": 7.0
   }
  ],
  "DEf5399c0828": [

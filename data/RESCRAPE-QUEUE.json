@@ -1,7 +1,7 @@
 {
  "rule": "Paul, 2026-09-03: any live deal with under 5 happy-hour items needs a re-scrape.",
  "generated": "2026-09-04",
- "count": 126,
+ "count": 125,
  "venues": [
   {
    "zone": "abington_jenkintown",
@@ -1063,15 +1063,6 @@
    "verified_by": "agent_read",
    "item_count": 1,
    "url": "http://www.jstavern.com/new-events/2014/2/1/happy-hour-3-6pm",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "wilmington",
-   "name": "Kid Shelleen's - Trolley Square",
-   "lid": "DEa1932d1c0d",
-   "verified_by": "roundup_extract",
-   "item_count": 1,
-   "url": "https://delawaretoday.com/food/happy-hours-wilmington/",
    "status": "NEEDS_RESCRAPE"
   },
   {

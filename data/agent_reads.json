@@ -3883,6 +3883,86 @@
   "error": "RuntimeError: claude -p exited 143: ",
   "read_at": "2026-09-03"
  },
+ "DE01470ee0d8": {
+  "cost_usd": 0.5647,
+  "deals": [
+   {
+    "fine_print": "",
+    "items": [],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "20:00",
+      "start": "18:00"
+     },
+     {
+      "dow": 2,
+      "end": "20:00",
+      "start": "18:00"
+     },
+     {
+      "dow": 3,
+      "end": "20:00",
+      "start": "18:00"
+     },
+     {
+      "dow": 4,
+      "end": "20:00",
+      "start": "18:00"
+     },
+     {
+      "dow": 5,
+      "end": "20:00",
+      "start": "18:00"
+     }
+    ]
+   },
+   {
+    "fine_print": "FULL MENU AVAILABLE UNTIL MIDNIGHT",
+    "items": [
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Chef Keev's Chicken Wings",
+      "price_quote": "$1 EACH",
+      "price_usd": 1,
+      "quote": "CHEF KEEV'S CHICKEN WINGS"
+     }
+    ],
+    "type": "daily_special",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "22:00",
+      "start": "18:00"
+     }
+    ]
+   }
+  ],
+  "dropped": [
+   "'daily_special' deal: not the happy hour"
+  ],
+  "found": true,
+  "items_kept": 0,
+  "kind": "image",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch http://www.barxiii.com/ - nav links; footer Hours widget shows 'HAPPY HOUR: 6pm-8pm' with no days",
+   "WebFetch https://barxiii.com/weekly/ - same footer line only, no happy hour items",
+   "WebFetch https://barxiii.com/beer/ (Drinks) - links drink menu image 12.02-Bar-Drink-Menu.png",
+   "WebFetch https://barxiii.com/food-drink/ (Food) - links monday-wings-website.png",
+   "curl -sL -o bar-drink-menu.png https://barxiii.com/wp-content/uploads/2025/01/12.02-Bar-Drink-Menu.png, then Read it - Happy Hour hours printed, no happy hour prices",
+   "curl -sL -o monday-wings.png https://barxiii.com/wp-content/uploads/2024/07/monday-wings-website.png, then Read it - Monday wing special"
+  ],
+  "read_at": "2026-09-04",
+  "source_url": "https://barxiii.com/wp-content/uploads/2025/01/12.02-Bar-Drink-Menu.png",
+  "transcript": "Bar Hours\nMonday - Saturday\n6:00 pm - 1:00 am\n\nHappy Hour\nMonday - Friday\n6:00 pm - 8:00 pm\n\n1706 Philadelphia Pike, Wilmington DE 19809 | (302) 746-7033 | www.barxiii.com\n\nMONDAY NIGHTS\nCHEF KEEV'S CHICKEN WINGS\n6:00 PM - 10:00 PM ONLY\nFULL MENU AVAILABLE UNTIL MIDNIGHT\n$1 EACH",
+  "turns": 14,
+  "venue_name_on_menu": "BAR XIII",
+  "why_not": ""
+ },
  "DE01de14e9e2": {
   "error": "RuntimeError: claude -p exited 143: ",
   "read_at": "2026-09-03"
@@ -6336,15 +6416,16 @@
   "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.51 spent"
  },
  "DE6192c1db22": {
-  "cost_usd": 0.4602,
+  "cost_usd": 0.7717,
   "deals": [
    {
     "fine_print": "Bar Area",
     "items": [
      {
+      "amount_off_usd": null,
       "category": "food",
       "discount_pct": 50,
-      "label": "Bar Food Menu only 50% off",
+      "label": "Bar Food Menu",
       "price_quote": "Bar Food Menu only 50% off",
       "price_usd": null,
       "quote": "Bar Food Menu only 50% off"
@@ -6386,15 +6467,16 @@
   "kind": "page",
   "model": "opus",
   "path_taken": [
-   "WebFetch home page http://www.cafemezzanotte.net/ -- saw \"Happy Hour Specials 3-6 PM\" and a Bar Menu link named martini-happy-hour-menu",
-   "WebFetch https://www.cafemezzanotte.net/menu-2/martini-happy-hour-menu/ -- HAPPY HOUR MONDAY - FRIDAY 3pm to 6pm, no priced items",
-   "WebFetch https://www.cafemezzanotte.net/specials/ -- HAPPY HOUR SPECIALS with the 50% off bar food statement",
-   "curl both pages' raw HTML into the scratch directory and read the happy-hour blocks to confirm no items were dropped"
+   "WebFetch http://www.cafemezzanotte.net/ — homepage teases \"Happy Hour Specials 3-6 PM\", nav lists Bar Menu at /menu-2/martini-happy-hour-menu/ and Specials at /specials/",
+   "WebFetch https://www.cafemezzanotte.net/menu-2/martini-happy-hour-menu/ — \"H A P P Y   H O U R / MONDAY – FRIDAY 3pm to 6pm\", no items or prices",
+   "curl barmenu.html + inspected raw HTML — only favicon/banner images, no menu image or PDF attached to the bar menu page",
+   "WebFetch https://www.cafemezzanotte.net/specials/ — happy hour block with hours and the bar food discount",
+   "curl specials.html + read raw HTML lines 246-249 for verbatim wording"
   ],
-  "read_at": "2026-09-03",
+  "read_at": "2026-09-04",
   "source_url": "https://www.cafemezzanotte.net/specials/",
   "transcript": "HAPPY HOUR SPECIALS:\nMonday – Friday  3pm to 6pm Bar Area\nBar Food Menu only 50% off\nHappy Hour Only 3pm-6pm M-F",
-  "turns": 11,
+  "turns": 17,
   "venue_name_on_menu": "Café Mezzanotte",
   "why_not": ""
  },
@@ -6727,7 +6809,7 @@
   "why_not": "The site shows only a 'Happy-Hour Food' amenity badge with no hours, items or prices; its actual written specials are a weekday Lunch Special (Mon-Fri 11:30am-3:00pm) and dated one-off chicken platter promos on the specials page."
  },
  "DE749053386a": {
-  "cost_usd": 0.2651,
+  "cost_usd": 0.2661,
   "deals": [],
   "dropped": [],
   "found": false,
@@ -6735,17 +6817,17 @@
   "kind": "none",
   "model": "opus",
   "path_taken": [
-   "WebFetch home page http://riverfrontde.mytimothysrestaurants.com/ -- nav links to Food, Drinks, Specials",
-   "WebFetch /wilmington-timothy-s-riverfront-grill-happy-hour-specials -- 'We are updating our specials'",
-   "WebFetch /wilmington-timothy-s-riverfront-grill-drink-menu -- no happy hour section",
-   "WebFetch /wilmington-timothy-s-riverfront-grill-food-menu -- no happy hour section"
+   "WebFetch home page http://riverfrontde.mytimothysrestaurants.com/ — mentions \"Happy Hour five days a week\" but no days, times or items",
+   "WebFetch /wilmington-timothy-s-riverfront-grill-happy-hour-specials — \"We are updating our specials\"",
+   "WebFetch /wilmington-timothy-s-riverfront-grill-drink-menu — regular drink pricing only, no happy hour",
+   "WebFetch /wilmington-timothy-s-riverfront-grill-food-menu — regular food menu only, no happy hour"
   ],
-  "read_at": "2026-09-03",
+  "read_at": "2026-09-04",
   "source_url": "",
   "transcript": "",
   "turns": 6,
-  "venue_name_on_menu": "",
-  "why_not": "The site's Specials page (its happy-hour URL) currently says only \"We are updating our specials / Please stay tuned\", and neither the drink nor food menu page states any happy hour times or pricing."
+  "venue_name_on_menu": "Timothy's Riverfront Grill",
+  "why_not": "The site's SPECIALS/happy hour page says \"We are updating our specials—Please stay tuned,\" and the only happy hour mention anywhere is the home page's \"Happy Hour five days a week\" with no days, times, items or prices printed."
  },
  "DE7629273777": {
   "cost_usd": 0.6114,
@@ -6760,6 +6842,30 @@
   "transcript": "",
   "turns": 15,
   "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.61 spent"
+ },
+ "DE79741790f2": {
+  "cost_usd": 0.3986,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://wilmingtonbrewworks.com/ — no happy hour; links to Miller Rd taproom, food, on-tap, recurring events",
+   "WebFetch https://wilmingtonbrewworks.com/miller-rd-flagship-taproom/ — this location's page, no specials",
+   "WebFetch https://wilmingtonbrewworks.com/taproom/regular-and-recurring-fun/ — recurring events only, no happy hour pricing",
+   "WebFetch https://wilmingtonbrewworks.com/taproom/food-at-miller-road/ — links two menu PDFs, no specials section",
+   "WebFetch https://wilmingtonbrewworks.com/on-tap-now/ — live beer board, no discount pricing",
+   "curl + Read Food-Menu-2026-07-09.pdf — full-price food menu, no happy hour",
+   "Read cocktail-menu.pdf (Beyond the Brew beverage menu) — full-price drinks, no happy hour"
+  ],
+  "read_at": "2026-09-04",
+  "source_url": "",
+  "transcript": "",
+  "turns": 10,
+  "venue_name_on_menu": "",
+  "why_not": "The Miller Road taproom's own pages and both of its linked menu PDFs list only regular full prices, and the recurring-events page advertises weekly events (Turntable Tuesday, Dark Star BBQ, Run Club, live music, yoga) without any stated happy hour hours or discount prices."
  },
  "DE7c3e84d920": {
   "cost_usd": 0.585,
@@ -7015,12 +7121,13 @@
   "why_not": ""
  },
  "DE81960c2e6e": {
-  "cost_usd": 0.2564,
+  "cost_usd": 0.3749,
   "deals": [
    {
     "fine_print": "",
     "items": [
      {
+      "amount_off_usd": 2,
       "category": "draft",
       "discount_pct": null,
       "label": "$2 off drafts",
@@ -7029,6 +7136,7 @@
       "quote": "$2 off drafts"
      },
      {
+      "amount_off_usd": 2,
       "category": "wine",
       "discount_pct": null,
       "label": "$2 off wines by glass",
@@ -7037,6 +7145,7 @@
       "quote": "$2 off wines by glass"
      },
      {
+      "amount_off_usd": 3,
       "category": "cocktail",
       "discount_pct": null,
       "label": "$3 off specialty cocktails",
@@ -7045,6 +7154,7 @@
       "quote": "$3 off specialty cocktails"
      },
      {
+      "amount_off_usd": 3,
       "category": "food",
       "discount_pct": null,
       "label": "$3 off appetizers",
@@ -7083,25 +7193,20 @@
     ]
    }
   ],
-  "dropped": [
-   "'$2 off drafts': needs exactly one of price_usd / discount_pct",
-   "'$2 off wines by glass': needs exactly one of price_usd / discount_pct",
-   "'$3 off specialty cocktails': needs exactly one of price_usd / discount_pct",
-   "'$3 off appetizers': needs exactly one of price_usd / discount_pct"
-  ],
+  "dropped": [],
   "found": true,
-  "items_kept": 0,
+  "items_kept": 4,
   "kind": "page",
   "model": "opus",
   "path_taken": [
-   "WebFetch http://tonicsns.com/ — home page listed a Happy Hour Menu link to /menu/#happy-hour",
-   "WebFetch http://tonicsns.com/menu/ — menu page contains the happy hour section",
-   "WebFetch http://tonicsns.com/menu/#happy-hour — read the happy hour section verbatim"
+   "WebFetch home page http://tonicsns.com/ — nav lists 'Happy Hour Menu' at /menu/#happy-hour",
+   "WebFetch http://tonicsns.com/menu/ — happy hour tab panel",
+   "curl menu page HTML to scratch dir and read the #happy-hour section markup verbatim"
   ],
-  "read_at": "2026-09-03",
+  "read_at": "2026-09-04",
   "source_url": "http://tonicsns.com/menu/#happy-hour",
-  "transcript": "Happy Hour\n\n3-6 PM  Monday - Friday\n\n$2 off drafts\n$2 off wines by glass\n$3 off specialty cocktails\n$3 off appetizers",
-  "turns": 5,
+  "transcript": "Happy Hour\n3-6 PM  Monday - Friday\n$2 off drafts\n$2 off wines by glass\n$3 off specialty cocktails\n$3 off appetizers",
+  "turns": 9,
   "venue_name_on_menu": "Tonic Seafood & Steak",
   "why_not": ""
  },
@@ -7154,20 +7259,22 @@
   "why_not": "exited 1 after 29 turns (stop_reason 'tool_use'), $1.17 spent"
  },
  "DEa077f4e311": {
-  "cost_usd": 0.3802,
+  "cost_usd": 0.3979,
   "deals": [
    {
-    "fine_print": "Plus, we've got Free Peanuts! Just ask!",
+    "fine_print": "Plus, we’ve got Free Peanuts! Just ask!",
     "items": [
      {
+      "amount_off_usd": 1,
       "category": "draft",
       "discount_pct": null,
       "label": "$1 OFF Full Size Draught Beer and Cider",
       "price_quote": "$1 OFF",
       "price_usd": null,
-      "quote": "$1 OFF Full Size Draught Beer and Cider"
+      "quote": "Full Size Draught Beer and Cider"
      },
      {
+      "amount_off_usd": 1,
       "category": "cocktail",
       "discount_pct": null,
       "label": "$1 OFF Steel Blu Vodka Cocktails",
@@ -7176,6 +7283,7 @@
       "quote": "Steel Blu Vodka Cocktails"
      },
      {
+      "amount_off_usd": 1,
       "category": "wine",
       "discount_pct": null,
       "label": "$1 OFF Glasses of Wine",
@@ -7184,6 +7292,7 @@
       "quote": "Glasses of Wine"
      },
      {
+      "amount_off_usd": null,
       "category": "food",
       "discount_pct": null,
       "label": "Free Peanuts",
@@ -7223,50 +7332,49 @@
    }
   ],
   "dropped": [
-   "'$1 OFF Full Size Draught Beer and Cider': needs exactly one of price_usd / discount_pct",
-   "'$1 OFF Steel Blu Vodka Cocktails': needs exactly one of price_usd / discount_pct",
-   "'$1 OFF Glasses of Wine': needs exactly one of price_usd / discount_pct",
    "'Free Peanuts': implausible price 0.0"
   ],
   "found": true,
-  "items_kept": 0,
+  "items_kept": 3,
   "kind": "page",
   "model": "opus",
   "path_taken": [
-   "WebFetch https://wilmingtonbrewworks.com/brew-works-north/ — location page for 1851 Marsh Rd, found a Happy Hour section",
-   "curl -sL the same page to HTML to confirm the happy-hour wording and the printed operating hours verbatim"
+   "WebFetch https://wilmingtonbrewworks.com/brew-works-north/ — found a Happy Hour section on the location page",
+   "curl the same page to data/agent_reads/DEa077f4e311/north.html to read the Happy Hour and Hours text verbatim"
   ],
-  "read_at": "2026-09-03",
+  "read_at": "2026-09-04",
   "source_url": "https://wilmingtonbrewworks.com/brew-works-north/",
-  "transcript": "Brew Works North Hours\nMON:  5 PM – 10 PM\nTUE:   5PM – 10 PM\nWED:   4 PM – 10 PM\nTHU:   4 PM – 10 PM\nFRI:   2 PM – 12 AM\nSAT:   12 PM – 12 AM (Family Friendly, Noon – 6pm)\nSUN:   12 PM – 9 PM (Family & Dog Friendly, Noon-6pm)\n\nHappy Hour\nBrew Works North does Happy Hour! From Open until 6pm Monday through Thursday, and Open until 5pmn on Fridays, enjoy $1 OFF Full Size Draught Beer and Cider, Steel Blu Vodka Cocktails, and Glasses of Wine. Plus, we've got Free Peanuts! Just ask!",
+  "transcript": "Brew Works North Hours\nMON:  5 PM – 10 PM\nTUE:   5PM – 10 PM\nWED:   4 PM – 10 PM\nTHU:   4 PM – 10 PM\nFRI:   2 PM – 12 AM\nSAT:   12 PM – 12 AM (Family Friendly, Noon – 6pm)\nSUN:   12 PM – 9 PM (Family & Dog Friendly, Noon-6pm)\n\nHappy Hour\nBrew Works North does Happy Hour! From Open until 6pm Monday through Thursday, and Open until 5pmn on Fridays, enjoy $1 OFF Full Size Draught Beer and Cider, Steel Blu Vodka Cocktails, and Glasses of Wine. Plus, we’ve got Free Peanuts! Just ask!",
   "turns": 9,
   "venue_name_on_menu": "Brew Works North",
   "why_not": ""
  },
  "DEa1932d1c0d": {
-  "cost_usd": 0.5219,
+  "cost_usd": 0.6322,
   "deals": [
    {
-    "fine_print": "Restaurant-Wide: drink prices. BAR ONLY: Discounted Bar Bites Menu",
+    "fine_print": "Restaurant-Wide: $1 off Draft Beers & Wines by the Glass, $4 Rail Mixed Drinks, $6 Spritzes, $8 Crushes. BAR ONLY: Discounted Bar Bites Menu",
     "items": [
      {
+      "amount_off_usd": 1,
       "category": "draft",
       "discount_pct": null,
-      "label": "$1 off Draft Beers",
+      "label": "Draft Beers",
       "price_quote": "$1 off",
       "price_usd": null,
-      "quote": "$1 off Draft Beers",
-      "type_note": null
+      "quote": "$1 off Draft Beers"
      },
      {
+      "amount_off_usd": 1,
       "category": "wine",
       "discount_pct": null,
-      "label": "$1 off Wines by the Glass",
+      "label": "Wines by the Glass",
       "price_quote": "$1 off",
       "price_usd": null,
       "quote": "Wines by the Glass"
      },
      {
+      "amount_off_usd": null,
       "category": "well",
       "discount_pct": null,
       "label": "Rail Mixed Drinks",
@@ -7275,14 +7383,16 @@
       "quote": "$4 Rail Mixed Drinks"
      },
      {
+      "amount_off_usd": null,
       "category": "cocktail",
       "discount_pct": null,
       "label": "Spritzes",
       "price_quote": "$6",
       "price_usd": 6,
-      "quote": "$6 Spritzes"
+      "quote": "$6  Spritzes"
      },
      {
+      "amount_off_usd": null,
       "category": "cocktail",
       "discount_pct": null,
       "label": "Crushes",
@@ -7291,10 +7401,11 @@
       "quote": "$8 Crushes"
      },
      {
+      "amount_off_usd": null,
       "category": "food",
       "discount_pct": null,
       "label": "Discounted Bar Bites Menu (bar only)",
-      "price_quote": "",
+      "price_quote": "Discounted Bar Bites Menu",
       "price_usd": null,
       "quote": "Discounted Bar Bites Menu"
      }
@@ -7329,12 +7440,13 @@
     ]
    },
    {
-    "fine_print": "MONDAY: 5:30-7:30pm Family Night with Jungle John",
+    "fine_print": "MONDAY:  5:30-7:30pm Family Night with Jungle John & $5 kid’s menu (10 years & younger)",
     "items": [
      {
+      "amount_off_usd": null,
       "category": "food",
       "discount_pct": null,
-      "label": "kid’s menu (10 years & younger), Family Night",
+      "label": "kid's menu (10 years & younger), Family Night",
       "price_quote": "$5",
       "price_usd": 5,
       "quote": "$5 kid’s menu (10 years & younger)"
@@ -7350,45 +7462,54 @@
     ]
    },
    {
-    "fine_print": "BURGER TUESDAY: 25% off burgers* DINE-IN ONLY *some exclusions",
+    "fine_print": "BURGER TUESDAY:   25% off burgers*  DINE-IN ONLY  *some exclusions (no clock times printed)",
     "items": [
      {
+      "amount_off_usd": null,
       "category": "food",
       "discount_pct": 25,
-      "label": "25% off burgers",
+      "label": "burgers",
       "price_quote": "25% off",
       "price_usd": null,
-      "quote": "25% off burgers*"
+      "quote": "25% off burgers*  DINE-IN ONLY"
      }
     ],
     "type": "daily_special",
     "windows": []
    },
    {
-    "fine_print": "WEDNESDAY MUG NIGHT: 50% off draft mugs from 7PM – Close",
+    "fine_print": "WEDNESDAY MUG NIGHT:  50% off draft mugs from 7PM – Close",
     "items": [
      {
+      "amount_off_usd": null,
       "category": "draft",
       "discount_pct": 50,
-      "label": "50% off draft mugs",
+      "label": "draft mugs",
       "price_quote": "50% off",
       "price_usd": null,
       "quote": "50% off draft mugs from 7PM – Close"
      }
     ],
     "type": "daily_special",
-    "windows": []
+    "windows": [
+     {
+      "dow": 3,
+      "end": "24:00",
+      "start": "19:00"
+     }
+    ]
    },
    {
-    "fine_print": "WINE THURSDAY: 50% off bottled wine list, open to close",
+    "fine_print": "WINE THURSDAY:  50% off  bottled wine list, open to close (no clock times printed)",
     "items": [
      {
+      "amount_off_usd": null,
       "category": "wine",
       "discount_pct": 50,
-      "label": "50% off bottled wine list",
+      "label": "bottled wine list",
       "price_quote": "50% off",
       "price_usd": null,
-      "quote": "50% off bottled wine list, open to close"
+      "quote": "50% off  bottled wine list, open to close"
      }
     ],
     "type": "daily_special",
@@ -7396,27 +7517,26 @@
    }
   ],
   "dropped": [
-   "'$1 off Draft Beers': needs exactly one of price_usd / discount_pct",
-   "'$1 off Wines by the Glass': needs exactly one of price_usd / discount_pct",
-   "'Discounted Bar Bites Menu (bar only)': needs exactly one of price_usd / discount_pct",
+   "'Discounted Bar Bites Menu (bar only)': needs exactly one of price_usd / discount_pct / amount_off_usd",
    "'daily_special' deal: not the happy hour",
    "'daily_special' deal: not the happy hour",
    "'daily_special' deal: not the happy hour",
    "'daily_special' deal: not the happy hour"
   ],
   "found": true,
-  "items_kept": 3,
+  "items_kept": 5,
   "kind": "page",
   "model": "opus",
   "path_taken": [
-   "WebFetch https://www.harryshospitalitygroup.com/kid-shelleens/ — no happy hour on the location page; it links to a Menus page",
-   "WebFetch https://www.harryshospitalitygroup.com/kid-shelleens/kid-shelleens-menus/ — happy hour text present",
-   "curl the menus page HTML into the scratch dir to transcribe the happy hour block verbatim"
+   "WebFetch https://www.harryshospitalitygroup.com/kid-shelleens/ - no happy hour on the location page; linked to a Menus page and PDF menus",
+   "WebFetch https://www.harryshospitalitygroup.com/kid-shelleens/kid-shelleens-menus/ - found HAPPY HOUR block plus Weekly Specials",
+   "curl -sL -o data/agent_reads/DEa1932d1c0d/menus.html https://www.harryshospitalitygroup.com/kid-shelleens/kid-shelleens-menus/ - read raw HTML for verbatim text",
+   "curl -sL -o data/agent_reads/DEa1932d1c0d/beer-wine-cocktails.pdf .../New-Trolley-Beer-Wine-Cocktails-docx-14.pdf - downloaded but not needed; happy hour is stated on the page"
   ],
-  "read_at": "2026-09-03",
+  "read_at": "2026-09-04",
   "source_url": "https://www.harryshospitalitygroup.com/kid-shelleens/kid-shelleens-menus/",
-  "transcript": "HAPPY HOUR\nMonday through Friday 3-6PM\nRestaurant-Wide:\n$1 off Draft Beers & Wines by the Glass, $4 Rail Mixed Drinks\n$6 Spritzes, $8 Crushes\nBAR ONLY:\nDiscounted Bar Bites Menu\n\nWeekly Specials\nMONDAY: 5:30-7:30pm Family Night with Jungle John & $5 kid’s menu (10 years & younger)\nBURGER TUESDAY: 25% off burgers* DINE-IN ONLY *some exclusions\nWEDNESDAY MUG NIGHT: 50% off draft mugs from 7PM – Close\nWINE THURSDAY: 50% off bottled wine list, open to close\nSATURDAY & SUNDAY: Brunch 10am – 2pm",
-  "turns": 10,
+  "transcript": "HAPPY HOUR\nMonday through Friday 3-6PM\nRestaurant-Wide:\n$1 off Draft Beers & Wines by the Glass, $4 Rail Mixed Drinks\n$6  Spritzes, $8 Crushes\nBAR ONLY:\nDiscounted Bar Bites Menu\n\nWeekly Specials\nMONDAY:  5:30-7:30pm Family Night with Jungle John & $5 kid’s menu (10 years & younger)\nBURGER TUESDAY:   25% off burgers*  DINE-IN ONLY  *some exclusions\nWEDNESDAY MUG NIGHT:  50% off draft mugs from 7PM – Close\nWINE THURSDAY:  50% off  bottled wine list, open to close\nSATURDAY & SUNDAY:  Brunch 10am – 2pm",
+  "turns": 13,
   "venue_name_on_menu": "Kid Shelleen's Trolley Square",
   "why_not": ""
  },
@@ -7570,18 +7690,19 @@
   "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.51 spent"
  },
  "DEa3dcf9e68f": {
-  "cost_usd": 0.264,
+  "cost_usd": 0.3423,
   "deals": [
    {
     "fine_print": "",
     "items": [
      {
+      "amount_off_usd": 2,
       "category": "draft",
       "discount_pct": null,
-      "label": "$2 off all drafts",
+      "label": "all drafts",
       "price_quote": "$2 off all drafts",
       "price_usd": null,
-      "quote": "$2 off all drafts during happy hour"
+      "quote": "$2 off all drafts during happy hour | Tuesday-Friday 4 pm-6 pm"
      }
     ],
     "type": "happy_hour",
@@ -7609,23 +7730,21 @@
     ]
    }
   ],
-  "dropped": [
-   "'$2 off all drafts': needs exactly one of price_usd / discount_pct"
-  ],
+  "dropped": [],
   "found": true,
-  "items_kept": 0,
+  "items_kept": 1,
   "kind": "page",
   "model": "opus",
   "path_taken": [
-   "WebFetch http://dorcea.com/ -- nav listed Food Menu and Drinks Menu, no happy hour on home page",
-   "WebFetch http://dorcea.com/wilmington-dorcea-drink-menu -- happy hour line found above the Draft list",
-   "WebFetch http://dorcea.com/wilmington-dorcea-food-menu -- no happy hour section",
-   "curl drink menu HTML to confirm the happy hour line verbatim"
+   "WebFetch http://dorcea.com/ — home page, no happy hour section; linked Food Menu and Drinks Menu",
+   "WebFetch http://dorcea.com/wilmington-dorcea-drink-menu — happy hour line found above the Draft section",
+   "curl drink menu HTML into scratch dir to confirm the printed wording character-for-character",
+   "curl http://dorcea.com/wilmington-dorcea-food-menu — no happy hour mention"
   ],
-  "read_at": "2026-09-03",
+  "read_at": "2026-09-04",
   "source_url": "http://dorcea.com/wilmington-dorcea-drink-menu",
-  "transcript": "$2 off all drafts during happy hour | Tuesday-Friday 4 pm-6 pm",
-  "turns": 6,
+  "transcript": "$2 off all drafts during happy hour | Tuesday-Friday 4 pm-6 pm\n\nDraft",
+  "turns": 8,
   "venue_name_on_menu": "Dorcea",
   "why_not": ""
  },
@@ -7668,7 +7787,7 @@
   "why_not": "The site is a single-location halal fried chicken takeout with no alcohol; its only \"specials\" is a standing menu category (\"DAILY SPECIALS - HALAL\") of all-day combo prices with no days, times, or happy hour stated anywhere."
  },
  "DEb511151c02": {
-  "cost_usd": 0.5424,
+  "cost_usd": 0.2289,
   "deals": [],
   "dropped": [],
   "found": false,
@@ -7676,21 +7795,18 @@
   "kind": "none",
   "model": "opus",
   "path_taken": [
-   "WebFetch http://www.jstavern.com/ — home page, no happy hour text; nav links to About, Main Menu, Beer & Wine, Buffet Menu, Events, Photos, Contact",
-   "WebFetch http://www.jstavern.com/beer-wine — beer/wine list with no pricing specials",
-   "WebFetch http://www.jstavern.com/main-menu — food menu, no specials section",
-   "WebFetch http://www.jstavern.com/new-events — EVENTS page empty, contact info only",
-   "curl home/new-events/main-menu/beer-wine raw HTML — grep for 'happy hour' returned no matches; only sign/neighborhood photos",
-   "curl http://www.jstavern.com/http/wwwjstaverncom/buffet-menu — menu is a single image",
-   "curl + Read buffet_menu.jpg (bUF+mENU+jst+24.jpg) — catering/buffet pricing only, no happy hour",
-   "WebFetch http://www.jstavern.com/about — no happy hour or specials"
+   "WebFetch http://www.jstavern.com/ — home page, no happy hour mention; links to Main Menu, Beer & Wine, Events, About",
+   "WebFetch http://www.jstavern.com/main-menu — food menu only, no specials section",
+   "WebFetch http://www.jstavern.com/beer-wine — beer/wine list only, no happy hour",
+   "WebFetch http://www.jstavern.com/new-events — navigation and ordering links only",
+   "WebFetch http://www.jstavern.com/about — description and hours of operation, no specials"
   ],
-  "read_at": "2026-09-03",
+  "read_at": "2026-09-04",
   "source_url": "",
   "transcript": "",
-  "turns": 16,
+  "turns": 7,
   "venue_name_on_menu": "",
-  "why_not": "The site's pages (home, about, main menu, beer & wine, events, buffet menu image) list food and drink offerings, catering prices and store hours, but nowhere states a happy hour or any time-limited drink specials."
+  "why_not": "The site offers a food menu, a beer & wine list, an events page and an about page with hours of operation, but nowhere states a happy hour or any discounted pricing."
  },
  "DEc03244dbee": {
   "cost_usd": 0.5419,
@@ -7750,32 +7866,35 @@
   "why_not": "Bertucci's Christiana page, the chain specials page and this location's menu offer only a \"Two For Tuesday\" buy-one-pizza-get-one-free promotion and an eClub signup, with no happy hour hours, bar menu, or discounted drink pricing stated anywhere."
  },
  "DEc46bc95585": {
-  "cost_usd": 0.2085,
+  "cost_usd": 0.207,
   "deals": [
    {
     "fine_print": "",
     "items": [
      {
+      "amount_off_usd": null,
       "category": "draft",
       "discount_pct": null,
       "label": "Legal Light & Delaware Park Lagers",
-      "price_quote": "$3",
+      "price_quote": "$3 Legal Light & Delaware Park Lagers",
       "price_usd": 3,
       "quote": "$3 Legal Light & Delaware Park Lagers"
      },
      {
+      "amount_off_usd": null,
       "category": "draft",
       "discount_pct": null,
       "label": "All Other High Steaks Beers",
-      "price_quote": "$5",
+      "price_quote": "$5 All Other High Steaks Beers",
       "price_usd": 5,
       "quote": "$5 All Other High Steaks Beers"
      },
      {
+      "amount_off_usd": null,
       "category": "food",
       "discount_pct": null,
       "label": "Personal Pizzas",
-      "price_quote": "$8",
+      "price_quote": "$8 Personal Pizzas",
       "price_usd": 8,
       "quote": "$8 Personal Pizzas"
      }
@@ -7806,10 +7925,10 @@
   "kind": "page",
   "model": "opus",
   "path_taken": [
-   "WebFetch https://delawarepark.com/dining/brewing/ — found HAPPY HOUR block stated on the page",
-   "WebFetch same page again for a verbatim transcription of the happy hour section"
+   "WebFetch https://delawarepark.com/dining/brewing/ — found HAPPY HOUR block on the location page",
+   "WebFetch same page again for verbatim transcription of the happy hour block"
   ],
-  "read_at": "2026-09-03",
+  "read_at": "2026-09-04",
   "source_url": "https://delawarepark.com/dining/brewing/",
   "transcript": "HAPPY HOUR\n\nWednesday – Friday | 2pm to 6pm\n$3 Legal Light & Delaware Park Lagers | $5 All Other High Steaks Beers | $8 Personal Pizzas",
   "turns": 4,
@@ -8056,23 +8175,25 @@
   "why_not": "The site never states a happy hour anywhere it links to; its Weekly Specials page offers only weekday food/loyalty specials, and the word 'happy hour' appears solely inside the pages' SEO meta keywords tag."
  },
  "DEd7a6e46b80": {
-  "cost_usd": 0.5154,
+  "cost_usd": 0.2156,
   "deals": [
    {
     "fine_print": "",
     "items": [
      {
+      "amount_off_usd": 1,
       "category": "cocktail",
       "discount_pct": null,
-      "label": "$1 off mixed drinks",
+      "label": "mixed drinks",
       "price_quote": "$1 off",
       "price_usd": null,
       "quote": "$1 off mixed drinks"
      },
      {
+      "amount_off_usd": 1,
       "category": "wine",
       "discount_pct": null,
-      "label": "$1 off wine by the glass",
+      "label": "wine by the glass",
       "price_quote": "$1 off",
       "price_usd": null,
       "quote": "wine by the glass"
@@ -8108,24 +8229,20 @@
     ]
    }
   ],
-  "dropped": [
-   "'$1 off mixed drinks': needs exactly one of price_usd / discount_pct",
-   "'$1 off wine by the glass': needs exactly one of price_usd / discount_pct"
-  ],
+  "dropped": [],
   "found": true,
-  "items_kept": 0,
+  "items_kept": 2,
   "kind": "page",
   "model": "opus",
   "path_taken": [
-   "WebFetch http://www.littlevinniespizza.com/ — home page lists a Bar & Restaurant section with happy hour",
-   "curl -sL home page HTML into scratch dir to confirm the wording character-for-character",
-   "WebFetch http://www.littlevinniespizza.com/ again for a verbatim quote of the Happy Hour block"
+   "WebFetch http://www.littlevinniespizza.com/ — home page states happy hour directly",
+   "WebFetch http://www.littlevinniespizza.com/ — re-read for verbatim happy hour wording"
   ],
-  "read_at": "2026-09-03",
+  "read_at": "2026-09-04",
   "source_url": "http://www.littlevinniespizza.com/",
-  "transcript": "Bar & Restaurant\nbar + restaurant hours\nM-F 11am- 8pm// Saturday 4pm -8pm\nHappy Hour – M-F 3-5pm* $1 off mixed drinks + wine by the glass—\nBar + restaurant open Monday - Friday 11-8pm\nweekly lunch + dinner specials! Reservations suggested.\nSaturday 4-8pm\n*Private parties may be reserved Saturdays from 11-3pm. call for details",
-  "turns": 12,
-  "venue_name_on_menu": "Little Vinnie's Pizza + Pasta",
+  "transcript": "Bar & Restaurant Schedule for feb 16-21\nHappy Hour – M-F 3-5pm* $1 off mixed drinks + wine by the glass\nBar + restaurant open Monday - Friday 11-8pm",
+  "turns": 4,
+  "venue_name_on_menu": "Little Vinnie's Pizza & Pasta",
   "why_not": ""
  },
  "DEe2a8eafc2f": {
@@ -8430,31 +8547,34 @@
   "why_not": ""
  },
  "DEf02235c26c": {
-  "cost_usd": 0.4866,
+  "cost_usd": 0.286,
   "deals": [
    {
     "fine_print": "",
     "items": [
      {
+      "amount_off_usd": 2,
       "category": "cocktail",
       "discount_pct": null,
-      "label": "$2 off all \"Classic\" cocktails",
+      "label": "all \"Classic\" cocktails",
       "price_quote": "$2 off all \"Classic\" cocktails",
       "price_usd": null,
       "quote": "$2 off all \"Classic\" cocktails"
      },
      {
+      "amount_off_usd": 1,
       "category": "draft",
       "discount_pct": null,
-      "label": "$1 off all draft beers",
+      "label": "all draft beers",
       "price_quote": "$1 off all draft beers",
       "price_usd": null,
       "quote": "$1 off all draft beers"
      },
      {
+      "amount_off_usd": 1,
       "category": "wine",
       "discount_pct": null,
-      "label": "$1 off glasses of wine",
+      "label": "glasses of wine",
       "price_quote": "$1 off glasses of wine",
       "price_usd": null,
       "quote": "$1 off glasses of wine"
@@ -8500,15 +8620,16 @@
     ]
    },
    {
-    "fine_print": "",
+    "fine_print": "all day",
     "items": [
      {
+      "amount_off_usd": null,
       "category": "draft",
       "discount_pct": 50,
       "label": "1/2 price draft beers all day",
-      "price_quote": "1/2 price draft beers all day",
+      "price_quote": "MONDAY - 1/2 price draft beers all day",
       "price_usd": null,
-      "quote": "1/2 price draft beers all day"
+      "quote": "MONDAY - 1/2 price draft beers all day"
      }
     ],
     "type": "daily_special",
@@ -8521,15 +8642,16 @@
     ]
    },
    {
-    "fine_print": "",
+    "fine_print": "all day",
     "items": [
      {
+      "amount_off_usd": null,
       "category": "cocktail",
       "discount_pct": 50,
       "label": "1/2 price classic cocktails all day",
-      "price_quote": "1/2 price classic cocktails all day",
+      "price_quote": "TUESDAY - 1/2 price classic cocktails all day",
       "price_usd": null,
-      "quote": "1/2 price classic cocktails all day"
+      "quote": "TUESDAY - 1/2 price classic cocktails all day"
      }
     ],
     "type": "daily_special",
@@ -8542,23 +8664,25 @@
     ]
    },
    {
-    "fine_print": "",
+    "fine_print": "all day",
     "items": [
      {
-      "category": "wine",
-      "discount_pct": 50,
-      "label": "1/2 price dates & wine all day",
-      "price_quote": "1/2 price dates & wine all day",
-      "price_usd": null,
-      "quote": "1/2 price dates & wine all day"
-     },
-     {
+      "amount_off_usd": null,
       "category": "food",
       "discount_pct": 50,
-      "label": "1/2 price dates & wine all day",
-      "price_quote": "1/2 price dates & wine all day",
+      "label": "1/2 price dates all day",
+      "price_quote": "WEDNESDAY - 1/2 price dates & wine all day",
       "price_usd": null,
-      "quote": "1/2 price dates & wine all day"
+      "quote": "WEDNESDAY - 1/2 price dates & wine all day"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "wine",
+      "discount_pct": 50,
+      "label": "1/2 price wine all day",
+      "price_quote": "WEDNESDAY - 1/2 price dates & wine all day",
+      "price_usd": null,
+      "quote": "WEDNESDAY - 1/2 price dates & wine all day"
      }
     ],
     "type": "daily_special",
@@ -8571,15 +8695,16 @@
     ]
    },
    {
-    "fine_print": "",
+    "fine_print": "all day",
     "items": [
      {
+      "amount_off_usd": null,
       "category": "food",
       "discount_pct": null,
-      "label": "$12 flat breads all day",
-      "price_quote": "$12 flat breads all day",
+      "label": "flat breads all day",
+      "price_quote": "THURSDAY - $12 flat breads all day",
       "price_usd": 12,
-      "quote": "$12 flat breads all day"
+      "quote": "THURSDAY - $12 flat breads all day"
      }
     ],
     "type": "daily_special",
@@ -8593,43 +8718,162 @@
    }
   ],
   "dropped": [
-   "'$2 off all \"Classic\" cocktails': needs exactly one of price_usd / discount_pct",
-   "'$1 off all draft beers': needs exactly one of price_usd / discount_pct",
-   "'$1 off glasses of wine': needs exactly one of price_usd / discount_pct",
    "'daily_special' deal: not the happy hour",
    "'daily_special' deal: not the happy hour",
    "'daily_special' deal: not the happy hour",
    "'daily_special' deal: not the happy hour"
   ],
   "found": true,
-  "items_kept": 0,
+  "items_kept": 3,
   "kind": "page",
   "model": "opus",
   "path_taken": [
-   "WebFetch http://www.copperdram.com/ -- home page, no happy hour text; linked to Events & Specials",
-   "WebFetch https://www.copperdram.com/events-specials -- happy hour and daily specials found",
-   "curl -sL events-specials.html into scratch dir and read the page text nodes verbatim to confirm exact wording"
+   "WebFetch http://www.copperdram.com/ — home page, nav lists 'Events & Specials'",
+   "WebFetch https://www.copperdram.com/events-specials — happy hour and daily specials printed here"
   ],
-  "read_at": "2026-09-03",
+  "read_at": "2026-09-04",
   "source_url": "https://www.copperdram.com/events-specials",
-  "transcript": "Happy Hour\n3:00 - 6:00 EVERY day\n$2 off all \"Classic\" cocktails\n$1 off all draft beers\n$1 off glasses of wine\n\nMONDAY - 1/2 price draft beers all day\nTUESDAY - 1/2 price classic cocktails all day\nWEDNESDAY - 1/2 price dates & wine all day\nTHURSDAY - $12 flat breads all day",
-  "turns": 11,
+  "transcript": "3:00 - 6:00 EVERY day\n$2 off all \"Classic\" cocktails\n$1 off all draft beers\n$1 off glasses of wine\n\nMONDAY - 1/2 price draft beers all day\n\nTUESDAY - 1/2 price classic cocktails all day\n\nWEDNESDAY - 1/2 price dates & wine all day\n\nTHURSDAY - $12 flat breads all day",
+  "turns": 5,
   "venue_name_on_menu": "Copper Dram",
   "why_not": ""
  },
  "DEf31d98e1ae": {
-  "cost_usd": 0.5235,
-  "deals": [],
-  "dropped": [],
-  "found": false,
-  "items_kept": 0,
-  "kind": "exhausted",
+  "cost_usd": 0.6824,
+  "deals": [
+   {
+    "fine_print": "PLUS SEASONAL COCKTAILS & BUCKET SPECIALS!",
+    "items": [
+     {
+      "amount_off_usd": null,
+      "category": "draft",
+      "discount_pct": null,
+      "label": "SELECT DRAFT BEER",
+      "price_quote": "$5 SELECT DRAFT BEER",
+      "price_usd": 5,
+      "quote": "$5 SELECT DRAFT BEER"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "wine",
+      "discount_pct": null,
+      "label": "HOUSE WINE",
+      "price_quote": "$6 HOUSE WINE",
+      "price_usd": 6,
+      "quote": "$6 HOUSE WINE"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "HOUSE CRUSHES",
+      "price_quote": "$7 HOUSE CRUSHES",
+      "price_usd": 7,
+      "quote": "$7 HOUSE CRUSHES"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "well",
+      "discount_pct": null,
+      "label": "RAIL DRINKS WITH ONE MIXER",
+      "price_quote": "$7 RAIL DRINKS WITH ONE MIXER",
+      "price_usd": 7,
+      "quote": "$7 RAIL DRINKS WITH ONE MIXER"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "19:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "19:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "19:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "19:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "19:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 6,
+      "end": "19:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 7,
+      "end": "19:00",
+      "start": "16:00"
+     }
+    ]
+   },
+   {
+    "fine_print": "",
+    "items": [
+     {
+      "amount_off_usd": null,
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "select martinis every Monday",
+      "price_quote": "$9 select martinis every Monday",
+      "price_usd": 9,
+      "quote": "$9 select martinis every Monday"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "wine",
+      "discount_pct": null,
+      "label": "bottles of house wine every Tuesday",
+      "price_quote": "$20 bottles of house wine every Tuesday",
+      "price_usd": 20,
+      "quote": "$20 bottles of house wine every Tuesday"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "shot",
+      "discount_pct": null,
+      "label": "pickleback shots every day of the week",
+      "price_quote": "$5 pickleback shots every day of the week",
+      "price_usd": 5,
+      "quote": "$5 pickleback shots every day of the week"
+     }
+    ],
+    "type": "daily_special",
+    "windows": []
+   }
+  ],
+  "dropped": [
+   "'daily_special' deal: not the happy hour"
+  ],
+  "found": true,
+  "items_kept": 4,
+  "kind": "page",
   "model": "opus",
-  "path_taken": [],
-  "read_at": "2026-09-03",
-  "transcript": "",
-  "turns": 15,
-  "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.52 spent"
+  "path_taken": [
+   "WebFetch https://www.thechancerymarket.com/ — home page states \"HAPPY HOUR FROM 4PM - 7PM EVERY DAY\", links to EAT & DRINK and HAPPENINGS",
+   "WebFetch https://www.thechancerymarket.com/eat-drink — found the happy hour block with prices",
+   "WebFetch https://www.thechancerymarket.com/happenings — events only, no happy hour",
+   "curl -sL https://www.thechancerymarket.com/eat-drink -o eat-drink.html — verified the happy hour wording character-for-character in the raw page source"
+  ],
+  "read_at": "2026-09-04",
+  "source_url": "https://www.thechancerymarket.com/eat-drink",
+  "transcript": "Enjoy $9 select martinis every Monday and $20 bottles of house wine every Tuesday, along with $5 pickleback shots every day of the week.\n\nHAPPY HOUR EVERY DAY!\n4PM - 7PM\n$5 SELECT DRAFT BEER\n$6 HOUSE WINE\n$7 HOUSE CRUSHES\n$7 RAIL DRINKS WITH ONE MIXER\nPLUS SEASONAL COCKTAILS & BUCKET SPECIALS!",
+  "turns": 18,
+  "venue_name_on_menu": "The Chancery Market",
+  "why_not": ""
  },
  "DEf5399c0828": {
   "cost_usd": 0.6569,
@@ -9137,5 +9381,111 @@
   "turns": 10,
   "venue_name_on_menu": "Potstickers",
   "why_not": ""
+ },
+ "DEffd025ba9c": {
+  "cost_usd": 0.861,
+  "deals": [
+   {
+    "fine_print": "AT THE BAR MONDAYS",
+    "items": [
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "PRIME RIB SANDWICHES",
+      "price_quote": "$16",
+      "price_usd": 16,
+      "quote": "PRIME RIB SANDWICHES $16"
+     }
+    ],
+    "type": "daily_special",
+    "windows": []
+   },
+   {
+    "fine_print": "Every Day Except Friday. INCLUDES: APPETIZER peel & eat shrimp; ENTREE red wine braised short ribs over mashed potatoes with roasted carrots and fried leeks",
+    "items": [
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "SHORT RIB DINNER SPECIAL",
+      "price_quote": "$38.95 - INCLUDES:",
+      "price_usd": 38.95,
+      "quote": "SHORT RIB DINNER SPECIAL"
+     }
+    ],
+    "type": "food_combo",
+    "windows": []
+   },
+   {
+    "fine_print": "AT THE BAR WEDNESDAYS. WITH SOUTHERN SLAW, PICKLED JALAPENOS & DEVIL SAUCE. INCLUDES STEAK FRIES.",
+    "items": [
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "SHORT RIB SANDWICH NIGHT",
+      "price_quote": "$15",
+      "price_usd": 15,
+      "quote": "SHORT RIB SANDWICH NIGHT"
+     }
+    ],
+    "type": "daily_special",
+    "windows": []
+   },
+   {
+    "fine_print": "AT THE BAR THURSDAYS. A DELICIOUS, MOUTH WATERING HOUSE-BLEND OF BRISKET & CHUCK INCLUDES STEAK FRIES.",
+    "items": [
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "BURGER NIGHT",
+      "price_quote": "$11",
+      "price_usd": 11,
+      "quote": "BURGER NIGHT"
+     }
+    ],
+    "type": "daily_special",
+    "windows": []
+   },
+   {
+    "fine_print": "FRIDAYS. ENTREE (choose one) 14oz. prime rib! / salmon; SOUP / SALAD (choose one) caesar salad / french onion soup; SIDE (choose one) mashed potatoes / broccoli; DESSERT (choose one) key lime pie / cheese cake / chocolate mousse cake",
+    "items": [
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "PRIME RIB NIGHT",
+      "price_quote": "$47.95",
+      "price_usd": 47.95,
+      "quote": "PRIME RIB NIGHT"
+     }
+    ],
+    "type": "food_combo",
+    "windows": []
+   }
+  ],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "page",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch http://www.walters-steakhouse.com/ — nav links: dinner menu (PDF), specials, banquet, wine list; no happy hour",
+   "WebFetch + curl http://www.walters-steakhouse.com/specials.html — page body is five special flyer images",
+   "curl + Read menus/wsh_dinner_0525.pdf — full dinner/drink menu, no happy hour section",
+   "curl + Read images/specials/wsh_primesandwich_0424.png",
+   "curl + Read images/specials/wsh_shortrib_0225.jpg",
+   "curl + Read images/specials/wsh_short_rib_sandwich_1225.jpg",
+   "curl + Read images/specials/wsh_burger_0224.jpg",
+   "curl + Read images/specials/wsh_prime_0424.jpg"
+  ],
+  "read_at": "2026-09-04",
+  "source_url": "http://www.walters-steakhouse.com/specials.html",
+  "transcript": "Walter's Steakhouse Events and Special Dinners\n\nWALTER'S STEAKHOUSE\nPRIME RIB SANDWICHES $16\nAT THE BAR MONDAYS\n\nWALTER'S STEAKHOUSE\nSHORT RIB DINNER SPECIAL\nEvery Day Except Friday\n$38.95 - INCLUDES:\nAPPETIZER\npeel & eat shrimp\nENTREE\nred wine braised short ribs over mashed potatoes with roasted carrots and fried leeks\n\nWALTER'S STEAKHOUSE\nAT THE BAR WEDNESDAYS\n$15\nSHORT RIB SANDWICH NIGHT\nWITH SOUTHERN SLAW, PICKLED JALAPENOS & DEVIL SAUCE. INCLUDES STEAK FRIES.\n\nWALTER'S STEAKHOUSE\nAT THE BAR THURSDAYS\n$11\nBURGER NIGHT\nA DELICIOUS, MOUTH WATERING HOUSE-BLEND OF BRISKET & CHUCK INCLUDES STEAK FRIES.\n\nPRIME RIB NIGHT\n$47.95\nFRIDAYS\nENTREE (choose one)\n14oz. prime rib!\nsalmon\nSOUP / SALAD (choose one)\ncaesar salad\nfrench onion soup\nSIDE (choose one)\nmashed potatoes\nbroccoli\nDESSERT (choose one)\nkey lime pie\ncheese cake\nchocolate mousse cake\nWALTER'S STEAKHOUSE",
+  "turns": 13,
+  "venue_name_on_menu": "WALTER'S STEAKHOUSE",
+  "why_not": "The site never states a happy hour anywhere; its specials page instead posts flyers for day-of-the-week bar and dinner specials with no times printed, and the dinner menu PDF lists only full-price drinks and food."
  }
 }
