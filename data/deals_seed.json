@@ -860,6 +860,138 @@
           "fine_print": ""
         }
       ]
+    },
+    {
+      "id": "big-fish-grill-on-the-riverfront-wilmington",
+      "name": "Big Fish Grill on the Riverfront",
+      "plcb_name": "Big Fish Grill on the Riverfront",
+      "address": "720 Justison St, Wilmington, DE 19801",
+      "zone_id": "wilmington",
+      "license_type": "",
+      "website": "http://www.bigfishriverfront.com/",
+      "lid": "DE03fd0ecb4b",
+      "deals": [
+        {
+          "type": "happy_hour",
+          "windows": [
+            {
+              "dow": 1,
+              "end": "18:00",
+              "start": "16:00"
+            },
+            {
+              "dow": 2,
+              "end": "18:00",
+              "start": "16:00"
+            },
+            {
+              "dow": 3,
+              "end": "18:00",
+              "start": "16:00"
+            },
+            {
+              "dow": 4,
+              "end": "18:00",
+              "start": "16:00"
+            },
+            {
+              "dow": 5,
+              "end": "18:00",
+              "start": "16:00"
+            }
+          ],
+          "items": [
+            {
+              "category": "food",
+              "label": "Riverwalk Wings (6)",
+              "price_usd": 10
+            },
+            {
+              "category": "food",
+              "label": "Buffalo Shrimp",
+              "price_usd": 10
+            },
+            {
+              "category": "food",
+              "label": "Blackened Filet Medallions",
+              "price_usd": 10
+            },
+            {
+              "category": "food",
+              "label": "Garlic-Wine Mussels",
+              "price_usd": 8
+            },
+            {
+              "category": "food",
+              "label": "Maryland Crab Pretzels",
+              "price_usd": 12
+            },
+            {
+              "category": "food",
+              "label": "Big Fish Bruschetta",
+              "price_usd": 8
+            },
+            {
+              "category": "well",
+              "label": "New Amsterdam Vodka mixed drink",
+              "price_usd": 6
+            },
+            {
+              "category": "well",
+              "label": "New Amsterdam Gin mixed drink",
+              "price_usd": 6
+            },
+            {
+              "category": "well",
+              "label": "Seagrams 7 Whiskey mixed drink",
+              "price_usd": 6
+            },
+            {
+              "category": "well",
+              "label": "Cruzan Rum mixed drink",
+              "price_usd": 6
+            },
+            {
+              "category": "well",
+              "label": "Jim Beam Bourbon mixed drink",
+              "price_usd": 6
+            },
+            {
+              "category": "well",
+              "label": "Sauza Silver Tequila mixed drink",
+              "price_usd": 6
+            },
+            {
+              "category": "cocktail",
+              "label": "Signature margaritas - classic recipe, silver tequila",
+              "price_usd": 9
+            },
+            {
+              "category": "draft",
+              "label": "Select draft beers",
+              "amount_off_usd": 1
+            },
+            {
+              "category": "wine",
+              "label": "Wines by the glass",
+              "amount_off_usd": 1
+            },
+            {
+              "category": "cocktail",
+              "label": "Signature cocktails",
+              "amount_off_usd": 1
+            }
+          ],
+          "confidence": "likely",
+          "last_verified_at": "2026-09-04",
+          "verified_by": "agent_read",
+          "source": {
+            "kind": "venue_site",
+            "url": "https://static.spotapps.co/web/bigfishriverfront--com/custom/happy_hour_menu_new.pdf"
+          },
+          "fine_print": "no take-out • bar area only • no modifications; margaritas: ADD FLAVOR +$2.00 • MAKE IT SPICY +$1.00, *Salt or sugar rim available by request"
+        }
+      ]
     }
   ],
   "_excluded": [
