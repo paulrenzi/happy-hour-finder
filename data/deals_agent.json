@@ -1016,6 +1016,48 @@
    "price_usd": 5.0
   }
  ],
+ "DE2ac901dfe1": [
+  {
+   "amount_off_usd": 1.0,
+   "category": "food",
+   "label": "Oysters"
+  },
+  {
+   "category": "food",
+   "label": "Fish Tacos",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Caesar Salad",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Shrimp Cocktail",
+   "price_usd": 14.0
+  },
+  {
+   "category": "food",
+   "label": "Crab Bisque",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Miso Honey Wings",
+   "price_usd": 12.0
+  },
+  {
+   "category": "food",
+   "label": "Tuna Poke",
+   "price_usd": 15.0
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "cocktail",
+   "label": "House Cocktails"
+  }
+ ],
  "DE35c46628ec": [
   {
    "category": "draft",
@@ -1182,6 +1224,68 @@
    "price_usd": 7.5
   }
  ],
+ "DE46b3f30d66": [
+  {
+   "category": "food",
+   "label": "Mozzarella Log",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "1/2lb Steamed Shrimp",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Sauteed Calamari & Clams",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Charred Shishito Peppers",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "Wings",
+   "price_usd": 9.0
+  },
+  {
+   "category": "food",
+   "label": "Dewey Crab Frachos",
+   "price_usd": 10.0
+  },
+  {
+   "category": "wine",
+   "label": "Bubbles by the Glass",
+   "price_usd": 6.0
+  },
+  {
+   "category": "wine",
+   "label": "House Wines",
+   "price_usd": 6.0
+  },
+  {
+   "category": "draft",
+   "label": "Starboard VIP Ale",
+   "price_usd": 5.0
+  },
+  {
+   "category": "draft",
+   "label": "Natural Light",
+   "price_usd": 3.0
+  },
+  {
+   "category": "draft",
+   "label": "Guinness",
+   "price_usd": 6.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Orange & Grapefruit Crushes",
+   "price_usd": 8.0
+  }
+ ],
  "DE4798b4126a": [
   {
    "category": "food",
@@ -1256,6 +1360,68 @@
    "category": "cocktail",
    "label": "premium cocktails",
    "price_usd": 5.0
+  }
+ ],
+ "DE4fe0692015": [
+  {
+   "category": "food",
+   "label": "House Wings (5)",
+   "price_usd": 9.0
+  },
+  {
+   "category": "food",
+   "label": "Turkey Burger Sliders (2)",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Cajun Mussels",
+   "price_usd": 12.0
+  },
+  {
+   "category": "food",
+   "label": "Steamed Shrimp (1/2 lb)",
+   "price_usd": 12.0
+  },
+  {
+   "category": "food",
+   "label": "Queso Blanco Cheese Dip",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "Edamame",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "Thai Bang Bang Shrimp (5)",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Onion Rings",
+   "price_usd": 5.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Domestic Beer",
+   "price_usd": 3.0
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "draft",
+   "label": "$2 off drafts"
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "wine",
+   "label": "$2 off wines by glass"
+  },
+  {
+   "category": "well",
+   "label": "Rail Drinks",
+   "price_usd": 6.0
   }
  ],
  "DE52c61670ed": [
@@ -1540,6 +1706,85 @@
    "label": "$3 off appetizers"
   }
  ],
+ "DE98bc222a48": [
+  {
+   "amount_off_usd": 2.0,
+   "category": "draft",
+   "label": "$2 off beer"
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "food",
+   "label": "$2 off appetizers"
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "cocktail",
+   "label": "$2 off cocktails"
+  }
+ ],
+ "DE9b6bd4d8c7": [
+  {
+   "category": "food",
+   "label": "bone-in filet chop",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "shishito peppers",
+   "price_usd": 12.0
+  },
+  {
+   "category": "food",
+   "label": "rice krispy fried shrimp",
+   "price_usd": 14.0
+  },
+  {
+   "category": "food",
+   "label": "chargrilled oysters",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "pei mussels",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "nuggets & caviar",
+   "price_usd": 14.0
+  },
+  {
+   "category": "food",
+   "label": "seafood gumbo",
+   "price_usd": 9.0
+  },
+  {
+   "category": "food",
+   "label": "boardwalk fries",
+   "price_usd": 6.0
+  },
+  {
+   "category": "wine",
+   "label": "jardin pinot noir",
+   "price_usd": 10.0
+  },
+  {
+   "category": "wine",
+   "label": "benvolio pinot grigio",
+   "price_usd": 10.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "rolling rock bottles",
+   "price_usd": 4.0
+  },
+  {
+   "category": "shot",
+   "label": "'salt air citywide' modelo especial + don julio 1942 50mL",
+   "price_usd": 45.0
+  }
+ ],
  "DEa077f4e311": [
   {
    "amount_off_usd": 1.0,
@@ -1618,6 +1863,70 @@
    "label": "all drafts"
   }
  ],
+ "DEbc40408583": [
+  {
+   "category": "food",
+   "label": "HOUSE-MADE MOZZARELLA STICKS",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "RICOTTA MEATBALLS",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "THE QUEEN",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "HOUSE WINGS",
+   "price_usd": 14.0
+  },
+  {
+   "category": "food",
+   "label": "DYNAMITE SHRIMP",
+   "price_usd": 14.0
+  }
+ ],
+ "DEbe9c9f200e": [
+  {
+   "category": "food",
+   "label": "5 jumbo fried shrimp",
+   "price_usd": 12.0
+  },
+  {
+   "category": "food",
+   "label": "Picnic style deviled egg (each)",
+   "price_usd": 2.0
+  },
+  {
+   "category": "food",
+   "label": "Vegetable fried rice with egg",
+   "price_usd": 12.0
+  },
+  {
+   "category": "food",
+   "label": "Hot fried chicken sando",
+   "price_usd": 13.0
+  },
+  {
+   "category": "food",
+   "label": "Buttermilk fried calamari",
+   "price_usd": 14.0
+  },
+  {
+   "category": "food",
+   "label": "Kung-fu fries",
+   "price_usd": 12.0
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "draft",
+   "label": "$2 off select drafts"
+  }
+ ],
  "DEc46bc95585": [
   {
    "category": "draft",
@@ -1685,6 +1994,43 @@
    "category": "bottle_can",
    "label": "Seltzer buckets (5) — Lagoon Bar only",
    "price_usd": 25.0
+  }
+ ],
+ "DEd798591919": [
+  {
+   "category": "food",
+   "label": "Sticky Ikky wings",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Cheeseburger",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Buttermilk flash fried calamari",
+   "price_usd": 12.0
+  },
+  {
+   "category": "food",
+   "label": "Deviled eggs",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "1/2 lb. steamed shrimp",
+   "price_usd": 12.0
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "cocktail",
+   "label": "$2 off select cocktails"
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "draft",
+   "label": "$2 off select drafts"
   }
  ],
  "DEd7a6e46b80": [
@@ -1771,6 +2117,130 @@
    "category": "cocktail",
    "label": "Martinis",
    "price_usd": 8.0
+  }
+ ],
+ "DEe7e82a13d9": [
+  {
+   "amount_off_usd": 1.0,
+   "category": "draft",
+   "label": "$1 off draft beer"
+  },
+  {
+   "category": "well",
+   "label": "Rail mixed drinks",
+   "price_usd": 7.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Crushes",
+   "price_usd": 9.0
+  },
+  {
+   "category": "wine",
+   "label": "House wines",
+   "price_usd": 7.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Canned domestic",
+   "price_usd": 4.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Miller Lite",
+   "price_usd": 4.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Coors Lite",
+   "price_usd": 4.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Natty Light",
+   "price_usd": 4.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Michelob Ultra",
+   "price_usd": 4.0
+  },
+  {
+   "category": "food",
+   "label": "Loaded Tots",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Traditional or Boneless Wings",
+   "price_usd": 11.0
+  },
+  {
+   "category": "food",
+   "label": "Cheesesteak Eggrolls",
+   "price_usd": 9.0
+  },
+  {
+   "category": "food",
+   "label": "Smash Burger",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Soup of the Day",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Oyster of the Day, 1/2 dozen",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Oyster of the Day, dozen",
+   "price_usd": 18.0
+  }
+ ],
+ "DEedef61db00": [
+  {
+   "amount_off_usd": 1.0,
+   "category": "well",
+   "label": "Rail drinks"
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "draft",
+   "label": "Draft beer"
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "wine",
+   "label": "Wines by the glass"
+  },
+  {
+   "category": "food",
+   "label": "Wings",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Spicy chicken sandwich",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Hot dog",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Beach fries",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "Shucked oysters",
+   "price_usd": 1.5
   }
  ],
  "DEf02235c26c": [
@@ -2009,6 +2479,58 @@
    "category": "wine",
    "label": "7 MOONS RED BLEND",
    "price_usd": 6.0
+  }
+ ],
+ "DEf590bd08f2": [
+  {
+   "category": "food",
+   "label": "Hollander Mussels",
+   "price_usd": 12.0
+  },
+  {
+   "category": "food",
+   "label": "Housemade Whipped Ricotta",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Crispy Calamari",
+   "price_usd": 15.0
+  },
+  {
+   "category": "food",
+   "label": "Housemade Mozzarella Sticks",
+   "price_usd": 11.0
+  },
+  {
+   "category": "food",
+   "label": "Tavern Fries",
+   "price_usd": 9.0
+  },
+  {
+   "category": "food",
+   "label": "Grizzly Wings (4)",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "PINES Caesar",
+   "price_usd": 8.0
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "wine",
+   "label": "All Wines by the Glass $2 off"
+  },
+  {
+   "category": "well",
+   "label": "Highballs (Choice of Spirit + Mixer)",
+   "price_usd": 8.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Martinis (Classic, Dirty or Cosmos)",
+   "price_usd": 11.0
   }
  ]
 }

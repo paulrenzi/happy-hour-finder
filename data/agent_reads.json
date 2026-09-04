@@ -4683,6 +4683,205 @@
   "venue_name_on_menu": "Kirkwood Country Club",
   "why_not": ""
  },
+ "DE2ac901dfe1": {
+  "cost_usd": 0.5889,
+  "deals": [
+   {
+    "fine_print": "4-7pm Daily at the Bar",
+    "items": [
+     {
+      "amount_off_usd": 1,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Oysters",
+      "price_quote": "$1 OFF OYSTERS",
+      "price_usd": null,
+      "quote": "$1 OFF OYSTERS"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Fish Tacos",
+      "price_quote": "10 | FISH TACOS",
+      "price_usd": 10,
+      "quote": "10 | FISH TACOS"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Caesar Salad",
+      "price_quote": "10 | CAESAR SALAD",
+      "price_usd": 10,
+      "quote": "10 | CAESAR SALAD"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Shrimp Cocktail",
+      "price_quote": "14 | SHRIMP COCKTAIL OLD BAY, LEMON",
+      "price_usd": 14,
+      "quote": "14 | SHRIMP COCKTAIL OLD BAY, LEMON"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Crab Bisque",
+      "price_quote": "10 | CRAB BISQUE CREAM SHERRY, CHIVES, SALTINES",
+      "price_usd": 10,
+      "quote": "10 | CRAB BISQUE CREAM SHERRY, CHIVES, SALTINES"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Miso Honey Wings",
+      "price_quote": "12 | MISO HONEY WINGS SRIRACHA RANCH",
+      "price_usd": 12,
+      "quote": "12 | MISO HONEY WINGS SRIRACHA RANCH"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Tuna Poke",
+      "price_quote": "15 | TUNA POKE",
+      "price_usd": 15,
+      "quote": "15 | TUNA POKE"
+     },
+     {
+      "amount_off_usd": 2,
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "House Cocktails",
+      "price_quote": "$2 OFF HOUSE COCKTAILS",
+      "price_usd": null,
+      "quote": "$2 OFF HOUSE COCKTAILS"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "wine",
+      "discount_pct": null,
+      "label": "House Wines",
+      "price_quote": "06 | HOUSE WINES",
+      "price_usd": 6,
+      "quote": "06 | HOUSE WINES"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "draft",
+      "discount_pct": null,
+      "label": "Select Drafts",
+      "price_quote": "05 | SELECT DRAFTS",
+      "price_usd": 5,
+      "quote": "05 | SELECT DRAFTS"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "Coors Light",
+      "price_quote": "03 | COORS LIGHT",
+      "price_usd": 3,
+      "quote": "03 | COORS LIGHT"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "well",
+      "discount_pct": null,
+      "label": "House Mixed Drinks",
+      "price_quote": "07 | HOUSE MIXED DRINKS",
+      "price_usd": 7,
+      "quote": "07 | HOUSE MIXED DRINKS"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "House Martinis",
+      "price_quote": "09 | HOUSE MARTINIS",
+      "price_usd": 9,
+      "quote": "09 | HOUSE MARTINIS"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "Athletic Brewing Co. NA",
+      "price_quote": "05 | ATHLETIC BREWING CO. NA",
+      "price_usd": 5,
+      "quote": "05 | ATHLETIC BREWING CO. NA"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "19:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "19:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "19:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "19:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "19:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 6,
+      "end": "19:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 7,
+      "end": "19:00",
+      "start": "16:00"
+     }
+    ]
+   }
+  ],
+  "dropped": [
+   "'House Wines': price 6 not written in the evidence",
+   "'Select Drafts': price 5 not written in the evidence",
+   "'Coors Light': price 3 not written in the evidence",
+   "'House Mixed Drinks': price 7 not written in the evidence",
+   "'House Martinis': price 9 not written in the evidence",
+   "'Athletic Brewing Co. NA': price 5 not written in the evidence"
+  ],
+  "found": true,
+  "items_kept": 8,
+  "kind": "image",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://fishonlewes.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp -- home page says HAPPY HOUR 4-7PM Daily, links to /restaurantmenu#happyhour",
+   "WebFetch https://fishonlewes.com/restaurantmenu -- menu page hosts a Happy Hour Menu PNG",
+   "WebFetch https://fishonlewes.com/ -- verbatim home page happy hour line",
+   "curl https://fishonlewes.com/restaurantmenu -> page.html to extract the happy hour image URL",
+   "curl -o hh2.png the fo_hh_SPRING_26_EDITS (Page 1).png happy hour menu image, then Read it"
+  ],
+  "read_at": "2026-09-04",
+  "source_url": "https://images.squarespace-cdn.com/content/v1/552ba288e4b0c842cdb93473/8b0b6bc3-5e21-4c89-a8bd-f86df08fbb74/fo_hh_SPRING_26_EDITS+%281%29+%28Page+1%29.png",
+  "transcript": "Fish On\nSEAFOOD GRILL & BAR\nHAPPY HOUR\n4-7pm Daily at the Bar\n\nEats\n$1 OFF OYSTERS\n10 | FISH TACOS\nNAPA CABBAGE, PICKLED RED ONIONS\nSPICY MAYO, FLOUR TORTILLAS, LIME\n10 | CAESAR SALAD\nPARMESAN, CROUTONS, CLASSIC DRESSING\n14 | SHRIMP COCKTAIL OLD BAY, LEMON\n10 | CRAB BISQUE CREAM SHERRY, CHIVES, SALTINES\n12 | MISO HONEY WINGS SRIRACHA RANCH\n15 | TUNA POKE\nCARROTS, CUCUMBERS, CABBAGE, FRESNO CHILES\nCRISPY SHALLOTS, WASABI MAYO\n\nDrinks\n$2 OFF HOUSE COCKTAILS\n06 | HOUSE WINES\n05 | SELECT DRAFTS\n03 | COORS LIGHT\n07 | HOUSE MIXED DRINKS\n09 | HOUSE MARTINIS\n05 | ATHLETIC BREWING CO. NA\n\nCONSUMING RAW OR UNDERCOOKED MEATS, POULTRY, SEAFOOD, SHELLFISH, OR EGGS MAY INCREASE YOUR RISK OF FOODBORNE ILLNESS, ESPECIALLY IF YOU HAVE A MEDICAL CONDITION",
+  "turns": 13,
+  "venue_name_on_menu": "Fish On SEAFOOD GRILL & BAR",
+  "why_not": ""
+ },
  "DE2d548ed490": {
   "cost_usd": 0.2833,
   "deals": [],
@@ -4703,6 +4902,20 @@
   "turns": 6,
   "venue_name_on_menu": "",
   "why_not": "The site markets all-day, every-day drink specials and day-of-week food deals but never states a happy hour with days or times for this location."
+ },
+ "DE34a2200ca1": {
+  "cost_usd": 0.5594,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "exhausted",
+  "model": "opus",
+  "path_taken": [],
+  "read_at": "2026-09-04",
+  "transcript": "",
+  "turns": 15,
+  "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.56 spent"
  },
  "DE35c46628ec": {
   "cost_usd": 0.577,
@@ -5405,6 +5618,179 @@
   "venue_name_on_menu": "MadMacs",
   "why_not": ""
  },
+ "DE46b3f30d66": {
+  "cost_usd": 0.3664,
+  "deals": [
+   {
+    "fine_print": "",
+    "items": [
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Mozzarella Log",
+      "price_quote": "Mozzarella Log $6",
+      "price_usd": 6,
+      "quote": "Mozzarella Log $6"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "1/2lb Steamed Shrimp",
+      "price_quote": "1/2lb Steamed Shrimp $8",
+      "price_usd": 8,
+      "quote": "1/2lb Steamed Shrimp $8"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Sauteed Calamari & Clams",
+      "price_quote": "Sauteed Calamari & Clams $7",
+      "price_usd": 7,
+      "quote": "Sauteed Calamari & Clams $7"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Charred Shishito Peppers",
+      "price_quote": "Charred Shishito Peppers $6",
+      "price_usd": 6,
+      "quote": "Charred Shishito Peppers $6"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Wings",
+      "price_quote": "Wings $9",
+      "price_usd": 9,
+      "quote": "Wings $9"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Dewey Crab Frachos",
+      "price_quote": "Dewey Crab Frachos $10",
+      "price_usd": 10,
+      "quote": "Dewey Crab Frachos $10"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "wine",
+      "discount_pct": null,
+      "label": "Bubbles by the Glass",
+      "price_quote": "Bubbles by the Glass $6",
+      "price_usd": 6,
+      "quote": "Bubbles by the Glass $6"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "wine",
+      "discount_pct": null,
+      "label": "House Wines",
+      "price_quote": "House Wines $6",
+      "price_usd": 6,
+      "quote": "House Wines $6"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "draft",
+      "discount_pct": null,
+      "label": "Starboard VIP Ale",
+      "price_quote": "Starboard VIP Ale $5",
+      "price_usd": 5,
+      "quote": "Starboard VIP Ale $5"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "draft",
+      "discount_pct": null,
+      "label": "Natural Light",
+      "price_quote": "Natural Light $3",
+      "price_usd": 3,
+      "quote": "Natural Light $3"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "draft",
+      "discount_pct": null,
+      "label": "Guinness",
+      "price_quote": "Guinness $6",
+      "price_usd": 6,
+      "quote": "Guinness $6"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "Orange & Grapefruit Crushes",
+      "price_quote": "Orange & Grapefruit Crushes $8",
+      "price_usd": 8,
+      "quote": "Orange & Grapefruit Crushes $8"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 6,
+      "end": "18:00",
+      "start": "12:00"
+     },
+     {
+      "dow": 7,
+      "end": "18:00",
+      "start": "12:00"
+     }
+    ]
+   }
+  ],
+  "dropped": [],
+  "found": true,
+  "items_kept": 12,
+  "kind": "image",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://starboardclawdewey.com/ -- 301 redirect to https://starboardclaw.com/",
+   "WebFetch https://starboardclaw.com/ -- home page states happy hour times, prices only in images",
+   "curl home page HTML to list image assets -- found happy-hour-story-11x17-2025-scaled.jpg",
+   "curl -o happy-hour.jpg the happy hour poster, then Read it"
+  ],
+  "read_at": "2026-09-04",
+  "source_url": "https://starboardclaw.com/wp-content/uploads/2026/06/happy-hour-story-11x17-2025-scaled.jpg",
+  "transcript": "HAPPY HOUR\nMonday-Friday 4pm-6pm\nSaturday-Sunday 12pm-6pm\n\nMozzarella Log $6\n1/2lb Steamed Shrimp $8\nSauteed Calamari & Clams $7\nCharred Shishito Peppers $6\nWings $9\nDewey Crab Frachos $10\n\nBubbles by the Glass $6\nHouse Wines $6\nStarboard VIP Ale $5\nNatural Light $3\nGuinness $6\nOrange & Grapefruit Crushes $8",
+  "turns": 8,
+  "venue_name_on_menu": "",
+  "why_not": ""
+ },
  "DE4798b4126a": {
   "cost_usd": 0.3427,
   "deals": [
@@ -5745,6 +6131,179 @@
   "turns": 5,
   "venue_name_on_menu": "",
   "why_not": "The location's happy hour page states \"Applebee's Happy Hour times vary by location. For the most accurate information about Happy Hour availability and times, contact your local Applebee's location.\" and the specials page offers only seasonal drink marketing copy with no days, times, items or prices."
+ },
+ "DE4fe0692015": {
+  "cost_usd": 0.3623,
+  "deals": [
+   {
+    "fine_print": "Dine-in at the bar only.",
+    "items": [
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "House Wings (5)",
+      "price_quote": "HOUSE WINGS (5) 9",
+      "price_usd": 9,
+      "quote": "HOUSE WINGS (5) 9"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Turkey Burger Sliders (2)",
+      "price_quote": "TURKEY BURGER SLIDERS (2) 10",
+      "price_usd": 10,
+      "quote": "TURKEY BURGER SLIDERS (2) 10"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Cajun Mussels",
+      "price_quote": "CAJUN MUSSELS 12",
+      "price_usd": 12,
+      "quote": "CAJUN MUSSELS 12"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Steamed Shrimp (1/2 lb)",
+      "price_quote": "STEAMED SHRIMP (1/2 lb) 12",
+      "price_usd": 12,
+      "quote": "STEAMED SHRIMP (1/2 lb) 12"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Queso Blanco Cheese Dip",
+      "price_quote": "QUESO BLANCO CHEESE DIP 5",
+      "price_usd": 5,
+      "quote": "QUESO BLANCO CHEESE DIP 5"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Edamame",
+      "price_quote": "EDAMAME 5",
+      "price_usd": 5,
+      "quote": "EDAMAME 5"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Thai Bang Bang Shrimp (5)",
+      "price_quote": "THAI BANG BANG SHRIMP (5) 10",
+      "price_usd": 10,
+      "quote": "THAI BANG BANG SHRIMP (5) 10"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Onion Rings",
+      "price_quote": "ONION RINGS 5",
+      "price_usd": 5,
+      "quote": "ONION RINGS 5"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "Domestic Beer",
+      "price_quote": "$3 DOMESTIC BEER",
+      "price_usd": 3,
+      "quote": "$3 DOMESTIC BEER"
+     },
+     {
+      "amount_off_usd": 2,
+      "category": "draft",
+      "discount_pct": null,
+      "label": "$2 off drafts",
+      "price_quote": "$2 OFF DRAFTS",
+      "price_usd": null,
+      "quote": "$2 OFF DRAFTS"
+     },
+     {
+      "amount_off_usd": 2,
+      "category": "wine",
+      "discount_pct": null,
+      "label": "$2 off wines by glass",
+      "price_quote": "$2 OFF WINES BY GLASS",
+      "price_usd": null,
+      "quote": "$2 OFF WINES BY GLASS"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "well",
+      "discount_pct": null,
+      "label": "Rail Drinks",
+      "price_quote": "$6 RAIL DRINKS",
+      "price_usd": 6,
+      "quote": "$6 RAIL DRINKS"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 6,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 7,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ]
+   }
+  ],
+  "dropped": [],
+  "found": true,
+  "items_kept": 12,
+  "kind": "image",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch http://www.striperbites.com/ -- footer says Happy Hour Daily 4pm-6pm, links to /specials/",
+   "WebFetch https://striperbites.com/specials/ -- 'At the bar from 4-6pm everyday!' plus a happy hour image",
+   "curl NEW-Happy-Hour-Summer-2026-2.jpg into scratch dir (406 on first try; retried with browser UA + referer)",
+   "Read happyhour.jpg"
+  ],
+  "read_at": "2026-09-04",
+  "source_url": "https://striperbites.com/wp-content/uploads/2026/04/NEW-Happy-Hour-Summer-2026-2.jpg",
+  "transcript": "Striper Bites\nHAPPY HOUR\nEVERY DAY 4PM-6PM\nDine-in at the bar only.\n\nFOOD\nHOUSE WINGS (5) 9\nBuffalo sauce, celery sticks, poblano ranch\nTURKEY BURGER SLIDERS (2) 10\nMaple bacon aioli, smoked Gouda, lettuce, tomato\nCAJUN MUSSELS 12\nCreamy Cajun broth, Andouille sausage, house bread\nSTEAMED SHRIMP (1/2 lb) 12\nOld Bay, cocktail sauce, lemon\nQUESO BLANCO CHEESE DIP 5\nTortilla Chips\nEDAMAME 5\nSalt, Gochujang or Old Bay & butter\nTHAI BANG BANG SHRIMP (5) 10\nArugula, Thai chili sauce\nONION RINGS 5\nFried onion rings, house spread\n\nDRINKS\n$3 DOMESTIC BEER\n$2 OFF DRAFTS\n$2 OFF WINES BY GLASS\n$6 RAIL DRINKS\n\nSTRIPERBITES.COM",
+  "turns": 8,
+  "venue_name_on_menu": "Striper Bites",
+  "why_not": ""
  },
  "DE520bfab56d": {
   "cost_usd": 0.9997,
@@ -7019,6 +7578,20 @@
   "venue_name_on_menu": "Firebirds Wood Fired Grill",
   "why_not": ""
  },
+ "DE7e12c54abb": {
+  "cost_usd": 0.5276,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "exhausted",
+  "model": "opus",
+  "path_taken": [],
+  "read_at": "2026-09-04",
+  "transcript": "",
+  "turns": 15,
+  "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.53 spent"
+ },
  "DE80dea6d966": {
   "cost_usd": 0.6015,
   "deals": [
@@ -7257,6 +7830,287 @@
   "transcript": "",
   "turns": 29,
   "why_not": "exited 1 after 29 turns (stop_reason 'tool_use'), $1.17 spent"
+ },
+ "DE98bc222a48": {
+  "cost_usd": 0.2969,
+  "deals": [
+   {
+    "fine_print": "",
+    "items": [
+     {
+      "amount_off_usd": 2,
+      "category": "draft",
+      "discount_pct": null,
+      "label": "$2 off beer",
+      "price_quote": "$2 off beer",
+      "price_usd": null,
+      "quote": "$2 off beer"
+     },
+     {
+      "amount_off_usd": 2,
+      "category": "food",
+      "discount_pct": null,
+      "label": "$2 off appetizers",
+      "price_quote": "$2 off beer, appetizers",
+      "price_usd": null,
+      "quote": "$2 off beer, appetizers"
+     },
+     {
+      "amount_off_usd": 2,
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "$2 off cocktails",
+      "price_quote": "$2 off beer, appetizers, and cocktails!",
+      "price_usd": null,
+      "quote": "$2 off beer, appetizers, and cocktails!"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "17:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 2,
+      "end": "17:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 3,
+      "end": "17:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 4,
+      "end": "17:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 5,
+      "end": "17:00",
+      "start": "15:00"
+     }
+    ]
+   }
+  ],
+  "dropped": [],
+  "found": true,
+  "items_kept": 3,
+  "kind": "page",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://threenotchdbrewing.com/ -- found Locations nav and a Rehoboth Beach location page",
+   "WebFetch https://threenotchdbrewing.com/pages/rehoboth-beach -- address matched 19815 Coastal Hwy; linked to the Rehoboth menus page",
+   "WebFetch https://threenotchdbrewing.com/pages/rehoboth-menu-three-notchd -- happy hour stated on the page",
+   "WebFetch same page again to confirm the happy-hour wording verbatim"
+  ],
+  "read_at": "2026-09-04",
+  "source_url": "https://threenotchdbrewing.com/pages/rehoboth-menu-three-notchd",
+  "transcript": "don't forget to stop in for happy hour! Monday - Friday, 3pm - 5pm | $2 off beer, appetizers, and cocktails!",
+  "turns": 6,
+  "venue_name_on_menu": "Three Notch'd Rehoboth Beach",
+  "why_not": ""
+ },
+ "DE9b6bd4d8c7": {
+  "cost_usd": 0.334,
+  "deals": [
+   {
+    "fine_print": "",
+    "items": [
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "bone-in filet chop",
+      "price_quote": "| 8 ea",
+      "price_usd": 8,
+      "quote": "bone-in filet chop charred scallion relish + pickled beech mushrooms + soy marinade | 8 ea"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "shishito peppers",
+      "price_quote": "shishito peppers charred + soy truffle glaze | 12",
+      "price_usd": 12,
+      "quote": "shishito peppers charred + soy truffle glaze | 12"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "rice krispy fried shrimp",
+      "price_quote": "rice krispy fried shrimp four jumbo shrimp + house cocktail sauce | 14",
+      "price_usd": 14,
+      "quote": "rice krispy fried shrimp four jumbo shrimp + house cocktail sauce | 14"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "chargrilled oysters",
+      "price_quote": "chargrilled oysters pair of oysters + garlic herb butter + parm | 6",
+      "price_usd": 6,
+      "quote": "chargrilled oysters pair of oysters + garlic herb butter + parm | 6"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "pei mussels",
+      "price_quote": "pei mussels half pound + garlic + white wine + herb compound butter + grilled lemon + ciabatta | 10",
+      "price_usd": 10,
+      "quote": "pei mussels half pound + garlic + white wine + herb compound butter + grilled lemon + ciabatta | 10"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "nuggets & caviar",
+      "price_quote": "nuggets & caviar buttermilk marinated chicken thighs + ranch + caviar | 14",
+      "price_usd": 14,
+      "quote": "nuggets & caviar buttermilk marinated chicken thighs + ranch + caviar | 14"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "seafood gumbo",
+      "price_quote": "seafood gumbo crab + crawfish + shrimp + andouille + rice | 9",
+      "price_usd": 9,
+      "quote": "seafood gumbo crab + crawfish + shrimp + andouille + rice | 9"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "boardwalk fries",
+      "price_quote": "boardwalk fries | 6",
+      "price_usd": 6,
+      "quote": "boardwalk fries | 6"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "wine",
+      "discount_pct": null,
+      "label": "jardin pinot noir",
+      "price_quote": "jardin pinot noir | 10",
+      "price_usd": 10,
+      "quote": "jardin pinot noir | 10"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "wine",
+      "discount_pct": null,
+      "label": "benvolio pinot grigio",
+      "price_quote": "benvolio pinot grigio | 10",
+      "price_usd": 10,
+      "quote": "benvolio pinot grigio | 10"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "rolling rock bottles",
+      "price_quote": "rolling rock bottles | 4",
+      "price_usd": 4,
+      "quote": "rolling rock bottles | 4"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "shot",
+      "discount_pct": null,
+      "label": "'salt air citywide' modelo especial + don julio 1942 50mL",
+      "price_quote": "'salt air citywide' modelo especial + don julio 1942 50mL | 45",
+      "price_usd": 45,
+      "quote": "'salt air citywide' modelo especial + don julio 1942 50mL | 45"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 6,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 7,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ]
+   },
+   {
+    "fine_print": "all day, every day cocktails",
+    "items": [
+     {
+      "amount_off_usd": null,
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "pineapple express",
+      "price_quote": "pineapple express infused tequila + pineapple + jalapeño simple + lime + spicy salt | 13",
+      "price_usd": 13,
+      "quote": "pineapple express infused tequila + pineapple + jalapeño simple + lime + spicy salt | 13"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "sussex sunset punch",
+      "price_quote": "sussex sunset punch kula toasted coconut rum + pom + oj + blood orange + lime + gosling's dark rum float | 13",
+      "price_usd": 13,
+      "quote": "sussex sunset punch kula toasted coconut rum + pom + oj + blood orange + lime + gosling's dark rum float | 13"
+     }
+    ],
+    "type": "daily_special",
+    "windows": []
+   }
+  ],
+  "dropped": [
+   "'daily_special' deal: not the happy hour"
+  ],
+  "found": true,
+  "items_kept": 12,
+  "kind": "image",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch http://www.saltairrestaurant.com/ -- home page, 'Bar Bites' linked to an image named SAHH8.2026.jpg",
+   "curl -sL SAHH8.2026.jpg -> data/agent_reads/DE9b6bd4d8c7/barbites.jpg",
+   "Read barbites.jpg -- happy hour menu image"
+  ],
+  "read_at": "2026-09-04",
+  "source_url": "https://saltairrestaurant.com/wp-content/uploads/2026/08/SAHH8.2026.jpg",
+  "transcript": "HAPPY HOUR\n7 DAYS A WEEK • 4PM TO 6PM\n\nbar bites\nbone-in filet chop charred scallion relish + pickled beech mushrooms + soy marinade | 8 ea\nshishito peppers charred + soy truffle glaze | 12\nrice krispy fried shrimp four jumbo shrimp + house cocktail sauce | 14\nchargrilled oysters pair of oysters + garlic herb butter + parm | 6\npei mussels half pound + garlic + white wine + herb compound butter + grilled lemon + ciabatta | 10\nnuggets & caviar buttermilk marinated chicken thighs + ranch + caviar | 14\nseafood gumbo crab + crawfish + shrimp + andouille + rice | 9\nboardwalk fries | 6\n\ndrink specials\njardin pinot noir | 10\nbenvolio pinot grigio | 10\nrolling rock bottles | 4\n'salt air citywide' modelo especial + don julio 1942 50mL | 45\n\nall day, every day cocktails\npineapple express infused tequila + pineapple + jalapeño simple + lime + spicy salt | 13\nsussex sunset punch kula toasted coconut rum + pom + oj + blood orange + lime + gosling's dark rum float | 13\n\nSalt Air",
+  "turns": 5,
+  "venue_name_on_menu": "Salt Air",
+  "why_not": ""
  },
  "DEa077f4e311": {
   "cost_usd": 0.3979,
@@ -7808,6 +8662,397 @@
   "venue_name_on_menu": "",
   "why_not": "The site offers a food menu, a beer & wine list, an events page and an about page with hours of operation, but nowhere states a happy hour or any discounted pricing."
  },
+ "DEbc40408583": {
+  "cost_usd": 0.5294,
+  "deals": [
+   {
+    "fine_print": "3-6PM DAILY AT THE BAR",
+    "items": [
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "LOCAL SALAD",
+      "price_quote": "08  LOCAL SALAD",
+      "price_usd": 8,
+      "quote": "08  LOCAL SALAD"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "HOUSE-MADE MOZZARELLA STICKS",
+      "price_quote": "10  HOUSE-MADE MOZZARELLA STICKS",
+      "price_usd": 10,
+      "quote": "10  HOUSE-MADE MOZZARELLA STICKS"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "RICOTTA MEATBALLS",
+      "price_quote": "10  RICOTTA MEATBALLS",
+      "price_usd": 10,
+      "quote": "10  RICOTTA MEATBALLS"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "THE QUEEN",
+      "price_quote": "10  THE QUEEN",
+      "price_usd": 10,
+      "quote": "10  THE QUEEN"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "HOUSE WINGS",
+      "price_quote": "14  HOUSE WINGS",
+      "price_usd": 14,
+      "quote": "14  HOUSE WINGS"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "DYNAMITE SHRIMP",
+      "price_quote": "14  DYNAMITE SHRIMP",
+      "price_usd": 14,
+      "quote": "14  DYNAMITE SHRIMP"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "draft",
+      "discount_pct": null,
+      "label": "SELECT DRAFTS",
+      "price_quote": "05  SELECT DRAFTS",
+      "price_usd": 5,
+      "quote": "05  SELECT DRAFTS"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "ATHLETIC BREWING CO. NA",
+      "price_quote": "05  ATHLETIC BREWING CO. NA",
+      "price_usd": 5,
+      "quote": "05  ATHLETIC BREWING CO. NA"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "HOUSE MIXED DRINKS",
+      "price_quote": "06  HOUSE MIXED DRINKS",
+      "price_usd": 6,
+      "quote": "06  HOUSE MIXED DRINKS"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "wine",
+      "discount_pct": null,
+      "label": "HOUSE WINES",
+      "price_quote": "06  HOUSE WINES",
+      "price_usd": 6,
+      "quote": "06  HOUSE WINES"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 6,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 7,
+      "end": "18:00",
+      "start": "15:00"
+     }
+    ]
+   }
+  ],
+  "dropped": [
+   "'LOCAL SALAD': price 8 not written in the evidence",
+   "'SELECT DRAFTS': price 5 not written in the evidence",
+   "'ATHLETIC BREWING CO. NA': price 5 not written in the evidence",
+   "'HOUSE MIXED DRINKS': price 6 not written in the evidence",
+   "'HOUSE WINES': price 6 not written in the evidence"
+  ],
+  "found": true,
+  "items_kept": 5,
+  "kind": "image",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch home page https://www.crustandcraftrehoboth.com/ — saw \"HAPPY HOUR •3-6PM Daily\", nav link to RESTAURANT MENU",
+   "WebFetch https://www.crustandcraftrehoboth.com/restaurantmenu — happy hour shown as a menu image, prices not in text",
+   "curl the restaurantmenu HTML to scratch dir to find the image URL (ccr_hh_spring_26 (Page 1).png; no Page 2 exists)",
+   "curl -o hh.png the happy hour image at ?format=2500w, then Read it"
+  ],
+  "read_at": "2026-09-04",
+  "source_url": "https://images.squarespace-cdn.com/content/v1/5c703d094d546e31750a397c/df8e8062-274f-4785-95e4-0695b2b7cfd0/ccr_hh_spring_26+%28Page+1%29.png",
+  "transcript": "CRUST&CRAFT\nWOOD FIRED PIZZA\n\nHAPPY HOUR\n3-6PM DAILY AT THE BAR\n\nEats\n\n08  LOCAL SALAD\nCUCUMBERS, CHERRY TOMATOES, SHAVED ONIONS\nWHITE BALSAMIC VINAIGRETTE\n\n10  HOUSE-MADE MOZZARELLA STICKS\nPECORINO, MARINARA\n\n10  RICOTTA MEATBALLS\nBEEF, PORK & VEAL, MARINARA\nSHARP PROVOLONE, TOAST\n\n10  THE QUEEN\nCRUSHED TOMATO SAUCE, MOZZARELLA, BASIL, OLIVE OIL\n\n14  HOUSE WINGS\nSUGAR-BRINED, BUFFALO SAUCE, MOODY BLUE CHEESE, RANCH\n\n14  DYNAMITE SHRIMP\nCREAMY COCONUT & SRIRACHA SAUCE, TOASTED COCONUT\nSCALLIONS\n\nDrinks\n\n05  SELECT DRAFTS\n\n05  ATHLETIC BREWING CO. NA\n\n06  HOUSE MIXED DRINKS\n\n06  HOUSE WINES\n\n* CONSUMING RAW OR UNDERCOOKED MEATS, POULTRY, SEAFOOD, SHELLFISH, OR EGGS,\nMAY INCREASE YOUR RISK OF FOODBORNE ILLNESS, ESPECIALLY IF YOU HAVE A MEDICAL CONDITION.",
+  "turns": 11,
+  "venue_name_on_menu": "CRUST&CRAFT WOOD FIRED PIZZA",
+  "why_not": ""
+ },
+ "DEbe9c9f200e": {
+  "cost_usd": 0.782,
+  "deals": [
+   {
+    "fine_print": "CONSUMING RAW OR UNDERCOOKED MEATS, POULTRY, SEAFOOD, SHELLFISH, OR EGGS MAY INCREASE YOUR RISK OF FOODBORNE ILLNESS, ESPECIALLY IF YOU HAVE A MEDICAL CONDITION.",
+    "items": [
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Buck-a-shuck local oysters & clams",
+      "price_quote": "BUCK-A-SHUCK",
+      "price_usd": 1,
+      "quote": "BUCK-A-SHUCK\nLOCAL OYSTERS & CLAMS"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "5 jumbo fried shrimp",
+      "price_quote": "5 JUMBO FRIED SHRIMP ... 12",
+      "price_usd": 12,
+      "quote": "5 JUMBO FRIED SHRIMP ... 12"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Picnic style deviled egg (each)",
+      "price_quote": "PICNIC STYLE DEVILED EGG ... 2EA",
+      "price_usd": 2,
+      "quote": "PICNIC STYLE DEVILED EGG ... 2EA"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Vegetable fried rice with egg",
+      "price_quote": "VEGETABLE FRIED RICE WITH EGG ... 12",
+      "price_usd": 12,
+      "quote": "VEGETABLE FRIED RICE WITH EGG ... 12"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Hot fried chicken sando",
+      "price_quote": "HOT FRIED CHICKEN SANDO ... 13",
+      "price_usd": 13,
+      "quote": "HOT FRIED CHICKEN SANDO ... 13"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Buttermilk fried calamari",
+      "price_quote": "BUTTERMILK FRIED CALAMARI ... 14",
+      "price_usd": 14,
+      "quote": "BUTTERMILK FRIED CALAMARI ... 14"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Kung-fu fries",
+      "price_quote": "KUNG-FU FRIES ... 12",
+      "price_usd": 12,
+      "quote": "KUNG-FU FRIES ... 12"
+     },
+     {
+      "amount_off_usd": 2,
+      "category": "draft",
+      "discount_pct": null,
+      "label": "$2 off select drafts",
+      "price_quote": "$2 OFF SELECT DRAFTS",
+      "price_usd": null,
+      "quote": "$2 OFF SELECT DRAFTS"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "Coors Light, Miller Lite, Natty Boh, Michelob Ultra",
+      "price_quote": "NATTY BOH, MICHELOB ULTRA ... 03",
+      "price_usd": 3,
+      "quote": "COORS LIGHT, MILLER LITE\nNATTY BOH, MICHELOB ULTRA ... 03"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "Athletic Brewing Co. NA",
+      "price_quote": "ATHLETIC BREWING CO. NA ... 05",
+      "price_usd": 5,
+      "quote": "ATHLETIC BREWING CO. NA ... 05"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "Sun Cruiser",
+      "price_quote": "SUN CRUISER ... 06",
+      "price_usd": 6,
+      "quote": "SUN CRUISER ... 06"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "wine",
+      "discount_pct": null,
+      "label": "Seasonal sangria",
+      "price_quote": "SEASONAL SANGRIA ... 06",
+      "price_usd": 6,
+      "quote": "SEASONAL SANGRIA ... 06"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "wine",
+      "discount_pct": null,
+      "label": "House wines",
+      "price_quote": "HOUSE WINES ... 06",
+      "price_usd": 6,
+      "quote": "HOUSE WINES ... 06"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "well",
+      "discount_pct": null,
+      "label": "House mixes",
+      "price_quote": "HOUSE MIXES ... 07",
+      "price_usd": 7,
+      "quote": "HOUSE MIXES ... 07"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "Seasonal crush",
+      "price_quote": "SEASONAL CRUSH ... 08",
+      "price_usd": 8,
+      "quote": "SEASONAL CRUSH ... 08"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "Papa Grande's margarita",
+      "price_quote": "PAPA GRANDE'S MARGARITA ... 09",
+      "price_usd": 9,
+      "quote": "PAPA GRANDE'S MARGARITA ... 09"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "Cosmopolitan",
+      "price_quote": "COSMOPOLITAN ... 09",
+      "price_usd": 9,
+      "quote": "COSMOPOLITAN ... 09"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 6,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 7,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ]
+   }
+  ],
+  "dropped": [
+   "'Buck-a-shuck local oysters & clams': price 1 not written in the evidence",
+   "'Coors Light, Miller Lite, Natty Boh, Michelob Ultra': price 3 not written in the evidence",
+   "'Athletic Brewing Co. NA': price 5 not written in the evidence",
+   "'Sun Cruiser': price 6 not written in the evidence",
+   "'Seasonal sangria': price 6 not written in the evidence",
+   "'House wines': price 6 not written in the evidence",
+   "'House mixes': price 7 not written in the evidence",
+   "'Seasonal crush': price 8 not written in the evidence",
+   "\"Papa Grande's margarita\": price 9 not written in the evidence",
+   "'Cosmopolitan': price 9 not written in the evidence"
+  ],
+  "found": true,
+  "items_kept": 7,
+  "kind": "image",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://www.bluecoastrehoboth.com/ -- footer states HAPPY HOUR 4-6PM Daily, links to /restaurantmenu",
+   "WebFetch https://www.bluecoastrehoboth.com/restaurantmenu -- no text menu, menus are images",
+   "curl https://www.bluecoastrehoboth.com/restaurantmenu -> menupage.html, grepped image URLs, found bcr_hh_spring_26_edit Page 1 and Page 2",
+   "curl -o p1.webp .../bcr_hh_spring_26_edit+%28Page+1%29.png?format=2500w -- Happy Hour EATS page, Read it",
+   "curl -o p2.webp .../bcr_hh_spring_26_edit+%28Page+2%29.png?format=2500w -- Happy Hour DRINKS page, Read it"
+  ],
+  "read_at": "2026-09-04",
+  "source_url": "https://images.squarespace-cdn.com/content/v1/59c007d9e3df283147c88259/34711f4d-0de2-4922-a924-1ee96ec5abd8/bcr_hh_spring_26_edit+%28Page+1%29.png",
+  "transcript": "BLUECOAST SEAFOOD GRILL + RAW BAR\nHappy Hour\n4-6PM DAILY\n\n— EATS —\n\nBUCK-A-SHUCK\nLOCAL OYSTERS & CLAMS\n\n5 JUMBO FRIED SHRIMP ... 12\nCOCKTAIL, LEMON\n\nPICNIC STYLE DEVILED EGG ... 2EA\nMUSTARD WHIPPED YOLKS, SMOKED PAPRIKA, CHIVES\n\nVEGETABLE FRIED RICE WITH EGG ... 12\nBOK CHOY, NAPA CABBAGE, CARROTS, SPICY MAYO\nSUNNY EGG, JAPANESE BBQ\n\nHOT FRIED CHICKEN SANDO ... 13\nSLOWER LOWER DRY SPICE, HOUSE PICKLES, COLE SLAW\nBUTTERED BRIOCHE ROLL\n\nBUTTERMILK FRIED CALAMARI ... 14\nCHERRY PEPPERS, MARINARA, LEMON\n\nKUNG-FU FRIES ... 12\nFRIED CHICKEN MORSELS, GARLIC CHILI CRUNCH\nSESAME SEEDS, SCALLIONS\n\nBLUECOASTSEAFOODGRILL   BLUECOASTSEAFOODGRILLREHOBOTH\n\nCONSUMING RAW OR UNDERCOOKED MEATS, POULTRY, SEAFOOD, SHELLFISH, OR EGGS\nMAY INCREASE YOUR RISK OF FOODBORNE ILLNESS, ESPECIALLY IF YOU HAVE A MEDICAL CONDITION.\n\n---\n\nBLUECOAST SEAFOOD GRILL + RAW BAR\nHappy Hour\n4-6PM DAILY\n\n— DRINKS —\n\n$2 OFF SELECT DRAFTS\n\nCOORS LIGHT, MILLER LITE\nNATTY BOH, MICHELOB ULTRA ... 03\n\nATHLETIC BREWING CO. NA ... 05\n\nSUN CRUISER ... 06\n\nSEASONAL SANGRIA ... 06\n\nHOUSE WINES ... 06\n\nHOUSE MIXES ... 07\n\nSEASONAL CRUSH ... 08\n\nPAPA GRANDE'S MARGARITA ... 09\n\nCOSMOPOLITAN ... 09\n\n#BLUECOASTHAPPYHOUR\n\nBLUECOASTSEAFOODGRILL   BLUECOASTSEAFOODGRILLREHOBOTH",
+  "turns": 15,
+  "venue_name_on_menu": "BLUECOAST SEAFOOD GRILL + RAW BAR",
+  "why_not": ""
+ },
  "DEc03244dbee": {
   "cost_usd": 0.5419,
   "deals": [],
@@ -8173,6 +9418,206 @@
   "turns": 15,
   "venue_name_on_menu": "La Casa Pasta",
   "why_not": "The site never states a happy hour anywhere it links to; its Weekly Specials page offers only weekday food/loyalty specials, and the word 'happy hour' appears solely inside the pages' SEO meta keywords tag."
+ },
+ "DEd798591919": {
+  "cost_usd": 0.6321,
+  "deals": [
+   {
+    "fine_print": "AVAILABLE AT THE BAR. RAW BAR 3 PIECE MINIMUM.",
+    "items": [
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Buck-a-shuck local oysters & clams (raw bar, 3 piece minimum)",
+      "price_quote": "BUCK-A-SHUCK",
+      "price_usd": 1,
+      "quote": "BUCK-A-SHUCK\nLOCAL OYSTERS & CLAMS"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "New England clam chowder",
+      "price_quote": "06",
+      "price_usd": 6,
+      "quote": "06 NEW ENGLAND CLAM CHOWDER"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Sticky Ikky wings",
+      "price_quote": "10",
+      "price_usd": 10,
+      "quote": "10 STICKY IKKY WINGS"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Cheeseburger",
+      "price_quote": "10",
+      "price_usd": 10,
+      "quote": "10 CHEESEBURGER"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Buttermilk flash fried calamari",
+      "price_quote": "12",
+      "price_usd": 12,
+      "quote": "12 BUTTERMILK FLASH FRIED CALAMARI"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Deviled eggs",
+      "price_quote": "8",
+      "price_usd": 8,
+      "quote": "8 DEVILED EGGS"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "1/2 lb. steamed shrimp",
+      "price_quote": "12",
+      "price_usd": 12,
+      "quote": "12 1/2 LB. STEAMED SHRIMP"
+     },
+     {
+      "amount_off_usd": 2,
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "$2 off select cocktails",
+      "price_quote": "$2 OFF SELECT COCKTAILS",
+      "price_usd": null,
+      "quote": "$2 OFF SELECT COCKTAILS"
+     },
+     {
+      "amount_off_usd": 2,
+      "category": "draft",
+      "discount_pct": null,
+      "label": "$2 off select drafts",
+      "price_quote": "$2 OFF SELECT DRAFTS",
+      "price_usd": null,
+      "quote": "$2 OFF SELECT DRAFTS"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "Athletic Brewing Co. NA",
+      "price_quote": "05",
+      "price_usd": 5,
+      "quote": "05 ATHLETIC BREWING CO. NA"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "wine",
+      "discount_pct": null,
+      "label": "House wine - Cabernet Sauvignon",
+      "price_quote": "06 HOUSE WINES",
+      "price_usd": 6,
+      "quote": "CABERNET SAUVIGNON"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "wine",
+      "discount_pct": null,
+      "label": "House wine - Merlot",
+      "price_quote": "06 HOUSE WINES",
+      "price_usd": 6,
+      "quote": "MERLOT"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "wine",
+      "discount_pct": null,
+      "label": "House wine - Pinot Grigio",
+      "price_quote": "06 HOUSE WINES",
+      "price_usd": 6,
+      "quote": "PINOT GRIGIO"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "wine",
+      "discount_pct": null,
+      "label": "House wine - Chardonnay",
+      "price_quote": "06 HOUSE WINES",
+      "price_usd": 6,
+      "quote": "CHARDONNAY"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 6,
+      "end": "18:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 7,
+      "end": "18:00",
+      "start": "15:00"
+     }
+    ]
+   }
+  ],
+  "dropped": [
+   "'Buck-a-shuck local oysters & clams (raw bar, 3 piece minimum)': label length",
+   "'New England clam chowder': price 6 not written in the evidence",
+   "'Athletic Brewing Co. NA': price 5 not written in the evidence",
+   "'House wine - Cabernet Sauvignon': price 6 not written in the evidence",
+   "'House wine - Merlot': price 6 not written in the evidence",
+   "'House wine - Pinot Grigio': price 6 not written in the evidence",
+   "'House wine - Chardonnay': price 6 not written in the evidence"
+  ],
+  "found": true,
+  "items_kept": 7,
+  "kind": "image",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://www.mattsfishcamplewes.com/ -- home page says HAPPY HOUR 3-6PM DAILY, links to /restaurantmenu",
+   "WebFetch https://www.mattsfishcamplewes.com/restaurantmenu -- lists a Happy Hour Menu as 2 images",
+   "curl page HTML to recover the image URLs behind the menu gallery",
+   "curl -sL -o hh1.png .../mfcl_hh_spring_26_hh+(Page+1).png -- read food page",
+   "curl -sL -o hh2.png .../mfcl_hh_spring_26_hh+(Page+2).png -- read drinks page"
+  ],
+  "read_at": "2026-09-04",
+  "source_url": "https://images.squarespace-cdn.com/content/v1/56cc715e0442621c56ef31e1/b0f109f3-6201-4a0a-b2e7-5ae3073dcbc9/mfcl_hh_spring_26_hh+%28Page+1%29.png",
+  "transcript": "MATT'S FISH CAMP\nLEWES\nHAPPY HOUR\n3-6 PM DAILY\nAVAILABLE AT THE BAR\nRAW BAR 3 PIECE MINIMUM\nBUCK-A-SHUCK\nLOCAL OYSTERS & CLAMS\n06 NEW ENGLAND CLAM CHOWDER\nBACON, SHERRY, CREAM, SALTINES\n10 STICKY IKKY WINGS\nPINEAPPLE SOY GLAZE, SRIRACHA RANCH\nSESAME SEEDS\n10 CHEESEBURGER\nHANDMADE BEEF PATTY, AMERICAN CHEESE\nLTO, TOASTED POTATO BUN, CHIPS\n12 BUTTERMILK FLASH FRIED CALAMARI\nMARINARA, LEMON\n8 DEVILED EGGS\nJUMBO LUMP CRAB, OLD BAY\n12 1/2 LB. STEAMED SHRIMP\nOLD BAY, COCKTAIL SAUCE, LEMON\n\nMATT'S FISH CAMP\nLEWES\nHAPPY HOUR\n3-6 PM DAILY\nAVAILABLE AT THE BAR\n$2 OFF SELECT COCKTAILS\n$2 OFF SELECT DRAFTS\n05 ATHLETIC BREWING CO. NA\n06 HOUSE WINES\nCABERNET SAUVIGNON\nMERLOT\nPINOT GRIGIO\nCHARDONNAY\n#MATTSFISHCAMP",
+  "turns": 13,
+  "venue_name_on_menu": "MATT'S FISH CAMP LEWES",
+  "why_not": ""
  },
  "DEd7a6e46b80": {
   "cost_usd": 0.2156,
@@ -8544,6 +9989,353 @@
   "transcript": "Daily Specials\n\nHappy Hour Bar & Patio\nMonday-Friday 4:00pm-6:00pm\nMonday - Friday\n$6 Featured Wine\n$6 Craft Drafts\n$8 Martinis\n½ price Small Plates\n½ price Pizza\n½ price Pasta\n\nNightcap Bar & Patio\nFriday & Saturday 8:00pm-close\nFriday & Saturday\n½ price Martinis\n½ price Cocktails\n\n- Alcohol specials require entree purchase -",
   "turns": 14,
   "venue_name_on_menu": "Caffe Gelato",
+  "why_not": ""
+ },
+ "DEe7e82a13d9": {
+  "cost_usd": 0.4406,
+  "deals": [
+   {
+    "fine_print": "",
+    "items": [
+     {
+      "amount_off_usd": 1,
+      "category": "draft",
+      "discount_pct": null,
+      "label": "$1 off draft beer",
+      "price_quote": "$1 OFF DRAFT BEER",
+      "price_usd": null,
+      "quote": "$1 OFF DRAFT BEER"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "well",
+      "discount_pct": null,
+      "label": "Rail mixed drinks",
+      "price_quote": "RAIL MIXED DRINKS - 7",
+      "price_usd": 7,
+      "quote": "RAIL MIXED DRINKS - 7"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "Crushes",
+      "price_quote": "CRUSHES - 9",
+      "price_usd": 9,
+      "quote": "CRUSHES - 9"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "wine",
+      "discount_pct": null,
+      "label": "House wines",
+      "price_quote": "HOUSE WINES - 7",
+      "price_usd": 7,
+      "quote": "HOUSE WINES - 7"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "Canned domestic",
+      "price_quote": "CANNED DOMESTIC - 4",
+      "price_usd": 4,
+      "quote": "CANNED DOMESTIC - 4"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "Miller Lite",
+      "price_quote": "CANNED DOMESTIC - 4",
+      "price_usd": 4,
+      "quote": "Miller Lite"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "Coors Lite",
+      "price_quote": "CANNED DOMESTIC - 4",
+      "price_usd": 4,
+      "quote": "Coors Lite"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "Natty Light",
+      "price_quote": "CANNED DOMESTIC - 4",
+      "price_usd": 4,
+      "quote": "Natty Light"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "Michelob Ultra",
+      "price_quote": "CANNED DOMESTIC - 4",
+      "price_usd": 4,
+      "quote": "Michelob Ultra"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Loaded Tots",
+      "price_quote": "LOADED TOTS - 7",
+      "price_usd": 7,
+      "quote": "LOADED TOTS - 7"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Traditional or Boneless Wings",
+      "price_quote": "TRADITIONAL or BONELESS WINGS - 11",
+      "price_usd": 11,
+      "quote": "TRADITIONAL or BONELESS WINGS - 11"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Cheesesteak Eggrolls",
+      "price_quote": "CHEESESTEAK EGGROLLS - 9",
+      "price_usd": 9,
+      "quote": "CHEESESTEAK EGGROLLS - 9"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Smash Burger",
+      "price_quote": "SMASH BURGER - 10",
+      "price_usd": 10,
+      "quote": "SMASH BURGER - 10"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Soup of the Day",
+      "price_quote": "SOUP OF THE DAY - 8",
+      "price_usd": 8,
+      "quote": "SOUP OF THE DAY - 8"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Oyster of the Day, 1/2 dozen",
+      "price_quote": "1/2 Dozen - 10",
+      "price_usd": 10,
+      "quote": "OYSTER OF THE DAY"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Oyster of the Day, dozen",
+      "price_quote": "Dozen - 18",
+      "price_usd": 18,
+      "quote": "OYSTER OF THE DAY"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 6,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 7,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ]
+   }
+  ],
+  "dropped": [],
+  "found": true,
+  "items_kept": 16,
+  "kind": "page",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch http://grainontherocks.com/ -- homepage mentions happy hour Mon-Fri, links /happyhour",
+   "curl homepage HTML to read real hrefs (/happyhour on grainontherocks.com)",
+   "WebFetch https://grainontherocks.com/happyhour -- two menu images",
+   "curl 2026+otr+summer+happy+hour+1.png -> hh1.png, Read it (DRINKS)",
+   "curl 2026+otr+summer+hh+2.png -> hh2.png, Read it (EATS)"
+  ],
+  "read_at": "2026-09-04",
+  "source_url": "https://grainontherocks.com/happyhour",
+  "transcript": "GRAIN ON THE ROCKS\n\nHAPPY HOUR\n4-6 pm daily\n\nDRINKS\n$1 OFF DRAFT BEER\nRAIL MIXED DRINKS - 7\nCRUSHES - 9\nHOUSE WINES - 7\nCANNED DOMESTIC - 4\n  Miller Lite\n  Coors Lite\n  Natty Light\n  Michelob Ultra\n\nGRAINONTHEROCKS   GRAINONTHEROCKS\n\nGRAIN ON THE ROCKS\n\nEATS\nLOADED TOTS - 7\nCheese sauce, bacon, scallions\nsour cream\n\nTRADITIONAL or BONELESS WINGS - 11\nJalapeño Hot Honey, Sriracha Honey,\nBBQ, Buffalo or Agave Old Bay\n\nCHEESESTEAK EGGROLLS - 9\nSautéed onions, Sriracha ketchup\n\nSMASH BURGER - 10\nCheddar cheese, LTO, toasted potato roll,\nkettle chips\n\nSOUP OF THE DAY - 8\nChef's daily preparation\n\nOYSTER OF THE DAY\nCocktail sauce, lemon, cucumber mignonette\n  1/2 Dozen - 10        Dozen - 18\n\nGRAINONTHEROCKS   GRAINONTHEROCKS",
+  "turns": 9,
+  "venue_name_on_menu": "GRAIN ON THE ROCKS",
+  "why_not": ""
+ },
+ "DEedef61db00": {
+  "cost_usd": 0.3836,
+  "deals": [
+   {
+    "fine_print": "At the bar & bar rails only.",
+    "items": [
+     {
+      "amount_off_usd": 1,
+      "category": "well",
+      "discount_pct": null,
+      "label": "Rail drinks",
+      "price_quote": "$1 OFF",
+      "price_usd": null,
+      "quote": "RAIL DRINKS"
+     },
+     {
+      "amount_off_usd": 1,
+      "category": "draft",
+      "discount_pct": null,
+      "label": "Draft beer",
+      "price_quote": "$1 OFF",
+      "price_usd": null,
+      "quote": "DRAFT BEER"
+     },
+     {
+      "amount_off_usd": 1,
+      "category": "wine",
+      "discount_pct": null,
+      "label": "Wines by the glass",
+      "price_quote": "$1 OFF",
+      "price_usd": null,
+      "quote": "WINES BY THE GLASS"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Wings",
+      "price_quote": "$8",
+      "price_usd": 8,
+      "quote": "WINGS"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Spicy chicken sandwich",
+      "price_quote": "$10",
+      "price_usd": 10,
+      "quote": "SPICY CHICKEN SANDWICH"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Hot dog",
+      "price_quote": "$7",
+      "price_usd": 7,
+      "quote": "HOT DOG"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Beach fries",
+      "price_quote": "$5",
+      "price_usd": 5,
+      "quote": "BEACH FRIES"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Shucked oysters",
+      "price_quote": "$1.50",
+      "price_usd": 1.5,
+      "quote": "SHUCKED OYSTERS"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "17:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 2,
+      "end": "17:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 3,
+      "end": "17:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 4,
+      "end": "17:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 5,
+      "end": "17:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 6,
+      "end": "17:00",
+      "start": "15:00"
+     },
+     {
+      "dow": 7,
+      "end": "17:00",
+      "start": "15:00"
+     }
+    ]
+   }
+  ],
+  "dropped": [],
+  "found": true,
+  "items_kept": 8,
+  "kind": "pdf",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch http://obiesrehoboth.com/ -- home page states \"Happy Hour: 3-5pm daily at the bar and bar rails\", links to Menu page",
+   "WebFetch https://obiesrehoboth.com/menu/ -- lists a dedicated Happy Hour Menu PDF",
+   "curl https://obiesrehoboth.com/wp-content/uploads/2026/04/Obies-HH-Menu_2026.pdf -- first attempt returned a 300-byte mod_security 406 error page",
+   "curl again with a browser user-agent -> hh.pdf (1 page), then Read the PDF"
+  ],
+  "read_at": "2026-09-04",
+  "source_url": "https://obiesrehoboth.com/wp-content/uploads/2026/04/Obies-HH-Menu_2026.pdf",
+  "transcript": "EVERY DAY 3-5PM\nAt the bar & bar rails only.\n\nHAPPY HOUR\n\nDrinks\n\n$1 OFF\nRAIL DRINKS\nDRAFT BEER\nWINES BY THE GLASS\n\nFood\n\n$8\nWINGS\n\n$10\nSPICY CHICKEN SANDWICH\n\n$7\nHOT DOG\n\n$5\nBEACH FRIES\n\n$1.50\nSHUCKED OYSTERS\n\nConsuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness, especially with individuals with certain medical conditions.",
+  "turns": 9,
+  "venue_name_on_menu": "Obie's By the Sea",
   "why_not": ""
  },
  "DEf02235c26c": {
@@ -9381,6 +11173,198 @@
   "turns": 10,
   "venue_name_on_menu": "Potstickers",
   "why_not": ""
+ },
+ "DEf590bd08f2": {
+  "cost_usd": 0.5342,
+  "deals": [
+   {
+    "fine_print": "Happy Hour is available Daily Downstairs at the Bar & Hightops from 5-6pm. And Upstairs in The Treehouse Lounge from 5-6pm on Fri-Mon.",
+    "items": [
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Hollander Mussels",
+      "price_quote": "$12",
+      "price_usd": 12,
+      "quote": "Hollander Mussels - chorizo, spiced beer broth, tobasco, tajin, toasted baguette slices | $12"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Housemade Whipped Ricotta",
+      "price_quote": "$10",
+      "price_usd": 10,
+      "quote": "Housemade Whipped Ricotta - pine nut gremolata, garlic confit, toasted points | $10"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Crispy Calamari",
+      "price_quote": "$15",
+      "price_usd": 15,
+      "quote": "Crispy Calamari - housemade marinara sauce, lemon | $15"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Housemade Mozzarella Sticks",
+      "price_quote": "$11",
+      "price_usd": 11,
+      "quote": "Housemade Mozzarella Sticks - housemade roasted garlic pomodoro | $11"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Tavern Fries",
+      "price_quote": "| $9",
+      "price_usd": 9,
+      "quote": "Tavern Fries - honey malt vinegar aioli (add white truffle oil, blue cheese +$5) | $9"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Grizzly Wings (4)",
+      "price_quote": "$8",
+      "price_usd": 8,
+      "quote": "Grizzly Wings (4) - grizzly housemade hot sauce | $8"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "PINES Caesar",
+      "price_quote": "$8",
+      "price_usd": 8,
+      "quote": "PINES Caesar - shaved parm, croutons, romaine, eggless housemade caesar dressing | $8"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "Domestic Beers (Miller Lite, Coors Light, Bud Light, Michelob Ultra, All Day Hazy IPA)",
+      "price_quote": "$3",
+      "price_usd": 3,
+      "quote": "Domestic Beers - Miller Lite, Coors Light, Bud Light, Michelob Ultra, All Day Hazy IPA | $3"
+     },
+     {
+      "amount_off_usd": 2,
+      "category": "wine",
+      "discount_pct": null,
+      "label": "All Wines by the Glass $2 off",
+      "price_quote": "$2 off",
+      "price_usd": null,
+      "quote": "Wines - All Wines by the Glass $2 off"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "well",
+      "discount_pct": null,
+      "label": "Highballs (Choice of Spirit + Mixer)",
+      "price_quote": "| $8",
+      "price_usd": 8,
+      "quote": "Highballs - Choice of Spirit + Mixer (Vodka, Gin, Rum, Tequila, Bourbon) | $8"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "Martinis (Classic, Dirty or Cosmos)",
+      "price_quote": "$11",
+      "price_usd": 11,
+      "quote": "Martinis - Classic, Dirty or Cosmos with Tito's Vodka or Tanqueray London Dry Gin | $11"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "Craft Cocktails (Old Fashioned, French 75, Hibiscus Daiquiri, Lemon-Ginger Sour, Hotel Americano)",
+      "price_quote": "$9",
+      "price_usd": 9,
+      "quote": "Craft Cocktails - Old Fashioned, French 75, Hibiscus Daiquiri, Lemon-Ginger Sour, Hotel Americano | $9"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "17:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "17:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "17:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "17:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "17:00"
+     },
+     {
+      "dow": 6,
+      "end": "18:00",
+      "start": "17:00"
+     },
+     {
+      "dow": 7,
+      "end": "18:00",
+      "start": "17:00"
+     }
+    ]
+   }
+  ],
+  "dropped": [
+   "'Domestic Beers (Miller Lite, Coors Light, Bud Light, Michelob Ultra, All Day Hazy IPA)': label length",
+   "'Craft Cocktails (Old Fashioned, French 75, Hibiscus Daiquiri, Lemon-Ginger Sour, Hotel Americano)': label length"
+  ],
+  "found": true,
+  "items_kept": 10,
+  "kind": "page",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://thepinesrb.com/ -- 301 redirect to http://www.thepinesrb.com/",
+   "WebFetch http://www.thepinesrb.com/ -- home page lists a Happy Hour menu link at /menus/happy-hour.html",
+   "WebFetch http://www.thepinesrb.com/menus/happy-hour.html -- happy hour days, times and full item list",
+   "curl -sL -o .../hh.pdf http://www.thepinesrb.com/images/Happy-hour-the-pines-menu-8.6.26.pdf -- PDF linked from that page",
+   "Read hh.pdf -- printed happy hour menu, 'Happy Hour 5-6 pm', same items and prices (no days printed on the PDF)",
+   "curl of the happy-hour page itself returned a 403 'Malware detected' block page, so the page was read via WebFetch"
+  ],
+  "read_at": "2026-09-04",
+  "source_url": "http://www.thepinesrb.com/menus/happy-hour.html",
+  "transcript": "Happy Hour Menu - The Pines Coastal Tavern\n\nHours and Availability\nHappy Hour is available Daily Downstairs at the Bar & Hightops from 5-6pm. And Upstairs in The Treehouse Lounge from 5-6pm on Fri-Mon.\n\nStarters\nHollander Mussels - chorizo, spiced beer broth, tobasco, tajin, toasted baguette slices | $12\nHousemade Whipped Ricotta - pine nut gremolata, garlic confit, toasted points | $10\nCrispy Calamari - housemade marinara sauce, lemon | $15\nHousemade Mozzarella Sticks - housemade roasted garlic pomodoro | $11\nTavern Fries - honey malt vinegar aioli (add white truffle oil, blue cheese +$5) | $9\nGrizzly Wings (4) - grizzly housemade hot sauce | $8\nPINES Caesar - shaved parm, croutons, romaine, eggless housemade caesar dressing | $8\n\nBeverages\nDomestic Beers - Miller Lite, Coors Light, Bud Light, Michelob Ultra, All Day Hazy IPA | $3\nWines - All Wines by the Glass $2 off\nHighballs - Choice of Spirit + Mixer (Vodka, Gin, Rum, Tequila, Bourbon) | $8\nMartinis - Classic, Dirty or Cosmos with Tito's Vodka or Tanqueray London Dry Gin | $11\nCraft Cocktails - Old Fashioned, French 75, Hibiscus Daiquiri, Lemon-Ginger Sour, Hotel Americano | $9",
+  "turns": 10,
+  "venue_name_on_menu": "The Pines Coastal Tavern",
+  "why_not": ""
+ },
+ "DEf6bd2b8332": {
+  "cost_usd": 0.5206,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "exhausted",
+  "model": "opus",
+  "path_taken": [],
+  "read_at": "2026-09-04",
+  "transcript": "",
+  "turns": 15,
+  "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.52 spent"
  },
  "DEffd025ba9c": {
   "cost_usd": 0.861,
