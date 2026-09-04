@@ -1,7 +1,7 @@
 {
  "rule": "Paul, 2026-09-03: any live deal with under 5 happy-hour items needs a re-scrape.",
  "generated": "2026-09-04",
- "count": 134,
+ "count": 135,
  "venues": [
   {
    "zone": "abington_jenkintown",
@@ -77,11 +77,20 @@
   },
   {
    "zone": "ardmore_bryn_mawr",
-   "name": "The Pub of Penn Valley",
+   "name": "Pub of Penn Valley",
    "lid": "43721",
    "verified_by": "agent_read",
    "item_count": 4,
    "url": "https://pubofpennvalley.com/menu/",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "ardmore_bryn_mawr",
+   "name": "The Grog Grill",
+   "lid": "64347",
+   "verified_by": "agent_read",
+   "item_count": 4,
+   "url": "https://thegroggrill.com/bryn-mawr-the-grog-grill-happy-hours-specials",
    "status": "NEEDS_RESCRAPE"
   },
   {

@@ -365,6 +365,93 @@
   "venue_name_on_menu": "",
   "why_not": ""
  },
+ "102696": {
+  "cost_usd": 0.596,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "exhausted",
+  "model": "opus",
+  "path_taken": [],
+  "read_at": "2026-09-04",
+  "transcript": "",
+  "turns": 15,
+  "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.60 spent"
+ },
+ "104811": {
+  "cost_usd": 0.3928,
+  "deals": [
+   {
+    "fine_print": "",
+    "items": [],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 2,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 3,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 4,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 5,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 6,
+      "end": "18:30",
+      "start": "16:30"
+     }
+    ]
+   },
+   {
+    "fine_print": "",
+    "items": [],
+    "type": "daily_special",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "21:00",
+      "start": "16:30"
+     }
+    ]
+   }
+  ],
+  "dropped": [
+   "'daily_special' deal: not the happy hour"
+  ],
+  "found": true,
+  "items_kept": 0,
+  "kind": "page",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch home page https://thepullmanrestaurant.com/ -- nav has Food Menu, Drinks Menu, Specials",
+   "WebFetch /bryn-mawr-main-line-the-pullman-restaurant-and-bar-happy-hours-specials -- daily specials calendar listing Happy Hour",
+   "WebFetch /bryn-mawr-main-line-the-pullman-restaurant-and-bar-drink-menu -- no happy hour section, no menu images or PDFs",
+   "curl -sL specials page HTML into scratch dir to read the raw specials list; no linked menu image or PDF"
+  ],
+  "read_at": "2026-09-04",
+  "source_url": "https://thepullmanrestaurant.com/bryn-mawr-main-line-the-pullman-restaurant-and-bar-happy-hours-specials",
+  "transcript": "Specials\n\nFriday September 4th\nHappy Hour\n04:30 PM - 06:30 PM\n\nSaturday September 5th\nHappy Hour\n04:30 PM - 06:30 PM\n\nMonday September 7th\nHappy Hour\n04:30 PM - 06:30 PM\nHappy Hour Taco Special Night\n04:30 PM - 09:00 PM\n\nTuesday September 8th\nHappy Hour\n04:30 PM - 06:30 PM\n\nWednesday September 9th\nHappy Hour\n04:30 PM - 06:30 PM\n\nThursday September 10th\nBYOB all night\n04:00 PM - 09:00 PM\nHappy Hour\n04:30 PM - 06:30 PM",
+  "turns": 9,
+  "venue_name_on_menu": "The Pullman Restaurant and Bar",
+  "why_not": ""
+ },
  "106706": {
   "cost_usd": 0.3773,
   "deals": [
@@ -639,6 +726,28 @@
   "venue_name_on_menu": "JITTERS",
   "why_not": ""
  },
+ "114948": {
+  "cost_usd": 0.3658,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://sokobag.com/ -- home page, nav lists About/Our Menu/Beer/Reviews/Blog/Events/Merch/Franchise/Contact/Order Online; no happy hour anywhere",
+   "WebFetch https://sokobag.com/beer/ -- beer descriptions and ABV only, no prices, times or specials",
+   "WebFetch https://sokobag.com/#menu -- menu section is two linked images, both pointing to the Toast ordering page",
+   "curl + Read https://sokobag.com/wp-content/uploads/2026/03/soko-bag-menu-march-2026.jpg -- full food menu image, no prices and no happy hour",
+   "curl + Read https://sokobag.com/wp-content/uploads/2024/06/soko-web-menu-june-2024.jpeg -- promotional 'Delicious Korean Fried Chicken' graphic, not a menu"
+  ],
+  "read_at": "2026-09-04",
+  "source_url": "",
+  "transcript": "",
+  "turns": 9,
+  "venue_name_on_menu": "SOKO BAG MENU",
+  "why_not": "The site is a single-location page whose only menu is an image listing flavors, sauces and sides with no prices, times or specials, and the beer page lists beer descriptions and ABVs without any happy hour statement."
+ },
  "118439": {
   "cost_usd": 0.3463,
   "deals": [
@@ -845,6 +954,251 @@
   "turns": 6,
   "venue_name_on_menu": "STH Steals",
   "why_not": ""
+ },
+ "118876": {
+  "cost_usd": 0.3063,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch http://www.thegoatsbeardphilly.com/ -- home page, no happy hour section; nav lists only Manayunk and Wayne",
+   "WebFetch http://www.thegoatsbeardphilly.com/hours-and-location/ -- locations index, only Manayunk and Wayne, no happy hour"
+  ],
+  "read_at": "2026-09-04",
+  "source_url": "",
+  "transcript": "",
+  "turns": 6,
+  "venue_name_on_menu": "",
+  "why_not": "The site covers only the Manayunk and Wayne locations -- it has no page, menu or address for 1100 Hector St, Conshohocken -- and neither the home page nor the Hours & Location page mentions a happy hour or specials."
+ },
+ "120650": {
+  "cost_usd": 0.5886,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "exhausted",
+  "model": "opus",
+  "path_taken": [],
+  "read_at": "2026-09-04",
+  "transcript": "",
+  "turns": 15,
+  "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.59 spent"
+ },
+ "120949": {
+  "cost_usd": 0.4725,
+  "deals": [
+   {
+    "fine_print": "",
+    "items": [
+     {
+      "amount_off_usd": null,
+      "category": "wine",
+      "discount_pct": null,
+      "label": "wine by the glass",
+      "price_quote": "$6 wine by the glass",
+      "price_usd": 6,
+      "quote": "$6 wine by the glass"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "well",
+      "discount_pct": null,
+      "label": "well drinks",
+      "price_quote": "$8 well drinks",
+      "price_usd": 8,
+      "quote": "$8 well drinks"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "wine",
+      "discount_pct": null,
+      "label": "rabbit hole pinot noir bottles",
+      "price_quote": "$20 rabbit hole pinot noir bottles",
+      "price_usd": 20,
+      "quote": "$20 rabbit hole pinot noir bottles"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "select cocktails",
+      "price_quote": "$10 select cocktails",
+      "price_usd": 10,
+      "quote": "$10 select cocktails"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "miller lights",
+      "price_quote": "$3 miller lights",
+      "price_usd": 3,
+      "quote": "$3 miller lights"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "bottle_can",
+      "discount_pct": null,
+      "label": "seasonal ciders",
+      "price_quote": "$6 seasonal ciders",
+      "price_usd": 6,
+      "quote": "$6 seasonal ciders"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "seasonal flatbreads",
+      "price_quote": "$12 seasonal flatbreads",
+      "price_usd": 12,
+      "quote": "$12 seasonal flatbreads"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "seasonal hummus",
+      "price_quote": "$7 seasonal hummus",
+      "price_usd": 7,
+      "quote": "$7 seasonal hummus"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 6,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ]
+   },
+   {
+    "fine_print": "Brunch Hoppy Hour!",
+    "items": [
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "mini waffle duo",
+      "price_quote": "$12 mini waffle duo",
+      "price_usd": 12,
+      "quote": "$12 mini waffle duo"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "deviled egg duo",
+      "price_quote": "$6 deviled egg duo",
+      "price_usd": 6,
+      "quote": "$6 deviled egg duo"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "maple bacon board",
+      "price_quote": "$8 maple bacon board",
+      "price_usd": 8,
+      "quote": "$8 maple bacon board"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "wine",
+      "discount_pct": null,
+      "label": "rabbit hole pinot noir bottles",
+      "price_quote": "$10 rabbit hole pinot noir bottles",
+      "price_usd": 10,
+      "quote": "$10 rabbit hole pinot noir bottles"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "espresso martinis",
+      "price_quote": "$10 espresso martinis",
+      "price_usd": 10,
+      "quote": "$10 espresso martinis"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "espresso martini towers",
+      "price_quote": "$30 espresso martini towers",
+      "price_usd": 30,
+      "quote": "$30 espresso martini towers"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 6,
+      "end": "01:00",
+      "start": "11:00"
+     },
+     {
+      "dow": 7,
+      "end": "13:00",
+      "start": "11:00"
+     }
+    ]
+   }
+  ],
+  "dropped": [],
+  "found": true,
+  "items_kept": 14,
+  "kind": "page",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://therabbitholeconshy.com/ — nav offered Menu / Drinks / Specials / Events",
+   "WebFetch https://therabbitholeconshy.com/specials — happy hour listed per day",
+   "curl -sL -o data/agent_reads/120949/specials.html https://therabbitholeconshy.com/specials — read raw page for verbatim wording"
+  ],
+  "read_at": "2026-09-04",
+  "source_url": "https://therabbitholeconshy.com/specials",
+  "transcript": "Specials\n\nFriday\nHoppy Hour!\n$6 wine by the glass\n$8 well drinks\n$20 rabbit hole pinot noir bottles\n$10 select cocktails\n$3 miller lights\n$6 seasonal ciders\n\n$12 seasonal flatbreads\n$7 seasonal hummus\n04:00 PM - 06:00 PM\n\nSaturday\nBrunch Hoppy Hour!\n$12 mini waffle duo\n$6 deviled egg duo\n$8 maple bacon board\n$10 rabbit hole pinot noir bottles\n$10 espresso martinis\n$30 espresso martini towers\n11:00 AM - 01:00 AM\n\nHoppy Hour!\n$6 wine by the glass\n$8 well drinks\n$20 rabbit hole pinot noir bottles\n$10 select cocktails\n$3 miller lights\n$6 seasonal ciders\n\n$12 seasonal flatbreads\n$7 seasonal hummus\n04:00 PM - 06:00 PM\n\nSunday\nBrunch Hoppy Hour!\n$12 mini waffle duo\n$6 deviled egg duo\n$8 maple bacon board\n$10 rabbit hole pinot noir bottles\n$10 espresso martinis\n$30 espresso martini towers\n11:00 AM - 01:00 PM\n\nWednesday\nHoppy Hour!\n$6 wine by the glass\n$8 well drinks\n$20 rabbit hole pinot noir bottles\n$10 select cocktails\n$3 miller lights\n$6 seasonal ciders\n\n$12 seasonal flatbreads\n$7 seasonal hummus\n04:00 PM - 06:00 PM\n\nThursday\nHoppy Hour!\n$6 wine by the glass\n$8 well drinks\n$20 rabbit hole pinot noir bottles\n$10 select cocktails\n$3 miller lights\n$6 seasonal ciders\n\n$12 seasonal flatbreads\n$7 seasonal hummus\n04:00 PM - 06:00 PM",
+  "turns": 8,
+  "venue_name_on_menu": "The Rabbit Hole",
+  "why_not": ""
+ },
+ "121138": {
+  "cost_usd": 0.1869,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://royalfarms.com/ — convenience-store chain site; nav has About, Current Promos, Fresh Food, ROFO Rewards, Locations, Car Wash; no happy hour anywhere",
+   "WebFetch https://royalfarms.com/current-promos/ — promo image tiles, no times/days, note that 'Prices vary by location'"
+  ],
+  "read_at": "2026-09-04",
+  "source_url": "",
+  "transcript": "",
+  "turns": 4,
+  "venue_name_on_menu": "",
+  "why_not": "Royal Farms is a convenience store and gas station chain whose site offers fresh food menus, a rewards program, a store locator and general promotions, with no happy hour or timed drink specials stated anywhere."
  },
  "126237": {
   "cost_usd": 0.4765,
@@ -1114,6 +1468,48 @@
   "turns": 4,
   "venue_name_on_menu": "Station 142",
   "why_not": ""
+ },
+ "26291": {
+  "cost_usd": 0.5524,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "exhausted",
+  "model": "opus",
+  "path_taken": [],
+  "read_at": "2026-09-04",
+  "transcript": "",
+  "turns": 15,
+  "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.55 spent"
+ },
+ "31616": {
+  "cost_usd": 0.5819,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "exhausted",
+  "model": "opus",
+  "path_taken": [],
+  "read_at": "2026-09-04",
+  "transcript": "",
+  "turns": 15,
+  "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.58 spent"
+ },
+ "36229": {
+  "cost_usd": 0.5544,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "exhausted",
+  "model": "opus",
+  "path_taken": [],
+  "read_at": "2026-09-04",
+  "transcript": "",
+  "turns": 15,
+  "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.55 spent"
  },
  "36841": {
   "cost_usd": 0.2818,
@@ -1976,6 +2372,97 @@
   "venue_name_on_menu": "MÁS",
   "why_not": ""
  },
+ "64347": {
+  "cost_usd": 0.4597,
+  "deals": [
+   {
+    "fine_print": "",
+    "items": [
+     {
+      "amount_off_usd": null,
+      "category": "wine",
+      "discount_pct": null,
+      "label": "House Wine",
+      "price_quote": "House Wine $5",
+      "price_usd": 5,
+      "quote": "House Wine $5",
+      "type": "happy_hour"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "draft",
+      "discount_pct": null,
+      "label": "Craft Drafts",
+      "price_quote": "Craft Drafts $5",
+      "price_usd": 5,
+      "quote": "Craft Drafts $5"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "draft",
+      "discount_pct": null,
+      "label": "Domestic Drafts",
+      "price_quote": "Domestic Drafts $3",
+      "price_usd": 3,
+      "quote": "Domestic Drafts $3"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "wine",
+      "discount_pct": null,
+      "label": "House Prosecco",
+      "price_quote": "House Prosecco $7",
+      "price_usd": 7,
+      "quote": "House Prosecco $7"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:05",
+      "start": "16:05"
+     },
+     {
+      "dow": 2,
+      "end": "18:05",
+      "start": "16:05"
+     },
+     {
+      "dow": 3,
+      "end": "18:05",
+      "start": "16:05"
+     },
+     {
+      "dow": 4,
+      "end": "18:05",
+      "start": "16:05"
+     },
+     {
+      "dow": 5,
+      "end": "18:05",
+      "start": "16:05"
+     }
+    ]
+   }
+  ],
+  "dropped": [],
+  "found": true,
+  "items_kept": 4,
+  "kind": "page",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://thegroggrill.com/ -- nav lists Specials at /bryn-mawr-the-grog-grill-happy-hours-specials, single Bryn Mawr location",
+   "WebFetch https://thegroggrill.com/bryn-mawr-the-grog-grill-happy-hours-specials -- dated specials calendar with H.H. Specials entries",
+   "curl -sL -o specials.html of the same specials page, grepped for verbatim text and document order"
+  ],
+  "read_at": "2026-09-04",
+  "source_url": "https://thegroggrill.com/bryn-mawr-the-grog-grill-happy-hours-specials",
+  "transcript": "Friday September 4th\nH.H. Specials - House Wine $5 / Craft Drafts $5 / Domestic Drafts $3 / House Prosecco $7\n04:05 PM - 06:05 PM\nEvery Friday Night at The Grog we have Live Music from 9 - ??\n09:00 PM - 02:00 AM\n\nMonday September 7th\nH.H. Specials - House Wine $5.00 / Craft Drafts $5 / Domestic Drafts $3 / House Prosecco $7\n04:05 PM - 06:05 PM\n\nTuesday September 8th\nH.H. Specials - House Wine $5 / Craft Drafts $5 / Domestic Drafts $3 / House Prosecco $7\n04:05 PM - 06:05 PM\n\nWednesday September 9th\nHouse Wine $5 / Craft Drafts $5 / Domestic Drafts $3 / House Prosecco $7\n04:05 PM - 06:05 PM\nCalling all Brainiacs.  The Grog Quizzo every Wednesday 8 - 10 with giveaways and prizes!\n\nThursday September 10th\nH.H. Specials - House Wine $5 / Craft Drafts $5 / Domestic Drafts $3 / House Prosecco $7\n04:05 PM - 06:05 PM",
+  "turns": 10,
+  "venue_name_on_menu": "The Grog Grill",
+  "why_not": ""
+ },
  "64766": {
   "cost_usd": 0.4978,
   "deals": [
@@ -2136,6 +2623,180 @@
   "transcript": "",
   "turns": 15,
   "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.61 spent"
+ },
+ "67489": {
+  "cost_usd": 0.4369,
+  "deals": [
+   {
+    "fine_print": "**at the bar only**",
+    "items": [
+     {
+      "amount_off_usd": null,
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "Sangria, red or white",
+      "price_quote": "$8 Sangria",
+      "price_usd": 8,
+      "quote": "$8 Sangria\nred or white"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "Martinis, made with house vodka or gin",
+      "price_quote": "$8 Martinis",
+      "price_usd": 8,
+      "quote": "$8 Martinis\nmade with house vodka or gin"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "draft",
+      "discount_pct": null,
+      "label": "Draft Beer",
+      "price_quote": "$5 Draft Beer",
+      "price_usd": 5,
+      "quote": "$5 Draft Beer"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "well",
+      "discount_pct": null,
+      "label": "House Vodka or Gin Mixes",
+      "price_quote": "$5 House Vodka or Gin Mixes",
+      "price_usd": 5,
+      "quote": "$5 House Vodka or Gin Mixes"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "wine",
+      "discount_pct": null,
+      "label": "House Wine -- pinot grigio, chardonnay, merlot, cabernet",
+      "price_quote": "$5 House Wine",
+      "price_usd": 5,
+      "quote": "$5 House Wine\npinot grigio | chardonnay | merlot | cabernet"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Deviled Eggs -- 3 classic, 3 seasonal",
+      "price_quote": "Deviled Eggs .. 8",
+      "price_usd": 8,
+      "quote": "Deviled Eggs .. 8\n3 classic, 3 seasonal"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Cajun Pierogies -- sauteed onions, cajun sour cream",
+      "price_quote": "Cajun Pierogies .. 8",
+      "price_usd": 8,
+      "quote": "Cajun Pierogies .. 8\nsautéed onions, cajun sour cream"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Flatbread -- choice of Mushroom Pesto, Cajun Margarita",
+      "price_quote": "Flatbread .. 10",
+      "price_usd": 10,
+      "quote": "Flatbread .. 10\nchoice of -\nMushroom Pesto, Cajun Margarita"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Fried Chicken Nachos",
+      "price_quote": "Fried Chicken Nachos .. 15",
+      "price_usd": 15,
+      "quote": "Fried Chicken Nachos .. 15"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Fried Pickles -- green goddess & zesty aioli",
+      "price_quote": "Fried Pickles .. 7",
+      "price_usd": 7,
+      "quote": "Fried Pickles .. 7\ngreen goddess & zesty aioli"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Slider Trio -- choice of Hot Honey, Classic, BBQ",
+      "price_quote": "Slider Trio ..12",
+      "price_usd": 12,
+      "quote": "Slider Trio ..12\nChoice of - Hot Honey, Classic, BBQ"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Biscuit Board",
+      "price_quote": "Biscuit Board .. 18",
+      "price_usd": 18,
+      "quote": "Biscuit Board .. 18"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 2,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 3,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 4,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 5,
+      "end": "18:30",
+      "start": "16:30"
+     },
+     {
+      "dow": 5,
+      "end": "22:00",
+      "start": "21:00"
+     },
+     {
+      "dow": 6,
+      "end": "19:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 6,
+      "end": "22:00",
+      "start": "21:00"
+     }
+    ]
+   }
+  ],
+  "dropped": [
+   "'Slider Trio -- choice of Hot Honey, Classic, BBQ': price 12 not written in the evidence"
+  ],
+  "found": true,
+  "items_kept": 11,
+  "kind": "image",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://www.southerncrosskitchen.com/ -- no happy hour on page, linked 'View Menus' to /menus",
+   "WebFetch https://www.southerncrosskitchen.com/menus/ -- lists 'Happy Hour Menu' and 'Brunch Happy Hour Menu' as image files",
+   "curl -sL -o hh_normal.png <Happy Hour 2025 - Normal .png> then Read the image"
+  ],
+  "read_at": "2026-09-04",
+  "source_url": "https://media-cdn.getbento.com/accounts/e83390c853e108a5477b945f6559dd5a/media/rx0wHAzQeS3LOKrIyGKG_SCK%20-%20Happy%20Hour%202025%20-%20Normal.png",
+  "transcript": "HAPPY HOUR\nTuesday to Thursday .. 4:30pm-6:30pm\nFriday .. 4:30pm-6:30pm | 9pm-10pm\nSaturday .. 4pm-7pm | 9pm-10pm\n**at the bar only**\n\nDRINKS\n$8 Sangria\nred or white\n$8 Martinis\nmade with house vodka or gin\n$5 Draft Beer\n$5 House Vodka or Gin Mixes\n$5 House Wine\npinot grigio | chardonnay | merlot | cabernet\n\nBITES\nDeviled Eggs .. 8\n3 classic, 3 seasonal\nCajun Pierogies .. 8\nsautéed onions, cajun sour cream\nFlatbread .. 10\nchoice of -\nMushroom Pesto, Cajun Margarita\nFried Chicken Nachos .. 15\ncorn tortilla, fried chicken, smoked gouda cheese sauce, cheddar cheese, jalapenos, pico de gallo, corn salsa, sour cream, zesty aioli, avocado\nFried Pickles .. 7\ngreen goddess & zesty aioli\nSlider Trio ..12\nChoice of - Hot Honey, Classic, BBQ\nBiscuit Board .. 18\nthree buttermilk biscuits, pimento cheese, homemade jams, maple butter, sausage gravy, assorted fruit",
+  "turns": 7,
+  "venue_name_on_menu": "Southern Cross Kitchen",
+  "why_not": ""
  },
  "68978": {
   "cost_usd": 0.5175,
@@ -3306,6 +3967,38 @@
   "turns": 24,
   "venue_name_on_menu": "TRUE FOOD KITCHEN",
   "why_not": ""
+ },
+ "85899": {
+  "cost_usd": 0.1619,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://local.acmemarkets.com/pa/bala-cynwyd/121-e-city-ave.html -- this location's own store page; no happy hour, specials, or menu link"
+  ],
+  "read_at": "2026-09-04",
+  "source_url": "",
+  "transcript": "",
+  "turns": 3,
+  "venue_name_on_menu": "",
+  "why_not": "This is a grocery store location page listing store hours (6:00 AM - 11:00 PM daily), phone, and departments including Beer & Wine, with no happy hour, drink specials, or menu link of any kind."
+ },
+ "88737": {
+  "cost_usd": 0.6249,
+  "deals": [],
+  "dropped": [],
+  "found": false,
+  "items_kept": 0,
+  "kind": "exhausted",
+  "model": "opus",
+  "path_taken": [],
+  "read_at": "2026-09-04",
+  "transcript": "",
+  "turns": 15,
+  "why_not": "exited 1 after 15 turns (stop_reason 'tool_use'), $0.62 spent"
  },
  "91502": {
   "cost_usd": 0.3924,

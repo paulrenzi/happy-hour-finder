@@ -828,7 +828,7 @@
   ]
  },
  "105248": {
-  "name": "118 North",
+  "name": "110 North Wayne",
   "deals": [
    {
     "type": "happy_hour",
@@ -1555,7 +1555,7 @@
   ]
  },
  "119303": {
-  "name": "PJ Whelihan's",
+  "name": "PJ Whelihan\u2019s Pub + Restaurant - Wynnewood",
   "deals": [
    {
     "type": "happy_hour",
@@ -1593,7 +1593,7 @@
   ]
  },
  "43721": {
-  "name": "The Pub of Penn Valley",
+  "name": "Pub of Penn Valley",
   "deals": [
    {
     "type": "happy_hour",
@@ -1632,6 +1632,44 @@
       "dow": 7,
       "end": "17:30",
       "start": "15:30"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "64347": {
+  "name": "The Grog Grill",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:05",
+      "start": "16:05"
+     },
+     {
+      "dow": 2,
+      "end": "18:05",
+      "start": "16:05"
+     },
+     {
+      "dow": 3,
+      "end": "18:05",
+      "start": "16:05"
+     },
+     {
+      "dow": 4,
+      "end": "18:05",
+      "start": "16:05"
+     },
+     {
+      "dow": 5,
+      "end": "18:05",
+      "start": "16:05"
      }
     ],
     "source": {
@@ -1865,44 +1903,6 @@
       "dow": 5,
       "start": "17:00",
       "end": "19:00"
-     }
-    ],
-    "source": {
-     "kind": "venue_site"
-    }
-   }
-  ]
- },
- "117317": {
-  "name": "P.J. Whelihan's",
-  "deals": [
-   {
-    "type": "happy_hour",
-    "windows": [
-     {
-      "dow": 1,
-      "end": "18:00",
-      "start": "16:00"
-     },
-     {
-      "dow": 2,
-      "end": "18:00",
-      "start": "16:00"
-     },
-     {
-      "dow": 3,
-      "end": "18:00",
-      "start": "16:00"
-     },
-     {
-      "dow": 4,
-      "end": "18:00",
-      "start": "16:00"
-     },
-     {
-      "dow": 5,
-      "end": "18:00",
-      "start": "16:00"
      }
     ],
     "source": {
@@ -2149,6 +2149,44 @@
    }
   ]
  },
+ "117317": {
+  "name": "P.J. Whelihan's Pub + Restaurant - Conshohocken",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 2,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "53783": {
   "name": "Pepperoncini Restaurant & Bar",
   "deals": [
@@ -2302,6 +2340,39 @@
      {
       "dow": 5,
       "end": "18:30",
+      "start": "16:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "120949": {
+  "name": "The Rabbit Hole",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 6,
+      "end": "18:00",
       "start": "16:00"
      }
     ],
