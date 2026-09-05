@@ -752,3 +752,220 @@ land `pending`; `GET /admin/events?status=pending` lists them and
 `POST /admin/events/review/<id>` rules on each. Until a person rules, the board
 shows nothing — that is the design (a re-read must never overturn a human
 ruling), not a delay to route around.
+
+## 15. The four boundaries, and how a standing weekly show is represented (2026-09-05, night 6)
+
+§14 found the gap and named it. This section closes it, and answers the design
+question §14 left open: what a recurring show *is* in the schema.
+
+### 15.1 The lane runs end to end now, and two defects were in the way
+
+Wayne's 28 rows are `pending` → approved → live. `GET /live/events.json` carries
+4 venues and 28 rows. Two things had to be fixed to get there, and **both were
+invisible because this lane had literally never run**:
+
+- 🛑 **There was no path from `data/events_reads.json` to the queue at all.**
+  `to_post` was built *inside the read loop*, so only a venue read in this run
+  could ever be posted. And `todo` skips any venue read in the last 6 days — so
+  the handoff's own instruction, `--zone wayne_radnor --post`, would have read
+  **zero** venues and posted **zero** rows, printing a cheerful summary either
+  way. Re-posting what is already on file required `--force` and **$7.47 of
+  re-reading to send rows that were already grounded on disk.**
+  Fixed: `--post-only` posts what is on file, reads nothing, spends nothing.
+  `post_row()` is now one function both paths call, so they cannot drift.
+- 🛑 **Cloudflare's edge 403s `Python-urllib/3.x` before the Worker is reached.**
+  The same request from `curl` is a 200. The reader now sends a real
+  `User-Agent`. **A 403 here is not an auth failure** — the Worker returns 401
+  for a bad admin token, so a 403 means you never got to it.
+
+**The general lesson:** a lane with four boundaries (file → Worker → human
+ruling → overlay) has four places to die, and the *last* one to be built is
+usually where the bodies are. Verification is a **live fetch of the overlay**,
+never a green unit test — every unit test passed, against fixtures, the whole
+time nothing worked.
+
+*(One unreproduced event, recorded not explained: the first-ever 28-row POST
+returned 500. The same payload from curl, and from python a minute later, both
+returned 200. Cold-start or a first-batch D1 hiccup; if it recurs, look there.)*
+
+### 15.2 🔑 A weekly show is ONE row keyed on its WEEKDAY, expanded at read time
+
+Flip and Baileys publishes *"Music Bingo — Thursdays 7pm-9pm"* and *"Dollar
+Drink Night ... every friday"*. The reader returned those as **four dated
+one-offs** inside its 14-day window. That is wrong three ways, and the third one
+is fatal:
+
+1. They go stale. Past the horizon the board forgets a show that runs every week.
+2. They cost a re-read to refresh, forever.
+3. 🛑 **The human ruling could never stick.** `eventFingerprint` was
+   `lid|date|act`, so next Thursday's Music Bingo is a *different id*, and a
+   different id lands `pending` again. Somebody would be re-approving Music
+   Bingo **every week for as long as the bar runs it.**
+
+**The decision: a weekly rule is a first-class row, and the deals side already
+proved the shape.** A happy hour on this board *is* a weekly recurring rule —
+`days + window`. Events invented a one-off-only model and walked straight into
+the wall the deals half solved months ago. So:
+
+| field | meaning |
+|---|---|
+| `recurs` | `NULL` = a one-off on `date`; `'weekly'` = every week on `date`'s weekday |
+| `date` | the **first occurrence**. It carries the weekday; there is no separate `weekday` column to disagree with it |
+| `until` | the last day the rule is **trusted**. Never open-ended |
+
+- **`eventFingerprint` keys a weekly row on `weekly-<weekday>`, not on `date`.**
+  One id for the life of the show, so one human ruling, and a re-read *refreshes*
+  the row (pushing `date` and `until` forward) instead of minting a new one.
+- **Expansion happens in the Worker, in `expandRecurring()`, not in the browser.**
+  Deliberate: the page already renders a dated row, so a standing show needed
+  **no `web/` change at all** — and a `web/` change is what costs a
+  detached-worktree rebuild to restamp `sw.js`. Each occurrence gets a per-date
+  `id` plus `rule_id`, so nothing downstream sees two rows sharing a key.
+- **`until` defaults to `date + 35 days`** when the reader does not set one.
+  Longer than the fortnightly re-read cadence, short enough that **two missed
+  reads retire a show that quietly ended**. A stale standing claim is worse than
+  a blank — the same rule as "blank means unknown, never zero", pointed at time.
+
+The reader's prompt now asks for a rule when the venue states one ("Thursdays
+7-9pm") and a date when it prints one ("September 11: Joe Miralles"). The
+grounding gate validates `recurs` and carries it through.
+
+🔑 **The tell was already in the evidence.** Music Bingo's quote is
+`"Thursdays 7pm-9pm"` — **no date in it**. The model *derived* 9/10 and 9/17
+from a rule. A dated row whose own quote contains no date is, by construction, a
+derived date, and that is exactly what a recurrence rule looks like from the
+outside. The grounding gate could learn to detect this rather than trust the
+model to declare it — **not built, worth building.**
+
+### 15.3 Still open
+
+- **The fan-out to West Chester + Phoenixville launched before the recurrence
+  prompt landed**, so its rows come back as dated one-offs. They are still
+  grounded and still correct as one-offs; a targeted second pass with `--force`
+  over just the venues showing a repeated act converts them, rather than paying
+  to re-read a whole town.
+- **Wayne's four Flip and Baileys rows are still dated one-offs on the board.**
+  Correct for 14 days, wrong in shape. A `--force` re-read of that one venue
+  (~$0.53) is the honest fix; hand-editing an approved row is not.
+- **Nothing schedules this reader yet.** The cadence the `until` window is sized
+  against — a fortnight — is a decision, not a cron entry that exists.
+- **The four moat fields are still mostly blank** — start time is arriving, set
+  length / cover / kitchen-open almost never. 🛑 Blank means unknown, never zero.
+
+### 15.4 🚨 The events lane put one bar's whole night on another bar's card
+
+Paul asked for "the correct name and a picture" on the 118 North card. There was
+no 118 North card. What he was looking at was **The Blue Elephant's licence
+wearing 118 North's entire identity.**
+
+| lid | licence | door | actually |
+|---|---|---|---|
+| **105248** | `110 NORTH WAYNE LLC` | 110 N Wayne Ave | **The Blue Elephant Wayne** |
+| **66143** | `JDM WAYNE INC` | 118 N Wayne Ave | **118 North** |
+
+Two different buildings, eight house numbers apart. Lid **105248** was shipping:
+its licensee's name ("110 North Wayne"), **118 North's website**, **118 North's
+happy hour** (from a hand-read of `118northwayne.com`), and — as of this session
+— **15 approved event rows read off 118 North's calendar.** All retracted.
+
+**The mechanism, and it is the NIGHT4 defect wearing new clothes.** A hand-read
+attached `118northwayne.com/menus#happyhour` to lid 105248 because the licensee
+name *"110 North Wayne"* looks like a street-address version of *"118 North"*.
+Nothing ever checked that guess against the **door number in the licence**, which
+disagreed the whole time. NIGHT4 wrote the rule after Serum/Slow Hand — *"when a
+join has a strong fallback key, ask what checks the primary path"* — and
+`quote_names_another_door()` guards the **roundup** joiner. **The hand-read path
+has no such guard.** Same bug, second door.
+
+> 🔑 **The general rule, sharper: a licence is a DOOR, not a name.** Every join
+> onto `lid` is a claim about a street address. When a name and an address
+> disagree, the address is the licence and the name is a guess.
+
+**And the events lane multiplies it.** A wrong happy hour is one wrong card. A
+wrong *venue join* now also drags a calendar, so one bad join publishes fifteen
+false claims about a restaurant that has no band — and each one had been through
+a human approval that could not see the join underneath it. 🛑 **Approving a row
+is not approving the venue it is filed under.** The queue shows the act, the
+date and the lid; it does not show whether that lid is the right building.
+
+**Fixed the NIGHT4 way — refuse, do not re-route.** 118 North's page, hand-read,
+and events read were *removed* from 105248 rather than moved to 66143 on my own
+authority. 66143 then earned its own identity through the normal mechanism:
+Places resolved `JDM WAYNE INC → 118 North` at 118 N Wayne Ave, the site merge
+gave it `118northwayne.com`, `build_venue_base.py` now names it **118 North**,
+and 105248 correctly reads **The Blue Elephant Wayne**. Its happy hour and its
+events are being re-read under the right lid.
+
+**Still open here:** the hand-read path needs the door check
+`quote_names_another_door()` already gives the roundup path — until it has one,
+this is one hand-read away from happening again. And nothing in the review queue
+shows the reviewer *which building* a row belongs to; the queue should print the
+venue name and address next to the act.
+
+### 15.5 The fan-out, and what three towns say about the shape of the data
+
+| | Wayne | West Chester | Phoenixville |
+|---|---|---|---|
+| venues read | 14 | 48 | 40 |
+| that publish a calendar | 4 | 14 | 11 |
+| cost | $7.47 | $30.88 | $25.83 |
+| per venue | $0.53 | $0.64 | $0.65 |
+
+**~3 in 10 publish, and it is stable across three towns.** Budget a town at
+`venues × $0.65`, not $0.53 — Wayne was the cheap one.
+
+🔑 **The finding that reorders the roadmap: most of a bar's calendar is a
+STANDING WEEKLY GRID, not a list of gigs.** Saloon 151 publishes eight weekly
+shows; Kildare's seven. Of 105 grounded rows across the three towns, **38 are
+weekly rules and 67 one-offs — and before collapsing, those 38 rules occupied
+76 duplicate rows.** 118 North, an actual music room booking named touring acts
+on named dates, is the **exception**, and it was the town we designed from.
+
+**So recurrence was not a nicety, it was the majority case.** Saloon 151 went
+from 17 rows to 8 — and those 8 are exactly the grid the bar prints.
+
+### 15.6 🔑 Re-grounding beats re-reading: the transcript is already paid for
+
+The fan-out launched minutes before the recurrence prompt landed, so 129 rows
+came back as dated one-offs. Re-reading two towns to fix that is **$56**.
+Instead `--reground` re-runs the grounding gate over the transcripts already on
+file: **$0**, and it cannot invent anything, because `ground()` still checks
+every quote against the transcript character for character.
+
+> **The general rule:** when a gate changes, re-derive from the evidence before
+> re-buying it. The expensive half of an agent read is the reading; the
+> transcript is the asset, and it does not expire when our rules improve.
+
+**Two signals decide a weekly rule** (`ingest/recurrence.py`, both tested):
+
+1. **The quote states a rule and prints no date** — "Thursdays 7pm-9pm",
+   "every friday". Both halves are required: "Sat Sep 05 ... Doors 7:00 PM"
+   names a day *and* a date, and the date wins.
+2. **The model expanded the same act onto the same weekday twice, and no quote
+   in the group carries a date.** 🛑 **Signal 1 alone under-detects badly** — it
+   caught **1 of Saloon 151's 8** standing shows, because a model `quote` is a
+   narrow slice ("Quizzo Starts at 7pm") while the "Mondays:" heading that makes
+   it a rule sits one line above, *outside the quote*. But a 14-day window holds
+   each weekday twice, so the model's own duplication **is** the evidence of the
+   rule it read. Signal 2 took Saloon 151 from 1 to 8 and Kildare's to 7.
+
+### 15.7 🛑 Two concurrent reads silently lose each other's work
+
+`read_events_venue.py` holds `_lock` around `save(READS, reads)` — but that lock
+is **per process**. Two runs at once each hold a whole-file copy in memory and
+each writes it back, so the last one to finish erases the other's venues. It
+happened twice this session: the 118 North read was wiped by the fan-out mid-run,
+and a venue I had deliberately deleted was **resurrected** from the fan-out's
+stale copy. The rows survived only because they had already been `--post`ed.
+
+**Nothing is fixed here yet.** Until it is: **do not run two readers at once**,
+and after any concurrent run, re-check the file rather than trusting it. The
+same shape is in `fetch_og_images.py` (`data/venue_photos.json`) and in every
+other whole-file `load`/`save` pair in `ingest/`.
+
+### 15.8 🛑 The queue shows the act. It does not show the building.
+
+A reviewer approving 15 rows saw acts and dates and lids — never a venue name or
+a street address — so the wrong-venue join in §15.4 was invisible at exactly the
+moment a person was asked to rule on it. **`GET /admin/events` should join the
+venue's name and address onto every row.** Not built.

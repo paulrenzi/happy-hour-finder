@@ -28,6 +28,10 @@ const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 const CLOCK_RE = /^([01]\d|2[0-4]):[0-5]\d$/;
 const KINDS = new Set(["live_music", "trivia", "dj", "comedy", "other"]);
 const HORIZON_DAYS = 14;
+/* How long a weekly rule is believed without being re-read. Longer than the
+   fortnightly re-read cadence, short enough that two missed reads retire a show
+   that has quietly ended -- a stale standing claim is worse than a blank. */
+const RECUR_TRUST_DAYS = 35;
 const MAX_EVENTS_PER_POST = 60;
 const MAX_SUBSCRIBES_PER_DAY = 5;
 
@@ -61,6 +65,18 @@ function tokenMatches(given, expected) {
 function localToday(offsetDays = 0) {
   const d = new Date(Date.now() + offsetDays * 86400000);
   return d.toLocaleDateString("en-CA", { timeZone: "America/New_York" }); // YYYY-MM-DD
+}
+
+/* Pure YYYY-MM-DD arithmetic, done in UTC so no timezone can shift a day.
+   These never touch the clock -- the caller supplies "today". */
+function dayNum(iso) {
+  return Math.floor(Date.UTC(+iso.slice(0, 4), +iso.slice(5, 7) - 1, +iso.slice(8, 10)) / 86400000);
+}
+export function addDays(iso, n) {
+  return new Date((dayNum(iso) + n) * 86400000).toISOString().slice(0, 10);
+}
+export function weekdayOf(iso) {
+  return ((dayNum(iso) + 4) % 7 + 7) % 7; // 1970-01-01 was a Thursday
 }
 
 /* ---- events: validation shared by every writer ------------------------ */
@@ -99,6 +115,16 @@ export function eventFrom(raw, { lid, zone_id, source_kind, status }) {
   else kitchen = kitchen === true || kitchen === 1 || kitchen === "1" || kitchen === "yes" ? 1 : 0;
   const sourceUrl = raw.source_url ? String(raw.source_url).slice(0, 500) : null;
   const quote = raw.quote ? String(raw.quote).slice(0, 500) : null;
+  // A standing weekly show ("Music Bingo, Thursdays 7-9") is ONE row, not one
+  // row per Thursday. `date` is its first occurrence and carries the weekday;
+  // `until` is the last day the rule is trusted. Expanded in liveEvents().
+  let recurs = raw.recurs == null || raw.recurs === "" ? null : String(raw.recurs).trim();
+  if (recurs !== null && recurs !== "weekly") return { error: "recurs must be 'weekly'" };
+  let until = raw.until == null || raw.until === "" ? null : String(raw.until).trim();
+  if (until !== null && !DATE_RE.test(until)) return { error: "until must be YYYY-MM-DD" };
+  if (recurs && until && until < date) return { error: "until is before the first date" };
+  if (!recurs) until = null;
+  else if (!until) until = addDays(date, RECUR_TRUST_DAYS);
   return {
     row: {
       lid: String(lid),
@@ -114,16 +140,24 @@ export function eventFrom(raw, { lid, zone_id, source_kind, status }) {
       source_kind,
       source_url: sourceUrl,
       quote,
+      recurs,
+      until,
       status,
     },
   };
 }
 
 /* Two rows describe the same thing when venue, date and act match. The act is
-   compared loosely so "Rhythm & Blondes" and "rhythm and blondes" collide. */
+   compared loosely so "Rhythm & Blondes" and "rhythm and blondes" collide.
+
+   🛑 A WEEKLY ROW IS KEYED ON ITS WEEKDAY, NOT ITS DATE. Keying a standing show
+   on `date` mints a fresh id -- and therefore a fresh `pending` -- every single
+   week, so the human ruling could never stick and someone would be re-approving
+   Music Bingo forever. The weekday is the thing the venue actually published. */
 export function eventFingerprint(row) {
   const act = String(row.act || "").toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, " ").trim();
-  return `${row.lid}|${row.date}|${act}`;
+  const when = row.recurs === "weekly" ? `weekly-${weekdayOf(row.date)}` : row.date;
+  return `${row.lid}|${when}|${act}`;
 }
 
 async function insertEvents(env, rows) {
@@ -138,21 +172,54 @@ async function insertEvents(env, rows) {
   const stmts = rows.map((r, i) =>
     env.DB.prepare(
       `INSERT INTO events (id, lid, zone_id, date, start, end, set_minutes, act, kind,
-                           cover_usd, kitchen_open, source_kind, source_url, quote, status, created_at)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                           cover_usd, kitchen_open, source_kind, source_url, quote,
+                           recurs, until, status, created_at)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
        ON CONFLICT(id) DO UPDATE SET
-         start = excluded.start, end = excluded.end, set_minutes = excluded.set_minutes,
+         date = excluded.date, start = excluded.start, end = excluded.end,
+         set_minutes = excluded.set_minutes,
          cover_usd = excluded.cover_usd, kitchen_open = excluded.kitchen_open,
          source_url = excluded.source_url, quote = excluded.quote,
+         -- a re-read is what pushes a standing show's trust window forward
+         recurs = excluded.recurs, until = excluded.until,
          -- a row a person already ruled on keeps that ruling
          status = CASE WHEN events.status = 'pending' THEN excluded.status ELSE events.status END`
     ).bind(
       ids[i], r.lid, r.zone_id, r.date, r.start, r.end, r.set_minutes, r.act, r.kind,
-      r.cover_usd, r.kitchen_open, r.source_kind, r.source_url, r.quote, r.status, now
+      r.cover_usd, r.kitchen_open, r.source_kind, r.source_url, r.quote,
+      r.recurs, r.until, r.status, now
     )
   );
   if (stmts.length) await env.DB.batch(stmts);
   return ids;
+}
+
+/* One stored weekly rule becomes one dated row per occurrence in the window.
+
+   The expansion happens HERE and not in the browser on purpose: the page already
+   knows how to render a dated row, so a standing show needs no `web/` change at
+   all -- and a `web/` change is the thing that costs a detached-worktree rebuild
+   to restamp `sw.js`. Occurrences carry a per-date `id` so nothing downstream
+   sees two rows sharing a key, and `recurs` rides along so the card can say
+   "every Thursday" rather than pretending it is a one-off. Pure: tested. */
+export function expandRecurring(rows, from, to) {
+  const out = [];
+  for (const r of rows) {
+    if (r.recurs !== "weekly") {
+      out.push(r);
+      continue;
+    }
+    // Start at the first occurrence on or after `from`, stepping whole weeks
+    // from the stored first date so the weekday can never drift.
+    const first = dayNum(r.date) >= dayNum(from)
+      ? r.date
+      : addDays(r.date, Math.ceil((dayNum(from) - dayNum(r.date)) / 7) * 7);
+    const last = r.until && r.until < to ? r.until : to;
+    for (let d = first; d <= last; d = addDays(d, 7)) {
+      out.push({ ...r, date: d, id: `${r.id}-${d}`, rule_id: r.id });
+    }
+  }
+  return out;
 }
 
 /* ---- GET /live/events.json -------------------------------------------- */
@@ -164,19 +231,24 @@ export async function liveEvents(env, url, headers) {
   const q = zone
     ? env.DB.prepare(
         `SELECT id, lid, zone_id, date, start, end, set_minutes, act, kind, cover_usd,
-                kitchen_open, source_kind, source_url
-           FROM events WHERE status = 'approved' AND date BETWEEN ? AND ? AND zone_id = ?
-           ORDER BY date, start`
-      ).bind(from, to, zone)
+                kitchen_open, source_kind, source_url, recurs, until
+           FROM events WHERE status = 'approved' AND zone_id = ?
+             AND (recurs IS NULL AND date BETWEEN ? AND ?
+                  OR recurs = 'weekly' AND date <= ? AND until >= ?)`
+      ).bind(zone, from, to, to, from)
     : env.DB.prepare(
         `SELECT id, lid, zone_id, date, start, end, set_minutes, act, kind, cover_usd,
-                kitchen_open, source_kind, source_url
-           FROM events WHERE status = 'approved' AND date BETWEEN ? AND ?
-           ORDER BY date, start`
-      ).bind(from, to);
+                kitchen_open, source_kind, source_url, recurs, until
+           FROM events WHERE status = 'approved'
+             AND (recurs IS NULL AND date BETWEEN ? AND ?
+                  OR recurs = 'weekly' AND date <= ? AND until >= ?)`
+      ).bind(from, to, to, from);
   const { results } = await q.all();
   const byLid = {};
-  for (const r of results) (byLid[r.lid] ||= []).push(r);
+  for (const r of expandRecurring(results, from, to)) (byLid[r.lid] ||= []).push(r);
+  for (const rows of Object.values(byLid)) {
+    rows.sort((a, b) => a.date.localeCompare(b.date) || String(a.start).localeCompare(String(b.start)));
+  }
   return json(
     { generated_at: nowIso(), today: from, horizon_days: HORIZON_DAYS, venues: byLid },
     200,

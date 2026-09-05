@@ -40,6 +40,8 @@ import urllib.request
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
+from recurrence import collapse_weekly, infers_weekly  # noqa: E402
+
 BASE = os.path.join(REPO, "data", "venue_base.json")
 SITES = os.path.join(REPO, "data", "venue_sites.json")
 BUNDLES = os.path.join(REPO, "web", "data")
@@ -50,6 +52,9 @@ MAX_TURNS = int(os.environ.get("HHF_MAX_TURNS", "14"))
 HORIZON = 14
 KINDS = {"live_music", "trivia", "dj", "comedy", "other"}
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+# The only words that license a cover of ZERO. Anything else and the price is
+# unknown, which is NULL -- see FREE_RE's use in ground().
+FREE_RE = re.compile(r"\b(free|no cover|without cover|\$0(?:\.00)?)\b", re.I)
 CLOCK_RE = re.compile(r"^([01]\d|2[0-4]):[0-5]\d$")
 
 PROMPT = """You are reading one bar's EVENTS for a listings site that publishes only
@@ -73,9 +78,7 @@ Do this:
    locations' calendars for this one.
 
 You are a reader, not an author. Every act, date, time and price must be
-printed by the venue in what you read. A standing line like "live acoustic
-music every Friday and Saturday 7-10pm" counts: expand it into one event per
-date inside the window, each quoting that line. If a start time is not
+printed by the venue in what you read. If a start time is not
 printed, leave start null. If no cover is printed, leave cover_usd null --
 do NOT write 0 unless "no cover" or "free" is printed. kitchen_open is 1 only
 if the venue says food is served during the event, 0 only if it says the
@@ -84,6 +87,14 @@ kitchen closes, else null.
 Transcribe the events section into `transcript` verbatim. Each event's `quote`
 is the exact substring of the transcript it came from; it is checked
 character-for-character and the event is dropped if it is not there.
+
+A STANDING WEEKLY SHOW IS ONE EVENT, NOT ONE PER WEEK. When the venue states
+a rule rather than a date -- "Music Bingo, Thursdays 7-9pm", "live acoustic
+every Friday" -- set "recurs": "weekly" and give "date" as the FIRST date in
+the window that falls on that weekday. Do not emit a second row for the same
+show a week later. When the venue prints an actual date ("September 11: Joe
+Miralles"), leave "recurs" null. If it prints a date AND says it repeats, the
+printed date wins and recurs is "weekly".
 
 Times are 24-hour "HH:MM". Dates are "YYYY-MM-DD".
 
@@ -105,6 +116,7 @@ Reply with ONE JSON object and nothing else. No prose, no code fence.
       "end": "HH:MM" or null,
       "cover_usd": number or null,
       "kitchen_open": 1 | 0 | null,
+      "recurs": "weekly" or null,
       "quote": "exact substring of transcript"
     }}
   ]
@@ -157,17 +169,28 @@ def ground(read, today, until):
             why = "bad clock"
         elif ev.get("cover_usd") not in (None, "") and not isinstance(ev.get("cover_usd"), (int, float)):
             why = "cover not a number"
+        elif ev.get("recurs") not in (None, "", "weekly"):
+            why = f"recurs {ev.get('recurs')!r}"
         if why:
             dropped.append(f"{act or '?'} {date}: {why}")
             continue
+        # 🛑 A cover of ZERO is a CLAIM, and it needs the venue's own words.
+        # 118 North's "Happy Hour / Doors 4:00 PM" rows came back cover_usd 0
+        # on three shows whose quotes say nothing at all about price -- the
+        # model read "happy hour" as "free". Blank means unknown, never zero.
+        cover = ev.get("cover_usd") if ev.get("cover_usd") != "" else None
+        if cover == 0 and not FREE_RE.search(ev.get("quote") or ""):
+            dropped.append(f"{act} {date}: cover 0 with no 'free' in the quote -> unknown")
+            cover = None
         kept.append({
             "date": date, "act": act[:120], "kind": ev["kind"],
             "start": ev.get("start") or None, "end": ev.get("end") or None,
-            "cover_usd": ev.get("cover_usd") if ev.get("cover_usd") != "" else None,
+            "cover_usd": cover,
             "kitchen_open": ev.get("kitchen_open") if ev.get("kitchen_open") in (0, 1) else None,
+            "recurs": "weekly" if ev.get("recurs") == "weekly" else None,
             "quote": (ev.get("quote") or "")[:500],
         })
-    return kept, dropped
+    return collapse_weekly(kept), dropped
 
 
 class TurnsExhausted(RuntimeError):
@@ -291,6 +314,28 @@ def population(args):
     return out
 
 
+def post_row(lid, venue, rec, ev):
+    """The wire shape the Worker's /admin/events expects, for one kept event.
+
+    One function so a fresh read and a re-post from file cannot drift: the
+    posting half used to live inline in the read loop, which meant rows already
+    grounded on file had NO path to the queue at all.
+    """
+    return {**ev, "lid": lid, "zone_id": venue.get("zone_id"),
+            "source_kind": "image" if rec.get("kind") == "image" else "page",
+            "source_url": rec.get("source_url", "")}
+
+
+def rows_on_file(reads, venues):
+    """Every grounded row already in `data/events_reads.json` for `venues`."""
+    out = []
+    for lid, venue in venues:
+        rec = reads.get(lid) or {}
+        for ev in rec.get("kept") or []:
+            out.append(post_row(lid, venue, rec, ev))
+    return out
+
+
 def post_rows(rows):
     """Send grounded rows to the Worker's review queue. Needs SUBMIT_API and
     ADMIN_TOKEN from this repo's .env (never another repo's)."""
@@ -307,7 +352,11 @@ def post_rows(rows):
     req = urllib.request.Request(
         api.rstrip("/") + "/admin/events", method="POST",
         data=json.dumps({"events": rows}).encode("utf-8"),
-        headers={"Content-Type": "application/json", "X-Admin-Token": tok})
+        headers={"Content-Type": "application/json", "X-Admin-Token": tok,
+                 # Cloudflare's edge 403s the default `Python-urllib/3.x` agent
+                 # before the Worker is ever reached -- the same request from
+                 # curl is a 200. Invisible until the day this lane first ran.
+                 "User-Agent": "happy-hour-finder/events-reader"})
     with urllib.request.urlopen(req, timeout=60) as r:
         return json.loads(r.read().decode("utf-8"))
 
@@ -324,6 +373,11 @@ def main():
     ap.add_argument("--rejects", action="store_true")
     ap.add_argument("--post", action="store_true",
                     help="POST grounded rows to the Worker review queue (status pending)")
+    ap.add_argument("--post-only", action="store_true",
+                    help="post what is already in data/events_reads.json; read nothing, spend nothing")
+    ap.add_argument("--reground", action="store_true",
+                    help="re-run the grounding gate over the transcripts already on file "
+                         "(picks up new rules, e.g. recurrence); reads nothing, spends nothing")
     args = ap.parse_args()
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     if os.environ.get("ANTHROPIC_API_KEY"):
@@ -333,6 +387,41 @@ def main():
     today = datetime.date.today().isoformat()
     until = (datetime.date.today() + datetime.timedelta(days=HORIZON)).isoformat()
     reads = load(READS)
+    if args.reground:
+        # The transcript is the evidence and it is already paid for. When a gate
+        # changes -- recurrence, the zero-cover rule -- re-deriving beats
+        # re-reading a town at $0.53 a venue, and it cannot invent anything the
+        # venue did not print, because `ground()` still checks every quote.
+        changed = 0
+        for lid, _ in population(args):
+            rec = reads.get(lid)
+            if not rec or "error" in rec or not rec.get("found"):
+                continue
+            kept, dropped = ground(rec, today, until)
+            was = json.dumps(rec.get("kept"), sort_keys=True)
+            if json.dumps(kept, sort_keys=True) == was:
+                continue
+            changed += 1
+            print(f"{lid} {len(rec.get('kept') or [])} -> {len(kept)} row(s)")
+            for ev in kept if args.show else []:
+                tag = "weekly " if ev.get("recurs") == "weekly" else "       "
+                print(f"      {tag}{ev['date']} {ev['start'] or '--:--'}  {ev['act'][:52]}")
+            rec["kept"], rec["dropped"] = kept, dropped
+        save(READS, reads)
+        print(f"\n{changed} venue(s) re-grounded, $0 spent -> {READS}")
+        return 0
+    if args.post_only:
+        rows = rows_on_file(reads, population(args))
+        print(f"{len(rows)} grounded row(s) on file for this population.")
+        for ev in rows if args.show else []:
+            print(f"      {ev['lid']} {ev['date']} {ev['start'] or '--:--'}  {ev['act']}")
+        if not rows:
+            return 0
+        out = post_rows(rows)
+        print(f"posted: {out.get('inserted')} pending, {len(out.get('errors') or [])} refused.")
+        for e in (out.get("errors") or [])[:20]:
+            print(f"  x {e}")
+        return 0
     # A calendar rots in a week; an events read older than that is re-read.
     stale = (datetime.date.today() - datetime.timedelta(days=6)).isoformat()
     todo = [(lid, v) for lid, v in population(args)
@@ -363,9 +452,7 @@ def main():
             if rec["found"]:
                 print(f"      {rec['source_url'][:110]}")
             for ev in kept:
-                to_post.append({**ev, "lid": lid, "zone_id": venue.get("zone_id"),
-                                "source_kind": "image" if rec["kind"] == "image" else "page",
-                                "source_url": rec.get("source_url", "")})
+                to_post.append(post_row(lid, venue, rec, ev))
                 if args.show:
                     when = ev["start"] or "--:--"
                     cov = "" if ev["cover_usd"] is None else f"  ${ev['cover_usd']:g}"

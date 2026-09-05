@@ -122,6 +122,9 @@ CREATE TABLE IF NOT EXISTS events (
   source_kind   TEXT NOT NULL,
   source_url    TEXT,
   quote         TEXT,                 -- the exact words the row was read from
+  recurs        TEXT,                 -- NULL = a one-off on `date`; 'weekly' = every
+                                      -- week on `date`'s weekday, expanded at read time
+  until         TEXT,                 -- YYYY-MM-DD, last day a recurring rule is trusted
   status        TEXT NOT NULL DEFAULT 'pending',
   created_at    TEXT NOT NULL,
   reviewed_at   TEXT,

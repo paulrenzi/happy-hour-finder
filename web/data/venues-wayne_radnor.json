@@ -4,20 +4,6 @@
  "built_at": "2026-09-05",
  "venues": [
   {
-   "lid": "115189",
-   "name": "30 Main",
-   "address": "660 Lancaster Ave, Berwyn PA 19312",
-   "zone_id": "wayne_radnor",
-   "license_type": "Restaurant (Liquor)",
-   "id": "115189",
-   "plcb_name": "30 MAIN",
-   "website": "https://www.30main.net",
-   "lat": 40.0474559,
-   "lng": -75.4421053,
-   "geo_precision": "place",
-   "deals": []
-  },
-  {
    "lid": "113002",
    "name": "333 Belrose",
    "address": "333 Belrose Ln, Radnor PA 19087",
@@ -25,9 +11,9 @@
    "license_type": "Restaurant (Liquor)",
    "id": "113002",
    "plcb_name": "333 BELROSE, LLC",
-   "website": "https://333belrose.com",
-   "lat": 40.0457542,
-   "lng": -75.3617741,
+   "website": "http://333belrose.com/",
+   "lat": 40.045775299999995,
+   "lng": -75.3618049,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: 333 Belrose / Google",
@@ -43,9 +29,9 @@
    "license_type": "Restaurant (Liquor)",
    "id": "118364",
    "plcb_name": "ALESSANDRO'S RESTAURANT",
-   "website": "https://alessandroswoodfired.com/",
-   "lat": 40.0453783,
-   "lng": -75.3875344,
+   "website": "http://www.alessandroswoodfired.com/",
+   "lat": 40.0454244,
+   "lng": -75.3875027,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Alessandro's Wood Fired Italian & Bar / Google",
@@ -54,34 +40,16 @@
    "deals": []
   },
   {
-   "lid": "70835",
-   "name": "Autograph Brasserie",
-   "address": "503 W Lancaster Ave Suite 700, Wayne PA 19087",
-   "zone_id": "wayne_radnor",
-   "license_type": "Restaurant (Liquor)",
-   "id": "70835",
-   "plcb_name": "MSG WAYNE LLC",
-   "website": "https://www.autographbrasserie.com/",
-   "lat": 40.0452678,
-   "lng": -75.4019404,
-   "geo_precision": "place",
-   "photo": {
-    "attribution": "Photo: Autograph Brasserie / Google",
-    "file": "img/venues/70835.jpg"
-   },
-   "deals": []
-  },
-  {
    "lid": "60153",
-   "name": "Baxter's American Grill",
+   "name": "Baxter's American Grille",
    "address": "14 Paoli Shopping Center, Paoli PA 19301",
    "zone_id": "wayne_radnor",
    "license_type": "Restaurant (Liquor)",
    "id": "60153",
    "plcb_name": "BAXTERS",
-   "website": "https://www.baxtersinpaoli.com",
-   "lat": 40.0409626,
-   "lng": -75.4793799,
+   "website": "http://baxtersamericangrille.com/",
+   "lat": 40.04097590000001,
+   "lng": -75.47928209999999,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Baxter's American Grille / Google",
@@ -97,9 +65,9 @@
    "license_type": "Restaurant (Liquor)",
    "id": "130987",
    "plcb_name": "BERWYN TAVERN",
-   "website": "https://www.berwyntavern.net/",
-   "lat": 40.0481158,
-   "lng": -75.4410142,
+   "website": "https://berwyntavern.com/",
+   "lat": 40.04812450000001,
+   "lng": -75.44099039999999,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Berwyn Tavern / Google",
@@ -108,49 +76,17 @@
    "deals": []
   },
   {
-   "lid": "64901",
-   "name": "Bkbc",
-   "address": "324 W Swedesford Rd, Berwyn PA 19312",
-   "zone_id": "wayne_radnor",
-   "license_type": "Brewery",
-   "id": "64901",
-   "plcb_name": "BKBC INC",
-   "deals": []
-  },
-  {
-   "lid": "96781",
-   "name": "Bodega by la Cabra Brewing",
-   "address": "810 Glenbrook Ave, Bryn Mawr PA 19010",
-   "zone_id": "wayne_radnor",
-   "license_type": "Brewery Storage",
-   "id": "96781",
-   "plcb_name": "BODEGA BY LA CABRA BREWING",
-   "deals": []
-  },
-  {
-   "lid": "43548",
-   "name": "Bt & T",
-   "address": "108 N Wayne Ave, Wayne PA 19087",
-   "zone_id": "wayne_radnor",
-   "license_type": "Restaurant (Liquor)",
-   "id": "43548",
-   "plcb_name": "BT & T COMPANY",
-   "website": "http://www.christophersaneighborhoodplace.com/",
-   "photo": {
-    "attribution": "Photo: Christopher's a Neighborhood Place / Google",
-    "file": "img/venues/43548.jpg"
-   },
-   "deals": []
-  },
-  {
    "lid": "129136",
-   "name": "Burtons Grill and Bar",
+   "name": "Burtons Grill & Bar",
    "address": "312-316 W Lancaster Ave, Wayne PA 19087",
    "zone_id": "wayne_radnor",
    "license_type": "Restaurant (Liquor)",
    "id": "129136",
    "plcb_name": "BURTONS GRILL AND BAR",
    "website": "https://burtonsgrill.com/locations/pa/wayne/",
+   "lat": 40.0437832,
+   "lng": -75.394649,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Burtons Grill & Bar / Google",
     "file": "img/venues/129136.jpg"
@@ -159,15 +95,15 @@
   },
   {
    "lid": "102604",
-   "name": "Campus Corner Pizza",
+   "name": "Campus Corner",
    "address": "829 Lancaster Ave, Villanova PA 19087",
    "zone_id": "wayne_radnor",
    "license_type": "Restaurant (Liquor)",
    "id": "102604",
    "plcb_name": "JOHNS CAMPUS CORNER INC",
-   "website": "http://campuscornerpizza.com/",
-   "lat": 40.0359213,
-   "lng": -75.3476952,
+   "website": "https://www.campuscornerpizza.com/",
+   "lat": 40.0359458,
+   "lng": -75.3476721,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Campus Corner / Google",
@@ -184,8 +120,8 @@
    "id": "130234",
    "plcb_name": "BIRDIE 543 INC",
    "website": "http://www.caseyspourhouse.com/",
-   "lat": 40.0480633,
-   "lng": -75.4372366,
+   "lat": 40.0481002,
+   "lng": -75.43724069999999,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Casey's Pour House / Google",
@@ -195,15 +131,15 @@
   },
   {
    "lid": "43278",
-   "name": "Cedar Hollow Inn",
+   "name": "Cedar Hollow Inn Restaurant & Bar",
    "address": "2455 Yellow Springs Rd, Malvern PA 19355",
    "zone_id": "wayne_radnor",
    "license_type": "Restaurant (Liquor)",
    "id": "43278",
    "plcb_name": "CEDAR HOLLOW INN RESTAURANT & BAR, INC.",
-   "website": "https://cedarhollowinn.com/home.html",
-   "lat": 40.073002,
-   "lng": -75.5238098,
+   "website": "https://www.cedarhollowinn.com/",
+   "lat": 40.072984999999996,
+   "lng": -75.523844,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: J Irby / Google",
@@ -212,16 +148,34 @@
    "deals": []
   },
   {
+   "lid": "43548",
+   "name": "Christopher's a Neighborhood Place",
+   "address": "108 N Wayne Ave, Wayne PA 19087",
+   "zone_id": "wayne_radnor",
+   "license_type": "Restaurant (Liquor)",
+   "id": "43548",
+   "plcb_name": "BT & T COMPANY",
+   "website": "http://www.christophersaneighborhoodplace.com/",
+   "lat": 40.0445091,
+   "lng": -75.388103,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Christopher's a Neighborhood Place / Google",
+    "file": "img/venues/43548.jpg"
+   },
+   "deals": []
+  },
+  {
    "lid": "86742",
-   "name": "Cornerstone Bistro & Artisinal Market",
+   "name": "Cornerstone & The Wine Shop at Cornerstone",
    "address": "1 West Ave, Wayne PA 19087",
    "zone_id": "wayne_radnor",
    "license_type": "Restaurant (Liquor)",
    "id": "86742",
    "plcb_name": "CORNERSTONE CHEESE & CHARCUTERIE",
-   "website": "https://www.cornerstonewayne.com/",
-   "lat": 40.0453865,
-   "lng": -75.3886341,
+   "website": "http://www.cornerstonewayne.com/",
+   "lat": 40.0457047,
+   "lng": -75.3879754,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Cornerstone & The Wine Shop at Cornerstone / Google",
@@ -246,13 +200,49 @@
    "branch": "W Lancaster Ave"
   },
   {
+   "lid": "84839",
+   "name": "Devon Yard",
+   "address": "Lancaster Ave And Waterloo Blvd, Devon PA 19333",
+   "zone_id": "wayne_radnor",
+   "license_type": "Restaurant (Liquor)",
+   "id": "84839",
+   "plcb_name": "URBN DEVON YARD",
+   "website": "https://www.anthropologie.com/stores/devon",
+   "lat": 40.045625099999995,
+   "lng": -75.4222391,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Rafael Tremont / Google",
+    "file": "img/venues/84839.jpg"
+   },
+   "deals": []
+  },
+  {
    "lid": "61077",
-   "name": "Flemings Prime Steakhouse & Wine Bar",
+   "name": "Fleming\u2019s Prime Steakhouse & Wine Bar",
    "address": "Radnor Financial Center 555 E Lancaster Ave, Radnor PA 19087",
    "zone_id": "wayne_radnor",
    "license_type": "Restaurant (Liquor)",
    "id": "61077",
    "plcb_name": "FLEMINGS PRIME STEAKHOUSE & WINE BAR",
+   "website": "https://www.flemingssteakhouse.com/Locations/PA/Radnor?y_source=1_MTU1MDMxODItNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "lat": 40.041191,
+   "lng": -75.3676536,
+   "geo_precision": "place",
+   "deals": []
+  },
+  {
+   "lid": "99795",
+   "name": "Franks Pizza",
+   "address": "958 County Line Rd, Bryn Mawr PA 19010",
+   "zone_id": "wayne_radnor",
+   "license_type": "Restaurant (Liquor)",
+   "id": "99795",
+   "plcb_name": "PIZZARELLA GRILLE",
+   "website": "https://frankspizzabrynmawr.com/?utm_source=gbp",
+   "lat": 40.021319999999996,
+   "lng": -75.32527,
+   "geo_precision": "place",
    "deals": []
   },
   {
@@ -263,9 +253,9 @@
    "license_type": "Restaurant (Liquor)",
    "id": "47795",
    "plcb_name": "WAYNE TOWN USA, INC.",
-   "website": "https://thegreatamericanpub.com/wayne/",
-   "lat": 40.0453846,
-   "lng": -75.3880308,
+   "website": "http://www.thegreatamericanpub.com/",
+   "lat": 40.0454,
+   "lng": -75.38819459999999,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Great American Pub Wayne / Google",
@@ -274,28 +264,35 @@
    "deals": []
   },
   {
+   "lid": "72326",
+   "name": "Hibachi of Valley Forge",
+   "address": "240 W Swedesford Rd, Berwyn PA 19312",
+   "zone_id": "wayne_radnor",
+   "license_type": "Restaurant (Liquor)",
+   "id": "72326",
+   "plcb_name": "W&W (USA) LLC",
+   "website": "http://www.hibachiofvalleyforge.com/",
+   "lat": 40.070781,
+   "lng": -75.441661,
+   "geo_precision": "place",
+   "deals": []
+  },
+  {
    "lid": "122238",
-   "name": "Intown Golf Club Operations",
+   "name": "Intown Golf Club",
    "address": "201 King Of Prussia Rd Ste 250 & 255, Radnor PA 19087",
    "zone_id": "wayne_radnor",
    "license_type": "Restaurant (Liquor)",
    "id": "122238",
    "plcb_name": "INTOWN GOLF CLUB OPERATIONS LLC",
    "website": "https://www.intowngolfclub.com/",
+   "lat": 40.043881,
+   "lng": -75.3576032,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Intown Golf Club / Google",
     "file": "img/venues/122238.jpg"
    },
-   "deals": []
-  },
-  {
-   "lid": "66143",
-   "name": "Jdm Wayne",
-   "address": "118 N Wayne Ave, Wayne PA 19087",
-   "zone_id": "wayne_radnor",
-   "license_type": "Restaurant (Liquor)",
-   "id": "66143",
-   "plcb_name": "JDM WAYNE INC",
    "deals": []
   },
   {
@@ -307,6 +304,9 @@
    "id": "102098",
    "plcb_name": "JIN DING RESTAURANT INC",
    "website": "https://www.jindingbrynmawr.com/",
+   "lat": 40.0225958,
+   "lng": -75.3260452,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Jin Ding Restaurant / Google",
     "file": "img/venues/102098.jpg"
@@ -322,6 +322,9 @@
    "id": "72655",
    "plcb_name": "LA CABRA BREWING",
    "website": "https://www.lacabrabrewing.com/",
+   "lat": 40.0476378,
+   "lng": -75.4415149,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Angel Gibase / Google",
     "file": "img/venues/72655.jpg"
@@ -329,18 +332,49 @@
    "deals": []
   },
   {
+   "lid": "96781",
+   "name": "La Cabra Brewing Smokehouse",
+   "address": "810 Glenbrook Ave, Bryn Mawr PA 19010",
+   "zone_id": "wayne_radnor",
+   "license_type": "Brewery Storage",
+   "id": "96781",
+   "plcb_name": "BODEGA BY LA CABRA BREWING",
+   "website": "https://www.lacabrabrewing.com/smokehouse",
+   "lat": 40.0176121,
+   "lng": -75.3222095,
+   "geo_precision": "place",
+   "deals": []
+  },
+  {
    "lid": "129334",
-   "name": "Mama-San",
+   "name": "Mama San | \u30de\u30de\u3055\u3093",
    "address": "226 N Radnor Chester Rd, Radnor PA 19087",
    "zone_id": "wayne_radnor",
    "license_type": "Restaurant (Liquor)",
    "id": "129334",
    "plcb_name": "MAMA-SAN",
    "website": "https://www.mamasan-restaurant.com/",
+   "lat": 40.0414216,
+   "lng": -75.3637825,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: MAMA SAN | \u30de\u30de\u3055\u3093 / Google",
     "file": "img/venues/129334.jpg"
    },
+   "deals": []
+  },
+  {
+   "lid": "115189",
+   "name": "Midtown Social",
+   "address": "660 Lancaster Ave, Berwyn PA 19312",
+   "zone_id": "wayne_radnor",
+   "license_type": "Restaurant (Liquor)",
+   "id": "115189",
+   "plcb_name": "30 MAIN",
+   "website": "https://www.midtownsocialmainline.com/",
+   "lat": 40.047575099999996,
+   "lng": -75.442139,
+   "geo_precision": "place",
    "deals": []
   },
   {
@@ -351,24 +385,14 @@
    "license_type": "Restaurant (Liquor)",
    "id": "53895",
    "plcb_name": "LANCASTER DINER INC",
-   "website": "https://www.minellasdiner.com/",
-   "lat": 40.0439206,
-   "lng": -75.3952474,
+   "website": "http://www.minellasdiner.com/",
+   "lat": 40.0439335,
+   "lng": -75.39525929999999,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Minella's Diner / Google",
     "file": "img/venues/53895.jpg"
    },
-   "deals": []
-  },
-  {
-   "lid": "49534",
-   "name": "Mywei",
-   "address": "1091 Lancaster Ave, Berwyn PA 19312",
-   "zone_id": "wayne_radnor",
-   "license_type": "Restaurant (Liquor)",
-   "id": "49534",
-   "plcb_name": "MYWEI, INC.",
    "deals": []
   },
   {
@@ -379,11 +403,28 @@
    "license_type": "Restaurant (Liquor)",
    "id": "129007",
    "plcb_name": "NATURE'S VIN",
-   "website": "https://www.naturesvin.com/",
+   "website": "http://www.naturesvin.com/",
+   "lat": 40.0441145,
+   "lng": -75.3849754,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Tara Mitchell / Google",
     "file": "img/venues/129007.jpg"
    },
+   "deals": []
+  },
+  {
+   "lid": "49534",
+   "name": "NECTAR Restaurant & Lounge",
+   "address": "1091 Lancaster Ave, Berwyn PA 19312",
+   "zone_id": "wayne_radnor",
+   "license_type": "Restaurant (Liquor)",
+   "id": "49534",
+   "plcb_name": "MYWEI, INC.",
+   "website": "http://www.tastenectar.com/",
+   "lat": 40.0441694,
+   "lng": -75.45013229999999,
+   "geo_precision": "place",
    "deals": []
   },
   {
@@ -394,9 +435,9 @@
    "license_type": "Eating Place Retail Dispenser (Malt)",
    "id": "29908",
    "plcb_name": "NEOPOLITAN DELICATESSEN",
-   "website": "https://neodeli.com",
-   "lat": 40.0443148,
-   "lng": -75.4483891,
+   "website": "https://neodeli.com/",
+   "lat": 40.044298999999995,
+   "lng": -75.448382,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Wesley Martin / Google",
@@ -406,30 +447,20 @@
   },
   {
    "lid": "67895",
-   "name": "Pietro's Pizzeria",
+   "name": "Pietro's",
    "address": "236 N Radnor Chester Rd, Radnor PA 19085",
    "zone_id": "wayne_radnor",
    "license_type": "Restaurant (Liquor)",
    "id": "67895",
    "plcb_name": "PIETROS ITALIAN RESTAURANT INC",
-   "website": "https://pietrospizza.com/radnor.asp",
-   "lat": 40.041703,
-   "lng": -75.3636776,
+   "website": "http://www.pietrosradnor.com/",
+   "lat": 40.041632299999996,
+   "lng": -75.3635805,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Pietro's / Google",
     "file": "img/venues/67895.jpg"
    },
-   "deals": []
-  },
-  {
-   "lid": "99795",
-   "name": "Pizzarella Grille",
-   "address": "958 County Line Rd, Bryn Mawr PA 19010",
-   "zone_id": "wayne_radnor",
-   "license_type": "Restaurant (Liquor)",
-   "id": "99795",
-   "plcb_name": "PIZZARELLA GRILLE",
    "deals": []
   },
   {
@@ -441,6 +472,9 @@
    "id": "66832",
    "plcb_name": "POMME RADNOR LLC",
    "website": "http://www.pommeradnor.com/",
+   "lat": 40.0423342,
+   "lng": -75.3548162,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Pomme Radnor / Google",
     "file": "img/venues/66832.jpg"
@@ -449,13 +483,16 @@
   },
   {
    "lid": "87006",
-   "name": "Pour Richards Coffee",
+   "name": "Pour Richard's Coffee",
    "address": "36 Berkley Rd, Devon PA 19333",
    "zone_id": "wayne_radnor",
    "license_type": "Limited Distillery",
    "id": "87006",
    "plcb_name": "POUR RICHARDS COFFEE COMPANY",
    "website": "https://pourrichardscoffee.com/",
+   "lat": 40.0466027,
+   "lng": -75.41391879999999,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Pour Richard's Coffee Co. / Google",
     "file": "img/venues/87006.jpg"
@@ -463,24 +500,17 @@
    "deals": []
   },
   {
-   "lid": "70683",
-   "name": "Se&V",
-   "address": "720 Lancaster Ave, Berwyn PA 19312",
-   "zone_id": "wayne_radnor",
-   "license_type": "Restaurant (Liquor)",
-   "id": "70683",
-   "plcb_name": "SE&V LLC",
-   "deals": []
-  },
-  {
    "lid": "117616",
-   "name": "Takumi KOP",
+   "name": "Takumi Bistro & Bar",
    "address": "821 Lancaster Ave, Devon PA 19333",
    "zone_id": "wayne_radnor",
    "license_type": "Restaurant (Liquor)",
    "id": "117616",
    "plcb_name": "TAKUMI KOP",
    "website": "https://www.takumibistro.com/",
+   "lat": 40.048227399999995,
+   "lng": -75.4121205,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Food & Booze / Google",
     "file": "img/venues/117616.jpg"
@@ -495,14 +525,28 @@
    "license_type": "Restaurant (Liquor)",
    "id": "56549",
    "plcb_name": "ELLIS & ELLIS INC",
-   "website": "https://www.teresas-cafe.com/",
-   "lat": 40.0450827,
-   "lng": -75.3879904,
+   "website": "http://teresas-cafe.com/",
+   "lat": 40.045066,
+   "lng": -75.3881789,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Teresa's Cafe / Google",
     "file": "img/venues/56549.jpg"
    },
+   "deals": []
+  },
+  {
+   "lid": "105248",
+   "name": "The Blue Elephant Wayne",
+   "address": "110 N Wayne Ave, Wayne PA 19087",
+   "zone_id": "wayne_radnor",
+   "license_type": "Restaurant (Liquor)",
+   "id": "105248",
+   "plcb_name": "110 NORTH WAYNE LLC",
+   "website": "http://www.blueelephantwayne.com/",
+   "lat": 40.0445995,
+   "lng": -75.3880582,
+   "geo_precision": "place",
    "deals": []
   },
   {
@@ -514,6 +558,9 @@
    "id": "44553",
    "plcb_name": "THE INN AT VILLANOVA UNIVERSITY",
    "website": "https://theinnatvillanova.com/",
+   "lat": 40.050912,
+   "lng": -75.348939,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: The Inn at Villanova University / Google",
     "file": "img/venues/44553.jpg"
@@ -521,18 +568,35 @@
    "deals": []
   },
   {
-   "lid": "89755",
-   "name": "The Refectory",
-   "address": "800 Lancaster Ave, Villanova PA 19085",
+   "lid": "70835",
+   "name": "The Silverspoon",
+   "address": "503 W Lancaster Ave Suite 700, Wayne PA 19087",
    "zone_id": "wayne_radnor",
    "license_type": "Restaurant (Liquor)",
-   "id": "89755",
-   "plcb_name": "THE REFECTORY",
-   "website": "http://refectorynova.com/",
+   "id": "70835",
+   "plcb_name": "MSG WAYNE LLC",
+   "website": "http://www.silverspoonwayne.com/",
+   "lat": 40.0458893,
+   "lng": -75.4014696,
+   "geo_precision": "place",
    "photo": {
-    "attribution": "Photo: The Refectory / Google",
-    "file": "img/venues/89755.jpg"
+    "attribution": "Photo: Autograph Brasserie / Google",
+    "file": "img/venues/70835.jpg"
    },
+   "deals": []
+  },
+  {
+   "lid": "70683",
+   "name": "Tiramisu Cucina Romana",
+   "address": "720 Lancaster Ave, Berwyn PA 19312",
+   "zone_id": "wayne_radnor",
+   "license_type": "Restaurant (Liquor)",
+   "id": "70683",
+   "plcb_name": "SE&V LLC",
+   "website": "http://www.tiramisuberwyn.com/",
+   "lat": 40.046955499999996,
+   "lng": -75.4438648,
+   "geo_precision": "place",
    "deals": []
   },
   {
@@ -543,9 +607,9 @@
    "license_type": "Restaurant (Liquor)",
    "id": "97945",
    "plcb_name": "TJ'S RESTAURANT AND DRINKERY",
-   "website": "https://tjsbeer.com",
-   "lat": 40.0426984,
-   "lng": -75.485639,
+   "website": "http://www.tjsbeer.com/",
+   "lat": 40.042755899999996,
+   "lng": -75.4856914,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: TJ's Restaurant and Drinkery / Google",
@@ -554,31 +618,16 @@
    "deals": []
   },
   {
-   "lid": "84839",
-   "name": "Urbn Devon Yard",
-   "address": "Lancaster Ave And Waterloo Blvd, Devon PA 19333",
-   "zone_id": "wayne_radnor",
-   "license_type": "Restaurant (Liquor)",
-   "id": "84839",
-   "plcb_name": "URBN DEVON YARD",
-   "website": "https://www.anthropologie.com/stores/devon",
-   "photo": {
-    "attribution": "Photo: Rafael Tremont / Google",
-    "file": "img/venues/84839.jpg"
-   },
-   "deals": []
-  },
-  {
    "lid": "133297",
-   "name": "Vibe Haus",
+   "name": "Vibe Haus - Indian Restaurant and Brewery",
    "address": "402 Swedesford Rd, Berwyn PA 19312",
    "zone_id": "wayne_radnor",
    "license_type": "Brewery",
    "id": "133297",
    "plcb_name": "VIBE HAUS INDIAN PLATES AND TAPS",
-   "website": "https://www.vibehausbrew.com/",
-   "lat": 40.0685485,
-   "lng": -75.4468109,
+   "website": "https://vibehausbrew.com/",
+   "lat": 40.068470399999995,
+   "lng": -75.4467927,
    "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Vibe Haus - Indian Plates and Taps / Google",
@@ -595,20 +644,13 @@
    "id": "94023",
    "plcb_name": "VILLANOVA UNIVERSITY",
    "website": "http://www.villanova.edu/",
+   "lat": 40.0368926,
+   "lng": -75.3425785,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Villanova University / Google",
     "file": "img/venues/94023.jpg"
    },
-   "deals": []
-  },
-  {
-   "lid": "72326",
-   "name": "W&W (USA)",
-   "address": "240 W Swedesford Rd, Berwyn PA 19312",
-   "zone_id": "wayne_radnor",
-   "license_type": "Restaurant (Liquor)",
-   "id": "72326",
-   "plcb_name": "W&W (USA) LLC",
    "deals": []
   }
  ]

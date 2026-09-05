@@ -10168,6 +10168,241 @@
   "venue_name_on_menu": "The Perky",
   "why_not": ""
  },
+ "66143": {
+  "cost_usd": 0.704,
+  "deals": [
+   {
+    "fine_print": "",
+    "items": [
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "SPROUTS",
+      "price_quote": "SPROUTS // 10",
+      "price_usd": 10,
+      "quote": "SPROUTS // 10\nHoney chili crisp, peanuts, cilantro"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "ROASTED NUTS",
+      "price_quote": "ROASTED NUTS // 10",
+      "price_usd": 10,
+      "quote": "ROASTED NUTS // 10\nalmond, walnut, peanuts, rosemary"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Coconut Shrimp",
+      "price_quote": "Coconut Shrimp // 10",
+      "price_usd": 10,
+      "quote": "Coconut Shrimp // 10\nranch, lime"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "BBQ Fries",
+      "price_quote": "BBQ Fries // 10",
+      "price_usd": 10,
+      "quote": "BBQ Fries // 10\nsmoked cheddar cheese sauce, smoked pork, root beer bbq sauce"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Burger Sliders",
+      "price_quote": "Burger Sliders // 10",
+      "price_usd": 10,
+      "quote": "Burger Sliders // 10\n2 sliders, pickle, amercian"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "OLD FASHIONED",
+      "price_quote": "OLD FASHIONED // 8",
+      "price_usd": 8,
+      "quote": "OLD FASHIONED // 8\nheaven hill, bitters"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "COSMO",
+      "price_quote": "COSMO // 8",
+      "price_usd": 8,
+      "quote": "COSMO // 8\nboardroom, cranberry, triple sec"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "draft",
+      "discount_pct": null,
+      "label": "DRAFTS",
+      "price_quote": "DRAFTS // 6",
+      "price_usd": 6,
+      "quote": "DRAFTS // 6"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "wine",
+      "discount_pct": null,
+      "label": "RED WINE",
+      "price_quote": "RED WINE // 8",
+      "price_usd": 8,
+      "quote": "RED WINE // 8"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "wine",
+      "discount_pct": null,
+      "label": "WHITE WINE",
+      "price_quote": "WHITE WINE // 8",
+      "price_usd": 8,
+      "quote": "WHITE WINE // 8"
+     }
+    ],
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "17:00"
+     },
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "17:00"
+     },
+     {
+      "dow": 5,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 6,
+      "end": "18:00",
+      "start": "16:00"
+     },
+     {
+      "dow": 7,
+      "end": "18:00",
+      "start": "16:00"
+     }
+    ]
+   },
+   {
+    "fine_print": "",
+    "items": [
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "Tacos",
+      "price_quote": "$10 Tacos & Patron Margaritas",
+      "price_usd": 10,
+      "quote": "Every Thursday! $10 Tacos & Patron Margaritas 5PM – 6PM"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "cocktail",
+      "discount_pct": null,
+      "label": "Patron Margaritas",
+      "price_quote": "$10 Tacos & Patron Margaritas",
+      "price_usd": 10,
+      "quote": "Every Thursday! $10 Tacos & Patron Margaritas 5PM – 6PM"
+     }
+    ],
+    "type": "daily_special",
+    "windows": [
+     {
+      "dow": 4,
+      "end": "18:00",
+      "start": "17:00"
+     }
+    ]
+   },
+   {
+    "fine_print": "",
+    "items": [
+     {
+      "amount_off_usd": null,
+      "category": "wine",
+      "discount_pct": 50,
+      "label": "Half off Bottles of Wine",
+      "price_quote": "Half off Bottles of Wine every Wednesday from 5pm – 6pm",
+      "price_usd": null,
+      "quote": "Half off Bottles of Wine every Wednesday from 5pm – 6pm"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "call",
+      "discount_pct": null,
+      "label": "Whiskey Flights",
+      "price_quote": "Whiskey Flights every Wednesday // 12",
+      "price_usd": 12,
+      "quote": "Whiskey Flights every Wednesday // 12"
+     },
+     {
+      "amount_off_usd": null,
+      "category": "wine",
+      "discount_pct": null,
+      "label": "Wine Flights",
+      "price_quote": "Wine Flights every Wednesday // 10",
+      "price_usd": 10,
+      "quote": "Wine Flights every Wednesday // 10"
+     }
+    ],
+    "type": "daily_special",
+    "windows": [
+     {
+      "dow": 3,
+      "end": "18:00",
+      "start": "17:00"
+     }
+    ]
+   },
+   {
+    "fine_print": "",
+    "items": [
+     {
+      "amount_off_usd": null,
+      "category": "food",
+      "discount_pct": null,
+      "label": "KIDS EAT FREE EVERY SUNDAY",
+      "price_quote": "KIDS EAT FREE EVERY SUNDAY",
+      "price_usd": 0,
+      "quote": "KIDS EAT FREE EVERY SUNDAY"
+     }
+    ],
+    "type": "daily_special",
+    "windows": []
+   }
+  ],
+  "dropped": [
+   "'daily_special' deal: not the happy hour",
+   "'daily_special' deal: not the happy hour",
+   "'daily_special' deal: not the happy hour"
+  ],
+  "found": true,
+  "items_kept": 10,
+  "kind": "page",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://www.118northwayne.com/ — nav lists Happy Hour under MENUS, linking to /menus#happyhour",
+   "WebFetch https://118northwayne.com/menus/ — happy hour section present on the page",
+   "curl -sL -o data/agent_reads/66143/menus.html https://118northwayne.com/menus/ — read the raw page to transcribe the section exactly"
+  ],
+  "read_at": "2026-09-05",
+  "source_url": "https://118northwayne.com/menus/",
+  "transcript": "HAPPY HOUR\n\nWednesday-Thursday\n5PM – 6PM\n\nFriday-Sunday\n4PM – 6PM\n\nFOOD:\n\nSPROUTS // 10\nHoney chili crisp, peanuts, cilantro\n\nROASTED NUTS // 10\nalmond, walnut, peanuts, rosemary\n\nCoconut Shrimp // 10\nranch, lime\n\nBBQ Fries // 10\nsmoked cheddar cheese sauce, smoked pork, root beer bbq sauce\n\nBurger Sliders // 10\n2 sliders, pickle, amercian\n\n♬ Every Thursday! $10 Tacos & Patron Margaritas 5PM – 6PM\n\nDrinks:\n\nOLD FASHIONED // 8\nheaven hill, bitters\n\nCOSMO // 8\nboardroom, cranberry, triple sec\n\nDRAFTS // 6\n\nRED WINE // 8\n\nWHITE WINE // 8\n\nHalf off Bottles of Wine every Wednesday from 5pm – 6pm\n\nWhiskey Flights every Wednesday // 12\n\nWine Flights every Wednesday // 10\n\nKIDS EAT FREE EVERY SUNDAY",
+  "turns": 14,
+  "venue_name_on_menu": "118 North",
+  "why_not": ""
+ },
  "67233": {
   "cost_usd": 0.4997,
   "deals": [

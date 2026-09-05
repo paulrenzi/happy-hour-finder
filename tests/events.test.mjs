@@ -4,7 +4,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { applyEvents, nextEvent, eventLine, validEmail } from "../web/lib.js";
-import { eventFrom, eventFingerprint } from "../worker/nightout.js";
+import { eventFrom, eventFingerprint, expandRecurring, weekdayOf } from "../worker/nightout.js";
 
 const venue = (lid, events) => ({ id: "v" + lid, name: "A Bar", lid, events });
 const ev = (id, date, extra = {}) => ({ id, lid: "111", date, act: "Rhythm & Blondes", kind: "live_music", ...extra });
@@ -100,4 +100,73 @@ test("the same night from the same venue is one fingerprint", () => {
   const c = eventFingerprint({ lid: "111", date: "2026-09-06", act: "Rhythm & Blondes" });
   assert.equal(a, b);
   assert.notEqual(a, c);
+});
+
+/* ---- recurring weekly shows (PLAYBOOK-NIGHT-OUT.md §15) ----------------- */
+
+const weekly = (extra = {}) => ({
+  id: "r1", lid: "111", date: "2026-09-10", act: "Music Bingo", kind: "trivia",
+  start: "19:00", recurs: "weekly", until: "2026-10-15", ...extra,
+});
+
+test("a weekly rule and a one-off on the same day are different rows", () => {
+  const rule = eventFrom({ ...weekly() }, { lid: "111", source_kind: "page", status: "pending" }).row;
+  const once = eventFrom({ ...weekly(), recurs: null, until: null }, { lid: "111", source_kind: "page", status: "pending" }).row;
+  assert.notEqual(eventFingerprint(rule), eventFingerprint(once));
+});
+
+test("🛑 a weekly rule keeps ONE id as its first date moves week to week", () => {
+  // This is the whole reason recurrence is in the schema: keyed on `date`, a
+  // re-read next Thursday minted a new id, so it landed `pending` again and the
+  // human ruling could never stick.
+  const a = eventFrom(weekly(), { lid: "111", source_kind: "page", status: "pending" }).row;
+  const b = eventFrom({ ...weekly(), date: "2026-09-17" }, { lid: "111", source_kind: "page", status: "pending" }).row;
+  assert.equal(eventFingerprint(a), eventFingerprint(b));
+  assert.equal(weekdayOf("2026-09-10"), weekdayOf("2026-09-17"));
+});
+
+test("a weekly rule expands to one dated row per week in the window", () => {
+  const out = expandRecurring([weekly()], "2026-09-05", "2026-09-19");
+  assert.deepEqual(out.map((r) => r.date), ["2026-09-10", "2026-09-17"]);
+  assert.deepEqual(out.map((r) => r.id), ["r1-2026-09-10", "r1-2026-09-17"]);
+  assert.equal(out[0].rule_id, "r1");
+  assert.equal(out[0].act, "Music Bingo");
+});
+
+test("expansion starts at the window, not at the rule's first date", () => {
+  // A rule first seen weeks ago must still produce THIS fortnight's dates.
+  const out = expandRecurring([weekly({ date: "2026-07-02", until: "2026-12-01" })], "2026-09-05", "2026-09-19");
+  assert.deepEqual(out.map((r) => r.date), ["2026-09-10", "2026-09-17"]);
+});
+
+test("🛑 `until` retires a show that quietly ended -- it is not open-ended", () => {
+  const out = expandRecurring([weekly({ until: "2026-09-10" })], "2026-09-05", "2026-09-19");
+  assert.deepEqual(out.map((r) => r.date), ["2026-09-10"]);
+  assert.equal(expandRecurring([weekly({ until: "2026-09-01" })], "2026-09-05", "2026-09-19").length, 0);
+});
+
+test("a one-off passes through expansion untouched", () => {
+  const rows = [{ ...weekly(), recurs: null, until: null }];
+  assert.deepEqual(expandRecurring(rows, "2026-09-05", "2026-09-19"), rows);
+});
+
+test("an unread `until` defaults to a bounded trust window, never forever", () => {
+  const row = eventFrom({ ...weekly(), until: null }, { lid: "111", source_kind: "page", status: "pending" }).row;
+  assert.equal(row.until, "2026-10-15"); // date + 35 days
+  assert.ok(row.until > row.date);
+});
+
+test("recurs is validated, and a one-off never carries an until", () => {
+  assert.match(eventFrom({ ...weekly(), recurs: "daily" }, { lid: "111", source_kind: "page", status: "pending" }).error, /weekly/);
+  assert.match(eventFrom({ ...weekly(), until: "next year" }, { lid: "111", source_kind: "page", status: "pending" }).error, /until/);
+  assert.match(eventFrom({ ...weekly(), until: "2026-09-01" }, { lid: "111", source_kind: "page", status: "pending" }).error, /before/);
+  assert.equal(eventFrom({ ...weekly(), recurs: null }, { lid: "111", source_kind: "page", status: "pending" }).row.until, null);
+});
+
+test("the page needs no new code: an expanded row is what nextEvent already eats", () => {
+  const v = venue("111", []);
+  applyEvents([v], { venues: { 111: expandRecurring([weekly()], "2026-09-05", "2026-09-19") } });
+  assert.equal(v.events.length, 2);
+  assert.equal(nextEvent(v, "2026-09-05").date, "2026-09-10");
+  assert.equal(nextEvent(v, "2026-09-11").date, "2026-09-17");
 });
