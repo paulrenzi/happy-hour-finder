@@ -57,6 +57,13 @@ body {
   color: var(--fg);
   font: 17px/1.5 "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
+  /* Neither self-hosted face carries an italic, and a browser asked for one it
+     does not have will INVENT it by shearing the uprights rather than failing.
+     A synthesised oblique of a high-contrast serif is unreadable at display
+     size and it shipped that way once. Off means a stray `font-style: italic`
+     renders upright and visibly wrong in review, instead of quietly wrong live.
+     Weight synthesis is left alone: both faces are variable and cover 400-800. */
+  font-synthesis-style: none;
   padding-bottom: calc(92px + env(safe-area-inset-bottom));
   overflow-x: hidden;
 }
@@ -129,9 +136,16 @@ button { font: inherit; cursor: pointer; }
   width: 5px; height: 5px; border-radius: 50%; background: #44dceb;
   box-shadow: 0 0 8px rgba(68, 220, 235, 0.7);
 }
+/* Upright, NOT italic. web/fonts/fraunces-latin-var.woff2 ships a single face
+   declared `font-style: normal` -- there is no italic in the file. Asking for
+   one does not fail, it gets SYNTHESISED: the browser shears the upright glyphs
+   and calls it italic. On a high-contrast serif that thins every hairline to
+   nothing and the numerals turn to mush at display size, which is exactly how
+   this shipped. font-synthesis-style is off at the root now, so a future
+   `font-style: italic` here renders upright instead of quietly faking it. */
 #heroClock {
   display: flex; align-items: baseline; gap: 0.18em; margin: 0 0 0.6rem;
-  font-family: var(--serif); font-style: italic; font-weight: 600;
+  font-family: var(--serif); font-weight: 700;
   font-size: clamp(4.4rem, 19vw, 7.2rem); line-height: 0.9; letter-spacing: -0.045em;
   font-variant-numeric: tabular-nums; color: #fff;
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.4);
@@ -144,7 +158,13 @@ button { font: inherit; cursor: pointer; }
   font-size: clamp(1.9rem, 8.4vw, 3.3rem); line-height: 1.02; letter-spacing: -0.035em;
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.4);
 }
-#hero h1 em { font-style: italic; font-weight: 600; color: #7fe6f2; }
+/* The colour carries the emphasis now that the slant is gone, and the weight
+   matches the rest of the headline -- a lighter em inside a 700 h1 read as a
+   mistake once it was no longer leaning. */
+/* font-style must be stated, not merely dropped: <em> is italic by UA default,
+   so deleting the declaration left it computing italic and relying on synthesis
+   being off to look right. Say it. */
+#hero h1 em { font-style: normal; font-weight: 700; color: #7fe6f2; }
 /* On a phone the headline and the live count already say it, and keeping the
    paragraph squeezes the photo down to a stripe. */
 .hero-tagline { display: none; }
@@ -315,7 +335,7 @@ input[type=range] { width: 100%; height: var(--tap); accent-color: var(--accent)
 }
 .mono {
   position: absolute; right: 10px; bottom: -26px; z-index: 0;
-  font-family: var(--serif); font-size: 132px; line-height: 1; font-style: italic;
+  font-family: var(--serif); font-size: 132px; line-height: 1;
   font-weight: 800; color: hsl(var(--h) 70% 78% / 0.22); letter-spacing: -6px; user-select: none;
 }
 .shot:not(.fallback) .mono { display: none; }
