@@ -168,3 +168,71 @@ CREATE TABLE IF NOT EXISTS pledges (
   created_at    TEXT NOT NULL
 );
 CREATE INDEX IF NOT EXISTS pledges_campaign ON pledges (campaign_id);
+
+-- ============================================================
+-- Accounts: a saved list of places, and a private note on any of them.
+-- Added 2026-09-05. Re-runnable, like everything above.
+--   wrangler d1 execute hhf --remote --file worker/schema.sql
+-- ============================================================
+
+-- ONE IDENTITY: an account is a row in `subscribers`, because an address is
+-- one person whether it is on the mailing list or not. It is NOT one consent.
+-- `status` still means "is this address on the digest" and signing in never
+-- touches it -- an account-only row is status 'none', which no mailing query
+-- selects. The `subscribers.account_at` column that records when an address
+-- first signed in is added by the ALTER at the very END of this file: SQLite
+-- has no ADD COLUMN IF NOT EXISTS, so a re-run fails on that one statement,
+-- and it is last so that nothing else is skipped when it does.
+
+-- A live sign-in, one per browser. The token is held as a SHA-256 hash, like a
+-- password: the copy in the browser is the only copy that can be used, so this
+-- table cannot be read to impersonate anybody.
+CREATE TABLE IF NOT EXISTS sessions (
+  token_hash   TEXT PRIMARY KEY,
+  email        TEXT NOT NULL,
+  created_at   TEXT NOT NULL,
+  last_seen_at TEXT
+);
+CREATE INDEX IF NOT EXISTS sessions_email ON sessions (email);
+
+-- The one-time link in the mail. Hashed for the same reason, single-use
+-- (used_at), and short-lived (expires_at) -- a link that still works tomorrow
+-- is a key sitting in a mailbox.
+CREATE TABLE IF NOT EXISTS signin_tokens (
+  token_hash TEXT PRIMARY KEY,
+  email      TEXT NOT NULL,
+  created_at TEXT NOT NULL,
+  expires_at TEXT NOT NULL,
+  used_at    TEXT
+);
+
+-- A saved place. lid is the PLCB licence number, the same key the board is
+-- built on, so a favourite survives a rebuild, a rename and a re-geocode.
+CREATE TABLE IF NOT EXISTS favorites (
+  email      TEXT NOT NULL,
+  lid        TEXT NOT NULL,
+  created_at TEXT NOT NULL,
+  PRIMARY KEY (email, lid)
+);
+
+-- A private note on a place (kind 'venue', subject_id = lid) or on one night
+-- at it (kind 'event', subject_id = the event id). Two kinds rather than two
+-- tables because the row is identical and the reader wants them together.
+--
+-- This is the most personal thing the database holds -- more than an address,
+-- because it is something a person wrote. It is never served to anyone but the
+-- account that wrote it, never mailed, and never reaches the board's bundles.
+CREATE TABLE IF NOT EXISTS notes (
+  email      TEXT NOT NULL,
+  kind       TEXT NOT NULL,           -- venue | event
+  subject_id TEXT NOT NULL,
+  body       TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  PRIMARY KEY (email, kind, subject_id)
+);
+
+-- LAST STATEMENT ON PURPOSE. SQLite has no `ADD COLUMN IF NOT EXISTS`, so
+-- re-running this file fails here with "duplicate column name: account_at".
+-- That is expected and harmless -- every CREATE above has already run. Nothing
+-- may be appended below it.
+ALTER TABLE subscribers ADD COLUMN account_at TEXT;

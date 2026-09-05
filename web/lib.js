@@ -176,6 +176,15 @@ export const FILTERS = {
     label: "Events",
     kindTest: (k) => k !== "live_music",
   },
+  /* The saved list. It is a chip rather than a page of its own because it is
+     the same question as every other chip -- which of these bars, right now --
+     asked of a smaller set. `requiresAccount` keeps it off the strip for a
+     reader who has not signed in, where it could only ever be empty. */
+  saved: {
+    label: "Saved",
+    requiresAccount: true,
+    savedTest: true,
+  },
 };
 
 /* The kind predicate behind a filter name, or null for a filter that is not
@@ -561,11 +570,17 @@ function bestDeal(venue, at, horizonDays) {
   return row;
 }
 
-export function buildFeed(venues, at, { zone = null, filter = "all", sort = "soonest", origin = null, horizonDays = 7, query = "", planning = false, now = null } = {}) {
+export function buildFeed(venues, at, { zone = null, filter = "all", sort = "soonest", origin = null, horizonDays = 7, query = "", planning = false, now = null, saved = null } = {}) {
   const today = dateKeyOf(now || new Date());
   const f = FILTERS[filter] || FILTERS.all;
   const test = f.test || (() => true);
   const wantKind = f.kindTest || null;
+  /* The saved chip asks one question of the venue -- is this one of mine -- and
+     then gets out of the way: everything below ranks and groups a saved bar
+     exactly as the whole board would. A saved bar with no published window
+     still gets its row, because the reader put it there on purpose. */
+  const savedOnly = !!f.savedTest;
+  const savedSet = saved || new Set();
   const q = normalizeName(query);
   const rows = [];
 
@@ -583,6 +598,7 @@ export function buildFeed(venues, at, { zone = null, filter = "all", sort = "soo
        looking at a different town when you typed it. */
     if (zone && !q && v.zone_id !== zone) continue;
     if (q && !matchesQuery(v, q)) continue;
+    if (savedOnly && !lidsOf(v).some((lid) => savedSet.has(lid))) continue;
     const miles = origin && v.lat != null ? haversineMiles(origin, v) : null;
     const driveMin = miles == null ? null : driveMinutes(miles);
 
@@ -618,7 +634,7 @@ export function buildFeed(venues, at, { zone = null, filter = "all", sort = "soo
        being asked ("drinks under $5") is one an empty venue cannot answer.
        An EVENT filter never reaches here -- it built its row above. */
     if (!v.deals || !v.deals.length) {
-      if (filter === "all") {
+      if (filter === "all" || savedOnly) {
         rows.push({
           v, deal: null, hit: null, miles, driveMin, hasOrigin: origin != null,
           confidence: "unknown", ageDays: null, group: GROUP.UNKNOWN,

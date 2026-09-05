@@ -50,6 +50,12 @@ const state = {
   // How many no-hours venues the feed is currently showing. Reset on every
   // control change -- a zone with 668 licensed bars must not paint 668 cards.
   shown: 0,
+  /* The signed-in reader, or a blank one. `favorites` is a Set of licence ids
+     and `notes` is keyed "kind:id" -- the same shapes the Worker returns, so
+     nothing is translated between the wire and the screen. A signed-out board
+     is this object with a null email and two empty collections, which is why
+     nothing below has to ask "is there an account" before reading it. */
+  account: { email: null, token: null, favorites: new Set(), notes: new Map() },
 };
 
 const UNKNOWN_PAGE = 24;
@@ -215,7 +221,11 @@ function buildControls() {
 
   chipRow(
     $("#filters"),
-    Object.entries(FILTERS).map(([k, f]) => [k, f.label]),
+    // "Saved" only exists for a reader who has an account to save into. Shown
+    // signed out it is a chip that can only ever return nothing.
+    Object.entries(FILTERS)
+      .filter(([, f]) => !f.requiresAccount || state.account.email)
+      .map(([k, f]) => [k, f.label]),
     (v) => state.filter === v,
     (v) => (state.filter = v)
   );
@@ -494,6 +504,7 @@ function unknownCard(row) {
   if (v.website) site.href = v.website;
   else site.remove();
   $(".know", node).addEventListener("click", () => submitHours(v));
+  $(".know", node).after(saveButton(v));
   return node;
 }
 
@@ -1107,6 +1118,7 @@ function card(row, at) {
   // person and the Directions button.
   else src.remove();
   $(".wrong", node).addEventListener("click", () => reportWrong(v, deal));
+  $(".wrong", node).before(saveButton(v));
   return node;
 }
 
@@ -1121,6 +1133,7 @@ function render() {
     // "Live now" and "ends before you'd get there" are claims about the
     // present. The board only gets to make them while it IS the present.
     planning: !isNow(),
+    saved: state.account.favorites,
   });
 
   const clock = at.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
@@ -1381,7 +1394,10 @@ function openVenue(id) {
   share.type = "button";
   share.addEventListener("click", () => shareVenue(v));
   acts.append(share);
+  acts.append(saveButton(v));
   body.append(acts);
+
+  body.append(...venueAccountBlock(v));
 
   // The photo lane used to live only in submitHours(), which runs for venues
   // with NO hours -- so the one case that actually happens, somebody standing
@@ -1400,6 +1416,48 @@ function openVenue(id) {
 
   writeHash(v.id);
   openSheet();
+}
+
+/* What a SIGNED-IN reader gets on a venue's sheet: their own note on the bar,
+   and this fortnight's nights at it with a note against each one.
+
+   Signed out it is one line offering the thing, not a form that will fail: a
+   note box you cannot save is worse than no note box.
+
+   Events are listed here whether or not the board is filtered by them -- the
+   sheet is everything we know about one venue, and "who is playing" is the
+   half of that the board only ever shows one line of. */
+function venueAccountBlock(v) {
+  const out = [];
+  const today = dateKeyOf(new Date());
+  const upcoming = (v.events || []).filter((e) => e.date >= today).slice(0, 8);
+
+  if (!state.account.email) {
+    if (upcoming.length) {
+      out.push(el("h4", null, "On at this bar"));
+      const ul = el("ul", "items");
+      for (const ev of upcoming) ul.append(el("li", null, eventLine(ev, today)));
+      out.push(ul);
+    }
+    const p = el("p", "note",
+      "Sign in from the menu to save this place and keep your own note on it.");
+    out.push(p);
+    return out;
+  }
+
+  out.push(el("h4", null, "Your note"));
+  out.push(noteBox("venue", String(v.lid), `A private note on ${v.name}`));
+
+  if (upcoming.length) {
+    out.push(el("h4", null, "On at this bar"));
+    for (const ev of upcoming) {
+      const box = el("div", "dealBlock");
+      box.append(el("p", "sched", eventLine(ev, today)));
+      box.append(noteBox("event", ev.id, "Your note on this night"));
+      out.push(box);
+    }
+  }
+  return out;
 }
 
 async function shareVenue(v) {
@@ -1525,6 +1583,9 @@ function toggleMenu(open) {
     box.value = state.query;
     box.focus();
     box.select();
+    // The panel holds the account block too, and its content depends on who is
+    // signed in -- repainted on open so it can never show a stale identity.
+    paintAccountPanel();
   }
 }
 
@@ -1650,6 +1711,292 @@ async function loadEvents() {
   if (applyEvents(state.venues, overlay)) refresh();
 }
 
+
+/* ---- accounts: saved places and private notes --------------------------
+
+   Sign-in is a link in an email (worker/accounts.js). What the browser keeps
+   is one session token in localStorage plus a CACHE of what that account
+   saved, so the board still shows your list on a phone with no signal -- the
+   whole point of an offline-first board is that it does not need the network
+   to answer, and a saved list is exactly the thing you check standing outside
+   a bar with one bar of signal.
+
+   Every write is optimistic: the star fills, the note says "Saved", and the
+   request goes afterwards. A failed write says so and puts the state back --
+   it never leaves the screen claiming something the server did not accept. */
+
+const ACCOUNT_KEY = "account";
+
+function loadAccountCache() {
+  try {
+    const raw = JSON.parse(localStorage.getItem(ACCOUNT_KEY) || "null");
+    if (!raw || !raw.token) return;
+    state.account = {
+      email: raw.email || null,
+      token: raw.token,
+      favorites: new Set(raw.favorites || []),
+      notes: new Map(Object.entries(raw.notes || {})),
+    };
+  } catch {
+    /* private mode, or a cache written by an older version -- signed out is a
+       correct state to fall back to, and the next sign-in rebuilds it. */
+  }
+}
+
+function saveAccountCache() {
+  const a = state.account;
+  try {
+    if (!a.token) localStorage.removeItem(ACCOUNT_KEY);
+    else localStorage.setItem(ACCOUNT_KEY, JSON.stringify({
+      email: a.email, token: a.token,
+      favorites: [...a.favorites], notes: Object.fromEntries(a.notes),
+    }));
+  } catch {
+    /* the list still works this session; it just will not survive a reload */
+  }
+}
+
+const noteKey = (kind, id) => `${kind}:${id}`;
+const noteFor = (kind, id) => state.account.notes.get(noteKey(kind, id)) || "";
+const isSaved = (v) =>
+  [v.lid, ...(v.also_lids || [])].some((l) => state.account.favorites.has(String(l)));
+
+async function accountFetch(path, opts = {}) {
+  const res = await fetch(`${SUBMIT_API}${path}`, {
+    ...opts,
+    headers: {
+      ...(opts.body ? { "Content-Type": "application/json" } : {}),
+      Authorization: `Bearer ${state.account.token}`,
+      ...(opts.headers || {}),
+    },
+  });
+  /* A session the server no longer knows is not an error to retry -- it is a
+     signed-out reader who has not been told yet. Say it once, here, so no
+     caller has to. */
+  if (res.status === 401) {
+    signOutLocally();
+    toast("Signed out — that link had expired");
+    throw new Error("signed out");
+  }
+  if (!res.ok) throw new Error((await res.json().catch(() => ({}))).error || res.status);
+  return await res.json();
+}
+
+function signOutLocally() {
+  state.account = { email: null, token: null, favorites: new Set(), notes: new Map() };
+  saveAccountCache();
+  // The Saved chip goes with the account, and a board still filtered by it
+  // would be an empty screen with no control left to leave it.
+  if (state.filter === "saved") state.filter = "all";
+  buildControls();
+  refresh();
+  paintAccountPanel();
+}
+
+/* The session arrives in the URL FRAGMENT (never sent to a server, never in a
+   Referer header) and is consumed immediately: the token must not survive in
+   the address bar, in a bookmark, or in whatever the reader shares next. */
+function readSignin() {
+  const p = new URLSearchParams(location.hash.slice(1));
+  const t = p.get("signin");
+  if (!t) return null;
+  p.delete("signin");
+  history.replaceState(null, "", location.pathname + location.search + (p.toString() ? "#" + p : ""));
+  return t === "invalid" || t === "expired" ? null : t;
+}
+
+async function loadAccount(token) {
+  state.account.token = token;
+  let me;
+  try {
+    me = await accountFetch("/account/me");
+  } catch {
+    /* Offline, or a dead session. The cache -- if there is one -- is still the
+       best answer we have, so the board keeps showing the saved list. */
+    return;
+  }
+  state.account.email = me.email;
+  state.account.favorites = new Set((me.favorites || []).map(String));
+  state.account.notes = new Map((me.notes || []).map((n) => [noteKey(n.kind, n.id), n.body]));
+  saveAccountCache();
+  buildControls();
+  refresh();
+  paintAccountPanel();
+}
+
+async function toggleSaved(v, button) {
+  if (!state.account.token) return promptSignIn();
+  const lid = String(v.lid);
+  const on = !isSaved(v);
+  // Optimistic: the star answers the tap, not the network.
+  if (on) state.account.favorites.add(lid);
+  else [v.lid, ...(v.also_lids || [])].forEach((l) => state.account.favorites.delete(String(l)));
+  saveAccountCache();
+  if (button) paintSaveButton(button, v);
+  try {
+    await accountFetch("/account/favorite", { method: "POST", body: JSON.stringify({ lid, on }) });
+    toast(on ? "Saved" : "Removed");
+    if (state.filter === "saved") refresh();
+  } catch (err) {
+    if (err.message === "signed out") return;
+    /* Put it back. A star left filled after a failed write is a list the
+       reader believes in and the server has never heard of. */
+    if (on) state.account.favorites.delete(lid);
+    else state.account.favorites.add(lid);
+    saveAccountCache();
+    if (button) paintSaveButton(button, v);
+    toast("Couldn't save that — try again");
+  }
+}
+
+async function saveNote(kind, id, body, status) {
+  const key = noteKey(kind, id);
+  const before = state.account.notes.get(key) || "";
+  const text = body.trim();
+  if (text === before) return;
+  if (text) state.account.notes.set(key, text);
+  else state.account.notes.delete(key);
+  saveAccountCache();
+  if (status) status.textContent = "Saving…";
+  try {
+    await accountFetch("/account/note", {
+      method: "POST",
+      body: JSON.stringify({ kind, id, body: text }),
+    });
+    if (status) status.textContent = text ? "Saved" : "Note removed";
+  } catch (err) {
+    if (before) state.account.notes.set(key, before);
+    else state.account.notes.delete(key);
+    saveAccountCache();
+    if (status && err.message !== "signed out") status.textContent = "Couldn't save that note.";
+  }
+}
+
+function paintSaveButton(button, v) {
+  const on = isSaved(v);
+  button.textContent = on ? "★ Saved" : "☆ Save";
+  button.classList.toggle("saved", on);
+  button.setAttribute("aria-pressed", String(on));
+}
+
+/* The save control a card carries. Signed out it is not hidden -- it is the
+   one place a reader ever learns that saving is possible -- it just asks for a
+   sign-in first. */
+function saveButton(v) {
+  const b = el("button", "btn save", "");
+  b.type = "button";
+  paintSaveButton(b, v);
+  b.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleSaved(v, b);
+  });
+  return b;
+}
+
+function promptSignIn() {
+  toggleMenu(true);
+  const input = $("#accountEmail");
+  if (input) input.focus();
+  toast("Sign in to save places");
+}
+
+/* A note box, for a venue or for one night at it. Saved on blur rather than
+   behind a button: a note is a thought somebody typed, and asking them to
+   press Save is how it gets lost. */
+function noteBox(kind, id, label) {
+  const wrap = el("div", "noteBox");
+  const ta = el("textarea");
+  ta.rows = 2;
+  ta.maxLength = 2000;
+  ta.placeholder = "Only you can see this.";
+  ta.value = noteFor(kind, id);
+  ta.id = `note-${kind}-${id}`;
+  const lab = el("label", "strip-label", label);
+  lab.htmlFor = ta.id;
+  const status = el("p", "menu-note", "");
+  status.setAttribute("aria-live", "polite");
+  ta.addEventListener("blur", () => saveNote(kind, id, ta.value, status));
+  wrap.append(lab, ta, status);
+  return wrap;
+}
+
+/* The account block in the menu panel: sign in, or who you are and the way
+   out. It lives in the panel rather than the control strip because it is
+   something you do once, not a control you use while deciding where to drink. */
+function paintAccountPanel() {
+  const box = $("#accountBox");
+  if (!box) return;
+  box.textContent = "";
+  const a = state.account;
+
+  if (a.email) {
+    box.append(el("p", "menu-note", `Signed in as ${a.email}`));
+    const n = a.favorites.size;
+    box.append(el("p", "menu-note",
+      n ? `${n} saved place${n === 1 ? "" : "s"} — the Saved chip shows them.`
+        : "Star a bar on any card and it lands here."));
+    const out = el("button", "btn", "Sign out");
+    out.type = "button";
+    out.addEventListener("click", async () => {
+      const token = a.token;
+      signOutLocally();
+      // Local first, network after: this browser is signed out whatever the
+      // network says, and the row is swept when it can be.
+      try {
+        await fetch(`${SUBMIT_API}/account/signout`, {
+          method: "POST", headers: { Authorization: `Bearer ${token}` },
+        });
+      } catch {
+        /* the token is gone from this device either way */
+      }
+    });
+    box.append(out);
+    return;
+  }
+
+  box.append(el("p", "menu-note",
+    "Save the bars you keep coming back to, and keep your own note on any of " +
+    "them. We email you a link — no password, and signing in does not put you " +
+    "on the mailing list."));
+  const form = el("form", "accountForm");
+  const input = el("input");
+  input.type = "email";
+  input.id = "accountEmail";
+  input.placeholder = "you@example.com";
+  input.autocomplete = "email";
+  input.required = true;
+  const go = el("button", "btn go", "Email me a link");
+  go.type = "submit";
+  const note = el("p", "menu-note", "");
+  note.setAttribute("aria-live", "polite");
+  form.append(input, go);
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (!validEmail(input.value)) {
+      note.textContent = "That doesn't look like an email address.";
+      return;
+    }
+    go.disabled = true;
+    note.textContent = "Sending…";
+    try {
+      const res = await fetch(`${SUBMIT_API}/account/signin`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: input.value.trim() }),
+      });
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(out.error || res.status);
+      note.textContent = "Check your inbox. The link works once and expires in 30 minutes.";
+    } catch (err) {
+      note.textContent = `Couldn't reach us (${err.message}). Try again in a minute.`;
+    } finally {
+      go.disabled = false;
+    }
+  });
+  box.append(form, note);
+}
+
+
 /* The list. One field, one promise: new happy hours and nights out near you.
    The Worker sends the confirm link; nothing is on the list until it is
    clicked. See worker/nightout.js. */
@@ -1731,6 +2078,11 @@ async function boot() {
   // need nothing else, and a page that shows its filters immediately reads as
   // loading rather than as broken while the network is slow.
   const openId = readHash();
+  /* Read BEFORE anything can rewrite the hash. The board writes its own state
+     into the hash on every control change and on the first render, so a token
+     read later than this is a token the board has already thrown away. */
+  const signinToken = readSignin();
+  loadAccountCache();
   buildControls();
   restoreLocation();
   watchHero();
@@ -1742,6 +2094,12 @@ async function boot() {
   loadOverlay();
   loadEvents();
   wireSubscribe();
+  /* The cached account paints the saved list before the network answers -- the
+     board is offline-first, and a reader outside a bar should not have to wait
+     for a round trip to see the places they saved. The token in the URL, if a
+     sign-in link brought them here, wins over it. */
+  paintAccountPanel();
+  if (signinToken || state.account.token) loadAccount(signinToken || state.account.token);
   // A shared link to a venue with no published hours names a venue that only
   // arrives with its zone's base, so the fetch has to finish before the sheet is
   // opened -- otherwise the link silently does nothing, which is exactly the

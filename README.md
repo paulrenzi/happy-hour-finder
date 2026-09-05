@@ -14,9 +14,12 @@ the bingo, the trivia — hangs off a venue that already earned its card by
 publishing an hour we could prove.
 
 The reader picks a **state**, a **town**, and one of four chips:
-`Everything` · `Drinks under $5` · `Live music` · `Events`. There is no sort
-control; the board picks the order (nearest once it knows where you are,
-soonest before that).
+`Everything` · `Drinks under $5` · `Live music` · `Events` — plus `Saved`, once
+they have signed in. There is no sort control; the board picks the order
+(nearest once it knows where you are, soonest before that). Under an event chip
+the board is a **calendar**: tonight's shows first, nearest first inside the
+night, and every card names the show that matched the chip rather than whatever
+the venue has on next.
 
 **Standalone project.** Its own `.env`, its own deploy, no shared code or
 credentials with anything else on this machine.
@@ -226,6 +229,27 @@ In the browser the split is strict: [`web/lib.js`](web/lib.js) holds **all** pur
 logic — feed assembly, grouping, ranking, freshness decay, time math — and is the
 part under test. [`web/app.js`](web/app.js) only paints the DOM. Keep that split;
 it is why the logic is testable without a browser.
+
+### Accounts — a saved list and a private note on a place
+
+```
+worker/accounts.js    sign-in links, sessions, favourites, notes
+worker/schema.sql     sessions . signin_tokens . favorites . notes (+ subscribers.account_at)
+web/app.js            the account block in the menu, the Save control, the note boxes
+```
+
+Sign-in is a **magic link** — no password. An account is a row in `subscribers`,
+the same table the mailing list uses, because an address is one person either
+way; **signing in never subscribes anybody**, because `status` still means only
+"is this on the digest". Favourites are keyed on the licence id, so they survive
+a rebuild, and the browser caches the list so it paints with no signal. Notes
+are private to the account, never mailed, and never reach the bundles.
+
+🛑 **Nobody can sign in until `RESEND_API_KEY` is set on the Worker** — mail is
+the whole of the sign-in flow. Until then the only door is
+`POST /admin/account/signin-link`, which returns the link instead of mailing it.
+See `worker/README.md` for the routes and `PLAYBOOK-NIGHT-OUT.md` §16 for why
+each decision was made.
 
 ### The night-out layer — events, the email list, and the venue's own form
 

@@ -144,3 +144,42 @@ curl -H "X-Admin-Token: $ADMIN_TOKEN" -X POST "$SUBMIT_API/admin/events/review/<
 
 `campaigns` and `pledges` are in the schema and served by nothing. See the
 playbook, section 9a, for what has to be true before they are.
+
+## Accounts (added 2026-09-05)
+
+Third module: `worker/accounts.js` — a saved list of places and a private note
+on any of them. Tables are appended to `worker/schema.sql`; the same
+`wrangler d1 execute` line applies them, and the `ALTER TABLE subscribers ADD
+COLUMN account_at` at the very end of that file is expected to fail on a re-run
+("duplicate column name") — everything before it has already run.
+
+| Route | Who | What |
+|---|---|---|
+| `POST /account/signin` `{email}` | public | mints a one-time link and mails it. **202 whether or not the address is known** — the endpoint must never be an account-lookup oracle. 6/day per IP |
+| `GET /account/callback?t=` | the mail | one use, 30 minutes; redirects to the board with the session in the **fragment** |
+| `GET /account/me` | Bearer session | `{email, favorites, notes}` |
+| `POST /account/favorite` `{lid, on}` | Bearer session | save or unsave one bar |
+| `POST /account/note` `{kind, id, body}` | Bearer session | a note on a venue (`kind: "venue"`, id = lid) or one night (`kind: "event"`, id = event id). An empty body deletes it |
+| `POST /account/signout` | Bearer session | deletes that session, and only that session |
+| `POST /admin/account/signin-link` `{email}` | admin | mints a link and **returns** it instead of mailing it |
+
+Three rules, all gated by `tests/accounts.test.mjs` (which runs `schema.sql`
+itself against Node's SQLite):
+
+1. **An account is not a subscription.** An account is a row in `subscribers`,
+   because an address is one person either way — but `status` still means "is
+   this on the digest", and signing in never touches it. An account-only row is
+   `status = 'none'`.
+2. **Nothing reversible is stored.** Both tokens are held as SHA-256 hashes.
+   The copy in the mail and the copy in the browser are the only usable ones.
+3. **Notes are private.** They are the most personal thing this database holds.
+   They are served only to the account that wrote them, never mailed, and never
+   reach the board's bundles.
+
+🛑 **Mail needs `RESEND_API_KEY`, and it is not set.** Until it is, a public
+`POST /account/signin` answers 202 and sends nothing, so nobody can sign in
+without the admin route above. Setting it is one command:
+
+```sh
+cd worker && wrangler secret put RESEND_API_KEY   # and MAIL_FROM in [vars]
+```

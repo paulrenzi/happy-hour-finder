@@ -37,6 +37,9 @@ import {
   subscribeLeave,
   venueEvents,
 } from "./nightout.js";
+// Accounts: sign-in links, saved places, private notes. Routes are listed at
+// the top of accounts.js; every one of them lives under /account.
+import { accountRoutes, adminSigninLink } from "./accounts.js";
 
 const MAX_BYTES = 8 * 1024 * 1024;
 const MAX_PER_DAY = 12;
@@ -131,7 +134,10 @@ function cors(env, origin) {
   return {
     "Access-Control-Allow-Origin": allowed.includes(origin) ? origin : allowed[0],
     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type, X-Admin-Token",
+    // Authorization carries the account session on every /account call. Left
+    // out, the browser refuses the preflight and every saved place fails with
+    // a CORS error that says nothing about what is wrong.
+    "Access-Control-Allow-Headers": "Content-Type, X-Admin-Token, Authorization",
     "Access-Control-Max-Age": "86400",
   };
 }
@@ -559,6 +565,11 @@ async function admin(request, env, url, headers) {
     if (handled) return handled;
   }
 
+  if (verb === "account") {
+    const handled = await adminSigninLink(request, env, url, headers, parts);
+    if (handled) return handled;
+  }
+
   if (verb === "queue" && request.method === "GET") {
     const status = url.searchParams.get("status") || "pending";
     const { results } = await env.DB.prepare(
@@ -708,6 +719,10 @@ export default {
       if (url.pathname === "/venue/events" && request.method === "POST") {
         return await venueEvents(request, env, headers);
       }
+      // One entry for the whole account surface. It answers null for a path
+      // that is not its own, so nothing below is shadowed.
+      const account = await accountRoutes(request, env, url, headers);
+      if (account) return account;
 
       if (url.pathname === "/submit" && request.method === "POST") {
         return await submit(request, env, ctx, headers);

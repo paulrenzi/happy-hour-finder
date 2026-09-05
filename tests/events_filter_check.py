@@ -104,17 +104,17 @@ def main():
                    lambda r: r.fulfill(status=200, content_type="application/json",
                                        body=json.dumps(overlay(today, next_week))))
 
-        page.goto(BASE, wait_until="load")
-        # A location, granted the way the app stores one: the order this test is
-        # about is the one distance decides.
-        page.evaluate(
-            """(o) => localStorage.setItem("origin", JSON.stringify(
-                 { lat: o.lat, lng: o.lng, at: Date.now() }))""", ORIGIN)
-        # goto() between two #hash URLs of one document does NOT reload, and
-        # the hash is read at boot -- so the second navigation is followed by an
-        # explicit reload or the board comes up unfiltered.
+        # ONE navigation, straight to the filtered URL. The hash is read at
+        # boot, and goto() between two #hash URLs of one document does not
+        # reload -- so a second navigation would need a reload, and a reload
+        # aborts the zone fetches already in flight, which surfaces as a page
+        # error that has nothing to do with what is being tested. The location
+        # is seeded before the first byte instead, the way a returning reader's
+        # browser already holds one.
+        page.add_init_script(
+            """localStorage.setItem("origin", JSON.stringify(
+                 { lat: %r, lng: %r, at: Date.now() }))""" % (ORIGIN["lat"], ORIGIN["lng"]))
         page.goto(BASE + "#z=wayne_radnor&f=music", wait_until="load")
-        page.reload(wait_until="load")
         page.wait_for_timeout(3500)
 
         seen = page.evaluate(

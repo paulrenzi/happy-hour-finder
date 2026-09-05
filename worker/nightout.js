@@ -35,21 +35,23 @@ const RECUR_TRUST_DAYS = 35;
 const MAX_EVENTS_PER_POST = 60;
 const MAX_SUBSCRIBES_PER_DAY = 5;
 
-const json = (body, status = 200, headers = {}) =>
+/* Shared with worker/accounts.js -- one JSON writer, one clock, one token
+   mint, one hash, so two modules cannot drift on any of them. */
+export const json = (body, status = 200, headers = {}) =>
   new Response(JSON.stringify(body), {
     status,
     headers: { "Content-Type": "application/json", ...headers },
   });
 
-const nowIso = () => new Date().toISOString();
+export const nowIso = () => new Date().toISOString();
 
-function randomToken(bytes = 24) {
+export function randomToken(bytes = 24) {
   const b = new Uint8Array(bytes);
   crypto.getRandomValues(b);
   return [...b].map((x) => x.toString(16).padStart(2, "0")).join("");
 }
 
-async function sha256Hex(s) {
+export async function sha256Hex(s) {
   const d = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s));
   return [...new Uint8Array(d)].map((b) => b.toString(16).padStart(2, "0")).join("");
 }

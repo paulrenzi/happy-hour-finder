@@ -10,6 +10,10 @@ echo "== time math, ranking, feed assembly, the live overlay =="
 node --test "tests/*.test.mjs"
 
 echo
+echo "== accounts: the worker against its own schema =="
+node --test "tests/accounts.test.mjs"
+
+echo
 echo "== the shipped corpus still validates =="
 python ingest/validate_pa.py
 
@@ -28,6 +32,10 @@ python tests/render_check.py
 echo
 echo "== the live-shows chip shows live shows, tonight first =="
 python tests/events_filter_check.py
+
+echo
+echo "== accounts: sign in, save a bar, filter to it, note it =="
+python tests/account_check.py
 
 echo
 echo "== a bar can be found by name =="

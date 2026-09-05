@@ -791,3 +791,31 @@ body.sheetOpen {
   }
   #heroCount b { color: var(--accent-deep); }
 }
+
+/* ---- accounts: the saved list and private notes ------------------------
+
+   A save control sizes to its own two words and never takes a share of the
+   row: the label swaps between "Save" and "Saved", and a button that stretched
+   would move Directions under the reader's thumb the moment they tapped it. */
+.btn.save { flex: 0 0 auto; padding: 0 14px; color: var(--dim); }
+.btn.save.saved { color: var(--accent-deep); border-color: var(--accent-deep); font-weight: 700; }
+
+#accountBox { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
+#accountBox .btn { margin-top: 10px; }
+.accountForm { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+.accountForm input {
+  flex: 1 1 200px; min-width: 0; padding: 11px 14px;
+  font: inherit; font-size: 16px; /* 16px or iOS zooms the page on focus */
+  color: var(--fg); background: var(--surface);
+  border: 1px solid var(--line); border-radius: var(--r-sm);
+}
+.accountForm .btn { flex: 0 0 auto; margin-top: 0; }
+
+.noteBox { margin-top: 10px; }
+.noteBox textarea {
+  width: 100%; margin-top: 6px; padding: 10px 12px;
+  font: inherit; font-size: 16px; line-height: 1.45; resize: vertical;
+  color: var(--fg); background: var(--surface);
+  border: 1px solid var(--line); border-radius: var(--r-sm);
+}
+.noteBox textarea:focus-visible { outline: 2px solid var(--accent-deep); outline-offset: 1px; }

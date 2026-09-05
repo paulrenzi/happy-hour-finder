@@ -1048,3 +1048,80 @@ every card names a band, and that the summary lines count shows rather than
 happy hours. 🛑 It also re-learned the standing trap: `goto()` between two
 `#hash` URLs of one document **does not reload**, and the hash is read at boot,
 so the first version of the check ran against a completely unfiltered board.
+
+## 16. Accounts: a saved list, and a private note on a place (2026-09-05, night 7)
+
+Paul's ask: *"add basic user accounts to allow for favorite lists, with the
+ability to add personalized notes to a place when logged in."* Four decisions
+were open before any code; all four were put to him and answered.
+
+### 16.1 The four answers
+
+| Question | Answer | What it settled |
+|---|---|---|
+| One identity, or two? | **One** — a confirmed subscriber address IS the account | `subscribers` is the account table; no second list to reconcile |
+| How does someone log in? | **Magic link** | No passwords, no reset flow, reuses the confirm-link machinery `worker/nightout.js` already proves |
+| What does v1 hold? | Favorites **+** notes **+** a Saved chip **+** notes on events **+** cross-device sync | The whole of it, not a slice |
+| Where does it live? | The same Worker, the same D1 | `worker/accounts.js`, tables appended to `worker/schema.sql` |
+
+### 16.2 🔑 One identity is not one consent
+
+The trap in "one identity" is that `subscribers.status = 'confirmed'` means
+*this address gets mailed*. If signing in had set it, every person who ever
+saved a bar would have been silently added to the digest — a mailing list built
+out of people who never asked, which is the one thing this project's mail lane
+has been careful about from the start.
+
+So the account and the subscription are **one row and two facts**: `account_at`
+records that an address has signed in, `status` still records only whether it
+is on the list, and an account-only row is `status = 'none'`, which no mailing
+query selects. `tests/accounts.test.mjs` gates it in both directions — a new
+address is never subscribed, and an already-confirmed address is never demoted.
+
+### 16.3 What the browser holds, and what it does not
+
+- A session token in `localStorage`, plus a **cache of the saved list and the
+  notes**. The board is offline-first and a saved list is exactly what you
+  check standing outside a bar on one bar of signal, so it paints from the
+  cache first and refreshes from `/account/me` when the network answers.
+- The token arrives in the URL **fragment** (`#signin=…`), which is never sent
+  to a server, never in a `Referer`, and is stripped from the address bar the
+  moment it is read — before anything else can rewrite the hash, because the
+  board writes its own state into the hash on the first render.
+- The database holds **no reversible token**: both the session and the sign-in
+  link are stored as SHA-256 hashes.
+
+### 16.4 Every write is optimistic, and every failure puts it back
+
+The star fills on the tap, not on the round trip. A failed write says so and
+**reverts** — a star left filled after a write the server refused is a list the
+reader believes in and the server has never heard of. A 401 is not a retry: it
+is a signed-out reader who has not been told, so it signs the browser out
+locally, says why, and stops.
+
+### 16.5 🛑 Nobody can sign in yet — `RESEND_API_KEY` is not set
+
+The Worker sends mail only when that secret exists, and it does not. A public
+`POST /account/signin` answers 202 and sends nothing. Until Paul sets it, the
+only door is `POST /admin/account/signin-link`, which mints a link and returns
+it instead of mailing it (admin token, same 30-minute single use). That route
+is also how the lane was proven against the real deployment: mint, redeem,
+save, note, read back, re-use the dead link, sign out.
+
+### 16.6 What gates it
+
+- `tests/accounts.test.mjs` — the Worker's own handler over **`schema.sql`
+  itself**, run in Node's SQLite. It proves the SQL is SQL, the columns exist,
+  a link works exactly once, an expired one mints nothing, one account never
+  sees another's list, and signing out kills the session without touching the
+  saved list.
+- `tests/account_check.py` — the painted page in WebKit against a stubbed
+  Worker: signed out there is no Saved chip, the link signs you in and leaves
+  no token in the address bar, saving a bar tells the Worker the right licence
+  id, the Saved chip narrows the board to exactly that bar, and a note typed on
+  the venue sheet survives a fresh load.
+  🛑 It re-learned two standing traps in one sitting: a second `goto()` between
+  `#hash` URLs does not reload (so each step opens a **fresh page**), and
+  `browser.new_page()` opens a new **context** — with its own `localStorage`,
+  which is where the session and the cache live, so all pages come from one
+  `browser.new_context()`.
