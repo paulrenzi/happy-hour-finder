@@ -3,7 +3,7 @@
 
 import test from "node:test";
 import assert from "node:assert/strict";
-import { applyEvents, nextEvent, eventLine, validEmail } from "../web/lib.js";
+import { applyEvents, nextEvent, eventLine, validEmail, buildFeed, GROUP } from "../web/lib.js";
 import { eventFrom, eventFingerprint, expandRecurring, weekdayOf } from "../worker/nightout.js";
 
 const venue = (lid, events) => ({ id: "v" + lid, name: "A Bar", lid, events });
@@ -169,4 +169,76 @@ test("the page needs no new code: an expanded row is what nextEvent already eats
   assert.equal(v.events.length, 2);
   assert.equal(nextEvent(v, "2026-09-05").date, "2026-09-10");
   assert.equal(nextEvent(v, "2026-09-11").date, "2026-09-17");
+});
+
+/* ---- the chip, the card and the order ----------------------------------
+
+   Two faults Paul reported on 2026-09-05, from the live board: events of the
+   wrong kind bleeding into the live-shows filter, and no night-first order --
+   a show a week away sitting above one tonight. */
+
+test("nextEvent honours the chip's kind, so live music never offers Quizzo", () => {
+  const v = venue("111", []);
+  applyEvents([v], { venues: { 111: [
+    ev("quiz", "2026-09-05", { kind: "trivia", act: "Quizzo Night" }),
+    ev("band", "2026-09-08", { kind: "live_music", act: "Billy Price Band" }),
+  ] } });
+  const music = (k) => k === "live_music";
+  const notMusic = (k) => k !== "live_music";
+  assert.equal(nextEvent(v, "2026-09-05", null, music).id, "band");
+  assert.equal(nextEvent(v, "2026-09-05", null, notMusic).id, "quiz");
+  // No predicate = the old behaviour, unchanged.
+  assert.equal(nextEvent(v, "2026-09-05").id, "quiz");
+});
+
+const NIGHT = new Date(2026, 8, 5, 17, 0); // Sat 5 Sep 2026, 5pm
+
+const showVenue = (id, miles, events, deals = []) => ({
+  id, name: id, zone_id: "z", lid: id, lat: 40 + miles / 69, lng: -75, deals, events,
+});
+const ME = { lat: 40, lng: -75 };
+
+const feedMusic = (venues, opts = {}) =>
+  buildFeed(venues, NIGHT, { filter: "music", origin: ME, now: NIGHT, ...opts })
+    .map((r) => r.v.id);
+
+test("tonight leads, and inside a night the nearest show does", () => {
+  const near = showVenue("near", 1, [ev("a", "2026-09-05", { start: "20:00" })]);
+  const far = showVenue("far", 15, [ev("b", "2026-09-05", { start: "19:00" })]);
+  const nextWeek = showVenue("nextWeek", 0.2, [ev("c", "2026-09-11", { start: "20:00" })]);
+  assert.deepEqual(feedMusic([nextWeek, far, near]), ["near", "far", "nextWeek"]);
+});
+
+test("a bar with a band and no published happy hour keeps its place in the night", () => {
+  const noHours = showVenue("noHours", 1, [ev("a", "2026-09-05", { start: "20:00" })]);
+  const withHours = showVenue("withHours", 9, [ev("b", "2026-09-05", { start: "20:00" })], [{
+    confidence: "likely", items: [{ category: "draft", price_usd: 4 }],
+    windows: [{ dow: 6, start: "16:00", end: "18:00" }],
+  }]);
+  const rows = buildFeed([withHours, noHours], NIGHT, { filter: "music", origin: ME, now: NIGHT });
+  assert.deepEqual(rows.map((r) => r.v.id), ["noHours", "withHours"]);
+  // It is a show on a night, not "Hours not published" at the foot of the board.
+  assert.ok(rows.every((r) => r.group !== GROUP.UNKNOWN));
+  assert.equal(rows[0].deal, null);
+  assert.equal(rows[1].deal.items[0].price_usd, 4);
+});
+
+test("the row carries the event that survived the chip, not the venue's next one", () => {
+  const v = showVenue("v", 1, [
+    ev("quiz", "2026-09-05", { kind: "trivia" }),
+    ev("band", "2026-09-08", { kind: "live_music" }),
+  ]);
+  assert.equal(buildFeed([v], NIGHT, { filter: "music", now: NIGHT })[0].event.id, "band");
+  assert.equal(buildFeed([v], NIGHT, { filter: "events", now: NIGHT })[0].event.id, "quiz");
+});
+
+test("a set that already started tonight does not hold the venue at the top", () => {
+  const done = showVenue("done", 1, [ev("over", "2026-09-05", { start: "14:00" }), ev("tue", "2026-09-08")]);
+  const on = showVenue("on", 9, [ev("later", "2026-09-05", { start: "20:00" })]);
+  assert.deepEqual(feedMusic([done, on]), ["on", "done"]);
+});
+
+test("a venue with no event of that kind is not on the board at all", () => {
+  const quizOnly = showVenue("quizOnly", 1, [ev("q", "2026-09-05", { kind: "trivia" })]);
+  assert.deepEqual(feedMusic([quizOnly]), []);
 });

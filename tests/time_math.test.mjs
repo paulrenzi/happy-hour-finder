@@ -12,7 +12,7 @@ import {
   dowOf, mins, fmtClock, fmtMins, itemParts, sortForDisplay, haversineMiles, driveMinutes, fmtMiles,
   dealValue, cheapestPrice, FILTERS, windowFor, nextOccurrence, groupFor, GROUP,
   buildFeed, summarizeWindows, usableMinutes, ageDays, effectiveConfidence,
-  GROUP_LABEL, score, dealKey, applyConfirmations, DAY_BAND,
+  GROUP_LABEL, score, dealKey, applyConfirmations, DAY_BAND, eventKindTest,
 } from "../web/lib.js";
 
 const FRI_5PM = new Date(2026, 6, 31, 17, 0);
@@ -120,18 +120,22 @@ test("the under-$5 filter is about drinks, not $1 oysters", () => {
    first read returned bands, DJs, music bingo and a history lecture from four
    bars, and a reader who taps "Live music" and is handed bingo reads that as
    the board being wrong. */
-test("the event filters split on kind and ask about the venue, not the deal", () => {
-  const band = { date: "2026-09-12", kind: "live_music" };
-  const bingo = { date: "2026-09-10", kind: "trivia" };
-  const today = "2026-09-05";
-  assert.equal(FILTERS.music.venueTest({ events: [band, bingo] }, today), true);
-  assert.equal(FILTERS.music.venueTest({ events: [bingo] }, today), false);
-  assert.equal(FILTERS.events.venueTest({ events: [bingo] }, today), true);
-  assert.equal(FILTERS.events.venueTest({ events: [band] }, today), false);
-  // A venue with no calendar answers "no" to both, and does not throw.
-  assert.equal(FILTERS.music.venueTest({}, today), false);
-  // Last night's band is not tonight's. Past dates never match.
-  assert.equal(FILTERS.music.venueTest({ events: [{ date: "2026-09-01", kind: "live_music" }] }, today), false);
+test("the event filters split on kind, and a chip IS its kind predicate", () => {
+  // The chip used to carry a venueTest -- "does this bar have a band at all
+  // this fortnight" -- and the card then printed whichever event came next, so
+  // "Live music" advertised Quizzo. A chip is now the kind predicate itself,
+  // and every reader (the feed's filter, its order, the card's line) asks this
+  // one function, so they cannot disagree. See tests/events.test.mjs for the
+  // feed and tests/events_filter_check.py for the painted page.
+  assert.equal(FILTERS.music.kindTest("live_music"), true);
+  assert.equal(FILTERS.music.kindTest("trivia"), false);
+  assert.equal(FILTERS.events.kindTest("trivia"), true);
+  assert.equal(FILTERS.events.kindTest("live_music"), false);
+  assert.equal(eventKindTest("music")("live_music"), true);
+  // A filter that is not about events at all has no predicate to offer.
+  assert.equal(eventKindTest("all"), null);
+  assert.equal(eventKindTest("cheap"), null);
+  assert.equal(eventKindTest("nonsense"), null);
 });
 
 /* ---- freshness -------------------------------------------------------- */

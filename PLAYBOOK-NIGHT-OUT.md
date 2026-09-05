@@ -1009,3 +1009,42 @@ queue is empty. Everything in §15.3's "still open" is now current:
 | …of which standing weekly rules | 38 |
 | live occurrences (rules expanded) | 187 |
 | pending review queue | 0 |
+
+### 15.11 🔑 A chip has to BE its predicate, or the card contradicts the filter (2026-09-05)
+
+Paul, reading the live board the night the events lane went up, reported two
+things: events "fleeting into the live shows filter", and no night-first
+order. Both were one shape of mistake — **the chip and the card asked
+different questions of the same calendar**, and nothing about the show reached
+the ranking at all.
+
+- **The chip asked about the VENUE.** `FILTERS.music.venueTest` was "does this
+  bar have a live_music row anywhere in the next fortnight". The card then
+  called `nextEvent(v, today)` with no kind at all and printed whatever came
+  next. A bar that plays on Friday and runs Quizzo tonight passed the Live
+  music chip and printed **"Tonight · Quizzo Night"**. That is not a data
+  fault: the kinds in the overlay are clean (79 live_music, 51 other, 32
+  trivia, 24 dj, 1 comedy on the day).
+  🔑 **The fix is that a chip IS a kind predicate** (`kindTest`), and every
+  reader — the filter, the order, the card line, the venue sheet — asks that
+  one function. The event that survived the chip is carried **on the row**
+  (`row.event`), so the card cannot print a different one.
+- **The order knew nothing about the show.** An event row was scored by its
+  HAPPY HOUR — how much window was left, how cheap, how sure we were — so a
+  band a week out outranked one tonight, and a bar with a band and **no
+  published happy hour** was not in the order at all: it fell to `GROUP.UNKNOWN`
+  and was paged out at the foot of the board under "Hours not published", with
+  no event line on that card template to say what was on.
+  🔑 Under an event chip the board is a **calendar**: banded by the show's day
+  (tonight first, one header per night, reusing the day-band machinery a future
+  happy hour already used), then **distance**, then start time. A venue with no
+  window keeps its place in the night and its card now prints the show.
+
+The gate is `tests/events_filter_check.py` — the painted page, in WebKit, with
+a location granted and a controlled overlay: a band tonight 0.4 mi away, a band
+tonight 4 mi away, and a venue at the origin itself running a quiz tonight and
+playing next week. It asserts the order is MID, FAR, NEAR-next-week, that
+every card names a band, and that the summary lines count shows rather than
+happy hours. 🛑 It also re-learned the standing trap: `goto()` between two
+`#hash` URLs of one document **does not reload**, and the hash is read at boot,
+so the first version of the check ran against a completely unfiltered board.

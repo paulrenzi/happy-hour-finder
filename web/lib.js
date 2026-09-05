@@ -139,16 +139,21 @@ export function sortForDisplay(items) {
 
 /* ---- filters ---------------------------------------------------------- */
 
-/* Does this venue have an event on or after `today` whose kind `want` accepts?
-
-   A band and a bingo night are different questions, so they are different
+/* A band and a bingo night are different questions, so they are different
    chips. `kind` already separates them -- live_music | trivia | dj | comedy |
    other -- and Wayne returned all five on its first read, so the split is what
    the data does, not a guess about it. */
-const hasEvent = (venue, today, want) =>
-  (venue.events || []).some((e) => e.date >= today && want(e.kind));
 
-/* A filter tests a DEAL (`test`) or a VENUE (`venueTest`), never both.
+/* A filter tests a DEAL (`test`) or an EVENT KIND (`kindTest`), never both.
+
+   `kindTest` is the whole of an event chip. Everything else about the chip --
+   which venues survive it, which of a venue's events the card is allowed to
+   name, and what the board is ordered by -- is derived from this one
+   predicate, so the filter and the line the card prints can never disagree.
+   They used to: the chip asked "does this bar have a band this fortnight" and
+   the card then printed whatever event came next, so "Live music" showed cards
+   reading "Tonight · Quizzo Night" -- the events bleeding into the live-shows
+   filter.
 
    "Food deals" and "Drink deals" were here and are gone: nearly every window on
    the board carries one or the other, so they removed almost nothing and cost a
@@ -165,13 +170,18 @@ export const FILTERS = {
   },
   music: {
     label: "Live music",
-    venueTest: (v, today) => hasEvent(v, today, (k) => k === "live_music"),
+    kindTest: (k) => k === "live_music",
   },
   events: {
     label: "Events",
-    venueTest: (v, today) => hasEvent(v, today, (k) => k !== "live_music"),
+    kindTest: (k) => k !== "live_music",
   },
 };
+
+/* The kind predicate behind a filter name, or null for a filter that is not
+   about events at all. One reader for every caller -- the feed, the card and
+   the venue sheet all ask this rather than re-deriving it. */
+export const eventKindTest = (filter) => (FILTERS[filter] || {}).kindTest || null;
 
 /* ---- when is this deal on? -------------------------------------------- */
 
@@ -355,6 +365,30 @@ export function score(row, { sort = "soonest" } = {}) {
   const conf = CONFIDENCE_PENALTY[row.confidence] ?? 9;
   const drive = row.driveMin ?? 0;
 
+  /* An EVENT row is ranked by its own calendar: what is on TONIGHT is the top
+     of the board, and inside a night the nearest show leads. The happy-hour
+     terms below -- how much window is left, how cheap it is, how sure we are
+     of it -- answer a question this reader did not ask, and a bar with no
+     published window at all has none of them; ranking on them is what sent a
+     band four towns away above one down the road, and buried the show-with-
+     no-happy-hour under "Hours not published" entirely.
+
+     Distance is the secondary key by default. A reader who explicitly picks
+     "Best value" still gets the calendar first -- the day band is not
+     negotiable, the board prints one header per night -- and value inside it. */
+  if (row.event) {
+    const day = Math.max(0, Math.min(MAX_DAY, row.dayIndex ?? 0));
+    const part = (x, of) => Math.min(1, Math.max(0, x) / of);
+    const near = part(Math.min(row.miles ?? 199, 199), 200);
+    const clock = part(Math.floor(mins(row.event.start || "23:59") / START_BUCKET), 48);
+    let within;
+    if (sort === "value") within = part(100 - Math.min(row.deal ? dealValue(row.deal) : 0, 100), 100) * 0.9 + near * 0.09;
+    else if (row.miles != null) within = near * 0.9 + clock * 0.09;
+    // With no location, the only fact left about a night is when it starts.
+    else within = clock * 0.9;
+    return row.group * 100000 + day * DAY_BAND + within * DAY_BAND;
+  }
+
   /* A venue with no published window has no deal to rank and no window to be
      early or late for. It sits in its own group below everything else, ordered
      by how far away it is -- the only fact about it we actually have. */
@@ -505,13 +539,42 @@ export function matchesQuery(venue, query) {
   return q.split(" ").every((word) => name.includes(tight(word)));
 }
 
+/* The one deal an EVENT row shows, or nulls when the venue has none.
+
+   An event row is one row per bar by construction -- the calendar is the
+   subject -- so the deal is picked here rather than by the collapse below:
+   the soonest window that is still honest to show. */
+function bestDeal(venue, at, horizonDays) {
+  let best = null;
+  for (const deal of venue.deals || []) {
+    const confidence = effectiveConfidence(deal, at);
+    if (confidence === "disputed" || confidence === "hidden") continue;
+    const hit = nextOccurrence(deal, at, horizonDays);
+    if (!hit) continue;
+    const rank = hit.dayAhead * 10000 + (hit.live ? -1 : hit.startsIn);
+    if (!best || rank < best.rank) {
+      best = { rank, deal, hit, confidence, ageDays: ageDays(deal, at) };
+    }
+  }
+  if (!best) return { deal: null, hit: null, confidence: "unknown", ageDays: null };
+  const { rank, ...row } = best;
+  return row;
+}
+
 export function buildFeed(venues, at, { zone = null, filter = "all", sort = "soonest", origin = null, horizonDays = 7, query = "", planning = false, now = null } = {}) {
   const today = dateKeyOf(now || new Date());
   const f = FILTERS[filter] || FILTERS.all;
   const test = f.test || (() => true);
-  const venueTest = f.venueTest || null;
+  const wantKind = f.kindTest || null;
   const q = normalizeName(query);
   const rows = [];
+
+  /* Under an event chip the board is a CALENDAR, not a happy-hour list: the
+     question is "what's on, soonest first, and how far is it", and the venue's
+     window -- if it even has one -- is a detail of the card, not the ranking.
+     Measured against the real clock, exactly as the card line is: a set that
+     started an hour ago is not what is next. */
+  const nowMin = minutesOfDay(now || new Date());
 
   for (const v of venues) {
     /* A search is a question about the whole board, not about the town you last
@@ -520,13 +583,32 @@ export function buildFeed(venues, at, { zone = null, filter = "all", sort = "soo
        looking at a different town when you typed it. */
     if (zone && !q && v.zone_id !== zone) continue;
     if (q && !matchesQuery(v, q)) continue;
-    // An event filter is a question about the VENUE's calendar, so it is asked
-    // once, here, and a venue that fails it is gone whether or not it has a
-    // window. Asking it per-deal would drop a bar that has a band and no
-    // published happy hour -- which is precisely a bar worth showing.
-    if (venueTest && !venueTest(v, today)) continue;
     const miles = origin && v.lat != null ? haversineMiles(origin, v) : null;
     const driveMin = miles == null ? null : driveMinutes(miles);
+
+    /* An event filter is a question about the VENUE's calendar, so it is asked
+       once, here, and a venue that fails it is gone whether or not it has a
+       window. Asking it per-deal would drop a bar that has a band and no
+       published happy hour -- which is precisely a bar worth showing.
+
+       The event that survives the chip is carried ON the row: it is what the
+       card must print, and what the order is built from. */
+    if (wantKind) {
+      const event = nextEvent(v, today, nowMin, wantKind);
+      if (!event) continue;
+      rows.push({
+        v, event, ...bestDeal(v, at, horizonDays), miles, driveMin,
+        hasOrigin: origin != null,
+        /* Every event row is banded by its DAY, tonight's first -- the same
+           machinery a future happy hour uses, so the section headers and the
+           order are still built from one number. A bar with a band and no
+           published window is not "Hours not published" under this chip; it
+           is a show on a night, ranked with the rest of them. */
+        group: GROUP.UPCOMING,
+        dayIndex: Math.max(0, Math.round((Date.parse(event.date) - Date.parse(today)) / 86400000)),
+      });
+      continue;
+    }
 
     /* The reframe: the board is a list of VENUES, and the happy hour is an
        attribute some of them have. A licensed bar with no window we could prove
@@ -534,11 +616,9 @@ export function buildFeed(venues, at, { zone = null, filter = "all", sort = "soo
        missing and tell us what it is -- they cannot fill in a bar that never
        shows up. It is excluded only under a DEAL filter, where the question
        being asked ("drinks under $5") is one an empty venue cannot answer.
-       An EVENT filter is not such a question: it was already answered above
-       against the venue, so a bar with a band and no window still gets its
-       row. */
+       An EVENT filter never reaches here -- it built its row above. */
     if (!v.deals || !v.deals.length) {
-      if (filter === "all" || venueTest) {
+      if (filter === "all") {
         rows.push({
           v, deal: null, hit: null, miles, driveMin, hasOrigin: origin != null,
           confidence: "unknown", ageDays: null, group: GROUP.UNKNOWN,
@@ -830,9 +910,15 @@ export function applyEvents(venues, overlay) {
 
    An event whose start is UNKNOWN is never skipped. Blank means unknown, not
    "already over" (rule 4): we do not drop a night because the venue did not
-   print a time. */
-export function nextEvent(venue, today, nowMin = null) {
+   print a time.
+
+   `want` is a kind predicate -- pass the one behind the active chip and the
+   answer is the next event OF THAT KIND. Under "Live music" a bar that plays
+   Friday and runs Quizzo tonight has to offer the band; naming the quiz is how
+   a filter for live shows ends up printing something that is not one. */
+export function nextEvent(venue, today, nowMin = null, want = null) {
   for (const ev of venue.events || []) {
+    if (want && !want(ev.kind)) continue;
     if (ev.date > today) return ev;
     if (ev.date < today) continue;
     if (nowMin == null || !ev.start || mins(ev.start) >= nowMin) return ev;

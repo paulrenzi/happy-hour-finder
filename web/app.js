@@ -10,7 +10,7 @@ import {
   matchesQuery,
   haversineMiles, driveMinutes, ageDays, effectiveConfidence, applyOverlay, minutesOfDay,
   dealKey, applyConfirmations, dateKeyOf, dayOffset,
-  applyEvents, nextEvent, eventLine, validEmail,
+  applyEvents, nextEvent, eventLine, eventKindTest, validEmail,
 } from "./lib.js";
 
 const state = {
@@ -386,6 +386,19 @@ async function loadZoneVenues(zoneId) {
    the day after tomorrow. The hit carries its own calendar date; compare that
    to today and the label cannot drift. */
 function sectionFor(row) {
+  /* An event row is filed under the night the SHOW is on, not the night its
+     happy hour runs -- they are routinely different, and the header has to
+     name the one the reader is here for. Same numbers the order is built
+     from (row.dayIndex), so the two can never disagree. */
+  if (row.event) {
+    const days = row.dayIndex ?? 0;
+    if (days === 0) return "Tonight";
+    if (days === 1) return "Tomorrow";
+    const d = new Date(row.event.date + "T12:00:00");
+    return days > 6
+      ? `${DOW_LONG[dowOf(d) - 1]} ${d.getMonth() + 1}/${d.getDate()}`
+      : DOW_LONG[dowOf(d) - 1];
+  }
   if (row.group !== GROUP.UPCOMING) return GROUP_LABEL[row.group];
   /* The same function the ORDER is built from, so the header and the sort can
      never name different days. */
@@ -464,6 +477,16 @@ function unknownCard(row) {
   const dist = distanceText(v, row.miles, row.driveMin);
   $(".zone", node).textContent = dist ? `${zoneName} · ${dist}` : zoneName;
   $(".kind", node).textContent = licenseLabel(v.license_type);
+
+  /* A bar with a band and no published happy hour is still a place to be
+     tonight, and under an event chip it is exactly what the reader asked
+     for -- so the show gets said here too, on the card that has no window to
+     print. */
+  const now = new Date();
+  const ev = row.event || nextEvent(v, dateKeyOf(now), minutesOfDay(now), eventKindTest(state.filter));
+  const tonight = $(".tonight", node);
+  if (ev) tonight.textContent = eventLine(ev, dateKeyOf(now));
+  else tonight.remove();
 
   // No Directions on an unknown card: nobody is driving to a bar whose happy
   // hour we cannot name. The one action that matters is telling us the hours.
@@ -1066,8 +1089,11 @@ function card(row, at) {
   // Pass the clock, not just the date. A venue can play twice in a night and
   // this board is read DURING the happy hour; without it the card offers a set
   // that is already over. See nextEvent().
+  // Under an event chip the row already carries the event that SURVIVED the
+  // chip; printing anything else is how "Live music" ended up advertising
+  // Quizzo.
   const now = new Date();
-  const ev = nextEvent(v, dateKeyOf(now), minutesOfDay(now));
+  const ev = row.event || nextEvent(v, dateKeyOf(now), minutesOfDay(now), eventKindTest(state.filter));
   const tonight = $(".tonight", node);
   if (ev) tonight.textContent = eventLine(ev, dateKeyOf(new Date()));
   else tonight.remove();
@@ -1116,6 +1142,17 @@ function render() {
   const live = rows.filter((r) => r.group === GROUP.LIVE).length;
   const soon = rows.filter((r) => r.group === GROUP.SOON).length;
   const withDeals = rows.filter((r) => r.group !== GROUP.UNKNOWN).length;
+  /* Under an event chip the headline counts SHOWS TONIGHT. "Nothing live right
+     now" is a sentence about happy hours, and it is the wrong answer to a
+     reader who is asking who is playing. */
+  const eventFilter = !!eventKindTest(state.filter);
+  const tonightRows = eventFilter ? rows.filter((r) => (r.dayIndex ?? 0) === 0).length : 0;
+  if (eventFilter) {
+    const noun = state.filter === "music" ? "live show" : "event";
+    $("#heroCount").innerHTML = tonightRows
+      ? `<b>${tonightRows}</b> ${noun}${tonightRows === 1 ? "" : "s"} tonight`
+      : `Nothing on tonight — <b>${rows.length}</b> ${noun}${rows.length === 1 ? "" : "s"} coming up`;
+  } else {
   $("#heroCount").innerHTML = live
     ? `<b>${live}</b> happy hour${live === 1 ? "" : "s"} live ${isNow() ? "now" : "then"}`
     : soon
@@ -1125,6 +1162,7 @@ function render() {
         : rows.length
           ? "No published hours here yet — every venue below is one you could fill in"
           : "Nothing matches that filter";
+  }
 
   const feed = $("#feed");
   feed.textContent = "";
@@ -1163,7 +1201,10 @@ function render() {
   for (const row of dealRows) {
     const want = sectionFor(row);
     if (want !== section) feed.append(el("p", "sec", (section = want)));
-    feed.append(card(row, at));
+    /* An event row is about a show, and a show can be at a bar whose happy
+       hour we cannot name. It keeps its place in the night either way -- the
+       card just has no window to print. */
+    feed.append(row.deal ? card(row, at) : unknownCard(row));
   }
 
   if (unknownRows.length) {
@@ -1208,6 +1249,16 @@ function render() {
     );
   }
 
+  if (eventFilter) {
+    // The kicker counts the same thing the headline does, or the two lines of
+    // one screen say different numbers about the same board.
+    const noun = state.filter === "music" ? "show" : "event";
+    const line =
+      `${rows.length} ${noun}${rows.length === 1 ? "" : "s"} · ` +
+      (tonightRows ? `${tonightRows} tonight` : "none tonight");
+    $("#status").textContent = line + ".";
+    $("#sectionKicker").textContent = line;
+  } else {
   $("#status").textContent =
     `${dealRows.length} result${dealRows.length === 1 ? "" : "s"}, ${live} live` +
     (unknownRows.length ? `, ${unknownRows.length} with no published hours.` : ".");
@@ -1216,6 +1267,7 @@ function render() {
     `${total} venue${total === 1 ? "" : "s"} · ` +
     (live ? `${live} live ${isNow() ? "now" : "then"}` : "none live") +
     (unknownRows.length ? ` · ${unknownRows.length} need hours` : "");
+  }
   paintHeadline();
 }
 

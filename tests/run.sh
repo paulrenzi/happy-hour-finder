@@ -26,6 +26,10 @@ echo "== the board actually paints =="
 python tests/render_check.py
 
 echo
+echo "== the live-shows chip shows live shows, tonight first =="
+python tests/events_filter_check.py
+
+echo
 echo "== a bar can be found by name =="
 python tests/search_check.py
 
