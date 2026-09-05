@@ -1,7 +1,7 @@
 {
  "rule": "Paul, 2026-09-03: any live deal with under 5 happy-hour items needs a re-scrape.",
  "generated": "2026-09-05",
- "count": 106,
+ "count": 105,
  "venues": [
   {
    "zone": "abington_jenkintown",
@@ -205,15 +205,6 @@
    "zone": "center_city",
    "name": "Ocean Prime",
    "lid": "68137",
-   "verified_by": "auto_extract",
-   "item_count": 4,
-   "url": "https://www.ocean-prime.com/locations-menus/philadelphia",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "center_city",
-   "name": "Ocean Prime",
-   "lid": "97502",
    "verified_by": "auto_extract",
    "item_count": 4,
    "url": "https://www.ocean-prime.com/locations-menus/philadelphia",
