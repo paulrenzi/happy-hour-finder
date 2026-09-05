@@ -61,6 +61,12 @@ PAGES_JSON = os.path.join(REPO, "data", "deals_pages_llm.json")
 MENUS_JSON = os.path.join(REPO, "data", "deals_menus.json")
 PHOTOS_JSON = os.path.join(REPO, "data", "venue_photos.json")
 COORDS_JSON = os.path.join(REPO, "data", "venue_coords.json")
+# The same thing keyed on LID, written by ingest/geocode_missing.py. COORDS_JSON
+# above keys on the seed slug and so can only ever reach the 387-row seed
+# corpus; every venue the PLCB base or a zone expansion added is unreachable
+# through it. Keyed on LID this survives a rebuild of the base, which is
+# regenerated wholesale from Places and drops anything Places did not answer.
+COORDS_LID_JSON = os.path.join(REPO, "data", "venue_coords_lid.json")
 BASE_JSON = os.path.join(REPO, "data", "venue_base.json")
 OUT_DIR = os.path.join(REPO, "web", "data")
 # Why a venue publishes a window and names no item, one line per venue, written
@@ -617,6 +623,8 @@ def main():
     # Written by ingest/geocode_venues.py. Without it the app still works, it
     # just cannot rank by distance or tell you whether you can make it in time.
     coords = json.load(open(COORDS_JSON, encoding="utf-8")) if os.path.exists(COORDS_JSON) else {}
+    coords_lid = (json.load(open(COORDS_LID_JSON, encoding="utf-8"))
+                  if os.path.exists(COORDS_LID_JSON) else {})
 
     # The venue base: every licensed premises in the corpus, keyed on its PLCB
     # LID (ingest/build_venue_base.py). This is what the board is a list OF. A
@@ -853,7 +861,7 @@ def main():
             "plcb_name": venue.get("plcb_name") or b.get("plcb_name"),
             "license_type": b.get("license_type", ""),
         }
-        at = coords.get(venue["id"])
+        at = coords.get(venue["id"]) or coords_lid.get(str(v["lid"]))
         if at:
             v["lat"], v["lng"] = at["lat"], at["lng"]
             # A road-level match is a street centroid: good to a block, not a
@@ -896,6 +904,13 @@ def main():
         for k in ("website", "lat", "lng", "geo_precision", "photo", "also_lids"):
             if k in b:
                 v[k] = b[k]
+        # Same fallback the deal-bearing venues get above. A venue with no
+        # window still needs a coordinate: it is the one the reader is standing
+        # next to when they submit the photo that gives it one.
+        at = coords_lid.get(str(lid))
+        if at and v.get("lat") is None:
+            v["lat"], v["lng"] = at["lat"], at["lng"]
+            v["geo_precision"] = at.get("precision", "?")
         v["deals"] = []
         by_zone.setdefault(b["zone_id"], []).append(v)
 
