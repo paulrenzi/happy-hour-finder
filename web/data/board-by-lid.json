@@ -10256,6 +10256,44 @@
    }
   ]
  },
+ "66885": {
+  "name": "1518 Bar & Grill",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 2,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 3,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 4,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 5,
+      "start": "17:00",
+      "end": "19:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "72755": {
   "name": "2637brew",
   "deals": [
@@ -10271,6 +10309,44 @@
       "dow": 7,
       "start": "15:00",
       "end": "17:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "100132": {
+  "name": "Adobe Cafe",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 2,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 3,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 4,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 5,
+      "start": "16:30",
+      "end": "18:30"
      }
     ],
     "source": {
@@ -10535,6 +10611,54 @@
    }
   ]
  },
+ "68436": {
+  "name": "Bar-Ly Chinatown",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 6,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 7,
+      "start": "15:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "61894": {
   "name": "Barbuzzo",
   "deals": [
@@ -10573,6 +10697,77 @@
    }
   ]
  },
+ "66115": {
+  "name": "Barra Rossa Ristorante",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "106839": {
+  "name": "Bellini",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "86119": {
   "name": "Bloomsday Cafe",
   "deals": [
@@ -10593,6 +10788,44 @@
       "dow": 5,
       "start": "16:00",
       "end": "17:30"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "70264": {
+  "name": "Bodega Bar & Kitchen",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 2,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 3,
+      "start": "17:00",
+      "end": "20:00"
+     },
+     {
+      "dow": 4,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 5,
+      "start": "17:00",
+      "end": "20:00"
      }
     ],
     "source": {
@@ -10639,6 +10872,254 @@
       "dow": 5,
       "start": "16:00",
       "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "67179": {
+  "name": "Br\u00fc Craft & Wurst",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "21:00",
+      "end": "23:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 7,
+      "start": "20:00",
+      "end": "22:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "44460": {
+  "name": "Buffalo Billiards",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "17:00",
+      "end": "20:00"
+     },
+     {
+      "dow": 2,
+      "start": "17:00",
+      "end": "20:00"
+     },
+     {
+      "dow": 3,
+      "start": "17:00",
+      "end": "20:00"
+     },
+     {
+      "dow": 4,
+      "start": "17:00",
+      "end": "20:00"
+     },
+     {
+      "dow": 5,
+      "start": "17:00",
+      "end": "20:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "110752": {
+  "name": "Cafe Click",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "15:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 2,
+      "start": "15:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 3,
+      "start": "15:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 4,
+      "start": "15:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 5,
+      "start": "15:30",
+      "end": "18:30"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "126293": {
+  "name": "Capri",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "15:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 2,
+      "start": "15:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 3,
+      "start": "15:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 4,
+      "start": "15:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 5,
+      "start": "15:00",
+      "end": "19:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "118212": {
+  "name": "Caribou Cafe",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 6,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 7,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "66919": {
+  "name": "Cavanaugh\u2019s Headhouse",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 2,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 3,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 4,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 5,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 7,
+      "start": "21:00",
+      "end": "24:00"
      }
     ],
     "source": {
@@ -10710,6 +11191,39 @@
       "dow": 4,
       "start": "15:00",
       "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "44800": {
+  "name": "Chris' Jazz Cafe",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:45"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:45"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:45"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:45"
      }
     ],
     "source": {
@@ -10976,6 +11490,44 @@
    }
   ]
  },
+ "63096": {
+  "name": "El Rey",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "52068": {
   "name": "El Vez",
   "deals": [
@@ -11006,6 +11558,72 @@
       "dow": 5,
       "start": "15:00",
       "end": "17:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "101354": {
+  "name": "Ember & Ash",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 3,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 4,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 5,
+      "start": "17:00",
+      "end": "19:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "92001": {
+  "name": "Emmy Squared Pizza: Queen Village",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "15:00",
+      "end": "18:00"
      }
     ],
     "source": {
@@ -11054,6 +11672,82 @@
       "dow": 7,
       "start": "15:30",
       "end": "17:30"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "23603": {
+  "name": "Fat Moon Restaurant & Bar",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 2,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 3,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 4,
+      "start": "15:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 5,
+      "start": "15:00",
+      "end": "19:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "112368": {
+  "name": "Founding Fathers South St Sports Bar & Grill",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 2,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 3,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 4,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 5,
+      "start": "17:00",
+      "end": "19:00"
      }
     ],
     "source": {
@@ -11267,6 +11961,191 @@
    }
   ]
  },
+ "69485": {
+  "name": "Independence Beer Garden",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 2,
+      "start": "15:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 3,
+      "start": "15:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 4,
+      "start": "15:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 5,
+      "start": "15:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 6,
+      "start": "15:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 7,
+      "start": "15:00",
+      "end": "19:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "117245": {
+  "name": "Insatiable Restaurant",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 6,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 7,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "81964": {
+  "name": "InterAct Theatre Company at The Proscenium Theatre",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 4,
+      "start": "17:30",
+      "end": "19:30"
+     },
+     {
+      "dow": 5,
+      "start": "17:30",
+      "end": "19:30"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "61639": {
+  "name": "IosRestobar",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "104698": {
+  "name": "Jaxx Steaks Taproom",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 2,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 3,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 4,
+      "start": "17:00",
+      "end": "19:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "65261": {
   "name": "Jerry's Bar",
   "deals": [
@@ -11297,6 +12176,87 @@
       "dow": 5,
       "start": "16:00",
       "end": "19:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "90000": {
+  "name": "Juno",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 6,
+      "start": "16:00",
+      "end": "19:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "96216": {
+  "name": "La Chinesca",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 7,
+      "start": "16:00",
+      "end": "18:00"
      }
     ],
     "source": {
@@ -11344,6 +12304,158 @@
      {
       "dow": 7,
       "start": "17:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "52600": {
+  "name": "LaScala's FIRE - Center City",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "15:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "104830": {
+  "name": "Liberty Point",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "20:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "65466": {
+  "name": "Lion Sports Bar",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 6,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 7,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "116982": {
+  "name": "Loch Bar",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 6,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 7,
+      "start": "15:00",
       "end": "18:00"
      }
     ],
@@ -11401,6 +12513,44 @@
    }
   ]
  },
+ "133576": {
+  "name": "Madira",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "71806": {
   "name": "Malbec Argentine Steakhouse",
   "deals": [
@@ -11439,7 +12589,222 @@
    }
   ]
  },
+ "131142": {
+  "name": "Miss Saigon Vietnamese Restaurant & Lounge",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 2,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 3,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 4,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 5,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 6,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 7,
+      "start": "16:30",
+      "end": "18:30"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "109552": {
+  "name": "Mona",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:30"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:30"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:30"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:30"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:30"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "122258": {
+  "name": "NaBrasa Brazilian Steakhouse",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 2,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 3,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 4,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 5,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 6,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 7,
+      "start": "17:00",
+      "end": "19:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "57781": {
+  "name": "National Mechanics Bar and Restaurant",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "19:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "68137": {
+  "name": "Ocean Prime",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 7,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "97502": {
   "name": "Ocean Prime",
   "deals": [
    {
@@ -11548,6 +12913,130 @@
      },
      {
       "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "116742": {
+  "name": "Our Town Taproom",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "92503": {
+  "name": "P. J. Clarke\u2019s At The Curtis",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 2,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 3,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 4,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 5,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 6,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 7,
+      "start": "17:00",
+      "end": "19:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "108595": {
+  "name": "Paddy Whacks Irish Sports Pub - South Street",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
       "start": "16:00",
       "end": "18:00"
      }
@@ -11692,6 +13181,49 @@
    }
   ]
  },
+ "71225": {
+  "name": "Prestige by Vesper",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 2,
+      "start": "17:00",
+      "end": "21:00"
+     },
+     {
+      "dow": 3,
+      "start": "17:00",
+      "end": "21:00"
+     },
+     {
+      "dow": 4,
+      "start": "17:00",
+      "end": "21:00"
+     },
+     {
+      "dow": 5,
+      "start": "17:00",
+      "end": "21:00"
+     },
+     {
+      "dow": 6,
+      "start": "17:00",
+      "end": "21:00"
+     },
+     {
+      "dow": 7,
+      "start": "17:00",
+      "end": "21:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "60604": {
   "name": "Prohibition Taproom",
   "deals": [
@@ -11721,6 +13253,54 @@
      {
       "dow": 5,
       "start": "15:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "104629": {
+  "name": "Prunella",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 6,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 7,
+      "start": "16:00",
       "end": "18:00"
      }
     ],
@@ -11760,6 +13340,130 @@
       "dow": 5,
       "start": "16:00",
       "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "133827": {
+  "name": "Recipe Philly",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 6,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 7,
+      "start": "15:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "40892": {
+  "name": "Rittenhouse Grill",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 2,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 3,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 4,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 5,
+      "start": "16:30",
+      "end": "18:30"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "119139": {
+  "name": "Rosy's Taco Bar East",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 6,
+      "start": "21:00",
+      "end": "24:00"
      }
     ],
     "source": {
@@ -11844,6 +13548,110 @@
    }
   ]
  },
+ "133688": {
+  "name": "Sav\u00fa",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "19:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "127909": {
+  "name": "Secondhand Ranch",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "15:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "15:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "129449": {
+  "name": "Side Eye",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "69790": {
   "name": "SouthGate",
   "deals": [
@@ -11869,6 +13677,82 @@
       "dow": 5,
       "start": "16:00",
       "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "101231": {
+  "name": "Taste Cheesesteak Bar",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "20:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "20:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "20:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "20:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "20:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "47529": {
+  "name": "Tequilas Casa Mexicana",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 2,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 3,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 4,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 5,
+      "start": "17:00",
+      "end": "19:00"
      }
     ],
     "source": {
@@ -11991,6 +13875,44 @@
    }
   ]
  },
+ "63953": {
+  "name": "The Dandelion",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 2,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 3,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 4,
+      "start": "16:30",
+      "end": "18:30"
+     },
+     {
+      "dow": 5,
+      "start": "16:30",
+      "end": "18:30"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "109360": {
   "name": "The Fairmount Tavern",
   "deals": [
@@ -12021,6 +13943,44 @@
       "dow": 5,
       "start": "17:00",
       "end": "20:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "100231": {
+  "name": "The Goat Rittenhouse",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
      }
     ],
     "source": {
@@ -12115,6 +14075,44 @@
    }
   ]
  },
+ "122239": {
+  "name": "The Silver Buckle",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 2,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 3,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 4,
+      "start": "17:00",
+      "end": "19:00"
+     },
+     {
+      "dow": 5,
+      "start": "17:00",
+      "end": "19:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "63425": {
   "name": "The Trestle Inn",
   "deals": [
@@ -12155,6 +14153,49 @@
       "dow": 7,
       "start": "17:00",
       "end": "20:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "64384": {
+  "name": "The Twisted Tail",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 2,
+      "start": "18:00",
+      "end": "22:00"
+     },
+     {
+      "dow": 3,
+      "start": "18:00",
+      "end": "22:00"
+     },
+     {
+      "dow": 4,
+      "start": "18:00",
+      "end": "22:00"
+     },
+     {
+      "dow": 5,
+      "start": "18:00",
+      "end": "22:00"
+     },
+     {
+      "dow": 6,
+      "start": "18:00",
+      "end": "22:00"
+     },
+     {
+      "dow": 7,
+      "start": "18:00",
+      "end": "22:00"
      }
     ],
     "source": {
@@ -12282,6 +14323,39 @@
    }
   ]
  },
+ "52035": {
+  "name": "Tria Cafe Rittenhouse",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "14:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "14:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "14:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "14:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "63811": {
   "name": "Ubar",
   "deals": [
@@ -12310,6 +14384,54 @@
      },
      {
       "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "131512": {
+  "name": "Uchi Philadelphia",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 6,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 7,
       "start": "16:00",
       "end": "18:00"
      }
@@ -12444,6 +14566,92 @@
    }
   ]
  },
+ "46321": {
+  "name": "Vintage",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 2,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 5,
+      "start": "16:00",
+      "end": "18:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "37666": {
+  "name": "Woody's",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 1,
+      "start": "17:00",
+      "end": "20:00"
+     },
+     {
+      "dow": 2,
+      "start": "17:00",
+      "end": "20:00"
+     },
+     {
+      "dow": 3,
+      "start": "17:00",
+      "end": "20:00"
+     },
+     {
+      "dow": 4,
+      "start": "17:00",
+      "end": "20:00"
+     },
+     {
+      "dow": 5,
+      "start": "17:00",
+      "end": "20:00"
+     },
+     {
+      "dow": 6,
+      "start": "17:00",
+      "end": "20:00"
+     },
+     {
+      "dow": 7,
+      "start": "17:00",
+      "end": "20:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
  "51472": {
   "name": "Yakitori Boy",
   "deals": [
@@ -12474,6 +14682,29 @@
       "dow": 7,
       "start": "17:00",
       "end": "19:00"
+     }
+    ],
+    "source": {
+     "kind": "venue_site"
+    }
+   }
+  ]
+ },
+ "121229": {
+  "name": "Yanaga Kappo Izakaya",
+  "deals": [
+   {
+    "type": "happy_hour",
+    "windows": [
+     {
+      "dow": 3,
+      "start": "16:00",
+      "end": "18:00"
+     },
+     {
+      "dow": 4,
+      "start": "16:00",
+      "end": "18:00"
      }
     ],
     "source": {

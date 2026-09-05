@@ -1744,9 +1744,15 @@ class VenueBase(unittest.TestCase):
         # carrying a window and nearly all a photo. Measured: the three zones
         # are 54,220 bytes and the rest of the board is 575,207, still under
         # the old bar. Deals again, not the base, which is now 1.47MB.
+        # 700k held until 2026-09-05, when a full crawl of Center City took one
+        # zone from 58 published windows to 115. Measured: center_city's own
+        # bundle is 134,057 bytes and the whole rest of the board is 592,624,
+        # still under the old bar; the zone count is unchanged at 51 and no
+        # venue ships in a zone bundle without a deal. The base is 1.3MB and
+        # could not fit under this number if it tried. Richer town, same shape.
         boot = sum(os.path.getsize(os.path.join(REPO, "web", "data", f"zone-{z['id']}.json"))
                    for z in self.index["zones"])
-        self.assertLess(boot, 700_000, "the boot payload has grown a venue base again")
+        self.assertLess(boot, 800_000, "the boot payload has grown a venue base again")
 
     def test_every_shipped_venue_can_be_identified_in_a_submission(self):
         # The ask on a no-hours card quotes the LID back to us. A card that
