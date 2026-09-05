@@ -593,7 +593,22 @@ body.sheetOpen {
 }
 .note { margin: 10px 0 0; font-size: 13px; line-height: 1.5; color: var(--dim); }
 .note a { color: var(--accent-deep); }
-#sheet .actions { margin-top: 20px; }
+#sheet .actions { margin-top: 20px; flex-wrap: wrap; }
+/* A card's buttons are one or two words. A sheet's are sentences -- "Send a
+   photo of the menu" next to "No photo — tell us instead" is wider than a
+   320px phone, and .btn's nowrap + min-width:0 let them shrink under their own
+   labels: both were clipped and the second ran off the sheet's right edge,
+   which is the overflow people reported on the "wrong" sheet. The venue
+   sheet's "These hours changed — send a photo of the menu" clipped the same
+   way on its own. So in here a row wraps, and a label wraps with it: a button
+   too long for the row takes a line of its own rather than losing its words.
+   The min-width keeps a wrapped button from collapsing to a sliver, and caps
+   at 100% so a single long label still fits the row and wraps inside it. */
+#sheet .actions > .btn {
+  flex: 1 1 auto; min-width: min(100%, 8ch);
+  white-space: normal; text-align: center; line-height: 1.25;
+  padding: 8px 12px;
+}
 
 .pick { color: var(--muted); font-size: 13.5px; word-break: break-word; }
 .pick-preview {

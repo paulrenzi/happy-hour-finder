@@ -51,6 +51,53 @@ def stray_control_characters():
     return bad
 
 
+# A card's buttons say "Directions". A SHEET's say "No photo — tell us instead"
+# next to "Send a photo of the menu", and that pair is wider than a 320px phone.
+# .btn is nowrap with min-width:0, so they did not wrap -- they shrank under
+# their own labels, clipped, and the second one ran off the sheet's right edge.
+# That is the overflow reported on the "wrong" sheet, and the venue sheet's
+# "These hours changed — send a photo of the menu" was clipping the same way on
+# its own. Measure what the engine drew, in the sheet, at the narrowest phone.
+SHEET_MEASURE = """() => {
+  const sheet = document.querySelector("#sheet");
+  const cs = getComputedStyle(sheet);
+  const r = sheet.getBoundingClientRect();
+  const left = r.left + parseFloat(cs.paddingLeft);
+  const right = r.right - parseFloat(cs.paddingRight);
+  const out = [];
+  for (const e of sheet.querySelectorAll("*")) {
+    const b = e.getBoundingClientRect();
+    if (!b.width) continue;
+    const label = (e.textContent || "").trim().slice(0, 40);
+    // Past the sheet's own padding box: visibly outside the sheet.
+    if (b.right - right > 0.5 || left - b.left > 0.5)
+      out.push(`"${label}" sticks out past the sheet's edge`);
+    // Wider inside than out: the words are there and cannot be read.
+    else if (e.scrollWidth - e.clientWidth > 1)
+      out.push(`"${label}" is clipped by its own box`);
+  }
+  // The sheet itself scrolling sideways is the reader-visible symptom.
+  if (sheet.scrollWidth - sheet.clientWidth > 1)
+    out.push("the sheet scrolls sideways");
+  return out;
+}"""
+
+
+def sheet_overflow(page, probe):
+    """Open each sheet a reader can reach from a card, at 320px, and measure."""
+    page.set_viewport_size({"width": 320, "height": 780})
+    bad = []
+    for sel, name in ((".wrong", 'the "wrong" sheet'), (".name", "the venue sheet")):
+        card = page.locator(".card", has_text=probe).first
+        card.locator(sel).first.click()
+        page.wait_for_timeout(500)
+        bad += [f"{name} at 320px: {line}" for line in page.evaluate(SHEET_MEASURE)]
+        page.click("#sheetClose")
+        page.wait_for_timeout(300)
+    page.set_viewport_size({"width": 360, "height": 780})
+    return bad
+
+
 def main():
     problems = stray_control_characters()
     for line in problems:
@@ -179,9 +226,10 @@ def main():
                }""",
             "CHROME PROBE DRAFT",
         )
+        sheets = sheet_overflow(page, "CHROME PROBE DRAFT") if found.get("found") else []
         browser.close()
 
-    bad = list(problems)
+    bad = list(problems) + sheets
     if errors:
         bad.append(f"uncaught page error: {errors[0]}")
     if not found.get("found"):
