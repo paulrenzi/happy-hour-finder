@@ -1268,9 +1268,7 @@ function reportWrong(v, deal) {
       "p",
       null,
       "Wrong window, new prices, a menu that changed last week — it is all the " +
-        "same fix, and the fastest one by a distance is a photo of the menu: it " +
-        "goes into the same queue a person reads every day, and an approved " +
-        "photo replaces what's on the card above."
+        "same fix, and the fastest one by a distance is a photo of the menu."
     )
   );
 
