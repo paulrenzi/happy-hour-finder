@@ -4,44 +4,6 @@
  "built_at": "2026-09-05",
  "venues": [
   {
-   "lid": "85899",
-   "name": "ACME Markets",
-   "address": "121 E City Line Ave, Bala Cynwyd PA 19004",
-   "zone_id": "ardmore_bryn_mawr",
-   "license_type": "Restaurant (Liquor)",
-   "id": "85899",
-   "plcb_name": "THE FROSTED MUG",
-   "website": "https://local.acmemarkets.com/pa/bala-cynwyd/121-e-city-ave.html",
-   "lat": 40.0039219,
-   "lng": -75.22373569999999,
-   "geo_precision": "place",
-   "photo": {
-    "attribution": "Photo: ACME Markets / Google",
-    "file": "img/venues/85899.jpg"
-   },
-   "deals": [],
-   "branch": "E City Line Ave"
-  },
-  {
-   "lid": "98507",
-   "name": "ACME Markets",
-   "address": "829 Montgomery Ave, Penn Valley PA 19072",
-   "zone_id": "ardmore_bryn_mawr",
-   "license_type": "Restaurant (Liquor)",
-   "id": "98507",
-   "plcb_name": "THE FROSTED MUG",
-   "website": "https://local.acmemarkets.com/pa/narberth/829-montgomery-ave.html",
-   "lat": 40.0109158,
-   "lng": -75.2580748,
-   "geo_precision": "place",
-   "photo": {
-    "attribution": "Photo: ACME Markets / Google",
-    "file": "img/venues/98507.jpg"
-   },
-   "deals": [],
-   "branch": "Montgomery Ave"
-  },
-  {
    "lid": "14597",
    "name": "Al Dar Bistro",
    "address": "281-283 Montgomery Ave, Bala Cynwyd PA 19004",
@@ -164,24 +126,6 @@
    "photo": {
     "attribution": "Photo: Thi Lam / Google",
     "file": "img/venues/15280.jpg"
-   },
-   "deals": []
-  },
-  {
-   "lid": "73040",
-   "name": "Giant",
-   "address": "50 E Wynnewood Rd Unit #2, Wynnewood PA 19096",
-   "zone_id": "ardmore_bryn_mawr",
-   "license_type": "Restaurant (Liquor)",
-   "id": "73040",
-   "plcb_name": "THE GIANT COMPANY LLC",
-   "website": "https://stores.giantfoodstores.com/pa/wynnewood/50-e-wynnewood-rd?y_source=1_NDE5NTcwMy03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
-   "lat": 40.0013629,
-   "lng": -75.27213549999999,
-   "geo_precision": "place",
-   "photo": {
-    "attribution": "Photo: Chris Reece / Google",
-    "file": "img/venues/73040.jpg"
    },
    "deals": []
   },
@@ -561,24 +505,6 @@
    "photo": {
     "attribution": "Photo: Tired Hands Fermentaria Tap Room / Google",
     "file": "img/venues/65792.jpg"
-   },
-   "deals": []
-  },
-  {
-   "lid": "68985",
-   "name": "Whole Foods at Wynnewood",
-   "address": "15 Wynnewood Rd, Wynnewood PA 19096",
-   "zone_id": "ardmore_bryn_mawr",
-   "license_type": "Restaurant (Liquor)",
-   "id": "68985",
-   "plcb_name": "WHOLE FOODS MARKET GROUP LLC",
-   "website": "https://properties.kimcorealty.com/properties/whole-foods-at-wynnewood/117010/view",
-   "lat": 40.0017381,
-   "lng": -75.276216,
-   "geo_precision": "place",
-   "photo": {
-    "attribution": "Photo: Chris Reece / Google",
-    "file": "img/venues/68985.jpg"
    },
    "deals": []
   },
