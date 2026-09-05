@@ -652,3 +652,103 @@ route stub in all four browser checks** (`render`, `card_chrome`, `search`,
 Two more, newer: a `web/` change ships nothing until a **detached-worktree**
 rebuild restamps `sw.js` in the same commit; and a browser check must open a
 **fresh page per URL**, because the app reads its hash once at boot.
+
+## 14. The first read, the first chips, and the gap between them (2026-09-05, night 5)
+
+Night 4 designed §13. Night 5 built the top of it and found the one thing the
+design did not name.
+
+### 14.1 The reader works, and the hit rate is the finding
+
+`ingest/read_events_venue.py` had never been run against a real venue. It has
+now read one whole town, Wayne, and the numbers are the planning input every
+later town should be sized against:
+
+| | |
+|---|---|
+| board venues in Wayne | 14 |
+| that publish a calendar we can read | **4** |
+| grounded event rows returned | **28** |
+| rows dropped by the grounding gate | 0 |
+| cost | ~$7.47, about **$0.53/venue** |
+
+118 North 15 rows, LaScala's Fire 6, Flip and Baileys 4, Black Powder Tavern 3.
+**Roughly three in ten venues publish anything.** Budget a town read as
+`venues × $0.53`, and expect two thirds of it to buy a clean "none" — which is
+still worth paying for, because a clean "none" is what stops us re-reading.
+
+Two things the reader needed before it worked at all:
+
+- **It could not see most of the board's websites.** `population()` read only
+  `venue_sites.json`; **33 of 471** published venues have no row there, 118 North
+  among them, and the run printed "0 venue(s) to read" rather than an error. It
+  now falls back to the shipped bundles (`bundle_sites()`, reading `venues-*.json`
+  then `zone-*.json`, deal-bearing wins) and prints a loud skip line naming what
+  it could not reach.
+- **The turn budget, not the source, was the whole gap.** 118 North's page is
+  755KB. At the default 14 turns the agent exhausted itself, returned nothing,
+  and cost $0.67 for it. `HHF_MAX_TURNS=28` returned 15 grounded rows for $0.99.
+  🛑 A `kind: "exhausted"` result is **not** evidence that a venue publishes
+  nothing. Re-run it with a bigger budget before believing a "none".
+
+### 14.2 The population is not bands, and that shaped the UI
+
+The 28 rows are bands, DJs, **music bingo**, a **dollar drink night** and a
+**historical dinner lecture**. Paul: *"All of those events are important, even the
+bingo, trivia nights etc. we want all of that."* And then, on labelling: *"live
+music is one thing, and events is another."*
+
+So the board ships **two chips, not one**: `FILTERS.music` (`kind === "live_music"`)
+and `FILTERS.events` (every other kind). A reader who taps "Live music" and is
+handed music bingo reads that as the board being wrong.
+
+🔑 **Both are `venueTest`, not `test`** — an event filter is a question about the
+venue's calendar, not about a deal. `buildFeed` asks it **once per venue**, and
+keeps a venue that has a band and **no published happy hour**. That bar is
+exactly the one worth showing; asking the question per-deal would have silently
+dropped it.
+
+Also removed the same session: the **Sort** picker (three orders for a question
+with one right answer, and the app already overrode it once it learned where the
+reader was — `SORTS` stays as a table because `readHash` still honours an `s=`
+on an older shared link), and the **Food deals / Drink deals** chips, which
+nearly every window on the board matched and so removed almost nothing.
+Added: a **State** picker (`All / PA / DE`) on the town line, backed by an
+explicit `state` field on every zone in `data/zones.json` and carried into
+`index.json` by `build_bundles.py` — derived from the zones, so a zone in a third
+state needs no code edit.
+
+### 14.3 🛑 The gap: a filter can ship ahead of the data it filters on
+
+Paul selected **Live music**, all towns, no other filter, and got **zero**. That
+is not a bug in the chip. `GET /live/events.json` returns `{"venues":{}}` on the
+live Worker, because the Wayne read was run **without `--post`**: 28 grounded
+rows sit in `data/events_reads.json` and have never touched the database.
+
+Two half-lanes, and neither is finished:
+
+```
+reader → data/events_reads.json     ← DONE (28 rows, Wayne)
+       → POST /admin/events         ← NEVER RUN   (needs --post)
+       → a person approves          ← NEVER RUN   (rows land `pending` by design)
+       → GET /live/events.json      ← returns {} today
+       → app.js applyEvents         ← works, has nothing to apply
+```
+
+**The lesson, general:** an events row has to cross **four** boundaries (file →
+Worker → human approval → overlay) and the UI is the fifth. Shipping the fifth
+first makes an empty board that looks like a defect. When a new surface reads a
+new source, the acceptance test is a **live fetch of the overlay**, not a green
+unit test — the unit tests all passed, against fixtures.
+
+§11's "one thing to check first when events do not appear" already listed
+`GET /live/events.json` non-empty as step one. It was right. **Run it before
+believing a filter is broken.**
+
+### 14.4 What is still on file only
+
+`--post` sends rows to `$SUBMIT_API/admin/events` with `ADMIN_TOKEN`, where they
+land `pending`; `GET /admin/events?status=pending` lists them and
+`POST /admin/events/review/<id>` rules on each. Until a person rules, the board
+shows nothing — that is the design (a re-read must never overturn a human
+ruling), not a delay to route around.

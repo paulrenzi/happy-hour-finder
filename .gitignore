@@ -23,3 +23,7 @@ scratchpad/google_eyes/
 data/agent_reads/
 scratchpad/turtle/
 scratchpad/*_raw.html
+
+# The events reader's saved pages, sibling of data/agent_reads/. The
+# grounded ANSWERS are committed: data/events_reads.json.
+data/events_reads/

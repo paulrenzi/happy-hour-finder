@@ -4,10 +4,19 @@
 
 One question, answered fast: **where can I get a drink deal near me, right now?**
 
-A mobile-web PWA covering the western Philadelphia suburbs and northern Delaware.
+A mobile-web PWA covering 51 towns across Pennsylvania and Delaware.
 No framework, no build step, no CDN — the site is static files in [`web/`](web/),
 and the "what's on right now" math runs in the browser over a cached bundle, so it
 works with no signal in a parking lot or a basement bar.
+
+**Happy hours come first.** Everything else on the board — who's playing later,
+the bingo, the trivia — hangs off a venue that already earned its card by
+publishing an hour we could prove.
+
+The reader picks a **state**, a **town**, and one of four chips:
+`Everything` · `Drinks under $5` · `Live music` · `Events`. There is no sort
+control; the board picks the order (nearest once it knows where you are,
+soonest before that).
 
 **Standalone project.** Its own `.env`, its own deploy, no shared code or
 credentials with anything else on this machine.
@@ -27,6 +36,8 @@ credentials with anything else on this machine.
 | …carrying items you can actually order | 312 venues, 2,175 items |
 | …with an hour but **no items** — the open gap | **161** |
 | published windows that contradict their own evidence | **0** |
+| towns read for **events** (bands, DJs, bingo, trivia) | **1** — Wayne |
+| event rows **live on the board** | **0** — read but never posted, see below |
 
 🛑 **The Delaware rows are not a denominator.** Pennsylvania's count comes from
 the PLCB's own list of everyone licensed to pour, so "did we miss a bar?" has an
@@ -228,6 +239,22 @@ ingest/read_events_venue.py   an agent reads a venue's calendar; every claim mus
 GET /live/events.json  -> web/app.js patches the cards at runtime, like /live/deals.json
 ```
 
+🛑 **Nothing is live on this lane yet (2026-09-05).** The reader has read one
+town — Wayne, 14 board venues, **4 publish a calendar**, 28 grounded rows, ~$0.53
+a venue — but it ran without `--post`, so those rows sit in
+`data/events_reads.json` and have never reached the database.
+`GET /live/events.json` returns `{"venues":{}}`, which is why the **Live music**
+chip currently matches nothing. A row crosses four boundaries before a reader
+sees it:
+
+```
+data/events_reads.json → POST /admin/events (--post) → a person approves
+                       → GET /live/events.json → app.js applyEvents
+```
+
+Steps two and three have never been run. **Check the overlay with one curl
+before believing a filter is broken** — see PLAYBOOK §14.3.
+
 Two sources, two trust levels, one table: **a venue's own rows publish on write**
 (it is the author of its own calendar), while **an agent's rows land `pending`**
 and are invisible until a person approves them. A re-read can never overturn a
@@ -246,6 +273,20 @@ python ingest/build_bundles.py                                              # it
 git commit && git push                                                      # deploy
 python tests/live_front_door.py <zone>                                      # "it is live"
 ```
+
+To read the same town's **events** instead of its menus, it is a different
+reader on the same population, and it deploys through the Worker rather than
+through a bundle:
+
+```
+HHF_MAX_TURNS=28 python ingest/read_events_venue.py --zone <zone> --show   # read
+HHF_MAX_TURNS=28 python ingest/read_events_venue.py --zone <zone> --post   # queue it
+curl -H "Authorization: Bearer $ADMIN_TOKEN" "$SUBMIT_API/admin/events?status=pending"
+```
+
+🛑 **28 turns, not the default 14.** A big calendar page exhausts the default
+budget, returns `kind: "exhausted"`, and costs money for nothing — that is not
+evidence the venue publishes no events.
 
 All four, in order, or the fix exists only in the source. One town at a time,
 never the corpus. Two agent sessions at a time (the default) — three lost a
