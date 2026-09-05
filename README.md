@@ -19,10 +19,11 @@ credentials with anything else on this machine.
 | | |
 |---|---|
 | zones (named drinking districts) | 51 |
-| licensed venues known — the denominator | 3,714 |
+| licensed venues known — the denominator | 3,579 |
 | …with a website we know of | 2,113 |
 | …crawled | 2,229 |
-| **on the board with a published happy-hour window** | **473** |
+| **on the board with a published happy-hour window** | **471** |
+| …of those, rankable by distance | **470** |
 | …carrying items you can actually order | 312 venues, 2,175 items |
 | …with an hour but **no items** — the open gap | **161** |
 | published windows that contradict their own evidence | **0** |
@@ -125,9 +126,49 @@ data/venue_base.json    3,479 licensees, the denominator (regenerate, don't edit
    ↓ ingest/crawl_sites.py      robots-honouring crawl → data/crawl_hits.json  (the WINDOW)
    ↓ ingest/agent_read_venue.py an agent hand-reads each venue's menu → data/deals_agent.json  (the ITEMS)
    ↓ ingest/validate_pa.py      PA Acts 57 & 86 of 2024 — a failing deal never ships
-   ↓ ingest/build_bundles.py    → web/data/zone-*.json  (and restamps web/sw.js)
+   ↓ ingest/geocode_venues.py   seed-corpus addresses → data/venue_coords.json
+   ↓ ingest/geocode_missing.py  everything else, keyed on LID → data/venue_coords_lid.json
+   ↓ ingest/build_bundles.py    → web/data/*.json  (and restamps web/sw.js)
    ↓ git push → GitHub Actions → live site
 ```
+
+### 🛑 Each zone ships as TWO files, and the names do not say which is which
+
+```
+web/data/zone-<id>.json     the BOARD — the venues that HAVE a published window
+web/data/venues-<id>.json   every other licensed premises, deals: []
+web/data/board-by-lid.json  the published windows keyed by licence ID
+```
+
+Every zone's `zone-*.json` is fetched at boot, because "what's on right now"
+is a question about the whole area. `venues-*.json` is ~3,200 rows and is
+fetched only for the zone the reader picks.
+
+**Read the wrong one and you get a confident, false answer**, which has now
+happened twice. A consumer reading only `venues-*.json` found 18 matching
+venues and reported that not one published a happy hour — necessarily true,
+since that file is *defined* as the venues with no window. The same misreading
+produced "only 1 of 476 deal venues carries a coordinate," which was written
+down as a blocker on this project. 441 of them carried one; 470 do now.
+
+If you are joining against this data from outside, **read both**, deal-bearing
+first.
+
+### Coordinates
+
+`ingest/geocode_venues.py` keys on the seed corpus's own slug and so can only
+ever reach `data/deals_seed.json`'s 387 rows. Everything the PLCB base and the
+zone expansions added needs `ingest/geocode_missing.py`, which works off the
+published bundles and keys on **LID** — the base is regenerated wholesale from
+Places, so a coordinate stored against anything else gets dropped on the next
+rebuild.
+
+A wrong coordinate is worse than a missing one: it puts a bar in a town it is
+not in and the reader cannot tell. A hit is recorded only if the ZIP Nominatim
+resolves matches the one asked for, or — where the licensee and the post
+office genuinely disagree about a boundary building — if the answer still
+lands within five miles of its zone's median. Those are flagged `zip_mismatch`
+on the record. Nothing is recorded for a miss or a timeout.
 
 Two lanes feed the board. The deterministic crawl still finds the **window**
 (the hours) and the "asking to be filled in" list. The agent finds the
@@ -367,6 +408,21 @@ with the rest held back (not currently surfaced in the UI).
 - `open(p, "w")` truncates before `write()` — write `.new` and `os.replace`.
 - **Pull before push.** Codex works in this repo too.
 - This repo's `.env` has no `ANTHROPIC_API_KEY` and must never borrow another repo's.
+- **The photo fetcher's coverage check is keyed to the shipped board, not the
+  manifest.** `ingest/fetch_venue_photos.py --from-board` skips a lid only if
+  the *built, pushed* bundles already show it with a photo — it never checks
+  whether `data/venue_photos_by_lid.json` already resolved that lid in an
+  earlier run that wasn't built and shipped yet. A stale uncommitted partial
+  run re-buys already-resolved lids at full price on the next run (cost
+  ~$22.66 in duplicate lookups during the 2026-09-05 center_city pass). Not
+  yet fixed at the tooling level — see
+  [ARCHITECTURE-MENU-INGEST.md](ARCHITECTURE-MENU-INGEST.md). Always commit +
+  build + push before re-running the fetcher on a zone.
+- **`ingest/exclusions.py`** keeps banned venues and non-bars (grocery-store
+  liquor licences, hotels-by-brand) off the board at the two build doors
+  (`build_venue_base.py`, `build_bundles.py`). See its own docstring and
+  [ARCHITECTURE-MENU-INGEST.md](ARCHITECTURE-MENU-INGEST.md) for the running
+  list and the known-unhandled fast-food/liquor-licence misattribution rows.
 
 ## Design
 

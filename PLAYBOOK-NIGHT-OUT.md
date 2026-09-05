@@ -333,6 +333,31 @@ It re-reads anything older than six days because a calendar rots in a week.
   live JS and running the live page, never by a 200.
 - **R2 is not enabled on this account** (error 10042 is a dashboard billing opt-in),
   which is why menu photos live in `PHOTOS_KV`. Do not plan storage around R2.
+- **`zone-<id>.json` is the board; `venues-<id>.json` is everything with NO
+  window.** The names do not say so, and reading the wrong one returns a
+  confident false answer rather than an error. It has cost two sessions:
+  dead-shows joined against `venues-*` and reported "0 of 18 matched venues
+  publish a happy hour" — necessarily true of a file defined as the venues
+  with no window — and the same misreading produced "only 1 of 476 deal
+  venues carries a coordinate", filed as a blocker on this project when 441
+  of them had one. **Any consumer must read both, deal-bearing first.**
+- **`#v=<lid>` alone is a dead link, and it fails silently.** The app boots only
+  the zones' deal bundles; a venue with no published window arrives with its
+  zone's *base*, which is fetched only when the hash names a zone. Without
+  `z=`, `openVenue()` looks the id up in a list it was never in and returns —
+  the reader lands on the default board and concludes the link is broken.
+  **Share a venue as `#z=<zone>&v=<lid>`.**
+- **The app reads the hash once, at boot.** There is no `hashchange` listener,
+  so navigating between two of our own deep links inside one document changes
+  `location.hash` and nothing else. Harmless for real links (they open a fresh
+  document) but it will silently invalidate any browser check that reuses one
+  page across several URLs — every result after the first describes the first.
+  **Open a fresh page per link.**
+- **The sw cache name could not see a build that changed a bundle's contents.**
+  It was date + deal count + shell digest, so filling in 30 coordinates on the
+  same day as the previous build produced an identical name and evicted
+  nothing. It now covers the shipped data too (`data_digest`). If you add a
+  build step that rewrites bundles, check the stamp actually moves.
 
 ### The one thing to check first when events do not appear
 
