@@ -257,3 +257,86 @@ can see a Facebook embed at all (assumption 12), and whether a JPEG calendar
 survives the grounding gate — the model must transcribe the picture before it
 can quote it, which is the same path the menu lane took two sessions to get
 right.
+
+## 11. The night-out architecture, and what to know before debugging it
+
+Written the session it was built (2026-09-04) so the next one does not have to
+re-derive it. The shapes here are deliberate; each paragraph names the failure it
+prevents.
+
+### The pieces and where they live
+
+```
+worker/schema.sql      subscribers · events · venue_tokens · campaigns · pledges
+worker/nightout.js     the whole layer: validator, fingerprint, feed, signup, venue form, admin
+worker/index.js        routes only — it imports nightout.js and dispatches
+web/lib.js             applyEvents · nextEvent · eventLine · validEmail   ← the tested half
+web/app.js             loadEvents() · wireSubscribe() · the card line     ← paints only
+web/venue.html         the magic-link form a venue fills in itself
+ingest/read_events_venue.py   the agent reader and its grounding gate
+tests/events.test.mjs         7 Node tests   ·  tests/test_events_reader.py   6 Python tests
+```
+
+### Six rules the code depends on
+
+**1. The overlay is additive and idempotent, and a failed fetch changes nothing.**
+`loadEvents()` patches the static bundle at runtime exactly like the deals overlay.
+`applyEvents` keys on event id, so running it twice adds nothing and a re-fetch
+cannot duplicate a night. If the Worker is down the board is simply the board — the
+offline PWA story is untouched. **Never make a card's render depend on a live fetch.**
+
+**2. Two sources, two trust levels, one table.** A row from `/venue/events` publishes
+on write because the venue is the author of its own calendar. A row from the reader,
+posted to `/admin/events`, lands `pending` and is invisible until a person approves
+it. The upsert enforces this: `status = CASE WHEN events.status = 'pending' THEN
+excluded.status ELSE events.status END` — **a re-read can never overturn a human
+ruling**, in either direction. That one CASE is the safety property; the live smoke
+test checks it, and any schema change must keep it.
+
+**3. `eventFingerprint` is what stops a nightly re-read from stacking duplicates.**
+`${lid}|${date}|${act}` with the act lowercased, `&` mapped to `and`, and every
+non-alphanumeric stripped — so "Rhythm & Blondes" and "rhythm and blondes!" are one
+night, not two. The id is derived, never generated; drop that and every calendar
+re-read grows the table.
+
+**4. Blank means unknown, never zero.** A venue that says nothing about cover is not
+a venue with no cover. `eventFrom` maps an empty string to `null` and `eventLine`
+omits the clause entirely, so the card says only what the source said. The line
+renders "no cover" **only** for a literal 0. Same for `kitchen_open`. This is the
+same rule the menu lane learned the hard way, applied before it could bite here.
+
+**5. The Worker runs UTC and "tonight" does not.** `localToday()` uses
+`toLocaleDateString("en-CA", {timeZone:"America/New_York"})`. Without it the feed
+drops tonight's shows at 8pm Eastern, which is exactly when people look. Any new
+date math on the server goes through that helper.
+
+**6. The grounding gate is a substring test against the model's own transcript.**
+`ground()` in `read_events_venue.py` drops any event whose `quote` is not in the
+transcript after whitespace/case normalisation, plus anything outside the 14-day
+window, an unknown `kind`, a clock that is not `HH:MM`, or a non-numeric cover.
+It **drops, never repairs** — a half-understood row is worse than an absent one.
+It re-reads anything older than six days because a calendar rots in a week.
+
+### Traps this build already hit
+
+- **A new live `fetch()` in `app.js` breaks every Playwright check at once.** The
+  sandboxed test page refuses the cross-origin call and it surfaces as
+  `uncaught page error: … due to access control checks`, which reads like a code
+  bug and is not. **Any new endpoint the page calls needs a route stub added to
+  `tests/{render,card_chrome,search,picker}_check.py`**, mirroring the
+  `/live/deals.json` stub already there. Four files, same edit.
+- **Touching `web/` without rebuilding fails a test that names none of the files
+  you touched.** `test_ingest.ServiceWorkerCache` compares `sw.js`'s cache name to
+  the hash of the shell. Run `python ingest/build_bundles.py`; never hand-edit `sw.js`.
+- **Deploying is not shipping.** The Worker and GitHub Pages are separate deploys
+  with separate lags, and only `master` publishes the site. Verify by fetching the
+  live JS and running the live page, never by a 200.
+- **R2 is not enabled on this account** (error 10042 is a dashboard billing opt-in),
+  which is why menu photos live in `PHOTOS_KV`. Do not plan storage around R2.
+
+### The one thing to check first when events do not appear
+
+In order, because each step is cheap and rules out the one below it:
+`GET /live/events.json` non-empty? → the row's `status` is `approved`? → the row's
+`lid` matches a venue in the built bundle? → `applyEvents` present in the **live**
+`lib.js`? A live-`lib.js` miss means a build or a deploy did not land, not a bug.

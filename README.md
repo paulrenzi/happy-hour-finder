@@ -129,6 +129,31 @@ logic — feed assembly, grouping, ranking, freshness decay, time math — and i
 part under test. [`web/app.js`](web/app.js) only paints the DOM. Keep that split;
 it is why the logic is testable without a browser.
 
+### The night-out layer — events, the email list, and the venue's own form
+
+A second, smaller system rides on the same board. It answers *what is happening
+at that bar tonight* — the four fields nobody else carries: start time, set
+length, cover, and whether the kitchen is open during the set.
+
+```
+worker/schema.sql     subscribers . events . venue_tokens . campaigns . pledges
+worker/nightout.js    validator, dedupe fingerprint, public feed, signup, venue form, admin
+web/venue.html        the form a venue fills in itself, opened with a magic link
+ingest/read_events_venue.py   an agent reads a venue's calendar; every claim must be quoted
+   |
+GET /live/events.json  -> web/app.js patches the cards at runtime, like /live/deals.json
+```
+
+Two sources, two trust levels, one table: **a venue's own rows publish on write**
+(it is the author of its own calendar), while **an agent's rows land `pending`**
+and are invisible until a person approves them. A re-read can never overturn a
+human ruling. Money tables (`campaigns`, `pledges`) exist and are served by nothing.
+
+The rules the code depends on, the traps this build already hit, and what to check
+first when an event does not appear are in
+**[PLAYBOOK-NIGHT-OUT.md](PLAYBOOK-NIGHT-OUT.md) section 11**. Routes and operator
+commands are in [`worker/README.md`](worker/README.md).
+
 ### The process for one town — four commands, in order
 
 ```
@@ -350,4 +375,4 @@ deliberately no map.
   assumptions still unproven. The one to read before any strategy or pitch talk.
 - **[SPEC.md](SPEC.md)** — what a deal is, and the eight categories.
 - **`HANDOFF-START-HERE-*.md`** — session notes, newest wins. The current one is
-  [`HANDOFF-START-HERE-20260904-NIGHT7-THE-BEACH-TOWNS.md`](HANDOFF-START-HERE-20260904-NIGHT7-THE-BEACH-TOWNS.md).
+  [`HANDOFF-START-HERE-20260904-NIGHT8-THE-NIGHT-OUT-BACKEND.md`](HANDOFF-START-HERE-20260904-NIGHT8-THE-NIGHT-OUT-BACKEND.md).
