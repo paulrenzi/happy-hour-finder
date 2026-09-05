@@ -119,7 +119,7 @@ Tables are appended to `worker/schema.sql` (all `IF NOT EXISTS`, so the same
 | `POST /venue/events` `{token, events}` | a venue with its magic link | publishes immediately, `source_kind: venue_form` |
 | `GET /admin/events?status=pending` | admin | the review queue |
 | `POST /admin/events` `{events}` | `ingest/read_events_venue.py --post` | bulk insert, `pending` |
-| `POST /admin/events/review/<id>` `{status, note}` | admin | approve or reject |
+| `POST /admin/events/review/<id>` `{status, note}` | admin | `status` is `approved`, `rejected`, or `pending` (the last is for undoing your own bulk-action mistake, not for a re-read to overturn a person's ruling) |
 | `POST /admin/venue-token/<lid>` `{contact}` | admin | mints the venue's link: `web/venue.html#<token>`. Minting again replaces it |
 | `GET /admin/subscribers?status=` | admin / the PC sender | the list |
 | `POST /admin/subscribers/mailed` `{emails}` | the PC sender | stamps `mailed_at` so nothing is sent twice |

@@ -995,3 +995,17 @@ by hand in D1.** The Worker should accept `status: "pending"` on
 `/admin/events/review/<id>` for exactly this — an operator's own mistake,
 not a re-read overturning a person's ruling (that prohibition is about *other*
 sessions re-litigating a human's answer, not about this).
+
+### 15.10 Paul reviewed and approved the full queue (2026-09-05)
+
+All 144 grounded rows across the three towns are approved — 187 occurrences
+live once weekly rules expand across the 14-day window, 29 venues. The review
+queue is empty. Everything in §15.3's "still open" is now current:
+
+| | |
+|---|---|
+| venues with a live event | 29 (Wayne 4, West Chester 14, Phoenixville 11) |
+| approved rows in the database | 144 |
+| …of which standing weekly rules | 38 |
+| live occurrences (rules expanded) | 187 |
+| pending review queue | 0 |

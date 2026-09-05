@@ -36,8 +36,10 @@ credentials with anything else on this machine.
 | …carrying items you can actually order | 312 venues, 2,175 items |
 | …with an hour but **no items** — the open gap | **161** |
 | published windows that contradict their own evidence | **0** |
-| towns read for **events** (bands, DJs, bingo, trivia) | **1** — Wayne |
-| event rows **live on the board** | **0** — read but never posted, see below |
+| towns read for **events** (bands, DJs, bingo, trivia) | **3** — Wayne, West Chester, Phoenixville |
+| event rows approved (in the database) | **144**, across 29 venues |
+| …of which standing **weekly** rules | **38** |
+| occurrences the board actually shows, 14-day horizon (weekly rules expanded) | **187** |
 
 🛑 **The Delaware rows are not a denominator.** Pennsylvania's count comes from
 the PLCB's own list of everyone licensed to pour, so "did we miss a bar?" has an
@@ -116,10 +118,11 @@ The short form, which every session should be able to recite:
 - **The reference price** is Updown Nightlife: one loyal metro, 40K regulars, ten
   years, stated $5M exit. Commission-only nightlife (Discotech) nets under $1M/yr.
   The exit buyer is a POS or reservations company that can measure sell-through.
-- **Built so far (2026-09-04):** the email signup, the events table and its
-  public feed, the agent events reader, and a venue magic-link form whose rows
-  publish on write. Money tables are reserved and served by nothing. Playbook
-  section 10 has the state of each and what to run first.
+- **Built so far (2026-09-05):** the email signup, the events table and its
+  public feed (now with 28 rows live and recurring weekly shows), the agent
+  events reader, and a venue magic-link form whose rows publish on write.
+  Money tables are reserved and served by nothing. Playbook §10 and §15 have
+  the state of each and what to run first.
 - **The `dead-shows` link is half built (2026-09-05):** a show there can send a
   reader to the happy hours around its venue (`#z=…&near=…&from=…`). The reverse —
   *what is on after your drink* — does not exist yet and is the next design
@@ -239,26 +242,40 @@ ingest/read_events_venue.py   an agent reads a venue's calendar; every claim mus
 GET /live/events.json  -> web/app.js patches the cards at runtime, like /live/deals.json
 ```
 
-🛑 **Nothing is live on this lane yet (2026-09-05).** The reader has read one
-town — Wayne, 14 board venues, **4 publish a calendar**, 28 grounded rows, ~$0.53
-a venue — but it ran without `--post`, so those rows sit in
-`data/events_reads.json` and have never reached the database.
-`GET /live/events.json` returns `{"venues":{}}`, which is why the **Live music**
-chip currently matches nothing. A row crosses four boundaries before a reader
-sees it:
+🎯 **Live as of 2026-09-05.** Three towns read — Wayne, West Chester,
+Phoenixville, ~102 venues, ~3 in 10 publish a calendar — and `GET
+/live/events.json` carries **144 approved rows across 29 venues** (187
+occurrences once weekly rules expand across the 14-day window). A row crosses
+four boundaries before a reader sees it, and each one is now exercised:
 
 ```
 data/events_reads.json → POST /admin/events (--post) → a person approves
                        → GET /live/events.json → app.js applyEvents
 ```
 
-Steps two and three have never been run. **Check the overlay with one curl
-before believing a filter is broken** — see PLAYBOOK §14.3.
+**Check the overlay with one curl before believing a filter is broken** —
+never trust a green test alone here; see PLAYBOOK §14.3.
+
+**Most of a bar's calendar is a standing weekly grid, not a list of gigs.**
+Saloon 151 publishes eight recurring shows, Kildare's seven — 38 of the 105
+grounded rows are `recurs: "weekly"`, keyed on venue + weekday so a re-read
+refreshes the row instead of minting a fresh `pending` approval every week.
+Expansion into dated occurrences happens in the Worker (`expandRecurring`),
+so the page needed no change. See PLAYBOOK §15.
+
+🛑 **A licence is a door, not a name.** This session found a real wrong-venue
+join: one licence was shipping a *different* building's name, website, happy
+hour and 15 approved events, because a hand-read guessed a join from the name
+alone and nothing checked it against the street address in the licence. See
+PLAYBOOK §15.4 before trusting any join that was not checked address-first.
 
 Two sources, two trust levels, one table: **a venue's own rows publish on write**
 (it is the author of its own calendar), while **an agent's rows land `pending`**
 and are invisible until a person approves them. A re-read can never overturn a
-human ruling. Money tables (`campaigns`, `pledges`) exist and are served by nothing.
+human ruling — but an operator CAN undo their own mistake with
+`{"status": "pending"}` on the review endpoint (added 2026-09-05, after a bulk
+cleanup step wrongly rejected 85 good rows — PLAYBOOK §15.9). Money tables
+(`campaigns`, `pledges`) exist and are served by nothing.
 
 The rules the code depends on, the traps this build already hit, and what to check
 first when an event does not appear are in
@@ -281,12 +298,17 @@ through a bundle:
 ```
 HHF_MAX_TURNS=28 python ingest/read_events_venue.py --zone <zone> --show   # read
 HHF_MAX_TURNS=28 python ingest/read_events_venue.py --zone <zone> --post   # queue it
-curl -H "Authorization: Bearer $ADMIN_TOKEN" "$SUBMIT_API/admin/events?status=pending"
+python ingest/read_events_venue.py --zone <zone> --post-only               # (re)post what's on file, $0
+python ingest/read_events_venue.py --zone <zone> --reground                # re-run the gates, $0
+curl -H "X-Admin-Token: $ADMIN_TOKEN" "$SUBMIT_API/admin/events?status=pending"
 ```
 
 🛑 **28 turns, not the default 14.** A big calendar page exhausts the default
 budget, returns `kind: "exhausted"`, and costs money for nothing — that is not
-evidence the venue publishes no events.
+evidence the venue publishes no events. **Never run two readers/fetchers at
+once** — `data/events_reads.json` and `data/venue_photos.json` are whole-file
+load/save with no cross-process lock; a concurrent run can silently erase the
+other's writes (PLAYBOOK §15.7).
 
 All four, in order, or the fix exists only in the source. One town at a time,
 never the corpus. Two agent sessions at a time (the default) — three lost a
