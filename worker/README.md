@@ -102,3 +102,45 @@ token the moment the secret exists, and ignores it while it doesn't.
 ```sh
 wrangler secret put TURNSTILE_SECRET
 ```
+
+## The night-out layer (added 2026-09-04)
+
+Same Worker, second module: `worker/nightout.js`. Why it exists and what it is
+for is `PLAYBOOK-NIGHT-OUT.md`; the routes are listed at the top of the file.
+Tables are appended to `worker/schema.sql` (all `IF NOT EXISTS`, so the same
+`wrangler d1 execute` line applies them).
+
+| Route | Who | What |
+|---|---|---|
+| `POST /subscribe` `{email, zone_id}` | public | pending row + confirm token. 5/day per IP |
+| `GET /subscribe/confirm?t=` | the mail | marks confirmed, redirects to the board |
+| `GET /subscribe/leave?t=` | the mail | deletes the row outright |
+| `GET /live/events.json[?zone=]` | public | approved events, today + 14 days, keyed by licence id. The board patches these onto cards like the deals overlay |
+| `POST /venue/events` `{token, events}` | a venue with its magic link | publishes immediately, `source_kind: venue_form` |
+| `GET /admin/events?status=pending` | admin | the review queue |
+| `POST /admin/events` `{events}` | `ingest/read_events_venue.py --post` | bulk insert, `pending` |
+| `POST /admin/events/review/<id>` `{status, note}` | admin | approve or reject |
+| `POST /admin/venue-token/<lid>` `{contact}` | admin | mints the venue's link: `web/venue.html#<token>`. Minting again replaces it |
+| `GET /admin/subscribers?status=` | admin / the PC sender | the list |
+| `POST /admin/subscribers/mailed` `{emails}` | the PC sender | stamps `mailed_at` so nothing is sent twice |
+
+**Mail.** The Worker sends the confirm link only when `RESEND_API_KEY` (and
+optionally `MAIL_FROM`) is set. Until then a subscriber sits `pending` with
+`mailed_at NULL`; a script on Paul's PC can read `/admin/subscribers?status=pending`,
+send from this repo's own address, and report back through `/admin/subscribers/mailed`.
+There is no sender script yet — that is the next piece.
+
+**Events reach a card two ways.** A venue's own form publishes on write, because
+the venue is the author. Everything the agent reads off a calendar picture or a
+page lands `pending` and waits for a person, exactly like a stranger's menu photo.
+
+```sh
+python ingest/read_events_venue.py --zone phoenixville --show --rejects   # read, file only
+python ingest/read_events_venue.py --zone phoenixville --post             # ...and queue for review
+curl -H "X-Admin-Token: $ADMIN_TOKEN" "$SUBMIT_API/admin/events?status=pending"
+curl -H "X-Admin-Token: $ADMIN_TOKEN" -X POST "$SUBMIT_API/admin/events/review/<id>" \
+     -H "Content-Type: application/json" -d '{"status":"approved"}'
+```
+
+`campaigns` and `pledges` are in the schema and served by nothing. See the
+playbook, section 9a, for what has to be true before they are.

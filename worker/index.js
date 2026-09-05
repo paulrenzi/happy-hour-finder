@@ -27,6 +27,16 @@
 
 import { proposalFrom, readPhoto } from "./extract.js";
 import { ADMIN_HTML } from "./admin_page.js";
+// The night-out layer: subscribers, events, venue magic links. Routes and
+// admin verbs are listed at the top of nightout.js.
+import {
+  adminNightOut,
+  liveEvents,
+  subscribe,
+  subscribeConfirm,
+  subscribeLeave,
+  venueEvents,
+} from "./nightout.js";
 
 const MAX_BYTES = 8 * 1024 * 1024;
 const MAX_PER_DAY = 12;
@@ -544,6 +554,11 @@ async function admin(request, env, url, headers) {
   const verb = parts[1];
   const id = parts[2];
 
+  if (["events", "venue-token", "subscribers"].includes(verb)) {
+    const handled = await adminNightOut(request, env, url, headers, parts);
+    if (handled) return handled;
+  }
+
   if (verb === "queue" && request.method === "GET") {
     const status = url.searchParams.get("status") || "pending";
     const { results } = await env.DB.prepare(
@@ -677,6 +692,21 @@ export default {
       }
       if (url.pathname === "/confirm" && request.method === "POST") {
         return await confirm(request, env, headers);
+      }
+      if (url.pathname === "/live/events.json" && request.method === "GET") {
+        return await liveEvents(env, url, headers);
+      }
+      if (url.pathname === "/subscribe" && request.method === "POST") {
+        return await subscribe(request, env, headers);
+      }
+      if (url.pathname === "/subscribe/confirm" && request.method === "GET") {
+        return await subscribeConfirm(env, url);
+      }
+      if (url.pathname === "/subscribe/leave" && request.method === "GET") {
+        return await subscribeLeave(env, url);
+      }
+      if (url.pathname === "/venue/events" && request.method === "POST") {
+        return await venueEvents(request, env, headers);
       }
 
       if (url.pathname === "/submit" && request.method === "POST") {

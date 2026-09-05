@@ -70,6 +70,10 @@ def main():
                    lambda r: r.fulfill(status=200, content_type="application/json",
                                        body='{"venues":[]}'))
 
+        page.route("**/live/events.json",
+                   lambda r: r.fulfill(status=200, content_type="application/json",
+                                       body='{"venues":{}}'))
+
         page.goto(BASE, wait_until="load")
         page.wait_for_timeout(3000)
 
