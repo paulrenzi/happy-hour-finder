@@ -34,6 +34,31 @@ BANNED_PLCB_NAMES = {
     "BALD BIRDS BREWING COMPANY": "banned by Paul, permanently (2026-09-01)",
 }
 
+# Paul's review of the live board, 2026-09-05: these are not bars and must
+# never appear, no matter which zone or which trade-name variant scraped in.
+# Matched against the trade `name`, contained not equal, same as
+# BANNED_PLCB_NAMES above -- keeps "Suite 4 Eleven" off no matter the address
+# suffix, "El Diablo Burritos" and "Opa! Opa!" off in every location.
+BANNED_NAMES = {
+    "SUITE 4 ELEVEN": "strip bar, not the kind of venue we list (Paul, 2026-09-05)",
+    "OPA! OPA!": "restaurant, not a bar (Paul, 2026-09-05)",
+    "EL DIABLO": "restaurant, not a bar (Paul, 2026-09-05)",
+    "PANERA BREAD": "cafe, not a bar (Paul, 2026-09-05)",
+}
+
+# Grocery-store liquor licences (ACME/GIANT/ShopRite/Wegmans/Weis/Whole Foods/
+# The Fresh Grocer all sell wine/beer at the register) and standalone PA
+# liquor stores ("Fine Wine & Good Spirits") are not bars and never belong on
+# the board, regardless of zone. Matched against the trade `name` only --
+# the PLCB licensee field on these rows is frequently a DIFFERENT business
+# sharing the same licence/address and is not a signal here.
+GROCERY_OR_LIQUOR_STORE_RE = re.compile(
+    r"\b("
+    r"acme markets|shop\s*rite|wegmans|whole foods|the fresh grocer|"
+    r"weis markets|giant(?:\s*#\d+|\s+heirloom market)?|the giant company|"
+    r"fine wine\s*(?:&|and)\s*(?:good\s*)?spirits"
+    r")\b", re.I)
+
 HOTEL_BRAND_RE = re.compile(
     r"\b("
     r"marriott|hilton|hyatt|sheraton|westin|doubletree|sofitel|"
@@ -71,6 +96,12 @@ def excluded(name, plcb_name="", license_type=""):
     for banned, why in BANNED_PLCB_NAMES.items():
         if any(banned in lab for lab in labels if lab):
             return why
+    name_label = (name or "").strip().upper()
+    for banned, why in BANNED_NAMES.items():
+        if banned in name_label:
+            return why
+    if GROCERY_OR_LIQUOR_STORE_RE.search(name or ""):
+        return "grocery store / liquor store, not a bar"
     for label in (name or "", plcb_name or ""):
         if HOTEL_BRAND_RE.search(label):
             return "hotel"
