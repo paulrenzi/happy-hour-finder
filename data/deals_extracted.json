@@ -22998,6 +22998,708 @@
      }
     }
    ]
+  },
+  {
+   "id": "hares-hill-brewing-co-pottstown",
+   "lid": "106097",
+   "name": "Hares Hill Brewing Co.",
+   "plcb_name": "HARES HILL BREWING CO",
+   "address": "1161 RIDGE RD, POTTSTOWN PA 19465-8703",
+   "zone_id": "pottstown",
+   "license_type": "",
+   "website": "http://hareshillbrewingco.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 2,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 3,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 4,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 5,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 6,
+       "start": "15:00",
+       "end": "17:00"
+      },
+      {
+       "dow": 7,
+       "start": "15:00",
+       "end": "17:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-04",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://hareshillbrewingco.com/eats",
+      "quote": "The Secret to Hoppiness is a Happy Hour! 3pm - 5pm",
+      "quotes": [
+       "The Secret to Hoppiness is a Happy Hour! 3pm - 5pm",
+       "The Secret to Hoppiness is a Happy Hour! / Tuesday - Friday / 3pm - 5pm",
+       "Teacher\u2019s Happy Hour / Fridays 3PM-5PM / $1 off ALL drinks"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "ice-house-pottstown",
+   "lid": "36353",
+   "name": "Ice House",
+   "plcb_name": "ICE HOUSE DELI",
+   "address": "1 KING ST, POTTSTOWN PA 19464",
+   "zone_id": "pottstown",
+   "license_type": "",
+   "website": "http://icehousedelivers.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 6,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 7,
+       "start": "16:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-04",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://icehousedelivers.com/food-menu",
+      "quote": "Happy hour from 4pm to 7pm",
+      "quotes": [
+       "Happy hour from 4pm to 7pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "post-haste-philadelphia",
+   "lid": "109551",
+   "name": "Post Haste",
+   "plcb_name": "FIRST SPACE LLC",
+   "address": "2519 FRANKFORD AVE, PHILADELPHIA PA 19125-1708",
+   "zone_id": "fishtown_kensington",
+   "license_type": "",
+   "website": "http://www.posthastephilly.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 6,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 7,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "HOUSE WINES",
+       "price_usd": 10.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-04",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://www.posthastephilly.com/",
+      "quote": "HAPPY HOUR / EVERY NIGHT FROM 5 - 7 PM / $11 EXPERIMENTAL HAPPY HOUR COCKTAILS",
+      "quotes": [
+       "HAPPY HOUR / EVERY NIGHT FROM 5 - 7 PM / $11 EXPERIMENTAL HAPPY HOUR COCKTAILS"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "la-roma-philadelphia",
+   "lid": "110210",
+   "name": "La Roma",
+   "plcb_name": "LAROMA",
+   "address": "2620 E ALLEGHENY AVE, PHILADELPHIA PA 19134-5114",
+   "zone_id": "fishtown_kensington",
+   "license_type": "",
+   "website": "https://laromaphilly.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-04",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://laromaphilly.com/",
+      "quote": "Happy Hour / Monday \u2013 Friday / 04:00pm -07:00pm",
+      "quotes": [
+       "Happy Hour / Monday \u2013 Friday / 04:00pm -07:00pm",
+       "Happy Hours / Monday \u2013 Friday / 4p.m. \u2013 7p.m."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "yuhiro-omakase-sushi-philadelphia",
+   "lid": "117237",
+   "name": "Yuhiro Omakase Sushi",
+   "plcb_name": "YUHIRO FISHTOWN SUSHI INC",
+   "address": "2146 E SUSQUEHANNA AVE, PHILADELPHIA PA 19125-2064",
+   "zone_id": "fishtown_kensington",
+   "license_type": "",
+   "website": "https://www.yuhirosushi.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 6,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 7,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-04",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.yuhirosushi.com/",
+      "quote": "Walk-Ins are always welcome at the Hand Roll Bar & Table Seating, and we have Happy Hour from 5-7pm every day!",
+      "quotes": [
+       "Walk-Ins are always welcome at the Hand Roll Bar & Table Seating, and we have Happy Hour from 5-7pm every day!"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "mixteca-philly-philadelphia",
+   "lid": "131267",
+   "name": "Mixteca Philly",
+   "plcb_name": "PIG & KHAO",
+   "address": "2113-15 E YORK ST, PHILADELPHIA PA 19125-1604",
+   "zone_id": "fishtown_kensington",
+   "license_type": "",
+   "website": "https://cocteleriamixteca.com/philly",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-04",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://cocteleriamixteca.com/philly",
+      "quote": "HAPPY HOUR / Monday - Friday / 4:00-6:00 pm",
+      "quotes": [
+       "HAPPY HOUR / Monday - Friday / 4:00-6:00 pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "wm-mulherin-s-sons-philadelphia",
+   "lid": "67968",
+   "name": "Wm. Mulherin\u2019s Sons",
+   "plcb_name": "1355 FRONT ST VENTURE LLC",
+   "address": "1353-1355 N FRONT ST, PHILADELPHIA PA 19122-4603",
+   "zone_id": "fishtown_kensington",
+   "license_type": "",
+   "website": "https://www.wmmulherinssons.com/restaurant?utm_source=google&utm_medium=Local&utm_campaign=Google+My+Business",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-04",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.wmmulherinssons.com/restaurant?utm_source=google&utm_medium=Local&utm_campaign=Google+My+Business",
+      "quote": "Happy Hour: Mon - Fri 5:00pm - 7:00pm",
+      "quotes": [
+       "Happy Hour: Mon - Fri 5:00pm - 7:00pm",
+       "Happy Hour / Monday - Friday: 5 :00pm - 7:00pm / Dinner: Mon - Wednesday 5pm - 9pm , Thursday 5pm - 10pm, Fri 5pm - 11pm, Sat 5pm-11pm, Sun 5pm-9pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "mamajuana-cafe-philly-philadelphia",
+   "lid": "71719",
+   "name": "Mamajuana Cafe Philly",
+   "plcb_name": "WOLFGANG PUCK CATERING AND EVENTS LLC",
+   "address": "1000 FRANKFORD AVE, PHILADELPHIA PA 19125",
+   "zone_id": "fishtown_kensington",
+   "license_type": "",
+   "website": "http://www.mamajuanacafephilly.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [
+      {
+       "category": "food",
+       "label": "Bites and",
+       "price_usd": 8.0
+      }
+     ],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-04",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://www.mamajuanacafephilly.com/",
+      "quote": "Happy Hour at the Mamajuana Bar / Unwind in style at Mamajuana Cafe Philly with our signature Happy Hour , every Monday to Thursday from 4PM to 7PM at the bar. / Enjoy an irresistible lineup of $8 Bites and $8 Handcrafted Drinks , featuring bold Latin flavors and refreshing cocktails\u2014all in a vibrant, upscale setting. Whether you're meeting friends after work or starting your evening early, Mamaju",
+      "quotes": [
+       "Happy Hour at the Mamajuana Bar / Unwind in style at Mamajuana Cafe Philly with our signature Happy Hour , every Monday to Thursday from 4PM to 7PM at the bar. / Enjoy an irresistible lineup of $8 Bites and $8 Handcrafted Drinks , featuring bold Latin flavors and refreshing cocktails\u2014all in a vibrant, upscale setting. Whether you're meeting friends after work or starting your evening early, Mamaju",
+       "Unwind in style at Mamajuana Cafe Philly with our signature Happy Hour , every Monday to Thursday from 4PM to 7PM at the bar."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "the-international-bar-philadelphia",
+   "lid": "81990",
+   "name": "The International Bar",
+   "plcb_name": "ENDLESS ROAD LLC",
+   "address": "1624 N FRONT ST, PHILADELPHIA PA 19122-3202",
+   "zone_id": "fishtown_kensington",
+   "license_type": "",
+   "website": "http://theintlbar.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-04",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "http://theintlbar.com/",
+      "quote": "Happy Hour / Mon \u2013 Fri, 4\u20136pm",
+      "quotes": [
+       "Happy Hour / Mon \u2013 Fri, 4\u20136pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "pearl-s-on-the-corner-philadelphia",
+   "lid": "91880",
+   "name": "Pearl's on the Corner",
+   "plcb_name": "1444 RESTAURANT GROUP LLC",
+   "address": "1444 FRANKFORD AVE, PHILADELPHIA PA 19125-4410",
+   "zone_id": "fishtown_kensington",
+   "license_type": "",
+   "website": "https://www.pearlsfishtown.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 2,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 3,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 4,
+       "start": "17:00",
+       "end": "19:00"
+      },
+      {
+       "dow": 5,
+       "start": "17:00",
+       "end": "19:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-04",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://www.pearlsfishtown.com/",
+      "quote": "Happy Hour Mon-Fri 5pm-7pm",
+      "quotes": [
+       "Happy Hour Mon-Fri 5pm-7pm"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "lmno-philadelphia",
+   "lid": "92743",
+   "name": "LMNO",
+   "plcb_name": "RKPALMER ASSOCIATES LLC",
+   "address": "1739-49 N FRONT ST, PHILADELPHIA  PA 19122",
+   "zone_id": "fishtown_kensington",
+   "license_type": "",
+   "website": "https://lmnophilly.com/?utm_source=GoogleBusinessProfile&utm_medium=Website&utm_campaign=MapLabs",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-04",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://lmnophilly.com/?utm_source=GoogleBusinessProfile&utm_medium=Website&utm_campaign=MapLabs",
+      "quote": "M-F: (Happy Hour): 4-6PM",
+      "quotes": [
+       "M-F: (Happy Hour): 4-6PM"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "nemi-philadelphia",
+   "lid": "93392",
+   "name": "Nemi",
+   "plcb_name": "NEMI RESTAURANT LLC",
+   "address": "2636 E ANN ST, PHILADELPHIA PA 19134-4901",
+   "zone_id": "fishtown_kensington",
+   "license_type": "",
+   "website": "https://nemirestaurant.com/",
+   "deals": [
+    {
+     "type": "happy_hour",
+     "windows": [
+      {
+       "dow": 1,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 2,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 3,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 4,
+       "start": "16:00",
+       "end": "18:00"
+      },
+      {
+       "dow": 5,
+       "start": "16:00",
+       "end": "18:00"
+      }
+     ],
+     "items": [],
+     "confidence": "unconfirmed",
+     "last_verified_at": "2026-09-04",
+     "verified_by": "auto_extract",
+     "source": {
+      "kind": "venue_site",
+      "url": "https://nemirestaurant.com/happy-hour/",
+      "quote": "Happy Hour / HAPPY HOUR (Mon \u2013 Fri 4-6PM)",
+      "quotes": [
+       "Happy Hour / HAPPY HOUR (Mon \u2013 Fri 4-6PM)",
+       "Happy Hour (Mon-Fri) 4pm-6pm",
+       "HAPPY HOUR (Mon \u2013 Fri 4-6PM)"
+      ]
+     }
+    }
+   ]
   }
  ]
 }

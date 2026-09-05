@@ -287,6 +287,18 @@ MEAL_RE = re.compile(
 HH_RE = re.compile(r"happy\s*hour|social hour|power hour", re.I)
 FOREIGN_PROMO_URL_RE = re.compile(r"(?:^|[-_/])ca(?:[-_/]|$)", re.I)
 
+# The word "happy hour" and a clock do not mean the venue is OFFERING one --
+# Jaffa Bar's events page reads "Want to host a Happy Hour? We love that too!
+# Parties of up-to 35 guests can reserve the upstairs from 5-7 pm," a private
+# BOOKING pitch, and it read exactly like a standing deal: the word is there,
+# the clock is there, and windows_from() cannot tell a pitch from an offer.
+# It shipped a 7-day 5-9pm window and 24 items pulled from the venue's regular
+# menu, none of them a verified happy-hour price. Found 2026-09-04.
+PRIVATE_EVENT_PITCH_RE = re.compile(
+    r"want to host|host (?:a|your) happy hour|book (?:a|your) (?:party|event)|"
+    r"reserve\s+(?:the|our|a)\s+\S+\s+for\s+(?:a|your)\s+(?:private|casual)",
+    re.I)
+
 
 def refused_source_urls(hits):
     """URLs that explicitly cannot evidence a PA location's hours.
@@ -1230,9 +1242,14 @@ def main():
     places = place_names(json.load(open(BASE, encoding="utf-8"))
                          if os.path.exists(BASE) else {})
     base_rows = json.load(open(BASE, encoding="utf-8")) if os.path.exists(BASE) else {}
+    # Every lid actually re-examined this pass -- a scoped --lids run touches
+    # only these, and the coordinate-prune below must not reach further than
+    # that or it discards a coordinate for a venue nobody re-checked.
+    reexamined_addrs = set()
     for lid, v in one_per_osm(hits, sites):
         if only is not None and lid not in only:
             continue
+        reexamined_addrs.add(v["address"])
         # 🛑 A venue taken OUT of the corpus must stop publishing. This loop
         # walks crawl_hits.json, which is an archive of everything ever
         # crawled and is never pruned -- so seventeen southern-Delaware rows
@@ -1264,6 +1281,9 @@ def main():
                 continue
             if another_branch(h, city, places):
                 stats["  quote is another location of the same business"] += 1
+                continue
+            if PRIVATE_EVENT_PITCH_RE.search(h["quote"]):
+                stats["  quote is a private-event pitch, not an offer"] += 1
                 continue
             # A clock that runs longer than any happy hour may is the venue's
             # OPENING hours: Valley Forge Pizza's /happy-hours page says
@@ -1460,10 +1480,22 @@ def main():
                    "venues": venues}, fh, indent=1)
     # A venue id is derived from its name, so a re-extraction after a rename
     # would otherwise leave the old id behind as a coordinate nothing claims.
-    if only is None:
-        live = {v["id"] for v in venues}
-        coords = {k: c for k, c in coords.items()
-                  if c.get("matched_by") != "osm_site" or k in live}
+    #
+    # 🛑 Used to run only on a full, unscoped pass -- reasoning that a scoped
+    # --lids run touches too little of the corpus to safely prune. That
+    # reasoning was backwards: pruning was never corpus-wide, only ever
+    # "erase anything not live." A scoped run just needs the SAME rule
+    # applied to the smaller set it actually re-examined -- reexamined_addrs,
+    # collected above -- not skipped outright. Found 2026-09-04: two scoped
+    # runs in one session first kept, then correctly dropped, Jaffa Bar's
+    # deal (a private-event-booking pitch misread as a standing offer, see
+    # PRIVATE_EVENT_PITCH_RE) and the stale coordinate from the first run
+    # survived because `only` was never None that session.
+    live = {v["id"] for v in venues}
+    coords = {k: c for k, c in coords.items()
+              if c.get("matched_by") != "osm_site"
+              or k in live
+              or c.get("queried") not in reexamined_addrs}
     with open(COORDS, "w", encoding="utf-8") as fh:
         json.dump(coords, fh, indent=1, sort_keys=True)
 

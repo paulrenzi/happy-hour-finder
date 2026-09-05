@@ -22,6 +22,24 @@
    "deals": []
   },
   {
+   "lid": "122430",
+   "name": "Artillery Brewing - Pottstown",
+   "address": "305 E High St, Pottstown PA 19464",
+   "zone_id": "pottstown",
+   "license_type": "Brewery Storage",
+   "id": "122430",
+   "plcb_name": "THE CITADEL TAPROOM",
+   "website": "https://www.artillerybrewing.com/",
+   "lat": 40.2456653,
+   "lng": -75.64741699999999,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Anita Glawson Powers / Google",
+    "file": "img/venues/122430.jpg"
+   },
+   "deals": []
+  },
+  {
    "lid": "48934",
    "name": "Bella Vista Golf Course",
    "address": "2901 Fagleysville Rd, Gilbertsville PA 19525",
@@ -30,6 +48,9 @@
    "id": "48934",
    "plcb_name": "BELLA VISTA GOLF COURSE",
    "website": "http://www.bellavistagc.com/",
+   "lat": 40.2816184,
+   "lng": -75.56187270000001,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: PhillyStrokers / Google",
     "file": "img/venues/48934.jpg"
@@ -99,6 +120,9 @@
    "id": "39379",
    "plcb_name": "CHINA BAR, INC.",
    "website": "http://china-bar-inc.jany.io/",
+   "lat": 40.2455552,
+   "lng": -75.68653479999999,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Beatriz S / Google",
     "file": "img/venues/39379.jpg"
@@ -106,14 +130,35 @@
    "deals": []
   },
   {
+   "lid": "119821",
+   "name": "El Tequila Sports Bar & Grill",
+   "address": "2688 E High St, Pottstown PA 19464",
+   "zone_id": "pottstown",
+   "license_type": "Hotel (Liquor)",
+   "id": "119821",
+   "plcb_name": "SANATOGA INN",
+   "website": "https://www.eltequilainc.com/",
+   "lat": 40.2439809,
+   "lng": -75.58543379999999,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Sanatoga Pizza Grill / Google",
+    "file": "img/venues/119821.jpg"
+   },
+   "deals": []
+  },
+  {
    "lid": "109521",
-   "name": "Flowing Spring",
+   "name": "Flowing Springs Inn",
    "address": "4000 Pottstown Pk, Spring City PA 19475",
    "zone_id": "pottstown",
    "license_type": "Hotel (Liquor)",
    "id": "109521",
    "plcb_name": "FLOWING SPRING",
    "website": "https://flowingspringsinn.com/",
+   "lat": 40.1505709,
+   "lng": -75.67076469999999,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Phillip / Google",
     "file": "img/venues/109521.jpg"
@@ -171,33 +216,96 @@
    "deals": []
   },
   {
+   "lid": "100198",
+   "name": "Giant",
+   "address": "86 Glocker Way, Pottstown PA 19465",
+   "zone_id": "pottstown",
+   "license_type": "Restaurant (Liquor)",
+   "id": "100198",
+   "plcb_name": "THE GIANT COMPANY LLC",
+   "website": "https://stores.giantfoodstores.com/pa/pottstown/86-glocker-way?y_source=1_NDE5NTgzNi03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "lat": 40.207791,
+   "lng": -75.6578851,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Chris Reece / Google",
+    "file": "img/venues/100198.jpg"
+   },
+   "deals": [],
+   "branch": "Glocker Way"
+  },
+  {
+   "lid": "85940",
+   "name": "Giant",
+   "address": "180 Upland Square Dr, Stowe PA 19464",
+   "zone_id": "pottstown",
+   "license_type": "Restaurant (Liquor)",
+   "id": "85940",
+   "plcb_name": "THE GIANT COMPANY LLC",
+   "website": "https://stores.giantfoodstores.com/pa/stowe/180-upland-square-dr?y_source=1_NDE5NTQzNS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "lat": 40.2652499,
+   "lng": -75.6540754,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: James Crowell / Google",
+    "file": "img/venues/85940.jpg"
+   },
+   "deals": [],
+   "branch": "Upland Square Dr"
+  },
+  {
+   "lid": "87357",
+   "name": "Giant",
+   "address": "173 Holly Rd, Gilbertsville PA 19525",
+   "zone_id": "pottstown",
+   "license_type": "Restaurant (Liquor)",
+   "id": "87357",
+   "plcb_name": "THE GIANT COMPANY LLC",
+   "website": "https://stores.giantfoodstores.com/pa/gilbertsville/173-holly-rd?y_source=1_NDE5NTQyNC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "lat": 40.33555760000001,
+   "lng": -75.6185451,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: S M / Google",
+    "file": "img/venues/87357.jpg"
+   },
+   "deals": [],
+   "branch": "Holly Rd"
+  },
+  {
    "lid": "130935",
-   "name": "Giovanni's Italian Brick Oven Express",
+   "name": "Giovanni's Brick Oven Express Italian Market",
    "address": "233 W Schuylkill Rd, Pottstown PA 19465",
    "zone_id": "pottstown",
    "license_type": "Brewery Storage",
    "id": "130935",
    "plcb_name": "GIOVANNI'S ITALIAN BRICK OVEN EXPRESS LLC",
+   "website": "https://giovannisexpress724.com/",
+   "lat": 40.233786599999995,
+   "lng": -75.6579752,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Giovanni's Brick Oven Express Italian Market / Google",
+    "file": "img/venues/130935.jpg"
+   },
    "deals": []
   },
   {
    "lid": "130937",
-   "name": "Giovanni's IV Restaurant",
+   "name": "Giovanni\u2019s 724 Italian Restaurant",
    "address": "1492 E Schuylkill Rd, Pottstown PA 19465",
    "zone_id": "pottstown",
    "license_type": "Brewery Storage",
    "id": "130937",
    "plcb_name": "GIOVANNI'S IV RESTAURANT INC",
-   "deals": []
-  },
-  {
-   "lid": "106097",
-   "name": "Hares Hill Brewing",
-   "address": "1161 Ridge Rd, Pottstown PA 19465",
-   "zone_id": "pottstown",
-   "license_type": "Brewery Storage",
-   "id": "106097",
-   "plcb_name": "HARES HILL BREWING CO",
+   "website": "http://giovannis724.com/",
+   "lat": 40.2281805,
+   "lng": -75.6255326,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Giovanni\u2019s 724 Italian Restaurant / Google",
+    "file": "img/venues/130937.jpg"
+   },
    "deals": []
   },
   {
@@ -227,24 +335,12 @@
    "id": "111045",
    "plcb_name": "HICKORY VALLEY GOLF CLUB",
    "website": "http://www.hickoryvalley.com/",
+   "lat": 40.323616,
+   "lng": -75.5744304,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Steve Kuritz / Google",
     "file": "img/venues/111045.jpg"
-   },
-   "deals": []
-  },
-  {
-   "lid": "36353",
-   "name": "Ice House Deli",
-   "address": "1 King St, Pottstown PA 19464",
-   "zone_id": "pottstown",
-   "license_type": "Restaurant (Liquor)",
-   "id": "36353",
-   "plcb_name": "ICE HOUSE DELI",
-   "website": "http://icehousedelivers.com/",
-   "photo": {
-    "attribution": "Photo: Ice House / Google",
-    "file": "img/venues/36353.jpg"
    },
    "deals": []
   },
@@ -278,13 +374,16 @@
   },
   {
    "lid": "104290",
-   "name": "Karpys Tavern",
+   "name": "Karpy's Tavern",
    "address": "252 Elm St, Stowe PA 19464",
    "zone_id": "pottstown",
    "license_type": "Restaurant (Liquor)",
    "id": "104290",
    "plcb_name": "KARPYS TAVERN",
    "website": "https://www.facebook.com/Karpys-Tavern-277586716305/",
+   "lat": 40.255410499999996,
+   "lng": -75.67577039999999,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Karpy's Tavern / Google",
     "file": "img/venues/104290.jpg"
@@ -303,13 +402,16 @@
   },
   {
    "lid": "52234",
-   "name": "Little Italy",
+   "name": "Little Italy Pizzeria",
    "address": "636 E High St, Pottstown PA 19464",
    "zone_id": "pottstown",
    "license_type": "Restaurant (Liquor)",
    "id": "52234",
    "plcb_name": "LITTLE ITALY",
    "website": "http://www.pourhouselittleitaly.com/",
+   "lat": 40.2437395,
+   "lng": -75.6384593,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: LB Carter / Google",
     "file": "img/venues/52234.jpg"
@@ -429,12 +531,20 @@
   },
   {
    "lid": "112557",
-   "name": "Rivet",
+   "name": "Rivet: Canteen & Assembly",
    "address": "238-244 E High St, Pottstown PA 19464",
    "zone_id": "pottstown",
    "license_type": "Brewery Storage",
    "id": "112557",
    "plcb_name": "RIVET",
+   "website": "https://www.visitrivet.com/",
+   "lat": 40.2451663,
+   "lng": -75.64894799999999,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Rivet: Canteen & Assembly / Google",
+    "file": "img/venues/112557.jpg"
+   },
    "deals": []
   },
   {
@@ -463,21 +573,6 @@
    "license_type": "Restaurant (Liquor)",
    "id": "112277",
    "plcb_name": "ROYAL FARMS",
-   "deals": []
-  },
-  {
-   "lid": "119821",
-   "name": "Sanatoga Inn",
-   "address": "2688 E High St, Pottstown PA 19464",
-   "zone_id": "pottstown",
-   "license_type": "Hotel (Liquor)",
-   "id": "119821",
-   "plcb_name": "SANATOGA INN",
-   "website": "http://sanatogapizzagrill.com/",
-   "photo": {
-    "attribution": "Photo: Sanatoga Pizza Grill / Google",
-    "file": "img/venues/119821.jpg"
-   },
    "deals": []
   },
   {
@@ -514,19 +609,25 @@
     "attribution": "Photo: Sly Fox Brewing Company / Google",
     "file": "img/venues/125005.jpg"
    },
-   "deals": [],
-   "branch": "Glasgow St"
+   "deals": []
   },
   {
    "lid": "84876",
-   "name": "Sly Fox Brewing",
+   "name": "Sly Fox Taphouse",
    "address": "820 Knitting Mills Way Suite 100, Wyomissing PA 19610",
    "zone_id": "pottstown",
    "license_type": "Brewery Storage",
    "id": "84876",
    "plcb_name": "SLY FOX BREWING COMPANY INC",
-   "deals": [],
-   "branch": "Knitting Mills Way"
+   "website": "https://www.slyfoxbeer.com/",
+   "lat": 40.337440699999995,
+   "lng": -75.9543475,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: Sly Fox Taphouse / Google",
+    "file": "img/venues/84876.jpg"
+   },
+   "deals": []
   },
   {
    "lid": "109061",
@@ -555,6 +656,9 @@
    "id": "67891",
    "plcb_name": "STEEL RIVER PLAYHOUSE",
    "website": "http://www.steelriver.org/",
+   "lat": 40.2456624,
+   "lng": -75.6486518,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Toni Sterling / Google",
     "file": "img/venues/67891.jpg"
@@ -580,16 +684,6 @@
    "deals": []
   },
   {
-   "lid": "129537",
-   "name": "Sunset Hill Brewery",
-   "address": "300 E High St, Pottstown PA 19464",
-   "zone_id": "pottstown",
-   "license_type": "Brewery Storage",
-   "id": "129537",
-   "plcb_name": "SUNSET HILL BREWERY",
-   "deals": []
-  },
-  {
    "lid": "107113",
    "name": "Sunset Hill Brewing",
    "address": "2782 Leidy Rd, Gilbertsville PA 19525",
@@ -605,80 +699,27 @@
     "attribution": "Photo: Chris W / Google",
     "file": "img/venues/107113.jpg"
    },
-   "deals": []
+   "deals": [],
+   "branch": "Leidy Rd"
   },
   {
-   "lid": "122430",
-   "name": "The Citadel Taproom",
-   "address": "305 E High St, Pottstown PA 19464",
+   "lid": "129537",
+   "name": "Sunset Hill Brewing",
+   "address": "300 E High St, Pottstown PA 19464",
    "zone_id": "pottstown",
    "license_type": "Brewery Storage",
-   "id": "122430",
-   "plcb_name": "THE CITADEL TAPROOM",
-   "deals": []
-  },
-  {
-   "lid": "100198",
-   "name": "The Giant",
-   "address": "86 Glocker Way, Pottstown PA 19465",
-   "zone_id": "pottstown",
-   "license_type": "Restaurant (Liquor)",
-   "id": "100198",
-   "plcb_name": "THE GIANT COMPANY LLC",
-   "website": "https://stores.giantfoodstores.com/pa/pottstown/86-glocker-way?y_source=1_NDE5NTgzNi03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "id": "129537",
+   "plcb_name": "SUNSET HILL BREWERY",
+   "website": "https://sunsethillbrewingco.com/",
+   "lat": 40.244994299999995,
+   "lng": -75.64758429999999,
+   "geo_precision": "place",
    "photo": {
-    "attribution": "Photo: Chris Reece / Google",
-    "file": "img/venues/100198.jpg"
+    "attribution": "Photo: Sunset Hill Brewing Company / Google",
+    "file": "img/venues/129537.jpg"
    },
    "deals": [],
-   "branch": "Glocker Way"
-  },
-  {
-   "lid": "85940",
-   "name": "The Giant",
-   "address": "180 Upland Square Dr, Stowe PA 19464",
-   "zone_id": "pottstown",
-   "license_type": "Restaurant (Liquor)",
-   "id": "85940",
-   "plcb_name": "THE GIANT COMPANY LLC",
-   "website": "https://stores.giantfoodstores.com/pa/stowe/180-upland-square-dr?y_source=1_NDE5NTQzNS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
-   "photo": {
-    "attribution": "Photo: James Crowell / Google",
-    "file": "img/venues/85940.jpg"
-   },
-   "deals": [],
-   "branch": "Upland Square Dr"
-  },
-  {
-   "lid": "87357",
-   "name": "The Giant",
-   "address": "173 Holly Rd, Gilbertsville PA 19525",
-   "zone_id": "pottstown",
-   "license_type": "Restaurant (Liquor)",
-   "id": "87357",
-   "plcb_name": "THE GIANT COMPANY LLC",
-   "website": "https://stores.giantfoodstores.com/pa/gilbertsville/173-holly-rd?y_source=1_NDE5NTQyNC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
-   "photo": {
-    "attribution": "Photo: S M / Google",
-    "file": "img/venues/87357.jpg"
-   },
-   "deals": [],
-   "branch": "Holly Rd"
-  },
-  {
-   "lid": "128292",
-   "name": "The Twisted Cork",
-   "address": "2532 Swamp Pk, Pottstown PA 19464",
-   "zone_id": "pottstown",
-   "license_type": "Restaurant (Liquor)",
-   "id": "128292",
-   "plcb_name": "THE TWISTED CORK",
-   "website": "https://www.twistedcork.com/",
-   "photo": {
-    "attribution": "Photo: John Evans / Google",
-    "file": "img/venues/128292.jpg"
-   },
-   "deals": []
+   "branch": "E High St"
   },
   {
    "lid": "129064",
@@ -724,14 +765,35 @@
    "deals": []
   },
   {
+   "lid": "128292",
+   "name": "Twisted Cork",
+   "address": "2532 Swamp Pk, Pottstown PA 19464",
+   "zone_id": "pottstown",
+   "license_type": "Restaurant (Liquor)",
+   "id": "128292",
+   "plcb_name": "THE TWISTED CORK",
+   "website": "https://www.twistedcork.com/",
+   "lat": 40.274281099999996,
+   "lng": -75.5637259,
+   "geo_precision": "place",
+   "photo": {
+    "attribution": "Photo: John Evans / Google",
+    "file": "img/venues/128292.jpg"
+   },
+   "deals": []
+  },
+  {
    "lid": "56941",
-   "name": "Union Jacks",
+   "name": "Union Jack's Olde Congo Hotel",
    "address": "373 Hoffmansville Rd, Barto PA 19504",
    "zone_id": "pottstown",
    "license_type": "Restaurant (Liquor)",
    "id": "56941",
    "plcb_name": "UNION JACKS",
    "website": "http://unionjackscongo.com/",
+   "lat": 40.350875300000006,
+   "lng": -75.5843093,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Union Jack's Olde Congo Hotel / Google",
     "file": "img/venues/56941.jpg"
@@ -740,13 +802,16 @@
   },
   {
    "lid": "128389",
-   "name": "Wawa #8196",
+   "name": "Wawa",
    "address": "157 Evergreen Rd, Pottstown PA 19464",
    "zone_id": "pottstown",
    "license_type": "Restaurant (Liquor)",
    "id": "128389",
    "plcb_name": "WAWA #8196",
    "website": "https://www.wawa.com/locations/8196?utm_source=gmblisting&utm_medium=organic&utm_campaign=locallisting",
+   "lat": 40.2393816,
+   "lng": -75.5794878,
+   "geo_precision": "place",
    "photo": {
     "attribution": "Photo: Wawa / Google",
     "file": "img/venues/128389.jpg"
@@ -771,6 +836,10 @@
    "license_type": "Restaurant (Liquor)",
    "id": "57814",
    "plcb_name": "ZACHJEN INC",
+   "photo": {
+    "attribution": "Photo: Bchaz23 / Google",
+    "file": "img/venues/57814.jpg"
+   },
    "deals": []
   }
  ]

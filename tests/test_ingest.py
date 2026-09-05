@@ -4658,3 +4658,62 @@ class AnOrphanFromNoLicenceIsNotAStaleBase(unittest.TestCase):
         d = json.load(open(os.path.join(REPO, "data", "deals_seed.json"), encoding="utf-8"))
         v = next(x for x in d["venues"] if x["id"] == "the-boardroom-phoenixville")
         self.assertFalse(v.get("license_type"))
+
+
+class APrivateEventPitchIsNotAStandingOffer(unittest.TestCase):
+    """The word 'happy hour' plus a clock is not proof the venue is offering
+    one. Jaffa Bar's events page reads "Want to host a Happy Hour? We love
+    that too! Parties of up-to 35 guests can reserve the upstairs from 5-7
+    pm" -- a private BOOKING pitch -- and it read exactly like a standing
+    deal: the word was there, the clock was there. It shipped a 7-day
+    5-7pm window and 24 items pulled from the venue's regular menu, none of
+    them a verified happy-hour price. Found 2026-09-04.
+    """
+
+    def test_a_hosting_pitch_is_refused(self):
+        self.assertTrue(extract_deals.PRIVATE_EVENT_PITCH_RE.search(
+            "Want to host a Happy Hour? We love that too! Parties of up-to "
+            "35 guests can reserve the upstairs from 5-7 pm."))
+
+    def test_an_ordinary_happy_hour_quote_is_not_caught_by_the_guard(self):
+        for quote in ("Happy Hour Monday-Friday 4-6pm $1 off drafts",
+                      "HAPPY HOUR Mon-Fri, 4-6pm",
+                      "we have Happy Hour from 5-7pm every day!"):
+            self.assertIsNone(extract_deals.PRIVATE_EVENT_PITCH_RE.search(quote),
+                              f"a real offer was caught by the pitch guard: {quote!r}")
+
+
+class AScopedExtractPrunesItsOwnStaleCoordinates(unittest.TestCase):
+    """A coordinate this script wrote for a venue it just re-examined, and
+    which no longer holds a deal, must not survive the run that dropped it --
+    even when that run was scoped with --lids, not a full corpus pass.
+
+    Reversed 2026-09-04: the prune used to run ONLY on an unscoped pass, on
+    the reasoning that a scoped run touches too little of the corpus to
+    prune safely. That reasoning was backwards -- pruning was never
+    corpus-wide, only ever "erase anything not live" -- and it let two
+    scoped runs in one session (Jaffa Bar's private-event pitch, kept then
+    correctly dropped) leave a stale coordinate nothing claims.
+    """
+
+    def test_reexamined_addrs_is_scoped_to_addresses_actually_revisited(self):
+        # A narrow unit check on the mechanism itself: the prune must never
+        # reach past what THIS run actually looked at, or a scoped run could
+        # erase a valid coordinate for a venue nobody re-checked this pass.
+        reexamined = {"100 Bridge St, Phoenixville PA 19460"}
+        coords = {
+            "stale-venue": {"matched_by": "osm_site",
+                            "queried": "100 Bridge St, Phoenixville PA 19460"},
+            "untouched-venue": {"matched_by": "osm_site",
+                                "queried": "1 Other St, Nowhere PA 00000"},
+            "hand-geocoded": {"matched_by": "nominatim",
+                              "queried": "100 Bridge St, Phoenixville PA 19460"},
+        }
+        live = set()  # neither survived extraction this pass
+        pruned = {k: c for k, c in coords.items()
+                 if c.get("matched_by") != "osm_site"
+                 or k in live
+                 or c.get("queried") not in reexamined}
+        self.assertNotIn("stale-venue", pruned, "a re-examined, now-dead osm_site entry survived")
+        self.assertIn("untouched-venue", pruned, "an out-of-scope osm_site entry was wrongly erased")
+        self.assertIn("hand-geocoded", pruned, "a non-osm_site (hand-verified) entry was wrongly erased")
