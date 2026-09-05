@@ -1,4 +1,125 @@
 {
+ "100210": [
+  {
+   "amount_off_usd": 1.0,
+   "category": "draft",
+   "label": "draft beer"
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "call",
+   "label": "Stateside Vodka"
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "bottle_can",
+   "label": "Surfside Iced Tea cans"
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "wine",
+   "label": "house wine"
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "cocktail",
+   "label": "specialty cocktails"
+  },
+  {
+   "amount_off_usd": 4.0,
+   "category": "food",
+   "label": "Wings (excluding Wing Wednesday)"
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "food",
+   "label": "Buffalo Chicken Dip"
+  },
+  {
+   "category": "food",
+   "label": "Cauliflower Bites",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Chips & Salsa",
+   "price_usd": 3.0
+  },
+  {
+   "category": "food",
+   "label": "Garlic Parmesan Waffle Fries",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "Buffalo Chicken Cheesesteak Eggrolls",
+   "price_usd": 8.0
+  }
+ ],
+ "100226": [
+  {
+   "amount_off_usd": 2.0,
+   "category": "draft",
+   "label": "$2 OFF Draft Beer"
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "wine",
+   "label": "$2 OFF Wine"
+  },
+  {
+   "category": "cocktail",
+   "label": "Select Cocktails",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "Pimento Cheese Dip",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Loaded Potato Wedges",
+   "price_usd": 9.0
+  },
+  {
+   "category": "food",
+   "label": "Buffalo Roasted Cauliflower",
+   "price_usd": 9.0
+  },
+  {
+   "category": "food",
+   "label": "Korean Fried Chicken Bites",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Smoked Chicken Nachos",
+   "price_usd": 10.0
+  }
+ ],
+ "101064": [
+  {
+   "amount_off_usd": 2.0,
+   "category": "food",
+   "label": "$2 OFF any bar bite"
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "draft",
+   "label": "$1 OFF any beer"
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "wine",
+   "label": "$2 OFF any wine"
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "cocktail",
+   "label": "$2 OFF any cocktail"
+  }
+ ],
  "101307": [
   {
    "category": "food",
@@ -143,20 +264,124 @@
    "price_usd": 12.9
   }
  ],
+ "101711": [
+  {
+   "amount_off_usd": 1.0,
+   "category": "food",
+   "label": "Appetizers"
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "draft",
+   "label": "Draft beer"
+  },
+  {
+   "category": "wine",
+   "label": "House wine",
+   "price_usd": 8.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "City wide",
+   "price_usd": 5.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Bud Lite / PBR",
+   "price_usd": 4.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Specialty cocktails",
+   "price_usd": 7.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Castaway Rum & Ginger",
+   "price_usd": 7.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Barry's Blackberry Bramble",
+   "price_usd": 7.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Blueberry Crush",
+   "price_usd": 7.0
+  },
+  {
+   "category": "cocktail",
+   "discount_pct": 50.0,
+   "label": "Half price pitchers"
+  },
+  {
+   "category": "cocktail",
+   "discount_pct": 50.0,
+   "label": "guava margarita pitcher"
+  },
+  {
+   "category": "cocktail",
+   "discount_pct": 50.0,
+   "label": "mango margarita pitcher"
+  },
+  {
+   "category": "cocktail",
+   "discount_pct": 50.0,
+   "label": "hibiscus margarita pitcher"
+  },
+  {
+   "category": "cocktail",
+   "discount_pct": 50.0,
+   "label": "blueberry crush pitcher"
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "wine",
+   "label": "House wine"
+  }
+ ],
+ "103994": [
+  {
+   "category": "food",
+   "label": "Truffle fries",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Margarita flatbread",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Arugula flatbread",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Pepperoni flatbread",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Sweet potato fries",
+   "price_usd": 8.0
+  }
+ ],
  "106706": [
   {
    "category": "food",
-   "label": "Crispy Brussels V",
+   "label": "Crispy Brussels",
    "price_usd": 6.0
   },
   {
    "category": "food",
-   "label": "Truffle Fries V",
+   "label": "Truffle Fries",
    "price_usd": 8.0
   },
   {
    "category": "cocktail",
-   "label": "Bangin' Lemon Drops",
+   "label": "Bangin' Lemon Drops (+$3 Martini)",
    "price_usd": 7.0
   },
   {
@@ -176,7 +401,7 @@
   },
   {
    "category": "food",
-   "label": "Crispy Brussels",
+   "label": "Crispy Brussels V",
    "price_usd": 6.0
   },
   {
@@ -191,7 +416,7 @@
   },
   {
    "category": "food",
-   "label": "Truffle Fries",
+   "label": "Truffle Fries V",
    "price_usd": 8.0
   },
   {
@@ -206,7 +431,7 @@
   },
   {
    "category": "cocktail",
-   "label": "Bangin' Lemon Drops (+$3 Martini)",
+   "label": "Bangin' Lemon Drops",
    "price_usd": 7.0
   },
   {
@@ -230,6 +455,11 @@
    "price_usd": 10.0
   },
   {
+   "amount_off_usd": 2.0,
+   "category": "draft",
+   "label": "$2 off Craft Drafts"
+  },
+  {
    "category": "draft",
    "label": "Miller Lite and Michelob Ultra Draft",
    "price_usd": 3.0
@@ -238,6 +468,313 @@
    "category": "wine",
    "label": "Glass of House Red or House White",
    "price_usd": 4.5
+  }
+ ],
+ "107050": [
+  {
+   "category": "food",
+   "label": "Mini French Fry Board",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Jumbo Bavarian Soft Pretzel, served warm w/ dijon mustard",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Mini Pierogies",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Chicken Wings",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Twirl of the Day",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Mini Chicken & Cheese Quesadilla",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Chicken Tacos",
+   "price_usd": 10.0
+  },
+  {
+   "category": "wine",
+   "label": "House Red",
+   "price_usd": 6.0
+  },
+  {
+   "category": "wine",
+   "label": "House White",
+   "price_usd": 6.0
+  },
+  {
+   "category": "wine",
+   "label": "House Sparkling",
+   "price_usd": 6.0
+  },
+  {
+   "category": "well",
+   "label": "House Mixed Drinks",
+   "price_usd": 6.0
+  },
+  {
+   "category": "draft",
+   "label": "Draft Beers",
+   "price_usd": 6.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Seasonal Sangria",
+   "price_usd": 6.0
+  }
+ ],
+ "108693": [
+  {
+   "amount_off_usd": 1.0,
+   "category": "draft",
+   "label": "All draft beers, $1 off"
+  },
+  {
+   "category": "cocktail",
+   "label": "Pub-A-Ritas",
+   "price_usd": 5.0
+  },
+  {
+   "category": "cocktail",
+   "label": "The Whatever",
+   "price_usd": 7.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Old Fashioned",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Cauliflower Bites",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "Philly Cheesesteak Fries",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "BBQ Pork or BBQ Chicken Nachos",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Jumbo Wings",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Fried Calamari",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "BBQ Grilled Chicken Quesadilla",
+   "price_usd": 8.0
+  }
+ ],
+ "109005": [
+  {
+   "category": "draft",
+   "label": "Bud Light 16 oz",
+   "price_usd": 3.0
+  },
+  {
+   "category": "draft",
+   "label": "Miller Lite 16 oz",
+   "price_usd": 3.0
+  },
+  {
+   "category": "draft",
+   "label": "Coors Light 16 oz",
+   "price_usd": 3.0
+  },
+  {
+   "category": "draft",
+   "label": "Bud Light 22 oz",
+   "price_usd": 4.0
+  },
+  {
+   "category": "draft",
+   "label": "Modelo 16 oz",
+   "price_usd": 4.0
+  },
+  {
+   "category": "draft",
+   "label": "Miller Lite 22 oz",
+   "price_usd": 4.0
+  },
+  {
+   "category": "draft",
+   "label": "Coors Light 22 oz",
+   "price_usd": 4.0
+  },
+  {
+   "category": "draft",
+   "label": "Michelob Ultra 16 oz",
+   "price_usd": 4.0
+  },
+  {
+   "category": "draft",
+   "label": "Modelo 22 oz",
+   "price_usd": 5.0
+  },
+  {
+   "category": "wine",
+   "label": "House Red & White Wine",
+   "price_usd": 5.0
+  },
+  {
+   "category": "draft",
+   "label": "Michelob Ultra 22 oz",
+   "price_usd": 5.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Margarita of the Month",
+   "price_usd": 6.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Tequila Classic Marg",
+   "price_usd": 7.0
+  }
+ ],
+ "109551": [
+  {
+   "category": "cocktail",
+   "label": "Experimental happy hour cocktails",
+   "price_usd": 11.0
+  },
+  {
+   "category": "wine",
+   "label": "House wines",
+   "price_usd": 10.0
+  }
+ ],
+ "110382": [
+  {
+   "amount_off_usd": 1.0,
+   "category": "food",
+   "label": "select apps"
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "draft",
+   "label": "select drafts"
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "wine",
+   "label": "select wine"
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "cocktail",
+   "label": "select cocktails"
+  }
+ ],
+ "114544": [
+  {
+   "category": "cocktail",
+   "label": "Augustinian Old Fashioned",
+   "price_usd": 8.0
+  },
+  {
+   "category": "cocktail",
+   "label": "HH Strawberry Fields",
+   "price_usd": 8.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Nova Punch",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "Cabernet",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "Chardonnay",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "Sauv Blanc",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "Sparkling",
+   "price_usd": 8.0
+  },
+  {
+   "category": "draft",
+   "label": "Allagash White",
+   "price_usd": 6.0
+  },
+  {
+   "category": "draft",
+   "label": "Garage Beer",
+   "price_usd": 6.0
+  },
+  {
+   "category": "draft",
+   "label": "Lavante Hazy IPA",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "HH Buffalo Chicken Flatbread",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "HH Cheese Flatbread",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "HH Daily Oysters",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "HH Garden Salad",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "HH Mahi Taco",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "HH Pepperoni Flatbread",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "HH Sliders",
+   "price_usd": 7.0
   }
  ],
  "118439": [
@@ -404,6 +941,140 @@
    "price_usd": 30.0
   }
  ],
+ "122033": [
+  {
+   "amount_off_usd": 2.0,
+   "category": "draft",
+   "label": "Draft Beer & Mocktails"
+  },
+  {
+   "category": "cocktail",
+   "label": "Margaritas - Strawberry or Lime",
+   "price_usd": 5.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Broad Street Tea",
+   "price_usd": 5.0
+  },
+  {
+   "category": "wine",
+   "label": "House Wine - Red or White Wine",
+   "price_usd": 6.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "City Wide - Yuengling Bottle & Well Shot",
+   "price_usd": 6.0
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "food",
+   "label": "Select Starters & Sides"
+  },
+  {
+   "amount_off_usd": 3.0,
+   "category": "food",
+   "label": "All Personal Pizzas"
+  }
+ ],
+ "122420": [
+  {
+   "category": "well",
+   "label": "Mixed drinks, house spirits",
+   "price_usd": 6.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Lagunitas IPA",
+   "price_usd": 5.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Levante Cloudy & Cumbersome IPA",
+   "price_usd": 5.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Tiger Lager",
+   "price_usd": 5.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Heineken Light",
+   "price_usd": 5.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Lychee Martini — vodka, rose, citrus",
+   "price_usd": 8.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Old Fashioned — rye whiskey",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "Cabernet, Mcmanis Estate, CA",
+   "price_usd": 7.0
+  },
+  {
+   "category": "wine",
+   "label": "Pinot Grigio, Canal Grando, IT",
+   "price_usd": 7.0
+  },
+  {
+   "category": "wine",
+   "label": "Pinot Noir, DeLoach, CA",
+   "price_usd": 7.0
+  },
+  {
+   "category": "wine",
+   "label": "Sparkling, Fete D'or, Blanc de Blanc Brut, FR",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Steamed Dumplings, chicken or vegetable",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Tuna Tartare",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Korean Fried Chicken Bao Buns",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Wok Tossed Mussels",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Salmon Crudo",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Crispy Veggie Spring Rolls",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Brussels Sprouts",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Bang Bang Broccoli",
+   "price_usd": 8.0
+  }
+ ],
  "126237": [
   {
    "category": "draft",
@@ -429,6 +1100,125 @@
    "category": "wine",
    "label": "House Wines",
    "price_usd": 5.0
+  }
+ ],
+ "128022": [
+  {
+   "category": "food",
+   "discount_pct": 50.0,
+   "label": "KALE SALAD*"
+  },
+  {
+   "category": "food",
+   "discount_pct": 50.0,
+   "label": "ADDICTIVE GREEN BEANS"
+  },
+  {
+   "category": "food",
+   "discount_pct": 50.0,
+   "label": "YUZU KOSHO CORN"
+  },
+  {
+   "category": "food",
+   "discount_pct": 50.0,
+   "label": "HERBED EDAMAME*"
+  },
+  {
+   "category": "food",
+   "discount_pct": 50.0,
+   "label": "ROASTED MUSHROOM DUMPLINGS"
+  },
+  {
+   "category": "food",
+   "discount_pct": 50.0,
+   "label": "RED OIL DUMPLINGS"
+  },
+  {
+   "category": "food",
+   "discount_pct": 50.0,
+   "label": "FIRECRACKER WINGS*"
+  },
+  {
+   "category": "food",
+   "discount_pct": 50.0,
+   "label": "SAIGON EGG ROLLS"
+  },
+  {
+   "category": "food",
+   "discount_pct": 50.0,
+   "label": "SWEET & SOUR SPARERIBS"
+  },
+  {
+   "category": "wine",
+   "discount_pct": 50.0,
+   "label": "BUSHIDO “WAY OF THE WARRIOR” sake"
+  },
+  {
+   "category": "wine",
+   "discount_pct": 50.0,
+   "label": "JOTO GRAFFITI ONE CUP sake"
+  },
+  {
+   "category": "wine",
+   "discount_pct": 50.0,
+   "label": "IZUMO FUJI \"ANCIENT SHRINE\" sake"
+  },
+  {
+   "category": "wine",
+   "discount_pct": 50.0,
+   "label": "BAN RYU “10,000 WAYS” sake"
+  },
+  {
+   "category": "wine",
+   "discount_pct": 50.0,
+   "label": "KONTEKI \"TEARS OF DAWN\" sake"
+  },
+  {
+   "category": "wine",
+   "discount_pct": 50.0,
+   "label": "JOTO NIGORI \"THE BLUE ONE\" sake"
+  },
+  {
+   "category": "wine",
+   "discount_pct": 50.0,
+   "label": "JOTO YUZU \"THE CITRUS ONE\" sake"
+  },
+  {
+   "category": "wine",
+   "discount_pct": 50.0,
+   "label": "HOT SAKE"
+  },
+  {
+   "category": "wine",
+   "discount_pct": 50.0,
+   "label": "SAKE FLIGHT"
+  }
+ ],
+ "129263": [
+  {
+   "amount_off_usd": 4.0,
+   "category": "wine",
+   "label": "$4 Off Wines"
+  },
+  {
+   "amount_off_usd": 4.0,
+   "category": "cocktail",
+   "label": "$4 Off Cocktails"
+  },
+  {
+   "amount_off_usd": 4.0,
+   "category": "food",
+   "label": "$4 Off Pizzas"
+  },
+  {
+   "amount_off_usd": 4.0,
+   "category": "food",
+   "label": "$4 Off Apps"
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "draft",
+   "label": "$2 Off Draft Beers"
   }
  ],
  "129847": [
@@ -463,6 +1253,194 @@
    "price_usd": 7.0
   }
  ],
+ "133012": [
+  {
+   "category": "cocktail",
+   "label": "OLD FASHIONED GABBAR",
+   "price_usd": 10.0
+  },
+  {
+   "category": "cocktail",
+   "label": "MAHARAJA TONIC",
+   "price_usd": 9.0
+  },
+  {
+   "category": "cocktail",
+   "label": "SPICY MARGARITA",
+   "price_usd": 9.0
+  },
+  {
+   "category": "cocktail",
+   "label": "COSMOPOLITAN",
+   "price_usd": 9.0
+  },
+  {
+   "category": "cocktail",
+   "label": "LEMONDROPS",
+   "price_usd": 9.0
+  },
+  {
+   "category": "well",
+   "label": "HOUSE VODKA - Choice of Soda or Juice",
+   "price_usd": 8.0
+  },
+  {
+   "category": "well",
+   "label": "HOUSE GIN - Choice of Soda or Juice",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "WHITE WINE & RED WINE",
+   "price_usd": 7.0
+  },
+  {
+   "category": "draft",
+   "label": "DRAFT BEER - House and Seasonal Options",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "CHILI CAULIFLOWER DRY (V)",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "SAMOSA CHAAT",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "TANDOORI PANEER (GF)",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "GOAT CHEESE NAAN",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "CALCUTTA PORK RIBS (GF)",
+   "price_usd": 9.0
+  },
+  {
+   "category": "food",
+   "label": "GOAN CRAB CAKE",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "CHILI CHICKEN DRY",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "AMRITSARI FISH PAKORA (GF)",
+   "price_usd": 9.0
+  }
+ ],
+ "19496": [
+  {
+   "category": "draft",
+   "label": "Domestic Drafts",
+   "price_usd": 3.75
+  },
+  {
+   "category": "well",
+   "label": "Mixed Well Drinks",
+   "price_usd": 5.0
+  },
+  {
+   "category": "draft",
+   "label": "Select Micro Drafts",
+   "price_usd": 5.5
+  },
+  {
+   "category": "wine",
+   "label": "House Wines",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Ahi Tuna Tacos",
+   "price_usd": 9.0
+  },
+  {
+   "category": "food",
+   "label": "Shaved Prime Rib Sliders",
+   "price_usd": 9.0
+  },
+  {
+   "category": "food",
+   "label": "Pretzel Bites",
+   "price_usd": 9.0
+  },
+  {
+   "category": "food",
+   "label": "Southwest Chicken Spring Rolls",
+   "price_usd": 9.0
+  },
+  {
+   "category": "food",
+   "label": "Italian Calamari",
+   "price_usd": 9.0
+  },
+  {
+   "category": "food",
+   "label": "Buffalo Shrimp",
+   "price_usd": 9.0
+  },
+  {
+   "category": "food",
+   "label": "Potato Skins",
+   "price_usd": 9.0
+  },
+  {
+   "category": "food",
+   "label": "Fried Pickles",
+   "price_usd": 9.0
+  }
+ ],
+ "32028": [
+  {
+   "category": "draft",
+   "discount_pct": 50.0,
+   "label": "Half Priced Beer"
+  },
+  {
+   "category": "cocktail",
+   "discount_pct": 50.0,
+   "label": "Half Priced Cocktails"
+  },
+  {
+   "category": "food",
+   "label": "Appetizers",
+   "price_usd": 5.99
+  }
+ ],
+ "36829": [
+  {
+   "amount_off_usd": 2.0,
+   "category": "draft",
+   "label": "drafts"
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "well",
+   "label": "liquor pours"
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "wine",
+   "label": "wine"
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "food",
+   "label": "shareables"
+  }
+ ],
  "36841": [
   {
    "category": "food",
@@ -478,6 +1456,670 @@
    "category": "food",
    "label": "$1 wings",
    "price_usd": 1.0
+  }
+ ],
+ "39404": [
+  {
+   "category": "draft",
+   "label": "Domestic Drafts",
+   "price_usd": 2.75
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "draft",
+   "label": "Craft & Import Drafts"
+  },
+  {
+   "amount_off_usd": 0.5,
+   "category": "bottle_can",
+   "label": "Bottled Beers"
+  },
+  {
+   "amount_off_usd": 0.5,
+   "category": "call",
+   "label": "Spirits"
+  },
+  {
+   "amount_off_usd": 0.5,
+   "category": "wine",
+   "label": "Wine"
+  }
+ ],
+ "43721": [
+  {
+   "category": "food",
+   "label": "Appetizer Specials (3:30pm-5:30pm only)",
+   "price_usd": 6.0
+  },
+  {
+   "category": "cocktail",
+   "label": "House Martinis/Manhattans/Cosmos",
+   "price_usd": 6.0
+  },
+  {
+   "category": "wine",
+   "label": "House Wines",
+   "price_usd": 6.0
+  },
+  {
+   "category": "cocktail",
+   "label": "House Mixed Drinks",
+   "price_usd": 6.0
+  },
+  {
+   "category": "draft",
+   "label": "Lager Drafts",
+   "price_usd": 4.0
+  }
+ ],
+ "44242": [
+  {
+   "category": "cocktail",
+   "label": "Espresso Martini",
+   "price_usd": 10.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Bourbon Crush",
+   "price_usd": 10.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Ambler Mule",
+   "price_usd": 10.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Black Manhattan",
+   "price_usd": 10.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Cherry Old Fashioned",
+   "price_usd": 10.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Peach Basil Margarita",
+   "price_usd": 10.0
+  },
+  {
+   "category": "draft",
+   "label": "Ring the Bell Lager",
+   "price_usd": 5.0
+  },
+  {
+   "category": "draft",
+   "label": "Type A West Coast IPA",
+   "price_usd": 5.0
+  },
+  {
+   "category": "draft",
+   "label": "J.A.I Hazy IPA",
+   "price_usd": 5.0
+  },
+  {
+   "category": "draft",
+   "label": "Puddler's Row ESB",
+   "price_usd": 5.0
+  },
+  {
+   "category": "draft",
+   "label": "Michelob Ultra",
+   "price_usd": 5.0
+  },
+  {
+   "category": "draft",
+   "label": "Seasonal Draughts",
+   "price_usd": 5.0
+  },
+  {
+   "category": "wine",
+   "label": "Squealing Pig Sauvignon Blanc",
+   "price_usd": 9.0
+  },
+  {
+   "category": "wine",
+   "label": "Banfi San Angelo Pinot Grigio",
+   "price_usd": 9.0
+  },
+  {
+   "category": "wine",
+   "label": "Boen Pinot Noir",
+   "price_usd": 9.0
+  },
+  {
+   "category": "wine",
+   "label": "Nicolas Merlot",
+   "price_usd": 9.0
+  },
+  {
+   "category": "food",
+   "label": "Roasted Cherry Tomato Bruschetta, $2 per piece",
+   "price_usd": 2.0
+  },
+  {
+   "category": "food",
+   "label": "Crispy Wings, $1.50 per wing",
+   "price_usd": 1.5
+  },
+  {
+   "category": "food",
+   "label": "Battered Fish Tacos, $4 per piece",
+   "price_usd": 4.0
+  },
+  {
+   "category": "food",
+   "label": "Voodoo Flatbread",
+   "price_usd": 12.0
+  },
+  {
+   "category": "food",
+   "label": "Roasted Pepper Hummus",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Shrimp Cocktail, $2 per piece",
+   "price_usd": 2.0
+  },
+  {
+   "category": "food",
+   "label": "Philly Cheesesteak Egg Rolls, $1.50 per piece",
+   "price_usd": 1.5
+  }
+ ],
+ "45092": [
+  {
+   "amount_off_usd": 1.0,
+   "category": "draft",
+   "label": "$1 off drafts"
+  }
+ ],
+ "45865": [
+  {
+   "category": "cocktail",
+   "label": "Mixed Drinks",
+   "price_usd": 5.0
+  },
+  {
+   "category": "wine",
+   "label": "Wines",
+   "price_usd": 6.0
+  }
+ ],
+ "46363": [
+  {
+   "category": "food",
+   "label": "Guacamole Cubano (V), plantain chips",
+   "price_usd": 6.5
+  },
+  {
+   "category": "food",
+   "label": "Yuca Fries (V), cilantro-caper allioli",
+   "price_usd": 6.5
+  },
+  {
+   "category": "food",
+   "label": "Tostones (V), Dijon-mojo",
+   "price_usd": 6.5
+  },
+  {
+   "category": "food",
+   "label": "Croquetas, chicken and ham & cheese",
+   "price_usd": 7.5
+  },
+  {
+   "category": "food",
+   "label": "Mamá Amelia's Empanadas, choice of one",
+   "price_usd": 7.5
+  },
+  {
+   "category": "food",
+   "label": "Barrio Chino Chicken Wings",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Dragon Street Meatballs",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Churrasco Burger, 10oz double patty skirt steak burger",
+   "price_usd": 10.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Classic Mojito",
+   "price_usd": 7.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Flavored Mojito - Coconut, Mango or Passion Fruit",
+   "price_usd": 8.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Classic Caipirinha",
+   "price_usd": 7.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Signature Cuba Libre",
+   "price_usd": 7.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Sangria - Roja or Blanco",
+   "price_usd": 7.0
+  },
+  {
+   "category": "wine",
+   "label": "House Wine, red or white",
+   "price_usd": 7.0
+  },
+  {
+   "category": "draft",
+   "label": "Beer, rotating selection",
+   "price_usd": 7.0
+  },
+  {
+   "category": "well",
+   "label": "Single Liquor Cocktail - house liquor with soda or juice",
+   "price_usd": 7.0
+  }
+ ],
+ "53093": [
+  {
+   "amount_off_usd": 2.0,
+   "category": "draft",
+   "label": "$2 off drafts"
+  },
+  {
+   "category": "wine",
+   "label": "House wines",
+   "price_usd": 5.0
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "bottle_can",
+   "label": "$1 off bottled beer"
+  },
+  {
+   "category": "food",
+   "label": "Pub snacks",
+   "price_usd": 5.0
+  }
+ ],
+ "53420": [
+  {
+   "category": "draft",
+   "label": "Yuengling Lager",
+   "price_usd": 4.0
+  },
+  {
+   "category": "wine",
+   "label": "House Chardonnay",
+   "price_usd": 6.0
+  },
+  {
+   "category": "wine",
+   "label": "House Cabernet",
+   "price_usd": 6.0
+  },
+  {
+   "category": "well",
+   "label": "Well Mixed Drinks",
+   "price_usd": 6.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Seasonal Sangria",
+   "price_usd": 6.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Berry Vodka Lemonade",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "Veggie Quesadilla",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "Pulled Pork Sliders",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "Nachitos",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "Cheeseburger Slider(1)",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "Cheesesteak Eggroll (1)",
+   "price_usd": 5.0
+  }
+ ],
+ "53783": [
+  {
+   "amount_off_usd": 2.0,
+   "category": "draft",
+   "label": "$2 off our draft beer selection"
+  },
+  {
+   "category": "food",
+   "label": "Fried Calamari",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Wings (6)",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "arancini",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "World Famous Meatballs",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Traditional pizza",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Fresh White Herb pizza",
+   "price_usd": 10.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Aperol Spritzers",
+   "price_usd": 9.0
+  }
+ ],
+ "54116": [
+  {
+   "category": "cocktail",
+   "discount_pct": 50.0,
+   "label": "Signature Cocktail: Ocean Water"
+  },
+  {
+   "category": "cocktail",
+   "discount_pct": 50.0,
+   "label": "Signature Cocktail: Nooner"
+  },
+  {
+   "category": "cocktail",
+   "discount_pct": 50.0,
+   "label": "Signature Cocktail: Cranberry Cooler"
+  },
+  {
+   "category": "cocktail",
+   "discount_pct": 50.0,
+   "label": "Signature Cocktail: Frank’s Knight House"
+  },
+  {
+   "category": "draft",
+   "discount_pct": 50.0,
+   "label": "Draft Beer: Michelob Ultra"
+  },
+  {
+   "category": "draft",
+   "discount_pct": 50.0,
+   "label": "Draft Beer: Lancaster Amber Lager"
+  },
+  {
+   "category": "draft",
+   "discount_pct": 50.0,
+   "label": "Draft Beer: 86 Pils"
+  },
+  {
+   "category": "wine",
+   "discount_pct": 50.0,
+   "label": "Glass Wine: Canyon Road Chardonnay"
+  },
+  {
+   "category": "wine",
+   "discount_pct": 50.0,
+   "label": "Glass Wine: Canyon Road Cabernet"
+  },
+  {
+   "category": "wine",
+   "discount_pct": 50.0,
+   "label": "Glass Wine: Icona Pinot Grigio"
+  },
+  {
+   "category": "wine",
+   "discount_pct": 50.0,
+   "label": "Glass Wine: Vendange Sauvignon Blanc"
+  },
+  {
+   "category": "food",
+   "label": "Filet Mozzarella — Grilled Filet, Breaded Mozzarella",
+   "price_usd": 24.5
+  },
+  {
+   "category": "food",
+   "label": "Jumbo Shrimp Cocktail (5)",
+   "price_usd": 14.5
+  },
+  {
+   "category": "food",
+   "label": "Classic Edamame — Steamed in Pod",
+   "price_usd": 12.0
+  },
+  {
+   "category": "food",
+   "label": "Pot Stickers — Pork or Chicken",
+   "price_usd": 14.0
+  },
+  {
+   "category": "food",
+   "label": "Kung Fu Cauliflower — Chipotle and Garlic Aioli",
+   "price_usd": 14.0
+  },
+  {
+   "category": "food",
+   "label": "Zucchini Fries — Breaded Zucchini, Wasabi Aioli",
+   "price_usd": 12.0
+  },
+  {
+   "category": "food",
+   "label": "Guacamole & Chips — House-Fried Corn Tortillas",
+   "price_usd": 14.5
+  },
+  {
+   "category": "food",
+   "label": "Signature Sushi Roll (8 pieces): Lobster Blast",
+   "price_usd": 20.0
+  },
+  {
+   "category": "food",
+   "label": "Signature Sushi Roll (8 pieces): Out of Control",
+   "price_usd": 19.5
+  },
+  {
+   "category": "food",
+   "label": "Signature Sushi Roll (8 pieces): Aka",
+   "price_usd": 18.0
+  },
+  {
+   "category": "food",
+   "label": "Signature Sushi Roll (8 pieces): Green Dragon",
+   "price_usd": 20.0
+  }
+ ],
+ "54242": [
+  {
+   "category": "food",
+   "label": "ESTIA CHIPS - zucchini & eggplant fried crispy with tzatziki",
+   "price_usd": 12.0
+  },
+  {
+   "category": "food",
+   "label": "SPANAKOPITA",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "CHEESE SAGANAKI",
+   "price_usd": 11.0
+  },
+  {
+   "category": "food",
+   "label": "OCTOPODI - charcoal grilled octopus",
+   "price_usd": 13.0
+  },
+  {
+   "category": "food",
+   "label": "CALAMARI - fried with spicy tomato sauce",
+   "price_usd": 12.0
+  },
+  {
+   "category": "food",
+   "label": "GRILLED SHRIMP",
+   "price_usd": 15.0
+  },
+  {
+   "category": "food",
+   "label": "KEFTEDES - lamb and beef meatballs",
+   "price_usd": 11.0
+  },
+  {
+   "category": "food",
+   "label": "HORIATIKI SALATA - Greek country salad",
+   "price_usd": 12.0
+  },
+  {
+   "category": "food",
+   "label": "ROMAINE SALATA",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "OYSTERS (6pc/12pc)",
+   "price_usd": 12.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Xenia - tequila, strawberry, mint, lime",
+   "price_usd": 10.0
+  },
+  {
+   "category": "cocktail",
+   "label": "ESTIA SPRITZ - Lillet, St. Germain, sparkling wine",
+   "price_usd": 10.0
+  },
+  {
+   "category": "cocktail",
+   "label": "DIONYSUS - house-infused berry vodka, lemon, sparkling wine",
+   "price_usd": 10.0
+  },
+  {
+   "category": "cocktail",
+   "label": "ROSEMARY MARTINI",
+   "price_usd": 10.0
+  },
+  {
+   "category": "cocktail",
+   "label": "ESPRESSOTINI - vanilla vodka, Kahlua, espresso",
+   "price_usd": 10.0
+  },
+  {
+   "category": "wine",
+   "label": "PINOT GRIGIO, Castelli, Italy",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "CHARDONNAY, Circle Creek, California",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "MOSCHOFILERO, Stamnaki, Greece",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "SAUVIGNON BLANC, Rai Valley, NZ",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "TEMPRANILLO, Faustino, Spain",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "PINOT NOIR, Alias, California",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "SANGIOVESE, Terra Viva, Italy",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "CABERNET SAUVIGNON, Twenty Acres, California",
+   "price_usd": 8.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "CORONA EXTRA, Mexico",
+   "price_usd": 5.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "STELLA ARTOIS, Belgium",
+   "price_usd": 5.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "MILLER LITE, Milwaukee",
+   "price_usd": 5.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "VICTORY ROTATING, Philadelphia",
+   "price_usd": 5.0
+  }
+ ],
+ "55311": [
+  {
+   "category": "draft",
+   "label": "Domestic drafts",
+   "price_usd": 3.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Domestic bottles",
+   "price_usd": 3.0
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "cocktail",
+   "label": "All mixed drinks"
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "bottle_can",
+   "label": "All import and specialty beers"
   }
  ],
  "57342": [
@@ -525,6 +2167,130 @@
    "category": "draft",
    "label": "Draft Beers (16 oz.)",
    "price_usd": 5.0
+  }
+ ],
+ "60353": [
+  {
+   "category": "wine",
+   "label": "sparkling",
+   "price_usd": 7.0
+  },
+  {
+   "category": "wine",
+   "label": "white",
+   "price_usd": 7.0
+  },
+  {
+   "category": "wine",
+   "label": "rosé",
+   "price_usd": 7.0
+  },
+  {
+   "category": "wine",
+   "label": "red",
+   "price_usd": 7.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "miller lite",
+   "price_usd": 4.0
+  },
+  {
+   "category": "draft",
+   "label": "2sp pony boi lager",
+   "price_usd": 4.0
+  },
+  {
+   "category": "cocktail",
+   "label": "p&k old fashioned — bourbon, demerara, bitters",
+   "price_usd": 10.0
+  },
+  {
+   "category": "cocktail",
+   "label": "le michele — vodka, aperol, st. germaine, grapefruit, soda",
+   "price_usd": 10.0
+  },
+  {
+   "category": "cocktail",
+   "label": "espresso martini — vodka, kahlua, amaro, sea salt",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "deviled eggs — bacon, ranch",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "harissa hummus — crudité, sourdough",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "pabbit fries — house cheese sauce",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Buffalo Cauliflower — pickled carrots, buttermilk dressing",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "cheese plate — chef’s selection, accoutrement",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Buck a Shuck",
+   "price_usd": 1.0
+  }
+ ],
+ "61260": [
+  {
+   "category": "cocktail",
+   "label": "Margaritas",
+   "price_usd": 7.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Titos Cocktails",
+   "price_usd": 6.0
+  },
+  {
+   "category": "wine",
+   "label": "Wines",
+   "price_usd": 7.0
+  },
+  {
+   "category": "draft",
+   "label": "Harp & Yuengling Draft",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "Murphy's Fries",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Smoked Gouda Mac & Cheese Bites",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Chicken Bites",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Pretzel Bites",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Chips & Guac",
+   "price_usd": 8.0
   }
  ],
  "61942": [
@@ -576,6 +2342,65 @@
    "label": "Half Off Appetizers"
   }
  ],
+ "62955": [
+  {
+   "category": "draft",
+   "label": "select pints",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "pulled pork sandwiches",
+   "price_usd": 7.0
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "wine",
+   "label": "wine by the glass"
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "cocktail",
+   "label": "select cocktails"
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "food",
+   "label": "small plates"
+  }
+ ],
+ "63902": [
+  {
+   "category": "draft",
+   "label": "Domestic Drafts 16 oz",
+   "price_usd": 3.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Corona & Corona Light bottles",
+   "price_usd": 4.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Krushes",
+   "price_usd": 6.0
+  },
+  {
+   "category": "wine",
+   "label": "House Wine, 6oz pour",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "Boneless Wings, snack size",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "Boneless Wings, share size",
+   "price_usd": 10.0
+  }
+ ],
  "64347": [
   {
    "category": "wine",
@@ -596,6 +2421,48 @@
    "category": "wine",
    "label": "House Prosecco",
    "price_usd": 7.0
+  }
+ ],
+ "64739": [
+  {
+   "category": "draft",
+   "label": "1/2 Liter German Drafts",
+   "price_usd": 6.0
+  },
+  {
+   "category": "draft",
+   "label": "1 Liter German Drafts",
+   "price_usd": 12.0
+  },
+  {
+   "category": "draft",
+   "label": "German Wheat or Lager Flight",
+   "price_usd": 10.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Mystery Can",
+   "price_usd": 6.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Bier Sangria",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Sweet or Savory Pretzel Bites",
+   "price_usd": 4.0
+  },
+  {
+   "category": "food",
+   "label": "Curry Wurst with Fries",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "Bavarian Cheesesteak",
+   "price_usd": 10.0
   }
  ],
  "64766": [
@@ -638,6 +2505,474 @@
    "category": "food",
    "label": "Garlic Bread",
    "price_usd": 6.0
+  }
+ ],
+ "64900": [
+  {
+   "category": "food",
+   "label": "Buck-a-Shuck Oysters, $1 each",
+   "price_usd": 1.0
+  },
+  {
+   "category": "draft",
+   "label": "WB Craft Pints",
+   "price_usd": 5.0
+  },
+  {
+   "category": "cocktail",
+   "label": "House martinis, Manhattans and Cosmos",
+   "price_usd": 7.0
+  },
+  {
+   "category": "wine",
+   "label": "House red, white or sparkling wine",
+   "price_usd": 7.0
+  }
+ ],
+ "65714": [
+  {
+   "category": "food",
+   "label": "PERUVIAN FRIES: aji amarillo, peanut, olive, cilantro",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "SPICY TOFU & CUCUMBERS: xo, chile crisp",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "SEITAN BIRRIA TACO",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "\"OLIVE GARDEN\": summer panzanella",
+   "price_usd": 7.0
+  },
+  {
+   "category": "cocktail",
+   "label": "SOUR CHERRY SOUR: gin, morello cherry, aquafava",
+   "price_usd": 10.0
+  },
+  {
+   "category": "cocktail",
+   "label": "YUZU DAQUIRI: rum, yuzu curacao, lime",
+   "price_usd": 10.0
+  },
+  {
+   "category": "cocktail",
+   "label": "CREME SODA: vanilla, orange, bubbles (refreshment)",
+   "price_usd": 5.0
+  },
+  {
+   "category": "wine",
+   "label": "RIESLING: Incline, Mosel, Germany",
+   "price_usd": 9.0
+  },
+  {
+   "category": "wine",
+   "label": "BONARDA: Colonia las Liebres, Mendoza, Argentina",
+   "price_usd": 9.0
+  }
+ ],
+ "67233": [
+  {
+   "category": "draft",
+   "label": "Miller Lite & Stella Drafts",
+   "price_usd": 5.0
+  },
+  {
+   "category": "wine",
+   "label": "Glasses of House Red or White Wine",
+   "price_usd": 5.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Stateside Seltzers/Teas",
+   "price_usd": 5.0
+  },
+  {
+   "category": "call",
+   "label": "Kiki Vodka & Mixer",
+   "price_usd": 5.0
+  },
+  {
+   "amount_off_usd": 5.0,
+   "category": "food",
+   "label": "the Bar \"Nosh Menu\""
+  }
+ ],
+ "67364": [
+  {
+   "category": "cocktail",
+   "label": "Limoncello martini",
+   "price_usd": 10.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Blood Orange Cosmopolitan martini",
+   "price_usd": 10.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Limoncello Cosmopolitan martini",
+   "price_usd": 10.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Basil Grapefruit martini",
+   "price_usd": 10.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Espresso martini",
+   "price_usd": 10.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Pear Bliss martini",
+   "price_usd": 10.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Limoncello Crush",
+   "price_usd": 8.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Blackberry Mule",
+   "price_usd": 8.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Blueberry Mojito",
+   "price_usd": 8.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Blushing Rum",
+   "price_usd": 8.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Limoncello spritz",
+   "price_usd": 10.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Raspberry Cello spritz",
+   "price_usd": 10.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Strawberry Hugo spritz",
+   "price_usd": 10.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Blood Orange Cello spritz",
+   "price_usd": 10.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Rosé spritz",
+   "price_usd": 10.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Aperol spritz",
+   "price_usd": 10.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Cherry Limeade mocktail",
+   "price_usd": 6.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Fresca Fizz mocktail",
+   "price_usd": 6.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Mocktail Mule",
+   "price_usd": 6.0
+  },
+  {
+   "category": "cocktail",
+   "label": "White Cranberry Mint Sour mocktail",
+   "price_usd": 6.0
+  },
+  {
+   "category": "wine",
+   "label": "Pinot Grigio - Casal Thaulero, Italy",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "Sauvignon Blanc - Stoneleigh, New Zealand",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "Chardonnay - Harken, California",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "Rosé - Bieler Pere & Fils, France",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "Prosecco - Avissi, Italy",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "Pinot Noir - Josh, California",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "Cabernet Sauvignon - Francis Coppola, California",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "Malbec - Santa Julia, Argentina",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "Montepulciano - Collegiata, Italy",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "Chianti DOCG - Toscolo, Italy",
+   "price_usd": 8.0
+  },
+  {
+   "category": "draft",
+   "label": "Birra Moretti",
+   "price_usd": 6.0
+  },
+  {
+   "category": "draft",
+   "label": "Yards Philly Pale Ale",
+   "price_usd": 6.0
+  },
+  {
+   "category": "draft",
+   "label": "Levante Cloudy & Cumbersome",
+   "price_usd": 6.0
+  },
+  {
+   "category": "draft",
+   "label": "Peroni",
+   "price_usd": 6.0
+  },
+  {
+   "category": "draft",
+   "label": "Guinness",
+   "price_usd": 6.0
+  },
+  {
+   "category": "draft",
+   "label": "Stella Artois",
+   "price_usd": 6.0
+  },
+  {
+   "category": "draft",
+   "label": "Limoncello Lager",
+   "price_usd": 6.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Corona",
+   "price_usd": 5.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Miller Lite",
+   "price_usd": 5.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Corona Light",
+   "price_usd": 5.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Yuengling Lager",
+   "price_usd": 5.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Blue Moon",
+   "price_usd": 5.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Coors Light",
+   "price_usd": 5.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Michelob Ultra",
+   "price_usd": 5.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Peroni 0.0",
+   "price_usd": 5.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Heineken",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "Vodka Pie specialty pizza",
+   "price_usd": 13.0
+  },
+  {
+   "category": "food",
+   "label": "Vodkaroni specialty pizza",
+   "price_usd": 13.0
+  },
+  {
+   "category": "food",
+   "label": "Meatball and Ricotta specialty pizza",
+   "price_usd": 13.0
+  },
+  {
+   "category": "food",
+   "label": "Chicken Parm Rosé specialty pizza",
+   "price_usd": 13.0
+  },
+  {
+   "category": "food",
+   "label": "Veggie specialty pizza",
+   "price_usd": 13.0
+  },
+  {
+   "category": "food",
+   "label": "Mortadella specialty pizza",
+   "price_usd": 13.0
+  },
+  {
+   "category": "food",
+   "label": "Caprese specialty pizza",
+   "price_usd": 13.0
+  },
+  {
+   "category": "food",
+   "label": "Margherita specialty pizza",
+   "price_usd": 13.0
+  },
+  {
+   "category": "food",
+   "label": "Buffalo Chicken specialty pizza",
+   "price_usd": 13.0
+  },
+  {
+   "category": "food",
+   "label": "Sweet Tuscany specialty pizza",
+   "price_usd": 13.0
+  },
+  {
+   "category": "food",
+   "label": "Diavolo specialty pizza",
+   "price_usd": 13.0
+  },
+  {
+   "category": "food",
+   "label": "Frank's Favorite specialty pizza",
+   "price_usd": 13.0
+  },
+  {
+   "category": "food",
+   "label": "Insalata Caesar",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Limoncello Wedge",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Mozzarella Sticks",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Sausage and Pepper Dumplings",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Maria's Meatballs",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Spinach and Ricotta Calzone",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Classic Smash Burger",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Arancini",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Crispy Brussel Sprouts",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Sausage & Broccoli Rabe",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Calamari Fritti",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Prince Edward Island Mussels",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Porchetta Egg Rolls",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Pauly Pepper",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Italian Stromboli",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Cheesesteak Stromboli",
+   "price_usd": 10.0
   }
  ],
  "67489": [
@@ -695,6 +3030,121 @@
    "category": "food",
    "label": "Biscuit Board",
    "price_usd": 18.0
+  }
+ ],
+ "67822": [
+  {
+   "amount_off_usd": 3.5,
+   "category": "cocktail",
+   "label": "All margaritas & specialty cocktails"
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "cocktail",
+   "label": "Specials menu cocktails"
+  },
+  {
+   "category": "wine",
+   "label": "Red/white/sparkling wine",
+   "price_usd": 6.0
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "draft",
+   "label": "Draft beer"
+  },
+  {
+   "category": "bottle_can",
+   "label": "Tecate",
+   "price_usd": 3.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Surfsides",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "Guacamole Traditional",
+   "price_usd": 8.95
+  },
+  {
+   "category": "food",
+   "label": "Small Nachos",
+   "price_usd": 8.95
+  },
+  {
+   "category": "food",
+   "label": "2 pc. tacos",
+   "price_usd": 7.95
+  }
+ ],
+ "68137": [
+  {
+   "category": "food",
+   "discount_pct": 50.0,
+   "label": "Half off our Lounge Menu & Sushi Items"
+  },
+  {
+   "amount_off_usd": 5.0,
+   "category": "cocktail",
+   "label": "$5 off Specialty Cocktails"
+  },
+  {
+   "amount_off_usd": 5.0,
+   "category": "wine",
+   "label": "$5 off Selected Wines"
+  },
+  {
+   "category": "bottle_can",
+   "label": "Selected Domestic Beers",
+   "price_usd": 5.0
+  }
+ ],
+ "68604": [
+  {
+   "category": "cocktail",
+   "label": "House Margarita (16oz)",
+   "price_usd": 5.99
+  },
+  {
+   "category": "food",
+   "label": "Tacos (chicken or beef, restrictions apply)",
+   "price_usd": 2.5
+  },
+  {
+   "category": "cocktail",
+   "discount_pct": 50.0,
+   "label": "Mojitos- Half Price (+$1 Flavor)"
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "draft",
+   "label": "Draft Beer- $1 off each pint"
+  }
+ ],
+ "68830": [
+  {
+   "amount_off_usd": 1.0,
+   "category": "draft",
+   "label": "beers $1 off"
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "well",
+   "label": "wells $1 off"
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "wine",
+   "label": "wines $1 off"
+  }
+ ],
+ "69140": [
+  {
+   "amount_off_usd": 1.0,
+   "category": "draft",
+   "label": "$1 off pints"
   }
  ],
  "69448": [
@@ -818,6 +3268,202 @@
    "price_usd": 6.0
   }
  ],
+ "73031": [
+  {
+   "category": "food",
+   "label": "Mussels Fra Diavolo",
+   "price_usd": 8.5
+  },
+  {
+   "category": "food",
+   "label": "Kennet Bruschetta",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Brussel Sprouts Caesar Salad",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Sausage Peppers and Onions",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Four Cheese Flat Bread",
+   "price_usd": 8.0
+  },
+  {
+   "category": "draft",
+   "label": "Miller Lite, Peroni, and Yuengling",
+   "price_usd": 3.0
+  },
+  {
+   "category": "draft",
+   "label": "Allagash White and Blue Moon",
+   "price_usd": 4.0
+  },
+  {
+   "category": "draft",
+   "label": "Victory,and Levante",
+   "price_usd": 4.0
+  },
+  {
+   "category": "wine",
+   "label": "White Zinfandel",
+   "price_usd": 5.0
+  },
+  {
+   "category": "wine",
+   "label": "Pinot Grigio",
+   "price_usd": 7.0
+  },
+  {
+   "category": "wine",
+   "label": "Prosecco",
+   "price_usd": 7.0
+  },
+  {
+   "category": "wine",
+   "label": "Montepulciano D'Abruzzo",
+   "price_usd": 7.0
+  },
+  {
+   "category": "wine",
+   "label": "Alias Cabernet",
+   "price_usd": 6.0
+  },
+  {
+   "category": "wine",
+   "label": "Nash Pinot Noir",
+   "price_usd": 7.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Single shot mixed drinks",
+   "price_usd": 5.0
+  },
+  {
+   "category": "cocktail",
+   "label": "All cocktails in our menu for only",
+   "price_usd": 9.0
+  }
+ ],
+ "81364": [
+  {
+   "amount_off_usd": 2.0,
+   "category": "draft",
+   "label": "Draft beers"
+  },
+  {
+   "category": "wine",
+   "label": "House wine",
+   "price_usd": 5.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Surfside/ Stateside",
+   "price_usd": 6.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Traditional margarita",
+   "price_usd": 6.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Strawberry lemon drop martini",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Chips & salsa, salsa roja & verde",
+   "price_usd": 3.0
+  },
+  {
+   "category": "food",
+   "label": "Chips & guacamole, cotija cheese",
+   "price_usd": 9.0
+  },
+  {
+   "category": "food",
+   "label": "Chips trio, guacamole, queso, salsa roja",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Nacho baby",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Crispy wings (5), korean BBQ, house hot, or honey sriracha",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "Birria fries, short rib, jack cheese, beef consume",
+   "price_usd": 6.0
+  }
+ ],
+ "83984": [
+  {
+   "category": "food",
+   "label": "Whipped Ricotta Crostini",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "French Fries",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Burrata di Bufala",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Arancini alla Cacio e Pepe",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Shrimp Scampi",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Salmon & Avocado Toast",
+   "price_usd": 7.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Old Fashioned — Old Forester, Angostura Bitters",
+   "price_usd": 7.0
+  },
+  {
+   "category": "wine",
+   "label": "Wine by the Glass — Sauvignon Blanc or Cabernet Sauvignon",
+   "price_usd": 7.0
+  },
+  {
+   "category": "call",
+   "label": "Hidden Still Vodka — Mixed Drinks or Martinis",
+   "price_usd": 7.0
+  },
+  {
+   "category": "draft",
+   "label": "Beer — Mainstay Helles Lager or Bowline IPA",
+   "price_usd": 5.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Harper's Sangria",
+   "price_usd": 5.0
+  }
+ ],
  "85694": [
   {
    "category": "bottle_can",
@@ -845,10 +3491,49 @@
    "label": "edamame dumplings & hummus"
   }
  ],
+ "87212": [
+  {
+   "amount_off_usd": 1.0,
+   "category": "draft",
+   "label": "$1 off drafts"
+  }
+ ],
+ "91278": [
+  {
+   "amount_off_usd": 2.0,
+   "category": "draft",
+   "label": "DRAFT BEERS"
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "wine",
+   "label": "WINES BY THE GLASS"
+  },
+  {
+   "category": "food",
+   "label": "HAPPY HOUR BITES",
+   "price_usd": 5.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "SURFSIDE & STATESIDE CANS",
+   "price_usd": 6.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "2MOODS ORANGE CRUSH CANS",
+   "price_usd": 6.0
+  },
+  {
+   "category": "cocktail",
+   "label": "DRIPT ESPRESSO MARTINI",
+   "price_usd": 12.0
+  }
+ ],
  "91502": [
   {
    "category": "food",
-   "label": "‘Kobe Beef’ Sliders (2) with greens",
+   "label": "'Kobe Beef' Sliders (2) with greens",
    "price_usd": 12.9
   },
   {
@@ -933,13 +3618,102 @@
   },
   {
    "category": "food",
-   "label": "'Kobe Beef' Sliders (2) with greens",
+   "label": "‘Kobe Beef’ Sliders (2) with greens",
    "price_usd": 12.9
   },
   {
    "category": "food",
    "label": "Prince Edward Island Mussels",
    "price_usd": 12.9
+  }
+ ],
+ "93544": [
+  {
+   "amount_off_usd": 1.0,
+   "category": "draft",
+   "label": "$1 off Pints"
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "cocktail",
+   "label": "$1 off House Cocktails"
+  }
+ ],
+ "93942": [
+  {
+   "category": "food",
+   "label": "Hot Chicken Slider",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "Pulled Pork Slider",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "Caesar Salad",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "Deviled Eggs",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "Fried Pickles",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "Pimento Cheese Dip",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Duck Fat Cheddar Fries",
+   "price_usd": 8.0
+  },
+  {
+   "category": "cocktail",
+   "label": "It's Always Sunny...",
+   "price_usd": 9.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Rose Gold",
+   "price_usd": 9.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Orange Line",
+   "price_usd": 9.0
+  },
+  {
+   "category": "cocktail",
+   "label": "NY Sour",
+   "price_usd": 9.0
+  },
+  {
+   "category": "wine",
+   "label": "Sauvignon Blanc, EOS, CA",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "Pinot Noir, EOS, CA",
+   "price_usd": 8.0
+  },
+  {
+   "category": "draft",
+   "label": "Garage Beer, Light Beer, 4%",
+   "price_usd": 5.0
+  },
+  {
+   "category": "draft",
+   "label": "Half Acre Daisy Cutter, Pale Ale, 5.2%",
+   "price_usd": 5.0
   }
  ],
  "96391": [
@@ -986,6 +3760,18 @@
   {
    "category": "food",
    "label": "Fried Chicken Sliders - house pickles & hot honey",
+   "price_usd": 10.0
+  }
+ ],
+ "98360": [
+  {
+   "amount_off_usd": 1.0,
+   "category": "draft",
+   "label": "$1 off Draught Beers"
+  },
+  {
+   "category": "cocktail",
+   "label": "Cocktail of the Week",
    "price_usd": 10.0
   }
  ],
@@ -1207,6 +3993,88 @@
    "amount_off_usd": 2.0,
    "category": "cocktail",
    "label": "House Cocktails"
+  }
+ ],
+ "DE2c4cd90f28": [
+  {
+   "category": "food",
+   "label": "Hong Kong Shrimp Toast",
+   "price_usd": 11.0
+  },
+  {
+   "category": "food",
+   "label": "Thai Chicken Lettuce Wraps [GF/NA]",
+   "price_usd": 11.0
+  },
+  {
+   "category": "food",
+   "label": "Togarashi Tuna [GF]",
+   "price_usd": 12.0
+  },
+  {
+   "category": "food",
+   "label": "Crab Rangoon",
+   "price_usd": 13.0
+  },
+  {
+   "category": "food",
+   "label": "Peking Duck Taco (1)",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "Soup Dumpling (3)",
+   "price_usd": 6.0
+  },
+  {
+   "category": "food",
+   "label": "Steamed Dumplings (3) [VE]",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "Pork Belly Steam Bun",
+   "price_usd": 4.0
+  },
+  {
+   "category": "food",
+   "label": "Bang Bang Shrimp Steam Bun",
+   "price_usd": 4.0
+  },
+  {
+   "category": "food",
+   "label": "Marinated Mushroom Steam Bun",
+   "price_usd": 3.0
+  },
+  {
+   "category": "food",
+   "label": "Spicy Cucumbers [GF/NA/VE]",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "Wok-Fried Green Beans [GF/VE]",
+   "price_usd": 7.0
+  },
+  {
+   "category": "food",
+   "label": "Spicy Mango Salad [GF]",
+   "price_usd": 6.0
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "draft",
+   "label": "$2 Off Beer"
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "cocktail",
+   "label": "$2 Off Signature Cocktails"
+  },
+  {
+   "amount_off_usd": 3.0,
+   "category": "wine",
+   "label": "$3 Off Wine by the Glass"
   }
  ],
  "DE35c46628ec": [
@@ -1506,6 +4374,67 @@
    "label": "Cocktails"
   }
  ],
+ "DE493f7928d5": [
+  {
+   "amount_off_usd": 2.0,
+   "category": "draft",
+   "label": "draft beers"
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "wine",
+   "label": "house wines"
+  },
+  {
+   "amount_off_usd": 3.0,
+   "category": "wine",
+   "label": "all cruvinet pours"
+  },
+  {
+   "amount_off_usd": 3.0,
+   "category": "food",
+   "label": "all appetizers"
+  }
+ ],
+ "DE49d0a52dae": [
+  {
+   "category": "food",
+   "discount_pct": 25.0,
+   "label": "25% Off Appetizers & Raw/Hot Bar Items"
+  },
+  {
+   "category": "food",
+   "label": "3 Course Everyday Pre Fixe",
+   "price_usd": 35.0
+  },
+  {
+   "category": "cocktail",
+   "label": "All Specialty/Classic Cocktails & Martinis",
+   "price_usd": 10.0
+  },
+  {
+   "category": "wine",
+   "label": "First Tier House Wines",
+   "price_usd": 8.0
+  },
+  {
+   "category": "draft",
+   "label": "Miller Lite",
+   "price_usd": 4.0
+  },
+  {
+   "category": "draft",
+   "label": "Draft Beer",
+   "price_usd": 6.0
+  }
+ ],
+ "DE4b33244ae6": [
+  {
+   "amount_off_usd": 1.0,
+   "category": "draft",
+   "label": "$1 off all drinks except bottled beers"
+  }
+ ],
  "DE4bfeada154": [
   {
    "category": "cocktail",
@@ -1622,6 +4551,11 @@
    "category": "food",
    "discount_pct": 50.0,
    "label": "Bar Food Menu"
+  },
+  {
+   "category": "food",
+   "discount_pct": 50.0,
+   "label": "Bar Food Menu 50% off"
   }
  ],
  "DE6779bbc094": [
@@ -1830,6 +4764,21 @@
    "label": "all cocktails"
   },
   {
+   "amount_off_usd": 2.0,
+   "category": "draft",
+   "label": "$2 OFF all beer"
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "wine",
+   "label": "$2 OFF all wine"
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "cocktail",
+   "label": "$2 OFF all cocktails"
+  },
+  {
    "category": "food",
    "label": "curated bar bites menu",
    "price_usd": 7.0
@@ -1857,6 +4806,210 @@
    "label": "$3 off appetizers"
   }
  ],
+ "DE8e9e339b4c": [
+  {
+   "category": "food",
+   "label": "Chefs Choice Raw Oysters, full dozen",
+   "price_usd": 24.0
+  },
+  {
+   "category": "food",
+   "label": "Chefs Choice Raw Oysters, half dozen",
+   "price_usd": 12.0
+  },
+  {
+   "category": "food",
+   "label": "New Orleans Dog",
+   "price_usd": 13.0
+  },
+  {
+   "category": "food",
+   "label": "Halibut Ceviche",
+   "price_usd": 15.0
+  },
+  {
+   "category": "food",
+   "label": "Coconut Shrimp",
+   "price_usd": 13.0
+  },
+  {
+   "category": "food",
+   "label": "M.W.P.P white clam pizza",
+   "price_usd": 16.0
+  },
+  {
+   "category": "food",
+   "label": "Ricotta Toast",
+   "price_usd": 13.0
+  },
+  {
+   "category": "food",
+   "label": "Mussels & Boardwalk Fries",
+   "price_usd": 17.0
+  },
+  {
+   "category": "food",
+   "label": "Steamed Clams",
+   "price_usd": 13.0
+  },
+  {
+   "category": "food",
+   "label": "Lobster Roll",
+   "price_usd": 32.0
+  },
+  {
+   "category": "food",
+   "label": "Damn Good Burger",
+   "price_usd": 18.0
+  },
+  {
+   "category": "food",
+   "label": "Garden Salad",
+   "price_usd": 12.0
+  },
+  {
+   "category": "food",
+   "label": "2nd St. Wedge",
+   "price_usd": 13.0
+  },
+  {
+   "category": "food",
+   "label": "Tavern Wings",
+   "price_usd": 14.0
+  },
+  {
+   "category": "wine",
+   "label": "Sparkling Rose",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "Pinot Grigio",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "Pinot Noir",
+   "price_usd": 8.0
+  },
+  {
+   "category": "cocktail",
+   "label": "The Last Tango",
+   "price_usd": 12.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Lavender Daquiri",
+   "price_usd": 12.0
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "draft",
+   "label": "Select drafts, rotating"
+  },
+  {
+   "category": "bottle_can",
+   "label": "Bells - Two Hearted Ale",
+   "price_usd": 6.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Montucky Cold Snacks",
+   "price_usd": 6.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Yuengling",
+   "price_usd": 4.0
+  },
+  {
+   "category": "bottle_can",
+   "label": "Coors Light",
+   "price_usd": 4.0
+  }
+ ],
+ "DE98501eeb65": [
+  {
+   "category": "food",
+   "label": "Loaded BBQ Cheese Fries",
+   "price_usd": 11.0
+  },
+  {
+   "category": "food",
+   "label": "Fried Chicken Sliders",
+   "price_usd": 11.0
+  },
+  {
+   "category": "food",
+   "label": "Blackened Chicken Quesadilla",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Onion Rings",
+   "price_usd": 8.0
+  },
+  {
+   "category": "food",
+   "label": "Popcorn Shrimp Tacos (2)",
+   "price_usd": 9.0
+  },
+  {
+   "category": "food",
+   "label": "Nachos Supreme",
+   "price_usd": 9.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Honey Ol' Fashion",
+   "price_usd": 8.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Spicy Blackberry Margarita",
+   "price_usd": 8.0
+  },
+  {
+   "category": "cocktail",
+   "label": "After Hours",
+   "price_usd": 8.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Pearlicious",
+   "price_usd": 8.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Vodkarita",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "Opici Red Sangria",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "White Sangria",
+   "price_usd": 8.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Apple Cider Spritz",
+   "price_usd": 10.0
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "draft",
+   "label": "$1 off select draft"
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "wine",
+   "label": "$1 off wines by the glass"
+  }
+ ],
  "DE98bc222a48": [
   {
    "amount_off_usd": 2.0,
@@ -1872,6 +5025,23 @@
    "amount_off_usd": 2.0,
    "category": "cocktail",
    "label": "$2 off cocktails"
+  }
+ ],
+ "DE99a710355f": [
+  {
+   "category": "food",
+   "label": "Oysters",
+   "price_usd": 1.0
+  },
+  {
+   "category": "draft",
+   "label": "Draft Beers",
+   "price_usd": 5.0
+  },
+  {
+   "category": "food",
+   "label": "Beer & Oyster Trays",
+   "price_usd": 20.0
   }
  ],
  "DE9b6bd4d8c7": [
@@ -1951,6 +5121,21 @@
    "amount_off_usd": 1.0,
    "category": "wine",
    "label": "$1 OFF Glasses of Wine"
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "draft",
+   "label": "Full Size Draught Beer and Cider"
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "cocktail",
+   "label": "Steel Blu Vodka Cocktails"
+  },
+  {
+   "amount_off_usd": 1.0,
+   "category": "wine",
+   "label": "Glasses of Wine"
   }
  ],
  "DEa1932d1c0d": [
@@ -2012,6 +5197,38 @@
    "amount_off_usd": 2.0,
    "category": "draft",
    "label": "all drafts"
+  },
+  {
+   "amount_off_usd": 2.0,
+   "category": "draft",
+   "label": "$2 off all drafts"
+  }
+ ],
+ "DEb0abd23fc8": [
+  {
+   "category": "food",
+   "discount_pct": 25.0,
+   "label": "25% Off Pub Menu"
+  },
+  {
+   "category": "cocktail",
+   "label": "Martinis",
+   "price_usd": 10.0
+  },
+  {
+   "category": "wine",
+   "label": "House Wines",
+   "price_usd": 8.0
+  },
+  {
+   "category": "wine",
+   "label": "Splits of Bubbly",
+   "price_usd": 8.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Select Martinis",
+   "price_usd": 10.0
   }
  ],
  "DEbc40408583": [
@@ -2093,6 +5310,73 @@
    "category": "food",
    "label": "Personal Pizzas",
    "price_usd": 8.0
+  }
+ ],
+ "DEc68619870c": [
+  {
+   "category": "draft",
+   "label": "Bud Light 16 oz",
+   "price_usd": 3.0
+  },
+  {
+   "category": "draft",
+   "label": "Miller Lite 16 oz",
+   "price_usd": 3.0
+  },
+  {
+   "category": "draft",
+   "label": "Coors Light 16 oz",
+   "price_usd": 3.0
+  },
+  {
+   "category": "draft",
+   "label": "Bud Light 22 oz",
+   "price_usd": 4.0
+  },
+  {
+   "category": "draft",
+   "label": "Modelo 16 oz",
+   "price_usd": 4.0
+  },
+  {
+   "category": "draft",
+   "label": "Miller Lite 22 oz",
+   "price_usd": 4.0
+  },
+  {
+   "category": "draft",
+   "label": "Coors Light 22 oz",
+   "price_usd": 4.0
+  },
+  {
+   "category": "draft",
+   "label": "Michelob Ultra 16 oz",
+   "price_usd": 4.0
+  },
+  {
+   "category": "draft",
+   "label": "Modelo 22 oz",
+   "price_usd": 5.0
+  },
+  {
+   "category": "wine",
+   "label": "House Red & White Wine",
+   "price_usd": 5.0
+  },
+  {
+   "category": "draft",
+   "label": "Michelob Ultra 22 oz",
+   "price_usd": 5.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Margarita of the Month",
+   "price_usd": 6.0
+  },
+  {
+   "category": "cocktail",
+   "label": "Tequila Classic Marg",
+   "price_usd": 7.0
   }
  ],
  "DEcfc7c9decb": [
@@ -2194,6 +5478,198 @@
    "amount_off_usd": 1.0,
    "category": "wine",
    "label": "wine by the glass"
+  }
+ ],
+ "DEe016563850": [
+  {
+   "category": "food",
+   "label": "A5 Wagyu Nigiri*",
+   "price_usd": 25.0
+  },
+  {
+   "category": "food",
+   "label": "New England Lobster Roll",
+   "price_usd": 25.0
+  },
+  {
+   "category": "food",
+   "label": "Shrimp Three Ways",
+   "price_usd": 25.0
+  },
+  {
+   "category": "food",
+   "label": "Lobster Pot Pie",
+   "price_usd": 25.0
+  },
+  {
+   "category": "food",
+   "label": "Pork Belly Trio",
+   "price_usd": 25.0
+  },
+  {
+   "category": "food",
+   "label": "Angry Shrimp",
+   "price_usd": 20.0
+  },
+  {
+   "category": "food",
+   "label": "Crab Cake Sliders",
+   "price_usd": 20.0
+  },
+  {
+   "category": "food",
+   "label": "Jumbo Shrimp Cocktail",
+   "price_usd": 20.0
+  },
+  {
+   "category": "food",
+   "label": "Beef Carpaccio*",
+   "price_usd": 20.0
+  },
+  {
+   "category": "food",
+   "label": "Crab & Avocado Salad",
+   "price_usd": 20.0
+  },
+  {
+   "category": "food",
+   "label": "Sweet & Spicy Cauliflower",
+   "price_usd": 15.0
+  },
+  {
+   "category": "food",
+   "label": "Beef Wellington Bites",
+   "price_usd": 15.0
+  },
+  {
+   "category": "food",
+   "label": "Shaved Prime Steak Sliders*",
+   "price_usd": 15.0
+  },
+  {
+   "category": "food",
+   "label": "Sullivan's Signature Angus Burger*",
+   "price_usd": 15.0
+  },
+  {
+   "category": "food",
+   "label": "Cheesesteak Eggrolls",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Ahi Tuna Poke Stack*",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Sriracha Shrimp Lettuce Cups",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "Sullivan's Signature Angus Sliders*",
+   "price_usd": 10.0
+  },
+  {
+   "category": "food",
+   "label": "House Fries",
+   "price_usd": 10.0
+  },
+  {
+   "amount_off_usd": 5.0,
+   "category": "cocktail",
+   "label": "The Knockout (select martini, $5 off)"
+  },
+  {
+   "amount_off_usd": 5.0,
+   "category": "cocktail",
+   "label": "Lavender Limoncello (select martini, $5 off)"
+  },
+  {
+   "amount_off_usd": 5.0,
+   "category": "cocktail",
+   "label": "Dirty Bird Martini (select martini, $5 off)"
+  },
+  {
+   "amount_off_usd": 5.0,
+   "category": "cocktail",
+   "label": "Blueberry Lemon Drop (select martini, $5 off)"
+  },
+  {
+   "amount_off_usd": 5.0,
+   "category": "cocktail",
+   "label": "Strawberry & Agave Fields (select martini, $5 off)"
+  },
+  {
+   "amount_off_usd": 5.0,
+   "category": "cocktail",
+   "label": "Hibiscus Cosmopolitan (select martini, $5 off)"
+  },
+  {
+   "amount_off_usd": 5.0,
+   "category": "cocktail",
+   "label": "Pomegranate Cosmopolitan (select martini, $5 off)"
+  },
+  {
+   "amount_off_usd": 5.0,
+   "category": "cocktail",
+   "label": "Manhattan (select martini, $5 off)"
+  },
+  {
+   "amount_off_usd": 5.0,
+   "category": "cocktail",
+   "label": "French 75 (select martini, $5 off)"
+  },
+  {
+   "amount_off_usd": 5.0,
+   "category": "cocktail",
+   "label": "Espresso Martini (select martini, $5 off)"
+  },
+  {
+   "amount_off_usd": 5.0,
+   "category": "cocktail",
+   "label": "Smoky Apple Orchard (select craft cocktail, $5 off)"
+  },
+  {
+   "amount_off_usd": 5.0,
+   "category": "cocktail",
+   "label": "Gold Rush (select craft cocktail, $5 off)"
+  },
+  {
+   "amount_off_usd": 5.0,
+   "category": "cocktail",
+   "label": "Barrel-Aged Vieux Carré (select craft cocktail, $5 off)"
+  },
+  {
+   "amount_off_usd": 5.0,
+   "category": "cocktail",
+   "label": "Prickly Pear Paloma (select craft cocktail, $5 off)"
+  },
+  {
+   "amount_off_usd": 5.0,
+   "category": "cocktail",
+   "label": "Spicy Flamed Margarita (select craft cocktail, $5 off)"
+  },
+  {
+   "amount_off_usd": 5.0,
+   "category": "cocktail",
+   "label": "Perfect Patrón Margarita (select craft cocktail, $5 off)"
+  },
+  {
+   "amount_off_usd": 5.0,
+   "category": "cocktail",
+   "label": "Texas Mule (select craft cocktail, $5 off)"
+  },
+  {
+   "amount_off_usd": 5.0,
+   "category": "cocktail",
+   "label": "Pink Gin Fizz (select craft cocktail, $5 off)"
+  },
+  {
+   "category": "wine",
+   "label": "Select Red, White & Sparkling Wines",
+   "price_usd": 8.0
   }
  ],
  "DEe2a8eafc2f": [
