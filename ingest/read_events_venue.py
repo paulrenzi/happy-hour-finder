@@ -27,6 +27,7 @@ Writes:
 import argparse
 import concurrent.futures as cf
 import datetime
+import glob
 import json
 import os
 import re
@@ -41,6 +42,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 BASE = os.path.join(REPO, "data", "venue_base.json")
 SITES = os.path.join(REPO, "data", "venue_sites.json")
+BUNDLES = os.path.join(REPO, "web", "data")
 READS = os.path.join(REPO, "data", "events_reads.json")
 WORK = os.path.join(REPO, "data", "events_reads")
 MODEL = os.environ.get("HHF_AGENT_MODEL", "opus")
@@ -233,20 +235,57 @@ def one(lid, venue, today, until):
     }
 
 
+def bundle_sites():
+    """Websites the BUILT bundles carry, for venues `venue_sites.json` lacks.
+
+    A venue can reach the board with a website and never get a `venue_sites`
+    row -- 33 of the 471 published venues are in exactly that state, 118 North
+    in Wayne among them. Without this the reader silently skips a venue whose
+    site we publish on its own card, and prints "0 venue(s) to read", which
+    reads as "this town has no calendars" rather than "I could not see it".
+
+    Both files per zone, deal-bearing first, so where a venue is in both it is
+    the board's copy that wins: `zone-<id>.json` is the venues WITH a window,
+    `venues-<id>.json` is every other licensed premises.
+    """
+    out = {}
+    for pat in ("venues-*.json", "zone-*.json"):
+        for path in sorted(glob.glob(os.path.join(BUNDLES, pat))):
+            try:
+                doc = json.load(open(path, encoding="utf-8"))
+            except (OSError, ValueError):
+                continue
+            rows = doc.get("venues", doc) if isinstance(doc, dict) else doc
+            if not isinstance(rows, list):
+                continue
+            for v in rows:
+                if isinstance(v, dict) and v.get("lid") and v.get("website"):
+                    out[str(v["lid"])] = v["website"]
+    return out
+
+
 def population(args):
     base, sites = load(BASE), load(SITES)
+    fallback = bundle_sites()
     lids = []
     if args.lids:
         lids = [x.strip() for x in open(args.lids, encoding="utf-8") if x.strip() and not x.startswith("#")]
     else:
         lids = [lid for lid, v in base.items() if v.get("zone_id") == args.zone]
-    out = []
+    out, skipped = [], []
     for lid in lids:
         v, s = base.get(lid), sites.get(lid) or {}
-        if not v or not s.get("website"):
+        website = s.get("website") or fallback.get(lid)
+        if not v or not website:
+            skipped.append(lid)
             continue
         out.append((lid, {"name": v["name"], "address": v.get("address", ""),
-                          "website": s["website"], "zone_id": v.get("zone_id")}))
+                          "website": website, "zone_id": v.get("zone_id")}))
+    # Say what was dropped. A silent skip here is indistinguishable from a town
+    # that publishes no calendars, and the difference is the whole finding.
+    if skipped:
+        print(f"skipped {len(skipped)} of {len(lids)} -- no website on file: "
+              + ", ".join(skipped[:10]) + (" ..." if len(skipped) > 10 else ""))
     if args.limit:
         out = out[: args.limit]
     return out
