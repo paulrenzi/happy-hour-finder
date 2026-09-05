@@ -444,3 +444,211 @@ level, and never invents a field to fill a column.
 4. Which town proves it? §6 says Phoenixville for population 1. Population 2 may be
    better proven where a ticketed room and a dense bar block coexist — West Chester
    or Wilmington.
+
+## 13. "What's on after" — the design, and the plan to build it (2026-09-05, night 4)
+
+§12 asked four questions and left them open. This section answers them, adds a
+fifth the survey turned up (Untappd), and ends in a build order. No code was
+written for it; two things were *probed*, and both probes are recorded below
+because each one changes the plan.
+
+### 13.1 The answer to Q1: it is two surfaces, and the split is DISTANCE, not population
+
+The tempting split is "population 1 on the card, populations 2 and 3 somewhere
+else." That is wrong, because it makes the surface a property of where the data
+came from, which is an implementation detail the reader cannot see.
+
+The split the reader actually feels is **here vs. nearby**:
+
+- **An event AT this venue is a line on this venue's card.** Already built —
+  `nextEvent` + `eventLine` + the `.tonight` node in `app.js`. Nothing new is
+  needed for this and nothing about it should change.
+- **An event NEAR this venue is not a property of any card.** It is a property
+  of the *town*. Putting "band at the Colonial, four blocks away" on the Iron
+  Hill card is a lie about Iron Hill, and repeating it on all eleven West
+  Chester cards is eleven lies.
+
+So the second surface is **one strip per board, not per card**: *"Later tonight
+in West Chester"*, at most three rows, below the board, each row a start time, an
+act, a room, a distance and an outbound link. It appears only when the zone has
+rows for tonight or tomorrow, and it is the natural landing place for the
+`from=` link `dead-shows` already sends us — the reverse direction closes the
+loop on the same rail.
+
+This also means population 2 needs **no per-venue data model at all**. It is
+zone-scoped. That is most of why it is the cheap one.
+
+### 13.2 The answer to Q2: third-party rows do NOT go in `events`
+
+Two reasons, and the first is decisive on its own.
+
+**`events.lid` is `NOT NULL`.** A Ticketmaster row at the Colonial Theatre has
+no `lid`, because the Colonial is not a licensed bar on our board. Writing it in
+means minting a fake `lid`, and every consumer keyed on `lid` — `applyEvents`,
+the admin queue, `events_lid` — then holds rows pointing at venues that do not
+exist. The schema is telling us these are not the same thing.
+
+**And §11 rule 2 is a safety property we should not dilute.** "Two sources, two
+trust levels, one table" works because both sources are *statements about one of
+our venues* — the venue itself, or an agent reading that venue. A Ticketmaster
+feed is neither. It is a third party's assertion about a room we do not track,
+and it rots on a different clock (§7 assumption 6).
+
+**So: a third static file, built the `dead-shows` way.** `data/shows-<zone>.json`,
+one per zone that has any, produced by a scheduled job, committed to master, read
+by the page from its own origin. Never a runtime cross-site fetch; the offline
+PWA story is untouched, and expiry is free because the file is rebuilt daily with
+a 14-day horizon and simply stops containing what has passed.
+
+The one crossing case: a ticketed show whose venue **does** match a board venue.
+Then it may also render as that card's line — but it is still sourced from the
+static file and still rendered through `eventLine`, so rule 4 (blank means
+unknown) and rule 3 (`eventFingerprint` derived) hold unchanged. The match is
+`dead-shows`' own address-first, **city-gated** key (`scripts/venuetext.py`), and
+it is gated because an ungated address key has already matched Montclair NJ to
+Green Lane PA in production.
+
+### 13.3 The answer to Q3: half a mile is the walk, three miles is the cap
+
+`dead-shows` ranks a 100-mile audience. That number must not travel here. A
+reader who has just been told where to drink at 5 will walk to the 8 o'clock
+thing or not go.
+
+- **≤ 0.5 mi** — "a few minutes' walk". This is the band the strip is *for*.
+- **0.5–3 mi** — "a short drive", shown only when the walk band is empty.
+- **> 3 mi** — not shown. There is no fallback to a wider radius. An empty strip
+  is the correct output for a quiet town, and widening a window to fill it is
+  the failure mode already recorded on the fleet side.
+
+Distance is measured from **the venue the reader last opened**, else from
+`state.origin` (which `near=` already lets a link set). And distance **leads the
+sort outright** — the `near=` session found that a distance term scaled over 200
+miles lost to two confidence terms, so "Nearest" meant "best sourced". Any new
+ranking here asserts the resulting order in a test, never the formula.
+
+### 13.4 The answer to Q4: two towns, because they prove two different things
+
+- **West Chester** proves population 2. It is an existing zone, it has a ticketed
+  room and a dense bar block inside a quarter mile of each other, and the whole
+  claim of the strip — "the show is a walk from your drink" — is either true
+  there or true nowhere.
+- **Phoenixville** proves population 1. Not because it is better, but because
+  §2 already collected the evidence there on 2026-09-04 (the Fenix's JPEG
+  calendar, Twelve78's Facebook embeds) and that read has still never been run.
+  Running the reader anywhere else throws that away.
+
+### 13.5 Q5, which §12 did not ask: Untappd, and what is actually reachable
+
+Paul asked whether Untappd can be integrated free for general beer lists.
+Three doors were checked. Two are shut and the third is wide open.
+
+- **The v4 consumer API is shut.** 100 calls/hour per key by default, and new
+  application registration is approval-gated to the point of being closed. It
+  could not cover 2,116 venues even if granted.
+- **The Untappd for Business API is shut *to us*.** Its token lives under the
+  venue's own Premium account (`business.untappd.com/account`); every endpoint
+  requires it; there are no public read endpoints. This is not a door we can
+  open — but it is worth noting it is a door a *venue* can open for us, and we
+  already mail venues a magic link (`venue_tokens`). That is a partner
+  conversation, not an integration.
+- **The venue's own published embed is open, keyless, and complete.** This is
+  the find. When a bar puts an Untappd menu on its website, the page carries
+
+  ```
+  PreloadEmbedMenu('https://business.untappd.com', "menu-container", <loc>, <theme>)
+  ```
+
+  and one plain GET of
+
+  ```
+  https://business.untappd.com/locations/<loc>/themes/<theme>/js
+  ```
+
+  returns the **entire menu already rendered into the payload** — no key, no
+  cookie, no second XHR, no browser. Proven today against location 39393,
+  theme 153078 (a venue already in `data/agent_reads/108084`): 115 lines of
+  menu, every item with its price, section descriptions, and a per-menu
+  `Updated on Sep 2, 4:33 PM EDT` stamp.
+
+  **It is not only beer.** That payload contained a section titled
+  `HAPPY HOUR BITES` whose description reads, verbatim:
+
+  > Join us for Happy Hour! Select $5 Draft Beers and $12 Cocktails.
+  > Monday to Thursday | 4pm to 6pm
+
+  That is a window, six priced items, and a freshness timestamp — HHF's core
+  product, from the venue's own mouth, in one unauthenticated request. It is a
+  better source than the JPEG-reading agent, and it is the only source we have
+  ever had that stamps its own last-update time.
+
+  Three things to know before building on it:
+
+  1. **Discovery is our crawl, not an Untappd directory.** There is no way to
+     ask Untappd "which venues near West Chester have a menu". The ids come out
+     of the bar's own site, which we already fetch. The regex above is the
+     whole detector.
+  2. **Prevalence is unmeasured.** Five embeds turned up in the handful of pages
+     `agent_reads` happens to have saved. That is a hit, not a rate. Sizing it
+     across the 2,116 sites in `venue_sites.json` is a one-evening job and must
+     happen before anything is designed around it.
+  3. **The theme config carries `"show_events": false`.** UTFB has an events
+     feature. Whether a venue that turns it on ships its band calendar down the
+     same free payload is **unprobed**, and if it does it is a population-1
+     source that costs a GET instead of an agent session. Probe it early; it is
+     cheap and it could reorder everything below.
+
+  One judgment call belongs to Paul, not to a session: this reads a widget the
+  venue chose to publish on its own public page — the same act as the agent
+  reader fetching that page — but Untappd's terms are Untappd's. Flagging it,
+  not deciding it.
+
+### 13.6 The build order
+
+Cost first, exactly as §12 set out, with the Untappd lane inserted where its
+evidence puts it.
+
+**Step 0 — two spikes, one evening, no schema.** (a) Sweep `venue_sites.json`
+for the `PreloadEmbedMenu` regex and report the real hit rate. (b) Pull one
+venue known to run UTFB events and see whether events ride the theme payload.
+Both write findings to the playbook and nothing else. **Nothing after this is
+planned in detail until 0(a) returns a number.**
+
+**Step 1 — the ticketed layer, West Chester.** A build-time script
+`ingest/fetch_shows.py` calling Ticketmaster Discovery through a Worker route
+that hides the key (mirror `dead-shows/worker/worker.js`; note its artist list
+lives in *two* files that must be edited together — ours has no artist list, so
+this trap does not apply, but the key-hiding shape does). Writes
+`data/shows-<zone>.json`, 14-day horizon, geo-queried from the zone centroid at
+3 miles. Then the strip in `web/`, reading that file. Gate: `tests/` asserts the
+rendered *order* and that a >3 mi row never appears.
+
+**Step 2 — the strip's own correctness.** UTC vs "tonight" (§11 rule 5 —
+`localToday`), blank-means-unknown on price (a TM row has a price range and no
+set length; the card says only what it said), and the walk/drive band copy.
+
+**Step 3 — the Untappd lane**, scoped by what Step 0(a) found. If the hit rate
+is material, a keyless fetcher becomes a *first-class source* for items and
+windows — with its own `source_kind`, its `Updated on` stamp carried through as
+real freshness, and rows landing `pending` like every third-party read.
+
+**Step 4 — the genre circuit.** GDTB's shape, one lane per genre, reusing the
+scraper we already run daily.
+
+**Step 5 — population 1, Phoenixville.** Run `ingest/read_events_venue.py`
+against the Fenix and Twelve78 for the first time. This is the moat and it is
+last **on purpose**: it must not block the three cheap layers, and by the time
+it runs, the surface it paints into already exists and is proven.
+
+### 13.7 Rules this build inherits and must not rediscover
+
+All from §11, each having cost a session already: blank means unknown, never
+zero · a third-party row lands `pending`, never `approved` · `eventFingerprint`
+is derived, never generated · the Worker runs UTC and "tonight" does not ·
+`zone-*.json` is the board and `venues-*.json` is everything with **no** window,
+so read both, deal-bearing first · and **any new endpoint the page calls needs a
+route stub in all four browser checks** (`render`, `card_chrome`, `search`,
+`picker`) or every Playwright run fails at once with what looks like a code bug.
+
+Two more, newer: a `web/` change ships nothing until a **detached-worktree**
+rebuild restamps `sw.js` in the same commit; and a browser check must open a
+**fresh page per URL**, because the app reads its hash once at boot.
