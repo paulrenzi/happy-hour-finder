@@ -38,6 +38,10 @@ echo "== a tab left open restamps itself on wake =="
 python tests/stale_clock_check.py
 
 echo
+echo "== a link can sort the board around a place, and says which =="
+python tests/near_check.py
+
+echo
 echo "== a card still reads at phone width =="
 python tests/card_chrome_check.py
 

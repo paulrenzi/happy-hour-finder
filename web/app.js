@@ -26,6 +26,15 @@ const state = {
   // better default without ever overriding what they asked for.
   sortPicked: false,
   origin: null,  // {lat,lng} once, in-session only -- never tracked in the background
+  // Set when the origin is a PLACE carried in on a link (`near=`), not the
+  // reader. Every distance on the board is measured from state.origin, and a
+  // reader who assumes that is themselves when it is a concert hall four towns
+  // over reads every number on the page wrong. Whenever this is set the board
+  // has to say so, out loud, in the headline. The label is optional; the flag
+  // is not, or a `near=` with no `from=` would quietly lose its origin on the
+  // first control change.
+  originIsPlace: false,
+  originFrom: null,
   // Zones whose full venue base has been fetched. Boot loads every zone's
   // DEALS (small, and "what's on right now" is an area-wide question); the
   // 2,900-venue base is a megabyte, so it arrives one zone at a time.
@@ -91,7 +100,32 @@ function readHash() {
     state.sort = p.get("s");
     state.sortPicked = true;
   }
+  readNear(p);
   return p.get("v");
+}
+
+/* `near=<lat>,<lng>&from=<name>` -- sort this town's board by distance from a
+   named place instead of from the reader. It is how a show on dead-shows links
+   to "the happy hours near this venue": the linker knows the venue's
+   coordinate at build time, and the board already ranks by distance from
+   state.origin, so the whole feature is an origin the link gets to choose.
+
+   `from` is a label only. It never affects the ranking, and a link that omits
+   it still sorts -- it just has to say "this location" in the headline, which
+   is weaker but not wrong. */
+function readNear(p) {
+  if (!p.has("near")) return;
+  const [lat, lng] = String(p.get("near")).split(",").map(Number);
+  // A coordinate that is not one must not silently become (0,0) in the Gulf of
+  // Guinea and rank the whole board against it.
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) return;
+  if (Math.abs(lat) > 90 || Math.abs(lng) > 180) return;
+  state.origin = { lat, lng };
+  state.originIsPlace = true;
+  state.originFrom = (p.get("from") || "").trim() || null;
+  // Distance is the entire point of the link. A `s=` on the same link is still
+  // the reader's explicit ask and wins.
+  if (!state.sortPicked) state.sort = "nearest";
 }
 
 function writeHash(venueId) {
@@ -102,6 +136,15 @@ function writeHash(venueId) {
   if (state.query) p.set("q", state.query);
   if (state.filter !== "all") p.set("f", state.filter);
   if (state.sort !== "soonest") p.set("s", state.sort);
+  /* A place-origin is part of what the reader is looking at, so it has to
+     survive writeHash() -- which runs on the first control change and rewrites
+     the URL wholesale. Dropping it here would leave the board still sorted
+     from the venue while the URL said otherwise, and a share of that link
+     would come back sorted from nothing. */
+  if (state.originIsPlace && state.origin) {
+    p.set("near", `${state.origin.lat},${state.origin.lng}`);
+    if (state.originFrom) p.set("from", state.originFrom);
+  }
   if (venueId) p.set("v", venueId);
   const hash = p.toString();
   history.replaceState(null, "", hash ? "#" + hash : location.pathname + location.search);
@@ -208,6 +251,9 @@ function askLocation() {
   navigator.geolocation.getCurrentPosition(
     (pos) => {
       state.origin = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+      // Tapping "Near me" is the reader taking the origin back off the link.
+      state.originIsPlace = false;
+      state.originFrom = null;
       rememberOrigin(state.origin);
       if (!state.sortPicked) {
         state.sort = "nearest";
@@ -247,6 +293,12 @@ function rememberOrigin(origin) {
 function restoreLocation() {
   try {
     const saved = JSON.parse(localStorage.getItem("origin") || "null");
+    /* A link that names an origin beats a stored one. restoreLocation() runs
+       after readHash() at boot, so without this a reader who had used "Near
+       me" in the last 12 hours would open a "near this venue" link and get the
+       board ranked from their own kitchen, with the headline still promising
+       the venue. Silent, and wrong in the one way the link exists to prevent. */
+    if (state.originIsPlace) return;
     if (!saved || !(Date.now() - saved.at < ORIGIN_TTL_MS)) return;
     state.origin = { lat: saved.lat, lng: saved.lng };
     /* Knowing where they are makes "nearest" the better answer to the question
@@ -1059,6 +1111,7 @@ function render() {
     feed.append(p);
     $("#status").textContent = "No results.";
     $("#sectionKicker").textContent = "Nothing to show";
+    paintHeadline();
     return;
   }
 
@@ -1124,6 +1177,18 @@ function render() {
     `${total} venue${total === 1 ? "" : "s"} · ` +
     (live ? `${live} live ${isNow() ? "now" : "then"}` : "none live") +
     (unknownRows.length ? ` · ${unknownRows.length} need hours` : "");
+  paintHeadline();
+}
+
+/* "Happy hours near you" is a promise about whose feet the distances are
+   measured from, and a place-origin makes it false. Every "0.3 mi · ~5 min" on
+   the page is from the show venue, and nothing else on the board would tell
+   the reader that. Called on the empty path too -- a board with no results is
+   exactly where a reader looks hardest at what it was searching around. */
+function paintHeadline() {
+  $("#sectionHeadline").textContent = state.originIsPlace
+    ? `Happy hours near ${state.originFrom || "this location"}`
+    : "Happy hours near you";
 }
 
 function refresh() {

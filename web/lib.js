@@ -392,7 +392,17 @@ export function score(row, { sort = "soonest" } = {}) {
 
     let within;
     if (sort === "nearest") {
-      within = near * 0.9 + unsure * 0.09;
+      /* Distance, and only distance. `near` is a fraction of two hundred miles,
+         so half a mile is 0.00225 of it -- while the two confidence terms (the
+         0.09 here, and the 0.009 added below on every sort) reach 0.081 and
+         0.0081. Both of them dwarfed the distances this board is actually made
+         of, so "Nearest" on any future day was really "best sourced, then
+         nearest": a bar 0.2 mi from the venue sorted below one fifteen miles
+         away. Nobody asks a distance sort to weigh sourcing.
+
+         Confidence still breaks an exact tie -- see the sort-dependent weight
+         on the way out. */
+      within = near * 0.9;
     } else if (sort === "value") {
       within = dear * 0.9 + part(drive, 120) * 0.09;
     } else if (row.hasOrigin) {
@@ -407,7 +417,14 @@ export function score(row, { sort = "soonest" } = {}) {
       // With no location we have nothing better than the clock, and we keep it.
       within = clock * 0.9 + dear * 0.09;
     }
-    return row.group * 100000 + day * DAY_BAND + (within + unsure * 0.009) * DAY_BAND;
+    /* The tiebreak has to be smaller than the smallest difference the leading
+       term is meant to express. For "nearest" that is a fraction of a mile
+       (a tenth is 0.00045 of `near`), so the usual 0.009 is not a tiebreak at
+       all -- it is a second sort key, and it outranked two tenths of a mile.
+       The other sorts lead on the clock or on value, where 0.009 really is
+       below the resolution, so they keep it. */
+    const tie = unsure * (sort === "nearest" ? 0.00001 : 0.009);
+    return row.group * 100000 + day * DAY_BAND + (within + tie) * DAY_BAND;
   }
 
   if (sort === "nearest") {
