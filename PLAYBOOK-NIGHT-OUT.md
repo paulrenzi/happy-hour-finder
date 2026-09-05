@@ -969,3 +969,29 @@ A reviewer approving 15 rows saw acts and dates and lids — never a venue name 
 a street address — so the wrong-venue join in §15.4 was invisible at exactly the
 moment a person was asked to rule on it. **`GET /admin/events` should join the
 venue's name and address onto every row.** Not built.
+
+### 15.9 🚨 My own cleanup step wrongly rejected 85 good rows — the sticky-ruling rule then trapped them
+
+Fixing §15.3 (retire rows superseded by the recurrence collapse), I rejected
+**every** pending row across all three towns as "superseded" — but only 4
+venues' rows had actually changed shape. The other 85 were correct one-offs
+that had done nothing wrong. Because `insertEvents` never overwrites a ruling
+("a row a person already ruled on keeps that ruling"), re-posting the *correct*
+collapsed set could not put them back to `pending` — they silently stayed
+`rejected` forever, and the review endpoint refuses `status: "pending"` outright
+(`adminNightOut` only accepts `approved`/`rejected`), so there was no API path
+to undo it. Fixed by writing `status='pending'` directly in D1 for exactly the
+85 ids whose venue was not one of the four that changed.
+
+> 🔑 **The general rule: a bulk status change over "everything currently
+> pending" is not a ruling, it is a blast radius.** Filter to the rows the
+> change actually concerns before touching status, and check the count of what
+> you are about to reject against the count of what actually changed —
+> 105 posted, only 4 venues changed, 129 rejected is the mismatch that should
+> have stopped this before it shipped.
+
+**And there is still no way to undo a wrong `rejected`/`approved` call except
+by hand in D1.** The Worker should accept `status: "pending"` on
+`/admin/events/review/<id>` for exactly this — an operator's own mistake,
+not a re-read overturning a person's ruling (that prohibition is about *other*
+sessions re-litigating a human's answer, not about this).

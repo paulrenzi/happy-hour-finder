@@ -427,10 +427,18 @@ export async function adminNightOut(request, env, url, headers, parts) {
 
   if (verb === "events" && parts[2] === "review" && parts[3] && request.method === "POST") {
     const body = await request.json();
-    if (!["approved", "rejected"].includes(body.status)) return json({ error: "status" }, 400, headers);
+    // "pending" is allowed here on purpose, for undoing an OPERATOR'S OWN
+    // mistake -- a bulk action that swept up rows it should not have (see
+    // PLAYBOOK-NIGHT-OUT.md §15.9, where 85 good rows got auto-rejected and
+    // there was no way back except a raw D1 UPDATE). This is not the same as a
+    // re-read overturning a human ruling: that prohibition is about a later
+    // AUTOMATED pass re-litigating a person's answer, not about a person
+    // undoing their own slip through the same door they made it.
+    if (!["approved", "rejected", "pending"].includes(body.status)) return json({ error: "status" }, 400, headers);
+    const reviewedAt = body.status === "pending" ? null : nowIso();
     const res = await env.DB.prepare(
       "UPDATE events SET status = ?, reviewed_at = ?, review_note = ? WHERE id = ?"
-    ).bind(body.status, nowIso(), (body.note || "").slice(0, 500) || null, parts[3]).run();
+    ).bind(body.status, reviewedAt, (body.note || "").slice(0, 500) || null, parts[3]).run();
     if (!res.meta.changes) return json({ error: "no such event" }, 404, headers);
     return json({ id: parts[3], status: body.status }, 200, headers);
   }
