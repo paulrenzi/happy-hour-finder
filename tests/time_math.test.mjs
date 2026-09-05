@@ -113,8 +113,25 @@ test("cheapestPrice can be asked for drinks only", () => {
 test("the under-$5 filter is about drinks, not $1 oysters", () => {
   const oystersOnly = { items: [{ category: "food", price_usd: 1 }, { category: "draft", price_usd: 6 }] };
   assert.equal(FILTERS.cheap.test(oystersOnly), false);
-  assert.equal(FILTERS.food.test(oystersOnly), true);
   assert.equal(FILTERS.cheap.test({ items: [{ category: "draft", price_usd: 4 }] }), true);
+});
+
+/* Live music and Events are two chips because they are two questions. Wayne's
+   first read returned bands, DJs, music bingo and a history lecture from four
+   bars, and a reader who taps "Live music" and is handed bingo reads that as
+   the board being wrong. */
+test("the event filters split on kind and ask about the venue, not the deal", () => {
+  const band = { date: "2026-09-12", kind: "live_music" };
+  const bingo = { date: "2026-09-10", kind: "trivia" };
+  const today = "2026-09-05";
+  assert.equal(FILTERS.music.venueTest({ events: [band, bingo] }, today), true);
+  assert.equal(FILTERS.music.venueTest({ events: [bingo] }, today), false);
+  assert.equal(FILTERS.events.venueTest({ events: [bingo] }, today), true);
+  assert.equal(FILTERS.events.venueTest({ events: [band] }, today), false);
+  // A venue with no calendar answers "no" to both, and does not throw.
+  assert.equal(FILTERS.music.venueTest({}, today), false);
+  // Last night's band is not tonight's. Past dates never match.
+  assert.equal(FILTERS.music.venueTest({ events: [{ date: "2026-09-01", kind: "live_music" }] }, today), false);
 });
 
 /* ---- freshness -------------------------------------------------------- */
@@ -425,7 +442,21 @@ test("buildFeed honours zone and filter, and never returns a disputed deal", () 
   };
   assert.equal(buildFeed([disputed], FRI_5PM).length, 0);
   assert.equal(buildFeed([near, far], FRI_5PM, { zone: "other" }).length, 0);
-  assert.equal(buildFeed([near, far], FRI_5PM, { filter: "food" }).length, 0);
+  assert.equal(buildFeed([near, far], FRI_5PM, { filter: "music" }).length, 0);
+});
+
+/* An event filter is a VENUE question, so a bar with a band and no published
+   happy hour still gets its row -- that bar is exactly the one worth showing.
+   Asking it per-deal would have dropped it. */
+test("an event filter keeps a venue whose window we do not know", () => {
+  const noWindow = {
+    id: "band-no-hours", name: "Band, no hours", zone_id: "z", deals: [],
+    events: [{ id: "e1", date: "2026-08-08", kind: "live_music", act: "A Band" }],
+  };
+  const rows = buildFeed([noWindow, near], FRI_5PM, { filter: "music", now: FRI_5PM });
+  assert.equal(rows.length, 1);
+  assert.equal(rows[0].v.id, "band-no-hours");
+  assert.equal(rows[0].deal, null);
 });
 
 test("buildFeed still answers on a Sunday morning", () => {

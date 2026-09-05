@@ -139,12 +139,23 @@ export function sortForDisplay(items) {
 
 /* ---- filters ---------------------------------------------------------- */
 
+/* Does this venue have an event on or after `today` whose kind `want` accepts?
+
+   A band and a bingo night are different questions, so they are different
+   chips. `kind` already separates them -- live_music | trivia | dj | comedy |
+   other -- and Wayne returned all five on its first read, so the split is what
+   the data does, not a guess about it. */
+const hasEvent = (venue, today, want) =>
+  (venue.events || []).some((e) => e.date >= today && want(e.kind));
+
+/* A filter tests a DEAL (`test`) or a VENUE (`venueTest`), never both.
+
+   "Food deals" and "Drink deals" were here and are gone: nearly every window on
+   the board carries one or the other, so they removed almost nothing and cost a
+   tap to learn that. "Drinks under $5" stays because it is a real threshold a
+   person decides by. */
 export const FILTERS = {
   all: { label: "Everything", test: () => true },
-  food: {
-    label: "Food deals",
-    test: (deal) => (deal.items || []).some((i) => i.category === "food"),
-  },
   cheap: {
     label: "Drinks under $5",
     test: (deal) => {
@@ -152,9 +163,13 @@ export const FILTERS = {
       return p != null && p < 5;
     },
   },
-  drinks: {
-    label: "Drink deals",
-    test: (deal) => (deal.items || []).some((i) => DRINK_CATEGORIES.includes(i.category)),
+  music: {
+    label: "Live music",
+    venueTest: (v, today) => hasEvent(v, today, (k) => k === "live_music"),
+  },
+  events: {
+    label: "Events",
+    venueTest: (v, today) => hasEvent(v, today, (k) => k !== "live_music"),
   },
 };
 
@@ -492,7 +507,9 @@ export function matchesQuery(venue, query) {
 
 export function buildFeed(venues, at, { zone = null, filter = "all", sort = "soonest", origin = null, horizonDays = 7, query = "", planning = false, now = null } = {}) {
   const today = dateKeyOf(now || new Date());
-  const test = (FILTERS[filter] || FILTERS.all).test;
+  const f = FILTERS[filter] || FILTERS.all;
+  const test = f.test || (() => true);
+  const venueTest = f.venueTest || null;
   const q = normalizeName(query);
   const rows = [];
 
@@ -503,6 +520,11 @@ export function buildFeed(venues, at, { zone = null, filter = "all", sort = "soo
        looking at a different town when you typed it. */
     if (zone && !q && v.zone_id !== zone) continue;
     if (q && !matchesQuery(v, q)) continue;
+    // An event filter is a question about the VENUE's calendar, so it is asked
+    // once, here, and a venue that fails it is gone whether or not it has a
+    // window. Asking it per-deal would drop a bar that has a band and no
+    // published happy hour -- which is precisely a bar worth showing.
+    if (venueTest && !venueTest(v, today)) continue;
     const miles = origin && v.lat != null ? haversineMiles(origin, v) : null;
     const driveMin = miles == null ? null : driveMinutes(miles);
 
@@ -511,9 +533,12 @@ export function buildFeed(venues, at, { zone = null, filter = "all", sort = "soo
        still gets a row, because it is the only way a person can see that it is
        missing and tell us what it is -- they cannot fill in a bar that never
        shows up. It is excluded only under a DEAL filter, where the question
-       being asked ("food deals") is one an empty venue cannot answer. */
+       being asked ("drinks under $5") is one an empty venue cannot answer.
+       An EVENT filter is not such a question: it was already answered above
+       against the venue, so a bar with a band and no window still gets its
+       row. */
     if (!v.deals || !v.deals.length) {
-      if (filter === "all") {
+      if (filter === "all" || venueTest) {
         rows.push({
           v, deal: null, hit: null, miles, driveMin, hasOrigin: origin != null,
           confidence: "unknown", ageDays: null, group: GROUP.UNKNOWN,

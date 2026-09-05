@@ -608,6 +608,7 @@ def main():
                     keep=roundup_deal_kept)
     zones = json.load(open(ZONES_JSON, encoding="utf-8"))
     zone_names = {z["id"]: z["name"] for z in zones["zones"]}
+    zone_states = {z["id"]: z.get("state", "PA") for z in zones["zones"]}
     # Optional: written by ingest/fetch_venue_photos.py. A venue with no entry
     # gets the app's generated tile instead.
     # Written by ingest/extract_prices_llm.py: prices read off the same quotes
@@ -997,6 +998,10 @@ def main():
             {
                 "id": zid,
                 "name": zone_names.get(zid, zid),
+                # The board spans two states. The town picker is long enough
+                # that a reader in Delaware should not scroll past 43 Pennsylvania
+                # towns to reach theirs, so the picker filters on this.
+                "state": zone_states.get(zid, "PA"),
                 "venues": len(venues),
                 # How many of them we can actually tell you the hours for. The
                 # zone picker shows this, because "59 venues, 6 with hours" is

@@ -243,6 +243,11 @@ input[type=range] { width: 100%; height: var(--tap); accent-color: var(--accent)
   text-overflow: ellipsis; white-space: nowrap; overflow: hidden;
 }
 .pick select:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+/* State holds two letters; the town name beside it is the long one and gets the
+   room. Sized in ch so it fits "All" and "PA" without a media query. */
+.pick--state { flex: 0 0 auto; width: 9.5ch; }
+.pick--state select { padding-right: 22px; }
+.pick--state::after { right: 9px; }
 .ghost {
   flex: 0 0 auto; min-height: 40px; padding: 9px 14px; border-radius: 999px;
   display: inline-flex; align-items: center; gap: 7px;

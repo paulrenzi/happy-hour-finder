@@ -19,6 +19,10 @@ const state = {
   day: 0,        // days ahead: 0 = today
   offset: -1,    // 15-minute slot of the day; -1 means "right now"
   zone: null,
+  // Which state's towns the picker offers. null = both. It narrows the TOWN
+  // list only; it never filters the board, because a zone already belongs to
+  // exactly one state and the board is filtered by zone.
+  stateCode: null,
   query: "",     // venue-name search, from the menu panel
   filter: "all",
   sort: "soonest",
@@ -58,6 +62,11 @@ const el = (tag, cls, text) => {
   return n;
 };
 
+/* No longer a control. The picker offered three orders for a question with one
+   right answer -- what can I still get to -- and the app already overrode it the
+   moment it learned where the reader was. Kept as a table because readHash()
+   still honours an `s=` carried by a link shared before it was removed, and
+   because buildFeed takes the same three values. */
 const SORTS = [
   ["soonest", "Best now"],
   ["nearest", "Nearest"],
@@ -214,11 +223,44 @@ function buildControls() {
   // "King of Prussia (6 of 59)" -- the second number is the coverage claim and
   // the first is what we can actually stand behind. Showing only one of them is
   // what made the board look either empty or complete, and it is neither.
+  paintZonePicker();
+
+  picker(
+    $("#stateSel"),
+    [[null, "All"], ...stateCodes().map((c) => [c, c])],
+    state.stateCode,
+    (v) => {
+      state.stateCode = v;
+      // Picking a state that does not contain the town you are looking at would
+      // leave the board showing a town the picker no longer offers, so the town
+      // resets to "all" rather than going stale.
+      if (v && state.zone && zoneById(state.zone)?.state !== v) state.zone = null;
+      paintZonePicker();
+    }
+  );
+}
+
+const zoneById = (id) => state.zones.find((z) => z.id === id) || null;
+
+/* The states the board actually covers, in the order they appear. Derived, not
+   listed: adding a zone in a new state must not need an edit here. */
+const stateCodes = () => [...new Set(state.zones.map((z) => z.state).filter(Boolean))];
+
+/* "King of Prussia (6 of 59)" -- the second number is the coverage claim and the
+   first is what we can actually stand behind. Showing only one of them is what
+   made the board look either empty or complete, and it is neither.
+
+   Repainted whenever the state changes, so the list only ever offers towns the
+   reader can actually pick. */
+function paintZonePicker() {
+  const zones = state.stateCode
+    ? state.zones.filter((z) => z.state === state.stateCode)
+    : state.zones;
   picker(
     $("#zone"),
     [
       [null, "All towns"],
-      ...state.zones.map((z) => [
+      ...zones.map((z) => [
         z.id,
         `${z.name} (${z.with_deals ?? z.venues} of ${z.venues})`,
       ]),
@@ -229,11 +271,6 @@ function buildControls() {
       loadZoneVenues(v);
     }
   );
-
-  picker($("#sort"), SORTS, state.sort, (v) => {
-    state.sort = v;
-    state.sortPicked = true;
-  });
 }
 
 /* ---- location --------------------------------------------------------- */
@@ -260,8 +297,7 @@ function askLocation() {
         // The control has to agree with the board: an order that changed under
         // the reader while the picker still reads "Best now" is the app lying
         // about what it just did.
-        $("#sort").value = state.sort;
-      }
+        }
       $("#nearMe").classList.add("on");
       label.textContent = "Located";
       refresh();
@@ -306,8 +342,7 @@ function restoreLocation() {
        reader picked, or one carried in on a shared link. */
     if (!state.sortPicked) {
       state.sort = "nearest";
-      $("#sort").value = state.sort;
-    }
+      }
     $("#nearMe").classList.add("on");
     $("#nearMeLabel").textContent = "Located";
   } catch {

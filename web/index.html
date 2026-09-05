@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#f7f3eb">
-<title>Happy Hour — King of Prussia</title>
-<meta name="description" content="What's live right now around King of Prussia, and is the deal actually still on?">
-<meta property="og:title" content="Happy Hour — King of Prussia">
-<meta property="og:description" content="What's live right now around King of Prussia, and is the deal actually still on?">
+<title>Happy Hour &amp; What's On — Philadelphia Suburbs &amp; Delaware</title>
+<meta name="description" content="Where the happy hour is on right now across 51 towns in Pennsylvania and Delaware — and who is playing after it.">
+<meta property="og:title" content="Happy Hour &amp; What's On — Philadelphia Suburbs &amp; Delaware">
+<meta property="og:description" content="Where the happy hour is on right now across 51 towns in Pennsylvania and Delaware — and who is playing after it.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="manifest" href="manifest.json">
@@ -57,14 +57,16 @@
   <div id="heroInk">
     <p class="kicker">
       <span class="kicker-dot" aria-hidden="true"></span>
-      <span>King of Prussia · 20 miles</span>
+      <span id="heroPlace">51 towns · Pennsylvania &amp; Delaware</span>
     </p>
     <p id="heroClock" aria-hidden="true"><span class="hc-time"></span><span class="hc-ampm"></span></p>
-    <h1>What's on <em>right now</em></h1>
+    <h1>The drink, <em>then the night</em></h1>
     <p class="hero-tagline">
-      Every happy hour within reach of King of Prussia, checked against the clock
-      you're actually holding — so you see what's live this minute, what starts
-      soon, and what ends before you could get there.
+      Every happy hour we can prove, in fifty-one towns across Pennsylvania and
+      Delaware, checked against the clock you're actually holding — so you see
+      what's live this minute and what ends before you could get there. Then who's
+      playing after it: the bands, the DJs, the bingo and the trivia the bar
+      posted itself.
     </p>
     <p id="heroCount">Checking the board…</p>
   </div>
@@ -83,16 +85,23 @@
       <div id="filters" class="chips" role="group" aria-label="Deal type"></div>
     </div>
 
-    <!-- Zone and sort are pickers, not chip strips: four scrolling rows of chrome
-         pushed the first deal off the screen entirely. -->
+    <!-- Pickers, not chip strips: four scrolling rows of chrome pushed the first
+         deal off the screen entirely. State narrows the town list -- the board
+         covers two states and a reader in Delaware should not scroll past 43
+         Pennsylvania towns to reach theirs.
+
+         Sort used to sit here and does not any more. It offered three orders
+         for a question with one right answer: what can I still get to. The app
+         picks it -- nearest once it knows where you are, soonest before that --
+         which is what the control did for almost everyone anyway. -->
     <div id="pickers">
+      <label class="pick pick--state">
+        <span class="strip-label">State</span>
+        <select id="stateSel"></select>
+      </label>
       <label class="pick">
         <span class="strip-label">Town</span>
         <select id="zone"></select>
-      </label>
-      <label class="pick">
-        <span class="strip-label">Sort</span>
-        <select id="sort"></select>
       </label>
       <button id="nearMe" class="ghost" type="button">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"

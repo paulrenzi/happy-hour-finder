@@ -148,9 +148,9 @@ def main():
         check("near you" not in head.lower(),
               f"headline still promises the reader's own location: {head!r}")
 
-        check(page.eval_on_selector("#sort", "s => s.value") == "nearest",
-              "the sort control does not read 'Nearest' -- the board would be "
-              "ordered by distance while the picker claimed otherwise")
+        # The sort PICKER is gone -- the app chooses the order now -- so what is
+        # asserted is the order itself, below. Reading a control's value only
+        # ever proved the control agreed with itself.
 
         rows, groups = by_section(page)
         check(len(rows) >= 3,
@@ -177,9 +177,12 @@ def main():
         # Changing a control rewrites the URL from state. If near= is dropped
         # there, the board stays sorted while the URL forgets, and a share of
         # that link comes back sorted from nothing.
-        page.select_option("#sort", "value")
+        # Any control will do; the Day chips are the ones that survived the
+        # picker cull, and Tomorrow-then-Today leaves the board where it started
+        # so the assertions below still describe the same list.
+        page.click("#days button.chip >> nth=1")
         page.wait_for_timeout(400)
-        page.select_option("#sort", "nearest")
+        page.click("#days button.chip >> nth=0")
         page.wait_for_timeout(600)
         url = page.evaluate("location.hash")
         check("near=" in url, f"near= was dropped from the url on a control "
