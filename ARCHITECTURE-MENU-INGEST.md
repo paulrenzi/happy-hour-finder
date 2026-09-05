@@ -2860,3 +2860,74 @@ the *second-pass address-widening join*, `quote_names_another_door` gates
 *every* roundup deal regardless of which pass produced it). Neither was
 removed; `quote_names_another_door` is additive and catches what the older,
 narrower guard structurally cannot.
+
+---
+
+## The photo pipeline is `ingest/fetch_venue_photos.py`, not `discover_places.py` (2026-09-05)
+
+Older handoffs (including the 2026-09-05 night one) name
+`ingest/discover_places.py` as the paid photo-fetch step. That script resolves
+a venue's **website**, not its photo. The actual photo fetch, storage and
+manifest-write live in `ingest/fetch_venue_photos.py` (`--from-board` for the
+normal "fill gaps in one zone" run, `--from-places` to reuse a resolution
+`discover_places.py` already paid for). Read this file's own module docstring
+and `shipped_with_a_photo()`/`from_board()` before running it — it already
+carries hard-won comments about two earlier miscounts (counting one manifest
+file instead of the live bundles; reading only `zone-*.json` and missing
+`venues-*.json`).
+
+## 🛑🔑 The coverage check is keyed to the SHIPPED BOARD, not the manifest — a stale unbuilt run re-buys resolved lids (2026-09-05)
+
+`from_board()`'s skip test is `if lid in covered and not args.force: continue`,
+where `covered = shipped_with_a_photo()` — the LIDs the **built, pushed
+bundles** currently show with a photo. That is deliberate for the normal case
+(see the comment on `shipped_with_a_photo()`: counting `venue_photos_by_lid.json`
+alone undercounts, because a photo can reach a card by more than one route).
+
+But it means the check has no idea a lid was **already resolved and written
+to `data/venue_photos_by_lid.json`** during an earlier `--spend` run that
+never got built and shipped. If that manifest write survives uncommitted (or
+mid-session, before `build_bundles.py` + push) and the fetcher is run again
+over the same zone, every one of those already-resolved-but-unbuilt lids
+reads as `not covered` and gets a **second** paid Places lookup — full
+search + photo billing again for a result already sitting in the manifest.
+This is exactly what happened in the center_city photo-fill pass (2026-09-05):
+a stale uncommitted partial run left resolved-but-unbuilt lids in the
+manifest, and the next run re-bought them, costing roughly **$22.66** in
+duplicate lookups (403 successful lookups landed, but the manifest only grew
+net +26 for that pass).
+
+**Not yet fixed at the tooling level.** The correct skip test for `--from-board`
+should be `lid in covered OR lid in manifest` (i.e. also honor
+`LID_MANIFEST`/`venue_photos_by_lid.json`, which `from_board()` already loads
+into `manifest` at line ~303 but never consults for the skip decision) —
+someone should close this before running another multi-zone photo-fill pass.
+Until then: **always commit + build + push before re-running the fetcher on
+the same zone**, and check `data/venue_photos_by_lid.json` by hand for
+already-resolved lids from an earlier aborted run before spending again.
+
+## `ingest/exclusions.py` — the venue block/allow list, and where it runs (2026-09-05)
+
+Two different kinds of exclusion live in one file, `ingest/exclusions.py`,
+and its own module docstring is the read for the reasoning (banned-by-name
+vs. hotel-brand-vs-hotel-licence). What matters architecturally: it is not a
+scraper-time decision. `excluded(name, plcb_name, license_type)` runs at the
+two doors onto the board — `ingest/build_venue_base.py` (where a venue first
+exists) and `ingest/build_bundles.py` (so a stale base can't put a banned
+venue back on a rebuild). Adding a name to `BANNED_NAMES` or
+`GROCERY_OR_LIQUOR_STORE_RE` takes effect on the next base/bundle rebuild,
+with no separate re-crawl needed. 2026-09-05 used this path to remove six
+venues Paul flagged as not bars: 114 grocery-store liquor licensees (ACME/
+GIANT/ShopRite/etc., via the regex), Fine Wine & Good Spirits, Panera Bread,
+Suite 4 Eleven (a strip bar), Opa! Opa!, and El Diablo.
+
+**Known, deliberately unaddressed as of 2026-09-05:** three rows where a
+fast-food name (McDonald's, and two Chipotle rows) is misattributed to a
+grocery-store PLCB liquor licence — the PLCB licensee field names a grocery
+store at that address, but the trade name resolved is a fast-food chain
+sharing the address/licence. `GROCERY_OR_LIQUOR_STORE_RE` matches the trade
+`name` field specifically to dodge this (see the comment at line ~52 in
+`exclusions.py` on why the PLCB licensee field is untrustworthy for this
+match), so these three did NOT get excluded — they're a separate, known data
+anomaly (a licence-sharing misattribution), not a bug in the exclusion regex,
+and nobody has fixed the misattribution itself yet.
