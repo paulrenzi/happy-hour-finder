@@ -1008,6 +1008,14 @@ function render() {
 
   const clock = at.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
   $("#clock").textContent = isNow() ? clock : `${DOW_SHORT[dowOf(at) - 1]} ${clock}`;
+  // The same moment, set large in the hero: the clock is what the reader came
+  // to check the board against, so it is the biggest thing on the first screen.
+  const heroClock = $("#heroClock");
+  if (heroClock) {
+    const [hhmm, ampm = ""] = clock.split(" ");
+    $(".hc-time", heroClock).textContent = isNow() ? hhmm : `${DOW_SHORT[dowOf(at) - 1]} ${hhmm}`;
+    $(".hc-ampm", heroClock).textContent = ampm.toLowerCase();
+  }
   // The arrival-time slider was removed from the strip (2026-09-02): a board
   // whose whole promise is "what's on RIGHT NOW" was also asking the reader to
   // set a time, and the "Arriving Fri 5:30pm" label read as a filter they had

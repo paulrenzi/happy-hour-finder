@@ -29,12 +29,14 @@
   --bg2: #efe8dc;
   --surface: #ffffff;
   --fg: #0f2a34;
+  --ink: #0f2a34;
   --muted: #3d5a65;
   --dim: #5a7888;
   --line: rgba(15, 42, 52, 0.1);
   --shadow-sm: 0 4px 20px rgba(10, 28, 38, 0.07);
   --shadow-md: 0 8px 30px rgba(10, 28, 38, 0.1);
   --shadow-lg: 0 16px 48px rgba(10, 28, 38, 0.14);
+  --shadow-card: 0 1px 0 rgba(15, 42, 52, 0.06), 0 12px 32px -18px rgba(10, 28, 38, 0.35);
   --r: 22px;
   --r-sm: 14px;
   /* "Live" has to shout across a cream page, so it stays warm and dark enough
@@ -127,13 +129,22 @@ button { font: inherit; cursor: pointer; }
   width: 5px; height: 5px; border-radius: 50%; background: #44dceb;
   box-shadow: 0 0 8px rgba(68, 220, 235, 0.7);
 }
-#hero h1 {
-  margin: 0 0 1.1rem;
-  font-family: var(--serif); font-weight: 800;
-  font-size: clamp(3rem, 10vw, 5.6rem); line-height: 0.94; letter-spacing: -0.045em;
+#heroClock {
+  display: flex; align-items: baseline; gap: 0.18em; margin: 0 0 0.6rem;
+  font-family: var(--serif); font-style: italic; font-weight: 600;
+  font-size: clamp(4.4rem, 19vw, 7.2rem); line-height: 0.9; letter-spacing: -0.045em;
+  font-variant-numeric: tabular-nums; color: #fff;
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.4);
 }
-#hero h1 em { font-style: italic; color: #7fe6f2; }
+#heroClock .hc-ampm { font-size: 0.38em; color: #7fe6f2; letter-spacing: -0.02em; }
+#heroClock:empty { display: none; }
+#hero h1 {
+  margin: 0 0 1rem;
+  font-family: var(--serif); font-weight: 700;
+  font-size: clamp(1.9rem, 8.4vw, 3.3rem); line-height: 1.02; letter-spacing: -0.035em;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.4);
+}
+#hero h1 em { font-style: italic; font-weight: 600; color: #7fe6f2; }
 /* On a phone the headline and the live count already say it, and keeping the
    paragraph squeezes the photo down to a stripe. */
 .hero-tagline { display: none; }
@@ -235,7 +246,7 @@ input[type=range] { width: 100%; height: var(--tap); accent-color: var(--accent)
   transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
 .chip[aria-pressed="true"] {
-  background: var(--accent); color: #fff; border-color: transparent; font-weight: 700;
+  background: var(--fg); color: #fff; border-color: transparent; font-weight: 700;
 }
 .chip:focus-visible { outline: 2px solid var(--accent-deep); outline-offset: 2px; }
 
@@ -268,7 +279,7 @@ input[type=range] { width: 100%; height: var(--tap); accent-color: var(--accent)
 
 .card {
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--r);
-  overflow: hidden; box-shadow: var(--shadow-sm);
+  overflow: hidden; box-shadow: var(--shadow-card);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 @media (hover: hover) {
@@ -337,22 +348,28 @@ input[type=range] { width: 100%; height: var(--tap); accent-color: var(--accent)
 .body { padding: 16px 18px 18px; }
 
 /* Price chips read at a glance -- the number is the point. */
-.items { list-style: none; display: flex; flex-wrap: wrap; gap: 7px; margin: 0; padding: 0; }
+.items { list-style: none; display: flex; flex-direction: column; margin: 0; padding: 0; }
 .items:empty { display: none; }
 .items li {
-  display: inline-flex; align-items: baseline; gap: 6px;
-  padding: 6px 11px; border-radius: 10px; background: var(--bg);
-  border: 1px solid var(--line); font-size: 14.5px; color: var(--fg);
+  display: flex; align-items: baseline; gap: 10px;
+  padding: 9px 0; border-bottom: 1px dotted rgba(15, 42, 52, 0.22);
+  font-size: 15.5px; color: var(--fg);
 }
-.items b { color: var(--accent-deep); font-variant-numeric: tabular-nums; font-weight: 800; }
+.items li:last-child { border-bottom: 0; }
+/* itemChip() puts the price first in the DOM; here it reads last, on the right. */
+.items b {
+  order: 2; margin-left: auto; flex: 0 0 auto;
+  font-family: var(--serif); font-weight: 700; font-size: 22px; line-height: 1;
+  letter-spacing: -0.02em; color: var(--accent-deep); font-variant-numeric: tabular-nums;
+}
 
 /* Sits between the drink chips and the food chips in the same list --
    sortForDisplay already puts food last, this just says so, so a folded
    "+more" doesn't read as one undifferentiated pile of prices. */
-.itemsDivider {
-  flex-basis: 100%; padding: 2px 0 0; margin-top: 2px;
-  background: none; border: none; font-size: 11.5px; font-weight: 700;
-  letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted);
+.items .itemsDivider {
+  padding: 12px 0 2px; border-bottom: 0;
+  font-size: 10.5px; font-weight: 800; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--dim);
 }
 
 .fine { margin: 12px 0 0; font-size: 14px; color: var(--muted); line-height: 1.5; }
@@ -379,7 +396,8 @@ input[type=range] { width: 100%; height: var(--tap); accent-color: var(--accent)
 .moreFold .foldText {
   display: block; margin: 8px 0 0; font-size: 14px; color: var(--muted); line-height: 1.5;
 }
-.itemsMore { margin-top: 8px; }
+.itemsMore { margin-top: 4px; }
+.itemsMore li:first-child { border-top: 1px dotted rgba(15, 42, 52, 0.22); }
 
 .meta {
   display: flex; justify-content: space-between; align-items: baseline; gap: 10px;
@@ -548,7 +566,7 @@ body.sheetOpen {
   border-radius: var(--r-sm); background: var(--bg);
 }
 .dealBlock .items { margin: 12px 0 0; }
-.dealBlock .items li { background: var(--surface); }
+.dealBlock .items { margin-top: 6px; }
 .sched {
   margin: 0; color: var(--fg); font-size: 17px; font-weight: 700;
   font-variant-numeric: tabular-nums;
@@ -678,23 +696,58 @@ body.sheetOpen {
 
 /* ---- the night-out layer ---------------------------------------------- */
 .tonight {
-  margin: 10px 0 0; padding: 8px 10px; border-radius: 8px;
-  background: var(--bg2); color: var(--ink); font-size: 14px; line-height: 1.45;
-  border-left: 3px solid var(--accent);
+  margin: 12px 0 0; padding: 10px 12px; border-radius: 12px;
+  background: var(--fg); color: var(--bg); font-size: 14px; line-height: 1.45;
 }
 .tonight:empty { display: none; }
 
 .subscribe-wrap {
-  width: min(1040px, calc(100% - 2rem)); margin: 2.5rem auto 0; padding: 1.5rem 1.25rem;
-  border: 1px solid var(--line); border-radius: 14px; background: var(--bg2);
+  width: min(1040px, calc(100% - 2rem)); margin: 1.75rem auto 0; padding: 1.5rem 1.25rem;
+  border-radius: 18px; background: var(--surface); box-shadow: var(--shadow-card);
 }
-@media (min-width: 700px) { .subscribe-wrap { width: min(1040px, calc(100% - 3rem)); padding: 2rem; } }
-.subscribe-wrap h2 { margin: 0 0 0.5rem; font-size: 1.35rem; }
+@media (min-width: 700px) { .subscribe-wrap { width: min(1040px, calc(100% - 3rem)); padding: 2.25rem 2.5rem; } }
+.subscribe-wrap h2 {
+  margin: 0 0 0.5rem; font-family: var(--serif); font-weight: 700;
+  font-size: 1.5rem; line-height: 1.1; letter-spacing: -0.03em;
+}
 .subscribe-body { margin: 0 0 1rem; max-width: 62ch; color: var(--muted); line-height: 1.6; }
 #subscribe { display: flex; gap: 0.6rem; flex-wrap: wrap; }
 #subscribe input {
   flex: 1 1 220px; min-height: 44px; padding: 0 12px; font: inherit; font-size: 16px;
-  border: 1px solid var(--line); border-radius: 10px; background: #fff; color: var(--ink);
+  border: 1px solid var(--line); border-radius: 12px; background: var(--bg); color: var(--ink);
 }
 #subscribe button { min-height: 44px; }
 .subscribe-note { margin: 0.7rem 0 0; min-height: 1.2em; font-size: 14px; color: var(--muted); }
+
+/* ---- wide screens: the hero comes off the photo ----------------------- */
+/* On a phone the photo is the page and the type sits on it. With a column to
+   spare the type moves onto the cream beside a framed photo, so the clock and
+   the headline are set in ink rather than in white on a gradient. */
+@media (min-width: 1024px) {
+  #hero {
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: end; min-height: 0; overflow: visible; background: var(--bg);
+    width: min(1040px, calc(100% - 3rem)); margin: 0 auto; padding: 4.5rem 0 0;
+  }
+  #heroImg {
+    position: relative; grid-column: 2; grid-row: 1;
+    height: 520px; border-radius: 28px; filter: none;
+  }
+  #heroOverlay { display: none; }
+  #heroInk {
+    grid-column: 1; grid-row: 1; width: auto; margin: 0;
+    padding: 0 3.25rem 2.4rem 0; color: var(--fg);
+  }
+  .kicker { color: var(--dim); }
+  .kicker-dot { background: var(--accent); box-shadow: 0 0 10px rgba(10, 138, 158, 0.7); }
+  #heroClock { color: var(--fg); text-shadow: none; font-size: 9rem; }
+  #heroClock .hc-ampm { color: var(--accent); }
+  #hero h1 { text-shadow: none; }
+  #hero h1 em { color: var(--accent-deep); }
+  .hero-tagline { color: var(--muted); }
+  #heroCount {
+    background: rgba(10, 138, 158, 0.08); border-color: rgba(10, 138, 158, 0.3);
+    color: var(--fg); -webkit-backdrop-filter: none; backdrop-filter: none;
+  }
+  #heroCount b { color: var(--accent-deep); }
+}
