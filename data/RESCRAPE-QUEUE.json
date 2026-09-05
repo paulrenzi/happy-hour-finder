@@ -1,14 +1,14 @@
 {
  "rule": "Paul, 2026-09-03: any live deal with under 5 happy-hour items needs a re-scrape.",
  "generated": "2026-09-05",
- "count": 154,
+ "count": 106,
  "venues": [
   {
    "zone": "abington_jenkintown",
    "name": "Se\u00f1or Salsa",
    "lid": "68604",
    "verified_by": "auto_extract",
-   "item_count": 1,
+   "item_count": 4,
    "url": "https://www.senorsalsapa.com/",
    "status": "NEEDS_RESCRAPE"
   },
@@ -17,7 +17,7 @@
    "name": "The Ways Restaurant & Brewery",
    "lid": "93544",
    "verified_by": "auto_extract",
-   "item_count": 1,
+   "item_count": 3,
    "url": "https://thewaysrestaurantandbrewery.com/glenside-the-ways-restaurant-and-brewery-happy-hours-specials",
    "status": "NEEDS_RESCRAPE"
   },
@@ -26,17 +26,8 @@
    "name": "W Tavern",
    "lid": "110382",
    "verified_by": "auto_extract",
-   "item_count": 1,
+   "item_count": 4,
    "url": "https://wtavern19090.wixsite.com/my-site/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "ambler_upper_dublin",
-   "name": "Fireside Bar and Grill",
-   "lid": "55311",
-   "verified_by": "agent_read",
-   "item_count": 1,
-   "url": "https://www.firesidebarandgrille.com/",
    "status": "NEEDS_RESCRAPE"
   },
   {
@@ -77,15 +68,6 @@
   },
   {
    "zone": "ardmore_bryn_mawr",
-   "name": "Pub of Penn Valley",
-   "lid": "43721",
-   "verified_by": "agent_read",
-   "item_count": 4,
-   "url": "https://pubofpennvalley.com/menu/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "ardmore_bryn_mawr",
    "name": "The Grog Grill",
    "lid": "64347",
    "verified_by": "agent_read",
@@ -95,38 +77,11 @@
   },
   {
    "zone": "ardmore_bryn_mawr",
-   "name": "The Refectory",
-   "lid": "114544",
-   "verified_by": "auto_extract",
-   "item_count": 4,
-   "url": "https://refectorynova.com/happy-hour/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "ardmore_bryn_mawr",
    "name": "Tired Hands Fermentaria",
    "lid": "70057",
    "verified_by": "staff",
    "item_count": 4,
    "url": "https://tiredhands.com",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "blue_bell_plymouth_meeting",
-   "name": "Blue Bell Inn",
-   "lid": "67233",
-   "verified_by": "agent_read",
-   "item_count": 2,
-   "url": "https://bluebellinn.com/blue-bell-blue-bell-blue-bell-inn-happy-hours-specials",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "blue_bell_plymouth_meeting",
-   "name": "Panache",
-   "lid": "103994",
-   "verified_by": "auto_extract",
-   "item_count": 2,
-   "url": "https://panachewoodfiregrill.com/happy-hour-blue-bell/",
    "status": "NEEDS_RESCRAPE"
   },
   {
@@ -149,15 +104,6 @@
   },
   {
    "zone": "center_city",
-   "name": "Bad Brother",
-   "lid": "91278",
-   "verified_by": "auto_extract",
-   "item_count": 3,
-   "url": "https://www.badbrotherphilly.com",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "center_city",
    "name": "Buffalo Billiards",
    "lid": "44460",
    "verified_by": "auto_extract",
@@ -172,33 +118,6 @@
    "verified_by": "auto_extract",
    "item_count": 1,
    "url": "https://www.cavsheadhouse.com/sports",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "center_city",
-   "name": "Con Murphy's",
-   "lid": "61260",
-   "verified_by": "auto_extract",
-   "item_count": 2,
-   "url": "https://conmurphyspub.com",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "center_city",
-   "name": "Cuba Libre",
-   "lid": "46363",
-   "verified_by": "auto_extract",
-   "item_count": 1,
-   "url": "https://www.cubalibrerestaurant.com/en/philadelphia/menus/happy-hour/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "center_city",
-   "name": "Devil's Alley Bar & Grill",
-   "lid": "53420",
-   "verified_by": "auto_extract",
-   "item_count": 3,
-   "url": "https://devilsalleybarandgrill.com/specials",
    "status": "NEEDS_RESCRAPE"
   },
   {
@@ -221,15 +140,6 @@
   },
   {
    "zone": "center_city",
-   "name": "Estia",
-   "lid": "54242",
-   "verified_by": "auto_extract",
-   "item_count": 3,
-   "url": "https://estiarestaurant.com/philadelphia-pa/pdfs/estia-philadelphia-happy-hour-menu.pdf",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "center_city",
    "name": "Founding Fathers South St Sports Bar & Grill",
    "lid": "112368",
    "verified_by": "auto_extract",
@@ -244,15 +154,6 @@
    "verified_by": "auto_extract",
    "item_count": 2,
    "url": "https://gooddogbar.com/menu/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "center_city",
-   "name": "Harper's Garden",
-   "lid": "83984",
-   "verified_by": "auto_extract",
-   "item_count": 1,
-   "url": "https://www.harpersgardenphilly.com/menus",
    "status": "NEEDS_RESCRAPE"
   },
   {
@@ -356,15 +257,6 @@
   },
   {
    "zone": "center_city",
-   "name": "Pub & Kitchen",
-   "lid": "60353",
-   "verified_by": "auto_extract",
-   "item_count": 1,
-   "url": "https://thepubandkitchen.com/menus/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "center_city",
    "name": "Recipe Philly",
    "lid": "133827",
    "verified_by": "auto_extract",
@@ -379,15 +271,6 @@
    "verified_by": "auto_extract",
    "item_count": 4,
    "url": "https://www.rosyseasttacobar.com/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "center_city",
-   "name": "Santucci's Original Square Pizza",
-   "lid": "122033",
-   "verified_by": "auto_extract",
-   "item_count": 4,
-   "url": "https://santuccispizza.com/specials/",
    "status": "NEEDS_RESCRAPE"
   },
   {
@@ -419,33 +302,6 @@
   },
   {
    "zone": "center_city",
-   "name": "Veda",
-   "lid": "133012",
-   "verified_by": "auto_extract",
-   "item_count": 4,
-   "url": "https://vedaphilly.com/menu-new/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "center_city",
-   "name": "Vedge",
-   "lid": "65714",
-   "verified_by": "auto_extract",
-   "item_count": 1,
-   "url": "https://www.vedgerestaurant.com/happyhour",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "center_city",
-   "name": "Village Whiskey",
-   "lid": "93942",
-   "verified_by": "auto_extract",
-   "item_count": 4,
-   "url": "https://www.villagewhiskey.com/specials/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "center_city",
    "name": "Yanaga Kappo Izakaya",
    "lid": "121229",
    "verified_by": "auto_extract",
@@ -472,57 +328,12 @@
    "status": "NEEDS_RESCRAPE"
   },
   {
-   "zone": "collegeville_trappe",
-   "name": "Trappe Tavern",
-   "lid": "19496",
-   "verified_by": "auto_extract",
-   "item_count": 4,
-   "url": "https://trappetavern.com/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "collegeville_trappe",
-   "name": "Troubles End Brewing",
-   "lid": "100226",
-   "verified_by": "auto_extract",
-   "item_count": 4,
-   "url": "https://www.troublesendbrewing.com/happyhour",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
    "zone": "conshohocken",
    "name": "Jasper's Backyard",
    "lid": "70520",
    "verified_by": "auto_extract",
    "item_count": 4,
    "url": "https://jaspersbackyard.com/-specials?source=pop_up&spot_id=92745&destination=specials&promotion=custom_promotion",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "conshohocken",
-   "name": "Pepperoncini Restaurant & Bar",
-   "lid": "53783",
-   "verified_by": "agent_read",
-   "item_count": 4,
-   "url": "https://pepperoncinirestaurant.com/conshohocken-pepperoncini-restaurant-happy-hours-specials",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "conshohocken",
-   "name": "The Gypsy Saloon",
-   "lid": "107050",
-   "verified_by": "agent_read",
-   "item_count": 4,
-   "url": "https://www.gypsysaloon.com/menus/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "doylestown",
-   "name": "86 West",
-   "lid": "54116",
-   "verified_by": "auto_extract",
-   "item_count": 1,
-   "url": "https://the86west.com/wp-content/uploads/Buy1_50_HappyHour_menu_08-03-26.pdf",
    "status": "NEEDS_RESCRAPE"
   },
   {
@@ -536,38 +347,11 @@
   },
   {
    "zone": "doylestown",
-   "name": "New Britain Inn",
-   "lid": "39404",
-   "verified_by": "auto_extract",
-   "item_count": 4,
-   "url": "http://www.newbritaininn.com/happy-hour/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "doylestown",
    "name": "Penn Taproom",
    "lid": "63321",
    "verified_by": "roundup_extract",
    "item_count": 1,
    "url": "https://bucksco.today/2026/08/best-restaurants-outdoor-seating-doylestown-pa/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "exton_downingtown",
-   "name": "Al Pastor",
-   "lid": "81364",
-   "verified_by": "auto_extract",
-   "item_count": 1,
-   "url": "https://eatalpastor.com",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "exton_downingtown",
-   "name": "Anthony's Cucina Fresca",
-   "lid": "73031",
-   "verified_by": "auto_extract",
-   "item_count": 2,
-   "url": "https://anthonyscucinafresca.com/menu/",
    "status": "NEEDS_RESCRAPE"
   },
   {
@@ -581,56 +365,11 @@
   },
   {
    "zone": "exton_downingtown",
-   "name": "Limoncello",
-   "lid": "67364",
-   "verified_by": "auto_extract",
-   "item_count": 2,
-   "url": "https://www.limoncellorestaurant.com/happy-hour-menu",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "exton_downingtown",
-   "name": "PJ Whelihan's",
-   "lid": "63902",
-   "verified_by": "auto_extract",
-   "item_count": 1,
-   "url": "https://www.pjspub.com/about.php?loc=Downingtown",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "exton_downingtown",
    "name": "R5 Wines",
    "lid": "86837",
    "verified_by": "auto_extract",
    "item_count": 1,
    "url": "https://rfivewines.com/events",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "exton_downingtown",
-   "name": "Station Taproom",
-   "lid": "62955",
-   "verified_by": "auto_extract",
-   "item_count": 1,
-   "url": "https://stationtaproom.com/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "exton_downingtown",
-   "name": "Victory Brewing",
-   "lid": "36829",
-   "verified_by": "auto_extract",
-   "item_count": 3,
-   "url": "https://downingtown.victorybeer.com/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "fishtown_kensington",
-   "name": "Frankford Hall",
-   "lid": "64739",
-   "verified_by": "auto_extract",
-   "item_count": 1,
-   "url": "https://frankfordhall.com/",
    "status": "NEEDS_RESCRAPE"
   },
   {
@@ -653,19 +392,10 @@
   },
   {
    "zone": "fishtown_kensington",
-   "name": "Percy",
-   "lid": "128022",
-   "verified_by": "auto_extract",
-   "item_count": 3,
-   "url": "https://percyphl.com/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "fishtown_kensington",
    "name": "Post Haste",
    "lid": "109551",
    "verified_by": "auto_extract",
-   "item_count": 1,
+   "item_count": 2,
    "url": "http://www.posthastephilly.com/",
    "status": "NEEDS_RESCRAPE"
   },
@@ -680,29 +410,11 @@
   },
   {
    "zone": "hockessin_greenville",
-   "name": "Bar Reverie",
-   "lid": "DE493f7928d5",
-   "verified_by": "auto_extract",
-   "item_count": 1,
-   "url": "http://www.barreverie.com/events",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "hockessin_greenville",
    "name": "Kid Shelleen's - Branmar Plaza",
    "lid": "DE6da252adc0",
    "verified_by": "auto_extract",
    "item_count": 2,
    "url": "https://www.harryshospitalitygroup.com/kid-shelleens/branmar-plaza/menus/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "hockessin_greenville",
-   "name": "Sullivan's Steakhouse",
-   "lid": "DEe016563850",
-   "verified_by": "auto_extract",
-   "item_count": 2,
-   "url": "https://www.sullivanssteakhouse.com/wilmington/menus/happyhour-food-drink/",
    "status": "NEEDS_RESCRAPE"
   },
   {
@@ -743,24 +455,6 @@
   },
   {
    "zone": "lansdale_montgomeryville",
-   "name": "Joseph Ambler Inn",
-   "lid": "44242",
-   "verified_by": "auto_extract",
-   "item_count": 3,
-   "url": "https://josephamblerinn.com/wp-content/uploads/2026/06/JAI-HH.pdf",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "lansdale_montgomeryville",
-   "name": "Lansdale Tavern",
-   "lid": "100210",
-   "verified_by": "agent_read",
-   "item_count": 3,
-   "url": "https://lansdaletavern.com/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "lansdale_montgomeryville",
    "name": "The Bull Restaurant & Tavern",
    "lid": "126965",
    "verified_by": "agent_read",
@@ -779,38 +473,11 @@
   },
   {
    "zone": "lewes",
-   "name": "Lewes Oyster House",
-   "lid": "DE8e9e339b4c",
-   "verified_by": "auto_extract",
-   "item_count": 4,
-   "url": "https://lewesoyster.com/menu/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "lewes",
    "name": "Raas",
    "lid": "DEeb93b5cdfd",
    "verified_by": "auto_extract",
    "item_count": 1,
    "url": "https://www.raaslewes.com/lewes-lewes-beach-raas-happy-hours-specials",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "manayunk",
-   "name": "Taqueria Amor",
-   "lid": "67822",
-   "verified_by": "agent_read",
-   "item_count": 2,
-   "url": "https://www.taqueriaamor.com/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "media",
-   "name": "Ariano",
-   "lid": "129263",
-   "verified_by": "auto_extract",
-   "item_count": 2,
-   "url": "https://arianomedia.com/specials",
    "status": "NEEDS_RESCRAPE"
   },
   {
@@ -829,15 +496,6 @@
    "verified_by": "auto_extract",
    "item_count": 4,
    "url": "https://www.sligomedia.com/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "media",
-   "name": "State Street Pub",
-   "lid": "108693",
-   "verified_by": "auto_extract",
-   "item_count": 4,
-   "url": "https://www.statestreetpubmedia.com/s/Happy-Hour.pdf",
    "status": "NEEDS_RESCRAPE"
   },
   {
@@ -874,15 +532,6 @@
    "verified_by": "agent_read",
    "item_count": 3,
    "url": "http://www.caffegelato.net/menus/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "newark_de",
-   "name": "Chili's Grill & Bar",
-   "lid": "DEc68619870c",
-   "verified_by": "auto_extract",
-   "item_count": 2,
-   "url": "https://www.chilis.com/locations/us/delaware/newark/christiana?utm_source=google&utm_medium=local&utm_campaign=Chilis",
    "status": "NEEDS_RESCRAPE"
   },
   {
@@ -1079,26 +728,8 @@
    "name": "Doc's Irish Pub",
    "lid": "68830",
    "verified_by": "agent_read",
-   "item_count": 1,
+   "item_count": 4,
    "url": "https://www.godocspub.com/specials/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "rehoboth_beach",
-   "name": "1776 Steakhouse",
-   "lid": "DE49d0a52dae",
-   "verified_by": "auto_extract",
-   "item_count": 3,
-   "url": "https://1776steakhouse.com/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "rehoboth_beach",
-   "name": "Bodhi Kitchen",
-   "lid": "DE2c4cd90f28",
-   "verified_by": "auto_extract",
-   "item_count": 2,
-   "url": "https://www.bodhirb.com/images/fl_items/files/81/82_happy-hour-bodhi-102523-2up-4-25x11.pdf",
    "status": "NEEDS_RESCRAPE"
   },
   {
@@ -1129,48 +760,12 @@
    "status": "NEEDS_RESCRAPE"
   },
   {
-   "zone": "rehoboth_beach",
-   "name": "Victoria's Restaurant",
-   "lid": "DEb0abd23fc8",
-   "verified_by": "auto_extract",
-   "item_count": 4,
-   "url": "https://boardwalkplaza.com/wp-content/uploads/2026/06/Plaza-Pub-Menu-2.pdf",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "south_philly",
-   "name": "Chili's",
-   "lid": "109005",
-   "verified_by": "auto_extract",
-   "item_count": 1,
-   "url": "https://www.chilis.com/locations/us/pennsylvania/philadelphia/south-philly",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
    "zone": "south_philly",
    "name": "South Philadelphia Tap Room",
    "lid": "45092",
    "verified_by": "auto_extract",
    "item_count": 1,
    "url": "https://southphiladelphiataproom.com/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "university_city",
-   "name": "Renata's Kitchen & Bar",
-   "lid": "101711",
-   "verified_by": "auto_extract",
-   "item_count": 1,
-   "url": "https://www.renatas-kitchen.com/menu",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "wayne_radnor",
-   "name": "Maison Lotus",
-   "lid": "122420",
-   "verified_by": "auto_extract",
-   "item_count": 4,
-   "url": "https://www.maison-lotus.com/",
    "status": "NEEDS_RESCRAPE"
   },
   {
@@ -1268,7 +863,7 @@
    "name": "Crooked Eye Brewery",
    "lid": "69140",
    "verified_by": "menu_read_llm",
-   "item_count": 1,
+   "item_count": 2,
    "url": "https://crookedeyebrewery.com/events",
    "status": "NEEDS_RESCRAPE"
   },
@@ -1283,19 +878,10 @@
   },
   {
    "zone": "wilmington",
-   "name": "Brew Works North",
-   "lid": "DEa077f4e311",
-   "verified_by": "agent_read",
-   "item_count": 3,
-   "url": "https://wilmingtonbrewworks.com/brew-works-north/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "wilmington",
    "name": "Cafe Mezzanotte",
    "lid": "DE6192c1db22",
    "verified_by": "agent_read",
-   "item_count": 2,
+   "item_count": 3,
    "url": "https://www.cafemezzanotte.net/specials/",
    "status": "NEEDS_RESCRAPE"
   },
@@ -1304,17 +890,8 @@
    "name": "Dorcea",
    "lid": "DEa3dcf9e68f",
    "verified_by": "auto_extract",
-   "item_count": 1,
+   "item_count": 2,
    "url": "http://dorcea.com/wilmington-dorcea-drink-menu",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "wilmington",
-   "name": "Iron Hill Brewery & Restaurant - Wilmington",
-   "lid": "DE80dea6d966",
-   "verified_by": "agent_read",
-   "item_count": 4,
-   "url": "https://ironhillbrewery.com/locations/wilmington-de",
    "status": "NEEDS_RESCRAPE"
   },
   {
@@ -1378,15 +955,6 @@
    "verified_by": "agent_read",
    "item_count": 4,
    "url": "http://tonicsns.com/menu/",
-   "status": "NEEDS_RESCRAPE"
-  },
-  {
-   "zone": "wilmington",
-   "name": "Washington Street Ale House",
-   "lid": "DE98501eeb65",
-   "verified_by": "agent_read",
-   "item_count": 3,
-   "url": "https://wsalehouse.com/",
    "status": "NEEDS_RESCRAPE"
   }
  ]
