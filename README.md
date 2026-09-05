@@ -70,6 +70,39 @@ separately) — were fixed 2026-09-04. **15 venues** still sit
 
 ---
 
+## Where it is going — directional guidelines and the revenue model
+
+Full text, evidence and the open assumptions: **[PLAYBOOK-NIGHT-OUT.md](PLAYBOOK-NIGHT-OUT.md)**.
+The short form, which every session should be able to recite:
+
+- **The happy hour is the hook. The product is the night.** The unit we sell is a
+  night in a town: drinks at A, band at B, kitchen at C. The listing stays free forever.
+- **The moat is four fields nobody has:** start time, set length, cover, and whether
+  the kitchen is open during the set. Not even the venue's own page carries them
+  (Phoenixville, 2026-09-04: The Fenix posts a JPEG, Twelve78 a Facebook embed,
+  JamBase lists only the Colonial Theatre). Ingest by image and embed, not API.
+- **The venue pays for the second half of the night, never the first.** Event
+  promotion, then a committed-group RSVP with a redemption code, charged per
+  redeemed head. The redemption record is also our sell-through measurement, so
+  we never have to cite anyone else's study.
+- **Order of work:** close the item gap → email signup → one town's events correct
+  for four straight weekends (Phoenixville) → fold `dead-shows` in as the first
+  genre lane → Reddit → RSVP pilot with five bars → Untappd join for beer.
+- **Not building:** avatars, points, badges, bartender profiles, upvotes, beer
+  upload. Retention polish for a product with a supply problem.
+- **The reference price** is Updown Nightlife: one loyal metro, 40K regulars, ten
+  years, stated $5M exit. Commission-only nightlife (Discotech) nets under $1M/yr.
+  The exit buyer is a POS or reservations company that can measure sell-through.
+- **Built so far (2026-09-04):** the email signup, the events table and its
+  public feed, the agent events reader, and a venue magic-link form whose rows
+  publish on write. Money tables are reserved and served by nothing. Playbook
+  section 10 has the state of each and what to run first.
+- **Twelve assumptions are still unproven** (do people plan ahead at all? does the
+  happy-hour crowd stay for the band? will a bar pay per head?). They are ranked in
+  the playbook §7 with the research that settles each. Read them before pitching.
+
+---
+
 ## How it works
 
 ```
@@ -312,6 +345,9 @@ deliberately no map.
 - **[ARCHITECTURE-MENU-INGEST.md](ARCHITECTURE-MENU-INGEST.md)** — how a menu
   becomes items, every known class of failure, and the findings that cost a
   session each. The one to read before changing ingest.
+- **[PLAYBOOK-NIGHT-OUT.md](PLAYBOOK-NIGHT-OUT.md)** — where this is going: the
+  night-out thesis, the market, the revenue model, the build order, and the
+  assumptions still unproven. The one to read before any strategy or pitch talk.
 - **[SPEC.md](SPEC.md)** — what a deal is, and the eight categories.
 - **`HANDOFF-START-HERE-*.md`** — session notes, newest wins. The current one is
   [`HANDOFF-START-HERE-20260904-NIGHT7-THE-BEACH-TOWNS.md`](HANDOFF-START-HERE-20260904-NIGHT7-THE-BEACH-TOWNS.md).
