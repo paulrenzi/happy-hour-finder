@@ -442,4 +442,4 @@ deliberately no map.
   assumptions still unproven. The one to read before any strategy or pitch talk.
 - **[SPEC.md](SPEC.md)** — what a deal is, and the eight categories.
 - **`HANDOFF-START-HERE-*.md`** — session notes, newest wins. The current one is
-  [`HANDOFF-START-HERE-20260905-NIGHT-RESCRAPE-AND-DOCS.md`](HANDOFF-START-HERE-20260905-NIGHT-RESCRAPE-AND-DOCS.md).
+  [`HANDOFF-START-HERE-20260905-NIGHT2-PHOTO-FILL-DOCS-AND-WRONG-COPY.md`](HANDOFF-START-HERE-20260905-NIGHT2-PHOTO-FILL-DOCS-AND-WRONG-COPY.md).
