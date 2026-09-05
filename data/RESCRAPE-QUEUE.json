@@ -1,7 +1,7 @@
 {
  "rule": "Paul, 2026-09-03: any live deal with under 5 happy-hour items needs a re-scrape.",
- "generated": "2026-09-04",
- "count": 137,
+ "generated": "2026-09-05",
+ "count": 154,
  "venues": [
   {
    "zone": "abington_jenkintown",
@@ -140,11 +140,38 @@
   },
   {
    "zone": "center_city",
+   "name": "1518 Bar & Grill",
+   "lid": "66885",
+   "verified_by": "auto_extract",
+   "item_count": 2,
+   "url": "https://1518barandgrill.com/happy-hour/",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "center_city",
    "name": "Bad Brother",
    "lid": "91278",
    "verified_by": "auto_extract",
    "item_count": 3,
    "url": "https://www.badbrotherphilly.com",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "center_city",
+   "name": "Buffalo Billiards",
+   "lid": "44460",
+   "verified_by": "auto_extract",
+   "item_count": 1,
+   "url": "https://www.buffalobilliardsphilly.com/",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "center_city",
+   "name": "Cavanaugh\u2019s Headhouse",
+   "lid": "66919",
+   "verified_by": "auto_extract",
+   "item_count": 1,
+   "url": "https://www.cavsheadhouse.com/sports",
    "status": "NEEDS_RESCRAPE"
   },
   {
@@ -185,11 +212,29 @@
   },
   {
    "zone": "center_city",
+   "name": "Ember & Ash",
+   "lid": "101354",
+   "verified_by": "auto_extract",
+   "item_count": 2,
+   "url": "http://www.emberandashphilly.com/menu/",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "center_city",
    "name": "Estia",
    "lid": "54242",
    "verified_by": "auto_extract",
    "item_count": 3,
    "url": "https://estiarestaurant.com/philadelphia-pa/pdfs/estia-philadelphia-happy-hour-menu.pdf",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "center_city",
+   "name": "Founding Fathers South St Sports Bar & Grill",
+   "lid": "112368",
+   "verified_by": "auto_extract",
+   "item_count": 1,
+   "url": "https://www.foundingfathersbar.com/",
    "status": "NEEDS_RESCRAPE"
   },
   {
@@ -212,6 +257,15 @@
   },
   {
    "zone": "center_city",
+   "name": "Juno",
+   "lid": "90000",
+   "verified_by": "auto_extract",
+   "item_count": 1,
+   "url": "http://junophilly.com/specials",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "center_city",
    "name": "Las Bugambilias",
    "lid": "103534",
    "verified_by": "auto_extract",
@@ -221,8 +275,44 @@
   },
   {
    "zone": "center_city",
+   "name": "Loch Bar",
+   "lid": "116982",
+   "verified_by": "auto_extract",
+   "item_count": 2,
+   "url": "http://www.lochbar.com/philly",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "center_city",
+   "name": "NaBrasa Brazilian Steakhouse",
+   "lid": "122258",
+   "verified_by": "auto_extract",
+   "item_count": 3,
+   "url": "https://nabrasa.com/locations/philadelphia/",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "center_city",
+   "name": "National Mechanics Bar and Restaurant",
+   "lid": "57781",
+   "verified_by": "auto_extract",
+   "item_count": 3,
+   "url": "http://www.nationalmechanics.com/",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "center_city",
    "name": "Ocean Prime",
    "lid": "68137",
+   "verified_by": "auto_extract",
+   "item_count": 4,
+   "url": "https://www.ocean-prime.com/locations-menus/philadelphia",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "center_city",
+   "name": "Ocean Prime",
+   "lid": "97502",
    "verified_by": "auto_extract",
    "item_count": 4,
    "url": "https://www.ocean-prime.com/locations-menus/philadelphia",
@@ -239,6 +329,33 @@
   },
   {
    "zone": "center_city",
+   "name": "P. J. Clarke\u2019s At The Curtis",
+   "lid": "92503",
+   "verified_by": "auto_extract",
+   "item_count": 1,
+   "url": "http://pjclarkes.com/location/philadelphia/",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "center_city",
+   "name": "Paddy Whacks Irish Sports Pub - South Street",
+   "lid": "108595",
+   "verified_by": "auto_extract",
+   "item_count": 4,
+   "url": "https://www.paddywhackspub.com/specials",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "center_city",
+   "name": "Prestige by Vesper",
+   "lid": "71225",
+   "verified_by": "auto_extract",
+   "item_count": 3,
+   "url": "https://www.theprestigephl.com/",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "center_city",
    "name": "Pub & Kitchen",
    "lid": "60353",
    "verified_by": "auto_extract",
@@ -248,11 +365,38 @@
   },
   {
    "zone": "center_city",
+   "name": "Recipe Philly",
+   "lid": "133827",
+   "verified_by": "auto_extract",
+   "item_count": 3,
+   "url": "https://www.recipe-philly.com/menus/",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "center_city",
+   "name": "Rosy's Taco Bar East",
+   "lid": "119139",
+   "verified_by": "auto_extract",
+   "item_count": 4,
+   "url": "https://www.rosyseasttacobar.com/",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "center_city",
    "name": "Santucci's Original Square Pizza",
    "lid": "122033",
    "verified_by": "auto_extract",
    "item_count": 4,
    "url": "https://santuccispizza.com/specials/",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "center_city",
+   "name": "The Silver Buckle",
+   "lid": "122239",
+   "verified_by": "auto_extract",
+   "item_count": 3,
+   "url": "https://jjbootleggers.com/happy-hour/",
    "status": "NEEDS_RESCRAPE"
   },
   {
@@ -298,6 +442,15 @@
    "verified_by": "auto_extract",
    "item_count": 4,
    "url": "https://www.villagewhiskey.com/specials/",
+   "status": "NEEDS_RESCRAPE"
+  },
+  {
+   "zone": "center_city",
+   "name": "Yanaga Kappo Izakaya",
+   "lid": "121229",
+   "verified_by": "auto_extract",
+   "item_count": 1,
+   "url": "https://www.ykisushi.com/",
    "status": "NEEDS_RESCRAPE"
   },
   {

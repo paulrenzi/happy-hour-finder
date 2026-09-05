@@ -43,6 +43,15 @@ import re
 import sys
 import time
 
+# A venue's real name (Savé, José Pistola's) can hold a character
+# Windows' default console codepage has no slot for -- a mid-run crash on
+# print() here already once burned a --execute run's remaining API spend for
+# nothing (the cache only checkpoints every 25 and at the very end, so a
+# crash between checkpoints loses lookups already paid for). Replace, don't
+# lose the run over a character the terminal can't draw.
+if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 VENUES_CSV = os.path.join(REPO, "data", "venues.csv")
 OUT_JSON = os.path.join(REPO, "data", "places_venues.json")
