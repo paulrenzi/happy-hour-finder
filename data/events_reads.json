@@ -1,4 +1,169 @@
 {
+ "101476": {
+  "cost_usd": 0.9294,
+  "dropped": [],
+  "events": [],
+  "found": false,
+  "kept": [],
+  "kind": "page",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch home https://www.garretthillalehouse.com/ - nav lists EVENTS & SPECIALS, no listings on home",
+   "WebFetch https://www.garretthillalehouse.com/events-specials - food/drink specials only",
+   "curl events-specials HTML to scratch - no calendar app, no Facebook/Instagram embed, no PDF link",
+   "curl home HTML - no social or calendar links",
+   "WebFetch https://www.garretthillalehouse.com/about-us - no entertainment mentioned",
+   "curl 3 page images (img1-3.png) and Read them - wings, bloody mary bar, tacos; no calendar"
+  ],
+  "read_at": "2026-09-05",
+  "source_url": "https://www.garretthillalehouse.com/events-specials",
+  "transcript": "EVENTS & Specials!\n\nThere is always a reason to come to Garrett Hill Ale House. \n\nHappy Hour Wednesday-Friday\n\n4pm-7pm\n\n - $2 off craft beers!  \n\nDirect TV Sunday NFL Ticket\n\n$5 Coors Light Drafts, $7 Tito's Bloody Mary, Wing Platters $15\n\nSunday Brunch 10am-3pm\n\nBreakfast Classics and our Custom Bloody Mary Bar & Special Brunch Cocktails\n\nLarge Groups Welcome\n\nInquire for group happy hour rentals\n\nChef's Nightly Blackboard Specials\n\nRotating selection of appetizers, soups and custom dishes rotating daily.  ",
+  "turns": 23,
+  "why_not": "The venue's EVENTS & SPECIALS page states only recurring food and drink specials (happy hour, NFL Sunday, brunch, blackboard specials) and no live music, trivia, or other dated entertainment; no calendar image, PDF, or event embed is linked anywhere on the site."
+ },
+ "103297": {
+  "cost_usd": 0.9856,
+  "dropped": [],
+  "events": [
+   {
+    "act": "Girl Dinner",
+    "cover_usd": null,
+    "date": "2026-09-07",
+    "end": "21:00",
+    "kind": "other",
+    "kitchen_open": 1,
+    "quote": "9/7\nMonday 4pm-9pm\nGirl Dinner\n(view menu HERE)",
+    "start": "16:00"
+   },
+   {
+    "act": "Russ Knight",
+    "cover_usd": null,
+    "date": "2026-09-10",
+    "end": "21:00",
+    "kind": "live_music",
+    "kitchen_open": null,
+    "quote": "9/10\nThursday 6pm-9pm\nRuss Knight",
+    "start": "18:00"
+   },
+   {
+    "act": "DJ Cousin Donnie",
+    "cover_usd": null,
+    "date": "2026-09-11",
+    "end": "22:00",
+    "kind": "dj",
+    "kitchen_open": null,
+    "quote": "9/11\nFriday 7pm-10pm\nDJ Cousin Donnie",
+    "start": "19:00"
+   },
+   {
+    "act": "Girl Dinner",
+    "cover_usd": null,
+    "date": "2026-09-14",
+    "end": "21:00",
+    "kind": "other",
+    "kitchen_open": 1,
+    "quote": "9/14\nMonday 4pm-9pm\nGirl Dinner\n(view menu HERE)",
+    "start": "16:00"
+   },
+   {
+    "act": "Ed Packer",
+    "cover_usd": null,
+    "date": "2026-09-17",
+    "end": "21:00",
+    "kind": "live_music",
+    "kitchen_open": null,
+    "quote": "9/17\nThursday 6pm-9pm\nEd Packer",
+    "start": "18:00"
+   },
+   {
+    "act": "DJ Acer",
+    "cover_usd": null,
+    "date": "2026-09-18",
+    "end": "22:00",
+    "kind": "dj",
+    "kitchen_open": null,
+    "quote": "9/18\nFriday 7pm-10pm\nDJ Acer",
+    "start": "19:00"
+   }
+  ],
+  "found": true,
+  "kept": [
+   {
+    "act": "Girl Dinner",
+    "cover_usd": null,
+    "date": "2026-09-07",
+    "end": "21:00",
+    "kind": "other",
+    "kitchen_open": 1,
+    "quote": "9/7\nMonday 4pm-9pm\nGirl Dinner\n(view menu HERE)",
+    "start": "16:00"
+   },
+   {
+    "act": "Russ Knight",
+    "cover_usd": null,
+    "date": "2026-09-10",
+    "end": "21:00",
+    "kind": "live_music",
+    "kitchen_open": null,
+    "quote": "9/10\nThursday 6pm-9pm\nRuss Knight",
+    "start": "18:00"
+   },
+   {
+    "act": "DJ Cousin Donnie",
+    "cover_usd": null,
+    "date": "2026-09-11",
+    "end": "22:00",
+    "kind": "dj",
+    "kitchen_open": null,
+    "quote": "9/11\nFriday 7pm-10pm\nDJ Cousin Donnie",
+    "start": "19:00"
+   },
+   {
+    "act": "Girl Dinner",
+    "cover_usd": null,
+    "date": "2026-09-14",
+    "end": "21:00",
+    "kind": "other",
+    "kitchen_open": 1,
+    "quote": "9/14\nMonday 4pm-9pm\nGirl Dinner\n(view menu HERE)",
+    "start": "16:00"
+   },
+   {
+    "act": "Ed Packer",
+    "cover_usd": null,
+    "date": "2026-09-17",
+    "end": "21:00",
+    "kind": "live_music",
+    "kitchen_open": null,
+    "quote": "9/17\nThursday 6pm-9pm\nEd Packer",
+    "start": "18:00"
+   },
+   {
+    "act": "DJ Acer",
+    "cover_usd": null,
+    "date": "2026-09-18",
+    "end": "22:00",
+    "kind": "dj",
+    "kitchen_open": null,
+    "quote": "9/18\nFriday 7pm-10pm\nDJ Acer",
+    "start": "19:00"
+   }
+  ],
+  "kind": "page",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://lascalasfire.com/villanova/ — location page; nav has no events/calendar link, but body mentions live music schedule",
+   "curl -sL https://lascalasfire.com/villanova/ -o villanova.html — saved raw HTML to scratch dir",
+   "grepped HTML for event/music/calendar links — found a 'Villanova_WebsitePromo_LiveMusic' popup image and an inline month-filtered calendar",
+   "extracted the inline 'Happenings at Villanova' calendar block (event-block divs, Sept–Dec 2026) from the page HTML — read directly, no download needed",
+   "stopped: the venue states its events on its own location page"
+  ],
+  "read_at": "2026-09-05",
+  "source_url": "https://lascalasfire.com/villanova/",
+  "transcript": "join us!\nHappenings at Villanova\nHappy Hour, Mon-Fri, 3pm-6pm\n\nALL September October November December\n\n9/7\nMonday 4pm-9pm\nGirl Dinner\n(view menu HERE)\n\n9/10\nThursday 6pm-9pm\nRuss Knight\n\n9/11\nFriday 7pm-10pm\nDJ Cousin Donnie\n\n9/14\nMonday 4pm-9pm\nGirl Dinner\n(view menu HERE)\n\n9/17\nThursday 6pm-9pm\nEd Packer\n\n9/18\nFriday 7pm-10pm\nDJ Acer\n\n9/21\nMonday 4pm-9pm\nGirl Dinner\n(view menu HERE)\n\n9/24\nThursday 6pm-9pm\nKat Rivers\n\n9/25\nFriday 7pm-10pm\nDJ Leo\n\n9/27\nSunday 4pm-7pm\nJoe Grasso\n\n9/28\nMonday 4pm-9pm\nGirl Dinner\n(view menu HERE)\n\nMORE EVENTS",
+  "turns": 25,
+  "why_not": ""
+ },
  "105248": {
   "cost_usd": 0.9942,
   "dropped": [],
@@ -320,5 +485,372 @@
   "transcript": "Sat Sep 05\nHappy Hour\nMain Line School of Rock\nDoors: 4:00 PM | Show: 4:00 PM\nAges 21+\nTICKETS\nSat Sep 05\nGlam Rock\nCreem Circus + The Sound Minds\nDoors: 7:00 PM | Show: 8:00 PM\nAges 21+\nTICKETS\nSun Sep 06\nBlues Rock\nBilly Price Band\nwith Brother John - Johnny Never and John Colgan-Davis\nDoors: 5:30 PM | Show: 7:30 PM\nAges 21+\nTICKETS\nWed Sep 09\nFolk / Bluegrass\nThe Horsenecks + Burnt Mills Highballers\nDoors: 5:30 PM | Show: 7:30 PM\nAges 21+\nTICKETS\nThu Sep 10\nJam\nStrangers Stopping Strangers: Grateful Dead Tribute\nDoors: 6:00 PM | Show: 8:00 PM\nAges 21+\nTICKETS\nFri Sep 11\nRock\nThe Gathering Gloom: Tribute to The Cure\nDoors: 7:00 PM | Show: 8:00 PM\nAges 21+\nTICKETS\nSat Sep 12\nWXPN Happy Hour\nDan Reed\nDoors: 4:00 PM | Show: 4:00 PM\nAges 21+\nTICKETS\nSat Sep 12\nRock // Pop\nKid Charlemagne - Steely Dan Tribute\nwith Philly Joel: The Billy Joel Tribute\nDoors: 7:00 PM | Show: 8:00 PM\nAges 21+\nTICKETS\nSun Sep 13\nMatinee / Instrumental Rock\nLos Straitjackets\nDoors: 2:00 PM | Show: 3:00 PM\nAges 21+\nTICKETS\nSun Sep 13\nJam / Rock / Tribute\nJammy Buffet\nwith The Tisburys\nDoors: 5:30 PM | Show: 7:30 PM\nAges 21+\nTICKETS\nWed Sep 16\nFunk // Organ Trio\nParlor Greens\nwith The Sermon\nDoors: 5:30 PM | Show: 7:30 PM\nAges 21+\nTICKETS\nThu Sep 17\nRock\nSidecar + The Modbeats\nwith Drew Lawrence (of seeTrees)\nDoors: 6:00 PM | Show: 8:00 PM\nAges 21+\nTICKETS\nFri Sep 18\nHappy Hour\nSilas Piper\nDoors: 4:00 PM | Show: 4:00 PM\nAges 21+\nTICKETS\nFri Sep 18\nPop / Cover Band\nBasic Cable: A Tribute to the Golden Age of MTV\nDoors: 7:00 PM | Show: 8:00 PM\nAges 21+\nTICKETS\nSat Sep 19\nClassic Rock\nBrown Sugar: Rolling Stones Tribute\nDoors: 7:00 PM | Show: 8:00 PM\nAges 21+\nTICKETS",
   "turns": 17,
   "why_not": ""
+ },
+ "109849": {
+  "cost_usd": 0.3128,
+  "dropped": [],
+  "events": [],
+  "found": false,
+  "kept": [],
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://exit13gastrobar.com/ — nav lists Menu, Drinks, Parties, Order, Events, Specials, Catering, Jobs; no events content on home",
+   "WebFetch https://exit13gastrobar.com/bryn-mawr-villanova-exit-13-gastrobar-events — page reads only \"We are updating our events / Please stay tuned\"",
+   "WebFetch https://exit13gastrobar.com/bryn-mawr-villanova-exit-13-gastrobar-happy-hours-specials — happy hour times only, no entertainment",
+   "curl events page HTML to data/events_reads/109849/events.html — only logo/favicon images, no calendar jpg/png/pdf, no Facebook embed"
+  ],
+  "read_at": "2026-09-05",
+  "source_url": "",
+  "transcript": "",
+  "turns": 9,
+  "why_not": "The venue's Events page states only \"We are updating our events - Please stay tuned\", and no calendar image, PDF or event embed is linked anywhere on the site."
+ },
+ "115054": {
+  "cost_usd": 0.2238,
+  "dropped": [],
+  "events": [],
+  "found": false,
+  "kept": [],
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://www.amadarestaurant.com/amada-radnor/ - location page: happy hour and cochinillo only, no events/calendar link in nav",
+   "WebFetch https://www.amadarestaurant.com/specials/ - specials page: happy hour and cochinillo only, no dated events",
+   "WebFetch https://www.amadarestaurant.com/ - home page: nav and footer have no events/calendar/live music link"
+  ],
+  "read_at": "2026-09-05",
+  "source_url": "",
+  "transcript": "",
+  "turns": 5,
+  "why_not": "The Radnor location page, the Specials page and the site home page carry no events, calendar or live-music section, and the site links no calendar page, image or PDF of entertainment."
+ },
+ "122420": {
+  "cost_usd": 0.5408,
+  "dropped": [],
+  "events": [],
+  "found": false,
+  "kept": [],
+  "kind": "page",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://www.maison-lotus.com/ — nav links Order/Reserve/Gift Cards/Events (winsignaturerestaurants.com/events)/Jade Rabbit Speakeasy; no live music, trivia or calendar on the home page",
+   "WebFetch https://maison-lotus.com/jaderabbit — speakeasy hours only (Thursdays 5-9pm, Fridays & Saturdays 5pm-12am), no events or entertainment programming",
+   "curl -sL -o data/events_reads/122420/events.html https://winsignaturerestaurants.com/events — read the raw Upcoming Events list",
+   "Read events.html — upcoming events are Sep 8 (Blue Elephant Wayne), Sep 14 (Teikoku), Sep 23 (Maison Lotus), then October and later; only the Sep 23 one is this venue and it falls after the window"
+  ],
+  "read_at": "2026-09-05",
+  "source_url": "https://winsignaturerestaurants.com/events",
+  "transcript": "Upcoming Events\n\nSep 8\nSushi Class - Masterchef Koichi Aoyama at Blue Elephant Wayne\nTuesday, September 8, 2026\n6:00 PM 8:00 PM\nGoogle Calendar ICS\nThis intimate, hands-on experience invites guests into the refined world of sushi, where technique meets philosophy.\n\nThe event starts at 6pm sharp. It does includes a complimentary welcome drinks, a 2 hour hands-on Masterchef Koichi Aoyama and all the sushi you make/eat.\nBOOK NOW\nView Event →\n\nSep 14\nSushi Class @ Teikoku\nMonday, September 14, 2026\n6:00 PM 8:00 PM\nGoogle Calendar ICS\nView Event →\n\nSep 23\nMahjong at Maison Lotus\nWednesday, September 23, 2026\n5:30 PM 8:30 PM\nView Event →",
+  "turns": 12,
+  "why_not": "The venue's events page lists only one upcoming Maison Lotus event, Mahjong at Maison Lotus on Wednesday, September 23, 2026, which is outside the 2026-09-05 to 2026-09-19 window; the two in-window listings are at other WIN restaurants (Blue Elephant Wayne and Teikoku)."
+ },
+ "131343": {
+  "cost_usd": 0.2833,
+  "dropped": [],
+  "events": [],
+  "found": false,
+  "kept": [],
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://acfp.com/ — nav has Menu, Happy Hour, Live Sports, Book An Event, Locations; no events/calendar link",
+   "WebFetch https://acfp.com/sports/ — generic 'catch the big games' copy, no dated listings",
+   "WebFetch https://acfp.com/locations/ — found the Wayne PA location page URL",
+   "WebFetch https://acfp.com/locations/wayne-pa/ — hours/address/menu only, no events or calendar",
+   "WebFetch https://acfp.com/happy-hour/ — drink/food specials only, no live music, trivia or DJ"
+  ],
+  "read_at": "2026-09-05",
+  "source_url": "",
+  "transcript": "",
+  "turns": 7,
+  "why_not": "Anthony's Coal Fired Pizza's site has no events, calendar or entertainment listings for the Wayne PA location — the only entertainment-adjacent page (Live Sports) carries generic copy with no dated events."
+ },
+ "17574": {
+  "cost_usd": 0.8751,
+  "dropped": [],
+  "events": [
+   {
+    "act": "Joe Miralles",
+    "cover_usd": null,
+    "date": "2026-09-11",
+    "end": "20:30",
+    "kind": "live_music",
+    "kitchen_open": null,
+    "quote": "September 11: Joe Miralles",
+    "start": "17:30"
+   },
+   {
+    "act": "How The Colonies Won The Revolution — Lecturer Arch Hunter (Historical Dinner Series)",
+    "cover_usd": null,
+    "date": "2026-09-15",
+    "end": null,
+    "kind": "other",
+    "kitchen_open": 1,
+    "quote": "Our next lecture will take place on Tuesday, September 15, and is titled “How The Colonies Won The Revolution”. Lecturer Arch Hunter will explore the often-overlooked factors that led to America’s victory in the Revolutionary War.",
+    "start": "17:15"
+   },
+   {
+    "act": "Brian Saunders",
+    "cover_usd": null,
+    "date": "2026-09-18",
+    "end": "20:30",
+    "kind": "live_music",
+    "kitchen_open": null,
+    "quote": "September 18: Brian Saunders",
+    "start": "17:30"
+   }
+  ],
+  "found": true,
+  "kept": [
+   {
+    "act": "Joe Miralles",
+    "cover_usd": null,
+    "date": "2026-09-11",
+    "end": "20:30",
+    "kind": "live_music",
+    "kitchen_open": null,
+    "quote": "September 11: Joe Miralles",
+    "start": "17:30"
+   },
+   {
+    "act": "How The Colonies Won The Revolution — Lecturer Arch Hunter (Historical Dinner Series)",
+    "cover_usd": null,
+    "date": "2026-09-15",
+    "end": null,
+    "kind": "other",
+    "kitchen_open": 1,
+    "quote": "Our next lecture will take place on Tuesday, September 15, and is titled “How The Colonies Won The Revolution”. Lecturer Arch Hunter will explore the often-overlooked factors that led to America’s victory in the Revolutionary War.",
+    "start": "17:15"
+   },
+   {
+    "act": "Brian Saunders",
+    "cover_usd": null,
+    "date": "2026-09-18",
+    "end": "20:30",
+    "kind": "live_music",
+    "kitchen_open": null,
+    "quote": "September 18: Brian Saunders",
+    "start": "17:30"
+   }
+  ],
+  "kind": "page",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://blackpowdertavern.com/ — nav lists \"News & Events\" -> /blog/",
+   "WebFetch https://blackpowdertavern.com/blog/ — events hub, 5 posts",
+   "curl blog.html — raw HTML for verbatim text; post list: Seafood Celebration, Historical Dinner Series, Live Music Fridays, Happy Hour, County Lines review; no pagination, no trivia",
+   "curl livemusic.html (https://blackpowdertavern.com/live-music-fridays-at-black-powder-tavern/) — Friday schedule with September dates",
+   "curl historical.html (https://blackpowdertavern.com/historical-dinner-series/) — named Sept 15 lecture and times"
+  ],
+  "read_at": "2026-09-05",
+  "source_url": "https://blackpowdertavern.com/blog/",
+  "transcript": "Live Music Fridays at Black Powder Tavern\n\nJoin us every Friday night from 5:30 p.m. to 8:30 p.m. for live music in our Bar area. Musical acts will vary. See September’s schedule below.\n\nSeptember 4: Kate Buck\n\nSeptember 11: Joe Miralles\n\nSeptember 18: Brian Saunders\n\nSeptember 25: Brian Horoho\n\nWe look forward to seeing everyone for live music, great food and handcrafted cocktails.\n\nHistorical Dinner Series\n\nWe’re excited to continue our Historical Dinner Series at Black Powder Tavern!\n\nJoin us on the third Tuesday of every month as we learn about the American Revolution from guest speakers and enjoy dishes reminiscent of those served during Colonial Times.\n\nThis series is possible through a partnership with the Paoli Battlefield Preservation Fund.\n\nLearn more about each month’s topic and reserve your spot. Our next lecture will take place on Tuesday, September 15, and is titled “How The Colonies Won The Revolution”. Lecturer Arch Hunter will explore the often-overlooked factors that led to America’s victory in the Revolutionary War. Discover how the colonies challenged the world’s leading superpower despite lacking a standing military, navy, weapons, and trained officers, and learn about the key people, battles, and international alliances that helped secure American independence.\n\nPlease arrive by 5:15 p.m. as dinner will be served around 5:45 p.m. View the special buffet dinner menu here.\n\nWe look forward to you joining us!\n\nAn End-of-Summer Seafood Celebration!\n\nJoin us for our End-of-The Summer Seafood Festival! From Friday, September 11 through Sunday, September 20, enjoy specially crafted lunch and dinner specials featuring fresh seafood favorites and seasonal flavors. View Lunch Specials View Dinner Specials Come celebrate the final days of summer and enjoy a delicious send-off to the season!\n\nHappy Hour at Black Powder Tavern\n\nWe invite you to come and join us to celebrate Happy Hour on Tuesday through Friday from 4:00 p.m. until 6:00 p.m. You can enjoy the Black Powder Tavern experience with our special offers on drinks and Bar Bites.",
+  "turns": 20,
+  "why_not": ""
+ },
+ "56307": {
+  "cost_usd": 0.7768,
+  "dropped": [],
+  "events": [
+   {
+    "act": "Music Bingo",
+    "cover_usd": null,
+    "date": "2026-09-10",
+    "end": "21:00",
+    "kind": "trivia",
+    "kitchen_open": null,
+    "quote": "Thursdays 7pm-9pm",
+    "start": "19:00"
+   },
+   {
+    "act": "Dollar Drink Night",
+    "cover_usd": null,
+    "date": "2026-09-11",
+    "end": "02:00",
+    "kind": "dj",
+    "kitchen_open": null,
+    "quote": "Come by from 10pm-12am every friday and buy a $20 cup to enjoy $1 drinks! Live DJ from 10pm-2am",
+    "start": "22:00"
+   },
+   {
+    "act": "Music Bingo",
+    "cover_usd": null,
+    "date": "2026-09-17",
+    "end": "21:00",
+    "kind": "trivia",
+    "kitchen_open": null,
+    "quote": "Thursdays 7pm-9pm",
+    "start": "19:00"
+   },
+   {
+    "act": "Dollar Drink Night",
+    "cover_usd": null,
+    "date": "2026-09-18",
+    "end": "02:00",
+    "kind": "dj",
+    "kitchen_open": null,
+    "quote": "Come by from 10pm-12am every friday and buy a $20 cup to enjoy $1 drinks! Live DJ from 10pm-2am",
+    "start": "22:00"
+   }
+  ],
+  "found": true,
+  "kept": [
+   {
+    "act": "Music Bingo",
+    "cover_usd": null,
+    "date": "2026-09-10",
+    "end": "21:00",
+    "kind": "trivia",
+    "kitchen_open": null,
+    "quote": "Thursdays 7pm-9pm",
+    "start": "19:00"
+   },
+   {
+    "act": "Dollar Drink Night",
+    "cover_usd": null,
+    "date": "2026-09-11",
+    "end": "02:00",
+    "kind": "dj",
+    "kitchen_open": null,
+    "quote": "Come by from 10pm-12am every friday and buy a $20 cup to enjoy $1 drinks! Live DJ from 10pm-2am",
+    "start": "22:00"
+   },
+   {
+    "act": "Music Bingo",
+    "cover_usd": null,
+    "date": "2026-09-17",
+    "end": "21:00",
+    "kind": "trivia",
+    "kitchen_open": null,
+    "quote": "Thursdays 7pm-9pm",
+    "start": "19:00"
+   },
+   {
+    "act": "Dollar Drink Night",
+    "cover_usd": null,
+    "date": "2026-09-18",
+    "end": "02:00",
+    "kind": "dj",
+    "kitchen_open": null,
+    "quote": "Come by from 10pm-12am every friday and buy a $20 cup to enjoy $1 drinks! Live DJ from 10pm-2am",
+    "start": "22:00"
+   }
+  ],
+  "kind": "page",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://www.flipandbaileys.com/ — nav has HOME, SPECIALS, PRIVATE PARTIES, EMPLOYMENT, ABOUT, DRINK/FOOD MENU, plus an 'Upcoming Events' link",
+   "WebFetch https://www.flipandbaileys.com/general-7 — 'Upcoming Events' page, summary paraphrased so pulled raw HTML for exact wording",
+   "curl https://www.flipandbaileys.com/general-7 to scratchpad (data/events_reads/56307 was blocked by sandbox) and read the 'Weekly Happenings' repeater text verbatim",
+   "Stopped: venue states its events in text on this page; no calendar image or PDF linked"
+  ],
+  "read_at": "2026-09-05",
+  "source_url": "https://www.flipandbaileys.com/general-7",
+  "transcript": "Upcoming Events\nCheck out some fun activities we have planned for you! You can always check our social media to stay up to date with new exciting experiences coming to Flip's!\nClick Here\n\nWeekly Happenings\n\nThursday\nMusic Bingo\nTune in for some fun music bingo hosted by Good Thomas Entertainment. \nPlay for a chance to win rotating prizes\nThursdays 7pm-9pm\n\nFriday\nDollar Drink Night\nA deal you can't beat! Come by from 10pm-12am every friday and buy a $20 cup to enjoy $1 drinks! Live DJ from 10pm-2am\n\nWeekday\nHappy Hour\n$2 off all Drinks and Appetizers 5pm-7pm Tuesday - Friday\nAll day Happy Hour Every Monday\n\nThursday\nFirst Responder Night\nUpstairs open to our local first responders! Enjoy an extended happy hour and free snacks\nThank you for all you do!\nRotating weeks, check socials for specifics!",
+  "turns": 17,
+  "why_not": ""
+ },
+ "61419": {
+  "cost_usd": 0.2066,
+  "dropped": [],
+  "events": [],
+  "found": false,
+  "kept": [],
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://www.whitedog.com/wayne — location page: menus, happy hour PDF, specials, private parties; no events/music/calendar link",
+   "WebFetch https://www.whitedog.com/wayne/specials — recurring drink/food specials only (Wine Not Monday, Happiest Hour); no dated events",
+   "WebFetch https://www.whitedog.com/ — site nav has no events, calendar, music or entertainment section"
+  ],
+  "read_at": "2026-09-05",
+  "source_url": "",
+  "transcript": "",
+  "turns": 5,
+  "why_not": "White Dog Cafe's site has no events, live music, trivia or calendar section for the Wayne location — the location page and specials page state only recurring food and drink specials."
+ },
+ "64900": {
+  "cost_usd": 0.2457,
+  "dropped": [],
+  "events": [],
+  "found": false,
+  "kept": [],
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://wills-bills.com/ — nav is Menu, Event Spaces, Gift Cards, Join Our Team, About, Order Now, Book a Table; no events/calendar/music link; only a happy hour blurb",
+   "WebFetch https://wills-bills.com/event-spaces — private event hosting and banquet packages only, no public event listings; links out to Instagram/Facebook/TikTok",
+   "WebFetch https://wills-bills.com/about — no events, music, trivia or calendar",
+   "WebFetch https://wills-bills.com/menu — beer menu, hours, contact; no entertainment schedule",
+   "WebFetch https://www.facebook.com/willsandbillsbrewery/ (linked from site) — returned no readable content, no event details"
+  ],
+  "read_at": "2026-09-05",
+  "source_url": "",
+  "transcript": "",
+  "turns": 7,
+  "why_not": "The venue's website has no events, calendar, live music or trivia section — the home, event-spaces, about and menu pages cover only private event hosting, food/beer and happy hour, and the site's linked Facebook page returned no readable event content."
+ },
+ "67838": {
+  "cost_usd": 0.6464,
+  "dropped": [],
+  "events": [],
+  "found": false,
+  "kept": [],
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://estiarestaurant.com/ — nav lists Locations, Private Dining & Events, Catering, Gift Cards, Reservations, Order Now; no events/music/calendar page",
+   "WebFetch https://estiarestaurant.com/locations/ and /sitemap/ — both 404 'This Page has moved'",
+   "curl https://estiarestaurant.com/ — pulled real link list; Radnor location page is /radnor-pa/radnor-pa.asp",
+   "WebFetch https://estiarestaurant.com/radnor-pa/radnor-pa.asp — sub-nav is Contact, Menus, Gallery, Promotions, Group Dining, Catering, Order Now; no events/music/calendar",
+   "curl https://estiarestaurant.com/sitemap.asp — no events, music, calendar or promotions page anywhere on the site",
+   "curl https://estiarestaurant.com/radnor-pa/radnor-pa.asp — 'Promotions' is an on-page anchor (#promotions); its only live item is Happy Hour (two others commented out); no entertainment",
+   "curl + Read https://estiarestaurant.com/radnor-pa/pdfs/happy-hour-radnor-08172026.pdf — food/drink happy hour menu only, no entertainment",
+   "WebFetch https://www.facebook.com/estiatavernaradnor/ (linked from the Radnor page) — returned only the business name and location, no posts or events"
+  ],
+  "read_at": "2026-09-05",
+  "source_url": "",
+  "transcript": "",
+  "turns": 17,
+  "why_not": "Estia Taverna's site has no events, live music, calendar or entertainment page for the Radnor location; the only recurring item the venue publishes there is its everyday happy hour, and the linked Facebook page returned no event content."
+ },
+ "72756": {
+  "cost_usd": 0.2658,
+  "dropped": [],
+  "events": [],
+  "found": false,
+  "kept": [],
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://www.thegoatsbeardphilly.com/location/the-goats-beard-wayne/ — Wayne location page: hours/address only, no events; nav has no events/calendar/music link (only \"Private Events\" booking pages)",
+   "WebFetch https://www.thegoatsbeardphilly.com/ — home page: no events, calendar or entertainment content; only menus, reservations, gift cards, loyalty, contact, hours, jobs, gallery",
+   "WebFetch https://www.thegoatsbeardphilly.com/wayne-menu/ — Wayne menu page: only brunch hours and a Sunday wine special, no events, no calendar image or PDF",
+   "WebFetch https://www.thegoatsbeardphilly.com/hours-and-location/ — hours page: no events or recurring nights for Wayne"
+  ],
+  "read_at": "2026-09-05",
+  "source_url": "",
+  "transcript": "",
+  "turns": 6,
+  "why_not": "The Goat's Beard site has no events, calendar, music or trivia page for the Wayne location — the home page, the Wayne location page, the Wayne menu and the hours page state no entertainment at all, and the only \"events\" links are private-party booking pages."
+ },
+ "80458": {
+  "cost_usd": 0.1871,
+  "dropped": [],
+  "events": [],
+  "found": false,
+  "kept": [],
+  "kind": "none",
+  "model": "opus",
+  "path_taken": [
+   "WebFetch https://www.dandanrestaurant.com/location/wayne-1/ — Wayne location page: hours/menu/ordering only, no events, no calendar or music nav link",
+   "WebFetch https://www.dandanrestaurant.com/ — home page: nav is About, three locations, gift cards, catering, menus, private dining, jobs, press, contact; no events/calendar/entertainment link anywhere"
+  ],
+  "read_at": "2026-09-05",
+  "source_url": "",
+  "transcript": "",
+  "turns": 4,
+  "why_not": "Dan Dan's Wayne location page and the site home page carry no events, calendar, live music or trivia section, and the site links no events or calendar page to follow."
  }
 }
