@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Post what's on — Happy Hour Finder</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .venue-form { width: min(720px, calc(100% - 2rem)); margin: 2rem auto 4rem; }
+  .venue-form h1 { font-size: 1.6rem; margin: 0 0 0.4rem; }
+  .venue-form p { color: var(--muted); line-height: 1.6; }
+  .row { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.6rem; margin: 0.8rem 0; padding: 0.8rem; border: 1px solid var(--line); border-radius: 12px; background: var(--bg2); }
+  .row label { display: flex; flex-direction: column; font-size: 12px; color: var(--muted); gap: 4px; }
+  .row input, .row select { min-height: 40px; padding: 0 8px; font: inherit; font-size: 15px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); }
+  .row .act { grid-column: 1 / -1; }
+  .venue-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 1rem; }
+  #venueNote { min-height: 1.4em; }
+</style>
+</head>
+<body>
+<main class="venue-form">
+  <h1>Post what's on</h1>
+  <p>
+    You reached this page from a link we sent to your venue. Anything you post
+    here goes on the board under your name as the source, within a minute, and
+    only the fields you fill in are shown. Leave a time blank rather than
+    guessing it.
+  </p>
+  <form id="venueForm">
+    <div id="rows"></div>
+    <div class="venue-actions">
+      <button type="button" class="btn" id="addRow">Add another night</button>
+      <button type="submit" class="btn go">Put it on the board</button>
+    </div>
+    <p id="venueNote" class="subscribe-note" aria-live="polite"></p>
+  </form>
+</main>
+<script type="module">
+  const API = "https://hhf-submit.paulmichaelrenzi.workers.dev";
+  const token = location.hash.slice(1).trim();
+  const $ = (s, r = document) => r.querySelector(s);
+  const note = $("#venueNote");
+  if (!token) note.textContent = "This page only works from the link we sent your venue.";
+
+  const KINDS = [["live_music", "Live music"], ["trivia", "Trivia"], ["dj", "DJ"], ["comedy", "Comedy"], ["other", "Other"]];
+  function row() {
+    const d = document.createElement("div");
+    d.className = "row";
+    d.innerHTML = `
+      <label class="act">Who or what <input name="act" placeholder="Rhythm & Blondes" required maxlength="120"></label>
+      <label>Date <input name="date" type="date" required></label>
+      <label>Kind <select name="kind">${KINDS.map(([v, l]) => `<option value="${v}">${l}</option>`).join("")}</select></label>
+      <label>Starts <input name="start" type="time"></label>
+      <label>Ends <input name="end" type="time"></label>
+      <label>Cover, $ <input name="cover_usd" type="number" min="0" step="1" placeholder="0"></label>
+      <label>Kitchen open during? <select name="kitchen_open"><option value="">Not sure</option><option value="1">Yes</option><option value="0">No</option></select></label>`;
+    return d;
+  }
+  $("#rows").append(row());
+  $("#addRow").addEventListener("click", () => $("#rows").append(row()));
+
+  $("#venueForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const events = [...document.querySelectorAll(".row")].map((r) => {
+      const get = (n) => r.querySelector(`[name=${n}]`).value;
+      return {
+        act: get("act"), date: get("date"), kind: get("kind"),
+        start: get("start") || null, end: get("end") || null,
+        cover_usd: get("cover_usd") === "" ? null : Number(get("cover_usd")),
+        kitchen_open: get("kitchen_open") === "" ? null : Number(get("kitchen_open")),
+      };
+    }).filter((ev) => ev.act && ev.date);
+    if (!events.length) { note.textContent = "Fill in at least a name and a date."; return; }
+    note.textContent = "Sending…";
+    try {
+      const res = await fetch(`${API}/venue/events`, {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token, events }),
+      });
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(out.error || res.status);
+      note.textContent = `On the board: ${out.published} night${out.published === 1 ? "" : "s"}.`;
+    } catch (err) {
+      note.textContent = `Didn't go through (${err.message}).`;
+    }
+  });
+</script>
+</body>
+</html>

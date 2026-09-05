@@ -10,6 +10,7 @@ import {
   matchesQuery,
   haversineMiles, driveMinutes, ageDays, effectiveConfidence, applyOverlay,
   dealKey, applyConfirmations, dateKeyOf, dayOffset,
+  applyEvents, nextEvent, eventLine, validEmail,
 } from "./lib.js";
 
 const state = {
@@ -973,6 +974,13 @@ function card(row, at) {
   // hides a deal that gets too old; that is the part of freshness doing work.
   fillItems($(".items", node), sortForDisplay(deal.items), $(".fine", node), fine.trim());
 
+  // What is on at this venue tonight, if the events overlay knows. One line,
+  // only the fields the source stated; see eventLine().
+  const ev = nextEvent(v, dateKeyOf(new Date()));
+  const tonight = $(".tonight", node);
+  if (ev) tonight.textContent = eventLine(ev, dateKeyOf(new Date()));
+  else tonight.remove();
+
   $(".map", node).href = directionsUrl(v);
   const src = $(".src", node);
   if (deal.source?.url) src.href = deal.source.url;
@@ -1467,6 +1475,58 @@ async function loadOverlay() {
   if (res.added || confirms) refresh();
 }
 
+/* What is on tonight: the events overlay, same shape of promise as the deals
+   one. A venue with no events shows nothing new; a failed fetch shows nothing
+   new. It is loaded after the board is drawn, never before. */
+async function loadEvents() {
+  let overlay;
+  try {
+    overlay = await fetchJSON(`${SUBMIT_API}/live/events.json`, 1);
+  } catch {
+    return;
+  }
+  if (applyEvents(state.venues, overlay)) refresh();
+}
+
+/* The list. One field, one promise: new happy hours and nights out near you.
+   The Worker sends the confirm link; nothing is on the list until it is
+   clicked. See worker/nightout.js. */
+function wireSubscribe() {
+  const form = $("#subscribe");
+  if (!form) return;
+  const note = $("#subscribeNote");
+  const flag = new URLSearchParams(location.search).get("subscribed");
+  if (flag === "1") note.textContent = "You're on the list. Thanks.";
+  else if (flag === "left") note.textContent = "You're off the list.";
+  else if (flag === "invalid") note.textContent = "That link had already been used or has expired.";
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const email = $("#subscribeEmail").value;
+    if (!validEmail(email)) {
+      note.textContent = "That doesn't look like an email address.";
+      return;
+    }
+    const btn = $("button", form);
+    btn.disabled = true;
+    note.textContent = "Sending…";
+    try {
+      const res = await fetch(`${SUBMIT_API}/subscribe`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, zone_id: state.zone || null }),
+      });
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(out.error || res.status);
+      note.textContent = "Check your inbox for a confirm link. Nothing arrives until you click it.";
+      form.reset();
+    } catch (err) {
+      note.textContent = `Couldn't reach us (${err.message}). Try again in a minute.`;
+    } finally {
+      btn.disabled = false;
+    }
+  });
+}
+
 // A page that cannot say what went wrong is indistinguishable from a broken one.
 function boardNote(text, retry) {
   let n = $("#boardNote");
@@ -1518,6 +1578,8 @@ async function boot() {
   render();
   if (failed.length) noteMissingZones(failed);
   loadOverlay();
+  loadEvents();
+  wireSubscribe();
   // A shared link to a venue with no published hours names a venue that only
   // arrives with its zone's base, so the fetch has to finish before the sheet is
   // opened -- otherwise the link silently does nothing, which is exactly the

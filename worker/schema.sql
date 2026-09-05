@@ -71,3 +71,97 @@ CREATE TABLE IF NOT EXISTS confirmations (
 );
 
 CREATE INDEX IF NOT EXISTS confirmations_recent ON confirmations (confirmed_at);
+
+-- ============================================================
+-- The night-out layer (PLAYBOOK-NIGHT-OUT.md). Added 2026-09-04.
+-- Re-runnable: everything here is IF NOT EXISTS.
+--   wrangler d1 execute hhf --remote --file worker/schema.sql
+-- ============================================================
+
+-- One row per address that asked for the list. Double opt-in: a row is
+-- `pending` until the person clicks the link we mailed them, and only
+-- `confirmed` rows are ever mailed again. The address is the only personal
+-- thing this database holds anywhere, so it is stored once, lower-cased, and
+-- deleted outright on unsubscribe -- not flagged.
+CREATE TABLE IF NOT EXISTS subscribers (
+  email         TEXT PRIMARY KEY,
+  zone_id       TEXT,
+  status        TEXT NOT NULL DEFAULT 'pending',   -- pending | confirmed
+  token         TEXT NOT NULL,                     -- confirm/unsubscribe link
+  created_at    TEXT NOT NULL,
+  confirmed_at  TEXT,
+  ip_hash       TEXT NOT NULL,
+  mailed_at     TEXT                               -- when the confirm mail went
+);
+CREATE INDEX IF NOT EXISTS subscribers_status ON subscribers (status, created_at);
+
+-- One row per thing happening at a venue on a date: a band, trivia, a seating.
+-- The four fields nobody else carries are start, set_minutes, cover_usd and
+-- kitchen_open. Everything else is what any calendar has.
+--
+-- source_kind says where the row came from, and decides who reviewed it:
+--   image       read off a calendar picture on the venue's site (agent lane)
+--   page        read off a page or Facebook embed on the venue's site
+--   venue_form  the venue typed it through its own magic link  -> publishes
+--   band_claim  the act typed it through its claim link         -> pending
+--   ticketing   Ticketmaster / dead-shows feed
+-- status: pending | approved | rejected. Only approved rows reach the overlay,
+-- and a venue_form row is approved on write because the venue is the author.
+CREATE TABLE IF NOT EXISTS events (
+  id            TEXT PRIMARY KEY,
+  lid           TEXT NOT NULL,
+  zone_id       TEXT,
+  date          TEXT NOT NULL,        -- YYYY-MM-DD, local
+  start         TEXT,                 -- HH:MM, 24h, or NULL when unpublished
+  end           TEXT,
+  set_minutes   INTEGER,
+  act           TEXT NOT NULL,
+  kind          TEXT NOT NULL,        -- live_music | trivia | dj | comedy | other
+  cover_usd     REAL,
+  kitchen_open  INTEGER,              -- 1 yes, 0 no, NULL unknown
+  source_kind   TEXT NOT NULL,
+  source_url    TEXT,
+  quote         TEXT,                 -- the exact words the row was read from
+  status        TEXT NOT NULL DEFAULT 'pending',
+  created_at    TEXT NOT NULL,
+  reviewed_at   TEXT,
+  review_note   TEXT
+);
+CREATE INDEX IF NOT EXISTS events_live ON events (status, date);
+CREATE INDEX IF NOT EXISTS events_lid ON events (lid, date);
+
+-- A venue's magic link. Minted by an admin, mailed by a person, presented by
+-- the venue on POST /venue/events. One live token per venue; minting again
+-- replaces it.
+CREATE TABLE IF NOT EXISTS venue_tokens (
+  lid           TEXT PRIMARY KEY,
+  token         TEXT NOT NULL UNIQUE,
+  contact       TEXT,                 -- who it was sent to, for the record
+  created_at    TEXT NOT NULL,
+  last_used_at  TEXT
+);
+
+-- RESERVED, not yet served by any route. Model 2 in the playbook: "the band
+-- plays Tuesday if 25 people put $10 on a tab". Schema settled now so the
+-- events table above is built with it in mind; no money moves until the
+-- PLCB read and the three-band test in PLAYBOOK-NIGHT-OUT.md section 9a.
+CREATE TABLE IF NOT EXISTS campaigns (
+  id            TEXT PRIMARY KEY,
+  event_id      TEXT NOT NULL,
+  lid           TEXT NOT NULL,
+  threshold     INTEGER NOT NULL,     -- pledges needed to tip
+  price_usd     REAL NOT NULL,        -- per pledge, credited to the tab
+  deadline      TEXT NOT NULL,
+  status        TEXT NOT NULL DEFAULT 'open',   -- open | tipped | failed | cancelled
+  created_at    TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS pledges (
+  id            TEXT PRIMARY KEY,
+  campaign_id   TEXT NOT NULL,
+  email         TEXT NOT NULL,
+  heads         INTEGER NOT NULL DEFAULT 1,
+  payment_ref   TEXT,                 -- Stripe PaymentIntent, authorised not captured
+  status        TEXT NOT NULL DEFAULT 'held',   -- held | captured | released | redeemed
+  created_at    TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS pledges_campaign ON pledges (campaign_id);

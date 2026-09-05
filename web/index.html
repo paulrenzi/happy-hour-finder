@@ -128,6 +128,22 @@
   </div>
 </section>
 
+<section class="subscribe-wrap" aria-labelledby="subscribeHead">
+  <h2 id="subscribeHead">New happy hours and nights out, by email</h2>
+  <p class="subscribe-body">
+    When a bar near you publishes a happy hour we hadn't seen, or a band, trivia
+    night or show goes on the board. A short note, not a newsletter. Nothing is
+    sent until you confirm.
+  </p>
+  <form id="subscribe" novalidate>
+    <label for="subscribeEmail" class="visually-hidden">Email</label>
+    <input id="subscribeEmail" type="email" name="email" autocomplete="email"
+           inputmode="email" placeholder="you@example.com" required>
+    <button type="submit" class="btn go">Keep me posted</button>
+  </form>
+  <p id="subscribeNote" class="subscribe-note" aria-live="polite"></p>
+</section>
+
 <footer class="footer">
   <p id="credits"></p>
   <p class="footer-credit">
@@ -152,6 +168,7 @@
     <div class="body">
       <ul class="items"></ul>
       <p class="fine"></p>
+      <p class="tonight"></p>
       <div class="actions">
         <a class="btn go map" target="_blank" rel="noopener">Directions</a>
         <a class="btn src" target="_blank" rel="noopener">Source</a>

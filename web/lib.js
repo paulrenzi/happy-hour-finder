@@ -738,3 +738,77 @@ export function applyConfirmations(venues, confirms) {
   }
   return touched;
 }
+
+/* ---- the night-out layer: events -----------------------------------------
+
+   What is on at a venue tonight, and for the next two weeks: a band, trivia,
+   a seating. Served live by the Worker (/live/events.json) and patched onto
+   venues the same way approved deals are. Additive, idempotent, and a failed
+   fetch changes nothing on screen. See PLAYBOOK-NIGHT-OUT.md section 2 for
+   why start, set length, cover and kitchen are the fields that matter. */
+
+export const EVENT_KIND_LABEL = {
+  live_music: "Live music",
+  trivia: "Trivia",
+  dj: "DJ",
+  comedy: "Comedy",
+  other: "Event",
+};
+
+/* Fold the overlay's events onto the venues in place. Keyed by event id, so
+   applying twice is applying once. Returns how many landed. */
+export function applyEvents(venues, overlay) {
+  const byLid = new Map();
+  for (const v of venues) for (const lid of lidsOf(v)) byLid.set(lid, v);
+  let added = 0;
+  const entries = (overlay && overlay.venues) || {};
+  for (const [lid, list] of Object.entries(entries)) {
+    const venue = byLid.get(String(lid));
+    if (!venue) continue;
+    const have = new Set((venue.events || []).map((e) => e.id));
+    for (const ev of list || []) {
+      if (!ev || have.has(ev.id)) continue;
+      (venue.events ||= []).push(ev);
+      have.add(ev.id);
+      added += 1;
+    }
+    if (venue.events) venue.events.sort((a, b) => (a.date + (a.start || "")).localeCompare(b.date + (b.start || "")));
+  }
+  return added;
+}
+
+/* The venue's next event on or after `today` (YYYY-MM-DD), or null. */
+export function nextEvent(venue, today) {
+  for (const ev of venue.events || []) if (ev.date >= today) return ev;
+  return null;
+}
+
+/* One line for a card: "Tonight · Rhythm & Blondes 7pm–10pm · $5 cover · kitchen open".
+   Says only what the row says; an unpublished start is left out, not guessed. */
+export function eventLine(ev, today) {
+  if (!ev) return "";
+  const parts = [];
+  const days = Math.round((Date.parse(ev.date) - Date.parse(today)) / 86400000);
+  let when;
+  if (days === 0) when = "Tonight";
+  else if (days === 1) when = "Tomorrow";
+  else {
+    const d = new Date(ev.date + "T12:00:00");
+    when = DOW_SHORT[dowOf(d) - 1];
+    if (days > 6) when += ` ${d.getMonth() + 1}/${d.getDate()}`;
+  }
+  parts.push(when);
+  let what = ev.act || EVENT_KIND_LABEL[ev.kind] || "Event";
+  if (ev.start) what += ` ${fmtClock(ev.start)}`;
+  if (ev.start && ev.end) what += `–${fmtClock(ev.end)}`;
+  parts.push(what);
+  if (ev.cover_usd != null) parts.push(ev.cover_usd === 0 ? "no cover" : `${money(ev.cover_usd)} cover`);
+  if (ev.kitchen_open === 1) parts.push("kitchen open");
+  else if (ev.kitchen_open === 0) parts.push("kitchen closed");
+  return parts.join(" · ");
+}
+
+/* The signup form's only client-side rule. The Worker re-checks it. */
+export function validEmail(s) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(String(s || "").trim());
+}
