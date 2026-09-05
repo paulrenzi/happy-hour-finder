@@ -132,7 +132,7 @@ def main():
                      .map((c) => [
                        [".name", ".zone"].map((sel) =>
                          c.querySelector(sel)?.textContent?.trim()).join(" @ "),
-                       [...c.querySelectorAll("ul.items li")].map((li) =>
+                       [...c.querySelectorAll("ul.items li:not(.itemsDivider)")].map((li) =>
                          li.textContent.trim()),
                      ])),
                })"""

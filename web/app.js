@@ -863,8 +863,26 @@ function itemChip(item) {
 
    Nothing is dropped, and the count stays in the label: "+13 more" is itself
    the honest signal that this venue published a real menu. */
+// sortForDisplay puts drinks first and food last -- but a fold that swallows
+// both halves reads as one flat list, so a $4 well drink and a $9 flatbread
+// sit side by side with nothing saying which is which. This is the only place
+// that split is visible, so it's the only place that needs a divider: append
+// items in order, and drop one label the instant the run crosses from a
+// non-food category into "food".
+function appendItemsWithFoodDivider(list, items) {
+  let sawFood = false;
+  for (const item of items) {
+    if (!sawFood && item.category === "food") {
+      list.append(el("li", "itemsDivider", "Food"));
+      sawFood = true;
+    }
+    list.append(itemChip(item));
+  }
+}
+
 function fillItems(list, items, fineNode, fine) {
-  for (const item of items.slice(0, ITEMS_SHOWN)) list.append(itemChip(item));
+  const shown = items.slice(0, ITEMS_SHOWN);
+  appendItemsWithFoodDivider(list, shown);
   const rest = items.slice(ITEMS_SHOWN);
   const foldFine = fine.length > FINE_FOLD_CHARS;
   // Short small print (nearly all of it) still prints in the open, because a
@@ -883,7 +901,14 @@ function fillItems(list, items, fineNode, fine) {
   const body = el("div", "foldBody");
   if (rest.length) {
     const more = el("ul", "items itemsMore");
-    for (const item of rest) more.append(itemChip(item));
+    // The divider only needs to reappear here if the shown slice hadn't
+    // already crossed into food -- otherwise the boundary already printed
+    // above and everything in `rest` is food.
+    if (shown.some((i) => i.category === "food")) {
+      for (const item of rest) more.append(itemChip(item));
+    } else {
+      appendItemsWithFoodDivider(more, rest);
+    }
     body.append(more);
   }
   if (foldFine) body.append(el("p", "foldText", fine));
