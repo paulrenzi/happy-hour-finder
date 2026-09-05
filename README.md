@@ -109,6 +109,11 @@ The short form, which every session should be able to recite:
   public feed, the agent events reader, and a venue magic-link form whose rows
   publish on write. Money tables are reserved and served by nothing. Playbook
   section 10 has the state of each and what to run first.
+- **The `dead-shows` link is half built (2026-09-05):** a show there can send a
+  reader to the happy hours around its venue (`#z=…&near=…&from=…`). The reverse —
+  *what is on after your drink* — does not exist yet and is the next design
+  session. Playbook §12 has the three populations, what carries over from
+  `dead-shows`, and the open questions.
 - **Twelve assumptions are still unproven** (do people plan ahead at all? does the
   happy-hour crowd stay for the band? will a bar pay per head?). They are ranked in
   the playbook §7 with the research that settles each. Read them before pitching.
@@ -153,6 +158,33 @@ down as a blocker on this project. 441 of them carried one; 470 do now.
 
 If you are joining against this data from outside, **read both**, deal-bearing
 first.
+
+### Linking into the board from another site
+
+The board's URL is its API for other sites. Three forms, and the third is new
+(2026-09-05):
+
+```
+#z=<zone>                                  open a town's board
+#z=<zone>&v=<lid>                          open one venue's sheet
+#z=<zone>&near=<lat>,<lng>&from=<name>     sort that town by distance from a PLACE
+```
+
+`near=` is how `dead-shows` sends a reader from a show to the happy hours around
+its venue: the board already ranks from `state.origin`, so the feature is an
+origin the **link** gets to choose rather than a list copied onto the other
+site's card. Every consumer gets the same sort for free.
+
+Three things it has to keep doing, and only the first was true when it was
+written: the headline must **name what the distances were measured from** (a
+place-origin makes "Happy hours near you" a false promise); a stored "Near me"
+location must not win over the link (`restoreLocation()` runs after
+`readHash()`); and `near=` must survive `writeHash()`, which rewrites the URL
+wholesale on the first control change. A malformed `near=` is refused, not
+ranked from (0,0).
+
+🛑 **`#v=<lid>` alone is a dead link and fails silently** — without `z=` the app
+looks the id up in a list it never loaded. Always send `#z=<zone>&v=<lid>`.
 
 ### Coordinates
 
@@ -299,6 +331,14 @@ driving weighted above deal-time. Sorting live deals by least-time-remaining —
 naive reading of "urgency" — puts on top the bar you have the least chance of
 reaching.
 
+**1b. A tiebreak sized wrong stops being a tiebreak.** "Nearest" mixed a
+distance term scaled over *two hundred miles* (half a mile is 0.00225 of it)
+with confidence terms reaching 0.081 — so on any future day the sort was really
+"best sourced, then nearest," and a bar 0.2 mi from the reader lost to one
+fifteen miles away. Distance now leads and confidence breaks exact ties only.
+**Size a tiebreak against the sort it is breaking ties in, and assert the
+resulting order, not the formula** (`tests/near_check.py`).
+
 **2. The feed never dead-ends.** It searches forward up to 7 days. Before that it
 was blank roughly 18 hours a day, which is most of when a person opens it.
 
@@ -359,6 +399,16 @@ with the rest held back (not currently surfaced in the UI).
 
 - **A `web/` edit ships nothing until `build_bundles.py` restamps `web/sw.js`.**
   The cache name *is* the shell hash and the only eviction trigger. Never hand-edit `sw.js`.
+- **A sheet's buttons are sentences; a card's are one word, and they share a
+  class.** `.btn` is `white-space: nowrap` with `min-width: 0` — right for
+  "Directions", wrong for "Send a photo of the menu" beside "No photo — tell us
+  instead". At 320px that pair did not wrap; it shrank under its own labels,
+  clipped both, and ran the second off the sheet's right edge. Inside `#sheet`
+  the row wraps and the label wraps with it. The handoff that reported this
+  blamed the textarea; measuring the drawn page showed the textarea was clean
+  and the button row was not. `tests/card_chrome_check.py` now opens both
+  sheets at 320px and measures every box against the sheet's padding box —
+  **a layout claim is settled by what the engine drew, never by reading CSS.**
 - **A chain's `/locations` URL is not a page — it is a redirect to one branch.**
   The crawl records where it **landed**, not only what it asked for, and refuses a
   landing whose path names another town. Before that guard, a bar in Bear, DE
@@ -442,4 +492,4 @@ deliberately no map.
   assumptions still unproven. The one to read before any strategy or pitch talk.
 - **[SPEC.md](SPEC.md)** — what a deal is, and the eight categories.
 - **`HANDOFF-START-HERE-*.md`** — session notes, newest wins. The current one is
-  [`HANDOFF-START-HERE-20260905-NIGHT2-PHOTO-FILL-DOCS-AND-WRONG-COPY.md`](HANDOFF-START-HERE-20260905-NIGHT2-PHOTO-FILL-DOCS-AND-WRONG-COPY.md).
+  [`HANDOFF-START-HERE-20260905-NIGHT3-EVENTS-AFTER-HAPPY-HOUR.md`](HANDOFF-START-HERE-20260905-NIGHT3-EVENTS-AFTER-HAPPY-HOUR.md).

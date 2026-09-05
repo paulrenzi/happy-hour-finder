@@ -365,3 +365,82 @@ In order, because each step is cheap and rules out the one below it:
 `GET /live/events.json` non-empty? → the row's `status` is `approved`? → the row's
 `lid` matches a venue in the built bundle? → `applyEvents` present in the **live**
 `lib.js`? A live-`lib.js` miss means a build or a deploy did not land, not a bug.
+
+## 12. The two-way link with `dead-shows`, and the direction still missing (2026-09-05)
+
+Step 5 of the build order ("fold `dead-shows` in as the first genre lane") is now
+**half done**, and the half that exists is the cheap half.
+
+**Built — shows → happy hours.** `dead-shows/scripts/link_happy_hour.py` joins its
+835 GDTB events to our published bundles at **build time**, address-first and
+city-gated, and writes `data/hhf-links.json` plus an `hhf` block on each event. A
+show card can now say "happy hour until 6 nearby" and link to
+`#z=<zone>&near=<lat>,<lng>&from=<venue>`, which sorts that town's board by
+distance from the show's door. Neither static site gained a runtime dependency on
+the other; the join is a file, not a fetch. 23 events matched on the first run.
+
+**Not built — happy hours → shows.** A reader on our board cannot see what is on
+after their drink. That is the direction the product thesis actually needs (§1: the
+unit is a night, and the drink is the first hour of it), and it is the next design
+session.
+
+### What the reverse direction is really asking for
+
+Three populations, and they are not the same problem:
+
+1. **A local band or cover duo playing the bar you are already looking at**, during
+   or just after the happy hour. **No aggregator has this** (§2). It lives in the
+   venue's own calendar, as a JPEG or a Facebook embed, and it is the moat.
+   `ingest/read_events_venue.py` is the tool and has still never been run against a
+   real venue.
+2. **A ticketed show in the same town** — the Colonial Theatre case. Ticketmaster's
+   Discovery API carries these and `dead-shows/worker/worker.js` already proxies it
+   on the free tier (5,000 calls/day). This is the population we can fill *today*
+   without inventing anything.
+3. **A tribute/genre circuit** — GDTB is one community directory that catches
+   small-bar gigs Ticketmaster misses. There are others per genre. Cheap per genre,
+   and each one is a lane, not a platform.
+
+**Sequence follows cost, not value:** 2 is nearly free and proves the surface; 3
+reuses a scraper shape we have already run daily for months; 1 is the expensive,
+defensible one and should not be the thing that blocks the other two shipping.
+
+### What carries over from `dead-shows`, and what does not
+
+- **Carries over:** the build-time join (never a runtime cross-site fetch); the
+  address-first, **city-gated** key — an ungated address key matched "101 Walnut St,
+  Montclair NJ" to "101 Walnut St, Green Lane PA", and did in practice; a daily
+  GitHub Action that refreshes data and commits back to master; a Worker that hides
+  a third-party key from the page.
+- **Does not carry over:** its audience radius. A tribute act pulls 100 miles; a
+  happy hour is five. Assumption 9 in §7 is unchanged — **do not assume the
+  dead-shows reader is the happy-hour reader.**
+- **The trap that has now cost three readings:** `zone-*.json` is the board,
+  `venues-*.json` is everything with **no** window. Any events consumer must read
+  both, deal-bearing first, or it gets a confident false answer instead of an error.
+
+### Fields, before anything is ingested
+
+Whatever the source, a show row on our board has to answer the four fields from §2
+(start, set length, cover, kitchen) and obey rule 4 of §11: **blank means unknown,
+never zero.** A Ticketmaster row will have a start and a price and will not have a
+set length or a kitchen; that is fine, and the card must say only what the source
+said. `worker/schema.sql`'s `events` table and `eventLine` already enforce this —
+a third-party importer writes into that same table, at the **`pending`** trust
+level, and never invents a field to fill a column.
+
+### The open design questions for that session
+
+1. Does an event ride the **venue's card** (an extra line, like the deals overlay)
+   or a **separate surface** ("tonight in this town")? The first is nearly free and
+   only works for population 1; the second is where a ticketed show four blocks
+   away belongs.
+2. Are third-party rows written into `events` at all, or joined at render? Writing
+   them means our table now holds data we do not own and must expire (a lineup rots
+   in a week, §7 assumption 6); joining at render means a runtime dependency the
+   offline PWA story forbids on the board itself.
+3. What is the **radius**, and is it a walk or a drive? The whole value of "after
+   your happy hour" collapses past about a mile on foot.
+4. Which town proves it? §6 says Phoenixville for population 1. Population 2 may be
+   better proven where a ticketed room and a dense bar block coexist — West Chester
+   or Wilmington.
