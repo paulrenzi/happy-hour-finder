@@ -794,9 +794,24 @@ export function applyEvents(venues, overlay) {
   return added;
 }
 
-/* The venue's next event on or after `today` (YYYY-MM-DD), or null. */
-export function nextEvent(venue, today) {
-  for (const ev of venue.events || []) if (ev.date >= today) return ev;
+/* The venue's next event on or after `today` (YYYY-MM-DD), or null.
+
+   `nowMin` is minutes since midnight; pass it and a set that has already
+   STARTED today is skipped. 118 North on 2026-09-05 is why: it plays a 4pm
+   set and an 8pm set on the same Saturday, and this board is read during the
+   happy hour, 4 to 6. Date-only, a reader at 6pm was told "Tonight · Main Line
+   School of Rock 4pm" -- a show that ended two hours ago -- while the 8pm act
+   that is the whole point of "what's on after your drink" sat behind it.
+
+   An event whose start is UNKNOWN is never skipped. Blank means unknown, not
+   "already over" (rule 4): we do not drop a night because the venue did not
+   print a time. */
+export function nextEvent(venue, today, nowMin = null) {
+  for (const ev of venue.events || []) {
+    if (ev.date > today) return ev;
+    if (ev.date < today) continue;
+    if (nowMin == null || !ev.start || mins(ev.start) >= nowMin) return ev;
+  }
   return null;
 }
 

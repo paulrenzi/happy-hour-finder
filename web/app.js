@@ -8,7 +8,7 @@ import {
   DOW_SHORT, DOW_LONG, dowOf, fmtClock, fmtMins, fmtMiles, itemParts, sortForDisplay,
   FILTERS, GROUP, GROUP_LABEL, buildFeed, summarizeWindows, usableMinutes,
   matchesQuery,
-  haversineMiles, driveMinutes, ageDays, effectiveConfidence, applyOverlay,
+  haversineMiles, driveMinutes, ageDays, effectiveConfidence, applyOverlay, minutesOfDay,
   dealKey, applyConfirmations, dateKeyOf, dayOffset,
   applyEvents, nextEvent, eventLine, validEmail,
 } from "./lib.js";
@@ -1028,7 +1028,11 @@ function card(row, at) {
 
   // What is on at this venue tonight, if the events overlay knows. One line,
   // only the fields the source stated; see eventLine().
-  const ev = nextEvent(v, dateKeyOf(new Date()));
+  // Pass the clock, not just the date. A venue can play twice in a night and
+  // this board is read DURING the happy hour; without it the card offers a set
+  // that is already over. See nextEvent().
+  const now = new Date();
+  const ev = nextEvent(v, dateKeyOf(now), minutesOfDay(now));
   const tonight = $(".tonight", node);
   if (ev) tonight.textContent = eventLine(ev, dateKeyOf(new Date()));
   else tonight.remove();

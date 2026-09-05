@@ -28,6 +28,33 @@ test("nextEvent skips the past and returns the soonest", () => {
   assert.equal(nextEvent(v, "2026-09-07"), null);
 });
 
+/* 118 North, Wayne, Saturday 2026-09-05 -- the real rows the reader returned.
+   Two sets in one night, and this board is read between 4 and 6. */
+test("nextEvent skips a set that has already started today", () => {
+  const v = venue("111", []);
+  applyEvents([v], { venues: { 111: [
+    ev("late", "2026-09-05", { act: "Creem Circus + The Sound Minds", start: "20:00" }),
+    ev("early", "2026-09-05", { act: "Main Line School of Rock", start: "16:00" }),
+    ev("sun", "2026-09-06", { act: "Billy Price Band", start: "19:30" }),
+  ] } });
+  // Before either set, the 4pm one is genuinely next.
+  assert.equal(nextEvent(v, "2026-09-05", 15 * 60).id, "early");
+  // At 6pm -- mid happy hour -- the 4pm set is over and the 8pm one is the answer.
+  assert.equal(nextEvent(v, "2026-09-05", 18 * 60).id, "late");
+  // After the last set of the night, roll to tomorrow rather than re-offering it.
+  assert.equal(nextEvent(v, "2026-09-05", 22 * 60).id, "sun");
+  // No clock passed = the old date-only behaviour, unchanged.
+  assert.equal(nextEvent(v, "2026-09-05").id, "early");
+});
+
+/* Blank means unknown, never "already over" (rule 4). A venue that printed no
+   start time must not lose its night to a clock comparison it never entered. */
+test("nextEvent never skips an event whose start is unknown", () => {
+  const v = venue("111", []);
+  applyEvents([v], { venues: { 111: [ev("noTime", "2026-09-05", { start: null })] } });
+  assert.equal(nextEvent(v, "2026-09-05", 23 * 60).id, "noTime");
+});
+
 test("the card line says only what the row says", () => {
   assert.equal(eventLine(ev("e", "2026-09-04"), "2026-09-04"), "Tonight · Rhythm & Blondes");
   assert.equal(
