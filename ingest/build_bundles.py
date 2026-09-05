@@ -376,6 +376,36 @@ def shell_digest():
     return h.hexdigest()[:8]
 
 
+def data_digest():
+    """A digest of the data the app actually boots on.
+
+    The date and the deal count between them miss a whole class of build: one
+    that changes what is IN a bundle without changing how many deals there are.
+    Filling in 30 missing coordinates on 2026-09-05, the same day as the
+    previous build, moved 11 zone bundles and produced byte-for-byte the same
+    cache name -- so every device with a warm service worker would have gone on
+    serving venues with no coordinate, which is precisely the field that had
+    just been fixed. A silent no-op deploy is the King of Prussia freeze again.
+
+    Hashing the shipped bundles cannot miss it. Eviction is cheap; a reader
+    holding data we have already corrected is not.
+    """
+    h = hashlib.sha256()
+    for name in sorted(os.listdir(OUT_DIR)):
+        if not name.endswith(".json"):
+            continue
+        with open(os.path.join(OUT_DIR, name), "rb") as fh:
+            h.update(name.encode())
+            h.update(fh.read().replace(b"\r\n", b"\n"))
+    return h.hexdigest()[:8]
+
+
+def ship_digest():
+    """Everything a device caches: the shell and the data both."""
+    return hashlib.sha256(
+        (shell_digest() + data_digest()).encode()).hexdigest()[:8]
+
+
 def sw_cache_name(built_at, n_published, digest=None):
     """The cache name a build of this shape must ship.
 
@@ -384,10 +414,11 @@ def sw_cache_name(built_at, n_published, digest=None):
     so devices kept serving an index from an older corpus -- King of Prussia read
     1 venue while the server had said 3 for hours, with nothing on either side to
     show a disagreement. The venue count rides along with the date so that a
-    second build on the same day still evicts, and the shell digest so that a
-    build changing only the app code evicts too.
+    second build on the same day still evicts, and the ship digest so that a
+    build changing only the app code -- or only the contents of a bundle --
+    evicts too.
     """
-    return f"hhf-{built_at}-{n_published}-{shell_digest() if digest is None else digest}"
+    return f"hhf-{built_at}-{n_published}-{ship_digest() if digest is None else digest}"
 
 
 def stamp_service_worker(built_at, n_published):
